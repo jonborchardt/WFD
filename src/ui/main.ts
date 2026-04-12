@@ -28,9 +28,6 @@ const resetCount = catalog.resetFailed();
 if (resetCount > 0) logger.info("boot.reset-failed", { count: resetCount });
 
 const ingester = new Ingester({ catalog });
-// Kick off an initial run in the background. Any new rows the seed loader
-// added will flow through here; already-fetched rows are skipped.
-void ingester.start();
 
 // Backfill metadata on rows that were fetched before we started collecting
 // the microformat block. Non-blocking.

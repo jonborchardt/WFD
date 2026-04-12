@@ -82,22 +82,31 @@ export class Ingester {
         this.progress = { ...this.progress, done: this.progress.done + 1 };
       } catch (e) {
         const err = e as TranscriptFetchError | Error;
-        const kind =
-          err instanceof TranscriptFetchError && err.failure.kind === "no-captions"
+        const failure =
+          err instanceof TranscriptFetchError ? err.failure : undefined;
+        const errorReason = failure?.kind;
+        const kind: "retryable" | "needs-user" =
+          errorReason === "no-captions" ||
+          errorReason === "login-required" ||
+          errorReason === "removed"
             ? "needs-user"
             : "retryable";
-        const message =
-          err instanceof TranscriptFetchError ? err.failure.kind : err.message;
+        const message = failure ? failure.kind : err.message;
         const stack = err instanceof Error ? err.stack : undefined;
         logger.error("ingest.row.failure", {
           videoId: row.videoId,
           kind,
           message,
           stack,
-          failure:
-            err instanceof TranscriptFetchError ? err.failure : undefined,
+          failure,
         });
-        recordFailure(this.opts.catalog, row.videoId, kind, message);
+        recordFailure(
+          this.opts.catalog,
+          row.videoId,
+          kind,
+          message,
+          errorReason,
+        );
         this.progress = {
           ...this.progress,
           failed: this.progress.failed + 1,

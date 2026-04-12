@@ -11,7 +11,7 @@ import { VideoMeta } from "../catalog/catalog.js";
 
 export type FetchFailure =
   | { kind: "no-captions" }
-  | { kind: "private" }
+  | { kind: "login-required" }
   | { kind: "removed" }
   | { kind: "network"; status?: number; message: string };
 
@@ -106,23 +106,27 @@ function decodeEntities(s: string): string {
 // positives because YouTube ships localized string tables containing that
 // literal for every watch page.
 export function parseWatchPage(html: string): {
-  state: "ok" | "private" | "removed" | "no-captions";
+  state: "ok" | "login-required" | "removed" | "no-captions";
   tracks: CaptionTrack[];
 } {
   const statusMatch = html.match(
     /"playabilityStatus"\s*:\s*\{\s*"status"\s*:\s*"([^"]+)"/,
   );
   const status = statusMatch?.[1];
-  if (status === "LOGIN_REQUIRED") {
-    return { state: "private", tracks: [] };
+  if (
+    status === "LOGIN_REQUIRED" ||
+    status === "AGE_VERIFICATION_REQUIRED" ||
+    status === "CONTENT_CHECK_REQUIRED"
+  ) {
+    return { state: "login-required", tracks: [] };
   }
   if (status === "ERROR" || status === "UNPLAYABLE") {
     return { state: "removed", tracks: [] };
   }
   // Fallback shorthand probes for pages where playabilityStatus is missing
-  // but a private/removed marker is present elsewhere.
+  // but a login-required marker is present elsewhere.
   if (!status && /"status"\s*:\s*"LOGIN_REQUIRED"/.test(html)) {
-    return { state: "private", tracks: [] };
+    return { state: "login-required", tracks: [] };
   }
   const m = html.match(/"captionTracks":(\[[^\]]*\])/);
   if (!m) return { state: "no-captions", tracks: [] };
@@ -333,6 +337,85 @@ export async function fetchMicroformatViaWeb(
   return meta;
 }
 
+// TVHTML5_SIMPLY_EMBEDDED_PLAYER bypasses most age-gate / login-required
+// walls because YouTube treats embeddable-player traffic as anonymous TV
+// sessions. We only fall through to this when the Android client returned
+// zero tracks, so the extra request is scoped to the failure path.
+export async function fetchViaEmbeddedInnertube(
+  videoId: string,
+  fetchFn: typeof fetch,
+): Promise<InnertubeResult | null> {
+  logger.info("fetch.embedded.start", { videoId });
+  let res: Response;
+  try {
+    res = await fetchFn(INNERTUBE_URL, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "user-agent": WEB_UA,
+        "x-youtube-client-name": "85",
+        "x-youtube-client-version": "2.0",
+      },
+      body: JSON.stringify({
+        context: {
+          client: {
+            clientName: "TVHTML5_SIMPLY_EMBEDDED_PLAYER",
+            clientVersion: "2.0",
+            hl: "en",
+          },
+          thirdParty: { embedUrl: "https://www.youtube.com/" },
+        },
+        videoId,
+      }),
+    });
+  } catch (e) {
+    logger.warn("fetch.embedded.network-error", {
+      videoId,
+      message: (e as Error).message,
+    });
+    return null;
+  }
+  logger.info("fetch.embedded.response", {
+    videoId,
+    status: res.status,
+    ok: res.ok,
+  });
+  if (!res.ok) return null;
+  let body: unknown;
+  try {
+    body = await res.json();
+  } catch {
+    return null;
+  }
+  const b = body as {
+    captions?: {
+      playerCaptionsTracklistRenderer?: {
+        captionTracks?: Array<{
+          baseUrl?: string;
+          languageCode?: string;
+          kind?: string;
+        }>;
+      };
+    };
+  };
+  const meta = parseVideoMetaFromInnertube(body);
+  const rawTracks =
+    b.captions?.playerCaptionsTracklistRenderer?.captionTracks ?? [];
+  if (rawTracks.length === 0) {
+    logger.warn("fetch.embedded.no-tracks", { videoId });
+    return { tracks: [], meta };
+  }
+  const tracks: CaptionTrack[] = rawTracks
+    .filter((t) => !!t.baseUrl)
+    .map((t) => ({
+      language: String(t.languageCode ?? "en"),
+      kind: t.kind === "asr" ? "auto" : "manual",
+      baseUrl: String(t.baseUrl),
+    }));
+  logger.info("fetch.embedded.tracks", { videoId, count: tracks.length });
+  return { tracks, meta };
+}
+
 export async function fetchViaInnertube(
   videoId: string,
   fetchFn: typeof fetch,
@@ -436,31 +519,43 @@ export async function fetchTranscript(
     });
   }
 
+  // Android returned no tracks — try the embedded-player client before
+  // dropping to watch-page scraping. This recovers most age-gated /
+  // login-required videos that the Android path can't see.
+  let tracksSource: "innertube" | "embedded" = "innertube";
+  let chosen: InnertubeResult | null = inner;
   if (!inner || inner.tracks.length === 0) {
-    return fetchViaWatchPage(videoId, fetchFn);
+    const embedded = await fetchViaEmbeddedInnertube(videoId, fetchFn);
+    if (embedded && embedded.tracks.length > 0) {
+      chosen = embedded;
+      tracksSource = "embedded";
+    } else {
+      return fetchViaWatchPage(videoId, fetchFn);
+    }
   }
 
-  const track = pickTrack(inner.tracks);
+  const chosenInner = chosen!;
+  const track = pickTrack(chosenInner.tracks);
   if (!track) throw new TranscriptFetchError({ kind: "no-captions" });
   logger.info("fetch.track.picked", {
     videoId,
     language: track.language,
     kind: track.kind,
-    source: "innertube",
+    source: tracksSource,
   });
   const cues = await downloadAndParseTrack(videoId, track.baseUrl, fetchFn);
-  // Merge: prefer android videoDetails for title/channel/viewCount, prefer
+  // Merge: prefer innertube videoDetails for title/channel/viewCount, prefer
   // web microformat for uploadDate/publishDate/category. Any missing field
   // falls through to whichever side did provide it.
-  const mergedMeta: VideoMeta = { ...inner.meta, ...(webMeta ?? {}) };
-  // But keep the richer android fields if web didn't have them.
-  mergedMeta.title = inner.meta.title ?? webMeta?.title;
-  mergedMeta.channel = inner.meta.channel ?? webMeta?.channel;
-  mergedMeta.description = inner.meta.description ?? webMeta?.description;
-  mergedMeta.keywords = inner.meta.keywords ?? webMeta?.keywords;
-  mergedMeta.viewCount = inner.meta.viewCount ?? webMeta?.viewCount;
-  mergedMeta.lengthSeconds = inner.meta.lengthSeconds ?? webMeta?.lengthSeconds;
-  mergedMeta.thumbnailUrl = inner.meta.thumbnailUrl ?? webMeta?.thumbnailUrl;
+  const mergedMeta: VideoMeta = { ...chosenInner.meta, ...(webMeta ?? {}) };
+  // But keep the richer innertube fields if web didn't have them.
+  mergedMeta.title = chosenInner.meta.title ?? webMeta?.title;
+  mergedMeta.channel = chosenInner.meta.channel ?? webMeta?.channel;
+  mergedMeta.description = chosenInner.meta.description ?? webMeta?.description;
+  mergedMeta.keywords = chosenInner.meta.keywords ?? webMeta?.keywords;
+  mergedMeta.viewCount = chosenInner.meta.viewCount ?? webMeta?.viewCount;
+  mergedMeta.lengthSeconds = chosenInner.meta.lengthSeconds ?? webMeta?.lengthSeconds;
+  mergedMeta.thumbnailUrl = chosenInner.meta.thumbnailUrl ?? webMeta?.thumbnailUrl;
   return {
     videoId,
     language: track.language,
@@ -563,8 +658,8 @@ async function fetchViaWatchPage(
       hasBaseUrl: !!t.baseUrl,
     })),
   });
-  if (state === "private") {
-    throw new TranscriptFetchError({ kind: "private" });
+  if (state === "login-required") {
+    throw new TranscriptFetchError({ kind: "login-required" });
   }
   if (state === "removed") {
     throw new TranscriptFetchError({ kind: "removed" });

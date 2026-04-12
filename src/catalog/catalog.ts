@@ -35,6 +35,12 @@ export interface VideoMeta {
   isLiveContent?: boolean;
 }
 
+export type ErrorReason =
+  | "no-captions"
+  | "login-required"
+  | "removed"
+  | "network";
+
 export interface CatalogRow extends VideoMeta {
   videoId: string;
   sourceUrl: string;
@@ -43,6 +49,7 @@ export interface CatalogRow extends VideoMeta {
   fetchedAt?: string;
   attempts: number;
   lastError?: string;
+  errorReason?: ErrorReason;
 }
 
 interface CatalogFile {
@@ -132,6 +139,7 @@ export class Catalog {
       ) {
         row.status = "pending";
         row.lastError = undefined;
+        row.errorReason = undefined;
         n++;
       }
     }

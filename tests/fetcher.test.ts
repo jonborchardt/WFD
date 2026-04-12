@@ -40,10 +40,10 @@ describe("parseTimedText", () => {
 });
 
 describe("parseWatchPage", () => {
-  it("detects private videos", () => {
+  it("detects login-required videos", () => {
     expect(
       parseWatchPage('{"playabilityStatus":{"status":"LOGIN_REQUIRED"}}').state,
-    ).toBe("private");
+    ).toBe("login-required");
   });
   it("detects removed videos", () => {
     expect(
@@ -131,7 +131,7 @@ describe("fetchTranscript", () => {
     ).rejects.toBeInstanceOf(TranscriptFetchError);
   });
 
-  it("distinguishes private from removed", async () => {
+  it("distinguishes login-required from removed", async () => {
     const priv = {
       "youtube.com/watch": () =>
         new Response(
@@ -143,7 +143,7 @@ describe("fetchTranscript", () => {
       await fetchTranscript("p", { fetchImpl: limiterFor(fakeFetch(priv).impl) });
       expect.fail("expected throw");
     } catch (e) {
-      expect((e as TranscriptFetchError).failure.kind).toBe("private");
+      expect((e as TranscriptFetchError).failure.kind).toBe("login-required");
     }
     const gone = {
       "youtube.com/watch": () =>
