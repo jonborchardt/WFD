@@ -122,11 +122,46 @@ export function parseWatchPage(html: string): {
   return { state: "ok", tracks };
 }
 
-// Append &fmt=<format> to a timedtext URL if none is already present.
+// Append &fmt=<format> to a timedtext URL, replacing any existing fmt.
 export function withFormat(url: string, format: string): string {
-  if (/[?&]fmt=/.test(url)) return url;
-  const sep = url.includes("?") ? "&" : "?";
-  return `${url}${sep}fmt=${format}`;
+  const stripped = url.replace(/([?&])fmt=[^&]*/, "$1").replace(/[?&]$/, "");
+  const sep = stripped.includes("?") ? "&" : "?";
+  return `${stripped}${sep}fmt=${format}`;
+}
+
+// YouTube's modern json3 format. Shape:
+//   { events: [ { tStartMs, dDurationMs, segs: [ { utf8 } ] }, ... ] }
+export function parseJson3(raw: string): Cue[] {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return [];
+  }
+  const events = (parsed as { events?: unknown }).events;
+  if (!Array.isArray(events)) return [];
+  const out: Cue[] = [];
+  for (const ev of events) {
+    if (!ev || typeof ev !== "object") continue;
+    const e = ev as {
+      tStartMs?: number;
+      dDurationMs?: number;
+      segs?: Array<{ utf8?: string }>;
+    };
+    if (typeof e.tStartMs !== "number") continue;
+    const text = (e.segs ?? [])
+      .map((s) => s.utf8 ?? "")
+      .join("")
+      .replace(/\n/g, " ")
+      .trim();
+    if (!text) continue;
+    out.push({
+      start: e.tStartMs / 1000,
+      duration: (e.dDurationMs ?? 0) / 1000,
+      text,
+    });
+  }
+  return out;
 }
 
 export function pickTrack(
@@ -228,50 +263,58 @@ export async function fetchTranscript(
   });
 
   // YouTube's timedtext endpoint returns an empty body unless you ask for a
-  // specific format. srv1 is the legacy XML shape <text start="..." dur="...">
-  // that parseTimedText understands. Also send a browser-ish UA header —
+  // specific format. We try json3 first (the modern shape used by the web
+  // player), then fall back to srv1 (legacy XML). Also send a browser UA —
   // some YouTube edges serve empty bodies to bare clients.
-  const cueUrl = withFormat(track.baseUrl, "srv1");
-  logger.debug("fetch.track.url", { videoId, cueUrl: cueUrl.slice(0, 300) });
-  const cueRes = await fetchFn(cueUrl, {
-    headers: {
-      "user-agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
-      "accept-language": "en-US,en;q=0.9",
-    },
-  });
-  logger.info("fetch.track.response", {
-    videoId,
-    status: cueRes.status,
-    ok: cueRes.ok,
-  });
-  if (!cueRes.ok) {
-    throw new TranscriptFetchError({
-      kind: "network",
+  const attempts: Array<{ fmt: "json3" | "srv1" }> = [
+    { fmt: "json3" },
+    { fmt: "srv1" },
+  ];
+  const headers = {
+    "user-agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+    "accept-language": "en-US,en;q=0.9",
+  };
+  let cues: Cue[] = [];
+  let lastBody = "";
+  for (const attempt of attempts) {
+    const cueUrl = withFormat(track.baseUrl, attempt.fmt);
+    logger.debug("fetch.track.url", { videoId, fmt: attempt.fmt, cueUrl });
+    const cueRes = await fetchFn(cueUrl, { headers });
+    logger.info("fetch.track.response", {
+      videoId,
+      fmt: attempt.fmt,
       status: cueRes.status,
-      message: `caption track ${cueRes.status}`,
+      ok: cueRes.ok,
     });
+    if (!cueRes.ok) continue;
+    const body = await cueRes.text();
+    lastBody = body;
+    logger.debug("fetch.track.body", {
+      videoId,
+      fmt: attempt.fmt,
+      length: body.length,
+      head: body.slice(0, 200),
+    });
+    if (body.length === 0) continue;
+    cues =
+      attempt.fmt === "json3" ? parseJson3(body) : parseTimedText(body);
+    logger.info("fetch.track.parsed", {
+      videoId,
+      fmt: attempt.fmt,
+      cueCount: cues.length,
+    });
+    if (cues.length > 0) break;
   }
-  const xml = await cueRes.text();
-  logger.debug("fetch.track.body", {
-    videoId,
-    xmlLength: xml.length,
-    xmlHead: xml.slice(0, 200),
-  });
-  const cues = parseTimedText(xml);
-  logger.info("fetch.track.parsed", { videoId, cueCount: cues.length });
   if (cues.length === 0) {
-    // Empty body / empty parse is a transport glitch — YouTube returned
-    // captionTracks metadata for this video so we know captions exist. The
-    // fix is to retry, not to park the row as needs-user.
     logger.warn("fetch.empty-cues", {
       videoId,
-      xmlLength: xml.length,
-      xmlSample: xml.slice(0, 2000),
+      lastBodyLength: lastBody.length,
+      lastBodySample: lastBody.slice(0, 2000),
     });
     throw new TranscriptFetchError({
       kind: "network",
-      message: `empty caption body (xmlLength=${xml.length})`,
+      message: `all caption formats returned no cues`,
     });
   }
   return {
