@@ -4,6 +4,7 @@
 
 import { appendFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { tmpdir } from "node:os";
 
 export type LogLevel = "debug" | "info" | "warn" | "error";
 
@@ -14,13 +15,17 @@ export interface LogEntry {
   [key: string]: unknown;
 }
 
+// Under vitest we route to a throwaway tmp path so tests never pollute the
+// real diagnostic log at data/logs/captions.log. Outside tests the default
+// is the real path in the cwd.
 function defaultLogPath(): string {
+  if (process.env.VITEST) {
+    return join(tmpdir(), `captions-test-${process.pid}.log`);
+  }
   return join(process.cwd(), "data", "logs", "captions.log");
 }
 
 let currentPath = defaultLogPath();
-// Default off during tests so vitest output stays clean. `npm run dev` flips
-// this on in src/ui/main.ts.
 let consoleMirror = !process.env.VITEST;
 
 export function configureLogger(opts: { path?: string; console?: boolean }): void {
