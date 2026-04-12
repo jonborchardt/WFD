@@ -131,7 +131,7 @@ export interface LimitedFetchOptions {
 export function makeLimitedFetch(opts: LimitedFetchOptions): typeof fetch {
   const f = opts.fetchImpl ?? fetch;
   const maxAttempts = opts.maxAttempts ?? 5;
-  return (async (input: RequestInfo | URL, init?: RequestInit) => {
+  return (async (input: Parameters<typeof fetch>[0], init?: RequestInit) => {
     let lastErr: unknown;
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
       await opts.limiter.acquire();
@@ -167,7 +167,7 @@ export function getSharedLimiter(): RateLimiter {
 }
 
 export function limitedFetch(
-  input: RequestInfo | URL,
+  input: Parameters<typeof fetch>[0],
   init?: RequestInit,
 ): Promise<Response> {
   if (!sharedFetch) {

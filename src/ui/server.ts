@@ -9,11 +9,14 @@ import { createServer, IncomingMessage, ServerResponse } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import { Catalog, CatalogRow } from "../catalog/catalog.js";
 import { transcriptPath } from "../ingest/transcript.js";
+import { Ingester, IngestProgress } from "../ingest/ingester.js";
+import { renderSpaShell } from "./spa-shell.js";
 
 export interface UiOptions {
   catalog: Catalog;
   dataDir?: string;
   port?: number;
+  ingester?: Ingester;
 }
 
 export interface ListQuery {
@@ -200,40 +203,64 @@ function parseQuery(url: string): ListQuery {
   return q;
 }
 
+function sendJson(res: ServerResponse, status: number, body: unknown): void {
+  res.writeHead(status, { "content-type": "application/json" });
+  res.end(JSON.stringify(body));
+}
+
 export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOptions): void {
   const url = req.url ?? "/";
   try {
-    if (url === "/" || url.startsWith("/?")) {
+    // JSON API for the SPA.
+    if (url.startsWith("/api/catalog")) {
       const q = parseQuery(url);
       const filtered = filterRows(opts.catalog.all(), q);
-      if (filtered.length === 0 && opts.catalog.all().length === 0) {
-        res.writeHead(200, { "content-type": "text/html" });
-        res.end(renderEmptyState("empty"));
+      sendJson(res, 200, paginate(filtered, q));
+      return;
+    }
+    if (url.startsWith("/api/progress")) {
+      const progress: IngestProgress = opts.ingester?.snapshot() ?? {
+        running: false,
+        total: 0,
+        done: 0,
+        failed: 0,
+      };
+      sendJson(res, 200, progress);
+      return;
+    }
+    const apiVideo = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)/);
+    if (apiVideo) {
+      const row = opts.catalog.get(apiVideo[1]);
+      if (!row) {
+        sendJson(res, 404, { error: "not found" });
         return;
       }
-      const page = paginate(filtered, q);
+      const transcript = loadTranscript(row, opts.dataDir);
+      sendJson(res, 200, { row, transcript });
+      return;
+    }
+    if (url === "/api/ingest/start" && req.method === "POST") {
+      if (opts.ingester) void opts.ingester.start();
+      sendJson(res, 202, { started: true });
+      return;
+    }
+
+    // SPA shell + legacy HTML routes (kept for non-JS clients / tests).
+    if (url === "/" || url.startsWith("/?")) {
       res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderListPage(page, q));
+      res.end(renderSpaShell());
       return;
     }
     const m = url.match(/^\/video\/([A-Za-z0-9_-]+)/);
     if (m) {
-      const row = opts.catalog.get(m[1]);
-      if (!row) {
-        res.writeHead(404, { "content-type": "text/html" });
-        res.end(renderEmptyState("error", "not found"));
-        return;
-      }
-      const transcript = loadTranscript(row, opts.dataDir);
       res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderDetailPage(row, transcript));
+      res.end(renderSpaShell());
       return;
     }
     res.writeHead(404);
     res.end("not found");
   } catch (e) {
-    res.writeHead(500, { "content-type": "text/html" });
-    res.end(renderEmptyState("error", (e as Error).message));
+    sendJson(res, 500, { error: (e as Error).message });
   }
 }
 

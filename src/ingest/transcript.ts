@@ -47,14 +47,18 @@ export interface FetchDeps {
 // <text start="..." dur="...">...</text> payloads.
 export function parseTimedText(xml: string): Cue[] {
   const cues: Cue[] = [];
-  const re = /<text[^>]*start="([^"]+)"[^>]*(?:dur="([^"]+)")?[^>]*>([\s\S]*?)<\/text>/g;
+  const re = /<text\s+([^>]*)>([\s\S]*?)<\/text>/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(xml))) {
-    const text = decodeEntities(m[3].replace(/<[^>]+>/g, ""));
+    const attrs = m[1];
+    const startMatch = attrs.match(/start="([^"]+)"/);
+    const durMatch = attrs.match(/dur="([^"]+)"/);
+    if (!startMatch) continue;
+    const text = decodeEntities(m[2].replace(/<[^>]+>/g, ""));
     if (!text.trim()) continue;
     cues.push({
-      start: Number(m[1]),
-      duration: Number(m[2] ?? "0"),
+      start: Number(startMatch[1]),
+      duration: Number(durMatch?.[1] ?? "0"),
       text,
     });
   }

@@ -70,7 +70,7 @@ export function detectNovel(
       const b = entityIds[j];
       if (asserted.has(`${a}|${b}`)) continue;
       const sharedN = intersect(neighbors.get(a)!, neighbors.get(b)!);
-      const sharedT = intersect(transcripts.get(a) ?? new Set(), transcripts.get(b) ?? new Set());
+      const sharedT = intersect(transcripts.get(a) ?? new Set<string>(), transcripts.get(b) ?? new Set<string>());
       if (sharedN.size + sharedT.size < minSupport) continue;
       const support: Relationship[] = [];
       for (const r of rels) {
