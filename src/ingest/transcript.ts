@@ -44,13 +44,32 @@ export interface FetchDeps {
   dataDir?: string;
 }
 
-// Parse YouTube's timedtext XML. Deliberately tiny — enough for well-formed
-// <text start="..." dur="...">...</text> payloads.
+// Parse YouTube timedtext. Handles two on-wire shapes:
+//   1. <p t="MS" d="MS"><s>text</s></p>   (Innertube baseUrl response)
+//   2. <text start="SEC" dur="SEC">text</text>   (legacy srv1)
 export function parseTimedText(xml: string): Cue[] {
   const cues: Cue[] = [];
-  const re = /<text\s+([^>]*)>([\s\S]*?)<\/text>/g;
+  // Try the modern <p t d> shape first.
+  const pRe = /<p\s+t="(\d+)"\s+d="(\d+)"[^>]*>([\s\S]*?)<\/p>/g;
   let m: RegExpExecArray | null;
-  while ((m = re.exec(xml))) {
+  while ((m = pRe.exec(xml))) {
+    const tMs = Number(m[1]);
+    const dMs = Number(m[2]);
+    const inner = m[3];
+    let text = "";
+    const sRe = /<s[^>]*>([^<]*)<\/s>/g;
+    let s: RegExpExecArray | null;
+    while ((s = sRe.exec(inner))) text += s[1];
+    if (!text) text = inner.replace(/<[^>]+>/g, "");
+    text = decodeEntities(text).trim();
+    if (!text) continue;
+    cues.push({ start: tMs / 1000, duration: dMs / 1000, text });
+  }
+  if (cues.length > 0) return cues;
+
+  // Legacy <text start dur> shape.
+  const tRe = /<text\s+([^>]*)>([\s\S]*?)<\/text>/g;
+  while ((m = tRe.exec(xml))) {
     const attrs = m[1];
     const startMatch = attrs.match(/start="([^"]+)"/);
     const durMatch = attrs.match(/dur="([^"]+)"/);
@@ -187,11 +206,174 @@ export function atomicWriteJson(path: string, data: unknown): void {
   renameSync(tmp, path);
 }
 
+// YouTube's internal Innertube API. Hitting this with an Android client
+// context returns the same playerResponse the mobile app uses, including
+// a captionTracks list. This is strictly more reliable than scraping the
+// watch page because:
+//   - no HTML parsing
+//   - no stale `ip=` signatures (the Android client gets a freshly minted
+//     baseUrl scoped to the request)
+//   - YouTube cooperates with Android traffic in ways it does not for
+//     bare node fetches against /watch
+const INNERTUBE_URL = "https://www.youtube.com/youtubei/v1/player?prettyPrint=false";
+const INNERTUBE_CLIENT_VERSION = "20.10.38";
+const ANDROID_UA = `com.google.android.youtube/${INNERTUBE_CLIENT_VERSION} (Linux; U; Android 14)`;
+
+export async function fetchViaInnertube(
+  videoId: string,
+  fetchFn: typeof fetch,
+): Promise<CaptionTrack[] | null> {
+  logger.info("fetch.innertube.start", { videoId });
+  let res: Response;
+  try {
+    res = await fetchFn(INNERTUBE_URL, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "user-agent": ANDROID_UA,
+      },
+      body: JSON.stringify({
+        context: {
+          client: {
+            clientName: "ANDROID",
+            clientVersion: INNERTUBE_CLIENT_VERSION,
+          },
+        },
+        videoId,
+      }),
+    });
+  } catch (e) {
+    logger.warn("fetch.innertube.network-error", {
+      videoId,
+      message: (e as Error).message,
+    });
+    return null;
+  }
+  logger.info("fetch.innertube.response", {
+    videoId,
+    status: res.status,
+    ok: res.ok,
+  });
+  if (!res.ok) return null;
+  let body: unknown;
+  try {
+    body = await res.json();
+  } catch {
+    return null;
+  }
+  const b = body as {
+    captions?: {
+      playerCaptionsTracklistRenderer?: {
+        captionTracks?: Array<{
+          baseUrl?: string;
+          languageCode?: string;
+          kind?: string;
+        }>;
+      };
+    };
+  };
+  const rawTracks =
+    b.captions?.playerCaptionsTracklistRenderer?.captionTracks ?? [];
+  if (rawTracks.length === 0) {
+    logger.warn("fetch.innertube.no-tracks", { videoId });
+    return [];
+  }
+  const tracks: CaptionTrack[] = rawTracks
+    .filter((t) => !!t.baseUrl)
+    .map((t) => ({
+      language: String(t.languageCode ?? "en"),
+      kind: t.kind === "asr" ? "auto" : "manual",
+      baseUrl: String(t.baseUrl),
+    }));
+  logger.info("fetch.innertube.tracks", {
+    videoId,
+    count: tracks.length,
+    tracks: tracks.map((t) => ({ language: t.language, kind: t.kind })),
+  });
+  return tracks;
+}
+
 export async function fetchTranscript(
   videoId: string,
   deps: FetchDeps = {},
 ): Promise<NormalizedTranscript> {
   const fetchFn = (deps.fetchImpl ?? limitedFetch) as typeof fetch;
+
+  // Step 1: try Innertube first.
+  let tracks: CaptionTrack[] | null = null;
+  try {
+    tracks = await fetchViaInnertube(videoId, fetchFn);
+  } catch (e) {
+    logger.warn("fetch.innertube.unexpected-error", {
+      videoId,
+      message: (e as Error).message,
+    });
+  }
+
+  // Step 2: watch-page fallback if Innertube gave us nothing.
+  if (!tracks || tracks.length === 0) {
+    return fetchViaWatchPage(videoId, fetchFn);
+  }
+
+  const track = pickTrack(tracks);
+  if (!track) throw new TranscriptFetchError({ kind: "no-captions" });
+  logger.info("fetch.track.picked", {
+    videoId,
+    language: track.language,
+    kind: track.kind,
+    source: "innertube",
+  });
+  const cues = await downloadAndParseTrack(videoId, track.baseUrl, fetchFn);
+  return { videoId, language: track.language, kind: track.kind, cues };
+}
+
+async function downloadAndParseTrack(
+  videoId: string,
+  baseUrl: string,
+  fetchFn: typeof fetch,
+): Promise<Cue[]> {
+  logger.debug("fetch.track.url", { videoId, baseUrl });
+  const res = await fetchFn(baseUrl, {
+    headers: { "user-agent": ANDROID_UA },
+  });
+  logger.info("fetch.track.response", {
+    videoId,
+    status: res.status,
+    ok: res.ok,
+  });
+  if (!res.ok) {
+    throw new TranscriptFetchError({
+      kind: "network",
+      status: res.status,
+      message: `caption track ${res.status}`,
+    });
+  }
+  const body = await res.text();
+  logger.debug("fetch.track.body", {
+    videoId,
+    length: body.length,
+    head: body.slice(0, 200),
+  });
+  const cues = parseTimedText(body);
+  logger.info("fetch.track.parsed", { videoId, cueCount: cues.length });
+  if (cues.length === 0) {
+    logger.warn("fetch.empty-cues", {
+      videoId,
+      bodyLength: body.length,
+      bodySample: body.slice(0, 2000),
+    });
+    throw new TranscriptFetchError({
+      kind: "network",
+      message: `caption body parsed to 0 cues (length=${body.length})`,
+    });
+  }
+  return cues;
+}
+
+async function fetchViaWatchPage(
+  videoId: string,
+  fetchFn: typeof fetch,
+): Promise<NormalizedTranscript> {
   const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
   logger.info("fetch.watch.start", { videoId, watchUrl });
   let watchRes: Response;

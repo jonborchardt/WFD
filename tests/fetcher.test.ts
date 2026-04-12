@@ -116,8 +116,8 @@ describe("fetchTranscript", () => {
     });
     expect(result.videoId).toBe("abc12345678");
     expect(result.cues).toHaveLength(2);
-    // watch page + one json3 attempt (empty parse) + one srv1 attempt.
-    expect(calls.length).toBe(3);
+    // innertube probe (404, no match) + watch page + json3 (empty parse) + srv1.
+    expect(calls.length).toBe(4);
   });
 
   it("throws no-captions when none exist", async () => {
