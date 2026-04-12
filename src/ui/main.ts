@@ -4,7 +4,11 @@
 import { Catalog } from "../catalog/catalog.js";
 import { loadSeedFile } from "../catalog/seed-loader.js";
 import { Ingester } from "../ingest/ingester.js";
+import { configureLogger, logger } from "../shared/logger.js";
 import { startUi } from "./server.js";
+
+configureLogger({ console: true });
+logger.info("boot");
 
 const catalog = new Catalog(Catalog.defaultPath());
 

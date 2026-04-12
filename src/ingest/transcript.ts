@@ -6,6 +6,7 @@
 import { mkdirSync, writeFileSync, renameSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { limitedFetch } from "./rate-limiter.js";
+import { logger } from "../shared/logger.js";
 
 export type FetchFailure =
   | { kind: "no-captions" }
@@ -136,15 +137,25 @@ export async function fetchTranscript(
 ): Promise<NormalizedTranscript> {
   const fetchFn = (deps.fetchImpl ?? limitedFetch) as typeof fetch;
   const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+  logger.info("fetch.watch.start", { videoId, watchUrl });
   let watchRes: Response;
   try {
     watchRes = await fetchFn(watchUrl);
   } catch (e) {
+    logger.error("fetch.watch.network-error", {
+      videoId,
+      message: (e as Error).message,
+    });
     throw new TranscriptFetchError({
       kind: "network",
       message: (e as Error).message,
     });
   }
+  logger.info("fetch.watch.response", {
+    videoId,
+    status: watchRes.status,
+    ok: watchRes.ok,
+  });
   if (!watchRes.ok) {
     throw new TranscriptFetchError({
       kind: "network",
@@ -153,15 +164,54 @@ export async function fetchTranscript(
     });
   }
   const html = await watchRes.text();
+  logger.debug("fetch.watch.body", {
+    videoId,
+    htmlLength: html.length,
+    hasCaptionTracks: /"captionTracks"/.test(html),
+    loginRequired: /"status":"LOGIN_REQUIRED"/.test(html),
+    errorStatus: /"status":"ERROR"/.test(html),
+  });
   const { state, tracks } = parseWatchPage(html);
-  if (state === "private") throw new TranscriptFetchError({ kind: "private" });
-  if (state === "removed") throw new TranscriptFetchError({ kind: "removed" });
-  if (state === "no-captions")
+  logger.info("fetch.watch.parsed", {
+    videoId,
+    state,
+    trackCount: tracks.length,
+    tracks: tracks.map((t) => ({
+      language: t.language,
+      kind: t.kind,
+      hasBaseUrl: !!t.baseUrl,
+    })),
+  });
+  if (state === "private") {
+    throw new TranscriptFetchError({ kind: "private" });
+  }
+  if (state === "removed") {
+    throw new TranscriptFetchError({ kind: "removed" });
+  }
+  if (state === "no-captions") {
+    logger.warn("fetch.no-captions", {
+      videoId,
+      htmlSample: html.slice(0, 2000),
+    });
     throw new TranscriptFetchError({ kind: "no-captions" });
+  }
   const track = pickTrack(tracks);
-  if (!track) throw new TranscriptFetchError({ kind: "no-captions" });
+  if (!track) {
+    logger.warn("fetch.no-track-picked", { videoId, tracks });
+    throw new TranscriptFetchError({ kind: "no-captions" });
+  }
+  logger.info("fetch.track.picked", {
+    videoId,
+    language: track.language,
+    kind: track.kind,
+  });
 
   const cueRes = await fetchFn(track.baseUrl);
+  logger.info("fetch.track.response", {
+    videoId,
+    status: cueRes.status,
+    ok: cueRes.ok,
+  });
   if (!cueRes.ok) {
     throw new TranscriptFetchError({
       kind: "network",
@@ -170,8 +220,16 @@ export async function fetchTranscript(
     });
   }
   const xml = await cueRes.text();
+  logger.debug("fetch.track.body", { videoId, xmlLength: xml.length });
   const cues = parseTimedText(xml);
-  if (cues.length === 0) throw new TranscriptFetchError({ kind: "no-captions" });
+  logger.info("fetch.track.parsed", { videoId, cueCount: cues.length });
+  if (cues.length === 0) {
+    logger.warn("fetch.empty-cues", {
+      videoId,
+      xmlSample: xml.slice(0, 2000),
+    });
+    throw new TranscriptFetchError({ kind: "no-captions" });
+  }
   return {
     videoId,
     language: track.language,
