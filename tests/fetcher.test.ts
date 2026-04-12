@@ -41,10 +41,20 @@ describe("parseTimedText", () => {
 
 describe("parseWatchPage", () => {
   it("detects private videos", () => {
-    expect(parseWatchPage('{"status":"LOGIN_REQUIRED"}').state).toBe("private");
+    expect(
+      parseWatchPage('{"playabilityStatus":{"status":"LOGIN_REQUIRED"}}').state,
+    ).toBe("private");
   });
   it("detects removed videos", () => {
-    expect(parseWatchPage('{"status":"ERROR"} video unavailable').state).toBe("removed");
+    expect(
+      parseWatchPage('{"playabilityStatus":{"status":"ERROR"}}').state,
+    ).toBe("removed");
+  });
+  it("ignores a bare status:ERROR string outside playabilityStatus", () => {
+    // Real YouTube pages embed localized strings like "status":"ERROR"
+    // inside translation tables; they must not trip the removed detector.
+    const html = `<html>{"playabilityStatus":{"status":"OK"}}...{"status":"ERROR"}...{"captionTracks":[{"languageCode":"en","baseUrl":"http://x/a"}]}</html>`;
+    expect(parseWatchPage(html).state).toBe("ok");
   });
   it("reports no-captions when captionTracks missing", () => {
     expect(parseWatchPage("<html>nothing</html>").state).toBe("no-captions");
@@ -122,7 +132,10 @@ describe("fetchTranscript", () => {
   it("distinguishes private from removed", async () => {
     const priv = {
       "youtube.com/watch": () =>
-        new Response('{"status":"LOGIN_REQUIRED"}', { status: 200 }),
+        new Response(
+          '{"playabilityStatus":{"status":"LOGIN_REQUIRED"}}',
+          { status: 200 },
+        ),
     };
     try {
       await fetchTranscript("p", { fetchImpl: limiterFor(fakeFetch(priv).impl) });
@@ -132,7 +145,10 @@ describe("fetchTranscript", () => {
     }
     const gone = {
       "youtube.com/watch": () =>
-        new Response('{"status":"ERROR"} video unavailable', { status: 200 }),
+        new Response(
+          '{"playabilityStatus":{"status":"ERROR"}}',
+          { status: 200 },
+        ),
     };
     try {
       await fetchTranscript("r", { fetchImpl: limiterFor(fakeFetch(gone).impl) });

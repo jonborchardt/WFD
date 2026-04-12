@@ -79,15 +79,29 @@ function decodeEntities(s: string): string {
 // Parse the watch-page HTML to classify video state and pull caption tracks.
 // This intentionally matches the shape YouTube currently embeds; it's best-
 // effort and is the single seam tests stub.
+//
+// State is derived from the playabilityStatus block, not from loose text
+// matching. A plain `"status":"ERROR"` substring match produces false
+// positives because YouTube ships localized string tables containing that
+// literal for every watch page.
 export function parseWatchPage(html: string): {
   state: "ok" | "private" | "removed" | "no-captions";
   tracks: CaptionTrack[];
 } {
-  if (/"status":"LOGIN_REQUIRED"/.test(html) || /video is private/i.test(html)) {
+  const statusMatch = html.match(
+    /"playabilityStatus"\s*:\s*\{\s*"status"\s*:\s*"([^"]+)"/,
+  );
+  const status = statusMatch?.[1];
+  if (status === "LOGIN_REQUIRED") {
     return { state: "private", tracks: [] };
   }
-  if (/"status":"ERROR"/.test(html) || /video unavailable/i.test(html)) {
+  if (status === "ERROR" || status === "UNPLAYABLE") {
     return { state: "removed", tracks: [] };
+  }
+  // Fallback shorthand probes for pages where playabilityStatus is missing
+  // but a private/removed marker is present elsewhere.
+  if (!status && /"status"\s*:\s*"LOGIN_REQUIRED"/.test(html)) {
+    return { state: "private", tracks: [] };
   }
   const m = html.match(/"captionTracks":(\[[^\]]*\])/);
   if (!m) return { state: "no-captions", tracks: [] };

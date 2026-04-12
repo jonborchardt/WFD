@@ -1,0 +1,9 @@
+{"ts":"2026-04-12T21:43:24.912Z","level":"info","event":"boot"}
+{"ts":"2026-04-12T21:43:24.920Z","level":"info","event":"ingest.run.start","total":1}
+{"ts":"2026-04-12T21:43:24.921Z","level":"info","event":"ingest.row.start","videoId":"xauvaJ1kTBo","attempts":4}
+{"ts":"2026-04-12T21:43:24.922Z","level":"info","event":"fetch.watch.start","videoId":"xauvaJ1kTBo","watchUrl":"https://www.youtube.com/watch?v=xauvaJ1kTBo"}
+{"ts":"2026-04-12T21:43:25.198Z","level":"info","event":"fetch.watch.response","videoId":"xauvaJ1kTBo","status":200,"ok":true}
+{"ts":"2026-04-12T21:43:25.857Z","level":"debug","event":"fetch.watch.body","videoId":"xauvaJ1kTBo","htmlLength":1458480,"hasCaptionTracks":true,"loginRequired":false,"errorStatus":false}
+{"ts":"2026-04-12T21:43:25.864Z","level":"info","event":"fetch.watch.parsed","videoId":"xauvaJ1kTBo","state":"removed","trackCount":0,"tracks":[]}
+{"ts":"2026-04-12T21:43:25.869Z","level":"error","event":"ingest.row.failure","videoId":"xauvaJ1kTBo","kind":"retryable","message":"removed","stack":"Error: transcript fetch failed: removed\n    at fetchTranscript (E:\\github2\\captions\\src\\ingest\\transcript.ts:189:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async fetchAndStore (E:\\github2\\captions\\src\\ingest\\transcript.ts:250:22)\n    at async Ingester.run (E:\\github2\\captions\\src\\ingest\\ingester.ts:74:22)","failure":{"kind":"removed"}}
+{"ts":"2026-04-12T21:43:25.874Z","level":"info","event":"ingest.run.finish","done":0,"failed":1}
