@@ -152,13 +152,29 @@ function VideoDetail({ videoId, nav }) {
     const n = Math.floor(s);
     return String(Math.floor(n / 60)).padStart(2, "0") + ":" + String(n % 60).padStart(2, "0");
   };
+  const metaLine = [
+    row.channel,
+    row.uploadDate,
+    row.lengthSeconds && \`\${Math.floor(row.lengthSeconds / 60)}m\`,
+    row.viewCount && \`\${row.viewCount.toLocaleString()} views\`,
+  ].filter(Boolean).join(" · ");
   return html\`
     <\${Container} maxWidth="md" sx=\${{ py: 3 }}>
       <\${Button} size="small" onClick=\${() => nav("/")}>← back<//>
       <\${Typography} variant="h5" sx=\${{ mt: 2 }}>\${row.title || row.videoId}<//>
       <\${Typography} variant="body2" color="text.secondary">
-        \${row.channel || ""} · <\${StatusChip} status=\${row.status} />
+        \${metaLine} · <\${StatusChip} status=\${row.status} />
       <//>
+      \${row.keywords && row.keywords.length > 0 && html\`
+        <\${Box} sx=\${{ mt: 1, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+          \${row.keywords.slice(0, 20).map(k => html\`<\${Chip} key=\${k} size="small" label=\${k} variant="outlined" />\`)}
+        <//>
+      \`}
+      \${row.description && html\`
+        <\${Paper} sx=\${{ mt: 2, p: 2 }} variant="outlined">
+          <\${Typography} variant="body2" sx=\${{ whiteSpace: "pre-wrap" }}>\${row.description.slice(0, 1000)}<//>
+        <//>
+      \`}
       \${!transcript && html\`<\${Typography} sx=\${{ mt: 2 }}>no transcript on disk<//>\`}
       \${transcript && html\`
         <\${Paper} sx=\${{ mt: 2, p: 2, maxHeight: "70vh", overflow: "auto" }}>

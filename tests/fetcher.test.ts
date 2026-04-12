@@ -187,18 +187,18 @@ describe("fetchAndStore integration with catalog + gaps", () => {
       "http://cap/x": () => new Response(TIMED_TEXT, { status: 200 }),
     };
     const { impl } = fakeFetch(routes);
-    const path = await fetchAndStore("vid00000001", {
+    const stored = await fetchAndStore("vid00000001", {
       fetchImpl: limiterFor(impl),
       dataDir,
     });
-    expect(existsSync(path)).toBe(true);
-    const parsed = JSON.parse(readFileSync(path, "utf8"));
+    expect(existsSync(stored.path)).toBe(true);
+    const parsed = JSON.parse(readFileSync(stored.path, "utf8"));
     expect(parsed.cues).toHaveLength(2);
 
     const catPath = join(dir, "catalog.json");
     const cat = new Catalog(catPath);
     cat.seed([{ videoId: "vid00000001" }]);
-    recordSuccess(cat, "vid00000001", path);
+    recordSuccess(cat, "vid00000001", stored.path);
     const report = detectGaps(cat);
     expect(report.ok).toHaveLength(1);
     expect(report.retry).toHaveLength(0);

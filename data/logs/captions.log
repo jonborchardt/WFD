@@ -1,0 +1,19 @@
+{"ts":"2026-04-12T22:06:51.587Z","level":"info","event":"boot"}
+{"ts":"2026-04-12T22:06:51.592Z","level":"info","event":"seed.loaded","parsed":1,"added":0,"path":"E:\\github2\\captions\\data\\seeds\\videos.txt"}
+{"ts":"2026-04-12T22:06:51.595Z","level":"info","event":"boot.reset-failed","count":1}
+{"ts":"2026-04-12T22:06:51.596Z","level":"info","event":"ingest.run.start","total":1}
+{"ts":"2026-04-12T22:06:51.597Z","level":"info","event":"ingest.row.start","videoId":"xauvaJ1kTBo","attempts":8}
+{"ts":"2026-04-12T22:06:51.599Z","level":"info","event":"fetch.innertube.start","videoId":"xauvaJ1kTBo"}
+{"ts":"2026-04-12T22:06:51.937Z","level":"info","event":"fetch.innertube.response","videoId":"xauvaJ1kTBo","status":200,"ok":true}
+{"ts":"2026-04-12T22:06:51.973Z","level":"info","event":"fetch.innertube.tracks","videoId":"xauvaJ1kTBo","count":1,"tracks":[{"language":"en","kind":"auto"}]}
+{"ts":"2026-04-12T22:06:51.975Z","level":"info","event":"fetch.track.picked","videoId":"xauvaJ1kTBo","language":"en","kind":"auto","source":"innertube"}
+{"ts":"2026-04-12T22:06:51.977Z","level":"debug","event":"fetch.track.url","videoId":"xauvaJ1kTBo","baseUrl":"https://www.youtube.com/api/timedtext?v=xauvaJ1kTBo&ei=fRfcafbJKr2dsfIP0p74gAk&caps=asr&opi=112496729&xoaf=5&xowf=1&xospf=1&hl=en&ip=0.0.0.0&ipbits=0&expire=1776056813&sparams=ip,ipbits,expire,v,ei,caps,opi,xoaf&signature=8AB08AFD5831336D3A9D59CE97C972015820CCB8.716BB168F804A0AA1EBAB5A75FC3D28C9C2EDC22&key=yt8&kind=asr&lang=en&fmt=srv3"}
+{"ts":"2026-04-12T22:06:52.150Z","level":"info","event":"fetch.track.response","videoId":"xauvaJ1kTBo","status":200,"ok":true}
+{"ts":"2026-04-12T22:06:52.164Z","level":"debug","event":"fetch.track.body","videoId":"xauvaJ1kTBo","length":217215,"head":"<?xml version=\"1.0\" encoding=\"utf-8\" ?><timedtext format=\"3\">\n<head>\n<ws id=\"0\"/>\n<ws id=\"1\" mh=\"2\" ju=\"0\" sd=\"3\"/>\n<wp id=\"0\"/>\n<wp id=\"1\" ap=\"6\" ah=\"20\" av=\"100\" rc=\"2\" cc=\"40\"/>\n</head>\n<body>\n<w t"}
+{"ts":"2026-04-12T22:06:52.175Z","level":"info","event":"fetch.track.parsed","videoId":"xauvaJ1kTBo","cueCount":896}
+{"ts":"2026-04-12T22:06:52.182Z","level":"info","event":"ingest.row.success","videoId":"xauvaJ1kTBo","path":"E:\\github2\\captions\\data\\transcripts\\xauvaJ1kTBo.json"}
+{"ts":"2026-04-12T22:06:52.185Z","level":"info","event":"ingest.run.finish","done":1,"failed":0}
+{"ts":"2026-04-12T22:07:42.558Z","level":"info","event":"boot"}
+{"ts":"2026-04-12T22:07:42.562Z","level":"info","event":"seed.loaded","parsed":1,"added":0,"path":"E:\\github2\\captions\\data\\seeds\\videos.txt"}
+{"ts":"2026-04-12T22:07:42.563Z","level":"info","event":"ingest.run.start","total":0}
+{"ts":"2026-04-12T22:07:42.564Z","level":"info","event":"ingest.run.finish","done":0,"failed":0}

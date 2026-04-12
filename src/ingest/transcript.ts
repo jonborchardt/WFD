@@ -7,6 +7,7 @@ import { mkdirSync, writeFileSync, renameSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { limitedFetch } from "./rate-limiter.js";
 import { logger } from "../shared/logger.js";
+import { VideoMeta } from "../catalog/catalog.js";
 
 export type FetchFailure =
   | { kind: "no-captions" }
@@ -31,6 +32,7 @@ export interface NormalizedTranscript {
   language: string;
   kind: "auto" | "manual";
   cues: Cue[];
+  meta?: VideoMeta;
 }
 
 export interface CaptionTrack {
@@ -219,10 +221,60 @@ const INNERTUBE_URL = "https://www.youtube.com/youtubei/v1/player?prettyPrint=fa
 const INNERTUBE_CLIENT_VERSION = "20.10.38";
 const ANDROID_UA = `com.google.android.youtube/${INNERTUBE_CLIENT_VERSION} (Linux; U; Android 14)`;
 
+export interface InnertubeResult {
+  tracks: CaptionTrack[];
+  meta: VideoMeta;
+}
+
+export function parseVideoMetaFromInnertube(body: unknown): VideoMeta {
+  const b = body as {
+    videoDetails?: {
+      title?: string;
+      author?: string;
+      channelId?: string;
+      shortDescription?: string;
+      keywords?: string[];
+      lengthSeconds?: string | number;
+      viewCount?: string | number;
+      isLiveContent?: boolean;
+      thumbnail?: { thumbnails?: Array<{ url?: string; width?: number }> };
+    };
+    microformat?: {
+      playerMicroformatRenderer?: {
+        uploadDate?: string;
+        publishDate?: string;
+        category?: string;
+        ownerChannelName?: string;
+      };
+    };
+  };
+  const vd = b.videoDetails ?? {};
+  const mf = b.microformat?.playerMicroformatRenderer ?? {};
+  const thumbs = vd.thumbnail?.thumbnails ?? [];
+  const biggestThumb = thumbs.length
+    ? thumbs.reduce((a, c) => ((c.width ?? 0) > (a.width ?? 0) ? c : a))
+    : undefined;
+  return {
+    title: vd.title,
+    channel: mf.ownerChannelName ?? vd.author,
+    channelId: vd.channelId,
+    description: vd.shortDescription,
+    keywords: vd.keywords,
+    category: mf.category,
+    uploadDate: mf.uploadDate,
+    publishDate: mf.publishDate,
+    lengthSeconds:
+      vd.lengthSeconds !== undefined ? Number(vd.lengthSeconds) : undefined,
+    viewCount: vd.viewCount !== undefined ? Number(vd.viewCount) : undefined,
+    thumbnailUrl: biggestThumb?.url,
+    isLiveContent: vd.isLiveContent,
+  };
+}
+
 export async function fetchViaInnertube(
   videoId: string,
   fetchFn: typeof fetch,
-): Promise<CaptionTrack[] | null> {
+): Promise<InnertubeResult | null> {
   logger.info("fetch.innertube.start", { videoId });
   let res: Response;
   try {
@@ -272,11 +324,12 @@ export async function fetchViaInnertube(
       };
     };
   };
+  const meta = parseVideoMetaFromInnertube(body);
   const rawTracks =
     b.captions?.playerCaptionsTracklistRenderer?.captionTracks ?? [];
   if (rawTracks.length === 0) {
     logger.warn("fetch.innertube.no-tracks", { videoId });
-    return [];
+    return { tracks: [], meta };
   }
   const tracks: CaptionTrack[] = rawTracks
     .filter((t) => !!t.baseUrl)
@@ -288,9 +341,15 @@ export async function fetchViaInnertube(
   logger.info("fetch.innertube.tracks", {
     videoId,
     count: tracks.length,
-    tracks: tracks.map((t) => ({ language: t.language, kind: t.kind })),
+    meta: {
+      title: meta.title,
+      channel: meta.channel,
+      uploadDate: meta.uploadDate,
+      lengthSeconds: meta.lengthSeconds,
+      keywordCount: meta.keywords?.length ?? 0,
+    },
   });
-  return tracks;
+  return { tracks, meta };
 }
 
 export async function fetchTranscript(
@@ -300,9 +359,9 @@ export async function fetchTranscript(
   const fetchFn = (deps.fetchImpl ?? limitedFetch) as typeof fetch;
 
   // Step 1: try Innertube first.
-  let tracks: CaptionTrack[] | null = null;
+  let inner: InnertubeResult | null = null;
   try {
-    tracks = await fetchViaInnertube(videoId, fetchFn);
+    inner = await fetchViaInnertube(videoId, fetchFn);
   } catch (e) {
     logger.warn("fetch.innertube.unexpected-error", {
       videoId,
@@ -310,12 +369,12 @@ export async function fetchTranscript(
     });
   }
 
-  // Step 2: watch-page fallback if Innertube gave us nothing.
-  if (!tracks || tracks.length === 0) {
+  // Step 2: watch-page fallback if Innertube gave us no tracks.
+  if (!inner || inner.tracks.length === 0) {
     return fetchViaWatchPage(videoId, fetchFn);
   }
 
-  const track = pickTrack(tracks);
+  const track = pickTrack(inner.tracks);
   if (!track) throw new TranscriptFetchError({ kind: "no-captions" });
   logger.info("fetch.track.picked", {
     videoId,
@@ -324,7 +383,13 @@ export async function fetchTranscript(
     source: "innertube",
   });
   const cues = await downloadAndParseTrack(videoId, track.baseUrl, fetchFn);
-  return { videoId, language: track.language, kind: track.kind, cues };
+  return {
+    videoId,
+    language: track.language,
+    kind: track.kind,
+    cues,
+    meta: inner.meta,
+  };
 }
 
 async function downloadAndParseTrack(
@@ -512,14 +577,19 @@ export function transcriptPath(videoId: string, dataDir?: string): string {
   return join(root, `${videoId}.json`);
 }
 
+export interface StoredTranscript {
+  path: string;
+  meta?: VideoMeta;
+}
+
 export async function fetchAndStore(
   videoId: string,
   deps: FetchDeps = {},
-): Promise<string> {
+): Promise<StoredTranscript> {
   const transcript = await fetchTranscript(videoId, deps);
   const path = transcriptPath(videoId, deps.dataDir);
   atomicWriteJson(path, transcript);
-  return path;
+  return { path, meta: transcript.meta };
 }
 
 export function transcriptExists(videoId: string, dataDir?: string): boolean {

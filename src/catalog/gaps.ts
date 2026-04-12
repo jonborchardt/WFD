@@ -1,7 +1,7 @@
 // Gap detection: which catalog rows are missing transcripts, and what to do.
 
 import { existsSync } from "node:fs";
-import { Catalog, CatalogRow } from "./catalog.js";
+import { Catalog, CatalogRow, VideoMeta } from "./catalog.js";
 
 export type GapBucket = "retry" | "needs-user" | "ok";
 
@@ -90,10 +90,12 @@ export function recordSuccess(
   catalog: Catalog,
   videoId: string,
   transcriptPath: string,
+  meta?: VideoMeta,
 ): void {
   const row = catalog.get(videoId);
   if (!row) throw new Error(`gaps: no row for ${videoId}`);
   catalog.update(videoId, {
+    ...(meta ?? {}),
     status: "fetched",
     transcriptPath,
     fetchedAt: new Date().toISOString(),

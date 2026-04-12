@@ -20,11 +20,24 @@ export type CatalogStatus =
   | "failed-retryable"
   | "failed-needs-user";
 
-export interface CatalogRow {
-  videoId: string;
-  sourceUrl: string;
+export interface VideoMeta {
   title?: string;
   channel?: string;
+  channelId?: string;
+  description?: string;
+  keywords?: string[];
+  category?: string;
+  uploadDate?: string;
+  publishDate?: string;
+  lengthSeconds?: number;
+  viewCount?: number;
+  thumbnailUrl?: string;
+  isLiveContent?: boolean;
+}
+
+export interface CatalogRow extends VideoMeta {
+  videoId: string;
+  sourceUrl: string;
   transcriptPath?: string;
   status: CatalogStatus;
   fetchedAt?: string;

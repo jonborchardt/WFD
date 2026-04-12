@@ -71,9 +71,14 @@ export class Ingester {
         attempts: row.attempts,
       });
       try {
-        const path = await fetcher(row.videoId, { dataDir: this.opts.dataDir });
-        recordSuccess(this.opts.catalog, row.videoId, path);
-        logger.info("ingest.row.success", { videoId: row.videoId, path });
+        const stored = await fetcher(row.videoId, { dataDir: this.opts.dataDir });
+        recordSuccess(this.opts.catalog, row.videoId, stored.path, stored.meta);
+        logger.info("ingest.row.success", {
+          videoId: row.videoId,
+          path: stored.path,
+          title: stored.meta?.title,
+          uploadDate: stored.meta?.uploadDate,
+        });
         this.progress = { ...this.progress, done: this.progress.done + 1 };
       } catch (e) {
         const err = e as TranscriptFetchError | Error;
