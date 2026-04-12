@@ -1,0 +1,28 @@
+{
+  "name": "captions",
+  "version": "0.1.0",
+  "description": "Pull video transcripts, extract entities and relationships, score truthiness, and explore a queryable map of who/what/where across a corpus of contested video.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "captions": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
