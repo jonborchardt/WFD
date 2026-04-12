@@ -4,6 +4,7 @@
 import { Catalog } from "../catalog/catalog.js";
 import { loadSeedFile } from "../catalog/seed-loader.js";
 import { Ingester } from "../ingest/ingester.js";
+import { MetaBackfiller } from "../ingest/backfill-meta.js";
 import { configureLogger, logger } from "../shared/logger.js";
 import { startUi } from "./server.js";
 
@@ -30,6 +31,11 @@ const ingester = new Ingester({ catalog });
 // Kick off an initial run in the background. Any new rows the seed loader
 // added will flow through here; already-fetched rows are skipped.
 void ingester.start();
+
+// Backfill metadata on rows that were fetched before we started collecting
+// the microformat block. Non-blocking.
+const backfiller = new MetaBackfiller(catalog);
+void backfiller.start();
 
 const port = Number(process.env.PORT ?? 4173);
 startUi({ catalog, ingester, port });
