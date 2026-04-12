@@ -219,7 +219,10 @@ export function atomicWriteJson(path: string, data: unknown): void {
 //     bare node fetches against /watch
 const INNERTUBE_URL = "https://www.youtube.com/youtubei/v1/player?prettyPrint=false";
 const INNERTUBE_CLIENT_VERSION = "20.10.38";
+const WEB_CLIENT_VERSION = "2.20240726.00.00";
 const ANDROID_UA = `com.google.android.youtube/${INNERTUBE_CLIENT_VERSION} (Linux; U; Android 14)`;
+const WEB_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
 export interface InnertubeResult {
   tracks: CaptionTrack[];
@@ -269,6 +272,65 @@ export function parseVideoMetaFromInnertube(body: unknown): VideoMeta {
     thumbnailUrl: biggestThumb?.url,
     isLiveContent: vd.isLiveContent,
   };
+}
+
+// Second Innertube call with a WEB client context. Android responses omit
+// the microformat block (uploadDate / publishDate / category), while WEB
+// responses include it. We fire this alongside the primary caption fetch
+// and merge the meta. Failures here don't block ingest.
+export async function fetchMicroformatViaWeb(
+  videoId: string,
+  fetchFn: typeof fetch,
+): Promise<VideoMeta | null> {
+  logger.info("fetch.microformat.start", { videoId });
+  let res: Response;
+  try {
+    res = await fetchFn(INNERTUBE_URL, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "user-agent": WEB_UA,
+        "x-youtube-client-name": "1",
+        "x-youtube-client-version": WEB_CLIENT_VERSION,
+      },
+      body: JSON.stringify({
+        context: {
+          client: {
+            clientName: "WEB",
+            clientVersion: WEB_CLIENT_VERSION,
+            hl: "en",
+          },
+        },
+        videoId,
+      }),
+    });
+  } catch (e) {
+    logger.warn("fetch.microformat.network-error", {
+      videoId,
+      message: (e as Error).message,
+    });
+    return null;
+  }
+  logger.info("fetch.microformat.response", {
+    videoId,
+    status: res.status,
+    ok: res.ok,
+  });
+  if (!res.ok) return null;
+  let body: unknown;
+  try {
+    body = await res.json();
+  } catch {
+    return null;
+  }
+  const meta = parseVideoMetaFromInnertube(body);
+  logger.info("fetch.microformat.parsed", {
+    videoId,
+    uploadDate: meta.uploadDate,
+    publishDate: meta.publishDate,
+    category: meta.category,
+  });
+  return meta;
 }
 
 export async function fetchViaInnertube(
@@ -358,10 +420,15 @@ export async function fetchTranscript(
 ): Promise<NormalizedTranscript> {
   const fetchFn = (deps.fetchImpl ?? limitedFetch) as typeof fetch;
 
-  // Step 1: try Innertube first.
+  // Step 1: fire innertube (android) for captions and innertube (web) for
+  // microformat in parallel. Both failures fall back to watch-page path.
   let inner: InnertubeResult | null = null;
+  let webMeta: VideoMeta | null = null;
   try {
-    inner = await fetchViaInnertube(videoId, fetchFn);
+    [inner, webMeta] = await Promise.all([
+      fetchViaInnertube(videoId, fetchFn),
+      fetchMicroformatViaWeb(videoId, fetchFn).catch(() => null),
+    ]);
   } catch (e) {
     logger.warn("fetch.innertube.unexpected-error", {
       videoId,
@@ -369,7 +436,6 @@ export async function fetchTranscript(
     });
   }
 
-  // Step 2: watch-page fallback if Innertube gave us no tracks.
   if (!inner || inner.tracks.length === 0) {
     return fetchViaWatchPage(videoId, fetchFn);
   }
@@ -383,12 +449,24 @@ export async function fetchTranscript(
     source: "innertube",
   });
   const cues = await downloadAndParseTrack(videoId, track.baseUrl, fetchFn);
+  // Merge: prefer android videoDetails for title/channel/viewCount, prefer
+  // web microformat for uploadDate/publishDate/category. Any missing field
+  // falls through to whichever side did provide it.
+  const mergedMeta: VideoMeta = { ...inner.meta, ...(webMeta ?? {}) };
+  // But keep the richer android fields if web didn't have them.
+  mergedMeta.title = inner.meta.title ?? webMeta?.title;
+  mergedMeta.channel = inner.meta.channel ?? webMeta?.channel;
+  mergedMeta.description = inner.meta.description ?? webMeta?.description;
+  mergedMeta.keywords = inner.meta.keywords ?? webMeta?.keywords;
+  mergedMeta.viewCount = inner.meta.viewCount ?? webMeta?.viewCount;
+  mergedMeta.lengthSeconds = inner.meta.lengthSeconds ?? webMeta?.lengthSeconds;
+  mergedMeta.thumbnailUrl = inner.meta.thumbnailUrl ?? webMeta?.thumbnailUrl;
   return {
     videoId,
     language: track.language,
     kind: track.kind,
     cues,
-    meta: inner.meta,
+    meta: mergedMeta,
   };
 }
 
