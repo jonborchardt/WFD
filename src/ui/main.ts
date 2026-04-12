@@ -14,10 +14,17 @@ const catalog = new Catalog(Catalog.defaultPath());
 
 const seed = loadSeedFile(catalog);
 if (seed.exists) {
-  console.log(`seed: ${seed.parsed} entries, ${seed.added} new`);
+  logger.info("seed.loaded", { parsed: seed.parsed, added: seed.added, path: seed.path });
 } else {
-  console.log(`seed: no file at ${seed.path} (create it to auto-ingest)`);
+  logger.info("seed.missing", { path: seed.path });
 }
+
+// On every dev boot, reset rows parked in any failed state so the ingester
+// picks them up again. Genuine "no captions exist" rows will reclassify
+// themselves on the next run; this just avoids manual JSON surgery when a
+// classification bug has parked something by mistake.
+const resetCount = catalog.resetFailed();
+if (resetCount > 0) logger.info("boot.reset-failed", { count: resetCount });
 
 const ingester = new Ingester({ catalog });
 // Kick off an initial run in the background. Any new rows the seed loader
