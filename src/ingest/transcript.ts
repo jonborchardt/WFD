@@ -86,7 +86,7 @@ export function parseWatchPage(html: string): {
   }
   const m = html.match(/"captionTracks":(\[[^\]]*\])/);
   if (!m) return { state: "no-captions", tracks: [] };
-  let arr: any[];
+  let arr: unknown;
   try {
     arr = JSON.parse(m[1]);
   } catch {
@@ -95,7 +95,7 @@ export function parseWatchPage(html: string): {
   if (!Array.isArray(arr) || arr.length === 0) {
     return { state: "no-captions", tracks: [] };
   }
-  const tracks: CaptionTrack[] = arr.map((t) => ({
+  const tracks: CaptionTrack[] = (arr as Array<Record<string, unknown>>).map((t) => ({
     language: String(t.languageCode ?? "en"),
     kind: t.kind === "asr" ? "auto" : "manual",
     baseUrl: String(t.baseUrl ?? ""),

@@ -46,7 +46,6 @@ export function detectNovel(
   // neighbor or transcript with no asserted edge between them.
   const neighbors = new Map<string, Set<string>>();
   const transcripts = new Map<string, Set<string>>();
-  const supportByPair = new Map<string, Relationship[]>();
 
   for (const r of rels) {
     for (const [a, b] of [

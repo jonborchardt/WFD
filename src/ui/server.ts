@@ -51,7 +51,17 @@ export function paginate(rows: CatalogRow[], q: ListQuery): ListResult {
   return { total: rows.length, page, pageSize, rows: rows.slice(start, start + pageSize) };
 }
 
-export function loadTranscript(row: CatalogRow, dataDir?: string): any | null {
+export interface LoadedTranscript {
+  videoId: string;
+  language?: string;
+  kind?: string;
+  cues: Array<{ start: number; duration: number; text: string }>;
+}
+
+export function loadTranscript(
+  row: CatalogRow,
+  dataDir?: string,
+): LoadedTranscript | null {
   const path = row.transcriptPath ?? transcriptPath(row.videoId, dataDir);
   if (!existsSync(path)) return null;
   try {
@@ -62,14 +72,14 @@ export function loadTranscript(row: CatalogRow, dataDir?: string): any | null {
 }
 
 export function searchTranscriptLines(
-  transcript: any,
+  transcript: LoadedTranscript | null,
   needle: string,
 ): Array<{ start: number; text: string }> {
   if (!transcript?.cues) return [];
   const n = needle.toLowerCase();
   return transcript.cues
-    .filter((c: any) => c.text.toLowerCase().includes(n))
-    .map((c: any) => ({ start: c.start, text: c.text }));
+    .filter((c) => c.text.toLowerCase().includes(n))
+    .map((c) => ({ start: c.start, text: c.text }));
 }
 
 export function deepLink(videoId: string, startSec: number): string {
@@ -101,7 +111,10 @@ export function renderListPage(result: ListResult, q: ListQuery): string {
   );
 }
 
-export function renderDetailPage(row: CatalogRow, transcript: any | null): string {
+export function renderDetailPage(
+  row: CatalogRow,
+  transcript: LoadedTranscript | null,
+): string {
   if (!transcript) {
     return layout(
       `captions — ${row.videoId}`,
@@ -111,7 +124,7 @@ export function renderDetailPage(row: CatalogRow, transcript: any | null): strin
   const cues = transcript.cues ?? [];
   const lines = cues
     .map(
-      (c: any) =>
+      (c) =>
         `<li><a href="${escapeHtml(deepLink(row.videoId, c.start))}" target="_blank">[${formatTime(c.start)}]</a> ${escapeHtml(c.text)}</li>`,
     )
     .join("");

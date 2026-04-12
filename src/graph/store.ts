@@ -40,12 +40,13 @@ const migrations: Array<(g: GraphFile) => GraphFile> = [
   }),
 ];
 
-function migrate(raw: any): GraphFile {
+function migrate(raw: unknown): GraphFile {
+  const r = (raw ?? {}) as Partial<GraphFile>;
   let g: GraphFile = {
-    version: Number(raw?.version ?? 0),
-    entities: raw?.entities ?? {},
-    relationships: raw?.relationships ?? {},
-    transcripts: raw?.transcripts ?? {},
+    version: Number(r.version ?? 0),
+    entities: r.entities ?? {},
+    relationships: r.relationships ?? {},
+    transcripts: r.transcripts ?? {},
   };
   while (g.version < GRAPH_SCHEMA_VERSION) {
     g = migrations[g.version](g);

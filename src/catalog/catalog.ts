@@ -45,10 +45,11 @@ const migrations: Array<(f: CatalogFile) => CatalogFile> = [
   (f) => ({ version: 1, rows: f.rows ?? {} }),
 ];
 
-export function migrate(raw: any): CatalogFile {
+export function migrate(raw: unknown): CatalogFile {
+  const r = (raw ?? {}) as { version?: unknown; rows?: Record<string, CatalogRow> };
   let f: CatalogFile = {
-    version: Number(raw?.version ?? 0),
-    rows: raw?.rows ?? {},
+    version: Number(r.version ?? 0),
+    rows: r.rows ?? {},
   };
   while (f.version < CATALOG_SCHEMA_VERSION) {
     f = migrations[f.version](f);

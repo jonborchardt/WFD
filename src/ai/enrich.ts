@@ -96,18 +96,24 @@ export function parseAIResponse(
   }
   if (!Array.isArray(parsed)) return [];
   const out: AIResponseEdge[] = [];
-  for (const e of parsed) {
+  for (const raw of parsed) {
+    if (!raw || typeof raw !== "object") continue;
+    const e = raw as Record<string, unknown>;
     if (
-      e &&
-      typeof e === "object" &&
-      typeof (e as any).subjectId === "string" &&
-      typeof (e as any).objectId === "string" &&
-      typeof (e as any).predicate === "string" &&
-      VALID_PREDICATES.has((e as any).predicate) &&
-      typeof (e as any).cueIndex === "number" &&
-      typeof (e as any).confidence === "number"
+      typeof e.subjectId === "string" &&
+      typeof e.objectId === "string" &&
+      typeof e.predicate === "string" &&
+      VALID_PREDICATES.has(e.predicate) &&
+      typeof e.cueIndex === "number" &&
+      typeof e.confidence === "number"
     ) {
-      out.push(e as AIResponseEdge);
+      out.push({
+        subjectId: e.subjectId,
+        objectId: e.objectId,
+        predicate: e.predicate,
+        cueIndex: e.cueIndex,
+        confidence: e.confidence,
+      });
     }
   }
   return out;

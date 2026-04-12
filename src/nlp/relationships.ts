@@ -140,16 +140,17 @@ function dedupe(rels: Relationship[]): Relationship[] {
 // Shape validator used by tests + AI-enrichment ingest.
 export function isValidRelationship(r: unknown): r is Relationship {
   if (!r || typeof r !== "object") return false;
-  const o = r as any;
+  const o = r as Record<string, unknown>;
+  const ev = o.evidence as Record<string, unknown> | undefined;
   return (
     typeof o.id === "string" &&
     typeof o.subjectId === "string" &&
     typeof o.objectId === "string" &&
     typeof o.predicate === "string" &&
     typeof o.confidence === "number" &&
-    o.evidence &&
-    typeof o.evidence.transcriptId === "string" &&
-    typeof o.evidence.charStart === "number" &&
-    typeof o.evidence.charEnd === "number"
+    !!ev &&
+    typeof ev.transcriptId === "string" &&
+    typeof ev.charStart === "number" &&
+    typeof ev.charEnd === "number"
   );
 }
