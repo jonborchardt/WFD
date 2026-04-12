@@ -244,6 +244,12 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       sendJson(res, 202, { started: true });
       return;
     }
+    if (url === "/api/catalog/reset-failed" && req.method === "POST") {
+      const reset = opts.catalog.resetFailed();
+      if (reset > 0 && opts.ingester) void opts.ingester.start();
+      sendJson(res, 200, { reset });
+      return;
+    }
 
     // SPA shell + legacy HTML routes (kept for non-JS clients / tests).
     if (url === "/" || url.startsWith("/?")) {

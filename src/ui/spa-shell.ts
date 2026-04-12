@@ -88,6 +88,7 @@ function CatalogList({ nav }) {
   }, [text, status, progress.done, progress.failed, progress.running]);
 
   const startIngest = () => fetch("/api/ingest/start", { method: "POST" });
+  const retryFailed = () => fetch("/api/catalog/reset-failed", { method: "POST" });
 
   return html\`
     <\${Container} maxWidth="lg" sx=\${{ py: 3 }}>
@@ -104,6 +105,9 @@ function CatalogList({ nav }) {
         <//>
         <\${Button} variant="contained" onClick=\${startIngest} disabled=\${progress.running}>
           \${progress.running ? "running..." : "run ingest"}
+        <//>
+        <\${Button} variant="outlined" onClick=\${retryFailed} disabled=\${progress.running}>
+          retry failed
         <//>
       <//>
       <\${Paper}>

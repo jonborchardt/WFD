@@ -253,15 +253,26 @@ export async function fetchTranscript(
     });
   }
   const xml = await cueRes.text();
-  logger.debug("fetch.track.body", { videoId, xmlLength: xml.length });
+  logger.debug("fetch.track.body", {
+    videoId,
+    xmlLength: xml.length,
+    xmlHead: xml.slice(0, 200),
+  });
   const cues = parseTimedText(xml);
   logger.info("fetch.track.parsed", { videoId, cueCount: cues.length });
   if (cues.length === 0) {
+    // Empty body / empty parse is a transport glitch — YouTube returned
+    // captionTracks metadata for this video so we know captions exist. The
+    // fix is to retry, not to park the row as needs-user.
     logger.warn("fetch.empty-cues", {
       videoId,
+      xmlLength: xml.length,
       xmlSample: xml.slice(0, 2000),
     });
-    throw new TranscriptFetchError({ kind: "no-captions" });
+    throw new TranscriptFetchError({
+      kind: "network",
+      message: `empty caption body (xmlLength=${xml.length})`,
+    });
   }
   return {
     videoId,

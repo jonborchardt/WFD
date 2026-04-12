@@ -108,6 +108,24 @@ export class Catalog {
     this.persist();
   }
 
+  // Flip every failed-* row back to pending so the ingester picks it up
+  // again. Returns how many rows were reset.
+  resetFailed(): number {
+    let n = 0;
+    for (const row of Object.values(this.data.rows)) {
+      if (
+        row.status === "failed-retryable" ||
+        row.status === "failed-needs-user"
+      ) {
+        row.status = "pending";
+        row.lastError = undefined;
+        n++;
+      }
+    }
+    if (n > 0) this.persist();
+    return n;
+  }
+
   // Seed a list of video ids/urls into `pending` state. Existing rows are
   // left alone so this is safe to re-run.
   seed(entries: Array<{ videoId: string; sourceUrl?: string }>): number {

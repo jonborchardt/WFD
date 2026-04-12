@@ -1,14 +1,5 @@
-{"ts":"2026-04-12T21:45:42.108Z","level":"info","event":"boot"}
-{"ts":"2026-04-12T21:45:42.115Z","level":"info","event":"ingest.run.start","total":1}
-{"ts":"2026-04-12T21:45:42.115Z","level":"info","event":"ingest.row.start","videoId":"xauvaJ1kTBo","attempts":5}
-{"ts":"2026-04-12T21:45:42.116Z","level":"info","event":"fetch.watch.start","videoId":"xauvaJ1kTBo","watchUrl":"https://www.youtube.com/watch?v=xauvaJ1kTBo"}
-{"ts":"2026-04-12T21:45:42.349Z","level":"info","event":"fetch.watch.response","videoId":"xauvaJ1kTBo","status":200,"ok":true}
-{"ts":"2026-04-12T21:45:43.217Z","level":"debug","event":"fetch.watch.body","videoId":"xauvaJ1kTBo","htmlLength":1447282,"hasCaptionTracks":true,"loginRequired":false,"errorStatus":false}
-{"ts":"2026-04-12T21:45:43.221Z","level":"info","event":"fetch.watch.parsed","videoId":"xauvaJ1kTBo","state":"ok","trackCount":1,"tracks":[{"language":"en","kind":"auto","hasBaseUrl":true}]}
-{"ts":"2026-04-12T21:45:43.224Z","level":"info","event":"fetch.track.picked","videoId":"xauvaJ1kTBo","language":"en","kind":"auto"}
-{"ts":"2026-04-12T21:45:43.243Z","level":"info","event":"fetch.track.response","videoId":"xauvaJ1kTBo","status":200,"ok":true}
-{"ts":"2026-04-12T21:45:43.247Z","level":"debug","event":"fetch.track.body","videoId":"xauvaJ1kTBo","xmlLength":0}
-{"ts":"2026-04-12T21:45:43.248Z","level":"info","event":"fetch.track.parsed","videoId":"xauvaJ1kTBo","cueCount":0}
-{"ts":"2026-04-12T21:45:43.249Z","level":"warn","event":"fetch.empty-cues","videoId":"xauvaJ1kTBo","xmlSample":""}
-{"ts":"2026-04-12T21:45:43.254Z","level":"error","event":"ingest.row.failure","videoId":"xauvaJ1kTBo","kind":"needs-user","message":"no-captions","stack":"Error: transcript fetch failed: no-captions\n    at fetchTranscript (E:\\github2\\captions\\src\\ingest\\transcript.ts:245:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async fetchAndStore (E:\\github2\\captions\\src\\ingest\\transcript.ts:264:22)\n    at async Ingester.run (E:\\github2\\captions\\src\\ingest\\ingester.ts:74:22)","failure":{"kind":"no-captions"}}
-{"ts":"2026-04-12T21:45:43.260Z","level":"info","event":"ingest.run.finish","done":0,"failed":1}
+{"ts":"2026-04-12T21:47:09.782Z","level":"info","event":"boot"}
+{"ts":"2026-04-12T21:47:09.790Z","level":"info","event":"ingest.run.start","total":0}
+{"ts":"2026-04-12T21:47:09.791Z","level":"info","event":"ingest.run.finish","done":0,"failed":0}
+{"ts":"2026-04-12T21:47:14.310Z","level":"info","event":"ingest.run.start","total":0}
+{"ts":"2026-04-12T21:47:14.312Z","level":"info","event":"ingest.run.finish","done":0,"failed":0}
