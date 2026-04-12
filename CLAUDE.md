@@ -17,11 +17,16 @@ See [README.md](README.md) for the full capability list.
 
 ## Status
 
-**Scaffolding only.** Directory layout exists; modules are empty placeholders.
-Do not assume any module is implemented — read before you reference.
+**Implemented across all pipeline stages**, but not production-hardened. Every
+module under `src/` has real TypeScript — ingest, catalog, nlp, ai, graph,
+truth, skeptic, ui, web. Read the actual file before assuming behavior; the
+module list below describes intent, not a guarantee of completeness.
 
-Note: `npm run build` currently fails — there is no `.ts` source under `src/`
-yet, only placeholder READMEs. Don't chase that as a bug.
+Note: `npm run build` currently fails because `@types/node` is not installed,
+so node built-ins (`node:http`, `node:fs`, `process`, `URL`, etc.) don't
+resolve. Install `@types/node` as a dev dependency before chasing individual
+TS errors. A few real type issues remain after that (e.g. `unknown[]` →
+`string[]` in [src/truth/novel.ts](src/truth/novel.ts)).
 
 ## Commands
 
@@ -33,7 +38,7 @@ yet, only placeholder READMEs. Don't chase that as a bug.
 - Single test file: `npx vitest run path/to/file.test.ts`
 - Single test by name: `npx vitest run -t "test name"`
 
-## Architecture (intended)
+## Architecture
 
 Pipeline shape, roughly in order:
 

@@ -1,0 +1,43 @@
+// HTML envelope for the client-side SPA. The actual application code lives in
+// `client/app.js` and is served as a static module; keeping the shell tiny
+// means this file never has to deal with template-literal escaping.
+
+export function renderSpaShell(): string {
+  return `<!doctype html><html><head>
+<meta charset="utf-8"/>
+<title>captions</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="preconnect" href="https://esm.sh"/>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "htm": "https://esm.sh/htm@3.1.1",
+    "@mui/material": "https://esm.sh/@mui/material@5.16.7?external=react,react-dom",
+    "@emotion/react": "https://esm.sh/@emotion/react@11.11.4?external=react",
+    "@emotion/styled": "https://esm.sh/@emotion/styled@11.11.5?external=react,@emotion/react"
+  }
+}
+</script>
+</head><body>
+<div id="root"></div>
+<script>
+(function(){
+  let wasConnected = false;
+  function connect() {
+    const es = new EventSource("/api/livereload");
+    es.addEventListener("hello", () => { if (wasConnected) location.reload(); wasConnected = true; });
+    es.onerror = () => {
+      es.close();
+      setTimeout(connect, 500);
+    };
+  }
+  connect();
+})();
+</script>
+<script type="module" src="/client.js"></script>
+</body></html>`;
+}
