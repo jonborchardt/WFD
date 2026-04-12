@@ -122,6 +122,13 @@ export function parseWatchPage(html: string): {
   return { state: "ok", tracks };
 }
 
+// Append &fmt=<format> to a timedtext URL if none is already present.
+export function withFormat(url: string, format: string): string {
+  if (/[?&]fmt=/.test(url)) return url;
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}fmt=${format}`;
+}
+
 export function pickTrack(
   tracks: CaptionTrack[],
   preferredLanguage = "en",
@@ -220,7 +227,19 @@ export async function fetchTranscript(
     kind: track.kind,
   });
 
-  const cueRes = await fetchFn(track.baseUrl);
+  // YouTube's timedtext endpoint returns an empty body unless you ask for a
+  // specific format. srv1 is the legacy XML shape <text start="..." dur="...">
+  // that parseTimedText understands. Also send a browser-ish UA header —
+  // some YouTube edges serve empty bodies to bare clients.
+  const cueUrl = withFormat(track.baseUrl, "srv1");
+  logger.debug("fetch.track.url", { videoId, cueUrl: cueUrl.slice(0, 300) });
+  const cueRes = await fetchFn(cueUrl, {
+    headers: {
+      "user-agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+      "accept-language": "en-US,en;q=0.9",
+    },
+  });
   logger.info("fetch.track.response", {
     videoId,
     status: cueRes.status,
