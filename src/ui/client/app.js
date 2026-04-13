@@ -276,9 +276,6 @@ function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
             />
           `}
           <${Box} sx=${{ flexGrow: 1 }} />
-          <${Typography} variant="caption" sx=${{ mr: 1, color: "text.secondary" }}>
-            ${activeCols.length} / ${cols.length} columns
-          <//>
           <${Button} size="small" variant="outlined" onClick=${e => setColMenuAnchor(e.currentTarget)}>
             columns ▾
           <//>
@@ -803,7 +800,10 @@ function RelationshipsPage({ nav }) {
       source: e.source,
       target: e.target,
       label: e.predicate,
-      labelStyle: { fontSize: 10, fill: "#ccc" },
+      labelStyle: { fontSize: 10, fill: "#111" },
+      labelBgStyle: { fill: "#fff", fillOpacity: 0.85 },
+      labelBgPadding: [4, 2],
+      labelBgBorderRadius: 3,
       style: { stroke: "#888", strokeWidth: Math.min(4, 1 + Math.log2(e.count + 1)) },
     }));
     return { nodes: ns, edges: es };

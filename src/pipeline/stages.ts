@@ -26,7 +26,14 @@ import { fetchAndStore } from "../ingest/transcript.js";
 import { recordSuccess, recordFailure } from "../catalog/gaps.js";
 import { extract as extractEntities, Transcript } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
-import { writePersistedNlp } from "../nlp/persist.js";
+import {
+  EntityIndexEntry,
+  EntityVideosIndex,
+  readPersistedNlp,
+  writePersistedNlp,
+  writePersistedEntityIndex,
+  writePersistedEntityVideos,
+} from "../nlp/persist.js";
 import {
   buildBundle,
   writeBundles,
@@ -208,6 +215,98 @@ export const contradictionsStage: GraphStage = {
   },
 };
 
+// Aggregates per-video NLP output into the corpus-wide files the UI (and
+// static deploy shim) read: entity-index.json, entity-videos.json, and
+// relationships-graph.json. Runs at graph level so one pass covers the
+// whole catalog after any NLP-producing stage has touched dirtyAt.
+export const indexesStage: GraphStage = {
+  name: "indexes",
+  version: 1,
+  async run(ctx): Promise<StageOutcome> {
+    const agg = new Map<string, EntityIndexEntry>();
+    const videosByEntity: EntityVideosIndex = {};
+    const graphNodes = new Map<
+      string,
+      { id: string; type: string; canonical: string; weight: number }
+    >();
+    const graphEdges = new Map<
+      string,
+      { id: string; source: string; target: string; predicate: string; count: number }
+    >();
+    let processed = 0;
+    for (const row of ctx.catalog.all()) {
+      if (row.status !== "fetched") continue;
+      const nlp = readPersistedNlp(row.videoId, ctx.dataDir);
+      if (!nlp) continue;
+      processed += 1;
+      const entById = new Map(nlp.entities.map((e) => [e.id, e]));
+      for (const rel of nlp.relationships) {
+        const s = entById.get(rel.subjectId);
+        const o = entById.get(rel.objectId);
+        if (!s || !o) continue;
+        for (const ent of [s, o]) {
+          const existing = graphNodes.get(ent.id);
+          if (existing) existing.weight += 1;
+          else
+            graphNodes.set(ent.id, {
+              id: ent.id,
+              type: ent.type,
+              canonical: ent.canonical,
+              weight: 1,
+            });
+        }
+        const key = `${rel.subjectId}|${rel.predicate}|${rel.objectId}`;
+        const existingEdge = graphEdges.get(key);
+        if (existingEdge) existingEdge.count += 1;
+        else
+          graphEdges.set(key, {
+            id: key,
+            source: rel.subjectId,
+            target: rel.objectId,
+            predicate: rel.predicate,
+            count: 1,
+          });
+      }
+      for (const e of nlp.entities) {
+        const existing = agg.get(e.id);
+        if (existing) {
+          existing.videoCount += 1;
+          existing.mentionCount += e.mentions.length;
+        } else {
+          agg.set(e.id, {
+            id: e.id,
+            type: e.type,
+            canonical: e.canonical,
+            videoCount: 1,
+            mentionCount: e.mentions.length,
+          });
+        }
+        (videosByEntity[e.id] ||= []).push({
+          videoId: row.videoId,
+          mentions: e.mentions,
+        });
+      }
+    }
+    writePersistedEntityIndex([...agg.values()], ctx.dataDir);
+    writePersistedEntityVideos(videosByEntity, ctx.dataDir);
+    const graph = {
+      nodes: [...graphNodes.values()],
+      edges: [...graphEdges.values()],
+    };
+    const dir = join(ctx.dataDir, "nlp");
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(
+      join(dir, "relationships-graph.json"),
+      JSON.stringify(graph),
+      "utf8",
+    );
+    return {
+      kind: "ok",
+      notes: `videos=${processed} entities=${agg.size} nodes=${graph.nodes.length} edges=${graph.edges.length}`,
+    };
+  },
+};
+
 export const novelStage: GraphStage = {
   name: "novel",
   version: 1,
@@ -235,4 +334,5 @@ export const DEFAULT_GRAPH_STAGES: GraphStage[] = [
   propagationStage,
   contradictionsStage,
   novelStage,
+  indexesStage,
 ];

@@ -11,7 +11,6 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { Catalog, CatalogRow, parseIdList } from "../catalog/catalog.js";
 import { transcriptPath } from "../ingest/transcript.js";
-import { Ingester, IngestProgress } from "../ingest/ingester.js";
 import { limitedFetch } from "../ingest/rate-limiter.js";
 import { renderSpaShell } from "./spa-shell.js";
 import { extract as extractEntities, Transcript as NlpTranscript } from "../nlp/entities.js";
@@ -288,7 +287,6 @@ export interface UiOptions {
   catalog: Catalog;
   dataDir?: string;
   port?: number;
-  ingester?: Ingester;
 }
 
 export type { ListQuery, ListResult };
@@ -411,8 +409,12 @@ function layout(title: string, body: string): string {
   <style>body{font-family:system-ui;max-width:900px;margin:2em auto;padding:0 1em}
   table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #ddd;padding:4px;text-align:left}
   form{display:flex;gap:.5em;margin-bottom:1em}ol{padding-left:1.2em}</style></head>
-  <body><header><a href="/">catalog</a></header>${body}</body></html>`;
+  <body><header><a href="/">catalog</a></header>${body}${CREDIT_FOOTER}</body></html>`;
 }
+
+export const CREDIT_FOOTER = `<footer style="margin-top:2rem;padding:0.75rem 0;border-top:1px solid #ccc;font-size:0.8rem;color:#555;text-align:center">
+All transcript content is from <a href="https://thewhyfiles.com" target="_blank" rel="noopener" style="color:#1976d2">The Why Files</a> (AJ Gentile). Credit and copyright belong to The Why Files. Support: <a href="https://www.patreon.com/thewhyfiles" target="_blank" rel="noopener" style="color:#1976d2">Patreon</a> · <a href="https://shop.thewhyfiles.com" target="_blank" rel="noopener" style="color:#1976d2">Shop</a> · <a href="https://www.youtube.com/@TheWhyFiles" target="_blank" rel="noopener" style="color:#1976d2">YouTube</a>. Independent research index, not affiliated with The Why Files.
+</footer>`;
 
 export function escapeHtml(s: string): string {
   return s
@@ -494,16 +496,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       );
       return;
     }
-    if (url.startsWith("/api/progress")) {
-      const progress: IngestProgress = opts.ingester?.snapshot() ?? {
-        running: false,
-        total: 0,
-        done: 0,
-        failed: 0,
-      };
-      sendJson(res, 200, progress);
-      return;
-    }
     const apiNlp = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)\/nlp/);
     if (apiNlp) {
       const row = opts.catalog.get(apiNlp[1]);
@@ -580,16 +572,9 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       sendJson(res, 200, { row, transcript });
       return;
     }
-    if (url === "/api/ingest/start" && req.method === "POST") {
-      if (opts.ingester) void opts.ingester.start();
-      sendJson(res, 202, { started: true });
-      return;
-    }
     // Add-video entrypoint. Mirrors `captions add` from the CLI: seeds a row
-    // in the catalog from a url/id passed as ?url=. The caller is expected to
-    // POST /api/ingest/start afterwards (or run `captions pipeline`) to
-    // actually fetch and process. This replaces the ad-hoc admin-page
-    // ingest flow without deleting anything.
+    // in the catalog from a url/id passed as ?url=. Fetching happens out of
+    // band via `npm run ingest` / `npm run pipeline`; the UI is read-only.
     if (url.startsWith("/api/add") && req.method === "POST") {
       const u = new URL(url, "http://localhost");
       const raw = u.searchParams.get("url") ?? "";
@@ -608,7 +593,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     }
     if (url === "/api/catalog/reset-failed" && req.method === "POST") {
       const reset = opts.catalog.resetFailed();
-      if (reset > 0 && opts.ingester) void opts.ingester.start();
       sendJson(res, 200, { reset });
       return;
     }

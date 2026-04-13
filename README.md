@@ -72,7 +72,45 @@ npm run build
 npm test
 ```
 
-CLI entrypoint is `captions` (see `package.json`). Project layout:
+### Adding videos and building the index
+
+The pipeline is split into explicit steps. Each is its own npm script — nothing
+runs implicitly, so you always know what's happening and when.
+
+```bash
+# 1. Add videos to the catalog.
+#    Either edit data/seeds/videos.txt (one url or id per line),
+#    or drop one in directly:
+npm run add -- "https://www.youtube.com/watch?v=VIDEOID"
+
+# 2. Fetch transcripts for any pending / failed-retryable rows.
+#    Also loads data/seeds/videos.txt into the catalog first,
+#    so you can batch-edit the seed file and run this once.
+npm run ingest
+
+# 3. Run the staged pipeline: nlp → ai → per-claim, then graph
+#    stages (propagation, contradictions, novel, indexes). The
+#    `indexes` stage writes the aggregated files the UI reads.
+npm run pipeline
+
+# 4. Serve the UI (read-only; no background work on boot).
+npm run dev
+```
+
+Other commands:
+
+```bash
+npm run heal    # reset failed rows + clear stale transcriptPath fields
+npm run audit   # print a state summary of the catalog
+npm run cli -- status [--video ID]   # per-row stage map
+```
+
+The `ai` stage is a checkpoint: it writes a Claude Code prompt bundle under
+`data/ai/bundles/<id>.bundle.json` and parks the row as `awaiting`. Run Claude
+Code against the bundle, drop the reply at
+`data/ai/responses/<id>.response.json`, then re-run `npm run pipeline` to ingest
+it. Re-running the pipeline is always safe — stages are idempotent and only
+stale work runs.
 
 ```
 src/

@@ -3,6 +3,10 @@
 //
 // Commands:
 //   captions add <url-or-id>         seed a row in the catalog
+//   captions ingest                  load data/seeds/videos.txt, then fetch
+//                                    all pending/failed-retryable transcripts
+//   captions heal                    reset failed rows + clear stale
+//                                    transcriptPath fields
 //   captions pipeline [flags]        run stale stages against the catalog
 //     --video <id>                   restrict to a single video
 //     --stage <name>                 restrict to a single stage
@@ -13,8 +17,11 @@
 // All commands operate on the default data/ directory relative to the repo
 // root. Pass CAPTIONS_DATA_DIR to override.
 
+import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { Catalog, parseIdList, StageName } from "../catalog/catalog.js";
+import { Catalog, parseIdList, StageName, GraphStageName } from "../catalog/catalog.js";
+import { loadSeedFile } from "../catalog/seed-loader.js";
+import { Ingester } from "../ingest/ingester.js";
 import { runPipeline } from "../pipeline/run.js";
 
 function dataDir(): string {
@@ -34,6 +41,8 @@ function usage(): void {
       "",
       "commands:",
       "  add <url-or-id>           seed a new video into the catalog",
+      "  ingest                     load seeds file, then fetch pending transcripts",
+      "  heal                       reset failed rows + clear stale transcript paths",
       "  pipeline [--video <id>] [--stage <name>] [--dry-run]",
       "                             run all stale stages",
       "  audit                      print a state summary of the catalog",
@@ -90,6 +99,39 @@ async function cmdAdd(arg: string | undefined): Promise<number> {
   return 0;
 }
 
+async function cmdIngest(): Promise<number> {
+  const dir = dataDir();
+  const catalog = catalogFromDataDir(dir);
+  const seed = loadSeedFile(catalog);
+  if (seed.exists) {
+    console.log(`seed: parsed=${seed.parsed} added=${seed.added} (${seed.path})`);
+  } else {
+    console.log(`seed: no file at ${seed.path}`);
+  }
+  const ingester = new Ingester({ catalog, dataDir: dir });
+  await ingester.start();
+  const snap = ingester.snapshot();
+  console.log(
+    `ingest: done=${snap.done} failed=${snap.failed}` +
+      (snap.lastError ? `\n  last error: ${snap.lastError}` : ""),
+  );
+  return 0;
+}
+
+async function cmdHeal(): Promise<number> {
+  const catalog = catalogFromDataDir(dataDir());
+  const reset = catalog.resetFailed();
+  let cleared = 0;
+  for (const row of catalog.all()) {
+    if (row.transcriptPath && !existsSync(row.transcriptPath)) {
+      catalog.update(row.videoId, { transcriptPath: undefined });
+      cleared++;
+    }
+  }
+  console.log(`heal: reset=${reset} transcriptPath-cleared=${cleared}`);
+  return 0;
+}
+
 async function cmdPipeline(flags: Parsed["flags"]): Promise<number> {
   const dir = dataDir();
   const catalog = catalogFromDataDir(dir);
@@ -99,7 +141,7 @@ async function cmdPipeline(flags: Parsed["flags"]): Promise<number> {
     onlyVideoId: typeof flags.video === "string" ? flags.video : undefined,
     onlyStage:
       typeof flags.stage === "string"
-        ? (flags.stage as StageName | "propagation" | "contradictions" | "novel")
+        ? (flags.stage as StageName | GraphStageName)
         : undefined,
     dryRun: flags["dry-run"] === true,
   });
@@ -175,6 +217,12 @@ async function main(): Promise<void> {
   switch (command) {
     case "add":
       code = await cmdAdd(parsed.positional[0]);
+      break;
+    case "ingest":
+      code = await cmdIngest();
+      break;
+    case "heal":
+      code = await cmdHeal();
       break;
     case "pipeline":
       code = await cmdPipeline(parsed.flags);
