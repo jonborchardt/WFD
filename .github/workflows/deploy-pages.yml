@@ -37,6 +37,7 @@ jobs:
           cp -r data/transcripts _site/data/
           cp -r data/nlp _site/data/
           cp src/ui/client/index.html _site/index.html
+          cp src/ui/client/404.html _site/404.html
           cp src/ui/client/app.js _site/client.js
           cp src/ui/query.js _site/query.js
           cp scripts/static-shim.js _site/static-shim.js

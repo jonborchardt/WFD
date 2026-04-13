@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>captions</title>
+<script>
+  // SPA fallback for GitHub Pages: rewrite the 404 URL into a query-encoded
+  // path on the site root, then let index.html decode it back. Based on
+  // https://github.com/rafgraph/spa-github-pages (MIT).
+  // pathSegmentsToKeep=1 -> project page (user.github.io/<repo>/); set to 0
+  // for a user/apex domain.
+  var pathSegmentsToKeep = 1;
+  var l = window.location;
+  l.replace(
+    l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+    l.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") + "/?/" +
+    l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+    (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+    l.hash
+  );
+</script>
+</head>
+<body></body>
+</html>
