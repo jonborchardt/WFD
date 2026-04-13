@@ -7,10 +7,21 @@
 /** @typedef {import("./query.d.ts").ListResult} ListResult */
 /** @typedef {import("./query.d.ts").EntityIndexEntry} EntityIndexEntry */
 
+export const PER_VIDEO_STAGES = ["fetched", "nlp", "ai", "per-claim"];
+
+export function hasIncompleteStages(row) {
+  const stages = row.stages || {};
+  for (const name of PER_VIDEO_STAGES) {
+    if (!stages[name]) return true;
+  }
+  return false;
+}
+
 export function matchesBase(row, q) {
   if (q.channel && row.channel !== q.channel) return false;
   if (q.status && row.status !== q.status) return false;
   if (q.notStatus && row.status === q.notStatus) return false;
+  if (q.incompleteStages && !hasIncompleteStages(row)) return false;
   return true;
 }
 

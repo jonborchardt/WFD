@@ -24,7 +24,7 @@ import {
   CssBaseline, ThemeProvider, createTheme, AppBar, Toolbar, Typography,
   Container, Paper, Table, TableHead, TableBody, TableRow, TableCell,
   TablePagination, TextField, Select, MenuItem, LinearProgress, Chip, Button, Box, Link, Stack,
-  Menu, Checkbox, FormControlLabel, ListItemText, ListItemIcon,
+  Menu, Checkbox, FormControlLabel, ListItemText, ListItemIcon, Tooltip, Alert, AlertTitle,
 } from "@mui/material";
 
 const html = htm.bind(React.createElement);
@@ -43,39 +43,6 @@ function useRoute() {
     dispatchEvent(new PopStateEvent("popstate"));
   };
   return [path, nav];
-}
-
-function useProgress() {
-  const [p, setP] = useState({ running: false, total: 0, done: 0, failed: 0 });
-  useEffect(() => {
-    let stop = false;
-    const tick = async () => {
-      try {
-        const r = await fetch("/api/progress");
-        if (!stop) setP(await r.json());
-      } catch {}
-      if (!stop) setTimeout(tick, 1500);
-    };
-    tick();
-    return () => { stop = true; };
-  }, []);
-  return p;
-}
-
-function ProgressBar({ progress }) {
-  const pct = progress.total > 0 ? ((progress.done + progress.failed) / progress.total) * 100 : 0;
-  const label = progress.running
-    ? `ingesting ${progress.done + progress.failed} / ${progress.total}${progress.current ? " — " + progress.current : ""}`
-    : progress.total > 0
-      ? `idle — last run: ${progress.done} ok, ${progress.failed} failed`
-      : "idle";
-  return html`
-    <${Box} sx=${{ my: 2 }}>
-      <${Typography} variant="body2" sx=${{ mb: 0.5 }}>${label}<//>
-      <${LinearProgress} variant=${progress.running ? "determinate" : "determinate"} value=${pct} />
-      ${progress.lastError && html`<${Typography} variant="caption" color="error">${progress.lastError}<//>`}
-    <//>
-  `;
 }
 
 function StatusChip({ status }) {
@@ -229,7 +196,7 @@ function EntitySuggestions({ text, nav, onPick }) {
   `;
 }
 
-function CatalogTable({ nav, progress, showStatusFilter, columns }) {
+function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
   const cols = columns || CATALOG_COLUMNS;
   const [data, setData] = useState({ total: 0, page: 1, pageSize: 25, rows: [] });
   const [page, setPage] = useState(1);
@@ -237,7 +204,7 @@ function CatalogTable({ nav, progress, showStatusFilter, columns }) {
   const [text, setText] = useState(() => new URLSearchParams(location.search).get("search") || "");
   const [showDropdown, setShowDropdown] = useState(false);
   const [status, setStatus] = useState("");
-  const [failedOnly, setFailedOnly] = useState(false);
+  const [failedOnly, setFailedOnly] = useState(!!defaultFailedOnly);
   const [visible, setVisible] = useState(() => {
     const init = {};
     for (const c of cols) init[c.key] = c.default;
@@ -267,7 +234,7 @@ function CatalogTable({ nav, progress, showStatusFilter, columns }) {
     const q = new URLSearchParams();
     if (text) q.set("text", text);
     if (status) q.set("status", status);
-    if (failedOnly) q.set("notStatus", "fetched");
+    if (failedOnly) q.set("incompleteStages", "1");
     q.set("page", String(page));
     q.set("pageSize", String(pageSize));
     let cancelled = false;
@@ -276,7 +243,7 @@ function CatalogTable({ nav, progress, showStatusFilter, columns }) {
       fetch("/api/catalog?" + q).then(r => r.json()).then(d => { if (!cancelled) setData(d); });
     }, delay);
     return () => { cancelled = true; clearTimeout(h); };
-  }, [text, status, failedOnly, page, pageSize, progress?.done, progress?.failed, progress?.running]);
+  }, [text, status, failedOnly, page, pageSize]);
 
   const pagination = html`
     <${TablePagination}
@@ -359,18 +326,47 @@ const HOME_COLUMNS = CATALOG_COLUMNS
   .filter(c => c.key !== "status")
   .map(c => ["lengthSeconds", "viewCount"].includes(c.key) ? { ...c, default: true } : c);
 
+const PIPELINE_STAGES = ["fetched", "nlp", "ai", "per-claim"];
+
+function stageCellFor(stageName) {
+  return (r) => {
+    const stages = r.stages || {};
+    if (stages[stageName]) {
+      return html`<${Chip} size="small" color="success" label="pass" />`;
+    }
+    // Stage hasn't been recorded. If an earlier stage is also missing, this
+    // one is simply blocked/pending. If all prior stages passed and the row
+    // carries an error, attribute the failure to this stage.
+    const idx = PIPELINE_STAGES.indexOf(stageName);
+    const priorAllPass = PIPELINE_STAGES.slice(0, idx).every(s => stages[s]);
+    const hasError = r.status === "failed-retryable" || r.status === "failed-needs-user" || !!r.lastError;
+    if (priorAllPass && hasError) {
+      const reason = r.errorReason || r.lastError || "failed";
+      return html`<${Tooltip} title=${r.lastError || reason}>
+        <${Chip} size="small" color="error" label=${"fail: " + reason} />
+      <//>`;
+    }
+    return html`<${Chip} size="small" variant="outlined" label="pending" />`;
+  };
+}
+
+const STAGE_COLUMNS = PIPELINE_STAGES.map(s => ({
+  key: "stage:" + s,
+  label: s,
+  default: true,
+  render: stageCellFor(s),
+}));
+
 const ADMIN_COLUMNS = (() => {
-  const byKey = Object.fromEntries(CATALOG_COLUMNS.map(c => [c.key, c]));
-  const moved = new Set(["attempts", "status"]);
-  const base = CATALOG_COLUMNS.filter(c => !moved.has(c.key));
+  const hidden = new Set(["status", "errorReason", "lastError", "attempts"]);
+  const base = CATALOG_COLUMNS.filter(c => !hidden.has(c.key));
   const idx = base.findIndex(c => c.key === "sourceUrl");
   const ordered = [
     ...base.slice(0, idx + 1),
-    byKey.attempts,
-    byKey.status,
+    ...STAGE_COLUMNS,
     ...base.slice(idx + 1),
   ];
-  return ordered.map(c => ["attempts", "sourceUrl", "errorReason"].includes(c.key) ? { ...c, default: true } : c);
+  return ordered.map(c => c.key === "sourceUrl" ? { ...c, default: true } : c);
 })();
 
 function CatalogList({ nav }) {
@@ -382,23 +378,59 @@ function CatalogList({ nav }) {
   `;
 }
 
+function UpstreamCheck() {
+  const [state, setState] = useState({ loading: true, channels: [] });
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/admin/upstream-check")
+      .then(r => r.json())
+      .then(d => { if (!cancelled) setState({ loading: false, channels: d.channels || [] }); })
+      .catch(() => { if (!cancelled) setState({ loading: false, channels: [] }); });
+    return () => { cancelled = true; };
+  }, []);
+  if (state.loading) return null;
+  return html`
+    <${Box} sx=${{ mb: 2 }}>
+      ${state.channels.map(c => {
+        if (c.error) {
+          return html`<${Alert} key=${c.channelId} severity="warning" sx=${{ mb: 1 }}>
+            ${c.channelLabel}: upstream check failed — ${c.error}
+          <//>`;
+        }
+        if (c.behind && c.upstream) {
+          const upDate = fmtDate(c.upstream.publishedAt);
+          const catDate = c.catalog?.publishDate ? fmtDate(c.catalog.publishDate) : "none";
+          const ytUrl = "https://www.youtube.com/watch?v=" + c.upstream.videoId;
+          return html`<${Alert} key=${c.channelId} severity="warning" sx=${{ mb: 1 }}>
+            <${AlertTitle}>${c.channelLabel}: new video needs upload<//>
+            Upstream latest: <${Link} href=${ytUrl} target="_blank" rel="noopener">${c.upstream.title}<//> (${upDate})
+            <${Box} component="span" sx=${{ ml: 1, color: "text.secondary" }}>— catalog latest: ${catDate}<//>
+          <//>`;
+        }
+        if (!c.upstream) {
+          return html`<${Alert} key=${c.channelId} severity="info" sx=${{ mb: 1 }}>
+            ${c.channelLabel}: no upstream video found
+          <//>`;
+        }
+        return html`<${Alert} key=${c.channelId} severity="success" sx=${{ mb: 1 }}>
+          ${c.channelLabel}: up to date (latest ${fmtDate(c.upstream.publishedAt)})
+        <//>`;
+      })}
+    <//>
+  `;
+}
+
 function AdminPage({ nav }) {
-  const progress = useProgress();
-  const startIngest = () => fetch("/api/ingest/start", { method: "POST" });
-  const retryFailed = () => fetch("/api/catalog/reset-failed", { method: "POST" });
   return html`
     <${Container} maxWidth="lg" sx=${{ py: 3 }}>
       <${Typography} variant="h4" gutterBottom>Admin<//>
-      ${(progress.running || progress.total > 0) && html`<${ProgressBar} progress=${progress} />`}
-      <${Stack} direction="row" spacing=${2} sx=${{ mb: 2, flexWrap: "wrap", rowGap: 1 }}>
-        <${Button} variant="contained" onClick=${startIngest} disabled=${progress.running}>
-          ${progress.running ? "running..." : "run ingest"}
-        <//>
-        <${Button} variant="outlined" onClick=${retryFailed} disabled=${progress.running}>
-          retry failed
-        <//>
-      <//>
-      <${CatalogTable} nav=${nav} progress=${progress} showStatusFilter=${true} columns=${ADMIN_COLUMNS} />
+      <${UpstreamCheck} />
+      <${CatalogTable}
+        nav=${nav}
+        showStatusFilter=${true}
+        defaultFailedOnly=${true}
+        columns=${ADMIN_COLUMNS}
+      />
     <//>
   `;
 }

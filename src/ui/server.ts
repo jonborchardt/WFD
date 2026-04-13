@@ -12,6 +12,7 @@ import { dirname, join } from "node:path";
 import { Catalog, CatalogRow, parseIdList } from "../catalog/catalog.js";
 import { transcriptPath } from "../ingest/transcript.js";
 import { Ingester, IngestProgress } from "../ingest/ingester.js";
+import { limitedFetch } from "../ingest/rate-limiter.js";
 import { renderSpaShell } from "./spa-shell.js";
 import { extract as extractEntities, Transcript as NlpTranscript } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
@@ -38,6 +39,113 @@ import type { ListQuery, ListResult } from "./query.js";
 interface NlpResult {
   entities: Entity[];
   relationships: Relationship[];
+}
+
+// Channels we watch for upstream drift. YouTube exposes the 15 most recent
+// uploads as an unauthenticated Atom feed, which is enough to detect "there
+// is a new video we haven't pulled yet". If we outgrow a single channel,
+// promote this to catalog config.
+const WATCHED_CHANNELS: { id: string; label: string }[] = [
+  { id: "UCIFk2uvCNcEmZ77g0ESKLcQ", label: "The Why Files" },
+];
+
+interface UpstreamVideo {
+  videoId: string;
+  title: string;
+  publishedAt: string;
+}
+
+interface UpstreamCheck {
+  channelId: string;
+  channelLabel: string;
+  upstream: UpstreamVideo | null;
+  catalog: { videoId: string; title?: string; publishDate?: string } | null;
+  behind: boolean;
+  error?: string;
+}
+
+const upstreamCache = new Map<string, { at: number; value: UpstreamVideo | null }>();
+const UPSTREAM_TTL_MS = 10 * 60 * 1000;
+
+async function fetchChannelLatest(channelId: string): Promise<UpstreamVideo | null> {
+  const cached = upstreamCache.get(channelId);
+  if (cached && Date.now() - cached.at < UPSTREAM_TTL_MS) return cached.value;
+  const url = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+  const r = await limitedFetch(url);
+  if (!r.ok) throw new Error(`feed fetch failed: ${r.status}`);
+  const xml = await r.text();
+  const entry = xml.match(/<entry>[\s\S]*?<\/entry>/);
+  if (!entry) {
+    upstreamCache.set(channelId, { at: Date.now(), value: null });
+    return null;
+  }
+  const body = entry[0];
+  const videoId = body.match(/<yt:videoId>([^<]+)<\/yt:videoId>/)?.[1];
+  const title = body.match(/<title>([^<]+)<\/title>/)?.[1];
+  const publishedAt = body.match(/<published>([^<]+)<\/published>/)?.[1];
+  if (!videoId || !title || !publishedAt) {
+    upstreamCache.set(channelId, { at: Date.now(), value: null });
+    return null;
+  }
+  const value: UpstreamVideo = { videoId, title, publishedAt };
+  upstreamCache.set(channelId, { at: Date.now(), value });
+  return value;
+}
+
+function latestCatalogRowForChannel(catalog: Catalog, channelId: string): CatalogRow | null {
+  let best: CatalogRow | null = null;
+  let bestT = -Infinity;
+  for (const r of catalog.all()) {
+    if (r.channelId !== channelId) continue;
+    const t = r.publishDate ? Date.parse(r.publishDate) : NaN;
+    if (isNaN(t)) continue;
+    if (t > bestT) { bestT = t; best = r; }
+  }
+  return best;
+}
+
+async function checkUpstream(catalog: Catalog): Promise<UpstreamCheck[]> {
+  const out: UpstreamCheck[] = [];
+  for (const ch of WATCHED_CHANNELS) {
+    const catalogRow = latestCatalogRowForChannel(catalog, ch.id);
+    try {
+      const upstream = await fetchChannelLatest(ch.id);
+      let behind = false;
+      if (upstream) {
+        if (!catalogRow) behind = true;
+        else if (catalogRow.videoId !== upstream.videoId) {
+          const upT = Date.parse(upstream.publishedAt);
+          const catT = catalogRow.publishDate ? Date.parse(catalogRow.publishDate) : NaN;
+          behind = isNaN(catT) || upT > catT;
+        }
+      }
+      out.push({
+        channelId: ch.id,
+        channelLabel: ch.label,
+        upstream,
+        catalog: catalogRow ? {
+          videoId: catalogRow.videoId,
+          title: catalogRow.title,
+          publishDate: catalogRow.publishDate,
+        } : null,
+        behind,
+      });
+    } catch (err) {
+      out.push({
+        channelId: ch.id,
+        channelLabel: ch.label,
+        upstream: null,
+        catalog: catalogRow ? {
+          videoId: catalogRow.videoId,
+          title: catalogRow.title,
+          publishDate: catalogRow.publishDate,
+        } : null,
+        behind: false,
+        error: err instanceof Error ? err.message : String(err),
+      });
+    }
+  }
+  return out;
 }
 
 const nlpCache = new Map<string, NlpResult>();
@@ -281,6 +389,7 @@ function parseQuery(url: string): ListQuery {
   if (status) q.status = status;
   const notStatus = u.searchParams.get("notStatus");
   if (notStatus) q.notStatus = notStatus;
+  if (u.searchParams.get("incompleteStages")) q.incompleteStages = true;
   const pageSize = u.searchParams.get("pageSize");
   if (pageSize) q.pageSize = Number(pageSize);
   if (page) q.page = Number(page);
@@ -323,6 +432,13 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       res.write(`event: hello\ndata: ok\n\n`);
       const keepalive = setInterval(() => res.write(`: ping\n\n`), 15000);
       req.on("close", () => clearInterval(keepalive));
+      return;
+    }
+    if (url.startsWith("/api/admin/upstream-check")) {
+      void checkUpstream(opts.catalog).then(
+        (results) => sendJson(res, 200, { channels: results }),
+        (err) => sendJson(res, 500, { error: err instanceof Error ? err.message : String(err) }),
+      );
       return;
     }
     if (url.startsWith("/api/progress")) {
