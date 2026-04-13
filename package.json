@@ -15,6 +15,9 @@
     "lint:fix": "eslint src/ --fix",
     "dev": "tsx watch --clear-screen=false src/ui/main.ts",
     "build:nlp": "tsx scripts/build-nlp.ts",
+    "cli": "tsx src/cli/index.ts",
+    "backup": "tsx scripts/backup-data.ts",
+    "audit": "tsx scripts/audit-state.ts",
     "clean": "rm -rf dist"
   },
   "devDependencies": {

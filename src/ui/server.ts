@@ -9,7 +9,7 @@ import { createServer, IncomingMessage, ServerResponse } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { Catalog, CatalogRow } from "../catalog/catalog.js";
+import { Catalog, CatalogRow, parseIdList } from "../catalog/catalog.js";
 import { transcriptPath } from "../ingest/transcript.js";
 import { Ingester, IngestProgress } from "../ingest/ingester.js";
 import { renderSpaShell } from "./spa-shell.js";
@@ -410,6 +410,27 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     if (url === "/api/ingest/start" && req.method === "POST") {
       if (opts.ingester) void opts.ingester.start();
       sendJson(res, 202, { started: true });
+      return;
+    }
+    // Add-video entrypoint. Mirrors `captions add` from the CLI: seeds a row
+    // in the catalog from a url/id passed as ?url=. The caller is expected to
+    // POST /api/ingest/start afterwards (or run `captions pipeline`) to
+    // actually fetch and process. This replaces the ad-hoc admin-page
+    // ingest flow without deleting anything.
+    if (url.startsWith("/api/add") && req.method === "POST") {
+      const u = new URL(url, "http://localhost");
+      const raw = u.searchParams.get("url") ?? "";
+      const parsed = parseIdList(raw);
+      if (parsed.length === 0) {
+        sendJson(res, 400, { error: "could not parse youtube url or id" });
+        return;
+      }
+      const added = opts.catalog.seed(parsed);
+      sendJson(res, 200, {
+        added,
+        videoId: parsed[0].videoId,
+        alreadyPresent: added === 0,
+      });
       return;
     }
     if (url === "/api/catalog/reset-failed" && req.method === "POST") {
