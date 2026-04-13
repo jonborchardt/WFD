@@ -216,6 +216,59 @@ function getEntityIndex(catalog: Catalog, dataDir?: string): EntityIndexEntry[] 
   return built.index;
 }
 
+interface GraphNode {
+  id: string;
+  type: Entity["type"];
+  canonical: string;
+  weight: number;
+}
+interface GraphEdge {
+  id: string;
+  source: string;
+  target: string;
+  predicate: string;
+  count: number;
+}
+interface RelationshipsGraph {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+}
+let relationshipsGraphCache: RelationshipsGraph | null = null;
+
+function buildRelationshipsGraph(catalog: Catalog, dataDir?: string): RelationshipsGraph {
+  if (relationshipsGraphCache) return relationshipsGraphCache;
+  const nodes = new Map<string, GraphNode>();
+  const edges = new Map<string, GraphEdge>();
+  for (const row of catalog.all()) {
+    if (row.status !== "fetched") continue;
+    const nlp = computeNlp(row, dataDir);
+    if (!nlp) continue;
+    const localEnts = new Map(nlp.entities.map((e) => [e.id, e]));
+    for (const rel of nlp.relationships) {
+      const s = localEnts.get(rel.subjectId);
+      const o = localEnts.get(rel.objectId);
+      if (!s || !o) continue;
+      for (const ent of [s, o]) {
+        const existing = nodes.get(ent.id);
+        if (existing) existing.weight += 1;
+        else nodes.set(ent.id, { id: ent.id, type: ent.type, canonical: ent.canonical, weight: 1 });
+      }
+      const key = `${rel.subjectId}|${rel.predicate}|${rel.objectId}`;
+      const existing = edges.get(key);
+      if (existing) existing.count += 1;
+      else edges.set(key, {
+        id: key,
+        source: rel.subjectId,
+        target: rel.objectId,
+        predicate: rel.predicate,
+        count: 1,
+      });
+    }
+  }
+  relationshipsGraphCache = { nodes: [...nodes.values()], edges: [...edges.values()] };
+  return relationshipsGraphCache;
+}
+
 function getEntityVideos(catalog: Catalog, dataDir?: string): EntityVideosIndex {
   if (entityVideosCache) return entityVideosCache;
   const persisted = readPersistedEntityVideos(dataDir);
@@ -462,6 +515,10 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       sendJson(res, 200, nlp ?? { entities: [], relationships: [] });
       return;
     }
+    if (url === "/api/relationships" || url.startsWith("/api/relationships?")) {
+      sendJson(res, 200, buildRelationshipsGraph(opts.catalog, opts.dataDir));
+      return;
+    }
     if (url.startsWith("/api/entities/search")) {
       const u = new URL(url, "http://local");
       const results = searchEntityIndex(
@@ -590,6 +647,11 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     }
     const m = url.match(/^\/video\/([A-Za-z0-9_-]+)/);
     if (m) {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(renderSpaShell());
+      return;
+    }
+    if (url === "/relationships" || url.startsWith("/relationships?")) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(renderSpaShell());
       return;

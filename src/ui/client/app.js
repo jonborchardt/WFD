@@ -17,7 +17,7 @@
 /** @typedef {import("../../shared/types.js").TranscriptSpan} TranscriptSpan */
 /** @typedef {import("../../catalog/catalog.js").CatalogRow} Row */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import htm from "htm";
 import {
@@ -666,20 +666,205 @@ function EntityDetail({ entityId, nav }) {
   `;
 }
 
+const ENTITY_TYPE_HEX = {
+  person: "#42a5f5",
+  organization: "#ab47bc",
+  location: "#66bb6a",
+  event: "#ffa726",
+  thing: "#29b6f6",
+  time: "#bdbdbd",
+};
+
+function RelationshipsPage({ nav }) {
+  const [graph, setGraph] = useState(null);
+  const [error, setError] = useState(null);
+  const [rf, setRf] = useState(null);
+  const [flowLib, setFlowLib] = useState(null);
+  const [layout, setLayout] = useState(null);
+  const [positions, setPositions] = useState({});
+  const [query, setQuery] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+  const rfInstance = useRef(null);
+
+  useEffect(() => {
+    Promise.all([
+      import("reactflow"),
+      import("d3-force"),
+    ]).then(([flow, d3]) => {
+      setFlowLib({ flow, d3 });
+    }).catch(e => setError(String(e)));
+    fetch("/api/relationships")
+      .then(r => r.json())
+      .then(setGraph)
+      .catch(e => setError(String(e)));
+  }, []);
+
+  useEffect(() => {
+    if (!graph || !flowLib) return;
+    const { d3 } = flowLib;
+    const simNodes = graph.nodes.map(n => ({ ...n }));
+    const simLinks = graph.edges.map(e => ({ source: e.source, target: e.target }));
+    const sim = d3.forceSimulation(simNodes)
+      .force("charge", d3.forceManyBody().strength(-180))
+      .force("link", d3.forceLink(simLinks).id(d => d.id).distance(90).strength(0.6))
+      .force("center", d3.forceCenter(0, 0))
+      .force("collide", d3.forceCollide().radius(30))
+      .stop();
+    const ticks = Math.min(400, Math.max(120, Math.round(30 + 200 * Math.log2(1 + simNodes.length / 10))));
+    for (let i = 0; i < ticks; i++) sim.tick();
+    const pos = {};
+    for (const n of simNodes) pos[n.id] = { x: n.x, y: n.y };
+    setLayout(pos);
+    setPositions(pos);
+  }, [graph, flowLib]);
+
+  const { nodes, edges } = useMemo(() => {
+    if (!graph || !layout) return { nodes: [], edges: [] };
+    const ns = graph.nodes.map(n => {
+      const p = positions[n.id] || layout[n.id] || { x: 0, y: 0 };
+      const color = ENTITY_TYPE_HEX[n.type] || "#888";
+      const dim = query && !n.canonical.toLowerCase().includes(query.toLowerCase());
+      const selected = selectedId === n.id;
+      return {
+        id: n.id,
+        position: { x: p.x, y: p.y },
+        data: { label: n.canonical },
+        style: {
+          background: color,
+          color: "#000",
+          border: selected ? "3px solid #fff" : "1px solid rgba(0,0,0,0.3)",
+          borderRadius: 6,
+          padding: "4px 8px",
+          fontSize: 12,
+          opacity: dim ? 0.15 : 1,
+          minWidth: 40,
+        },
+      };
+    });
+    const es = graph.edges.map(e => ({
+      id: e.id,
+      source: e.source,
+      target: e.target,
+      label: e.predicate,
+      labelStyle: { fontSize: 10, fill: "#ccc" },
+      style: { stroke: "#888", strokeWidth: Math.min(4, 1 + Math.log2(e.count + 1)) },
+    }));
+    return { nodes: ns, edges: es };
+  }, [graph, layout, positions, query, selectedId]);
+
+  const suggestions = useMemo(() => {
+    if (!graph || !query.trim()) return [];
+    const q = query.toLowerCase();
+    return graph.nodes
+      .filter(n => n.canonical.toLowerCase().includes(q))
+      .sort((a, b) => b.weight - a.weight)
+      .slice(0, 10);
+  }, [graph, query]);
+
+  const focusNode = useCallback((id) => {
+    const p = layout && layout[id];
+    if (!p || !rfInstance.current) return;
+    rfInstance.current.setCenter(p.x, p.y, { zoom: 1.3, duration: 500 });
+    setSelectedId(id);
+  }, [layout]);
+
+  if (error) return html`<${Container} sx=${{ py: 3 }}><${Typography} color="error">${error}<//><//>`;
+  if (!graph || !flowLib || !layout) return html`<${Container} sx=${{ py: 3 }}><${Typography}>loading graph…<//><//>`;
+
+  const { flow } = flowLib;
+  const ReactFlow = flow.default || flow.ReactFlow;
+  const { Background, Controls, MiniMap } = flow;
+
+  return html`
+    <${Box} sx=${{ position: "relative", height: "calc(100vh - 64px)", width: "100%" }}>
+      <${Paper} sx=${{ position: "absolute", top: 12, left: 12, zIndex: 10, p: 1, width: 320 }}>
+        <${TextField}
+          size="small"
+          fullWidth
+          placeholder="search nodes…"
+          value=${query}
+          onChange=${e => { setQuery(e.target.value); setShowDropdown(true); }}
+          onFocus=${() => setShowDropdown(true)}
+          onKeyDown=${e => {
+            if (e.key === "Enter" && suggestions[0]) { focusNode(suggestions[0].id); setShowDropdown(false); }
+            else if (e.key === "Escape") setShowDropdown(false);
+          }}
+        />
+        ${showDropdown && suggestions.length > 0 && html`
+          <${Box} sx=${{ mt: 1, maxHeight: 300, overflow: "auto" }}>
+            ${suggestions.map(n => html`
+              <${Box}
+                key=${n.id}
+                sx=${{ display: "flex", alignItems: "center", gap: 1, px: 1, py: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" }, borderRadius: 1 }}
+                onClick=${() => { focusNode(n.id); setShowDropdown(false); }}
+              >
+                <${Box} sx=${{ width: 10, height: 10, borderRadius: "50%", bgcolor: ENTITY_TYPE_HEX[n.type] || "#888" }} />
+                <${Typography} variant="body2" sx=${{ flexGrow: 1 }}>${n.canonical}<//>
+                <${Typography} variant="caption" color="text.secondary">${n.weight}<//>
+              <//>
+            `)}
+          <//>
+        `}
+        <${Box} sx=${{ mt: 1, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+          ${Object.entries(ENTITY_TYPE_HEX).map(([t, c]) => html`
+            <${Box} key=${t} sx=${{ display: "flex", alignItems: "center", gap: 0.5 }}>
+              <${Box} sx=${{ width: 10, height: 10, borderRadius: "50%", bgcolor: c }} />
+              <${Typography} variant="caption">${t}<//>
+            <//>
+          `)}
+        <//>
+        <${Typography} variant="caption" color="text.secondary" sx=${{ display: "block", mt: 0.5 }}>
+          ${graph.nodes.length} nodes · ${graph.edges.length} edges
+        <//>
+      <//>
+      <${ReactFlow}
+        nodes=${nodes}
+        edges=${edges}
+        nodesDraggable=${true}
+        onInit=${(inst) => { rfInstance.current = inst; setRf(inst); inst.fitView({ padding: 0.2 }); }}
+        onNodeDrag=${(_, node) => {
+          setPositions(p => ({ ...p, [node.id]: { x: node.position.x, y: node.position.y } }));
+        }}
+        onNodeDragStop=${(_, node) => {
+          setPositions(p => ({ ...p, [node.id]: { x: node.position.x, y: node.position.y } }));
+        }}
+        onNodeClick=${(_, node) => {
+          setSelectedId(node.id);
+        }}
+        onNodeDoubleClick=${(_, node) => {
+          nav("/entity/" + encodeURIComponent(node.id));
+        }}
+        onPaneClick=${() => setShowDropdown(false)}
+        fitView
+        minZoom=${0.1}
+        maxZoom=${4}
+      >
+        <${Background} />
+        <${Controls} />
+        <${MiniMap} nodeColor=${(n) => n.style?.background || "#888"} pannable zoomable />
+      <//>
+    <//>
+  `;
+}
+
 const IS_STATIC = typeof window !== "undefined" && window.__STATIC__;
 
 function App() {
   const [path, nav] = useRoute();
   const videoMatch = path.match(/^\/video\/([A-Za-z0-9_-]+)/);
   const entityMatch = path.match(/^\/entity\/([^?]+)/);
+  const isRelationships = path === "/relationships" || path.startsWith("/relationships?");
   const isAdmin = !IS_STATIC && path.startsWith("/admin");
   const body = videoMatch
     ? html`<${VideoDetail} videoId=${videoMatch[1]} nav=${nav} />`
     : entityMatch
       ? html`<${EntityDetail} entityId=${decodeURIComponent(entityMatch[1])} nav=${nav} />`
-      : isAdmin
-        ? html`<${AdminPage} nav=${nav} />`
-        : html`<${CatalogList} nav=${nav} />`;
+      : isRelationships
+        ? html`<${RelationshipsPage} nav=${nav} />`
+        : isAdmin
+          ? html`<${AdminPage} nav=${nav} />`
+          : html`<${CatalogList} nav=${nav} />`;
   return html`
     <${ThemeProvider} theme=${theme}>
       <${CssBaseline} />
@@ -687,6 +872,7 @@ function App() {
         <${Toolbar}>
           <${Typography} variant="h6" sx=${{ cursor: "pointer", flexGrow: 1 }} onClick=${() => nav("/")}>Why Files Database<//>
           <${Button} color="inherit" onClick=${() => nav("/")}>home<//>
+          <${Button} color="inherit" onClick=${() => nav("/relationships")}>relationships<//>
           ${!IS_STATIC && html`<${Button} color="inherit" onClick=${() => nav("/admin")}>admin<//>`}
         <//>
       <//>
