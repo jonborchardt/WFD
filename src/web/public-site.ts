@@ -23,6 +23,7 @@ import { GraphStore } from "../graph/store.js";
 import { entityPage, searchEntities } from "../graph/query.js";
 import { edgeEvidence } from "../ui/graph-view.js";
 import { escapeHtml } from "../ui/server.js";
+import { CREDIT_FOOTER } from "../shared/credit-footer.js";
 
 export interface PublicOptions {
   store: GraphStore;
@@ -103,7 +104,7 @@ function json(res: ServerResponse, status: number, body: unknown): void {
 
 function html(res: ServerResponse, status: number, body: string): void {
   res.writeHead(status, { "content-type": "text/html" });
-  res.end(body);
+  res.end(body + CREDIT_FOOTER);
 }
 
 function searchPage(): string {

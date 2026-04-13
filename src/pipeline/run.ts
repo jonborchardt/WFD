@@ -6,7 +6,7 @@
 // `graph.dirtyAt` watermark. Stages failing or awaiting external input do not
 // advance; the next run picks them up again.
 
-import { Catalog, CatalogRow, StageName } from "../catalog/catalog.js";
+import { Catalog, CatalogRow, StageName, GraphStageName } from "../catalog/catalog.js";
 import { GraphStore } from "../graph/store.js";
 import {
   VideoStage,
@@ -28,7 +28,7 @@ export interface RunOptions {
   graphStages?: GraphStage[];
   // Restrict to a single row / stage, typically from the CLI.
   onlyVideoId?: string;
-  onlyStage?: StageName | "propagation" | "contradictions" | "novel";
+  onlyStage?: StageName | GraphStageName;
   dryRun?: boolean;
   // Injected for tests so we don't load the real graph store.
   makeStore?: (path: string) => GraphStore;

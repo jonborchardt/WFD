@@ -22,11 +22,8 @@ module under `src/` has real TypeScript — ingest, catalog, nlp, ai, graph,
 truth, skeptic, ui, web. Read the actual file before assuming behavior; the
 module list below describes intent, not a guarantee of completeness.
 
-Note: `npm run build` currently fails because `@types/node` is not installed,
-so node built-ins (`node:http`, `node:fs`, `process`, `URL`, etc.) don't
-resolve. Install `@types/node` as a dev dependency before chasing individual
-TS errors. A few real type issues remain after that (e.g. `unknown[]` →
-`string[]` in [src/truth/novel.ts](src/truth/novel.ts)).
+`npm run build` passes clean as of 2026-04-12 (`@types/node` installed,
+prior `unknown[]` issue in [src/truth/novel.ts](src/truth/novel.ts) resolved).
 
 ## Commands
 
