@@ -63,14 +63,14 @@ export function augmentWithEntityMatches(into, allRows, q, entityIndex, entityVi
   return into;
 }
 
-export function sortByPublishAsc(rows) {
+export function sortByPublishDesc(rows) {
   return rows.slice().sort((a, b) => {
     const ta = a.publishDate ? Date.parse(a.publishDate) : NaN;
     const tb = b.publishDate ? Date.parse(b.publishDate) : NaN;
     if (isNaN(ta) && isNaN(tb)) return 0;
     if (isNaN(ta)) return 1;
     if (isNaN(tb)) return -1;
-    return ta - tb;
+    return tb - ta;
   });
 }
 

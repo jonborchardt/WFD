@@ -30,7 +30,7 @@ import {
 import {
   filterRows as qFilterRows,
   augmentWithEntityMatches,
-  sortByPublishAsc,
+  sortByPublishDesc,
   paginate as qPaginate,
   searchEntityIndex,
 } from "./query.js";
@@ -471,7 +471,7 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           getEntityVideos(opts.catalog, opts.dataDir),
         );
       }
-      const sorted = sortByPublishAsc(filtered);
+      const sorted = sortByPublishDesc(filtered);
       sendJson(res, 200, qPaginate(sorted, q));
       return;
     }

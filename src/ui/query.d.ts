@@ -33,7 +33,7 @@ export function augmentWithEntityMatches(
   entityIndex: EntityIndexEntry[],
   entityVideos: EntityVideosIndex,
 ): CatalogRow[];
-export function sortByPublishAsc(rows: CatalogRow[]): CatalogRow[];
+export function sortByPublishDesc(rows: CatalogRow[]): CatalogRow[];
 export function paginate(rows: CatalogRow[], q: ListQuery): ListResult;
 export function searchEntityIndex(
   index: EntityIndexEntry[],
