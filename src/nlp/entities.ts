@@ -11,6 +11,7 @@
 // the downstream graph and truthiness layers amplify false positives.
 
 import { Entity, TranscriptSpan } from "../shared/types.js";
+import { resolveCoreferences } from "./coref.js";
 
 export interface TranscriptCue {
   start: number;
@@ -216,6 +217,7 @@ function timeMentions(
 
 export interface ExtractOptions {
   gazetteer?: GazetteerMap;
+  coref?: boolean;
 }
 
 export function extract(
@@ -223,7 +225,8 @@ export function extract(
   opts: ExtractOptions = {},
 ): Entity[] {
   const gaz = opts.gazetteer ?? DEFAULT_GAZETTEER;
-  const { text, cueStarts } = flatten(transcript);
+  const flat = flatten(transcript);
+  const { text, cueStarts } = flat;
   const mentions: Mention[] = [
     ...personMentions(text, transcript, cueStarts),
     ...timeMentions(text, transcript, cueStarts),
@@ -232,7 +235,9 @@ export function extract(
     ...gazetteerMentions("event", gaz.event, text, transcript, cueStarts),
     ...gazetteerMentions("thing", gaz.thing, text, transcript, cueStarts),
   ];
-  return normalize(mentions);
+  const entities = normalize(mentions);
+  if (opts.coref === false) return entities;
+  return resolveCoreferences(transcript, entities, flat);
 }
 
 // Fold mentions with the same (type, canonical) into a single entity and
