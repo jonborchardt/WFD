@@ -26,6 +26,7 @@ import { fetchAndStore } from "../ingest/transcript.js";
 import { recordSuccess, recordFailure } from "../catalog/gaps.js";
 import { extract as extractEntities, Transcript } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
+import { loadGazetteer } from "../nlp/gazetteer.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
@@ -80,12 +81,13 @@ export const fetchedStage: VideoStage = {
 
 export const nlpStage: VideoStage = {
   name: "nlp",
-  version: 1,
+  version: 2,
   dependsOn: ["fetched"],
   async run(row, ctx): Promise<StageOutcome> {
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
-    const entities = extractEntities(t);
+    const gazetteer = loadGazetteer(ctx.dataDir);
+    const entities = extractEntities(t, { gazetteer });
     const relationships = extractRelationships(t, entities);
     writePersistedNlp(row.videoId, { entities, relationships }, ctx.dataDir);
 
@@ -129,7 +131,7 @@ export const aiStage: VideoStage = {
   async run(row, ctx): Promise<StageOutcome> {
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
-    const entities = extractEntities(t);
+    const entities = extractEntities(t, { gazetteer: loadGazetteer(ctx.dataDir) });
     const responsePath = join(
       responseDir(ctx.dataDir),
       `${row.videoId}.response.json`,
