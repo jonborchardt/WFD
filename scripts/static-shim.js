@@ -13,7 +13,7 @@
 import {
   filterRows,
   augmentWithEntityMatches,
-  sortByPublishAsc,
+  sortByPublishDesc,
   paginate,
   searchEntityIndex,
 } from "./query.js";
@@ -26,6 +26,7 @@ if (window.__STATIC__) {
   let catalogPromise = null;
   let entityIndexPromise = null;
   let entityVideosPromise = null;
+  let relationshipsGraphPromise = null;
   const nlpPromises = new Map();
   const transcriptPromises = new Map();
 
@@ -103,7 +104,7 @@ if (window.__STATIC__) {
       const [index, videos] = await Promise.all([loadEntityIndex(), loadEntityVideos()]);
       augmentWithEntityMatches(filtered, rows, q, index, videos);
     }
-    return json(paginate(sortByPublishAsc(filtered), q));
+    return json(paginate(sortByPublishDesc(filtered), q));
   }
 
   async function handleEntitiesSearch(u) {
@@ -175,6 +176,14 @@ if (window.__STATIC__) {
     try {
       if (path === "/api/catalog") return await handleCatalog(u);
       if (path === "/api/entities/search") return await handleEntitiesSearch(u);
+      if (path === "/api/relationships") {
+        if (!relationshipsGraphPromise) {
+          relationshipsGraphPromise = origFetch(dataBase + "nlp/relationships-graph.json")
+            .then((r) => (r.ok ? r.json() : { nodes: [], edges: [] }))
+            .catch(() => ({ nodes: [], edges: [] }));
+        }
+        return json(await relationshipsGraphPromise);
+      }
       let m = path.match(/^\/api\/video\/([A-Za-z0-9_-]+)\/nlp$/);
       if (m) return await handleVideoNlp(m[1]);
       m = path.match(/^\/api\/video\/([A-Za-z0-9_-]+)$/);

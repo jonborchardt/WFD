@@ -696,7 +696,13 @@ function RelationshipsPage({ nav }) {
     }).catch(e => setError(String(e)));
     fetch("/api/relationships")
       .then(r => r.json())
-      .then(setGraph)
+      .then(g => {
+        if (!g || !Array.isArray(g.nodes) || !Array.isArray(g.edges)) {
+          setGraph({ nodes: [], edges: [] });
+        } else {
+          setGraph(g);
+        }
+      })
       .catch(e => setError(String(e)));
   }, []);
 
