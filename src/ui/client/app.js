@@ -435,6 +435,52 @@ function AdminPage({ nav }) {
   `;
 }
 
+const WFD_ISSUES_URL = "https://github.com/jonborchardt/WFD/issues/new";
+
+function suggestIssueUrl(area, { videoId, extra } = {}) {
+  const page = location.pathname + location.search;
+  const title = "[suggest] " + area + (videoId ? " — " + videoId : "");
+  const lines = [
+    "**Area:** " + area,
+    "**Page:** " + page,
+  ];
+  if (videoId) {
+    lines.push("**Video ID:** " + videoId);
+    lines.push("**Video URL:** https://www.youtube.com/watch?v=" + videoId);
+  }
+  if (extra) lines.push(extra);
+  lines.push("", "---", "");
+  lines.push("**Your suggestion:** <!-- what should be added or changed -->");
+  lines.push("");
+  lines.push("**Evidence timestamp (mm:ss):** <!-- e.g. 12:34 -->");
+  lines.push("");
+  lines.push("**Evidence quote:** <!-- copy the relevant transcript text -->");
+  lines.push("");
+  lines.push("**Notes:**");
+  const params = new URLSearchParams({
+    title,
+    body: lines.join("\n"),
+    labels: "suggestion," + area.replace(/\s+/g, "-"),
+  });
+  return WFD_ISSUES_URL + "?" + params.toString();
+}
+
+function SuggestChip({ area, videoId, label, extra }) {
+  return html`
+    <${Chip}
+      size="small"
+      variant="outlined"
+      label=${label || "suggest…"}
+      component="a"
+      href=${suggestIssueUrl(area, { videoId, extra })}
+      target="_blank"
+      rel="noopener"
+      clickable
+      sx=${{ fontStyle: "italic", borderStyle: "dashed" }}
+    />
+  `;
+}
+
 const ENTITY_TYPE_COLOR = {
   person: "primary",
   organization: "secondary",
@@ -448,12 +494,11 @@ function NlpPanel({ videoId, nlp, nav }) {
   if (!nlp) return html`<${Typography} variant="body2" color="text.secondary" sx=${{ mt: 2 }}>analyzing transcript…<//>`;
   const entities = nlp.entities || [];
   const relationships = nlp.relationships || [];
-  if (entities.length === 0) {
-    return html`<${Typography} variant="body2" color="text.secondary" sx=${{ mt: 2 }}>no entities extracted<//>`;
-  }
   const byType = {};
   for (const e of entities) (byType[e.type] ||= []).push(e);
   const order = ["person", "organization", "location", "event", "thing", "time"];
+  const extraTypes = Object.keys(byType).filter(t => !order.includes(t)).sort();
+  const visibleTypes = [...order, ...extraTypes];
   const entById = Object.fromEntries(entities.map(e => [e.id, e]));
   const deepLink = (t) => "https://www.youtube.com/watch?v=" + videoId + "&t=" + Math.floor(t) + "s";
   const fmt = s => {
@@ -465,31 +510,31 @@ function NlpPanel({ videoId, nlp, nav }) {
       <${Typography} variant="h6" sx=${{ mb: 1 }}>
         Entities <${Typography} component="span" variant="caption" color="text.secondary">${entities.length} unique · ${entities.reduce((n, e) => n + e.mentions.length, 0)} mentions<//>
       <//>
-      ${order.filter(t => byType[t]).map(t => html`
+      ${visibleTypes.map(t => html`
         <${Box} key=${t} sx=${{ mb: 1.5 }}>
           <${Typography} variant="overline" color="text.secondary">${t}<//>
           <${Box} sx=${{ display: "flex", flexWrap: "wrap", gap: 0.5, mt: 0.5 }}>
-            ${byType[t]
+            ${(byType[t] || [])
               .slice()
               .sort((a, b) => a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
               .map(e => {
-                const label = e.canonical + (e.mentions.length > 1 ? " (" + e.mentions.length + ")" : "");
                 return html`
                   <${Chip}
                     key=${e.id}
                     size="small"
                     color=${ENTITY_TYPE_COLOR[t] || "default"}
                     variant="outlined"
-                    label=${label}
+                    label=${e.canonical}
                     clickable
                     onClick=${() => nav("/entity/" + encodeURIComponent(e.id))}
                   />
                 `;
               })}
+            <${SuggestChip} area=${"new " + t} videoId=${videoId} label=${"suggest " + t + "…"} />
           <//>
         <//>
       `)}
-      ${relationships.length > 0 && html`
+      ${html`
         <${Typography} variant="h6" sx=${{ mt: 2, mb: 1 }}>
           Relationships <${Typography} component="span" variant="caption" color="text.secondary">${relationships.length}<//>
         <//>
@@ -514,6 +559,9 @@ function NlpPanel({ videoId, nlp, nav }) {
                 <//>
               `;
             })}
+          <${Box} sx=${{ mt: 0.5 }}>
+            <${SuggestChip} area="new relationship" videoId=${videoId} label="suggest relationship…" />
+          <//>
         <//>
       `}
     <//>
@@ -557,11 +605,10 @@ function VideoDetail({ videoId, nav }) {
           <${Typography} variant="body2" color="text.secondary" sx=${{ mt: 0.5 }}>
             ${metaLine}
           <//>
-          ${row.keywords && row.keywords.length > 0 && html`
-            <${Box} sx=${{ mt: 1, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              ${row.keywords.slice(0, 20).map(k => html`<${Chip} key=${k} size="small" label=${k} variant="outlined" clickable onClick=${() => nav("/?search=" + encodeURIComponent(k))} />`)}
-            <//>
-          `}
+          <${Box} sx=${{ mt: 1, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+            ${(row.keywords || []).slice(0, 20).map(k => html`<${Chip} key=${k} size="small" label=${k} variant="outlined" clickable onClick=${() => nav("/?search=" + encodeURIComponent(k))} />`)}
+            <${SuggestChip} area="new tag" videoId=${row.videoId} label="suggest tag…" />
+          <//>
         <//>
       <//>
       ${row.description && html`
@@ -579,6 +626,9 @@ function VideoDetail({ videoId, nav }) {
               ${" " + c.text}
             <//>
           `)}
+        <//>
+        <${Box} sx=${{ mt: 1 }}>
+          <${SuggestChip} area="transcript correction" videoId=${row.videoId} label="suggest correction…" />
         <//>
       `}
     <//>
