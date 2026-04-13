@@ -746,8 +746,8 @@ async function fetchViaWatchPage(
 }
 
 export function transcriptPath(videoId: string, dataDir?: string): string {
-  const root = dataDir ?? join(process.cwd(), "data", "transcripts");
-  return join(root, `${videoId}.json`);
+  const root = dataDir ?? join(process.cwd(), "data");
+  return join(root, "transcripts", `${videoId}.json`);
 }
 
 export interface StoredTranscript {

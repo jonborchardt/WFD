@@ -9,9 +9,10 @@ import { createServer, IncomingMessage, ServerResponse } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { Catalog, CatalogRow } from "../catalog/catalog.js";
+import { Catalog, CatalogRow, parseIdList } from "../catalog/catalog.js";
 import { transcriptPath } from "../ingest/transcript.js";
 import { Ingester, IngestProgress } from "../ingest/ingester.js";
+import { limitedFetch } from "../ingest/rate-limiter.js";
 import { renderSpaShell } from "./spa-shell.js";
 import { extract as extractEntities, Transcript as NlpTranscript } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
@@ -38,6 +39,113 @@ import type { ListQuery, ListResult } from "./query.js";
 interface NlpResult {
   entities: Entity[];
   relationships: Relationship[];
+}
+
+// Channels we watch for upstream drift. YouTube exposes the 15 most recent
+// uploads as an unauthenticated Atom feed, which is enough to detect "there
+// is a new video we haven't pulled yet". If we outgrow a single channel,
+// promote this to catalog config.
+const WATCHED_CHANNELS: { id: string; label: string }[] = [
+  { id: "UCIFk2uvCNcEmZ77g0ESKLcQ", label: "The Why Files" },
+];
+
+interface UpstreamVideo {
+  videoId: string;
+  title: string;
+  publishedAt: string;
+}
+
+interface UpstreamCheck {
+  channelId: string;
+  channelLabel: string;
+  upstream: UpstreamVideo | null;
+  catalog: { videoId: string; title?: string; publishDate?: string } | null;
+  behind: boolean;
+  error?: string;
+}
+
+const upstreamCache = new Map<string, { at: number; value: UpstreamVideo | null }>();
+const UPSTREAM_TTL_MS = 10 * 60 * 1000;
+
+async function fetchChannelLatest(channelId: string): Promise<UpstreamVideo | null> {
+  const cached = upstreamCache.get(channelId);
+  if (cached && Date.now() - cached.at < UPSTREAM_TTL_MS) return cached.value;
+  const url = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+  const r = await limitedFetch(url);
+  if (!r.ok) throw new Error(`feed fetch failed: ${r.status}`);
+  const xml = await r.text();
+  const entry = xml.match(/<entry>[\s\S]*?<\/entry>/);
+  if (!entry) {
+    upstreamCache.set(channelId, { at: Date.now(), value: null });
+    return null;
+  }
+  const body = entry[0];
+  const videoId = body.match(/<yt:videoId>([^<]+)<\/yt:videoId>/)?.[1];
+  const title = body.match(/<title>([^<]+)<\/title>/)?.[1];
+  const publishedAt = body.match(/<published>([^<]+)<\/published>/)?.[1];
+  if (!videoId || !title || !publishedAt) {
+    upstreamCache.set(channelId, { at: Date.now(), value: null });
+    return null;
+  }
+  const value: UpstreamVideo = { videoId, title, publishedAt };
+  upstreamCache.set(channelId, { at: Date.now(), value });
+  return value;
+}
+
+function latestCatalogRowForChannel(catalog: Catalog, channelId: string): CatalogRow | null {
+  let best: CatalogRow | null = null;
+  let bestT = -Infinity;
+  for (const r of catalog.all()) {
+    if (r.channelId !== channelId) continue;
+    const t = r.publishDate ? Date.parse(r.publishDate) : NaN;
+    if (isNaN(t)) continue;
+    if (t > bestT) { bestT = t; best = r; }
+  }
+  return best;
+}
+
+async function checkUpstream(catalog: Catalog): Promise<UpstreamCheck[]> {
+  const out: UpstreamCheck[] = [];
+  for (const ch of WATCHED_CHANNELS) {
+    const catalogRow = latestCatalogRowForChannel(catalog, ch.id);
+    try {
+      const upstream = await fetchChannelLatest(ch.id);
+      let behind = false;
+      if (upstream) {
+        if (!catalogRow) behind = true;
+        else if (catalogRow.videoId !== upstream.videoId) {
+          const upT = Date.parse(upstream.publishedAt);
+          const catT = catalogRow.publishDate ? Date.parse(catalogRow.publishDate) : NaN;
+          behind = isNaN(catT) || upT > catT;
+        }
+      }
+      out.push({
+        channelId: ch.id,
+        channelLabel: ch.label,
+        upstream,
+        catalog: catalogRow ? {
+          videoId: catalogRow.videoId,
+          title: catalogRow.title,
+          publishDate: catalogRow.publishDate,
+        } : null,
+        behind,
+      });
+    } catch (err) {
+      out.push({
+        channelId: ch.id,
+        channelLabel: ch.label,
+        upstream: null,
+        catalog: catalogRow ? {
+          videoId: catalogRow.videoId,
+          title: catalogRow.title,
+          publishDate: catalogRow.publishDate,
+        } : null,
+        behind: false,
+        error: err instanceof Error ? err.message : String(err),
+      });
+    }
+  }
+  return out;
 }
 
 const nlpCache = new Map<string, NlpResult>();
@@ -106,6 +214,59 @@ function getEntityIndex(catalog: Catalog, dataDir?: string): EntityIndexEntry[] 
   writePersistedEntityIndex(built.index, dataDir);
   writePersistedEntityVideos(built.videos, dataDir);
   return built.index;
+}
+
+interface GraphNode {
+  id: string;
+  type: Entity["type"];
+  canonical: string;
+  weight: number;
+}
+interface GraphEdge {
+  id: string;
+  source: string;
+  target: string;
+  predicate: string;
+  count: number;
+}
+interface RelationshipsGraph {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+}
+let relationshipsGraphCache: RelationshipsGraph | null = null;
+
+function buildRelationshipsGraph(catalog: Catalog, dataDir?: string): RelationshipsGraph {
+  if (relationshipsGraphCache) return relationshipsGraphCache;
+  const nodes = new Map<string, GraphNode>();
+  const edges = new Map<string, GraphEdge>();
+  for (const row of catalog.all()) {
+    if (row.status !== "fetched") continue;
+    const nlp = computeNlp(row, dataDir);
+    if (!nlp) continue;
+    const localEnts = new Map(nlp.entities.map((e) => [e.id, e]));
+    for (const rel of nlp.relationships) {
+      const s = localEnts.get(rel.subjectId);
+      const o = localEnts.get(rel.objectId);
+      if (!s || !o) continue;
+      for (const ent of [s, o]) {
+        const existing = nodes.get(ent.id);
+        if (existing) existing.weight += 1;
+        else nodes.set(ent.id, { id: ent.id, type: ent.type, canonical: ent.canonical, weight: 1 });
+      }
+      const key = `${rel.subjectId}|${rel.predicate}|${rel.objectId}`;
+      const existing = edges.get(key);
+      if (existing) existing.count += 1;
+      else edges.set(key, {
+        id: key,
+        source: rel.subjectId,
+        target: rel.objectId,
+        predicate: rel.predicate,
+        count: 1,
+      });
+    }
+  }
+  relationshipsGraphCache = { nodes: [...nodes.values()], edges: [...edges.values()] };
+  return relationshipsGraphCache;
 }
 
 function getEntityVideos(catalog: Catalog, dataDir?: string): EntityVideosIndex {
@@ -281,6 +442,7 @@ function parseQuery(url: string): ListQuery {
   if (status) q.status = status;
   const notStatus = u.searchParams.get("notStatus");
   if (notStatus) q.notStatus = notStatus;
+  if (u.searchParams.get("incompleteStages")) q.incompleteStages = true;
   const pageSize = u.searchParams.get("pageSize");
   if (pageSize) q.pageSize = Number(pageSize);
   if (page) q.page = Number(page);
@@ -325,6 +487,13 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       req.on("close", () => clearInterval(keepalive));
       return;
     }
+    if (url.startsWith("/api/admin/upstream-check")) {
+      void checkUpstream(opts.catalog).then(
+        (results) => sendJson(res, 200, { channels: results }),
+        (err) => sendJson(res, 500, { error: err instanceof Error ? err.message : String(err) }),
+      );
+      return;
+    }
     if (url.startsWith("/api/progress")) {
       const progress: IngestProgress = opts.ingester?.snapshot() ?? {
         running: false,
@@ -344,6 +513,10 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       }
       const nlp = computeNlp(row, opts.dataDir);
       sendJson(res, 200, nlp ?? { entities: [], relationships: [] });
+      return;
+    }
+    if (url === "/api/relationships" || url.startsWith("/api/relationships?")) {
+      sendJson(res, 200, buildRelationshipsGraph(opts.catalog, opts.dataDir));
       return;
     }
     if (url.startsWith("/api/entities/search")) {
@@ -412,6 +585,27 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       sendJson(res, 202, { started: true });
       return;
     }
+    // Add-video entrypoint. Mirrors `captions add` from the CLI: seeds a row
+    // in the catalog from a url/id passed as ?url=. The caller is expected to
+    // POST /api/ingest/start afterwards (or run `captions pipeline`) to
+    // actually fetch and process. This replaces the ad-hoc admin-page
+    // ingest flow without deleting anything.
+    if (url.startsWith("/api/add") && req.method === "POST") {
+      const u = new URL(url, "http://localhost");
+      const raw = u.searchParams.get("url") ?? "";
+      const parsed = parseIdList(raw);
+      if (parsed.length === 0) {
+        sendJson(res, 400, { error: "could not parse youtube url or id" });
+        return;
+      }
+      const added = opts.catalog.seed(parsed);
+      sendJson(res, 200, {
+        added,
+        videoId: parsed[0].videoId,
+        alreadyPresent: added === 0,
+      });
+      return;
+    }
     if (url === "/api/catalog/reset-failed" && req.method === "POST") {
       const reset = opts.catalog.resetFailed();
       if (reset > 0 && opts.ingester) void opts.ingester.start();
@@ -453,6 +647,11 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     }
     const m = url.match(/^\/video\/([A-Za-z0-9_-]+)/);
     if (m) {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(renderSpaShell());
+      return;
+    }
+    if (url === "/relationships" || url.startsWith("/relationships?")) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(renderSpaShell());
       return;

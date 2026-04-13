@@ -6,9 +6,11 @@
 // version at the top lets us migrate without wiping the catalog.
 
 import {
+  copyFileSync,
   existsSync,
   mkdirSync,
   readFileSync,
+  statSync,
   writeFileSync,
   renameSync,
 } from "node:fs";
@@ -19,6 +21,33 @@ export type CatalogStatus =
   | "fetched"
   | "failed-retryable"
   | "failed-needs-user";
+
+// Pipeline stages. The per-video stages (fetched, nlp, ai) run against a
+// single row and write per-video artifacts. The graph-level stages
+// (propagation, truth, novel, contradictions) are tracked on the file-level
+// `graph` watermark instead of on individual rows — see GraphWatermark.
+export type StageName = "fetched" | "nlp" | "ai" | "per-claim";
+
+export interface StageRecord {
+  at: string;       // ISO timestamp when the stage last ran
+  version: number;  // bumped when the stage's implementation changes
+  notes?: string;
+}
+
+export type StageMap = Partial<Record<StageName, StageRecord>>;
+
+export type GraphStageName =
+  | "propagation"
+  | "per-claim"
+  | "novel"
+  | "contradictions";
+
+export interface GraphWatermark {
+  // Any per-video write that touches the graph bumps this. Graph-level stages
+  // run when their own lastRanAt is older than dirtyAt.
+  dirtyAt: string;
+  stages: Partial<Record<GraphStageName, { at: string; version: number }>>;
+}
 
 export interface VideoMeta {
   title?: string;
@@ -50,26 +79,98 @@ export interface CatalogRow extends VideoMeta {
   attempts: number;
   lastError?: string;
   errorReason?: ErrorReason;
+  // Per-video pipeline stage state. Additive over `status`: fetch callers
+  // keep writing `status`/`fetchedAt`, and the pipeline runner also writes
+  // stages.fetched so downstream stages have a uniform interface.
+  stages?: StageMap;
 }
 
 interface CatalogFile {
   version: number;
   rows: Record<string, CatalogRow>;
+  graph?: GraphWatermark;
 }
 
-export const CATALOG_SCHEMA_VERSION = 1;
+export const CATALOG_SCHEMA_VERSION = 2;
+
+// Data-dir used by the v1→v2 migration to infer which stages have already
+// run based on what's on disk. Defaults to the repo data/ dir but overridable
+// for tests.
+let inferDataDir: string | null = null;
+export function setMigrationDataDir(path: string | null): void {
+  inferDataDir = path;
+}
+
+function defaultDataDir(): string {
+  return join(process.cwd(), "data");
+}
+
+function safeMtime(p: string): number {
+  try {
+    return statSync(p).mtimeMs;
+  } catch {
+    return 0;
+  }
+}
+
+// v1→v2: add the `stages` map per row and the top-level `graph` watermark.
+// The upgrade reads the filesystem to infer which stages are already
+// complete, so an existing corpus doesn't need a full re-run.
+function migrateV1toV2(f: CatalogFile): CatalogFile {
+  const dataDir = inferDataDir ?? defaultDataDir();
+  const nlpDir = join(dataDir, "nlp");
+  const now = new Date().toISOString();
+
+  const nextRows: Record<string, CatalogRow> = {};
+  for (const [id, row] of Object.entries(f.rows)) {
+    const stages: StageMap = row.stages ?? {};
+    if (row.status === "fetched" && !stages.fetched) {
+      stages.fetched = {
+        at: row.fetchedAt ?? now,
+        version: 1,
+      };
+    }
+    const nlpFile = join(nlpDir, `${id}.json`);
+    const nlpMtime = safeMtime(nlpFile);
+    if (nlpMtime > 0 && !stages.nlp) {
+      stages.nlp = {
+        at: new Date(nlpMtime).toISOString(),
+        version: 1,
+      };
+    }
+    nextRows[id] = { ...row, stages };
+  }
+
+  return {
+    version: 2,
+    rows: nextRows,
+    // Seed the graph watermark as dirty so the first post-migration pipeline
+    // run does a full propagation/novel/contradiction pass over the existing
+    // corpus. Graph-level stages have no prior record, so they'll all run.
+    graph: {
+      dirtyAt: now,
+      stages: {},
+    },
+  };
+}
 
 const migrations: Array<(f: CatalogFile) => CatalogFile> = [
-  // Index 0 migrates v0 → v1. Future: push new migrations onto the end; the
-  // loader replays from the file's recorded version forward.
+  // Index 0 migrates v0 → v1.
   (f) => ({ version: 1, rows: f.rows ?? {} }),
+  // Index 1 migrates v1 → v2 (stage map + graph watermark).
+  migrateV1toV2,
 ];
 
 export function migrate(raw: unknown): CatalogFile {
-  const r = (raw ?? {}) as { version?: unknown; rows?: Record<string, CatalogRow> };
+  const r = (raw ?? {}) as {
+    version?: unknown;
+    rows?: Record<string, CatalogRow>;
+    graph?: GraphWatermark;
+  };
   let f: CatalogFile = {
     version: Number(r.version ?? 0),
     rows: r.rows ?? {},
+    graph: r.graph,
   };
   while (f.version < CATALOG_SCHEMA_VERSION) {
     f = migrations[f.version](f);
@@ -81,9 +182,36 @@ export class Catalog {
   private data: CatalogFile;
 
   constructor(private path: string) {
-    this.data = existsSync(path)
-      ? migrate(JSON.parse(readFileSync(path, "utf8")))
-      : { version: CATALOG_SCHEMA_VERSION, rows: {} };
+    if (existsSync(path)) {
+      const raw = JSON.parse(readFileSync(path, "utf8")) as { version?: number };
+      const rawVersion = Number(raw.version ?? 0);
+      // Belt-and-braces: snapshot the pre-migration file so a bad v2 write
+      // can be rolled back by hand. Only taken the first time we see a
+      // version below current, and never overwritten.
+      if (rawVersion < CATALOG_SCHEMA_VERSION) {
+        const backup = `${path}.v${rawVersion}.bak`;
+        if (!existsSync(backup)) {
+          try {
+            copyFileSync(path, backup);
+          } catch {
+            // Non-fatal: migration still proceeds. The migration itself is
+            // idempotent so a second run doesn't compound damage.
+          }
+        }
+      }
+      this.data = migrate(raw);
+      // If the raw version on disk was older than current, persist the
+      // migrated form immediately so later readers don't have to re-migrate.
+      if (rawVersion < CATALOG_SCHEMA_VERSION) {
+        this.persist();
+      }
+    } else {
+      this.data = {
+        version: CATALOG_SCHEMA_VERSION,
+        rows: {},
+        graph: { dirtyAt: new Date().toISOString(), stages: {} },
+      };
+    }
   }
 
   static defaultPath(): string {
@@ -167,6 +295,59 @@ export class Catalog {
 
   version(): number {
     return this.data.version;
+  }
+
+  // ---- Per-video pipeline stages ----------------------------------------
+
+  getStage(videoId: string, stage: StageName): StageRecord | undefined {
+    return this.data.rows[videoId]?.stages?.[stage];
+  }
+
+  setStage(videoId: string, stage: StageName, record: StageRecord): void {
+    const row = this.data.rows[videoId];
+    if (!row) throw new Error(`catalog: no row for ${videoId}`);
+    row.stages = { ...(row.stages ?? {}), [stage]: record };
+    this.persist();
+  }
+
+  clearStage(videoId: string, stage: StageName): void {
+    const row = this.data.rows[videoId];
+    if (!row || !row.stages) return;
+    delete row.stages[stage];
+    this.persist();
+  }
+
+  // ---- Graph-level watermark --------------------------------------------
+
+  graphState(): GraphWatermark {
+    if (!this.data.graph) {
+      this.data.graph = {
+        dirtyAt: new Date().toISOString(),
+        stages: {},
+      };
+      this.persist();
+    }
+    return this.data.graph;
+  }
+
+  // Called by any per-video stage that writes into the entity/relationship
+  // graph. Bumps the watermark so graph-level stages know to re-run.
+  markGraphDirty(): void {
+    const now = new Date().toISOString();
+    this.data.graph = {
+      dirtyAt: now,
+      stages: this.data.graph?.stages ?? {},
+    };
+    this.persist();
+  }
+
+  setGraphStage(
+    stage: GraphStageName,
+    record: { at: string; version: number },
+  ): void {
+    const g = this.graphState();
+    g.stages[stage] = record;
+    this.persist();
   }
 }
 

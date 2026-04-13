@@ -17,14 +17,14 @@
 /** @typedef {import("../../shared/types.js").TranscriptSpan} TranscriptSpan */
 /** @typedef {import("../../catalog/catalog.js").CatalogRow} Row */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import htm from "htm";
 import {
   CssBaseline, ThemeProvider, createTheme, AppBar, Toolbar, Typography,
   Container, Paper, Table, TableHead, TableBody, TableRow, TableCell,
   TablePagination, TextField, Select, MenuItem, LinearProgress, Chip, Button, Box, Link, Stack,
-  Menu, Checkbox, FormControlLabel, ListItemText, ListItemIcon,
+  Menu, Checkbox, FormControlLabel, ListItemText, ListItemIcon, Tooltip, Alert, AlertTitle,
 } from "@mui/material";
 
 const html = htm.bind(React.createElement);
@@ -43,39 +43,6 @@ function useRoute() {
     dispatchEvent(new PopStateEvent("popstate"));
   };
   return [path, nav];
-}
-
-function useProgress() {
-  const [p, setP] = useState({ running: false, total: 0, done: 0, failed: 0 });
-  useEffect(() => {
-    let stop = false;
-    const tick = async () => {
-      try {
-        const r = await fetch("/api/progress");
-        if (!stop) setP(await r.json());
-      } catch {}
-      if (!stop) setTimeout(tick, 1500);
-    };
-    tick();
-    return () => { stop = true; };
-  }, []);
-  return p;
-}
-
-function ProgressBar({ progress }) {
-  const pct = progress.total > 0 ? ((progress.done + progress.failed) / progress.total) * 100 : 0;
-  const label = progress.running
-    ? `ingesting ${progress.done + progress.failed} / ${progress.total}${progress.current ? " — " + progress.current : ""}`
-    : progress.total > 0
-      ? `idle — last run: ${progress.done} ok, ${progress.failed} failed`
-      : "idle";
-  return html`
-    <${Box} sx=${{ my: 2 }}>
-      <${Typography} variant="body2" sx=${{ mb: 0.5 }}>${label}<//>
-      <${LinearProgress} variant=${progress.running ? "determinate" : "determinate"} value=${pct} />
-      ${progress.lastError && html`<${Typography} variant="caption" color="error">${progress.lastError}<//>`}
-    <//>
-  `;
 }
 
 function StatusChip({ status }) {
@@ -229,7 +196,7 @@ function EntitySuggestions({ text, nav, onPick }) {
   `;
 }
 
-function CatalogTable({ nav, progress, showStatusFilter, columns }) {
+function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
   const cols = columns || CATALOG_COLUMNS;
   const [data, setData] = useState({ total: 0, page: 1, pageSize: 25, rows: [] });
   const [page, setPage] = useState(1);
@@ -237,7 +204,7 @@ function CatalogTable({ nav, progress, showStatusFilter, columns }) {
   const [text, setText] = useState(() => new URLSearchParams(location.search).get("search") || "");
   const [showDropdown, setShowDropdown] = useState(false);
   const [status, setStatus] = useState("");
-  const [failedOnly, setFailedOnly] = useState(false);
+  const [failedOnly, setFailedOnly] = useState(!!defaultFailedOnly);
   const [visible, setVisible] = useState(() => {
     const init = {};
     for (const c of cols) init[c.key] = c.default;
@@ -267,7 +234,7 @@ function CatalogTable({ nav, progress, showStatusFilter, columns }) {
     const q = new URLSearchParams();
     if (text) q.set("text", text);
     if (status) q.set("status", status);
-    if (failedOnly) q.set("notStatus", "fetched");
+    if (failedOnly) q.set("incompleteStages", "1");
     q.set("page", String(page));
     q.set("pageSize", String(pageSize));
     let cancelled = false;
@@ -276,7 +243,7 @@ function CatalogTable({ nav, progress, showStatusFilter, columns }) {
       fetch("/api/catalog?" + q).then(r => r.json()).then(d => { if (!cancelled) setData(d); });
     }, delay);
     return () => { cancelled = true; clearTimeout(h); };
-  }, [text, status, failedOnly, page, pageSize, progress?.done, progress?.failed, progress?.running]);
+  }, [text, status, failedOnly, page, pageSize]);
 
   const pagination = html`
     <${TablePagination}
@@ -359,18 +326,47 @@ const HOME_COLUMNS = CATALOG_COLUMNS
   .filter(c => c.key !== "status")
   .map(c => ["lengthSeconds", "viewCount"].includes(c.key) ? { ...c, default: true } : c);
 
+const PIPELINE_STAGES = ["fetched", "nlp", "ai", "per-claim"];
+
+function stageCellFor(stageName) {
+  return (r) => {
+    const stages = r.stages || {};
+    if (stages[stageName]) {
+      return html`<${Chip} size="small" color="success" label="pass" />`;
+    }
+    // Stage hasn't been recorded. If an earlier stage is also missing, this
+    // one is simply blocked/pending. If all prior stages passed and the row
+    // carries an error, attribute the failure to this stage.
+    const idx = PIPELINE_STAGES.indexOf(stageName);
+    const priorAllPass = PIPELINE_STAGES.slice(0, idx).every(s => stages[s]);
+    const hasError = r.status === "failed-retryable" || r.status === "failed-needs-user" || !!r.lastError;
+    if (priorAllPass && hasError) {
+      const reason = r.errorReason || r.lastError || "failed";
+      return html`<${Tooltip} title=${r.lastError || reason}>
+        <${Chip} size="small" color="error" label=${"fail: " + reason} />
+      <//>`;
+    }
+    return html`<${Chip} size="small" variant="outlined" label="pending" />`;
+  };
+}
+
+const STAGE_COLUMNS = PIPELINE_STAGES.map(s => ({
+  key: "stage:" + s,
+  label: s,
+  default: true,
+  render: stageCellFor(s),
+}));
+
 const ADMIN_COLUMNS = (() => {
-  const byKey = Object.fromEntries(CATALOG_COLUMNS.map(c => [c.key, c]));
-  const moved = new Set(["attempts", "status"]);
-  const base = CATALOG_COLUMNS.filter(c => !moved.has(c.key));
+  const hidden = new Set(["status", "errorReason", "lastError", "attempts"]);
+  const base = CATALOG_COLUMNS.filter(c => !hidden.has(c.key));
   const idx = base.findIndex(c => c.key === "sourceUrl");
   const ordered = [
     ...base.slice(0, idx + 1),
-    byKey.attempts,
-    byKey.status,
+    ...STAGE_COLUMNS,
     ...base.slice(idx + 1),
   ];
-  return ordered.map(c => ["attempts", "sourceUrl", "errorReason"].includes(c.key) ? { ...c, default: true } : c);
+  return ordered.map(c => c.key === "sourceUrl" ? { ...c, default: true } : c);
 })();
 
 function CatalogList({ nav }) {
@@ -382,23 +378,59 @@ function CatalogList({ nav }) {
   `;
 }
 
+function UpstreamCheck() {
+  const [state, setState] = useState({ loading: true, channels: [] });
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/admin/upstream-check")
+      .then(r => r.json())
+      .then(d => { if (!cancelled) setState({ loading: false, channels: d.channels || [] }); })
+      .catch(() => { if (!cancelled) setState({ loading: false, channels: [] }); });
+    return () => { cancelled = true; };
+  }, []);
+  if (state.loading) return null;
+  return html`
+    <${Box} sx=${{ mb: 2 }}>
+      ${state.channels.map(c => {
+        if (c.error) {
+          return html`<${Alert} key=${c.channelId} severity="warning" sx=${{ mb: 1 }}>
+            ${c.channelLabel}: upstream check failed — ${c.error}
+          <//>`;
+        }
+        if (c.behind && c.upstream) {
+          const upDate = fmtDate(c.upstream.publishedAt);
+          const catDate = c.catalog?.publishDate ? fmtDate(c.catalog.publishDate) : "none";
+          const ytUrl = "https://www.youtube.com/watch?v=" + c.upstream.videoId;
+          return html`<${Alert} key=${c.channelId} severity="warning" sx=${{ mb: 1 }}>
+            <${AlertTitle}>${c.channelLabel}: new video needs upload<//>
+            Upstream latest: <${Link} href=${ytUrl} target="_blank" rel="noopener">${c.upstream.title}<//> (${upDate})
+            <${Box} component="span" sx=${{ ml: 1, color: "text.secondary" }}>— catalog latest: ${catDate}<//>
+          <//>`;
+        }
+        if (!c.upstream) {
+          return html`<${Alert} key=${c.channelId} severity="info" sx=${{ mb: 1 }}>
+            ${c.channelLabel}: no upstream video found
+          <//>`;
+        }
+        return html`<${Alert} key=${c.channelId} severity="success" sx=${{ mb: 1 }}>
+          ${c.channelLabel}: up to date (latest ${fmtDate(c.upstream.publishedAt)})
+        <//>`;
+      })}
+    <//>
+  `;
+}
+
 function AdminPage({ nav }) {
-  const progress = useProgress();
-  const startIngest = () => fetch("/api/ingest/start", { method: "POST" });
-  const retryFailed = () => fetch("/api/catalog/reset-failed", { method: "POST" });
   return html`
     <${Container} maxWidth="lg" sx=${{ py: 3 }}>
       <${Typography} variant="h4" gutterBottom>Admin<//>
-      ${(progress.running || progress.total > 0) && html`<${ProgressBar} progress=${progress} />`}
-      <${Stack} direction="row" spacing=${2} sx=${{ mb: 2, flexWrap: "wrap", rowGap: 1 }}>
-        <${Button} variant="contained" onClick=${startIngest} disabled=${progress.running}>
-          ${progress.running ? "running..." : "run ingest"}
-        <//>
-        <${Button} variant="outlined" onClick=${retryFailed} disabled=${progress.running}>
-          retry failed
-        <//>
-      <//>
-      <${CatalogTable} nav=${nav} progress=${progress} showStatusFilter=${true} columns=${ADMIN_COLUMNS} />
+      <${UpstreamCheck} />
+      <${CatalogTable}
+        nav=${nav}
+        showStatusFilter=${true}
+        defaultFailedOnly=${true}
+        columns=${ADMIN_COLUMNS}
+      />
     <//>
   `;
 }
@@ -634,20 +666,205 @@ function EntityDetail({ entityId, nav }) {
   `;
 }
 
+const ENTITY_TYPE_HEX = {
+  person: "#42a5f5",
+  organization: "#ab47bc",
+  location: "#66bb6a",
+  event: "#ffa726",
+  thing: "#29b6f6",
+  time: "#bdbdbd",
+};
+
+function RelationshipsPage({ nav }) {
+  const [graph, setGraph] = useState(null);
+  const [error, setError] = useState(null);
+  const [rf, setRf] = useState(null);
+  const [flowLib, setFlowLib] = useState(null);
+  const [layout, setLayout] = useState(null);
+  const [positions, setPositions] = useState({});
+  const [query, setQuery] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+  const rfInstance = useRef(null);
+
+  useEffect(() => {
+    Promise.all([
+      import("reactflow"),
+      import("d3-force"),
+    ]).then(([flow, d3]) => {
+      setFlowLib({ flow, d3 });
+    }).catch(e => setError(String(e)));
+    fetch("/api/relationships")
+      .then(r => r.json())
+      .then(setGraph)
+      .catch(e => setError(String(e)));
+  }, []);
+
+  useEffect(() => {
+    if (!graph || !flowLib) return;
+    const { d3 } = flowLib;
+    const simNodes = graph.nodes.map(n => ({ ...n }));
+    const simLinks = graph.edges.map(e => ({ source: e.source, target: e.target }));
+    const sim = d3.forceSimulation(simNodes)
+      .force("charge", d3.forceManyBody().strength(-180))
+      .force("link", d3.forceLink(simLinks).id(d => d.id).distance(90).strength(0.6))
+      .force("center", d3.forceCenter(0, 0))
+      .force("collide", d3.forceCollide().radius(30))
+      .stop();
+    const ticks = Math.min(400, Math.max(120, Math.round(30 + 200 * Math.log2(1 + simNodes.length / 10))));
+    for (let i = 0; i < ticks; i++) sim.tick();
+    const pos = {};
+    for (const n of simNodes) pos[n.id] = { x: n.x, y: n.y };
+    setLayout(pos);
+    setPositions(pos);
+  }, [graph, flowLib]);
+
+  const { nodes, edges } = useMemo(() => {
+    if (!graph || !layout) return { nodes: [], edges: [] };
+    const ns = graph.nodes.map(n => {
+      const p = positions[n.id] || layout[n.id] || { x: 0, y: 0 };
+      const color = ENTITY_TYPE_HEX[n.type] || "#888";
+      const dim = query && !n.canonical.toLowerCase().includes(query.toLowerCase());
+      const selected = selectedId === n.id;
+      return {
+        id: n.id,
+        position: { x: p.x, y: p.y },
+        data: { label: n.canonical },
+        style: {
+          background: color,
+          color: "#000",
+          border: selected ? "3px solid #fff" : "1px solid rgba(0,0,0,0.3)",
+          borderRadius: 6,
+          padding: "4px 8px",
+          fontSize: 12,
+          opacity: dim ? 0.15 : 1,
+          minWidth: 40,
+        },
+      };
+    });
+    const es = graph.edges.map(e => ({
+      id: e.id,
+      source: e.source,
+      target: e.target,
+      label: e.predicate,
+      labelStyle: { fontSize: 10, fill: "#ccc" },
+      style: { stroke: "#888", strokeWidth: Math.min(4, 1 + Math.log2(e.count + 1)) },
+    }));
+    return { nodes: ns, edges: es };
+  }, [graph, layout, positions, query, selectedId]);
+
+  const suggestions = useMemo(() => {
+    if (!graph || !query.trim()) return [];
+    const q = query.toLowerCase();
+    return graph.nodes
+      .filter(n => n.canonical.toLowerCase().includes(q))
+      .sort((a, b) => b.weight - a.weight)
+      .slice(0, 10);
+  }, [graph, query]);
+
+  const focusNode = useCallback((id) => {
+    const p = layout && layout[id];
+    if (!p || !rfInstance.current) return;
+    rfInstance.current.setCenter(p.x, p.y, { zoom: 1.3, duration: 500 });
+    setSelectedId(id);
+  }, [layout]);
+
+  if (error) return html`<${Container} sx=${{ py: 3 }}><${Typography} color="error">${error}<//><//>`;
+  if (!graph || !flowLib || !layout) return html`<${Container} sx=${{ py: 3 }}><${Typography}>loading graph…<//><//>`;
+
+  const { flow } = flowLib;
+  const ReactFlow = flow.default || flow.ReactFlow;
+  const { Background, Controls, MiniMap } = flow;
+
+  return html`
+    <${Box} sx=${{ position: "relative", height: "calc(100vh - 64px)", width: "100%" }}>
+      <${Paper} sx=${{ position: "absolute", top: 12, left: 12, zIndex: 10, p: 1, width: 320 }}>
+        <${TextField}
+          size="small"
+          fullWidth
+          placeholder="search nodes…"
+          value=${query}
+          onChange=${e => { setQuery(e.target.value); setShowDropdown(true); }}
+          onFocus=${() => setShowDropdown(true)}
+          onKeyDown=${e => {
+            if (e.key === "Enter" && suggestions[0]) { focusNode(suggestions[0].id); setShowDropdown(false); }
+            else if (e.key === "Escape") setShowDropdown(false);
+          }}
+        />
+        ${showDropdown && suggestions.length > 0 && html`
+          <${Box} sx=${{ mt: 1, maxHeight: 300, overflow: "auto" }}>
+            ${suggestions.map(n => html`
+              <${Box}
+                key=${n.id}
+                sx=${{ display: "flex", alignItems: "center", gap: 1, px: 1, py: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" }, borderRadius: 1 }}
+                onClick=${() => { focusNode(n.id); setShowDropdown(false); }}
+              >
+                <${Box} sx=${{ width: 10, height: 10, borderRadius: "50%", bgcolor: ENTITY_TYPE_HEX[n.type] || "#888" }} />
+                <${Typography} variant="body2" sx=${{ flexGrow: 1 }}>${n.canonical}<//>
+                <${Typography} variant="caption" color="text.secondary">${n.weight}<//>
+              <//>
+            `)}
+          <//>
+        `}
+        <${Box} sx=${{ mt: 1, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+          ${Object.entries(ENTITY_TYPE_HEX).map(([t, c]) => html`
+            <${Box} key=${t} sx=${{ display: "flex", alignItems: "center", gap: 0.5 }}>
+              <${Box} sx=${{ width: 10, height: 10, borderRadius: "50%", bgcolor: c }} />
+              <${Typography} variant="caption">${t}<//>
+            <//>
+          `)}
+        <//>
+        <${Typography} variant="caption" color="text.secondary" sx=${{ display: "block", mt: 0.5 }}>
+          ${graph.nodes.length} nodes · ${graph.edges.length} edges
+        <//>
+      <//>
+      <${ReactFlow}
+        nodes=${nodes}
+        edges=${edges}
+        nodesDraggable=${true}
+        onInit=${(inst) => { rfInstance.current = inst; setRf(inst); inst.fitView({ padding: 0.2 }); }}
+        onNodeDrag=${(_, node) => {
+          setPositions(p => ({ ...p, [node.id]: { x: node.position.x, y: node.position.y } }));
+        }}
+        onNodeDragStop=${(_, node) => {
+          setPositions(p => ({ ...p, [node.id]: { x: node.position.x, y: node.position.y } }));
+        }}
+        onNodeClick=${(_, node) => {
+          setSelectedId(node.id);
+        }}
+        onNodeDoubleClick=${(_, node) => {
+          nav("/entity/" + encodeURIComponent(node.id));
+        }}
+        onPaneClick=${() => setShowDropdown(false)}
+        fitView
+        minZoom=${0.1}
+        maxZoom=${4}
+      >
+        <${Background} />
+        <${Controls} />
+        <${MiniMap} nodeColor=${(n) => n.style?.background || "#888"} pannable zoomable />
+      <//>
+    <//>
+  `;
+}
+
 const IS_STATIC = typeof window !== "undefined" && window.__STATIC__;
 
 function App() {
   const [path, nav] = useRoute();
   const videoMatch = path.match(/^\/video\/([A-Za-z0-9_-]+)/);
   const entityMatch = path.match(/^\/entity\/([^?]+)/);
+  const isRelationships = path === "/relationships" || path.startsWith("/relationships?");
   const isAdmin = !IS_STATIC && path.startsWith("/admin");
   const body = videoMatch
     ? html`<${VideoDetail} videoId=${videoMatch[1]} nav=${nav} />`
     : entityMatch
       ? html`<${EntityDetail} entityId=${decodeURIComponent(entityMatch[1])} nav=${nav} />`
-      : isAdmin
-        ? html`<${AdminPage} nav=${nav} />`
-        : html`<${CatalogList} nav=${nav} />`;
+      : isRelationships
+        ? html`<${RelationshipsPage} nav=${nav} />`
+        : isAdmin
+          ? html`<${AdminPage} nav=${nav} />`
+          : html`<${CatalogList} nav=${nav} />`;
   return html`
     <${ThemeProvider} theme=${theme}>
       <${CssBaseline} />
@@ -655,6 +872,7 @@ function App() {
         <${Toolbar}>
           <${Typography} variant="h6" sx=${{ cursor: "pointer", flexGrow: 1 }} onClick=${() => nav("/")}>Why Files Database<//>
           <${Button} color="inherit" onClick=${() => nav("/")}>home<//>
+          <${Button} color="inherit" onClick=${() => nav("/relationships")}>relationships<//>
           ${!IS_STATIC && html`<${Button} color="inherit" onClick=${() => nav("/admin")}>admin<//>`}
         <//>
       <//>

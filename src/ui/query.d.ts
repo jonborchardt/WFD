@@ -8,6 +8,7 @@ export interface ListQuery {
   channel?: string;
   status?: string;
   notStatus?: string;
+  incompleteStages?: boolean;
   text?: string;
   page?: number;
   pageSize?: number;
@@ -20,6 +21,8 @@ export interface ListResult {
   rows: CatalogRow[];
 }
 
+export const PER_VIDEO_STAGES: readonly string[];
+export function hasIncompleteStages(row: CatalogRow): boolean;
 export function matchesBase(row: CatalogRow, q: ListQuery): boolean;
 export function matchesText(row: CatalogRow, needleLower: string): boolean;
 export function filterRows(rows: CatalogRow[], q: ListQuery): CatalogRow[];
