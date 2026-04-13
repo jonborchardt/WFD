@@ -15,7 +15,8 @@ import { limitedFetch } from "../ingest/rate-limiter.js";
 import { renderSpaShell } from "./spa-shell.js";
 import { extract as extractEntities, Transcript as NlpTranscript } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
-import { Entity, Relationship, TranscriptSpan } from "../shared/types.js";
+import { Entity, Relationship } from "../shared/types.js";
+import { CREDIT_FOOTER } from "../shared/credit-footer.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
@@ -411,10 +412,6 @@ function layout(title: string, body: string): string {
   form{display:flex;gap:.5em;margin-bottom:1em}ol{padding-left:1.2em}</style></head>
   <body><header><a href="/">catalog</a></header>${body}${CREDIT_FOOTER}</body></html>`;
 }
-
-export const CREDIT_FOOTER = `<footer style="margin-top:2rem;padding:0.75rem 0;border-top:1px solid #ccc;font-size:0.8rem;color:#555;text-align:center">
-All transcript content is from <a href="https://thewhyfiles.com" target="_blank" rel="noopener" style="color:#1976d2">The Why Files</a> (AJ Gentile). Credit and copyright belong to The Why Files. Support: <a href="https://www.patreon.com/thewhyfiles" target="_blank" rel="noopener" style="color:#1976d2">Patreon</a> · <a href="https://shop.thewhyfiles.com" target="_blank" rel="noopener" style="color:#1976d2">Shop</a> · <a href="https://www.youtube.com/@TheWhyFiles" target="_blank" rel="noopener" style="color:#1976d2">YouTube</a>. Independent research index, not affiliated with The Why Files.
-</footer>`;
 
 export function escapeHtml(s: string): string {
   return s

@@ -23,7 +23,7 @@ import htm from "htm";
 import {
   CssBaseline, ThemeProvider, createTheme, AppBar, Toolbar, Typography,
   Container, Paper, Table, TableHead, TableBody, TableRow, TableCell,
-  TablePagination, TextField, Select, MenuItem, LinearProgress, Chip, Button, Box, Link, Stack,
+  TablePagination, TextField, MenuItem, Chip, Button, Box, Link, Stack,
   Menu, Checkbox, FormControlLabel, ListItemText, ListItemIcon, Tooltip, Alert, AlertTitle,
 } from "@mui/material";
 
@@ -203,7 +203,7 @@ function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
   const [pageSize, setPageSize] = useState(25);
   const [text, setText] = useState(() => new URLSearchParams(location.search).get("search") || "");
   const [showDropdown, setShowDropdown] = useState(false);
-  const [status, setStatus] = useState("");
+  const [status] = useState("");
   const [failedOnly, setFailedOnly] = useState(!!defaultFailedOnly);
   const [visible, setVisible] = useState(() => {
     const init = {};
@@ -725,7 +725,7 @@ const ENTITY_TYPE_HEX = {
 function RelationshipsPage({ nav }) {
   const [graph, setGraph] = useState(null);
   const [error, setError] = useState(null);
-  const [rf, setRf] = useState(null);
+  const [, setRf] = useState(null);
   const [flowLib, setFlowLib] = useState(null);
   const [layout, setLayout] = useState(null);
   const [positions, setPositions] = useState({});
