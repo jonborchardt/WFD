@@ -1,43 +1,45 @@
-// HTML envelope for the client-side SPA. The actual application code lives in
-// `client/app.js` and is served as a static module; keeping the shell tiny
-// means this file never has to deal with template-literal escaping.
+// Dev-server HTML. Single source of truth lives in src/ui/client/index.html —
+// the same file the static deploy ships. We do two explicit literal
+// substitutions: flip __STATIC__ off and append the livereload snippet. If
+// either token is missing we throw, so a refactor of index.html can't silently
+// break the dev server.
 
-export function renderSpaShell(): string {
-  return `<!doctype html><html><head>
-<meta charset="utf-8"/>
-<title>captions</title>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<link rel="preconnect" href="https://esm.sh"/>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.3.1",
-    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
-    "react-dom": "https://esm.sh/react-dom@18.3.1",
-    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
-    "htm": "https://esm.sh/htm@3.1.1",
-    "@mui/material": "https://esm.sh/@mui/material@5.16.7?external=react,react-dom",
-    "@emotion/react": "https://esm.sh/@emotion/react@11.11.4?external=react",
-    "@emotion/styled": "https://esm.sh/@emotion/styled@11.11.5?external=react,@emotion/react"
-  }
-}
-</script>
-</head><body>
-<div id="root"></div>
-<script>
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const here = dirname(fileURLToPath(import.meta.url));
+const templatePath = join(here, "client", "index.html");
+
+const STATIC_FLAG = "window.__STATIC__ = true";
+const BODY_END = "</body>";
+
+const LIVERELOAD = `<script>
 (function(){
   let wasConnected = false;
   function connect() {
     const es = new EventSource("/api/livereload");
     es.addEventListener("hello", () => { if (wasConnected) location.reload(); wasConnected = true; });
-    es.onerror = () => {
-      es.close();
-      setTimeout(connect, 500);
-    };
+    es.onerror = () => { es.close(); setTimeout(connect, 500); };
   }
   connect();
 })();
 </script>
-<script type="module" src="/client.js"></script>
-</body></html>`;
+</body>`;
+
+let cached: string | null = null;
+function render(): string {
+  const raw = readFileSync(templatePath, "utf8");
+  if (!raw.includes(STATIC_FLAG)) {
+    throw new Error(`spa-shell: index.html missing literal token "${STATIC_FLAG}"`);
+  }
+  if (!raw.includes(BODY_END)) {
+    throw new Error(`spa-shell: index.html missing "${BODY_END}"`);
+  }
+  return raw.replace(STATIC_FLAG, "window.__STATIC__ = false").replace(BODY_END, LIVERELOAD);
+}
+
+export function renderSpaShell(): string {
+  if (!cached) cached = render();
+  return cached;
 }

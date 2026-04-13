@@ -16,6 +16,24 @@ import { renderSpaShell } from "./spa-shell.js";
 import { extract as extractEntities, Transcript as NlpTranscript } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
 import { Entity, Relationship, TranscriptSpan } from "../shared/types.js";
+import {
+  EntityIndexEntry,
+  EntityVideosIndex,
+  readPersistedEntityIndex,
+  readPersistedEntityVideos,
+  readPersistedNlp,
+  writePersistedEntityIndex,
+  writePersistedEntityVideos,
+  writePersistedNlp,
+} from "../nlp/persist.js";
+import {
+  filterRows as qFilterRows,
+  augmentWithEntityMatches,
+  sortByPublishAsc,
+  paginate as qPaginate,
+  searchEntityIndex,
+} from "./query.js";
+import type { ListQuery, ListResult } from "./query.js";
 
 interface NlpResult {
   entities: Entity[];
@@ -23,18 +41,34 @@ interface NlpResult {
 }
 
 const nlpCache = new Map<string, NlpResult>();
+let entityIndexCache: EntityIndexEntry[] | null = null;
+let entityVideosCache: EntityVideosIndex | null = null;
 
-interface EntityIndexEntry {
-  id: string;
-  type: Entity["type"];
-  canonical: string;
-  videoCount: number;
-  mentionCount: number;
+function computeNlp(row: CatalogRow, dataDir?: string): NlpResult | null {
+  const cached = nlpCache.get(row.videoId);
+  if (cached) return cached;
+  const persisted = readPersistedNlp(row.videoId, dataDir);
+  if (persisted) {
+    nlpCache.set(row.videoId, persisted);
+    return persisted;
+  }
+  const transcript = loadTranscript(row, dataDir);
+  if (!transcript) return null;
+  const t = transcript as NlpTranscript;
+  const entities = extractEntities(t);
+  const relationships = extractRelationships(t, entities);
+  const result = { entities, relationships };
+  nlpCache.set(row.videoId, result);
+  writePersistedNlp(row.videoId, result, dataDir);
+  return result;
 }
-let entityIndexCache: { built: number; entries: EntityIndexEntry[] } | null = null;
 
-function buildEntityIndex(catalog: Catalog, dataDir?: string): EntityIndexEntry[] {
+function buildNlpIndexes(
+  catalog: Catalog,
+  dataDir?: string,
+): { index: EntityIndexEntry[]; videos: EntityVideosIndex } {
   const agg = new Map<string, EntityIndexEntry>();
+  const videos: EntityVideosIndex = {};
   for (const row of catalog.all()) {
     if (row.status !== "fetched") continue;
     const nlp = computeNlp(row, dataDir);
@@ -53,29 +87,40 @@ function buildEntityIndex(catalog: Catalog, dataDir?: string): EntityIndexEntry[
           mentionCount: e.mentions.length,
         });
       }
+      (videos[e.id] ||= []).push({ videoId: row.videoId, mentions: e.mentions });
     }
   }
-  return [...agg.values()];
+  return { index: [...agg.values()], videos };
 }
 
 function getEntityIndex(catalog: Catalog, dataDir?: string): EntityIndexEntry[] {
-  if (entityIndexCache) return entityIndexCache.entries;
-  const entries = buildEntityIndex(catalog, dataDir);
-  entityIndexCache = { built: Date.now(), entries };
-  return entries;
+  if (entityIndexCache) return entityIndexCache;
+  const persisted = readPersistedEntityIndex(dataDir);
+  if (persisted) {
+    entityIndexCache = persisted;
+    return persisted;
+  }
+  const built = buildNlpIndexes(catalog, dataDir);
+  entityIndexCache = built.index;
+  entityVideosCache = built.videos;
+  writePersistedEntityIndex(built.index, dataDir);
+  writePersistedEntityVideos(built.videos, dataDir);
+  return built.index;
 }
 
-function computeNlp(row: CatalogRow, dataDir?: string): NlpResult | null {
-  const cached = nlpCache.get(row.videoId);
-  if (cached) return cached;
-  const transcript = loadTranscript(row, dataDir);
-  if (!transcript) return null;
-  const t = transcript as NlpTranscript;
-  const entities = extractEntities(t);
-  const relationships = extractRelationships(t, entities);
-  const result = { entities, relationships };
-  nlpCache.set(row.videoId, result);
-  return result;
+function getEntityVideos(catalog: Catalog, dataDir?: string): EntityVideosIndex {
+  if (entityVideosCache) return entityVideosCache;
+  const persisted = readPersistedEntityVideos(dataDir);
+  if (persisted) {
+    entityVideosCache = persisted;
+    return persisted;
+  }
+  const built = buildNlpIndexes(catalog, dataDir);
+  entityIndexCache = built.index;
+  entityVideosCache = built.videos;
+  writePersistedEntityIndex(built.index, dataDir);
+  writePersistedEntityVideos(built.videos, dataDir);
+  return built.videos;
 }
 
 export interface UiOptions {
@@ -85,42 +130,9 @@ export interface UiOptions {
   ingester?: Ingester;
 }
 
-export interface ListQuery {
-  channel?: string;
-  status?: string;
-  notStatus?: string;
-  text?: string;
-  page?: number;
-  pageSize?: number;
-}
-
-export interface ListResult {
-  total: number;
-  page: number;
-  pageSize: number;
-  rows: CatalogRow[];
-}
-
-export function filterRows(rows: CatalogRow[], q: ListQuery): CatalogRow[] {
-  const needle = q.text?.toLowerCase();
-  return rows.filter((r) => {
-    if (q.channel && r.channel !== q.channel) return false;
-    if (q.status && r.status !== q.status) return false;
-    if (q.notStatus && r.status === q.notStatus) return false;
-    if (needle) {
-      const hay = `${r.title ?? ""} ${r.videoId} ${r.channel ?? ""} ${(r.keywords ?? []).join(" ")} ${r.description ?? ""}`.toLowerCase();
-      if (!hay.includes(needle)) return false;
-    }
-    return true;
-  });
-}
-
-export function paginate(rows: CatalogRow[], q: ListQuery): ListResult {
-  const pageSize = Math.max(1, Math.min(200, q.pageSize ?? 25));
-  const page = Math.max(1, q.page ?? 1);
-  const start = (page - 1) * pageSize;
-  return { total: rows.length, page, pageSize, rows: rows.slice(start, start + pageSize) };
-}
+export type { ListQuery, ListResult };
+export const filterRows = qFilterRows;
+export const paginate = qPaginate;
 
 export interface LoadedTranscript {
   videoId: string;
@@ -287,32 +299,18 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     if (url.startsWith("/api/catalog")) {
       const q = parseQuery(url);
       const allRows = opts.catalog.all();
-      const filtered = filterRows(allRows, q);
+      const filtered = qFilterRows(allRows, q);
       if (q.text) {
-        const needle = q.text.toLowerCase();
-        const have = new Set(filtered.map((r) => r.videoId));
-        for (const row of allRows) {
-          if (have.has(row.videoId)) continue;
-          if (row.status !== "fetched") continue;
-          if (q.channel && row.channel !== q.channel) continue;
-          if (q.status && row.status !== q.status) continue;
-          if (q.notStatus && row.status === q.notStatus) continue;
-          const nlp = computeNlp(row, opts.dataDir);
-          if (!nlp) continue;
-          if (nlp.entities.some((e) => e.canonical.toLowerCase().includes(needle))) {
-            filtered.push(row);
-          }
-        }
+        augmentWithEntityMatches(
+          filtered,
+          allRows,
+          q,
+          getEntityIndex(opts.catalog, opts.dataDir),
+          getEntityVideos(opts.catalog, opts.dataDir),
+        );
       }
-      filtered.sort((a, b) => {
-        const ta = a.publishDate ? Date.parse(a.publishDate) : NaN;
-        const tb = b.publishDate ? Date.parse(b.publishDate) : NaN;
-        if (isNaN(ta) && isNaN(tb)) return 0;
-        if (isNaN(ta)) return 1;
-        if (isNaN(tb)) return -1;
-        return ta - tb;
-      });
-      sendJson(res, 200, paginate(filtered, q));
+      const sorted = sortByPublishAsc(filtered);
+      sendJson(res, 200, qPaginate(sorted, q));
       return;
     }
     if (url === "/api/livereload") {
@@ -350,25 +348,14 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     }
     if (url.startsWith("/api/entities/search")) {
       const u = new URL(url, "http://local");
-      const q = (u.searchParams.get("q") || "").trim().toLowerCase();
-      const type = u.searchParams.get("type") || "";
-      const limit = Math.min(200, Math.max(1, Number(u.searchParams.get("limit") || 50)));
-      const index = getEntityIndex(opts.catalog, opts.dataDir);
-      let results = index;
-      if (type) results = results.filter((e) => e.type === type);
-      if (q) results = results.filter((e) => e.canonical.toLowerCase().includes(q));
-      results = results
-        .slice()
-        .sort((a, b) => {
-          if (q) {
-            const ai = a.canonical.toLowerCase().indexOf(q);
-            const bi = b.canonical.toLowerCase().indexOf(q);
-            if (ai !== bi) return ai - bi;
-          }
-          if (b.mentionCount !== a.mentionCount) return b.mentionCount - a.mentionCount;
-          return a.canonical.localeCompare(b.canonical);
-        })
-        .slice(0, limit);
+      const results = searchEntityIndex(
+        getEntityIndex(opts.catalog, opts.dataDir),
+        {
+          q: u.searchParams.get("q") || "",
+          type: u.searchParams.get("type") || "",
+          limit: Number(u.searchParams.get("limit") || 50),
+        },
+      );
       sendJson(res, 200, { total: results.length, results });
       return;
     }
@@ -379,39 +366,33 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         sendJson(res, 400, { error: "missing entity id" });
         return;
       }
-      const videos: Array<{
-        videoId: string;
-        title?: string;
-        channel?: string;
-        publishDate?: string;
-        thumbnailUrl?: string;
-        mentions: TranscriptSpan[];
-      }> = [];
-      let entity: Entity | null = null;
-      for (const row of opts.catalog.all()) {
-        if (row.status !== "fetched") continue;
-        const nlp = computeNlp(row, opts.dataDir);
-        if (!nlp) continue;
-        const match = nlp.entities.find((e) => e.id === entityId);
-        if (!match) continue;
-        if (!entity) entity = { ...match, mentions: [] };
-        videos.push({
-          videoId: row.videoId,
-          title: row.title,
-          channel: row.channel,
-          publishDate: row.publishDate,
-          thumbnailUrl: row.thumbnailUrl,
-          mentions: match.mentions,
+      const idx = getEntityIndex(opts.catalog, opts.dataDir).find((e) => e.id === entityId);
+      const entity: Entity | null = idx
+        ? { id: idx.id, type: idx.type, canonical: idx.canonical, aliases: [], mentions: [] }
+        : null;
+      const refs = getEntityVideos(opts.catalog, opts.dataDir)[entityId] || [];
+      const videos = refs
+        .map((ref) => {
+          const row = opts.catalog.get(ref.videoId);
+          if (!row) return null;
+          return {
+            videoId: row.videoId,
+            title: row.title,
+            channel: row.channel,
+            publishDate: row.publishDate,
+            thumbnailUrl: row.thumbnailUrl,
+            mentions: ref.mentions,
+          };
+        })
+        .filter((v): v is NonNullable<typeof v> => v !== null)
+        .sort((a, b) => {
+          const ta = a.publishDate ? Date.parse(a.publishDate) : NaN;
+          const tb = b.publishDate ? Date.parse(b.publishDate) : NaN;
+          if (isNaN(ta) && isNaN(tb)) return 0;
+          if (isNaN(ta)) return 1;
+          if (isNaN(tb)) return -1;
+          return tb - ta;
         });
-      }
-      videos.sort((a, b) => {
-        const ta = a.publishDate ? Date.parse(a.publishDate) : NaN;
-        const tb = b.publishDate ? Date.parse(b.publishDate) : NaN;
-        if (isNaN(ta) && isNaN(tb)) return 0;
-        if (isNaN(ta)) return 1;
-        if (isNaN(tb)) return -1;
-        return tb - ta;
-      });
       sendJson(res, 200, { entityId, entity, videos });
       return;
     }
@@ -438,10 +419,20 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       return;
     }
 
-    if (url === "/client.js") {
+    const staticAsset: Record<string, string> = {
+      "/client.js": join(dirname(fileURLToPath(import.meta.url)), "client", "app.js"),
+      "/query.js": join(dirname(fileURLToPath(import.meta.url)), "query.js"),
+      "/static-shim.js": join(
+        dirname(fileURLToPath(import.meta.url)),
+        "..",
+        "..",
+        "scripts",
+        "static-shim.js",
+      ),
+    };
+    if (staticAsset[url]) {
       try {
-        const here = dirname(fileURLToPath(import.meta.url));
-        const body = readFileSync(join(here, "client", "app.js"), "utf8");
+        const body = readFileSync(staticAsset[url], "utf8");
         res.writeHead(200, {
           "content-type": "application/javascript; charset=utf-8",
           "cache-control": "no-cache",
@@ -449,7 +440,7 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         res.end(body);
       } catch (e) {
         res.writeHead(500);
-        res.end("client.js: " + (e as Error).message);
+        res.end(`${url}: ` + (e as Error).message);
       }
       return;
     }
