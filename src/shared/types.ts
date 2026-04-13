@@ -18,12 +18,34 @@ export interface Entity {
 
 export type RelationshipType =
   | "said"
+  | "denied"
+  | "accused"
   | "met"
+  | "knows"
+  | "married"
+  | "lived-with"
+  | "loves"
+  | "hates"
   | "attended"
-  | "worked-for"
+  | "visited"
   | "located-at"
-  | "related-to"
-  | "member-of";
+  | "near"
+  | "born-in"
+  | "died-in"
+  | "during"
+  | "worked-for"
+  | "employs"
+  | "member-of"
+  | "founded"
+  | "owns"
+  | "funded-by"
+  | "funds"
+  | "investigated"
+  | "researches"
+  | "authored"
+  | "cited"
+  | "interested-in"
+  | "related-to";
 
 export type Provenance = "nlp" | "ai" | "both";
 

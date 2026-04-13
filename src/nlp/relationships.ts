@@ -1,36 +1,59 @@
 // Relationship extraction.
 //
-// Approach: for each cue, consider pairs of entities whose mentions fall in
-// that cue, and match a small set of predicate patterns between their surface
-// positions. Every relationship MUST carry an evidence pointer — this is the
-// load-bearing project invariant, and the constructor enforces it by
-// refusing to return a Relationship without one.
+// Approach: segment the flattened transcript into sentences, then for each
+// sentence pair up entities whose mentions fall inside it and match a
+// predicate pattern against the between-text (the substring lying strictly
+// between the two mentions). Every relationship MUST carry an evidence
+// pointer — this is the load-bearing project invariant, and the constructor
+// refuses to return a Relationship without one.
+//
+// Pattern order matters: more specific cues are listed first so "born in"
+// does not get swallowed by the generic "in" (located-at) pattern, and
+// "worked for" wins over "member of" when both could apply.
 
 import { Entity, Relationship, RelationshipType, TranscriptSpan } from "../shared/types.js";
 import { Transcript, flatten } from "./entities.js";
+import { segmentSentences } from "./sentences.js";
 
 interface Pattern {
   predicate: RelationshipType;
-  // Regex run against the *between-text* (the substring of the transcript
-  // lying strictly between the two entity mentions).
   re: RegExp;
 }
 
 const PATTERNS: Pattern[] = [
-  { predicate: "said", re: /\b(said|told|claimed|stated|argued|wrote)\b/i },
+  { predicate: "born-in", re: /\bborn in\b/i },
+  { predicate: "died-in", re: /\b(died in|passed away in)\b/i },
+  { predicate: "married", re: /\b(married to|married|wed|engaged to)\b/i },
+  { predicate: "lived-with", re: /\b(lived with|lives with|cohabitated with)\b/i },
+  { predicate: "funded-by", re: /\b(funded by|financed by|backed by|bankrolled by|paid by)\b/i },
+  { predicate: "funds", re: /\b(funds|funded|finances|financed|bankrolls|bankrolled)\b/i },
+  { predicate: "founded", re: /\b(founded|co-?founded|established|started)\b/i },
+  { predicate: "owns", re: /\b(owns|owned|acquired|purchased|bought)\b/i },
+  { predicate: "employs", re: /\b(hired|hires|employs|employed)\b/i },
+  { predicate: "worked-for", re: /\b(worked for|works for|employed by|staff of|on the staff of)\b/i },
+  { predicate: "member-of", re: /\b(member of|belongs to|part of|sits on)\b/i },
   { predicate: "met", re: /\b(met with|met|spoke with|sat down with)\b/i },
-  { predicate: "attended", re: /\b(attended|joined|was at|was present at)\b/i },
-  { predicate: "worked-for", re: /\b(worked for|works for|employed by|joined)\b/i },
+  { predicate: "knows", re: /\b(knows|knew|acquainted with|friends with|close to)\b/i },
+  { predicate: "attended", re: /\b(attended|present at|was at)\b/i },
+  { predicate: "visited", re: /\b(visited|traveled to|flew to|went to)\b/i },
+  { predicate: "near", re: /\b(near|close to|just outside|adjacent to)\b/i },
+  { predicate: "during", re: /\b(during|in the midst of|amid|amidst)\b/i },
+  { predicate: "loves", re: /\b(loves|loved|adores|admires)\b/i },
+  { predicate: "hates", re: /\b(hates|hated|despises|loathes)\b/i },
+  { predicate: "accused", re: /\b(accused|charged|blamed|alleged)\b/i },
+  { predicate: "denied", re: /\b(denied|rejected|refuted|dismissed)\b/i },
+  { predicate: "investigated", re: /\b(investigated|probed|looked into|examined)\b/i },
+  { predicate: "researches", re: /\b(researches|researched|studies|studied)\b/i },
+  { predicate: "authored", re: /\b(authored|wrote|penned|co-?authored)\b/i },
+  { predicate: "cited", re: /\b(cited|quoted|referenced)\b/i },
+  { predicate: "interested-in", re: /\b(interested in|focused on|fascinated by)\b/i },
+  { predicate: "said", re: /\b(said|told|claimed|stated|argued|reported|testified)\b/i },
   { predicate: "located-at", re: /\b(in|at|based in|headquartered in)\b/i },
-  { predicate: "member-of", re: /\b(member of|belongs to|part of)\b/i },
+  { predicate: "related-to", re: /\b(related to|tied to|connected to|linked to)\b/i },
 ];
 
 export interface ExtractRelsOptions {
   minConfidence?: number;
-}
-
-function spanOverlapsCue(span: TranscriptSpan, cueStart: number, cueEnd: number): boolean {
-  return span.charStart >= cueStart && span.charEnd <= cueEnd;
 }
 
 function makeId(
@@ -76,27 +99,37 @@ export function extractRelationships(
   opts: ExtractRelsOptions = {},
 ): Relationship[] {
   const minConfidence = opts.minConfidence ?? 0.2;
-  const { text, cueStarts } = flatten(transcript);
+  const { text } = flatten(transcript);
+  const sentences = segmentSentences(text);
   const out: Relationship[] = [];
-  for (let i = 0; i < transcript.cues.length; i++) {
-    const cueStart = cueStarts[i];
-    const cueEnd =
-      i + 1 < cueStarts.length ? cueStarts[i + 1] - 1 : text.length;
-    // Collect (entity, span) pairs that land in this cue, sorted by charStart.
-    const inCue: Array<{ entity: Entity; span: TranscriptSpan }> = [];
-    for (const e of entities) {
-      for (const s of e.mentions) {
-        if (spanOverlapsCue(s, cueStart, cueEnd)) inCue.push({ entity: e, span: s });
+
+  // Build a flat, sorted list of (entity, span) once; then for each sentence
+  // binary-scan the slice that lands inside it. Cheaper than re-scanning
+  // every entity per sentence.
+  const allMentions: Array<{ entity: Entity; span: TranscriptSpan }> = [];
+  for (const e of entities) {
+    for (const s of e.mentions) allMentions.push({ entity: e, span: s });
+  }
+  allMentions.sort((a, b) => a.span.charStart - b.span.charStart);
+
+  for (const sent of sentences) {
+    const inSent: typeof allMentions = [];
+    for (const m of allMentions) {
+      if (m.span.charStart >= sent.start && m.span.charEnd <= sent.end) {
+        inSent.push(m);
+      } else if (m.span.charStart >= sent.end) {
+        break;
       }
     }
-    inCue.sort((a, b) => a.span.charStart - b.span.charStart);
-    for (let a = 0; a < inCue.length; a++) {
-      for (let b = a + 1; b < inCue.length; b++) {
-        const left = inCue[a];
-        const right = inCue[b];
+    if (inSent.length < 2) continue;
+
+    for (let a = 0; a < inSent.length; a++) {
+      for (let b = a + 1; b < inSent.length; b++) {
+        const left = inSent[a];
+        const right = inSent[b];
         if (left.entity.id === right.entity.id) continue;
         const between = text.slice(left.span.charEnd, right.span.charStart);
-        if (between.length === 0 || between.length > 80) continue;
+        if (between.length === 0 || between.length > 120) continue;
         for (const pat of PATTERNS) {
           if (!pat.re.test(between)) continue;
           const evidence: TranscriptSpan = {
@@ -106,10 +139,9 @@ export function extractRelationships(
             timeStart: left.span.timeStart,
             timeEnd: right.span.timeEnd,
           };
-          // Confidence heuristic: shorter between-text + closer time → higher.
           const confidence = Math.max(
             minConfidence,
-            Math.min(0.9, 1 - between.length / 80),
+            Math.min(0.9, 1 - between.length / 120),
           );
           out.push(
             createRelationship({
@@ -120,7 +152,7 @@ export function extractRelationships(
               confidence,
             }),
           );
-          break; // one predicate per pair per cue
+          break; // one predicate per pair per sentence
         }
       }
     }

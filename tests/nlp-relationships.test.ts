@@ -19,6 +19,16 @@ const fixture = {
       duration: 3,
       text: "Angela Merkel said the vaccine rollout was successful.",
     },
+    {
+      start: 6,
+      duration: 3,
+      text: "John Smith founded OpenAI and later accused Sam Altman.",
+    },
+    {
+      start: 9,
+      duration: 3,
+      text: "Jane Doe investigated the FBI during the Cold War.",
+    },
   ],
 };
 
@@ -40,6 +50,16 @@ describe("relationship extraction", () => {
     const predicates = rels.map((r) => r.predicate);
     expect(predicates).toContain("met");
     expect(predicates).toContain("said");
+  });
+
+  it("captures expanded predicates (founded, accused, investigated, during)", () => {
+    const entities = extract(fixture);
+    const rels = extractRelationships(fixture, entities);
+    const predicates = new Set(rels.map((r) => r.predicate));
+    expect(predicates.has("founded")).toBe(true);
+    expect(predicates.has("accused")).toBe(true);
+    expect(predicates.has("investigated")).toBe(true);
+    expect(predicates.has("during")).toBe(true);
   });
 
   it("refuses to construct a relationship without evidence", () => {
