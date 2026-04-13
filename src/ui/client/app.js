@@ -7,6 +7,15 @@
 //   /          → catalog list
 //   /admin     → catalog + ingest controls
 //   /video/:id → transcript detail
+//
+// Type checking is anchored to ../shared/types.ts and ../catalog/catalog.ts
+// via the JSDoc @typedef imports below; VSCode / tsc --checkJs use those to
+// validate our use of Row, Entity, Relationship, TranscriptSpan.
+
+/** @typedef {import("../../shared/types.js").Entity} Entity */
+/** @typedef {import("../../shared/types.js").Relationship} Relationship */
+/** @typedef {import("../../shared/types.js").TranscriptSpan} TranscriptSpan */
+/** @typedef {import("../../catalog/catalog.js").CatalogRow} Row */
 
 import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
@@ -261,7 +270,12 @@ function CatalogTable({ nav, progress, showStatusFilter, columns }) {
     if (failedOnly) q.set("notStatus", "fetched");
     q.set("page", String(page));
     q.set("pageSize", String(pageSize));
-    fetch("/api/catalog?" + q).then(r => r.json()).then(setData);
+    let cancelled = false;
+    const delay = text ? 200 : 0;
+    const h = setTimeout(() => {
+      fetch("/api/catalog?" + q).then(r => r.json()).then(d => { if (!cancelled) setData(d); });
+    }, delay);
+    return () => { cancelled = true; clearTimeout(h); };
   }, [text, status, failedOnly, page, pageSize, progress?.done, progress?.failed, progress?.running]);
 
   const pagination = html`
@@ -620,11 +634,13 @@ function EntityDetail({ entityId, nav }) {
   `;
 }
 
+const IS_STATIC = typeof window !== "undefined" && window.__STATIC__;
+
 function App() {
   const [path, nav] = useRoute();
   const videoMatch = path.match(/^\/video\/([A-Za-z0-9_-]+)/);
   const entityMatch = path.match(/^\/entity\/([^?]+)/);
-  const isAdmin = path.startsWith("/admin");
+  const isAdmin = !IS_STATIC && path.startsWith("/admin");
   const body = videoMatch
     ? html`<${VideoDetail} videoId=${videoMatch[1]} nav=${nav} />`
     : entityMatch
@@ -639,7 +655,7 @@ function App() {
         <${Toolbar}>
           <${Typography} variant="h6" sx=${{ cursor: "pointer", flexGrow: 1 }} onClick=${() => nav("/")}>Why Files Database<//>
           <${Button} color="inherit" onClick=${() => nav("/")}>home<//>
-          <${Button} color="inherit" onClick=${() => nav("/admin")}>admin<//>
+          ${!IS_STATIC && html`<${Button} color="inherit" onClick=${() => nav("/admin")}>admin<//>`}
         <//>
       <//>
       ${body}
