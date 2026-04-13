@@ -29,7 +29,10 @@ export interface Loop {
 
 // Pairs of predicates we consider mutually exclusive.
 const EXCLUSIVE: Array<[RelationshipType, RelationshipType]> = [
-  ["worked-for", "member-of"],
+  ["loves", "hates"],
+  ["accused", "denied"],
+  ["funds", "funded-by"],
+  ["employs", "worked-for"],
 ];
 
 function edgeKey(r: Relationship): string {
