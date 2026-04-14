@@ -6,12 +6,10 @@
 //      `PER` on words like "God", "Lord", "Dad" in conspiracy/interview
 //      corpora where they appear constantly. Drop them entirely.
 //
-//   2. Per-transcript long-form binding — "Dan" alone is a first name that
-//      normalize() would otherwise collapse across every unrelated transcript
-//      into a single global `person:dan` entity. Bind each short mention to
+//   2. Per-transcript long-form binding — bind each short mention ("Dan") to
 //      a multi-token mention from the same transcript when exactly one
 //      multi-token candidate shares a token with it. Unbound short mentions
-//      are scoped to the transcript so they do not merge across videos.
+//      keep their bare surface form and are allowed to merge globally.
 //
 //   3. LOCATION_ALIASES  — small hand-maintained map that collapses US /
 //      USA / United States / America into one entity, etc. The same
@@ -196,9 +194,10 @@ function tokens(s: string): string[] {
 }
 
 export interface CanonicalizeOptions {
-  // When a single-token person cannot be bound to a multi-token mention in
-  // the same transcript, scope its canonical form with this suffix so it
-  // does not merge across transcripts. Pass the videoId.
+  // VideoId of the transcript being canonicalized. Currently unused by the
+  // canonicalizer itself but kept on the options type so callers (pipeline,
+  // tests) have a stable shape and can reintroduce per-transcript scoping
+  // later without a breaking change.
   transcriptId: string;
   // Drop single-token persons that never appear as part of a multi-token
   // mention in the transcript. Default false (we keep them scoped instead).
@@ -211,7 +210,7 @@ export function canonicalizeNerMentions(
   mentions: NerMention[],
   opts: CanonicalizeOptions,
 ): NerMention[] {
-  const transcriptId = opts.transcriptId;
+  void opts.transcriptId;
   const dropUnbound = opts.dropUnboundFirstNames ?? false;
 
   // Build per-transcript alias map for persons: token (lowercased) → set of
@@ -250,8 +249,7 @@ export function canonicalizeNerMentions(
         continue;
       }
       if (dropUnbound) continue;
-      // Unbound: scope to transcript so it does not merge globally.
-      out.push({ ...m, canonical: `${toks[0]} #${transcriptId}` });
+      out.push({ ...m, canonical: toks[0] });
       continue;
     }
 

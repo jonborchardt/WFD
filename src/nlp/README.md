@@ -27,8 +27,8 @@ output before normalization and does three things:
    PER in news-wire-heavy corpora. Dropped entirely.
 2. **Per-transcript long-form binding** — a single-token first name like
    `"Dan"` is bound to the only multi-token mention it matches inside the
-   same transcript (`"Dan Brown"`). Unbound short mentions get a
-   `#<videoId>` suffix so unrelated `"Kenny"` mentions don't merge globally.
+   same transcript (`"Dan Brown"`). Unbound short mentions keep their bare
+   surface form (`"Dan"`) and are allowed to merge globally.
 3. **Location alias collapse** — `US`/`USA`/`America`/`United States` →
    one canonical `United States`. Small hand-maintained map; extend as
    needed.

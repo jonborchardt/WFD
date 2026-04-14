@@ -28,18 +28,18 @@ describe("canonicalize ner mentions", () => {
     expect(dans.length).toBe(2);
   });
 
-  it("scopes ambiguous first names with the transcript id", () => {
+  it("leaves ambiguous first names as bare surface form", () => {
     const out = canonicalizeNerMentions(
       [per("Dan Brown", 0), per("Dan Rather", 20), per("Dan", 40)],
       { transcriptId: "v42" },
     );
     const bare = out.find((m) => m.surface === "Dan");
-    expect(bare!.canonical).toBe("Dan #v42");
+    expect(bare!.canonical).toBe("Dan");
   });
 
-  it("scopes unbound first names per-transcript when no long form exists", () => {
+  it("keeps unbound first names as bare surface form", () => {
     const out = canonicalizeNerMentions([per("Dan", 0)], { transcriptId: "v7" });
-    expect(out[0].canonical).toBe("Dan #v7");
+    expect(out[0].canonical).toBe("Dan");
   });
 
   it("collapses US / America / United States to one canonical location", () => {
