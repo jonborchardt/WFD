@@ -10,7 +10,7 @@ export interface TranscriptSpan {
 
 export interface Entity {
   id: string;
-  type: "person" | "thing" | "time" | "event" | "location" | "organization";
+  type: "person" | "misc" | "time" | "location" | "organization";
   canonical: string;
   aliases: string[];
   mentions: TranscriptSpan[];

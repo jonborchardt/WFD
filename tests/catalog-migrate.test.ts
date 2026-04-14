@@ -51,7 +51,10 @@ describe("catalog migrate", () => {
     expect(migrated.version).toBe(CATALOG_SCHEMA_VERSION);
     expect(Object.keys(migrated.rows)).toEqual(["aaa"]);
     expect(migrated.rows.aaa.status).toBe("fetched");
-    expect(migrated.rows.aaa.attempts).toBe(1);
+    expect((migrated.rows.aaa as Record<string, unknown>).attempts).toBeUndefined();
+    expect((migrated.rows.aaa as Record<string, unknown>).fetchedAt).toBeUndefined();
+    // v1→v2 should still have seeded stages.fetched from the legacy fetchedAt.
+    expect(migrated.rows.aaa.stages?.fetched?.at).toBe("2025-01-01T00:00:00Z");
   });
 
   it("preserves every row key through round-trip", () => {
@@ -86,9 +89,9 @@ describe("catalog migrate", () => {
     const c1 = new Catalog(path);
     expect(c1.all().map((r) => r.videoId).sort()).toEqual(["a", "b"]);
     // Trigger a persist.
-    c1.update("a", { attempts: 5 });
+    c1.update("a", { lastError: "boom" });
     const c2 = new Catalog(path);
-    expect(c2.get("a")?.attempts).toBe(5);
+    expect(c2.get("a")?.lastError).toBe("boom");
     expect(c2.get("b")?.status).toBe("fetched");
     rmSync(tmp, { recursive: true, force: true });
   });
@@ -123,10 +126,10 @@ describe("catalog migrate", () => {
         },
       };
       const migrated = migrate(raw);
-      expect(migrated.version).toBe(2);
-      expect(migrated.rows.aaa.stages?.fetched?.version).toBe(1);
+      expect(migrated.version).toBe(CATALOG_SCHEMA_VERSION);
+      expect(migrated.rows.aaa.stages?.fetched).toBeDefined();
       expect(migrated.rows.aaa.stages?.fetched?.at).toBe("2025-03-01T00:00:00Z");
-      expect(migrated.rows.aaa.stages?.nlp?.version).toBe(1);
+      expect(migrated.rows.aaa.stages?.nlp).toBeDefined();
       // bbb has neither fetched nor an nlp file → no stages populated.
       expect(migrated.rows.bbb.stages?.fetched).toBeUndefined();
       expect(migrated.rows.bbb.stages?.nlp).toBeUndefined();
@@ -168,14 +171,14 @@ describe("catalog migrate", () => {
     writeFileSync(
       path,
       JSON.stringify({
-        version: 2,
+        version: CATALOG_SCHEMA_VERSION,
         rows: {
           aaa: {
             videoId: "aaa",
             sourceUrl: "x",
             status: "fetched",
             attempts: 1,
-            stages: { fetched: { at: "2025-01-01T00:00:00Z", version: 1 } },
+            stages: { fetched: { at: "2025-01-01T00:00:00Z" } },
           },
         },
         graph: { dirtyAt: "2025-01-01T00:00:00Z", stages: {} },
@@ -183,15 +186,51 @@ describe("catalog migrate", () => {
       "utf8",
     );
     const c1 = new Catalog(path);
-    c1.setStage("aaa", "nlp", { at: "2025-02-01T00:00:00Z", version: 1 });
+    c1.setStage("aaa", "nlp", { at: "2025-02-01T00:00:00Z" });
     c1.markGraphDirty();
-    c1.setGraphStage("propagation", { at: "2025-02-01T00:01:00Z", version: 1 });
+    c1.setGraphStage("propagation", { at: "2025-02-01T00:01:00Z" });
 
     const c2 = new Catalog(path);
-    expect(c2.getStage("aaa", "nlp")?.version).toBe(1);
+    expect(c2.getStage("aaa", "nlp")?.at).toBe("2025-02-01T00:00:00Z");
     const g = c2.graphState();
     expect(g.dirtyAt > "2025-01-01T00:00:00Z").toBe(true);
-    expect(g.stages.propagation?.version).toBe(1);
+    expect(g.stages.propagation?.at).toBe("2025-02-01T00:01:00Z");
+  });
+
+  it("v2→v3 strips legacy `version` fields from stage records", () => {
+    const raw = {
+      version: 2,
+      rows: {
+        aaa: {
+          videoId: "aaa",
+          sourceUrl: "x",
+          status: "fetched",
+          attempts: 1,
+          stages: {
+            fetched: { at: "2025-01-01T00:00:00Z", version: 1 },
+            nlp: { at: "2025-01-02T00:00:00Z", version: 5, notes: "62 ents" },
+          },
+        },
+      },
+      graph: {
+        dirtyAt: "2025-01-01T00:00:00Z",
+        stages: {
+          propagation: { at: "2025-01-03T00:00:00Z", version: 2 },
+        },
+      },
+    };
+    const migrated = migrate(raw);
+    expect(migrated.version).toBe(CATALOG_SCHEMA_VERSION);
+    const fetched = migrated.rows.aaa.stages?.fetched as Record<string, unknown>;
+    expect(fetched.version).toBeUndefined();
+    expect(fetched.at).toBe("2025-01-01T00:00:00Z");
+    const nlp = migrated.rows.aaa.stages?.nlp as Record<string, unknown>;
+    expect(nlp.version).toBeUndefined();
+    expect(nlp.at).toBe("2025-01-02T00:00:00Z");
+    expect(nlp.notes).toBe("62 ents");
+    const prop = migrated.graph?.stages.propagation as Record<string, unknown>;
+    expect(prop.version).toBeUndefined();
+    expect(prop.at).toBe("2025-01-03T00:00:00Z");
   });
 
   afterEach(() => {

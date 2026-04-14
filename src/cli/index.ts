@@ -13,13 +13,20 @@
 //     --dry-run                      print what would run, do nothing
 //   captions audit                   read-only state report
 //   captions status [--video <id>]   show per-row stage map
+//   captions catalog sync-meta       copy `meta` from each on-disk transcript
+//                                    into its catalog row (offline, no fetch)
+//   captions delete --stage <name> [--video <id>] [--dry-run]
+//                                    clear a stage from catalog rows so the
+//                                    pipeline re-runs it. Scoped to one video
+//                                    if --video is given, otherwise all rows.
 //
 // All commands operate on the default data/ directory relative to the repo
 // root. Pass CAPTIONS_DATA_DIR to override.
 
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { Catalog, parseIdList, StageName, GraphStageName } from "../catalog/catalog.js";
+import { Catalog, parseIdList, StageName, GraphStageName, VideoMeta } from "../catalog/catalog.js";
+import { NormalizedTranscript } from "../ingest/transcript.js";
 import { loadSeedFile } from "../catalog/seed-loader.js";
 import { Ingester } from "../ingest/ingester.js";
 import { runPipeline } from "../pipeline/run.js";
@@ -47,6 +54,9 @@ function usage(): void {
       "                             run all stale stages",
       "  audit                      print a state summary of the catalog",
       "  status [--video <id>]      print per-row stage status",
+      "  catalog sync-meta          backfill catalog rows from on-disk transcript meta (offline)",
+      "  delete --stage <name> [--video <id>] [--dry-run]",
+      "                             clear a stage from catalog rows so it re-runs",
       "",
     ].join("\n"),
   );
@@ -132,6 +142,48 @@ async function cmdHeal(): Promise<number> {
   return 0;
 }
 
+const VIDEO_STAGE_NAMES: StageName[] = ["fetched", "nlp", "ai", "per-claim"];
+
+async function cmdDelete(flags: Parsed["flags"]): Promise<number> {
+  const stage = typeof flags.stage === "string" ? flags.stage : undefined;
+  if (!stage) {
+    console.error("captions delete: --stage <name> is required");
+    return 2;
+  }
+  if (!(VIDEO_STAGE_NAMES as string[]).includes(stage)) {
+    console.error(
+      `captions delete: unknown stage "${stage}"; expected one of ${VIDEO_STAGE_NAMES.join(", ")}`,
+    );
+    return 2;
+  }
+  const onlyVideo = typeof flags.video === "string" ? flags.video : undefined;
+  const dryRun = flags["dry-run"] === true;
+  const catalog = catalogFromDataDir(dataDir());
+  const rows = onlyVideo
+    ? catalog.all().filter((r) => r.videoId === onlyVideo)
+    : catalog.all();
+  if (onlyVideo && rows.length === 0) {
+    console.error(`captions delete: no catalog row for ${onlyVideo}`);
+    return 1;
+  }
+  let cleared = 0;
+  for (const row of rows) {
+    if (!row.stages?.[stage as StageName]) continue;
+    if (dryRun) {
+      console.log(`would clear ${row.videoId} ${stage}`);
+    } else {
+      catalog.clearStage(row.videoId, stage as StageName);
+      console.log(`ok  ${row.videoId} ${stage}`);
+    }
+    cleared++;
+  }
+  const prefix = dryRun ? "dry-run: " : "";
+  console.log(
+    `\n${prefix}delete --stage ${stage}${onlyVideo ? ` --video ${onlyVideo}` : ""}: cleared=${cleared} scanned=${rows.length}`,
+  );
+  return 0;
+}
+
 async function cmdPipeline(flags: Parsed["flags"]): Promise<number> {
   const dir = dataDir();
   const catalog = catalogFromDataDir(dir);
@@ -163,9 +215,58 @@ async function cmdPipeline(flags: Parsed["flags"]): Promise<number> {
         : `--  graph:${g.stage}  ${g.outcome.reason}`;
     console.log(line);
   }
+  // Per-stage breakdown of every entry in the run result, grouped so it's
+  // obvious which stages did real work, which are awaiting external input,
+  // which were skipped, and which never even fired because they were not
+  // stale. The runner doesn't push "not stale" entries into the result, so
+  // re-derive that count by walking the catalog: total rows minus the rows
+  // we observed a stage run for.
+  const allRows = catalog.all();
+  const totalRows = allRows.length;
+  const stageNames = new Set<string>();
+  for (const v of result.videoStagesRan) stageNames.add(v.stage);
+  for (const g of result.graphStagesRan) stageNames.add(`graph:${g.stage}`);
+
+  console.log("\nper-video stage outcomes:");
+  const byStage = new Map<
+    string,
+    { ok: number; awaiting: number; skip: number }
+  >();
+  for (const v of result.videoStagesRan) {
+    const b = byStage.get(v.stage) ?? { ok: 0, awaiting: 0, skip: 0 };
+    if (v.outcome.kind === "ok") b.ok += 1;
+    else if (v.outcome.kind === "awaiting") b.awaiting += 1;
+    else b.skip += 1;
+    byStage.set(v.stage, b);
+  }
+  if (byStage.size === 0) {
+    console.log(`  (no per-video stages ran; ${totalRows} rows all up to date)`);
+  } else {
+    for (const [stage, b] of byStage) {
+      const touched = b.ok + b.awaiting + b.skip;
+      const upToDate = totalRows - touched;
+      console.log(
+        `  ${stage.padEnd(10)}  ok=${b.ok}  awaiting=${b.awaiting}  skip=${b.skip}  up-to-date=${upToDate}`,
+      );
+    }
+  }
+
+  console.log("\ngraph stage outcomes:");
+  if (result.graphStagesRan.length === 0) {
+    console.log("  (no graph stages ran; watermark clean)");
+  } else {
+    for (const g of result.graphStagesRan) {
+      console.log(`  ${g.stage.padEnd(15)}  ${g.outcome.kind}`);
+    }
+  }
+
   const ok = result.videoStagesRan.filter((v) => v.outcome.kind === "ok").length;
+  const awaiting = result.videoStagesRan.filter((v) => v.outcome.kind === "awaiting").length;
+  const skipped = result.videoStagesRan.filter((v) => v.outcome.kind === "skip").length;
   const okG = result.graphStagesRan.filter((v) => v.outcome.kind === "ok").length;
-  console.log(`\ntotal: ${ok} video-stage runs, ${okG} graph-stage runs`);
+  console.log(
+    `\ntotal: ${ok} ok, ${awaiting} awaiting, ${skipped} skipped video-stage runs across ${totalRows} rows; ${okG} graph-stage runs`,
+  );
   return 0;
 }
 
@@ -190,6 +291,71 @@ async function cmdAudit(): Promise<number> {
   return 0;
 }
 
+async function updateWithRetry(
+  catalog: Catalog,
+  videoId: string,
+  patch: Partial<VideoMeta>,
+): Promise<void> {
+  // Windows can briefly hold catalog.json open (search indexer / AV) between
+  // rapid rename-based writes, surfacing as EPERM. Short retry loop.
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      catalog.update(videoId, patch);
+      return;
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== "EPERM" || attempt === 4) throw e;
+      await new Promise((r) => setTimeout(r, 50 * (attempt + 1)));
+    }
+  }
+}
+
+async function cmdCatalogSyncMeta(): Promise<number> {
+  const catalog = catalogFromDataDir(dataDir());
+  const rows = catalog.all();
+  let updated = 0;
+  let missing = 0;
+  let unchanged = 0;
+  for (const row of rows) {
+    const path = row.transcriptPath;
+    if (!path || !existsSync(path)) {
+      missing++;
+      continue;
+    }
+    let parsed: NormalizedTranscript;
+    try {
+      parsed = JSON.parse(readFileSync(path, "utf8")) as NormalizedTranscript;
+    } catch (e) {
+      console.error(`skip ${row.videoId}: ${(e as Error).message}`);
+      missing++;
+      continue;
+    }
+    const meta = parsed.meta;
+    if (!meta) {
+      unchanged++;
+      continue;
+    }
+    const patch: Partial<VideoMeta> = {};
+    for (const key of Object.keys(meta) as Array<keyof VideoMeta>) {
+      const incoming = meta[key];
+      if (incoming === undefined) continue;
+      if ((row as VideoMeta)[key] !== incoming) {
+        (patch as Record<string, unknown>)[key] = incoming;
+      }
+    }
+    if (Object.keys(patch).length === 0) {
+      unchanged++;
+      continue;
+    }
+    await updateWithRetry(catalog, row.videoId, patch);
+    updated++;
+    console.log(`ok  ${row.videoId}  fields=${Object.keys(patch).join(",")}`);
+  }
+  console.log(
+    `\nsync-meta: updated=${updated} unchanged=${unchanged} missing-transcript=${missing} total=${rows.length}`,
+  );
+  return 0;
+}
+
 async function cmdStatus(flags: Parsed["flags"]): Promise<number> {
   const catalog = catalogFromDataDir(dataDir());
   const rows =
@@ -198,7 +364,7 @@ async function cmdStatus(flags: Parsed["flags"]): Promise<number> {
       : catalog.all();
   for (const row of rows) {
     const stageList = Object.entries(row.stages ?? {})
-      .map(([k, v]) => `${k}@v${v?.version}`)
+      .map(([k, v]) => `${k}@${v?.at ?? "?"}`)
       .join(",");
     console.log(`${row.videoId}\t${row.status}\t${stageList || "-"}`);
   }
@@ -227,12 +393,25 @@ async function main(): Promise<void> {
     case "pipeline":
       code = await cmdPipeline(parsed.flags);
       break;
+    case "delete":
+      code = await cmdDelete(parsed.flags);
+      break;
     case "audit":
       code = await cmdAudit();
       break;
     case "status":
       code = await cmdStatus(parsed.flags);
       break;
+    case "catalog": {
+      const sub = parsed.positional[0];
+      if (sub === "sync-meta") {
+        code = await cmdCatalogSyncMeta();
+      } else {
+        console.error(`unknown catalog subcommand: ${sub ?? "(none)"}`);
+        code = 2;
+      }
+      break;
+    }
     case "--help":
     case "-h":
     case "help":

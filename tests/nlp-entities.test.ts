@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { extract, flatten } from "../src/nlp/entities.ts";
+import { synthesizeNer } from "./helpers/fake-ner.ts";
+
+function ex(t: Parameters<typeof extract>[0], opts: Parameters<typeof extract>[1] = {}) {
+  const { text } = flatten(t);
+  return extract(t, { ...opts, nerMentions: synthesizeNer(text) });
+}
 
 const fixture = {
   videoId: "fix001",
@@ -11,19 +17,17 @@ const fixture = {
 };
 
 describe("entity extraction", () => {
-  it("extracts people, locations, orgs, things, times", () => {
-    const entities = extract(fixture);
+  it("extracts people, locations, orgs, times", () => {
+    const entities = ex(fixture);
     const types = entities.map((e) => e.type);
     expect(types).toContain("person");
     expect(types).toContain("location");
     expect(types).toContain("organization");
-    expect(types).toContain("thing");
     expect(types).toContain("time");
     const canonicals = entities.map((e) => e.canonical.toLowerCase());
     expect(canonicals).toContain("angela merkel");
     expect(canonicals).toContain("berlin");
     expect(canonicals).toContain("nasa");
-    expect(canonicals).toContain("vaccine");
     expect(canonicals).toContain("2021");
   });
 
@@ -35,14 +39,14 @@ describe("entity extraction", () => {
         { start: 1, duration: 1, text: "Later, Angela Merkel spoke again." },
       ],
     };
-    const entities = extract(duped);
+    const entities = ex(duped);
     const merkel = entities.find((e) => e.canonical === "Angela Merkel");
     expect(merkel).toBeTruthy();
     expect(merkel!.mentions.length).toBe(2);
   });
 
   it("spans point back to the right time window", () => {
-    const entities = extract(fixture);
+    const entities = ex(fixture);
     const nasa = entities.find((e) => e.canonical === "NASA");
     expect(nasa).toBeTruthy();
     expect(nasa!.mentions[0].timeStart).toBeGreaterThanOrEqual(5);

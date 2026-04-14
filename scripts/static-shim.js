@@ -175,6 +175,8 @@ if (window.__STATIC__) {
     const path = u.pathname;
     try {
       if (path === "/api/catalog") return await handleCatalog(u);
+      if (path === "/api/nlp/entity-index") return json(await loadEntityIndex());
+      if (path === "/api/nlp/entity-videos") return json(await loadEntityVideos());
       if (path === "/api/entities/search") return await handleEntitiesSearch(u);
       if (path === "/api/relationships") {
         if (!relationshipsGraphPromise) {

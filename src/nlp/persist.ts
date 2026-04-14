@@ -1,8 +1,11 @@
 // Persistent NLP artifacts on disk.
 //
 // Per-video `{entities, relationships}` get written to data/nlp/<videoId>.json
-// by the build-nlp script. The UI server reads from here instead of recomputing
-// on every request. Treated as a derived cache: safe to delete and rebuild.
+// by the nlp pipeline stage. The UI server reads from here instead of
+// recomputing on every request. Treated as a derived cache that is regenerated
+// whenever the upstream transcript is regenerated. There is no hand-edit
+// sidecar — edits to NER output are not supported. Downstream refinement
+// happens in the ai stage, whose bundles live under data/ai/.
 
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -59,8 +62,8 @@ function mtime(p: string): number {
 const AGGREGATE_FILES = new Set(["entity-index.json", "entity-videos.json"]);
 
 // Max mtime across the per-video NLP files in data/nlp/, excluding aggregates.
-// Used to detect when entity-index.json / entity-videos.json are stale relative
-// to any recomputed individual file.
+// Used to detect when entity-index.json / entity-videos.json are stale
+// relative to any recomputed individual file.
 function maxPerVideoNlpMtime(dataDir?: string): number {
   const dir = nlpDir(dataDir);
   if (!existsSync(dir)) return 0;

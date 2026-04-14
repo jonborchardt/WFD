@@ -7,20 +7,7 @@
 <link rel="preconnect" href="https://esm.sh"/>
 <link rel="stylesheet" href="https://unpkg.com/reactflow@11.11.4/dist/style.css"/>
 <script>window.__STATIC__ = true;</script>
-<script>
-  // SPA fallback decode: if we arrived via 404.html, restore the real path
-  // before any app code runs. Must stay in sync with 404.html.
-  (function () {
-    var l = window.location;
-    if (l.search[1] === "/") {
-      var decoded = l.search.slice(1).split("&").map(function (s) {
-        return s.replace(/~and~/g, "&");
-      }).join("?");
-      window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-    }
-  })();
-</script>
-<script type="module" src="./static-shim.js"></script>
+<script type="module" src="/static-shim.js"></script>
 <script type="importmap">
 {
   "imports": {
@@ -44,6 +31,6 @@
 <footer style="margin-top:2rem;padding:0.75rem 1rem;border-top:1px solid #ccc;font-size:0.8rem;color:#555;text-align:center;font-family:system-ui">
 All transcript content is from <a href="https://thewhyfiles.com" target="_blank" rel="noopener" style="color:#1976d2">The Why Files</a> (AJ Gentile). Credit and copyright belong to The Why Files. Support: <a href="https://www.patreon.com/thewhyfiles" target="_blank" rel="noopener" style="color:#1976d2">Patreon</a> &middot; <a href="https://shop.thewhyfiles.com" target="_blank" rel="noopener" style="color:#1976d2">Shop</a> &middot; <a href="https://www.youtube.com/@TheWhyFiles" target="_blank" rel="noopener" style="color:#1976d2">YouTube</a>. Independent research index, not affiliated with The Why Files.
 </footer>
-<script type="module" src="./client.js"></script>
+<script type="module" src="/client.js"></script>
 </body>
 </html>

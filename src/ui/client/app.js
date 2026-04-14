@@ -26,10 +26,12 @@ import {
   TablePagination, TextField, MenuItem, Chip, Button, Box, Link, Stack,
   Menu, Checkbox, FormControlLabel, ListItemText, ListItemIcon, Tooltip, Alert, AlertTitle,
 } from "@mui/material";
+import { FacetsPage } from "./facets/FacetsPage.js";
 
 const html = htm.bind(React.createElement);
 const theme = createTheme({ palette: { mode: "dark" } });
 
+/** @returns {[string, (to: string) => void]} */
 function useRoute() {
   const [path, setPath] = useState(location.pathname + location.search);
   useEffect(() => {
@@ -86,13 +88,11 @@ const CATALOG_COLUMNS = [
   { key: "publishDate", label: "Published", default: true, render: (r) => fmtDate(r.publishDate) },
   { key: "status", label: "Status", default: true, render: (r) => html`<${StatusChip} status=${r.status} />` },
   { key: "uploadDate", label: "Uploaded", default: false, render: (r) => fmtDate(r.uploadDate) },
-  { key: "fetchedAt", label: "Fetched", default: false, render: (r) => fmtDate(r.fetchedAt) },
   { key: "category", label: "Category", default: false, render: (r) => r.category || "" },
   { key: "lengthSeconds", label: "Length", default: false,
     render: (r) => r.lengthSeconds ? `${Math.floor(r.lengthSeconds / 60)}m` : "" },
   { key: "viewCount", label: "Views", default: false,
     render: (r) => r.viewCount ? r.viewCount.toLocaleString() : "" },
-  { key: "attempts", label: "Attempts", default: false, render: (r) => r.attempts ?? "" },
   { key: "isLiveContent", label: "Live", default: false, render: (r) => r.isLiveContent ? "yes" : "" },
   { key: "sourceUrl", label: "Source URL", default: false,
     render: (r) => r.sourceUrl
@@ -355,7 +355,7 @@ const STAGE_COLUMNS = PIPELINE_STAGES.map(s => ({
 }));
 
 const ADMIN_COLUMNS = (() => {
-  const hidden = new Set(["status", "errorReason", "lastError", "attempts"]);
+  const hidden = new Set(["status", "errorReason", "lastError"]);
   const base = CATALOG_COLUMNS.filter(c => !hidden.has(c.key));
   const idx = base.findIndex(c => c.key === "sourceUrl");
   const ordered = [
@@ -433,6 +433,54 @@ function AdminPage({ nav }) {
 }
 
 const WFD_ISSUES_URL = "https://github.com/jonborchardt/WFD/issues/new";
+const CAPTIONS_ISSUES_URL = "https://github.com/jonborchardt/captions/issues/new";
+
+function graphNodeIssueUrl(node) {
+  const lines = [
+    "**Entity:** " + node.canonical,
+    "**Type:** " + node.type,
+    "**ID:** " + node.id,
+    "**Weight:** " + (node.weight != null ? node.weight : ""),
+    "",
+    "---",
+    "",
+    "**Action requested:** <!-- e.g. merge with another entity, retype, remove -->",
+    "",
+    "**Notes:**",
+  ];
+  const params = new URLSearchParams({
+    title: "[graph/node] " + node.canonical,
+    body: lines.join("\n"),
+    labels: "graph-action,node",
+  });
+  return CAPTIONS_ISSUES_URL + "?" + params.toString();
+}
+
+function graphEdgeIssueUrl(edge, nodesById) {
+  const a = nodesById[edge.source];
+  const b = nodesById[edge.target];
+  const subj = a ? a.canonical : edge.source;
+  const obj = b ? b.canonical : edge.target;
+  const lines = [
+    "**Subject:** " + subj + " (" + edge.source + ")",
+    "**Predicate:** " + edge.predicate,
+    "**Object:** " + obj + " (" + edge.target + ")",
+    "**Relationship ID:** " + edge.id,
+    "**Count:** " + (edge.count != null ? edge.count : ""),
+    "",
+    "---",
+    "",
+    "**Action requested:** <!-- e.g. dispute, add evidence, re-predicate, delete -->",
+    "",
+    "**Notes:**",
+  ];
+  const params = new URLSearchParams({
+    title: "[graph/edge] " + subj + " " + edge.predicate + " " + obj,
+    body: lines.join("\n"),
+    labels: "graph-action,edge",
+  });
+  return CAPTIONS_ISSUES_URL + "?" + params.toString();
+}
 
 function suggestIssueUrl(area, { videoId, extra } = {}) {
   const page = location.pathname + location.search;
@@ -493,7 +541,7 @@ function NlpPanel({ videoId, nlp, nav }) {
   const relationships = nlp.relationships || [];
   const byType = {};
   for (const e of entities) (byType[e.type] ||= []).push(e);
-  const order = ["person", "organization", "location", "event", "thing", "time"];
+  const order = ["person", "organization", "location", "misc", "time"];
   const extraTypes = Object.keys(byType).filter(t => !order.includes(t)).sort();
   const visibleTypes = [...order, ...extraTypes];
   const entById = Object.fromEntries(entities.map(e => [e.id, e]));
@@ -732,6 +780,7 @@ function RelationshipsPage({ nav }) {
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
+  const [selectedEdgeId, setSelectedEdgeId] = useState(null);
   const rfInstance = useRef(null);
 
   useEffect(() => {
@@ -887,11 +936,16 @@ function RelationshipsPage({ nav }) {
         }}
         onNodeClick=${(_, node) => {
           setSelectedId(node.id);
+          setSelectedEdgeId(null);
         }}
         onNodeDoubleClick=${(_, node) => {
           nav("/entity/" + encodeURIComponent(node.id));
         }}
-        onPaneClick=${() => setShowDropdown(false)}
+        onEdgeClick=${(_, edge) => {
+          setSelectedEdgeId(edge.id);
+          setSelectedId(null);
+        }}
+        onPaneClick=${() => { setShowDropdown(false); setSelectedId(null); setSelectedEdgeId(null); }}
         fitView
         minZoom=${0.1}
         maxZoom=${4}
@@ -900,6 +954,48 @@ function RelationshipsPage({ nav }) {
         <${Controls} />
         <${MiniMap} nodeColor=${(n) => n.style?.background || "#888"} pannable zoomable />
       <//>
+      ${(() => {
+        if (!graph) return null;
+        const nodesById = Object.fromEntries(graph.nodes.map(n => [n.id, n]));
+        const selNode = selectedId ? nodesById[selectedId] : null;
+        const selEdge = selectedEdgeId ? graph.edges.find(e => e.id === selectedEdgeId) : null;
+        if (!selNode && !selEdge) return null;
+        return html`
+          <${Paper} sx=${{ position: "absolute", top: 12, right: 12, zIndex: 10, p: 1.5, width: 300 }}>
+            ${selNode && html`
+              <${Typography} variant="subtitle2">${selNode.canonical}<//>
+              <${Typography} variant="caption" color="text.secondary">${selNode.type} · weight ${selNode.weight}<//>
+              <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
+                <${Button} size="small" variant="outlined" onClick=${() => nav("/entity/" + encodeURIComponent(selNode.id))}>open entity<//>
+                <${Button}
+                  size="small"
+                  variant="outlined"
+                  component="a"
+                  href=${graphNodeIssueUrl(selNode)}
+                  target="_blank"
+                  rel="noopener"
+                >create issue for this node<//>
+              <//>
+            `}
+            ${selEdge && html`
+              <${Typography} variant="subtitle2">
+                ${(nodesById[selEdge.source] || { canonical: selEdge.source }).canonical} ${selEdge.predicate} ${(nodesById[selEdge.target] || { canonical: selEdge.target }).canonical}
+              <//>
+              <${Typography} variant="caption" color="text.secondary">count ${selEdge.count}<//>
+              <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
+                <${Button}
+                  size="small"
+                  variant="outlined"
+                  component="a"
+                  href=${graphEdgeIssueUrl(selEdge, nodesById)}
+                  target="_blank"
+                  rel="noopener"
+                >create issue for this edge<//>
+              <//>
+            `}
+          <//>
+        `;
+      })()}
     <//>
   `;
 }
@@ -911,6 +1007,7 @@ function App() {
   const videoMatch = path.match(/^\/video\/([A-Za-z0-9_-]+)/);
   const entityMatch = path.match(/^\/entity\/([^?]+)/);
   const isRelationships = path === "/relationships" || path.startsWith("/relationships?");
+  const isFacets = path === "/facets" || path.startsWith("/facets?");
   const isAdmin = !IS_STATIC && path.startsWith("/admin");
   const body = videoMatch
     ? html`<${VideoDetail} videoId=${videoMatch[1]} nav=${nav} />`
@@ -918,9 +1015,11 @@ function App() {
       ? html`<${EntityDetail} entityId=${decodeURIComponent(entityMatch[1])} nav=${nav} />`
       : isRelationships
         ? html`<${RelationshipsPage} nav=${nav} />`
-        : isAdmin
-          ? html`<${AdminPage} nav=${nav} />`
-          : html`<${CatalogList} nav=${nav} />`;
+        : isFacets
+          ? html`<${FacetsPage} nav=${nav} />`
+          : isAdmin
+            ? html`<${AdminPage} nav=${nav} />`
+            : html`<${CatalogList} nav=${nav} />`;
   return html`
     <${ThemeProvider} theme=${theme}>
       <${CssBaseline} />
@@ -928,6 +1027,7 @@ function App() {
         <${Toolbar}>
           <${Typography} variant="h6" sx=${{ cursor: "pointer", flexGrow: 1 }} onClick=${() => nav("/")}>Why Files Database<//>
           <${Button} color="inherit" onClick=${() => nav("/")}>home<//>
+          <${Button} color="inherit" onClick=${() => nav("/facets")}>facets<//>
           <${Button} color="inherit" onClick=${() => nav("/relationships")}>relationships<//>
           ${!IS_STATIC && html`<${Button} color="inherit" onClick=${() => nav("/admin")}>admin<//>`}
         <//>

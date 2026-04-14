@@ -22,8 +22,13 @@ module under `src/` has real TypeScript — ingest, catalog, nlp, ai, graph,
 truth, skeptic, ui, web. Read the actual file before assuming behavior; the
 module list below describes intent, not a guarantee of completeness.
 
-`npm run build` passes clean as of 2026-04-12 (`@types/node` installed,
-prior `unknown[]` issue in [src/truth/novel.ts](src/truth/novel.ts) resolved).
+`npm run build` passes clean. `npm test` passes except one pre-existing
+[tests/fetcher.test.ts](tests/fetcher.test.ts) flake unrelated to NLP.
+
+On first `pipeline --stage nlp` (or `ai`), `@xenova/transformers` downloads
+`Xenova/bert-base-NER` (~400 MB) into its cache. Subsequent runs are
+offline. Tests never download the model — see
+[tests/helpers/setup.ts](tests/helpers/setup.ts).
 
 ## Commands
 
@@ -43,8 +48,14 @@ Pipeline shape, roughly in order:
    local `data/`.
 2. `src/catalog/` — maintain the video ↔ transcript catalog; expose "what's
    missing" queries.
-3. `src/nlp/` — entity + relationship extraction; every relationship MUST carry
-   an evidence pointer (transcript id + character/time span).
+3. `src/nlp/` — entity + relationship extraction. Two entity producers feed
+   one merge: neural NER (`src/nlp/ner.ts`, BERT via `@xenova/transformers`)
+   for persons/orgs/locations, and regex + gazetteer for times/dates/events/
+   domain jargon. Relationships come from a 29-predicate regex pattern table
+   in `src/nlp/relationships.ts`, paired per sentence (not per YouTube cue).
+   Every relationship MUST carry an evidence pointer (transcript id +
+   character/time span). See [src/nlp/README.md](src/nlp/README.md) for
+   pipeline shape, model choice, and cache notes.
 4. `src/ai/` — Claude-Code-driven enrichment that runs *after* NLP, refining
    and adding relationships. This is **not** a runtime API call to Claude — it's
    a batch pass invoked via Claude Code.
@@ -60,6 +71,26 @@ Pipeline shape, roughly in order:
   judgment must point back to a specific transcript span. No floating claims.
 - **Rate limiting is mandatory** for any code that talks to YouTube. Don't add
   a fetch path that bypasses the limiter.
+- **Transcripts are gold.** Once `data/transcripts/<id>.json` exists,
+  `fetchAndStore()` returns the on-disk copy and never re-fetches. Delete the
+  file by hand to force a refresh. Do not add code paths that overwrite an
+  existing transcript. `fetchAndStore` returns `{ path, meta, cached }` so
+  callers can distinguish "real fetch just happened" from "gold guard hit";
+  only real fetches should advance `stages.fetched.at`.
+- **Staleness is purely timestamp-driven.** There is no `version` field on
+  stage records. A stage runs iff its record is missing or any of its
+  dependencies has a more recent `at`. Force a re-run by deleting the
+  transcript (full cascade) or by deleting the specific stage record from
+  `catalog.json` (surgical). Do not reintroduce a version field.
+- **NLP regeneration invalidates AI artifacts.** When `nlpStage` rewrites
+  `data/nlp/<id>.json`, it unlinks `data/ai/bundles/<id>.bundle.json` and
+  stamps a top-level `_stale` marker onto `data/ai/responses/<id>.response.json`
+  if present. Response files are never deleted — they represent operator
+  labor — but the marker tells the admin UI and CLI to flag them for
+  review. See [src/nlp/README.md](src/nlp/README.md).
+- **NER output is not hand-edited.** The `/admin/nlp/<id>` page is
+  read-only. Refinement of entities/relationships happens downstream in the
+  `ai` stage, not by editing `data/nlp/<id>.json`.
 - **Local-first.** Transcripts and the index live under `data/` (gitignored).
   Don't commit corpus content.
 - **Read-only public surface.** The public web tier never mutates the graph

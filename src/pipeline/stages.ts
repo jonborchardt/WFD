@@ -18,15 +18,17 @@
 // Graph stages read the `graph.dirtyAt` watermark. A stage is stale when its
 // last-run timestamp is older than dirtyAt (or absent).
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { CatalogRow } from "../catalog/catalog.js";
 import { VideoStage, GraphStage, StageOutcome } from "./types.js";
 import { fetchAndStore } from "../ingest/transcript.js";
 import { recordSuccess, recordFailure } from "../catalog/gaps.js";
-import { extract as extractEntities, Transcript } from "../nlp/entities.js";
+import { extract as extractEntities, Transcript, flatten } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
 import { loadGazetteer } from "../nlp/gazetteer.js";
+import { runNer } from "../nlp/ner.js";
+import { canonicalizeNerMentions } from "../nlp/canonicalize.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
@@ -59,7 +61,6 @@ function loadTranscript(row: CatalogRow, dataDir: string): Transcript | null {
 
 export const fetchedStage: VideoStage = {
   name: "fetched",
-  version: 1,
   dependsOn: [],
   async run(row, ctx): Promise<StageOutcome> {
     // Skip rows that the user marked as unrecoverable until they flip back
@@ -69,6 +70,24 @@ export const fetchedStage: VideoStage = {
     }
     try {
       const stored = await fetchAndStore(row.videoId, { dataDir: ctx.dataDir });
+      if (stored.cached) {
+        // Gold-transcript path. The file was already on disk; do not bump
+        // `fetched.at` on every tick. If the stage record is missing —
+        // e.g. catalog.json was rebuilt after the transcript — backfill it
+        // using the transcript file's mtime so downstream cascading still
+        // works. Return `skip` so the runner does not overwrite the record.
+        if (!row.stages?.fetched) {
+          const mtime = statSync(stored.path).mtimeMs;
+          recordSuccess(
+            ctx.catalog,
+            row.videoId,
+            stored.path,
+            stored.meta,
+            new Date(mtime).toISOString(),
+          );
+        }
+        return { kind: "skip", reason: "transcript already on disk" };
+      }
       recordSuccess(ctx.catalog, row.videoId, stored.path, stored.meta);
       return { kind: "ok" };
     } catch (e) {
@@ -81,19 +100,31 @@ export const fetchedStage: VideoStage = {
 
 export const nlpStage: VideoStage = {
   name: "nlp",
-  version: 2,
   dependsOn: ["fetched"],
   async run(row, ctx): Promise<StageOutcome> {
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
     const gazetteer = loadGazetteer(ctx.dataDir);
-    const entities = extractEntities(t, { gazetteer });
+    const { text } = flatten(t);
+    const rawNer = await runNer(text);
+    const nerMentions = canonicalizeNerMentions(rawNer, { transcriptId: row.videoId, dataDir: ctx.dataDir });
+    const entities = extractEntities(t, { gazetteer, nerMentions });
     const relationships = extractRelationships(t, entities);
-    writePersistedNlp(row.videoId, { entities, relationships }, ctx.dataDir);
+    writePersistedNlp(
+      row.videoId,
+      { entities, relationships },
+      ctx.dataDir,
+    );
+
+    // NLP just regenerated, which means every downstream AI artifact was
+    // built against stale entity/relationship ids. Nuke the bundle so the
+    // next ai-stage run rebuilds it. Do NOT nuke the response file — that
+    // represents operator work. Instead, write a `_stale` marker into it so
+    // the operator (and UI) can tell it needs review.
+    invalidateAiArtifacts(row.videoId, ctx.dataDir);
 
     // Upsert into the graph store so graph-level stages see NLP output, not
-    // only AI output. This is the behavioral improvement that the old
-    // build-nlp script did not perform.
+    // only AI output.
     const store = ctx.getStore();
     store.registerTranscript(row.videoId);
     for (const e of entities) store.upsertEntity(e);
@@ -124,18 +155,77 @@ function responseDir(dataDir: string): string {
   return join(dataDir, "ai", "responses");
 }
 
+// Called by nlpStage after it regenerates per-video NLP output. The bundle
+// and the response were both built against the previous NLP run, and some
+// of their entity ids may no longer exist. We unlink the bundle (AI stage
+// will regenerate it on its next tick) but preserve the response — it is
+// operator labor. Instead, stamp a top-level `_stale` marker into the
+// response JSON so the admin UI and CLI can flag it for review.
+function invalidateAiArtifacts(videoId: string, dataDir: string): void {
+  const bundlePath = join(bundleDir(dataDir), `${videoId}.bundle.json`);
+  if (existsSync(bundlePath)) {
+    try {
+      unlinkSync(bundlePath);
+    } catch (err) {
+      logger.warn("pipeline.nlp.bundle-unlink-failed", {
+        videoId,
+        message: (err as Error).message,
+      });
+    }
+  }
+  const responsePath = join(responseDir(dataDir), `${videoId}.response.json`);
+  if (existsSync(responsePath)) {
+    try {
+      const raw = JSON.parse(readFileSync(responsePath, "utf8")) as Record<string, unknown>;
+      const now = new Date().toISOString();
+      raw._stale = {
+        since: now,
+        reason: "nlp regenerated; entity ids may no longer match",
+        nlpAt: now,
+      };
+      writeFileSync(responsePath, JSON.stringify(raw, null, 2), "utf8");
+    } catch (err) {
+      logger.warn("pipeline.nlp.response-mark-failed", {
+        videoId,
+        message: (err as Error).message,
+      });
+    }
+  }
+}
+
 export const aiStage: VideoStage = {
   name: "ai",
-  version: 1,
   dependsOn: ["nlp"],
   async run(row, ctx): Promise<StageOutcome> {
-    const t = loadTranscript(row, ctx.dataDir);
-    if (!t) return { kind: "skip", reason: "transcript file missing" };
-    const entities = extractEntities(t, { gazetteer: loadGazetteer(ctx.dataDir) });
     const responsePath = join(
       responseDir(ctx.dataDir),
       `${row.videoId}.response.json`,
     );
+    const dir = bundleDir(ctx.dataDir);
+    const bundlePath = join(dir, `${row.videoId}.bundle.json`);
+
+    // Fast path: bundle already on disk and no response yet. Re-running NER
+    // + entity extraction here would burn cycles every pipeline tick just to
+    // re-derive a bundle we already wrote. The runner re-enters this stage
+    // forever (awaiting outcomes are not recorded), so cheap is the rule.
+    if (!existsSync(responsePath) && existsSync(bundlePath)) {
+      return {
+        kind: "awaiting",
+        notes: `bundle already written; waiting for ${responsePath}`,
+      };
+    }
+
+    const t = loadTranscript(row, ctx.dataDir);
+    if (!t) return { kind: "skip", reason: "transcript file missing" };
+    const { text: aiText } = flatten(t);
+    const aiNer = canonicalizeNerMentions(await runNer(aiText), {
+      transcriptId: row.videoId,
+      dataDir: ctx.dataDir,
+    });
+    const entities = extractEntities(t, {
+      gazetteer: loadGazetteer(ctx.dataDir),
+      nerMentions: aiNer,
+    });
 
     if (existsSync(responsePath)) {
       // Operator has dropped a Claude Code response in place. Ingest it and
@@ -148,27 +238,18 @@ export const aiStage: VideoStage = {
       return { kind: "ok", notes: `ingested ${added.length} AI edges` };
     }
 
-    // Otherwise, ensure the prompt bundle exists and wait for a response.
-    const dir = bundleDir(ctx.dataDir);
+    // No bundle yet: write it and start awaiting.
     mkdirSync(dir, { recursive: true });
-    const bundlePath = join(dir, `${row.videoId}.bundle.json`);
-    if (!existsSync(bundlePath)) {
-      writeBundles(dir, [buildBundle(t, entities)]);
-      return {
-        kind: "awaiting",
-        notes: `bundle written to ${bundlePath}; waiting for ${responsePath}`,
-      };
-    }
+    writeBundles(dir, [buildBundle(t, entities)]);
     return {
       kind: "awaiting",
-      notes: `bundle already written; waiting for ${responsePath}`,
+      notes: `bundle written to ${bundlePath}; waiting for ${responsePath}`,
     };
   },
 };
 
 export const perClaimStage: VideoStage = {
   name: "per-claim",
-  version: 1,
   dependsOn: ["nlp"],
   async run(row, ctx): Promise<StageOutcome> {
     const t = loadTranscript(row, ctx.dataDir);
@@ -188,7 +269,6 @@ export const perClaimStage: VideoStage = {
 
 export const propagationStage: GraphStage = {
   name: "propagation",
-  version: 1,
   async run(ctx): Promise<StageOutcome> {
     const res = propagate(ctx.getStore());
     return {
@@ -200,7 +280,6 @@ export const propagationStage: GraphStage = {
 
 export const contradictionsStage: GraphStage = {
   name: "contradictions",
-  version: 1,
   async run(ctx): Promise<StageOutcome> {
     const report = buildConflictReport(ctx.getStore());
     const dir = join(ctx.dataDir, "reports");
@@ -223,7 +302,6 @@ export const contradictionsStage: GraphStage = {
 // whole catalog after any NLP-producing stage has touched dirtyAt.
 export const indexesStage: GraphStage = {
   name: "indexes",
-  version: 1,
   async run(ctx): Promise<StageOutcome> {
     const agg = new Map<string, EntityIndexEntry>();
     const videosByEntity: EntityVideosIndex = {};
@@ -311,7 +389,6 @@ export const indexesStage: GraphStage = {
 
 export const novelStage: GraphStage = {
   name: "novel",
-  version: 1,
   async run(ctx): Promise<StageOutcome> {
     const candidates = detectNovel(ctx.getStore());
     const dir = join(ctx.dataDir, "reports");

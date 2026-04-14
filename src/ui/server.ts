@@ -338,7 +338,7 @@ export function renderListPage(result: ListResult, q: ListQuery): string {
       <td>${escapeHtml(r.title ?? "")}</td>
       <td>${escapeHtml(r.channel ?? "")}</td>
       <td>${escapeHtml(r.status)}</td>
-      <td>${escapeHtml(r.fetchedAt ?? "")}</td>
+      <td>${escapeHtml(r.stages?.fetched?.at ?? "")}</td>
     </tr>`,
     )
     .join("");
@@ -377,6 +377,126 @@ export function renderDetailPage(
     <p>channel: ${escapeHtml(row.channel ?? "")} · status: ${escapeHtml(row.status)}</p>
     <ol>${lines}</ol>`,
   );
+}
+
+// Surface the `_stale` marker that nlpStage stamps onto an AI response
+// file when NLP is regenerated. Returns null when the response file does
+// not exist or has no marker. Does not mutate the file.
+export function readAiResponseStale(
+  videoId: string,
+  dataDir?: string,
+): { since: string; reason: string; nlpAt?: string } | null {
+  const root = dataDir ?? join(process.cwd(), "data");
+  const p = join(root, "ai", "responses", `${videoId}.response.json`);
+  if (!existsSync(p)) return null;
+  try {
+    const raw = JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>;
+    const stale = raw._stale as
+      | { since?: string; reason?: string; nlpAt?: string }
+      | undefined;
+    if (!stale?.since) return null;
+    return {
+      since: stale.since,
+      reason: stale.reason ?? "nlp regenerated",
+      nlpAt: stale.nlpAt,
+    };
+  } catch {
+    return null;
+  }
+}
+
+// Read-only NLP inspection page for /admin/nlp/<id>. Surfaces stage status,
+// entities, relationships, and (if present) the `_stale` marker on the AI
+// response so the operator can tell at a glance what's current.
+export function renderNlpAdmin(
+  row: CatalogRow,
+  nlp: { entities: Entity[]; relationships: Relationship[] },
+  aiResponseStale: { since: string; reason: string; nlpAt?: string } | null,
+): string {
+  const stageRows = (["fetched", "nlp", "per-claim", "ai"] as const)
+    .map((name) => {
+      const rec = row.stages?.[name];
+      if (!rec) return `<tr><td>${name}</td><td>—</td><td>—</td></tr>`;
+      return `<tr><td>${name}</td><td>${escapeHtml(rec.at)}</td><td>${escapeHtml(rec.notes ?? "")}</td></tr>`;
+    })
+    .join("");
+
+  const sortedEntities = [...nlp.entities].sort((a, b) =>
+    a.canonical.localeCompare(b.canonical),
+  );
+  const entityRows = sortedEntities
+    .map((e) => {
+      const first = e.mentions[0];
+      const link = first
+        ? `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, first.timeStart))}">${formatTime(first.timeStart)}</a>`
+        : "—";
+      return `<tr>
+        <td>${escapeHtml(e.type)}</td>
+        <td>${escapeHtml(e.canonical)}</td>
+        <td>${e.mentions.length}</td>
+        <td>${link}</td>
+        <td><code>${escapeHtml(e.id)}</code></td>
+      </tr>`;
+    })
+    .join("");
+
+  const relRows = nlp.relationships
+    .map((r) => {
+      const link = r.evidence
+        ? `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, r.evidence.timeStart))}">${formatTime(r.evidence.timeStart)}</a>`
+        : "—";
+      return `<tr>
+        <td>${escapeHtml(r.subjectId)}</td>
+        <td>${escapeHtml(r.predicate)}</td>
+        <td>${escapeHtml(r.objectId)}</td>
+        <td>${r.confidence.toFixed(2)}</td>
+        <td>${escapeHtml(r.provenance)}</td>
+        <td>${link}</td>
+      </tr>`;
+    })
+    .join("");
+
+  const staleBanner = aiResponseStale
+    ? `<div class="warn">
+        ⚠ AI response marked stale since ${escapeHtml(aiResponseStale.since)} — ${escapeHtml(aiResponseStale.reason)}.
+        Re-run <code>pipeline --stage ai</code> after regenerating its bundle to refresh.
+      </div>`
+    : "";
+
+  const body = `
+    <h1>NLP — ${escapeHtml(row.title ?? row.videoId)}</h1>
+    <p>
+      <a href="/video/${escapeHtml(row.videoId)}">video page</a> ·
+      channel: ${escapeHtml(row.channel ?? "")} ·
+      status: ${escapeHtml(row.status)} ·
+      ${nlp.entities.length} entities · ${nlp.relationships.length} relationships
+    </p>
+    ${staleBanner}
+
+    <h2>Stage status</h2>
+    <table>
+      <thead><tr><th>stage</th><th>at</th><th>notes</th></tr></thead>
+      <tbody>${stageRows}</tbody>
+    </table>
+
+    <h2>Entities</h2>
+    <table>
+      <thead><tr><th>type</th><th>canonical</th><th>mentions</th><th>first</th><th>id</th></tr></thead>
+      <tbody>${entityRows || "<tr><td colspan=5>none</td></tr>"}</tbody>
+    </table>
+
+    <h2>Relationships</h2>
+    <table>
+      <thead><tr><th>subject</th><th>predicate</th><th>object</th><th>conf</th><th>src</th><th>evidence</th></tr></thead>
+      <tbody>${relRows || "<tr><td colspan=6>none</td></tr>"}</tbody>
+    </table>
+
+    <style>
+      td code { font-size: 11px; color: #666; }
+      .warn { background: #fee; border: 1px solid #c88; padding: .6em 1em; margin: 1em 0; }
+    </style>
+  `;
+  return layout(`nlp — ${row.videoId}`, body);
 }
 
 export function renderEmptyState(reason: "empty" | "error" | "loading", msg?: string): string {
@@ -508,6 +628,14 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       sendJson(res, 200, buildRelationshipsGraph(opts.catalog, opts.dataDir));
       return;
     }
+    if (url === "/api/nlp/entity-index" || url.startsWith("/api/nlp/entity-index?")) {
+      sendJson(res, 200, getEntityIndex(opts.catalog, opts.dataDir));
+      return;
+    }
+    if (url === "/api/nlp/entity-videos" || url.startsWith("/api/nlp/entity-videos?")) {
+      sendJson(res, 200, getEntityVideos(opts.catalog, opts.dataDir));
+      return;
+    }
     if (url.startsWith("/api/entities/search")) {
       const u = new URL(url, "http://local");
       const results = searchEntityIndex(
@@ -594,8 +722,9 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       return;
     }
 
+    const clientDir = join(dirname(fileURLToPath(import.meta.url)), "client");
     const staticAsset: Record<string, string> = {
-      "/client.js": join(dirname(fileURLToPath(import.meta.url)), "client", "app.js"),
+      "/client.js": join(clientDir, "app.js"),
       "/query.js": join(dirname(fileURLToPath(import.meta.url)), "query.js"),
       "/static-shim.js": join(
         dirname(fileURLToPath(import.meta.url)),
@@ -619,11 +748,48 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       }
       return;
     }
+    // Serve tsc-compiled output for /facets/* and /shared/* modules. These
+    // are .js files emitted in-place by `npm run build:client` next to their
+    // .tsx sources. No path traversal allowed.
+    if (url.startsWith("/facets/") || url.startsWith("/shared/")) {
+      const rel = url.replace(/^\//, "").split("?")[0];
+      if (!rel.includes("..") && rel.endsWith(".js")) {
+        const p = join(clientDir, rel);
+        if (existsSync(p)) {
+          res.writeHead(200, {
+            "content-type": "application/javascript; charset=utf-8",
+            "cache-control": "no-cache",
+          });
+          res.end(readFileSync(p, "utf8"));
+          return;
+        }
+      }
+    }
 
     // SPA shell + legacy HTML routes (kept for non-JS clients / tests).
     if (url === "/" || url.startsWith("/?") || url === "/admin" || url.startsWith("/admin?")) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(renderSpaShell());
+      return;
+    }
+    // Read-only NLP inspection page. Pure HTML, no SPA bundle, no editing —
+    // hand-editing NER output is not supported, and downstream refinements
+    // live in the ai stage's bundles/responses on disk.
+    const adminNlp = url.match(/^\/admin\/nlp\/([A-Za-z0-9_-]+)/);
+    if (adminNlp) {
+      const row = opts.catalog.get(adminNlp[1]);
+      if (!row) {
+        res.writeHead(404, { "content-type": "text/html" });
+        res.end(layout("not found", `<p>no such video: ${escapeHtml(adminNlp[1])}</p>`));
+        return;
+      }
+      const nlp = computeNlp(row, opts.dataDir) ?? {
+        entities: [],
+        relationships: [],
+      };
+      const aiResponseStale = readAiResponseStale(row.videoId, opts.dataDir);
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(renderNlpAdmin(row, nlp, aiResponseStale));
       return;
     }
     const m = url.match(/^\/video\/([A-Za-z0-9_-]+)/);
@@ -633,6 +799,11 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       return;
     }
     if (url === "/relationships" || url.startsWith("/relationships?")) {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(renderSpaShell());
+      return;
+    }
+    if (url === "/facets" || url.startsWith("/facets?")) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(renderSpaShell());
       return;

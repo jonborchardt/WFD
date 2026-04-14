@@ -16,3 +16,10 @@ temp/
 data/logs/
 data/ai/bundles/
 generated/
+
+# client-side tsc output (compiled in-place next to .tsx sources via
+# tsconfig.client.json). app.js and index.html are hand-authored and stay.
+src/ui/client/facets/*.js
+src/ui/client/facets/*.js.map
+src/ui/client/shared/*.js
+src/ui/client/shared/*.js.map

@@ -42,7 +42,6 @@ export interface RunOptions {
 function isVideoStageStale(row: CatalogRow, stage: VideoStage): boolean {
   const rec = row.stages?.[stage.name];
   if (!rec) return true;
-  if (rec.version < stage.version) return true;
   // A dependency ran more recently than we did → we need to re-run.
   for (const dep of stage.dependsOn) {
     const depRec = row.stages?.[dep];
@@ -51,28 +50,18 @@ function isVideoStageStale(row: CatalogRow, stage: VideoStage): boolean {
   return false;
 }
 
-function depsSatisfied(
-  row: CatalogRow,
-  stage: VideoStage,
-  stages: VideoStage[],
-): boolean {
+function depsSatisfied(row: CatalogRow, stage: VideoStage): boolean {
   for (const dep of stage.dependsOn) {
     const rec = row.stages?.[dep];
     if (!rec) return false;
-    const depStage = stages.find((s) => s.name === dep);
-    if (depStage && rec.version < depStage.version) return false;
   }
   return true;
 }
 
-function isGraphStageStale(
-  catalog: Catalog,
-  stage: GraphStage,
-): boolean {
+function isGraphStageStale(catalog: Catalog, stage: GraphStage): boolean {
   const g = catalog.graphState();
   const rec = g.stages[stage.name];
   if (!rec) return true;
-  if (rec.version < stage.version) return true;
   if (g.dirtyAt > rec.at) return true;
   return false;
 }
@@ -111,7 +100,7 @@ export async function runPipeline(opts: RunOptions): Promise<RunResult> {
       if (opts.onlyStage && opts.onlyStage !== stage.name) continue;
       const row = opts.catalog.get(videoId);
       if (!row) continue;
-      if (!depsSatisfied(row, stage, videoStages)) continue;
+      if (!depsSatisfied(row, stage)) continue;
       if (!isVideoStageStale(row, stage)) continue;
       if (opts.dryRun) {
         result.videoStagesRan.push({
@@ -139,11 +128,11 @@ export async function runPipeline(opts: RunOptions): Promise<RunResult> {
         };
       }
       if (outcome.kind === "ok") {
-        opts.catalog.setStage(videoId, stage.name, {
+        const rec: { at: string; notes?: string } = {
           at: new Date().toISOString(),
-          version: stage.version,
-          notes: outcome.notes,
-        });
+        };
+        if (outcome.notes !== undefined) rec.notes = outcome.notes;
+        opts.catalog.setStage(videoId, stage.name, rec);
       }
       result.videoStagesRan.push({ videoId, stage: stage.name, outcome });
     }
@@ -179,7 +168,6 @@ export async function runPipeline(opts: RunOptions): Promise<RunResult> {
     if (outcome.kind === "ok") {
       opts.catalog.setGraphStage(stage.name, {
         at: new Date().toISOString(),
-        version: stage.version,
       });
     }
     result.graphStagesRan.push({ stage: stage.name, outcome });

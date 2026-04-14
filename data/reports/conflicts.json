@@ -1,4 +1,3708 @@
 {
   "contradictions": [],
-  "loops": []
+  "loops": [
+    {
+      "edges": [
+        {
+          "id": "person:frank frank|said|time:1979|AOO5a_jUOzg:2072-2126",
+          "subjectId": "person:frank frank",
+          "predicate": "said",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 2072,
+            "charEnd": 2126,
+            "timeStart": 125,
+            "timeEnd": 133
+          },
+          "confidence": 0.675,
+          "provenance": "nlp",
+          "derivedTruth": 0.9977286367345584
+        },
+        {
+          "id": "time:1979|said|person:frank frank|AOO5a_jUOzg:2072-2126",
+          "subjectId": "time:1979",
+          "predicate": "said",
+          "objectId": "person:frank frank",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 2072,
+            "charEnd": 2126,
+            "timeStart": 125,
+            "timeEnd": 133
+          },
+          "confidence": 0.675,
+          "provenance": "nlp",
+          "derivedTruth": 0.9977742318826095
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:frank frank|said|time:1979|AOO5a_jUOzg:2072-2126",
+          "subjectId": "person:frank frank",
+          "predicate": "said",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 2072,
+            "charEnd": 2126,
+            "timeStart": 125,
+            "timeEnd": 133
+          },
+          "confidence": 0.675,
+          "provenance": "nlp",
+          "derivedTruth": 0.9977286367345584
+        },
+        {
+          "id": "time:1979|said|person:beatrice|AOO5a_jUOzg:2072-2110",
+          "subjectId": "time:1979",
+          "predicate": "said",
+          "objectId": "person:beatrice",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 2072,
+            "charEnd": 2110,
+            "timeStart": 125,
+            "timeEnd": 133
+          },
+          "confidence": 0.7416666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9977511218329955
+        },
+        {
+          "id": "person:beatrice|said|person:frank frank|AOO5a_jUOzg:2077-2126",
+          "subjectId": "person:beatrice",
+          "predicate": "said",
+          "objectId": "person:frank frank",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 2077,
+            "charEnd": 2126,
+            "timeStart": 125,
+            "timeEnd": 133
+          },
+          "confidence": 0.75,
+          "provenance": "nlp",
+          "derivedTruth": 0.9977786259406828
+        }
+      ],
+      "summary": "self-supporting loop across 3 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:vietnam|located-at|time:1965|zP3pOszdr5U:4306-4321",
+          "subjectId": "location:vietnam",
+          "predicate": "located-at",
+          "objectId": "time:1965",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 4306,
+            "charEnd": 4321,
+            "timeStart": 289.28,
+            "timeEnd": 295.11999999999995
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.996314929919184
+        },
+        {
+          "id": "time:1965|located-at|location:vietnam|zP3pOszdr5U:4306-4321",
+          "subjectId": "time:1965",
+          "predicate": "located-at",
+          "objectId": "location:vietnam",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 4306,
+            "charEnd": 4321,
+            "timeStart": 289.28,
+            "timeEnd": 295.11999999999995
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9962789926573734
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1979|located-at|location:vietnam|zP3pOszdr5U:5022-5037",
+          "subjectId": "time:1979",
+          "predicate": "located-at",
+          "objectId": "location:vietnam",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 5022,
+            "charEnd": 5037,
+            "timeStart": 336.72,
+            "timeEnd": 342.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9974449371554857
+        },
+        {
+          "id": "location:vietnam|located-at|time:1965|zP3pOszdr5U:4306-4321",
+          "subjectId": "location:vietnam",
+          "predicate": "located-at",
+          "objectId": "time:1965",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 4306,
+            "charEnd": 4321,
+            "timeStart": 289.28,
+            "timeEnd": 295.11999999999995
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.996314929919184
+        },
+        {
+          "id": "time:1965|located-at|location:mars|q9Nuy7mFIsE:1885-1915",
+          "subjectId": "time:1965",
+          "predicate": "located-at",
+          "objectId": "location:mars",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 1885,
+            "charEnd": 1915,
+            "timeStart": 120,
+            "timeEnd": 126.24
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9940119307648589
+        },
+        {
+          "id": "location:mars|located-at|time:1979|lb0ib5B_bK4:12750-12762",
+          "subjectId": "location:mars",
+          "predicate": "located-at",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 12750,
+            "charEnd": 12762,
+            "timeStart": 935.279,
+            "timeEnd": 940.48
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9959366688928485
+        }
+      ],
+      "summary": "self-supporting loop across 4 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1965|located-at|location:mars|q9Nuy7mFIsE:1885-1915",
+          "subjectId": "time:1965",
+          "predicate": "located-at",
+          "objectId": "location:mars",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 1885,
+            "charEnd": 1915,
+            "timeStart": 120,
+            "timeEnd": 126.24
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9940119307648589
+        },
+        {
+          "id": "location:mars|located-at|time:1965|q9Nuy7mFIsE:1885-1915",
+          "subjectId": "location:mars",
+          "predicate": "located-at",
+          "objectId": "time:1965",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 1885,
+            "charEnd": 1915,
+            "timeStart": 120,
+            "timeEnd": 126.24
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9940627535490545
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:rudy eugene|located-at|location:miami|lPpFFU9EMr8:15306-15328",
+          "subjectId": "person:rudy eugene",
+          "predicate": "located-at",
+          "objectId": "location:miami",
+          "evidence": {
+            "transcriptId": "lPpFFU9EMr8",
+            "charStart": 15306,
+            "charEnd": 15328,
+            "timeStart": 964,
+            "timeEnd": 972
+          },
+          "confidence": 0.875,
+          "provenance": "nlp",
+          "derivedTruth": 0.9910146937402579
+        },
+        {
+          "id": "location:miami|located-at|person:rudy eugene|lPpFFU9EMr8:15306-15328",
+          "subjectId": "location:miami",
+          "predicate": "located-at",
+          "objectId": "person:rudy eugene",
+          "evidence": {
+            "transcriptId": "lPpFFU9EMr8",
+            "charStart": 15306,
+            "charEnd": 15328,
+            "timeStart": 964,
+            "timeEnd": 972
+          },
+          "confidence": 0.875,
+          "provenance": "nlp",
+          "derivedTruth": 0.9911012404444677
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2012|located-at|organization:rover|q9Nuy7mFIsE:19142-19178",
+          "subjectId": "time:2012",
+          "predicate": "located-at",
+          "objectId": "organization:rover",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 19142,
+            "charEnd": 19178,
+            "timeStart": 1209.86,
+            "timeEnd": 1215.24
+          },
+          "confidence": 0.775,
+          "provenance": "nlp",
+          "derivedTruth": 0.9941247745320556
+        },
+        {
+          "id": "organization:rover|located-at|time:2012|q9Nuy7mFIsE:19142-19178",
+          "subjectId": "organization:rover",
+          "predicate": "located-at",
+          "objectId": "time:2012",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 19142,
+            "charEnd": 19178,
+            "timeStart": 1209.86,
+            "timeEnd": 1215.24
+          },
+          "confidence": 0.775,
+          "provenance": "nlp",
+          "derivedTruth": 0.994175687352956
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:mars|located-at|time:2012|q9Nuy7mFIsE:19159-19178",
+          "subjectId": "location:mars",
+          "predicate": "located-at",
+          "objectId": "time:2012",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 19159,
+            "charEnd": 19178,
+            "timeStart": 1209.86,
+            "timeEnd": 1215.24
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9938352241336184
+        },
+        {
+          "id": "time:2012|located-at|location:mars|q9Nuy7mFIsE:19159-19178",
+          "subjectId": "time:2012",
+          "predicate": "located-at",
+          "objectId": "location:mars",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 19159,
+            "charEnd": 19178,
+            "timeStart": 1209.86,
+            "timeEnd": 1215.24
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.993784075099905
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2012|located-at|location:kerala|16xhpv13DsM:9014-9028",
+          "subjectId": "time:2012",
+          "predicate": "located-at",
+          "objectId": "location:kerala",
+          "evidence": {
+            "transcriptId": "16xhpv13DsM",
+            "charStart": 9014,
+            "charEnd": 9028,
+            "timeStart": 579.59,
+            "timeEnd": 583.23
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9940988125962512
+        },
+        {
+          "id": "location:kerala|located-at|time:2012|16xhpv13DsM:9014-9028",
+          "subjectId": "location:kerala",
+          "predicate": "located-at",
+          "objectId": "time:2012",
+          "evidence": {
+            "transcriptId": "16xhpv13DsM",
+            "charStart": 9014,
+            "charEnd": 9028,
+            "timeStart": 579.59,
+            "timeEnd": 583.23
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9941362731053093
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1979|located-at|location:vietnam|zP3pOszdr5U:5022-5037",
+          "subjectId": "time:1979",
+          "predicate": "located-at",
+          "objectId": "location:vietnam",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 5022,
+            "charEnd": 5037,
+            "timeStart": 336.72,
+            "timeEnd": 342.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9974449371554857
+        },
+        {
+          "id": "location:vietnam|located-at|time:1979|zP3pOszdr5U:5022-5037",
+          "subjectId": "location:vietnam",
+          "predicate": "located-at",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 5022,
+            "charEnd": 5037,
+            "timeStart": 336.72,
+            "timeEnd": 342.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.997470638284433
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1979|located-at|organization:landers|lb0ib5B_bK4:12727-12762",
+          "subjectId": "time:1979",
+          "predicate": "located-at",
+          "objectId": "organization:landers",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 12727,
+            "charEnd": 12762,
+            "timeStart": 935.279,
+            "timeEnd": 940.48
+          },
+          "confidence": 0.8,
+          "provenance": "nlp",
+          "derivedTruth": 0.9977342895816369
+        },
+        {
+          "id": "organization:landers|located-at|time:1979|lb0ib5B_bK4:12727-12762",
+          "subjectId": "organization:landers",
+          "predicate": "located-at",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 12727,
+            "charEnd": 12762,
+            "timeStart": 935.279,
+            "timeEnd": 940.48
+          },
+          "confidence": 0.8,
+          "provenance": "nlp",
+          "derivedTruth": 0.9977567025629732
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1979|located-at|location:mars|lb0ib5B_bK4:12750-12762",
+          "subjectId": "time:1979",
+          "predicate": "located-at",
+          "objectId": "location:mars",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 12750,
+            "charEnd": 12762,
+            "timeStart": 935.279,
+            "timeEnd": 940.48
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9958891183219261
+        },
+        {
+          "id": "location:mars|located-at|time:1979|lb0ib5B_bK4:12750-12762",
+          "subjectId": "location:mars",
+          "predicate": "located-at",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 12750,
+            "charEnd": 12762,
+            "timeStart": 935.279,
+            "timeEnd": 940.48
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9959366688928485
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1979|located-at|location:mars|lb0ib5B_bK4:12750-12762",
+          "subjectId": "time:1979",
+          "predicate": "located-at",
+          "objectId": "location:mars",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 12750,
+            "charEnd": 12762,
+            "timeStart": 935.279,
+            "timeEnd": 940.48
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9958891183219261
+        },
+        {
+          "id": "location:mars|located-at|time:1965|q9Nuy7mFIsE:1885-1915",
+          "subjectId": "location:mars",
+          "predicate": "located-at",
+          "objectId": "time:1965",
+          "evidence": {
+            "transcriptId": "q9Nuy7mFIsE",
+            "charStart": 1885,
+            "charEnd": 1915,
+            "timeStart": 120,
+            "timeEnd": 126.24
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9940627535490545
+        },
+        {
+          "id": "time:1965|located-at|location:vietnam|zP3pOszdr5U:4306-4321",
+          "subjectId": "time:1965",
+          "predicate": "located-at",
+          "objectId": "location:vietnam",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 4306,
+            "charEnd": 4321,
+            "timeStart": 289.28,
+            "timeEnd": 295.11999999999995
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9962789926573734
+        },
+        {
+          "id": "location:vietnam|located-at|time:1979|zP3pOszdr5U:5022-5037",
+          "subjectId": "location:vietnam",
+          "predicate": "located-at",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "zP3pOszdr5U",
+            "charStart": 5022,
+            "charEnd": 5037,
+            "timeStart": 336.72,
+            "timeEnd": 342.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.997470638284433
+        }
+      ],
+      "summary": "self-supporting loop across 4 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1979|located-at|organization:voyager|V8kT6J_uoic:18060-18075",
+          "subjectId": "time:1979",
+          "predicate": "located-at",
+          "objectId": "organization:voyager",
+          "evidence": {
+            "transcriptId": "V8kT6J_uoic",
+            "charStart": 18060,
+            "charEnd": 18075,
+            "timeStart": 1118.08,
+            "timeEnd": 1122.28
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "directTruth": 1,
+          "derivedTruth": 0.9990387647608018
+        },
+        {
+          "id": "organization:voyager|located-at|time:1979|V8kT6J_uoic:18060-18075",
+          "subjectId": "organization:voyager",
+          "predicate": "located-at",
+          "objectId": "time:1979",
+          "evidence": {
+            "transcriptId": "V8kT6J_uoic",
+            "charStart": 18060,
+            "charEnd": 18075,
+            "timeStart": 1118.08,
+            "timeEnd": 1122.28
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "directTruth": 1,
+          "derivedTruth": 0.9990495893190064
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:pentagon|located-at|time:1995|Je3Qu-xMuxM:10033-10064",
+          "subjectId": "organization:pentagon",
+          "predicate": "located-at",
+          "objectId": "time:1995",
+          "evidence": {
+            "transcriptId": "Je3Qu-xMuxM",
+            "charStart": 10033,
+            "charEnd": 10064,
+            "timeStart": 600.18,
+            "timeEnd": 605.399
+          },
+          "confidence": 0.8416666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.987131178402352
+        },
+        {
+          "id": "time:1995|located-at|organization:pentagon|Je3Qu-xMuxM:10033-10064",
+          "subjectId": "time:1995",
+          "predicate": "located-at",
+          "objectId": "organization:pentagon",
+          "evidence": {
+            "transcriptId": "Je3Qu-xMuxM",
+            "charStart": 10033,
+            "charEnd": 10064,
+            "timeStart": 600.18,
+            "timeEnd": 605.399
+          },
+          "confidence": 0.8416666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9869496150047523
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1957|located-at|organization:pentagon|glehaMc-w98:13568-13584",
+          "subjectId": "time:1957",
+          "predicate": "located-at",
+          "objectId": "organization:pentagon",
+          "evidence": {
+            "transcriptId": "glehaMc-w98",
+            "charStart": 13568,
+            "charEnd": 13584,
+            "timeStart": 851.199,
+            "timeEnd": 856.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9806160616530009
+        },
+        {
+          "id": "organization:pentagon|located-at|time:1957|glehaMc-w98:13568-13584",
+          "subjectId": "organization:pentagon",
+          "predicate": "located-at",
+          "objectId": "time:1957",
+          "evidence": {
+            "transcriptId": "glehaMc-w98",
+            "charStart": 13568,
+            "charEnd": 13584,
+            "timeStart": 851.199,
+            "timeEnd": 856.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9808553208914897
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1967|located-at|location:bermuda triangle|tgqAt6YN1jE:16111-16145",
+          "subjectId": "time:1967",
+          "predicate": "located-at",
+          "objectId": "location:bermuda triangle",
+          "evidence": {
+            "transcriptId": "tgqAt6YN1jE",
+            "charStart": 16111,
+            "charEnd": 16145,
+            "timeStart": 1120.72,
+            "timeEnd": 1126.159
+          },
+          "confidence": 0.8833333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9888275074779868
+        },
+        {
+          "id": "location:bermuda triangle|located-at|time:1967|tgqAt6YN1jE:16111-16145",
+          "subjectId": "location:bermuda triangle",
+          "predicate": "located-at",
+          "objectId": "time:1967",
+          "evidence": {
+            "transcriptId": "tgqAt6YN1jE",
+            "charStart": 16111,
+            "charEnd": 16145,
+            "timeStart": 1120.72,
+            "timeEnd": 1126.159
+          },
+          "confidence": 0.8833333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.988901894067542
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1967|located-at|location:serbia|AOO5a_jUOzg:5935-6021",
+          "subjectId": "time:1967",
+          "predicate": "located-at",
+          "objectId": "location:serbia",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 5935,
+            "charEnd": 6021,
+            "timeStart": 367,
+            "timeEnd": 375
+          },
+          "confidence": 0.3666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9888146812081272
+        },
+        {
+          "id": "location:serbia|located-at|time:1967|AOO5a_jUOzg:5935-6021",
+          "subjectId": "location:serbia",
+          "predicate": "located-at",
+          "objectId": "time:1967",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 5935,
+            "charEnd": 6021,
+            "timeStart": 367,
+            "timeEnd": 375
+          },
+          "confidence": 0.3666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9888584116087231
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:pentagon|located-at|time:1967|glehaMc-w98:14344-14379",
+          "subjectId": "organization:pentagon",
+          "predicate": "located-at",
+          "objectId": "time:1967",
+          "evidence": {
+            "transcriptId": "glehaMc-w98",
+            "charStart": 14344,
+            "charEnd": 14379,
+            "timeStart": 905.279,
+            "timeEnd": 910.88
+          },
+          "confidence": 0.8083333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9880495583626427
+        },
+        {
+          "id": "time:1967|located-at|organization:pentagon|glehaMc-w98:14344-14379",
+          "subjectId": "time:1967",
+          "predicate": "located-at",
+          "objectId": "organization:pentagon",
+          "evidence": {
+            "transcriptId": "glehaMc-w98",
+            "charStart": 14344,
+            "charEnd": 14379,
+            "timeStart": 905.279,
+            "timeEnd": 910.88
+          },
+          "confidence": 0.8083333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9878680674513894
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1947|located-at|location:roswell|rih9-80p0Ec:14497-14512",
+          "subjectId": "time:1947",
+          "predicate": "located-at",
+          "objectId": "location:roswell",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 14497,
+            "charEnd": 14512,
+            "timeStart": 1003.56,
+            "timeEnd": 1009.8599999999999
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9888098992547426
+        },
+        {
+          "id": "location:roswell|located-at|time:1947|rih9-80p0Ec:14497-14512",
+          "subjectId": "location:roswell",
+          "predicate": "located-at",
+          "objectId": "time:1947",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 14497,
+            "charEnd": 14512,
+            "timeStart": 1003.56,
+            "timeEnd": 1009.8599999999999
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9889128982917216
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1947|located-at|location:roswell|rih9-80p0Ec:14497-14512",
+          "subjectId": "time:1947",
+          "predicate": "located-at",
+          "objectId": "location:roswell",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 14497,
+            "charEnd": 14512,
+            "timeStart": 1003.56,
+            "timeEnd": 1009.8599999999999
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9888098992547426
+        },
+        {
+          "id": "location:roswell|located-at|time:1947|rih9-80p0Ec:42217-42232",
+          "subjectId": "location:roswell",
+          "predicate": "located-at",
+          "objectId": "time:1947",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 42217,
+            "charEnd": 42232,
+            "timeStart": 2762.4,
+            "timeEnd": 2767.619
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.988847107156538
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1947|located-at|location:roswell|rih9-80p0Ec:42217-42232",
+          "subjectId": "time:1947",
+          "predicate": "located-at",
+          "objectId": "location:roswell",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 42217,
+            "charEnd": 42232,
+            "timeStart": 2762.4,
+            "timeEnd": 2767.619
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9887727175364975
+        },
+        {
+          "id": "location:roswell|located-at|time:1947|rih9-80p0Ec:14497-14512",
+          "subjectId": "location:roswell",
+          "predicate": "located-at",
+          "objectId": "time:1947",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 14497,
+            "charEnd": 14512,
+            "timeStart": 1003.56,
+            "timeEnd": 1009.8599999999999
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9889128982917216
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1947|located-at|location:roswell|rih9-80p0Ec:42217-42232",
+          "subjectId": "time:1947",
+          "predicate": "located-at",
+          "objectId": "location:roswell",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 42217,
+            "charEnd": 42232,
+            "timeStart": 2762.4,
+            "timeEnd": 2767.619
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9887727175364975
+        },
+        {
+          "id": "location:roswell|located-at|time:1947|rih9-80p0Ec:42217-42232",
+          "subjectId": "location:roswell",
+          "predicate": "located-at",
+          "objectId": "time:1947",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 42217,
+            "charEnd": 42232,
+            "timeStart": 2762.4,
+            "timeEnd": 2767.619
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.988847107156538
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:pentagon|located-at|time:1947|Aga-fA6iUm4:15157-15179",
+          "subjectId": "organization:pentagon",
+          "predicate": "located-at",
+          "objectId": "time:1947",
+          "evidence": {
+            "transcriptId": "Aga-fA6iUm4",
+            "charStart": 15157,
+            "charEnd": 15179,
+            "timeStart": 979.92,
+            "timeEnd": 985.519
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.987691709620012
+        },
+        {
+          "id": "time:1947|located-at|organization:pentagon|Aga-fA6iUm4:15157-15179",
+          "subjectId": "time:1947",
+          "predicate": "located-at",
+          "objectId": "organization:pentagon",
+          "evidence": {
+            "transcriptId": "Aga-fA6iUm4",
+            "charStart": 15157,
+            "charEnd": 15179,
+            "timeStart": 979.92,
+            "timeEnd": 985.519
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9875104577815302
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4159-4208",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4159,
+            "charEnd": 4208,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8,
+          "provenance": "nlp",
+          "derivedTruth": 0.979137759977496
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4228",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4228,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8583333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789669380526371
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4159-4208",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4159,
+            "charEnd": 4208,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8,
+          "provenance": "nlp",
+          "derivedTruth": 0.979137759977496
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4259",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4259,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.6,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789248197430321
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4159-4208",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4159,
+            "charEnd": 4208,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8,
+          "provenance": "nlp",
+          "derivedTruth": 0.979137759977496
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4300",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4300,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.2583333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789066883708902
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4228",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4228,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8583333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9787362248549952
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4228",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4228,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8583333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789669380526371
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4228",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4228,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8583333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9787362248549952
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4259",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4259,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.6,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789248197430321
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4228",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4228,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8583333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9787362248549952
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4300",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4300,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.2583333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789066883708902
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4259",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4259,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.6,
+          "provenance": "nlp",
+          "derivedTruth": 0.9786941976526423
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4228",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4228,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8583333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789669380526371
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4259",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4259,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.6,
+          "provenance": "nlp",
+          "derivedTruth": 0.9786941976526423
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4259",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4259,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.6,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789248197430321
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4259",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4259,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.6,
+          "provenance": "nlp",
+          "derivedTruth": 0.9786941976526423
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4300",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4300,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.2583333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789066883708902
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4300",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4300,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.2583333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9786761055920352
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4228",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4228,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.8583333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789669380526371
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4300",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4300,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.2583333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9786761055920352
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4259",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4259,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.6,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789248197430321
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:phyllis newcomb|located-at|location:shire hall|AOO5a_jUOzg:4198-4300",
+          "subjectId": "person:phyllis newcomb",
+          "predicate": "located-at",
+          "objectId": "location:shire hall",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4300,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.2583333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9786761055920352
+        },
+        {
+          "id": "location:shire hall|located-at|person:phyllis newcomb|AOO5a_jUOzg:4198-4300",
+          "subjectId": "location:shire hall",
+          "predicate": "located-at",
+          "objectId": "person:phyllis newcomb",
+          "evidence": {
+            "transcriptId": "AOO5a_jUOzg",
+            "charStart": 4198,
+            "charEnd": 4300,
+            "timeStart": 258,
+            "timeEnd": 267
+          },
+          "confidence": 0.2583333333333333,
+          "provenance": "nlp",
+          "derivedTruth": 0.9789066883708902
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1966|located-at|location:queensland|x2BQyZorSQc:12120-12138",
+          "subjectId": "time:1966",
+          "predicate": "located-at",
+          "objectId": "location:queensland",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 12120,
+            "charEnd": 12138,
+            "timeStart": 915.36,
+            "timeEnd": 920.399
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.998801252767729
+        },
+        {
+          "id": "location:queensland|located-at|time:1966|x2BQyZorSQc:12120-12138",
+          "subjectId": "location:queensland",
+          "predicate": "located-at",
+          "objectId": "time:1966",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 12120,
+            "charEnd": 12138,
+            "timeStart": 915.36,
+            "timeEnd": 920.399
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9988161092399195
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2015|located-at|organization:youtube|1HwC9L4BDpE:23174-23206",
+          "subjectId": "time:2015",
+          "predicate": "located-at",
+          "objectId": "organization:youtube",
+          "evidence": {
+            "transcriptId": "1HwC9L4BDpE",
+            "charStart": 23174,
+            "charEnd": 23206,
+            "timeStart": 1569.48,
+            "timeEnd": 1573.92
+          },
+          "confidence": 0.825,
+          "provenance": "nlp",
+          "derivedTruth": 0.9412151557961694
+        },
+        {
+          "id": "organization:youtube|located-at|time:2015|1HwC9L4BDpE:23174-23206",
+          "subjectId": "organization:youtube",
+          "predicate": "located-at",
+          "objectId": "time:2015",
+          "evidence": {
+            "transcriptId": "1HwC9L4BDpE",
+            "charStart": 23174,
+            "charEnd": 23206,
+            "timeStart": 1569.48,
+            "timeEnd": 1573.92
+          },
+          "confidence": 0.825,
+          "provenance": "nlp",
+          "derivedTruth": 0.9422800638393155
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2015|located-at|location:norway|16xhpv13DsM:6271-6285",
+          "subjectId": "time:2015",
+          "predicate": "located-at",
+          "objectId": "location:norway",
+          "evidence": {
+            "transcriptId": "16xhpv13DsM",
+            "charStart": 6271,
+            "charEnd": 6285,
+            "timeStart": 403.92,
+            "timeEnd": 409.08000000000004
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.940224000919684
+        },
+        {
+          "id": "location:norway|located-at|time:2015|16xhpv13DsM:6271-6285",
+          "subjectId": "location:norway",
+          "predicate": "located-at",
+          "objectId": "time:2015",
+          "evidence": {
+            "transcriptId": "16xhpv13DsM",
+            "charStart": 6271,
+            "charEnd": 6285,
+            "timeStart": 403.92,
+            "timeEnd": 409.08000000000004
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.940516539570081
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1987|located-at|person:sparta michigan|lPpFFU9EMr8:4657-4671",
+          "subjectId": "time:1987",
+          "predicate": "located-at",
+          "objectId": "person:sparta michigan",
+          "evidence": {
+            "transcriptId": "lPpFFU9EMr8",
+            "charStart": 4657,
+            "charEnd": 4671,
+            "timeStart": 296,
+            "timeEnd": 304
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8820851023774366
+        },
+        {
+          "id": "person:sparta michigan|knows|time:1987|lPpFFU9EMr8:4675-4742",
+          "subjectId": "person:sparta michigan",
+          "predicate": "knows",
+          "objectId": "time:1987",
+          "evidence": {
+            "transcriptId": "lPpFFU9EMr8",
+            "charStart": 4675,
+            "charEnd": 4742,
+            "timeStart": 304,
+            "timeEnd": 312
+          },
+          "confidence": 0.525,
+          "provenance": "nlp",
+          "derivedTruth": 0.8818290880222881
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1987|located-at|location:argentina|twstdwcxjdk:1226-1243",
+          "subjectId": "time:1987",
+          "predicate": "located-at",
+          "objectId": "location:argentina",
+          "evidence": {
+            "transcriptId": "twstdwcxjdk",
+            "charStart": 1226,
+            "charEnd": 1243,
+            "timeStart": 74.56,
+            "timeEnd": 79.119
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8811781190797642
+        },
+        {
+          "id": "location:argentina|located-at|time:1987|twstdwcxjdk:1226-1243",
+          "subjectId": "location:argentina",
+          "predicate": "located-at",
+          "objectId": "time:1987",
+          "evidence": {
+            "transcriptId": "twstdwcxjdk",
+            "charStart": 1226,
+            "charEnd": 1243,
+            "timeStart": 74.56,
+            "timeEnd": 79.119
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8813305884958177
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2002|located-at|location:washington|gfYUaMcmmSM:45161-45179",
+          "subjectId": "time:2002",
+          "predicate": "located-at",
+          "objectId": "location:washington",
+          "evidence": {
+            "transcriptId": "gfYUaMcmmSM",
+            "charStart": 45161,
+            "charEnd": 45179,
+            "timeStart": 2736.48,
+            "timeEnd": 2742.319
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9847075072119151
+        },
+        {
+          "id": "location:washington|located-at|time:2002|gfYUaMcmmSM:45161-45179",
+          "subjectId": "location:washington",
+          "predicate": "located-at",
+          "objectId": "time:2002",
+          "evidence": {
+            "transcriptId": "gfYUaMcmmSM",
+            "charStart": 45161,
+            "charEnd": 45179,
+            "timeStart": 2736.48,
+            "timeEnd": 2742.319
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9848543934157555
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:los angeles|located-at|time:1942|eAH59Wh-Ymo:11784-11812",
+          "subjectId": "location:los angeles",
+          "predicate": "located-at",
+          "objectId": "time:1942",
+          "evidence": {
+            "transcriptId": "eAH59Wh-Ymo",
+            "charStart": 11784,
+            "charEnd": 11812,
+            "timeStart": 732.48,
+            "timeEnd": 738.8100000000001
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9881690142250091
+        },
+        {
+          "id": "time:1942|located-at|location:los angeles|eAH59Wh-Ymo:11784-11812",
+          "subjectId": "time:1942",
+          "predicate": "located-at",
+          "objectId": "location:los angeles",
+          "evidence": {
+            "transcriptId": "eAH59Wh-Ymo",
+            "charStart": 11784,
+            "charEnd": 11812,
+            "timeStart": 732.48,
+            "timeEnd": 738.8100000000001
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9880635308050607
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:nasa|located-at|time:2002|lb0ib5B_bK4:14433-14453",
+          "subjectId": "organization:nasa",
+          "predicate": "located-at",
+          "objectId": "time:2002",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 14433,
+            "charEnd": 14453,
+            "timeStart": 1054.88,
+            "timeEnd": 1059.88
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9795894871035932
+        },
+        {
+          "id": "time:2002|located-at|organization:nasa|lb0ib5B_bK4:14433-14453",
+          "subjectId": "time:2002",
+          "predicate": "located-at",
+          "objectId": "organization:nasa",
+          "evidence": {
+            "transcriptId": "lb0ib5B_bK4",
+            "charStart": 14433,
+            "charEnd": 14453,
+            "timeStart": 1054.88,
+            "timeEnd": 1059.88
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9794406667524809
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2002|located-at|location:florida|50Y5r9HeR2w:23521-23551",
+          "subjectId": "time:2002",
+          "predicate": "located-at",
+          "objectId": "location:florida",
+          "evidence": {
+            "transcriptId": "50Y5r9HeR2w",
+            "charStart": 23521,
+            "charEnd": 23551,
+            "timeStart": 1425.6,
+            "timeEnd": 1430.3999999999999
+          },
+          "confidence": 0.8416666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9818425479562455
+        },
+        {
+          "id": "location:florida|died-in|time:2002|50Y5r9HeR2w:23521-23551",
+          "subjectId": "location:florida",
+          "predicate": "died-in",
+          "objectId": "time:2002",
+          "evidence": {
+            "transcriptId": "50Y5r9HeR2w",
+            "charStart": 23521,
+            "charEnd": 23551,
+            "timeStart": 1425.6,
+            "timeEnd": 1430.3999999999999
+          },
+          "confidence": 0.8416666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9819352992580984
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1961|located-at|organization:nasa|SJek6PsN2xg:22056-22068",
+          "subjectId": "time:1961",
+          "predicate": "located-at",
+          "objectId": "organization:nasa",
+          "evidence": {
+            "transcriptId": "SJek6PsN2xg",
+            "charStart": 22056,
+            "charEnd": 22068,
+            "timeStart": 1596.64,
+            "timeEnd": 1601.1200000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9783016012439483
+        },
+        {
+          "id": "organization:nasa|located-at|time:1961|SJek6PsN2xg:22056-22068",
+          "subjectId": "organization:nasa",
+          "predicate": "located-at",
+          "objectId": "time:1961",
+          "evidence": {
+            "transcriptId": "SJek6PsN2xg",
+            "charStart": 22056,
+            "charEnd": 22068,
+            "timeStart": 1596.64,
+            "timeEnd": 1601.1200000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9784455995420435
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2001|located-at|location:twin towers|gfYUaMcmmSM:24168-24187",
+          "subjectId": "time:2001",
+          "predicate": "located-at",
+          "objectId": "location:twin towers",
+          "evidence": {
+            "transcriptId": "gfYUaMcmmSM",
+            "charStart": 24168,
+            "charEnd": 24187,
+            "timeStart": 1458.046,
+            "timeEnd": 1463.6000000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9677784906471576
+        },
+        {
+          "id": "location:twin towers|located-at|time:2001|gfYUaMcmmSM:24168-24187",
+          "subjectId": "location:twin towers",
+          "predicate": "located-at",
+          "objectId": "time:2001",
+          "evidence": {
+            "transcriptId": "gfYUaMcmmSM",
+            "charStart": 24168,
+            "charEnd": 24187,
+            "timeStart": 1458.046,
+            "timeEnd": 1463.6000000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9678102367256097
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:nasa|located-at|time:2001|xC9SxxjEviE:6939-6951",
+          "subjectId": "organization:nasa",
+          "predicate": "located-at",
+          "objectId": "time:2001",
+          "evidence": {
+            "transcriptId": "xC9SxxjEviE",
+            "charStart": 6939,
+            "charEnd": 6951,
+            "timeStart": 430.919,
+            "timeEnd": 436.62
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9739727881744922
+        },
+        {
+          "id": "time:2001|located-at|organization:nasa|xC9SxxjEviE:6939-6951",
+          "subjectId": "time:2001",
+          "predicate": "located-at",
+          "objectId": "organization:nasa",
+          "evidence": {
+            "transcriptId": "xC9SxxjEviE",
+            "charStart": 6939,
+            "charEnd": 6951,
+            "timeStart": 430.919,
+            "timeEnd": 436.62
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9738846123565806
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1994|located-at|location:jupiter|o5ZaamPJd5U:14114-14129",
+          "subjectId": "time:1994",
+          "predicate": "located-at",
+          "objectId": "location:jupiter",
+          "evidence": {
+            "transcriptId": "o5ZaamPJd5U",
+            "charStart": 14114,
+            "charEnd": 14129,
+            "timeStart": 1003.44,
+            "timeEnd": 1008.9590000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9416863352929667
+        },
+        {
+          "id": "location:jupiter|located-at|time:1994|o5ZaamPJd5U:14114-14129",
+          "subjectId": "location:jupiter",
+          "predicate": "located-at",
+          "objectId": "time:1994",
+          "evidence": {
+            "transcriptId": "o5ZaamPJd5U",
+            "charStart": 14114,
+            "charEnd": 14129,
+            "timeStart": 1003.44,
+            "timeEnd": 1008.9590000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9416434434258019
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1994|located-at|organization:abc news|veVqh9XoXUs:13328-13344",
+          "subjectId": "time:1994",
+          "predicate": "located-at",
+          "objectId": "organization:abc news",
+          "evidence": {
+            "transcriptId": "veVqh9XoXUs",
+            "charStart": 13328,
+            "charEnd": 13344,
+            "timeStart": 953.8,
+            "timeEnd": 959.3599999999999
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.941693200497033
+        },
+        {
+          "id": "organization:abc news|located-at|time:1994|veVqh9XoXUs:13328-13344",
+          "subjectId": "organization:abc news",
+          "predicate": "located-at",
+          "objectId": "time:1994",
+          "evidence": {
+            "transcriptId": "veVqh9XoXUs",
+            "charStart": 13328,
+            "charEnd": 13344,
+            "timeStart": 953.8,
+            "timeEnd": 959.3599999999999
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9416504230335868
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1994|located-at|location:bolivia|CFNvij1f0Nk:25484-25499",
+          "subjectId": "time:1994",
+          "predicate": "located-at",
+          "objectId": "location:bolivia",
+          "evidence": {
+            "transcriptId": "CFNvij1f0Nk",
+            "charStart": 25484,
+            "charEnd": 25499,
+            "timeStart": 1656.9,
+            "timeEnd": 1661.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9417000481236236
+        },
+        {
+          "id": "location:bolivia|located-at|time:1994|CFNvij1f0Nk:25484-25499",
+          "subjectId": "location:bolivia",
+          "predicate": "located-at",
+          "objectId": "time:1994",
+          "evidence": {
+            "transcriptId": "CFNvij1f0Nk",
+            "charStart": 25484,
+            "charEnd": 25499,
+            "timeStart": 1656.9,
+            "timeEnd": 1661.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9416643315161355
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1994|located-at|location:mexico|u2MrTgBoqiI:20097-20111",
+          "subjectId": "time:1994",
+          "predicate": "located-at",
+          "objectId": "location:mexico",
+          "evidence": {
+            "transcriptId": "u2MrTgBoqiI",
+            "charStart": 20097,
+            "charEnd": 20111,
+            "timeStart": 1298.76,
+            "timeEnd": 1304.34
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.935833793135692
+        },
+        {
+          "id": "location:mexico|located-at|time:1994|u2MrTgBoqiI:20097-20111",
+          "subjectId": "location:mexico",
+          "predicate": "located-at",
+          "objectId": "time:1994",
+          "evidence": {
+            "transcriptId": "u2MrTgBoqiI",
+            "charStart": 20097,
+            "charEnd": 20111,
+            "timeStart": 1298.76,
+            "timeEnd": 1304.34
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.935800564214127
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1994|located-at|location:san francisco|-jtqMGKaw6c:8631-8652",
+          "subjectId": "time:1994",
+          "predicate": "located-at",
+          "objectId": "location:san francisco",
+          "evidence": {
+            "transcriptId": "-jtqMGKaw6c",
+            "charStart": 8631,
+            "charEnd": 8652,
+            "timeStart": 608.1,
+            "timeEnd": 612.3000000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.941716582819108
+        },
+        {
+          "id": "location:san francisco|located-at|time:1994|-jtqMGKaw6c:8631-8652",
+          "subjectId": "location:san francisco",
+          "predicate": "located-at",
+          "objectId": "time:1994",
+          "evidence": {
+            "transcriptId": "-jtqMGKaw6c",
+            "charStart": 8631,
+            "charEnd": 8652,
+            "timeStart": 608.1,
+            "timeEnd": 612.3000000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.941636447091938
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cia|located-at|time:1952|veVqh9XoXUs:17351-17376",
+          "subjectId": "organization:cia",
+          "predicate": "located-at",
+          "objectId": "time:1952",
+          "evidence": {
+            "transcriptId": "veVqh9XoXUs",
+            "charStart": 17351,
+            "charEnd": 17376,
+            "timeStart": 1347.6,
+            "timeEnd": 1352.76
+          },
+          "confidence": 0.85,
+          "provenance": "nlp",
+          "derivedTruth": 0.8860491912734526
+        },
+        {
+          "id": "time:1952|located-at|organization:cia|veVqh9XoXUs:17351-17376",
+          "subjectId": "time:1952",
+          "predicate": "located-at",
+          "objectId": "organization:cia",
+          "evidence": {
+            "transcriptId": "veVqh9XoXUs",
+            "charStart": 17351,
+            "charEnd": 17376,
+            "timeStart": 1347.6,
+            "timeEnd": 1352.76
+          },
+          "confidence": 0.85,
+          "provenance": "nlp",
+          "derivedTruth": 0.8852255472365547
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cia|located-at|time:1991|2k7YTFrmt84:23735-23758",
+          "subjectId": "organization:cia",
+          "predicate": "located-at",
+          "objectId": "time:1991",
+          "evidence": {
+            "transcriptId": "2k7YTFrmt84",
+            "charStart": 23735,
+            "charEnd": 23758,
+            "timeStart": 1683.559,
+            "timeEnd": 1690.08
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8862531125212464
+        },
+        {
+          "id": "time:1991|located-at|organization:cia|2k7YTFrmt84:23735-23758",
+          "subjectId": "time:1991",
+          "predicate": "located-at",
+          "objectId": "organization:cia",
+          "evidence": {
+            "transcriptId": "2k7YTFrmt84",
+            "charStart": 23735,
+            "charEnd": 23758,
+            "timeStart": 1683.559,
+            "timeEnd": 1690.08
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8854831193001416
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1991|located-at|location:minneapolis|16xhpv13DsM:13866-13885",
+          "subjectId": "time:1991",
+          "predicate": "located-at",
+          "objectId": "location:minneapolis",
+          "evidence": {
+            "transcriptId": "16xhpv13DsM",
+            "charStart": 13866,
+            "charEnd": 13885,
+            "timeStart": 892.66,
+            "timeEnd": 898.18
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8883615125019684
+        },
+        {
+          "id": "location:minneapolis|located-at|time:1991|16xhpv13DsM:13866-13885",
+          "subjectId": "location:minneapolis",
+          "predicate": "located-at",
+          "objectId": "time:1991",
+          "evidence": {
+            "transcriptId": "16xhpv13DsM",
+            "charStart": 13866,
+            "charEnd": 13885,
+            "timeStart": 892.66,
+            "timeEnd": 898.18
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8887484583161237
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cia|located-at|time:1999|x2BQyZorSQc:35826-35845",
+          "subjectId": "organization:cia",
+          "predicate": "located-at",
+          "objectId": "time:1999",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35826,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8855045198727354
+        },
+        {
+          "id": "time:1999|located-at|organization:cia|x2BQyZorSQc:35826-35845",
+          "subjectId": "time:1999",
+          "predicate": "located-at",
+          "objectId": "organization:cia",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35826,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8847602040427311
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cia|located-at|time:1999|x2BQyZorSQc:35826-35845",
+          "subjectId": "organization:cia",
+          "predicate": "located-at",
+          "objectId": "time:1999",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35826,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8855045198727354
+        },
+        {
+          "id": "time:1999|located-at|organization:cia|x2BQyZorSQc:35830-35845",
+          "subjectId": "time:1999",
+          "predicate": "located-at",
+          "objectId": "organization:cia",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35830,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8847087141399259
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cia|located-at|time:1999|x2BQyZorSQc:35830-35845",
+          "subjectId": "organization:cia",
+          "predicate": "located-at",
+          "objectId": "time:1999",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35830,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8854524188574425
+        },
+        {
+          "id": "time:1999|located-at|organization:cia|x2BQyZorSQc:35826-35845",
+          "subjectId": "time:1999",
+          "predicate": "located-at",
+          "objectId": "organization:cia",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35826,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8847602040427311
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cia|located-at|time:1999|x2BQyZorSQc:35830-35845",
+          "subjectId": "organization:cia",
+          "predicate": "located-at",
+          "objectId": "time:1999",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35830,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8854524188574425
+        },
+        {
+          "id": "time:1999|located-at|organization:cia|x2BQyZorSQc:35830-35845",
+          "subjectId": "time:1999",
+          "predicate": "located-at",
+          "objectId": "organization:cia",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 35830,
+            "charEnd": 35845,
+            "timeStart": 2409.64,
+            "timeEnd": 2417.64
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8847087141399259
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1941|located-at|location:missouri|rih9-80p0Ec:27299-27315",
+          "subjectId": "time:1941",
+          "predicate": "located-at",
+          "objectId": "location:missouri",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 27299,
+            "charEnd": 27315,
+            "timeStart": 1849.08,
+            "timeEnd": 1854.72
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9225071026094679
+        },
+        {
+          "id": "location:missouri|located-at|time:1941|rih9-80p0Ec:27299-27315",
+          "subjectId": "location:missouri",
+          "predicate": "located-at",
+          "objectId": "time:1941",
+          "evidence": {
+            "transcriptId": "rih9-80p0Ec",
+            "charStart": 27299,
+            "charEnd": 27315,
+            "timeStart": 1849.08,
+            "timeEnd": 1854.72
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9229942889747225
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cia|located-at|person:john lear|Je3Qu-xMuxM:22852-22884",
+          "subjectId": "organization:cia",
+          "predicate": "located-at",
+          "objectId": "person:john lear",
+          "evidence": {
+            "transcriptId": "Je3Qu-xMuxM",
+            "charStart": 22852,
+            "charEnd": 22884,
+            "timeStart": 1438.679,
+            "timeEnd": 1443.24
+          },
+          "confidence": 0.8333333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.8853795716313368
+        },
+        {
+          "id": "person:john lear|located-at|organization:cia|Je3Qu-xMuxM:22852-22884",
+          "subjectId": "person:john lear",
+          "predicate": "located-at",
+          "objectId": "organization:cia",
+          "evidence": {
+            "transcriptId": "Je3Qu-xMuxM",
+            "charStart": 22852,
+            "charEnd": 22884,
+            "timeStart": 1438.679,
+            "timeEnd": 1443.24
+          },
+          "confidence": 0.7916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.8848572471580353
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1972|located-at|location:united states|WqHimq-PT_s:16425-16460",
+          "subjectId": "time:1972",
+          "predicate": "located-at",
+          "objectId": "location:united states",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 16425,
+            "charEnd": 16460,
+            "timeStart": 1263.679,
+            "timeEnd": 1269.64
+          },
+          "confidence": 0.85,
+          "provenance": "nlp",
+          "derivedTruth": 0.8421981514590378
+        },
+        {
+          "id": "location:united states|located-at|time:1972|WqHimq-PT_s:16425-16460",
+          "subjectId": "location:united states",
+          "predicate": "located-at",
+          "objectId": "time:1972",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 16425,
+            "charEnd": 16460,
+            "timeStart": 1263.679,
+            "timeEnd": 1269.64
+          },
+          "confidence": 0.85,
+          "provenance": "nlp",
+          "derivedTruth": 0.8425332955877115
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:united states|located-at|time:1954|EieUJvKrjo4:13885-13923",
+          "subjectId": "location:united states",
+          "predicate": "located-at",
+          "objectId": "time:1954",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 13885,
+            "charEnd": 13923,
+            "timeStart": 994.24,
+            "timeEnd": 999.36
+          },
+          "confidence": 0.825,
+          "provenance": "nlp",
+          "derivedTruth": 0.8477275318970721
+        },
+        {
+          "id": "time:1954|located-at|location:united states|EieUJvKrjo4:13885-13923",
+          "subjectId": "time:1954",
+          "predicate": "located-at",
+          "objectId": "location:united states",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 13885,
+            "charEnd": 13923,
+            "timeStart": 994.24,
+            "timeEnd": 999.36
+          },
+          "confidence": 0.825,
+          "provenance": "nlp",
+          "derivedTruth": 0.8472579792408795
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:united states|located-at|time:1972|WqHimq-PT_s:16425-16460",
+          "subjectId": "person:united states",
+          "predicate": "located-at",
+          "objectId": "time:1972",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 16425,
+            "charEnd": 16460,
+            "timeStart": 1263.679,
+            "timeEnd": 1269.64
+          },
+          "confidence": 0.85,
+          "provenance": "nlp",
+          "derivedTruth": 0.8534895830047651
+        },
+        {
+          "id": "time:1972|located-at|location:united states|WqHimq-PT_s:16425-16460",
+          "subjectId": "time:1972",
+          "predicate": "located-at",
+          "objectId": "location:united states",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 16425,
+            "charEnd": 16460,
+            "timeStart": 1263.679,
+            "timeEnd": 1269.64
+          },
+          "confidence": 0.85,
+          "provenance": "nlp",
+          "derivedTruth": 0.8421981514590378
+        },
+        {
+          "id": "location:united states|said|person:united states|MNnvoPKcBSM:26452-26489",
+          "subjectId": "location:united states",
+          "predicate": "said",
+          "objectId": "person:united states",
+          "evidence": {
+            "transcriptId": "MNnvoPKcBSM",
+            "charStart": 26452,
+            "charEnd": 26489,
+            "timeStart": 1789.679,
+            "timeEnd": 1794.96
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8518690379256221
+        }
+      ],
+      "summary": "self-supporting loop across 3 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:united states|said|person:philip dick|MNnvoPKcBSM:26452-26489",
+          "subjectId": "location:united states",
+          "predicate": "said",
+          "objectId": "person:philip dick",
+          "evidence": {
+            "transcriptId": "MNnvoPKcBSM",
+            "charStart": 26452,
+            "charEnd": 26489,
+            "timeStart": 1789.679,
+            "timeEnd": 1794.96
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8455092800698407
+        },
+        {
+          "id": "person:philip dick|said|location:united states|MNnvoPKcBSM:26452-26489",
+          "subjectId": "person:philip dick",
+          "predicate": "said",
+          "objectId": "location:united states",
+          "evidence": {
+            "transcriptId": "MNnvoPKcBSM",
+            "charStart": 26452,
+            "charEnd": 26489,
+            "timeStart": 1789.679,
+            "timeEnd": 1794.96
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8451948779703061
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:united states|located-at|time:1954|EieUJvKrjo4:13885-13923",
+          "subjectId": "person:united states",
+          "predicate": "located-at",
+          "objectId": "time:1954",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 13885,
+            "charEnd": 13923,
+            "timeStart": 994.24,
+            "timeEnd": 999.36
+          },
+          "confidence": 0.825,
+          "provenance": "nlp",
+          "derivedTruth": 0.8611540001729635
+        },
+        {
+          "id": "time:1954|located-at|location:united states|EieUJvKrjo4:13885-13923",
+          "subjectId": "time:1954",
+          "predicate": "located-at",
+          "objectId": "location:united states",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 13885,
+            "charEnd": 13923,
+            "timeStart": 994.24,
+            "timeEnd": 999.36
+          },
+          "confidence": 0.825,
+          "provenance": "nlp",
+          "derivedTruth": 0.8472579792408795
+        },
+        {
+          "id": "location:united states|said|person:united states|MNnvoPKcBSM:26452-26489",
+          "subjectId": "location:united states",
+          "predicate": "said",
+          "objectId": "person:united states",
+          "evidence": {
+            "transcriptId": "MNnvoPKcBSM",
+            "charStart": 26452,
+            "charEnd": 26489,
+            "timeStart": 1789.679,
+            "timeEnd": 1794.96
+          },
+          "confidence": 0.8166666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8518690379256221
+        }
+      ],
+      "summary": "self-supporting loop across 3 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1975|located-at|location:geneva|TunNIAGN8Ac:24270-24293",
+          "subjectId": "time:1975",
+          "predicate": "located-at",
+          "objectId": "location:geneva",
+          "evidence": {
+            "transcriptId": "TunNIAGN8Ac",
+            "charStart": 24270,
+            "charEnd": 24293,
+            "timeStart": 1638.36,
+            "timeEnd": 1644
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9216107095381176
+        },
+        {
+          "id": "location:geneva|located-at|time:1975|TunNIAGN8Ac:24270-24293",
+          "subjectId": "location:geneva",
+          "predicate": "located-at",
+          "objectId": "time:1975",
+          "evidence": {
+            "transcriptId": "TunNIAGN8Ac",
+            "charStart": 24270,
+            "charEnd": 24293,
+            "timeStart": 1638.36,
+            "timeEnd": 1644
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9220896084593033
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:earth|located-at|time:2026|m6F4lHSbmWQ:4596-4635",
+          "subjectId": "location:earth",
+          "predicate": "located-at",
+          "objectId": "time:2026",
+          "evidence": {
+            "transcriptId": "m6F4lHSbmWQ",
+            "charStart": 4596,
+            "charEnd": 4635,
+            "timeStart": 303.44,
+            "timeEnd": 308.08
+          },
+          "confidence": 0.75,
+          "provenance": "nlp",
+          "derivedTruth": 0.971903517022505
+        },
+        {
+          "id": "time:2026|located-at|location:earth|m6F4lHSbmWQ:4596-4635",
+          "subjectId": "time:2026",
+          "predicate": "located-at",
+          "objectId": "location:earth",
+          "evidence": {
+            "transcriptId": "m6F4lHSbmWQ",
+            "charStart": 4596,
+            "charEnd": 4635,
+            "timeStart": 303.44,
+            "timeEnd": 308.08
+          },
+          "confidence": 0.75,
+          "provenance": "nlp",
+          "derivedTruth": 0.9716855060549867
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2026|located-at|location:south pole|WqHimq-PT_s:22678-22696",
+          "subjectId": "time:2026",
+          "predicate": "located-at",
+          "objectId": "location:south pole",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 22678,
+            "charEnd": 22696,
+            "timeStart": 1691.2,
+            "timeEnd": 1697.519
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9729183249716024
+        },
+        {
+          "id": "location:south pole|located-at|time:2026|WqHimq-PT_s:22678-22696",
+          "subjectId": "location:south pole",
+          "predicate": "located-at",
+          "objectId": "time:2026",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 22678,
+            "charEnd": 22696,
+            "timeStart": 1691.2,
+            "timeEnd": 1697.519
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9731750585057372
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1925|located-at|location:earth|_0n1Q0CV-3A:10855-10872",
+          "subjectId": "time:1925",
+          "predicate": "located-at",
+          "objectId": "location:earth",
+          "evidence": {
+            "transcriptId": "_0n1Q0CV-3A",
+            "charStart": 10855,
+            "charEnd": 10872,
+            "timeStart": 661.8,
+            "timeEnd": 668.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9637594094598316
+        },
+        {
+          "id": "location:earth|located-at|time:1925|_0n1Q0CV-3A:10855-10872",
+          "subjectId": "location:earth",
+          "predicate": "located-at",
+          "objectId": "time:1925",
+          "evidence": {
+            "transcriptId": "_0n1Q0CV-3A",
+            "charStart": 10855,
+            "charEnd": 10872,
+            "timeStart": 661.8,
+            "timeEnd": 668.16
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9638658999252931
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:geneva|located-at|time:1925|DQ9M1J9-77Y:5528-5554",
+          "subjectId": "location:geneva",
+          "predicate": "located-at",
+          "objectId": "time:1925",
+          "evidence": {
+            "transcriptId": "DQ9M1J9-77Y",
+            "charStart": 5528,
+            "charEnd": 5554,
+            "timeStart": 354.72,
+            "timeEnd": 361.52000000000004
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9433778221030247
+        },
+        {
+          "id": "time:1925|located-at|location:geneva|DQ9M1J9-77Y:5528-5554",
+          "subjectId": "time:1925",
+          "predicate": "located-at",
+          "objectId": "location:geneva",
+          "evidence": {
+            "transcriptId": "DQ9M1J9-77Y",
+            "charStart": 5528,
+            "charEnd": 5554,
+            "timeStart": 354.72,
+            "timeEnd": 361.52000000000004
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9430164062509966
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:tesla|died-in|time:1943|eALW00vr9Qc:445-463",
+          "subjectId": "organization:tesla",
+          "predicate": "died-in",
+          "objectId": "time:1943",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 445,
+            "charEnd": 463,
+            "timeStart": 37.28,
+            "timeEnd": 43.52
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8935223220443207
+        },
+        {
+          "id": "time:1943|located-at|organization:tesla|eALW00vr9Qc:445-463",
+          "subjectId": "time:1943",
+          "predicate": "located-at",
+          "objectId": "organization:tesla",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 445,
+            "charEnd": 463,
+            "timeStart": 37.28,
+            "timeEnd": 43.52
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8926842548799927
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:tesla|died-in|time:1943|eALW00vr9Qc:445-463",
+          "subjectId": "organization:tesla",
+          "predicate": "died-in",
+          "objectId": "time:1943",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 445,
+            "charEnd": 463,
+            "timeStart": 37.28,
+            "timeEnd": 43.52
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8935223220443207
+        },
+        {
+          "id": "time:1943|located-at|organization:tesla|eALW00vr9Qc:4967-4985",
+          "subjectId": "time:1943",
+          "predicate": "located-at",
+          "objectId": "organization:tesla",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 4967,
+            "charEnd": 4985,
+            "timeStart": 366.4,
+            "timeEnd": 372.599
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8926371422200968
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:tesla|died-in|time:1943|eALW00vr9Qc:4967-4985",
+          "subjectId": "organization:tesla",
+          "predicate": "died-in",
+          "objectId": "time:1943",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 4967,
+            "charEnd": 4985,
+            "timeStart": 366.4,
+            "timeEnd": 372.599
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8934745885568459
+        },
+        {
+          "id": "time:1943|located-at|organization:tesla|eALW00vr9Qc:445-463",
+          "subjectId": "time:1943",
+          "predicate": "located-at",
+          "objectId": "organization:tesla",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 445,
+            "charEnd": 463,
+            "timeStart": 37.28,
+            "timeEnd": 43.52
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8926842548799927
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:tesla|died-in|time:1943|eALW00vr9Qc:4967-4985",
+          "subjectId": "organization:tesla",
+          "predicate": "died-in",
+          "objectId": "time:1943",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 4967,
+            "charEnd": 4985,
+            "timeStart": 366.4,
+            "timeEnd": 372.599
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8934745885568459
+        },
+        {
+          "id": "time:1943|located-at|organization:tesla|eALW00vr9Qc:4967-4985",
+          "subjectId": "time:1943",
+          "predicate": "located-at",
+          "objectId": "organization:tesla",
+          "evidence": {
+            "transcriptId": "eALW00vr9Qc",
+            "charStart": 4967,
+            "charEnd": 4985,
+            "timeStart": 366.4,
+            "timeEnd": 372.599
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8926371422200968
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:tesla|knows|person:nikola tesla|Wnx-uM5Rn60:4986-4999",
+          "subjectId": "organization:tesla",
+          "predicate": "knows",
+          "objectId": "person:nikola tesla",
+          "evidence": {
+            "transcriptId": "Wnx-uM5Rn60",
+            "charStart": 4986,
+            "charEnd": 4999,
+            "timeStart": 303.96,
+            "timeEnd": 307.85999999999996
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8928333044999616
+        },
+        {
+          "id": "person:nikola tesla|located-at|organization:tesla|Wnx-uM5Rn60:19609-19633",
+          "subjectId": "person:nikola tesla",
+          "predicate": "located-at",
+          "objectId": "organization:tesla",
+          "evidence": {
+            "transcriptId": "Wnx-uM5Rn60",
+            "charStart": 19609,
+            "charEnd": 19633,
+            "timeStart": 1242.48,
+            "timeEnd": 1246.6200000000001
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8920313046895407
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:tesla|located-at|person:nikola tesla|Wnx-uM5Rn60:19609-19633",
+          "subjectId": "organization:tesla",
+          "predicate": "located-at",
+          "objectId": "person:nikola tesla",
+          "evidence": {
+            "transcriptId": "Wnx-uM5Rn60",
+            "charStart": 19609,
+            "charEnd": 19633,
+            "timeStart": 1242.48,
+            "timeEnd": 1246.6200000000001
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8926891618140124
+        },
+        {
+          "id": "person:nikola tesla|located-at|organization:tesla|Wnx-uM5Rn60:19609-19633",
+          "subjectId": "person:nikola tesla",
+          "predicate": "located-at",
+          "objectId": "organization:tesla",
+          "evidence": {
+            "transcriptId": "Wnx-uM5Rn60",
+            "charStart": 19609,
+            "charEnd": 19633,
+            "timeStart": 1242.48,
+            "timeEnd": 1246.6200000000001
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.8920313046895407
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:america|located-at|time:1924|Rg-Ocr5hNLI:14961-14992",
+          "subjectId": "location:america",
+          "predicate": "located-at",
+          "objectId": "time:1924",
+          "evidence": {
+            "transcriptId": "Rg-Ocr5hNLI",
+            "charStart": 14961,
+            "charEnd": 14992,
+            "timeStart": 1150.919,
+            "timeEnd": 1157.039
+          },
+          "confidence": 0.8333333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.6894262834181712
+        },
+        {
+          "id": "time:1924|located-at|location:america|Rg-Ocr5hNLI:14961-14992",
+          "subjectId": "time:1924",
+          "predicate": "located-at",
+          "objectId": "location:america",
+          "evidence": {
+            "transcriptId": "Rg-Ocr5hNLI",
+            "charStart": 14961,
+            "charEnd": 14992,
+            "timeStart": 1150.919,
+            "timeEnd": 1157.039
+          },
+          "confidence": 0.8333333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.6895932537148955
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:america|located-at|person:philip slater|WNavHksmXnA:5000-5033",
+          "subjectId": "location:america",
+          "predicate": "located-at",
+          "objectId": "person:philip slater",
+          "evidence": {
+            "transcriptId": "WNavHksmXnA",
+            "charStart": 5000,
+            "charEnd": 5033,
+            "timeStart": 347.039,
+            "timeEnd": 352.8
+          },
+          "confidence": 0.8333333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.6655898555842588
+        },
+        {
+          "id": "person:philip slater|located-at|location:america|WNavHksmXnA:5000-5033",
+          "subjectId": "person:philip slater",
+          "predicate": "located-at",
+          "objectId": "location:america",
+          "evidence": {
+            "transcriptId": "WNavHksmXnA",
+            "charStart": 5000,
+            "charEnd": 5033,
+            "timeStart": 347.039,
+            "timeEnd": 352.8
+          },
+          "confidence": 0.8333333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.6659355309611393
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:philip slater|located-at|location:africa|WNavHksmXnA:5012-5033",
+          "subjectId": "person:philip slater",
+          "predicate": "located-at",
+          "objectId": "location:africa",
+          "evidence": {
+            "transcriptId": "WNavHksmXnA",
+            "charStart": 5012,
+            "charEnd": 5033,
+            "timeStart": 347.039,
+            "timeEnd": 352.8
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.6620127331501044
+        },
+        {
+          "id": "location:africa|located-at|person:philip slater|WNavHksmXnA:5012-5033",
+          "subjectId": "location:africa",
+          "predicate": "located-at",
+          "objectId": "person:philip slater",
+          "evidence": {
+            "transcriptId": "WNavHksmXnA",
+            "charStart": 5012,
+            "charEnd": 5033,
+            "timeStart": 347.039,
+            "timeEnd": 352.8
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.6612648118197888
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:2019|located-at|location:new world|u2MrTgBoqiI:27701-27718",
+          "subjectId": "time:2019",
+          "predicate": "located-at",
+          "objectId": "location:new world",
+          "evidence": {
+            "transcriptId": "u2MrTgBoqiI",
+            "charStart": 27701,
+            "charEnd": 27718,
+            "timeStart": 1768.5,
+            "timeEnd": 1773.899
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8479351594238571
+        },
+        {
+          "id": "location:new world|located-at|time:2019|u2MrTgBoqiI:27701-27718",
+          "subjectId": "location:new world",
+          "predicate": "located-at",
+          "objectId": "time:2019",
+          "evidence": {
+            "transcriptId": "u2MrTgBoqiI",
+            "charStart": 27701,
+            "charEnd": 27718,
+            "timeStart": 1768.5,
+            "timeEnd": 1773.899
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.8481693027055758
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1992|located-at|organization:cnn|XLhMi6YEhsQ:25228-25239",
+          "subjectId": "time:1992",
+          "predicate": "located-at",
+          "objectId": "organization:cnn",
+          "evidence": {
+            "transcriptId": "XLhMi6YEhsQ",
+            "charStart": 25228,
+            "charEnd": 25239,
+            "timeStart": 1742.919,
+            "timeEnd": 1749.1200000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9997249578175013
+        },
+        {
+          "id": "organization:cnn|located-at|time:1992|XLhMi6YEhsQ:25228-25239",
+          "subjectId": "organization:cnn",
+          "predicate": "located-at",
+          "objectId": "time:1992",
+          "evidence": {
+            "transcriptId": "XLhMi6YEhsQ",
+            "charStart": 25228,
+            "charEnd": 25239,
+            "timeStart": 1742.919,
+            "timeEnd": 1749.1200000000001
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9997384333588561
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:cnn|located-at|person:bill cooper|XLhMi6YEhsQ:25228-25246",
+          "subjectId": "organization:cnn",
+          "predicate": "located-at",
+          "objectId": "person:bill cooper",
+          "evidence": {
+            "transcriptId": "XLhMi6YEhsQ",
+            "charStart": 25228,
+            "charEnd": 25246,
+            "timeStart": 1742.919,
+            "timeEnd": 1749.1200000000001
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9997472246381447
+        },
+        {
+          "id": "person:bill cooper|located-at|organization:cnn|XLhMi6YEhsQ:25228-25246",
+          "subjectId": "person:bill cooper",
+          "predicate": "located-at",
+          "objectId": "organization:cnn",
+          "evidence": {
+            "transcriptId": "XLhMi6YEhsQ",
+            "charStart": 25228,
+            "charEnd": 25246,
+            "timeStart": 1742.919,
+            "timeEnd": 1749.1200000000001
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9997368398864648
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1986|located-at|location:connecticut|pl7DE8RFfUc:16449-16468",
+          "subjectId": "time:1986",
+          "predicate": "located-at",
+          "objectId": "location:connecticut",
+          "evidence": {
+            "transcriptId": "pl7DE8RFfUc",
+            "charStart": 16449,
+            "charEnd": 16468,
+            "timeStart": 1006.199,
+            "timeEnd": 1011
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9886991653338717
+        },
+        {
+          "id": "location:connecticut|located-at|time:1986|pl7DE8RFfUc:16449-16468",
+          "subjectId": "location:connecticut",
+          "predicate": "located-at",
+          "objectId": "time:1986",
+          "evidence": {
+            "transcriptId": "pl7DE8RFfUc",
+            "charStart": 16449,
+            "charEnd": 16468,
+            "timeStart": 1006.199,
+            "timeEnd": 1011
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9887778343242226
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1986|located-at|organization:u|Je3Qu-xMuxM:23069-23081",
+          "subjectId": "time:1986",
+          "predicate": "located-at",
+          "objectId": "organization:u",
+          "evidence": {
+            "transcriptId": "Je3Qu-xMuxM",
+            "charStart": 23069,
+            "charEnd": 23081,
+            "timeStart": 1450.799,
+            "timeEnd": 1456.02
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9890342674504773
+        },
+        {
+          "id": "organization:u|located-at|time:1986|Je3Qu-xMuxM:23069-23081",
+          "subjectId": "organization:u",
+          "predicate": "located-at",
+          "objectId": "time:1986",
+          "evidence": {
+            "transcriptId": "Je3Qu-xMuxM",
+            "charStart": 23069,
+            "charEnd": 23081,
+            "timeStart": 1450.799,
+            "timeEnd": 1456.02
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9891040740904068
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1920|died-in|person:powers thomas|4n3fkTq_p0o:17602-17633",
+          "subjectId": "time:1920",
+          "predicate": "died-in",
+          "objectId": "person:powers thomas",
+          "evidence": {
+            "transcriptId": "4n3fkTq_p0o",
+            "charStart": 17602,
+            "charEnd": 17633,
+            "timeStart": 1085.559,
+            "timeEnd": 1089.84
+          },
+          "confidence": 0.7916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9449923994446295
+        },
+        {
+          "id": "person:powers thomas|died-in|time:1920|4n3fkTq_p0o:17602-17633",
+          "subjectId": "person:powers thomas",
+          "predicate": "died-in",
+          "objectId": "time:1920",
+          "evidence": {
+            "transcriptId": "4n3fkTq_p0o",
+            "charStart": 17602,
+            "charEnd": 17633,
+            "timeStart": 1085.559,
+            "timeEnd": 1089.84
+          },
+          "confidence": 0.7916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9444307316917007
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1963|located-at|location:dallas|a5KXsiBZjOM:15758-15772",
+          "subjectId": "time:1963",
+          "predicate": "located-at",
+          "objectId": "location:dallas",
+          "evidence": {
+            "transcriptId": "a5KXsiBZjOM",
+            "charStart": 15758,
+            "charEnd": 15772,
+            "timeStart": 1073.76,
+            "timeEnd": 1078.32
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.935771440021618
+        },
+        {
+          "id": "location:dallas|located-at|time:1963|a5KXsiBZjOM:15758-15772",
+          "subjectId": "location:dallas",
+          "predicate": "located-at",
+          "objectId": "time:1963",
+          "evidence": {
+            "transcriptId": "a5KXsiBZjOM",
+            "charStart": 15758,
+            "charEnd": 15772,
+            "timeStart": 1073.76,
+            "timeEnd": 1078.32
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9369169951648
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1963|located-at|location:kansas|x2BQyZorSQc:5899-5913",
+          "subjectId": "time:1963",
+          "predicate": "located-at",
+          "objectId": "location:kansas",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 5899,
+            "charEnd": 5913,
+            "timeStart": 419.72,
+            "timeEnd": 425.59900000000005
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9359051003382195
+        },
+        {
+          "id": "location:kansas|located-at|time:1963|x2BQyZorSQc:5899-5913",
+          "subjectId": "location:kansas",
+          "predicate": "located-at",
+          "objectId": "time:1963",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 5899,
+            "charEnd": 5913,
+            "timeStart": 419.72,
+            "timeEnd": 425.59900000000005
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9365094462621455
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:kansas|located-at|person:patrick moore|x2BQyZorSQc:5899-5931",
+          "subjectId": "location:kansas",
+          "predicate": "located-at",
+          "objectId": "person:patrick moore",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 5899,
+            "charEnd": 5931,
+            "timeStart": 419.72,
+            "timeEnd": 425.59900000000005
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9374125317345465
+        },
+        {
+          "id": "person:patrick moore|located-at|location:kansas|x2BQyZorSQc:5899-5931",
+          "subjectId": "person:patrick moore",
+          "predicate": "located-at",
+          "objectId": "location:kansas",
+          "evidence": {
+            "transcriptId": "x2BQyZorSQc",
+            "charStart": 5899,
+            "charEnd": 5931,
+            "timeStart": 419.72,
+            "timeEnd": 425.59900000000005
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9366065384781298
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:nato|located-at|time:1964|WqHimq-PT_s:12033-12045",
+          "subjectId": "organization:nato",
+          "predicate": "located-at",
+          "objectId": "time:1964",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 12033,
+            "charEnd": 12045,
+            "timeStart": 920.079,
+            "timeEnd": 926.079
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9839138622312305
+        },
+        {
+          "id": "time:1964|located-at|organization:nato|WqHimq-PT_s:12033-12045",
+          "subjectId": "time:1964",
+          "predicate": "located-at",
+          "objectId": "organization:nato",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 12033,
+            "charEnd": 12045,
+            "timeStart": 920.079,
+            "timeEnd": 926.079
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9838071355629247
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1964|located-at|location:oakland|WMETBHvo-U4:6397-6432",
+          "subjectId": "time:1964",
+          "predicate": "located-at",
+          "objectId": "location:oakland",
+          "evidence": {
+            "transcriptId": "WMETBHvo-U4",
+            "charStart": 6397,
+            "charEnd": 6432,
+            "timeStart": 351.24,
+            "timeEnd": 355.92
+          },
+          "confidence": 0.8,
+          "provenance": "nlp",
+          "derivedTruth": 0.9845101470526728
+        },
+        {
+          "id": "location:oakland|located-at|time:1964|WMETBHvo-U4:6397-6432",
+          "subjectId": "location:oakland",
+          "predicate": "located-at",
+          "objectId": "time:1964",
+          "evidence": {
+            "transcriptId": "WMETBHvo-U4",
+            "charStart": 6397,
+            "charEnd": 6432,
+            "timeStart": 351.24,
+            "timeEnd": 355.92
+          },
+          "confidence": 0.8,
+          "provenance": "nlp",
+          "derivedTruth": 0.9846160912833208
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "time:1964|located-at|location:california|WMETBHvo-U4:6406-6432",
+          "subjectId": "time:1964",
+          "predicate": "located-at",
+          "objectId": "location:california",
+          "evidence": {
+            "transcriptId": "WMETBHvo-U4",
+            "charStart": 6406,
+            "charEnd": 6432,
+            "timeStart": 351.24,
+            "timeEnd": 355.92
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9849718755053548
+        },
+        {
+          "id": "location:california|located-at|time:1964|WMETBHvo-U4:6406-6432",
+          "subjectId": "location:california",
+          "predicate": "located-at",
+          "objectId": "time:1964",
+          "evidence": {
+            "transcriptId": "WMETBHvo-U4",
+            "charStart": 6406,
+            "charEnd": 6432,
+            "timeStart": 351.24,
+            "timeEnd": 355.92
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.985050469111818
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "organization:nato|located-at|person:robert dean|WqHimq-PT_s:12033-12048",
+          "subjectId": "organization:nato",
+          "predicate": "located-at",
+          "objectId": "person:robert dean",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 12033,
+            "charEnd": 12048,
+            "timeStart": 920.079,
+            "timeEnd": 926.079
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9816111113827416
+        },
+        {
+          "id": "person:robert dean|located-at|organization:nato|WqHimq-PT_s:12033-12048",
+          "subjectId": "person:robert dean",
+          "predicate": "located-at",
+          "objectId": "organization:nato",
+          "evidence": {
+            "transcriptId": "WqHimq-PT_s",
+            "charStart": 12033,
+            "charEnd": 12048,
+            "timeStart": 920.079,
+            "timeEnd": 926.079
+          },
+          "confidence": 0.9,
+          "provenance": "nlp",
+          "derivedTruth": 0.9815394418551132
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:charles hall|met|person:sullivan #eieujvkrjo4|EieUJvKrjo4:5045-5073",
+          "subjectId": "person:charles hall",
+          "predicate": "met",
+          "objectId": "person:sullivan #eieujvkrjo4",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 5045,
+            "charEnd": 5073,
+            "timeStart": 350.12,
+            "timeEnd": 355.68
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9798654791998367
+        },
+        {
+          "id": "person:sullivan #eieujvkrjo4|said|person:charles hall|EieUJvKrjo4:6765-6790",
+          "subjectId": "person:sullivan #eieujvkrjo4",
+          "predicate": "said",
+          "objectId": "person:charles hall",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 6765,
+            "charEnd": 6790,
+            "timeStart": 463.599,
+            "timeEnd": 467.87899999999996
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9798262407151371
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "person:charles|met|person:sullivan|EieUJvKrjo4:5045-5073",
+          "subjectId": "person:charles",
+          "predicate": "met",
+          "objectId": "person:sullivan",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 5045,
+            "charEnd": 5073,
+            "timeStart": 350.12,
+            "timeEnd": 355.68
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9745453716725416
+        },
+        {
+          "id": "person:sullivan|said|person:charles|EieUJvKrjo4:6765-6790",
+          "subjectId": "person:sullivan",
+          "predicate": "said",
+          "objectId": "person:charles",
+          "evidence": {
+            "transcriptId": "EieUJvKrjo4",
+            "charStart": 6765,
+            "charEnd": 6790,
+            "timeStart": 463.599,
+            "timeEnd": 467.87899999999996
+          },
+          "confidence": 0.8666666666666667,
+          "provenance": "nlp",
+          "derivedTruth": 0.9745364709983237
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    },
+    {
+      "edges": [
+        {
+          "id": "location:france|located-at|person:michel|CLATUuVcPBs:10508-10536",
+          "subjectId": "location:france",
+          "predicate": "located-at",
+          "objectId": "person:michel",
+          "evidence": {
+            "transcriptId": "CLATUuVcPBs",
+            "charStart": 10508,
+            "charEnd": 10536,
+            "timeStart": 665.9,
+            "timeEnd": 671.84
+          },
+          "confidence": 0.8333333333333334,
+          "provenance": "nlp",
+          "derivedTruth": 0.9842592021752258
+        },
+        {
+          "id": "person:michel|located-at|location:france|CLATUuVcPBs:10489-10514",
+          "subjectId": "person:michel",
+          "predicate": "located-at",
+          "objectId": "location:france",
+          "evidence": {
+            "transcriptId": "CLATUuVcPBs",
+            "charStart": 10489,
+            "charEnd": 10514,
+            "timeStart": 665.9,
+            "timeEnd": 671.84
+          },
+          "confidence": 0.8916666666666666,
+          "provenance": "nlp",
+          "derivedTruth": 0.9843421784843468
+        }
+      ],
+      "summary": "self-supporting loop across 2 edges"
+    }
+  ]
 }

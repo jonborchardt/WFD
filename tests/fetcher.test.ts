@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { mkdtempSync, existsSync, readFileSync, readdirSync } from "node:fs";
+import { mkdtempSync, existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
@@ -203,6 +203,44 @@ describe("fetchAndStore integration with catalog + gaps", () => {
     const report = detectGaps(cat);
     expect(report.ok).toHaveLength(1);
     expect(report.retry).toHaveLength(0);
+  });
+
+  it("treats an existing transcript as gold and never re-fetches", async () => {
+    const dir = tmpDir("gold");
+    const dataDir = join(dir, "transcripts");
+    let calls = 0;
+    const routes = {
+      "youtube.com/watch": () => {
+        calls += 1;
+        return new Response(
+          watchPageWith([{ languageCode: "en", baseUrl: "http://cap/x" }]),
+          { status: 200 },
+        );
+      },
+      "http://cap/x": () => new Response(TIMED_TEXT, { status: 200 }),
+    };
+    const { impl } = fakeFetch(routes);
+    const first = await fetchAndStore("vid00000002", {
+      fetchImpl: limiterFor(impl),
+      dataDir,
+    });
+    expect(existsSync(first.path)).toBe(true);
+    const callsAfterFirst = calls;
+
+    // Hand-edit the on-disk transcript. The next fetchAndStore must NOT
+    // overwrite it and must NOT make any additional network calls.
+    const edited = JSON.parse(readFileSync(first.path, "utf8"));
+    edited.cues[0].text = "HAND EDITED";
+    writeFileSync(first.path, JSON.stringify(edited));
+
+    const second = await fetchAndStore("vid00000002", {
+      fetchImpl: limiterFor(impl),
+      dataDir,
+    });
+    expect(second.path).toBe(first.path);
+    const reread = JSON.parse(readFileSync(first.path, "utf8"));
+    expect(reread.cues[0].text).toBe("HAND EDITED");
+    expect(calls).toBe(callsAfterFirst);
   });
 
   it("gap detector buckets failures correctly", () => {
