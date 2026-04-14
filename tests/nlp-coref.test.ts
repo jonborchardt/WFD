@@ -1,6 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { extract } from "../src/nlp/entities.ts";
+import { extract, flatten } from "../src/nlp/entities.ts";
 import { extractRelationships } from "../src/nlp/relationships.ts";
+import { synthesizeNer } from "./helpers/fake-ner.ts";
+
+function ex(t: Parameters<typeof extract>[0], opts: Parameters<typeof extract>[1] = {}) {
+  const { text } = flatten(t);
+  return extract(t, { ...opts, nerMentions: synthesizeNer(text) });
+}
 
 describe("coreference resolution", () => {
   it("resolves last-name mentions to the full-name entity", () => {
@@ -11,7 +17,7 @@ describe("coreference resolution", () => {
         { start: 2, duration: 2, text: "Later, Merkel left the room." },
       ],
     };
-    const entities = extract(t);
+    const entities = ex(t);
     const persons = entities.filter((e) => e.type === "person");
     expect(persons.length).toBe(1);
     const merkel = persons[0];
@@ -28,7 +34,7 @@ describe("coreference resolution", () => {
         { start: 2, duration: 2, text: "She said the talks went well." },
       ],
     };
-    const entities = extract(t);
+    const entities = ex(t);
     const merkel = entities.find((e) => e.canonical === "Angela Merkel")!;
     expect(merkel).toBeTruthy();
     expect(merkel.mentions.length).toBeGreaterThanOrEqual(2);
@@ -43,7 +49,7 @@ describe("coreference resolution", () => {
         { start: 2, duration: 2, text: "He said the talks went well." },
       ],
     };
-    const entities = extract(t);
+    const entities = ex(t);
     const aliases = entities
       .filter((e) => e.type === "person")
       .flatMap((e) => e.aliases.map((a) => a.toLowerCase()));
@@ -58,7 +64,7 @@ describe("coreference resolution", () => {
         { start: 2, duration: 2, text: "She said the vaccine rollout was successful." },
       ],
     };
-    const entities = extract(t);
+    const entities = ex(t);
     const rels = extractRelationships(t, entities);
     const saidVaccine = rels.find(
       (r) =>
@@ -77,7 +83,7 @@ describe("coreference resolution", () => {
         { start: 2, duration: 2, text: "Later, Merkel left the room." },
       ],
     };
-    const entities = extract(t, { coref: false });
+    const entities = ex(t, { coref: false });
     const merkel = entities.find((e) => e.canonical === "Angela Merkel")!;
     expect(merkel.mentions.length).toBe(1);
   });

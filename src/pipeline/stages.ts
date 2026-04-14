@@ -24,9 +24,11 @@ import { CatalogRow } from "../catalog/catalog.js";
 import { VideoStage, GraphStage, StageOutcome } from "./types.js";
 import { fetchAndStore } from "../ingest/transcript.js";
 import { recordSuccess, recordFailure } from "../catalog/gaps.js";
-import { extract as extractEntities, Transcript } from "../nlp/entities.js";
+import { extract as extractEntities, Transcript, flatten } from "../nlp/entities.js";
 import { extractRelationships } from "../nlp/relationships.js";
 import { loadGazetteer } from "../nlp/gazetteer.js";
+import { runNer } from "../nlp/ner.js";
+import { canonicalizeNerMentions } from "../nlp/canonicalize.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
@@ -81,13 +83,16 @@ export const fetchedStage: VideoStage = {
 
 export const nlpStage: VideoStage = {
   name: "nlp",
-  version: 2,
+  version: 5,
   dependsOn: ["fetched"],
   async run(row, ctx): Promise<StageOutcome> {
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
     const gazetteer = loadGazetteer(ctx.dataDir);
-    const entities = extractEntities(t, { gazetteer });
+    const { text } = flatten(t);
+    const rawNer = await runNer(text);
+    const nerMentions = canonicalizeNerMentions(rawNer, { transcriptId: row.videoId });
+    const entities = extractEntities(t, { gazetteer, nerMentions });
     const relationships = extractRelationships(t, entities);
     writePersistedNlp(row.videoId, { entities, relationships }, ctx.dataDir);
 
@@ -131,7 +136,14 @@ export const aiStage: VideoStage = {
   async run(row, ctx): Promise<StageOutcome> {
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
-    const entities = extractEntities(t, { gazetteer: loadGazetteer(ctx.dataDir) });
+    const { text: aiText } = flatten(t);
+    const aiNer = canonicalizeNerMentions(await runNer(aiText), {
+      transcriptId: row.videoId,
+    });
+    const entities = extractEntities(t, {
+      gazetteer: loadGazetteer(ctx.dataDir),
+      nerMentions: aiNer,
+    });
     const responsePath = join(
       responseDir(ctx.dataDir),
       `${row.videoId}.response.json`,

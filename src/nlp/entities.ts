@@ -1,17 +1,24 @@
 // Entity extraction from transcripts.
 //
-// Library choice: no external NLP dependency. We use a rule-based extractor
-// that walks cues, matches gazetteers + capitalization patterns, and emits
-// character-span offsets. A heavier model (spaCy, wink-nlp, compromise) can
-// be dropped in behind this same interface later without touching callers —
-// that's the reason extract() takes a Transcript and returns typed Entity[].
+// Two entity producers feed a single normalize() pass:
+//
+//   1. Regex + gazetteer  — times, dates, and anything in the gazetteer
+//                            (orgs, locations, events, things). Pure JS, sync.
+//   2. Neural NER (BERT)  — persons, organizations, locations. Runs through
+//                            @xenova/transformers. Case-insensitive in practice
+//                            and necessary for the lowercase auto-generated
+//                            transcripts that dominate this corpus.
+//
+// Because the neural pass is async and the rest of the extractor is sync,
+// NER mentions are computed by the caller (typically the pipeline stage)
+// and passed in as an option. Tests and the UI preview path can omit them
+// and still get regex-only extraction — graceful degradation is intentional.
 //
 // Entity types emitted: person, thing, time, event, location, organization.
-// The rules here are intentionally conservative: precision > recall, because
-// the downstream graph and truthiness layers amplify false positives.
 
 import { Entity, TranscriptSpan } from "../shared/types.js";
 import { resolveCoreferences } from "./coref.js";
+import type { NerMention } from "./ner.js";
 
 export interface TranscriptCue {
   start: number;
@@ -148,45 +155,11 @@ function gazetteerMentions(
   return out;
 }
 
-// Person detector: consecutive Capitalized words of length >=2, optionally
-// prefixed by an honorific. Skips sentence-initial single capitalized words
-// by requiring at least two capitalized tokens or a recognized honorific.
-const HONORIFICS = ["Mr", "Mrs", "Ms", "Dr", "Sen", "Rep", "Gov", "Pres", "President"];
-
-function personMentions(
-  text: string,
-  transcript: Transcript,
-  cueStarts: number[],
-): Mention[] {
-  const out: Mention[] = [];
-  const re =
-    /\b((?:(?:Mr|Mrs|Ms|Dr|Sen|Rep|Gov|Pres|President)\.?\s+)?[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\b/g;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(text))) {
-    const surface = m[1];
-    const canonical = surface.replace(/^(?:Mr|Mrs|Ms|Dr|Sen|Rep|Gov|Pres|President)\.?\s+/, "");
-    out.push({
-      type: "person",
-      surface,
-      canonical,
-      span: makeSpan(transcript, cueStarts, m.index, m.index + surface.length),
-    });
-  }
-  // Honorific followed by single capitalized word also counts as a person.
-  const honRe = new RegExp(
-    `\\b(?:${HONORIFICS.join("|")})\\.?\\s+([A-Z][a-z]+)\\b`,
-    "g",
-  );
-  while ((m = honRe.exec(text))) {
-    out.push({
-      type: "person",
-      surface: m[0],
-      canonical: m[1],
-      span: makeSpan(transcript, cueStarts, m.index, m.index + m[0].length),
-    });
-  }
-  return out;
-}
+// Person/org/location detection used to live here as a capitalized-word
+// regex. It was deleted when the neural NER pass landed — it only fired on
+// properly-cased text, which is the opposite of what the YouTube
+// auto-generated transcript corpus contains. The neural pass in
+// src/nlp/ner.ts replaces it.
 
 // Time/date mentions. Years, ISO dates, "January 5 2024", relative ("yesterday"
 // is ignored — too noisy without context).
@@ -218,6 +191,34 @@ function timeMentions(
 export interface ExtractOptions {
   gazetteer?: GazetteerMap;
   coref?: boolean;
+  // Neural NER mentions from src/nlp/ner.ts, pre-computed by the caller
+  // because the model is async. Omit for regex-only extraction.
+  nerMentions?: NerMention[];
+}
+
+// Convert neural NER char-offset mentions into the internal Mention shape,
+// building proper TranscriptSpans so downstream code sees no difference
+// from a regex/gazetteer-sourced mention.
+function nerToMentions(
+  ner: NerMention[],
+  transcript: Transcript,
+  cueStarts: number[],
+): Mention[] {
+  const out: Mention[] = [];
+  for (const n of ner) {
+    // Prefer the canonical form supplied by src/nlp/canonicalize.ts; fall
+    // back to the raw surface for callers (mostly tests) that skip the
+    // canonicalization pass. Strip subword artefacts ("##") defensively.
+    const canonical = (n.canonical ?? n.surface).replace(/##/g, "").trim();
+    if (!canonical) continue;
+    out.push({
+      type: n.type,
+      surface: n.surface,
+      canonical,
+      span: makeSpan(transcript, cueStarts, n.start, n.end),
+    });
+  }
+  return out;
 }
 
 export function extract(
@@ -228,7 +229,7 @@ export function extract(
   const flat = flatten(transcript);
   const { text, cueStarts } = flat;
   const mentions: Mention[] = [
-    ...personMentions(text, transcript, cueStarts),
+    ...nerToMentions(opts.nerMentions ?? [], transcript, cueStarts),
     ...timeMentions(text, transcript, cueStarts),
     ...gazetteerMentions("organization", gaz.organization, text, transcript, cueStarts),
     ...gazetteerMentions("location", gaz.location, text, transcript, cueStarts),
