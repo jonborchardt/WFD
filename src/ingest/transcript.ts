@@ -753,6 +753,11 @@ export function transcriptPath(videoId: string, dataDir?: string): string {
 export interface StoredTranscript {
   path: string;
   meta?: VideoMeta;
+  // True when the file was already on disk and we returned it untouched
+  // ("gold guard"). False when a real fetch + write happened. Callers use
+  // this to decide whether to bump stage records: only real fetches should
+  // advance stages.fetched.at.
+  cached: boolean;
 }
 
 export async function fetchAndStore(
@@ -765,14 +770,14 @@ export async function fetchAndStore(
   if (existsSync(path)) {
     try {
       const existing = JSON.parse(readFileSync(path, "utf8")) as NormalizedTranscript;
-      return { path, meta: existing.meta };
+      return { path, meta: existing.meta, cached: true };
     } catch {
       // Fall through and re-fetch only if the on-disk file is unreadable.
     }
   }
   const transcript = await fetchTranscript(videoId, deps);
   atomicWriteJson(path, transcript);
-  return { path, meta: transcript.meta };
+  return { path, meta: transcript.meta, cached: false };
 }
 
 export function transcriptExists(videoId: string, dataDir?: string): boolean {

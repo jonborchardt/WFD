@@ -4,6 +4,7 @@
 // rate-limited client. Exposes a progress snapshot that the UI polls, so
 // the user can watch the queue drain without blocking the request path.
 
+import { statSync } from "node:fs";
 import { Catalog } from "../catalog/catalog.js";
 import { recordFailure, recordSuccess } from "../catalog/gaps.js";
 import { fetchAndStore, TranscriptFetchError } from "./transcript.js";
@@ -72,10 +73,32 @@ export class Ingester {
       });
       try {
         const stored = await fetcher(row.videoId, { dataDir: this.opts.dataDir });
-        recordSuccess(this.opts.catalog, row.videoId, stored.path, stored.meta);
+        // Three cases:
+        //   - real fetch (cached=false): record with now().
+        //   - cached + row has no fetched stage record: backfill using the
+        //     transcript file's mtime so downstream cascading still works.
+        //   - cached + row already recorded: do nothing (idempotent).
+        if (!stored.cached) {
+          recordSuccess(
+            this.opts.catalog,
+            row.videoId,
+            stored.path,
+            stored.meta,
+          );
+        } else if (!row.stages?.fetched) {
+          const mtime = statSync(stored.path).mtimeMs;
+          recordSuccess(
+            this.opts.catalog,
+            row.videoId,
+            stored.path,
+            stored.meta,
+            new Date(mtime).toISOString(),
+          );
+        }
         logger.info("ingest.row.success", {
           videoId: row.videoId,
           path: stored.path,
+          cached: stored.cached,
           title: stored.meta?.title,
           uploadDate: stored.meta?.uploadDate,
         });

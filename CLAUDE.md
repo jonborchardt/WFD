@@ -74,16 +74,23 @@ Pipeline shape, roughly in order:
 - **Transcripts are gold.** Once `data/transcripts/<id>.json` exists,
   `fetchAndStore()` returns the on-disk copy and never re-fetches. Delete the
   file by hand to force a refresh. Do not add code paths that overwrite an
-  existing transcript.
-- **NLP overlay is gold.** `data/nlp/<id>.json` is a derived cache the
-  pipeline freely overwrites, but `data/nlp/<id>.overlay.json` holds
-  hand-authored deltas (`addEntities` / `removeEntities` /
-  `addRelationships` / `removeRelationships`) and is **never written by the
-  pipeline**. Consumers must read through `readMergedNlp()` /
-  `mergeNlpWithOverlay()` so they see `auto ∪ adds − removes`. Re-running
-  NLP is always safe; overlay survives every run. See
-  [src/nlp/README.md](src/nlp/README.md) for the full schema and
-  `/admin/nlp/<id>` admin page.
+  existing transcript. `fetchAndStore` returns `{ path, meta, cached }` so
+  callers can distinguish "real fetch just happened" from "gold guard hit";
+  only real fetches should advance `stages.fetched.at`.
+- **Staleness is purely timestamp-driven.** There is no `version` field on
+  stage records. A stage runs iff its record is missing or any of its
+  dependencies has a more recent `at`. Force a re-run by deleting the
+  transcript (full cascade) or by deleting the specific stage record from
+  `catalog.json` (surgical). Do not reintroduce a version field.
+- **NLP regeneration invalidates AI artifacts.** When `nlpStage` rewrites
+  `data/nlp/<id>.json`, it unlinks `data/ai/bundles/<id>.bundle.json` and
+  stamps a top-level `_stale` marker onto `data/ai/responses/<id>.response.json`
+  if present. Response files are never deleted — they represent operator
+  labor — but the marker tells the admin UI and CLI to flag them for
+  review. See [src/nlp/README.md](src/nlp/README.md).
+- **NER output is not hand-edited.** The `/admin/nlp/<id>` page is
+  read-only. Refinement of entities/relationships happens downstream in the
+  `ai` stage, not by editing `data/nlp/<id>.json`.
 - **Local-first.** Transcripts and the index live under `data/` (gitignored).
   Don't commit corpus content.
 - **Read-only public surface.** The public web tier never mutates the graph

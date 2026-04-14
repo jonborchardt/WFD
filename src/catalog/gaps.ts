@@ -88,19 +88,19 @@ export function recordFailure(
   });
 }
 
-// Version of the `fetched` pipeline stage. Hardcoded here to avoid a
-// circular import from src/pipeline/stages.ts. Bump alongside fetchedStage.version.
-const FETCHED_STAGE_VERSION = 1;
-
+// Record a successful transcript fetch. Always writes the `fetched` stage
+// record because callers must only invoke this on real fetches (or deliberate
+// backfills where they pass `at` explicitly). The gold-transcript fast path
+// in the pipeline skips the call entirely on a cache hit.
 export function recordSuccess(
   catalog: Catalog,
   videoId: string,
   transcriptPath: string,
   meta?: VideoMeta,
+  at: string = new Date().toISOString(),
 ): void {
   const row = catalog.get(videoId);
   if (!row) throw new Error(`gaps: no row for ${videoId}`);
-  const at = new Date().toISOString();
   catalog.update(videoId, {
     ...(meta ?? {}),
     status: "fetched",
@@ -109,19 +109,5 @@ export function recordSuccess(
     lastError: undefined,
     errorReason: undefined,
   });
-  // Backfill the per-video `fetched` stage record so downstream pipeline
-  // stages (`nlp`, `ai`, `per-claim`) see the dependency as satisfied even
-  // when the transcript was fetched outside the pipeline runner — e.g. via
-  // `cli ingest` (Ingester) or any other path that calls recordSuccess.
-  //
-  // Idempotent: only write the record if it's missing or version-stale.
-  // Bumping `at` on every call would cascade fake "dep ran more recently"
-  // re-runs across nlp / per-claim on every pipeline tick.
-  const existing = catalog.getStage(videoId, "fetched");
-  if (!existing || existing.version < FETCHED_STAGE_VERSION) {
-    catalog.setStage(videoId, "fetched", {
-      at,
-      version: FETCHED_STAGE_VERSION,
-    });
-  }
+  catalog.setStage(videoId, "fetched", { at });
 }

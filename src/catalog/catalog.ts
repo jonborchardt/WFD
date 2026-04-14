@@ -30,7 +30,6 @@ export type StageName = "fetched" | "nlp" | "ai" | "per-claim";
 
 export interface StageRecord {
   at: string;       // ISO timestamp when the stage last ran
-  version: number;  // bumped when the stage's implementation changes
   notes?: string;
 }
 
@@ -47,7 +46,7 @@ export interface GraphWatermark {
   // Any per-video write that touches the graph bumps this. Graph-level stages
   // run when their own lastRanAt is older than dirtyAt.
   dirtyAt: string;
-  stages: Partial<Record<GraphStageName, { at: string; version: number }>>;
+  stages: Partial<Record<GraphStageName, { at: string }>>;
 }
 
 export interface VideoMeta {
@@ -92,7 +91,7 @@ interface CatalogFile {
   graph?: GraphWatermark;
 }
 
-export const CATALOG_SCHEMA_VERSION = 2;
+export const CATALOG_SCHEMA_VERSION = 3;
 
 // Data-dir used by the v1→v2 migration to infer which stages have already
 // run based on what's on disk. Defaults to the repo data/ dir but overridable
@@ -126,18 +125,12 @@ function migrateV1toV2(f: CatalogFile): CatalogFile {
   for (const [id, row] of Object.entries(f.rows)) {
     const stages: StageMap = row.stages ?? {};
     if (row.status === "fetched" && !stages.fetched) {
-      stages.fetched = {
-        at: row.fetchedAt ?? now,
-        version: 1,
-      };
+      stages.fetched = { at: row.fetchedAt ?? now };
     }
     const nlpFile = join(nlpDir, `${id}.json`);
     const nlpMtime = safeMtime(nlpFile);
     if (nlpMtime > 0 && !stages.nlp) {
-      stages.nlp = {
-        at: new Date(nlpMtime).toISOString(),
-        version: 1,
-      };
+      stages.nlp = { at: new Date(nlpMtime).toISOString() };
     }
     nextRows[id] = { ...row, stages };
   }
@@ -155,11 +148,43 @@ function migrateV1toV2(f: CatalogFile): CatalogFile {
   };
 }
 
+// v2→v3: strip the legacy `version` field from every stage record. Staleness
+// is purely timestamp-driven now, so the field is dead data. No stage records
+// are removed; only `version` is deleted from each one.
+function migrateV2toV3(f: CatalogFile): CatalogFile {
+  const nextRows: Record<string, CatalogRow> = {};
+  for (const [id, row] of Object.entries(f.rows)) {
+    if (row.stages) {
+      const cleanedStages: StageMap = {};
+      for (const [name, rec] of Object.entries(row.stages)) {
+        if (!rec) continue;
+        const { at, notes } = rec as StageRecord & { version?: unknown };
+        cleanedStages[name as StageName] = notes !== undefined ? { at, notes } : { at };
+      }
+      nextRows[id] = { ...row, stages: cleanedStages };
+    } else {
+      nextRows[id] = row;
+    }
+  }
+  let graph = f.graph;
+  if (graph) {
+    const cleanedGraphStages: Partial<Record<GraphStageName, { at: string }>> = {};
+    for (const [name, rec] of Object.entries(graph.stages)) {
+      if (!rec) continue;
+      cleanedGraphStages[name as GraphStageName] = { at: rec.at };
+    }
+    graph = { dirtyAt: graph.dirtyAt, stages: cleanedGraphStages };
+  }
+  return { version: 3, rows: nextRows, graph };
+}
+
 const migrations: Array<(f: CatalogFile) => CatalogFile> = [
   // Index 0 migrates v0 → v1.
   (f) => ({ version: 1, rows: f.rows ?? {} }),
   // Index 1 migrates v1 → v2 (stage map + graph watermark).
   migrateV1toV2,
+  // Index 2 migrates v2 → v3 (drop legacy `version` field from stage records).
+  migrateV2toV3,
 ];
 
 export function migrate(raw: unknown): CatalogFile {
@@ -344,7 +369,7 @@ export class Catalog {
 
   setGraphStage(
     stage: GraphStageName,
-    record: { at: string; version: number },
+    record: { at: string },
   ): void {
     const g = this.graphState();
     g.stages[stage] = record;

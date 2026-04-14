@@ -316,7 +316,7 @@ async function cmdStatus(flags: Parsed["flags"]): Promise<number> {
       : catalog.all();
   for (const row of rows) {
     const stageList = Object.entries(row.stages ?? {})
-      .map(([k, v]) => `${k}@v${v?.version}`)
+      .map(([k, v]) => `${k}@${v?.at ?? "?"}`)
       .join(",");
     console.log(`${row.videoId}\t${row.status}\t${stageList || "-"}`);
   }

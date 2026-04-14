@@ -113,51 +113,58 @@ Rerunning is non-destructive: the stage is staleness-gated by record
 version. The current `nlpStage.version` in [src/pipeline/stages.ts](../pipeline/stages.ts)
 controls re-run.
 
-## Hand-edits and the overlay sidecar
+## How to force re-processing
 
-Every video has two NLP files on disk:
+The pipeline is driven by stage-record timestamps. A stage runs when either
+its record is missing or any of its dependencies recorded a timestamp more
+recent than its own. There is no `version` field and no force flag — to
+force work, delete something.
 
-```
-data/nlp/<videoId>.json          # auto output, freely overwritten by re-runs
-data/nlp/<videoId>.overlay.json  # hand-authored deltas, never touched by the pipeline
-```
+Three knobs, in decreasing scope:
 
-The overlay holds four arrays:
+1. **Delete the transcript** — `rm data/transcripts/<id>.json` then
+   `cli pipeline`. The `fetched` stage re-runs, `fetched.at` advances, and
+   every downstream stage (`nlp`, `per-claim`, `ai`) cascades automatically.
+   This is the canonical way to reprocess everything for a single video.
+2. **Delete a single stage record** — hand-edit `data/catalog/catalog.json`,
+   remove `row.stages.<name>`, run `cli pipeline`. That stage re-runs; any
+   stage that depends on it also re-runs via the timestamp rule. Good for
+   "just re-run nlp without re-fetching" situations.
+3. **Delete the NLP file** — `rm data/nlp/<id>.json`. The nlp stage will
+   regenerate it on the next run provided `nlp.at < fetched.at` (otherwise
+   delete the stage record too).
 
-```jsonc
-{
-  "addEntities":         [ /* full Entity objects */ ],
-  "removeEntities":      [ { "id": "person:dan-brown" } ],
-  "addRelationships":    [ /* full Relationship objects */ ],
-  "removeRelationships": [ { "id": "..." } ]
-}
-```
-
-Consumers (graph store, indexes, UI) call `readMergedNlp()` /
-`mergeNlpWithOverlay()` from [persist.ts](persist.ts), which produces the
-effective view: `auto ∪ adds − removes`. Removes are matched on stable entity
-or relationship `id`. Overlay adds whose `id` collides with an auto entry
-**replace** the auto entry, so hand-edited canonicals win.
-
-**Re-running NLP is always safe.** The pipeline rewrites the auto file from
-scratch and applies the overlay on top. Your edits survive every run, even
-across NLP version bumps. If a re-run no longer produces something you
-previously removed, the remove entry becomes a harmless no-op.
-
-### Editing the overlay
-
-Two ways:
-
-1. **Admin UI** — visit `/admin/nlp/<videoId>` in the local server. It shows
-   the three layers (auto / overlay / merged) with `auto`, `added`, `removed`
-   row labels, plus a textarea to edit the overlay JSON directly. Saving
-   POSTs to `/api/video/<id>/nlp/overlay` and busts the in-memory caches.
-2. **Hand-edit the file** under `data/nlp/<videoId>.overlay.json`. The
-   pipeline never opens it for writing, so a re-run will not clobber it.
-
-### Transcripts are also gold
+### Transcripts are gold
 
 Once `data/transcripts/<videoId>.json` exists on disk, `fetchAndStore()`
-treats it as gold and never re-fetches. Delete the file by hand to force a
-new download. This protects manual transcript edits the same way the
-overlay protects NLP edits.
+treats it as gold and never re-fetches. You can hand-edit the file freely;
+the fetcher will return the on-disk version unchanged. Delete the file by
+hand to force a new download.
+
+### NLP regeneration invalidates AI artifacts
+
+When `nlpStage` rewrites `data/nlp/<id>.json`, it also:
+
+- **Unlinks** `data/ai/bundles/<id>.bundle.json` if present — the `ai` stage
+  will regenerate it on its next tick against the fresh NLP output.
+- **Marks** `data/ai/responses/<id>.response.json` with a top-level `_stale`
+  field if present. The response file itself is preserved (it represents
+  operator work), but the marker lets the admin UI and CLI flag it for
+  review. Example:
+
+  ```json
+  "_stale": {
+    "since": "2026-04-14T12:00:00.000Z",
+    "reason": "nlp regenerated; entity ids may no longer match",
+    "nlpAt": "2026-04-14T12:00:00.000Z"
+  }
+  ```
+
+### Inspection admin page
+
+`/admin/nlp/<videoId>` in the local UI is a read-only view of a video's
+NLP state: stage timestamps, entities (with deep-links into the YouTube
+video at the first mention timestamp), relationships, and a warning banner
+when the AI response is marked `_stale`. Editing NER output in the browser
+is intentionally not supported — downstream refinement happens in the `ai`
+stage.

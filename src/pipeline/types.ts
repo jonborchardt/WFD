@@ -4,10 +4,11 @@
 // (per-video) or the corpus graph as a whole (graph-level). The runner walks
 // the stage list, decides which are stale, and runs them in dependency order.
 //
-// "Stale" is intentionally simple: a stage is stale if it has never run, if
-// its recorded version is below the current implementation version, or if any
-// of its dependencies recorded a timestamp more recent than its own. Stage
-// version bumps are how you force a rerun after changing an extractor.
+// "Stale" is intentionally simple: a stage is stale if it has never run or
+// if any of its dependencies recorded a timestamp more recent than its own.
+// To force a rerun, delete the stage record from the catalog (or delete the
+// upstream artifact — e.g. `rm data/transcripts/<id>.json` cascades through
+// every downstream stage).
 
 import { Catalog, CatalogRow, StageName, GraphStageName } from "../catalog/catalog.js";
 import { GraphStore } from "../graph/store.js";
@@ -30,14 +31,12 @@ export type StageOutcome =
 
 export interface VideoStage {
   name: StageName;
-  version: number;
   dependsOn: StageName[];
   run(row: CatalogRow, ctx: PipelineContext): Promise<StageOutcome>;
 }
 
 export interface GraphStage {
   name: GraphStageName;
-  version: number;
   run(ctx: PipelineContext): Promise<StageOutcome>;
 }
 

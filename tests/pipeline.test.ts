@@ -45,7 +45,6 @@ describe("runPipeline", () => {
     let calls = 0;
     const stage: VideoStage = {
       name: "fetched",
-      version: 1,
       dependsOn: [],
       async run() {
         calls++;
@@ -65,14 +64,13 @@ describe("runPipeline", () => {
       graphStages: [],
     });
     expect(calls).toBe(1);
-    expect(catalog.getStage("aaa", "fetched")?.version).toBe(1);
+    expect(catalog.getStage("aaa", "fetched")?.at).toBeTypeOf("string");
   });
 
-  it("reruns when the stage version bumps", async () => {
+  it("reruns when the stage record is deleted", async () => {
     let calls = 0;
-    const v1: VideoStage = {
+    const stage: VideoStage = {
       name: "fetched",
-      version: 1,
       dependsOn: [],
       async run() {
         calls++;
@@ -82,27 +80,27 @@ describe("runPipeline", () => {
     await runPipeline({
       catalog,
       dataDir: dir,
-      videoStages: [v1],
+      videoStages: [stage],
       graphStages: [],
     });
     expect(calls).toBe(1);
 
-    const v2: VideoStage = { ...v1, version: 2 };
+    // Staleness is timestamp-driven, not version-driven. The operator-facing
+    // knob for "force this stage to re-run" is to delete the stage record.
+    catalog.clearStage("aaa", "fetched");
     await runPipeline({
       catalog,
       dataDir: dir,
-      videoStages: [v2],
+      videoStages: [stage],
       graphStages: [],
     });
     expect(calls).toBe(2);
-    expect(catalog.getStage("aaa", "fetched")?.version).toBe(2);
   });
 
   it("respects dependsOn ordering", async () => {
     const order: string[] = [];
     const fetched: VideoStage = {
       name: "fetched",
-      version: 1,
       dependsOn: [],
       async run() {
         order.push("fetched");
@@ -111,7 +109,6 @@ describe("runPipeline", () => {
     };
     const nlp: VideoStage = {
       name: "nlp",
-      version: 1,
       dependsOn: ["fetched"],
       async run() {
         order.push("nlp");
@@ -131,7 +128,6 @@ describe("runPipeline", () => {
     let calls = 0;
     const stage: VideoStage = {
       name: "ai",
-      version: 1,
       dependsOn: [],
       async run() {
         calls++;
@@ -158,7 +154,6 @@ describe("runPipeline", () => {
     let calls = 0;
     const dirty: VideoStage = {
       name: "nlp",
-      version: 1,
       dependsOn: [],
       async run(_row, ctx) {
         ctx.catalog.markGraphDirty();
@@ -167,7 +162,6 @@ describe("runPipeline", () => {
     };
     const graph: GraphStage = {
       name: "propagation",
-      version: 1,
       async run() {
         calls++;
         return { kind: "ok" };
@@ -196,7 +190,6 @@ describe("runPipeline", () => {
     let calls = 0;
     const dirty: VideoStage = {
       name: "nlp",
-      version: 1,
       dependsOn: [],
       async run(_row, ctx) {
         ctx.catalog.markGraphDirty();
@@ -205,7 +198,6 @@ describe("runPipeline", () => {
     };
     const graph: GraphStage = {
       name: "propagation",
-      version: 1,
       async run() {
         calls++;
         return { kind: "ok" };
@@ -256,7 +248,7 @@ describe("runPipeline", () => {
       status: "fetched",
       transcriptPath: join(tDir, "aaa.json"),
       stages: {
-        fetched: { at: "2025-01-01T00:00:00Z", version: 1 },
+        fetched: { at: "2025-01-01T00:00:00Z" },
       },
     });
 
@@ -308,7 +300,6 @@ describe("runPipeline", () => {
   it("dry-run reports stages without mutating the catalog", async () => {
     const stage: VideoStage = {
       name: "fetched",
-      version: 1,
       dependsOn: [],
       async run() {
         throw new Error("should not run in dry-run");
