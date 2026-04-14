@@ -71,6 +71,19 @@ Pipeline shape, roughly in order:
   judgment must point back to a specific transcript span. No floating claims.
 - **Rate limiting is mandatory** for any code that talks to YouTube. Don't add
   a fetch path that bypasses the limiter.
+- **Transcripts are gold.** Once `data/transcripts/<id>.json` exists,
+  `fetchAndStore()` returns the on-disk copy and never re-fetches. Delete the
+  file by hand to force a refresh. Do not add code paths that overwrite an
+  existing transcript.
+- **NLP overlay is gold.** `data/nlp/<id>.json` is a derived cache the
+  pipeline freely overwrites, but `data/nlp/<id>.overlay.json` holds
+  hand-authored deltas (`addEntities` / `removeEntities` /
+  `addRelationships` / `removeRelationships`) and is **never written by the
+  pipeline**. Consumers must read through `readMergedNlp()` /
+  `mergeNlpWithOverlay()` so they see `auto ∪ adds − removes`. Re-running
+  NLP is always safe; overlay survives every run. See
+  [src/nlp/README.md](src/nlp/README.md) for the full schema and
+  `/admin/nlp/<id>` admin page.
 - **Local-first.** Transcripts and the index live under `data/` (gitignored).
   Don't commit corpus content.
 - **Read-only public surface.** The public web tier never mutates the graph

@@ -50,12 +50,36 @@ describe("canonicalize ner mentions", () => {
     expect(out.every((m) => m.canonical === "United States")).toBe(true);
   });
 
-  it("passes through organizations unchanged", () => {
+  it("collapses known organization aliases to a canonical form", () => {
     const orgs: NerMention[] = [
       { type: "organization", surface: "NASA", start: 0, end: 4, score: 0.99 },
+      { type: "organization", surface: "FBI", start: 10, end: 13, score: 0.99 },
+      {
+        type: "organization",
+        surface: "Federal Bureau of Investigation",
+        start: 20,
+        end: 51,
+        score: 0.99,
+      },
+    ];
+    const out = canonicalizeNerMentions(orgs, { transcriptId: "v1" });
+    expect(out[0].canonical).toBe("National Aeronautics and Space Administration");
+    expect(out[1].canonical).toBe("Federal Bureau of Investigation");
+    expect(out[2].canonical).toBe("Federal Bureau of Investigation");
+  });
+
+  it("leaves unknown organizations unchanged", () => {
+    const orgs: NerMention[] = [
+      {
+        type: "organization",
+        surface: "Some Obscure LLC",
+        start: 0,
+        end: 16,
+        score: 0.9,
+      },
     ];
     const out = canonicalizeNerMentions(orgs, { transcriptId: "v1" });
     expect(out[0].canonical).toBeUndefined();
-    expect(out[0].surface).toBe("NASA");
+    expect(out[0].surface).toBe("Some Obscure LLC");
   });
 });

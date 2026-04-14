@@ -180,21 +180,70 @@ export function renderGraphPage(slice: ViewSlice): string {
   }
   function frame(){ step(); draw(); requestAnimationFrame(frame); }
   frame();
+  const ISSUES_URL = 'https://github.com/jonborchardt/captions/issues/new';
+  function esc(s){ const d=document.createElement('div'); d.textContent=s==null?'':String(s); return d.innerHTML; }
+  function issueUrl(kind, title, lines, labels){
+    const body = lines.concat(['','---','','**Action requested:** <!-- what should change -->','']).join('\\n');
+    const p = new URLSearchParams({ title: '[graph/'+kind+'] '+title, body, labels: 'graph-action,'+kind });
+    return ISSUES_URL+'?'+p.toString();
+  }
+  function nodeIssueUrl(n){
+    return issueUrl('node', n.canonical, [
+      '**Entity:** '+n.canonical,
+      '**Type:** '+n.type,
+      '**ID:** '+n.id,
+    ], 'node');
+  }
+  function edgeIssueUrl(e, deepLink){
+    const a=nodeById[e.source], b=nodeById[e.target];
+    const title = (a?a.canonical:e.source)+' '+e.predicate+' '+(b?b.canonical:e.target);
+    const lines = [
+      '**Subject:** '+(a?a.canonical:e.source)+' ('+e.source+')',
+      '**Predicate:** '+e.predicate,
+      '**Object:** '+(b?b.canonical:e.target)+' ('+e.target+')',
+      '**Relationship ID:** '+e.id,
+    ];
+    if (e.truth!=null) lines.push('**Truth:** '+e.truth);
+    if (deepLink) lines.push('**Evidence:** '+deepLink);
+    return issueUrl('edge', title, lines);
+  }
+  function renderNode(hit, neighborCount){
+    const url = nodeIssueUrl(hit);
+    info.innerHTML = '<div><b>'+esc(hit.canonical)+'</b> <span style="opacity:.7">('+esc(hit.type)+')</span></div>'+
+      (neighborCount!=null?'<div style="opacity:.7">'+neighborCount+' edges</div>':'')+
+      '<div style="margin-top:.4em"><a href="'+url+'" target="_blank" rel="noopener" style="color:#9cf">create issue for this node</a></div>';
+  }
+  function renderEdge(edge, deepLink){
+    const a=nodeById[edge.source], b=nodeById[edge.target];
+    const url = edgeIssueUrl(edge, deepLink);
+    info.innerHTML = '<div><b>'+esc(a?a.canonical:edge.source)+'</b> '+esc(edge.predicate)+' <b>'+esc(b?b.canonical:edge.target)+'</b></div>'+
+      (deepLink?'<div><a href="'+esc(deepLink)+'" target="_blank" style="color:#9cf">evidence</a></div>':'')+
+      '<div style="margin-top:.4em"><a href="'+url+'" target="_blank" rel="noopener" style="color:#9cf">create issue for this edge</a></div>';
+  }
   canvas.addEventListener('click', ev => {
     const x=ev.clientX, y=ev.clientY;
     const hit=nodes.find(n => Math.hypot(n.x-x,n.y-y)<10);
-    if (hit){ fetch('/graph/neighbor/'+encodeURIComponent(hit.id)).then(r=>r.json()).then(s => {
-      info.textContent = hit.canonical+': '+s.edges.length+' edges';
-    }); return; }
+    if (hit){
+      renderNode(hit, null);
+      fetch('/graph/neighbor/'+encodeURIComponent(hit.id))
+        .then(r=>r.ok?r.json():null)
+        .then(s => { if (s) renderNode(hit, s.edges.length); })
+        .catch(()=>{});
+      return;
+    }
     const edge=edges.find(e => {
       const a=nodeById[e.source], b=nodeById[e.target];
       if (!a||!b) return false;
       const d = Math.abs((b.y-a.y)*x-(b.x-a.x)*y+b.x*a.y-b.y*a.x)/Math.hypot(b.y-a.y,b.x-a.x);
       return d<4;
     });
-    if (edge){ fetch('/graph/evidence/'+encodeURIComponent(edge.id)).then(r=>r.json()).then(ev => {
-      info.innerHTML = '<a href="'+ev.deepLink+'" target="_blank" style="color:#9cf">'+ev.deepLink+'</a>';
-    }); }
+    if (edge){
+      renderEdge(edge, null);
+      fetch('/graph/evidence/'+encodeURIComponent(edge.id))
+        .then(r=>r.ok?r.json():null)
+        .then(ev2 => { if (ev2 && ev2.deepLink) renderEdge(edge, ev2.deepLink); })
+        .catch(()=>{});
+    }
   });
 </script>
 </body></html>`;

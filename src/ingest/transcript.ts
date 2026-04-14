@@ -3,7 +3,7 @@
 // Every network call goes through the rate-limited fetch; a raw fetch is never
 // imported here. Writes are atomic: we write to <path>.tmp, fsync, then rename.
 
-import { mkdirSync, writeFileSync, renameSync, existsSync } from "node:fs";
+import { mkdirSync, writeFileSync, renameSync, existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { limitedFetch } from "./rate-limiter.js";
 import { logger } from "../shared/logger.js";
@@ -759,8 +759,18 @@ export async function fetchAndStore(
   videoId: string,
   deps: FetchDeps = {},
 ): Promise<StoredTranscript> {
-  const transcript = await fetchTranscript(videoId, deps);
   const path = transcriptPath(videoId, deps.dataDir);
+  // Transcripts are gold: once on disk they may have been hand-edited, and
+  // we never clobber them. Delete the file manually to force a re-fetch.
+  if (existsSync(path)) {
+    try {
+      const existing = JSON.parse(readFileSync(path, "utf8")) as NormalizedTranscript;
+      return { path, meta: existing.meta };
+    } catch {
+      // Fall through and re-fetch only if the on-disk file is unreadable.
+    }
+  }
+  const transcript = await fetchTranscript(videoId, deps);
   atomicWriteJson(path, transcript);
   return { path, meta: transcript.meta };
 }

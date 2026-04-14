@@ -22,6 +22,8 @@
 // transcriptId and returns a new filtered + rewritten list. The original
 // mentions are not mutated.
 
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { NerMention } from "./ner.js";
 
 const PERSON_STOPWORDS = new Set<string>([
@@ -107,6 +109,85 @@ const LOCATION_ALIAS: Map<string, string> = (() => {
   return m;
 })();
 
+// Hand-curated org aliases. Bounded list of high-value US federal + major
+// international bodies. Long-tail org canonicalization is intentionally not
+// attempted here — orgs with similar names are often genuinely different
+// (Department of Justice ≠ Department of Education). Add new entries on
+// demand. Aliases are matched case-insensitively.
+const ORG_CANONICALS: Array<[string, string[]]> = [
+  ["Federal Bureau of Investigation", ["fbi", "f.b.i.", "the fbi"]],
+  ["Central Intelligence Agency", ["cia", "c.i.a.", "the cia"]],
+  ["National Security Agency", ["nsa", "n.s.a.", "the nsa"]],
+  ["Department of Justice", ["doj", "d.o.j.", "the doj", "justice department"]],
+  ["Department of Defense", ["dod", "d.o.d.", "the dod", "defense department", "pentagon"]],
+  ["Department of Homeland Security", ["dhs", "d.h.s.", "the dhs"]],
+  ["Department of Energy", ["doe", "d.o.e."]],
+  ["Department of State", ["state department", "dos"]],
+  ["Department of the Treasury", ["treasury department", "us treasury", "u.s. treasury"]],
+  ["Food and Drug Administration", ["fda", "f.d.a.", "the fda"]],
+  ["Centers for Disease Control and Prevention", ["cdc", "c.d.c.", "the cdc"]],
+  ["National Institutes of Health", ["nih", "n.i.h.", "the nih"]],
+  ["World Health Organization", ["who", "w.h.o.", "the who"]],
+  ["Securities and Exchange Commission", ["sec", "s.e.c.", "the sec"]],
+  ["Internal Revenue Service", ["irs", "i.r.s.", "the irs"]],
+  ["Drug Enforcement Administration", ["dea", "d.e.a.", "the dea"]],
+  ["Bureau of Alcohol, Tobacco, Firearms and Explosives", ["atf", "a.t.f.", "the atf"]],
+  ["United States Postal Service", ["usps", "u.s.p.s.", "post office"]],
+  ["Federal Aviation Administration", ["faa", "f.a.a.", "the faa"]],
+  ["National Aeronautics and Space Administration", ["nasa", "n.a.s.a."]],
+  ["Environmental Protection Agency", ["epa", "e.p.a.", "the epa"]],
+  ["United Nations", ["un", "u.n.", "the un", "united nations organization"]],
+  ["North Atlantic Treaty Organization", ["nato", "n.a.t.o."]],
+  ["European Union", ["eu", "e.u.", "the eu"]],
+  ["International Monetary Fund", ["imf", "i.m.f.", "the imf"]],
+  ["World Bank", ["the world bank", "world bank group"]],
+  ["International Atomic Energy Agency", ["iaea", "i.a.e.a."]],
+  ["European Central Bank", ["ecb", "e.c.b."]],
+  ["World Trade Organization", ["wto", "w.t.o."]],
+  ["World Economic Forum", ["wef", "w.e.f.", "davos"]],
+];
+
+// Optional TSV side-loader: data/gazetteer/organization_aliases.tsv with
+// `alias<TAB>canonical` rows. Lets you extend the alias map without touching
+// code. Loaded lazily on first canonicalization call.
+let ORG_ALIAS: Map<string, string> | null = null;
+
+function buildOrgAlias(dataDir?: string): Map<string, string> {
+  const m = new Map<string, string>();
+  for (const [canonical, aliases] of ORG_CANONICALS) {
+    m.set(canonical.toLowerCase(), canonical);
+    for (const a of aliases) m.set(a.toLowerCase(), canonical);
+  }
+  const root = dataDir ?? join(process.cwd(), "data");
+  const tsv = join(root, "gazetteer", "organization_aliases.tsv");
+  if (existsSync(tsv)) {
+    try {
+      const body = readFileSync(tsv, "utf8");
+      for (const line of body.split(/\r?\n/)) {
+        const trimmed = line.trim();
+        if (!trimmed || trimmed.startsWith("#")) continue;
+        const [alias, canonical] = trimmed.split(/\t+/);
+        if (!alias || !canonical) continue;
+        m.set(alias.toLowerCase(), canonical);
+        m.set(canonical.toLowerCase(), canonical);
+      }
+    } catch {
+      // Malformed file is non-fatal — fall back to the built-in list.
+    }
+  }
+  return m;
+}
+
+function orgAlias(dataDir?: string): Map<string, string> {
+  if (!ORG_ALIAS) ORG_ALIAS = buildOrgAlias(dataDir);
+  return ORG_ALIAS;
+}
+
+// Test-only: reset the cached org alias map so a test can swap dataDir.
+export function _resetOrgAliasCache(): void {
+  ORG_ALIAS = null;
+}
+
 function tokens(s: string): string[] {
   return s
     .trim()
@@ -122,6 +203,8 @@ export interface CanonicalizeOptions {
   // Drop single-token persons that never appear as part of a multi-token
   // mention in the transcript. Default false (we keep them scoped instead).
   dropUnboundFirstNames?: boolean;
+  // Optional dataDir for sourcing the organization_aliases.tsv side-loader.
+  dataDir?: string;
 }
 
 export function canonicalizeNerMentions(
@@ -182,8 +265,17 @@ export function canonicalizeNerMentions(
       continue;
     }
 
-    // Organizations: pass through unchanged. Long-tail aliasing left for
-    // a future pass once the corpus shows which ones matter.
+    if (m.type === "organization") {
+      const canonical = orgAlias(opts.dataDir).get(m.surface.trim().toLowerCase());
+      if (canonical) {
+        out.push({ ...m, canonical });
+        continue;
+      }
+      out.push({ ...m });
+      continue;
+    }
+
+    // Other types: pass through unchanged.
     out.push({ ...m });
   }
   return out;

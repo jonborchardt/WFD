@@ -433,6 +433,54 @@ function AdminPage({ nav }) {
 }
 
 const WFD_ISSUES_URL = "https://github.com/jonborchardt/WFD/issues/new";
+const CAPTIONS_ISSUES_URL = "https://github.com/jonborchardt/captions/issues/new";
+
+function graphNodeIssueUrl(node) {
+  const lines = [
+    "**Entity:** " + node.canonical,
+    "**Type:** " + node.type,
+    "**ID:** " + node.id,
+    "**Weight:** " + (node.weight != null ? node.weight : ""),
+    "",
+    "---",
+    "",
+    "**Action requested:** <!-- e.g. merge with another entity, retype, remove -->",
+    "",
+    "**Notes:**",
+  ];
+  const params = new URLSearchParams({
+    title: "[graph/node] " + node.canonical,
+    body: lines.join("\n"),
+    labels: "graph-action,node",
+  });
+  return CAPTIONS_ISSUES_URL + "?" + params.toString();
+}
+
+function graphEdgeIssueUrl(edge, nodesById) {
+  const a = nodesById[edge.source];
+  const b = nodesById[edge.target];
+  const subj = a ? a.canonical : edge.source;
+  const obj = b ? b.canonical : edge.target;
+  const lines = [
+    "**Subject:** " + subj + " (" + edge.source + ")",
+    "**Predicate:** " + edge.predicate,
+    "**Object:** " + obj + " (" + edge.target + ")",
+    "**Relationship ID:** " + edge.id,
+    "**Count:** " + (edge.count != null ? edge.count : ""),
+    "",
+    "---",
+    "",
+    "**Action requested:** <!-- e.g. dispute, add evidence, re-predicate, delete -->",
+    "",
+    "**Notes:**",
+  ];
+  const params = new URLSearchParams({
+    title: "[graph/edge] " + subj + " " + edge.predicate + " " + obj,
+    body: lines.join("\n"),
+    labels: "graph-action,edge",
+  });
+  return CAPTIONS_ISSUES_URL + "?" + params.toString();
+}
 
 function suggestIssueUrl(area, { videoId, extra } = {}) {
   const page = location.pathname + location.search;
@@ -732,6 +780,7 @@ function RelationshipsPage({ nav }) {
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
+  const [selectedEdgeId, setSelectedEdgeId] = useState(null);
   const rfInstance = useRef(null);
 
   useEffect(() => {
@@ -887,11 +936,16 @@ function RelationshipsPage({ nav }) {
         }}
         onNodeClick=${(_, node) => {
           setSelectedId(node.id);
+          setSelectedEdgeId(null);
         }}
         onNodeDoubleClick=${(_, node) => {
           nav("/entity/" + encodeURIComponent(node.id));
         }}
-        onPaneClick=${() => setShowDropdown(false)}
+        onEdgeClick=${(_, edge) => {
+          setSelectedEdgeId(edge.id);
+          setSelectedId(null);
+        }}
+        onPaneClick=${() => { setShowDropdown(false); setSelectedId(null); setSelectedEdgeId(null); }}
         fitView
         minZoom=${0.1}
         maxZoom=${4}
@@ -900,6 +954,48 @@ function RelationshipsPage({ nav }) {
         <${Controls} />
         <${MiniMap} nodeColor=${(n) => n.style?.background || "#888"} pannable zoomable />
       <//>
+      ${(() => {
+        if (!graph) return null;
+        const nodesById = Object.fromEntries(graph.nodes.map(n => [n.id, n]));
+        const selNode = selectedId ? nodesById[selectedId] : null;
+        const selEdge = selectedEdgeId ? graph.edges.find(e => e.id === selectedEdgeId) : null;
+        if (!selNode && !selEdge) return null;
+        return html`
+          <${Paper} sx=${{ position: "absolute", top: 12, right: 12, zIndex: 10, p: 1.5, width: 300 }}>
+            ${selNode && html`
+              <${Typography} variant="subtitle2">${selNode.canonical}<//>
+              <${Typography} variant="caption" color="text.secondary">${selNode.type} · weight ${selNode.weight}<//>
+              <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
+                <${Button} size="small" variant="outlined" onClick=${() => nav("/entity/" + encodeURIComponent(selNode.id))}>open entity<//>
+                <${Button}
+                  size="small"
+                  variant="outlined"
+                  component="a"
+                  href=${graphNodeIssueUrl(selNode)}
+                  target="_blank"
+                  rel="noopener"
+                >create issue for this node<//>
+              <//>
+            `}
+            ${selEdge && html`
+              <${Typography} variant="subtitle2">
+                ${(nodesById[selEdge.source] || { canonical: selEdge.source }).canonical} ${selEdge.predicate} ${(nodesById[selEdge.target] || { canonical: selEdge.target }).canonical}
+              <//>
+              <${Typography} variant="caption" color="text.secondary">count ${selEdge.count}<//>
+              <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
+                <${Button}
+                  size="small"
+                  variant="outlined"
+                  component="a"
+                  href=${graphEdgeIssueUrl(selEdge, nodesById)}
+                  target="_blank"
+                  rel="noopener"
+                >create issue for this edge<//>
+              <//>
+            `}
+          <//>
+        `;
+      })()}
     <//>
   `;
 }

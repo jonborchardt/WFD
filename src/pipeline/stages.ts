@@ -32,7 +32,9 @@ import { canonicalizeNerMentions } from "../nlp/canonicalize.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
-  readPersistedNlp,
+  mergeNlpWithOverlay,
+  readMergedNlp,
+  readNlpOverlay,
   writePersistedNlp,
   writePersistedEntityIndex,
   writePersistedEntityVideos,
@@ -91,10 +93,25 @@ export const nlpStage: VideoStage = {
     const gazetteer = loadGazetteer(ctx.dataDir);
     const { text } = flatten(t);
     const rawNer = await runNer(text);
-    const nerMentions = canonicalizeNerMentions(rawNer, { transcriptId: row.videoId });
-    const entities = extractEntities(t, { gazetteer, nerMentions });
-    const relationships = extractRelationships(t, entities);
-    writePersistedNlp(row.videoId, { entities, relationships }, ctx.dataDir);
+    const nerMentions = canonicalizeNerMentions(rawNer, { transcriptId: row.videoId, dataDir: ctx.dataDir });
+    const autoEntities = extractEntities(t, { gazetteer, nerMentions });
+    const autoRelationships = extractRelationships(t, autoEntities);
+    writePersistedNlp(
+      row.videoId,
+      { entities: autoEntities, relationships: autoRelationships },
+      ctx.dataDir,
+    );
+
+    // Apply the hand-authored overlay (if any) on top of the freshly written
+    // auto output before pushing into the graph store. The overlay file is
+    // never touched by the pipeline — it survives every re-run.
+    const overlay = readNlpOverlay(row.videoId, ctx.dataDir);
+    const merged = mergeNlpWithOverlay(
+      { entities: autoEntities, relationships: autoRelationships },
+      overlay,
+    );
+    const entities = merged.entities;
+    const relationships = merged.relationships;
 
     // Upsert into the graph store so graph-level stages see NLP output, not
     // only AI output. This is the behavioral improvement that the old
@@ -134,20 +151,35 @@ export const aiStage: VideoStage = {
   version: 1,
   dependsOn: ["nlp"],
   async run(row, ctx): Promise<StageOutcome> {
+    const responsePath = join(
+      responseDir(ctx.dataDir),
+      `${row.videoId}.response.json`,
+    );
+    const dir = bundleDir(ctx.dataDir);
+    const bundlePath = join(dir, `${row.videoId}.bundle.json`);
+
+    // Fast path: bundle already on disk and no response yet. Re-running NER
+    // + entity extraction here would burn cycles every pipeline tick just to
+    // re-derive a bundle we already wrote. The runner re-enters this stage
+    // forever (awaiting outcomes are not recorded), so cheap is the rule.
+    if (!existsSync(responsePath) && existsSync(bundlePath)) {
+      return {
+        kind: "awaiting",
+        notes: `bundle already written; waiting for ${responsePath}`,
+      };
+    }
+
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
     const { text: aiText } = flatten(t);
     const aiNer = canonicalizeNerMentions(await runNer(aiText), {
       transcriptId: row.videoId,
+      dataDir: ctx.dataDir,
     });
     const entities = extractEntities(t, {
       gazetteer: loadGazetteer(ctx.dataDir),
       nerMentions: aiNer,
     });
-    const responsePath = join(
-      responseDir(ctx.dataDir),
-      `${row.videoId}.response.json`,
-    );
 
     if (existsSync(responsePath)) {
       // Operator has dropped a Claude Code response in place. Ingest it and
@@ -160,20 +192,12 @@ export const aiStage: VideoStage = {
       return { kind: "ok", notes: `ingested ${added.length} AI edges` };
     }
 
-    // Otherwise, ensure the prompt bundle exists and wait for a response.
-    const dir = bundleDir(ctx.dataDir);
+    // No bundle yet: write it and start awaiting.
     mkdirSync(dir, { recursive: true });
-    const bundlePath = join(dir, `${row.videoId}.bundle.json`);
-    if (!existsSync(bundlePath)) {
-      writeBundles(dir, [buildBundle(t, entities)]);
-      return {
-        kind: "awaiting",
-        notes: `bundle written to ${bundlePath}; waiting for ${responsePath}`,
-      };
-    }
+    writeBundles(dir, [buildBundle(t, entities)]);
     return {
       kind: "awaiting",
-      notes: `bundle already written; waiting for ${responsePath}`,
+      notes: `bundle written to ${bundlePath}; waiting for ${responsePath}`,
     };
   },
 };
@@ -250,7 +274,7 @@ export const indexesStage: GraphStage = {
     let processed = 0;
     for (const row of ctx.catalog.all()) {
       if (row.status !== "fetched") continue;
-      const nlp = readPersistedNlp(row.videoId, ctx.dataDir);
+      const nlp = readMergedNlp(row.videoId, ctx.dataDir);
       if (!nlp) continue;
       processed += 1;
       const entById = new Map(nlp.entities.map((e) => [e.id, e]));

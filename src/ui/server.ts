@@ -20,9 +20,14 @@ import { CREDIT_FOOTER } from "../shared/credit-footer.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
+  NlpOverlay,
+  emptyOverlay,
+  readMergedNlp,
+  readNlpOverlay,
   readPersistedEntityIndex,
   readPersistedEntityVideos,
   readPersistedNlp,
+  writeNlpOverlay,
   writePersistedEntityIndex,
   writePersistedEntityVideos,
   writePersistedNlp,
@@ -155,7 +160,7 @@ let entityVideosCache: EntityVideosIndex | null = null;
 function computeNlp(row: CatalogRow, dataDir?: string): NlpResult | null {
   const cached = nlpCache.get(row.videoId);
   if (cached) return cached;
-  const persisted = readPersistedNlp(row.videoId, dataDir);
+  const persisted = readMergedNlp(row.videoId, dataDir);
   if (persisted) {
     nlpCache.set(row.videoId, persisted);
     return persisted;
@@ -379,6 +384,136 @@ export function renderDetailPage(
   );
 }
 
+// Three-layer NLP overlay admin: shows auto NLP output, the user overlay
+// (adds + removes), and the merged effective view side by side. Each entity
+// row has source labels (auto / added / removed) so it's clear what survives
+// the next pipeline run.
+export function renderNlpOverlayAdmin(
+  row: CatalogRow,
+  auto: { entities: Entity[]; relationships: Relationship[] },
+  overlay: NlpOverlay,
+  merged: { entities: Entity[]; relationships: Relationship[] },
+): string {
+  const removedEntityIds = new Set(overlay.removeEntities.map((r) => r.id));
+  const removedRelIds = new Set(overlay.removeRelationships.map((r) => r.id));
+  const addedEntityIds = new Set(overlay.addEntities.map((e) => e.id));
+  const addedRelIds = new Set(overlay.addRelationships.map((r) => r.id));
+
+  function entitySource(id: string): string {
+    if (removedEntityIds.has(id)) return "removed";
+    if (addedEntityIds.has(id)) return "added";
+    return "auto";
+  }
+  function relSource(id: string): string {
+    if (removedRelIds.has(id)) return "removed";
+    if (addedRelIds.has(id)) return "added";
+    return "auto";
+  }
+
+  const allEntityIds = new Set<string>([
+    ...auto.entities.map((e) => e.id),
+    ...overlay.addEntities.map((e) => e.id),
+  ]);
+  const allEntities: Entity[] = [...allEntityIds].map(
+    (id) =>
+      auto.entities.find((e) => e.id === id) ??
+      overlay.addEntities.find((e) => e.id === id)!,
+  );
+  allEntities.sort((a, b) => a.canonical.localeCompare(b.canonical));
+
+  const entityRows = allEntities
+    .map((e) => {
+      const src = entitySource(e.id);
+      return `<tr class="src-${src}">
+        <td>${escapeHtml(src)}</td>
+        <td>${escapeHtml(e.type)}</td>
+        <td>${escapeHtml(e.canonical)}</td>
+        <td><code>${escapeHtml(e.id)}</code></td>
+      </tr>`;
+    })
+    .join("");
+
+  const allRelIds = new Set<string>([
+    ...auto.relationships.map((r) => r.id),
+    ...overlay.addRelationships.map((r) => r.id),
+  ]);
+  const allRels: Relationship[] = [...allRelIds].map(
+    (id) =>
+      auto.relationships.find((r) => r.id === id) ??
+      overlay.addRelationships.find((r) => r.id === id)!,
+  );
+  const relRows = allRels
+    .map((r) => {
+      const src = relSource(r.id);
+      return `<tr class="src-${src}">
+        <td>${escapeHtml(src)}</td>
+        <td>${escapeHtml(r.subjectId)}</td>
+        <td>${escapeHtml(r.predicate)}</td>
+        <td>${escapeHtml(r.objectId)}</td>
+        <td><code>${escapeHtml(r.id)}</code></td>
+      </tr>`;
+    })
+    .join("");
+
+  const overlayJson = JSON.stringify(overlay, null, 2);
+
+  const body = `
+    <h1>NLP overlay — ${escapeHtml(row.title ?? row.videoId)}</h1>
+    <p>
+      <a href="/video/${escapeHtml(row.videoId)}">video page</a> ·
+      auto: ${auto.entities.length} entities / ${auto.relationships.length} relationships ·
+      overlay: +${overlay.addEntities.length}/-${overlay.removeEntities.length} entities, +${overlay.addRelationships.length}/-${overlay.removeRelationships.length} relationships ·
+      merged: ${merged.entities.length} / ${merged.relationships.length}
+    </p>
+
+    <h2>Entities</h2>
+    <table>
+      <thead><tr><th>source</th><th>type</th><th>canonical</th><th>id</th></tr></thead>
+      <tbody>${entityRows || "<tr><td colspan=4>none</td></tr>"}</tbody>
+    </table>
+
+    <h2>Relationships</h2>
+    <table>
+      <thead><tr><th>source</th><th>subject</th><th>predicate</th><th>object</th><th>id</th></tr></thead>
+      <tbody>${relRows || "<tr><td colspan=5>none</td></tr>"}</tbody>
+    </table>
+
+    <h2>Overlay file</h2>
+    <p>Edit the JSON below and submit. The pipeline never touches this file.</p>
+    <form id="overlay-form">
+      <textarea id="overlay-json" rows="20" style="width:100%;font-family:monospace">${escapeHtml(overlayJson)}</textarea>
+      <p><button type="submit">Save overlay</button> <span id="status"></span></p>
+    </form>
+    <script>
+      document.getElementById("overlay-form").addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const status = document.getElementById("status");
+        status.textContent = "saving…";
+        try {
+          const body = document.getElementById("overlay-json").value;
+          JSON.parse(body);
+          const r = await fetch("/api/video/${encodeURIComponent(row.videoId)}/nlp/overlay", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body,
+          });
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          status.textContent = "saved. reloading…";
+          location.reload();
+        } catch (e) {
+          status.textContent = "error: " + e.message;
+        }
+      });
+    </script>
+    <style>
+      tr.src-removed { text-decoration: line-through; color: #a00; }
+      tr.src-added { background: #efe; }
+      td code { font-size: 11px; color: #666; }
+    </style>
+  `;
+  return layout(`overlay — ${row.videoId}`, body);
+}
+
 export function renderEmptyState(reason: "empty" | "error" | "loading", msg?: string): string {
   const map = {
     empty: "No videos in catalog.",
@@ -491,6 +626,50 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         (results) => sendJson(res, 200, { channels: results }),
         (err) => sendJson(res, 500, { error: err instanceof Error ? err.message : String(err) }),
       );
+      return;
+    }
+    // Overlay editing: GET returns { auto, overlay, merged } so the admin UI
+    // can render the three-layer view; POST replaces the overlay file body.
+    const apiOverlay = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)\/nlp\/overlay/);
+    if (apiOverlay) {
+      const row = opts.catalog.get(apiOverlay[1]);
+      if (!row) {
+        sendJson(res, 404, { error: "not found" });
+        return;
+      }
+      if (req.method === "POST") {
+        let body = "";
+        req.on("data", (c) => (body += c));
+        req.on("end", () => {
+          try {
+            const parsed = JSON.parse(body || "{}") as Partial<NlpOverlay>;
+            const overlay: NlpOverlay = {
+              ...emptyOverlay(),
+              ...parsed,
+              addEntities: parsed.addEntities ?? [],
+              removeEntities: parsed.removeEntities ?? [],
+              addRelationships: parsed.addRelationships ?? [],
+              removeRelationships: parsed.removeRelationships ?? [],
+            };
+            writeNlpOverlay(row.videoId, overlay, opts.dataDir);
+            nlpCache.delete(row.videoId);
+            entityIndexCache = null;
+            entityVideosCache = null;
+            relationshipsGraphCache = null;
+            sendJson(res, 200, { ok: true });
+          } catch (err) {
+            sendJson(res, 400, { error: (err as Error).message });
+          }
+        });
+        return;
+      }
+      const auto = readPersistedNlp(row.videoId, opts.dataDir) ?? {
+        entities: [],
+        relationships: [],
+      };
+      const overlay = readNlpOverlay(row.videoId, opts.dataDir) ?? emptyOverlay();
+      const merged = computeNlp(row, opts.dataDir) ?? { entities: [], relationships: [] };
+      sendJson(res, 200, { auto, overlay, merged });
       return;
     }
     const apiNlp = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)\/nlp/);
@@ -624,6 +803,30 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     if (url === "/" || url.startsWith("/?") || url === "/admin" || url.startsWith("/admin?")) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(renderSpaShell());
+      return;
+    }
+    // Admin three-layer NLP overlay view (auto / overlay / merged). Pure HTML
+    // so it works without the SPA bundle. Edits go through the JSON POST API.
+    const adminNlp = url.match(/^\/admin\/nlp\/([A-Za-z0-9_-]+)/);
+    if (adminNlp) {
+      const row = opts.catalog.get(adminNlp[1]);
+      if (!row) {
+        res.writeHead(404, { "content-type": "text/html" });
+        res.end(layout("not found", `<p>no such video: ${escapeHtml(adminNlp[1])}</p>`));
+        return;
+      }
+      const auto = readPersistedNlp(row.videoId, opts.dataDir) ?? {
+        entities: [],
+        relationships: [],
+      };
+      const overlay =
+        readNlpOverlay(row.videoId, opts.dataDir) ?? emptyOverlay();
+      const merged = computeNlp(row, opts.dataDir) ?? {
+        entities: [],
+        relationships: [],
+      };
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(renderNlpOverlayAdmin(row, auto, overlay, merged));
       return;
     }
     const m = url.match(/^\/video\/([A-Za-z0-9_-]+)/);

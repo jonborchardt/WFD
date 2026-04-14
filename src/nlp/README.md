@@ -32,6 +32,14 @@ output before normalization and does three things:
 3. **Location alias collapse** — `US`/`USA`/`America`/`United States` →
    one canonical `United States`. Small hand-maintained map; extend as
    needed.
+4. **Organization alias collapse** — `FBI` ↔ `Federal Bureau of Investigation`,
+   `CIA`, `NSA`, `DOJ`, `FDA`, `CDC`, `NIH`, `WHO`, `UN`, `NATO`, `EU`, etc.
+   Hand-curated bounded list of US federal + major intl bodies in
+   [canonicalize.ts](canonicalize.ts) `ORG_CANONICALS`. Extend without a
+   recompile by adding `alias<TAB>canonical` rows to
+   [data/gazetteer/organization_aliases.tsv](../../data/gazetteer/organization_aliases.tsv).
+   Long-tail org canonicalization is intentionally not attempted —
+   similar-looking orgs are often genuinely different (DOJ ≠ DOE).
 
 Relationship patterns in [relationships.ts](relationships.ts) each declare
 allowed `subj` and `obj` entity types. Pairs that don't satisfy the types
@@ -104,3 +112,52 @@ npm run cli -- pipeline --video=<id> --stage nlp
 Rerunning is non-destructive: the stage is staleness-gated by record
 version. The current `nlpStage.version` in [src/pipeline/stages.ts](../pipeline/stages.ts)
 controls re-run.
+
+## Hand-edits and the overlay sidecar
+
+Every video has two NLP files on disk:
+
+```
+data/nlp/<videoId>.json          # auto output, freely overwritten by re-runs
+data/nlp/<videoId>.overlay.json  # hand-authored deltas, never touched by the pipeline
+```
+
+The overlay holds four arrays:
+
+```jsonc
+{
+  "addEntities":         [ /* full Entity objects */ ],
+  "removeEntities":      [ { "id": "person:dan-brown" } ],
+  "addRelationships":    [ /* full Relationship objects */ ],
+  "removeRelationships": [ { "id": "..." } ]
+}
+```
+
+Consumers (graph store, indexes, UI) call `readMergedNlp()` /
+`mergeNlpWithOverlay()` from [persist.ts](persist.ts), which produces the
+effective view: `auto ∪ adds − removes`. Removes are matched on stable entity
+or relationship `id`. Overlay adds whose `id` collides with an auto entry
+**replace** the auto entry, so hand-edited canonicals win.
+
+**Re-running NLP is always safe.** The pipeline rewrites the auto file from
+scratch and applies the overlay on top. Your edits survive every run, even
+across NLP version bumps. If a re-run no longer produces something you
+previously removed, the remove entry becomes a harmless no-op.
+
+### Editing the overlay
+
+Two ways:
+
+1. **Admin UI** — visit `/admin/nlp/<videoId>` in the local server. It shows
+   the three layers (auto / overlay / merged) with `auto`, `added`, `removed`
+   row labels, plus a textarea to edit the overlay JSON directly. Saving
+   POSTs to `/api/video/<id>/nlp/overlay` and busts the in-memory caches.
+2. **Hand-edit the file** under `data/nlp/<videoId>.overlay.json`. The
+   pipeline never opens it for writing, so a re-run will not clobber it.
+
+### Transcripts are also gold
+
+Once `data/transcripts/<videoId>.json` exists on disk, `fetchAndStore()`
+treats it as gold and never re-fetches. Delete the file by hand to force a
+new download. This protects manual transcript edits the same way the
+overlay protects NLP edits.
