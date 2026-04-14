@@ -323,7 +323,7 @@ const HOME_COLUMNS = CATALOG_COLUMNS
   .filter(c => c.key !== "status")
   .map(c => ["lengthSeconds", "viewCount"].includes(c.key) ? { ...c, default: true } : c);
 
-const PIPELINE_STAGES = ["fetched", "nlp", "ai", "per-claim"];
+const PIPELINE_STAGES = ["fetched", "nlp", "per-claim", "ai"];
 
 function stageCellFor(stageName) {
   return (r) => {

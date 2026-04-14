@@ -44,7 +44,7 @@ export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, on
     const out: { top: FacetRow[]; pinned: FacetRow[]; selected: Set<string> }[] = [];
     for (let i = 0; i < groups.length; i++) {
       const scoped = activeVideoIds(bundle, selectionExcluding(selection, type, i));
-      const { top, pinned } = topEntitiesForType(bundle, type, scoped, 25, groups[i]);
+      const { top, pinned } = topEntitiesForType(bundle, type, scoped, 15, groups[i]);
       out.push({ top, pinned, selected: groups[i] });
     }
     const max = out.reduce(
