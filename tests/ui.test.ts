@@ -26,9 +26,8 @@ function seedCatalog(): Catalog {
     title: "Alpha debate",
     channel: "ChannelOne",
     status: "fetched",
-    attempts: 1,
     transcriptPath: join(dir, "aaaaaaaaaaa.json"),
-    fetchedAt: "2026-04-10T12:00:00Z",
+    stages: { fetched: { at: "2026-04-10T12:00:00Z" } },
   });
   cat.upsert({
     videoId: "bbbbbbbbbbb",
@@ -36,7 +35,6 @@ function seedCatalog(): Catalog {
     title: "Beta interview",
     channel: "ChannelTwo",
     status: "pending",
-    attempts: 0,
   });
   cat.upsert({
     videoId: "ccccccccccc",
@@ -44,7 +42,6 @@ function seedCatalog(): Catalog {
     title: "Gamma rally",
     channel: "ChannelOne",
     status: "failed-needs-user",
-    attempts: 3,
   });
   atomicWriteJson(join(dir, "aaaaaaaaaaa.json"), {
     videoId: "aaaaaaaaaaa",

@@ -20,5 +20,12 @@
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "tests"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests",
+    "src/ui/client/facets",
+    "src/ui/client/shared",
+    "src/ui/client/types.d.ts"
+  ]
 }

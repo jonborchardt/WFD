@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [],
+    "lib": ["es2022", "dom", "dom.iterable"]
+  },
+  "include": [
+    "src/ui/client/facets/**/*.ts",
+    "src/ui/client/facets/**/*.tsx",
+    "src/ui/client/shared/**/*.ts",
+    "src/ui/client/shared/**/*.tsx",
+    "src/ui/client/types.d.ts"
+  ]
+}

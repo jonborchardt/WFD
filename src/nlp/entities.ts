@@ -2,19 +2,19 @@
 //
 // Two entity producers feed a single normalize() pass:
 //
-//   1. Regex + gazetteer  — times, dates, and anything in the gazetteer
-//                            (orgs, locations, events, things). Pure JS, sync.
-//   2. Neural NER (BERT)  — persons, organizations, locations. Runs through
-//                            @xenova/transformers. Case-insensitive in practice
-//                            and necessary for the lowercase auto-generated
-//                            transcripts that dominate this corpus.
+//   1. Regex + gazetteer  — times, dates, and gazetteer-backed orgs and
+//                            locations. Pure JS, sync.
+//   2. Neural NER (BERT)  — persons, organizations, locations, misc. Runs
+//                            through @xenova/transformers. Case-insensitive in
+//                            practice and necessary for the lowercase auto-
+//                            generated transcripts that dominate this corpus.
 //
 // Because the neural pass is async and the rest of the extractor is sync,
 // NER mentions are computed by the caller (typically the pipeline stage)
 // and passed in as an option. Tests and the UI preview path can omit them
 // and still get regex-only extraction — graceful degradation is intentional.
 //
-// Entity types emitted: person, thing, time, event, location, organization.
+// Entity types emitted: person, misc, time, location, organization.
 
 import { Entity, TranscriptSpan } from "../shared/types.js";
 import { resolveCoreferences } from "./coref.js";
@@ -57,15 +57,11 @@ export const DEFAULT_GAZETTEER = {
     "Tokyo",
     "Berlin",
   ],
-  event: ["World War II", "Cold War", "9/11", "Brexit"],
-  thing: ["vaccine", "oil", "budget", "treaty"],
 };
 
 export interface GazetteerMap {
   organization: string[];
   location: string[];
-  event: string[];
-  thing: string[];
 }
 
 interface Mention {
@@ -233,8 +229,6 @@ export function extract(
     ...timeMentions(text, transcript, cueStarts),
     ...gazetteerMentions("organization", gaz.organization, text, transcript, cueStarts),
     ...gazetteerMentions("location", gaz.location, text, transcript, cueStarts),
-    ...gazetteerMentions("event", gaz.event, text, transcript, cueStarts),
-    ...gazetteerMentions("thing", gaz.thing, text, transcript, cueStarts),
   ];
   const entities = normalize(mentions);
   if (opts.coref === false) return entities;

@@ -17,19 +17,17 @@ const fixture = {
 };
 
 describe("entity extraction", () => {
-  it("extracts people, locations, orgs, things, times", () => {
+  it("extracts people, locations, orgs, times", () => {
     const entities = ex(fixture);
     const types = entities.map((e) => e.type);
     expect(types).toContain("person");
     expect(types).toContain("location");
     expect(types).toContain("organization");
-    expect(types).toContain("thing");
     expect(types).toContain("time");
     const canonicals = entities.map((e) => e.canonical.toLowerCase());
     expect(canonicals).toContain("angela merkel");
     expect(canonicals).toContain("berlin");
     expect(canonicals).toContain("nasa");
-    expect(canonicals).toContain("vaccine");
     expect(canonicals).toContain("2021");
   });
 

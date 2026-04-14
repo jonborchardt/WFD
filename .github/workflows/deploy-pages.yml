@@ -10,6 +10,8 @@ on:
       - "src/ui/client/**"
       - "src/ui/query.js"
       - "scripts/static-shim.js"
+      - "tsconfig.client.json"
+      - "package.json"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -30,9 +32,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install deps
+        run: npm ci || npm install
+      - name: Compile client TSX
+        run: npm run build:client
       - name: Assemble site
         run: |
-          mkdir -p _site/data
+          mkdir -p _site/data _site/facets _site/shared
           cp -r data/catalog _site/data/
           cp -r data/transcripts _site/data/
           cp -r data/nlp _site/data/
@@ -41,6 +50,8 @@ jobs:
           cp src/ui/client/app.js _site/client.js
           cp src/ui/query.js _site/query.js
           cp scripts/static-shim.js _site/static-shim.js
+          cp src/ui/client/facets/*.js _site/facets/
+          cp src/ui/client/shared/*.js _site/shared/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

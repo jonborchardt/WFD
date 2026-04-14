@@ -23,12 +23,18 @@ import { Entity } from "../shared/types.js";
 // to change backbones — nothing else in this file needs to change.
 const MODEL_ID = "Xenova/bert-base-NER";
 
+// BERT-base-NER emits CoNLL-2003 tags: PER, ORG, LOC, MISC. We surface all
+// four. MISC is mapped to our "misc" bucket — it's where named events,
+// nationalities, works, and other proper nouns live that don't fit the other
+// three slots. Dropping MISC (the previous behavior) silently discarded that
+// entire category.
+
 // Cap per-chunk character length well under the model's ~512 token window.
 // Roughly 3 chars/token is a safe lower bound for English.
 const MAX_CHUNK_CHARS = 1200;
 
 export interface NerMention {
-  type: Entity["type"]; // "person" | "organization" | "location"
+  type: Entity["type"]; // "person" | "organization" | "location" | "misc"
   surface: string;
   start: number; // char offset in the full input text
   end: number; // exclusive
@@ -111,6 +117,7 @@ function mapTagToType(tag: string): NerMention["type"] | null {
   if (tag === "PER" || tag === "PERSON") return "person";
   if (tag === "ORG" || tag === "ORGANIZATION") return "organization";
   if (tag === "LOC" || tag === "LOCATION" || tag === "GPE") return "location";
+  if (tag === "MISC") return "misc";
   return null;
 }
 

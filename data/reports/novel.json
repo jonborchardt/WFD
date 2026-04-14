@@ -1,5 +1,837 @@
 [
   {
+    "subjectId": "organization:cia",
+    "objectId": "organization:central intelligence agency",
+    "score": 27.655,
+    "supportingEdges": [
+      {
+        "id": "person:chanty\nmarvin hol|worked-for|organization:cia|a5KXsiBZjOM:22367-22388",
+        "subjectId": "person:chanty\nmarvin hol",
+        "predicate": "worked-for",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 22367,
+          "charEnd": 22388,
+          "timeStart": 1514.64,
+          "timeEnd": 1519.279
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8857909319932875
+      },
+      {
+        "id": "organization:cia|located-at|time:1952|veVqh9XoXUs:17351-17376",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "time:1952",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 17351,
+          "charEnd": 17376,
+          "timeStart": 1347.6,
+          "timeEnd": 1352.76
+        },
+        "confidence": 0.85,
+        "provenance": "nlp",
+        "derivedTruth": 0.8860491912734526
+      },
+      {
+        "id": "organization:cia|located-at|time:1991|2k7YTFrmt84:23735-23758",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "time:1991",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23758,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8862531125212464
+      },
+      {
+        "id": "person:united states|accused|organization:cia|2k7YTFrmt84:25904-25939",
+        "subjectId": "person:united states",
+        "predicate": "accused",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 25904,
+          "charEnd": 25939,
+          "timeStart": 1842.919,
+          "timeEnd": 1848
+        },
+        "confidence": 0.8416666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8815175189246363
+      },
+      {
+        "id": "location:united states|accused|organization:cia|2k7YTFrmt84:25904-25939",
+        "subjectId": "location:united states",
+        "predicate": "accused",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 25904,
+          "charEnd": 25939,
+          "timeStart": 1842.919,
+          "timeEnd": 1848
+        },
+        "confidence": 0.8416666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8683700376440606
+      },
+      {
+        "id": "person:united states|accused|organization:cia|2k7YTFrmt84:25922-25939",
+        "subjectId": "person:united states",
+        "predicate": "accused",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 25922,
+          "charEnd": 25939,
+          "timeStart": 1842.919,
+          "timeEnd": 1848
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8814459332934502
+      },
+      {
+        "id": "organization:cia|located-at|person:alberta\ncanada|KOajRmbroY0:5023-5052",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "person:alberta\ncanada",
+        "evidence": {
+          "transcriptId": "KOajRmbroY0",
+          "charStart": 5023,
+          "charEnd": 5052,
+          "timeStart": 381.36,
+          "timeEnd": 385.44
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.8854042140018127
+      },
+      {
+        "id": "organization:cia|during|person:world war|50Y5r9HeR2w:26862-26882",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "person:world war",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26882,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8871310158526
+      },
+      {
+        "id": "organization:cia|during|event:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "event:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8866517287480016
+      },
+      {
+        "id": "organization:cia|during|person:world war|50Y5r9HeR2w:26862-26889",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "person:world war",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26889,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.825,
+        "provenance": "nlp",
+        "derivedTruth": 0.8870349831592297
+      },
+      {
+        "id": "organization:cia|located-at|person:john lear|Je3Qu-xMuxM:22852-22884",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "person:john lear",
+        "evidence": {
+          "transcriptId": "Je3Qu-xMuxM",
+          "charStart": 22852,
+          "charEnd": 22884,
+          "timeStart": 1438.679,
+          "timeEnd": 1443.24
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.8853795716313368
+      },
+      {
+        "id": "person:shaw|denied|organization:cia|a5KXsiBZjOM:15447-15462",
+        "subjectId": "person:shaw",
+        "predicate": "denied",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 15447,
+          "charEnd": 15462,
+          "timeStart": 1050.16,
+          "timeEnd": 1055.039
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8851522046320611
+      },
+      {
+        "id": "organization:cia|located-at|location:ussr|2k7YTFrmt84:23735-23767",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "location:ussr",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23767,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.7916666666666666,
+        "provenance": "nlp",
+        "derivedTruth": 0.8851066244159637
+      },
+      {
+        "id": "organization:cia|located-at|location:canada|KOajRmbroY0:5023-5052",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "location:canada",
+        "evidence": {
+          "transcriptId": "KOajRmbroY0",
+          "charStart": 5023,
+          "charEnd": 5052,
+          "timeStart": 381.36,
+          "timeEnd": 385.44
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.88542486984689
+      },
+      {
+        "id": "person:klay shaw|denied|organization:cia|a5KXsiBZjOM:15447-15462",
+        "subjectId": "person:klay shaw",
+        "predicate": "denied",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 15447,
+          "charEnd": 15462,
+          "timeStart": 1050.16,
+          "timeEnd": 1055.039
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8852633712697746
+      },
+      {
+        "id": "person:chanty marvin hol|worked-for|organization:cia|a5KXsiBZjOM:22367-22388",
+        "subjectId": "person:chanty marvin hol",
+        "predicate": "worked-for",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 22367,
+          "charEnd": 22388,
+          "timeStart": 1514.64,
+          "timeEnd": 1519.279
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8852012411052185
+      },
+      {
+        "id": "time:1952|located-at|organization:cia|veVqh9XoXUs:17351-17376",
+        "subjectId": "time:1952",
+        "predicate": "located-at",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 17351,
+          "charEnd": 17376,
+          "timeStart": 1347.6,
+          "timeEnd": 1352.76
+        },
+        "confidence": 0.85,
+        "provenance": "nlp",
+        "derivedTruth": 0.8852255472365547
+      },
+      {
+        "id": "time:1991|located-at|organization:cia|2k7YTFrmt84:23735-23758",
+        "subjectId": "time:1991",
+        "predicate": "located-at",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23758,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8854831193001416
+      },
+      {
+        "id": "organization:cia|located-at|location:soviet union|2k7YTFrmt84:23735-23767",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "location:soviet union",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23767,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.7916666666666666,
+        "provenance": "nlp",
+        "derivedTruth": 0.8850277179335424
+      },
+      {
+        "id": "person:john lear|located-at|organization:cia|Je3Qu-xMuxM:22852-22884",
+        "subjectId": "person:john lear",
+        "predicate": "located-at",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "Je3Qu-xMuxM",
+          "charStart": 22852,
+          "charEnd": 22884,
+          "timeStart": 1438.679,
+          "timeEnd": 1443.24
+        },
+        "confidence": 0.7916666666666666,
+        "provenance": "nlp",
+        "derivedTruth": 0.8848572471580353
+      },
+      {
+        "id": "organization:central intelligence agency|located-at|location:middle east|TGGlLkE_-SA:68338-68360",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "located-at",
+        "objectId": "location:middle east",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 68338,
+          "charEnd": 68360,
+          "timeStart": 3790.4,
+          "timeEnd": 3792.7200000000003
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8905115144266134
+      },
+      {
+        "id": "organization:cia|located-at|location:middle east|TGGlLkE_-SA:68338-68360",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "location:middle east",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 68338,
+          "charEnd": 68360,
+          "timeStart": 3790.4,
+          "timeEnd": 3792.7200000000003
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8848391223364048
+      },
+      {
+        "id": "person:klay shaw|denied|organization:central intelligence agency|a5KXsiBZjOM:15447-15462",
+        "subjectId": "person:klay shaw",
+        "predicate": "denied",
+        "objectId": "organization:central intelligence agency",
+        "evidence": {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 15447,
+          "charEnd": 15462,
+          "timeStart": 1050.16,
+          "timeEnd": 1055.039
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8902750406923178
+      },
+      {
+        "id": "person:chanty marvin hol|worked-for|organization:central intelligence agency|a5KXsiBZjOM:22367-22388",
+        "subjectId": "person:chanty marvin hol",
+        "predicate": "worked-for",
+        "objectId": "organization:central intelligence agency",
+        "evidence": {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 22367,
+          "charEnd": 22388,
+          "timeStart": 1514.64,
+          "timeEnd": 1519.279
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8901472163353191
+      },
+      {
+        "id": "time:1952|located-at|organization:central intelligence agency|veVqh9XoXUs:17351-17376",
+        "subjectId": "time:1952",
+        "predicate": "located-at",
+        "objectId": "organization:central intelligence agency",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 17351,
+          "charEnd": 17376,
+          "timeStart": 1347.6,
+          "timeEnd": 1352.76
+        },
+        "confidence": 0.85,
+        "provenance": "nlp",
+        "derivedTruth": 0.8895014931749962
+      },
+      {
+        "id": "time:1991|located-at|organization:central intelligence agency|2k7YTFrmt84:23735-23758",
+        "subjectId": "time:1991",
+        "predicate": "located-at",
+        "objectId": "organization:central intelligence agency",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23758,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8893767453672787
+      },
+      {
+        "id": "organization:central intelligence agency|located-at|location:soviet union|2k7YTFrmt84:23735-23767",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "located-at",
+        "objectId": "location:soviet union",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23767,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.7916666666666666,
+        "provenance": "nlp",
+        "derivedTruth": 0.8897665493701825
+      },
+      {
+        "id": "organization:central intelligence agency|located-at|location:canada|KOajRmbroY0:5023-5052",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "located-at",
+        "objectId": "location:canada",
+        "evidence": {
+          "transcriptId": "KOajRmbroY0",
+          "charStart": 5023,
+          "charEnd": 5052,
+          "timeStart": 381.36,
+          "timeEnd": 385.44
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.8895050092977437
+      },
+      {
+        "id": "organization:central intelligence agency|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8900022040866248
+      },
+      {
+        "id": "organization:cia|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8851163550566417
+      },
+      {
+        "id": "person:john lear|located-at|organization:central intelligence agency|Je3Qu-xMuxM:22852-22884",
+        "subjectId": "person:john lear",
+        "predicate": "located-at",
+        "objectId": "organization:central intelligence agency",
+        "evidence": {
+          "transcriptId": "Je3Qu-xMuxM",
+          "charStart": 22852,
+          "charEnd": 22884,
+          "timeStart": 1438.679,
+          "timeEnd": 1443.24
+        },
+        "confidence": 0.7916666666666666,
+        "provenance": "nlp",
+        "derivedTruth": 0.8889868643341879
+      }
+    ],
+    "sharedEntities": [
+      "time:1952",
+      "time:1991",
+      "person:john lear",
+      "location:canada",
+      "person:klay shaw",
+      "person:chanty marvin hol",
+      "location:soviet union",
+      "location:middle east",
+      "misc:world war ii"
+    ],
+    "sharedTranscripts": [
+      "a5KXsiBZjOM",
+      "veVqh9XoXUs",
+      "2k7YTFrmt84",
+      "KOajRmbroY0",
+      "50Y5r9HeR2w",
+      "Je3Qu-xMuxM",
+      "TGGlLkE_-SA"
+    ]
+  },
+  {
+    "subjectId": "organization:nasa",
+    "objectId": "organization:national aeronautics and space administration",
+    "score": 16.608333333333334,
+    "supportingEdges": [
+      {
+        "id": "organization:nasa|located-at|time:2002|lb0ib5B_bK4:14433-14453",
+        "subjectId": "organization:nasa",
+        "predicate": "located-at",
+        "objectId": "time:2002",
+        "evidence": {
+          "transcriptId": "lb0ib5B_bK4",
+          "charStart": 14433,
+          "charEnd": 14453,
+          "timeStart": 1054.88,
+          "timeEnd": 1059.88
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9795894871035932
+      },
+      {
+        "id": "organization:nasa|located-at|time:1961|SJek6PsN2xg:22056-22068",
+        "subjectId": "organization:nasa",
+        "predicate": "located-at",
+        "objectId": "time:1961",
+        "evidence": {
+          "transcriptId": "SJek6PsN2xg",
+          "charStart": 22056,
+          "charEnd": 22068,
+          "timeStart": 1596.64,
+          "timeEnd": 1601.1200000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9784455995420435
+      },
+      {
+        "id": "person:ken johnston|knows|organization:nasa|WqHimq-PT_s:10463-10493",
+        "subjectId": "person:ken johnston",
+        "predicate": "knows",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "WqHimq-PT_s",
+          "charStart": 10463,
+          "charEnd": 10493,
+          "timeStart": 810.519,
+          "timeEnd": 818.5600000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9780750935559167
+      },
+      {
+        "id": "person:ken|knows|organization:nasa|WqHimq-PT_s:10463-10493",
+        "subjectId": "person:ken",
+        "predicate": "knows",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "WqHimq-PT_s",
+          "charStart": 10463,
+          "charEnd": 10493,
+          "timeStart": 810.519,
+          "timeEnd": 818.5600000000001
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.9780629715523498
+      },
+      {
+        "id": "person:robert dean|said|organization:nasa|WqHimq-PT_s:12150-12172",
+        "subjectId": "person:robert dean",
+        "predicate": "said",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "WqHimq-PT_s",
+          "charStart": 12150,
+          "charEnd": 12172,
+          "timeStart": 929.6,
+          "timeEnd": 935.399
+        },
+        "confidence": 0.8833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.9785351775273572
+      },
+      {
+        "id": "organization:nasa|located-at|time:2001|xC9SxxjEviE:6939-6951",
+        "subjectId": "organization:nasa",
+        "predicate": "located-at",
+        "objectId": "time:2001",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9739727881744922
+      },
+      {
+        "id": "person:air force|located-at|organization:nasa|Je3Qu-xMuxM:4199-4216",
+        "subjectId": "person:air force",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "Je3Qu-xMuxM",
+          "charStart": 4199,
+          "charEnd": 4216,
+          "timeStart": 256.979,
+          "timeEnd": 261
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9780243416224917
+      },
+      {
+        "id": "person:ken johnston|knows|organization:nasa|WqHimq-PT_s:10466-10493",
+        "subjectId": "person:ken johnston",
+        "predicate": "knows",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "WqHimq-PT_s",
+          "charStart": 10466,
+          "charEnd": 10493,
+          "timeStart": 810.519,
+          "timeEnd": 818.5600000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9779876372493618
+      },
+      {
+        "id": "person:dean|said|organization:nasa|WqHimq-PT_s:12150-12172",
+        "subjectId": "person:dean",
+        "predicate": "said",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "WqHimq-PT_s",
+          "charStart": 12150,
+          "charEnd": 12172,
+          "timeStart": 929.6,
+          "timeEnd": 935.399
+        },
+        "confidence": 0.8833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.9779749961108022
+      },
+      {
+        "id": "organization:air force|located-at|organization:nasa|Je3Qu-xMuxM:4199-4216",
+        "subjectId": "organization:air force",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "Je3Qu-xMuxM",
+          "charStart": 4199,
+          "charEnd": 4216,
+          "timeStart": 256.979,
+          "timeEnd": 261
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9803107018864629
+      },
+      {
+        "id": "time:2002|located-at|organization:nasa|lb0ib5B_bK4:14433-14453",
+        "subjectId": "time:2002",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "lb0ib5B_bK4",
+          "charStart": 14433,
+          "charEnd": 14453,
+          "timeStart": 1054.88,
+          "timeEnd": 1059.88
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9794406667524809
+      },
+      {
+        "id": "time:1961|located-at|organization:nasa|SJek6PsN2xg:22056-22068",
+        "subjectId": "time:1961",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "SJek6PsN2xg",
+          "charStart": 22056,
+          "charEnd": 22068,
+          "timeStart": 1596.64,
+          "timeEnd": 1601.1200000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9783016012439483
+      },
+      {
+        "id": "time:2001|located-at|organization:nasa|xC9SxxjEviE:6939-6951",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9738846123565806
+      },
+      {
+        "id": "time:2002|located-at|organization:national aeronautics and space administration|lb0ib5B_bK4:14433-14453",
+        "subjectId": "time:2002",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "lb0ib5B_bK4",
+          "charStart": 14433,
+          "charEnd": 14453,
+          "timeStart": 1054.88,
+          "timeEnd": 1059.88
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9809029895313935
+      },
+      {
+        "id": "time:1961|located-at|organization:national aeronautics and space administration|SJek6PsN2xg:22056-22068",
+        "subjectId": "time:1961",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "SJek6PsN2xg",
+          "charStart": 22056,
+          "charEnd": 22068,
+          "timeStart": 1596.64,
+          "timeEnd": 1601.1200000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9792354026016409
+      },
+      {
+        "id": "person:robert dean|said|organization:national aeronautics and space administration|WqHimq-PT_s:12150-12172",
+        "subjectId": "person:robert dean",
+        "predicate": "said",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "WqHimq-PT_s",
+          "charStart": 12150,
+          "charEnd": 12172,
+          "timeStart": 929.6,
+          "timeEnd": 935.399
+        },
+        "confidence": 0.8833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.9795485555886098
+      },
+      {
+        "id": "time:2001|located-at|organization:national aeronautics and space administration|xC9SxxjEviE:6939-6951",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.971358250200754
+      },
+      {
+        "id": "organization:air force|located-at|organization:national aeronautics and space administration|Je3Qu-xMuxM:4199-4216",
+        "subjectId": "organization:air force",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "Je3Qu-xMuxM",
+          "charStart": 4199,
+          "charEnd": 4216,
+          "timeStart": 256.979,
+          "timeEnd": 261
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9833476241035237
+      }
+    ],
+    "sharedEntities": [
+      "time:2002",
+      "time:1961",
+      "person:robert dean",
+      "time:2001",
+      "organization:air force"
+    ],
+    "sharedTranscripts": [
+      "lb0ib5B_bK4",
+      "SJek6PsN2xg",
+      "WqHimq-PT_s",
+      "xC9SxxjEviE",
+      "Je3Qu-xMuxM"
+    ]
+  },
+  {
     "subjectId": "person:al",
     "objectId": "person:al be",
     "score": 12.18,
@@ -18,7 +850,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9695779755116343
+        "derivedTruth": 0.9694690606546658
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -35,7 +867,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873031444387154
+        "derivedTruth": 0.9872576919804699
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -52,7 +884,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872581844555008
+        "derivedTruth": 0.98721257533196
       },
       {
         "id": "time:1927|said|person:al|BzRR4Yg6B3w:22675-22711",
@@ -69,7 +901,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956916922018533
+        "derivedTruth": 0.9956762392385996
       },
       {
         "id": "person:al|said|person:john v norman|BzRR4Yg6B3w:24534-24546",
@@ -85,7 +917,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869468553671776
+        "derivedTruth": 0.9869000585088974
       },
       {
         "id": "person:al|said|time:2000|BzRR4Yg6B3w:25417-25452",
@@ -101,7 +933,7 @@
         },
         "confidence": 0.7583333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9869471683506618
+        "derivedTruth": 0.9869003673239564
       },
       {
         "id": "person:al|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -118,7 +950,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.995892521207359
+        "derivedTruth": 0.9958777960043279
       },
       {
         "id": "person:al be|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -134,7 +966,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.969571534475911
+        "derivedTruth": 0.9694626840947235
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -151,7 +983,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873004575181378
+        "derivedTruth": 0.987255031771016
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -168,7 +1000,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872554894268052
+        "derivedTruth": 0.9872099068935749
       },
       {
         "id": "person:al be|said|time:1927|BzRR4Yg6B3w:22675-22711",
@@ -185,7 +1017,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956906651532522
+        "derivedTruth": 0.9956752238333413
       },
       {
         "id": "person:al be|said|person:john v norman|BzRR4Yg6B3w:24534-24546",
@@ -201,7 +1033,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869433012137403
+        "derivedTruth": 0.986896543043555
       },
       {
         "id": "person:al be|said|time:2000|BzRR4Yg6B3w:25417-25452",
@@ -217,7 +1049,7 @@
         },
         "confidence": 0.7583333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9869430089508573
+        "derivedTruth": 0.9868962537497591
       },
       {
         "id": "person:al be|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -234,7 +1066,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9958914888788343
+        "derivedTruth": 0.995876774846779
       }
     ],
     "sharedEntities": [
@@ -267,7 +1099,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9794439324358514
+        "derivedTruth": 0.9776594441389784
       },
       {
         "id": "location:england|located-at|time:1957|trj5dsNWgJ8:3963-3978",
@@ -283,7 +1115,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9763063098413406
+        "derivedTruth": 0.9743075033508912
       },
       {
         "id": "location:england|located-at|person:joanna|trj5dsNWgJ8:3963-3993",
@@ -299,7 +1131,7 @@
         },
         "confidence": 0.8583333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.9791582010779835
+        "derivedTruth": 0.9773552569608522
       },
       {
         "id": "person:phyllis newcomb|located-at|location:england|AOO5a_jUOzg:4159-4219",
@@ -315,7 +1147,7 @@
         },
         "confidence": 0.6833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9801548939949563
+        "derivedTruth": 0.978421074532834
       },
       {
         "id": "location:shire hall|located-at|location:england|AOO5a_jUOzg:4198-4219",
@@ -331,7 +1163,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9800251812081467
+        "derivedTruth": 0.9782823853668019
       },
       {
         "id": "location:elely cathedral|located-at|location:united kingdom|z_YeaMO2X0s:30935-30961",
@@ -347,7 +1179,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.979232074164047
+        "derivedTruth": 0.9774331035312365
       },
       {
         "id": "time:1957|located-at|location:united kingdom|trj5dsNWgJ8:3963-3978",
@@ -363,7 +1195,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9761747479708734
+        "derivedTruth": 0.9741672481153729
       },
       {
         "id": "person:joanna #trj5dsnwgj8|located-at|location:united kingdom|trj5dsNWgJ8:3963-3993",
@@ -379,7 +1211,7 @@
         },
         "confidence": 0.8583333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.9789697627288902
+        "derivedTruth": 0.9771538545055033
       },
       {
         "id": "person:phyllis newcomb|located-at|location:united kingdom|AOO5a_jUOzg:4159-4219",
@@ -395,7 +1227,7 @@
         },
         "confidence": 0.6833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9799586637041943
+        "derivedTruth": 0.9782112800815763
       },
       {
         "id": "location:shire hall|located-at|location:united kingdom|AOO5a_jUOzg:4198-4219",
@@ -411,7 +1243,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9798108044624383
+        "derivedTruth": 0.9780532295385603
       }
     ],
     "sharedEntities": [
@@ -424,6 +1256,217 @@
       "z_YeaMO2X0s",
       "trj5dsNWgJ8",
       "AOO5a_jUOzg"
+    ]
+  },
+  {
+    "subjectId": "location:united states",
+    "objectId": "location:america",
+    "score": 11.034166666666668,
+    "supportingEdges": [
+      {
+        "id": "location:america|located-at|location:boston|veVqh9XoXUs:18647-18674",
+        "subjectId": "location:america",
+        "predicate": "located-at",
+        "objectId": "location:boston",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 18647,
+          "charEnd": 18674,
+          "timeStart": 1432.24,
+          "timeEnd": 1438.44
+        },
+        "confidence": 0.8833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.6825536590686222
+      },
+      {
+        "id": "location:america|located-at|location:europe|2k7YTFrmt84:8234-8262",
+        "subjectId": "location:america",
+        "predicate": "located-at",
+        "objectId": "location:europe",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 8234,
+          "charEnd": 8262,
+          "timeStart": 593.8,
+          "timeEnd": 598.5999999999999
+        },
+        "confidence": 0.875,
+        "provenance": "nlp",
+        "derivedTruth": 0.5671660629505612
+      },
+      {
+        "id": "location:united states|accused|organization:cia|2k7YTFrmt84:25904-25939",
+        "subjectId": "location:united states",
+        "predicate": "accused",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 25904,
+          "charEnd": 25939,
+          "timeStart": 1842.919,
+          "timeEnd": 1848
+        },
+        "confidence": 0.8416666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8683700376440606
+      },
+      {
+        "id": "location:america|located-at|time:1924|Rg-Ocr5hNLI:14961-14992",
+        "subjectId": "location:america",
+        "predicate": "located-at",
+        "objectId": "time:1924",
+        "evidence": {
+          "transcriptId": "Rg-Ocr5hNLI",
+          "charStart": 14961,
+          "charEnd": 14992,
+          "timeStart": 1150.919,
+          "timeEnd": 1157.039
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.6894262834181712
+      },
+      {
+        "id": "location:america|located-at|location:queens|veVqh9XoXUs:18647-18664",
+        "subjectId": "location:america",
+        "predicate": "located-at",
+        "objectId": "location:queens",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 18647,
+          "charEnd": 18664,
+          "timeStart": 1432.24,
+          "timeEnd": 1438.44
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.6780036964185744
+      },
+      {
+        "id": "location:america|located-at|location:baltimore|veVqh9XoXUs:18647-18687",
+        "subjectId": "location:america",
+        "predicate": "located-at",
+        "objectId": "location:baltimore",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 18647,
+          "charEnd": 18687,
+          "timeStart": 1432.24,
+          "timeEnd": 1438.44
+        },
+        "confidence": 0.8,
+        "provenance": "nlp",
+        "derivedTruth": 0.6911278664005845
+      },
+      {
+        "id": "person:adolf hitler|said|location:united states|veVqh9XoXUs:23746-23760",
+        "subjectId": "person:adolf hitler",
+        "predicate": "said",
+        "objectId": "location:united states",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 23746,
+          "charEnd": 23760,
+          "timeStart": 1763.88,
+          "timeEnd": 1768.5590000000002
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "directTruth": 1,
+        "derivedTruth": 0.922347699967172
+      },
+      {
+        "id": "location:united states|located-at|location:europe|2k7YTFrmt84:8234-8262",
+        "subjectId": "location:united states",
+        "predicate": "located-at",
+        "objectId": "location:europe",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 8234,
+          "charEnd": 8262,
+          "timeStart": 593.8,
+          "timeEnd": 598.5999999999999
+        },
+        "confidence": 0.875,
+        "provenance": "nlp",
+        "derivedTruth": 0.7262970760608579
+      },
+      {
+        "id": "time:1924|located-at|location:united states|Rg-Ocr5hNLI:14961-14992",
+        "subjectId": "time:1924",
+        "predicate": "located-at",
+        "objectId": "location:united states",
+        "evidence": {
+          "transcriptId": "Rg-Ocr5hNLI",
+          "charStart": 14961,
+          "charEnd": 14992,
+          "timeStart": 1150.919,
+          "timeEnd": 1157.039
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.8124421710841554
+      },
+      {
+        "id": "time:1924|located-at|location:america|Rg-Ocr5hNLI:14961-14992",
+        "subjectId": "time:1924",
+        "predicate": "located-at",
+        "objectId": "location:america",
+        "evidence": {
+          "transcriptId": "Rg-Ocr5hNLI",
+          "charStart": 14961,
+          "charEnd": 14992,
+          "timeStart": 1150.919,
+          "timeEnd": 1157.039
+        },
+        "confidence": 0.8333333333333334,
+        "provenance": "nlp",
+        "derivedTruth": 0.6895932537148955
+      },
+      {
+        "id": "misc:aw|located-at|location:united states|tsKqJay4ZRE:4082-4105",
+        "subjectId": "misc:aw",
+        "predicate": "located-at",
+        "objectId": "location:united states",
+        "evidence": {
+          "transcriptId": "tsKqJay4ZRE",
+          "charStart": 4082,
+          "charEnd": 4105,
+          "timeStart": 279,
+          "timeEnd": 283.38
+        },
+        "confidence": 0.8833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.8371631841444934
+      },
+      {
+        "id": "misc:aw|located-at|location:america|tsKqJay4ZRE:4082-4105",
+        "subjectId": "misc:aw",
+        "predicate": "located-at",
+        "objectId": "location:america",
+        "evidence": {
+          "transcriptId": "tsKqJay4ZRE",
+          "charStart": 4082,
+          "charEnd": 4105,
+          "timeStart": 279,
+          "timeEnd": 283.38
+        },
+        "confidence": 0.8833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.6835576546267095
+      }
+    ],
+    "sharedEntities": [
+      "location:europe",
+      "time:1924",
+      "misc:aw"
+    ],
+    "sharedTranscripts": [
+      "2k7YTFrmt84",
+      "veVqh9XoXUs",
+      "Rg-Ocr5hNLI",
+      "tsKqJay4ZRE"
     ]
   },
   {
@@ -446,7 +1489,7 @@
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9995233115660875
+        "derivedTruth": 0.9973762413198497
       },
       {
         "id": "organization:sri|said|person:swan|V8kT6J_uoic:2526-2539",
@@ -462,7 +1505,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9988007750031863
+        "derivedTruth": 0.9934068812569418
       },
       {
         "id": "person:swan|said|location:washington|V8kT6J_uoic:3963-3994",
@@ -478,7 +1521,7 @@
         },
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9979853512984928
+        "derivedTruth": 0.9890803947118738
       },
       {
         "id": "person:axel rod|said|person:swan|V8kT6J_uoic:14314-14352",
@@ -494,7 +1537,7 @@
         },
         "confidence": 0.7833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9987838084637376
+        "derivedTruth": 0.9933400058646072
       },
       {
         "id": "person:swan #v8kt6j_uoic|denied|person:ino swan|V8kT6J_uoic:2226-2257",
@@ -511,7 +1554,7 @@
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9995053728756566
+        "derivedTruth": 0.9972903869090727
       },
       {
         "id": "organization:sri|said|person:swan #v8kt6j_uoic|V8kT6J_uoic:2526-2539",
@@ -527,7 +1570,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9987607645990607
+        "derivedTruth": 0.9932189415559232
       },
       {
         "id": "person:swan #v8kt6j_uoic|said|location:washington|V8kT6J_uoic:3963-3994",
@@ -543,7 +1586,7 @@
         },
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9979093059513302
+        "derivedTruth": 0.9886967654998804
       },
       {
         "id": "person:axel rod|said|person:swan #v8kt6j_uoic|V8kT6J_uoic:14314-14352",
@@ -559,7 +1602,7 @@
         },
         "confidence": 0.7833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9987394136975631
+        "derivedTruth": 0.9931344273084579
       }
     ],
     "sharedEntities": [
@@ -591,7 +1634,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9976917870035078
+        "derivedTruth": 0.9874417775052177
       },
       {
         "id": "location:washington|located-at|location:los angeles|veVqh9XoXUs:18691-18727",
@@ -607,7 +1650,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9977322689734439
+        "derivedTruth": 0.9876126249157597
       },
       {
         "id": "location:chicago|located-at|person:los angeles|veVqh9XoXUs:18705-18727",
@@ -623,7 +1666,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9978194127666528
+        "derivedTruth": 0.9879732871421171
       },
       {
         "id": "location:chicago|located-at|location:los angeles|veVqh9XoXUs:18705-18727",
@@ -639,7 +1682,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9978475454448673
+        "derivedTruth": 0.9880927329947561
       },
       {
         "id": "person:los angeles|located-at|person:chinese theater|TeS_Yq-7vHw:7760-7809",
@@ -655,7 +1698,7 @@
         },
         "confidence": 0.8083333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9978021311226346
+        "derivedTruth": 0.987902824848451
       },
       {
         "id": "location:los angeles|located-at|person:chinese theater|TeS_Yq-7vHw:7760-7809",
@@ -671,7 +1714,7 @@
         },
         "confidence": 0.8083333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9978413054119729
+        "derivedTruth": 0.9880678046941324
       },
       {
         "id": "location:los angeles|located-at|location:chinese theater|TeS_Yq-7vHw:7760-7809",
@@ -687,7 +1730,7 @@
         },
         "confidence": 0.8083333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9978378942319671
+        "derivedTruth": 0.9880537030113467
       }
     ],
     "sharedEntities": [
@@ -698,183 +1741,6 @@
     "sharedTranscripts": [
       "veVqh9XoXUs",
       "TeS_Yq-7vHw"
-    ]
-  },
-  {
-    "subjectId": "location:united states",
-    "objectId": "location:america",
-    "score": 7.8575,
-    "supportingEdges": [
-      {
-        "id": "location:america|located-at|location:boston|veVqh9XoXUs:18647-18674",
-        "subjectId": "location:america",
-        "predicate": "located-at",
-        "objectId": "location:boston",
-        "evidence": {
-          "transcriptId": "veVqh9XoXUs",
-          "charStart": 18647,
-          "charEnd": 18674,
-          "timeStart": 1432.24,
-          "timeEnd": 1438.44
-        },
-        "confidence": 0.8833333333333333,
-        "provenance": "nlp",
-        "derivedTruth": 0.653908504759187
-      },
-      {
-        "id": "location:america|located-at|location:europe|2k7YTFrmt84:8234-8262",
-        "subjectId": "location:america",
-        "predicate": "located-at",
-        "objectId": "location:europe",
-        "evidence": {
-          "transcriptId": "2k7YTFrmt84",
-          "charStart": 8234,
-          "charEnd": 8262,
-          "timeStart": 593.8,
-          "timeEnd": 598.5999999999999
-        },
-        "confidence": 0.875,
-        "provenance": "nlp",
-        "derivedTruth": 0.557768281805493
-      },
-      {
-        "id": "location:united states|accused|organization:cia|2k7YTFrmt84:25904-25939",
-        "subjectId": "location:united states",
-        "predicate": "accused",
-        "objectId": "organization:cia",
-        "evidence": {
-          "transcriptId": "2k7YTFrmt84",
-          "charStart": 25904,
-          "charEnd": 25939,
-          "timeStart": 1842.919,
-          "timeEnd": 1848
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "derivedTruth": 0.8712534143918208
-      },
-      {
-        "id": "location:america|located-at|time:1924|Rg-Ocr5hNLI:14961-14992",
-        "subjectId": "location:america",
-        "predicate": "located-at",
-        "objectId": "time:1924",
-        "evidence": {
-          "transcriptId": "Rg-Ocr5hNLI",
-          "charStart": 14961,
-          "charEnd": 14992,
-          "timeStart": 1150.919,
-          "timeEnd": 1157.039
-        },
-        "confidence": 0.8333333333333334,
-        "provenance": "nlp",
-        "derivedTruth": 0.6750040281567806
-      },
-      {
-        "id": "location:america|located-at|location:queens|veVqh9XoXUs:18647-18664",
-        "subjectId": "location:america",
-        "predicate": "located-at",
-        "objectId": "location:queens",
-        "evidence": {
-          "transcriptId": "veVqh9XoXUs",
-          "charStart": 18647,
-          "charEnd": 18664,
-          "timeStart": 1432.24,
-          "timeEnd": 1438.44
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.6556484905362907
-      },
-      {
-        "id": "location:america|located-at|location:baltimore|veVqh9XoXUs:18647-18687",
-        "subjectId": "location:america",
-        "predicate": "located-at",
-        "objectId": "location:baltimore",
-        "evidence": {
-          "transcriptId": "veVqh9XoXUs",
-          "charStart": 18647,
-          "charEnd": 18687,
-          "timeStart": 1432.24,
-          "timeEnd": 1438.44
-        },
-        "confidence": 0.8,
-        "provenance": "nlp",
-        "derivedTruth": 0.6711318523009413
-      },
-      {
-        "id": "person:adolf hitler|said|location:united states|veVqh9XoXUs:23746-23760",
-        "subjectId": "person:adolf hitler",
-        "predicate": "said",
-        "objectId": "location:united states",
-        "evidence": {
-          "transcriptId": "veVqh9XoXUs",
-          "charStart": 23746,
-          "charEnd": 23760,
-          "timeStart": 1763.88,
-          "timeEnd": 1768.5590000000002
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "directTruth": 1,
-        "derivedTruth": 0.9228220478508617
-      },
-      {
-        "id": "location:united states|located-at|location:europe|2k7YTFrmt84:8234-8262",
-        "subjectId": "location:united states",
-        "predicate": "located-at",
-        "objectId": "location:europe",
-        "evidence": {
-          "transcriptId": "2k7YTFrmt84",
-          "charStart": 8234,
-          "charEnd": 8262,
-          "timeStart": 593.8,
-          "timeEnd": 598.5999999999999
-        },
-        "confidence": 0.875,
-        "provenance": "nlp",
-        "derivedTruth": 0.7395118827145394
-      },
-      {
-        "id": "time:1924|located-at|location:united states|Rg-Ocr5hNLI:14961-14992",
-        "subjectId": "time:1924",
-        "predicate": "located-at",
-        "objectId": "location:united states",
-        "evidence": {
-          "transcriptId": "Rg-Ocr5hNLI",
-          "charStart": 14961,
-          "charEnd": 14992,
-          "timeStart": 1150.919,
-          "timeEnd": 1157.039
-        },
-        "confidence": 0.8333333333333334,
-        "provenance": "nlp",
-        "derivedTruth": 0.8113987121817153
-      },
-      {
-        "id": "time:1924|located-at|location:america|Rg-Ocr5hNLI:14961-14992",
-        "subjectId": "time:1924",
-        "predicate": "located-at",
-        "objectId": "location:america",
-        "evidence": {
-          "transcriptId": "Rg-Ocr5hNLI",
-          "charStart": 14961,
-          "charEnd": 14992,
-          "timeStart": 1150.919,
-          "timeEnd": 1157.039
-        },
-        "confidence": 0.8333333333333334,
-        "provenance": "nlp",
-        "derivedTruth": 0.6752261774570768
-      }
-    ],
-    "sharedEntities": [
-      "location:europe",
-      "time:1924"
-    ],
-    "sharedTranscripts": [
-      "2k7YTFrmt84",
-      "veVqh9XoXUs",
-      "Rg-Ocr5hNLI"
     ]
   },
   {
@@ -896,7 +1762,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6405809801050312
+        "derivedTruth": 0.6626031987182018
       },
       {
         "id": "location:america|located-at|person:philip slater|WNavHksmXnA:5000-5033",
@@ -912,7 +1778,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6439286000807236
+        "derivedTruth": 0.6655898555842588
       },
       {
         "id": "location:africa|located-at|person:philip slater|WNavHksmXnA:5012-5033",
@@ -928,7 +1794,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.639108102483581
+        "derivedTruth": 0.6612648118197888
       },
       {
         "id": "location:south america|located-at|person:slater|WNavHksmXnA:4994-5033",
@@ -944,7 +1810,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6406076827029291
+        "derivedTruth": 0.6625982151057225
       },
       {
         "id": "location:america|located-at|person:slater|WNavHksmXnA:5000-5033",
@@ -960,7 +1826,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6449657422335967
+        "derivedTruth": 0.6664277662796247
       },
       {
         "id": "location:africa|located-at|person:slater|WNavHksmXnA:5012-5033",
@@ -976,7 +1842,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.6391030465665115
+        "derivedTruth": 0.6612417193920842
       },
       {
         "id": "person:philip slater|located-at|location:south america|WNavHksmXnA:4994-5033",
@@ -992,7 +1858,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6410393802520995
+        "derivedTruth": 0.6629996865134694
       },
       {
         "id": "person:philip slater|located-at|location:america|WNavHksmXnA:5000-5033",
@@ -1008,7 +1874,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6443586602537748
+        "derivedTruth": 0.6659355309611393
       },
       {
         "id": "person:philip slater|located-at|location:africa|WNavHksmXnA:5012-5033",
@@ -1024,7 +1890,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.639951665546882
+        "derivedTruth": 0.6620127331501044
       }
     ],
     "sharedEntities": [
@@ -1055,7 +1921,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.997281044065422
+        "derivedTruth": 0.9970420627735365
       },
       {
         "id": "person:shannon|authored|location:fort levvenworth|zP3pOszdr5U:6006-6042",
@@ -1071,7 +1937,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9974237588789547
+        "derivedTruth": 0.9971996186194829
       },
       {
         "id": "person:shannon|died-in|time:2017|zP3pOszdr5U:21504-21531",
@@ -1087,7 +1953,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.997459620122938
+        "derivedTruth": 0.9972390555832014
       },
       {
         "id": "person:jim shannon|located-at|location:vietnam|zP3pOszdr5U:5022-5041",
@@ -1103,7 +1969,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9972515686936809
+        "derivedTruth": 0.9970093166016408
       },
       {
         "id": "person:jim shannon|located-at|location:fort levvenworth|zP3pOszdr5U:6006-6042",
@@ -1119,7 +1985,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9973918712811601
+        "derivedTruth": 0.9971643058664235
       },
       {
         "id": "person:jim shannon|died-in|time:2017|zP3pOszdr5U:21504-21531",
@@ -1135,7 +2001,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9974331795139196
+        "derivedTruth": 0.9972097781672383
       }
     ],
     "sharedEntities": [
@@ -1166,7 +2032,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.6858183831723157
+        "derivedTruth": 0.6923567929380977
       },
       {
         "id": "location:america|located-at|location:europe|2k7YTFrmt84:8234-8262",
@@ -1182,7 +2048,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.557768281805493
+        "derivedTruth": 0.5671660629505612
       },
       {
         "id": "location:america|located-at|time:1924|Rg-Ocr5hNLI:14961-14992",
@@ -1198,7 +2064,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6750040281567806
+        "derivedTruth": 0.6894262834181712
       },
       {
         "id": "person:adolf hitler|located-at|location:europe|veVqh9XoXUs:23964-23996",
@@ -1215,7 +2081,7 @@
         "confidence": 0.8,
         "provenance": "nlp",
         "directTruth": 0,
-        "derivedTruth": 0.22534204732004365
+        "derivedTruth": 0.22016828146080508
       },
       {
         "id": "location:united states|located-at|location:europe|2k7YTFrmt84:8234-8262",
@@ -1231,7 +2097,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.7395118827145394
+        "derivedTruth": 0.7262970760608579
       },
       {
         "id": "time:1924|located-at|location:united states|Rg-Ocr5hNLI:14961-14992",
@@ -1247,7 +2113,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.8113987121817153
+        "derivedTruth": 0.8124421710841554
       },
       {
         "id": "time:1924|located-at|location:america|Rg-Ocr5hNLI:14961-14992",
@@ -1263,7 +2129,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6752261774570768
+        "derivedTruth": 0.6895932537148955
       }
     ],
     "sharedEntities": [
@@ -1272,6 +2138,196 @@
       "location:united states"
     ],
     "sharedTranscripts": []
+  },
+  {
+    "subjectId": "event:world war ii",
+    "objectId": "misc:world war ii",
+    "score": 6.45,
+    "supportingEdges": [
+      {
+        "id": "organization:cia|during|event:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "event:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8866517287480016
+      },
+      {
+        "id": "location:indonesia|during|event:world war ii|TGGlLkE_-SA:201334-201363",
+        "subjectId": "location:indonesia",
+        "predicate": "during",
+        "objectId": "event:world war ii",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 201334,
+          "charEnd": 201363,
+          "timeStart": 11238.96,
+          "timeEnd": 11242.399
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8962515177783646
+      },
+      {
+        "id": "organization:central intelligence agency|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8900022040866248
+      },
+      {
+        "id": "organization:cia|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8851163550566417
+      },
+      {
+        "id": "location:indonesia|during|misc:world war ii|TGGlLkE_-SA:201334-201363",
+        "subjectId": "location:indonesia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 201334,
+          "charEnd": 201363,
+          "timeStart": 11238.96,
+          "timeEnd": 11242.399
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8927381330676937
+      }
+    ],
+    "sharedEntities": [
+      "organization:cia",
+      "location:indonesia"
+    ],
+    "sharedTranscripts": [
+      "50Y5r9HeR2w",
+      "TGGlLkE_-SA"
+    ]
+  },
+  {
+    "subjectId": "organization:nsa",
+    "objectId": "organization:national security agency",
+    "score": 6.443333333333333,
+    "supportingEdges": [
+      {
+        "id": "organization:nsa|said|person:doug|purPO8UE-9g:7270-7286",
+        "subjectId": "organization:nsa",
+        "predicate": "said",
+        "objectId": "person:doug",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 7270,
+          "charEnd": 7286,
+          "timeStart": 528.88,
+          "timeEnd": 534.36
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9934972736368239
+      },
+      {
+        "id": "organization:nsa|said|person:doug #purpo8ue-9g|purPO8UE-9g:7270-7286",
+        "subjectId": "organization:nsa",
+        "predicate": "said",
+        "objectId": "person:doug #purpo8ue-9g",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 7270,
+          "charEnd": 7286,
+          "timeStart": 528.88,
+          "timeEnd": 534.36
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9934644498002718
+      },
+      {
+        "id": "organization:national security agency|said|misc:a|7eZXBVgBDio:18672-18692",
+        "subjectId": "organization:national security agency",
+        "predicate": "said",
+        "objectId": "misc:a",
+        "evidence": {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 18672,
+          "charEnd": 18692,
+          "timeStart": 1266.559,
+          "timeEnd": 1270.559
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.9937394884892408
+      },
+      {
+        "id": "organization:nsa|said|misc:a|7eZXBVgBDio:18672-18692",
+        "subjectId": "organization:nsa",
+        "predicate": "said",
+        "objectId": "misc:a",
+        "evidence": {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 18672,
+          "charEnd": 18692,
+          "timeStart": 1266.559,
+          "timeEnd": 1270.559
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.9935649154190229
+      },
+      {
+        "id": "organization:national security agency|said|person:doug #purpo8ue-9g|purPO8UE-9g:7270-7286",
+        "subjectId": "organization:national security agency",
+        "predicate": "said",
+        "objectId": "person:doug #purpo8ue-9g",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 7270,
+          "charEnd": 7286,
+          "timeStart": 528.88,
+          "timeEnd": 534.36
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9933605461979085
+      }
+    ],
+    "sharedEntities": [
+      "person:doug #purpo8ue-9g",
+      "misc:a"
+    ],
+    "sharedTranscripts": [
+      "purPO8UE-9g",
+      "7eZXBVgBDio"
+    ]
   },
   {
     "subjectId": "person:new jersey",
@@ -1292,7 +2348,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.9342639987015491
+        "derivedTruth": 0.9294604634261715
       },
       {
         "id": "organization:tesla|located-at|person:new jersey|vCjo9KBpK9I:21278-21313",
@@ -1308,7 +2364,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.9035888619487997
+        "derivedTruth": 0.8968174495405873
       },
       {
         "id": "time:1957|located-at|person:new jersey|VVMpple3CJc:6680-6707",
@@ -1324,7 +2380,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9611518677429032
+        "derivedTruth": 0.9581461458940926
       },
       {
         "id": "organization:tesla|located-at|location:new jersey|vCjo9KBpK9I:21278-21313",
@@ -1340,7 +2396,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.9020378504414008
+        "derivedTruth": 0.8951990027522023
       },
       {
         "id": "time:1957|located-at|location:new jersey|VVMpple3CJc:6680-6707",
@@ -1356,7 +2412,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.964406578766353
+        "derivedTruth": 0.961625025312023
       }
     ],
     "sharedEntities": [
@@ -1464,6 +2520,355 @@
     ]
   },
   {
+    "subjectId": "organization:fbi",
+    "objectId": "organization:federal bureau of investigation",
+    "score": 6.328333333333333,
+    "supportingEdges": [
+      {
+        "id": "person:mary|located-at|organization:fbi|AOO5a_jUOzg:8101-8186",
+        "subjectId": "person:mary",
+        "predicate": "located-at",
+        "objectId": "organization:fbi",
+        "evidence": {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 8101,
+          "charEnd": 8186,
+          "timeStart": 498,
+          "timeEnd": 507
+        },
+        "confidence": 0.35,
+        "provenance": "nlp",
+        "derivedTruth": 0.7852554633531056
+      },
+      {
+        "id": "person:mary|located-at|organization:fbi|AOO5a_jUOzg:8101-8207",
+        "subjectId": "person:mary",
+        "predicate": "located-at",
+        "objectId": "organization:fbi",
+        "evidence": {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 8101,
+          "charEnd": 8207,
+          "timeStart": 498,
+          "timeEnd": 507
+        },
+        "confidence": 0.2,
+        "provenance": "nlp",
+        "derivedTruth": 0.7854693446846125
+      },
+      {
+        "id": "person:mary #aoo5a_juozg|located-at|organization:fbi|AOO5a_jUOzg:8101-8186",
+        "subjectId": "person:mary #aoo5a_juozg",
+        "predicate": "located-at",
+        "objectId": "organization:fbi",
+        "evidence": {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 8101,
+          "charEnd": 8186,
+          "timeStart": 498,
+          "timeEnd": 507
+        },
+        "confidence": 0.35,
+        "provenance": "nlp",
+        "derivedTruth": 0.7857279314556258
+      },
+      {
+        "id": "person:mary #aoo5a_juozg|located-at|organization:fbi|AOO5a_jUOzg:8101-8207",
+        "subjectId": "person:mary #aoo5a_juozg",
+        "predicate": "located-at",
+        "objectId": "organization:fbi",
+        "evidence": {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 8101,
+          "charEnd": 8207,
+          "timeStart": 498,
+          "timeEnd": 507
+        },
+        "confidence": 0.2,
+        "provenance": "nlp",
+        "derivedTruth": 0.7858918442066494
+      },
+      {
+        "id": "organization:federal bureau of investigation|located-at|location:colombia|TGGlLkE_-SA:185116-185149",
+        "subjectId": "organization:federal bureau of investigation",
+        "predicate": "located-at",
+        "objectId": "location:colombia",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 185116,
+          "charEnd": 185149,
+          "timeStart": 10313.279,
+          "timeEnd": 10316
+        },
+        "confidence": 0.8166666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.7885598483495773
+      },
+      {
+        "id": "organization:fbi|located-at|location:colombia|TGGlLkE_-SA:185116-185149",
+        "subjectId": "organization:fbi",
+        "predicate": "located-at",
+        "objectId": "location:colombia",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 185116,
+          "charEnd": 185149,
+          "timeStart": 10313.279,
+          "timeEnd": 10316
+        },
+        "confidence": 0.8166666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.7885560062786967
+      },
+      {
+        "id": "person:mary #aoo5a_juozg|located-at|organization:federal bureau of investigation|AOO5a_jUOzg:8101-8186",
+        "subjectId": "person:mary #aoo5a_juozg",
+        "predicate": "located-at",
+        "objectId": "organization:federal bureau of investigation",
+        "evidence": {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 8101,
+          "charEnd": 8186,
+          "timeStart": 498,
+          "timeEnd": 507
+        },
+        "confidence": 0.35,
+        "provenance": "nlp",
+        "derivedTruth": 0.7871923652311538
+      },
+      {
+        "id": "person:mary #aoo5a_juozg|located-at|organization:federal bureau of investigation|AOO5a_jUOzg:8101-8207",
+        "subjectId": "person:mary #aoo5a_juozg",
+        "predicate": "located-at",
+        "objectId": "organization:federal bureau of investigation",
+        "evidence": {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 8101,
+          "charEnd": 8207,
+          "timeStart": 498,
+          "timeEnd": 507
+        },
+        "confidence": 0.2,
+        "provenance": "nlp",
+        "derivedTruth": 0.7873928245634121
+      }
+    ],
+    "sharedEntities": [
+      "person:mary #aoo5a_juozg",
+      "location:colombia"
+    ],
+    "sharedTranscripts": [
+      "AOO5a_jUOzg",
+      "TGGlLkE_-SA"
+    ]
+  },
+  {
+    "subjectId": "time:2001",
+    "objectId": "time:2002",
+    "score": 6.076666666666667,
+    "supportingEdges": [
+      {
+        "id": "person:twin towers|located-at|time:2001|gfYUaMcmmSM:24168-24187",
+        "subjectId": "person:twin towers",
+        "predicate": "located-at",
+        "objectId": "time:2001",
+        "evidence": {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 24168,
+          "charEnd": 24187,
+          "timeStart": 1458.046,
+          "timeEnd": 1463.6000000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9678586433235172
+      },
+      {
+        "id": "person:sackmania county|located-at|time:2002|gfYUaMcmmSM:45143-45179",
+        "subjectId": "person:sackmania county",
+        "predicate": "located-at",
+        "objectId": "time:2002",
+        "evidence": {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 45143,
+          "charEnd": 45179,
+          "timeStart": 2736.48,
+          "timeEnd": 2742.319
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.9820886240394706
+      },
+      {
+        "id": "location:washington|located-at|time:2002|gfYUaMcmmSM:45161-45179",
+        "subjectId": "location:washington",
+        "predicate": "located-at",
+        "objectId": "time:2002",
+        "evidence": {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 45161,
+          "charEnd": 45179,
+          "timeStart": 2736.48,
+          "timeEnd": 2742.319
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9848543934157555
+      },
+      {
+        "id": "organization:nasa|located-at|time:2002|lb0ib5B_bK4:14433-14453",
+        "subjectId": "organization:nasa",
+        "predicate": "located-at",
+        "objectId": "time:2002",
+        "evidence": {
+          "transcriptId": "lb0ib5B_bK4",
+          "charStart": 14433,
+          "charEnd": 14453,
+          "timeStart": 1054.88,
+          "timeEnd": 1059.88
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9795894871035932
+      },
+      {
+        "id": "organization:nasa|located-at|time:2001|xC9SxxjEviE:6939-6951",
+        "subjectId": "organization:nasa",
+        "predicate": "located-at",
+        "objectId": "time:2001",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9739727881744922
+      },
+      {
+        "id": "location:twin towers|located-at|time:2001|gfYUaMcmmSM:24168-24187",
+        "subjectId": "location:twin towers",
+        "predicate": "located-at",
+        "objectId": "time:2001",
+        "evidence": {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 24168,
+          "charEnd": 24187,
+          "timeStart": 1458.046,
+          "timeEnd": 1463.6000000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9678102367256097
+      },
+      {
+        "id": "time:2001|located-at|location:twin towers|gfYUaMcmmSM:24168-24187",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "location:twin towers",
+        "evidence": {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 24168,
+          "charEnd": 24187,
+          "timeStart": 1458.046,
+          "timeEnd": 1463.6000000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9677784906471576
+      },
+      {
+        "id": "time:2002|located-at|location:washington|gfYUaMcmmSM:45161-45179",
+        "subjectId": "time:2002",
+        "predicate": "located-at",
+        "objectId": "location:washington",
+        "evidence": {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 45161,
+          "charEnd": 45179,
+          "timeStart": 2736.48,
+          "timeEnd": 2742.319
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9847075072119151
+      },
+      {
+        "id": "time:2002|located-at|organization:nasa|lb0ib5B_bK4:14433-14453",
+        "subjectId": "time:2002",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "lb0ib5B_bK4",
+          "charStart": 14433,
+          "charEnd": 14453,
+          "timeStart": 1054.88,
+          "timeEnd": 1059.88
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9794406667524809
+      },
+      {
+        "id": "time:2001|located-at|organization:nasa|xC9SxxjEviE:6939-6951",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9738846123565806
+      },
+      {
+        "id": "time:2002|located-at|organization:national aeronautics and space administration|lb0ib5B_bK4:14433-14453",
+        "subjectId": "time:2002",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "lb0ib5B_bK4",
+          "charStart": 14433,
+          "charEnd": 14453,
+          "timeStart": 1054.88,
+          "timeEnd": 1059.88
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9809029895313935
+      },
+      {
+        "id": "time:2001|located-at|organization:national aeronautics and space administration|xC9SxxjEviE:6939-6951",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.971358250200754
+      }
+    ],
+    "sharedEntities": [
+      "organization:nasa",
+      "organization:national aeronautics and space administration"
+    ],
+    "sharedTranscripts": [
+      "gfYUaMcmmSM"
+    ]
+  },
+  {
     "subjectId": "organization:cia",
     "objectId": "person:aliens dulce",
     "score": 5.94,
@@ -1482,7 +2887,7 @@
         },
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.8817211236992993
+        "derivedTruth": 0.8815175189246363
       },
       {
         "id": "location:united states|accused|organization:cia|2k7YTFrmt84:25904-25939",
@@ -1498,7 +2903,7 @@
         },
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.8712534143918208
+        "derivedTruth": 0.8683700376440606
       },
       {
         "id": "person:united states|accused|organization:cia|2k7YTFrmt84:25922-25939",
@@ -1514,7 +2919,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.8816506543623522
+        "derivedTruth": 0.8814459332934502
       },
       {
         "id": "person:aliens dulce|located-at|person:new mexico|Je3Qu-xMuxM:563-592",
@@ -1530,7 +2935,7 @@
         },
         "confidence": 0.8833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.8792464921867602
+        "derivedTruth": 0.8745440379399408
       },
       {
         "id": "time:1975|located-at|person:aliens dulce|Je3Qu-xMuxM:1422-1445",
@@ -1546,7 +2951,7 @@
         },
         "confidence": 0.8833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.8929918688972923
+        "derivedTruth": 0.8888600489605964
       },
       {
         "id": "person:aliens dulce|located-at|time:1987|Je3Qu-xMuxM:18670-18688",
@@ -1562,7 +2967,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.8827078246706886
+        "derivedTruth": 0.8779836110163727
       },
       {
         "id": "organization:cia|located-at|person:john lear|Je3Qu-xMuxM:22852-22884",
@@ -1578,7 +2983,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.8847034295422298
+        "derivedTruth": 0.8853795716313368
       },
       {
         "id": "person:aliens dulce|located-at|person:tao levesque|Je3Qu-xMuxM:31315-31351",
@@ -1594,7 +2999,7 @@
         },
         "confidence": 0.8083333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.8778001154952706
+        "derivedTruth": 0.8731000397556195
       },
       {
         "id": "person:united states|located-at|person:aliens dulce|Je3Qu-xMuxM:34331-34366",
@@ -1610,7 +3015,7 @@
         },
         "confidence": 0.8583333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.8735484226110021
+        "derivedTruth": 0.8698144161130194
       },
       {
         "id": "location:united states|located-at|person:aliens dulce|Je3Qu-xMuxM:34331-34366",
@@ -1626,7 +3031,7 @@
         },
         "confidence": 0.8583333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.8581365958792975
+        "derivedTruth": 0.8519009677476764
       },
       {
         "id": "person:john lear|located-at|organization:cia|Je3Qu-xMuxM:22852-22884",
@@ -1642,7 +3047,7 @@
         },
         "confidence": 0.7916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.8841772979302168
+        "derivedTruth": 0.8848572471580353
       }
     ],
     "sharedEntities": [
@@ -1672,7 +3077,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.8652703906497253
+        "derivedTruth": 0.8611540001729635
       },
       {
         "id": "location:united states|located-at|time:1954|EieUJvKrjo4:13885-13923",
@@ -1688,7 +3093,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.8537465745947959
+        "derivedTruth": 0.8477275318970721
       },
       {
         "id": "person:aliens dulce|located-at|person:new mexico|Je3Qu-xMuxM:563-592",
@@ -1704,7 +3109,7 @@
         },
         "confidence": 0.8833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.8792464921867602
+        "derivedTruth": 0.8745440379399408
       },
       {
         "id": "time:1975|located-at|person:aliens dulce|Je3Qu-xMuxM:1422-1445",
@@ -1720,7 +3125,7 @@
         },
         "confidence": 0.8833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.8929918688972923
+        "derivedTruth": 0.8888600489605964
       },
       {
         "id": "time:1944|located-at|time:1954|Je3Qu-xMuxM:13257-13269",
@@ -1736,7 +3141,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.8602689304072096
+        "derivedTruth": 0.8548668360519418
       },
       {
         "id": "person:aliens dulce|located-at|time:1987|Je3Qu-xMuxM:18670-18688",
@@ -1752,7 +3157,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.8827078246706886
+        "derivedTruth": 0.8779836110163727
       },
       {
         "id": "person:aliens dulce|located-at|person:tao levesque|Je3Qu-xMuxM:31315-31351",
@@ -1768,7 +3173,7 @@
         },
         "confidence": 0.8083333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.8778001154952706
+        "derivedTruth": 0.8731000397556195
       },
       {
         "id": "person:united states|located-at|person:aliens dulce|Je3Qu-xMuxM:34331-34366",
@@ -1784,7 +3189,7 @@
         },
         "confidence": 0.8583333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.8735484226110021
+        "derivedTruth": 0.8698144161130194
       },
       {
         "id": "location:united states|located-at|person:aliens dulce|Je3Qu-xMuxM:34331-34366",
@@ -1800,7 +3205,7 @@
         },
         "confidence": 0.8583333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.8581365958792975
+        "derivedTruth": 0.8519009677476764
       },
       {
         "id": "time:1954|located-at|location:united states|EieUJvKrjo4:13885-13923",
@@ -1816,7 +3221,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.8532336730898663
+        "derivedTruth": 0.8472579792408795
       }
     ],
     "sharedEntities": [
@@ -1846,7 +3251,7 @@
         },
         "confidence": 0.7333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.9941741871789921
+        "derivedTruth": 0.981346831814082
       },
       {
         "id": "person:charles|located-at|person:dwight|EieUJvKrjo4:3655-3679",
@@ -1862,7 +3267,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9770830595627787
+        "derivedTruth": 0.974573841404999
       },
       {
         "id": "person:john zimmer|said|person:charles|EieUJvKrjo4:4419-4454",
@@ -1878,7 +3283,7 @@
         },
         "confidence": 0.7916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9783534251149726
+        "derivedTruth": 0.9751023776140567
       },
       {
         "id": "person:charles|met|person:sullivan|EieUJvKrjo4:5045-5073",
@@ -1894,7 +3299,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9770957483151694
+        "derivedTruth": 0.9745453716725416
       },
       {
         "id": "person:sullivan|said|person:charles|EieUJvKrjo4:6765-6790",
@@ -1910,7 +3315,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.977100307553745
+        "derivedTruth": 0.9745364709983237
       },
       {
         "id": "location:nellis air force base|said|person:charles|EieUJvKrjo4:23720-23757",
@@ -1926,7 +3331,7 @@
         },
         "confidence": 0.8833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9784701395095803
+        "derivedTruth": 0.9751105066974666
       },
       {
         "id": "person:john zimmer|said|person:charles hall|EieUJvKrjo4:4419-4454",
@@ -1942,7 +3347,7 @@
         },
         "confidence": 0.7916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9880255324702921
+        "derivedTruth": 0.9791391314451059
       },
       {
         "id": "person:charles hall|met|person:sullivan #eieujvkrjo4|EieUJvKrjo4:5045-5073",
@@ -1958,7 +3363,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9898550575777838
+        "derivedTruth": 0.9798654791998367
       },
       {
         "id": "person:sullivan #eieujvkrjo4|said|person:charles hall|EieUJvKrjo4:6765-6790",
@@ -1974,7 +3379,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9898471356760403
+        "derivedTruth": 0.9798262407151371
       },
       {
         "id": "person:charles hall|said|location:nellis air force base|EieUJvKrjo4:23720-23757",
@@ -1990,7 +3395,7 @@
         },
         "confidence": 0.8833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9878523642311513
+        "derivedTruth": 0.978971975411225
       }
     ],
     "sharedEntities": [
@@ -2021,7 +3426,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9984133482792994
+        "derivedTruth": 0.9984076342174519
       },
       {
         "id": "person:eldridge duncan|located-at|location:new york|BzRR4Yg6B3w:23031-23055",
@@ -2037,7 +3442,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9624655556989359
+        "derivedTruth": 0.962387549381955
       },
       {
         "id": "person:al|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2053,7 +3458,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9695779755116343
+        "derivedTruth": 0.9694690606546658
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2070,7 +3475,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873031444387154
+        "derivedTruth": 0.9872576919804699
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2087,7 +3492,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872581844555008
+        "derivedTruth": 0.98721257533196
       },
       {
         "id": "time:1927|said|person:al|BzRR4Yg6B3w:22675-22711",
@@ -2104,7 +3509,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956916922018533
+        "derivedTruth": 0.9956762392385996
       },
       {
         "id": "person:al be|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2120,7 +3525,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.969571534475911
+        "derivedTruth": 0.9694626840947235
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2137,7 +3542,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873004575181378
+        "derivedTruth": 0.987255031771016
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2154,7 +3559,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872554894268052
+        "derivedTruth": 0.9872099068935749
       },
       {
         "id": "person:al be|said|time:1927|BzRR4Yg6B3w:22675-22711",
@@ -2171,7 +3576,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956906651532522
+        "derivedTruth": 0.9956752238333413
       }
     ],
     "sharedEntities": [
@@ -2180,6 +3585,180 @@
     ],
     "sharedTranscripts": [
       "BzRR4Yg6B3w"
+    ]
+  },
+  {
+    "subjectId": "time:2001",
+    "objectId": "time:1961",
+    "score": 5.794166666666667,
+    "supportingEdges": [
+      {
+        "id": "time:1994|located-at|time:2001|lPpFFU9EMr8:5760-5783",
+        "subjectId": "time:1994",
+        "predicate": "located-at",
+        "objectId": "time:2001",
+        "evidence": {
+          "transcriptId": "lPpFFU9EMr8",
+          "charStart": 5760,
+          "charEnd": 5783,
+          "timeStart": 368,
+          "timeEnd": 376
+        },
+        "confidence": 0.875,
+        "provenance": "nlp",
+        "derivedTruth": 0.9528802932845586
+      },
+      {
+        "id": "organization:nasa|located-at|time:1961|SJek6PsN2xg:22056-22068",
+        "subjectId": "organization:nasa",
+        "predicate": "located-at",
+        "objectId": "time:1961",
+        "evidence": {
+          "transcriptId": "SJek6PsN2xg",
+          "charStart": 22056,
+          "charEnd": 22068,
+          "timeStart": 1596.64,
+          "timeEnd": 1601.1200000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9784455995420435
+      },
+      {
+        "id": "organization:nasa|located-at|time:2001|xC9SxxjEviE:6939-6951",
+        "subjectId": "organization:nasa",
+        "predicate": "located-at",
+        "objectId": "time:2001",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9739727881744922
+      },
+      {
+        "id": "time:1961|near|location:michigan|lPpFFU9EMr8:2956-3042",
+        "subjectId": "time:1961",
+        "predicate": "near",
+        "objectId": "location:michigan",
+        "evidence": {
+          "transcriptId": "lPpFFU9EMr8",
+          "charStart": 2956,
+          "charEnd": 3042,
+          "timeStart": 199,
+          "timeEnd": 207
+        },
+        "confidence": 0.3833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.9823121151648436
+      },
+      {
+        "id": "time:2001|located-at|location:alpena|lPpFFU9EMr8:5779-5793",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "location:alpena",
+        "evidence": {
+          "transcriptId": "lPpFFU9EMr8",
+          "charStart": 5779,
+          "charEnd": 5793,
+          "timeStart": 368,
+          "timeEnd": 376
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9658561293097867
+      },
+      {
+        "id": "time:1961|located-at|organization:nasa|SJek6PsN2xg:22056-22068",
+        "subjectId": "time:1961",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "SJek6PsN2xg",
+          "charStart": 22056,
+          "charEnd": 22068,
+          "timeStart": 1596.64,
+          "timeEnd": 1601.1200000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9783016012439483
+      },
+      {
+        "id": "time:2001|located-at|organization:nasa|xC9SxxjEviE:6939-6951",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "organization:nasa",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9738846123565806
+      },
+      {
+        "id": "time:1961|located-at|location:michigan|lPpFFU9EMr8:2956-3042",
+        "subjectId": "time:1961",
+        "predicate": "located-at",
+        "objectId": "location:michigan",
+        "evidence": {
+          "transcriptId": "lPpFFU9EMr8",
+          "charStart": 2956,
+          "charEnd": 3042,
+          "timeStart": 199,
+          "timeEnd": 207
+        },
+        "confidence": 0.3833333333333333,
+        "provenance": "nlp",
+        "derivedTruth": 0.9822639530940374
+      },
+      {
+        "id": "time:1961|located-at|organization:national aeronautics and space administration|SJek6PsN2xg:22056-22068",
+        "subjectId": "time:1961",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "SJek6PsN2xg",
+          "charStart": 22056,
+          "charEnd": 22068,
+          "timeStart": 1596.64,
+          "timeEnd": 1601.1200000000001
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9792354026016409
+      },
+      {
+        "id": "time:2001|located-at|organization:national aeronautics and space administration|xC9SxxjEviE:6939-6951",
+        "subjectId": "time:2001",
+        "predicate": "located-at",
+        "objectId": "organization:national aeronautics and space administration",
+        "evidence": {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 6939,
+          "charEnd": 6951,
+          "timeStart": 430.919,
+          "timeEnd": 436.62
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.971358250200754
+      }
+    ],
+    "sharedEntities": [
+      "organization:nasa",
+      "organization:national aeronautics and space administration"
+    ],
+    "sharedTranscripts": [
+      "lPpFFU9EMr8"
     ]
   },
   {
@@ -2201,7 +3780,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9624655556989359
+        "derivedTruth": 0.962387549381955
       },
       {
         "id": "person:al|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2217,7 +3796,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9695779755116343
+        "derivedTruth": 0.9694690606546658
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2234,7 +3813,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873031444387154
+        "derivedTruth": 0.9872576919804699
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2251,7 +3830,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872581844555008
+        "derivedTruth": 0.98721257533196
       },
       {
         "id": "person:al|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -2268,7 +3847,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.995892521207359
+        "derivedTruth": 0.9958777960043279
       },
       {
         "id": "person:al be|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2284,7 +3863,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.969571534475911
+        "derivedTruth": 0.9694626840947235
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2301,7 +3880,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873004575181378
+        "derivedTruth": 0.987255031771016
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2318,7 +3897,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872554894268052
+        "derivedTruth": 0.9872099068935749
       },
       {
         "id": "person:al be|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -2335,7 +3914,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9958914888788343
+        "derivedTruth": 0.995876774846779
       }
     ],
     "sharedEntities": [
@@ -2365,7 +3944,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9624655556989359
+        "derivedTruth": 0.962387549381955
       },
       {
         "id": "person:al|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2381,7 +3960,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9695779755116343
+        "derivedTruth": 0.9694690606546658
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2398,7 +3977,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873031444387154
+        "derivedTruth": 0.9872576919804699
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2415,7 +3994,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872581844555008
+        "derivedTruth": 0.98721257533196
       },
       {
         "id": "person:al|said|person:john v norman|BzRR4Yg6B3w:24534-24546",
@@ -2431,7 +4010,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869468553671776
+        "derivedTruth": 0.9869000585088974
       },
       {
         "id": "person:al be|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2447,7 +4026,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.969571534475911
+        "derivedTruth": 0.9694626840947235
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2464,7 +4043,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873004575181378
+        "derivedTruth": 0.987255031771016
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2481,7 +4060,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872554894268052
+        "derivedTruth": 0.9872099068935749
       },
       {
         "id": "person:al be|said|person:john v norman|BzRR4Yg6B3w:24534-24546",
@@ -2497,7 +4076,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869433012137403
+        "derivedTruth": 0.986896543043555
       }
     ],
     "sharedEntities": [
@@ -2687,7 +4266,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.6858183831723157
+        "derivedTruth": 0.6923567929380977
       },
       {
         "id": "location:america|located-at|location:boston|veVqh9XoXUs:18647-18674",
@@ -2703,7 +4282,7 @@
         },
         "confidence": 0.8833333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.653908504759187
+        "derivedTruth": 0.6825536590686222
       },
       {
         "id": "location:america|located-at|location:europe|2k7YTFrmt84:8234-8262",
@@ -2719,7 +4298,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.557768281805493
+        "derivedTruth": 0.5671660629505612
       },
       {
         "id": "location:america|located-at|time:1924|Rg-Ocr5hNLI:14961-14992",
@@ -2735,7 +4314,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6750040281567806
+        "derivedTruth": 0.6894262834181712
       },
       {
         "id": "location:america|located-at|location:queens|veVqh9XoXUs:18647-18664",
@@ -2751,7 +4330,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.6556484905362907
+        "derivedTruth": 0.6780036964185744
       },
       {
         "id": "location:america|located-at|location:baltimore|veVqh9XoXUs:18647-18687",
@@ -2767,7 +4346,7 @@
         },
         "confidence": 0.8,
         "provenance": "nlp",
-        "derivedTruth": 0.6711318523009413
+        "derivedTruth": 0.6911278664005845
       },
       {
         "id": "person:adolf hitler|said|location:united states|veVqh9XoXUs:23746-23760",
@@ -2784,7 +4363,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9228220478508617
+        "derivedTruth": 0.922347699967172
       },
       {
         "id": "person:adolf hitler|located-at|location:europe|veVqh9XoXUs:23964-23996",
@@ -2801,7 +4380,7 @@
         "confidence": 0.8,
         "provenance": "nlp",
         "directTruth": 0,
-        "derivedTruth": 0.22534204732004365
+        "derivedTruth": 0.22016828146080508
       },
       {
         "id": "time:1924|located-at|location:america|Rg-Ocr5hNLI:14961-14992",
@@ -2817,7 +4396,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6752261774570768
+        "derivedTruth": 0.6895932537148955
       }
     ],
     "sharedEntities": [
@@ -2847,7 +4426,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9624655556989359
+        "derivedTruth": 0.962387549381955
       },
       {
         "id": "person:al|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2863,7 +4442,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9695779755116343
+        "derivedTruth": 0.9694690606546658
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2880,7 +4459,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873031444387154
+        "derivedTruth": 0.9872576919804699
       },
       {
         "id": "person:al|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2897,7 +4476,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872581844555008
+        "derivedTruth": 0.98721257533196
       },
       {
         "id": "person:al|said|time:2000|BzRR4Yg6B3w:25417-25452",
@@ -2913,7 +4492,7 @@
         },
         "confidence": 0.7583333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9869471683506618
+        "derivedTruth": 0.9869003673239564
       },
       {
         "id": "person:al be|visited|location:new york|BzRR4Yg6B3w:16111-16136",
@@ -2929,7 +4508,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.969571534475911
+        "derivedTruth": 0.9694626840947235
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22640-22671",
@@ -2946,7 +4525,7 @@
         "confidence": 0.825,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9873004575181378
+        "derivedTruth": 0.987255031771016
       },
       {
         "id": "person:al be|born-in|location:new york|BzRR4Yg6B3w:22648-22671",
@@ -2963,7 +4542,7 @@
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9872554894268052
+        "derivedTruth": 0.9872099068935749
       },
       {
         "id": "person:al be|said|time:2000|BzRR4Yg6B3w:25417-25452",
@@ -2979,7 +4558,7 @@
         },
         "confidence": 0.7583333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9869430089508573
+        "derivedTruth": 0.9868962537497591
       }
     ],
     "sharedEntities": [
@@ -3009,7 +4588,7 @@
         },
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.8817211236992993
+        "derivedTruth": 0.8815175189246363
       },
       {
         "id": "location:united states|accused|organization:cia|2k7YTFrmt84:25904-25939",
@@ -3025,7 +4604,7 @@
         },
         "confidence": 0.8416666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.8712534143918208
+        "derivedTruth": 0.8683700376440606
       },
       {
         "id": "person:united states|accused|organization:cia|2k7YTFrmt84:25922-25939",
@@ -3041,7 +4620,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.8816506543623522
+        "derivedTruth": 0.8814459332934502
       },
       {
         "id": "person:united states|located-at|time:1954|EieUJvKrjo4:13885-13923",
@@ -3057,7 +4636,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.8652703906497253
+        "derivedTruth": 0.8611540001729635
       },
       {
         "id": "location:united states|located-at|time:1954|EieUJvKrjo4:13885-13923",
@@ -3073,7 +4652,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.8537465745947959
+        "derivedTruth": 0.8477275318970721
       },
       {
         "id": "time:1944|located-at|time:1954|Je3Qu-xMuxM:13257-13269",
@@ -3089,7 +4668,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.8602689304072096
+        "derivedTruth": 0.8548668360519418
       },
       {
         "id": "organization:cia|located-at|person:john lear|Je3Qu-xMuxM:22852-22884",
@@ -3105,7 +4684,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.8847034295422298
+        "derivedTruth": 0.8853795716313368
       },
       {
         "id": "time:1954|located-at|location:united states|EieUJvKrjo4:13885-13923",
@@ -3121,7 +4700,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.8532336730898663
+        "derivedTruth": 0.8472579792408795
       },
       {
         "id": "person:john lear|located-at|organization:cia|Je3Qu-xMuxM:22852-22884",
@@ -3137,7 +4716,7 @@
         },
         "confidence": 0.7916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.8841772979302168
+        "derivedTruth": 0.8848572471580353
       }
     ],
     "sharedEntities": [
@@ -3167,7 +4746,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.99664964597556
+        "derivedTruth": 0.996314929919184
       },
       {
         "id": "location:vietnam|located-at|time:1979|zP3pOszdr5U:5022-5037",
@@ -3183,7 +4762,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9976444947078611
+        "derivedTruth": 0.997470638284433
       },
       {
         "id": "location:vietnam|located-at|person:shannon|zP3pOszdr5U:5022-5041",
@@ -3199,7 +4778,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.997281044065422
+        "derivedTruth": 0.9970420627735365
       },
       {
         "id": "person:shannon|authored|location:fort levvenworth|zP3pOszdr5U:6006-6042",
@@ -3215,7 +4794,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9974237588789547
+        "derivedTruth": 0.9971996186194829
       },
       {
         "id": "time:1965|located-at|location:vietnam|zP3pOszdr5U:4306-4321",
@@ -3231,7 +4810,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.99661383663499
+        "derivedTruth": 0.9962789926573734
       },
       {
         "id": "time:1979|located-at|location:vietnam|zP3pOszdr5U:5022-5037",
@@ -3247,7 +4826,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9976211343790238
+        "derivedTruth": 0.9974449371554857
       },
       {
         "id": "person:jim shannon|located-at|location:vietnam|zP3pOszdr5U:5022-5041",
@@ -3263,7 +4842,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9972515686936809
+        "derivedTruth": 0.9970093166016408
       },
       {
         "id": "person:jim shannon|located-at|location:fort levvenworth|zP3pOszdr5U:6006-6042",
@@ -3279,7 +4858,7 @@
         },
         "confidence": 0.8916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.9973918712811601
+        "derivedTruth": 0.9971643058664235
       }
     ],
     "sharedEntities": [
@@ -3309,7 +4888,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.99664964597556
+        "derivedTruth": 0.996314929919184
       },
       {
         "id": "location:vietnam|located-at|time:1979|zP3pOszdr5U:5022-5037",
@@ -3325,7 +4904,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9976444947078611
+        "derivedTruth": 0.997470638284433
       },
       {
         "id": "location:vietnam|located-at|person:shannon|zP3pOszdr5U:5022-5041",
@@ -3341,7 +4920,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.997281044065422
+        "derivedTruth": 0.9970420627735365
       },
       {
         "id": "person:shannon|died-in|time:2017|zP3pOszdr5U:21504-21531",
@@ -3357,7 +4936,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.997459620122938
+        "derivedTruth": 0.9972390555832014
       },
       {
         "id": "time:1965|located-at|location:vietnam|zP3pOszdr5U:4306-4321",
@@ -3373,7 +4952,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.99661383663499
+        "derivedTruth": 0.9962789926573734
       },
       {
         "id": "time:1979|located-at|location:vietnam|zP3pOszdr5U:5022-5037",
@@ -3389,7 +4968,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9976211343790238
+        "derivedTruth": 0.9974449371554857
       },
       {
         "id": "person:jim shannon|located-at|location:vietnam|zP3pOszdr5U:5022-5041",
@@ -3405,7 +4984,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9972515686936809
+        "derivedTruth": 0.9970093166016408
       },
       {
         "id": "person:jim shannon|died-in|time:2017|zP3pOszdr5U:21504-21531",
@@ -3421,7 +5000,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9974331795139196
+        "derivedTruth": 0.9972097781672383
       }
     ],
     "sharedEntities": [
@@ -3451,7 +5030,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.99664964597556
+        "derivedTruth": 0.996314929919184
       },
       {
         "id": "location:vietnam|located-at|time:1979|zP3pOszdr5U:5022-5037",
@@ -3467,7 +5046,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9976444947078611
+        "derivedTruth": 0.997470638284433
       },
       {
         "id": "location:mars|located-at|time:1979|lb0ib5B_bK4:12750-12762",
@@ -3483,7 +5062,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.996155502523958
+        "derivedTruth": 0.9959366688928485
       },
       {
         "id": "location:mars|located-at|time:1965|q9Nuy7mFIsE:1885-1915",
@@ -3499,7 +5078,7 @@
         },
         "confidence": 0.8166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9942995783032237
+        "derivedTruth": 0.9940627535490545
       },
       {
         "id": "time:1965|located-at|location:vietnam|zP3pOszdr5U:4306-4321",
@@ -3515,7 +5094,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.99661383663499
+        "derivedTruth": 0.9962789926573734
       },
       {
         "id": "time:1979|located-at|location:vietnam|zP3pOszdr5U:5022-5037",
@@ -3531,7 +5110,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9976211343790238
+        "derivedTruth": 0.9974449371554857
       },
       {
         "id": "time:1979|located-at|location:mars|lb0ib5B_bK4:12750-12762",
@@ -3547,7 +5126,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9961115348628726
+        "derivedTruth": 0.9958891183219261
       },
       {
         "id": "time:1965|located-at|location:mars|q9Nuy7mFIsE:1885-1915",
@@ -3563,7 +5142,7 @@
         },
         "confidence": 0.8166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9942496336836503
+        "derivedTruth": 0.9940119307648589
       }
     ],
     "sharedEntities": [
@@ -3572,6 +5151,132 @@
     ],
     "sharedTranscripts": [
       "zP3pOszdr5U"
+    ]
+  },
+  {
+    "subjectId": "organization:cia",
+    "objectId": "location:indonesia",
+    "score": 5.6275,
+    "supportingEdges": [
+      {
+        "id": "organization:cia|during|event:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "event:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8866517287480016
+      },
+      {
+        "id": "organization:cia|located-at|location:middle east|TGGlLkE_-SA:68338-68360",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "location:middle east",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 68338,
+          "charEnd": 68360,
+          "timeStart": 3790.4,
+          "timeEnd": 3792.7200000000003
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8848391223364048
+      },
+      {
+        "id": "person:wall #tggllke_-sa|located-at|location:indonesia|TGGlLkE_-SA:197837-197865",
+        "subjectId": "person:wall #tggllke_-sa",
+        "predicate": "located-at",
+        "objectId": "location:indonesia",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 197837,
+          "charEnd": 197865,
+          "timeStart": 11044.8,
+          "timeEnd": 11049.84
+        },
+        "confidence": 0.875,
+        "provenance": "nlp",
+        "derivedTruth": 0.8963873420741398
+      },
+      {
+        "id": "person:wall #tggllke_-sa|located-at|location:indonesia|TGGlLkE_-SA:197876-197893",
+        "subjectId": "person:wall #tggllke_-sa",
+        "predicate": "located-at",
+        "objectId": "location:indonesia",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 197876,
+          "charEnd": 197893,
+          "timeStart": 11048.08,
+          "timeEnd": 11052.64
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8960346132595429
+      },
+      {
+        "id": "location:indonesia|during|event:world war ii|TGGlLkE_-SA:201334-201363",
+        "subjectId": "location:indonesia",
+        "predicate": "during",
+        "objectId": "event:world war ii",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 201334,
+          "charEnd": 201363,
+          "timeStart": 11238.96,
+          "timeEnd": 11242.399
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8962515177783646
+      },
+      {
+        "id": "organization:cia|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8851163550566417
+      },
+      {
+        "id": "location:indonesia|during|misc:world war ii|TGGlLkE_-SA:201334-201363",
+        "subjectId": "location:indonesia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 201334,
+          "charEnd": 201363,
+          "timeStart": 11238.96,
+          "timeEnd": 11242.399
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8927381330676937
+      }
+    ],
+    "sharedEntities": [
+      "event:world war ii",
+      "misc:world war ii"
+    ],
+    "sharedTranscripts": [
+      "TGGlLkE_-SA"
     ]
   },
   {
@@ -3593,7 +5298,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9712679135147635
+        "derivedTruth": 0.9715094645277824
       },
       {
         "id": "person:arnold|visited|location:tacoma|a5KXsiBZjOM:7438-7459",
@@ -3609,7 +5314,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9713747249768916
+        "derivedTruth": 0.9716305674837923
       },
       {
         "id": "person:harold|located-at|location:win hotel|a5KXsiBZjOM:7559-7595",
@@ -3625,7 +5330,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.9713079432745845
+        "derivedTruth": 0.9714916940610253
       },
       {
         "id": "person:harold #a5kxsibzjom|located-at|location:tacoma|a5KXsiBZjOM:5861-5888",
@@ -3641,7 +5346,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9716795576509178
+        "derivedTruth": 0.9717874106160227
       },
       {
         "id": "person:kenneth arnold|visited|location:tacoma|a5KXsiBZjOM:7438-7459",
@@ -3657,7 +5362,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9714401093393108
+        "derivedTruth": 0.9716423684853747
       },
       {
         "id": "person:harold #a5kxsibzjom|located-at|location:win hotel|a5KXsiBZjOM:7559-7595",
@@ -3673,7 +5378,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.971796831111421
+        "derivedTruth": 0.9718224660714551
       },
       {
         "id": "person:fred chrisman|located-at|location:win hotel|a5KXsiBZjOM:7570-7595",
@@ -3689,7 +5394,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9715161354381445
+        "derivedTruth": 0.9716515064365627
       }
     ],
     "sharedEntities": [
@@ -3719,7 +5424,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.5437222579101587
+        "derivedTruth": 0.5426356335409819
       },
       {
         "id": "person:helen|located-at|location:new york|A89ozmI2zOo:10042-10073",
@@ -3735,7 +5440,7 @@
         },
         "confidence": 0.85,
         "provenance": "nlp",
-        "derivedTruth": 0.9002445916314804
+        "derivedTruth": 0.899650974475979
       },
       {
         "id": "person:harry|said|person:helen|A89ozmI2zOo:27730-27743",
@@ -3751,7 +5456,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.7663431909765722
+        "derivedTruth": 0.7640846191347009
       },
       {
         "id": "person:helen|located-at|time:1972|A89ozmI2zOo:28569-28603",
@@ -3767,7 +5472,7 @@
         },
         "confidence": 0.7916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.7947387593902449
+        "derivedTruth": 0.7916542271109253
       },
       {
         "id": "person:helen latrell|located-at|location:rome|A89ozmI2zOo:10042-10063",
@@ -3783,7 +5488,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.4997496192014877
+        "derivedTruth": 0.49926386215467916
       },
       {
         "id": "person:helen latrell|located-at|location:new york|A89ozmI2zOo:10042-10073",
@@ -3799,7 +5504,7 @@
         },
         "confidence": 0.85,
         "provenance": "nlp",
-        "derivedTruth": 0.8980757181813389
+        "derivedTruth": 0.8978893775568262
       },
       {
         "id": "person:harry nadia|said|person:helen latrell|A89ozmI2zOo:27730-27743",
@@ -3815,7 +5520,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.6932541582015296
+        "derivedTruth": 0.6929135912345489
       }
     ],
     "sharedEntities": [
@@ -3824,6 +5529,116 @@
     ],
     "sharedTranscripts": [
       "A89ozmI2zOo"
+    ]
+  },
+  {
+    "subjectId": "time:1952",
+    "objectId": "misc:world war ii",
+    "score": 5.525,
+    "supportingEdges": [
+      {
+        "id": "organization:cia|located-at|time:1952|veVqh9XoXUs:17351-17376",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "time:1952",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 17351,
+          "charEnd": 17376,
+          "timeStart": 1347.6,
+          "timeEnd": 1352.76
+        },
+        "confidence": 0.85,
+        "provenance": "nlp",
+        "derivedTruth": 0.8860491912734526
+      },
+      {
+        "id": "person:los alamos|located-at|time:1952|50Y5r9HeR2w:5531-5548",
+        "subjectId": "person:los alamos",
+        "predicate": "located-at",
+        "objectId": "time:1952",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 5531,
+          "charEnd": 5548,
+          "timeStart": 317.88,
+          "timeEnd": 322.38
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8878174190164787
+      },
+      {
+        "id": "time:1952|located-at|organization:cia|veVqh9XoXUs:17351-17376",
+        "subjectId": "time:1952",
+        "predicate": "located-at",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 17351,
+          "charEnd": 17376,
+          "timeStart": 1347.6,
+          "timeEnd": 1352.76
+        },
+        "confidence": 0.85,
+        "provenance": "nlp",
+        "derivedTruth": 0.8852255472365547
+      },
+      {
+        "id": "time:1952|located-at|organization:central intelligence agency|veVqh9XoXUs:17351-17376",
+        "subjectId": "time:1952",
+        "predicate": "located-at",
+        "objectId": "organization:central intelligence agency",
+        "evidence": {
+          "transcriptId": "veVqh9XoXUs",
+          "charStart": 17351,
+          "charEnd": 17376,
+          "timeStart": 1347.6,
+          "timeEnd": 1352.76
+        },
+        "confidence": 0.85,
+        "provenance": "nlp",
+        "derivedTruth": 0.8895014931749962
+      },
+      {
+        "id": "organization:central intelligence agency|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8900022040866248
+      },
+      {
+        "id": "organization:cia|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8851163550566417
+      }
+    ],
+    "sharedEntities": [
+      "organization:cia",
+      "organization:central intelligence agency"
+    ],
+    "sharedTranscripts": [
+      "50Y5r9HeR2w"
     ]
   },
   {
@@ -3845,7 +5660,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6439286000807236
+        "derivedTruth": 0.6655898555842588
       },
       {
         "id": "location:africa|located-at|person:philip slater|WNavHksmXnA:5012-5033",
@@ -3861,7 +5676,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.639108102483581
+        "derivedTruth": 0.6612648118197888
       },
       {
         "id": "location:america|located-at|person:slater|WNavHksmXnA:5000-5033",
@@ -3877,7 +5692,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6449657422335967
+        "derivedTruth": 0.6664277662796247
       },
       {
         "id": "location:africa|located-at|person:slater|WNavHksmXnA:5012-5033",
@@ -3893,7 +5708,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.6391030465665115
+        "derivedTruth": 0.6612417193920842
       },
       {
         "id": "person:philip slater|located-at|location:america|WNavHksmXnA:5000-5033",
@@ -3909,7 +5724,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6443586602537748
+        "derivedTruth": 0.6659355309611393
       },
       {
         "id": "person:philip slater|located-at|location:africa|WNavHksmXnA:5012-5033",
@@ -3925,7 +5740,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.639951665546882
+        "derivedTruth": 0.6620127331501044
       }
     ],
     "sharedEntities": [
@@ -3955,7 +5770,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9712679135147635
+        "derivedTruth": 0.9715094645277824
       },
       {
         "id": "person:charles|knows|person:harold|a5KXsiBZjOM:6194-6218",
@@ -3971,7 +5786,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9749279341049656
+        "derivedTruth": 0.9734174346636137
       },
       {
         "id": "person:harold|located-at|location:win hotel|a5KXsiBZjOM:7559-7595",
@@ -3987,7 +5802,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.9713079432745845
+        "derivedTruth": 0.9714916940610253
       },
       {
         "id": "person:harold #a5kxsibzjom|located-at|location:tacoma|a5KXsiBZjOM:5861-5888",
@@ -4003,7 +5818,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9716795576509178
+        "derivedTruth": 0.9717874106160227
       },
       {
         "id": "person:charles harlson|knows|person:harold #a5kxsibzjom|a5KXsiBZjOM:6194-6218",
@@ -4019,7 +5834,7 @@
         },
         "confidence": 0.8666666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9727411252400308
+        "derivedTruth": 0.9723608744473915
       },
       {
         "id": "person:harold #a5kxsibzjom|located-at|location:win hotel|a5KXsiBZjOM:7559-7595",
@@ -4035,7 +5850,7 @@
         },
         "confidence": 0.825,
         "provenance": "nlp",
-        "derivedTruth": 0.971796831111421
+        "derivedTruth": 0.9718224660714551
       }
     ],
     "sharedEntities": [
@@ -4255,6 +6070,194 @@
     ]
   },
   {
+    "subjectId": "person:doug",
+    "objectId": "person:doug #purpo8ue-9g",
+    "score": 5.45,
+    "supportingEdges": [
+      {
+        "id": "person:doug|located-at|location:ohio|purPO8UE-9g:324-344",
+        "subjectId": "person:doug",
+        "predicate": "located-at",
+        "objectId": "location:ohio",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 324,
+          "charEnd": 344,
+          "timeStart": 21.64,
+          "timeEnd": 25.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9929182642161588
+      },
+      {
+        "id": "organization:nsa|said|person:doug|purPO8UE-9g:7270-7286",
+        "subjectId": "organization:nsa",
+        "predicate": "said",
+        "objectId": "person:doug",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 7270,
+          "charEnd": 7286,
+          "timeStart": 528.88,
+          "timeEnd": 534.36
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9934972736368239
+      },
+      {
+        "id": "person:doug #purpo8ue-9g|located-at|location:ohio|purPO8UE-9g:324-344",
+        "subjectId": "person:doug #purpo8ue-9g",
+        "predicate": "located-at",
+        "objectId": "location:ohio",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 324,
+          "charEnd": 344,
+          "timeStart": 21.64,
+          "timeEnd": 25.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9928917352038918
+      },
+      {
+        "id": "organization:nsa|said|person:doug #purpo8ue-9g|purPO8UE-9g:7270-7286",
+        "subjectId": "organization:nsa",
+        "predicate": "said",
+        "objectId": "person:doug #purpo8ue-9g",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 7270,
+          "charEnd": 7286,
+          "timeStart": 528.88,
+          "timeEnd": 534.36
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9934644498002718
+      },
+      {
+        "id": "organization:national security agency|said|person:doug #purpo8ue-9g|purPO8UE-9g:7270-7286",
+        "subjectId": "organization:national security agency",
+        "predicate": "said",
+        "objectId": "person:doug #purpo8ue-9g",
+        "evidence": {
+          "transcriptId": "purPO8UE-9g",
+          "charStart": 7270,
+          "charEnd": 7286,
+          "timeStart": 528.88,
+          "timeEnd": 534.36
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.9933605461979085
+      }
+    ],
+    "sharedEntities": [
+      "location:ohio",
+      "organization:nsa"
+    ],
+    "sharedTranscripts": [
+      "purPO8UE-9g"
+    ]
+  },
+  {
+    "subjectId": "location:middle east",
+    "objectId": "misc:world war ii",
+    "score": 5.45,
+    "supportingEdges": [
+      {
+        "id": "organization:central intelligence agency|located-at|location:middle east|TGGlLkE_-SA:68338-68360",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "located-at",
+        "objectId": "location:middle east",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 68338,
+          "charEnd": 68360,
+          "timeStart": 3790.4,
+          "timeEnd": 3792.7200000000003
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8905115144266134
+      },
+      {
+        "id": "organization:cia|located-at|location:middle east|TGGlLkE_-SA:68338-68360",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "location:middle east",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 68338,
+          "charEnd": 68360,
+          "timeStart": 3790.4,
+          "timeEnd": 3792.7200000000003
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8848391223364048
+      },
+      {
+        "id": "organization:central intelligence agency|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8900022040866248
+      },
+      {
+        "id": "organization:cia|during|misc:world war ii|50Y5r9HeR2w:26862-26885",
+        "subjectId": "organization:cia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "50Y5r9HeR2w",
+          "charStart": 26862,
+          "charEnd": 26885,
+          "timeStart": 1654.799,
+          "timeEnd": 1658.76
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8851163550566417
+      },
+      {
+        "id": "location:indonesia|during|misc:world war ii|TGGlLkE_-SA:201334-201363",
+        "subjectId": "location:indonesia",
+        "predicate": "during",
+        "objectId": "misc:world war ii",
+        "evidence": {
+          "transcriptId": "TGGlLkE_-SA",
+          "charStart": 201334,
+          "charEnd": 201363,
+          "timeStart": 11238.96,
+          "timeEnd": 11242.399
+        },
+        "confidence": 0.9,
+        "provenance": "nlp",
+        "derivedTruth": 0.8927381330676937
+      }
+    ],
+    "sharedEntities": [
+      "organization:central intelligence agency",
+      "organization:cia"
+    ],
+    "sharedTranscripts": [
+      "TGGlLkE_-SA"
+    ]
+  },
+  {
     "subjectId": "person:tully queensland\naustralia",
     "objectId": "location:queensland",
     "score": 5.445,
@@ -4273,7 +6276,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9994972112240427
+        "derivedTruth": 0.9989146776345637
       },
       {
         "id": "person:tully queensland\naustralia|located-at|time:1966|x2BQyZorSQc:12120-12138",
@@ -4289,7 +6292,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9994536275018623
+        "derivedTruth": 0.9988284124136416
       },
       {
         "id": "person:doug bowers|located-at|location:queensland|x2BQyZorSQc:12103-12130",
@@ -4305,7 +6308,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9994787669538148
+        "derivedTruth": 0.9988780816997511
       },
       {
         "id": "location:queensland|located-at|time:1966|x2BQyZorSQc:12120-12138",
@@ -4321,7 +6324,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.999447402883421
+        "derivedTruth": 0.9988161092399195
       },
       {
         "id": "time:1966|located-at|location:queensland|x2BQyZorSQc:12120-12138",
@@ -4337,7 +6340,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9994398001894288
+        "derivedTruth": 0.998801252767729
       }
     ],
     "sharedEntities": [
@@ -4367,7 +6370,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.639108102483581
+        "derivedTruth": 0.6612648118197888
       },
       {
         "id": "location:south america|located-at|person:slater|WNavHksmXnA:4994-5033",
@@ -4383,7 +6386,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6406076827029291
+        "derivedTruth": 0.6625982151057225
       },
       {
         "id": "location:africa|located-at|person:slater|WNavHksmXnA:5012-5033",
@@ -4399,7 +6402,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.6391030465665115
+        "derivedTruth": 0.6612417193920842
       },
       {
         "id": "person:philip slater|located-at|location:south america|WNavHksmXnA:4994-5033",
@@ -4415,7 +6418,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6410393802520995
+        "derivedTruth": 0.6629996865134694
       },
       {
         "id": "person:philip slater|located-at|location:africa|WNavHksmXnA:5012-5033",
@@ -4431,7 +6434,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.639951665546882
+        "derivedTruth": 0.6620127331501044
       }
     ],
     "sharedEntities": [
@@ -4440,6 +6443,100 @@
     ],
     "sharedTranscripts": [
       "WNavHksmXnA"
+    ]
+  },
+  {
+    "subjectId": "time:1991",
+    "objectId": "location:soviet union",
+    "score": 5.418333333333333,
+    "supportingEdges": [
+      {
+        "id": "organization:cia|located-at|time:1991|2k7YTFrmt84:23735-23758",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "time:1991",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23758,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8862531125212464
+      },
+      {
+        "id": "time:1991|located-at|organization:cia|2k7YTFrmt84:23735-23758",
+        "subjectId": "time:1991",
+        "predicate": "located-at",
+        "objectId": "organization:cia",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23758,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8854831193001416
+      },
+      {
+        "id": "organization:cia|located-at|location:soviet union|2k7YTFrmt84:23735-23767",
+        "subjectId": "organization:cia",
+        "predicate": "located-at",
+        "objectId": "location:soviet union",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23767,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.7916666666666666,
+        "provenance": "nlp",
+        "derivedTruth": 0.8850277179335424
+      },
+      {
+        "id": "time:1991|located-at|organization:central intelligence agency|2k7YTFrmt84:23735-23758",
+        "subjectId": "time:1991",
+        "predicate": "located-at",
+        "objectId": "organization:central intelligence agency",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23758,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.8666666666666667,
+        "provenance": "nlp",
+        "derivedTruth": 0.8893767453672787
+      },
+      {
+        "id": "organization:central intelligence agency|located-at|location:soviet union|2k7YTFrmt84:23735-23767",
+        "subjectId": "organization:central intelligence agency",
+        "predicate": "located-at",
+        "objectId": "location:soviet union",
+        "evidence": {
+          "transcriptId": "2k7YTFrmt84",
+          "charStart": 23735,
+          "charEnd": 23767,
+          "timeStart": 1683.559,
+          "timeEnd": 1690.08
+        },
+        "confidence": 0.7916666666666666,
+        "provenance": "nlp",
+        "derivedTruth": 0.8897665493701825
+      }
+    ],
+    "sharedEntities": [
+      "organization:cia",
+      "organization:central intelligence agency"
+    ],
+    "sharedTranscripts": [
+      "2k7YTFrmt84"
     ]
   },
   {
@@ -4461,7 +6558,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6439286000807236
+        "derivedTruth": 0.6655898555842588
       },
       {
         "id": "location:south america|located-at|person:slater|WNavHksmXnA:4994-5033",
@@ -4477,7 +6574,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6406076827029291
+        "derivedTruth": 0.6625982151057225
       },
       {
         "id": "location:america|located-at|person:slater|WNavHksmXnA:5000-5033",
@@ -4493,7 +6590,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6449657422335967
+        "derivedTruth": 0.6664277662796247
       },
       {
         "id": "person:philip slater|located-at|location:south america|WNavHksmXnA:4994-5033",
@@ -4509,7 +6606,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6410393802520995
+        "derivedTruth": 0.6629996865134694
       },
       {
         "id": "person:philip slater|located-at|location:america|WNavHksmXnA:5000-5033",
@@ -4525,7 +6622,7 @@
         },
         "confidence": 0.8333333333333334,
         "provenance": "nlp",
-        "derivedTruth": 0.6443586602537748
+        "derivedTruth": 0.6659355309611393
       }
     ],
     "sharedEntities": [
@@ -4556,7 +6653,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9984133482792994
+        "derivedTruth": 0.9984076342174519
       },
       {
         "id": "time:1927|said|person:al|BzRR4Yg6B3w:22675-22711",
@@ -4573,7 +6670,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956916922018533
+        "derivedTruth": 0.9956762392385996
       },
       {
         "id": "person:al|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -4590,7 +6687,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.995892521207359
+        "derivedTruth": 0.9958777960043279
       },
       {
         "id": "person:al be|said|time:1927|BzRR4Yg6B3w:22675-22711",
@@ -4607,7 +6704,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956906651532522
+        "derivedTruth": 0.9956752238333413
       },
       {
         "id": "person:al be|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -4624,7 +6721,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9958914888788343
+        "derivedTruth": 0.995876774846779
       }
     ],
     "sharedEntities": [
@@ -4655,7 +6752,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9984133482792994
+        "derivedTruth": 0.9984076342174519
       },
       {
         "id": "time:1927|said|person:al|BzRR4Yg6B3w:22675-22711",
@@ -4672,7 +6769,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956916922018533
+        "derivedTruth": 0.9956762392385996
       },
       {
         "id": "person:al|said|person:john v norman|BzRR4Yg6B3w:24534-24546",
@@ -4688,7 +6785,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869468553671776
+        "derivedTruth": 0.9869000585088974
       },
       {
         "id": "person:al be|said|time:1927|BzRR4Yg6B3w:22675-22711",
@@ -4705,7 +6802,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956906651532522
+        "derivedTruth": 0.9956752238333413
       },
       {
         "id": "person:al be|said|person:john v norman|BzRR4Yg6B3w:24534-24546",
@@ -4721,7 +6818,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869433012137403
+        "derivedTruth": 0.986896543043555
       }
     ],
     "sharedEntities": [
@@ -4752,7 +6849,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9984133482792994
+        "derivedTruth": 0.9984076342174519
       },
       {
         "id": "time:1927|said|person:al|BzRR4Yg6B3w:22675-22711",
@@ -4769,7 +6866,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956916922018533
+        "derivedTruth": 0.9956762392385996
       },
       {
         "id": "person:al|said|time:2000|BzRR4Yg6B3w:25417-25452",
@@ -4785,7 +6882,7 @@
         },
         "confidence": 0.7583333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9869471683506618
+        "derivedTruth": 0.9869003673239564
       },
       {
         "id": "person:al be|said|time:1927|BzRR4Yg6B3w:22675-22711",
@@ -4802,7 +6899,7 @@
         "confidence": 0.75,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9956906651532522
+        "derivedTruth": 0.9956752238333413
       },
       {
         "id": "person:al be|said|time:2000|BzRR4Yg6B3w:25417-25452",
@@ -4818,7 +6915,7 @@
         },
         "confidence": 0.7583333333333333,
         "provenance": "nlp",
-        "derivedTruth": 0.9869430089508573
+        "derivedTruth": 0.9868962537497591
       }
     ],
     "sharedEntities": [
@@ -4848,7 +6945,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9824111195994348
+        "derivedTruth": 0.9834277125249486
       },
       {
         "id": "person:allen|located-at|location:philadelphia|TNKZz-C0EOc:7363-7414",
@@ -4864,7 +6961,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9798273322746999
+        "derivedTruth": 0.9806651169410903
       },
       {
         "id": "person:maurice jessup|authored|person:allen|TNKZz-C0EOc:8076-8098",
@@ -4880,7 +6977,7 @@
         },
         "confidence": 0.875,
         "provenance": "nlp",
-        "derivedTruth": 0.9827631400154011
+        "derivedTruth": 0.9838268481700682
       },
       {
         "id": "person:allen #tnkzz-c0eoc|located-at|location:philadelphia naval shipyard|TNKZz-C0EOc:7363-7429",
@@ -4896,7 +6993,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9802235338517516
+        "derivedTruth": 0.981072840611898
       },
       {
         "id": "person:allen #tnkzz-c0eoc|located-at|location:philadelphia|TNKZz-C0EOc:7363-7414",
@@ -4912,7 +7009,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9778625137139615
+        "derivedTruth": 0.9785553301001485
       }
     ],
     "sharedEntities": [
@@ -4942,7 +7039,7 @@
         },
         "confidence": 0.7916666666666666,
         "provenance": "nlp",
-        "derivedTruth": 0.977581883304784
+        "derivedTruth": 0.9782375787021543
       },
       {
         "id": "person:allen|located-at|location:philadelphia naval shipyard|TNKZz-C0EOc:7363-7429",
@@ -4958,7 +7055,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9824111195994348
+        "derivedTruth": 0.9834277125249486
       },
       {
         "id": "person:allen|located-at|location:philadelphia|TNKZz-C0EOc:7363-7414",
@@ -4974,7 +7071,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9798273322746999
+        "derivedTruth": 0.9806651169410903
       },
       {
         "id": "person:allen #tnkzz-c0eoc|located-at|location:philadelphia naval shipyard|TNKZz-C0EOc:7363-7429",
@@ -4990,7 +7087,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9802235338517516
+        "derivedTruth": 0.981072840611898
       },
       {
         "id": "person:allen #tnkzz-c0eoc|located-at|location:philadelphia|TNKZz-C0EOc:7363-7414",
@@ -5006,7 +7103,7 @@
         },
         "confidence": 0.7166666666666667,
         "provenance": "nlp",
-        "derivedTruth": 0.9778625137139615
+        "derivedTruth": 0.9785553301001485
       }
     ],
     "sharedEntities": [
@@ -5036,7 +7133,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869468553671776
+        "derivedTruth": 0.9869000585088974
       },
       {
         "id": "person:al|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -5053,7 +7150,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.995892521207359
+        "derivedTruth": 0.9958777960043279
       },
       {
         "id": "person:al be|said|person:john v norman|BzRR4Yg6B3w:24534-24546",
@@ -5069,7 +7166,7 @@
         },
         "confidence": 0.9,
         "provenance": "nlp",
-        "derivedTruth": 0.9869433012137403
+        "derivedTruth": 0.986896543043555
       },
       {
         "id": "person:al be|said|time:2005|BzRR4Yg6B3w:25477-25489",
@@ -5086,7 +7183,7 @@
         "confidence": 0.9,
         "provenance": "nlp",
         "directTruth": 1,
-        "derivedTruth": 0.9958914888788343
+        "derivedTruth": 0.995876774846779
       }
     ],
     "sharedEntities": [
@@ -5095,940 +7192,6 @@
     ],
     "sharedTranscripts": [
       "BzRR4Yg6B3w"
-    ]
-  },
-  {
-    "subjectId": "person:robert",
-    "objectId": "person:robert #fpxlpezjpas",
-    "score": 5.36,
-    "supportingEdges": [
-      {
-        "id": "person:robert|attended|location:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert",
-        "predicate": "attended",
-        "objectId": "location:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      },
-      {
-        "id": "person:robert|attended|organization:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert",
-        "predicate": "attended",
-        "objectId": "organization:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      },
-      {
-        "id": "person:robert #fpxlpezjpas|attended|location:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert #fpxlpezjpas",
-        "predicate": "attended",
-        "objectId": "location:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      },
-      {
-        "id": "person:robert #fpxlpezjpas|located-at|organization:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert #fpxlpezjpas",
-        "predicate": "located-at",
-        "objectId": "organization:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      }
-    ],
-    "sharedEntities": [
-      "location:white house",
-      "organization:white house"
-    ],
-    "sharedTranscripts": [
-      "FpxLpEzJpAs"
-    ]
-  },
-  {
-    "subjectId": "location:white house",
-    "objectId": "organization:white house",
-    "score": 5.36,
-    "supportingEdges": [
-      {
-        "id": "person:robert|attended|location:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert",
-        "predicate": "attended",
-        "objectId": "location:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      },
-      {
-        "id": "person:robert|attended|organization:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert",
-        "predicate": "attended",
-        "objectId": "organization:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      },
-      {
-        "id": "person:robert #fpxlpezjpas|attended|location:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert #fpxlpezjpas",
-        "predicate": "attended",
-        "objectId": "location:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      },
-      {
-        "id": "person:robert #fpxlpezjpas|located-at|organization:white house|FpxLpEzJpAs:15272-15301",
-        "subjectId": "person:robert #fpxlpezjpas",
-        "predicate": "located-at",
-        "objectId": "organization:white house",
-        "evidence": {
-          "transcriptId": "FpxLpEzJpAs",
-          "charStart": 15272,
-          "charEnd": 15301,
-          "timeStart": 1071.44,
-          "timeEnd": 1075.52
-        },
-        "confidence": 0.9,
-        "provenance": "nlp"
-      }
-    ],
-    "sharedEntities": [
-      "person:robert",
-      "person:robert #fpxlpezjpas"
-    ],
-    "sharedTranscripts": [
-      "FpxLpEzJpAs"
-    ]
-  },
-  {
-    "subjectId": "person:doug",
-    "objectId": "person:doug #purpo8ue-9g",
-    "score": 5.36,
-    "supportingEdges": [
-      {
-        "id": "person:doug|located-at|location:ohio|purPO8UE-9g:324-344",
-        "subjectId": "person:doug",
-        "predicate": "located-at",
-        "objectId": "location:ohio",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 324,
-          "charEnd": 344,
-          "timeStart": 21.64,
-          "timeEnd": 25.76
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.996651752494976
-      },
-      {
-        "id": "organization:nsa|said|person:doug|purPO8UE-9g:7270-7286",
-        "subjectId": "organization:nsa",
-        "predicate": "said",
-        "objectId": "person:doug",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 7270,
-          "charEnd": 7286,
-          "timeStart": 528.88,
-          "timeEnd": 534.36
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9967131355438805
-      },
-      {
-        "id": "person:doug #purpo8ue-9g|located-at|location:ohio|purPO8UE-9g:324-344",
-        "subjectId": "person:doug #purpo8ue-9g",
-        "predicate": "located-at",
-        "objectId": "location:ohio",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 324,
-          "charEnd": 344,
-          "timeStart": 21.64,
-          "timeEnd": 25.76
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9965486839513605
-      },
-      {
-        "id": "organization:nsa|said|person:doug #purpo8ue-9g|purPO8UE-9g:7270-7286",
-        "subjectId": "organization:nsa",
-        "predicate": "said",
-        "objectId": "person:doug #purpo8ue-9g",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 7270,
-          "charEnd": 7286,
-          "timeStart": 528.88,
-          "timeEnd": 534.36
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9966309097476205
-      }
-    ],
-    "sharedEntities": [
-      "location:ohio",
-      "organization:nsa"
-    ],
-    "sharedTranscripts": [
-      "purPO8UE-9g"
-    ]
-  },
-  {
-    "subjectId": "location:ohio",
-    "objectId": "organization:nsa",
-    "score": 5.36,
-    "supportingEdges": [
-      {
-        "id": "person:doug|located-at|location:ohio|purPO8UE-9g:324-344",
-        "subjectId": "person:doug",
-        "predicate": "located-at",
-        "objectId": "location:ohio",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 324,
-          "charEnd": 344,
-          "timeStart": 21.64,
-          "timeEnd": 25.76
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.996651752494976
-      },
-      {
-        "id": "organization:nsa|said|person:doug|purPO8UE-9g:7270-7286",
-        "subjectId": "organization:nsa",
-        "predicate": "said",
-        "objectId": "person:doug",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 7270,
-          "charEnd": 7286,
-          "timeStart": 528.88,
-          "timeEnd": 534.36
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9967131355438805
-      },
-      {
-        "id": "person:doug #purpo8ue-9g|located-at|location:ohio|purPO8UE-9g:324-344",
-        "subjectId": "person:doug #purpo8ue-9g",
-        "predicate": "located-at",
-        "objectId": "location:ohio",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 324,
-          "charEnd": 344,
-          "timeStart": 21.64,
-          "timeEnd": 25.76
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9965486839513605
-      },
-      {
-        "id": "organization:nsa|said|person:doug #purpo8ue-9g|purPO8UE-9g:7270-7286",
-        "subjectId": "organization:nsa",
-        "predicate": "said",
-        "objectId": "person:doug #purpo8ue-9g",
-        "evidence": {
-          "transcriptId": "purPO8UE-9g",
-          "charStart": 7270,
-          "charEnd": 7286,
-          "timeStart": 528.88,
-          "timeEnd": 534.36
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9966309097476205
-      }
-    ],
-    "sharedEntities": [
-      "person:doug",
-      "person:doug #purpo8ue-9g"
-    ],
-    "sharedTranscripts": [
-      "purPO8UE-9g"
-    ]
-  },
-  {
-    "subjectId": "time:2017",
-    "objectId": "location:fort levvenworth",
-    "score": 5.351666666666667,
-    "supportingEdges": [
-      {
-        "id": "person:shannon|authored|location:fort levvenworth|zP3pOszdr5U:6006-6042",
-        "subjectId": "person:shannon",
-        "predicate": "authored",
-        "objectId": "location:fort levvenworth",
-        "evidence": {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 6006,
-          "charEnd": 6042,
-          "timeStart": 403.6,
-          "timeEnd": 408.47900000000004
-        },
-        "confidence": 0.8916666666666666,
-        "provenance": "nlp",
-        "derivedTruth": 0.9974237588789547
-      },
-      {
-        "id": "person:shannon|died-in|time:2017|zP3pOszdr5U:21504-21531",
-        "subjectId": "person:shannon",
-        "predicate": "died-in",
-        "objectId": "time:2017",
-        "evidence": {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 21504,
-          "charEnd": 21531,
-          "timeStart": 1363.36,
-          "timeEnd": 1367.9189999999999
-        },
-        "confidence": 0.8666666666666667,
-        "provenance": "nlp",
-        "derivedTruth": 0.997459620122938
-      },
-      {
-        "id": "person:jim shannon|located-at|location:fort levvenworth|zP3pOszdr5U:6006-6042",
-        "subjectId": "person:jim shannon",
-        "predicate": "located-at",
-        "objectId": "location:fort levvenworth",
-        "evidence": {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 6006,
-          "charEnd": 6042,
-          "timeStart": 403.6,
-          "timeEnd": 408.47900000000004
-        },
-        "confidence": 0.8916666666666666,
-        "provenance": "nlp",
-        "derivedTruth": 0.9973918712811601
-      },
-      {
-        "id": "person:jim shannon|died-in|time:2017|zP3pOszdr5U:21504-21531",
-        "subjectId": "person:jim shannon",
-        "predicate": "died-in",
-        "objectId": "time:2017",
-        "evidence": {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 21504,
-          "charEnd": 21531,
-          "timeStart": 1363.36,
-          "timeEnd": 1367.9189999999999
-        },
-        "confidence": 0.8666666666666667,
-        "provenance": "nlp",
-        "derivedTruth": 0.9974331795139196
-      }
-    ],
-    "sharedEntities": [
-      "person:shannon",
-      "person:jim shannon"
-    ],
-    "sharedTranscripts": [
-      "zP3pOszdr5U"
-    ]
-  },
-  {
-    "subjectId": "location:new york",
-    "objectId": "location:rome",
-    "score": 5.35,
-    "supportingEdges": [
-      {
-        "id": "person:helen|located-at|location:rome|A89ozmI2zOo:10042-10063",
-        "subjectId": "person:helen",
-        "predicate": "located-at",
-        "objectId": "location:rome",
-        "evidence": {
-          "transcriptId": "A89ozmI2zOo",
-          "charStart": 10042,
-          "charEnd": 10063,
-          "timeStart": 619.6,
-          "timeEnd": 623.9200000000001
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.5437222579101587
-      },
-      {
-        "id": "person:helen|located-at|location:new york|A89ozmI2zOo:10042-10073",
-        "subjectId": "person:helen",
-        "predicate": "located-at",
-        "objectId": "location:new york",
-        "evidence": {
-          "transcriptId": "A89ozmI2zOo",
-          "charStart": 10042,
-          "charEnd": 10073,
-          "timeStart": 619.6,
-          "timeEnd": 623.9200000000001
-        },
-        "confidence": 0.85,
-        "provenance": "nlp",
-        "derivedTruth": 0.9002445916314804
-      },
-      {
-        "id": "person:helen latrell|located-at|location:rome|A89ozmI2zOo:10042-10063",
-        "subjectId": "person:helen latrell",
-        "predicate": "located-at",
-        "objectId": "location:rome",
-        "evidence": {
-          "transcriptId": "A89ozmI2zOo",
-          "charStart": 10042,
-          "charEnd": 10063,
-          "timeStart": 619.6,
-          "timeEnd": 623.9200000000001
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.4997496192014877
-      },
-      {
-        "id": "person:helen latrell|located-at|location:new york|A89ozmI2zOo:10042-10073",
-        "subjectId": "person:helen latrell",
-        "predicate": "located-at",
-        "objectId": "location:new york",
-        "evidence": {
-          "transcriptId": "A89ozmI2zOo",
-          "charStart": 10042,
-          "charEnd": 10073,
-          "timeStart": 619.6,
-          "timeEnd": 623.9200000000001
-        },
-        "confidence": 0.85,
-        "provenance": "nlp",
-        "derivedTruth": 0.8980757181813389
-      }
-    ],
-    "sharedEntities": [
-      "person:helen",
-      "person:helen latrell"
-    ],
-    "sharedTranscripts": [
-      "A89ozmI2zOo"
-    ]
-  },
-  {
-    "subjectId": "location:washington",
-    "objectId": "organization:sri",
-    "score": 5.348333333333334,
-    "supportingEdges": [
-      {
-        "id": "organization:sri|said|person:swan|V8kT6J_uoic:2526-2539",
-        "subjectId": "organization:sri",
-        "predicate": "said",
-        "objectId": "person:swan",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2526,
-          "charEnd": 2539,
-          "timeStart": 151.48,
-          "timeEnd": 156.67999999999998
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9988007750031863
-      },
-      {
-        "id": "person:swan|said|location:washington|V8kT6J_uoic:3963-3994",
-        "subjectId": "person:swan",
-        "predicate": "said",
-        "objectId": "location:washington",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 3963,
-          "charEnd": 3994,
-          "timeStart": 246.56,
-          "timeEnd": 251.04
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "derivedTruth": 0.9979853512984928
-      },
-      {
-        "id": "organization:sri|said|person:swan #v8kt6j_uoic|V8kT6J_uoic:2526-2539",
-        "subjectId": "organization:sri",
-        "predicate": "said",
-        "objectId": "person:swan #v8kt6j_uoic",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2526,
-          "charEnd": 2539,
-          "timeStart": 151.48,
-          "timeEnd": 156.67999999999998
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9987607645990607
-      },
-      {
-        "id": "person:swan #v8kt6j_uoic|said|location:washington|V8kT6J_uoic:3963-3994",
-        "subjectId": "person:swan #v8kt6j_uoic",
-        "predicate": "said",
-        "objectId": "location:washington",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 3963,
-          "charEnd": 3994,
-          "timeStart": 246.56,
-          "timeEnd": 251.04
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "derivedTruth": 0.9979093059513302
-      }
-    ],
-    "sharedEntities": [
-      "person:swan",
-      "person:swan #v8kt6j_uoic"
-    ],
-    "sharedTranscripts": [
-      "V8kT6J_uoic"
-    ]
-  },
-  {
-    "subjectId": "person:ino swan",
-    "objectId": "organization:sri",
-    "score": 5.348333333333334,
-    "supportingEdges": [
-      {
-        "id": "person:swan|denied|person:ino swan|V8kT6J_uoic:2226-2257",
-        "subjectId": "person:swan",
-        "predicate": "denied",
-        "objectId": "person:ino swan",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2226,
-          "charEnd": 2257,
-          "timeStart": 137.08,
-          "timeEnd": 140.959
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "directTruth": 1,
-        "derivedTruth": 0.9995233115660875
-      },
-      {
-        "id": "organization:sri|said|person:swan|V8kT6J_uoic:2526-2539",
-        "subjectId": "organization:sri",
-        "predicate": "said",
-        "objectId": "person:swan",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2526,
-          "charEnd": 2539,
-          "timeStart": 151.48,
-          "timeEnd": 156.67999999999998
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9988007750031863
-      },
-      {
-        "id": "person:swan #v8kt6j_uoic|denied|person:ino swan|V8kT6J_uoic:2226-2257",
-        "subjectId": "person:swan #v8kt6j_uoic",
-        "predicate": "denied",
-        "objectId": "person:ino swan",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2226,
-          "charEnd": 2257,
-          "timeStart": 137.08,
-          "timeEnd": 140.959
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "directTruth": 1,
-        "derivedTruth": 0.9995053728756566
-      },
-      {
-        "id": "organization:sri|said|person:swan #v8kt6j_uoic|V8kT6J_uoic:2526-2539",
-        "subjectId": "organization:sri",
-        "predicate": "said",
-        "objectId": "person:swan #v8kt6j_uoic",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2526,
-          "charEnd": 2539,
-          "timeStart": 151.48,
-          "timeEnd": 156.67999999999998
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.9987607645990607
-      }
-    ],
-    "sharedEntities": [
-      "person:swan",
-      "person:swan #v8kt6j_uoic"
-    ],
-    "sharedTranscripts": [
-      "V8kT6J_uoic"
-    ]
-  },
-  {
-    "subjectId": "location:united states",
-    "objectId": "location:usa",
-    "score": 5.345,
-    "supportingEdges": [
-      {
-        "id": "location:usa|located-at|time:2019|OvcCK-F6aKY:21423-21434",
-        "subjectId": "location:usa",
-        "predicate": "located-at",
-        "objectId": "time:2019",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21434,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.8533917982829102
-      },
-      {
-        "id": "location:usa|located-at|organization:advanced|OvcCK-F6aKY:21423-21455",
-        "subjectId": "location:usa",
-        "predicate": "located-at",
-        "objectId": "organization:advanced",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21455,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.825,
-        "provenance": "nlp",
-        "derivedTruth": 0.8527268854295
-      },
-      {
-        "id": "time:2019|located-at|location:united states|OvcCK-F6aKY:21423-21434",
-        "subjectId": "time:2019",
-        "predicate": "located-at",
-        "objectId": "location:united states",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21434,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.8516950829744725
-      },
-      {
-        "id": "location:united states|located-at|organization:advanced|OvcCK-F6aKY:21423-21455",
-        "subjectId": "location:united states",
-        "predicate": "located-at",
-        "objectId": "organization:advanced",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21455,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.825,
-        "provenance": "nlp",
-        "derivedTruth": 0.851319381055471
-      }
-    ],
-    "sharedEntities": [
-      "time:2019",
-      "organization:advanced"
-    ],
-    "sharedTranscripts": [
-      "OvcCK-F6aKY"
-    ]
-  },
-  {
-    "subjectId": "time:2019",
-    "objectId": "organization:advanced",
-    "score": 5.345,
-    "supportingEdges": [
-      {
-        "id": "location:usa|located-at|time:2019|OvcCK-F6aKY:21423-21434",
-        "subjectId": "location:usa",
-        "predicate": "located-at",
-        "objectId": "time:2019",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21434,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.8533917982829102
-      },
-      {
-        "id": "location:usa|located-at|organization:advanced|OvcCK-F6aKY:21423-21455",
-        "subjectId": "location:usa",
-        "predicate": "located-at",
-        "objectId": "organization:advanced",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21455,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.825,
-        "provenance": "nlp",
-        "derivedTruth": 0.8527268854295
-      },
-      {
-        "id": "time:2019|located-at|location:united states|OvcCK-F6aKY:21423-21434",
-        "subjectId": "time:2019",
-        "predicate": "located-at",
-        "objectId": "location:united states",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21434,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "derivedTruth": 0.8516950829744725
-      },
-      {
-        "id": "location:united states|located-at|organization:advanced|OvcCK-F6aKY:21423-21455",
-        "subjectId": "location:united states",
-        "predicate": "located-at",
-        "objectId": "organization:advanced",
-        "evidence": {
-          "transcriptId": "OvcCK-F6aKY",
-          "charStart": 21423,
-          "charEnd": 21455,
-          "timeStart": 1782,
-          "timeEnd": 1788.08
-        },
-        "confidence": 0.825,
-        "provenance": "nlp",
-        "derivedTruth": 0.851319381055471
-      }
-    ],
-    "sharedEntities": [
-      "location:usa",
-      "location:united states"
-    ],
-    "sharedTranscripts": [
-      "OvcCK-F6aKY"
-    ]
-  },
-  {
-    "subjectId": "location:washington",
-    "objectId": "person:ino swan",
-    "score": 5.336666666666667,
-    "supportingEdges": [
-      {
-        "id": "person:swan|denied|person:ino swan|V8kT6J_uoic:2226-2257",
-        "subjectId": "person:swan",
-        "predicate": "denied",
-        "objectId": "person:ino swan",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2226,
-          "charEnd": 2257,
-          "timeStart": 137.08,
-          "timeEnd": 140.959
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "directTruth": 1,
-        "derivedTruth": 0.9995233115660875
-      },
-      {
-        "id": "person:swan|said|location:washington|V8kT6J_uoic:3963-3994",
-        "subjectId": "person:swan",
-        "predicate": "said",
-        "objectId": "location:washington",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 3963,
-          "charEnd": 3994,
-          "timeStart": 246.56,
-          "timeEnd": 251.04
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "derivedTruth": 0.9979853512984928
-      },
-      {
-        "id": "person:swan #v8kt6j_uoic|denied|person:ino swan|V8kT6J_uoic:2226-2257",
-        "subjectId": "person:swan #v8kt6j_uoic",
-        "predicate": "denied",
-        "objectId": "person:ino swan",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 2226,
-          "charEnd": 2257,
-          "timeStart": 137.08,
-          "timeEnd": 140.959
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "directTruth": 1,
-        "derivedTruth": 0.9995053728756566
-      },
-      {
-        "id": "person:swan #v8kt6j_uoic|said|location:washington|V8kT6J_uoic:3963-3994",
-        "subjectId": "person:swan #v8kt6j_uoic",
-        "predicate": "said",
-        "objectId": "location:washington",
-        "evidence": {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 3963,
-          "charEnd": 3994,
-          "timeStart": 246.56,
-          "timeEnd": 251.04
-        },
-        "confidence": 0.8416666666666667,
-        "provenance": "nlp",
-        "derivedTruth": 0.9979093059513302
-      }
-    ],
-    "sharedEntities": [
-      "person:swan",
-      "person:swan #v8kt6j_uoic"
-    ],
-    "sharedTranscripts": [
-      "V8kT6J_uoic"
-    ]
-  },
-  {
-    "subjectId": "organization:alphabet",
-    "objectId": "person:henry cole",
-    "score": 5.336666666666667,
-    "supportingEdges": [
-      {
-        "id": "organization:alphabet|said|person:woody|1g-wANyGiR0:30318-30354",
-        "subjectId": "organization:alphabet",
-        "predicate": "said",
-        "objectId": "person:woody",
-        "evidence": {
-          "transcriptId": "1g-wANyGiR0",
-          "charStart": 30318,
-          "charEnd": 30354,
-          "timeStart": 1873.74,
-          "timeEnd": 1878.84
-        },
-        "confidence": 0.7833333333333333,
-        "provenance": "nlp",
-        "derivedTruth": 1
-      },
-      {
-        "id": "person:woody|said|person:henry cole|1g-wANyGiR0:31023-31044",
-        "subjectId": "person:woody",
-        "predicate": "said",
-        "objectId": "person:henry cole",
-        "evidence": {
-          "transcriptId": "1g-wANyGiR0",
-          "charStart": 31023,
-          "charEnd": 31044,
-          "timeStart": 1912.74,
-          "timeEnd": 1918.6200000000001
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "directTruth": 1,
-        "derivedTruth": 1
-      },
-      {
-        "id": "organization:alphabet|said|person:woody #1g-wanygir0|1g-wANyGiR0:30318-30354",
-        "subjectId": "organization:alphabet",
-        "predicate": "said",
-        "objectId": "person:woody #1g-wanygir0",
-        "evidence": {
-          "transcriptId": "1g-wANyGiR0",
-          "charStart": 30318,
-          "charEnd": 30354,
-          "timeStart": 1873.74,
-          "timeEnd": 1878.84
-        },
-        "confidence": 0.7833333333333333,
-        "provenance": "nlp",
-        "derivedTruth": 1
-      },
-      {
-        "id": "person:woody #1g-wanygir0|said|person:henry cole|1g-wANyGiR0:31023-31044",
-        "subjectId": "person:woody #1g-wanygir0",
-        "predicate": "said",
-        "objectId": "person:henry cole",
-        "evidence": {
-          "transcriptId": "1g-wANyGiR0",
-          "charStart": 31023,
-          "charEnd": 31044,
-          "timeStart": 1912.74,
-          "timeEnd": 1918.6200000000001
-        },
-        "confidence": 0.9,
-        "provenance": "nlp",
-        "directTruth": 1,
-        "derivedTruth": 1
-      }
-    ],
-    "sharedEntities": [
-      "person:woody",
-      "person:woody #1g-wanygir0"
-    ],
-    "sharedTranscripts": [
-      "1g-wANyGiR0"
     ]
   }
 ]

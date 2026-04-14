@@ -75,13 +75,11 @@ export interface CatalogRow extends VideoMeta {
   sourceUrl: string;
   transcriptPath?: string;
   status: CatalogStatus;
-  fetchedAt?: string;
-  attempts: number;
   lastError?: string;
   errorReason?: ErrorReason;
-  // Per-video pipeline stage state. Additive over `status`: fetch callers
-  // keep writing `status`/`fetchedAt`, and the pipeline runner also writes
-  // stages.fetched so downstream stages have a uniform interface.
+  // Per-video pipeline stage state. The `fetched` stage record is the sole
+  // source of truth for "when was the transcript fetched"; downstream stages
+  // read from here.
   stages?: StageMap;
 }
 
@@ -91,7 +89,7 @@ interface CatalogFile {
   graph?: GraphWatermark;
 }
 
-export const CATALOG_SCHEMA_VERSION = 3;
+export const CATALOG_SCHEMA_VERSION = 4;
 
 // Data-dir used by the v1→v2 migration to infer which stages have already
 // run based on what's on disk. Defaults to the repo data/ dir but overridable
@@ -125,7 +123,8 @@ function migrateV1toV2(f: CatalogFile): CatalogFile {
   for (const [id, row] of Object.entries(f.rows)) {
     const stages: StageMap = row.stages ?? {};
     if (row.status === "fetched" && !stages.fetched) {
-      stages.fetched = { at: row.fetchedAt ?? now };
+      const legacyFetchedAt = (row as { fetchedAt?: string }).fetchedAt;
+      stages.fetched = { at: legacyFetchedAt ?? now };
     }
     const nlpFile = join(nlpDir, `${id}.json`);
     const nlpMtime = safeMtime(nlpFile);
@@ -178,6 +177,24 @@ function migrateV2toV3(f: CatalogFile): CatalogFile {
   return { version: 3, rows: nextRows, graph };
 }
 
+// v3→v4: strip `fetchedAt` and `attempts` from every row. `fetchedAt` was
+// fully redundant with `stages.fetched.at` (set by the v1→v2 migration), and
+// `attempts` was the retry-exhaustion counter for the gap classifier — that
+// gate has been removed in favor of manual triage.
+function migrateV3toV4(f: CatalogFile): CatalogFile {
+  const nextRows: Record<string, CatalogRow> = {};
+  for (const [id, row] of Object.entries(f.rows)) {
+    const { fetchedAt: _f, attempts: _a, ...rest } = row as CatalogRow & {
+      fetchedAt?: string;
+      attempts?: number;
+    };
+    void _f;
+    void _a;
+    nextRows[id] = rest;
+  }
+  return { version: 4, rows: nextRows, graph: f.graph };
+}
+
 const migrations: Array<(f: CatalogFile) => CatalogFile> = [
   // Index 0 migrates v0 → v1.
   (f) => ({ version: 1, rows: f.rows ?? {} }),
@@ -185,6 +202,8 @@ const migrations: Array<(f: CatalogFile) => CatalogFile> = [
   migrateV1toV2,
   // Index 2 migrates v2 → v3 (drop legacy `version` field from stage records).
   migrateV2toV3,
+  // Index 3 migrates v3 → v4 (drop `fetchedAt` and `attempts` from rows).
+  migrateV3toV4,
 ];
 
 export function migrate(raw: unknown): CatalogFile {
@@ -311,7 +330,6 @@ export class Catalog {
         videoId: e.videoId,
         sourceUrl: e.sourceUrl ?? `https://www.youtube.com/watch?v=${e.videoId}`,
         status: "pending",
-        attempts: 0,
       };
       added++;
     }

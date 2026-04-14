@@ -51,7 +51,10 @@ describe("catalog migrate", () => {
     expect(migrated.version).toBe(CATALOG_SCHEMA_VERSION);
     expect(Object.keys(migrated.rows)).toEqual(["aaa"]);
     expect(migrated.rows.aaa.status).toBe("fetched");
-    expect(migrated.rows.aaa.attempts).toBe(1);
+    expect((migrated.rows.aaa as Record<string, unknown>).attempts).toBeUndefined();
+    expect((migrated.rows.aaa as Record<string, unknown>).fetchedAt).toBeUndefined();
+    // v1→v2 should still have seeded stages.fetched from the legacy fetchedAt.
+    expect(migrated.rows.aaa.stages?.fetched?.at).toBe("2025-01-01T00:00:00Z");
   });
 
   it("preserves every row key through round-trip", () => {
@@ -86,9 +89,9 @@ describe("catalog migrate", () => {
     const c1 = new Catalog(path);
     expect(c1.all().map((r) => r.videoId).sort()).toEqual(["a", "b"]);
     // Trigger a persist.
-    c1.update("a", { attempts: 5 });
+    c1.update("a", { lastError: "boom" });
     const c2 = new Catalog(path);
-    expect(c2.get("a")?.attempts).toBe(5);
+    expect(c2.get("a")?.lastError).toBe("boom");
     expect(c2.get("b")?.status).toBe("fetched");
     rmSync(tmp, { recursive: true, force: true });
   });

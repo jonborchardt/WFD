@@ -11,8 +11,6 @@ export interface GapEntry {
   reason: string;
 }
 
-export const MAX_RETRY_ATTEMPTS = 5;
-
 export function classifyRow(row: CatalogRow): GapEntry {
   if (row.transcriptPath && existsSync(row.transcriptPath) && row.status === "fetched") {
     return { row, bucket: "ok", reason: "transcript present" };
@@ -22,13 +20,6 @@ export function classifyRow(row: CatalogRow): GapEntry {
       row,
       bucket: "needs-user",
       reason: row.lastError ?? "no captions available; upload or pick another source",
-    };
-  }
-  if (row.status === "failed-retryable" && row.attempts >= MAX_RETRY_ATTEMPTS) {
-    return {
-      row,
-      bucket: "needs-user",
-      reason: `retries exhausted (${row.attempts}); last error: ${row.lastError ?? "unknown"}`,
     };
   }
   return {
@@ -60,7 +51,7 @@ export function formatGapReport(report: GapReport): string {
   lines.push(`ok: ${report.ok.length}`);
   lines.push(`retry: ${report.retry.length}`);
   for (const g of report.retry) {
-    lines.push(`  - ${g.row.videoId} (attempts=${g.row.attempts}) ${g.reason}`);
+    lines.push(`  - ${g.row.videoId} ${g.reason}`);
   }
   lines.push(`needs-user: ${report.needsUser.length}`);
   for (const g of report.needsUser) {
@@ -82,7 +73,6 @@ export function recordFailure(
   if (!row) throw new Error(`gaps: no row for ${videoId}`);
   catalog.update(videoId, {
     status: kind === "retryable" ? "failed-retryable" : "failed-needs-user",
-    attempts: row.attempts + 1,
     lastError: message,
     errorReason,
   });
@@ -105,7 +95,6 @@ export function recordSuccess(
     ...(meta ?? {}),
     status: "fetched",
     transcriptPath,
-    fetchedAt: at,
     lastError: undefined,
     errorReason: undefined,
   });

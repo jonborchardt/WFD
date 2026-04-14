@@ -29,8 +29,8 @@ interface Pattern {
 
 const AGENT: EntityType[] = ["person", "organization"];
 const PLACE: EntityType[] = ["location", "organization"];
-const THING: EntityType[] = ["thing", "organization", "event"];
-const ANY: EntityType[] = ["person", "thing", "time", "event", "location", "organization"];
+const THING: EntityType[] = ["misc", "organization"];
+const ANY: EntityType[] = ["person", "misc", "time", "location", "organization"];
 
 const PATTERNS: Pattern[] = [
   { predicate: "born-in", re: /\bborn in\b/i, subj: ["person"], obj: ["location", "time"] },
@@ -46,12 +46,12 @@ const PATTERNS: Pattern[] = [
   { predicate: "member-of", re: /\b(member of|belongs to|part of|sits on)\b/i, subj: ["person"], obj: ["organization"] },
   { predicate: "met", re: /\b(met with|met|spoke with|sat down with)\b/i, subj: ["person"], obj: ["person"] },
   { predicate: "knows", re: /\b(knows|knew|acquainted with|friends with|close to)\b/i, subj: ["person"], obj: ["person"] },
-  { predicate: "attended", re: /\b(attended|present at|was at)\b/i, subj: ["person"], obj: ["event", "location"] },
+  { predicate: "attended", re: /\b(attended|present at|was at)\b/i, subj: ["person"], obj: ["misc", "location"] },
   { predicate: "visited", re: /\b(visited|traveled to|flew to|went to)\b/i, subj: ["person"], obj: ["location", "organization"] },
   { predicate: "near", re: /\b(near|close to|just outside|adjacent to)\b/i, subj: PLACE, obj: PLACE },
-  { predicate: "during", re: /\b(during|in the midst of|amid|amidst)\b/i, subj: ANY, obj: ["event", "time"] },
-  { predicate: "loves", re: /\b(loves|loved|adores|admires)\b/i, subj: ["person"], obj: ["person", "thing"] },
-  { predicate: "hates", re: /\b(hates|hated|despises|loathes)\b/i, subj: ["person"], obj: ["person", "thing"] },
+  { predicate: "during", re: /\b(during|in the midst of|amid|amidst)\b/i, subj: ANY, obj: ["misc", "time"] },
+  { predicate: "loves", re: /\b(loves|loved|adores|admires)\b/i, subj: ["person"], obj: ["person", "misc"] },
+  { predicate: "hates", re: /\b(hates|hated|despises|loathes)\b/i, subj: ["person"], obj: ["person", "misc"] },
   { predicate: "accused", re: /\b(accused|charged|blamed|alleged)\b/i, subj: AGENT, obj: AGENT },
   { predicate: "denied", re: /\b(denied|rejected|refuted|dismissed)\b/i, subj: AGENT, obj: ANY },
   { predicate: "investigated", re: /\b(investigated|probed|looked into|examined)\b/i, subj: AGENT, obj: ANY },

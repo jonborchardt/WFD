@@ -15,6 +15,10 @@
 //   captions status [--video <id>]   show per-row stage map
 //   captions catalog sync-meta       copy `meta` from each on-disk transcript
 //                                    into its catalog row (offline, no fetch)
+//   captions delete --stage <name> [--video <id>] [--dry-run]
+//                                    clear a stage from catalog rows so the
+//                                    pipeline re-runs it. Scoped to one video
+//                                    if --video is given, otherwise all rows.
 //
 // All commands operate on the default data/ directory relative to the repo
 // root. Pass CAPTIONS_DATA_DIR to override.
@@ -51,6 +55,8 @@ function usage(): void {
       "  audit                      print a state summary of the catalog",
       "  status [--video <id>]      print per-row stage status",
       "  catalog sync-meta          backfill catalog rows from on-disk transcript meta (offline)",
+      "  delete --stage <name> [--video <id>] [--dry-run]",
+      "                             clear a stage from catalog rows so it re-runs",
       "",
     ].join("\n"),
   );
@@ -133,6 +139,48 @@ async function cmdHeal(): Promise<number> {
     }
   }
   console.log(`heal: reset=${reset} transcriptPath-cleared=${cleared}`);
+  return 0;
+}
+
+const VIDEO_STAGE_NAMES: StageName[] = ["fetched", "nlp", "ai", "per-claim"];
+
+async function cmdDelete(flags: Parsed["flags"]): Promise<number> {
+  const stage = typeof flags.stage === "string" ? flags.stage : undefined;
+  if (!stage) {
+    console.error("captions delete: --stage <name> is required");
+    return 2;
+  }
+  if (!(VIDEO_STAGE_NAMES as string[]).includes(stage)) {
+    console.error(
+      `captions delete: unknown stage "${stage}"; expected one of ${VIDEO_STAGE_NAMES.join(", ")}`,
+    );
+    return 2;
+  }
+  const onlyVideo = typeof flags.video === "string" ? flags.video : undefined;
+  const dryRun = flags["dry-run"] === true;
+  const catalog = catalogFromDataDir(dataDir());
+  const rows = onlyVideo
+    ? catalog.all().filter((r) => r.videoId === onlyVideo)
+    : catalog.all();
+  if (onlyVideo && rows.length === 0) {
+    console.error(`captions delete: no catalog row for ${onlyVideo}`);
+    return 1;
+  }
+  let cleared = 0;
+  for (const row of rows) {
+    if (!row.stages?.[stage as StageName]) continue;
+    if (dryRun) {
+      console.log(`would clear ${row.videoId} ${stage}`);
+    } else {
+      catalog.clearStage(row.videoId, stage as StageName);
+      console.log(`ok  ${row.videoId} ${stage}`);
+    }
+    cleared++;
+  }
+  const prefix = dryRun ? "dry-run: " : "";
+  console.log(
+    `\n${prefix}delete --stage ${stage}${onlyVideo ? ` --video ${onlyVideo}` : ""}: cleared=${cleared} scanned=${rows.length}`,
+  );
   return 0;
 }
 
@@ -344,6 +392,9 @@ async function main(): Promise<void> {
       break;
     case "pipeline":
       code = await cmdPipeline(parsed.flags);
+      break;
+    case "delete":
+      code = await cmdDelete(parsed.flags);
       break;
     case "audit":
       code = await cmdAudit();

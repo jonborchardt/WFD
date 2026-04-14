@@ -23,7 +23,7 @@ const fixture = {
     {
       start: 3,
       duration: 3,
-      text: "Angela Merkel said the vaccine rollout was successful.",
+      text: "Angela Merkel said Berlin was successful.",
     },
     {
       start: 6,
@@ -33,7 +33,7 @@ const fixture = {
     {
       start: 9,
       duration: 3,
-      text: "Jane Doe investigated the FBI during the Cold War.",
+      text: "Jane Doe investigated the FBI during 1989.",
     },
   ],
 };

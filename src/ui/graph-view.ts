@@ -136,7 +136,7 @@ export function renderGraphPage(slice: ViewSlice): string {
   }));
   const nodeById = Object.fromEntries(nodes.map(n => [n.id, n]));
   const edges = slice.edges;
-  const COLORS = { person:'#f66', organization:'#6f6', location:'#66f', event:'#fc6', thing:'#cf6', time:'#c6f' };
+  const COLORS = { person:'#f66', organization:'#6f6', location:'#66f', misc:'#fc6', time:'#c6f' };
   function step(){
     for (const n of nodes){
       for (const m of nodes){
@@ -250,7 +250,7 @@ export function renderGraphPage(slice: ViewSlice): string {
 }
 
 export function renderLegend(): string {
-  return `<ul>${["person", "organization", "location", "event", "thing", "time"]
+  return `<ul>${["person", "organization", "location", "misc", "time"]
     .map((t) => `<li>${escapeHtml(t)}</li>`)
     .join("")}</ul>`;
 }

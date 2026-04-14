@@ -338,7 +338,7 @@ export function renderListPage(result: ListResult, q: ListQuery): string {
       <td>${escapeHtml(r.title ?? "")}</td>
       <td>${escapeHtml(r.channel ?? "")}</td>
       <td>${escapeHtml(r.status)}</td>
-      <td>${escapeHtml(r.fetchedAt ?? "")}</td>
+      <td>${escapeHtml(r.stages?.fetched?.at ?? "")}</td>
     </tr>`,
     )
     .join("");
@@ -628,6 +628,14 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       sendJson(res, 200, buildRelationshipsGraph(opts.catalog, opts.dataDir));
       return;
     }
+    if (url === "/api/nlp/entity-index" || url.startsWith("/api/nlp/entity-index?")) {
+      sendJson(res, 200, getEntityIndex(opts.catalog, opts.dataDir));
+      return;
+    }
+    if (url === "/api/nlp/entity-videos" || url.startsWith("/api/nlp/entity-videos?")) {
+      sendJson(res, 200, getEntityVideos(opts.catalog, opts.dataDir));
+      return;
+    }
     if (url.startsWith("/api/entities/search")) {
       const u = new URL(url, "http://local");
       const results = searchEntityIndex(
@@ -714,8 +722,9 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       return;
     }
 
+    const clientDir = join(dirname(fileURLToPath(import.meta.url)), "client");
     const staticAsset: Record<string, string> = {
-      "/client.js": join(dirname(fileURLToPath(import.meta.url)), "client", "app.js"),
+      "/client.js": join(clientDir, "app.js"),
       "/query.js": join(dirname(fileURLToPath(import.meta.url)), "query.js"),
       "/static-shim.js": join(
         dirname(fileURLToPath(import.meta.url)),
@@ -738,6 +747,23 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         res.end(`${url}: ` + (e as Error).message);
       }
       return;
+    }
+    // Serve tsc-compiled output for /facets/* and /shared/* modules. These
+    // are .js files emitted in-place by `npm run build:client` next to their
+    // .tsx sources. No path traversal allowed.
+    if (url.startsWith("/facets/") || url.startsWith("/shared/")) {
+      const rel = url.replace(/^\//, "").split("?")[0];
+      if (!rel.includes("..") && rel.endsWith(".js")) {
+        const p = join(clientDir, rel);
+        if (existsSync(p)) {
+          res.writeHead(200, {
+            "content-type": "application/javascript; charset=utf-8",
+            "cache-control": "no-cache",
+          });
+          res.end(readFileSync(p, "utf8"));
+          return;
+        }
+      }
     }
 
     // SPA shell + legacy HTML routes (kept for non-JS clients / tests).
@@ -773,6 +799,11 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       return;
     }
     if (url === "/relationships" || url.startsWith("/relationships?")) {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(renderSpaShell());
+      return;
+    }
+    if (url === "/facets" || url.startsWith("/facets?")) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(renderSpaShell());
       return;

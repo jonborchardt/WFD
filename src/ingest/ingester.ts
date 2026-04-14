@@ -69,7 +69,6 @@ export class Ingester {
       this.progress = { ...this.progress, current: row.videoId };
       logger.info("ingest.row.start", {
         videoId: row.videoId,
-        attempts: row.attempts,
       });
       try {
         const stored = await fetcher(row.videoId, { dataDir: this.opts.dataDir });

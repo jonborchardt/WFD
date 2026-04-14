@@ -11,7 +11,6 @@ describe("gazetteer loader", () => {
     // Added via data/gazetteer/organization.txt.
     expect(g.organization.some((x) => /Federal Reserve/i.test(x))).toBe(true);
     expect(g.location.some((x) => /Wuhan/i.test(x))).toBe(true);
-    expect(g.event.some((x) => /COVID/i.test(x))).toBe(true);
   });
 
   it("falls back to defaults when directory is missing", () => {

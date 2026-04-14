@@ -60,19 +60,19 @@ describe("coreference resolution", () => {
     const t = {
       videoId: "cf4",
       cues: [
-        { start: 0, duration: 2, text: "Angela Merkel arrived in Berlin." },
-        { start: 2, duration: 2, text: "She said the vaccine rollout was successful." },
+        { start: 0, duration: 2, text: "Angela Merkel arrived in Paris." },
+        { start: 2, duration: 2, text: "She said Berlin was safe." },
       ],
     };
     const entities = ex(t);
     const rels = extractRelationships(t, entities);
-    const saidVaccine = rels.find(
+    const saidBerlin = rels.find(
       (r) =>
         r.predicate === "said" &&
         r.subjectId.includes("angela merkel") &&
-        r.objectId.includes("vaccine"),
+        r.objectId.includes("berlin"),
     );
-    expect(saidVaccine).toBeTruthy();
+    expect(saidBerlin).toBeTruthy();
   });
 
   it("coref: false disables the pass", () => {
