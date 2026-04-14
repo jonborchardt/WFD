@@ -13,13 +13,16 @@
 //     --dry-run                      print what would run, do nothing
 //   captions audit                   read-only state report
 //   captions status [--video <id>]   show per-row stage map
+//   captions catalog sync-meta       copy `meta` from each on-disk transcript
+//                                    into its catalog row (offline, no fetch)
 //
 // All commands operate on the default data/ directory relative to the repo
 // root. Pass CAPTIONS_DATA_DIR to override.
 
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { Catalog, parseIdList, StageName, GraphStageName } from "../catalog/catalog.js";
+import { Catalog, parseIdList, StageName, GraphStageName, VideoMeta } from "../catalog/catalog.js";
+import { NormalizedTranscript } from "../ingest/transcript.js";
 import { loadSeedFile } from "../catalog/seed-loader.js";
 import { Ingester } from "../ingest/ingester.js";
 import { runPipeline } from "../pipeline/run.js";
@@ -47,6 +50,7 @@ function usage(): void {
       "                             run all stale stages",
       "  audit                      print a state summary of the catalog",
       "  status [--video <id>]      print per-row stage status",
+      "  catalog sync-meta          backfill catalog rows from on-disk transcript meta (offline)",
       "",
     ].join("\n"),
   );
@@ -239,6 +243,71 @@ async function cmdAudit(): Promise<number> {
   return 0;
 }
 
+async function updateWithRetry(
+  catalog: Catalog,
+  videoId: string,
+  patch: Partial<VideoMeta>,
+): Promise<void> {
+  // Windows can briefly hold catalog.json open (search indexer / AV) between
+  // rapid rename-based writes, surfacing as EPERM. Short retry loop.
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      catalog.update(videoId, patch);
+      return;
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== "EPERM" || attempt === 4) throw e;
+      await new Promise((r) => setTimeout(r, 50 * (attempt + 1)));
+    }
+  }
+}
+
+async function cmdCatalogSyncMeta(): Promise<number> {
+  const catalog = catalogFromDataDir(dataDir());
+  const rows = catalog.all();
+  let updated = 0;
+  let missing = 0;
+  let unchanged = 0;
+  for (const row of rows) {
+    const path = row.transcriptPath;
+    if (!path || !existsSync(path)) {
+      missing++;
+      continue;
+    }
+    let parsed: NormalizedTranscript;
+    try {
+      parsed = JSON.parse(readFileSync(path, "utf8")) as NormalizedTranscript;
+    } catch (e) {
+      console.error(`skip ${row.videoId}: ${(e as Error).message}`);
+      missing++;
+      continue;
+    }
+    const meta = parsed.meta;
+    if (!meta) {
+      unchanged++;
+      continue;
+    }
+    const patch: Partial<VideoMeta> = {};
+    for (const key of Object.keys(meta) as Array<keyof VideoMeta>) {
+      const incoming = meta[key];
+      if (incoming === undefined) continue;
+      if ((row as VideoMeta)[key] !== incoming) {
+        (patch as Record<string, unknown>)[key] = incoming;
+      }
+    }
+    if (Object.keys(patch).length === 0) {
+      unchanged++;
+      continue;
+    }
+    await updateWithRetry(catalog, row.videoId, patch);
+    updated++;
+    console.log(`ok  ${row.videoId}  fields=${Object.keys(patch).join(",")}`);
+  }
+  console.log(
+    `\nsync-meta: updated=${updated} unchanged=${unchanged} missing-transcript=${missing} total=${rows.length}`,
+  );
+  return 0;
+}
+
 async function cmdStatus(flags: Parsed["flags"]): Promise<number> {
   const catalog = catalogFromDataDir(dataDir());
   const rows =
@@ -282,6 +351,16 @@ async function main(): Promise<void> {
     case "status":
       code = await cmdStatus(parsed.flags);
       break;
+    case "catalog": {
+      const sub = parsed.positional[0];
+      if (sub === "sync-meta") {
+        code = await cmdCatalogSyncMeta();
+      } else {
+        console.error(`unknown catalog subcommand: ${sub ?? "(none)"}`);
+        code = 2;
+      }
+      break;
+    }
     case "--help":
     case "-h":
     case "help":

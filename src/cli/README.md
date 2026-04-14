@@ -13,7 +13,19 @@ captions pipeline [--video <id>] [--stage <name>]  run stale stages
                   [--dry-run]
 captions audit                                     state summary
 captions status [--video <id>]                     per-row stage map
+captions catalog sync-meta                         backfill catalog from on-disk transcript meta
 ```
+
+## catalog sync-meta
+
+Walks every catalog row, opens its `transcriptPath`, and copies any fields
+present in the transcript's `meta` block (title, channel, description,
+keywords, viewCount, lengthSeconds, thumbnailUrl, uploadDate, …) into the
+catalog row when they differ. Offline — never touches YouTube. Use this
+after the transcript parser learns to extract a new field, or any time the
+catalog has drifted from the on-disk gold copy. Sibling to
+`src/ingest/backfill-meta.ts`, which does the network version for rows
+whose transcript file is missing the field too.
 
 During local development run via `npm run cli -- <command>` (uses `tsx`
 against `src/`, no build step). After `npm run build`, the compiled binary
