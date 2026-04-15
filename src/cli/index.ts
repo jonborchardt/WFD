@@ -30,6 +30,8 @@ import { NormalizedTranscript } from "../ingest/transcript.js";
 import { loadSeedFile } from "../catalog/seed-loader.js";
 import { Ingester } from "../ingest/ingester.js";
 import { runPipeline } from "../pipeline/run.js";
+import { runEntitiesStage } from "../entities/index.js";
+import { runRelationsStage } from "../relations/index.js";
 
 function dataDir(): string {
   return process.env.CAPTIONS_DATA_DIR
@@ -57,6 +59,9 @@ function usage(): void {
       "  catalog sync-meta          backfill catalog rows from on-disk transcript meta (offline)",
       "  delete --stage <name> [--video <id>] [--dry-run]",
       "                             clear a stage from catalog rows so it re-runs",
+      "  entities --video <id>      run the new neural entities stage (parallel output)",
+      "  relations --video <id>     run the new neural relations stage (depends on entities output)",
+      "  neural --video <id>        run entities + relations in sequence",
       "",
     ].join("\n"),
   );
@@ -270,6 +275,100 @@ async function cmdPipeline(flags: Parsed["flags"]): Promise<number> {
   return 0;
 }
 
+// Commit 1 of the GLiNER refactor: runs the new entities stage for one
+// video and writes data/entities/<id>.json alongside the existing
+// data/nlp/<id>.json. Not wired into `captions pipeline` yet — this is
+// the feature-flagged parallel-output path we use during eval.
+async function cmdEntities(flags: Parsed["flags"]): Promise<number> {
+  const videoId = typeof flags.video === "string" ? flags.video : undefined;
+  if (!videoId) {
+    console.error("captions entities: --video <id> is required");
+    return 2;
+  }
+  const dir = dataDir();
+  const catalog = catalogFromDataDir(dir);
+  const row = catalog.all().find((r) => r.videoId === videoId);
+  if (!row) {
+    console.error(`captions entities: no catalog row for ${videoId}`);
+    return 1;
+  }
+  const outcome = await runEntitiesStage(
+    { videoId: row.videoId, transcriptPath: row.transcriptPath },
+    { dataDir: dir, repoRoot: process.cwd() },
+  );
+  if (outcome.kind === "ok") {
+    console.log(`ok  ${videoId}  ${outcome.notes ?? ""}`);
+    if (outcome.outputPath) console.log(`    wrote ${outcome.outputPath}`);
+    return 0;
+  }
+  console.log(`--  ${videoId}  ${outcome.reason ?? "skipped"}`);
+  return 1;
+}
+
+// Commit 2: scoring pass. Runs the neural relations stage for one video
+// and writes data/relations/<id>.json. Depends on data/entities/<id>.json
+// having been produced (by `captions entities`).
+async function cmdRelations(flags: Parsed["flags"]): Promise<number> {
+  const videoId = typeof flags.video === "string" ? flags.video : undefined;
+  if (!videoId) {
+    console.error("captions relations: --video <id> is required");
+    return 2;
+  }
+  const dir = dataDir();
+  const catalog = catalogFromDataDir(dir);
+  const row = catalog.all().find((r) => r.videoId === videoId);
+  if (!row) {
+    console.error(`captions relations: no catalog row for ${videoId}`);
+    return 1;
+  }
+  const outcome = await runRelationsStage(
+    { videoId: row.videoId, transcriptPath: row.transcriptPath },
+    { dataDir: dir, repoRoot: process.cwd() },
+  );
+  if (outcome.kind === "ok") {
+    console.log(`ok  ${videoId}  ${outcome.notes ?? ""}`);
+    if (outcome.outputPath) console.log(`    wrote ${outcome.outputPath}`);
+    return 0;
+  }
+  console.log(`--  ${videoId}  ${outcome.reason ?? "skipped"}`);
+  return 1;
+}
+
+// Convenience: run both neural stages in sequence for one video.
+async function cmdNeural(flags: Parsed["flags"]): Promise<number> {
+  const videoId = typeof flags.video === "string" ? flags.video : undefined;
+  if (!videoId) {
+    console.error("captions neural: --video <id> is required");
+    return 2;
+  }
+  const dir = dataDir();
+  const catalog = catalogFromDataDir(dir);
+  const row = catalog.all().find((r) => r.videoId === videoId);
+  if (!row) {
+    console.error(`captions neural: no catalog row for ${videoId}`);
+    return 1;
+  }
+  const e = await runEntitiesStage(
+    { videoId: row.videoId, transcriptPath: row.transcriptPath },
+    { dataDir: dir, repoRoot: process.cwd() },
+  );
+  if (e.kind !== "ok") {
+    console.log(`--  ${videoId} entities  ${e.reason ?? "skipped"}`);
+    return 1;
+  }
+  console.log(`ok  ${videoId} entities  ${e.notes ?? ""}`);
+  const r = await runRelationsStage(
+    { videoId: row.videoId, transcriptPath: row.transcriptPath },
+    { dataDir: dir, repoRoot: process.cwd() },
+  );
+  if (r.kind !== "ok") {
+    console.log(`--  ${videoId} relations  ${r.reason ?? "skipped"}`);
+    return 1;
+  }
+  console.log(`ok  ${videoId} relations  ${r.notes ?? ""}`);
+  return 0;
+}
+
 async function cmdAudit(): Promise<number> {
   const catalog = catalogFromDataDir(dataDir());
   const rows = catalog.all();
@@ -398,6 +497,15 @@ async function main(): Promise<void> {
       break;
     case "audit":
       code = await cmdAudit();
+      break;
+    case "entities":
+      code = await cmdEntities(parsed.flags);
+      break;
+    case "relations":
+      code = await cmdRelations(parsed.flags);
+      break;
+    case "neural":
+      code = await cmdNeural(parsed.flags);
       break;
     case "status":
       code = await cmdStatus(parsed.flags);

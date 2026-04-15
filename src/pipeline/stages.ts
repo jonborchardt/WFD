@@ -409,6 +409,18 @@ export const DEFAULT_VIDEO_STAGES: VideoStage[] = [
   perClaimStage,
 ];
 
+// Neural replacement stages (src/entities, src/relations) are deliberately
+// NOT registered here. They live behind the `captions entities`,
+// `captions relations`, and `captions neural` CLI subcommands so we can
+// run them for eval without touching the live pipeline. Flip them in once
+// the 10-transcript eval passes and the `StageName` union has been
+// widened in src/catalog/catalog.ts to include "entities" and "relations".
+// The flip is: import { entitiesStage } from "../entities/stage.js";
+// import { relationsStage } from "../relations/stage.js"; and insert them
+// here (entities depends on "fetched", relations depends on "entities",
+// ai then depends on "relations" instead of "nlp"). Once that lands,
+// delete nlpStage and src/nlp/ in the same commit.
+
 export const DEFAULT_GRAPH_STAGES: GraphStage[] = [
   propagationStage,
   contradictionsStage,

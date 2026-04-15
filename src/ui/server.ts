@@ -28,6 +28,14 @@ import {
   writePersistedNlp,
 } from "../nlp/persist.js";
 import {
+  readPersistedEntities,
+  type PersistedEntities,
+} from "../entities/index.js";
+import {
+  readPersistedRelations,
+  type PersistedRelations,
+} from "../relations/index.js";
+import {
   filterRows as qFilterRows,
   augmentWithEntityMatches,
   sortByPublishDesc,
@@ -405,98 +413,144 @@ export function readAiResponseStale(
   }
 }
 
-// Read-only NLP inspection page for /admin/nlp/<id>. Surfaces stage status,
-// entities, relationships, and (if present) the `_stale` marker on the AI
-// response so the operator can tell at a glance what's current.
-export function renderNlpAdmin(
+// Unified per-video admin page. Shows neural entities and relations on
+// one screen, with a troubleshooting section at the bottom describing
+// how to respond to common quality issues. Tables are sortable client
+// side via the inline script wired up by layout().
+export function renderUnifiedVideoAdmin(
   row: CatalogRow,
-  nlp: { entities: Entity[]; relationships: Relationship[] },
+  neuralEntities: PersistedEntities | null,
+  neuralRelations: PersistedRelations | null,
   aiResponseStale: { since: string; reason: string; nlpAt?: string } | null,
 ): string {
   const stageRows = (["fetched", "nlp", "per-claim", "ai"] as const)
     .map((name) => {
       const rec = row.stages?.[name];
-      if (!rec) return `<tr><td>${name}</td><td>—</td><td>—</td></tr>`;
-      return `<tr><td>${name}</td><td>${escapeHtml(rec.at)}</td><td>${escapeHtml(rec.notes ?? "")}</td></tr>`;
+      if (!rec) {
+        return `<tr><td>${name}</td><td data-sort-value="">—</td><td>—</td></tr>`;
+      }
+      return `<tr><td>${name}</td><td data-sort-value="${escapeHtml(rec.at)}">${escapeHtml(rec.at)}</td><td>${escapeHtml(rec.notes ?? "")}</td></tr>`;
     })
     .join("");
 
-  const sortedEntities = [...nlp.entities].sort((a, b) =>
-    a.canonical.localeCompare(b.canonical),
+  const neuralEntityRows = neuralEntities
+    ? neuralEntities.mentions
+        .map((m) => {
+          const link = `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, m.span.timeStart))}">${formatTime(m.span.timeStart)}</a>`;
+          return `<tr>
+            <td>${escapeHtml(m.label)}</td>
+            <td>${escapeHtml(m.canonical)}</td>
+            <td>${escapeHtml(m.surface)}</td>
+            <td data-sort-value="${m.score}">${m.score.toFixed(2)}</td>
+            <td data-sort-value="${m.span.timeStart}">${link}</td>
+          </tr>`;
+        })
+        .join("")
+    : "";
+
+  const mentionById = new Map(
+    (neuralEntities?.mentions ?? []).map((m) => [m.id, m]),
   );
-  const entityRows = sortedEntities
-    .map((e) => {
-      const first = e.mentions[0];
-      const link = first
-        ? `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, first.timeStart))}">${formatTime(first.timeStart)}</a>`
-        : "—";
-      return `<tr>
-        <td>${escapeHtml(e.type)}</td>
-        <td>${escapeHtml(e.canonical)}</td>
-        <td>${e.mentions.length}</td>
-        <td>${link}</td>
-        <td><code>${escapeHtml(e.id)}</code></td>
-      </tr>`;
-    })
-    .join("");
-
-  const relRows = nlp.relationships
-    .map((r) => {
-      const link = r.evidence
-        ? `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, r.evidence.timeStart))}">${formatTime(r.evidence.timeStart)}</a>`
-        : "—";
-      return `<tr>
-        <td>${escapeHtml(r.subjectId)}</td>
-        <td>${escapeHtml(r.predicate)}</td>
-        <td>${escapeHtml(r.objectId)}</td>
-        <td>${r.confidence.toFixed(2)}</td>
-        <td>${escapeHtml(r.provenance)}</td>
-        <td>${link}</td>
-      </tr>`;
-    })
-    .join("");
+  const neuralRelRows = neuralRelations
+    ? neuralRelations.edges
+        .map((e) => {
+          const subj = mentionById.get(e.subjectMentionId);
+          const obj = mentionById.get(e.objectMentionId);
+          const link = `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, e.evidence.timeStart))}">${formatTime(e.evidence.timeStart)}</a>`;
+          return `<tr>
+            <td>${escapeHtml(subj?.canonical ?? e.subjectMentionId)}</td>
+            <td>${escapeHtml(e.predicate)}</td>
+            <td>${escapeHtml(obj?.canonical ?? e.objectMentionId)}</td>
+            <td data-sort-value="${e.score}">${e.score.toFixed(2)}</td>
+            <td data-sort-value="${e.evidence.timeStart}">${link}</td>
+          </tr>`;
+        })
+        .join("")
+    : "";
 
   const staleBanner = aiResponseStale
     ? `<div class="warn">
         ⚠ AI response marked stale since ${escapeHtml(aiResponseStale.since)} — ${escapeHtml(aiResponseStale.reason)}.
-        Re-run <code>pipeline --stage ai</code> after regenerating its bundle to refresh.
       </div>`
     : "";
 
+  const neuralStatus = neuralEntities
+    ? `${neuralEntities.mentions.length} mentions · model ${escapeHtml(neuralEntities.model)} · coref=${neuralEntities.corefApplied}`
+    : `<em>no data/entities/${escapeHtml(row.videoId)}.json — run <code>captions entities --video ${escapeHtml(row.videoId)}</code></em>`;
+  const neuralRelStatus = neuralRelations
+    ? `${neuralRelations.edges.length} edges · model ${escapeHtml(neuralRelations.model)}`
+    : `<em>no data/relations/${escapeHtml(row.videoId)}.json — run <code>captions relations --video ${escapeHtml(row.videoId)}</code></em>`;
+
+  const troubleshooting = `
+    <details>
+      <summary>Troubleshooting &amp; tuning — what to do if…</summary>
+      <p>Knobs live in <code>config/models.json</code>, <code>config/entity-labels.json</code>, and <code>config/relation-labels.json</code>. Re-run with <code>captions neural --video ${escapeHtml(row.videoId)}</code> after any change.</p>
+      <table>
+        <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Too many noisy relations overall</td><td>Raise per-predicate thresholds in <code>config/relation-labels.json</code> (0.3 → 0.35 or 0.4)</td></tr>
+          <tr><td>Specific predicates are garbage (e.g. <code>died_in</code>, <code>caused</code>)</td><td>Raise just those thresholds; leave reliable ones (<code>located_in</code>, <code>part_of</code>) alone</td></tr>
+          <tr><td>Transcript artifacts like <code>[Music]</code> or <code>[Applause]</code> extracted as entities</td><td>Add them to <code>PRONOUN_STOPWORDS</code> in <code>src/entities/canonicalize.ts</code></td></tr>
+          <tr><td>Generic common nouns (<code>channel</code>, <code>house</code>, <code>scientists</code>) firing as person/org</td><td>Raise <code>gliner.minScore</code> in <code>config/models.json</code> from 0.5 → 0.6 or 0.7</td></tr>
+          <tr><td>Zero relations and the log shows “0 raw preds” across every sentence</td><td>Lower <code>glirel.minScore</code> to 0.1 and rerun with <code>CAPTIONS_PY_DEBUG=1</code> to inspect raw scores</td></tr>
+          <tr><td>Relations are correct but thin (few edges from many entities)</td><td>Increase the relation-window size in <code>src/relations/extract.ts</code> (<code>RELATION_WINDOW_CHARS</code>) or bump <code>glirel.maxPairsPerSentence</code></td></tr>
+          <tr><td>Entities concentrated near the start of the transcript only</td><td>Auto-gen transcript truncation — lower <code>TARGET_CHUNK_CHARS</code> in <code>tools/gliner_sidecar.py</code> (currently 800)</td></tr>
+          <tr><td>Pronouns (<code>I</code>, <code>he</code>, <code>you</code>) showing up as entities</td><td>Already filtered in <code>src/entities/canonicalize.ts</code>; check the <code>PRONOUN_STOPWORDS</code> set hasn't been modified</td></tr>
+          <tr><td>Self-loops (same canonical on both sides of a relation)</td><td>Already filtered in <code>src/relations/extract.ts</code>; shouldn't appear</td></tr>
+          <tr><td>Labels firing for wrong categories (e.g. dates tagged as persons)</td><td>Drop those labels from <code>config/entity-labels.json</code> or narrow to the ones that actually fit this corpus</td></tr>
+          <tr><td>Entity coref broken (pronoun resolution)</td><td>Install <code>fastcoref</code> with a compatible <code>transformers</code> version (&lt;4.48), then flip <code>coref.enabled: true</code> in <code>config/models.json</code></td></tr>
+        </tbody>
+      </table>
+    </details>
+  `;
+
   const body = `
-    <h1>NLP — ${escapeHtml(row.title ?? row.videoId)}</h1>
+    <h1>${escapeHtml(row.title ?? row.videoId)}</h1>
     <p>
-      <a href="/video/${escapeHtml(row.videoId)}">video page</a> ·
+      <code>${escapeHtml(row.videoId)}</code> ·
+      <a href="/video/${escapeHtml(row.videoId)}">public video page</a> ·
       channel: ${escapeHtml(row.channel ?? "")} ·
-      status: ${escapeHtml(row.status)} ·
-      ${nlp.entities.length} entities · ${nlp.relationships.length} relationships
+      status: ${escapeHtml(row.status)}
     </p>
     ${staleBanner}
 
     <h2>Stage status</h2>
-    <table>
-      <thead><tr><th>stage</th><th>at</th><th>notes</th></tr></thead>
+    <table class="sortable">
+      <thead><tr><th>stage</th><th data-sort-type="date">at</th><th>notes</th></tr></thead>
       <tbody>${stageRows}</tbody>
     </table>
 
-    <h2>Entities</h2>
-    <table>
-      <thead><tr><th>type</th><th>canonical</th><th>mentions</th><th>first</th><th>id</th></tr></thead>
-      <tbody>${entityRows || "<tr><td colspan=5>none</td></tr>"}</tbody>
+    <h2>Neural entities <span class="sub">${neuralStatus}</span></h2>
+    <table class="sortable">
+      <thead>
+        <tr>
+          <th>label</th>
+          <th>canonical</th>
+          <th>surface</th>
+          <th data-sort-type="number">score</th>
+          <th data-sort-type="number">first</th>
+        </tr>
+      </thead>
+      <tbody>${neuralEntityRows || '<tr><td colspan="5">none</td></tr>'}</tbody>
     </table>
 
-    <h2>Relationships</h2>
-    <table>
-      <thead><tr><th>subject</th><th>predicate</th><th>object</th><th>conf</th><th>src</th><th>evidence</th></tr></thead>
-      <tbody>${relRows || "<tr><td colspan=6>none</td></tr>"}</tbody>
+    <h2>Neural relations <span class="sub">${neuralRelStatus}</span></h2>
+    <table class="sortable">
+      <thead>
+        <tr>
+          <th>subject</th>
+          <th>predicate</th>
+          <th>object</th>
+          <th data-sort-type="number">score</th>
+          <th data-sort-type="number">evidence</th>
+        </tr>
+      </thead>
+      <tbody>${neuralRelRows || '<tr><td colspan="5">none</td></tr>'}</tbody>
     </table>
 
-    <style>
-      td code { font-size: 11px; color: #666; }
-      .warn { background: #fee; border: 1px solid #c88; padding: .6em 1em; margin: 1em 0; }
-    </style>
+    ${troubleshooting}
   `;
-  return layout(`nlp — ${row.videoId}`, body);
+  return layout(`video admin — ${row.videoId}`, body);
 }
 
 export function renderEmptyState(reason: "empty" | "error" | "loading", msg?: string): string {
@@ -525,12 +579,91 @@ function searchBar(q: ListQuery): string {
   </form>`;
 }
 
+// Shared inline stylesheet. Kept vanilla-HTML so the plain-text admin
+// pages render identically with no JS. The Material-styled React SPA
+// pages use their own tree; this sheet just makes sure the HTML pages
+// look intentional next to them.
+const PAGE_STYLE = `
+  :root{--fg:#111;--muted:#666;--bg:#fff;--accent:#1976d2;--border:#e0e0e0;--good:#2e7d32;--warn:#ed6c02;--bad:#c62828}
+  body{font-family:system-ui,-apple-system,sans-serif;color:var(--fg);background:var(--bg);max-width:1100px;margin:0 auto;padding:1em}
+  header{display:flex;align-items:center;gap:1em;padding:.6em 0;border-bottom:1px solid var(--border);margin-bottom:1em;font-size:14px}
+  header a{color:var(--accent);text-decoration:none}
+  header a:hover{text-decoration:underline}
+  h1{font-size:22px;margin:.8em 0 .2em}
+  h2{font-size:16px;margin:1.6em 0 .4em;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+  h2 .sub{font-size:12px;color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;margin-left:.6em}
+  p{margin:.3em 0;color:var(--muted);font-size:13px}
+  p a{color:var(--accent);text-decoration:none}
+  p a:hover{text-decoration:underline}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:1em}
+  th,td{border-bottom:1px solid var(--border);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#fafafa;font-weight:600;color:var(--fg);position:sticky;top:0}
+  table.sortable th{cursor:pointer;user-select:none}
+  table.sortable th::after{content:" \\2195";opacity:.25;font-size:11px}
+  table.sortable th.asc::after{content:" \\25B2";opacity:1}
+  table.sortable th.desc::after{content:" \\25BC";opacity:1}
+  td code{font-size:11px;color:var(--muted);background:#f5f5f5;padding:1px 4px;border-radius:2px}
+  .pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;background:#eee;color:var(--muted)}
+  .pill.ok{background:#e8f5e9;color:var(--good)}
+  .pill.warn{background:#fff4e5;color:var(--warn)}
+  .pill.bad{background:#ffebee;color:var(--bad)}
+  .warn{background:#fff4e5;border:1px solid #ffcc80;padding:.6em 1em;margin:1em 0;border-radius:4px;color:var(--warn)}
+  details{margin-top:2em;border-top:1px solid var(--border);padding-top:1em}
+  details summary{cursor:pointer;font-weight:600;color:var(--fg);padding:.4em 0}
+  details table{font-size:12px}
+  details th,details td{padding:4px 8px}
+  form{display:flex;gap:.5em;margin-bottom:1em}
+  ol{padding-left:1.2em}
+`;
+
+// Minimal client-side script to make any <table class="sortable"> sort
+// when headers are clicked. Reads data-sort-type from th ("number"|
+// "string"|"date") and data-sort-value from td for custom ordering
+// (e.g. format display values while sorting on raw numbers).
+const SORTABLE_SCRIPT = `
+(function(){
+  function getVal(cell, type){
+    var raw = cell.getAttribute('data-sort-value');
+    if (raw === null) raw = cell.textContent.trim();
+    if (type === 'number') { var n = parseFloat(raw); return isNaN(n) ? -Infinity : n; }
+    if (type === 'date')   { var d = Date.parse(raw); return isNaN(d) ? -Infinity : d; }
+    return raw.toLowerCase();
+  }
+  function sortBy(table, idx, type, dir){
+    var tb = table.tBodies[0]; if (!tb) return;
+    var rows = Array.prototype.slice.call(tb.rows);
+    rows.sort(function(a,b){
+      var av = getVal(a.cells[idx], type);
+      var bv = getVal(b.cells[idx], type);
+      if (av < bv) return dir === 'asc' ? -1 : 1;
+      if (av > bv) return dir === 'asc' ? 1 : -1;
+      return 0;
+    });
+    for (var i=0;i<rows.length;i++) tb.appendChild(rows[i]);
+  }
+  function wire(table){
+    var ths = table.tHead ? table.tHead.rows[0].cells : [];
+    for (var i=0;i<ths.length;i++){
+      (function(th, idx){
+        th.addEventListener('click', function(){
+          var type = th.getAttribute('data-sort-type') || 'string';
+          var dir = th.classList.contains('asc') ? 'desc' : 'asc';
+          for (var j=0;j<ths.length;j++){ ths[j].classList.remove('asc','desc'); }
+          th.classList.add(dir);
+          sortBy(table, idx, type, dir);
+        });
+      })(ths[i], i);
+    }
+  }
+  var tables = document.querySelectorAll('table.sortable');
+  for (var i=0;i<tables.length;i++) wire(tables[i]);
+})();
+`;
+
 function layout(title: string, body: string): string {
   return `<!doctype html><html><head><meta charset="utf-8"/><title>${escapeHtml(title)}</title>
-  <style>body{font-family:system-ui;max-width:900px;margin:2em auto;padding:0 1em}
-  table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #ddd;padding:4px;text-align:left}
-  form{display:flex;gap:.5em;margin-bottom:1em}ol{padding-left:1.2em}</style></head>
-  <body><header><a href="/">catalog</a></header>${body}${CREDIT_FOOTER}</body></html>`;
+  <style>${PAGE_STYLE}</style></head>
+  <body><header><a href="/">← catalog</a><a href="/admin">admin</a><a href="/relationships">graph</a><a href="/facets">facets</a></header>${body}<script>${SORTABLE_SCRIPT}</script>${CREDIT_FOOTER}</body></html>`;
 }
 
 export function escapeHtml(s: string): string {
@@ -686,7 +819,24 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       sendJson(res, 200, { entityId, entity, videos });
       return;
     }
-    const apiVideo = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)/);
+    // Dedicated NLP sub-route, matched before the generic /api/video/:id
+    // so the greedy id regex does not swallow it. Returns the shape the
+    // client-side NlpPanel expects: { entities, relationships }.
+    const apiVideoNlp = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)\/nlp(?:\?|$)/);
+    if (apiVideoNlp) {
+      const row = opts.catalog.get(apiVideoNlp[1]);
+      if (!row) {
+        sendJson(res, 404, { error: "not found" });
+        return;
+      }
+      const nlp = computeNlp(row, opts.dataDir) ?? {
+        entities: [],
+        relationships: [],
+      };
+      sendJson(res, 200, nlp);
+      return;
+    }
+    const apiVideo = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)(?:\?|$)/);
     if (apiVideo) {
       const row = opts.catalog.get(apiVideo[1]);
       if (!row) {
@@ -775,21 +925,31 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     // Read-only NLP inspection page. Pure HTML, no SPA bundle, no editing —
     // hand-editing NER output is not supported, and downstream refinements
     // live in the ai stage's bundles/responses on disk.
-    const adminNlp = url.match(/^\/admin\/nlp\/([A-Za-z0-9_-]+)/);
-    if (adminNlp) {
-      const row = opts.catalog.get(adminNlp[1]);
+    // Unified per-video admin page — neural entities + relations on one
+    // screen with a troubleshooting section. Safe to call before any
+    // neural stage has run; the render function shows a "run `captions
+    // entities`" stub for each missing artifact.
+    const adminVideo = url.match(/^\/admin\/video\/([A-Za-z0-9_-]+)/);
+    if (adminVideo) {
+      const row = opts.catalog.get(adminVideo[1]);
       if (!row) {
         res.writeHead(404, { "content-type": "text/html" });
-        res.end(layout("not found", `<p>no such video: ${escapeHtml(adminNlp[1])}</p>`));
+        res.end(layout("not found", `<p>no such video: ${escapeHtml(adminVideo[1])}</p>`));
         return;
       }
-      const nlp = computeNlp(row, opts.dataDir) ?? {
-        entities: [],
-        relationships: [],
-      };
+      const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      const neuralEntities = readPersistedEntities(row.videoId, dataRoot);
+      const neuralRelations = readPersistedRelations(row.videoId, dataRoot);
       const aiResponseStale = readAiResponseStale(row.videoId, opts.dataDir);
       res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderNlpAdmin(row, nlp, aiResponseStale));
+      res.end(
+        renderUnifiedVideoAdmin(
+          row,
+          neuralEntities,
+          neuralRelations,
+          aiResponseStale,
+        ),
+      );
       return;
     }
     const m = url.match(/^\/video\/([A-Za-z0-9_-]+)/);

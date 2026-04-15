@@ -196,8 +196,9 @@ function EntitySuggestions({ text, nav, onPick }) {
   `;
 }
 
-function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
+function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly, rowHref }) {
   const cols = columns || CATALOG_COLUMNS;
+  const hrefFor = rowHref || ((r) => "/video/" + r.videoId);
   const [data, setData] = useState({ total: 0, page: 1, pageSize: 25, rows: [] });
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
@@ -305,7 +306,7 @@ function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
           <//>
           <${TableBody}>
             ${data.rows.map(r => html`
-              <${TableRow} key=${r.videoId} hover style=${{ cursor: "pointer" }} onClick=${() => nav("/video/" + r.videoId)}>
+              <${TableRow} key=${r.videoId} hover style=${{ cursor: "pointer" }} onClick=${() => nav(hrefFor(r))}>
                 ${activeCols.map(c => html`
                   <${TableCell} key=${c.key} sx=${c.cellSx || {}}>${c.render(r)}<//>
                 `)}
@@ -427,6 +428,7 @@ function AdminPage({ nav }) {
         showStatusFilter=${true}
         defaultFailedOnly=${true}
         columns=${ADMIN_COLUMNS}
+        rowHref=${(r) => "/admin/video/" + r.videoId}
       />
     <//>
   `;
