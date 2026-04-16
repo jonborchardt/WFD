@@ -295,5 +295,95 @@ def main() -> None:
     sys.stdout.write(json.dumps({"ok": True, "results": results}))
 
 
+def process_request(model, payload):
+    """Shared inference logic for both one-shot and daemon modes."""
+    sentences = payload.get("sentences", [])
+    threshold = float(payload.get("threshold", 0.5))
+    if not isinstance(sentences, list) or len(sentences) == 0:
+        return {"ok": True, "results": []}
+
+    results = []
+    for idx, sent in enumerate(sentences):
+        try:
+            predicates = sent.get("predicates", [])
+            if not predicates:
+                results.append([])
+                continue
+            scored = score_sentence(model, sent, predicates, threshold)
+            results.append(scored)
+        except Exception as exc:
+            sys.stderr.write(f"[glirel.py] sentence[{idx}] failed: {exc}\n")
+            results.append([])
+
+    return {"ok": True, "results": results}
+
+
+def _load_glirel(model_id):
+    """Load GLiREL with the huggingface_hub monkey-patch for API drift."""
+    from glirel import GLiREL
+    try:
+        import inspect
+        orig_cm = GLiREL.__dict__.get("_from_pretrained")
+        if orig_cm is not None:
+            orig_fn = getattr(orig_cm, "__func__", orig_cm)
+            params = inspect.signature(orig_fn).parameters
+            needs_patch = any(
+                name in params
+                and params[name].kind == inspect.Parameter.KEYWORD_ONLY
+                and params[name].default is inspect.Parameter.empty
+                for name in ("proxies", "resume_download")
+            )
+            if needs_patch:
+                def _patched(cls, *args, **kwargs):
+                    kwargs.setdefault("proxies", None)
+                    kwargs.setdefault("resume_download", None)
+                    return orig_fn(cls, *args, **kwargs)
+                GLiREL._from_pretrained = classmethod(_patched)
+    except Exception as exc:
+        sys.stderr.write(f"[glirel.py] monkey-patch skipped: {exc}\n")
+    return GLiREL.from_pretrained(model_id)
+
+
+def daemon_mode():
+    """Long-lived mode: load model once, process line-delimited JSON."""
+    model_id = "jackboyla/glirel-large-v0"
+    try:
+        from glirel import GLiREL  # noqa: F401 — needed for _load_glirel
+    except ImportError as exc:
+        sys.stdout.write(json.dumps({"ready": False, "error": f"glirel not installed: {exc}"}) + "\n")
+        sys.stdout.flush()
+        sys.exit(1)
+
+    try:
+        model = _load_glirel(model_id)
+    except Exception as exc:
+        sys.stdout.write(json.dumps({"ready": False, "error": f"model load failed: {exc}"}) + "\n")
+        sys.stdout.flush()
+        sys.exit(1)
+
+    sys.stdout.write(json.dumps({"ready": True, "model": model_id}) + "\n")
+    sys.stdout.flush()
+
+    for line in sys.stdin:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            payload = json.loads(line)
+        except Exception as exc:
+            sys.stdout.write(json.dumps({"ok": False, "error": f"bad json: {exc}"}) + "\n")
+            sys.stdout.flush()
+            continue
+        try:
+            result = process_request(model, payload)
+        except Exception as exc:
+            result = {"ok": False, "error": f"inference error: {exc}"}
+        sys.stdout.write(json.dumps(result) + "\n")
+        sys.stdout.flush()
+
+
 if __name__ == "__main__":
-    main()
+    if "--daemon" in sys.argv:
+        daemon_mode()
+    else:
+        main()

@@ -114,9 +114,11 @@ export function detectLoops(store: GraphStore): Loop[] {
   }
   const stack: Relationship[] = [];
   const onStack = new Set<string>();
+  const visited = new Set<string>();
   const seenCycles = new Set<string>();
 
   function dfs(nodeId: string): void {
+    visited.add(nodeId);
     onStack.add(nodeId);
     for (const r of adj.get(nodeId) ?? []) {
       if (onStack.has(r.objectId)) {
@@ -145,15 +147,17 @@ export function detectLoops(store: GraphStore): Loop[] {
         }
         continue;
       }
-      stack.push(r);
-      dfs(r.objectId);
-      stack.pop();
+      if (!visited.has(r.objectId)) {
+        stack.push(r);
+        dfs(r.objectId);
+        stack.pop();
+      }
     }
     onStack.delete(nodeId);
   }
 
   for (const entity of store.entities()) {
-    if (!onStack.has(entity.id)) dfs(entity.id);
+    if (!visited.has(entity.id)) dfs(entity.id);
   }
   return out;
 }

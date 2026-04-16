@@ -169,5 +169,128 @@ def main() -> None:
     sys.stdout.write(json.dumps({"ok": True, "mentions": mentions}))
 
 
+def process_request(model, payload):
+    """Shared inference logic used by both one-shot and daemon modes."""
+    text = payload.get("text", "")
+    labels = payload.get("labels", [])
+    threshold = float(payload.get("threshold", 0.5))
+
+    if not isinstance(text, str) or not text:
+        return {"ok": True, "mentions": []}
+    if not isinstance(labels, list) or len(labels) == 0:
+        return {"ok": False, "error": "labels must be a non-empty list"}
+
+    TARGET_CHUNK_CHARS = 800
+    lines_list = []
+    cursor = 0
+    while cursor < len(text):
+        nl = text.find("\n", cursor)
+        if nl == -1:
+            nl = len(text)
+        line = text[cursor:nl]
+        if line.strip():
+            lines_list.append((line, cursor))
+        cursor = nl + 1
+    if not lines_list:
+        lines_list = [(text, 0)]
+
+    chunks = []
+    buf_parts = []
+    buf_start = None
+    buf_len = 0
+    for line, off in lines_list:
+        if len(line) > TARGET_CHUNK_CHARS:
+            if buf_parts:
+                chunks.append(("\n".join(buf_parts), buf_start))
+                buf_parts = []
+                buf_start = None
+                buf_len = 0
+            chunks.append((line, off))
+            continue
+        prospective = buf_len + (1 if buf_parts else 0) + len(line)
+        if buf_parts and prospective > TARGET_CHUNK_CHARS:
+            chunks.append(("\n".join(buf_parts), buf_start))
+            buf_parts = []
+            buf_start = None
+            buf_len = 0
+        if not buf_parts:
+            buf_start = off
+            buf_len = len(line)
+        else:
+            buf_len = prospective
+        buf_parts.append(line)
+    if buf_parts:
+        chunks.append(("\n".join(buf_parts), buf_start))
+
+    mentions = []
+    for chunk_text, offset in chunks:
+        try:
+            ents = model.predict_entities(chunk_text, labels, threshold=threshold)
+        except Exception as exc:
+            sys.stderr.write(f"[gliner.py] chunk failed: {exc}\n")
+            continue
+        for e in ents:
+            try:
+                start = int(e["start"]) + offset
+                end = int(e["end"]) + offset
+                mentions.append(
+                    {
+                        "label": e["label"],
+                        "start": start,
+                        "end": end,
+                        "score": float(e.get("score", 0.0)),
+                        "text": e.get("text", text[start:end]),
+                    }
+                )
+            except Exception:
+                continue
+
+    return {"ok": True, "mentions": mentions}
+
+
+def daemon_mode():
+    """Long-lived mode: load model once, process line-delimited JSON
+    requests from stdin, write one JSON response per line to stdout."""
+    model_id = "urchade/gliner_large-v2.1"
+    try:
+        from gliner import GLiNER
+    except ImportError as exc:
+        sys.stdout.write(json.dumps({"ready": False, "error": f"gliner not installed: {exc}"}) + "\n")
+        sys.stdout.flush()
+        sys.exit(1)
+
+    try:
+        model = GLiNER.from_pretrained(model_id)
+    except Exception as exc:
+        sys.stdout.write(json.dumps({"ready": False, "error": f"model load failed: {exc}"}) + "\n")
+        sys.stdout.flush()
+        sys.exit(1)
+
+    sys.stdout.write(json.dumps({"ready": True, "model": model_id}) + "\n")
+    sys.stdout.flush()
+
+    for line in sys.stdin:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            payload = json.loads(line)
+        except Exception as exc:
+            sys.stdout.write(json.dumps({"ok": False, "error": f"bad json: {exc}"}) + "\n")
+            sys.stdout.flush()
+            continue
+
+        # Allow overriding model_id per request (ignored — model already loaded)
+        try:
+            result = process_request(model, payload)
+        except Exception as exc:
+            result = {"ok": False, "error": f"inference error: {exc}"}
+        sys.stdout.write(json.dumps(result) + "\n")
+        sys.stdout.flush()
+
+
 if __name__ == "__main__":
-    main()
+    if "--daemon" in sys.argv:
+        daemon_mode()
+    else:
+        main()

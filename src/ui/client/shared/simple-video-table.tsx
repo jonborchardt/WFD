@@ -27,7 +27,7 @@ export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Prop
     for (const c of cols) init[c.key] = c.default;
     return init;
   });
-  const [menuAnchor, setMenuAnchor] = useState<any>(null);
+  const [menuAnchor, setMenuAnchor] = useState<HTMLElement | null>(null);
   const activeCols = cols.filter((c) => visible[c.key]);
 
   const sliced = useMemo(() => {
@@ -45,9 +45,9 @@ export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Prop
       component="div"
       count={rows.length}
       page={page}
-      onPageChange={(_: any, p: number) => setPage(p)}
+      onPageChange={(_: unknown, p: number) => setPage(p)}
       rowsPerPage={pageSize}
-      onRowsPerPageChange={(e: any) => { setPageSize(parseInt(e.target.value, 10)); setPage(0); }}
+      onRowsPerPageChange={(e: React.ChangeEvent<HTMLInputElement>) => { setPageSize(parseInt(e.target.value, 10)); setPage(0); }}
       rowsPerPageOptions={[10, 25, 50, 100]}
     />
   );
@@ -58,7 +58,7 @@ export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Prop
         <Typography variant="body2" sx={{ flexGrow: 1, color: "text.secondary" }}>
           {title || `${rows.length} video${rows.length === 1 ? "" : "s"}`}
         </Typography>
-        <Button size="small" variant="outlined" onClick={(e: any) => setMenuAnchor(e.currentTarget)}>
+        <Button size="small" variant="outlined" onClick={(e: React.MouseEvent<HTMLButtonElement>) => setMenuAnchor(e.currentTarget)}>
           columns ▾
         </Button>
         <Menu

@@ -12,10 +12,7 @@
 // Tests inject a fake pipeline via __setGlinerPipelineForTests() so
 // they never spawn python or download model weights.
 
-import {
-  runPythonBridge,
-  type PythonBridgeOptions,
-} from "../shared/python-bridge.js";
+import { PersistentPythonDaemon } from "../shared/python-daemon.js";
 import { EntityLabel, GlinerRawMention } from "./types.js";
 
 export interface GlinerPipeline {
@@ -46,47 +43,45 @@ const DEFAULT_CONFIG: GlinerConfig = {
   timeoutMs: 600_000,
 };
 
-// Default implementation: shell out to the Python sidecar. Keeps the
-// GlinerPipeline abstraction so tests can swap this wholesale.
-function makePythonPipeline(config: GlinerConfig, repoRoot: string): GlinerPipeline {
-  return {
-    async predict(text, labels, opts) {
-      const threshold = opts?.threshold ?? config.minScore;
-      const bridgeOpts: PythonBridgeOptions = {
-        scriptPath: config.scriptPath ?? "tools/gliner_sidecar.py",
-        repoRoot,
-        pythonBin: config.pythonBin,
-        timeoutMs: config.timeoutMs,
-      };
-      const debug = process.env.CAPTIONS_PY_DEBUG === "1";
-      const result = await runPythonBridge<{ mentions: GlinerRawMention[] }>(
-        {
-          text,
-          labels,
-          threshold,
-          model_id: config.modelId,
-          debug,
-        },
-        bridgeOpts,
-      );
-      if (!result.ok || !result.data) {
-        if (result.error) {
-          console.warn(`[gliner] sidecar unavailable: ${result.error}`);
-        }
-        return [];
-      }
-      return result.data.mentions ?? [];
-    },
-  };
-}
-
 let pipelineOverride: GlinerPipeline | null | undefined;
+let glinerDaemon: PersistentPythonDaemon | null = null;
 
 // Test hook — lets unit tests inject a fake pipeline so they do not
 // spawn python or download weights. Pass null to short-circuit
 // extraction and mirror the "no model available" path.
 export function __setGlinerPipelineForTests(fake: GlinerPipeline | null): void {
   pipelineOverride = fake;
+}
+
+// Build a daemon-backed pipeline that keeps the model warm across
+// multiple calls within a single process. The daemon loads once on
+// first request; subsequent requests reuse the warm model.
+function makeDaemonPipeline(config: GlinerConfig, repoRoot: string): GlinerPipeline {
+  if (!glinerDaemon) {
+    glinerDaemon = new PersistentPythonDaemon({
+      scriptPath: config.scriptPath ?? "tools/gliner_sidecar.py",
+      repoRoot,
+      pythonBin: config.pythonBin,
+    });
+  }
+  return {
+    async predict(text, labels, opts) {
+      const threshold = opts?.threshold ?? config.minScore;
+      const result = await glinerDaemon!.request<{ mentions: GlinerRawMention[] }>({
+        text,
+        labels,
+        threshold,
+        model_id: config.modelId,
+      });
+      if (!result.ok || !result.data) {
+        if (result.error) {
+          console.warn(`[gliner] daemon unavailable: ${result.error}`);
+        }
+        return [];
+      }
+      return result.data.mentions ?? [];
+    },
+  };
 }
 
 export interface RunGlinerOptions {
@@ -111,15 +106,13 @@ export async function runGliner(
   const config: GlinerConfig = { ...DEFAULT_CONFIG, ...(opts.config ?? {}) };
   const repoRoot = opts.repoRoot ?? process.cwd();
 
-  // Resolve pipeline: test override wins, otherwise build the Python-
-  // backed default on demand. We build a fresh pipeline per run rather
-  // than caching one because config (model id, script path) can change
-  // between calls and there is no in-process state to preserve — the
-  // subprocess owns all the weight loading.
+  // Resolve pipeline: test override → daemon (warm, shared across
+  // videos) → one-shot fallback. The daemon keeps the model loaded
+  // across calls so videos 2..N skip the 30-second cold start.
   const pipe: GlinerPipeline =
     pipelineOverride !== undefined
       ? pipelineOverride!
-      : makePythonPipeline(config, repoRoot);
+      : makeDaemonPipeline(config, repoRoot);
   if (!pipe) return [];
 
   let raw: GlinerRawMention[] = [];

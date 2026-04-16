@@ -418,13 +418,16 @@ function UpstreamCheck() {
   `;
 }
 
-function AdminPage({ nav }) {
+function AdminPage() {
+  // Admin video pages are server-rendered HTML (not SPA), so use full
+  // page navigation instead of pushState SPA nav.
+  const adminNav = (to) => { window.location.href = to; };
   return html`
     <${Container} maxWidth="lg" sx=${{ py: 3 }}>
       <${Typography} variant="h4" gutterBottom>Admin<//>
       <${UpstreamCheck} />
       <${CatalogTable}
-        nav=${nav}
+        nav=${adminNav}
         showStatusFilter=${true}
         defaultFailedOnly=${true}
         columns=${ADMIN_COLUMNS}
@@ -1092,6 +1095,11 @@ function App() {
   const isFacets = path === "/facets" || path.startsWith("/facets?");
   const isAbout = path === "/about" || path.startsWith("/about?");
   const isAdmin = !IS_STATIC && path.startsWith("/admin");
+  // /admin/video/:id is server-rendered HTML — redirect to a full page load.
+  if (!IS_STATIC && path.match(/^\/admin\/video\/[A-Za-z0-9_-]+/)) {
+    window.location.href = path;
+    return null;
+  }
   const body = videoMatch
     ? html`<${VideoDetail} videoId=${videoMatch[1]} nav=${nav} />`
     : entityMatch
@@ -1103,7 +1111,7 @@ function App() {
           : isAbout
             ? html`<${AboutPage} nav=${nav} />`
             : isAdmin
-              ? html`<${AdminPage} nav=${nav} />`
+              ? html`<${AdminPage} />`
               : html`<${CatalogList} nav=${nav} />`;
   return html`
     <${ThemeProvider} theme=${theme}>

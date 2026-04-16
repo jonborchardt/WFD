@@ -8,10 +8,7 @@
 // installed, or if the sidecar errors, we log a single warning and
 // return empty score arrays. The pipeline still runs.
 
-import {
-  runPythonBridge,
-  type PythonBridgeOptions,
-} from "../shared/python-bridge.js";
+import { PersistentPythonDaemon } from "../shared/python-daemon.js";
 import { GlirelRawScore, GlirelSentenceInput } from "./types.js";
 
 export interface GlirelPipeline {
@@ -39,34 +36,37 @@ const DEFAULT_CONFIG: GlirelConfig = {
   timeoutMs: 600_000,
 };
 
-function makePythonPipeline(config: GlirelConfig, repoRoot: string): GlirelPipeline {
+let pipelineOverride: GlirelPipeline | null | undefined;
+let glirelDaemon: PersistentPythonDaemon | null = null;
+
+// Test hook — lets unit tests inject a fake pipeline.
+export function __setGlirelPipelineForTests(fake: GlirelPipeline | null): void {
+  pipelineOverride = fake;
+}
+
+function makeDaemonPipeline(config: GlirelConfig, repoRoot: string): GlirelPipeline {
+  if (!glirelDaemon) {
+    glirelDaemon = new PersistentPythonDaemon({
+      scriptPath: config.scriptPath ?? "tools/glirel_sidecar.py",
+      repoRoot,
+      pythonBin: config.pythonBin,
+    });
+  }
   return {
     async scoreBatch(sentences) {
       if (sentences.length === 0) return [];
-      const bridgeOpts: PythonBridgeOptions = {
-        scriptPath: config.scriptPath ?? "tools/glirel_sidecar.py",
-        repoRoot,
-        pythonBin: config.pythonBin,
-        timeoutMs: config.timeoutMs,
-      };
-      const debug = process.env.CAPTIONS_PY_DEBUG === "1";
-      const result = await runPythonBridge<{ results: GlirelRawScore[][] }>(
-        {
-          sentences,
-          threshold: config.minScore,
-          model_id: config.modelId,
-          debug,
-        },
-        bridgeOpts,
-      );
+      const result = await glirelDaemon!.request<{ results: GlirelRawScore[][] }>({
+        sentences,
+        threshold: config.minScore,
+        model_id: config.modelId,
+      });
       if (!result.ok || !result.data) {
         if (result.error) {
-          console.warn(`[glirel] sidecar unavailable: ${result.error}`);
+          console.warn(`[glirel] daemon unavailable: ${result.error}`);
         }
         return sentences.map(() => []);
       }
       const results = result.data.results ?? [];
-      // Defensive: pad or truncate so the length matches the input.
       const out: GlirelRawScore[][] = [];
       for (let i = 0; i < sentences.length; i++) {
         out.push(Array.isArray(results[i]) ? results[i] : []);
@@ -74,13 +74,6 @@ function makePythonPipeline(config: GlirelConfig, repoRoot: string): GlirelPipel
       return out;
     },
   };
-}
-
-let pipelineOverride: GlirelPipeline | null | undefined;
-
-// Test hook — lets unit tests inject a fake pipeline.
-export function __setGlirelPipelineForTests(fake: GlirelPipeline | null): void {
-  pipelineOverride = fake;
 }
 
 export interface ScoreBatchOptions {
@@ -98,7 +91,7 @@ export async function scoreSentences(
   const pipe: GlirelPipeline =
     pipelineOverride !== undefined
       ? pipelineOverride!
-      : makePythonPipeline(config, repoRoot);
+      : makeDaemonPipeline(config, repoRoot);
   if (!pipe) return sentences.map(() => []);
   try {
     const scored = await pipe.scoreBatch(sentences);
