@@ -63,12 +63,14 @@ export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, on
   const totalMentions = useMemo(() => totalMentionsForType(bundle, type, activeAll), [bundle, type, activeAll]);
 
   const searchOptions = useMemo(() => {
-    const opts: { entityId: string; canonical: string }[] = [];
+    const opts: { entityId: string; canonical: string; mentions: number }[] = [];
     for (const meta of bundle.entities.values()) {
       if (meta.type !== type) continue;
-      opts.push({ entityId: meta.id, canonical: meta.canonical });
+      const facts = bundle.factsByEntity.get(meta.id);
+      const mentions = facts ? facts.reduce((s, f) => s + f.count, 0) : 0;
+      opts.push({ entityId: meta.id, canonical: meta.canonical, mentions });
     }
-    opts.sort((a, b) => a.canonical.localeCompare(b.canonical));
+    opts.sort((a, b) => b.mentions - a.mentions);
     return opts;
   }, [bundle, type]);
 

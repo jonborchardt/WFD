@@ -11,6 +11,7 @@ import type { FacetRow } from "./duck.js";
 export interface SearchOption {
   entityId: string;
   canonical: string;
+  mentions: number;
 }
 
 const TYPE_COLOR_HEX: Record<string, string> = {
@@ -92,13 +93,19 @@ export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggl
       <Autocomplete
         size="small"
         options={searchOptions}
-        getOptionLabel={(o) => o.canonical}
-        isOptionEqualToValue={(a, b) => a.entityId === b.entityId}
+        getOptionLabel={(o: SearchOption) => o.canonical}
+        isOptionEqualToValue={(a: SearchOption, b: SearchOption) => a.entityId === b.entityId}
         value={null}
         blurOnSelect
         clearOnBlur
-        onChange={(_, val) => { if (val) onToggle(val.entityId); }}
-        renderInput={(params) => (
+        onChange={(_: any, val: SearchOption | null) => { if (val) onToggle(val.entityId); }}
+        renderOption={(props: any, option: SearchOption) => (
+          <Box component="li" {...props} sx={{ display: "flex", justifyContent: "space-between", fontSize: 12 }}>
+            <span>{option.canonical}</span>
+            <span style={{ color: "#999", marginLeft: 8, fontVariantNumeric: "tabular-nums" }}>{option.mentions.toLocaleString()}</span>
+          </Box>
+        )}
+        renderInput={(params: any) => (
           <TextField {...params} placeholder={"search " + type + "…"} variant="outlined" />
         )}
         sx={{ mb: 0.5, "& .MuiInputBase-root": { fontSize: 12, py: 0 } }}
