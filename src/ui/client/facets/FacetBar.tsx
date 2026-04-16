@@ -5,8 +5,13 @@
 // math. Keeping this component thin makes it easy to swap out the bar
 // rendering for something fancier later.
 
-import { Box, Typography, IconButton, Tooltip } from "@mui/material";
+import { Box, Typography, IconButton, Tooltip, Autocomplete, TextField } from "@mui/material";
 import type { FacetRow } from "./duck.js";
+
+export interface SearchOption {
+  entityId: string;
+  canonical: string;
+}
 
 const TYPE_COLOR_HEX: Record<string, string> = {
   person: "#90caf9",
@@ -68,9 +73,10 @@ interface FacetBarProps {
   onToggle: (entityId: string) => void;
   onRemove: () => void;
   removable: boolean;
+  searchOptions: SearchOption[];
 }
 
-export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggle, onRemove, removable }: FacetBarProps) {
+export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggle, onRemove, removable, searchOptions }: FacetBarProps) {
   return (
     <Box sx={{ border: 1, borderColor: "divider", borderRadius: 1, p: 1, width: 320, minWidth: 320 }}>
       <Box sx={{ display: "flex", alignItems: "center", mb: 0.5 }}>
@@ -83,6 +89,20 @@ export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggl
           </Tooltip>
         )}
       </Box>
+      <Autocomplete
+        size="small"
+        options={searchOptions}
+        getOptionLabel={(o) => o.canonical}
+        isOptionEqualToValue={(a, b) => a.entityId === b.entityId}
+        value={null}
+        blurOnSelect
+        clearOnBlur
+        onChange={(_, val) => { if (val) onToggle(val.entityId); }}
+        renderInput={(params) => (
+          <TextField {...params} placeholder={"search " + type + "…"} variant="outlined" />
+        )}
+        sx={{ mb: 0.5, "& .MuiInputBase-root": { fontSize: 12, py: 0 } }}
+      />
       {pinned.length > 0 && (
         <Box sx={{ borderBottom: 1, borderColor: "divider", pb: 0.5, mb: 0.5 }}>
           {pinned.map((r) => (

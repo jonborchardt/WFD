@@ -15,6 +15,10 @@
 //   captions status [--video <id>]   show per-row stage map
 //   captions catalog sync-meta       copy `meta` from each on-disk transcript
 //                                    into its catalog row (offline, no fetch)
+//   captions refresh-meta [--video <id>] [--dry-run]
+//                                    backfill missing keywords and refresh
+//                                    viewCount from YouTube for every row;
+//                                    writes both catalog and transcript file
 //   captions delete --stage <name> [--video <id>] [--dry-run]
 //                                    clear a stage from catalog rows so the
 //                                    pipeline re-runs it. Scoped to one video
@@ -26,7 +30,12 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { Catalog, parseIdList, StageName, GraphStageName, VideoMeta } from "../catalog/catalog.js";
-import { NormalizedTranscript } from "../ingest/transcript.js";
+import {
+  NormalizedTranscript,
+  atomicWriteJson,
+  fetchViaInnertube,
+} from "../ingest/transcript.js";
+import { limitedFetch } from "../ingest/rate-limiter.js";
 import { loadSeedFile } from "../catalog/seed-loader.js";
 import { Ingester } from "../ingest/ingester.js";
 import { runPipeline } from "../pipeline/run.js";
@@ -57,6 +66,8 @@ function usage(): void {
       "  audit                      print a state summary of the catalog",
       "  status [--video <id>]      print per-row stage status",
       "  catalog sync-meta          backfill catalog rows from on-disk transcript meta (offline)",
+      "  refresh-meta [--video <id>] [--dry-run]",
+      "                             fetch keywords (if missing) + viewCount from YouTube",
       "  delete --stage <name> [--video <id>] [--dry-run]",
       "                             clear a stage from catalog rows so it re-runs",
       "  entities --video <id>      run the new neural entities stage (parallel output)",
@@ -147,7 +158,20 @@ async function cmdHeal(): Promise<number> {
   return 0;
 }
 
-const VIDEO_STAGE_NAMES: StageName[] = ["fetched", "nlp", "ai", "per-claim"];
+const VIDEO_STAGE_NAMES: StageName[] = [
+  "fetched",
+  "entities",
+  "relations",
+  "ai",
+  "per-claim",
+];
+
+// `captions delete --stage` also accepts the retired `nlp` name so
+// operators can scrub pre-migration catalogs even though no stage
+// listens for it any more. The v4→v5 migration removes these records
+// on next load automatically, but the explicit delete path is kept
+// as a belt-and-suspenders option.
+const DELETABLE_STAGE_NAMES: string[] = [...VIDEO_STAGE_NAMES, "nlp"];
 
 async function cmdDelete(flags: Parsed["flags"]): Promise<number> {
   const stage = typeof flags.stage === "string" ? flags.stage : undefined;
@@ -155,9 +179,9 @@ async function cmdDelete(flags: Parsed["flags"]): Promise<number> {
     console.error("captions delete: --stage <name> is required");
     return 2;
   }
-  if (!(VIDEO_STAGE_NAMES as string[]).includes(stage)) {
+  if (!DELETABLE_STAGE_NAMES.includes(stage)) {
     console.error(
-      `captions delete: unknown stage "${stage}"; expected one of ${VIDEO_STAGE_NAMES.join(", ")}`,
+      `captions delete: unknown stage "${stage}"; expected one of ${DELETABLE_STAGE_NAMES.join(", ")}`,
     );
     return 2;
   }
@@ -455,6 +479,131 @@ async function cmdCatalogSyncMeta(): Promise<number> {
   return 0;
 }
 
+// Backfill missing `keywords` and refresh `viewCount` on every catalog row
+// and its on-disk transcript file. One Innertube call per row (rate-limited);
+// on keyword miss, a second watch-page scrape. Nothing else on the row or
+// transcript is touched — stage timestamps, cues, language, etc. are left
+// untouched. Use this as an occasional cleanup pass.
+async function cmdRefreshMeta(flags: Parsed["flags"]): Promise<number> {
+  const dir = dataDir();
+  const catalog = catalogFromDataDir(dir);
+  const onlyVideo = typeof flags.video === "string" ? flags.video : undefined;
+  const dryRun = flags["dry-run"] === true;
+  const rows = onlyVideo
+    ? catalog.all().filter((r) => r.videoId === onlyVideo)
+    : catalog.all();
+  if (onlyVideo && rows.length === 0) {
+    console.error(`captions refresh-meta: no catalog row for ${onlyVideo}`);
+    return 1;
+  }
+
+  let updatedKeywords = 0;
+  let updatedViews = 0;
+  let unchanged = 0;
+  let missing = 0;
+  let errors = 0;
+
+  for (const row of rows) {
+    const path = row.transcriptPath;
+    if (!path || !existsSync(path)) {
+      missing++;
+      continue;
+    }
+    let parsed: NormalizedTranscript;
+    try {
+      parsed = JSON.parse(readFileSync(path, "utf8")) as NormalizedTranscript;
+    } catch (e) {
+      console.error(`skip ${row.videoId}: ${(e as Error).message}`);
+      errors++;
+      continue;
+    }
+
+    const needKeywords = !row.keywords || row.keywords.length === 0;
+
+    let inner;
+    try {
+      inner = await fetchViaInnertube(row.videoId, limitedFetch);
+    } catch (e) {
+      console.error(`err  ${row.videoId}: innertube ${(e as Error).message}`);
+      errors++;
+      continue;
+    }
+    if (!inner) {
+      console.log(`--  ${row.videoId}  innertube returned null`);
+      errors++;
+      continue;
+    }
+
+    const keywords = inner.meta.keywords;
+
+    const patch: Partial<VideoMeta> = {};
+    if (
+      needKeywords &&
+      keywords &&
+      keywords.length > 0 &&
+      JSON.stringify(keywords) !== JSON.stringify(row.keywords)
+    ) {
+      patch.keywords = keywords;
+    }
+    if (
+      typeof inner.meta.viewCount === "number" &&
+      inner.meta.viewCount !== row.viewCount
+    ) {
+      patch.viewCount = inner.meta.viewCount;
+    }
+
+    if (Object.keys(patch).length === 0) {
+      unchanged++;
+      continue;
+    }
+
+    if (dryRun) {
+      const bits: string[] = [];
+      if (patch.keywords) bits.push(`keywords=${patch.keywords.length}`);
+      if (patch.viewCount !== undefined) bits.push(`views=${patch.viewCount}`);
+      console.log(`dry  ${row.videoId}  ${bits.join(" ")}`);
+      if (patch.keywords) updatedKeywords++;
+      if (patch.viewCount !== undefined) updatedViews++;
+      continue;
+    }
+
+    try {
+      await updateWithRetry(catalog, row.videoId, patch);
+    } catch (e) {
+      console.error(`err  ${row.videoId}: catalog ${(e as Error).message}`);
+      errors++;
+      continue;
+    }
+
+    const nextMeta: VideoMeta = { ...(parsed.meta ?? {}), ...patch };
+    const nextTranscript: NormalizedTranscript = { ...parsed, meta: nextMeta };
+    try {
+      atomicWriteJson(path, nextTranscript);
+    } catch (e) {
+      console.error(`err  ${row.videoId}: transcript ${(e as Error).message}`);
+      errors++;
+      continue;
+    }
+
+    const bits: string[] = [];
+    if (patch.keywords) {
+      bits.push(`keywords=${patch.keywords.length}`);
+      updatedKeywords++;
+    }
+    if (patch.viewCount !== undefined) {
+      bits.push(`views=${patch.viewCount}`);
+      updatedViews++;
+    }
+    console.log(`ok  ${row.videoId}  ${bits.join(" ")}`);
+  }
+
+  const prefix = dryRun ? "dry-run: " : "";
+  console.log(
+    `\n${prefix}refresh-meta: updated-keywords=${updatedKeywords} updated-views=${updatedViews} unchanged=${unchanged} missing=${missing} errors=${errors} total=${rows.length}`,
+  );
+  return 0;
+}
+
 async function cmdStatus(flags: Parsed["flags"]): Promise<number> {
   const catalog = catalogFromDataDir(dataDir());
   const rows =
@@ -506,6 +655,9 @@ async function main(): Promise<void> {
       break;
     case "neural":
       code = await cmdNeural(parsed.flags);
+      break;
+    case "refresh-meta":
+      code = await cmdRefreshMeta(parsed.flags);
       break;
     case "status":
       code = await cmdStatus(parsed.flags);

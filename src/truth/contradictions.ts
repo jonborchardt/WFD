@@ -27,12 +27,14 @@ export interface Loop {
   summary: string;
 }
 
-// Pairs of predicates we consider mutually exclusive.
+// Pairs of predicates we consider mutually exclusive. Migrated to the
+// neural predicate vocabulary; old pairs (loves/hates, employs/worked-for)
+// have no direct equivalent in the new schema and would need new
+// predicates to return. Add more rows here as the schema grows.
 const EXCLUSIVE: Array<[RelationshipType, RelationshipType]> = [
-  ["loves", "hates"],
-  ["accused", "denied"],
-  ["funds", "funded-by"],
-  ["employs", "worked-for"],
+  ["accused_of", "denies"],
+  ["allied_with", "opposed_by"],
+  ["endorses", "denies"],
 ];
 
 function edgeKey(r: Relationship): string {

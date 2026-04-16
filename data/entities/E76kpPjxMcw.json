@@ -1,0 +1,3890 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "E76kpPjxMcw",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T02:42:37.616Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "organization",
+      "surface": "North American Air Defense command",
+      "canonical": "North American Air Defense command",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4,
+        "charEnd": 38,
+        "timeStart": 1.02,
+        "timeEnd": 6.119999999999999
+      },
+      "score": 0.5607351064682007
+    },
+    {
+      "id": "m_0002",
+      "label": "organization",
+      "surface": "NORAD",
+      "canonical": "NORAD",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 48,
+        "charEnd": 53,
+        "timeStart": 3.24,
+        "timeEnd": 8.16
+      },
+      "score": 0.9671546220779419
+    },
+    {
+      "id": "m_0003",
+      "label": "date_time",
+      "surface": "1958",
+      "canonical": "1958",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 73,
+        "charEnd": 77,
+        "timeStart": 3.24,
+        "timeEnd": 8.16
+      },
+      "score": 0.6026445031166077
+    },
+    {
+      "id": "m_0004",
+      "label": "event",
+      "surface": "missile launches",
+      "canonical": "missile launches",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 149,
+        "charEnd": 165,
+        "timeStart": 10.32,
+        "timeEnd": 14.16
+      },
+      "score": 0.6362228393554688
+    },
+    {
+      "id": "m_0005",
+      "label": "organization",
+      "surface": "NORAD",
+      "canonical": "NORAD",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 192,
+        "charEnd": 197,
+        "timeStart": 12.059,
+        "timeEnd": 16.5
+      },
+      "score": 0.9729942679405212
+    },
+    {
+      "id": "m_0006",
+      "label": "location",
+      "surface": "Skies\naround the entire planet",
+      "canonical": "Skies\naround the entire planet",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 218,
+        "charEnd": 248,
+        "timeStart": 12.059,
+        "timeEnd": 20.039
+      },
+      "score": 0.5127063393592834
+    },
+    {
+      "id": "m_0007",
+      "label": "date_time",
+      "surface": "January 13 1996",
+      "canonical": "January 13 1996",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 273,
+        "charEnd": 288,
+        "timeStart": 16.5,
+        "timeEnd": 22.38
+      },
+      "score": 0.8511790633201599
+    },
+    {
+      "id": "m_0008",
+      "label": "organization",
+      "surface": "NORAD",
+      "canonical": "NORAD",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 289,
+        "charEnd": 294,
+        "timeStart": 16.5,
+        "timeEnd": 22.38
+      },
+      "score": 0.9618464112281799
+    },
+    {
+      "id": "m_0009",
+      "label": "organization",
+      "surface": "Brazilian air defense",
+      "canonical": "Brazilian air defense",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 305,
+        "charEnd": 326,
+        "timeStart": 20.039,
+        "timeEnd": 24.240000000000002
+      },
+      "score": 0.6372203826904297
+    },
+    {
+      "id": "m_0010",
+      "label": "location",
+      "surface": "Sao Paulo",
+      "canonical": "Sao Paulo",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 408,
+        "charEnd": 417,
+        "timeStart": 26.699,
+        "timeEnd": 32.759
+      },
+      "score": 0.6215775609016418
+    },
+    {
+      "id": "m_0011",
+      "label": "organization",
+      "surface": "NORAD",
+      "canonical": "NORAD",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 449,
+        "charEnd": 454,
+        "timeStart": 29.099,
+        "timeEnd": 34.92
+      },
+      "score": 0.974030077457428
+    },
+    {
+      "id": "m_0012",
+      "label": "location",
+      "surface": "town of Virginia",
+      "canonical": "town of Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 530,
+        "charEnd": 546,
+        "timeStart": 34.92,
+        "timeEnd": 39.719
+      },
+      "score": 0.5845165252685547
+    },
+    {
+      "id": "m_0013",
+      "label": "organization",
+      "surface": "Brazilian Army\nand Air Force",
+      "canonical": "Brazilian Army\nand Air Force",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 551,
+        "charEnd": 579,
+        "timeStart": 34.92,
+        "timeEnd": 41.699999999999996
+      },
+      "score": 0.7186038494110107
+    },
+    {
+      "id": "m_0014",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 909,
+        "charEnd": 917,
+        "timeStart": 63.239,
+        "timeEnd": 69.24
+      },
+      "score": 0.9952423572540283
+    },
+    {
+      "id": "m_0015",
+      "label": "location",
+      "surface": "vagina",
+      "canonical": "vagina",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1054,
+        "charEnd": 1060,
+        "timeStart": 71.58,
+        "timeEnd": 77.64
+      },
+      "score": 0.668948769569397
+    },
+    {
+      "id": "m_0016",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1067,
+        "charEnd": 1075,
+        "timeStart": 74.76,
+        "timeEnd": 79.619
+      },
+      "score": 0.9978310465812683
+    },
+    {
+      "id": "m_0017",
+      "label": "location",
+      "surface": "vagina",
+      "canonical": "vagina",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1248,
+        "charEnd": 1254,
+        "timeStart": 84.18,
+        "timeEnd": 91.43900000000001
+      },
+      "score": 0.958306610584259
+    },
+    {
+      "id": "m_0018",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1255,
+        "charEnd": 1263,
+        "timeStart": 86.759,
+        "timeEnd": 95.119
+      },
+      "score": 0.998458981513977
+    },
+    {
+      "id": "m_0019",
+      "label": "location",
+      "surface": "vagina",
+      "canonical": "vagina",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1280,
+        "charEnd": 1286,
+        "timeStart": 86.759,
+        "timeEnd": 95.119
+      },
+      "score": 0.9787384867668152
+    },
+    {
+      "id": "m_0020",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1287,
+        "charEnd": 1295,
+        "timeStart": 86.759,
+        "timeEnd": 95.119
+      },
+      "score": 0.9978439807891846
+    },
+    {
+      "id": "m_0021",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1323,
+        "charEnd": 1331,
+        "timeStart": 96.979,
+        "timeEnd": 102.17999999999999
+      },
+      "score": 0.9970827698707581
+    },
+    {
+      "id": "m_0022",
+      "label": "location",
+      "surface": "mina Shiraz",
+      "canonical": "mina Shiraz",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1384,
+        "charEnd": 1395,
+        "timeStart": 99.6,
+        "timeEnd": 105.17999999999999
+      },
+      "score": 0.7903257012367249
+    },
+    {
+      "id": "m_0023",
+      "label": "quantity",
+      "surface": "135 000",
+      "canonical": "135 000",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1420,
+        "charEnd": 1427,
+        "timeStart": 102.18,
+        "timeEnd": 107.28
+      },
+      "score": 0.6140846014022827
+    },
+    {
+      "id": "m_0024",
+      "label": "location",
+      "surface": "one of those Farms",
+      "canonical": "one of those Farms",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1611,
+        "charEnd": 1629,
+        "timeStart": 113.82,
+        "timeEnd": 118.67999999999999
+      },
+      "score": 0.541740357875824
+    },
+    {
+      "id": "m_0025",
+      "label": "person",
+      "surface": "eureko",
+      "canonical": "eureko",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1642,
+        "charEnd": 1648,
+        "timeStart": 116.159,
+        "timeEnd": 120.36
+      },
+      "score": 0.7778409123420715
+    },
+    {
+      "id": "m_0026",
+      "label": "person",
+      "surface": "orolina de Freitas",
+      "canonical": "orolina de Freitas",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1653,
+        "charEnd": 1671,
+        "timeStart": 116.159,
+        "timeEnd": 120.36
+      },
+      "score": 0.8858489990234375
+    },
+    {
+      "id": "m_0027",
+      "label": "person",
+      "surface": "orolina",
+      "canonical": "orolina",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1720,
+        "charEnd": 1727,
+        "timeStart": 120.36,
+        "timeEnd": 124.5
+      },
+      "score": 0.6589590907096863
+    },
+    {
+      "id": "m_0028",
+      "label": "person",
+      "surface": "Eureka",
+      "canonical": "Eureka",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 1896,
+        "charEnd": 1902,
+        "timeStart": 131.16,
+        "timeEnd": 135.35999999999999
+      },
+      "score": 0.7667222023010254
+    },
+    {
+      "id": "m_0029",
+      "label": "location",
+      "surface": "not far from\nthe farm",
+      "canonical": "not far from\nthe farm",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 2154,
+        "charEnd": 2175,
+        "timeStart": 144.18,
+        "timeEnd": 151.08
+      },
+      "score": 0.5322521328926086
+    },
+    {
+      "id": "m_0030",
+      "label": "location",
+      "surface": "on the other side of that Ridge",
+      "canonical": "on the other side of that Ridge",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 2176,
+        "charEnd": 2207,
+        "timeStart": 146.459,
+        "timeEnd": 151.08
+      },
+      "score": 0.5764272809028625
+    },
+    {
+      "id": "m_0031",
+      "label": "person",
+      "surface": "Carlos de Souza",
+      "canonical": "Carlos de Souza",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 2208,
+        "charEnd": 2223,
+        "timeStart": 148.459,
+        "timeEnd": 153.42000000000002
+      },
+      "score": 0.9195846915245056
+    },
+    {
+      "id": "m_0032",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 2622,
+        "charEnd": 2628,
+        "timeStart": 170.459,
+        "timeEnd": 174.66
+      },
+      "score": 0.9888766407966614
+    },
+    {
+      "id": "m_0033",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 2825,
+        "charEnd": 2831,
+        "timeStart": 183.12,
+        "timeEnd": 187.31900000000002
+      },
+      "score": 0.9899043440818787
+    },
+    {
+      "id": "m_0034",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 2979,
+        "charEnd": 2985,
+        "timeStart": 191.64,
+        "timeEnd": 196.319
+      },
+      "score": 0.9933046698570251
+    },
+    {
+      "id": "m_0035",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 3122,
+        "charEnd": 3128,
+        "timeStart": 198.48,
+        "timeEnd": 202.73899999999998
+      },
+      "score": 0.9913240671157837
+    },
+    {
+      "id": "m_0036",
+      "label": "location",
+      "surface": "the crash site",
+      "canonical": "the crash site",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 3146,
+        "charEnd": 3160,
+        "timeStart": 200.819,
+        "timeEnd": 204.89999999999998
+      },
+      "score": 0.6856614351272583
+    },
+    {
+      "id": "m_0037",
+      "label": "location",
+      "surface": "the road",
+      "canonical": "the road",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 3195,
+        "charEnd": 3203,
+        "timeStart": 202.739,
+        "timeEnd": 207.06
+      },
+      "score": 0.7204928994178772
+    },
+    {
+      "id": "m_0038",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 3666,
+        "charEnd": 3672,
+        "timeStart": 232.019,
+        "timeEnd": 236.28
+      },
+      "score": 0.91552734375
+    },
+    {
+      "id": "m_0039",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 3925,
+        "charEnd": 3931,
+        "timeStart": 245.519,
+        "timeEnd": 249.54
+      },
+      "score": 0.9953437447547913
+    },
+    {
+      "id": "m_0040",
+      "label": "person",
+      "surface": "Soldiers",
+      "canonical": "Soldiers",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4192,
+        "charEnd": 4200,
+        "timeStart": 260.459,
+        "timeEnd": 265.62
+      },
+      "score": 0.5121107697486877
+    },
+    {
+      "id": "m_0041",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4230,
+        "charEnd": 4236,
+        "timeStart": 263.16,
+        "timeEnd": 268.68
+      },
+      "score": 0.9975359439849854
+    },
+    {
+      "id": "m_0042",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4249,
+        "charEnd": 4255,
+        "timeStart": 263.16,
+        "timeEnd": 268.68
+      },
+      "score": 0.9973241090774536
+    },
+    {
+      "id": "m_0043",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4422,
+        "charEnd": 4428,
+        "timeStart": 274.74,
+        "timeEnd": 278.82
+      },
+      "score": 0.997533917427063
+    },
+    {
+      "id": "m_0044",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4546,
+        "charEnd": 4552,
+        "timeStart": 280.8,
+        "timeEnd": 286.58
+      },
+      "score": 0.9955450296401978
+    },
+    {
+      "id": "m_0045",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4626,
+        "charEnd": 4632,
+        "timeStart": 286.58,
+        "timeEnd": 291.84
+      },
+      "score": 0.9970691800117493
+    },
+    {
+      "id": "m_0046",
+      "label": "person",
+      "surface": "his wife",
+      "canonical": "his wife",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4687,
+        "charEnd": 4695,
+        "timeStart": 291.84,
+        "timeEnd": 295.85999999999996
+      },
+      "score": 0.6844906210899353
+    },
+    {
+      "id": "m_0047",
+      "label": "person",
+      "surface": "his daughter",
+      "canonical": "his daughter",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4696,
+        "charEnd": 4708,
+        "timeStart": 291.84,
+        "timeEnd": 295.85999999999996
+      },
+      "score": 0.7389522790908813
+    },
+    {
+      "id": "m_0048",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4788,
+        "charEnd": 4794,
+        "timeStart": 295.86,
+        "timeEnd": 300.12
+      },
+      "score": 0.9898601174354553
+    },
+    {
+      "id": "m_0049",
+      "label": "person",
+      "surface": "Carlos",
+      "canonical": "Carlos",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4916,
+        "charEnd": 4922,
+        "timeStart": 304.259,
+        "timeEnd": 309.90000000000003
+      },
+      "score": 0.9907492995262146
+    },
+    {
+      "id": "m_0050",
+      "label": "location",
+      "surface": "the crash\nsite",
+      "canonical": "the crash site",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 4986,
+        "charEnd": 5000,
+        "timeStart": 306.54,
+        "timeEnd": 314.09999999999997
+      },
+      "score": 0.5217332243919373
+    },
+    {
+      "id": "m_0051",
+      "label": "organization",
+      "surface": "Brazilian military",
+      "canonical": "Brazilian military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5005,
+        "charEnd": 5023,
+        "timeStart": 309.9,
+        "timeEnd": 314.09999999999997
+      },
+      "score": 0.8964766263961792
+    },
+    {
+      "id": "m_0052",
+      "label": "technology",
+      "surface": "craft",
+      "canonical": "craft",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5068,
+        "charEnd": 5073,
+        "timeStart": 312.06,
+        "timeEnd": 316.02
+      },
+      "score": 0.5020033121109009
+    },
+    {
+      "id": "m_0053",
+      "label": "person",
+      "surface": "survivors",
+      "canonical": "survivors",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5258,
+        "charEnd": 5267,
+        "timeStart": 324.66,
+        "timeEnd": 328.639
+      },
+      "score": 0.5663456320762634
+    },
+    {
+      "id": "m_0054",
+      "label": "location",
+      "surface": "town",
+      "canonical": "town",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5284,
+        "charEnd": 5288,
+        "timeStart": 324.66,
+        "timeEnd": 328.639
+      },
+      "score": 0.5380069613456726
+    },
+    {
+      "id": "m_0055",
+      "label": "organization",
+      "surface": "authorities",
+      "canonical": "authorities",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5322,
+        "charEnd": 5333,
+        "timeStart": 332.22,
+        "timeEnd": 336.78000000000003
+      },
+      "score": 0.6740930676460266
+    },
+    {
+      "id": "m_0056",
+      "label": "person",
+      "surface": "college student",
+      "canonical": "college student",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5412,
+        "charEnd": 5427,
+        "timeStart": 336.78,
+        "timeEnd": 341.28
+      },
+      "score": 0.598844587802887
+    },
+    {
+      "id": "m_0057",
+      "label": "location",
+      "surface": "park",
+      "canonical": "park",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5518,
+        "charEnd": 5522,
+        "timeStart": 343.74,
+        "timeEnd": 348.06
+      },
+      "score": 0.6204846501350403
+    },
+    {
+      "id": "m_0058",
+      "label": "person",
+      "surface": "Lillian valkyria",
+      "canonical": "Lillian valkyria",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5853,
+        "charEnd": 5869,
+        "timeStart": 363.72,
+        "timeEnd": 368.82000000000005
+      },
+      "score": 0.6913112998008728
+    },
+    {
+      "id": "m_0059",
+      "label": "person",
+      "surface": "Katya",
+      "canonical": "katya",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5874,
+        "charEnd": 5879,
+        "timeStart": 363.72,
+        "timeEnd": 368.82000000000005
+      },
+      "score": 0.8155507445335388
+    },
+    {
+      "id": "m_0060",
+      "label": "location",
+      "surface": "vacant lot",
+      "canonical": "vacant lot",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5946,
+        "charEnd": 5956,
+        "timeStart": 368.82,
+        "timeEnd": 373.08
+      },
+      "score": 0.6990374326705933
+    },
+    {
+      "id": "m_0061",
+      "label": "location",
+      "surface": "Tall Grass",
+      "canonical": "Tall Grass",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 5970,
+        "charEnd": 5980,
+        "timeStart": 371.22,
+        "timeEnd": 374.58000000000004
+      },
+      "score": 0.5499217510223389
+    },
+    {
+      "id": "m_0062",
+      "label": "person",
+      "surface": "the girls",
+      "canonical": "the girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6337,
+        "charEnd": 6346,
+        "timeStart": 394.199,
+        "timeEnd": 398.40000000000003
+      },
+      "score": 0.825312614440918
+    },
+    {
+      "id": "m_0063",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6419,
+        "charEnd": 6424,
+        "timeStart": 398.4,
+        "timeEnd": 403.25899999999996
+      },
+      "score": 0.7712485194206238
+    },
+    {
+      "id": "m_0064",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6542,
+        "charEnd": 6547,
+        "timeStart": 405.18,
+        "timeEnd": 409.319
+      },
+      "score": 0.8378280997276306
+    },
+    {
+      "id": "m_0065",
+      "label": "person",
+      "surface": "Katie",
+      "canonical": "Katie",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6592,
+        "charEnd": 6597,
+        "timeStart": 409.319,
+        "timeEnd": 412.97900000000004
+      },
+      "score": 0.7955635190010071
+    },
+    {
+      "id": "m_0066",
+      "label": "person",
+      "surface": "mother",
+      "canonical": "mother",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6619,
+        "charEnd": 6625,
+        "timeStart": 409.319,
+        "timeEnd": 412.97900000000004
+      },
+      "score": 0.6484066843986511
+    },
+    {
+      "id": "m_0067",
+      "label": "person",
+      "surface": "katya",
+      "canonical": "katya",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6719,
+        "charEnd": 6724,
+        "timeStart": 415.02,
+        "timeEnd": 419.69899999999996
+      },
+      "score": 0.81913161277771
+    },
+    {
+      "id": "m_0068",
+      "label": "person",
+      "surface": "mother",
+      "canonical": "mother",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6727,
+        "charEnd": 6733,
+        "timeStart": 415.02,
+        "timeEnd": 419.69899999999996
+      },
+      "score": 0.6792141199111938
+    },
+    {
+      "id": "m_0069",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6845,
+        "charEnd": 6850,
+        "timeStart": 422.4,
+        "timeEnd": 426.9
+      },
+      "score": 0.718242883682251
+    },
+    {
+      "id": "m_0070",
+      "label": "person",
+      "surface": "artist",
+      "canonical": "artist",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 6880,
+        "charEnd": 6886,
+        "timeStart": 424.86,
+        "timeEnd": 429.3
+      },
+      "score": 0.7422887086868286
+    },
+    {
+      "id": "m_0071",
+      "label": "role",
+      "surface": "military\npoliceman",
+      "canonical": "military\npoliceman",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7095,
+        "charEnd": 7113,
+        "timeStart": 436.56,
+        "timeEnd": 444.06
+      },
+      "score": 0.7781275510787964
+    },
+    {
+      "id": "m_0072",
+      "label": "person",
+      "surface": "Eric Lopes",
+      "canonical": "Eric Lopes",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7114,
+        "charEnd": 7124,
+        "timeStart": 439.02,
+        "timeEnd": 444.06
+      },
+      "score": 0.9531790018081665
+    },
+    {
+      "id": "m_0073",
+      "label": "person",
+      "surface": "Marco",
+      "canonical": "Marco",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7129,
+        "charEnd": 7134,
+        "timeStart": 439.02,
+        "timeEnd": 444.06
+      },
+      "score": 0.9577667713165283
+    },
+    {
+      "id": "m_0074",
+      "label": "person",
+      "surface": "Marco",
+      "canonical": "Marco",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7242,
+        "charEnd": 7247,
+        "timeStart": 445.86,
+        "timeEnd": 450.18
+      },
+      "score": 0.9174486398696899
+    },
+    {
+      "id": "m_0075",
+      "label": "location",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7343,
+        "charEnd": 7351,
+        "timeStart": 452.16,
+        "timeEnd": 456.96000000000004
+      },
+      "score": 0.7202385067939758
+    },
+    {
+      "id": "m_0076",
+      "label": "person",
+      "surface": "Marco",
+      "canonical": "Marco",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7406,
+        "charEnd": 7411,
+        "timeStart": 453.78,
+        "timeEnd": 459.23999999999995
+      },
+      "score": 0.9126666188240051
+    },
+    {
+      "id": "m_0077",
+      "label": "location",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7621,
+        "charEnd": 7629,
+        "timeStart": 467.4,
+        "timeEnd": 471.479
+      },
+      "score": 0.7326873540878296
+    },
+    {
+      "id": "m_0078",
+      "label": "location",
+      "surface": "intensive care",
+      "canonical": "intensive care",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7644,
+        "charEnd": 7658,
+        "timeStart": 469.38,
+        "timeEnd": 472.919
+      },
+      "score": 0.628165602684021
+    },
+    {
+      "id": "m_0079",
+      "label": "person",
+      "surface": "Marco",
+      "canonical": "Marco",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7760,
+        "charEnd": 7765,
+        "timeStart": 475.74,
+        "timeEnd": 480.96000000000004
+      },
+      "score": 0.908969521522522
+    },
+    {
+      "id": "m_0080",
+      "label": "organization",
+      "surface": "the doctors",
+      "canonical": "the doctors",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7798,
+        "charEnd": 7809,
+        "timeStart": 478.56,
+        "timeEnd": 483.24
+      },
+      "score": 0.7482910752296448
+    },
+    {
+      "id": "m_0081",
+      "label": "organization",
+      "surface": "Public Health",
+      "canonical": "Public Health",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 7951,
+        "charEnd": 7964,
+        "timeStart": 487.44,
+        "timeEnd": 491.46
+      },
+      "score": 0.9455124139785767
+    },
+    {
+      "id": "m_0082",
+      "label": "quantity",
+      "surface": "eight percent",
+      "canonical": "eight percent",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8025,
+        "charEnd": 8038,
+        "timeStart": 491.46,
+        "timeEnd": 495.84
+      },
+      "score": 0.5710192918777466
+    },
+    {
+      "id": "m_0083",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8110,
+        "charEnd": 8118,
+        "timeStart": 497.94,
+        "timeEnd": 503.24
+      },
+      "score": 0.7799051403999329
+    },
+    {
+      "id": "m_0084",
+      "label": "event",
+      "surface": "UFO incident",
+      "canonical": "UFO incident",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8119,
+        "charEnd": 8131,
+        "timeStart": 497.94,
+        "timeEnd": 503.24
+      },
+      "score": 0.5154303908348083
+    },
+    {
+      "id": "m_0085",
+      "label": "organization",
+      "surface": "the fire\ndepartment",
+      "canonical": "the fire\ndepartment",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8179,
+        "charEnd": 8198,
+        "timeStart": 504.66,
+        "timeEnd": 510.65999999999997
+      },
+      "score": 0.8783395290374756
+    },
+    {
+      "id": "m_0086",
+      "label": "location",
+      "surface": "park",
+      "canonical": "park",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8241,
+        "charEnd": 8245,
+        "timeStart": 508.8,
+        "timeEnd": 512.399
+      },
+      "score": 0.5894915461540222
+    },
+    {
+      "id": "m_0087",
+      "label": "person",
+      "surface": "firemen",
+      "canonical": "firemen",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8284,
+        "charEnd": 8291,
+        "timeStart": 510.66,
+        "timeEnd": 514.26
+      },
+      "score": 0.776154637336731
+    },
+    {
+      "id": "m_0088",
+      "label": "person",
+      "surface": "firemen",
+      "canonical": "firemen",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8332,
+        "charEnd": 8339,
+        "timeStart": 514.26,
+        "timeEnd": 517.979
+      },
+      "score": 0.778911292552948
+    },
+    {
+      "id": "m_0089",
+      "label": "quantity",
+      "surface": "five civilians",
+      "canonical": "five civilians",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8372,
+        "charEnd": 8386,
+        "timeStart": 516.24,
+        "timeEnd": 519.839
+      },
+      "score": 0.5081033706665039
+    },
+    {
+      "id": "m_0090",
+      "label": "location",
+      "surface": "densely wooded area",
+      "canonical": "densely wooded area",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8456,
+        "charEnd": 8475,
+        "timeStart": 519.839,
+        "timeEnd": 524.0390000000001
+      },
+      "score": 0.7396060824394226
+    },
+    {
+      "id": "m_0091",
+      "label": "person",
+      "surface": "firemen",
+      "canonical": "firemen",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8538,
+        "charEnd": 8545,
+        "timeStart": 524.039,
+        "timeEnd": 529.1999999999999
+      },
+      "score": 0.8307937383651733
+    },
+    {
+      "id": "m_0092",
+      "label": "quantity",
+      "surface": "two hours",
+      "canonical": "two hours",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8546,
+        "charEnd": 8555,
+        "timeStart": 524.039,
+        "timeEnd": 529.1999999999999
+      },
+      "score": 0.6022149920463562
+    },
+    {
+      "id": "m_0093",
+      "label": "organization",
+      "surface": "firemen",
+      "canonical": "firemen",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8773,
+        "charEnd": 8780,
+        "timeStart": 537.6,
+        "timeEnd": 542.4590000000001
+      },
+      "score": 0.6573131680488586
+    },
+    {
+      "id": "m_0094",
+      "label": "organization",
+      "surface": "ASA",
+      "canonical": "ASA",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8859,
+        "charEnd": 8862,
+        "timeStart": 542.459,
+        "timeEnd": 547.0189999999999
+      },
+      "score": 0.793755054473877
+    },
+    {
+      "id": "m_0095",
+      "label": "location",
+      "surface": "a\nmilitary base",
+      "canonical": "a\nmilitary base",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8863,
+        "charEnd": 8878,
+        "timeStart": 542.459,
+        "timeEnd": 549.2399999999999
+      },
+      "score": 0.5333458185195923
+    },
+    {
+      "id": "m_0096",
+      "label": "person",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 8896,
+        "charEnd": 8905,
+        "timeStart": 544.56,
+        "timeEnd": 549.2399999999999
+      },
+      "score": 0.7037992477416992
+    },
+    {
+      "id": "m_0097",
+      "label": "person",
+      "surface": "civilians",
+      "canonical": "civilians",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9146,
+        "charEnd": 9155,
+        "timeStart": 559.68,
+        "timeEnd": 564.06
+      },
+      "score": 0.502274215221405
+    },
+    {
+      "id": "m_0098",
+      "label": "location",
+      "surface": "section of regional hospital",
+      "canonical": "section of regional hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9219,
+        "charEnd": 9247,
+        "timeStart": 564.06,
+        "timeEnd": 569.459
+      },
+      "score": 0.6477115154266357
+    },
+    {
+      "id": "m_0099",
+      "label": "quantity",
+      "surface": "10 military and\npolice vehicles",
+      "canonical": "10 military and\npolice vehicles",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9277,
+        "charEnd": 9308,
+        "timeStart": 566.7,
+        "timeEnd": 573.54
+      },
+      "score": 0.5479406714439392
+    },
+    {
+      "id": "m_0100",
+      "label": "facility",
+      "surface": "radiology\ndepartment",
+      "canonical": "radiology\ndepartment",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9432,
+        "charEnd": 9452,
+        "timeStart": 576.36,
+        "timeEnd": 581.94
+      },
+      "score": 0.6329712271690369
+    },
+    {
+      "id": "m_0101",
+      "label": "person",
+      "surface": "the x-ray\ntechnician",
+      "canonical": "the x-ray\ntechnician",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9464,
+        "charEnd": 9484,
+        "timeStart": 577.62,
+        "timeEnd": 583.86
+      },
+      "score": 0.6973109841346741
+    },
+    {
+      "id": "m_0102",
+      "label": "location",
+      "surface": "the\nexamination room",
+      "canonical": "the\nexamination room",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9507,
+        "charEnd": 9527,
+        "timeStart": 579.6,
+        "timeEnd": 586.5
+      },
+      "score": 0.6154135465621948
+    },
+    {
+      "id": "m_0103",
+      "label": "organization",
+      "surface": "doctors",
+      "canonical": "doctors",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9540,
+        "charEnd": 9547,
+        "timeStart": 581.94,
+        "timeEnd": 586.5
+      },
+      "score": 0.6744707226753235
+    },
+    {
+      "id": "m_0104",
+      "label": "organization",
+      "surface": "police",
+      "canonical": "police",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9548,
+        "charEnd": 9554,
+        "timeStart": 583.86,
+        "timeEnd": 588.36
+      },
+      "score": 0.6973304152488708
+    },
+    {
+      "id": "m_0105",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9559,
+        "charEnd": 9567,
+        "timeStart": 583.86,
+        "timeEnd": 588.36
+      },
+      "score": 0.7803840637207031
+    },
+    {
+      "id": "m_0106",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9749,
+        "charEnd": 9757,
+        "timeStart": 594.42,
+        "timeEnd": 599.16
+      },
+      "score": 0.6151046752929688
+    },
+    {
+      "id": "m_0107",
+      "label": "organization",
+      "surface": "The\nRadiologists",
+      "canonical": "The\nRadiologists",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9772,
+        "charEnd": 9788,
+        "timeStart": 594.42,
+        "timeEnd": 600.899
+      },
+      "score": 0.5218468904495239
+    },
+    {
+      "id": "m_0108",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 9995,
+        "charEnd": 10003,
+        "timeStart": 608.16,
+        "timeEnd": 612.42
+      },
+      "score": 0.8770696520805359
+    },
+    {
+      "id": "m_0109",
+      "label": "facility",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10201,
+        "charEnd": 10209,
+        "timeStart": 620.82,
+        "timeEnd": 624.899
+      },
+      "score": 0.5177732110023499
+    },
+    {
+      "id": "m_0110",
+      "label": "organization",
+      "surface": "senior military officials",
+      "canonical": "senior military officials",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10491,
+        "charEnd": 10516,
+        "timeStart": 637.44,
+        "timeEnd": 642.12
+      },
+      "score": 0.8894957900047302
+    },
+    {
+      "id": "m_0111",
+      "label": "quantity",
+      "surface": "50",
+      "canonical": "50",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10542,
+        "charEnd": 10544,
+        "timeStart": 639.72,
+        "timeEnd": 643.98
+      },
+      "score": 0.6184598207473755
+    },
+    {
+      "id": "m_0112",
+      "label": "person",
+      "surface": "doctors",
+      "canonical": "doctors",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10545,
+        "charEnd": 10552,
+        "timeStart": 639.72,
+        "timeEnd": 643.98
+      },
+      "score": 0.6880013942718506
+    },
+    {
+      "id": "m_0113",
+      "label": "facility",
+      "surface": "Hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10557,
+        "charEnd": 10565,
+        "timeStart": 642.12,
+        "timeEnd": 646.32
+      },
+      "score": 0.5033992528915405
+    },
+    {
+      "id": "m_0114",
+      "label": "event",
+      "surface": "training exercise",
+      "canonical": "training exercise",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10640,
+        "charEnd": 10657,
+        "timeStart": 646.32,
+        "timeEnd": 651
+      },
+      "score": 0.7649819850921631
+    },
+    {
+      "id": "m_0115",
+      "label": "person",
+      "surface": "doctors",
+      "canonical": "doctors",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10662,
+        "charEnd": 10669,
+        "timeStart": 646.32,
+        "timeEnd": 651
+      },
+      "score": 0.5500967502593994
+    },
+    {
+      "id": "m_0116",
+      "label": "person",
+      "surface": "soldiers",
+      "canonical": "Soldiers",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10748,
+        "charEnd": 10756,
+        "timeStart": 652.2,
+        "timeEnd": 656.1600000000001
+      },
+      "score": 0.7986848950386047
+    },
+    {
+      "id": "m_0117",
+      "label": "organization",
+      "surface": "National Security",
+      "canonical": "National Security",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10800,
+        "charEnd": 10817,
+        "timeStart": 654.3,
+        "timeEnd": 658.26
+      },
+      "score": 0.9115369319915771
+    },
+    {
+      "id": "m_0118",
+      "label": "facility",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 10967,
+        "charEnd": 10975,
+        "timeStart": 665.1,
+        "timeEnd": 668.5790000000001
+      },
+      "score": 0.70965176820755
+    },
+    {
+      "id": "m_0119",
+      "label": "quantity",
+      "surface": "25 years",
+      "canonical": "25 years",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11091,
+        "charEnd": 11099,
+        "timeStart": 670.44,
+        "timeEnd": 675.5400000000001
+      },
+      "score": 0.8108620643615723
+    },
+    {
+      "id": "m_0120",
+      "label": "person",
+      "surface": "witness",
+      "canonical": "witness",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11108,
+        "charEnd": 11115,
+        "timeStart": 670.44,
+        "timeEnd": 675.5400000000001
+      },
+      "score": 0.6391487717628479
+    },
+    {
+      "id": "m_0121",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11194,
+        "charEnd": 11201,
+        "timeStart": 679.64,
+        "timeEnd": 685.38
+      },
+      "score": 0.9396511912345886
+    },
+    {
+      "id": "m_0122",
+      "label": "quantity",
+      "surface": "25 years",
+      "canonical": "25 years",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11210,
+        "charEnd": 11218,
+        "timeStart": 679.64,
+        "timeEnd": 685.38
+      },
+      "score": 0.7907814979553223
+    },
+    {
+      "id": "m_0123",
+      "label": "person",
+      "surface": "soldier",
+      "canonical": "soldier",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11225,
+        "charEnd": 11232,
+        "timeStart": 679.64,
+        "timeEnd": 685.38
+      },
+      "score": 0.8476166129112244
+    },
+    {
+      "id": "m_0124",
+      "label": "work_of_media",
+      "surface": "moment of contact",
+      "canonical": "moment of contact",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11342,
+        "charEnd": 11359,
+        "timeStart": 689.22,
+        "timeEnd": 693.72
+      },
+      "score": 0.8915916681289673
+    },
+    {
+      "id": "m_0125",
+      "label": "person",
+      "surface": "filmmaker James Fox",
+      "canonical": "filmmaker James Fox",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11363,
+        "charEnd": 11382,
+        "timeStart": 689.22,
+        "timeEnd": 693.72
+      },
+      "score": 0.6548391580581665
+    },
+    {
+      "id": "m_0126",
+      "label": "person",
+      "surface": "soldier",
+      "canonical": "soldier",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11487,
+        "charEnd": 11494,
+        "timeStart": 695.399,
+        "timeEnd": 699.36
+      },
+      "score": 0.8849793672561646
+    },
+    {
+      "id": "m_0127",
+      "label": "person",
+      "surface": "military X",
+      "canonical": "military X",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11571,
+        "charEnd": 11581,
+        "timeStart": 700.86,
+        "timeEnd": 706.44
+      },
+      "score": 0.5773669481277466
+    },
+    {
+      "id": "m_0128",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11617,
+        "charEnd": 11625,
+        "timeStart": 703.98,
+        "timeEnd": 708.3000000000001
+      },
+      "score": 0.5195127129554749
+    },
+    {
+      "id": "m_0129",
+      "label": "person",
+      "surface": "Raul",
+      "canonical": "Raul",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11717,
+        "charEnd": 11721,
+        "timeStart": 708.3,
+        "timeEnd": 712.8
+      },
+      "score": 0.994522213935852
+    },
+    {
+      "id": "m_0130",
+      "label": "person",
+      "surface": "Raul",
+      "canonical": "Raul",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11760,
+        "charEnd": 11764,
+        "timeStart": 710.16,
+        "timeEnd": 714.18
+      },
+      "score": 0.9939635396003723
+    },
+    {
+      "id": "m_0131",
+      "label": "facility",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 11821,
+        "charEnd": 11829,
+        "timeStart": 714.18,
+        "timeEnd": 718.8
+      },
+      "score": 0.862623929977417
+    },
+    {
+      "id": "m_0132",
+      "label": "facility",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12095,
+        "charEnd": 12103,
+        "timeStart": 730.5,
+        "timeEnd": 734.94
+      },
+      "score": 0.7244048118591309
+    },
+    {
+      "id": "m_0133",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12160,
+        "charEnd": 12168,
+        "timeStart": 734.94,
+        "timeEnd": 739.2
+      },
+      "score": 0.8166330456733704
+    },
+    {
+      "id": "m_0134",
+      "label": "person",
+      "surface": "Raul",
+      "canonical": "Raul",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12198,
+        "charEnd": 12202,
+        "timeStart": 736.92,
+        "timeEnd": 741.06
+      },
+      "score": 0.9949048757553101
+    },
+    {
+      "id": "m_0135",
+      "label": "person",
+      "surface": "CEO",
+      "canonical": "CEO",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12274,
+        "charEnd": 12277,
+        "timeStart": 741.06,
+        "timeEnd": 745.4399999999999
+      },
+      "score": 0.569182276725769
+    },
+    {
+      "id": "m_0136",
+      "label": "person",
+      "surface": "Raul",
+      "canonical": "Raul",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12303,
+        "charEnd": 12307,
+        "timeStart": 741.06,
+        "timeEnd": 745.4399999999999
+      },
+      "score": 0.997410237789154
+    },
+    {
+      "id": "m_0137",
+      "label": "person",
+      "surface": "Raul",
+      "canonical": "Raul",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12498,
+        "charEnd": 12502,
+        "timeStart": 753.32,
+        "timeEnd": 758.519
+      },
+      "score": 0.9863839745521545
+    },
+    {
+      "id": "m_0138",
+      "label": "date_time",
+      "surface": "the following day",
+      "canonical": "the following day",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12586,
+        "charEnd": 12603,
+        "timeStart": 760.68,
+        "timeEnd": 765.06
+      },
+      "score": 0.557202160358429
+    },
+    {
+      "id": "m_0139",
+      "label": "organization",
+      "surface": "Navy",
+      "canonical": "Navy",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12644,
+        "charEnd": 12648,
+        "timeStart": 762.899,
+        "timeEnd": 766.74
+      },
+      "score": 0.7817886471748352
+    },
+    {
+      "id": "m_0140",
+      "label": "person",
+      "surface": "Raul",
+      "canonical": "Raul",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12789,
+        "charEnd": 12793,
+        "timeStart": 771.18,
+        "timeEnd": 775.8599999999999
+      },
+      "score": 0.9839009642601013
+    },
+    {
+      "id": "m_0141",
+      "label": "location",
+      "surface": "Aza",
+      "canonical": "Aza",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12814,
+        "charEnd": 12817,
+        "timeStart": 773.579,
+        "timeEnd": 779.04
+      },
+      "score": 0.786595344543457
+    },
+    {
+      "id": "m_0142",
+      "label": "organization",
+      "surface": "SpaceX",
+      "canonical": "SpaceX",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12832,
+        "charEnd": 12838,
+        "timeStart": 773.579,
+        "timeEnd": 779.04
+      },
+      "score": 0.8014422655105591
+    },
+    {
+      "id": "m_0143",
+      "label": "facility",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12844,
+        "charEnd": 12848,
+        "timeStart": 773.579,
+        "timeEnd": 779.04
+      },
+      "score": 0.6743419766426086
+    },
+    {
+      "id": "m_0144",
+      "label": "location",
+      "surface": "Campinas",
+      "canonical": "Campinas",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12852,
+        "charEnd": 12860,
+        "timeStart": 775.86,
+        "timeEnd": 782.899
+      },
+      "score": 0.9135221242904663
+    },
+    {
+      "id": "m_0145",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12929,
+        "charEnd": 12937,
+        "timeStart": 782.899,
+        "timeEnd": 788.459
+      },
+      "score": 0.9674856066703796
+    },
+    {
+      "id": "m_0146",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 12938,
+        "charEnd": 12946,
+        "timeStart": 782.899,
+        "timeEnd": 788.459
+      },
+      "score": 0.9704649448394775
+    },
+    {
+      "id": "m_0147",
+      "label": "person",
+      "surface": "Raul",
+      "canonical": "Raul",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13015,
+        "charEnd": 13019,
+        "timeStart": 791.48,
+        "timeEnd": 795.1800000000001
+      },
+      "score": 0.9890453815460205
+    },
+    {
+      "id": "m_0148",
+      "label": "person",
+      "surface": "Jose Manuel Fernandez",
+      "canonical": "Jose Manuel Fernandez",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13127,
+        "charEnd": 13148,
+        "timeStart": 797.04,
+        "timeEnd": 801.7199999999999
+      },
+      "score": 0.9078101515769958
+    },
+    {
+      "id": "m_0149",
+      "label": "role",
+      "surface": "air traffic\ncontroller",
+      "canonical": "air traffic\ncontroller",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13156,
+        "charEnd": 13178,
+        "timeStart": 797.04,
+        "timeEnd": 803.88
+      },
+      "score": 0.7223449945449829
+    },
+    {
+      "id": "m_0150",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13186,
+        "charEnd": 13190,
+        "timeStart": 799.8,
+        "timeEnd": 803.88
+      },
+      "score": 0.5511721968650818
+    },
+    {
+      "id": "m_0151",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13254,
+        "charEnd": 13262,
+        "timeStart": 803.88,
+        "timeEnd": 808.019
+      },
+      "score": 0.9840410947799683
+    },
+    {
+      "id": "m_0152",
+      "label": "person",
+      "surface": "Jose",
+      "canonical": "Jose",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13380,
+        "charEnd": 13384,
+        "timeStart": 809.7,
+        "timeEnd": 813.839
+      },
+      "score": 0.9884445667266846
+    },
+    {
+      "id": "m_0153",
+      "label": "person",
+      "surface": "Jose",
+      "canonical": "Jose",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13476,
+        "charEnd": 13480,
+        "timeStart": 816.06,
+        "timeEnd": 821.16
+      },
+      "score": 0.9863828420639038
+    },
+    {
+      "id": "m_0154",
+      "label": "person",
+      "surface": "Jose",
+      "canonical": "Jose",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13669,
+        "charEnd": 13673,
+        "timeStart": 827.279,
+        "timeEnd": 832.2
+      },
+      "score": 0.9917801022529602
+    },
+    {
+      "id": "m_0155",
+      "label": "event",
+      "surface": "secret\nmission",
+      "canonical": "secret\nmission",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13729,
+        "charEnd": 13743,
+        "timeStart": 830.339,
+        "timeEnd": 836.399
+      },
+      "score": 0.5970385074615479
+    },
+    {
+      "id": "m_0156",
+      "label": "person",
+      "surface": "Jose",
+      "canonical": "Jose",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13783,
+        "charEnd": 13787,
+        "timeStart": 834.06,
+        "timeEnd": 839.959
+      },
+      "score": 0.992188572883606
+    },
+    {
+      "id": "m_0157",
+      "label": "nationality_or_ethnicity",
+      "surface": "Brazilians",
+      "canonical": "Brazilians",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13905,
+        "charEnd": 13915,
+        "timeStart": 842.76,
+        "timeEnd": 847.04
+      },
+      "score": 0.9618707895278931
+    },
+    {
+      "id": "m_0158",
+      "label": "organization",
+      "surface": "usop",
+      "canonical": "usop",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13924,
+        "charEnd": 13928,
+        "timeStart": 842.76,
+        "timeEnd": 847.04
+      },
+      "score": 0.5939176678657532
+    },
+    {
+      "id": "m_0159",
+      "label": "organization",
+      "surface": "USAF",
+      "canonical": "USAF",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13932,
+        "charEnd": 13936,
+        "timeStart": 845.48,
+        "timeEnd": 851.279
+      },
+      "score": 0.6898910999298096
+    },
+    {
+      "id": "m_0160",
+      "label": "organization",
+      "surface": "United States Air Force",
+      "canonical": "United States Air Force",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 13941,
+        "charEnd": 13964,
+        "timeStart": 847.04,
+        "timeEnd": 853.459
+      },
+      "score": 0.6972177624702454
+    },
+    {
+      "id": "m_0161",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14016,
+        "charEnd": 14024,
+        "timeStart": 856.8,
+        "timeEnd": 860.579
+      },
+      "score": 0.5346221327781677
+    },
+    {
+      "id": "m_0162",
+      "label": "nationality_or_ethnicity",
+      "surface": "Americans",
+      "canonical": "Americans",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14189,
+        "charEnd": 14198,
+        "timeStart": 865.079,
+        "timeEnd": 869.519
+      },
+      "score": 0.7858172655105591
+    },
+    {
+      "id": "m_0163",
+      "label": "person",
+      "surface": "katya",
+      "canonical": "katya",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14247,
+        "charEnd": 14252,
+        "timeStart": 869.519,
+        "timeEnd": 874.62
+      },
+      "score": 0.8953232169151306
+    },
+    {
+      "id": "m_0164",
+      "label": "person",
+      "surface": "Donna Luisa",
+      "canonical": "Donna Luisa",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14262,
+        "charEnd": 14273,
+        "timeStart": 869.519,
+        "timeEnd": 874.62
+      },
+      "score": 0.8989588022232056
+    },
+    {
+      "id": "m_0165",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreigners",
+      "canonical": "foreigners",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14369,
+        "charEnd": 14379,
+        "timeStart": 876.779,
+        "timeEnd": 881.399
+      },
+      "score": 0.89243483543396
+    },
+    {
+      "id": "m_0166",
+      "label": "quantity",
+      "surface": "tens of thousands of dollars",
+      "canonical": "tens of thousands of dollars",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14580,
+        "charEnd": 14608,
+        "timeStart": 889.26,
+        "timeEnd": 894.12
+      },
+      "score": 0.8572351336479187
+    },
+    {
+      "id": "m_0167",
+      "label": "person",
+      "surface": "Donald",
+      "canonical": "Donald",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14843,
+        "charEnd": 14849,
+        "timeStart": 903.3,
+        "timeEnd": 907.5
+      },
+      "score": 0.8354924321174622
+    },
+    {
+      "id": "m_0168",
+      "label": "person",
+      "surface": "Louisa",
+      "canonical": "Louisa",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 14850,
+        "charEnd": 14856,
+        "timeStart": 905.22,
+        "timeEnd": 909
+      },
+      "score": 0.9670175313949585
+    },
+    {
+      "id": "m_0169",
+      "label": "person",
+      "surface": "Donna",
+      "canonical": "Donna",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15038,
+        "charEnd": 15043,
+        "timeStart": 916.38,
+        "timeEnd": 920.22
+      },
+      "score": 0.6303334832191467
+    },
+    {
+      "id": "m_0170",
+      "label": "person",
+      "surface": "Luisa",
+      "canonical": "Luisa",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15044,
+        "charEnd": 15049,
+        "timeStart": 916.38,
+        "timeEnd": 920.22
+      },
+      "score": 0.7267032861709595
+    },
+    {
+      "id": "m_0171",
+      "label": "location",
+      "surface": "house",
+      "canonical": "house",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15109,
+        "charEnd": 15114,
+        "timeStart": 918.3,
+        "timeEnd": 922.5
+      },
+      "score": 0.6818456649780273
+    },
+    {
+      "id": "m_0172",
+      "label": "organization",
+      "surface": "police",
+      "canonical": "police",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15137,
+        "charEnd": 15143,
+        "timeStart": 920.22,
+        "timeEnd": 924.6
+      },
+      "score": 0.5262972712516785
+    },
+    {
+      "id": "m_0173",
+      "label": "date_time",
+      "surface": "evening",
+      "canonical": "evening",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15277,
+        "charEnd": 15284,
+        "timeStart": 929.1,
+        "timeEnd": 932.76
+      },
+      "score": 0.6720395088195801
+    },
+    {
+      "id": "m_0174",
+      "label": "event",
+      "surface": "the aliens were\ncaptured",
+      "canonical": "the aliens were\ncaptured",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15285,
+        "charEnd": 15309,
+        "timeStart": 929.1,
+        "timeEnd": 935.88
+      },
+      "score": 0.6750699281692505
+    },
+    {
+      "id": "m_0175",
+      "label": "quantity",
+      "surface": "the\nsize of a bus",
+      "canonical": "the\nsize of a bus",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15335,
+        "charEnd": 15352,
+        "timeStart": 930.779,
+        "timeEnd": 937.5
+      },
+      "score": 0.6246669888496399
+    },
+    {
+      "id": "m_0176",
+      "label": "location",
+      "surface": "house",
+      "canonical": "house",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15422,
+        "charEnd": 15427,
+        "timeStart": 937.5,
+        "timeEnd": 941.579
+      },
+      "score": 0.5471231937408447
+    },
+    {
+      "id": "m_0177",
+      "label": "organization",
+      "surface": "family",
+      "canonical": "family",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15687,
+        "charEnd": 15693,
+        "timeStart": 952.199,
+        "timeEnd": 956.699
+      },
+      "score": 0.8680077791213989
+    },
+    {
+      "id": "m_0178",
+      "label": "organization",
+      "surface": "family",
+      "canonical": "family",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15883,
+        "charEnd": 15889,
+        "timeStart": 963.18,
+        "timeEnd": 967.4399999999999
+      },
+      "score": 0.8269519209861755
+    },
+    {
+      "id": "m_0179",
+      "label": "organization",
+      "surface": "family",
+      "canonical": "family",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 15910,
+        "charEnd": 15916,
+        "timeStart": 963.18,
+        "timeEnd": 967.4399999999999
+      },
+      "score": 0.8576961755752563
+    },
+    {
+      "id": "m_0180",
+      "label": "person",
+      "surface": "Eric Lopes",
+      "canonical": "Eric Lopes",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16024,
+        "charEnd": 16034,
+        "timeStart": 970.139,
+        "timeEnd": 974.88
+      },
+      "score": 0.9830545783042908
+    },
+    {
+      "id": "m_0181",
+      "label": "person",
+      "surface": "Marco Shiraz",
+      "canonical": "Marco Shiraz",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16057,
+        "charEnd": 16069,
+        "timeStart": 972.18,
+        "timeEnd": 976.92
+      },
+      "score": 0.9562739133834839
+    },
+    {
+      "id": "m_0182",
+      "label": "role",
+      "surface": "military policeman",
+      "canonical": "military\npoliceman",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16080,
+        "charEnd": 16098,
+        "timeStart": 974.88,
+        "timeEnd": 979.139
+      },
+      "score": 0.6668092012405396
+    },
+    {
+      "id": "m_0183",
+      "label": "technology",
+      "surface": "alien",
+      "canonical": "alien",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16219,
+        "charEnd": 16224,
+        "timeStart": 981.36,
+        "timeEnd": 985.26
+      },
+      "score": 0.5025028586387634
+    },
+    {
+      "id": "m_0184",
+      "label": "location",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16281,
+        "charEnd": 16289,
+        "timeStart": 985.26,
+        "timeEnd": 990.48
+      },
+      "score": 0.6715428829193115
+    },
+    {
+      "id": "m_0185",
+      "label": "person",
+      "surface": "James Fox",
+      "canonical": "James Fox",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16375,
+        "charEnd": 16384,
+        "timeStart": 990.48,
+        "timeEnd": 994.74
+      },
+      "score": 0.8494659662246704
+    },
+    {
+      "id": "m_0186",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16534,
+        "charEnd": 16542,
+        "timeStart": 1001.22,
+        "timeEnd": 1005.36
+      },
+      "score": 0.9892405867576599
+    },
+    {
+      "id": "m_0187",
+      "label": "event",
+      "surface": "UFO incident",
+      "canonical": "UFO incident",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16543,
+        "charEnd": 16555,
+        "timeStart": 1001.22,
+        "timeEnd": 1005.36
+      },
+      "score": 0.6858716607093811
+    },
+    {
+      "id": "m_0188",
+      "label": "nationality_or_ethnicity",
+      "surface": "Brazilian",
+      "canonical": "Brazilian",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16576,
+        "charEnd": 16585,
+        "timeStart": 1003.62,
+        "timeEnd": 1006.8
+      },
+      "score": 0.8827822208404541
+    },
+    {
+      "id": "m_0189",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16685,
+        "charEnd": 16693,
+        "timeStart": 1013.699,
+        "timeEnd": 1018.8
+      },
+      "score": 0.9932560920715332
+    },
+    {
+      "id": "m_0190",
+      "label": "event",
+      "surface": "UFO incident",
+      "canonical": "UFO incident",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16694,
+        "charEnd": 16706,
+        "timeStart": 1013.699,
+        "timeEnd": 1018.8
+      },
+      "score": 0.7550058364868164
+    },
+    {
+      "id": "m_0191",
+      "label": "date_time",
+      "surface": "1996",
+      "canonical": "1996",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16737,
+        "charEnd": 16741,
+        "timeStart": 1016.279,
+        "timeEnd": 1020.6
+      },
+      "score": 0.9796822667121887
+    },
+    {
+      "id": "m_0192",
+      "label": "work_of_media",
+      "surface": "documentary",
+      "canonical": "documentary",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 16753,
+        "charEnd": 16764,
+        "timeStart": 1018.8,
+        "timeEnd": 1022.579
+      },
+      "score": 0.8340070247650146
+    },
+    {
+      "id": "m_0193",
+      "label": "organization",
+      "surface": "witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17166,
+        "charEnd": 17175,
+        "timeStart": 1042.919,
+        "timeEnd": 1046.3390000000002
+      },
+      "score": 0.9593925476074219
+    },
+    {
+      "id": "m_0194",
+      "label": "organization",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17278,
+        "charEnd": 17287,
+        "timeStart": 1048.679,
+        "timeEnd": 1053.1200000000001
+      },
+      "score": 0.9598410725593567
+    },
+    {
+      "id": "m_0195",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17375,
+        "charEnd": 17380,
+        "timeStart": 1053.12,
+        "timeEnd": 1056.8999999999999
+      },
+      "score": 0.949526846408844
+    },
+    {
+      "id": "m_0196",
+      "label": "quantity",
+      "surface": "two hundred dollars",
+      "canonical": "two hundred dollars",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17454,
+        "charEnd": 17473,
+        "timeStart": 1056.9,
+        "timeEnd": 1060.98
+      },
+      "score": 0.5230134129524231
+    },
+    {
+      "id": "m_0197",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17514,
+        "charEnd": 17519,
+        "timeStart": 1060.98,
+        "timeEnd": 1066.02
+      },
+      "score": 0.9613749384880066
+    },
+    {
+      "id": "m_0198",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17561,
+        "charEnd": 17569,
+        "timeStart": 1063.44,
+        "timeEnd": 1068.24
+      },
+      "score": 0.9030854105949402
+    },
+    {
+      "id": "m_0199",
+      "label": "event",
+      "surface": "UFO incident",
+      "canonical": "UFO incident",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17570,
+        "charEnd": 17582,
+        "timeStart": 1063.44,
+        "timeEnd": 1068.24
+      },
+      "score": 0.8259069323539734
+    },
+    {
+      "id": "m_0200",
+      "label": "organization",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17691,
+        "charEnd": 17700,
+        "timeStart": 1070.52,
+        "timeEnd": 1074.24
+      },
+      "score": 0.9577988386154175
+    },
+    {
+      "id": "m_0201",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17777,
+        "charEnd": 17782,
+        "timeStart": 1075.799,
+        "timeEnd": 1080.36
+      },
+      "score": 0.9684965014457703
+    },
+    {
+      "id": "m_0202",
+      "label": "organization",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 17798,
+        "charEnd": 17807,
+        "timeStart": 1075.799,
+        "timeEnd": 1080.36
+      },
+      "score": 0.9531317949295044
+    },
+    {
+      "id": "m_0203",
+      "label": "person",
+      "surface": "mudino",
+      "canonical": "mudino",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18365,
+        "charEnd": 18371,
+        "timeStart": 1107.539,
+        "timeEnd": 1113.12
+      },
+      "score": 0.8691951036453247
+    },
+    {
+      "id": "m_0204",
+      "label": "person",
+      "surface": "mudino",
+      "canonical": "mudino",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18372,
+        "charEnd": 18378,
+        "timeStart": 1107.539,
+        "timeEnd": 1113.12
+      },
+      "score": 0.8115230798721313
+    },
+    {
+      "id": "m_0205",
+      "label": "person",
+      "surface": "Luis Antonio de Paula",
+      "canonical": "Luis Antonio de Paula",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18414,
+        "charEnd": 18435,
+        "timeStart": 1110.419,
+        "timeEnd": 1114.7990000000002
+      },
+      "score": 0.9249258041381836
+    },
+    {
+      "id": "m_0206",
+      "label": "event",
+      "surface": "major storm",
+      "canonical": "major storm",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18717,
+        "charEnd": 18728,
+        "timeStart": 1127.46,
+        "timeEnd": 1131.9
+      },
+      "score": 0.7731217741966248
+    },
+    {
+      "id": "m_0207",
+      "label": "location",
+      "surface": "Town",
+      "canonical": "town",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18795,
+        "charEnd": 18799,
+        "timeStart": 1131.9,
+        "timeEnd": 1135.98
+      },
+      "score": 0.6453202366828918
+    },
+    {
+      "id": "m_0208",
+      "label": "person",
+      "surface": "modinio",
+      "canonical": "modinio",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18830,
+        "charEnd": 18837,
+        "timeStart": 1133.58,
+        "timeEnd": 1137.8999999999999
+      },
+      "score": 0.953156054019928
+    },
+    {
+      "id": "m_0209",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18901,
+        "charEnd": 18906,
+        "timeStart": 1137.9,
+        "timeEnd": 1141.26
+      },
+      "score": 0.8215023875236511
+    },
+    {
+      "id": "m_0210",
+      "label": "person",
+      "surface": "girls",
+      "canonical": "girls",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 18915,
+        "charEnd": 18920,
+        "timeStart": 1137.9,
+        "timeEnd": 1141.26
+      },
+      "score": 0.8534398674964905
+    },
+    {
+      "id": "m_0211",
+      "label": "date_time",
+      "surface": "1996",
+      "canonical": "1996",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19387,
+        "charEnd": 19391,
+        "timeStart": 1161.96,
+        "timeEnd": 1168.14
+      },
+      "score": 0.9490861296653748
+    },
+    {
+      "id": "m_0212",
+      "label": "person",
+      "surface": "people",
+      "canonical": "people",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19419,
+        "charEnd": 19425,
+        "timeStart": 1165.679,
+        "timeEnd": 1170.48
+      },
+      "score": 0.5140526294708252
+    },
+    {
+      "id": "m_0213",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19568,
+        "charEnd": 19573,
+        "timeStart": 1175.46,
+        "timeEnd": 1179.299
+      },
+      "score": 0.8509058952331543
+    },
+    {
+      "id": "m_0214",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19584,
+        "charEnd": 19589,
+        "timeStart": 1177.26,
+        "timeEnd": 1181.28
+      },
+      "score": 0.9029234051704407
+    },
+    {
+      "id": "m_0215",
+      "label": "person",
+      "surface": "katya",
+      "canonical": "katya",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19669,
+        "charEnd": 19674,
+        "timeStart": 1181.28,
+        "timeEnd": 1184.6399999999999
+      },
+      "score": 0.9303523898124695
+    },
+    {
+      "id": "m_0216",
+      "label": "person",
+      "surface": "mother",
+      "canonical": "mother",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19677,
+        "charEnd": 19683,
+        "timeStart": 1181.28,
+        "timeEnd": 1184.6399999999999
+      },
+      "score": 0.8707871437072754
+    },
+    {
+      "id": "m_0217",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19699,
+        "charEnd": 19704,
+        "timeStart": 1183.08,
+        "timeEnd": 1186.1399999999999
+      },
+      "score": 0.8546614646911621
+    },
+    {
+      "id": "m_0218",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19777,
+        "charEnd": 19782,
+        "timeStart": 1186.14,
+        "timeEnd": 1189.5
+      },
+      "score": 0.8921651840209961
+    },
+    {
+      "id": "m_0219",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19836,
+        "charEnd": 19841,
+        "timeStart": 1189.5,
+        "timeEnd": 1193.46
+      },
+      "score": 0.8550577163696289
+    },
+    {
+      "id": "m_0220",
+      "label": "organization",
+      "surface": "Men in\nBlack",
+      "canonical": "Men in\nBlack",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 19958,
+        "charEnd": 19970,
+        "timeStart": 1195.799,
+        "timeEnd": 1201.6200000000001
+      },
+      "score": 0.8844566345214844
+    },
+    {
+      "id": "m_0221",
+      "label": "technology",
+      "surface": "UFO",
+      "canonical": "UFO",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 20352,
+        "charEnd": 20355,
+        "timeStart": 1218.24,
+        "timeEnd": 1222.6200000000001
+      },
+      "score": 0.7507516741752625
+    },
+    {
+      "id": "m_0222",
+      "label": "location",
+      "surface": "Farm",
+      "canonical": "Farm",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 20367,
+        "charEnd": 20371,
+        "timeStart": 1218.24,
+        "timeEnd": 1222.6200000000001
+      },
+      "score": 0.7292553186416626
+    },
+    {
+      "id": "m_0223",
+      "label": "technology",
+      "surface": "UFO",
+      "canonical": "UFO",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 20470,
+        "charEnd": 20473,
+        "timeStart": 1224.6,
+        "timeEnd": 1229.1
+      },
+      "score": 0.7443095445632935
+    },
+    {
+      "id": "m_0224",
+      "label": "event",
+      "surface": "JFK assassination",
+      "canonical": "JFK assassination",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 20677,
+        "charEnd": 20694,
+        "timeStart": 1235.82,
+        "timeEnd": 1240.559
+      },
+      "score": 0.6949102282524109
+    },
+    {
+      "id": "m_0225",
+      "label": "event",
+      "surface": "911 attack",
+      "canonical": "911 attack",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 20702,
+        "charEnd": 20712,
+        "timeStart": 1237.86,
+        "timeEnd": 1241.82
+      },
+      "score": 0.8714931607246399
+    },
+    {
+      "id": "m_0226",
+      "label": "person",
+      "surface": "Marco shirez",
+      "canonical": "Marco shirez",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 20904,
+        "charEnd": 20916,
+        "timeStart": 1248.72,
+        "timeEnd": 1253.16
+      },
+      "score": 0.9584389925003052
+    },
+    {
+      "id": "m_0227",
+      "label": "person",
+      "surface": "Marco",
+      "canonical": "Marco",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21151,
+        "charEnd": 21156,
+        "timeStart": 1262.22,
+        "timeEnd": 1266.419
+      },
+      "score": 0.9929535984992981
+    },
+    {
+      "id": "m_0228",
+      "label": "organization",
+      "surface": "Brazilian military",
+      "canonical": "Brazilian military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21395,
+        "charEnd": 21413,
+        "timeStart": 1276.74,
+        "timeEnd": 1281.179
+      },
+      "score": 0.9246708154678345
+    },
+    {
+      "id": "m_0229",
+      "label": "person",
+      "surface": "Marco",
+      "canonical": "Marco",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21508,
+        "charEnd": 21513,
+        "timeStart": 1281.179,
+        "timeEnd": 1286.16
+      },
+      "score": 0.9935321807861328
+    },
+    {
+      "id": "m_0230",
+      "label": "event",
+      "surface": "training exercise",
+      "canonical": "training exercise",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21619,
+        "charEnd": 21636,
+        "timeStart": 1289.94,
+        "timeEnd": 1294.8600000000001
+      },
+      "score": 0.821250855922699
+    },
+    {
+      "id": "m_0231",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21642,
+        "charEnd": 21646,
+        "timeStart": 1289.94,
+        "timeEnd": 1294.8600000000001
+      },
+      "score": 0.7346367239952087
+    },
+    {
+      "id": "m_0232",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21662,
+        "charEnd": 21666,
+        "timeStart": 1292.34,
+        "timeEnd": 1296.6
+      },
+      "score": 0.7528502941131592
+    },
+    {
+      "id": "m_0233",
+      "label": "event",
+      "surface": "schedule\nmaintenance",
+      "canonical": "schedule\nmaintenance",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21724,
+        "charEnd": 21744,
+        "timeStart": 1294.86,
+        "timeEnd": 1300.86
+      },
+      "score": 0.5021336674690247
+    },
+    {
+      "id": "m_0234",
+      "label": "location",
+      "surface": "the base",
+      "canonical": "the base",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21786,
+        "charEnd": 21794,
+        "timeStart": 1298.82,
+        "timeEnd": 1303.5
+      },
+      "score": 0.7912850379943848
+    },
+    {
+      "id": "m_0235",
+      "label": "facility",
+      "surface": "hospital Wing",
+      "canonical": "hospital Wing",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 21824,
+        "charEnd": 21837,
+        "timeStart": 1300.86,
+        "timeEnd": 1305.299
+      },
+      "score": 0.7376816272735596
+    },
+    {
+      "id": "m_0236",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22034,
+        "charEnd": 22042,
+        "timeStart": 1310.52,
+        "timeEnd": 1315.02
+      },
+      "score": 0.9777984023094177
+    },
+    {
+      "id": "m_0237",
+      "label": "organization",
+      "surface": "police",
+      "canonical": "police",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22106,
+        "charEnd": 22112,
+        "timeStart": 1315.02,
+        "timeEnd": 1318.3799999999999
+      },
+      "score": 0.725449800491333
+    },
+    {
+      "id": "m_0238",
+      "label": "person",
+      "surface": "dwarf couple",
+      "canonical": "dwarf couple",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22191,
+        "charEnd": 22203,
+        "timeStart": 1320.539,
+        "timeEnd": 1324.3799999999999
+      },
+      "score": 0.7898355722427368
+    },
+    {
+      "id": "m_0239",
+      "label": "person",
+      "surface": "soldier",
+      "canonical": "soldier",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22254,
+        "charEnd": 22261,
+        "timeStart": 1322.34,
+        "timeEnd": 1325.6999999999998
+      },
+      "score": 0.7453813552856445
+    },
+    {
+      "id": "m_0240",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22415,
+        "charEnd": 22423,
+        "timeStart": 1331.94,
+        "timeEnd": 1336.2
+      },
+      "score": 0.9802718758583069
+    },
+    {
+      "id": "m_0241",
+      "label": "person",
+      "surface": "General Lima",
+      "canonical": "General Lima",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22557,
+        "charEnd": 22569,
+        "timeStart": 1364.159,
+        "timeEnd": 1369.3200000000002
+      },
+      "score": 0.9480945467948914
+    },
+    {
+      "id": "m_0242",
+      "label": "organization",
+      "surface": "witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22773,
+        "charEnd": 22782,
+        "timeStart": 1375.32,
+        "timeEnd": 1379.34
+      },
+      "score": 0.7711930871009827
+    },
+    {
+      "id": "m_0243",
+      "label": "person",
+      "surface": "James Fox",
+      "canonical": "James Fox",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22887,
+        "charEnd": 22896,
+        "timeStart": 1381.26,
+        "timeEnd": 1386.12
+      },
+      "score": 0.9358187317848206
+    },
+    {
+      "id": "m_0244",
+      "label": "event",
+      "surface": "moment\nof contact",
+      "canonical": "moment\nof contact",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22899,
+        "charEnd": 22916,
+        "timeStart": 1381.26,
+        "timeEnd": 1388.5800000000002
+      },
+      "score": 0.6015315055847168
+    },
+    {
+      "id": "m_0245",
+      "label": "organization",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22929,
+        "charEnd": 22938,
+        "timeStart": 1383.9,
+        "timeEnd": 1388.5800000000002
+      },
+      "score": 0.8162827491760254
+    },
+    {
+      "id": "m_0246",
+      "label": "person",
+      "surface": "Marco de Souza",
+      "canonical": "Marco de Souza",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 22969,
+        "charEnd": 22983,
+        "timeStart": 1386.12,
+        "timeEnd": 1390.26
+      },
+      "score": 0.9464749097824097
+    },
+    {
+      "id": "m_0247",
+      "label": "technology",
+      "surface": "craft",
+      "canonical": "craft",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23006,
+        "charEnd": 23011,
+        "timeStart": 1388.58,
+        "timeEnd": 1392.78
+      },
+      "score": 0.6118640303611755
+    },
+    {
+      "id": "m_0248",
+      "label": "location",
+      "surface": "field",
+      "canonical": "field",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23019,
+        "charEnd": 23024,
+        "timeStart": 1388.58,
+        "timeEnd": 1392.78
+      },
+      "score": 0.5386686325073242
+    },
+    {
+      "id": "m_0249",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23133,
+        "charEnd": 23140,
+        "timeStart": 1435.5,
+        "timeEnd": 1441.34
+      },
+      "score": 0.5259263515472412
+    },
+    {
+      "id": "m_0250",
+      "label": "location",
+      "surface": "Brazil",
+      "canonical": "Brazil",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23165,
+        "charEnd": 23171,
+        "timeStart": 1441.34,
+        "timeEnd": 1445.58
+      },
+      "score": 0.7173640131950378
+    },
+    {
+      "id": "m_0251",
+      "label": "location",
+      "surface": "Hollywood",
+      "canonical": "Hollywood",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23184,
+        "charEnd": 23193,
+        "timeStart": 1443.419,
+        "timeEnd": 1447.74
+      },
+      "score": 0.7810802459716797
+    },
+    {
+      "id": "m_0252",
+      "label": "person",
+      "surface": "Fox",
+      "canonical": "Fox",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23194,
+        "charEnd": 23197,
+        "timeStart": 1443.419,
+        "timeEnd": 1447.74
+      },
+      "score": 0.5044859647750854
+    },
+    {
+      "id": "m_0253",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23279,
+        "charEnd": 23287,
+        "timeStart": 1447.74,
+        "timeEnd": 1452.1200000000001
+      },
+      "score": 0.7802250385284424
+    },
+    {
+      "id": "m_0254",
+      "label": "person",
+      "surface": "Eric Lopes",
+      "canonical": "Eric Lopes",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23744,
+        "charEnd": 23754,
+        "timeStart": 1471.799,
+        "timeEnd": 1476.6589999999999
+      },
+      "score": 0.9754348397254944
+    },
+    {
+      "id": "m_0255",
+      "label": "person",
+      "surface": "Marcos\nshirez",
+      "canonical": "Marcos\nshirez",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 23783,
+        "charEnd": 23796,
+        "timeStart": 1474.5,
+        "timeEnd": 1480.38
+      },
+      "score": 0.9446219801902771
+    },
+    {
+      "id": "m_0256",
+      "label": "organization",
+      "surface": "Army",
+      "canonical": "Army",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24151,
+        "charEnd": 24155,
+        "timeStart": 1495.559,
+        "timeEnd": 1499.52
+      },
+      "score": 0.7436622977256775
+    },
+    {
+      "id": "m_0257",
+      "label": "person",
+      "surface": "Eric Lopes",
+      "canonical": "Eric Lopes",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24207,
+        "charEnd": 24217,
+        "timeStart": 1499.52,
+        "timeEnd": 1504.559
+      },
+      "score": 0.9871273040771484
+    },
+    {
+      "id": "m_0258",
+      "label": "quantity",
+      "surface": "100",
+      "canonical": "100",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24287,
+        "charEnd": 24290,
+        "timeStart": 1504.559,
+        "timeEnd": 1510.32
+      },
+      "score": 0.7046465873718262
+    },
+    {
+      "id": "m_0259",
+      "label": "organization",
+      "surface": "Brazilian military",
+      "canonical": "Brazilian military",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24358,
+        "charEnd": 24376,
+        "timeStart": 1510.32,
+        "timeEnd": 1513.799
+      },
+      "score": 0.849644660949707
+    },
+    {
+      "id": "m_0260",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24381,
+        "charEnd": 24391,
+        "timeStart": 1511.76,
+        "timeEnd": 1515.48
+      },
+      "score": 0.8587194681167603
+    },
+    {
+      "id": "m_0261",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24429,
+        "charEnd": 24439,
+        "timeStart": 1513.799,
+        "timeEnd": 1518.36
+      },
+      "score": 0.8908182382583618
+    },
+    {
+      "id": "m_0262",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24460,
+        "charEnd": 24473,
+        "timeStart": 1515.48,
+        "timeEnd": 1521.08
+      },
+      "score": 0.8258982300758362
+    },
+    {
+      "id": "m_0263",
+      "label": "event",
+      "surface": "cover-up",
+      "canonical": "cover-up",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24479,
+        "charEnd": 24487,
+        "timeStart": 1515.48,
+        "timeEnd": 1521.08
+      },
+      "score": 0.57270747423172
+    },
+    {
+      "id": "m_0264",
+      "label": "person",
+      "surface": "AJ",
+      "canonical": "AJ",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24583,
+        "charEnd": 24585,
+        "timeStart": 1525.86,
+        "timeEnd": 1530.539
+      },
+      "score": 0.6790252327919006
+    },
+    {
+      "id": "m_0265",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 24972,
+        "charEnd": 24979,
+        "timeStart": 1546.98,
+        "timeEnd": 1551.48
+      },
+      "score": 0.907784640789032
+    },
+    {
+      "id": "m_0266",
+      "label": "event",
+      "surface": "Wipeout",
+      "canonical": "Wipeout",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25006,
+        "charEnd": 25013,
+        "timeStart": 1549.08,
+        "timeEnd": 1553.46
+      },
+      "score": 0.9594931602478027
+    },
+    {
+      "id": "m_0267",
+      "label": "organization",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25106,
+        "charEnd": 25113,
+        "timeStart": 1555.26,
+        "timeEnd": 1559.279
+      },
+      "score": 0.7385659217834473
+    },
+    {
+      "id": "m_0268",
+      "label": "organization",
+      "surface": "Discord",
+      "canonical": "Discord",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25114,
+        "charEnd": 25121,
+        "timeStart": 1555.26,
+        "timeEnd": 1559.279
+      },
+      "score": 0.502335250377655
+    },
+    {
+      "id": "m_0269",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25203,
+        "charEnd": 25210,
+        "timeStart": 1559.279,
+        "timeEnd": 1562.76
+      },
+      "score": 0.9118229746818542
+    },
+    {
+      "id": "m_0270",
+      "label": "quantity",
+      "surface": "three dollars",
+      "canonical": "three dollars",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25244,
+        "charEnd": 25257,
+        "timeStart": 1561.08,
+        "timeEnd": 1564.62
+      },
+      "score": 0.6855761408805847
+    },
+    {
+      "id": "m_0271",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25532,
+        "charEnd": 25537,
+        "timeStart": 1580.33,
+        "timeEnd": 1592.519
+      },
+      "score": 0.7926530838012695
+    },
+    {
+      "id": "m_0272",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25539,
+        "charEnd": 25546,
+        "timeStart": 1595.1,
+        "timeEnd": 1598.1
+      },
+      "score": 0.9945241212844849
+    },
+    {
+      "id": "m_0273",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25548,
+        "charEnd": 25553,
+        "timeStart": 1600.56,
+        "timeEnd": 1630.259
+      },
+      "score": 0.8021826148033142
+    },
+    {
+      "id": "m_0274",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25555,
+        "charEnd": 25562,
+        "timeStart": 1632.9,
+        "timeEnd": 1635.9
+      },
+      "score": 0.9950758814811707
+    },
+    {
+      "id": "m_0275",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25564,
+        "charEnd": 25569,
+        "timeStart": 1638.31,
+        "timeEnd": 1667.329
+      },
+      "score": 0.7665408849716187
+    },
+    {
+      "id": "m_0276",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "E76kpPjxMcw",
+        "charStart": 25571,
+        "charEnd": 25578,
+        "timeStart": 1668.179,
+        "timeEnd": 1671.179
+      },
+      "score": 0.9974877834320068
+    }
+  ]
+}

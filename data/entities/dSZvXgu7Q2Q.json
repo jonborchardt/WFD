@@ -1,0 +1,2952 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "dSZvXgu7Q2Q",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T11:43:53.840Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "location",
+      "surface": "new york city",
+      "canonical": "new york city",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8,
+        "charEnd": 21,
+        "timeStart": 1.36,
+        "timeEnd": 4.72
+      },
+      "score": 0.957280158996582
+    },
+    {
+      "id": "m_0002",
+      "label": "quantity",
+      "surface": "500 foot",
+      "canonical": "500 foot",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 80,
+        "charEnd": 88,
+        "timeStart": 4.72,
+        "timeEnd": 9.36
+      },
+      "score": 0.6024354696273804
+    },
+    {
+      "id": "m_0003",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 192,
+        "charEnd": 195,
+        "timeStart": 12.24,
+        "timeEnd": 14.799
+      },
+      "score": 0.8116015195846558
+    },
+    {
+      "id": "m_0004",
+      "label": "event",
+      "surface": "nuclear war",
+      "canonical": "nuclear war",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 227,
+        "charEnd": 238,
+        "timeStart": 14.799,
+        "timeEnd": 30.049999999999997
+      },
+      "score": 0.8397765159606934
+    },
+    {
+      "id": "m_0005",
+      "label": "location",
+      "surface": "new york city",
+      "canonical": "new york city",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 277,
+        "charEnd": 290,
+        "timeStart": 38.32,
+        "timeEnd": 42.64
+      },
+      "score": 0.9649458527565002
+    },
+    {
+      "id": "m_0006",
+      "label": "ideology",
+      "surface": "brutalism",
+      "canonical": "brutalism",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 406,
+        "charEnd": 415,
+        "timeStart": 45.2,
+        "timeEnd": 48.800000000000004
+      },
+      "score": 0.881723940372467
+    },
+    {
+      "id": "m_0007",
+      "label": "ideology",
+      "surface": "minimalism",
+      "canonical": "minimalism",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 491,
+        "charEnd": 501,
+        "timeStart": 50.64,
+        "timeEnd": 53.6
+      },
+      "score": 0.9391624331474304
+    },
+    {
+      "id": "m_0008",
+      "label": "location",
+      "surface": "33 thomas\nstreet",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 637,
+        "charEnd": 653,
+        "timeStart": 56.079,
+        "timeEnd": 61.44
+      },
+      "score": 0.9423592686653137
+    },
+    {
+      "id": "m_0009",
+      "label": "quantity",
+      "surface": "500 foot",
+      "canonical": "500 foot",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 665,
+        "charEnd": 673,
+        "timeStart": 59.12,
+        "timeEnd": 62.959999999999994
+      },
+      "score": 0.6774765253067017
+    },
+    {
+      "id": "m_0010",
+      "label": "location",
+      "surface": "33 thomas street",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 740,
+        "charEnd": 756,
+        "timeStart": 62.96,
+        "timeEnd": 67.28
+      },
+      "score": 0.9556831121444702
+    },
+    {
+      "id": "m_0011",
+      "label": "location",
+      "surface": "33 thomas street",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 880,
+        "charEnd": 896,
+        "timeStart": 74.72,
+        "timeEnd": 79.759
+      },
+      "score": 0.8960086703300476
+    },
+    {
+      "id": "m_0012",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 922,
+        "charEnd": 925,
+        "timeStart": 76.799,
+        "timeEnd": 82.96000000000001
+      },
+      "score": 0.8477733731269836
+    },
+    {
+      "id": "m_0013",
+      "label": "facility",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 965,
+        "charEnd": 976,
+        "timeStart": 79.759,
+        "timeEnd": 84.64
+      },
+      "score": 0.9309309720993042
+    },
+    {
+      "id": "m_0014",
+      "label": "facility",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1003,
+        "charEnd": 1014,
+        "timeStart": 84.64,
+        "timeEnd": 89.43900000000001
+      },
+      "score": 0.9547185897827148
+    },
+    {
+      "id": "m_0015",
+      "label": "event",
+      "surface": "cold war",
+      "canonical": "cold war",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1060,
+        "charEnd": 1068,
+        "timeStart": 87.92,
+        "timeEnd": 90.96000000000001
+      },
+      "score": 0.7701708674430847
+    },
+    {
+      "id": "m_0016",
+      "label": "event",
+      "surface": "nuclear war",
+      "canonical": "nuclear war",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1086,
+        "charEnd": 1097,
+        "timeStart": 89.439,
+        "timeEnd": 92.55999999999999
+      },
+      "score": 0.8264980316162109
+    },
+    {
+      "id": "m_0017",
+      "label": "facility",
+      "surface": "project x",
+      "canonical": "project x",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1194,
+        "charEnd": 1203,
+        "timeStart": 96.56,
+        "timeEnd": 101.28
+      },
+      "score": 0.7360826730728149
+    },
+    {
+      "id": "m_0018",
+      "label": "facility",
+      "surface": "project x",
+      "canonical": "project x",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1204,
+        "charEnd": 1213,
+        "timeStart": 96.56,
+        "timeEnd": 101.28
+      },
+      "score": 0.6227496862411499
+    },
+    {
+      "id": "m_0019",
+      "label": "facility",
+      "surface": "project x",
+      "canonical": "project x",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1306,
+        "charEnd": 1315,
+        "timeStart": 103.6,
+        "timeEnd": 106.479
+      },
+      "score": 0.7219415307044983
+    },
+    {
+      "id": "m_0020",
+      "label": "facility",
+      "surface": "skyscraper",
+      "canonical": "skyscraper",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1331,
+        "charEnd": 1341,
+        "timeStart": 104.72,
+        "timeEnd": 108.56
+      },
+      "score": 0.598844587802887
+    },
+    {
+      "id": "m_0021",
+      "label": "location",
+      "surface": "new york city",
+      "canonical": "new york city",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1359,
+        "charEnd": 1372,
+        "timeStart": 106.479,
+        "timeEnd": 110.479
+      },
+      "score": 0.9145646095275879
+    },
+    {
+      "id": "m_0022",
+      "label": "quantity",
+      "surface": "29 floors",
+      "canonical": "29 floors",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1435,
+        "charEnd": 1444,
+        "timeStart": 110.479,
+        "timeEnd": 113.52
+      },
+      "score": 0.8422303795814514
+    },
+    {
+      "id": "m_0023",
+      "label": "quantity",
+      "surface": "three basement levels",
+      "canonical": "three basement levels",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1461,
+        "charEnd": 1482,
+        "timeStart": 113.52,
+        "timeEnd": 116.56
+      },
+      "score": 0.8276492357254028
+    },
+    {
+      "id": "m_0024",
+      "label": "quantity",
+      "surface": "1500 people",
+      "canonical": "1500 people",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1507,
+        "charEnd": 1518,
+        "timeStart": 116.56,
+        "timeEnd": 121.43900000000001
+      },
+      "score": 0.6802273392677307
+    },
+    {
+      "id": "m_0025",
+      "label": "quantity",
+      "surface": "two weeks",
+      "canonical": "two weeks",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1519,
+        "charEnd": 1528,
+        "timeStart": 116.56,
+        "timeEnd": 121.43900000000001
+      },
+      "score": 0.6183944940567017
+    },
+    {
+      "id": "m_0026",
+      "label": "organization",
+      "surface": "at t",
+      "canonical": "at t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1679,
+        "charEnd": 1683,
+        "timeStart": 126.399,
+        "timeEnd": 131.84
+      },
+      "score": 0.9656467437744141
+    },
+    {
+      "id": "m_0027",
+      "label": "person",
+      "surface": "edward snowden",
+      "canonical": "edward snowden",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1761,
+        "charEnd": 1775,
+        "timeStart": 131.84,
+        "timeEnd": 135.92000000000002
+      },
+      "score": 0.9480912685394287
+    },
+    {
+      "id": "m_0028",
+      "label": "organization",
+      "surface": "u.s\ngovernment",
+      "canonical": "u.s\ngovernment",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1827,
+        "charEnd": 1841,
+        "timeStart": 135.92,
+        "timeEnd": 140.4
+      },
+      "score": 0.7364270687103271
+    },
+    {
+      "id": "m_0029",
+      "label": "organization",
+      "surface": "telecommunications giant",
+      "canonical": "telecommunications giant",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1951,
+        "charEnd": 1975,
+        "timeStart": 143.959,
+        "timeEnd": 149.36
+      },
+      "score": 0.5690404772758484
+    },
+    {
+      "id": "m_0030",
+      "label": "organization",
+      "surface": "a t",
+      "canonical": "a t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 1976,
+        "charEnd": 1979,
+        "timeStart": 143.959,
+        "timeEnd": 149.36
+      },
+      "score": 0.9491912722587585
+    },
+    {
+      "id": "m_0031",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2033,
+        "charEnd": 2036,
+        "timeStart": 149.36,
+        "timeEnd": 153.76000000000002
+      },
+      "score": 0.9038602113723755
+    },
+    {
+      "id": "m_0032",
+      "label": "person",
+      "surface": "john karl\nwarnicky",
+      "canonical": "john karl\nwarnicky",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2066,
+        "charEnd": 2084,
+        "timeStart": 152.08,
+        "timeEnd": 158.48
+      },
+      "score": 0.9389899969100952
+    },
+    {
+      "id": "m_0033",
+      "label": "date_time",
+      "surface": "1969",
+      "canonical": "1969",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2111,
+        "charEnd": 2115,
+        "timeStart": 153.76,
+        "timeEnd": 158.48
+      },
+      "score": 0.94049072265625
+    },
+    {
+      "id": "m_0034",
+      "label": "date_time",
+      "surface": "1974",
+      "canonical": "1974",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2137,
+        "charEnd": 2141,
+        "timeStart": 156.48,
+        "timeEnd": 161.04
+      },
+      "score": 0.9463586211204529
+    },
+    {
+      "id": "m_0035",
+      "label": "facility",
+      "surface": "gray granite tower",
+      "canonical": "gray granite tower",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2147,
+        "charEnd": 2165,
+        "timeStart": 158.48,
+        "timeEnd": 162.48
+      },
+      "score": 0.6376002430915833
+    },
+    {
+      "id": "m_0036",
+      "label": "location",
+      "surface": "33\nthomas street",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2180,
+        "charEnd": 2196,
+        "timeStart": 158.48,
+        "timeEnd": 164.48
+      },
+      "score": 0.9449086785316467
+    },
+    {
+      "id": "m_0037",
+      "label": "location",
+      "surface": "lower manhattan",
+      "canonical": "lower manhattan",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2200,
+        "charEnd": 2215,
+        "timeStart": 161.04,
+        "timeEnd": 164.48
+      },
+      "score": 0.9671803712844849
+    },
+    {
+      "id": "m_0038",
+      "label": "facility",
+      "surface": "long\nlines building",
+      "canonical": "long\nlines building",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2252,
+        "charEnd": 2271,
+        "timeStart": 162.48,
+        "timeEnd": 167.44
+      },
+      "score": 0.5187699198722839
+    },
+    {
+      "id": "m_0039",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2530,
+        "charEnd": 2533,
+        "timeStart": 178.72,
+        "timeEnd": 181.76
+      },
+      "score": 0.8877764940261841
+    },
+    {
+      "id": "m_0040",
+      "label": "person",
+      "surface": "edward snowden",
+      "canonical": "edward snowden",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2554,
+        "charEnd": 2568,
+        "timeStart": 180.72,
+        "timeEnd": 183.76
+      },
+      "score": 0.9801878929138184
+    },
+    {
+      "id": "m_0041",
+      "label": "quantity",
+      "surface": "hundreds of millions",
+      "canonical": "hundreds of millions",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2754,
+        "charEnd": 2774,
+        "timeStart": 202.959,
+        "timeEnd": 207.04
+      },
+      "score": 0.9036951661109924
+    },
+    {
+      "id": "m_0042",
+      "label": "location",
+      "surface": "33 thomas street",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2811,
+        "charEnd": 2827,
+        "timeStart": 204.799,
+        "timeEnd": 209.28
+      },
+      "score": 0.9863870143890381
+    },
+    {
+      "id": "m_0043",
+      "label": "location",
+      "surface": "33 thomas street",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2842,
+        "charEnd": 2858,
+        "timeStart": 207.04,
+        "timeEnd": 210.879
+      },
+      "score": 0.9899864792823792
+    },
+    {
+      "id": "m_0044",
+      "label": "organization",
+      "surface": "national security agency",
+      "canonical": "national security agency",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2936,
+        "charEnd": 2960,
+        "timeStart": 212.56,
+        "timeEnd": 215.599
+      },
+      "score": 0.7515303492546082
+    },
+    {
+      "id": "m_0045",
+      "label": "facility",
+      "surface": "secret monitoring hub",
+      "canonical": "secret monitoring hub",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 2994,
+        "charEnd": 3015,
+        "timeStart": 215.599,
+        "timeEnd": 220.39999999999998
+      },
+      "score": 0.8292168378829956
+    },
+    {
+      "id": "m_0046",
+      "label": "location",
+      "surface": "33 thomas street",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3077,
+        "charEnd": 3093,
+        "timeStart": 220.4,
+        "timeEnd": 226.239
+      },
+      "score": 0.9882537126541138
+    },
+    {
+      "id": "m_0047",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3109,
+        "charEnd": 3112,
+        "timeStart": 223.599,
+        "timeEnd": 228.39999999999998
+      },
+      "score": 0.9936708211898804
+    },
+    {
+      "id": "m_0048",
+      "label": "location",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3123,
+        "charEnd": 3134,
+        "timeStart": 223.599,
+        "timeEnd": 228.39999999999998
+      },
+      "score": 0.865118682384491
+    },
+    {
+      "id": "m_0049",
+      "label": "location",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3139,
+        "charEnd": 3150,
+        "timeStart": 226.239,
+        "timeEnd": 229.68
+      },
+      "score": 0.8800995349884033
+    },
+    {
+      "id": "m_0050",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3214,
+        "charEnd": 3217,
+        "timeStart": 229.68,
+        "timeEnd": 233.28
+      },
+      "score": 0.992749035358429
+    },
+    {
+      "id": "m_0051",
+      "label": "event",
+      "surface": "mass\nsurveillance",
+      "canonical": "mass\nsurveillance",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3228,
+        "charEnd": 3245,
+        "timeStart": 229.68,
+        "timeEnd": 234.959
+      },
+      "score": 0.5346939563751221
+    },
+    {
+      "id": "m_0052",
+      "label": "organization",
+      "surface": "un",
+      "canonical": "un",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3328,
+        "charEnd": 3330,
+        "timeStart": 236.799,
+        "timeEnd": 240.239
+      },
+      "score": 0.8621554374694824
+    },
+    {
+      "id": "m_0053",
+      "label": "organization",
+      "surface": "world bank",
+      "canonical": "world bank",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3335,
+        "charEnd": 3345,
+        "timeStart": 237.519,
+        "timeEnd": 242.31900000000002
+      },
+      "score": 0.574231743812561
+    },
+    {
+      "id": "m_0054",
+      "label": "organization",
+      "surface": "imf",
+      "canonical": "imf",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3350,
+        "charEnd": 3353,
+        "timeStart": 237.519,
+        "timeEnd": 242.31900000000002
+      },
+      "score": 0.941325306892395
+    },
+    {
+      "id": "m_0055",
+      "label": "quantity",
+      "surface": "at least 38 countries",
+      "canonical": "at least 38 countries",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3379,
+        "charEnd": 3400,
+        "timeStart": 240.239,
+        "timeEnd": 244.72
+      },
+      "score": 0.6621207594871521
+    },
+    {
+      "id": "m_0056",
+      "label": "organization",
+      "surface": "att",
+      "canonical": "att",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3483,
+        "charEnd": 3486,
+        "timeStart": 245.519,
+        "timeEnd": 250.31900000000002
+      },
+      "score": 0.9850826263427734
+    },
+    {
+      "id": "m_0057",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3516,
+        "charEnd": 3519,
+        "timeStart": 247.76,
+        "timeEnd": 252.879
+      },
+      "score": 0.9893312454223633
+    },
+    {
+      "id": "m_0058",
+      "label": "organization",
+      "surface": "att",
+      "canonical": "att",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3539,
+        "charEnd": 3542,
+        "timeStart": 250.319,
+        "timeEnd": 254
+      },
+      "score": 0.9893897175788879
+    },
+    {
+      "id": "m_0059",
+      "label": "organization",
+      "surface": "at\nt",
+      "canonical": "at t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3660,
+        "charEnd": 3664,
+        "timeStart": 255.68,
+        "timeEnd": 261.67999999999995
+      },
+      "score": 0.6261031031608582
+    },
+    {
+      "id": "m_0060",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3710,
+        "charEnd": 3713,
+        "timeStart": 260.16,
+        "timeEnd": 263.84000000000003
+      },
+      "score": 0.9926760792732239
+    },
+    {
+      "id": "m_0061",
+      "label": "quantity",
+      "surface": "billions",
+      "canonical": "billions",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3724,
+        "charEnd": 3732,
+        "timeStart": 261.68,
+        "timeEnd": 265.6
+      },
+      "score": 0.7708020806312561
+    },
+    {
+      "id": "m_0062",
+      "label": "person",
+      "surface": "analysts",
+      "canonical": "analysts",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3811,
+        "charEnd": 3819,
+        "timeStart": 265.6,
+        "timeEnd": 268.8
+      },
+      "score": 0.6131325960159302
+    },
+    {
+      "id": "m_0063",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3936,
+        "charEnd": 3939,
+        "timeStart": 272.96,
+        "timeEnd": 276.32
+      },
+      "score": 0.9886431097984314
+    },
+    {
+      "id": "m_0064",
+      "label": "organization",
+      "surface": "att",
+      "canonical": "att",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 3944,
+        "charEnd": 3947,
+        "timeStart": 275.28,
+        "timeEnd": 279.03999999999996
+      },
+      "score": 0.9102588891983032
+    },
+    {
+      "id": "m_0065",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4040,
+        "charEnd": 4043,
+        "timeStart": 281.12,
+        "timeEnd": 284.72
+      },
+      "score": 0.9904990792274475
+    },
+    {
+      "id": "m_0066",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4070,
+        "charEnd": 4080,
+        "timeStart": 283.12,
+        "timeEnd": 285.199
+      },
+      "score": 0.6089205145835876
+    },
+    {
+      "id": "m_0067",
+      "label": "law_or_policy",
+      "surface": "legally",
+      "canonical": "legally",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4173,
+        "charEnd": 4180,
+        "timeStart": 288.8,
+        "timeEnd": 293.52000000000004
+      },
+      "score": 0.9115186929702759
+    },
+    {
+      "id": "m_0068",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4185,
+        "charEnd": 4188,
+        "timeStart": 288.8,
+        "timeEnd": 293.52000000000004
+      },
+      "score": 0.9903247356414795
+    },
+    {
+      "id": "m_0069",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign nationals",
+      "canonical": "foreign nationals",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4227,
+        "charEnd": 4244,
+        "timeStart": 290.639,
+        "timeEnd": 296.16
+      },
+      "score": 0.8442268967628479
+    },
+    {
+      "id": "m_0070",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4317,
+        "charEnd": 4320,
+        "timeStart": 297.28,
+        "timeEnd": 300.63899999999995
+      },
+      "score": 0.990538477897644
+    },
+    {
+      "id": "m_0071",
+      "label": "nationality_or_ethnicity",
+      "surface": "us citizen",
+      "canonical": "us citizen",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4377,
+        "charEnd": 4387,
+        "timeStart": 300.639,
+        "timeEnd": 305.919
+      },
+      "score": 0.8330096006393433
+    },
+    {
+      "id": "m_0072",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4461,
+        "charEnd": 4464,
+        "timeStart": 307.44,
+        "timeEnd": 313.84
+      },
+      "score": 0.9898380041122437
+    },
+    {
+      "id": "m_0073",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4500,
+        "charEnd": 4508,
+        "timeStart": 311.039,
+        "timeEnd": 316.4
+      },
+      "score": 0.657016932964325
+    },
+    {
+      "id": "m_0074",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4524,
+        "charEnd": 4532,
+        "timeStart": 313.84,
+        "timeEnd": 320.79999999999995
+      },
+      "score": 0.5301544070243835
+    },
+    {
+      "id": "m_0075",
+      "label": "facility",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4681,
+        "charEnd": 4692,
+        "timeStart": 339.52,
+        "timeEnd": 342.71999999999997
+      },
+      "score": 0.9950301647186279
+    },
+    {
+      "id": "m_0076",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4709,
+        "charEnd": 4712,
+        "timeStart": 341.36,
+        "timeEnd": 344.639
+      },
+      "score": 0.9962911605834961
+    },
+    {
+      "id": "m_0077",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4782,
+        "charEnd": 4785,
+        "timeStart": 346,
+        "timeEnd": 349.6
+      },
+      "score": 0.9953902959823608
+    },
+    {
+      "id": "m_0078",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4885,
+        "charEnd": 4888,
+        "timeStart": 351.6,
+        "timeEnd": 356.08000000000004
+      },
+      "score": 0.9951635599136353
+    },
+    {
+      "id": "m_0079",
+      "label": "facility",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4920,
+        "charEnd": 4931,
+        "timeStart": 353.84,
+        "timeEnd": 356.63899999999995
+      },
+      "score": 0.9921687245368958
+    },
+    {
+      "id": "m_0080",
+      "label": "location",
+      "surface": "33 thomas\nstreet",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 4944,
+        "charEnd": 4960,
+        "timeStart": 353.84,
+        "timeEnd": 358
+      },
+      "score": 0.7204744815826416
+    },
+    {
+      "id": "m_0081",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5033,
+        "charEnd": 5036,
+        "timeStart": 359.919,
+        "timeEnd": 362.71999999999997
+      },
+      "score": 0.9958118200302124
+    },
+    {
+      "id": "m_0082",
+      "label": "facility",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5112,
+        "charEnd": 5123,
+        "timeStart": 362.72,
+        "timeEnd": 365.84000000000003
+      },
+      "score": 0.9925110340118408
+    },
+    {
+      "id": "m_0083",
+      "label": "location",
+      "surface": "new york city",
+      "canonical": "new york city",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5130,
+        "charEnd": 5143,
+        "timeStart": 364.88,
+        "timeEnd": 367.52
+      },
+      "score": 0.7784818410873413
+    },
+    {
+      "id": "m_0084",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5203,
+        "charEnd": 5206,
+        "timeStart": 367.52,
+        "timeEnd": 370.88
+      },
+      "score": 0.9953461289405823
+    },
+    {
+      "id": "m_0085",
+      "label": "person",
+      "surface": "lithium",
+      "canonical": "lithium",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5235,
+        "charEnd": 5242,
+        "timeStart": 370.88,
+        "timeEnd": 374.479
+      },
+      "score": 0.9745697379112244
+    },
+    {
+      "id": "m_0086",
+      "label": "person",
+      "surface": "lithium",
+      "canonical": "lithium",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5267,
+        "charEnd": 5274,
+        "timeStart": 370.88,
+        "timeEnd": 374.479
+      },
+      "score": 0.9700590372085571
+    },
+    {
+      "id": "m_0087",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5290,
+        "charEnd": 5293,
+        "timeStart": 374.479,
+        "timeEnd": 378.08
+      },
+      "score": 0.9956343770027161
+    },
+    {
+      "id": "m_0088",
+      "label": "facility",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5345,
+        "charEnd": 5356,
+        "timeStart": 378.08,
+        "timeEnd": 382
+      },
+      "score": 0.9892527461051941
+    },
+    {
+      "id": "m_0089",
+      "label": "organization",
+      "surface": "fbi",
+      "canonical": "fbi",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5387,
+        "charEnd": 5390,
+        "timeStart": 380.08,
+        "timeEnd": 383.68
+      },
+      "score": 0.5423028469085693
+    },
+    {
+      "id": "m_0090",
+      "label": "location",
+      "surface": "thomas",
+      "canonical": "thomas",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5439,
+        "charEnd": 5445,
+        "timeStart": 383.68,
+        "timeEnd": 387.52
+      },
+      "score": 0.6603080034255981
+    },
+    {
+      "id": "m_0091",
+      "label": "organization",
+      "surface": "fbi",
+      "canonical": "fbi",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5462,
+        "charEnd": 5465,
+        "timeStart": 383.68,
+        "timeEnd": 387.52
+      },
+      "score": 0.9144372344017029
+    },
+    {
+      "id": "m_0092",
+      "label": "organization",
+      "surface": "fbi",
+      "canonical": "fbi",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5604,
+        "charEnd": 5607,
+        "timeStart": 393.36,
+        "timeEnd": 396.88
+      },
+      "score": 0.9362199902534485
+    },
+    {
+      "id": "m_0093",
+      "label": "organization",
+      "surface": "fbi",
+      "canonical": "fbi",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5670,
+        "charEnd": 5673,
+        "timeStart": 396.88,
+        "timeEnd": 400
+      },
+      "score": 0.9502174258232117
+    },
+    {
+      "id": "m_0094",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5721,
+        "charEnd": 5724,
+        "timeStart": 400,
+        "timeEnd": 403.52
+      },
+      "score": 0.9793127775192261
+    },
+    {
+      "id": "m_0095",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5806,
+        "charEnd": 5809,
+        "timeStart": 403.52,
+        "timeEnd": 408.31899999999996
+      },
+      "score": 0.9856618046760559
+    },
+    {
+      "id": "m_0096",
+      "label": "ideology",
+      "surface": "privacy freedom",
+      "canonical": "privacy freedom",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5967,
+        "charEnd": 5982,
+        "timeStart": 413.44,
+        "timeEnd": 417.199
+      },
+      "score": 0.8150031566619873
+    },
+    {
+      "id": "m_0097",
+      "label": "law_or_policy",
+      "surface": "constitution",
+      "canonical": "constitution",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 5991,
+        "charEnd": 6003,
+        "timeStart": 415.52,
+        "timeEnd": 420.79999999999995
+      },
+      "score": 0.8071666955947876
+    },
+    {
+      "id": "m_0098",
+      "label": "date_time",
+      "surface": "1975",
+      "canonical": "1975",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6041,
+        "charEnd": 6045,
+        "timeStart": 421.039,
+        "timeEnd": 425.28
+      },
+      "score": 0.9623851180076599
+    },
+    {
+      "id": "m_0099",
+      "label": "location",
+      "surface": "thomas",
+      "canonical": "thomas",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6067,
+        "charEnd": 6073,
+        "timeStart": 421.039,
+        "timeEnd": 425.28
+      },
+      "score": 0.7838634252548218
+    },
+    {
+      "id": "m_0100",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6099,
+        "charEnd": 6102,
+        "timeStart": 425.28,
+        "timeEnd": 429.35999999999996
+      },
+      "score": 0.9827796220779419
+    },
+    {
+      "id": "m_0101",
+      "label": "event",
+      "surface": "congressional inquiry",
+      "canonical": "congressional inquiry",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6135,
+        "charEnd": 6156,
+        "timeStart": 427.84,
+        "timeEnd": 430.23999999999995
+      },
+      "score": 0.8372778296470642
+    },
+    {
+      "id": "m_0102",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6173,
+        "charEnd": 6176,
+        "timeStart": 429.36,
+        "timeEnd": 432.96000000000004
+      },
+      "score": 0.9886217713356018
+    },
+    {
+      "id": "m_0103",
+      "label": "group_or_movement",
+      "surface": "anti-vietnam war activists",
+      "canonical": "anti-vietnam war activists",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6191,
+        "charEnd": 6217,
+        "timeStart": 430.24,
+        "timeEnd": 435.199
+      },
+      "score": 0.8720670342445374
+    },
+    {
+      "id": "m_0104",
+      "label": "law_or_policy",
+      "surface": "fourth\namendment",
+      "canonical": "fourth\namendment",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6267,
+        "charEnd": 6283,
+        "timeStart": 435.199,
+        "timeEnd": 440.24
+      },
+      "score": 0.8796396851539612
+    },
+    {
+      "id": "m_0105",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6288,
+        "charEnd": 6298,
+        "timeStart": 436.8,
+        "timeEnd": 440.24
+      },
+      "score": 0.561004102230072
+    },
+    {
+      "id": "m_0106",
+      "label": "person",
+      "surface": "judge",
+      "canonical": "judge",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6354,
+        "charEnd": 6359,
+        "timeStart": 440.24,
+        "timeEnd": 444
+      },
+      "score": 0.5902910828590393
+    },
+    {
+      "id": "m_0107",
+      "label": "person",
+      "surface": "judge",
+      "canonical": "judge",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6362,
+        "charEnd": 6367,
+        "timeStart": 440.24,
+        "timeEnd": 444
+      },
+      "score": 0.6375977993011475
+    },
+    {
+      "id": "m_0108",
+      "label": "person",
+      "surface": "judge",
+      "canonical": "judge",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6489,
+        "charEnd": 6494,
+        "timeStart": 447.12,
+        "timeEnd": 450.88
+      },
+      "score": 0.5581842064857483
+    },
+    {
+      "id": "m_0109",
+      "label": "group_or_movement",
+      "surface": "civil\nrights movement",
+      "canonical": "civil\nrights movement",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6582,
+        "charEnd": 6603,
+        "timeStart": 451.759,
+        "timeEnd": 456.16
+      },
+      "score": 0.9496681690216064
+    },
+    {
+      "id": "m_0110",
+      "label": "person",
+      "surface": "dr king muhammad\nali",
+      "canonical": "dr king muhammad\nali",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6609,
+        "charEnd": 6629,
+        "timeStart": 453.199,
+        "timeEnd": 458
+      },
+      "score": 0.7324849963188171
+    },
+    {
+      "id": "m_0111",
+      "label": "organization",
+      "surface": "congress",
+      "canonical": "congress",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6782,
+        "charEnd": 6790,
+        "timeStart": 463.52,
+        "timeEnd": 466.31899999999996
+      },
+      "score": 0.6122643351554871
+    },
+    {
+      "id": "m_0112",
+      "label": "law_or_policy",
+      "surface": "foreign\nintelligence surveillance act",
+      "canonical": "foreign\nintelligence surveillance act",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6803,
+        "charEnd": 6840,
+        "timeStart": 463.52,
+        "timeEnd": 468
+      },
+      "score": 0.6597592830657959
+    },
+    {
+      "id": "m_0113",
+      "label": "law_or_policy",
+      "surface": "fisa",
+      "canonical": "fisa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6883,
+        "charEnd": 6887,
+        "timeStart": 466.319,
+        "timeEnd": 470.08000000000004
+      },
+      "score": 0.7133106589317322
+    },
+    {
+      "id": "m_0114",
+      "label": "law_or_policy",
+      "surface": "fisa",
+      "canonical": "fisa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6892,
+        "charEnd": 6896,
+        "timeStart": 468,
+        "timeEnd": 472.72
+      },
+      "score": 0.8667498826980591
+    },
+    {
+      "id": "m_0115",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign\nnationals",
+      "canonical": "foreign nationals",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6920,
+        "charEnd": 6937,
+        "timeStart": 468,
+        "timeEnd": 475.19899999999996
+      },
+      "score": 0.9212568402290344
+    },
+    {
+      "id": "m_0116",
+      "label": "law_or_policy",
+      "surface": "fisa",
+      "canonical": "fisa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6977,
+        "charEnd": 6981,
+        "timeStart": 472.72,
+        "timeEnd": 475.84000000000003
+      },
+      "score": 0.8653666973114014
+    },
+    {
+      "id": "m_0117",
+      "label": "organization",
+      "surface": "executive branch",
+      "canonical": "executive branch",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 6986,
+        "charEnd": 7002,
+        "timeStart": 472.72,
+        "timeEnd": 475.84000000000003
+      },
+      "score": 0.807603657245636
+    },
+    {
+      "id": "m_0118",
+      "label": "organization",
+      "surface": "fisa",
+      "canonical": "fisa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7045,
+        "charEnd": 7049,
+        "timeStart": 475.84,
+        "timeEnd": 481.039
+      },
+      "score": 0.8726634383201599
+    },
+    {
+      "id": "m_0119",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7066,
+        "charEnd": 7069,
+        "timeStart": 478.24,
+        "timeEnd": 482.72
+      },
+      "score": 0.9902185797691345
+    },
+    {
+      "id": "m_0120",
+      "label": "law_or_policy",
+      "surface": "rules",
+      "canonical": "rules",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7086,
+        "charEnd": 7091,
+        "timeStart": 478.24,
+        "timeEnd": 482.72
+      },
+      "score": 0.713699460029602
+    },
+    {
+      "id": "m_0121",
+      "label": "law_or_policy",
+      "surface": "rules",
+      "canonical": "rules",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7130,
+        "charEnd": 7135,
+        "timeStart": 482.72,
+        "timeEnd": 487.68
+      },
+      "score": 0.5539963245391846
+    },
+    {
+      "id": "m_0122",
+      "label": "law_or_policy",
+      "surface": "law",
+      "canonical": "law",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7143,
+        "charEnd": 7146,
+        "timeStart": 485.599,
+        "timeEnd": 490.08
+      },
+      "score": 0.5330042243003845
+    },
+    {
+      "id": "m_0123",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7179,
+        "charEnd": 7182,
+        "timeStart": 485.599,
+        "timeEnd": 490.08
+      },
+      "score": 0.9849514365196228
+    },
+    {
+      "id": "m_0124",
+      "label": "organization",
+      "surface": "fisa",
+      "canonical": "fisa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7246,
+        "charEnd": 7250,
+        "timeStart": 490.08,
+        "timeEnd": 494.15999999999997
+      },
+      "score": 0.6309375166893005
+    },
+    {
+      "id": "m_0125",
+      "label": "organization",
+      "surface": "national security agency",
+      "canonical": "national security agency",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7320,
+        "charEnd": 7344,
+        "timeStart": 494.96,
+        "timeEnd": 498.52
+      },
+      "score": 0.700398325920105
+    },
+    {
+      "id": "m_0126",
+      "label": "quantity",
+      "surface": "151 million",
+      "canonical": "151 million",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7364,
+        "charEnd": 7375,
+        "timeStart": 498.52,
+        "timeEnd": 504.71999999999997
+      },
+      "score": 0.7437059879302979
+    },
+    {
+      "id": "m_0127",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7416,
+        "charEnd": 7419,
+        "timeStart": 502.72,
+        "timeEnd": 506.8
+      },
+      "score": 0.9885107278823853
+    },
+    {
+      "id": "m_0128",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7495,
+        "charEnd": 7498,
+        "timeStart": 508.479,
+        "timeEnd": 512
+      },
+      "score": 0.9894765615463257
+    },
+    {
+      "id": "m_0129",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7520,
+        "charEnd": 7523,
+        "timeStart": 508.479,
+        "timeEnd": 512
+      },
+      "score": 0.9893010258674622
+    },
+    {
+      "id": "m_0130",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7742,
+        "charEnd": 7745,
+        "timeStart": 522.479,
+        "timeEnd": 525.519
+      },
+      "score": 0.9882670044898987
+    },
+    {
+      "id": "m_0131",
+      "label": "technology",
+      "surface": "global\nnetworks",
+      "canonical": "global\nnetworks",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 7764,
+        "charEnd": 7779,
+        "timeStart": 522.479,
+        "timeEnd": 527.4399999999999
+      },
+      "score": 0.6477964520454407
+    },
+    {
+      "id": "m_0132",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8014,
+        "charEnd": 8017,
+        "timeStart": 539.44,
+        "timeEnd": 543.7600000000001
+      },
+      "score": 0.8437878489494324
+    },
+    {
+      "id": "m_0133",
+      "label": "law_or_policy",
+      "surface": "fisa\ncourt orders",
+      "canonical": "fisa\ncourt orders",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8043,
+        "charEnd": 8060,
+        "timeStart": 539.44,
+        "timeEnd": 544.5600000000001
+      },
+      "score": 0.8376947045326233
+    },
+    {
+      "id": "m_0134",
+      "label": "organization",
+      "surface": "major banks",
+      "canonical": "major banks",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8111,
+        "charEnd": 8122,
+        "timeStart": 544.56,
+        "timeEnd": 548.16
+      },
+      "score": 0.8629136681556702
+    },
+    {
+      "id": "m_0135",
+      "label": "organization",
+      "surface": "all kinds of companies",
+      "canonical": "all kinds of companies",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8140,
+        "charEnd": 8162,
+        "timeStart": 546.399,
+        "timeEnd": 550.56
+      },
+      "score": 0.5444122552871704
+    },
+    {
+      "id": "m_0136",
+      "label": "quantity",
+      "surface": "38 countries",
+      "canonical": "38 countries",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8167,
+        "charEnd": 8179,
+        "timeStart": 548.16,
+        "timeEnd": 551.4399999999999
+      },
+      "score": 0.5436379313468933
+    },
+    {
+      "id": "m_0137",
+      "label": "organization",
+      "surface": "the\nunited nations",
+      "canonical": "the\nunited nations",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8199,
+        "charEnd": 8217,
+        "timeStart": 548.16,
+        "timeEnd": 553.92
+      },
+      "score": 0.6850278973579407
+    },
+    {
+      "id": "m_0138",
+      "label": "person",
+      "surface": "president",
+      "canonical": "president",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8371,
+        "charEnd": 8380,
+        "timeStart": 558.72,
+        "timeEnd": 562.8000000000001
+      },
+      "score": 0.5737559795379639
+    },
+    {
+      "id": "m_0139",
+      "label": "person",
+      "surface": "republicans",
+      "canonical": "republicans",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8403,
+        "charEnd": 8414,
+        "timeStart": 560.56,
+        "timeEnd": 564.3199999999999
+      },
+      "score": 0.5394351482391357
+    },
+    {
+      "id": "m_0140",
+      "label": "nationality_or_ethnicity",
+      "surface": "american\ncitizens",
+      "canonical": "american\ncitizens",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8644,
+        "charEnd": 8661,
+        "timeStart": 571.92,
+        "timeEnd": 577.44
+      },
+      "score": 0.51717609167099
+    },
+    {
+      "id": "m_0141",
+      "label": "law_or_policy",
+      "surface": "national security letters",
+      "canonical": "national security letters",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8670,
+        "charEnd": 8695,
+        "timeStart": 575.2,
+        "timeEnd": 579.44
+      },
+      "score": 0.8696697354316711
+    },
+    {
+      "id": "m_0142",
+      "label": "location",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8895,
+        "charEnd": 8906,
+        "timeStart": 590,
+        "timeEnd": 593.92
+      },
+      "score": 0.8422927856445312
+    },
+    {
+      "id": "m_0143",
+      "label": "location",
+      "surface": "new york",
+      "canonical": "new york",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8910,
+        "charEnd": 8918,
+        "timeStart": 590,
+        "timeEnd": 593.92
+      },
+      "score": 0.6152730584144592
+    },
+    {
+      "id": "m_0144",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8939,
+        "charEnd": 8942,
+        "timeStart": 591.519,
+        "timeEnd": 595.76
+      },
+      "score": 0.9920960664749146
+    },
+    {
+      "id": "m_0145",
+      "label": "technology",
+      "surface": "software",
+      "canonical": "software",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 8986,
+        "charEnd": 8994,
+        "timeStart": 593.92,
+        "timeEnd": 597.04
+      },
+      "score": 0.6123348474502563
+    },
+    {
+      "id": "m_0146",
+      "label": "technology",
+      "surface": "skype",
+      "canonical": "skype",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9000,
+        "charEnd": 9005,
+        "timeStart": 595.76,
+        "timeEnd": 599.4399999999999
+      },
+      "score": 0.9095644354820251
+    },
+    {
+      "id": "m_0147",
+      "label": "technology",
+      "surface": "zoom",
+      "canonical": "zoom",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9010,
+        "charEnd": 9014,
+        "timeStart": 595.76,
+        "timeEnd": 599.4399999999999
+      },
+      "score": 0.850151002407074
+    },
+    {
+      "id": "m_0148",
+      "label": "location",
+      "surface": "33 thomas street",
+      "canonical": "33 thomas street",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9019,
+        "charEnd": 9035,
+        "timeStart": 597.04,
+        "timeEnd": 600.3199999999999
+      },
+      "score": 0.7850386500358582
+    },
+    {
+      "id": "m_0149",
+      "label": "organization",
+      "surface": "att",
+      "canonical": "att",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9057,
+        "charEnd": 9060,
+        "timeStart": 599.44,
+        "timeEnd": 602.72
+      },
+      "score": 0.96468186378479
+    },
+    {
+      "id": "m_0150",
+      "label": "organization",
+      "surface": "fcc",
+      "canonical": "fcc",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9079,
+        "charEnd": 9082,
+        "timeStart": 600.32,
+        "timeEnd": 604.8000000000001
+      },
+      "score": 0.8617863655090332
+    },
+    {
+      "id": "m_0151",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9108,
+        "charEnd": 9111,
+        "timeStart": 602.72,
+        "timeEnd": 606
+      },
+      "score": 0.9940940737724304
+    },
+    {
+      "id": "m_0152",
+      "label": "location",
+      "surface": "skid row",
+      "canonical": "skid row",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9296,
+        "charEnd": 9304,
+        "timeStart": 613.04,
+        "timeEnd": 617.5999999999999
+      },
+      "score": 0.6539553999900818
+    },
+    {
+      "id": "m_0153",
+      "label": "location",
+      "surface": "skid row",
+      "canonical": "skid row",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9316,
+        "charEnd": 9324,
+        "timeStart": 617.6,
+        "timeEnd": 621.6800000000001
+      },
+      "score": 0.5861851572990417
+    },
+    {
+      "id": "m_0154",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9350,
+        "charEnd": 9353,
+        "timeStart": 617.6,
+        "timeEnd": 621.6800000000001
+      },
+      "score": 0.9944639801979065
+    },
+    {
+      "id": "m_0155",
+      "label": "person",
+      "surface": "people",
+      "canonical": "people",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9478,
+        "charEnd": 9484,
+        "timeStart": 626.8,
+        "timeEnd": 631.3599999999999
+      },
+      "score": 0.5006949305534363
+    },
+    {
+      "id": "m_0156",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9691,
+        "charEnd": 9694,
+        "timeStart": 637.12,
+        "timeEnd": 640.5600000000001
+      },
+      "score": 0.9582636952400208
+    },
+    {
+      "id": "m_0157",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9739,
+        "charEnd": 9742,
+        "timeStart": 640.56,
+        "timeEnd": 644.079
+      },
+      "score": 0.960627555847168
+    },
+    {
+      "id": "m_0158",
+      "label": "organization",
+      "surface": "google",
+      "canonical": "google",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9750,
+        "charEnd": 9756,
+        "timeStart": 642.399,
+        "timeEnd": 645.68
+      },
+      "score": 0.6812770962715149
+    },
+    {
+      "id": "m_0159",
+      "label": "organization",
+      "surface": "yahoo",
+      "canonical": "yahoo",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9761,
+        "charEnd": 9766,
+        "timeStart": 642.399,
+        "timeEnd": 645.68
+      },
+      "score": 0.578012228012085
+    },
+    {
+      "id": "m_0160",
+      "label": "organization",
+      "surface": "intelligence\nservice",
+      "canonical": "intelligence\nservice",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 9960,
+        "charEnd": 9980,
+        "timeStart": 652.88,
+        "timeEnd": 661.519
+      },
+      "score": 0.5206241011619568
+    },
+    {
+      "id": "m_0161",
+      "label": "organization",
+      "surface": "at\nt",
+      "canonical": "at t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10193,
+        "charEnd": 10197,
+        "timeStart": 667.68,
+        "timeEnd": 674.8
+      },
+      "score": 0.9810648560523987
+    },
+    {
+      "id": "m_0162",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10246,
+        "charEnd": 10249,
+        "timeStart": 672.8,
+        "timeEnd": 677.04
+      },
+      "score": 0.9845974445343018
+    },
+    {
+      "id": "m_0163",
+      "label": "organization",
+      "surface": "att",
+      "canonical": "att",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10388,
+        "charEnd": 10391,
+        "timeStart": 680.959,
+        "timeEnd": 684.7199999999999
+      },
+      "score": 0.8601216077804565
+    },
+    {
+      "id": "m_0164",
+      "label": "organization",
+      "surface": "at\nt",
+      "canonical": "at t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10507,
+        "charEnd": 10511,
+        "timeStart": 686.24,
+        "timeEnd": 691.76
+      },
+      "score": 0.9936955571174622
+    },
+    {
+      "id": "m_0165",
+      "label": "quantity",
+      "surface": "billions of emails",
+      "canonical": "billions of emails",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10522,
+        "charEnd": 10540,
+        "timeStart": 688.16,
+        "timeEnd": 691.76
+      },
+      "score": 0.7195500731468201
+    },
+    {
+      "id": "m_0166",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10548,
+        "charEnd": 10551,
+        "timeStart": 690.88,
+        "timeEnd": 693.68
+      },
+      "score": 0.9899303913116455
+    },
+    {
+      "id": "m_0167",
+      "label": "organization",
+      "surface": "at t",
+      "canonical": "at t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10610,
+        "charEnd": 10614,
+        "timeStart": 693.68,
+        "timeEnd": 697.4399999999999
+      },
+      "score": 0.992414653301239
+    },
+    {
+      "id": "m_0168",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10647,
+        "charEnd": 10650,
+        "timeStart": 695.6,
+        "timeEnd": 699.12
+      },
+      "score": 0.9885401129722595
+    },
+    {
+      "id": "m_0169",
+      "label": "person",
+      "surface": "whistleblower",
+      "canonical": "whistleblower",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10803,
+        "charEnd": 10816,
+        "timeStart": 705.76,
+        "timeEnd": 709.8389999999999
+      },
+      "score": 0.902147650718689
+    },
+    {
+      "id": "m_0170",
+      "label": "event",
+      "surface": "class-action lawsuit",
+      "canonical": "class-action lawsuit",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10833,
+        "charEnd": 10853,
+        "timeStart": 707.279,
+        "timeEnd": 712.639
+      },
+      "score": 0.5335208773612976
+    },
+    {
+      "id": "m_0171",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10866,
+        "charEnd": 10869,
+        "timeStart": 707.279,
+        "timeEnd": 712.639
+      },
+      "score": 0.9851160645484924
+    },
+    {
+      "id": "m_0172",
+      "label": "person",
+      "surface": "george bush",
+      "canonical": "george bush",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 10874,
+        "charEnd": 10885,
+        "timeStart": 709.839,
+        "timeEnd": 713.6
+      },
+      "score": 0.9390782713890076
+    },
+    {
+      "id": "m_0173",
+      "label": "person",
+      "surface": "rand paul",
+      "canonical": "rand paul",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11059,
+        "charEnd": 11068,
+        "timeStart": 721.12,
+        "timeEnd": 727.2
+      },
+      "score": 0.933153510093689
+    },
+    {
+      "id": "m_0174",
+      "label": "person",
+      "surface": "ron wyden",
+      "canonical": "ron wyden",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11096,
+        "charEnd": 11105,
+        "timeStart": 724.48,
+        "timeEnd": 728.0790000000001
+      },
+      "score": 0.9096082448959351
+    },
+    {
+      "id": "m_0175",
+      "label": "law_or_policy",
+      "surface": "immunity bill",
+      "canonical": "immunity bill",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11184,
+        "charEnd": 11197,
+        "timeStart": 729.92,
+        "timeEnd": 735.04
+      },
+      "score": 0.8226256370544434
+    },
+    {
+      "id": "m_0176",
+      "label": "organization",
+      "surface": "phone companies",
+      "canonical": "phone companies",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11206,
+        "charEnd": 11221,
+        "timeStart": 729.92,
+        "timeEnd": 735.04
+      },
+      "score": 0.7830699682235718
+    },
+    {
+      "id": "m_0177",
+      "label": "date_time",
+      "surface": "2008",
+      "canonical": "2008",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11225,
+        "charEnd": 11229,
+        "timeStart": 732.24,
+        "timeEnd": 736
+      },
+      "score": 0.9119089245796204
+    },
+    {
+      "id": "m_0178",
+      "label": "person",
+      "surface": "barack obama",
+      "canonical": "barack obama",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11247,
+        "charEnd": 11259,
+        "timeStart": 732.24,
+        "timeEnd": 736
+      },
+      "score": 0.964174211025238
+    },
+    {
+      "id": "m_0179",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11323,
+        "charEnd": 11326,
+        "timeStart": 738.639,
+        "timeEnd": 741.92
+      },
+      "score": 0.9613816738128662
+    },
+    {
+      "id": "m_0180",
+      "label": "date_time",
+      "surface": "2017",
+      "canonical": "2017",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11385,
+        "charEnd": 11389,
+        "timeStart": 741.92,
+        "timeEnd": 746.7199999999999
+      },
+      "score": 0.7381411194801331
+    },
+    {
+      "id": "m_0181",
+      "label": "person",
+      "surface": "judge",
+      "canonical": "judge",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11392,
+        "charEnd": 11397,
+        "timeStart": 741.92,
+        "timeEnd": 746.7199999999999
+      },
+      "score": 0.6494337916374207
+    },
+    {
+      "id": "m_0182",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11410,
+        "charEnd": 11413,
+        "timeStart": 744.959,
+        "timeEnd": 749.1999999999999
+      },
+      "score": 0.9761961698532104
+    },
+    {
+      "id": "m_0183",
+      "label": "organization",
+      "surface": "at t",
+      "canonical": "at t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11470,
+        "charEnd": 11474,
+        "timeStart": 746.72,
+        "timeEnd": 749.839
+      },
+      "score": 0.975820779800415
+    },
+    {
+      "id": "m_0184",
+      "label": "location",
+      "surface": "titan point",
+      "canonical": "titan point",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11630,
+        "charEnd": 11641,
+        "timeStart": 761.76,
+        "timeEnd": 766.24
+      },
+      "score": 0.9099397659301758
+    },
+    {
+      "id": "m_0185",
+      "label": "organization",
+      "surface": "at t",
+      "canonical": "at t",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11698,
+        "charEnd": 11702,
+        "timeStart": 766.24,
+        "timeEnd": 772.639
+      },
+      "score": 0.9797132015228271
+    },
+    {
+      "id": "m_0186",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11790,
+        "charEnd": 11793,
+        "timeStart": 772.639,
+        "timeEnd": 776.0790000000001
+      },
+      "score": 0.9578689336776733
+    },
+    {
+      "id": "m_0187",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11921,
+        "charEnd": 11924,
+        "timeStart": 781.68,
+        "timeEnd": 785.8389999999999
+      },
+      "score": 0.9638405442237854
+    },
+    {
+      "id": "m_0188",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 11936,
+        "charEnd": 11939,
+        "timeStart": 783.6,
+        "timeEnd": 787.279
+      },
+      "score": 0.9725446701049805
+    },
+    {
+      "id": "m_0189",
+      "label": "facility",
+      "surface": "server room",
+      "canonical": "server room",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12046,
+        "charEnd": 12057,
+        "timeStart": 789.2,
+        "timeEnd": 793.36
+      },
+      "score": 0.8687444925308228
+    },
+    {
+      "id": "m_0190",
+      "label": "location",
+      "surface": "america",
+      "canonical": "america",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12136,
+        "charEnd": 12143,
+        "timeStart": 795.12,
+        "timeEnd": 798.32
+      },
+      "score": 0.5319544672966003
+    },
+    {
+      "id": "m_0191",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12237,
+        "charEnd": 12240,
+        "timeStart": 800.079,
+        "timeEnd": 805.1999999999999
+      },
+      "score": 0.9817513823509216
+    },
+    {
+      "id": "m_0192",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12241,
+        "charEnd": 12244,
+        "timeStart": 801.839,
+        "timeEnd": 806.399
+      },
+      "score": 0.7985358834266663
+    },
+    {
+      "id": "m_0193",
+      "label": "organization",
+      "surface": "fbi",
+      "canonical": "fbi",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12249,
+        "charEnd": 12252,
+        "timeStart": 801.839,
+        "timeEnd": 806.399
+      },
+      "score": 0.9134941697120667
+    },
+    {
+      "id": "m_0194",
+      "label": "law_or_policy",
+      "surface": "laws",
+      "canonical": "laws",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12324,
+        "charEnd": 12328,
+        "timeStart": 806.399,
+        "timeEnd": 809.839
+      },
+      "score": 0.7547619342803955
+    },
+    {
+      "id": "m_0195",
+      "label": "person",
+      "surface": "ben franklin",
+      "canonical": "ben franklin",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12407,
+        "charEnd": 12419,
+        "timeStart": 812.32,
+        "timeEnd": 816.399
+      },
+      "score": 0.7285792827606201
+    },
+    {
+      "id": "m_0196",
+      "label": "organization",
+      "surface": "google",
+      "canonical": "google",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12524,
+        "charEnd": 12530,
+        "timeStart": 818.959,
+        "timeEnd": 822.6389999999999
+      },
+      "score": 0.8275503516197205
+    },
+    {
+      "id": "m_0197",
+      "label": "organization",
+      "surface": "facebook",
+      "canonical": "facebook",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12531,
+        "charEnd": 12539,
+        "timeStart": 818.959,
+        "timeEnd": 822.6389999999999
+      },
+      "score": 0.9090405702590942
+    },
+    {
+      "id": "m_0198",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12564,
+        "charEnd": 12574,
+        "timeStart": 821.04,
+        "timeEnd": 824.48
+      },
+      "score": 0.9186080098152161
+    },
+    {
+      "id": "m_0199",
+      "label": "law_or_policy",
+      "surface": "rights",
+      "canonical": "rights",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12775,
+        "charEnd": 12781,
+        "timeStart": 833.36,
+        "timeEnd": 835.6
+      },
+      "score": 0.5801873803138733
+    },
+    {
+      "id": "m_0200",
+      "label": "organization",
+      "surface": "digital conglomerates",
+      "canonical": "digital conglomerates",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 12949,
+        "charEnd": 12970,
+        "timeStart": 842.56,
+        "timeEnd": 846.6389999999999
+      },
+      "score": 0.7899529337882996
+    },
+    {
+      "id": "m_0201",
+      "label": "law_or_policy",
+      "surface": "illegal searches",
+      "canonical": "illegal searches",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13026,
+        "charEnd": 13042,
+        "timeStart": 846.639,
+        "timeEnd": 849.12
+      },
+      "score": 0.5622193217277527
+    },
+    {
+      "id": "m_0202",
+      "label": "law_or_policy",
+      "surface": "spying",
+      "canonical": "spying",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13047,
+        "charEnd": 13053,
+        "timeStart": 848.48,
+        "timeEnd": 850.5600000000001
+      },
+      "score": 0.5816348791122437
+    },
+    {
+      "id": "m_0203",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13088,
+        "charEnd": 13098,
+        "timeStart": 850.56,
+        "timeEnd": 854.2399999999999
+      },
+      "score": 0.9337581992149353
+    },
+    {
+      "id": "m_0204",
+      "label": "ideology",
+      "surface": "popular ideas",
+      "canonical": "popular ideas",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13137,
+        "charEnd": 13150,
+        "timeStart": 852.399,
+        "timeEnd": 856.56
+      },
+      "score": 0.8279381394386292
+    },
+    {
+      "id": "m_0205",
+      "label": "person",
+      "surface": "aj",
+      "canonical": "aj",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13366,
+        "charEnd": 13368,
+        "timeStart": 868.24,
+        "timeEnd": 871.12
+      },
+      "score": 0.9218181371688843
+    },
+    {
+      "id": "m_0206",
+      "label": "person",
+      "surface": "hecklefish",
+      "canonical": "hecklefish",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13376,
+        "charEnd": 13386,
+        "timeStart": 868.24,
+        "timeEnd": 871.12
+      },
+      "score": 0.6270729303359985
+    },
+    {
+      "id": "m_0207",
+      "label": "work_of_media",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13405,
+        "charEnd": 13412,
+        "timeStart": 870.079,
+        "timeEnd": 872.6389999999999
+      },
+      "score": 0.7741541862487793
+    },
+    {
+      "id": "m_0208",
+      "label": "technology",
+      "surface": "algorithm",
+      "canonical": "algorithm",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13509,
+        "charEnd": 13518,
+        "timeStart": 874.399,
+        "timeEnd": 878.16
+      },
+      "score": 0.8944108486175537
+    },
+    {
+      "id": "m_0209",
+      "label": "organization",
+      "surface": "nsa",
+      "canonical": "nsa",
+      "span": {
+        "transcriptId": "dSZvXgu7Q2Q",
+        "charStart": 13542,
+        "charEnd": 13545,
+        "timeStart": 876.399,
+        "timeEnd": 878.72
+      },
+      "score": 0.6490792632102966
+    }
+  ]
+}

@@ -29,6 +29,12 @@ scale batch runs, consider a long-lived variant later — this is the
 import json
 import sys
 import traceback
+import warnings
+
+# Silence huggingface_hub `resume_download` deprecation and any other
+# transient library warnings. These are information-only and flood the
+# pipeline's stderr during normal operation.
+warnings.filterwarnings("ignore")
 
 
 def fail(msg: str) -> None:

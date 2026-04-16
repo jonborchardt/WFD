@@ -12,10 +12,14 @@
 
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { Entity, Relationship } from "../shared/types.js";
+import {
+  Entity,
+  Relationship,
+  isValidRelationship,
+  createRelationship,
+} from "../shared/types.js";
 import { GraphStore } from "../graph/store.js";
-import { isValidRelationship, createRelationship } from "../nlp/relationships.js";
-import { Transcript } from "../nlp/entities.js";
+import type { Transcript } from "../entities/index.js";
 
 export interface EnrichmentBundle {
   transcriptId: string;

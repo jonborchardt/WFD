@@ -1,0 +1,1804 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "7n5Dq-c0_Zw",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T11:05:27.616Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "person",
+      "surface": "first human",
+      "canonical": "first human",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 9,
+        "charEnd": 20,
+        "timeStart": 0.96,
+        "timeEnd": 4.48
+      },
+      "score": 0.5835403203964233
+    },
+    {
+      "id": "m_0002",
+      "label": "location",
+      "surface": "mars",
+      "canonical": "mars",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 28,
+        "charEnd": 32,
+        "timeStart": 0.96,
+        "timeEnd": 4.48
+      },
+      "score": 0.890710175037384
+    },
+    {
+      "id": "m_0003",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 149,
+        "charEnd": 152,
+        "timeStart": 6.48,
+        "timeEnd": 10.8
+      },
+      "score": 0.994782030582428
+    },
+    {
+      "id": "m_0004",
+      "label": "organization",
+      "surface": "united states military",
+      "canonical": "united states military",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 157,
+        "charEnd": 179,
+        "timeStart": 8.8,
+        "timeEnd": 12.559000000000001
+      },
+      "score": 0.5201250314712524
+    },
+    {
+      "id": "m_0005",
+      "label": "location",
+      "surface": "mars",
+      "canonical": "mars",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 201,
+        "charEnd": 205,
+        "timeStart": 10.8,
+        "timeEnd": 14.24
+      },
+      "score": 0.9103809595108032
+    },
+    {
+      "id": "m_0006",
+      "label": "quantity",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 289,
+        "charEnd": 294,
+        "timeStart": 17.2,
+        "timeEnd": 23.68
+      },
+      "score": 0.5577974915504456
+    },
+    {
+      "id": "m_0007",
+      "label": "event",
+      "surface": "cold war",
+      "canonical": "cold war",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 300,
+        "charEnd": 308,
+        "timeStart": 21.92,
+        "timeEnd": 25.439
+      },
+      "score": 0.8115311861038208
+    },
+    {
+      "id": "m_0008",
+      "label": "location",
+      "surface": "united states",
+      "canonical": "united states",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 321,
+        "charEnd": 334,
+        "timeStart": 21.92,
+        "timeEnd": 25.439
+      },
+      "score": 0.5615571141242981
+    },
+    {
+      "id": "m_0009",
+      "label": "quantity",
+      "surface": "billions",
+      "canonical": "billions",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 435,
+        "charEnd": 443,
+        "timeStart": 27.68,
+        "timeEnd": 31.679
+      },
+      "score": 0.9002588391304016
+    },
+    {
+      "id": "m_0010",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 476,
+        "charEnd": 479,
+        "timeStart": 31.679,
+        "timeEnd": 36.64
+      },
+      "score": 0.9948217868804932
+    },
+    {
+      "id": "m_0011",
+      "label": "event",
+      "surface": "operation acoustic kitty",
+      "canonical": "operation acoustic kitty",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 482,
+        "charEnd": 506,
+        "timeStart": 31.679,
+        "timeEnd": 36.64
+      },
+      "score": 0.7801758646965027
+    },
+    {
+      "id": "m_0012",
+      "label": "event",
+      "surface": "acoustic kitty",
+      "canonical": "acoustic kitty",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 576,
+        "charEnd": 590,
+        "timeStart": 39.04,
+        "timeEnd": 43.68
+      },
+      "score": 0.6051586866378784
+    },
+    {
+      "id": "m_0013",
+      "label": "technology",
+      "surface": "transmitter",
+      "canonical": "transmitter",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 653,
+        "charEnd": 664,
+        "timeStart": 43.68,
+        "timeEnd": 47.6
+      },
+      "score": 0.5469492077827454
+    },
+    {
+      "id": "m_0014",
+      "label": "location",
+      "surface": "washington dc",
+      "canonical": "washington dc",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 791,
+        "charEnd": 804,
+        "timeStart": 49.68,
+        "timeEnd": 54.16
+      },
+      "score": 0.8514332175254822
+    },
+    {
+      "id": "m_0015",
+      "label": "nationality_or_ethnicity",
+      "surface": "russians",
+      "canonical": "russians",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1037,
+        "charEnd": 1045,
+        "timeStart": 66.799,
+        "timeEnd": 70.72000000000001
+      },
+      "score": 0.8400071859359741
+    },
+    {
+      "id": "m_0016",
+      "label": "date_time",
+      "surface": "1972",
+      "canonical": "1972",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1159,
+        "charEnd": 1163,
+        "timeStart": 72.799,
+        "timeEnd": 77.84
+      },
+      "score": 0.9418692588806152
+    },
+    {
+      "id": "m_0017",
+      "label": "organization",
+      "surface": "american intelligence\ncommunity",
+      "canonical": "american intelligence\ncommunity",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1207,
+        "charEnd": 1238,
+        "timeStart": 76.08,
+        "timeEnd": 82.479
+      },
+      "score": 0.7450064420700073
+    },
+    {
+      "id": "m_0018",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1292,
+        "charEnd": 1300,
+        "timeStart": 80.24,
+        "timeEnd": 85.28
+      },
+      "score": 0.8763241171836853
+    },
+    {
+      "id": "m_0019",
+      "label": "organization",
+      "surface": "esp",
+      "canonical": "esp",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1327,
+        "charEnd": 1330,
+        "timeStart": 82.479,
+        "timeEnd": 86.64
+      },
+      "score": 0.8828550577163696
+    },
+    {
+      "id": "m_0020",
+      "label": "technology",
+      "surface": "mind reading",
+      "canonical": "mind reading",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1331,
+        "charEnd": 1343,
+        "timeStart": 82.479,
+        "timeEnd": 86.64
+      },
+      "score": 0.5443137884140015
+    },
+    {
+      "id": "m_0021",
+      "label": "technology",
+      "surface": "telekinesis",
+      "canonical": "telekinesis",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1348,
+        "charEnd": 1359,
+        "timeStart": 85.28,
+        "timeEnd": 88.56
+      },
+      "score": 0.6569244265556335
+    },
+    {
+      "id": "m_0022",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1407,
+        "charEnd": 1410,
+        "timeStart": 88.56,
+        "timeEnd": 92.88
+      },
+      "score": 0.9093858599662781
+    },
+    {
+      "id": "m_0023",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1576,
+        "charEnd": 1579,
+        "timeStart": 99.52,
+        "timeEnd": 103.03999999999999
+      },
+      "score": 0.9880358576774597
+    },
+    {
+      "id": "m_0024",
+      "label": "organization",
+      "surface": "defense intelligence agency",
+      "canonical": "defense intelligence agency",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1593,
+        "charEnd": 1620,
+        "timeStart": 100.479,
+        "timeEnd": 104.96
+      },
+      "score": 0.8101798892021179
+    },
+    {
+      "id": "m_0025",
+      "label": "facility",
+      "surface": "secret facilities",
+      "canonical": "secret facilities",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1628,
+        "charEnd": 1645,
+        "timeStart": 103.04,
+        "timeEnd": 106.799
+      },
+      "score": 0.6005718111991882
+    },
+    {
+      "id": "m_0026",
+      "label": "date_time",
+      "surface": "1976",
+      "canonical": "1976",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 1966,
+        "charEnd": 1970,
+        "timeStart": 120.079,
+        "timeEnd": 125.75899999999999
+      },
+      "score": 0.904322624206543
+    },
+    {
+      "id": "m_0027",
+      "label": "location",
+      "surface": "congo",
+      "canonical": "congo",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2005,
+        "charEnd": 2010,
+        "timeStart": 123.52,
+        "timeEnd": 127.52
+      },
+      "score": 0.8920300006866455
+    },
+    {
+      "id": "m_0028",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2053,
+        "charEnd": 2056,
+        "timeStart": 127.52,
+        "timeEnd": 132.319
+      },
+      "score": 0.992579996585846
+    },
+    {
+      "id": "m_0029",
+      "label": "location",
+      "surface": "patterson air base",
+      "canonical": "patterson air base",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2094,
+        "charEnd": 2112,
+        "timeStart": 129.92,
+        "timeEnd": 134.48
+      },
+      "score": 0.7648460268974304
+    },
+    {
+      "id": "m_0030",
+      "label": "location",
+      "surface": "ohio",
+      "canonical": "ohio",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2116,
+        "charEnd": 2120,
+        "timeStart": 129.92,
+        "timeEnd": 134.48
+      },
+      "score": 0.8562716245651245
+    },
+    {
+      "id": "m_0031",
+      "label": "person",
+      "surface": "rosemary smith",
+      "canonical": "rosemary smith",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2143,
+        "charEnd": 2157,
+        "timeStart": 132.319,
+        "timeEnd": 136.879
+      },
+      "score": 0.9670369029045105
+    },
+    {
+      "id": "m_0032",
+      "label": "location",
+      "surface": "congo",
+      "canonical": "congo",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2175,
+        "charEnd": 2180,
+        "timeStart": 134.48,
+        "timeEnd": 139.2
+      },
+      "score": 0.9400044083595276
+    },
+    {
+      "id": "m_0033",
+      "label": "organization",
+      "surface": "paramilitary unit",
+      "canonical": "paramilitary unit",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2250,
+        "charEnd": 2267,
+        "timeStart": 139.2,
+        "timeEnd": 143.92
+      },
+      "score": 0.7563660740852356
+    },
+    {
+      "id": "m_0034",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2351,
+        "charEnd": 2354,
+        "timeStart": 145.76,
+        "timeEnd": 149.67999999999998
+      },
+      "score": 0.9891868233680725
+    },
+    {
+      "id": "m_0035",
+      "label": "location",
+      "surface": "fort meade",
+      "canonical": "fort meade",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2515,
+        "charEnd": 2525,
+        "timeStart": 153.44,
+        "timeEnd": 158.07999999999998
+      },
+      "score": 0.919420599937439
+    },
+    {
+      "id": "m_0036",
+      "label": "location",
+      "surface": "maryland",
+      "canonical": "maryland",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2529,
+        "charEnd": 2537,
+        "timeStart": 153.44,
+        "timeEnd": 158.07999999999998
+      },
+      "score": 0.8979409337043762
+    },
+    {
+      "id": "m_0037",
+      "label": "facility",
+      "surface": "project stargate",
+      "canonical": "project stargate",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2559,
+        "charEnd": 2575,
+        "timeStart": 155.76,
+        "timeEnd": 160.959
+      },
+      "score": 0.6236456632614136
+    },
+    {
+      "id": "m_0038",
+      "label": "facility",
+      "surface": "project stargate",
+      "canonical": "project stargate",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2580,
+        "charEnd": 2596,
+        "timeStart": 158.08,
+        "timeEnd": 163.28
+      },
+      "score": 0.6457135677337646
+    },
+    {
+      "id": "m_0039",
+      "label": "quantity",
+      "surface": "years",
+      "canonical": "years",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2605,
+        "charEnd": 2610,
+        "timeStart": 158.08,
+        "timeEnd": 163.28
+      },
+      "score": 0.5863737463951111
+    },
+    {
+      "id": "m_0040",
+      "label": "date_time",
+      "surface": "1995",
+      "canonical": "1995",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2639,
+        "charEnd": 2643,
+        "timeStart": 160.959,
+        "timeEnd": 165.04
+      },
+      "score": 0.9578251838684082
+    },
+    {
+      "id": "m_0041",
+      "label": "work_of_media",
+      "surface": "nightline",
+      "canonical": "nightline",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2650,
+        "charEnd": 2659,
+        "timeStart": 163.28,
+        "timeEnd": 166.4
+      },
+      "score": 0.8917732834815979
+    },
+    {
+      "id": "m_0042",
+      "label": "quantity",
+      "surface": "years",
+      "canonical": "years",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2694,
+        "charEnd": 2699,
+        "timeStart": 165.04,
+        "timeEnd": 168.64
+      },
+      "score": 0.6174445748329163
+    },
+    {
+      "id": "m_0043",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2700,
+        "charEnd": 2703,
+        "timeStart": 166.4,
+        "timeEnd": 170.56
+      },
+      "score": 0.9892913699150085
+    },
+    {
+      "id": "m_0044",
+      "label": "technology",
+      "surface": "remote viewers",
+      "canonical": "remote viewers",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2704,
+        "charEnd": 2718,
+        "timeStart": 166.4,
+        "timeEnd": 170.56
+      },
+      "score": 0.979431688785553
+    },
+    {
+      "id": "m_0045",
+      "label": "technology",
+      "surface": "remote viewers",
+      "canonical": "remote viewers",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2783,
+        "charEnd": 2797,
+        "timeStart": 170.56,
+        "timeEnd": 175.12
+      },
+      "score": 0.9881902933120728
+    },
+    {
+      "id": "m_0046",
+      "label": "facility",
+      "surface": "secret soviet bases",
+      "canonical": "secret soviet bases",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2817,
+        "charEnd": 2836,
+        "timeStart": 172.72,
+        "timeEnd": 177.519
+      },
+      "score": 0.875389575958252
+    },
+    {
+      "id": "m_0047",
+      "label": "organization",
+      "surface": "red brigade",
+      "canonical": "red brigade",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2866,
+        "charEnd": 2877,
+        "timeStart": 175.12,
+        "timeEnd": 179.68
+      },
+      "score": 0.878388524055481
+    },
+    {
+      "id": "m_0048",
+      "label": "location",
+      "surface": "italy",
+      "canonical": "italy",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2881,
+        "charEnd": 2886,
+        "timeStart": 175.12,
+        "timeEnd": 179.68
+      },
+      "score": 0.8362913131713867
+    },
+    {
+      "id": "m_0049",
+      "label": "event",
+      "surface": "israeli hostage crisis",
+      "canonical": "israeli hostage crisis",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2906,
+        "charEnd": 2928,
+        "timeStart": 177.519,
+        "timeEnd": 181.519
+      },
+      "score": 0.5587325096130371
+    },
+    {
+      "id": "m_0050",
+      "label": "event",
+      "surface": "first gulf war",
+      "canonical": "first gulf war",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 2976,
+        "charEnd": 2990,
+        "timeStart": 181.519,
+        "timeEnd": 185.44
+      },
+      "score": 0.9203650951385498
+    },
+    {
+      "id": "m_0051",
+      "label": "location",
+      "surface": "world trade center",
+      "canonical": "world trade center",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3047,
+        "charEnd": 3065,
+        "timeStart": 185.44,
+        "timeEnd": 189.84
+      },
+      "score": 0.7254042625427246
+    },
+    {
+      "id": "m_0052",
+      "label": "date_time",
+      "surface": "1989",
+      "canonical": "1989",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3100,
+        "charEnd": 3104,
+        "timeStart": 187.04,
+        "timeEnd": 191.92
+      },
+      "score": 0.9326417446136475
+    },
+    {
+      "id": "m_0053",
+      "label": "person",
+      "surface": "viewer",
+      "canonical": "viewer",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3114,
+        "charEnd": 3120,
+        "timeStart": 189.84,
+        "timeEnd": 193.84
+      },
+      "score": 0.5900028944015503
+    },
+    {
+      "id": "m_0054",
+      "label": "person",
+      "surface": "angela ford",
+      "canonical": "angela ford",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3127,
+        "charEnd": 3138,
+        "timeStart": 189.84,
+        "timeEnd": 193.84
+      },
+      "score": 0.9514525532722473
+    },
+    {
+      "id": "m_0055",
+      "label": "role",
+      "surface": "former customs agent",
+      "canonical": "former customs agent",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3165,
+        "charEnd": 3185,
+        "timeStart": 191.92,
+        "timeEnd": 195.76
+      },
+      "score": 0.513029932975769
+    },
+    {
+      "id": "m_0056",
+      "label": "organization",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3218,
+        "charEnd": 3229,
+        "timeStart": 193.84,
+        "timeEnd": 197.519
+      },
+      "score": 0.8519355654716492
+    },
+    {
+      "id": "m_0057",
+      "label": "location",
+      "surface": "lowell\nwyoming",
+      "canonical": "lowell\nwyoming",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3257,
+        "charEnd": 3271,
+        "timeStart": 195.76,
+        "timeEnd": 202.48000000000002
+      },
+      "score": 0.8538452982902527
+    },
+    {
+      "id": "m_0058",
+      "label": "location",
+      "surface": "low wyoming",
+      "canonical": "low wyoming",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3322,
+        "charEnd": 3333,
+        "timeStart": 199.84,
+        "timeEnd": 205.04
+      },
+      "score": 0.5112590193748474
+    },
+    {
+      "id": "m_0059",
+      "label": "organization",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3451,
+        "charEnd": 3462,
+        "timeStart": 209.68,
+        "timeEnd": 213.76000000000002
+      },
+      "score": 0.8650178909301758
+    },
+    {
+      "id": "m_0060",
+      "label": "technology",
+      "surface": "remote viewing",
+      "canonical": "remote viewing",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3493,
+        "charEnd": 3507,
+        "timeStart": 211.68,
+        "timeEnd": 216.239
+      },
+      "score": 0.9405779242515564
+    },
+    {
+      "id": "m_0061",
+      "label": "technology",
+      "surface": "remote viewing",
+      "canonical": "remote viewing",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3547,
+        "charEnd": 3561,
+        "timeStart": 213.76,
+        "timeEnd": 218.239
+      },
+      "score": 0.9246549010276794
+    },
+    {
+      "id": "m_0062",
+      "label": "person",
+      "surface": "joe\nmcmonagle",
+      "canonical": "joe\nmcmonagle",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3628,
+        "charEnd": 3641,
+        "timeStart": 218.239,
+        "timeEnd": 224.799
+      },
+      "score": 0.9894914627075195
+    },
+    {
+      "id": "m_0063",
+      "label": "location",
+      "surface": "mars",
+      "canonical": "mars",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3699,
+        "charEnd": 3703,
+        "timeStart": 222.239,
+        "timeEnd": 227.04
+      },
+      "score": 0.6746593117713928
+    },
+    {
+      "id": "m_0064",
+      "label": "person",
+      "surface": "joe mcmonagle",
+      "canonical": "joe\nmcmonagle",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3761,
+        "charEnd": 3774,
+        "timeStart": 231.2,
+        "timeEnd": 234.48
+      },
+      "score": 0.9883095026016235
+    },
+    {
+      "id": "m_0065",
+      "label": "organization",
+      "surface": "u.s army",
+      "canonical": "u.s army",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3781,
+        "charEnd": 3789,
+        "timeStart": 231.2,
+        "timeEnd": 234.48
+      },
+      "score": 0.8454105257987976
+    },
+    {
+      "id": "m_0066",
+      "label": "role",
+      "surface": "intelligence officer",
+      "canonical": "intelligence officer",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3790,
+        "charEnd": 3810,
+        "timeStart": 232.879,
+        "timeEnd": 237.599
+      },
+      "score": 0.8649418950080872
+    },
+    {
+      "id": "m_0067",
+      "label": "location",
+      "surface": "vietnam",
+      "canonical": "vietnam",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3825,
+        "charEnd": 3832,
+        "timeStart": 234.48,
+        "timeEnd": 239.76
+      },
+      "score": 0.8997424840927124
+    },
+    {
+      "id": "m_0068",
+      "label": "date_time",
+      "surface": "1970",
+      "canonical": "1970",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3836,
+        "charEnd": 3840,
+        "timeStart": 234.48,
+        "timeEnd": 239.76
+      },
+      "score": 0.9353594779968262
+    },
+    {
+      "id": "m_0069",
+      "label": "event",
+      "surface": "helicopter accident",
+      "canonical": "helicopter accident",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3871,
+        "charEnd": 3890,
+        "timeStart": 237.599,
+        "timeEnd": 242.07999999999998
+      },
+      "score": 0.9698163866996765
+    },
+    {
+      "id": "m_0070",
+      "label": "organization",
+      "surface": "project stargate",
+      "canonical": "project stargate",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 3985,
+        "charEnd": 4001,
+        "timeStart": 244.159,
+        "timeEnd": 250.159
+      },
+      "score": 0.8921996355056763
+    },
+    {
+      "id": "m_0071",
+      "label": "role",
+      "surface": "psychic spy",
+      "canonical": "psychic spy",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4007,
+        "charEnd": 4018,
+        "timeStart": 244.159,
+        "timeEnd": 250.159
+      },
+      "score": 0.9161304235458374
+    },
+    {
+      "id": "m_0072",
+      "label": "date_time",
+      "surface": "1978",
+      "canonical": "1978",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4027,
+        "charEnd": 4031,
+        "timeStart": 246.56,
+        "timeEnd": 253.68
+      },
+      "score": 0.5976899266242981
+    },
+    {
+      "id": "m_0073",
+      "label": "date_time",
+      "surface": "1984",
+      "canonical": "1984",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4036,
+        "charEnd": 4040,
+        "timeStart": 246.56,
+        "timeEnd": 253.68
+      },
+      "score": 0.5479509830474854
+    },
+    {
+      "id": "m_0074",
+      "label": "person",
+      "surface": "mcmonicle",
+      "canonical": "mcmonicle",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4041,
+        "charEnd": 4050,
+        "timeStart": 246.56,
+        "timeEnd": 253.68
+      },
+      "score": 0.8997815251350403
+    },
+    {
+      "id": "m_0075",
+      "label": "quantity",
+      "surface": "450",
+      "canonical": "450",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4067,
+        "charEnd": 4070,
+        "timeStart": 250.159,
+        "timeEnd": 255.67999999999998
+      },
+      "score": 0.5396823287010193
+    },
+    {
+      "id": "m_0076",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4080,
+        "charEnd": 4083,
+        "timeStart": 250.159,
+        "timeEnd": 255.67999999999998
+      },
+      "score": 0.9293767213821411
+    },
+    {
+      "id": "m_0077",
+      "label": "location",
+      "surface": "iran",
+      "canonical": "iran",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4127,
+        "charEnd": 4131,
+        "timeStart": 253.68,
+        "timeEnd": 257.519
+      },
+      "score": 0.8856521248817444
+    },
+    {
+      "id": "m_0078",
+      "label": "technology",
+      "surface": "shortwave radio",
+      "canonical": "shortwave radio",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4153,
+        "charEnd": 4168,
+        "timeStart": 255.68,
+        "timeEnd": 260.079
+      },
+      "score": 0.8066724538803101
+    },
+    {
+      "id": "m_0079",
+      "label": "date_time",
+      "surface": "may 22nd 1984",
+      "canonical": "may 22nd 1984",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4248,
+        "charEnd": 4261,
+        "timeStart": 262,
+        "timeEnd": 266.4
+      },
+      "score": 0.9218958616256714
+    },
+    {
+      "id": "m_0080",
+      "label": "person",
+      "surface": "mcmonagle",
+      "canonical": "mcmonagle",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4282,
+        "charEnd": 4291,
+        "timeStart": 264.639,
+        "timeEnd": 268.40000000000003
+      },
+      "score": 0.8475549221038818
+    },
+    {
+      "id": "m_0081",
+      "label": "person",
+      "surface": "researcher",
+      "canonical": "researcher",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 4330,
+        "charEnd": 4340,
+        "timeStart": 266.4,
+        "timeEnd": 270.479
+      },
+      "score": 0.7285489439964294
+    },
+    {
+      "id": "m_0082",
+      "label": "person",
+      "surface": "mcmonagle",
+      "canonical": "mcmonagle",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5345,
+        "charEnd": 5354,
+        "timeStart": 344.16,
+        "timeEnd": 348.24
+      },
+      "score": 0.684589147567749
+    },
+    {
+      "id": "m_0083",
+      "label": "location",
+      "surface": "washington monument",
+      "canonical": "washington monument",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5412,
+        "charEnd": 5431,
+        "timeStart": 348.24,
+        "timeEnd": 352.40000000000003
+      },
+      "score": 0.8290491700172424
+    },
+    {
+      "id": "m_0084",
+      "label": "location",
+      "surface": "road beds",
+      "canonical": "road beds",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5497,
+        "charEnd": 5506,
+        "timeStart": 352.4,
+        "timeEnd": 356.96
+      },
+      "score": 0.5321070551872253
+    },
+    {
+      "id": "m_0085",
+      "label": "facility",
+      "surface": "pyramids",
+      "canonical": "pyramids",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5515,
+        "charEnd": 5523,
+        "timeStart": 352.4,
+        "timeEnd": 356.96
+      },
+      "score": 0.6906626224517822
+    },
+    {
+      "id": "m_0086",
+      "label": "facility",
+      "surface": "storm shelters",
+      "canonical": "storm shelters",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5542,
+        "charEnd": 5556,
+        "timeStart": 354.96,
+        "timeEnd": 359.68
+      },
+      "score": 0.8280559182167053
+    },
+    {
+      "id": "m_0087",
+      "label": "location",
+      "surface": "mars",
+      "canonical": "mars",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5777,
+        "charEnd": 5781,
+        "timeStart": 369.28,
+        "timeEnd": 377.11999999999995
+      },
+      "score": 0.7459502220153809
+    },
+    {
+      "id": "m_0088",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5946,
+        "charEnd": 5949,
+        "timeStart": 381.039,
+        "timeEnd": 385.12
+      },
+      "score": 0.9396049380302429
+    },
+    {
+      "id": "m_0089",
+      "label": "event",
+      "surface": "document dump",
+      "canonical": "document dump",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5950,
+        "charEnd": 5963,
+        "timeStart": 382.96,
+        "timeEnd": 387.039
+      },
+      "score": 0.7301353812217712
+    },
+    {
+      "id": "m_0090",
+      "label": "technology",
+      "surface": "project stargate",
+      "canonical": "project stargate",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 5970,
+        "charEnd": 5986,
+        "timeStart": 382.96,
+        "timeEnd": 387.039
+      },
+      "score": 0.8692604899406433
+    },
+    {
+      "id": "m_0091",
+      "label": "organization",
+      "surface": "united\nstates government",
+      "canonical": "united\nstates government",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6190,
+        "charEnd": 6214,
+        "timeStart": 396.8,
+        "timeEnd": 402.88
+      },
+      "score": 0.7187938690185547
+    },
+    {
+      "id": "m_0092",
+      "label": "person",
+      "surface": "joseph mcmonagle",
+      "canonical": "joseph mcmonagle",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6273,
+        "charEnd": 6289,
+        "timeStart": 402.88,
+        "timeEnd": 407.84
+      },
+      "score": 0.9599631428718567
+    },
+    {
+      "id": "m_0093",
+      "label": "organization",
+      "surface": "army",
+      "canonical": "army",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6424,
+        "charEnd": 6428,
+        "timeStart": 409.52,
+        "timeEnd": 413.44
+      },
+      "score": 0.6831120848655701
+    },
+    {
+      "id": "m_0094",
+      "label": "organization",
+      "surface": "legion of merit",
+      "canonical": "legion of merit",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6448,
+        "charEnd": 6463,
+        "timeStart": 411.599,
+        "timeEnd": 415.44
+      },
+      "score": 0.7673960328102112
+    },
+    {
+      "id": "m_0095",
+      "label": "work_of_media",
+      "surface": "books",
+      "canonical": "books",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6501,
+        "charEnd": 6506,
+        "timeStart": 413.44,
+        "timeEnd": 417.44
+      },
+      "score": 0.6542100310325623
+    },
+    {
+      "id": "m_0096",
+      "label": "quantity",
+      "surface": "countless times",
+      "canonical": "countless times",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6544,
+        "charEnd": 6559,
+        "timeStart": 417.44,
+        "timeEnd": 421.68
+      },
+      "score": 0.5364696383476257
+    },
+    {
+      "id": "m_0097",
+      "label": "quantity",
+      "surface": "hundreds of\nmissions",
+      "canonical": "hundreds of\nmissions",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6650,
+        "charEnd": 6670,
+        "timeStart": 421.68,
+        "timeEnd": 428
+      },
+      "score": 0.5709449648857117
+    },
+    {
+      "id": "m_0098",
+      "label": "technology",
+      "surface": "remote viewing",
+      "canonical": "remote viewing",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6728,
+        "charEnd": 6742,
+        "timeStart": 425.599,
+        "timeEnd": 430.24
+      },
+      "score": 0.877518355846405
+    },
+    {
+      "id": "m_0099",
+      "label": "quantity",
+      "surface": "one percent of the time",
+      "canonical": "one percent of the time",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6743,
+        "charEnd": 6766,
+        "timeStart": 428,
+        "timeEnd": 432.8
+      },
+      "score": 0.6555287837982178
+    },
+    {
+      "id": "m_0100",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6805,
+        "charEnd": 6808,
+        "timeStart": 430.24,
+        "timeEnd": 435.68
+      },
+      "score": 0.9132977724075317
+    },
+    {
+      "id": "m_0101",
+      "label": "person",
+      "surface": "joe mcmonicle",
+      "canonical": "joe mcmonicle",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 6947,
+        "charEnd": 6960,
+        "timeStart": 439.84,
+        "timeEnd": 444.31899999999996
+      },
+      "score": 0.7023606896400452
+    },
+    {
+      "id": "m_0102",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7016,
+        "charEnd": 7026,
+        "timeStart": 444.319,
+        "timeEnd": 448.24
+      },
+      "score": 0.6698643565177917
+    },
+    {
+      "id": "m_0103",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7052,
+        "charEnd": 7062,
+        "timeStart": 446.24,
+        "timeEnd": 451.84000000000003
+      },
+      "score": 0.5427350401878357
+    },
+    {
+      "id": "m_0104",
+      "label": "technology",
+      "surface": "project stargate",
+      "canonical": "project stargate",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7113,
+        "charEnd": 7129,
+        "timeStart": 452.56,
+        "timeEnd": 456.72
+      },
+      "score": 0.5062032341957092
+    },
+    {
+      "id": "m_0105",
+      "label": "organization",
+      "surface": "esp",
+      "canonical": "esp",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7216,
+        "charEnd": 7219,
+        "timeStart": 456.72,
+        "timeEnd": 461.759
+      },
+      "score": 0.8489325642585754
+    },
+    {
+      "id": "m_0106",
+      "label": "date_time",
+      "surface": "2014",
+      "canonical": "2014",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7223,
+        "charEnd": 7227,
+        "timeStart": 456.72,
+        "timeEnd": 461.759
+      },
+      "score": 0.5626909732818604
+    },
+    {
+      "id": "m_0107",
+      "label": "organization",
+      "surface": "office of naval research",
+      "canonical": "office of naval research",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7232,
+        "charEnd": 7256,
+        "timeStart": 460,
+        "timeEnd": 464.4
+      },
+      "score": 0.9197128415107727
+    },
+    {
+      "id": "m_0108",
+      "label": "quantity",
+      "surface": "4 million",
+      "canonical": "4 million",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7278,
+        "charEnd": 7287,
+        "timeStart": 461.759,
+        "timeEnd": 467.28000000000003
+      },
+      "score": 0.5215187072753906
+    },
+    {
+      "id": "m_0109",
+      "label": "person",
+      "surface": "dr edwin may",
+      "canonical": "dr edwin may",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7392,
+        "charEnd": 7404,
+        "timeStart": 469.36,
+        "timeEnd": 474
+      },
+      "score": 0.9858022332191467
+    },
+    {
+      "id": "m_0110",
+      "label": "role",
+      "surface": "former head of\nthe stargate project",
+      "canonical": "former head of\nthe stargate project",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7409,
+        "charEnd": 7444,
+        "timeStart": 469.36,
+        "timeEnd": 476.319
+      },
+      "score": 0.6680319309234619
+    },
+    {
+      "id": "m_0111",
+      "label": "organization",
+      "surface": "esp",
+      "canonical": "esp",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7462,
+        "charEnd": 7465,
+        "timeStart": 474,
+        "timeEnd": 478.319
+      },
+      "score": 0.9075390696525574
+    },
+    {
+      "id": "m_0112",
+      "label": "organization",
+      "surface": "military\nintelligence",
+      "canonical": "military\nintelligence",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7491,
+        "charEnd": 7512,
+        "timeStart": 474,
+        "timeEnd": 480.47900000000004
+      },
+      "score": 0.8678950071334839
+    },
+    {
+      "id": "m_0113",
+      "label": "organization",
+      "surface": "scientific community",
+      "canonical": "scientific community",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7520,
+        "charEnd": 7540,
+        "timeStart": 476.319,
+        "timeEnd": 480.47900000000004
+      },
+      "score": 0.8960265517234802
+    },
+    {
+      "id": "m_0114",
+      "label": "organization",
+      "surface": "military intelligence",
+      "canonical": "military\nintelligence",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7545,
+        "charEnd": 7566,
+        "timeStart": 478.319,
+        "timeEnd": 482.47900000000004
+      },
+      "score": 0.9164320826530457
+    },
+    {
+      "id": "m_0115",
+      "label": "ideology",
+      "surface": "skeptical believer",
+      "canonical": "skeptical believer",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7720,
+        "charEnd": 7738,
+        "timeStart": 486.4,
+        "timeEnd": 491.039
+      },
+      "score": 0.6497902870178223
+    },
+    {
+      "id": "m_0116",
+      "label": "ideology",
+      "surface": "open-minded skeptic",
+      "canonical": "open-minded skeptic",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7745,
+        "charEnd": 7764,
+        "timeStart": 488.56,
+        "timeEnd": 493.36
+      },
+      "score": 0.6402925848960876
+    },
+    {
+      "id": "m_0117",
+      "label": "quantity",
+      "surface": "27 million dollars",
+      "canonical": "27 million dollars",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7900,
+        "charEnd": 7918,
+        "timeStart": 497.039,
+        "timeEnd": 501.12
+      },
+      "score": 0.7975152730941772
+    },
+    {
+      "id": "m_0118",
+      "label": "location",
+      "surface": "morocco",
+      "canonical": "morocco",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7938,
+        "charEnd": 7945,
+        "timeStart": 499.199,
+        "timeEnd": 502.879
+      },
+      "score": 0.8165781497955322
+    },
+    {
+      "id": "m_0119",
+      "label": "quantity",
+      "surface": "three\nmillion dollars",
+      "canonical": "three\nmillion dollars",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 7968,
+        "charEnd": 7989,
+        "timeStart": 499.199,
+        "timeEnd": 505.12
+      },
+      "score": 0.9062209129333496
+    },
+    {
+      "id": "m_0120",
+      "label": "quantity",
+      "surface": "six hundred thousand dollars",
+      "canonical": "six hundred thousand dollars",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8091,
+        "charEnd": 8119,
+        "timeStart": 506.879,
+        "timeEnd": 511.28000000000003
+      },
+      "score": 0.5383750796318054
+    },
+    {
+      "id": "m_0121",
+      "label": "organization",
+      "surface": "esp",
+      "canonical": "esp",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8331,
+        "charEnd": 8334,
+        "timeStart": 519.44,
+        "timeEnd": 523.839
+      },
+      "score": 0.8387020230293274
+    },
+    {
+      "id": "m_0122",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8380,
+        "charEnd": 8383,
+        "timeStart": 521.599,
+        "timeEnd": 525.36
+      },
+      "score": 0.9231792688369751
+    },
+    {
+      "id": "m_0123",
+      "label": "organization",
+      "surface": "united states\ncongress",
+      "canonical": "united states\ncongress",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8409,
+        "charEnd": 8431,
+        "timeStart": 523.839,
+        "timeEnd": 529.36
+      },
+      "score": 0.673069179058075
+    },
+    {
+      "id": "m_0124",
+      "label": "person",
+      "surface": "aj",
+      "canonical": "aj",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8648,
+        "charEnd": 8650,
+        "timeStart": 540.16,
+        "timeEnd": 543.92
+      },
+      "score": 0.9545757174491882
+    },
+    {
+      "id": "m_0125",
+      "label": "person",
+      "surface": "hecklefish",
+      "canonical": "hecklefish",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8658,
+        "charEnd": 8668,
+        "timeStart": 540.16,
+        "timeEnd": 543.92
+      },
+      "score": 0.6274920701980591
+    },
+    {
+      "id": "m_0126",
+      "label": "work_of_media",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8687,
+        "charEnd": 8694,
+        "timeStart": 542.16,
+        "timeEnd": 545.279
+      },
+      "score": 0.8414247035980225
+    },
+    {
+      "id": "m_0127",
+      "label": "technology",
+      "surface": "youtube algorithm",
+      "canonical": "youtube algorithm",
+      "span": {
+        "transcriptId": "7n5Dq-c0_Zw",
+        "charStart": 8795,
+        "charEnd": 8812,
+        "timeStart": 546.959,
+        "timeEnd": 549.68
+      },
+      "score": 0.7729153633117676
+    }
+  ]
+}

@@ -1,0 +1,6438 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "yDyJe1nmSOM",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T00:57:56.790Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "person",
+      "surface": "Stanley Kubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 56,
+        "charEnd": 71,
+        "timeStart": 5.339,
+        "timeEnd": 9.9
+      },
+      "score": 0.9643634557723999
+    },
+    {
+      "id": "m_0002",
+      "label": "date_time",
+      "surface": "1968",
+      "canonical": "1968",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 183,
+        "charEnd": 187,
+        "timeStart": 12.179,
+        "timeEnd": 17.88
+      },
+      "score": 0.7972021102905273
+    },
+    {
+      "id": "m_0003",
+      "label": "work_of_media",
+      "surface": "2001 A\nSpace Odyssey",
+      "canonical": "2001 A\nSpace Odyssey",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 205,
+        "charEnd": 225,
+        "timeStart": 12.179,
+        "timeEnd": 20.64
+      },
+      "score": 0.9471439719200134
+    },
+    {
+      "id": "m_0004",
+      "label": "person",
+      "surface": "Arthur C\nClarke",
+      "canonical": "Arthur C\nClarke",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 431,
+        "charEnd": 446,
+        "timeStart": 26.939,
+        "timeEnd": 33.059000000000005
+      },
+      "score": 0.9345398545265198
+    },
+    {
+      "id": "m_0005",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 501,
+        "charEnd": 506,
+        "timeStart": 31.14,
+        "timeEnd": 35.34
+      },
+      "score": 0.8469122052192688
+    },
+    {
+      "id": "m_0006",
+      "label": "location",
+      "surface": "solar system",
+      "canonical": "solar system",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 560,
+        "charEnd": 572,
+        "timeStart": 35.34,
+        "timeEnd": 39.120000000000005
+      },
+      "score": 0.5880542397499084
+    },
+    {
+      "id": "m_0007",
+      "label": "technology",
+      "surface": "groundbreaking special effects",
+      "canonical": "groundbreaking special effects",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 592,
+        "charEnd": 622,
+        "timeStart": 37.2,
+        "timeEnd": 41.760000000000005
+      },
+      "score": 0.8826764225959778
+    },
+    {
+      "id": "m_0008",
+      "label": "organization",
+      "surface": "American government",
+      "canonical": "American government",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 708,
+        "charEnd": 727,
+        "timeStart": 43.86,
+        "timeEnd": 48.12
+      },
+      "score": 0.9172849059104919
+    },
+    {
+      "id": "m_0009",
+      "label": "quantity",
+      "surface": "billions of\ntax dollars",
+      "canonical": "billions of\ntax dollars",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 736,
+        "charEnd": 759,
+        "timeStart": 43.86,
+        "timeEnd": 50.7
+      },
+      "score": 0.7108991742134094
+    },
+    {
+      "id": "m_0010",
+      "label": "organization",
+      "surface": "Soviets",
+      "canonical": "Soviets",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 803,
+        "charEnd": 810,
+        "timeStart": 48.12,
+        "timeEnd": 53.218999999999994
+      },
+      "score": 0.8973618745803833
+    },
+    {
+      "id": "m_0011",
+      "label": "quantity",
+      "surface": "years",
+      "canonical": "years",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 822,
+        "charEnd": 827,
+        "timeStart": 48.12,
+        "timeEnd": 53.218999999999994
+      },
+      "score": 0.6961655020713806
+    },
+    {
+      "id": "m_0012",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 855,
+        "charEnd": 859,
+        "timeStart": 50.7,
+        "timeEnd": 54.719
+      },
+      "score": 0.951551616191864
+    },
+    {
+      "id": "m_0013",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 893,
+        "charEnd": 897,
+        "timeStart": 53.219,
+        "timeEnd": 56.76
+      },
+      "score": 0.9277731776237488
+    },
+    {
+      "id": "m_0014",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 1034,
+        "charEnd": 1038,
+        "timeStart": 60.96,
+        "timeEnd": 66.5
+      },
+      "score": 0.921141505241394
+    },
+    {
+      "id": "m_0015",
+      "label": "person",
+      "surface": "Gertie",
+      "canonical": "Gertie",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 1505,
+        "charEnd": 1511,
+        "timeStart": 105.24,
+        "timeEnd": 109.5
+      },
+      "score": 0.6483789682388306
+    },
+    {
+      "id": "m_0016",
+      "label": "organization",
+      "surface": "dog sled team",
+      "canonical": "dog sled team",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 1635,
+        "charEnd": 1648,
+        "timeStart": 114.42,
+        "timeEnd": 120.6
+      },
+      "score": 0.505414605140686
+    },
+    {
+      "id": "m_0017",
+      "label": "person",
+      "surface": "Gertie",
+      "canonical": "Gertie",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 1891,
+        "charEnd": 1897,
+        "timeStart": 134.04,
+        "timeEnd": 138.48
+      },
+      "score": 0.6520770192146301
+    },
+    {
+      "id": "m_0018",
+      "label": "person",
+      "surface": "Johnny Hancock",
+      "canonical": "Johnny Hancock",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 1992,
+        "charEnd": 2006,
+        "timeStart": 140.64,
+        "timeEnd": 144.5
+      },
+      "score": 0.9058595299720764
+    },
+    {
+      "id": "m_0019",
+      "label": "person",
+      "surface": "Daddy",
+      "canonical": "Daddy",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2024,
+        "charEnd": 2029,
+        "timeStart": 145.2,
+        "timeEnd": 151.39999999999998
+      },
+      "score": 0.7994458079338074
+    },
+    {
+      "id": "m_0020",
+      "label": "person",
+      "surface": "human",
+      "canonical": "human",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2047,
+        "charEnd": 2052,
+        "timeStart": 147.72,
+        "timeEnd": 151.4
+      },
+      "score": 0.5802014470100403
+    },
+    {
+      "id": "m_0021",
+      "label": "organization",
+      "surface": "Collections",
+      "canonical": "Collections",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2095,
+        "charEnd": 2106,
+        "timeStart": 158.52,
+        "timeEnd": 161.58
+      },
+      "score": 0.7572209239006042
+    },
+    {
+      "id": "m_0022",
+      "label": "person",
+      "surface": "Mr big shot",
+      "canonical": "Mr big shot",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2177,
+        "charEnd": 2188,
+        "timeStart": 161.58,
+        "timeEnd": 165.18
+      },
+      "score": 0.6679081916809082
+    },
+    {
+      "id": "m_0023",
+      "label": "organization",
+      "surface": "PDS debt",
+      "canonical": "PDS debt",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2273,
+        "charEnd": 2281,
+        "timeStart": 166.319,
+        "timeEnd": 170.29999999999998
+      },
+      "score": 0.8245795965194702
+    },
+    {
+      "id": "m_0024",
+      "label": "organization",
+      "surface": "PDS debt",
+      "canonical": "PDS debt",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2289,
+        "charEnd": 2297,
+        "timeStart": 171,
+        "timeEnd": 175.86
+      },
+      "score": 0.8709459900856018
+    },
+    {
+      "id": "m_0025",
+      "label": "quantity",
+      "surface": "monthly payment",
+      "canonical": "monthly payment",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2357,
+        "charEnd": 2372,
+        "timeStart": 175.86,
+        "timeEnd": 179.64000000000001
+      },
+      "score": 0.5360836982727051
+    },
+    {
+      "id": "m_0026",
+      "label": "quantity",
+      "surface": "ten\nthousand dollars",
+      "canonical": "ten\nthousand dollars",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2392,
+        "charEnd": 2412,
+        "timeStart": 175.86,
+        "timeEnd": 181.55999999999997
+      },
+      "score": 0.6614015102386475
+    },
+    {
+      "id": "m_0027",
+      "label": "organization",
+      "surface": "Fair Credit",
+      "canonical": "Fair Credit",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2492,
+        "charEnd": 2503,
+        "timeStart": 181.56,
+        "timeEnd": 185.76
+      },
+      "score": 0.5690696239471436
+    },
+    {
+      "id": "m_0028",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2529,
+        "charEnd": 2538,
+        "timeStart": 183.84,
+        "timeEnd": 187.62
+      },
+      "score": 0.5334282517433167
+    },
+    {
+      "id": "m_0029",
+      "label": "organization",
+      "surface": "PDS debt",
+      "canonical": "PDS debt",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 2608,
+        "charEnd": 2616,
+        "timeStart": 191.7,
+        "timeEnd": 196.379
+      },
+      "score": 0.8723638653755188
+    },
+    {
+      "id": "m_0030",
+      "label": "person",
+      "surface": "Neil Armstrong",
+      "canonical": "Neil Armstrong",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3117,
+        "charEnd": 3131,
+        "timeStart": 232.98,
+        "timeEnd": 237.11999999999998
+      },
+      "score": 0.9223624467849731
+    },
+    {
+      "id": "m_0031",
+      "label": "person",
+      "surface": "Buzz Aldrin",
+      "canonical": "Buzz Aldrin",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3136,
+        "charEnd": 3147,
+        "timeStart": 235.14,
+        "timeEnd": 240.42
+      },
+      "score": 0.9917416572570801
+    },
+    {
+      "id": "m_0032",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3164,
+        "charEnd": 3168,
+        "timeStart": 235.14,
+        "timeEnd": 240.42
+      },
+      "score": 0.9228225350379944
+    },
+    {
+      "id": "m_0033",
+      "label": "date_time",
+      "surface": "July\n20th 1969",
+      "canonical": "July\n20th 1969",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3172,
+        "charEnd": 3186,
+        "timeStart": 235.14,
+        "timeEnd": 242.28
+      },
+      "score": 0.9658011794090271
+    },
+    {
+      "id": "m_0034",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3394,
+        "charEnd": 3398,
+        "timeStart": 247.62,
+        "timeEnd": 251.64000000000001
+      },
+      "score": 0.9570549726486206
+    },
+    {
+      "id": "m_0035",
+      "label": "person",
+      "surface": "Richard C Hoagland",
+      "canonical": "Richard C Hoagland",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3564,
+        "charEnd": 3582,
+        "timeStart": 260.4,
+        "timeEnd": 265.44
+      },
+      "score": 0.918700635433197
+    },
+    {
+      "id": "m_0036",
+      "label": "work_of_media",
+      "surface": "dark mission",
+      "canonical": "dark mission",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3606,
+        "charEnd": 3618,
+        "timeStart": 262.56,
+        "timeEnd": 267.54
+      },
+      "score": 0.7109335064888
+    },
+    {
+      "id": "m_0037",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3631,
+        "charEnd": 3635,
+        "timeStart": 265.44,
+        "timeEnd": 269.759
+      },
+      "score": 0.9064089059829712
+    },
+    {
+      "id": "m_0038",
+      "label": "organization",
+      "surface": "Press",
+      "canonical": "Press",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3684,
+        "charEnd": 3689,
+        "timeStart": 267.54,
+        "timeEnd": 271.86
+      },
+      "score": 0.5765763521194458
+    },
+    {
+      "id": "m_0039",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3771,
+        "charEnd": 3775,
+        "timeStart": 271.86,
+        "timeEnd": 275.639
+      },
+      "score": 0.9672912359237671
+    },
+    {
+      "id": "m_0040",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3791,
+        "charEnd": 3800,
+        "timeStart": 273.54,
+        "timeEnd": 277.91900000000004
+      },
+      "score": 0.5097564458847046
+    },
+    {
+      "id": "m_0041",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3823,
+        "charEnd": 3827,
+        "timeStart": 275.639,
+        "timeEnd": 280.139
+      },
+      "score": 0.9249428510665894
+    },
+    {
+      "id": "m_0042",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3917,
+        "charEnd": 3921,
+        "timeStart": 280.139,
+        "timeEnd": 284.52
+      },
+      "score": 0.9175938367843628
+    },
+    {
+      "id": "m_0043",
+      "label": "organization",
+      "surface": "American\npublic",
+      "canonical": "American\npublic",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 3998,
+        "charEnd": 4013,
+        "timeStart": 284.52,
+        "timeEnd": 290.46
+      },
+      "score": 0.6141818165779114
+    },
+    {
+      "id": "m_0044",
+      "label": "event",
+      "surface": "moon landings",
+      "canonical": "moon landings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4026,
+        "charEnd": 4039,
+        "timeStart": 286.68,
+        "timeEnd": 290.46
+      },
+      "score": 0.7694756984710693
+    },
+    {
+      "id": "m_0045",
+      "label": "work_of_media",
+      "surface": "diamonds are forever",
+      "canonical": "diamonds are forever",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4116,
+        "charEnd": 4136,
+        "timeStart": 293.28,
+        "timeEnd": 297.96
+      },
+      "score": 0.8971572518348694
+    },
+    {
+      "id": "m_0046",
+      "label": "person",
+      "surface": "Sean Connery",
+      "canonical": "Sean Connery",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4162,
+        "charEnd": 4174,
+        "timeStart": 295.5,
+        "timeEnd": 300.06
+      },
+      "score": 0.9728795289993286
+    },
+    {
+      "id": "m_0047",
+      "label": "role",
+      "surface": "James Bond",
+      "canonical": "James Bond",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4178,
+        "charEnd": 4188,
+        "timeStart": 295.5,
+        "timeEnd": 300.06
+      },
+      "score": 0.8241748213768005
+    },
+    {
+      "id": "m_0048",
+      "label": "location",
+      "surface": "warehouse",
+      "canonical": "warehouse",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4203,
+        "charEnd": 4212,
+        "timeStart": 297.96,
+        "timeEnd": 302.03999999999996
+      },
+      "score": 0.8879354000091553
+    },
+    {
+      "id": "m_0049",
+      "label": "organization",
+      "surface": "government agents",
+      "canonical": "government agents",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4232,
+        "charEnd": 4249,
+        "timeStart": 300.06,
+        "timeEnd": 303.96
+      },
+      "score": 0.9262688159942627
+    },
+    {
+      "id": "m_0050",
+      "label": "work_of_media",
+      "surface": "Capricorn 1",
+      "canonical": "Capricorn 1",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4432,
+        "charEnd": 4443,
+        "timeStart": 316.68,
+        "timeEnd": 321.54
+      },
+      "score": 0.9343641400337219
+    },
+    {
+      "id": "m_0051",
+      "label": "person",
+      "surface": "James Brolin",
+      "canonical": "James Brolin",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4453,
+        "charEnd": 4465,
+        "timeStart": 316.68,
+        "timeEnd": 321.54
+      },
+      "score": 0.7915797233581543
+    },
+    {
+      "id": "m_0052",
+      "label": "person",
+      "surface": "O.J Simpson",
+      "canonical": "O.J Simpson",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4470,
+        "charEnd": 4481,
+        "timeStart": 319.139,
+        "timeEnd": 324
+      },
+      "score": 0.8089441657066345
+    },
+    {
+      "id": "m_0053",
+      "label": "work_of_media",
+      "surface": "Capricorn one",
+      "canonical": "Capricorn one",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4605,
+        "charEnd": 4618,
+        "timeStart": 325.259,
+        "timeEnd": 330.18
+      },
+      "score": 0.8917292952537537
+    },
+    {
+      "id": "m_0054",
+      "label": "event",
+      "surface": "Mission to Mars",
+      "canonical": "Mission to Mars",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4644,
+        "charEnd": 4659,
+        "timeStart": 327.72,
+        "timeEnd": 332.1
+      },
+      "score": 0.735682487487793
+    },
+    {
+      "id": "m_0055",
+      "label": "quantity",
+      "surface": "Millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4663,
+        "charEnd": 4671,
+        "timeStart": 330.18,
+        "timeEnd": 333.90000000000003
+      },
+      "score": 0.9426928758621216
+    },
+    {
+      "id": "m_0056",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 4760,
+        "charEnd": 4770,
+        "timeStart": 333.9,
+        "timeEnd": 338.69899999999996
+      },
+      "score": 0.5318083763122559
+    },
+    {
+      "id": "m_0057",
+      "label": "work_of_media",
+      "surface": "Night Fever",
+      "canonical": "Night Fever",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5280,
+        "charEnd": 5291,
+        "timeStart": 373.5,
+        "timeEnd": 379.08
+      },
+      "score": 0.5963671207427979
+    },
+    {
+      "id": "m_0058",
+      "label": "work_of_media",
+      "surface": "Night Fever",
+      "canonical": "Night Fever",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5295,
+        "charEnd": 5306,
+        "timeStart": 373.5,
+        "timeEnd": 379.08
+      },
+      "score": 0.547217071056366
+    },
+    {
+      "id": "m_0059",
+      "label": "location",
+      "surface": "Club 54",
+      "canonical": "Club 54",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5431,
+        "charEnd": 5438,
+        "timeStart": 383.759,
+        "timeEnd": 388.62
+      },
+      "score": 0.5797865390777588
+    },
+    {
+      "id": "m_0060",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5599,
+        "charEnd": 5607,
+        "timeStart": 393.3,
+        "timeEnd": 397.62
+      },
+      "score": 0.8453900814056396
+    },
+    {
+      "id": "m_0061",
+      "label": "event",
+      "surface": "the moon\nlandings",
+      "canonical": "the moon\nlandings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5683,
+        "charEnd": 5700,
+        "timeStart": 397.62,
+        "timeEnd": 402.90000000000003
+      },
+      "score": 0.7805352807044983
+    },
+    {
+      "id": "m_0062",
+      "label": "event",
+      "surface": "Apollo missions",
+      "canonical": "Apollo missions",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5769,
+        "charEnd": 5784,
+        "timeStart": 402.9,
+        "timeEnd": 407.69899999999996
+      },
+      "score": 0.7698647379875183
+    },
+    {
+      "id": "m_0063",
+      "label": "organization",
+      "surface": "BART",
+      "canonical": "BART",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5826,
+        "charEnd": 5830,
+        "timeStart": 404.94,
+        "timeEnd": 409.199
+      },
+      "score": 0.5524693727493286
+    },
+    {
+      "id": "m_0064",
+      "label": "person",
+      "surface": "sabrel",
+      "canonical": "sabrel",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5831,
+        "charEnd": 5837,
+        "timeStart": 404.94,
+        "timeEnd": 409.199
+      },
+      "score": 0.9252709150314331
+    },
+    {
+      "id": "m_0065",
+      "label": "work_of_media",
+      "surface": "a\nFunny Thing Happened on the Way to the\nMoon",
+      "canonical": "a\nFunny Thing Happened on the Way to the\nMoon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5843,
+        "charEnd": 5888,
+        "timeStart": 404.94,
+        "timeEnd": 412.5
+      },
+      "score": 0.8665102124214172
+    },
+    {
+      "id": "m_0066",
+      "label": "person",
+      "surface": "guy",
+      "canonical": "guy",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 5907,
+        "charEnd": 5910,
+        "timeStart": 409.199,
+        "timeEnd": 412.5
+      },
+      "score": 0.5642288327217102
+    },
+    {
+      "id": "m_0067",
+      "label": "person",
+      "surface": "sabriel",
+      "canonical": "sabriel",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6217,
+        "charEnd": 6224,
+        "timeStart": 429.84,
+        "timeEnd": 433.56
+      },
+      "score": 0.9337172508239746
+    },
+    {
+      "id": "m_0068",
+      "label": "person",
+      "surface": "Buzz",
+      "canonical": "Buzz",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6242,
+        "charEnd": 6246,
+        "timeStart": 429.84,
+        "timeEnd": 433.56
+      },
+      "score": 0.7033182978630066
+    },
+    {
+      "id": "m_0069",
+      "label": "work_of_media",
+      "surface": "Bible",
+      "canonical": "Bible",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6300,
+        "charEnd": 6305,
+        "timeStart": 433.56,
+        "timeEnd": 437.52
+      },
+      "score": 0.5579120516777039
+    },
+    {
+      "id": "m_0070",
+      "label": "event",
+      "surface": "the moon landing",
+      "canonical": "the moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6311,
+        "charEnd": 6327,
+        "timeStart": 433.56,
+        "timeEnd": 437.52
+      },
+      "score": 0.8440091013908386
+    },
+    {
+      "id": "m_0071",
+      "label": "person",
+      "surface": "Buzz",
+      "canonical": "Buzz",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6337,
+        "charEnd": 6341,
+        "timeStart": 435.18,
+        "timeEnd": 439.62
+      },
+      "score": 0.8223471641540527
+    },
+    {
+      "id": "m_0072",
+      "label": "person",
+      "surface": "sabriel",
+      "canonical": "sabriel",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6393,
+        "charEnd": 6400,
+        "timeStart": 437.52,
+        "timeEnd": 441.29999999999995
+      },
+      "score": 0.5162723660469055
+    },
+    {
+      "id": "m_0073",
+      "label": "event",
+      "surface": "moon landing",
+      "canonical": "moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6485,
+        "charEnd": 6497,
+        "timeStart": 443.099,
+        "timeEnd": 447.06
+      },
+      "score": 0.8823056221008301
+    },
+    {
+      "id": "m_0074",
+      "label": "work_of_media",
+      "surface": "American pop culture",
+      "canonical": "American pop culture",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6542,
+        "charEnd": 6562,
+        "timeStart": 444.96,
+        "timeEnd": 448.85999999999996
+      },
+      "score": 0.5279591679573059
+    },
+    {
+      "id": "m_0075",
+      "label": "person",
+      "surface": "Neil Armstrong",
+      "canonical": "Neil Armstrong",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6610,
+        "charEnd": 6624,
+        "timeStart": 448.86,
+        "timeEnd": 452.34000000000003
+      },
+      "score": 0.9831521511077881
+    },
+    {
+      "id": "m_0076",
+      "label": "person",
+      "surface": "Joe Rogan",
+      "canonical": "Joe Rogan",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6797,
+        "charEnd": 6806,
+        "timeStart": 470.639,
+        "timeEnd": 474.419
+      },
+      "score": 0.9879851937294006
+    },
+    {
+      "id": "m_0077",
+      "label": "event",
+      "surface": "the moon landing",
+      "canonical": "the moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6827,
+        "charEnd": 6843,
+        "timeStart": 472.5,
+        "timeEnd": 476.3
+      },
+      "score": 0.9307573437690735
+    },
+    {
+      "id": "m_0078",
+      "label": "person",
+      "surface": "Joe Rogan",
+      "canonical": "Joe Rogan",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6889,
+        "charEnd": 6898,
+        "timeStart": 476.3,
+        "timeEnd": 483.96000000000004
+      },
+      "score": 0.9833303093910217
+    },
+    {
+      "id": "m_0079",
+      "label": "date_time",
+      "surface": "1969",
+      "canonical": "1969",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6923,
+        "charEnd": 6927,
+        "timeStart": 476.3,
+        "timeEnd": 483.96000000000004
+      },
+      "score": 0.6882001757621765
+    },
+    {
+      "id": "m_0080",
+      "label": "date_time",
+      "surface": "1972",
+      "canonical": "1972",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6932,
+        "charEnd": 6936,
+        "timeStart": 481.08,
+        "timeEnd": 486.599
+      },
+      "score": 0.5736595988273621
+    },
+    {
+      "id": "m_0081",
+      "label": "quantity",
+      "surface": "seven",
+      "canonical": "seven",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6960,
+        "charEnd": 6965,
+        "timeStart": 481.08,
+        "timeEnd": 486.599
+      },
+      "score": 0.5046026110649109
+    },
+    {
+      "id": "m_0082",
+      "label": "quantity",
+      "surface": "seven",
+      "canonical": "seven",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6966,
+        "charEnd": 6971,
+        "timeStart": 483.96,
+        "timeEnd": 489.29999999999995
+      },
+      "score": 0.5784019231796265
+    },
+    {
+      "id": "m_0083",
+      "label": "quantity",
+      "surface": "six of them successful",
+      "canonical": "six of them successful",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 6981,
+        "charEnd": 7003,
+        "timeStart": 483.96,
+        "timeEnd": 489.29999999999995
+      },
+      "score": 0.5402225852012634
+    },
+    {
+      "id": "m_0084",
+      "label": "quantity",
+      "surface": "400 000 people",
+      "canonical": "400 000 people",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7131,
+        "charEnd": 7145,
+        "timeStart": 493.5,
+        "timeEnd": 499.44
+      },
+      "score": 0.899935245513916
+    },
+    {
+      "id": "m_0085",
+      "label": "quantity",
+      "surface": "600 million people",
+      "canonical": "600 million people",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7175,
+        "charEnd": 7193,
+        "timeStart": 496.68,
+        "timeEnd": 502.02
+      },
+      "score": 0.9071705341339111
+    },
+    {
+      "id": "m_0086",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7206,
+        "charEnd": 7210,
+        "timeStart": 499.44,
+        "timeEnd": 504.599
+      },
+      "score": 0.7753204107284546
+    },
+    {
+      "id": "m_0087",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7337,
+        "charEnd": 7341,
+        "timeStart": 506.759,
+        "timeEnd": 511.52000000000004
+      },
+      "score": 0.8356793522834778
+    },
+    {
+      "id": "m_0088",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7507,
+        "charEnd": 7511,
+        "timeStart": 529.2,
+        "timeEnd": 533.0400000000001
+      },
+      "score": 0.7752759456634521
+    },
+    {
+      "id": "m_0089",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7613,
+        "charEnd": 7617,
+        "timeStart": 535.2,
+        "timeEnd": 538.62
+      },
+      "score": 0.6018099188804626
+    },
+    {
+      "id": "m_0090",
+      "label": "organization",
+      "surface": "Soviets",
+      "canonical": "Soviets",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7629,
+        "charEnd": 7636,
+        "timeStart": 536.7,
+        "timeEnd": 540.779
+      },
+      "score": 0.6886775493621826
+    },
+    {
+      "id": "m_0091",
+      "label": "organization",
+      "surface": "the Soviet Union",
+      "canonical": "the Soviet Union",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7637,
+        "charEnd": 7653,
+        "timeStart": 536.7,
+        "timeEnd": 540.779
+      },
+      "score": 0.5243235230445862
+    },
+    {
+      "id": "m_0092",
+      "label": "technology",
+      "surface": "space technology",
+      "canonical": "space technology",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7706,
+        "charEnd": 7722,
+        "timeStart": 540.779,
+        "timeEnd": 545.399
+      },
+      "score": 0.8790885806083679
+    },
+    {
+      "id": "m_0093",
+      "label": "organization",
+      "surface": "the Soviet\nUnion",
+      "canonical": "the Soviet Union",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 7929,
+        "charEnd": 7945,
+        "timeStart": 557.88,
+        "timeEnd": 565.5600000000001
+      },
+      "score": 0.8131033778190613
+    },
+    {
+      "id": "m_0094",
+      "label": "date_time",
+      "surface": "1957",
+      "canonical": "1957",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8003,
+        "charEnd": 8007,
+        "timeStart": 562.62,
+        "timeEnd": 567.66
+      },
+      "score": 0.9411695003509521
+    },
+    {
+      "id": "m_0095",
+      "label": "date_time",
+      "surface": "1960",
+      "canonical": "1960",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8120,
+        "charEnd": 8124,
+        "timeStart": 570,
+        "timeEnd": 574.86
+      },
+      "score": 0.8603898286819458
+    },
+    {
+      "id": "m_0096",
+      "label": "person",
+      "surface": "Yuri Gagarin",
+      "canonical": "Yuri Gagarin",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8236,
+        "charEnd": 8248,
+        "timeStart": 577.44,
+        "timeEnd": 581.7600000000001
+      },
+      "score": 0.9815289974212646
+    },
+    {
+      "id": "m_0097",
+      "label": "person",
+      "surface": "Valentina tarshkova",
+      "canonical": "Valentina tarshkova",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8249,
+        "charEnd": 8268,
+        "timeStart": 579.48,
+        "timeEnd": 584.76
+      },
+      "score": 0.9734268188476562
+    },
+    {
+      "id": "m_0098",
+      "label": "event",
+      "surface": "first spacewalk",
+      "canonical": "first spacewalk",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8330,
+        "charEnd": 8345,
+        "timeStart": 584.76,
+        "timeEnd": 589.3199999999999
+      },
+      "score": 0.816876232624054
+    },
+    {
+      "id": "m_0099",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8376,
+        "charEnd": 8384,
+        "timeStart": 587.04,
+        "timeEnd": 591.36
+      },
+      "score": 0.7238062024116516
+    },
+    {
+      "id": "m_0100",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8427,
+        "charEnd": 8431,
+        "timeStart": 589.32,
+        "timeEnd": 593.4590000000001
+      },
+      "score": 0.5235211253166199
+    },
+    {
+      "id": "m_0101",
+      "label": "event",
+      "surface": "first\nsoft landing",
+      "canonical": "first\nsoft landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8445,
+        "charEnd": 8463,
+        "timeStart": 589.32,
+        "timeEnd": 595.92
+      },
+      "score": 0.6019909381866455
+    },
+    {
+      "id": "m_0102",
+      "label": "location",
+      "surface": "the\nmoon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8486,
+        "charEnd": 8494,
+        "timeStart": 591.36,
+        "timeEnd": 598.0799999999999
+      },
+      "score": 0.7911255359649658
+    },
+    {
+      "id": "m_0103",
+      "label": "organization",
+      "surface": "America",
+      "canonical": "America",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8551,
+        "charEnd": 8558,
+        "timeStart": 595.92,
+        "timeEnd": 602.06
+      },
+      "score": 0.5712159872055054
+    },
+    {
+      "id": "m_0104",
+      "label": "organization",
+      "surface": "Russians",
+      "canonical": "Russians",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8639,
+        "charEnd": 8647,
+        "timeStart": 606.6,
+        "timeEnd": 610.98
+      },
+      "score": 0.9061532020568848
+    },
+    {
+      "id": "m_0105",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8689,
+        "charEnd": 8693,
+        "timeStart": 608.279,
+        "timeEnd": 613.32
+      },
+      "score": 0.9455624222755432
+    },
+    {
+      "id": "m_0106",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 8930,
+        "charEnd": 8934,
+        "timeStart": 632.459,
+        "timeEnd": 637.5
+      },
+      "score": 0.9205792546272278
+    },
+    {
+      "id": "m_0107",
+      "label": "date_time",
+      "surface": "July 16 1969",
+      "canonical": "July 16 1969",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9028,
+        "charEnd": 9040,
+        "timeStart": 640.98,
+        "timeEnd": 647.4200000000001
+      },
+      "score": 0.8984053134918213
+    },
+    {
+      "id": "m_0108",
+      "label": "event",
+      "surface": "Apollo 11",
+      "canonical": "Apollo 11",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9041,
+        "charEnd": 9050,
+        "timeStart": 640.98,
+        "timeEnd": 647.4200000000001
+      },
+      "score": 0.8105901479721069
+    },
+    {
+      "id": "m_0109",
+      "label": "person",
+      "surface": "Neil Armstrong",
+      "canonical": "Neil Armstrong",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9089,
+        "charEnd": 9103,
+        "timeStart": 653.7,
+        "timeEnd": 659.6
+      },
+      "score": 0.9898099899291992
+    },
+    {
+      "id": "m_0110",
+      "label": "person",
+      "surface": "Buzz\nAldrin",
+      "canonical": "Buzz Aldrin",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9108,
+        "charEnd": 9119,
+        "timeStart": 653.7,
+        "timeEnd": 659.6
+      },
+      "score": 0.9720044136047363
+    },
+    {
+      "id": "m_0111",
+      "label": "location",
+      "surface": "the Moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9132,
+        "charEnd": 9140,
+        "timeStart": 656.16,
+        "timeEnd": 659.6
+      },
+      "score": 0.890733003616333
+    },
+    {
+      "id": "m_0112",
+      "label": "quantity",
+      "surface": "years",
+      "canonical": "years",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9199,
+        "charEnd": 9204,
+        "timeStart": 680.959,
+        "timeEnd": 685.7399999999999
+      },
+      "score": 0.6594197750091553
+    },
+    {
+      "id": "m_0113",
+      "label": "organization",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9209,
+        "charEnd": 9222,
+        "timeStart": 680.959,
+        "timeEnd": 685.7399999999999
+      },
+      "score": 0.7163951992988586
+    },
+    {
+      "id": "m_0114",
+      "label": "quantity",
+      "surface": "years",
+      "canonical": "years",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9239,
+        "charEnd": 9244,
+        "timeStart": 683.519,
+        "timeEnd": 688.32
+      },
+      "score": 0.7149729132652283
+    },
+    {
+      "id": "m_0115",
+      "label": "organization",
+      "surface": "Soviets",
+      "canonical": "Soviets",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9256,
+        "charEnd": 9263,
+        "timeStart": 683.519,
+        "timeEnd": 688.32
+      },
+      "score": 0.8102180361747742
+    },
+    {
+      "id": "m_0116",
+      "label": "group_or_movement",
+      "surface": "Skeptics",
+      "canonical": "Skeptics",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9376,
+        "charEnd": 9384,
+        "timeStart": 690.42,
+        "timeEnd": 694.68
+      },
+      "score": 0.8215991854667664
+    },
+    {
+      "id": "m_0117",
+      "label": "work_of_media",
+      "surface": "film",
+      "canonical": "film",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9422,
+        "charEnd": 9426,
+        "timeStart": 694.68,
+        "timeEnd": 699.42
+      },
+      "score": 0.9156433343887329
+    },
+    {
+      "id": "m_0118",
+      "label": "event",
+      "surface": "hoax",
+      "canonical": "hoax",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9510,
+        "charEnd": 9514,
+        "timeStart": 699.42,
+        "timeEnd": 703.56
+      },
+      "score": 0.5042078495025635
+    },
+    {
+      "id": "m_0119",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9528,
+        "charEnd": 9538,
+        "timeStart": 699.42,
+        "timeEnd": 703.56
+      },
+      "score": 0.8460640907287598
+    },
+    {
+      "id": "m_0120",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9636,
+        "charEnd": 9644,
+        "timeStart": 705.66,
+        "timeEnd": 710.459
+      },
+      "score": 0.7941462993621826
+    },
+    {
+      "id": "m_0121",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9648,
+        "charEnd": 9653,
+        "timeStart": 705.66,
+        "timeEnd": 710.459
+      },
+      "score": 0.6944878697395325
+    },
+    {
+      "id": "m_0122",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9682,
+        "charEnd": 9686,
+        "timeStart": 707.76,
+        "timeEnd": 711.72
+      },
+      "score": 0.7769395112991333
+    },
+    {
+      "id": "m_0123",
+      "label": "facility",
+      "surface": "movie\nsoundstage",
+      "canonical": "movie\nsoundstage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9864,
+        "charEnd": 9880,
+        "timeStart": 717.42,
+        "timeEnd": 723.12
+      },
+      "score": 0.668257474899292
+    },
+    {
+      "id": "m_0124",
+      "label": "work_of_media",
+      "surface": "studio lights",
+      "canonical": "studio lights",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9881,
+        "charEnd": 9894,
+        "timeStart": 719.399,
+        "timeEnd": 723.12
+      },
+      "score": 0.6776576638221741
+    },
+    {
+      "id": "m_0125",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 9982,
+        "charEnd": 9990,
+        "timeStart": 725.459,
+        "timeEnd": 730.3199999999999
+      },
+      "score": 0.8803096413612366
+    },
+    {
+      "id": "m_0126",
+      "label": "work_of_media",
+      "surface": "film",
+      "canonical": "film",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 10050,
+        "charEnd": 10054,
+        "timeStart": 730.32,
+        "timeEnd": 733.62
+      },
+      "score": 0.879851758480072
+    },
+    {
+      "id": "m_0127",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 10088,
+        "charEnd": 10098,
+        "timeStart": 732.06,
+        "timeEnd": 736.5
+      },
+      "score": 0.8848761320114136
+    },
+    {
+      "id": "m_0128",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 10319,
+        "charEnd": 10327,
+        "timeStart": 744.36,
+        "timeEnd": 748.74
+      },
+      "score": 0.8419422507286072
+    },
+    {
+      "id": "m_0129",
+      "label": "location",
+      "surface": "the Moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 10504,
+        "charEnd": 10512,
+        "timeStart": 754.079,
+        "timeEnd": 758.2199999999999
+      },
+      "score": 0.7630913853645325
+    },
+    {
+      "id": "m_0130",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 10513,
+        "charEnd": 10517,
+        "timeStart": 754.079,
+        "timeEnd": 758.2199999999999
+      },
+      "score": 0.9812660813331604
+    },
+    {
+      "id": "m_0131",
+      "label": "work_of_media",
+      "surface": "big budget movies",
+      "canonical": "big budget movies",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 10552,
+        "charEnd": 10569,
+        "timeStart": 755.94,
+        "timeEnd": 760.32
+      },
+      "score": 0.6659493446350098
+    },
+    {
+      "id": "m_0132",
+      "label": "location",
+      "surface": "Hills",
+      "canonical": "Hills",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11064,
+        "charEnd": 11069,
+        "timeStart": 787.86,
+        "timeEnd": 792.1800000000001
+      },
+      "score": 0.7701261043548584
+    },
+    {
+      "id": "m_0133",
+      "label": "quantity",
+      "surface": "miles",
+      "canonical": "miles",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11088,
+        "charEnd": 11093,
+        "timeStart": 790.019,
+        "timeEnd": 794.82
+      },
+      "score": 0.676841139793396
+    },
+    {
+      "id": "m_0134",
+      "label": "facility",
+      "surface": "Sound Stage",
+      "canonical": "Sound Stage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11139,
+        "charEnd": 11150,
+        "timeStart": 792.18,
+        "timeEnd": 797.279
+      },
+      "score": 0.8054604530334473
+    },
+    {
+      "id": "m_0135",
+      "label": "location",
+      "surface": "Hills",
+      "canonical": "Hills",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11169,
+        "charEnd": 11174,
+        "timeStart": 794.82,
+        "timeEnd": 799.38
+      },
+      "score": 0.8353274464607239
+    },
+    {
+      "id": "m_0136",
+      "label": "quantity",
+      "surface": "miles",
+      "canonical": "miles",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11213,
+        "charEnd": 11218,
+        "timeStart": 797.279,
+        "timeEnd": 802.019
+      },
+      "score": 0.5288602113723755
+    },
+    {
+      "id": "m_0137",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11357,
+        "charEnd": 11362,
+        "timeStart": 807.24,
+        "timeEnd": 812.22
+      },
+      "score": 0.5523582696914673
+    },
+    {
+      "id": "m_0138",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11503,
+        "charEnd": 11507,
+        "timeStart": 815.76,
+        "timeEnd": 820.139
+      },
+      "score": 0.9792140126228333
+    },
+    {
+      "id": "m_0139",
+      "label": "work_of_media",
+      "surface": "Something In Space",
+      "canonical": "Something In Space",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11562,
+        "charEnd": 11580,
+        "timeStart": 820.139,
+        "timeEnd": 824.5790000000001
+      },
+      "score": 0.7765595316886902
+    },
+    {
+      "id": "m_0140",
+      "label": "location",
+      "surface": "lunar surface",
+      "canonical": "lunar surface",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11929,
+        "charEnd": 11942,
+        "timeStart": 843,
+        "timeEnd": 847.86
+      },
+      "score": 0.5460020303726196
+    },
+    {
+      "id": "m_0141",
+      "label": "location",
+      "surface": "daylight Side of\nthe Moon",
+      "canonical": "daylight Side of\nthe Moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 11953,
+        "charEnd": 11978,
+        "timeStart": 843,
+        "timeEnd": 848.959
+      },
+      "score": 0.7617150545120239
+    },
+    {
+      "id": "m_0142",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12226,
+        "charEnd": 12234,
+        "timeStart": 862.2,
+        "timeEnd": 867.36
+      },
+      "score": 0.5536723732948303
+    },
+    {
+      "id": "m_0143",
+      "label": "person",
+      "surface": "the astronaut",
+      "canonical": "the astronaut",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12235,
+        "charEnd": 12248,
+        "timeStart": 862.2,
+        "timeEnd": 867.36
+      },
+      "score": 0.7715305685997009
+    },
+    {
+      "id": "m_0144",
+      "label": "role",
+      "surface": "Navigator",
+      "canonical": "Navigator",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12249,
+        "charEnd": 12258,
+        "timeStart": 864.48,
+        "timeEnd": 869.519
+      },
+      "score": 0.9001726508140564
+    },
+    {
+      "id": "m_0145",
+      "label": "facility",
+      "surface": "wide\nangle telescope",
+      "canonical": "wide\nangle telescope",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12285,
+        "charEnd": 12305,
+        "timeStart": 864.48,
+        "timeEnd": 872.339
+      },
+      "score": 0.5405497550964355
+    },
+    {
+      "id": "m_0146",
+      "label": "technology",
+      "surface": "fingertip control",
+      "canonical": "fingertip control",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12314,
+        "charEnd": 12331,
+        "timeStart": 869.519,
+        "timeEnd": 874.38
+      },
+      "score": 0.5802003145217896
+    },
+    {
+      "id": "m_0147",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12641,
+        "charEnd": 12645,
+        "timeStart": 889.68,
+        "timeEnd": 895.26
+      },
+      "score": 0.9517372250556946
+    },
+    {
+      "id": "m_0148",
+      "label": "event",
+      "surface": "the\nmoon landing",
+      "canonical": "the moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12649,
+        "charEnd": 12665,
+        "timeStart": 889.68,
+        "timeEnd": 897.98
+      },
+      "score": 0.9625464677810669
+    },
+    {
+      "id": "m_0149",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12704,
+        "charEnd": 12714,
+        "timeStart": 900.38,
+        "timeEnd": 906.06
+      },
+      "score": 0.8353713154792786
+    },
+    {
+      "id": "m_0150",
+      "label": "event",
+      "surface": "the moon landing",
+      "canonical": "the moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12720,
+        "charEnd": 12736,
+        "timeStart": 900.38,
+        "timeEnd": 906.06
+      },
+      "score": 0.9701942205429077
+    },
+    {
+      "id": "m_0151",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12925,
+        "charEnd": 12929,
+        "timeStart": 914.399,
+        "timeEnd": 919.8
+      },
+      "score": 0.9645996689796448
+    },
+    {
+      "id": "m_0152",
+      "label": "event",
+      "surface": "the greatest hoax\nof all time",
+      "canonical": "the greatest hoax\nof all time",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 12959,
+        "charEnd": 12988,
+        "timeStart": 917.579,
+        "timeEnd": 925.56
+      },
+      "score": 0.6717811822891235
+    },
+    {
+      "id": "m_0153",
+      "label": "location",
+      "surface": "the\nmoon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13010,
+        "charEnd": 13018,
+        "timeStart": 919.8,
+        "timeEnd": 928.56
+      },
+      "score": 0.617291271686554
+    },
+    {
+      "id": "m_0154",
+      "label": "facility",
+      "surface": "television\nStudio",
+      "canonical": "television\nStudio",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13038,
+        "charEnd": 13055,
+        "timeStart": 922.38,
+        "timeEnd": 932.2199999999999
+      },
+      "score": 0.738608717918396
+    },
+    {
+      "id": "m_0155",
+      "label": "organization",
+      "surface": "United States Geological Survey",
+      "canonical": "United States Geological Survey",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13167,
+        "charEnd": 13198,
+        "timeStart": 935.04,
+        "timeEnd": 940.26
+      },
+      "score": 0.8855624198913574
+    },
+    {
+      "id": "m_0156",
+      "label": "event",
+      "surface": "the\nmoon landing",
+      "canonical": "the moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13446,
+        "charEnd": 13462,
+        "timeStart": 963.839,
+        "timeEnd": 969.839
+      },
+      "score": 0.7674477100372314
+    },
+    {
+      "id": "m_0157",
+      "label": "facility",
+      "surface": "Sound Stage",
+      "canonical": "Sound Stage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13498,
+        "charEnd": 13509,
+        "timeStart": 966.959,
+        "timeEnd": 972.4799999999999
+      },
+      "score": 0.9383034110069275
+    },
+    {
+      "id": "m_0158",
+      "label": "technology",
+      "surface": "lunar module\nengine",
+      "canonical": "lunar module\nengine",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13514,
+        "charEnd": 13533,
+        "timeStart": 966.959,
+        "timeEnd": 974.5790000000001
+      },
+      "score": 0.894694983959198
+    },
+    {
+      "id": "m_0159",
+      "label": "quantity",
+      "surface": "3 000 pounds",
+      "canonical": "3 000 pounds",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13543,
+        "charEnd": 13555,
+        "timeStart": 969.839,
+        "timeEnd": 974.5790000000001
+      },
+      "score": 0.8580225706100464
+    },
+    {
+      "id": "m_0160",
+      "label": "location",
+      "surface": "lunar surface",
+      "canonical": "lunar surface",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 13574,
+        "charEnd": 13587,
+        "timeStart": 972.48,
+        "timeEnd": 977.22
+      },
+      "score": 0.5589061379432678
+    },
+    {
+      "id": "m_0161",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14039,
+        "charEnd": 14049,
+        "timeStart": 999.66,
+        "timeEnd": 1003.139
+      },
+      "score": 0.910123348236084
+    },
+    {
+      "id": "m_0162",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14148,
+        "charEnd": 14158,
+        "timeStart": 1005.779,
+        "timeEnd": 1010.759
+      },
+      "score": 0.7791604399681091
+    },
+    {
+      "id": "m_0163",
+      "label": "work_of_media",
+      "surface": "footage",
+      "canonical": "footage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14321,
+        "charEnd": 14328,
+        "timeStart": 1017.6,
+        "timeEnd": 1021.86
+      },
+      "score": 0.6702726483345032
+    },
+    {
+      "id": "m_0164",
+      "label": "work_of_media",
+      "surface": "footage",
+      "canonical": "footage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14427,
+        "charEnd": 14434,
+        "timeStart": 1021.86,
+        "timeEnd": 1027.079
+      },
+      "score": 0.6585025191307068
+    },
+    {
+      "id": "m_0165",
+      "label": "technology",
+      "surface": "camera",
+      "canonical": "camera",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14448,
+        "charEnd": 14454,
+        "timeStart": 1024.559,
+        "timeEnd": 1028.819
+      },
+      "score": 0.5578516125679016
+    },
+    {
+      "id": "m_0166",
+      "label": "technology",
+      "surface": "wires",
+      "canonical": "wires",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14735,
+        "charEnd": 14740,
+        "timeStart": 1040.4,
+        "timeEnd": 1045.52
+      },
+      "score": 0.5510410666465759
+    },
+    {
+      "id": "m_0167",
+      "label": "work_of_media",
+      "surface": "footage",
+      "canonical": "footage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14754,
+        "charEnd": 14761,
+        "timeStart": 1043.04,
+        "timeEnd": 1045.52
+      },
+      "score": 0.7334519028663635
+    },
+    {
+      "id": "m_0168",
+      "label": "event",
+      "surface": "Apollo 11",
+      "canonical": "Apollo 11",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14833,
+        "charEnd": 14842,
+        "timeStart": 1056.78,
+        "timeEnd": 1061.36
+      },
+      "score": 0.5526795983314514
+    },
+    {
+      "id": "m_0169",
+      "label": "location",
+      "surface": "Houston",
+      "canonical": "Houston",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 14851,
+        "charEnd": 14858,
+        "timeStart": 1056.78,
+        "timeEnd": 1061.36
+      },
+      "score": 0.9074628949165344
+    },
+    {
+      "id": "m_0170",
+      "label": "work_of_media",
+      "surface": "footage",
+      "canonical": "footage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15102,
+        "charEnd": 15109,
+        "timeStart": 1083.98,
+        "timeEnd": 1088.88
+      },
+      "score": 0.7428003549575806
+    },
+    {
+      "id": "m_0171",
+      "label": "person",
+      "surface": "Neil",
+      "canonical": "Neil",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15113,
+        "charEnd": 15117,
+        "timeStart": 1083.98,
+        "timeEnd": 1088.88
+      },
+      "score": 0.962131142616272
+    },
+    {
+      "id": "m_0172",
+      "label": "person",
+      "surface": "Buzz",
+      "canonical": "Buzz",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15122,
+        "charEnd": 15126,
+        "timeStart": 1086.24,
+        "timeEnd": 1090.2
+      },
+      "score": 0.9335958361625671
+    },
+    {
+      "id": "m_0173",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15181,
+        "charEnd": 15189,
+        "timeStart": 1088.88,
+        "timeEnd": 1093.2
+      },
+      "score": 0.8251791000366211
+    },
+    {
+      "id": "m_0174",
+      "label": "work_of_media",
+      "surface": "footage",
+      "canonical": "footage",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15219,
+        "charEnd": 15226,
+        "timeStart": 1090.2,
+        "timeEnd": 1095.1200000000001
+      },
+      "score": 0.7296115756034851
+    },
+    {
+      "id": "m_0175",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15282,
+        "charEnd": 15290,
+        "timeStart": 1095.12,
+        "timeEnd": 1099.3799999999999
+      },
+      "score": 0.855446994304657
+    },
+    {
+      "id": "m_0176",
+      "label": "location",
+      "surface": "the\nMoon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15658,
+        "charEnd": 15666,
+        "timeStart": 1114.26,
+        "timeEnd": 1121.8200000000002
+      },
+      "score": 0.7396655082702637
+    },
+    {
+      "id": "m_0177",
+      "label": "quantity",
+      "surface": "thousands of\npictures",
+      "canonical": "thousands of\npictures",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 15801,
+        "charEnd": 15822,
+        "timeStart": 1123.2,
+        "timeEnd": 1128.84
+      },
+      "score": 0.5332362055778503
+    },
+    {
+      "id": "m_0178",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 16082,
+        "charEnd": 16086,
+        "timeStart": 1139.4,
+        "timeEnd": 1143.9
+      },
+      "score": 0.9616850018501282
+    },
+    {
+      "id": "m_0179",
+      "label": "location",
+      "surface": "Mars",
+      "canonical": "Mars",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 16089,
+        "charEnd": 16093,
+        "timeStart": 1139.4,
+        "timeEnd": 1143.9
+      },
+      "score": 0.9472684860229492
+    },
+    {
+      "id": "m_0180",
+      "label": "location",
+      "surface": "Mars",
+      "canonical": "Mars",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 16132,
+        "charEnd": 16136,
+        "timeStart": 1142.039,
+        "timeEnd": 1146.059
+      },
+      "score": 0.9435558915138245
+    },
+    {
+      "id": "m_0181",
+      "label": "organization",
+      "surface": "Apollo",
+      "canonical": "Apollo",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 16234,
+        "charEnd": 16240,
+        "timeStart": 1148.46,
+        "timeEnd": 1152.66
+      },
+      "score": 0.7274744510650635
+    },
+    {
+      "id": "m_0182",
+      "label": "technology",
+      "surface": "handheld cameras",
+      "canonical": "handheld cameras",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 16241,
+        "charEnd": 16257,
+        "timeStart": 1148.46,
+        "timeEnd": 1152.66
+      },
+      "score": 0.5005085468292236
+    },
+    {
+      "id": "m_0183",
+      "label": "person",
+      "surface": "Apollo astronaut",
+      "canonical": "Apollo astronaut",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 16844,
+        "charEnd": 16860,
+        "timeStart": 1181.4,
+        "timeEnd": 1186.0800000000002
+      },
+      "score": 0.6565789580345154
+    },
+    {
+      "id": "m_0184",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17122,
+        "charEnd": 17126,
+        "timeStart": 1197.059,
+        "timeEnd": 1201.44
+      },
+      "score": 0.7802159190177917
+    },
+    {
+      "id": "m_0185",
+      "label": "organization",
+      "surface": "human beings",
+      "canonical": "human beings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17140,
+        "charEnd": 17152,
+        "timeStart": 1197.059,
+        "timeEnd": 1201.44
+      },
+      "score": 0.6224660873413086
+    },
+    {
+      "id": "m_0186",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17165,
+        "charEnd": 17170,
+        "timeStart": 1199.1,
+        "timeEnd": 1203.6599999999999
+      },
+      "score": 0.807946503162384
+    },
+    {
+      "id": "m_0187",
+      "label": "event",
+      "surface": "Apollo Landings",
+      "canonical": "Apollo Landings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17413,
+        "charEnd": 17428,
+        "timeStart": 1225.2,
+        "timeEnd": 1229.3400000000001
+      },
+      "score": 0.9352520108222961
+    },
+    {
+      "id": "m_0188",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17700,
+        "charEnd": 17704,
+        "timeStart": 1243.5,
+        "timeEnd": 1247.34
+      },
+      "score": 0.8809191584587097
+    },
+    {
+      "id": "m_0189",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17821,
+        "charEnd": 17826,
+        "timeStart": 1249.919,
+        "timeEnd": 1255.0200000000002
+      },
+      "score": 0.7492933869361877
+    },
+    {
+      "id": "m_0190",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17857,
+        "charEnd": 17861,
+        "timeStart": 1251.96,
+        "timeEnd": 1257.539
+      },
+      "score": 0.8463946580886841
+    },
+    {
+      "id": "m_0191",
+      "label": "date_time",
+      "surface": "1958",
+      "canonical": "1958",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17884,
+        "charEnd": 17888,
+        "timeStart": 1255.02,
+        "timeEnd": 1260.48
+      },
+      "score": 0.914899468421936
+    },
+    {
+      "id": "m_0192",
+      "label": "person",
+      "surface": "James Van Allen",
+      "canonical": "James Van Allen",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 17899,
+        "charEnd": 17914,
+        "timeStart": 1255.02,
+        "timeEnd": 1260.48
+      },
+      "score": 0.9515287280082703
+    },
+    {
+      "id": "m_0193",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18140,
+        "charEnd": 18145,
+        "timeStart": 1272,
+        "timeEnd": 1275.6
+      },
+      "score": 0.7999293804168701
+    },
+    {
+      "id": "m_0194",
+      "label": "location",
+      "surface": "Beyond",
+      "canonical": "Beyond",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18175,
+        "charEnd": 18181,
+        "timeStart": 1273.38,
+        "timeEnd": 1278.24
+      },
+      "score": 0.5628988742828369
+    },
+    {
+      "id": "m_0195",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18251,
+        "charEnd": 18256,
+        "timeStart": 1275.6,
+        "timeEnd": 1280.6399999999999
+      },
+      "score": 0.7055789828300476
+    },
+    {
+      "id": "m_0196",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18622,
+        "charEnd": 18632,
+        "timeStart": 1298.82,
+        "timeEnd": 1303.1399999999999
+      },
+      "score": 0.7766425013542175
+    },
+    {
+      "id": "m_0197",
+      "label": "event",
+      "surface": "Soviet nuclear test",
+      "canonical": "Soviet nuclear test",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18661,
+        "charEnd": 18680,
+        "timeStart": 1301.039,
+        "timeEnd": 1305.419
+      },
+      "score": 0.8964611291885376
+    },
+    {
+      "id": "m_0198",
+      "label": "technology",
+      "surface": "instruments",
+      "canonical": "instruments",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18742,
+        "charEnd": 18753,
+        "timeStart": 1305.419,
+        "timeEnd": 1310.64
+      },
+      "score": 0.5790488123893738
+    },
+    {
+      "id": "m_0199",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18772,
+        "charEnd": 18782,
+        "timeStart": 1308,
+        "timeEnd": 1313.4
+      },
+      "score": 0.6941492557525635
+    },
+    {
+      "id": "m_0200",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18823,
+        "charEnd": 18828,
+        "timeStart": 1310.64,
+        "timeEnd": 1315.8600000000001
+      },
+      "score": 0.7542158365249634
+    },
+    {
+      "id": "m_0201",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18890,
+        "charEnd": 18900,
+        "timeStart": 1315.86,
+        "timeEnd": 1321.08
+      },
+      "score": 0.5902107954025269
+    },
+    {
+      "id": "m_0202",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18916,
+        "charEnd": 18921,
+        "timeStart": 1318.38,
+        "timeEnd": 1323.659
+      },
+      "score": 0.7931211590766907
+    },
+    {
+      "id": "m_0203",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18943,
+        "charEnd": 18948,
+        "timeStart": 1318.38,
+        "timeEnd": 1323.659
+      },
+      "score": 0.6535376906394958
+    },
+    {
+      "id": "m_0204",
+      "label": "facility",
+      "surface": "window",
+      "canonical": "window",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18966,
+        "charEnd": 18972,
+        "timeStart": 1321.08,
+        "timeEnd": 1326.6589999999999
+      },
+      "score": 0.8627927899360657
+    },
+    {
+      "id": "m_0205",
+      "label": "work_of_media",
+      "surface": "The Craft",
+      "canonical": "The Craft",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 18976,
+        "charEnd": 18985,
+        "timeStart": 1321.08,
+        "timeEnd": 1326.6589999999999
+      },
+      "score": 0.922095000743866
+    },
+    {
+      "id": "m_0206",
+      "label": "facility",
+      "surface": "window",
+      "canonical": "window",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19003,
+        "charEnd": 19009,
+        "timeStart": 1323.659,
+        "timeEnd": 1328.8200000000002
+      },
+      "score": 0.9026944041252136
+    },
+    {
+      "id": "m_0207",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19033,
+        "charEnd": 19038,
+        "timeStart": 1326.659,
+        "timeEnd": 1331.8400000000001
+      },
+      "score": 0.6916099786758423
+    },
+    {
+      "id": "m_0208",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19109,
+        "charEnd": 19114,
+        "timeStart": 1332.44,
+        "timeEnd": 1337.76
+      },
+      "score": 0.6816959381103516
+    },
+    {
+      "id": "m_0209",
+      "label": "facility",
+      "surface": "window",
+      "canonical": "window",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19148,
+        "charEnd": 19154,
+        "timeStart": 1335.36,
+        "timeEnd": 1339.9799999999998
+      },
+      "score": 0.8707112669944763
+    },
+    {
+      "id": "m_0210",
+      "label": "person",
+      "surface": "the astronauts",
+      "canonical": "the astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19179,
+        "charEnd": 19193,
+        "timeStart": 1337.76,
+        "timeEnd": 1341.96
+      },
+      "score": 0.718706488609314
+    },
+    {
+      "id": "m_0211",
+      "label": "facility",
+      "surface": "window",
+      "canonical": "window",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19281,
+        "charEnd": 19287,
+        "timeStart": 1343.64,
+        "timeEnd": 1348.0800000000002
+      },
+      "score": 0.8667011260986328
+    },
+    {
+      "id": "m_0212",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19314,
+        "charEnd": 19319,
+        "timeStart": 1345.32,
+        "timeEnd": 1350.1789999999999
+      },
+      "score": 0.5288487076759338
+    },
+    {
+      "id": "m_0213",
+      "label": "facility",
+      "surface": "window",
+      "canonical": "window",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19381,
+        "charEnd": 19387,
+        "timeStart": 1348.08,
+        "timeEnd": 1352.46
+      },
+      "score": 0.8821504712104797
+    },
+    {
+      "id": "m_0214",
+      "label": "location",
+      "surface": "the Earth",
+      "canonical": "the Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19627,
+        "charEnd": 19636,
+        "timeStart": 1363.74,
+        "timeEnd": 1367.039
+      },
+      "score": 0.9401099681854248
+    },
+    {
+      "id": "m_0215",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19665,
+        "charEnd": 19670,
+        "timeStart": 1364.76,
+        "timeEnd": 1369.08
+      },
+      "score": 0.7967654466629028
+    },
+    {
+      "id": "m_0216",
+      "label": "location",
+      "surface": "the Earth",
+      "canonical": "the Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19681,
+        "charEnd": 19690,
+        "timeStart": 1367.039,
+        "timeEnd": 1371.179
+      },
+      "score": 0.9275608658790588
+    },
+    {
+      "id": "m_0217",
+      "label": "location",
+      "surface": "Van Allen\nbelts",
+      "canonical": "Van Allen\nbelts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19856,
+        "charEnd": 19871,
+        "timeStart": 1381.919,
+        "timeEnd": 1388.7
+      },
+      "score": 0.594165563583374
+    },
+    {
+      "id": "m_0218",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19941,
+        "charEnd": 19946,
+        "timeStart": 1386.24,
+        "timeEnd": 1390.679
+      },
+      "score": 0.6590625047683716
+    },
+    {
+      "id": "m_0219",
+      "label": "location",
+      "surface": "the Van Allen Bells",
+      "canonical": "the Van Allen Bells",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 19966,
+        "charEnd": 19985,
+        "timeStart": 1388.7,
+        "timeEnd": 1393.0800000000002
+      },
+      "score": 0.5302139520645142
+    },
+    {
+      "id": "m_0220",
+      "label": "technology",
+      "surface": "guidance systems",
+      "canonical": "guidance systems",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20052,
+        "charEnd": 20068,
+        "timeStart": 1396.44,
+        "timeEnd": 1400.8200000000002
+      },
+      "score": 0.6027489900588989
+    },
+    {
+      "id": "m_0221",
+      "label": "person",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20275,
+        "charEnd": 20285,
+        "timeStart": 1408.2,
+        "timeEnd": 1412.4
+      },
+      "score": 0.7121246457099915
+    },
+    {
+      "id": "m_0222",
+      "label": "location",
+      "surface": "low earth orbit",
+      "canonical": "low earth orbit",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20656,
+        "charEnd": 20671,
+        "timeStart": 1430.58,
+        "timeEnd": 1434.96
+      },
+      "score": 0.8949329257011414
+    },
+    {
+      "id": "m_0223",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20796,
+        "charEnd": 20800,
+        "timeStart": 1436.7,
+        "timeEnd": 1443.24
+      },
+      "score": 0.7665892243385315
+    },
+    {
+      "id": "m_0224",
+      "label": "location",
+      "surface": "low earth orbit",
+      "canonical": "low earth orbit",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20816,
+        "charEnd": 20831,
+        "timeStart": 1439.76,
+        "timeEnd": 1447.26
+      },
+      "score": 0.9227343201637268
+    },
+    {
+      "id": "m_0225",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20849,
+        "charEnd": 20853,
+        "timeStart": 1443.24,
+        "timeEnd": 1449.78
+      },
+      "score": 0.9702235460281372
+    },
+    {
+      "id": "m_0226",
+      "label": "technology",
+      "surface": "SLS",
+      "canonical": "SLS",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20886,
+        "charEnd": 20889,
+        "timeStart": 1443.24,
+        "timeEnd": 1449.78
+      },
+      "score": 0.8595101833343506
+    },
+    {
+      "id": "m_0227",
+      "label": "technology",
+      "surface": "heavy lift rocket",
+      "canonical": "heavy lift rocket",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20901,
+        "charEnd": 20918,
+        "timeStart": 1447.26,
+        "timeEnd": 1451.1589999999999
+      },
+      "score": 0.6787641048431396
+    },
+    {
+      "id": "m_0228",
+      "label": "technology",
+      "surface": "Orion capsule",
+      "canonical": "Orion capsule",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 20994,
+        "charEnd": 21007,
+        "timeStart": 1452.36,
+        "timeEnd": 1455.9599999999998
+      },
+      "score": 0.7424288392066956
+    },
+    {
+      "id": "m_0229",
+      "label": "technology",
+      "surface": "Landers",
+      "canonical": "Landers",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21030,
+        "charEnd": 21037,
+        "timeStart": 1455.96,
+        "timeEnd": 1462.559
+      },
+      "score": 0.7815161347389221
+    },
+    {
+      "id": "m_0230",
+      "label": "location",
+      "surface": "Earth orbit",
+      "canonical": "Earth orbit",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21087,
+        "charEnd": 21098,
+        "timeStart": 1459.44,
+        "timeEnd": 1465.2
+      },
+      "score": 0.6884540915489197
+    },
+    {
+      "id": "m_0231",
+      "label": "location",
+      "surface": "Earth orbit",
+      "canonical": "Earth orbit",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21128,
+        "charEnd": 21139,
+        "timeStart": 1462.559,
+        "timeEnd": 1466.6399999999999
+      },
+      "score": 0.7245235443115234
+    },
+    {
+      "id": "m_0232",
+      "label": "location",
+      "surface": "Earth orbit",
+      "canonical": "Earth orbit",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21198,
+        "charEnd": 21209,
+        "timeStart": 1466.64,
+        "timeEnd": 1470.24
+      },
+      "score": 0.7979527115821838
+    },
+    {
+      "id": "m_0233",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21338,
+        "charEnd": 21344,
+        "timeStart": 1474.02,
+        "timeEnd": 1478.82
+      },
+      "score": 0.7897849678993225
+    },
+    {
+      "id": "m_0234",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21385,
+        "charEnd": 21389,
+        "timeStart": 1475.94,
+        "timeEnd": 1482
+      },
+      "score": 0.8255000710487366
+    },
+    {
+      "id": "m_0235",
+      "label": "location",
+      "surface": "Mars",
+      "canonical": "Mars",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21390,
+        "charEnd": 21394,
+        "timeStart": 1475.94,
+        "timeEnd": 1482
+      },
+      "score": 0.7430539727210999
+    },
+    {
+      "id": "m_0236",
+      "label": "location",
+      "surface": "asteroids",
+      "canonical": "asteroids",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21395,
+        "charEnd": 21404,
+        "timeStart": 1475.94,
+        "timeEnd": 1482
+      },
+      "score": 0.6052966713905334
+    },
+    {
+      "id": "m_0237",
+      "label": "location",
+      "surface": "low earth orbit",
+      "canonical": "low earth orbit",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21510,
+        "charEnd": 21525,
+        "timeStart": 1486.559,
+        "timeEnd": 1490.7
+      },
+      "score": 0.644848644733429
+    },
+    {
+      "id": "m_0238",
+      "label": "organization",
+      "surface": "crew",
+      "canonical": "crew",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21612,
+        "charEnd": 21616,
+        "timeStart": 1492.38,
+        "timeEnd": 1496.5200000000002
+      },
+      "score": 0.5596882104873657
+    },
+    {
+      "id": "m_0239",
+      "label": "technology",
+      "surface": "electronic systems",
+      "canonical": "electronic systems",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21644,
+        "charEnd": 21662,
+        "timeStart": 1494.539,
+        "timeEnd": 1498.799
+      },
+      "score": 0.5682970881462097
+    },
+    {
+      "id": "m_0240",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21783,
+        "charEnd": 21793,
+        "timeStart": 1502.46,
+        "timeEnd": 1508.039
+      },
+      "score": 0.7165557146072388
+    },
+    {
+      "id": "m_0241",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21804,
+        "charEnd": 21812,
+        "timeStart": 1502.46,
+        "timeEnd": 1508.039
+      },
+      "score": 0.9083660840988159
+    },
+    {
+      "id": "m_0242",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21862,
+        "charEnd": 21872,
+        "timeStart": 1508.039,
+        "timeEnd": 1513.8799999999999
+      },
+      "score": 0.766016960144043
+    },
+    {
+      "id": "m_0243",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 21925,
+        "charEnd": 21935,
+        "timeStart": 1509.96,
+        "timeEnd": 1516.919
+      },
+      "score": 0.7556270360946655
+    },
+    {
+      "id": "m_0244",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22008,
+        "charEnd": 22018,
+        "timeStart": 1519.08,
+        "timeEnd": 1523.9399999999998
+      },
+      "score": 0.5338956117630005
+    },
+    {
+      "id": "m_0245",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22160,
+        "charEnd": 22164,
+        "timeStart": 1527.419,
+        "timeEnd": 1531.38
+      },
+      "score": 0.9494168758392334
+    },
+    {
+      "id": "m_0246",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22184,
+        "charEnd": 22188,
+        "timeStart": 1527.419,
+        "timeEnd": 1531.38
+      },
+      "score": 0.9960940480232239
+    },
+    {
+      "id": "m_0247",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22233,
+        "charEnd": 22237,
+        "timeStart": 1531.38,
+        "timeEnd": 1537.279
+      },
+      "score": 0.9261963963508606
+    },
+    {
+      "id": "m_0248",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22322,
+        "charEnd": 22326,
+        "timeStart": 1537.5,
+        "timeEnd": 1542.12
+      },
+      "score": 0.9942512512207031
+    },
+    {
+      "id": "m_0249",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22354,
+        "charEnd": 22358,
+        "timeStart": 1540.38,
+        "timeEnd": 1544.7600000000002
+      },
+      "score": 0.8505750894546509
+    },
+    {
+      "id": "m_0250",
+      "label": "organization",
+      "surface": "TV\nstations",
+      "canonical": "TV\nstations",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22394,
+        "charEnd": 22405,
+        "timeStart": 1542.12,
+        "timeEnd": 1548.6589999999999
+      },
+      "score": 0.9223027229309082
+    },
+    {
+      "id": "m_0251",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22480,
+        "charEnd": 22484,
+        "timeStart": 1548.659,
+        "timeEnd": 1552.74
+      },
+      "score": 0.995912492275238
+    },
+    {
+      "id": "m_0252",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 22508,
+        "charEnd": 22512,
+        "timeStart": 1548.659,
+        "timeEnd": 1552.74
+      },
+      "score": 0.9362055063247681
+    },
+    {
+      "id": "m_0253",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23004,
+        "charEnd": 23008,
+        "timeStart": 1577.22,
+        "timeEnd": 1581.779
+      },
+      "score": 0.9411062598228455
+    },
+    {
+      "id": "m_0254",
+      "label": "work_of_media",
+      "surface": "Hollywood",
+      "canonical": "Hollywood",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23063,
+        "charEnd": 23072,
+        "timeStart": 1584.299,
+        "timeEnd": 1586.539
+      },
+      "score": 0.7675690054893494
+    },
+    {
+      "id": "m_0255",
+      "label": "organization",
+      "surface": "nation",
+      "canonical": "nation",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23101,
+        "charEnd": 23107,
+        "timeStart": 1590.299,
+        "timeEnd": 1595.279
+      },
+      "score": 0.5413010716438293
+    },
+    {
+      "id": "m_0256",
+      "label": "event",
+      "surface": "Landing a\nman on the moon",
+      "canonical": "Landing a\nman on the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23180,
+        "charEnd": 23205,
+        "timeStart": 1595.279,
+        "timeEnd": 1602.24
+      },
+      "score": 0.6819214820861816
+    },
+    {
+      "id": "m_0257",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23549,
+        "charEnd": 23553,
+        "timeStart": 1620.299,
+        "timeEnd": 1628.1
+      },
+      "score": 0.5616354942321777
+    },
+    {
+      "id": "m_0258",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23746,
+        "charEnd": 23759,
+        "timeStart": 1639.62,
+        "timeEnd": 1645.559
+      },
+      "score": 0.8658567667007446
+    },
+    {
+      "id": "m_0259",
+      "label": "location",
+      "surface": "Russia",
+      "canonical": "Russia",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23770,
+        "charEnd": 23776,
+        "timeStart": 1641.179,
+        "timeEnd": 1647.48
+      },
+      "score": 0.7312583327293396
+    },
+    {
+      "id": "m_0260",
+      "label": "technology",
+      "surface": "large boosters",
+      "canonical": "large boosters",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 23944,
+        "charEnd": 23958,
+        "timeStart": 1652,
+        "timeEnd": 1657.86
+      },
+      "score": 0.583328366279602
+    },
+    {
+      "id": "m_0261",
+      "label": "quantity",
+      "surface": "first",
+      "canonical": "first",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24024,
+        "charEnd": 24029,
+        "timeStart": 1657.86,
+        "timeEnd": 1662.059
+      },
+      "score": 0.5298895239830017
+    },
+    {
+      "id": "m_0262",
+      "label": "person",
+      "surface": "man",
+      "canonical": "man",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24047,
+        "charEnd": 24050,
+        "timeStart": 1659.659,
+        "timeEnd": 1664.279
+      },
+      "score": 0.5427843332290649
+    },
+    {
+      "id": "m_0263",
+      "label": "person",
+      "surface": "man",
+      "canonical": "man",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24169,
+        "charEnd": 24172,
+        "timeStart": 1667.22,
+        "timeEnd": 1672.6200000000001
+      },
+      "score": 0.6685577630996704
+    },
+    {
+      "id": "m_0264",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24237,
+        "charEnd": 24244,
+        "timeStart": 1676.159,
+        "timeEnd": 1681.14
+      },
+      "score": 0.7786184549331665
+    },
+    {
+      "id": "m_0265",
+      "label": "person",
+      "surface": "Jay Widener",
+      "canonical": "Jay Widener",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24282,
+        "charEnd": 24293,
+        "timeStart": 1678.32,
+        "timeEnd": 1682.7
+      },
+      "score": 0.779580295085907
+    },
+    {
+      "id": "m_0266",
+      "label": "date_time",
+      "surface": "2011",
+      "canonical": "2011",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24297,
+        "charEnd": 24301,
+        "timeStart": 1678.32,
+        "timeEnd": 1682.7
+      },
+      "score": 0.668983519077301
+    },
+    {
+      "id": "m_0267",
+      "label": "person",
+      "surface": "Stanley Kubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24439,
+        "charEnd": 24454,
+        "timeStart": 1686.419,
+        "timeEnd": 1689.539
+      },
+      "score": 0.9590389132499695
+    },
+    {
+      "id": "m_0268",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24466,
+        "charEnd": 24470,
+        "timeStart": 1688.1,
+        "timeEnd": 1693.74
+      },
+      "score": 0.777179479598999
+    },
+    {
+      "id": "m_0269",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24491,
+        "charEnd": 24495,
+        "timeStart": 1688.1,
+        "timeEnd": 1693.74
+      },
+      "score": 0.9881649017333984
+    },
+    {
+      "id": "m_0270",
+      "label": "date_time",
+      "surface": "1964",
+      "canonical": "1964",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24520,
+        "charEnd": 24524,
+        "timeStart": 1689.539,
+        "timeEnd": 1695.48
+      },
+      "score": 0.9214304685592651
+    },
+    {
+      "id": "m_0271",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24525,
+        "charEnd": 24529,
+        "timeStart": 1689.539,
+        "timeEnd": 1695.48
+      },
+      "score": 0.9889541864395142
+    },
+    {
+      "id": "m_0272",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24559,
+        "charEnd": 24563,
+        "timeStart": 1693.74,
+        "timeEnd": 1698.24
+      },
+      "score": 0.8205134868621826
+    },
+    {
+      "id": "m_0273",
+      "label": "location",
+      "surface": "radiation belts",
+      "canonical": "radiation belts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24590,
+        "charEnd": 24605,
+        "timeStart": 1695.48,
+        "timeEnd": 1700.1
+      },
+      "score": 0.6740384697914124
+    },
+    {
+      "id": "m_0274",
+      "label": "technology",
+      "surface": "chemical rockets",
+      "canonical": "chemical rockets",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24618,
+        "charEnd": 24634,
+        "timeStart": 1698.24,
+        "timeEnd": 1702.14
+      },
+      "score": 0.7198230028152466
+    },
+    {
+      "id": "m_0275",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24701,
+        "charEnd": 24708,
+        "timeStart": 1702.14,
+        "timeEnd": 1706.279
+      },
+      "score": 0.6492143869400024
+    },
+    {
+      "id": "m_0276",
+      "label": "organization",
+      "surface": "Pentagon",
+      "canonical": "Pentagon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24745,
+        "charEnd": 24753,
+        "timeStart": 1704.539,
+        "timeEnd": 1709.52
+      },
+      "score": 0.9243859052658081
+    },
+    {
+      "id": "m_0277",
+      "label": "date_time",
+      "surface": "1963",
+      "canonical": "1963",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24762,
+        "charEnd": 24766,
+        "timeStart": 1706.279,
+        "timeEnd": 1711.86
+      },
+      "score": 0.7021000385284424
+    },
+    {
+      "id": "m_0278",
+      "label": "work_of_media",
+      "surface": "Dr Strangelove",
+      "canonical": "Dr Strangelove",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24772,
+        "charEnd": 24786,
+        "timeStart": 1706.279,
+        "timeEnd": 1711.86
+      },
+      "score": 0.9490525126457214
+    },
+    {
+      "id": "m_0279",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24840,
+        "charEnd": 24847,
+        "timeStart": 1711.86,
+        "timeEnd": 1716.36
+      },
+      "score": 0.6404581665992737
+    },
+    {
+      "id": "m_0280",
+      "label": "event",
+      "surface": "Apollo moon landings",
+      "canonical": "Apollo moon landings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24876,
+        "charEnd": 24896,
+        "timeStart": 1714.32,
+        "timeEnd": 1718.1589999999999
+      },
+      "score": 0.8254626393318176
+    },
+    {
+      "id": "m_0281",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24897,
+        "charEnd": 24904,
+        "timeStart": 1714.32,
+        "timeEnd": 1718.1589999999999
+      },
+      "score": 0.6149848103523254
+    },
+    {
+      "id": "m_0282",
+      "label": "event",
+      "surface": "The Landings",
+      "canonical": "The Landings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 24971,
+        "charEnd": 24983,
+        "timeStart": 1718.159,
+        "timeEnd": 1722.419
+      },
+      "score": 0.6911938190460205
+    },
+    {
+      "id": "m_0283",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25146,
+        "charEnd": 25153,
+        "timeStart": 1729.26,
+        "timeEnd": 1733.58
+      },
+      "score": 0.9636591076850891
+    },
+    {
+      "id": "m_0284",
+      "label": "event",
+      "surface": "Apollo Landings",
+      "canonical": "Apollo Landings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25168,
+        "charEnd": 25183,
+        "timeStart": 1731.6,
+        "timeEnd": 1735.98
+      },
+      "score": 0.9741278886795044
+    },
+    {
+      "id": "m_0285",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25211,
+        "charEnd": 25218,
+        "timeStart": 1733.58,
+        "timeEnd": 1738.1399999999999
+      },
+      "score": 0.962773859500885
+    },
+    {
+      "id": "m_0286",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25262,
+        "charEnd": 25269,
+        "timeStart": 1735.98,
+        "timeEnd": 1740.3600000000001
+      },
+      "score": 0.9504145979881287
+    },
+    {
+      "id": "m_0287",
+      "label": "ideology",
+      "surface": "American Communist Party",
+      "canonical": "American Communist Party",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25290,
+        "charEnd": 25314,
+        "timeStart": 1738.14,
+        "timeEnd": 1742.22
+      },
+      "score": 0.7671760320663452
+    },
+    {
+      "id": "m_0288",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25363,
+        "charEnd": 25373,
+        "timeStart": 1742.22,
+        "timeEnd": 1744.98
+      },
+      "score": 0.7241330742835999
+    },
+    {
+      "id": "m_0289",
+      "label": "date_time",
+      "surface": "1964",
+      "canonical": "1964",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25424,
+        "charEnd": 25428,
+        "timeStart": 1744.98,
+        "timeEnd": 1751.1
+      },
+      "score": 0.9352166652679443
+    },
+    {
+      "id": "m_0290",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25430,
+        "charEnd": 25437,
+        "timeStart": 1744.98,
+        "timeEnd": 1751.1
+      },
+      "score": 0.9657675623893738
+    },
+    {
+      "id": "m_0291",
+      "label": "quantity",
+      "surface": "three years",
+      "canonical": "three years",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25448,
+        "charEnd": 25459,
+        "timeStart": 1748.52,
+        "timeEnd": 1752.6589999999999
+      },
+      "score": 0.7570096850395203
+    },
+    {
+      "id": "m_0292",
+      "label": "work_of_media",
+      "surface": "2001",
+      "canonical": "2001",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25472,
+        "charEnd": 25476,
+        "timeStart": 1748.52,
+        "timeEnd": 1752.6589999999999
+      },
+      "score": 0.9530317187309265
+    },
+    {
+      "id": "m_0293",
+      "label": "technology",
+      "surface": "filmmaking technology",
+      "canonical": "filmmaking technology",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25499,
+        "charEnd": 25520,
+        "timeStart": 1751.1,
+        "timeEnd": 1754.6399999999999
+      },
+      "score": 0.692785918712616
+    },
+    {
+      "id": "m_0294",
+      "label": "event",
+      "surface": "moon landings",
+      "canonical": "moon landings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25543,
+        "charEnd": 25556,
+        "timeStart": 1752.659,
+        "timeEnd": 1757.1000000000001
+      },
+      "score": 0.8937092423439026
+    },
+    {
+      "id": "m_0295",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25612,
+        "charEnd": 25616,
+        "timeStart": 1757.1,
+        "timeEnd": 1762.26
+      },
+      "score": 0.9128745794296265
+    },
+    {
+      "id": "m_0296",
+      "label": "organization",
+      "surface": "Zeiss",
+      "canonical": "Zeiss",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25782,
+        "charEnd": 25787,
+        "timeStart": 1769.039,
+        "timeEnd": 1775.279
+      },
+      "score": 0.7902458906173706
+    },
+    {
+      "id": "m_0297",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25792,
+        "charEnd": 25796,
+        "timeStart": 1769.039,
+        "timeEnd": 1775.279
+      },
+      "score": 0.9511482119560242
+    },
+    {
+      "id": "m_0298",
+      "label": "technology",
+      "surface": "CGI",
+      "canonical": "CGI",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25836,
+        "charEnd": 25839,
+        "timeStart": 1772.22,
+        "timeEnd": 1777.5
+      },
+      "score": 0.554731011390686
+    },
+    {
+      "id": "m_0299",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25840,
+        "charEnd": 25847,
+        "timeStart": 1772.22,
+        "timeEnd": 1777.5
+      },
+      "score": 0.9347351789474487
+    },
+    {
+      "id": "m_0300",
+      "label": "technology",
+      "surface": "screen projection",
+      "canonical": "screen projection",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25899,
+        "charEnd": 25916,
+        "timeStart": 1777.5,
+        "timeEnd": 1782.419
+      },
+      "score": 0.5342891812324524
+    },
+    {
+      "id": "m_0301",
+      "label": "technology",
+      "surface": "front screen projection",
+      "canonical": "front screen projection",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25938,
+        "charEnd": 25961,
+        "timeStart": 1780.14,
+        "timeEnd": 1784.3400000000001
+      },
+      "score": 0.8889983296394348
+    },
+    {
+      "id": "m_0302",
+      "label": "date_time",
+      "surface": "1949",
+      "canonical": "1949",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 25971,
+        "charEnd": 25975,
+        "timeStart": 1780.14,
+        "timeEnd": 1784.3400000000001
+      },
+      "score": 0.9594385027885437
+    },
+    {
+      "id": "m_0303",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26101,
+        "charEnd": 26109,
+        "timeStart": 1789.5,
+        "timeEnd": 1794.72
+      },
+      "score": 0.5877547264099121
+    },
+    {
+      "id": "m_0304",
+      "label": "person",
+      "surface": "actors",
+      "canonical": "actors",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26251,
+        "charEnd": 26257,
+        "timeStart": 1798.74,
+        "timeEnd": 1802.3990000000001
+      },
+      "score": 0.5731848478317261
+    },
+    {
+      "id": "m_0305",
+      "label": "technology",
+      "surface": "front screen\nprojection",
+      "canonical": "front screen projection",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26348,
+        "charEnd": 26371,
+        "timeStart": 1802.399,
+        "timeEnd": 1808.64
+      },
+      "score": 0.9000649452209473
+    },
+    {
+      "id": "m_0306",
+      "label": "work_of_media",
+      "surface": "2001",
+      "canonical": "2001",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26442,
+        "charEnd": 26446,
+        "timeStart": 1808.64,
+        "timeEnd": 1814.279
+      },
+      "score": 0.9502447843551636
+    },
+    {
+      "id": "m_0307",
+      "label": "work_of_media",
+      "surface": "2001",
+      "canonical": "2001",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26515,
+        "charEnd": 26519,
+        "timeStart": 1814.279,
+        "timeEnd": 1819.32
+      },
+      "score": 0.9769012331962585
+    },
+    {
+      "id": "m_0308",
+      "label": "person",
+      "surface": "actors",
+      "canonical": "actors",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26546,
+        "charEnd": 26552,
+        "timeStart": 1814.279,
+        "timeEnd": 1819.32
+      },
+      "score": 0.6921032071113586
+    },
+    {
+      "id": "m_0309",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26649,
+        "charEnd": 26653,
+        "timeStart": 1821.36,
+        "timeEnd": 1826.039
+      },
+      "score": 0.6112459897994995
+    },
+    {
+      "id": "m_0310",
+      "label": "location",
+      "surface": "Crystal Clear\nMountain",
+      "canonical": "Crystal Clear\nMountain",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 26874,
+        "charEnd": 26896,
+        "timeStart": 1834.02,
+        "timeEnd": 1840.32
+      },
+      "score": 0.6407116055488586
+    },
+    {
+      "id": "m_0311",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27305,
+        "charEnd": 27312,
+        "timeStart": 1863.659,
+        "timeEnd": 1868.159
+      },
+      "score": 0.9500364661216736
+    },
+    {
+      "id": "m_0312",
+      "label": "work_of_media",
+      "surface": "The\nShining",
+      "canonical": "The\nShining",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27356,
+        "charEnd": 27367,
+        "timeStart": 1865.88,
+        "timeEnd": 1872.5390000000002
+      },
+      "score": 0.9920158386230469
+    },
+    {
+      "id": "m_0313",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27373,
+        "charEnd": 27380,
+        "timeStart": 1868.159,
+        "timeEnd": 1872.5390000000002
+      },
+      "score": 0.9731394648551941
+    },
+    {
+      "id": "m_0314",
+      "label": "date_time",
+      "surface": "1980",
+      "canonical": "1980",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27393,
+        "charEnd": 27397,
+        "timeStart": 1868.159,
+        "timeEnd": 1872.5390000000002
+      },
+      "score": 0.8262596726417542
+    },
+    {
+      "id": "m_0315",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27399,
+        "charEnd": 27406,
+        "timeStart": 1870.32,
+        "timeEnd": 1874.82
+      },
+      "score": 0.9591175317764282
+    },
+    {
+      "id": "m_0316",
+      "label": "event",
+      "surface": "moon landings",
+      "canonical": "moon landings",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27438,
+        "charEnd": 27451,
+        "timeStart": 1872.539,
+        "timeEnd": 1876.62
+      },
+      "score": 0.8534213900566101
+    },
+    {
+      "id": "m_0317",
+      "label": "person",
+      "surface": "Jack",
+      "canonical": "Jack",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27467,
+        "charEnd": 27471,
+        "timeStart": 1872.539,
+        "timeEnd": 1876.62
+      },
+      "score": 0.9770961403846741
+    },
+    {
+      "id": "m_0318",
+      "label": "person",
+      "surface": "Danny",
+      "canonical": "Danny",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27476,
+        "charEnd": 27481,
+        "timeStart": 1874.82,
+        "timeEnd": 1878.84
+      },
+      "score": 0.9301356673240662
+    },
+    {
+      "id": "m_0319",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27553,
+        "charEnd": 27560,
+        "timeStart": 1878.84,
+        "timeEnd": 1883.399
+      },
+      "score": 0.9896715879440308
+    },
+    {
+      "id": "m_0320",
+      "label": "person",
+      "surface": "Danny",
+      "canonical": "Danny",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27579,
+        "charEnd": 27584,
+        "timeStart": 1878.84,
+        "timeEnd": 1883.399
+      },
+      "score": 0.9390078783035278
+    },
+    {
+      "id": "m_0321",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27606,
+        "charEnd": 27613,
+        "timeStart": 1881.36,
+        "timeEnd": 1885.74
+      },
+      "score": 0.9883700609207153
+    },
+    {
+      "id": "m_0322",
+      "label": "person",
+      "surface": "Jack",
+      "canonical": "Jack",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27638,
+        "charEnd": 27642,
+        "timeStart": 1883.399,
+        "timeEnd": 1887.899
+      },
+      "score": 0.9305310249328613
+    },
+    {
+      "id": "m_0323",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27699,
+        "charEnd": 27706,
+        "timeStart": 1887.899,
+        "timeEnd": 1893.1789999999999
+      },
+      "score": 0.9898627996444702
+    },
+    {
+      "id": "m_0324",
+      "label": "location",
+      "surface": "Overlook\nHotel",
+      "canonical": "Overlook\nHotel",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27800,
+        "charEnd": 27814,
+        "timeStart": 1893.179,
+        "timeEnd": 1899.6
+      },
+      "score": 0.6904065012931824
+    },
+    {
+      "id": "m_0325",
+      "label": "location",
+      "surface": "Cape Canaveral",
+      "canonical": "Cape Canaveral",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 27962,
+        "charEnd": 27976,
+        "timeStart": 1903.679,
+        "timeEnd": 1907.8200000000002
+      },
+      "score": 0.8587764501571655
+    },
+    {
+      "id": "m_0326",
+      "label": "event",
+      "surface": "Apollo 11",
+      "canonical": "Apollo 11",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28097,
+        "charEnd": 28106,
+        "timeStart": 1910.399,
+        "timeEnd": 1915.559
+      },
+      "score": 0.7611787915229797
+    },
+    {
+      "id": "m_0327",
+      "label": "location",
+      "surface": "number 237",
+      "canonical": "number 237",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28215,
+        "charEnd": 28225,
+        "timeStart": 1918.02,
+        "timeEnd": 1924.1399999999999
+      },
+      "score": 0.5552232265472412
+    },
+    {
+      "id": "m_0328",
+      "label": "person",
+      "surface": "King",
+      "canonical": "King",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28270,
+        "charEnd": 28274,
+        "timeStart": 1921.559,
+        "timeEnd": 1926.6
+      },
+      "score": 0.5979243516921997
+    },
+    {
+      "id": "m_0329",
+      "label": "quantity",
+      "surface": "average orbital distance",
+      "canonical": "average orbital distance",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28323,
+        "charEnd": 28347,
+        "timeStart": 1926.6,
+        "timeEnd": 1932.059
+      },
+      "score": 0.6884644627571106
+    },
+    {
+      "id": "m_0330",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28360,
+        "charEnd": 28365,
+        "timeStart": 1928.52,
+        "timeEnd": 1934.22
+      },
+      "score": 0.637177586555481
+    },
+    {
+      "id": "m_0331",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28374,
+        "charEnd": 28378,
+        "timeStart": 1928.52,
+        "timeEnd": 1934.22
+      },
+      "score": 0.7708280682563782
+    },
+    {
+      "id": "m_0332",
+      "label": "person",
+      "surface": "Jack",
+      "canonical": "Jack",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28425,
+        "charEnd": 28429,
+        "timeStart": 1934.22,
+        "timeEnd": 1938.6000000000001
+      },
+      "score": 0.7742957472801208
+    },
+    {
+      "id": "m_0333",
+      "label": "person",
+      "surface": "Jack",
+      "canonical": "Jack",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28538,
+        "charEnd": 28542,
+        "timeStart": 1938.6,
+        "timeEnd": 1944.36
+      },
+      "score": 0.8827525973320007
+    },
+    {
+      "id": "m_0334",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28672,
+        "charEnd": 28679,
+        "timeStart": 1950.6,
+        "timeEnd": 1954.3799999999999
+      },
+      "score": 0.8905490040779114
+    },
+    {
+      "id": "m_0335",
+      "label": "work_of_media",
+      "surface": "Odyssey",
+      "canonical": "Odyssey",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28682,
+        "charEnd": 28689,
+        "timeStart": 1950.6,
+        "timeEnd": 1954.3799999999999
+      },
+      "score": 0.597953200340271
+    },
+    {
+      "id": "m_0336",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28795,
+        "charEnd": 28802,
+        "timeStart": 1956.179,
+        "timeEnd": 1960.14
+      },
+      "score": 0.9046794176101685
+    },
+    {
+      "id": "m_0337",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28826,
+        "charEnd": 28830,
+        "timeStart": 1958.399,
+        "timeEnd": 1962.2399999999998
+      },
+      "score": 0.8727898001670837
+    },
+    {
+      "id": "m_0338",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 28966,
+        "charEnd": 28973,
+        "timeStart": 1974.179,
+        "timeEnd": 1979.1000000000001
+      },
+      "score": 0.9507285356521606
+    },
+    {
+      "id": "m_0339",
+      "label": "work_of_media",
+      "surface": "film",
+      "canonical": "film",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29029,
+        "charEnd": 29033,
+        "timeStart": 1976.76,
+        "timeEnd": 1982.22
+      },
+      "score": 0.7104379534721375
+    },
+    {
+      "id": "m_0340",
+      "label": "location",
+      "surface": "final Assembly Building",
+      "canonical": "final Assembly Building",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29161,
+        "charEnd": 29184,
+        "timeStart": 1987.2,
+        "timeEnd": 1991.76
+      },
+      "score": 0.6723214983940125
+    },
+    {
+      "id": "m_0341",
+      "label": "date_time",
+      "surface": "2016",
+      "canonical": "2016",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29465,
+        "charEnd": 29469,
+        "timeStart": 2024.519,
+        "timeEnd": 2029.32
+      },
+      "score": 0.9277846217155457
+    },
+    {
+      "id": "m_0342",
+      "label": "event",
+      "surface": "interview",
+      "canonical": "interview",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29473,
+        "charEnd": 29482,
+        "timeStart": 2024.519,
+        "timeEnd": 2029.32
+      },
+      "score": 0.6862390637397766
+    },
+    {
+      "id": "m_0343",
+      "label": "person",
+      "surface": "Stanley\nKubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29488,
+        "charEnd": 29503,
+        "timeStart": 2024.519,
+        "timeEnd": 2032.14
+      },
+      "score": 0.9319202303886414
+    },
+    {
+      "id": "m_0344",
+      "label": "event",
+      "surface": "interview",
+      "canonical": "interview",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29606,
+        "charEnd": 29615,
+        "timeStart": 2033.94,
+        "timeEnd": 2037.2
+      },
+      "score": 0.688561737537384
+    },
+    {
+      "id": "m_0345",
+      "label": "person",
+      "surface": "Stanley Kubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29881,
+        "charEnd": 29896,
+        "timeStart": 2053.2,
+        "timeEnd": 2056.7999999999997
+      },
+      "score": 0.9756112694740295
+    },
+    {
+      "id": "m_0346",
+      "label": "role",
+      "surface": "director",
+      "canonical": "director",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29919,
+        "charEnd": 29927,
+        "timeStart": 2055.119,
+        "timeEnd": 2059.139
+      },
+      "score": 0.8080250024795532
+    },
+    {
+      "id": "m_0347",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 29953,
+        "charEnd": 29960,
+        "timeStart": 2056.8,
+        "timeEnd": 2060.8790000000004
+      },
+      "score": 0.550682008266449
+    },
+    {
+      "id": "m_0348",
+      "label": "work_of_media",
+      "surface": "film",
+      "canonical": "film",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 30057,
+        "charEnd": 30061,
+        "timeStart": 2060.879,
+        "timeEnd": 2065.379
+      },
+      "score": 0.9415677785873413
+    },
+    {
+      "id": "m_0349",
+      "label": "event",
+      "surface": "moon landing",
+      "canonical": "moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 30150,
+        "charEnd": 30162,
+        "timeStart": 2067.3,
+        "timeEnd": 2070.3590000000004
+      },
+      "score": 0.9693500399589539
+    },
+    {
+      "id": "m_0350",
+      "label": "work_of_media",
+      "surface": "film",
+      "canonical": "film",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 30225,
+        "charEnd": 30229,
+        "timeStart": 2073.3,
+        "timeEnd": 2078.639
+      },
+      "score": 0.9531621932983398
+    },
+    {
+      "id": "m_0351",
+      "label": "work_of_media",
+      "surface": "film",
+      "canonical": "film",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 30275,
+        "charEnd": 30279,
+        "timeStart": 2075.879,
+        "timeEnd": 2082.06
+      },
+      "score": 0.9561273455619812
+    },
+    {
+      "id": "m_0352",
+      "label": "event",
+      "surface": "moon landing",
+      "canonical": "moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 30565,
+        "charEnd": 30577,
+        "timeStart": 2103.96,
+        "timeEnd": 2107.5
+      },
+      "score": 0.9375734925270081
+    },
+    {
+      "id": "m_0353",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 30612,
+        "charEnd": 30616,
+        "timeStart": 2105.52,
+        "timeEnd": 2109.119
+      },
+      "score": 0.989618718624115
+    },
+    {
+      "id": "m_0354",
+      "label": "location",
+      "surface": "America",
+      "canonical": "America",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 30723,
+        "charEnd": 30730,
+        "timeStart": 2111.579,
+        "timeEnd": 2115.96
+      },
+      "score": 0.561439573764801
+    },
+    {
+      "id": "m_0355",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31076,
+        "charEnd": 31080,
+        "timeStart": 2142.72,
+        "timeEnd": 2147.339
+      },
+      "score": 0.9925587177276611
+    },
+    {
+      "id": "m_0356",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31108,
+        "charEnd": 31115,
+        "timeStart": 2142.72,
+        "timeEnd": 2147.339
+      },
+      "score": 0.9349130988121033
+    },
+    {
+      "id": "m_0357",
+      "label": "role",
+      "surface": "president",
+      "canonical": "president",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31120,
+        "charEnd": 31129,
+        "timeStart": 2145,
+        "timeEnd": 2149.26
+      },
+      "score": 0.6240953803062439
+    },
+    {
+      "id": "m_0358",
+      "label": "person",
+      "surface": "Nixon",
+      "canonical": "Nixon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31138,
+        "charEnd": 31143,
+        "timeStart": 2145,
+        "timeEnd": 2149.26
+      },
+      "score": 0.9553631544113159
+    },
+    {
+      "id": "m_0359",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31144,
+        "charEnd": 31151,
+        "timeStart": 2145,
+        "timeEnd": 2149.26
+      },
+      "score": 0.8774161338806152
+    },
+    {
+      "id": "m_0360",
+      "label": "person",
+      "surface": "Nixon",
+      "canonical": "Nixon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31161,
+        "charEnd": 31166,
+        "timeStart": 2147.339,
+        "timeEnd": 2151.66
+      },
+      "score": 0.9315618276596069
+    },
+    {
+      "id": "m_0361",
+      "label": "location",
+      "surface": "Oval Office",
+      "canonical": "Oval Office",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31174,
+        "charEnd": 31185,
+        "timeStart": 2147.339,
+        "timeEnd": 2151.66
+      },
+      "score": 0.8856514692306519
+    },
+    {
+      "id": "m_0362",
+      "label": "person",
+      "surface": "Nixon",
+      "canonical": "Nixon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31203,
+        "charEnd": 31208,
+        "timeStart": 2149.26,
+        "timeEnd": 2153.579
+      },
+      "score": 0.9462682008743286
+    },
+    {
+      "id": "m_0363",
+      "label": "event",
+      "surface": "moon landing",
+      "canonical": "moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31237,
+        "charEnd": 31249,
+        "timeStart": 2151.66,
+        "timeEnd": 2155.98
+      },
+      "score": 0.923259973526001
+    },
+    {
+      "id": "m_0364",
+      "label": "organization",
+      "surface": "Nasa",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31286,
+        "charEnd": 31290,
+        "timeStart": 2153.579,
+        "timeEnd": 2160.1800000000003
+      },
+      "score": 0.9786750078201294
+    },
+    {
+      "id": "m_0365",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31438,
+        "charEnd": 31443,
+        "timeStart": 2168.099,
+        "timeEnd": 2171.4
+      },
+      "score": 0.5649221539497375
+    },
+    {
+      "id": "m_0366",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31529,
+        "charEnd": 31536,
+        "timeStart": 2173.02,
+        "timeEnd": 2178.119
+      },
+      "score": 0.8755956888198853
+    },
+    {
+      "id": "m_0367",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31560,
+        "charEnd": 31568,
+        "timeStart": 2173.02,
+        "timeEnd": 2178.119
+      },
+      "score": 0.7874398827552795
+    },
+    {
+      "id": "m_0368",
+      "label": "event",
+      "surface": "moon landing",
+      "canonical": "moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31653,
+        "charEnd": 31665,
+        "timeStart": 2180.4,
+        "timeEnd": 2185.98
+      },
+      "score": 0.7883939743041992
+    },
+    {
+      "id": "m_0369",
+      "label": "person",
+      "surface": "Stanley\nKubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31721,
+        "charEnd": 31736,
+        "timeStart": 2183.28,
+        "timeEnd": 2188.339
+      },
+      "score": 0.9761834740638733
+    },
+    {
+      "id": "m_0370",
+      "label": "person",
+      "surface": "Stanley Kubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31741,
+        "charEnd": 31756,
+        "timeStart": 2191.68,
+        "timeEnd": 2195.3999999999996
+      },
+      "score": 0.9818320274353027
+    },
+    {
+      "id": "m_0371",
+      "label": "event",
+      "surface": "moon landing",
+      "canonical": "moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31757,
+        "charEnd": 31769,
+        "timeStart": 2191.68,
+        "timeEnd": 2195.3999999999996
+      },
+      "score": 0.8639332056045532
+    },
+    {
+      "id": "m_0372",
+      "label": "role",
+      "surface": "actor",
+      "canonical": "actor",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 31881,
+        "charEnd": 31886,
+        "timeStart": 2197.68,
+        "timeEnd": 2202.3199999999997
+      },
+      "score": 0.8043335676193237
+    },
+    {
+      "id": "m_0373",
+      "label": "role",
+      "surface": "actor",
+      "canonical": "actor",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32014,
+        "charEnd": 32019,
+        "timeStart": 2206.5,
+        "timeEnd": 2212.5
+      },
+      "score": 0.8120235204696655
+    },
+    {
+      "id": "m_0374",
+      "label": "person",
+      "surface": "Tom",
+      "canonical": "Tom",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32039,
+        "charEnd": 32042,
+        "timeStart": 2208.599,
+        "timeEnd": 2214.3
+      },
+      "score": 0.9147671461105347
+    },
+    {
+      "id": "m_0375",
+      "label": "event",
+      "surface": "launch pad accident",
+      "canonical": "launch pad accident",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32045,
+        "charEnd": 32064,
+        "timeStart": 2208.599,
+        "timeEnd": 2214.3
+      },
+      "score": 0.7572537660598755
+    },
+    {
+      "id": "m_0376",
+      "label": "person",
+      "surface": "Tom",
+      "canonical": "Tom",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32080,
+        "charEnd": 32083,
+        "timeStart": 2212.5,
+        "timeEnd": 2216.76
+      },
+      "score": 0.8135247230529785
+    },
+    {
+      "id": "m_0377",
+      "label": "location",
+      "surface": "Oval\nOffice",
+      "canonical": "Oval Office",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32143,
+        "charEnd": 32154,
+        "timeStart": 2214.3,
+        "timeEnd": 2220.7200000000003
+      },
+      "score": 0.9482834935188293
+    },
+    {
+      "id": "m_0378",
+      "label": "person",
+      "surface": "Tom",
+      "canonical": "Tom",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32409,
+        "charEnd": 32412,
+        "timeStart": 2231.78,
+        "timeEnd": 2236.02
+      },
+      "score": 0.9533222913742065
+    },
+    {
+      "id": "m_0379",
+      "label": "person",
+      "surface": "Stanley",
+      "canonical": "Stanley",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32572,
+        "charEnd": 32579,
+        "timeStart": 2239.92,
+        "timeEnd": 2243.94
+      },
+      "score": 0.7173160314559937
+    },
+    {
+      "id": "m_0380",
+      "label": "person",
+      "surface": "Tom",
+      "canonical": "Tom",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32635,
+        "charEnd": 32638,
+        "timeStart": 2241.66,
+        "timeEnd": 2246.04
+      },
+      "score": 0.9608877897262573
+    },
+    {
+      "id": "m_0381",
+      "label": "person",
+      "surface": "Nixon",
+      "canonical": "Nixon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32783,
+        "charEnd": 32788,
+        "timeStart": 2250.42,
+        "timeEnd": 2254.52
+      },
+      "score": 0.9510122537612915
+    },
+    {
+      "id": "m_0382",
+      "label": "person",
+      "surface": "Stanley Kubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 32903,
+        "charEnd": 32918,
+        "timeStart": 2265.9,
+        "timeEnd": 2270.1600000000003
+      },
+      "score": 0.9707001447677612
+    },
+    {
+      "id": "m_0383",
+      "label": "event",
+      "surface": "moon landing",
+      "canonical": "moon landing",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33001,
+        "charEnd": 33013,
+        "timeStart": 2270.16,
+        "timeEnd": 2273.7
+      },
+      "score": 0.9292051792144775
+    },
+    {
+      "id": "m_0384",
+      "label": "work_of_media",
+      "surface": "documentary",
+      "canonical": "documentary",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33021,
+        "charEnd": 33032,
+        "timeStart": 2272.14,
+        "timeEnd": 2276.0989999999997
+      },
+      "score": 0.8515400886535645
+    },
+    {
+      "id": "m_0385",
+      "label": "person",
+      "surface": "Kubrick",
+      "canonical": "Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33033,
+        "charEnd": 33040,
+        "timeStart": 2272.14,
+        "timeEnd": 2276.0989999999997
+      },
+      "score": 0.6724056601524353
+    },
+    {
+      "id": "m_0386",
+      "label": "work_of_media",
+      "surface": "documentary",
+      "canonical": "documentary",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33208,
+        "charEnd": 33219,
+        "timeStart": 2282.339,
+        "timeEnd": 2286.66
+      },
+      "score": 0.8283255696296692
+    },
+    {
+      "id": "m_0387",
+      "label": "location",
+      "surface": "lunar landscape",
+      "canonical": "lunar landscape",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33329,
+        "charEnd": 33344,
+        "timeStart": 2288.7,
+        "timeEnd": 2293.2
+      },
+      "score": 0.5198124051094055
+    },
+    {
+      "id": "m_0388",
+      "label": "work_of_media",
+      "surface": "documentary",
+      "canonical": "documentary",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33501,
+        "charEnd": 33512,
+        "timeStart": 2299.079,
+        "timeEnd": 2302.8
+      },
+      "score": 0.8682287931442261
+    },
+    {
+      "id": "m_0389",
+      "label": "work_of_media",
+      "surface": "The Shining",
+      "canonical": "The\nShining",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33614,
+        "charEnd": 33625,
+        "timeStart": 2305.38,
+        "timeEnd": 2309.28
+      },
+      "score": 0.8807827234268188
+    },
+    {
+      "id": "m_0390",
+      "label": "location",
+      "surface": "Cape Canaveral",
+      "canonical": "Cape Canaveral",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33785,
+        "charEnd": 33799,
+        "timeStart": 2316.48,
+        "timeEnd": 2320.98
+      },
+      "score": 0.7770391702651978
+    },
+    {
+      "id": "m_0391",
+      "label": "location",
+      "surface": "room 237",
+      "canonical": "room 237",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33871,
+        "charEnd": 33879,
+        "timeStart": 2320.98,
+        "timeEnd": 2327.46
+      },
+      "score": 0.6417686343193054
+    },
+    {
+      "id": "m_0392",
+      "label": "location",
+      "surface": "room 237",
+      "canonical": "room 237",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33888,
+        "charEnd": 33896,
+        "timeStart": 2320.98,
+        "timeEnd": 2327.46
+      },
+      "score": 0.6306639909744263
+    },
+    {
+      "id": "m_0393",
+      "label": "person",
+      "surface": "Danny",
+      "canonical": "Danny",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 33988,
+        "charEnd": 33993,
+        "timeStart": 2330.88,
+        "timeEnd": 2335.92
+      },
+      "score": 0.7370694279670715
+    },
+    {
+      "id": "m_0394",
+      "label": "event",
+      "surface": "Apollo 11",
+      "canonical": "Apollo 11",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34015,
+        "charEnd": 34024,
+        "timeStart": 2333.579,
+        "timeEnd": 2337.96
+      },
+      "score": 0.7708179354667664
+    },
+    {
+      "id": "m_0395",
+      "label": "person",
+      "surface": "Stanley Kubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34037,
+        "charEnd": 34052,
+        "timeStart": 2333.579,
+        "timeEnd": 2337.96
+      },
+      "score": 0.9784963130950928
+    },
+    {
+      "id": "m_0396",
+      "label": "person",
+      "surface": "Stanley\nKubrick",
+      "canonical": "Stanley Kubrick",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34121,
+        "charEnd": 34136,
+        "timeStart": 2337.96,
+        "timeEnd": 2344.5
+      },
+      "score": 0.9840816259384155
+    },
+    {
+      "id": "m_0397",
+      "label": "person",
+      "surface": "Paul",
+      "canonical": "Paul",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34147,
+        "charEnd": 34151,
+        "timeStart": 2340.359,
+        "timeEnd": 2344.5
+      },
+      "score": 0.8537176251411438
+    },
+    {
+      "id": "m_0398",
+      "label": "organization",
+      "surface": "Communist Party",
+      "canonical": "Communist Party",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34177,
+        "charEnd": 34192,
+        "timeStart": 2342.4,
+        "timeEnd": 2346.48
+      },
+      "score": 0.9380418658256531
+    },
+    {
+      "id": "m_0399",
+      "label": "work_of_media",
+      "surface": "documentary",
+      "canonical": "documentary",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34259,
+        "charEnd": 34270,
+        "timeStart": 2346.48,
+        "timeEnd": 2351.46
+      },
+      "score": 0.6405600309371948
+    },
+    {
+      "id": "m_0400",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34681,
+        "charEnd": 34686,
+        "timeStart": 2373.119,
+        "timeEnd": 2377.1400000000003
+      },
+      "score": 0.5875548720359802
+    },
+    {
+      "id": "m_0401",
+      "label": "person",
+      "surface": "the same woman",
+      "canonical": "the same woman",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34713,
+        "charEnd": 34727,
+        "timeStart": 2375.22,
+        "timeEnd": 2379.5989999999997
+      },
+      "score": 0.5598773956298828
+    },
+    {
+      "id": "m_0402",
+      "label": "location",
+      "surface": "vanishing point",
+      "canonical": "vanishing point",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 34973,
+        "charEnd": 34988,
+        "timeStart": 2390.04,
+        "timeEnd": 2394
+      },
+      "score": 0.6575358510017395
+    },
+    {
+      "id": "m_0403",
+      "label": "location",
+      "surface": "horizon line",
+      "canonical": "horizon line",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 35011,
+        "charEnd": 35023,
+        "timeStart": 2392.079,
+        "timeEnd": 2396.28
+      },
+      "score": 0.528799295425415
+    },
+    {
+      "id": "m_0404",
+      "label": "location",
+      "surface": "the\nmoon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 35365,
+        "charEnd": 35373,
+        "timeStart": 2409.78,
+        "timeEnd": 2416.4
+      },
+      "score": 0.8916890025138855
+    },
+    {
+      "id": "m_0405",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 35434,
+        "charEnd": 35442,
+        "timeStart": 2423.4,
+        "timeEnd": 2427.42
+      },
+      "score": 0.9165881276130676
+    },
+    {
+      "id": "m_0406",
+      "label": "location",
+      "surface": "the Moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 35477,
+        "charEnd": 35485,
+        "timeStart": 2425.92,
+        "timeEnd": 2429.64
+      },
+      "score": 0.7838822603225708
+    },
+    {
+      "id": "m_0407",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 35599,
+        "charEnd": 35607,
+        "timeStart": 2431.859,
+        "timeEnd": 2436.24
+      },
+      "score": 0.9057052731513977
+    },
+    {
+      "id": "m_0408",
+      "label": "quantity",
+      "surface": "trillions",
+      "canonical": "trillions",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 35632,
+        "charEnd": 35641,
+        "timeStart": 2434.14,
+        "timeEnd": 2438.04
+      },
+      "score": 0.8504107594490051
+    },
+    {
+      "id": "m_0409",
+      "label": "location",
+      "surface": "hills",
+      "canonical": "Hills",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36335,
+        "charEnd": 36340,
+        "timeStart": 2473.26,
+        "timeEnd": 2477.5200000000004
+      },
+      "score": 0.5253005027770996
+    },
+    {
+      "id": "m_0410",
+      "label": "location",
+      "surface": "Hills",
+      "canonical": "Hills",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36402,
+        "charEnd": 36407,
+        "timeStart": 2477.52,
+        "timeEnd": 2482.2599999999998
+      },
+      "score": 0.5441854000091553
+    },
+    {
+      "id": "m_0411",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36458,
+        "charEnd": 36466,
+        "timeStart": 2482.26,
+        "timeEnd": 2486.88
+      },
+      "score": 0.8302615880966187
+    },
+    {
+      "id": "m_0412",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36504,
+        "charEnd": 36512,
+        "timeStart": 2484.359,
+        "timeEnd": 2488.02
+      },
+      "score": 0.8994097113609314
+    },
+    {
+      "id": "m_0413",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36543,
+        "charEnd": 36551,
+        "timeStart": 2486.88,
+        "timeEnd": 2489.579
+      },
+      "score": 0.8877155184745789
+    },
+    {
+      "id": "m_0414",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36592,
+        "charEnd": 36597,
+        "timeStart": 2488.02,
+        "timeEnd": 2491.74
+      },
+      "score": 0.7458835244178772
+    },
+    {
+      "id": "m_0415",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36767,
+        "charEnd": 36772,
+        "timeStart": 2498.64,
+        "timeEnd": 2502.72
+      },
+      "score": 0.7139538526535034
+    },
+    {
+      "id": "m_0416",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 36942,
+        "charEnd": 36950,
+        "timeStart": 2507.579,
+        "timeEnd": 2512.1400000000003
+      },
+      "score": 0.8909310698509216
+    },
+    {
+      "id": "m_0417",
+      "label": "location",
+      "surface": "the Moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 37156,
+        "charEnd": 37164,
+        "timeStart": 2521.619,
+        "timeEnd": 2525.88
+      },
+      "score": 0.8934829235076904
+    },
+    {
+      "id": "m_0418",
+      "label": "location",
+      "surface": "the Moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 37324,
+        "charEnd": 37332,
+        "timeStart": 2530.2,
+        "timeEnd": 2533.74
+      },
+      "score": 0.8978087902069092
+    },
+    {
+      "id": "m_0419",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 37482,
+        "charEnd": 37492,
+        "timeStart": 2538.3,
+        "timeEnd": 2543.7000000000003
+      },
+      "score": 0.6292241811752319
+    },
+    {
+      "id": "m_0420",
+      "label": "location",
+      "surface": "Apollo 11",
+      "canonical": "Apollo 11",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 38113,
+        "charEnd": 38122,
+        "timeStart": 2574.839,
+        "timeEnd": 2580.119
+      },
+      "score": 0.5927131772041321
+    },
+    {
+      "id": "m_0421",
+      "label": "technology",
+      "surface": "camera",
+      "canonical": "camera",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 38435,
+        "charEnd": 38441,
+        "timeStart": 2594.579,
+        "timeEnd": 2598.119
+      },
+      "score": 0.5143465399742126
+    },
+    {
+      "id": "m_0422",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 38615,
+        "charEnd": 38619,
+        "timeStart": 2606.7,
+        "timeEnd": 2611.319
+      },
+      "score": 0.858377993106842
+    },
+    {
+      "id": "m_0423",
+      "label": "technology",
+      "surface": "camera",
+      "canonical": "camera",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 38838,
+        "charEnd": 38844,
+        "timeStart": 2617.619,
+        "timeEnd": 2620.2000000000003
+      },
+      "score": 0.5287380814552307
+    },
+    {
+      "id": "m_0424",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39019,
+        "charEnd": 39023,
+        "timeStart": 2629.8,
+        "timeEnd": 2635.26
+      },
+      "score": 0.990000307559967
+    },
+    {
+      "id": "m_0425",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39039,
+        "charEnd": 39043,
+        "timeStart": 2629.8,
+        "timeEnd": 2635.26
+      },
+      "score": 0.9008037447929382
+    },
+    {
+      "id": "m_0426",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39056,
+        "charEnd": 39060,
+        "timeStart": 2632.5,
+        "timeEnd": 2636.339
+      },
+      "score": 0.9941621422767639
+    },
+    {
+      "id": "m_0427",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39086,
+        "charEnd": 39094,
+        "timeStart": 2635.26,
+        "timeEnd": 2638.94
+      },
+      "score": 0.9024839997291565
+    },
+    {
+      "id": "m_0428",
+      "label": "person",
+      "surface": "Carl wolf",
+      "canonical": "Carl wolf",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39117,
+        "charEnd": 39126,
+        "timeStart": 2639.339,
+        "timeEnd": 2644.68
+      },
+      "score": 0.8761242032051086
+    },
+    {
+      "id": "m_0429",
+      "label": "person",
+      "surface": "Precision Electronics photographic\nrepairman",
+      "canonical": "Precision Electronics photographic\nrepairman",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39139,
+        "charEnd": 39183,
+        "timeStart": 2642.7,
+        "timeEnd": 2649.1189999999997
+      },
+      "score": 0.7993700504302979
+    },
+    {
+      "id": "m_0430",
+      "label": "date_time",
+      "surface": "mid-1965",
+      "canonical": "mid-1965",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39222,
+        "charEnd": 39230,
+        "timeStart": 2649.119,
+        "timeEnd": 2656.88
+      },
+      "score": 0.8159913420677185
+    },
+    {
+      "id": "m_0431",
+      "label": "organization",
+      "surface": "Nasa",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39276,
+        "charEnd": 39280,
+        "timeStart": 2652.72,
+        "timeEnd": 2659.6189999999997
+      },
+      "score": 0.9787832498550415
+    },
+    {
+      "id": "m_0432",
+      "label": "location",
+      "surface": "Langley field",
+      "canonical": "Langley field",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39284,
+        "charEnd": 39297,
+        "timeStart": 2652.72,
+        "timeEnd": 2659.6189999999997
+      },
+      "score": 0.9617659449577332
+    },
+    {
+      "id": "m_0433",
+      "label": "facility",
+      "surface": "laboratory",
+      "canonical": "laboratory",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39319,
+        "charEnd": 39329,
+        "timeStart": 2656.88,
+        "timeEnd": 2662.02
+      },
+      "score": 0.7114980816841125
+    },
+    {
+      "id": "m_0434",
+      "label": "person",
+      "surface": "Airman second class",
+      "canonical": "Airman second class",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39431,
+        "charEnd": 39450,
+        "timeStart": 2666.24,
+        "timeEnd": 2671.2
+      },
+      "score": 0.9800741076469421
+    },
+    {
+      "id": "m_0435",
+      "label": "person",
+      "surface": "Airman second\nclass",
+      "canonical": "Airman second class",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 39499,
+        "charEnd": 39518,
+        "timeStart": 2668.98,
+        "timeEnd": 2674.98
+      },
+      "score": 0.922324001789093
+    },
+    {
+      "id": "m_0436",
+      "label": "organization",
+      "surface": "Congress",
+      "canonical": "Congress",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 40340,
+        "charEnd": 40348,
+        "timeStart": 2723.88,
+        "timeEnd": 2726.75
+      },
+      "score": 0.8918455243110657
+    },
+    {
+      "id": "m_0437",
+      "label": "location",
+      "surface": "moon",
+      "canonical": "moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 40440,
+        "charEnd": 40444,
+        "timeStart": 2731.859,
+        "timeEnd": 2736.24
+      },
+      "score": 0.7313984632492065
+    },
+    {
+      "id": "m_0438",
+      "label": "quantity",
+      "surface": "50 years",
+      "canonical": "50 years",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 40449,
+        "charEnd": 40457,
+        "timeStart": 2731.859,
+        "timeEnd": 2736.24
+      },
+      "score": 0.6171806454658508
+    },
+    {
+      "id": "m_0439",
+      "label": "location",
+      "surface": "Van Allen radiation belts",
+      "canonical": "Van Allen radiation belts",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 40513,
+        "charEnd": 40538,
+        "timeStart": 2736.24,
+        "timeEnd": 2740.3799999999997
+      },
+      "score": 0.5588147640228271
+    },
+    {
+      "id": "m_0440",
+      "label": "location",
+      "surface": "the Moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 40571,
+        "charEnd": 40579,
+        "timeStart": 2738.46,
+        "timeEnd": 2742.3
+      },
+      "score": 0.6707506775856018
+    },
+    {
+      "id": "m_0441",
+      "label": "person",
+      "surface": "AJ",
+      "canonical": "AJ",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 40842,
+        "charEnd": 40844,
+        "timeStart": 2762.28,
+        "timeEnd": 2766.7200000000003
+      },
+      "score": 0.9704878926277161
+    },
+    {
+      "id": "m_0442",
+      "label": "organization",
+      "surface": "Y files",
+      "canonical": "Y files",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 40879,
+        "charEnd": 40886,
+        "timeStart": 2764.22,
+        "timeEnd": 2767.98
+      },
+      "score": 0.725436270236969
+    },
+    {
+      "id": "m_0443",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41232,
+        "charEnd": 41241,
+        "timeStart": 2781.839,
+        "timeEnd": 2786.22
+      },
+      "score": 0.7836652398109436
+    },
+    {
+      "id": "m_0444",
+      "label": "organization",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41300,
+        "charEnd": 41307,
+        "timeStart": 2786.22,
+        "timeEnd": 2790.66
+      },
+      "score": 0.8412528038024902
+    },
+    {
+      "id": "m_0445",
+      "label": "work_of_media",
+      "surface": "Y files",
+      "canonical": "Y files",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41512,
+        "charEnd": 41519,
+        "timeStart": 2797.2,
+        "timeEnd": 2800.9199999999996
+      },
+      "score": 0.5077288746833801
+    },
+    {
+      "id": "m_0446",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41545,
+        "charEnd": 41552,
+        "timeStart": 2797.2,
+        "timeEnd": 2800.9199999999996
+      },
+      "score": 0.8152176737785339
+    },
+    {
+      "id": "m_0447",
+      "label": "quantity",
+      "surface": "three dollars",
+      "canonical": "three dollars",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41570,
+        "charEnd": 41583,
+        "timeStart": 2799.42,
+        "timeEnd": 2802.839
+      },
+      "score": 0.8262413144111633
+    },
+    {
+      "id": "m_0448",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41846,
+        "charEnd": 41851,
+        "timeStart": 2827.9,
+        "timeEnd": 2864.11
+      },
+      "score": 0.9136664271354675
+    },
+    {
+      "id": "m_0449",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41864,
+        "charEnd": 41869,
+        "timeStart": 2869.13,
+        "timeEnd": 2893.389
+      },
+      "score": 0.8961809873580933
+    },
+    {
+      "id": "m_0450",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41871,
+        "charEnd": 41878,
+        "timeStart": 2894.88,
+        "timeEnd": 2921.679
+      },
+      "score": 0.980924129486084
+    },
+    {
+      "id": "m_0451",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41880,
+        "charEnd": 41885,
+        "timeStart": 2897.69,
+        "timeEnd": 2921.679
+      },
+      "score": 0.7928321957588196
+    },
+    {
+      "id": "m_0452",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41887,
+        "charEnd": 41894,
+        "timeStart": 2923.38,
+        "timeEnd": 2968.28
+      },
+      "score": 0.9755653142929077
+    },
+    {
+      "id": "m_0453",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41896,
+        "charEnd": 41901,
+        "timeStart": 2925.87,
+        "timeEnd": 2970.24
+      },
+      "score": 0.8482475280761719
+    },
+    {
+      "id": "m_0454",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41913,
+        "charEnd": 41920,
+        "timeStart": 2970.24,
+        "timeEnd": 2973.24
+      },
+      "score": 0.9843763113021851
+    },
+    {
+      "id": "m_0455",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41922,
+        "charEnd": 41927,
+        "timeStart": 2974.42,
+        "timeEnd": 2986.36
+      },
+      "score": 0.8409000039100647
+    },
+    {
+      "id": "m_0456",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41930,
+        "charEnd": 41935,
+        "timeStart": 2990.93,
+        "timeEnd": 2994.08
+      },
+      "score": 0.7727909088134766
+    },
+    {
+      "id": "m_0457",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41938,
+        "charEnd": 41943,
+        "timeStart": 2996.22,
+        "timeEnd": 3000.54
+      },
+      "score": 0.7861340045928955
+    },
+    {
+      "id": "m_0458",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "yDyJe1nmSOM",
+        "charStart": 41946,
+        "charEnd": 41951,
+        "timeStart": 3003.24,
+        "timeEnd": 3007.83
+      },
+      "score": 0.8099792003631592
+    }
+  ]
+}

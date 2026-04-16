@@ -1,0 +1,2686 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "ftrbdFGTQO4",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T09:49:38.554Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "date_time",
+      "surface": "september 1st 1859",
+      "canonical": "september 1st 1859",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3,
+        "charEnd": 21,
+        "timeStart": 0.16,
+        "timeEnd": 5.68
+      },
+      "score": 0.8740107417106628
+    },
+    {
+      "id": "m_0002",
+      "label": "person",
+      "surface": "a gold miner",
+      "canonical": "a gold miner",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 22,
+        "charEnd": 34,
+        "timeStart": 0.16,
+        "timeEnd": 5.68
+      },
+      "score": 0.8454021215438843
+    },
+    {
+      "id": "m_0003",
+      "label": "location",
+      "surface": "denver",
+      "canonical": "denver",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 38,
+        "charEnd": 44,
+        "timeStart": 3.439,
+        "timeEnd": 8
+      },
+      "score": 0.8923965692520142
+    },
+    {
+      "id": "m_0004",
+      "label": "person",
+      "surface": "his wife",
+      "canonical": "his wife",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 294,
+        "charEnd": 302,
+        "timeStart": 16.48,
+        "timeEnd": 20.16
+      },
+      "score": 0.7486107349395752
+    },
+    {
+      "id": "m_0005",
+      "label": "person",
+      "surface": "an\nastronomer",
+      "canonical": "an\nastronomer",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 677,
+        "charEnd": 690,
+        "timeStart": 37.68,
+        "timeEnd": 44.559000000000005
+      },
+      "score": 0.8851264715194702
+    },
+    {
+      "id": "m_0006",
+      "label": "date_time",
+      "surface": "september 1st",
+      "canonical": "september 1st",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 821,
+        "charEnd": 834,
+        "timeStart": 58.64,
+        "timeEnd": 62.719
+      },
+      "score": 0.8368316292762756
+    },
+    {
+      "id": "m_0007",
+      "label": "person",
+      "surface": "richard\ncarrington",
+      "canonical": "richard\ncarrington",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 846,
+        "charEnd": 864,
+        "timeStart": 58.64,
+        "timeEnd": 65.199
+      },
+      "score": 0.7138909101486206
+    },
+    {
+      "id": "m_0008",
+      "label": "quantity",
+      "surface": "about 10 times the size of the earth",
+      "canonical": "about 10 times the size of the earth",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 968,
+        "charEnd": 1004,
+        "timeStart": 67.2,
+        "timeEnd": 71.36
+      },
+      "score": 0.5448423027992249
+    },
+    {
+      "id": "m_0009",
+      "label": "location",
+      "surface": "north america",
+      "canonical": "north america",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1251,
+        "charEnd": 1264,
+        "timeStart": 82.799,
+        "timeEnd": 87.52000000000001
+      },
+      "score": 0.5489278435707092
+    },
+    {
+      "id": "m_0010",
+      "label": "event",
+      "surface": "aurora borealis",
+      "canonical": "aurora borealis",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1285,
+        "charEnd": 1300,
+        "timeStart": 84.96,
+        "timeEnd": 89.52
+      },
+      "score": 0.5328710675239563
+    },
+    {
+      "id": "m_0011",
+      "label": "location",
+      "surface": "miami",
+      "canonical": "miami",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1352,
+        "charEnd": 1357,
+        "timeStart": 89.52,
+        "timeEnd": 94.079
+      },
+      "score": 0.7475233674049377
+    },
+    {
+      "id": "m_0012",
+      "label": "location",
+      "surface": "cuba",
+      "canonical": "cuba",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1362,
+        "charEnd": 1366,
+        "timeStart": 89.52,
+        "timeEnd": 94.079
+      },
+      "score": 0.7770664691925049
+    },
+    {
+      "id": "m_0013",
+      "label": "location",
+      "surface": "colombia",
+      "canonical": "colombia",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1387,
+        "charEnd": 1395,
+        "timeStart": 91.84,
+        "timeEnd": 96.24000000000001
+      },
+      "score": 0.6151770353317261
+    },
+    {
+      "id": "m_0014",
+      "label": "location",
+      "surface": "brisbane",
+      "canonical": "brisbane",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1462,
+        "charEnd": 1470,
+        "timeStart": 96.24,
+        "timeEnd": 101.36
+      },
+      "score": 0.7950453758239746
+    },
+    {
+      "id": "m_0015",
+      "label": "date_time",
+      "surface": "september\n2nd",
+      "canonical": "september\n2nd",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1492,
+        "charEnd": 1505,
+        "timeStart": 96.24,
+        "timeEnd": 103.03999999999999
+      },
+      "score": 0.8532616496086121
+    },
+    {
+      "id": "m_0016",
+      "label": "technology",
+      "surface": "telegraph lines",
+      "canonical": "telegraph lines",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1668,
+        "charEnd": 1683,
+        "timeStart": 107.04,
+        "timeEnd": 110.799
+      },
+      "score": 0.6656405329704285
+    },
+    {
+      "id": "m_0017",
+      "label": "location",
+      "surface": "europe",
+      "canonical": "europe",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1705,
+        "charEnd": 1711,
+        "timeStart": 109.28,
+        "timeEnd": 113.04
+      },
+      "score": 0.7907229065895081
+    },
+    {
+      "id": "m_0018",
+      "label": "location",
+      "surface": "north\namerica",
+      "canonical": "north america",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1716,
+        "charEnd": 1729,
+        "timeStart": 109.28,
+        "timeEnd": 115.2
+      },
+      "score": 0.7699953317642212
+    },
+    {
+      "id": "m_0019",
+      "label": "facility",
+      "surface": "equipment",
+      "canonical": "equipment",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1730,
+        "charEnd": 1739,
+        "timeStart": 110.799,
+        "timeEnd": 115.2
+      },
+      "score": 0.9131624698638916
+    },
+    {
+      "id": "m_0020",
+      "label": "person",
+      "surface": "telegraph operators",
+      "canonical": "telegraph operators",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1871,
+        "charEnd": 1890,
+        "timeStart": 119.04,
+        "timeEnd": 123.92
+      },
+      "score": 0.5695893168449402
+    },
+    {
+      "id": "m_0021",
+      "label": "facility",
+      "surface": "equipment",
+      "canonical": "equipment",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 1908,
+        "charEnd": 1917,
+        "timeStart": 121.119,
+        "timeEnd": 125.6
+      },
+      "score": 0.9369938373565674
+    },
+    {
+      "id": "m_0022",
+      "label": "technology",
+      "surface": "telegraphs",
+      "canonical": "telegraphs",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2007,
+        "charEnd": 2017,
+        "timeStart": 125.6,
+        "timeEnd": 129.84
+      },
+      "score": 0.8762739300727844
+    },
+    {
+      "id": "m_0023",
+      "label": "event",
+      "surface": "carrington event",
+      "canonical": "carrington event",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2119,
+        "charEnd": 2135,
+        "timeStart": 132.08,
+        "timeEnd": 136.64000000000001
+      },
+      "score": 0.8790113925933838
+    },
+    {
+      "id": "m_0024",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2152,
+        "charEnd": 2162,
+        "timeStart": 134.56,
+        "timeEnd": 139.28
+      },
+      "score": 0.6533932685852051
+    },
+    {
+      "id": "m_0025",
+      "label": "date_time",
+      "surface": "1859",
+      "canonical": "1859",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2374,
+        "charEnd": 2378,
+        "timeStart": 151.44,
+        "timeEnd": 155.76
+      },
+      "score": 0.9380395412445068
+    },
+    {
+      "id": "m_0026",
+      "label": "person",
+      "surface": "carrington",
+      "canonical": "carrington",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2485,
+        "charEnd": 2495,
+        "timeStart": 158,
+        "timeEnd": 162.319
+      },
+      "score": 0.9634761214256287
+    },
+    {
+      "id": "m_0027",
+      "label": "facility",
+      "surface": "q\nobservatory",
+      "canonical": "q\nobservatory",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2517,
+        "charEnd": 2530,
+        "timeStart": 158,
+        "timeEnd": 164.56
+      },
+      "score": 0.7202138900756836
+    },
+    {
+      "id": "m_0028",
+      "label": "location",
+      "surface": "london",
+      "canonical": "london",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2534,
+        "charEnd": 2540,
+        "timeStart": 160.08,
+        "timeEnd": 164.56
+      },
+      "score": 0.8167856335639954
+    },
+    {
+      "id": "m_0029",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2610,
+        "charEnd": 2620,
+        "timeStart": 164.56,
+        "timeEnd": 168.8
+      },
+      "score": 0.6626717448234558
+    },
+    {
+      "id": "m_0030",
+      "label": "event",
+      "surface": "geomagnetic storms",
+      "canonical": "geomagnetic storms",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 2639,
+        "charEnd": 2657,
+        "timeStart": 166.319,
+        "timeEnd": 170.879
+      },
+      "score": 0.7109123468399048
+    },
+    {
+      "id": "m_0031",
+      "label": "organization",
+      "surface": "cmes",
+      "canonical": "cmes",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3195,
+        "charEnd": 3199,
+        "timeStart": 198.239,
+        "timeEnd": 203.44
+      },
+      "score": 0.6365057229995728
+    },
+    {
+      "id": "m_0032",
+      "label": "quantity",
+      "surface": "billions of tons",
+      "canonical": "billions of tons",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3279,
+        "charEnd": 3295,
+        "timeStart": 205.599,
+        "timeEnd": 210.56
+      },
+      "score": 0.8037667870521545
+    },
+    {
+      "id": "m_0033",
+      "label": "quantity",
+      "surface": "several million\nmiles per hour",
+      "canonical": "several million\nmiles per hour",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3332,
+        "charEnd": 3362,
+        "timeStart": 207.92,
+        "timeEnd": 214.959
+      },
+      "score": 0.8118245005607605
+    },
+    {
+      "id": "m_0034",
+      "label": "organization",
+      "surface": "cmes",
+      "canonical": "cmes",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3470,
+        "charEnd": 3474,
+        "timeStart": 216.959,
+        "timeEnd": 222.239
+      },
+      "score": 0.7519147992134094
+    },
+    {
+      "id": "m_0035",
+      "label": "organization",
+      "surface": "cmes",
+      "canonical": "cmes",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3806,
+        "charEnd": 3810,
+        "timeStart": 236.08,
+        "timeEnd": 240.48000000000002
+      },
+      "score": 0.6853179931640625
+    },
+    {
+      "id": "m_0036",
+      "label": "quantity",
+      "surface": "two or three\ntimes a day",
+      "canonical": "two or three\ntimes a day",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3818,
+        "charEnd": 3842,
+        "timeStart": 236.08,
+        "timeEnd": 242.79899999999998
+      },
+      "score": 0.5078237056732178
+    },
+    {
+      "id": "m_0037",
+      "label": "quantity",
+      "surface": "once or twice every\nhundred years",
+      "canonical": "once or twice every\nhundred years",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3847,
+        "charEnd": 3880,
+        "timeStart": 238.159,
+        "timeEnd": 244.79899999999998
+      },
+      "score": 0.6962262988090515
+    },
+    {
+      "id": "m_0038",
+      "label": "event",
+      "surface": "super\nstorms",
+      "canonical": "super\nstorms",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 3897,
+        "charEnd": 3909,
+        "timeStart": 240.48,
+        "timeEnd": 246.64000000000001
+      },
+      "score": 0.6906893849372864
+    },
+    {
+      "id": "m_0039",
+      "label": "date_time",
+      "surface": "774 a.d",
+      "canonical": "774 a.d",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4172,
+        "charEnd": 4179,
+        "timeStart": 262,
+        "timeEnd": 267.52
+      },
+      "score": 0.9134511947631836
+    },
+    {
+      "id": "m_0040",
+      "label": "event",
+      "surface": "miyake event",
+      "canonical": "miyake event",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4214,
+        "charEnd": 4226,
+        "timeStart": 265.36,
+        "timeEnd": 270.639
+      },
+      "score": 0.9262754321098328
+    },
+    {
+      "id": "m_0041",
+      "label": "date_time",
+      "surface": "993\na.d",
+      "canonical": "993\na.d",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4288,
+        "charEnd": 4295,
+        "timeStart": 267.52,
+        "timeEnd": 275.44
+      },
+      "score": 0.8931148648262024
+    },
+    {
+      "id": "m_0042",
+      "label": "organization",
+      "surface": "norris",
+      "canonical": "norris",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4446,
+        "charEnd": 4452,
+        "timeStart": 278.56,
+        "timeEnd": 284.8
+      },
+      "score": 0.6027932167053223
+    },
+    {
+      "id": "m_0043",
+      "label": "location",
+      "surface": "north america",
+      "canonical": "north america",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4464,
+        "charEnd": 4477,
+        "timeStart": 278.56,
+        "timeEnd": 284.8
+      },
+      "score": 0.7609957456588745
+    },
+    {
+      "id": "m_0044",
+      "label": "person",
+      "surface": "columbus",
+      "canonical": "columbus",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4495,
+        "charEnd": 4503,
+        "timeStart": 281.12,
+        "timeEnd": 288
+      },
+      "score": 0.9324514269828796
+    },
+    {
+      "id": "m_0045",
+      "label": "date_time",
+      "surface": "1052",
+      "canonical": "1052",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4504,
+        "charEnd": 4508,
+        "timeStart": 281.12,
+        "timeEnd": 288
+      },
+      "score": 0.7715175151824951
+    },
+    {
+      "id": "m_0046",
+      "label": "date_time",
+      "surface": "1279",
+      "canonical": "1279",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4509,
+        "charEnd": 4513,
+        "timeStart": 281.12,
+        "timeEnd": 288
+      },
+      "score": 0.8093295097351074
+    },
+    {
+      "id": "m_0047",
+      "label": "date_time",
+      "surface": "1582",
+      "canonical": "1582",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4551,
+        "charEnd": 4555,
+        "timeStart": 284.8,
+        "timeEnd": 292.08
+      },
+      "score": 0.9400189518928528
+    },
+    {
+      "id": "m_0048",
+      "label": "date_time",
+      "surface": "1730",
+      "canonical": "1730",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4556,
+        "charEnd": 4560,
+        "timeStart": 288,
+        "timeEnd": 293.919
+      },
+      "score": 0.9252187609672546
+    },
+    {
+      "id": "m_0049",
+      "label": "date_time",
+      "surface": "1770",
+      "canonical": "1770",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4565,
+        "charEnd": 4569,
+        "timeStart": 288,
+        "timeEnd": 293.919
+      },
+      "score": 0.8993628025054932
+    },
+    {
+      "id": "m_0050",
+      "label": "event",
+      "surface": "solar storms",
+      "canonical": "solar storms",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4738,
+        "charEnd": 4750,
+        "timeStart": 297.84,
+        "timeEnd": 301.84
+      },
+      "score": 0.5994836688041687
+    },
+    {
+      "id": "m_0051",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4889,
+        "charEnd": 4894,
+        "timeStart": 306.08,
+        "timeEnd": 309.59999999999997
+      },
+      "score": 0.6477373242378235
+    },
+    {
+      "id": "m_0052",
+      "label": "event",
+      "surface": "carrington event",
+      "canonical": "carrington event",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 4981,
+        "charEnd": 4997,
+        "timeStart": 311.68,
+        "timeEnd": 316.88
+      },
+      "score": 0.8964694738388062
+    },
+    {
+      "id": "m_0053",
+      "label": "date_time",
+      "surface": "1859",
+      "canonical": "1859",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5010,
+        "charEnd": 5014,
+        "timeStart": 311.68,
+        "timeEnd": 316.88
+      },
+      "score": 0.9817311763763428
+    },
+    {
+      "id": "m_0054",
+      "label": "organization",
+      "surface": "civilization",
+      "canonical": "civilization",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5015,
+        "charEnd": 5027,
+        "timeStart": 314.32,
+        "timeEnd": 319.199
+      },
+      "score": 0.890166163444519
+    },
+    {
+      "id": "m_0055",
+      "label": "technology",
+      "surface": "machines",
+      "canonical": "machines",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5069,
+        "charEnd": 5077,
+        "timeStart": 316.88,
+        "timeEnd": 320.71999999999997
+      },
+      "score": 0.5247111320495605
+    },
+    {
+      "id": "m_0056",
+      "label": "technology",
+      "surface": "electricity",
+      "canonical": "electricity",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5082,
+        "charEnd": 5093,
+        "timeStart": 316.88,
+        "timeEnd": 320.71999999999997
+      },
+      "score": 0.7273116707801819
+    },
+    {
+      "id": "m_0057",
+      "label": "work_of_media",
+      "surface": "hollywood disaster movie",
+      "canonical": "hollywood disaster movie",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5166,
+        "charEnd": 5190,
+        "timeStart": 323.12,
+        "timeEnd": 327.039
+      },
+      "score": 0.8630683422088623
+    },
+    {
+      "id": "m_0058",
+      "label": "technology",
+      "surface": "electricity",
+      "canonical": "electricity",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5250,
+        "charEnd": 5261,
+        "timeStart": 327.039,
+        "timeEnd": 330.88
+      },
+      "score": 0.7476218342781067
+    },
+    {
+      "id": "m_0059",
+      "label": "event",
+      "surface": "solar storms",
+      "canonical": "solar storms",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5385,
+        "charEnd": 5397,
+        "timeStart": 335.28,
+        "timeEnd": 340.4
+      },
+      "score": 0.8299641609191895
+    },
+    {
+      "id": "m_0060",
+      "label": "organization",
+      "surface": "civilization",
+      "canonical": "civilization",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5420,
+        "charEnd": 5432,
+        "timeStart": 337.84,
+        "timeEnd": 342.96
+      },
+      "score": 0.9053892493247986
+    },
+    {
+      "id": "m_0061",
+      "label": "quantity",
+      "surface": "millions of miles",
+      "canonical": "millions of miles",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5475,
+        "charEnd": 5492,
+        "timeStart": 340.4,
+        "timeEnd": 345.039
+      },
+      "score": 0.9308773875236511
+    },
+    {
+      "id": "m_0062",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "earth",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5517,
+        "charEnd": 5522,
+        "timeStart": 342.96,
+        "timeEnd": 347.28
+      },
+      "score": 0.5653943419456482
+    },
+    {
+      "id": "m_0063",
+      "label": "event",
+      "surface": "solar storm",
+      "canonical": "solar storm",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5538,
+        "charEnd": 5549,
+        "timeStart": 345.039,
+        "timeEnd": 349.84
+      },
+      "score": 0.9208976626396179
+    },
+    {
+      "id": "m_0064",
+      "label": "facility",
+      "surface": "power\ngrids",
+      "canonical": "power\ngrids",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5563,
+        "charEnd": 5574,
+        "timeStart": 345.039,
+        "timeEnd": 352
+      },
+      "score": 0.7509254813194275
+    },
+    {
+      "id": "m_0065",
+      "label": "facility",
+      "surface": "transformers",
+      "canonical": "transformers",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5583,
+        "charEnd": 5595,
+        "timeStart": 347.28,
+        "timeEnd": 352
+      },
+      "score": 0.6321119070053101
+    },
+    {
+      "id": "m_0066",
+      "label": "date_time",
+      "surface": "1989",
+      "canonical": "1989",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5657,
+        "charEnd": 5661,
+        "timeStart": 352,
+        "timeEnd": 356.8
+      },
+      "score": 0.9634057283401489
+    },
+    {
+      "id": "m_0067",
+      "label": "event",
+      "surface": "solar storm",
+      "canonical": "solar storm",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5685,
+        "charEnd": 5696,
+        "timeStart": 354.56,
+        "timeEnd": 359.199
+      },
+      "score": 0.9168570041656494
+    },
+    {
+      "id": "m_0068",
+      "label": "location",
+      "surface": "russia",
+      "canonical": "russia",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5733,
+        "charEnd": 5739,
+        "timeStart": 356.8,
+        "timeEnd": 361.6
+      },
+      "score": 0.6006709933280945
+    },
+    {
+      "id": "m_0069",
+      "label": "nationality_or_ethnicity",
+      "surface": "russians",
+      "canonical": "russians",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5747,
+        "charEnd": 5755,
+        "timeStart": 356.8,
+        "timeEnd": 361.6
+      },
+      "score": 0.9277858138084412
+    },
+    {
+      "id": "m_0070",
+      "label": "organization",
+      "surface": "american spies",
+      "canonical": "american spies",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 5809,
+        "charEnd": 5823,
+        "timeStart": 361.6,
+        "timeEnd": 365.36
+      },
+      "score": 0.6380829215049744
+    },
+    {
+      "id": "m_0071",
+      "label": "organization",
+      "surface": "toronto stock exchange",
+      "canonical": "toronto stock exchange",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6008,
+        "charEnd": 6030,
+        "timeStart": 371.44,
+        "timeEnd": 376.479
+      },
+      "score": 0.5504595041275024
+    },
+    {
+      "id": "m_0072",
+      "label": "quantity",
+      "surface": "millions of\npeople",
+      "canonical": "millions of\npeople",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6054,
+        "charEnd": 6072,
+        "timeStart": 373.84,
+        "timeEnd": 382
+      },
+      "score": 0.9462564587593079
+    },
+    {
+      "id": "m_0073",
+      "label": "location",
+      "surface": "quebec province",
+      "canonical": "quebec province",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6076,
+        "charEnd": 6091,
+        "timeStart": 376.479,
+        "timeEnd": 382
+      },
+      "score": 0.8676921129226685
+    },
+    {
+      "id": "m_0074",
+      "label": "date_time",
+      "surface": "2003",
+      "canonical": "2003",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6137,
+        "charEnd": 6141,
+        "timeStart": 378.4,
+        "timeEnd": 383.919
+      },
+      "score": 0.866233766078949
+    },
+    {
+      "id": "m_0075",
+      "label": "quantity",
+      "surface": "millions of people",
+      "canonical": "millions of\npeople",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6160,
+        "charEnd": 6178,
+        "timeStart": 382,
+        "timeEnd": 386.08
+      },
+      "score": 0.9419198036193848
+    },
+    {
+      "id": "m_0076",
+      "label": "date_time",
+      "surface": "1989",
+      "canonical": "1989",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6250,
+        "charEnd": 6254,
+        "timeStart": 386.08,
+        "timeEnd": 391.919
+      },
+      "score": 0.9544512629508972
+    },
+    {
+      "id": "m_0077",
+      "label": "date_time",
+      "surface": "2003",
+      "canonical": "2003",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6259,
+        "charEnd": 6263,
+        "timeStart": 388.96,
+        "timeEnd": 394.23999999999995
+      },
+      "score": 0.9402616024017334
+    },
+    {
+      "id": "m_0078",
+      "label": "event",
+      "surface": "carrington event",
+      "canonical": "carrington event",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6303,
+        "charEnd": 6319,
+        "timeStart": 391.919,
+        "timeEnd": 396.31899999999996
+      },
+      "score": 0.9853283762931824
+    },
+    {
+      "id": "m_0079",
+      "label": "event",
+      "surface": "carrington event",
+      "canonical": "carrington event",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6403,
+        "charEnd": 6419,
+        "timeStart": 398.319,
+        "timeEnd": 402.08000000000004
+      },
+      "score": 0.98464035987854
+    },
+    {
+      "id": "m_0080",
+      "label": "location",
+      "surface": "minnesota",
+      "canonical": "minnesota",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6552,
+        "charEnd": 6561,
+        "timeStart": 416.8,
+        "timeEnd": 421.79
+      },
+      "score": 0.9485993385314941
+    },
+    {
+      "id": "m_0081",
+      "label": "location",
+      "surface": "minnesota",
+      "canonical": "minnesota",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6587,
+        "charEnd": 6596,
+        "timeStart": 419.199,
+        "timeEnd": 425.29
+      },
+      "score": 0.8986141681671143
+    },
+    {
+      "id": "m_0082",
+      "label": "technology",
+      "surface": "shortwave radio",
+      "canonical": "shortwave radio",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6711,
+        "charEnd": 6726,
+        "timeStart": 431.759,
+        "timeEnd": 436
+      },
+      "score": 0.9369537830352783
+    },
+    {
+      "id": "m_0083",
+      "label": "technology",
+      "surface": "ship-to-shore communication",
+      "canonical": "ship-to-shore communication",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6891,
+        "charEnd": 6918,
+        "timeStart": 445.68,
+        "timeEnd": 450.8
+      },
+      "score": 0.8054254651069641
+    },
+    {
+      "id": "m_0084",
+      "label": "facility",
+      "surface": "air traffic control",
+      "canonical": "air traffic control",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 6980,
+        "charEnd": 6999,
+        "timeStart": 450.8,
+        "timeEnd": 455.599
+      },
+      "score": 0.8433717489242554
+    },
+    {
+      "id": "m_0085",
+      "label": "location",
+      "surface": "the atmosphere",
+      "canonical": "the atmosphere",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7123,
+        "charEnd": 7137,
+        "timeStart": 459.199,
+        "timeEnd": 464.40000000000003
+      },
+      "score": 0.5472951531410217
+    },
+    {
+      "id": "m_0086",
+      "label": "person",
+      "surface": "astronauts",
+      "canonical": "astronauts",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7198,
+        "charEnd": 7208,
+        "timeStart": 464.4,
+        "timeEnd": 469.12
+      },
+      "score": 0.5644043684005737
+    },
+    {
+      "id": "m_0087",
+      "label": "event",
+      "surface": "coronal mass ejection",
+      "canonical": "coronal mass ejection",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7506,
+        "charEnd": 7527,
+        "timeStart": 482.16,
+        "timeEnd": 487.36
+      },
+      "score": 0.8167737126350403
+    },
+    {
+      "id": "m_0088",
+      "label": "location",
+      "surface": "the earth",
+      "canonical": "the earth",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7634,
+        "charEnd": 7643,
+        "timeStart": 489.919,
+        "timeEnd": 494.639
+      },
+      "score": 0.853590726852417
+    },
+    {
+      "id": "m_0089",
+      "label": "location",
+      "surface": "atmosphere",
+      "canonical": "atmosphere",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7648,
+        "charEnd": 7658,
+        "timeStart": 489.919,
+        "timeEnd": 494.639
+      },
+      "score": 0.5488117337226868
+    },
+    {
+      "id": "m_0090",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "earth",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7701,
+        "charEnd": 7706,
+        "timeStart": 494.639,
+        "timeEnd": 499.44
+      },
+      "score": 0.8294237852096558
+    },
+    {
+      "id": "m_0091",
+      "label": "technology",
+      "surface": "your gps",
+      "canonical": "your gps",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7798,
+        "charEnd": 7806,
+        "timeStart": 499.44,
+        "timeEnd": 504.639
+      },
+      "score": 0.7796514630317688
+    },
+    {
+      "id": "m_0092",
+      "label": "technology",
+      "surface": "gps system",
+      "canonical": "gps system",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7909,
+        "charEnd": 7919,
+        "timeStart": 506.639,
+        "timeEnd": 511.599
+      },
+      "score": 0.9272044897079468
+    },
+    {
+      "id": "m_0093",
+      "label": "quantity",
+      "surface": "thousands of satellites",
+      "canonical": "thousands of satellites",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 7975,
+        "charEnd": 7998,
+        "timeStart": 511.599,
+        "timeEnd": 515.039
+      },
+      "score": 0.6522091031074524
+    },
+    {
+      "id": "m_0094",
+      "label": "location",
+      "surface": "orbit",
+      "canonical": "orbit",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8002,
+        "charEnd": 8007,
+        "timeStart": 511.599,
+        "timeEnd": 515.039
+      },
+      "score": 0.5724425315856934
+    },
+    {
+      "id": "m_0095",
+      "label": "organization",
+      "surface": "global supply chains",
+      "canonical": "global supply chains",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8135,
+        "charEnd": 8155,
+        "timeStart": 518.719,
+        "timeEnd": 523.599
+      },
+      "score": 0.7778249979019165
+    },
+    {
+      "id": "m_0096",
+      "label": "quantity",
+      "surface": "hours",
+      "canonical": "hours",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8181,
+        "charEnd": 8186,
+        "timeStart": 521.279,
+        "timeEnd": 525.76
+      },
+      "score": 0.5052950978279114
+    },
+    {
+      "id": "m_0097",
+      "label": "technology",
+      "surface": "military communication",
+      "canonical": "military communication",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8216,
+        "charEnd": 8238,
+        "timeStart": 523.599,
+        "timeEnd": 528.72
+      },
+      "score": 0.8875992298126221
+    },
+    {
+      "id": "m_0098",
+      "label": "technology",
+      "surface": "radar",
+      "canonical": "radar",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8272,
+        "charEnd": 8277,
+        "timeStart": 525.76,
+        "timeEnd": 531.92
+      },
+      "score": 0.8891376852989197
+    },
+    {
+      "id": "m_0099",
+      "label": "technology",
+      "surface": "weapon systems",
+      "canonical": "weapon systems",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8291,
+        "charEnd": 8305,
+        "timeStart": 528.72,
+        "timeEnd": 532.88
+      },
+      "score": 0.8575742840766907
+    },
+    {
+      "id": "m_0100",
+      "label": "quantity",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8345,
+        "charEnd": 8350,
+        "timeStart": 537.96,
+        "timeEnd": 541.009
+      },
+      "score": 0.5863605737686157
+    },
+    {
+      "id": "m_0101",
+      "label": "quantity",
+      "surface": "hours",
+      "canonical": "hours",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8365,
+        "charEnd": 8370,
+        "timeStart": 541.279,
+        "timeEnd": 544.64
+      },
+      "score": 0.6062681674957275
+    },
+    {
+      "id": "m_0102",
+      "label": "organization",
+      "surface": "governments",
+      "canonical": "governments",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8386,
+        "charEnd": 8397,
+        "timeStart": 543.279,
+        "timeEnd": 546
+      },
+      "score": 0.9216407537460327
+    },
+    {
+      "id": "m_0103",
+      "label": "technology",
+      "surface": "telecommunications",
+      "canonical": "telecommunications",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8484,
+        "charEnd": 8502,
+        "timeStart": 547.72,
+        "timeEnd": 552.48
+      },
+      "score": 0.5006910562515259
+    },
+    {
+      "id": "m_0104",
+      "label": "organization",
+      "surface": "emergency\nservices",
+      "canonical": "emergency\nservices",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8513,
+        "charEnd": 8531,
+        "timeStart": 547.72,
+        "timeEnd": 553.5999999999999
+      },
+      "score": 0.7801741361618042
+    },
+    {
+      "id": "m_0105",
+      "label": "person",
+      "surface": "your friend",
+      "canonical": "your friend",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8619,
+        "charEnd": 8630,
+        "timeStart": 553.6,
+        "timeEnd": 558.32
+      },
+      "score": 0.9133515357971191
+    },
+    {
+      "id": "m_0106",
+      "label": "organization",
+      "surface": "stock market",
+      "canonical": "stock market",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8684,
+        "charEnd": 8696,
+        "timeStart": 558.32,
+        "timeEnd": 561.6800000000001
+      },
+      "score": 0.704723060131073
+    },
+    {
+      "id": "m_0107",
+      "label": "facility",
+      "surface": "cell towers",
+      "canonical": "cell towers",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8883,
+        "charEnd": 8894,
+        "timeStart": 567.12,
+        "timeEnd": 572.399
+      },
+      "score": 0.6626303791999817
+    },
+    {
+      "id": "m_0108",
+      "label": "technology",
+      "surface": "satellite phones",
+      "canonical": "satellite phones",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 8958,
+        "charEnd": 8974,
+        "timeStart": 572.399,
+        "timeEnd": 576.16
+      },
+      "score": 0.7754929661750793
+    },
+    {
+      "id": "m_0109",
+      "label": "location",
+      "surface": "gas station",
+      "canonical": "gas station",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9182,
+        "charEnd": 9193,
+        "timeStart": 583.519,
+        "timeEnd": 587.36
+      },
+      "score": 0.5861198306083679
+    },
+    {
+      "id": "m_0110",
+      "label": "quantity",
+      "surface": "quarter mile",
+      "canonical": "quarter mile",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9216,
+        "charEnd": 9228,
+        "timeStart": 585.6,
+        "timeEnd": 589.6800000000001
+      },
+      "score": 0.7260401844978333
+    },
+    {
+      "id": "m_0111",
+      "label": "facility",
+      "surface": "gas pumps",
+      "canonical": "gas pumps",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9234,
+        "charEnd": 9243,
+        "timeStart": 587.36,
+        "timeEnd": 592.32
+      },
+      "score": 0.9286015033721924
+    },
+    {
+      "id": "m_0112",
+      "label": "technology",
+      "surface": "credit cards",
+      "canonical": "credit cards",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9281,
+        "charEnd": 9293,
+        "timeStart": 589.68,
+        "timeEnd": 595.3599999999999
+      },
+      "score": 0.7201120257377625
+    },
+    {
+      "id": "m_0113",
+      "label": "facility",
+      "surface": "atms",
+      "canonical": "atms",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9305,
+        "charEnd": 9309,
+        "timeStart": 589.68,
+        "timeEnd": 595.3599999999999
+      },
+      "score": 0.8098049759864807
+    },
+    {
+      "id": "m_0114",
+      "label": "technology",
+      "surface": "hard drives",
+      "canonical": "hard drives",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9380,
+        "charEnd": 9391,
+        "timeStart": 595.36,
+        "timeEnd": 599.6800000000001
+      },
+      "score": 0.7075050473213196
+    },
+    {
+      "id": "m_0115",
+      "label": "location",
+      "surface": "around the world",
+      "canonical": "around the world",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9392,
+        "charEnd": 9408,
+        "timeStart": 597.6,
+        "timeEnd": 601.839
+      },
+      "score": 0.6242531538009644
+    },
+    {
+      "id": "m_0116",
+      "label": "technology",
+      "surface": "blockchain",
+      "canonical": "blockchain",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9439,
+        "charEnd": 9449,
+        "timeStart": 599.68,
+        "timeEnd": 604.399
+      },
+      "score": 0.6615148782730103
+    },
+    {
+      "id": "m_0117",
+      "label": "quantity",
+      "surface": "hundreds of thousands of miles",
+      "canonical": "hundreds of thousands of miles",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9592,
+        "charEnd": 9622,
+        "timeStart": 608.8,
+        "timeEnd": 612.4799999999999
+      },
+      "score": 0.6818411350250244
+    },
+    {
+      "id": "m_0118",
+      "label": "facility",
+      "surface": "power\nstations around the world",
+      "canonical": "power\nstations around the world",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 9863,
+        "charEnd": 9894,
+        "timeStart": 623.12,
+        "timeEnd": 629.4399999999999
+      },
+      "score": 0.630242109298706
+    },
+    {
+      "id": "m_0119",
+      "label": "facility",
+      "surface": "power lines and\ntransformers",
+      "canonical": "power lines and\ntransformers",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10001,
+        "charEnd": 10029,
+        "timeStart": 631.36,
+        "timeEnd": 638.399
+      },
+      "score": 0.8560299277305603
+    },
+    {
+      "id": "m_0120",
+      "label": "facility",
+      "surface": "network\ncables",
+      "canonical": "network\ncables",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10045,
+        "charEnd": 10059,
+        "timeStart": 633.76,
+        "timeEnd": 641.12
+      },
+      "score": 0.8343439102172852
+    },
+    {
+      "id": "m_0121",
+      "label": "location",
+      "surface": "the gas station",
+      "canonical": "the gas station",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10169,
+        "charEnd": 10184,
+        "timeStart": 643.6,
+        "timeEnd": 647.12
+      },
+      "score": 0.8821204900741577
+    },
+    {
+      "id": "m_0122",
+      "label": "person",
+      "surface": "someone from your family",
+      "canonical": "someone from your family",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10185,
+        "charEnd": 10209,
+        "timeStart": 643.6,
+        "timeEnd": 647.12
+      },
+      "score": 0.533155620098114
+    },
+    {
+      "id": "m_0123",
+      "label": "facility",
+      "surface": "the restroom",
+      "canonical": "the restroom",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10225,
+        "charEnd": 10237,
+        "timeStart": 645.36,
+        "timeEnd": 649.6
+      },
+      "score": 0.5675994753837585
+    },
+    {
+      "id": "m_0124",
+      "label": "facility",
+      "surface": "traffic light",
+      "canonical": "traffic light",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10423,
+        "charEnd": 10436,
+        "timeStart": 656.24,
+        "timeEnd": 660.0790000000001
+      },
+      "score": 0.6803418397903442
+    },
+    {
+      "id": "m_0125",
+      "label": "event",
+      "surface": "solar storm",
+      "canonical": "solar storm",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10727,
+        "charEnd": 10738,
+        "timeStart": 680.56,
+        "timeEnd": 684.959
+      },
+      "score": 0.7828952074050903
+    },
+    {
+      "id": "m_0126",
+      "label": "event",
+      "surface": "worst case\nscenarios",
+      "canonical": "worst case\nscenarios",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10739,
+        "charEnd": 10759,
+        "timeStart": 680.56,
+        "timeEnd": 687.36
+      },
+      "score": 0.5903639793395996
+    },
+    {
+      "id": "m_0127",
+      "label": "event",
+      "surface": "carrington event",
+      "canonical": "carrington event",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 10807,
+        "charEnd": 10823,
+        "timeStart": 684.959,
+        "timeEnd": 689.76
+      },
+      "score": 0.6088619232177734
+    },
+    {
+      "id": "m_0128",
+      "label": "facility",
+      "surface": "water facilities",
+      "canonical": "water facilities",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11021,
+        "charEnd": 11037,
+        "timeStart": 697.92,
+        "timeEnd": 702.399
+      },
+      "score": 0.9268394708633423
+    },
+    {
+      "id": "m_0129",
+      "label": "organization",
+      "surface": "emergency\nservices",
+      "canonical": "emergency\nservices",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11052,
+        "charEnd": 11070,
+        "timeStart": 697.92,
+        "timeEnd": 704.5600000000001
+      },
+      "score": 0.8195998072624207
+    },
+    {
+      "id": "m_0130",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11092,
+        "charEnd": 11100,
+        "timeStart": 700.32,
+        "timeEnd": 704.5600000000001
+      },
+      "score": 0.8356685638427734
+    },
+    {
+      "id": "m_0131",
+      "label": "facility",
+      "surface": "charging\nstations",
+      "canonical": "charging\nstations",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11279,
+        "charEnd": 11296,
+        "timeStart": 711.04,
+        "timeEnd": 717.12
+      },
+      "score": 0.828380286693573
+    },
+    {
+      "id": "m_0132",
+      "label": "location",
+      "surface": "rural areas",
+      "canonical": "rural areas",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11403,
+        "charEnd": 11414,
+        "timeStart": 719.6,
+        "timeEnd": 724.0790000000001
+      },
+      "score": 0.7536498308181763
+    },
+    {
+      "id": "m_0133",
+      "label": "location",
+      "surface": "big city",
+      "canonical": "big city",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11424,
+        "charEnd": 11432,
+        "timeStart": 719.6,
+        "timeEnd": 724.0790000000001
+      },
+      "score": 0.6286475658416748
+    },
+    {
+      "id": "m_0134",
+      "label": "event",
+      "surface": "food riots",
+      "canonical": "food riots",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11560,
+        "charEnd": 11570,
+        "timeStart": 728.639,
+        "timeEnd": 734.32
+      },
+      "score": 0.9205600619316101
+    },
+    {
+      "id": "m_0135",
+      "label": "event",
+      "surface": "banking transactions",
+      "canonical": "banking transactions",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11618,
+        "charEnd": 11638,
+        "timeStart": 731.36,
+        "timeEnd": 736.639
+      },
+      "score": 0.7984034419059753
+    },
+    {
+      "id": "m_0136",
+      "label": "technology",
+      "surface": "satellite uplink",
+      "canonical": "satellite uplink",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11672,
+        "charEnd": 11688,
+        "timeStart": 736.639,
+        "timeEnd": 740.8
+      },
+      "score": 0.7339605093002319
+    },
+    {
+      "id": "m_0137",
+      "label": "organization",
+      "surface": "global financial system",
+      "canonical": "global financial system",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11707,
+        "charEnd": 11730,
+        "timeStart": 738.88,
+        "timeEnd": 743.36
+      },
+      "score": 0.8663998246192932
+    },
+    {
+      "id": "m_0138",
+      "label": "technology",
+      "surface": "satellites",
+      "canonical": "satellites",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11787,
+        "charEnd": 11797,
+        "timeStart": 743.36,
+        "timeEnd": 747.6
+      },
+      "score": 0.6518285870552063
+    },
+    {
+      "id": "m_0139",
+      "label": "location",
+      "surface": "the earth",
+      "canonical": "the earth",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11807,
+        "charEnd": 11816,
+        "timeStart": 743.36,
+        "timeEnd": 747.6
+      },
+      "score": 0.5806710720062256
+    },
+    {
+      "id": "m_0140",
+      "label": "event",
+      "surface": "solar\nstorms",
+      "canonical": "solar storms",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11851,
+        "charEnd": 11863,
+        "timeStart": 745.519,
+        "timeEnd": 751.44
+      },
+      "score": 0.9280786514282227
+    },
+    {
+      "id": "m_0141",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "earth",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 11923,
+        "charEnd": 11928,
+        "timeStart": 749.519,
+        "timeEnd": 753.76
+      },
+      "score": 0.5686506032943726
+    },
+    {
+      "id": "m_0142",
+      "label": "location",
+      "surface": "the earth",
+      "canonical": "the earth",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12066,
+        "charEnd": 12075,
+        "timeStart": 758.24,
+        "timeEnd": 762.32
+      },
+      "score": 0.6421617865562439
+    },
+    {
+      "id": "m_0143",
+      "label": "organization",
+      "surface": "governments",
+      "canonical": "governments",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12289,
+        "charEnd": 12300,
+        "timeStart": 771.12,
+        "timeEnd": 774.8
+      },
+      "score": 0.8210654258728027
+    },
+    {
+      "id": "m_0144",
+      "label": "law_or_policy",
+      "surface": "martial law",
+      "canonical": "martial law",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12322,
+        "charEnd": 12333,
+        "timeStart": 772.72,
+        "timeEnd": 776.8000000000001
+      },
+      "score": 0.9041978716850281
+    },
+    {
+      "id": "m_0145",
+      "label": "organization",
+      "surface": "governments",
+      "canonical": "governments",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12355,
+        "charEnd": 12366,
+        "timeStart": 774.8,
+        "timeEnd": 779.92
+      },
+      "score": 0.7276082634925842
+    },
+    {
+      "id": "m_0146",
+      "label": "date_time",
+      "surface": "2012",
+      "canonical": "2012",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12416,
+        "charEnd": 12420,
+        "timeStart": 776.8,
+        "timeEnd": 782.88
+      },
+      "score": 0.7794681191444397
+    },
+    {
+      "id": "m_0147",
+      "label": "date_time",
+      "surface": "july",
+      "canonical": "july",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12460,
+        "charEnd": 12464,
+        "timeStart": 779.92,
+        "timeEnd": 785.88
+      },
+      "score": 0.5575265288352966
+    },
+    {
+      "id": "m_0148",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12480,
+        "charEnd": 12485,
+        "timeStart": 785.88,
+        "timeEnd": 789.09
+      },
+      "score": 0.5739153027534485
+    },
+    {
+      "id": "m_0149",
+      "label": "date_time",
+      "surface": "july",
+      "canonical": "july",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12490,
+        "charEnd": 12494,
+        "timeStart": 795.2,
+        "timeEnd": 800.72
+      },
+      "score": 0.7694985270500183
+    },
+    {
+      "id": "m_0150",
+      "label": "date_time",
+      "surface": "2012",
+      "canonical": "2012",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12495,
+        "charEnd": 12499,
+        "timeStart": 795.2,
+        "timeEnd": 800.72
+      },
+      "score": 0.8482747673988342
+    },
+    {
+      "id": "m_0151",
+      "label": "event",
+      "surface": "solar storm",
+      "canonical": "solar storm",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12641,
+        "charEnd": 12652,
+        "timeStart": 805.36,
+        "timeEnd": 808.8000000000001
+      },
+      "score": 0.6905625462532043
+    },
+    {
+      "id": "m_0152",
+      "label": "quantity",
+      "surface": "a quarter of the\nearth's population",
+      "canonical": "a quarter of the\nearth's population",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12660,
+        "charEnd": 12695,
+        "timeStart": 805.36,
+        "timeEnd": 810.6800000000001
+      },
+      "score": 0.5870023965835571
+    },
+    {
+      "id": "m_0153",
+      "label": "nationality_or_ethnicity",
+      "surface": "americans",
+      "canonical": "americans",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12748,
+        "charEnd": 12757,
+        "timeStart": 810.68,
+        "timeEnd": 815.1999999999999
+      },
+      "score": 0.6392754912376404
+    },
+    {
+      "id": "m_0154",
+      "label": "quantity",
+      "surface": "trillions of dollars",
+      "canonical": "trillions of dollars",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 12884,
+        "charEnd": 12904,
+        "timeStart": 819.44,
+        "timeEnd": 823.2790000000001
+      },
+      "score": 0.7896913290023804
+    },
+    {
+      "id": "m_0155",
+      "label": "organization",
+      "surface": "nasa",
+      "canonical": "nasa",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13255,
+        "charEnd": 13259,
+        "timeStart": 841.12,
+        "timeEnd": 845.6
+      },
+      "score": 0.940086305141449
+    },
+    {
+      "id": "m_0156",
+      "label": "organization",
+      "surface": "stereo",
+      "canonical": "stereo",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13320,
+        "charEnd": 13326,
+        "timeStart": 843.04,
+        "timeEnd": 848.56
+      },
+      "score": 0.627260148525238
+    },
+    {
+      "id": "m_0157",
+      "label": "date_time",
+      "surface": "2006",
+      "canonical": "2006",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13339,
+        "charEnd": 13343,
+        "timeStart": 845.6,
+        "timeEnd": 850.72
+      },
+      "score": 0.9114500284194946
+    },
+    {
+      "id": "m_0158",
+      "label": "organization",
+      "surface": "cme",
+      "canonical": "cme",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13362,
+        "charEnd": 13365,
+        "timeStart": 845.6,
+        "timeEnd": 850.72
+      },
+      "score": 0.9655112624168396
+    },
+    {
+      "id": "m_0159",
+      "label": "organization",
+      "surface": "stereo",
+      "canonical": "stereo",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13403,
+        "charEnd": 13409,
+        "timeStart": 850.72,
+        "timeEnd": 856.9590000000001
+      },
+      "score": 0.6432870030403137
+    },
+    {
+      "id": "m_0160",
+      "label": "organization",
+      "surface": "cme",
+      "canonical": "cme",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13441,
+        "charEnd": 13444,
+        "timeStart": 853.92,
+        "timeEnd": 859.12
+      },
+      "score": 0.9674125909805298
+    },
+    {
+      "id": "m_0161",
+      "label": "organization",
+      "surface": "cme",
+      "canonical": "cme",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13506,
+        "charEnd": 13509,
+        "timeStart": 859.12,
+        "timeEnd": 863.76
+      },
+      "score": 0.9673685431480408
+    },
+    {
+      "id": "m_0162",
+      "label": "organization",
+      "surface": "cme",
+      "canonical": "cme",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13698,
+        "charEnd": 13701,
+        "timeStart": 869.68,
+        "timeEnd": 874.6389999999999
+      },
+      "score": 0.9692797064781189
+    },
+    {
+      "id": "m_0163",
+      "label": "organization",
+      "surface": "cme",
+      "canonical": "cme",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13736,
+        "charEnd": 13739,
+        "timeStart": 872.24,
+        "timeEnd": 876.8
+      },
+      "score": 0.970928966999054
+    },
+    {
+      "id": "m_0164",
+      "label": "event",
+      "surface": "disaster",
+      "canonical": "disaster",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13779,
+        "charEnd": 13787,
+        "timeStart": 874.639,
+        "timeEnd": 879.6800000000001
+      },
+      "score": 0.7972836494445801
+    },
+    {
+      "id": "m_0165",
+      "label": "organization",
+      "surface": "advanced\ncomposition explorer",
+      "canonical": "advanced\ncomposition explorer",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13796,
+        "charEnd": 13825,
+        "timeStart": 874.639,
+        "timeEnd": 882
+      },
+      "score": 0.6462418437004089
+    },
+    {
+      "id": "m_0166",
+      "label": "quantity",
+      "surface": "900 000\nmiles",
+      "canonical": "900 000\nmiles",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13837,
+        "charEnd": 13850,
+        "timeStart": 876.8,
+        "timeEnd": 884.399
+      },
+      "score": 0.7077329158782959
+    },
+    {
+      "id": "m_0167",
+      "label": "organization",
+      "surface": "cme",
+      "canonical": "cme",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13900,
+        "charEnd": 13903,
+        "timeStart": 882,
+        "timeEnd": 886.88
+      },
+      "score": 0.9674294590950012
+    },
+    {
+      "id": "m_0168",
+      "label": "quantity",
+      "surface": "half an hour",
+      "canonical": "half an hour",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 13967,
+        "charEnd": 13979,
+        "timeStart": 886.88,
+        "timeEnd": 891.68
+      },
+      "score": 0.7001233696937561
+    },
+    {
+      "id": "m_0169",
+      "label": "facility",
+      "surface": "grids",
+      "canonical": "grids",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14090,
+        "charEnd": 14095,
+        "timeStart": 893.92,
+        "timeEnd": 898.8
+      },
+      "score": 0.8068302273750305
+    },
+    {
+      "id": "m_0170",
+      "label": "quantity",
+      "surface": "four\npercent",
+      "canonical": "four percent",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14215,
+        "charEnd": 14227,
+        "timeStart": 900.32,
+        "timeEnd": 908
+      },
+      "score": 0.7006519436836243
+    },
+    {
+      "id": "m_0171",
+      "label": "event",
+      "surface": "severe solar storm",
+      "canonical": "severe solar storm",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14240,
+        "charEnd": 14258,
+        "timeStart": 902.959,
+        "timeEnd": 908
+      },
+      "score": 0.5230910778045654
+    },
+    {
+      "id": "m_0172",
+      "label": "event",
+      "surface": "carrington level event",
+      "canonical": "carrington level event",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14307,
+        "charEnd": 14329,
+        "timeStart": 908,
+        "timeEnd": 913.04
+      },
+      "score": 0.6544991135597229
+    },
+    {
+      "id": "m_0173",
+      "label": "event",
+      "surface": "solar\nmaximum",
+      "canonical": "solar\nmaximum",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14399,
+        "charEnd": 14412,
+        "timeStart": 913.04,
+        "timeEnd": 919.8389999999999
+      },
+      "score": 0.5149713158607483
+    },
+    {
+      "id": "m_0174",
+      "label": "date_time",
+      "surface": "2019",
+      "canonical": "2019",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14496,
+        "charEnd": 14500,
+        "timeStart": 922.639,
+        "timeEnd": 928.32
+      },
+      "score": 0.9330103397369385
+    },
+    {
+      "id": "m_0175",
+      "label": "date_time",
+      "surface": "2025",
+      "canonical": "2025",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14528,
+        "charEnd": 14532,
+        "timeStart": 925.36,
+        "timeEnd": 931.6800000000001
+      },
+      "score": 0.9544918537139893
+    },
+    {
+      "id": "m_0176",
+      "label": "event",
+      "surface": "solar maximum",
+      "canonical": "solar\nmaximum",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14545,
+        "charEnd": 14558,
+        "timeStart": 925.36,
+        "timeEnd": 931.6800000000001
+      },
+      "score": 0.6276581287384033
+    },
+    {
+      "id": "m_0177",
+      "label": "quantity",
+      "surface": "four percent",
+      "canonical": "four percent",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14644,
+        "charEnd": 14656,
+        "timeStart": 933.759,
+        "timeEnd": 938.72
+      },
+      "score": 0.712415874004364
+    },
+    {
+      "id": "m_0178",
+      "label": "quantity",
+      "surface": "four percent",
+      "canonical": "four percent",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14781,
+        "charEnd": 14793,
+        "timeStart": 943.36,
+        "timeEnd": 946.72
+      },
+      "score": 0.6755492091178894
+    },
+    {
+      "id": "m_0179",
+      "label": "organization",
+      "surface": "governments",
+      "canonical": "governments",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14830,
+        "charEnd": 14841,
+        "timeStart": 945.44,
+        "timeEnd": 949.12
+      },
+      "score": 0.8872063755989075
+    },
+    {
+      "id": "m_0180",
+      "label": "quantity",
+      "surface": "resources",
+      "canonical": "resources",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14884,
+        "charEnd": 14893,
+        "timeStart": 946.72,
+        "timeEnd": 951.6800000000001
+      },
+      "score": 0.767467737197876
+    },
+    {
+      "id": "m_0181",
+      "label": "technology",
+      "surface": "satellites",
+      "canonical": "satellites",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14920,
+        "charEnd": 14930,
+        "timeStart": 949.12,
+        "timeEnd": 953.279
+      },
+      "score": 0.6287316679954529
+    },
+    {
+      "id": "m_0182",
+      "label": "quantity",
+      "surface": "resources",
+      "canonical": "resources",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 14989,
+        "charEnd": 14998,
+        "timeStart": 953.279,
+        "timeEnd": 957.519
+      },
+      "score": 0.8396308422088623
+    },
+    {
+      "id": "m_0183",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 15165,
+        "charEnd": 15175,
+        "timeStart": 964.56,
+        "timeEnd": 968.8
+      },
+      "score": 0.6692030429840088
+    },
+    {
+      "id": "m_0184",
+      "label": "event",
+      "surface": "hurricane",
+      "canonical": "hurricane",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 15285,
+        "charEnd": 15294,
+        "timeStart": 970.959,
+        "timeEnd": 974.56
+      },
+      "score": 0.658119261264801
+    },
+    {
+      "id": "m_0185",
+      "label": "event",
+      "surface": "tornado",
+      "canonical": "tornado",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 15300,
+        "charEnd": 15307,
+        "timeStart": 972.48,
+        "timeEnd": 976.8000000000001
+      },
+      "score": 0.5524113178253174
+    },
+    {
+      "id": "m_0186",
+      "label": "event",
+      "surface": "earthquake",
+      "canonical": "earthquake",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 15314,
+        "charEnd": 15324,
+        "timeStart": 972.48,
+        "timeEnd": 976.8000000000001
+      },
+      "score": 0.7171318531036377
+    },
+    {
+      "id": "m_0187",
+      "label": "person",
+      "surface": "aj",
+      "canonical": "aj",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 15961,
+        "charEnd": 15963,
+        "timeStart": 1013.04,
+        "timeEnd": 1016.959
+      },
+      "score": 0.9516266584396362
+    },
+    {
+      "id": "m_0188",
+      "label": "person",
+      "surface": "hecklefish",
+      "canonical": "hecklefish",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 15971,
+        "charEnd": 15981,
+        "timeStart": 1013.04,
+        "timeEnd": 1016.959
+      },
+      "score": 0.8242855072021484
+    },
+    {
+      "id": "m_0189",
+      "label": "work_of_media",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 16000,
+        "charEnd": 16007,
+        "timeStart": 1015.12,
+        "timeEnd": 1018.639
+      },
+      "score": 0.9514992833137512
+    },
+    {
+      "id": "m_0190",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "ftrbdFGTQO4",
+        "charStart": 16116,
+        "charEnd": 16123,
+        "timeStart": 1021.44,
+        "timeEnd": 1026.079
+      },
+      "score": 0.590878427028656
+    }
+  ]
+}

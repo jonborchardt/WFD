@@ -1,0 +1,7460 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "zo68B3UG9VU",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-15T16:38:21.826Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "event",
+      "surface": "Space\nRace",
+      "canonical": "Space\nRace",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 90,
+        "charEnd": 100,
+        "timeStart": 15.279,
+        "timeEnd": 23.799999999999997
+      },
+      "score": 0.8718520402908325
+    },
+    {
+      "id": "m_0002",
+      "label": "person",
+      "surface": "Yuri\nGagarin",
+      "canonical": "Yuri\nGagarin",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 212,
+        "charEnd": 224,
+        "timeStart": 23.8,
+        "timeEnd": 32.52
+      },
+      "score": 0.9786713123321533
+    },
+    {
+      "id": "m_0003",
+      "label": "person",
+      "surface": "Valentina\nterova",
+      "canonical": "Valentina\nterova",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 248,
+        "charEnd": 264,
+        "timeStart": 26.48,
+        "timeEnd": 35.96
+      },
+      "score": 0.9580090641975403
+    },
+    {
+      "id": "m_0004",
+      "label": "location",
+      "surface": "Moon",
+      "canonical": "Moon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 315,
+        "charEnd": 319,
+        "timeStart": 32.52,
+        "timeEnd": 38.800000000000004
+      },
+      "score": 0.5056297183036804
+    },
+    {
+      "id": "m_0005",
+      "label": "location",
+      "surface": "America",
+      "canonical": "America",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 330,
+        "charEnd": 337,
+        "timeStart": 32.52,
+        "timeEnd": 38.800000000000004
+      },
+      "score": 0.7803633809089661
+    },
+    {
+      "id": "m_0006",
+      "label": "location",
+      "surface": "America",
+      "canonical": "America",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 463,
+        "charEnd": 470,
+        "timeStart": 43.44,
+        "timeEnd": 48
+      },
+      "score": 0.6935539841651917
+    },
+    {
+      "id": "m_0007",
+      "label": "group_or_movement",
+      "surface": "American citizens",
+      "canonical": "American citizens",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 566,
+        "charEnd": 583,
+        "timeStart": 50.8,
+        "timeEnd": 55.959999999999994
+      },
+      "score": 0.8042744994163513
+    },
+    {
+      "id": "m_0008",
+      "label": "ideology",
+      "surface": "paranoia",
+      "canonical": "paranoia",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 665,
+        "charEnd": 673,
+        "timeStart": 55.96,
+        "timeEnd": 60.480000000000004
+      },
+      "score": 0.5609193444252014
+    },
+    {
+      "id": "m_0009",
+      "label": "role",
+      "surface": "President",
+      "canonical": "President",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 706,
+        "charEnd": 715,
+        "timeStart": 60.48,
+        "timeEnd": 65.36
+      },
+      "score": 0.6741802096366882
+    },
+    {
+      "id": "m_0010",
+      "label": "person",
+      "surface": "Eisenhower",
+      "canonical": "Eisenhower",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 716,
+        "charEnd": 726,
+        "timeStart": 60.48,
+        "timeEnd": 65.36
+      },
+      "score": 0.9172058701515198
+    },
+    {
+      "id": "m_0011",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 773,
+        "charEnd": 786,
+        "timeStart": 62.199,
+        "timeEnd": 67.52
+      },
+      "score": 0.649620771408081
+    },
+    {
+      "id": "m_0012",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 787,
+        "charEnd": 797,
+        "timeStart": 65.36,
+        "timeEnd": 69.72
+      },
+      "score": 0.9382808804512024
+    },
+    {
+      "id": "m_0013",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 913,
+        "charEnd": 918,
+        "timeStart": 71.439,
+        "timeEnd": 76.119
+      },
+      "score": 0.6174873113632202
+    },
+    {
+      "id": "m_0014",
+      "label": "event",
+      "surface": "Sputnik 2",
+      "canonical": "Sputnik 2",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 943,
+        "charEnd": 952,
+        "timeStart": 74,
+        "timeEnd": 79.119
+      },
+      "score": 0.9311598539352417
+    },
+    {
+      "id": "m_0015",
+      "label": "organization",
+      "surface": "advanced research project agency",
+      "canonical": "advanced research project agency",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 970,
+        "charEnd": 1002,
+        "timeStart": 76.119,
+        "timeEnd": 82.56
+      },
+      "score": 0.5575835704803467
+    },
+    {
+      "id": "m_0016",
+      "label": "organization",
+      "surface": "arpa",
+      "canonical": "arpa",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1006,
+        "charEnd": 1010,
+        "timeStart": 76.119,
+        "timeEnd": 82.56
+      },
+      "score": 0.989682674407959
+    },
+    {
+      "id": "m_0017",
+      "label": "organization",
+      "surface": "arpa",
+      "canonical": "arpa",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1026,
+        "charEnd": 1030,
+        "timeStart": 79.119,
+        "timeEnd": 85.119
+      },
+      "score": 0.9801085591316223
+    },
+    {
+      "id": "m_0018",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1038,
+        "charEnd": 1043,
+        "timeStart": 79.119,
+        "timeEnd": 85.119
+      },
+      "score": 0.9873499274253845
+    },
+    {
+      "id": "m_0019",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1077,
+        "charEnd": 1082,
+        "timeStart": 82.56,
+        "timeEnd": 88.04
+      },
+      "score": 0.987922728061676
+    },
+    {
+      "id": "m_0020",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1227,
+        "charEnd": 1232,
+        "timeStart": 93.6,
+        "timeEnd": 99.759
+      },
+      "score": 0.9897860288619995
+    },
+    {
+      "id": "m_0021",
+      "label": "person",
+      "surface": "human",
+      "canonical": "human",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1491,
+        "charEnd": 1496,
+        "timeStart": 120.92,
+        "timeEnd": 125.92
+      },
+      "score": 0.6642845869064331
+    },
+    {
+      "id": "m_0022",
+      "label": "event",
+      "surface": "emergency",
+      "canonical": "emergency",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1566,
+        "charEnd": 1575,
+        "timeStart": 125.92,
+        "timeEnd": 129.959
+      },
+      "score": 0.9802204370498657
+    },
+    {
+      "id": "m_0023",
+      "label": "event",
+      "surface": "emergency",
+      "canonical": "emergency",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1594,
+        "charEnd": 1603,
+        "timeStart": 125.92,
+        "timeEnd": 129.959
+      },
+      "score": 0.9791411757469177
+    },
+    {
+      "id": "m_0024",
+      "label": "person",
+      "surface": "Gertie",
+      "canonical": "Gertie",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 1696,
+        "charEnd": 1702,
+        "timeStart": 132.959,
+        "timeEnd": 138.08
+      },
+      "score": 0.9441259503364563
+    },
+    {
+      "id": "m_0025",
+      "label": "organization",
+      "surface": "Factor",
+      "canonical": "Factor",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2449,
+        "charEnd": 2455,
+        "timeStart": 189.84,
+        "timeEnd": 197.159
+      },
+      "score": 0.981410801410675
+    },
+    {
+      "id": "m_0026",
+      "label": "organization",
+      "surface": "factor",
+      "canonical": "Factor",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2516,
+        "charEnd": 2522,
+        "timeStart": 197.159,
+        "timeEnd": 201.84
+      },
+      "score": 0.9846739768981934
+    },
+    {
+      "id": "m_0027",
+      "label": "organization",
+      "surface": "Factor",
+      "canonical": "Factor",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2722,
+        "charEnd": 2728,
+        "timeStart": 208.879,
+        "timeEnd": 213.159
+      },
+      "score": 0.9891052842140198
+    },
+    {
+      "id": "m_0028",
+      "label": "person",
+      "surface": "Gourmet Chef",
+      "canonical": "Gourmet Chef",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2750,
+        "charEnd": 2762,
+        "timeStart": 211.12,
+        "timeEnd": 215.36
+      },
+      "score": 0.9457927942276001
+    },
+    {
+      "id": "m_0029",
+      "label": "person",
+      "surface": "dietitian approved",
+      "canonical": "dietitian approved",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2770,
+        "charEnd": 2788,
+        "timeStart": 213.159,
+        "timeEnd": 217.879
+      },
+      "score": 0.6034999489784241
+    },
+    {
+      "id": "m_0030",
+      "label": "quantity",
+      "surface": "35 different\nmeals",
+      "canonical": "35 different\nmeals",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2835,
+        "charEnd": 2853,
+        "timeStart": 215.36,
+        "timeEnd": 223.48
+      },
+      "score": 0.6167186498641968
+    },
+    {
+      "id": "m_0031",
+      "label": "quantity",
+      "surface": "over 60 add-on options",
+      "canonical": "over 60 add-on options",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2859,
+        "charEnd": 2881,
+        "timeStart": 217.879,
+        "timeEnd": 223.48
+      },
+      "score": 0.6674110889434814
+    },
+    {
+      "id": "m_0032",
+      "label": "organization",
+      "surface": "factor",
+      "canonical": "Factor",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2886,
+        "charEnd": 2892,
+        "timeStart": 221.159,
+        "timeEnd": 225.2
+      },
+      "score": 0.9848480820655823
+    },
+    {
+      "id": "m_0033",
+      "label": "organization",
+      "surface": "hellofresh",
+      "canonical": "hellofresh",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 2909,
+        "charEnd": 2919,
+        "timeStart": 221.159,
+        "timeEnd": 225.2
+      },
+      "score": 0.9370309114456177
+    },
+    {
+      "id": "m_0034",
+      "label": "quantity",
+      "surface": "4 to 18 meals a week",
+      "canonical": "4 to 18 meals a week",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 3034,
+        "charEnd": 3054,
+        "timeStart": 228.84,
+        "timeEnd": 233.92000000000002
+      },
+      "score": 0.5713856816291809
+    },
+    {
+      "id": "m_0035",
+      "label": "person",
+      "surface": "Yi",
+      "canonical": "Yi",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 3263,
+        "charEnd": 3265,
+        "timeStart": 245.28,
+        "timeEnd": 251.92
+      },
+      "score": 0.5724164843559265
+    },
+    {
+      "id": "m_0036",
+      "label": "organization",
+      "surface": "factor 75",
+      "canonical": "factor 75",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 3274,
+        "charEnd": 3283,
+        "timeStart": 245.28,
+        "timeEnd": 251.92
+      },
+      "score": 0.6240130662918091
+    },
+    {
+      "id": "m_0037",
+      "label": "organization",
+      "surface": "factor75.com",
+      "canonical": "factor75.com",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 3413,
+        "charEnd": 3425,
+        "timeStart": 257.88,
+        "timeEnd": 264.639
+      },
+      "score": 0.504073977470398
+    },
+    {
+      "id": "m_0038",
+      "label": "person",
+      "surface": "Gertie",
+      "canonical": "Gertie",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 3603,
+        "charEnd": 3609,
+        "timeStart": 273.72,
+        "timeEnd": 278.24
+      },
+      "score": 0.9152414798736572
+    },
+    {
+      "id": "m_0039",
+      "label": "facility",
+      "surface": "gas station",
+      "canonical": "gas station",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4272,
+        "charEnd": 4283,
+        "timeStart": 320.759,
+        "timeEnd": 325.44
+      },
+      "score": 0.8084660172462463
+    },
+    {
+      "id": "m_0040",
+      "label": "location",
+      "surface": "7-Eleven",
+      "canonical": "7-Eleven",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4287,
+        "charEnd": 4295,
+        "timeStart": 322.6,
+        "timeEnd": 327
+      },
+      "score": 0.649022102355957
+    },
+    {
+      "id": "m_0041",
+      "label": "person",
+      "surface": "guy",
+      "canonical": "guy",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4362,
+        "charEnd": 4365,
+        "timeStart": 325.44,
+        "timeEnd": 329.28
+      },
+      "score": 0.7214848399162292
+    },
+    {
+      "id": "m_0042",
+      "label": "role",
+      "surface": "serial killer",
+      "canonical": "serial killer",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4414,
+        "charEnd": 4427,
+        "timeStart": 329.28,
+        "timeEnd": 335.55999999999995
+      },
+      "score": 0.6878141760826111
+    },
+    {
+      "id": "m_0043",
+      "label": "technology",
+      "surface": "GPS",
+      "canonical": "GPS",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4513,
+        "charEnd": 4516,
+        "timeStart": 335.56,
+        "timeEnd": 340.12
+      },
+      "score": 0.9269120693206787
+    },
+    {
+      "id": "m_0044",
+      "label": "work_of_media",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4643,
+        "charEnd": 4651,
+        "timeStart": 344.16,
+        "timeEnd": 349.56
+      },
+      "score": 0.5582199692726135
+    },
+    {
+      "id": "m_0045",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4875,
+        "charEnd": 4880,
+        "timeStart": 360.72,
+        "timeEnd": 365.12
+      },
+      "score": 0.9961418509483337
+    },
+    {
+      "id": "m_0046",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4917,
+        "charEnd": 4922,
+        "timeStart": 363.36,
+        "timeEnd": 367.28000000000003
+      },
+      "score": 0.9973194003105164
+    },
+    {
+      "id": "m_0047",
+      "label": "technology",
+      "surface": "microprocessors",
+      "canonical": "microprocessors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 4974,
+        "charEnd": 4989,
+        "timeStart": 367.28,
+        "timeEnd": 371.71999999999997
+      },
+      "score": 0.7343712449073792
+    },
+    {
+      "id": "m_0048",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5002,
+        "charEnd": 5007,
+        "timeStart": 367.28,
+        "timeEnd": 371.71999999999997
+      },
+      "score": 0.997611403465271
+    },
+    {
+      "id": "m_0049",
+      "label": "technology",
+      "surface": "microprocessors",
+      "canonical": "microprocessors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5055,
+        "charEnd": 5070,
+        "timeStart": 371.72,
+        "timeEnd": 376.56
+      },
+      "score": 0.8595199584960938
+    },
+    {
+      "id": "m_0050",
+      "label": "technology",
+      "surface": "Wireless technology",
+      "canonical": "Wireless technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5087,
+        "charEnd": 5106,
+        "timeStart": 374.16,
+        "timeEnd": 379.40000000000003
+      },
+      "score": 0.8971554636955261
+    },
+    {
+      "id": "m_0051",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5124,
+        "charEnd": 5129,
+        "timeStart": 376.56,
+        "timeEnd": 381.96
+      },
+      "score": 0.9987490177154541
+    },
+    {
+      "id": "m_0052",
+      "label": "technology",
+      "surface": "touchscreen",
+      "canonical": "touchscreen",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5134,
+        "charEnd": 5145,
+        "timeStart": 376.56,
+        "timeEnd": 381.96
+      },
+      "score": 0.8987901210784912
+    },
+    {
+      "id": "m_0053",
+      "label": "technology",
+      "surface": "microphone",
+      "canonical": "microphone",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5154,
+        "charEnd": 5164,
+        "timeStart": 376.56,
+        "timeEnd": 381.96
+      },
+      "score": 0.7358647584915161
+    },
+    {
+      "id": "m_0054",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5175,
+        "charEnd": 5180,
+        "timeStart": 379.4,
+        "timeEnd": 384.4
+      },
+      "score": 0.9985584616661072
+    },
+    {
+      "id": "m_0055",
+      "label": "technology",
+      "surface": "voice recognition",
+      "canonical": "voice recognition",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5181,
+        "charEnd": 5198,
+        "timeStart": 379.4,
+        "timeEnd": 384.4
+      },
+      "score": 0.8733075261116028
+    },
+    {
+      "id": "m_0056",
+      "label": "technology",
+      "surface": "GPS",
+      "canonical": "GPS",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5203,
+        "charEnd": 5206,
+        "timeStart": 381.96,
+        "timeEnd": 386.79999999999995
+      },
+      "score": 0.9542378783226013
+    },
+    {
+      "id": "m_0057",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5217,
+        "charEnd": 5222,
+        "timeStart": 384.4,
+        "timeEnd": 388.919
+      },
+      "score": 0.9982542395591736
+    },
+    {
+      "id": "m_0058",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5278,
+        "charEnd": 5286,
+        "timeStart": 386.8,
+        "timeEnd": 390.12
+      },
+      "score": 0.9453944563865662
+    },
+    {
+      "id": "m_0059",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5308,
+        "charEnd": 5313,
+        "timeStart": 390.12,
+        "timeEnd": 395.4
+      },
+      "score": 0.997983455657959
+    },
+    {
+      "id": "m_0060",
+      "label": "person",
+      "surface": "Al Gore",
+      "canonical": "Al Gore",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5400,
+        "charEnd": 5407,
+        "timeStart": 395.4,
+        "timeEnd": 400.039
+      },
+      "score": 0.9243838787078857
+    },
+    {
+      "id": "m_0061",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5428,
+        "charEnd": 5436,
+        "timeStart": 397.319,
+        "timeEnd": 403.96000000000004
+      },
+      "score": 0.980562150478363
+    },
+    {
+      "id": "m_0062",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5485,
+        "charEnd": 5490,
+        "timeStart": 404.039,
+        "timeEnd": 408.88
+      },
+      "score": 0.9860044121742249
+    },
+    {
+      "id": "m_0063",
+      "label": "organization",
+      "surface": "arpa",
+      "canonical": "arpa",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5545,
+        "charEnd": 5549,
+        "timeStart": 407.36,
+        "timeEnd": 410.68
+      },
+      "score": 0.9849083423614502
+    },
+    {
+      "id": "m_0064",
+      "label": "date_time",
+      "surface": "1972",
+      "canonical": "1972",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5583,
+        "charEnd": 5587,
+        "timeStart": 410.68,
+        "timeEnd": 415.199
+      },
+      "score": 0.8896822929382324
+    },
+    {
+      "id": "m_0065",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5601,
+        "charEnd": 5612,
+        "timeStart": 410.68,
+        "timeEnd": 415.199
+      },
+      "score": 0.5983210206031799
+    },
+    {
+      "id": "m_0066",
+      "label": "event",
+      "surface": "nuclear attack",
+      "canonical": "nuclear attack",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5692,
+        "charEnd": 5706,
+        "timeStart": 417.56,
+        "timeEnd": 421.68
+      },
+      "score": 0.9617546796798706
+    },
+    {
+      "id": "m_0067",
+      "label": "facility",
+      "surface": "traditional phone lines",
+      "canonical": "traditional phone lines",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5707,
+        "charEnd": 5730,
+        "timeStart": 417.56,
+        "timeEnd": 421.68
+      },
+      "score": 0.8155552744865417
+    },
+    {
+      "id": "m_0068",
+      "label": "facility",
+      "surface": "radio transmitters",
+      "canonical": "radio transmitters",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5735,
+        "charEnd": 5753,
+        "timeStart": 420.12,
+        "timeEnd": 424.12
+      },
+      "score": 0.7552300691604614
+    },
+    {
+      "id": "m_0069",
+      "label": "technology",
+      "surface": "packet switching",
+      "canonical": "packet switching",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5812,
+        "charEnd": 5828,
+        "timeStart": 427.4,
+        "timeEnd": 432.919
+      },
+      "score": 0.9846262335777283
+    },
+    {
+      "id": "m_0070",
+      "label": "technology",
+      "surface": "packet switching",
+      "canonical": "packet switching",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 5942,
+        "charEnd": 5958,
+        "timeStart": 436.72,
+        "timeEnd": 441.59900000000005
+      },
+      "score": 0.9913892149925232
+    },
+    {
+      "id": "m_0071",
+      "label": "location",
+      "surface": "New York",
+      "canonical": "New York",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6054,
+        "charEnd": 6062,
+        "timeStart": 444.16,
+        "timeEnd": 448.56
+      },
+      "score": 0.8872000575065613
+    },
+    {
+      "id": "m_0072",
+      "label": "location",
+      "surface": "LA",
+      "canonical": "LA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6066,
+        "charEnd": 6068,
+        "timeStart": 444.16,
+        "timeEnd": 448.56
+      },
+      "score": 0.8153055906295776
+    },
+    {
+      "id": "m_0073",
+      "label": "technology",
+      "surface": "network",
+      "canonical": "network",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6443,
+        "charEnd": 6450,
+        "timeStart": 464.159,
+        "timeEnd": 468.24
+      },
+      "score": 0.7073975801467896
+    },
+    {
+      "id": "m_0074",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6475,
+        "charEnd": 6483,
+        "timeStart": 465.72,
+        "timeEnd": 470.319
+      },
+      "score": 0.9581563472747803
+    },
+    {
+      "id": "m_0075",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6532,
+        "charEnd": 6540,
+        "timeStart": 470.319,
+        "timeEnd": 474.879
+      },
+      "score": 0.9569529891014099
+    },
+    {
+      "id": "m_0076",
+      "label": "technology",
+      "surface": "bulletin board\nsystems",
+      "canonical": "bulletin board\nsystems",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6626,
+        "charEnd": 6648,
+        "timeStart": 474.879,
+        "timeEnd": 482.44
+      },
+      "score": 0.6757012605667114
+    },
+    {
+      "id": "m_0077",
+      "label": "technology",
+      "surface": "network",
+      "canonical": "network",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6694,
+        "charEnd": 6701,
+        "timeStart": 479.919,
+        "timeEnd": 483.68
+      },
+      "score": 0.8103165626525879
+    },
+    {
+      "id": "m_0078",
+      "label": "technology",
+      "surface": "arpanet",
+      "canonical": "arpanet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6709,
+        "charEnd": 6716,
+        "timeStart": 479.919,
+        "timeEnd": 483.68
+      },
+      "score": 0.9269705414772034
+    },
+    {
+      "id": "m_0079",
+      "label": "date_time",
+      "surface": "1966",
+      "canonical": "1966",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 6734,
+        "charEnd": 6738,
+        "timeStart": 483.68,
+        "timeEnd": 488.639
+      },
+      "score": 0.8540674448013306
+    },
+    {
+      "id": "m_0080",
+      "label": "technology",
+      "surface": "tcpip",
+      "canonical": "tcpip",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7106,
+        "charEnd": 7111,
+        "timeStart": 508,
+        "timeEnd": 513.599
+      },
+      "score": 0.9353746175765991
+    },
+    {
+      "id": "m_0081",
+      "label": "technology",
+      "surface": "email",
+      "canonical": "email",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7198,
+        "charEnd": 7203,
+        "timeStart": 515.64,
+        "timeEnd": 520.64
+      },
+      "score": 0.5372032523155212
+    },
+    {
+      "id": "m_0082",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7230,
+        "charEnd": 7235,
+        "timeStart": 517.64,
+        "timeEnd": 523.919
+      },
+      "score": 0.9971572160720825
+    },
+    {
+      "id": "m_0083",
+      "label": "organization",
+      "surface": "UC Berkeley",
+      "canonical": "UC Berkeley",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7248,
+        "charEnd": 7259,
+        "timeStart": 517.64,
+        "timeEnd": 523.919
+      },
+      "score": 0.8817301392555237
+    },
+    {
+      "id": "m_0084",
+      "label": "technology",
+      "surface": "BSD Unix",
+      "canonical": "BSD Unix",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7274,
+        "charEnd": 7282,
+        "timeStart": 520.64,
+        "timeEnd": 525.76
+      },
+      "score": 0.9250556230545044
+    },
+    {
+      "id": "m_0085",
+      "label": "technology",
+      "surface": "BSD\nUnix",
+      "canonical": "BSD Unix",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7300,
+        "charEnd": 7308,
+        "timeStart": 520.64,
+        "timeEnd": 527.72
+      },
+      "score": 0.9114399552345276
+    },
+    {
+      "id": "m_0086",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7412,
+        "charEnd": 7417,
+        "timeStart": 527.72,
+        "timeEnd": 533.279
+      },
+      "score": 0.9955442547798157
+    },
+    {
+      "id": "m_0087",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7461,
+        "charEnd": 7466,
+        "timeStart": 533.279,
+        "timeEnd": 539.4399999999999
+      },
+      "score": 0.9962899684906006
+    },
+    {
+      "id": "m_0088",
+      "label": "date_time",
+      "surface": "1969",
+      "canonical": "1969",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7502,
+        "charEnd": 7506,
+        "timeStart": 536.72,
+        "timeEnd": 541.519
+      },
+      "score": 0.806907594203949
+    },
+    {
+      "id": "m_0089",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7540,
+        "charEnd": 7545,
+        "timeStart": 539.44,
+        "timeEnd": 543.5600000000001
+      },
+      "score": 0.9972572922706604
+    },
+    {
+      "id": "m_0090",
+      "label": "technology",
+      "surface": "self-driving cars",
+      "canonical": "self-driving cars",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7614,
+        "charEnd": 7631,
+        "timeStart": 543.56,
+        "timeEnd": 550.8389999999999
+      },
+      "score": 0.6620494723320007
+    },
+    {
+      "id": "m_0091",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7632,
+        "charEnd": 7637,
+        "timeStart": 543.56,
+        "timeEnd": 550.8389999999999
+      },
+      "score": 0.9964075684547424
+    },
+    {
+      "id": "m_0092",
+      "label": "date_time",
+      "surface": "1984",
+      "canonical": "1984",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7651,
+        "charEnd": 7655,
+        "timeStart": 546.8,
+        "timeEnd": 554.079
+      },
+      "score": 0.7640049457550049
+    },
+    {
+      "id": "m_0093",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7656,
+        "charEnd": 7661,
+        "timeStart": 546.8,
+        "timeEnd": 554.079
+      },
+      "score": 0.9969685673713684
+    },
+    {
+      "id": "m_0094",
+      "label": "technology",
+      "surface": "GPS",
+      "canonical": "GPS",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7666,
+        "charEnd": 7669,
+        "timeStart": 546.8,
+        "timeEnd": 554.079
+      },
+      "score": 0.9291109442710876
+    },
+    {
+      "id": "m_0095",
+      "label": "date_time",
+      "surface": "1973",
+      "canonical": "1973",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7673,
+        "charEnd": 7677,
+        "timeStart": 550.839,
+        "timeEnd": 557.12
+      },
+      "score": 0.8118484616279602
+    },
+    {
+      "id": "m_0096",
+      "label": "technology",
+      "surface": "microprocessors",
+      "canonical": "microprocessors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7678,
+        "charEnd": 7693,
+        "timeStart": 550.839,
+        "timeEnd": 557.12
+      },
+      "score": 0.838077962398529
+    },
+    {
+      "id": "m_0097",
+      "label": "technology",
+      "surface": "motion sensors",
+      "canonical": "motion sensors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7694,
+        "charEnd": 7708,
+        "timeStart": 550.839,
+        "timeEnd": 557.12
+      },
+      "score": 0.868270218372345
+    },
+    {
+      "id": "m_0098",
+      "label": "technology",
+      "surface": "wireless communication",
+      "canonical": "wireless communication",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7713,
+        "charEnd": 7735,
+        "timeStart": 554.079,
+        "timeEnd": 559.16
+      },
+      "score": 0.8118916153907776
+    },
+    {
+      "id": "m_0099",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7736,
+        "charEnd": 7741,
+        "timeStart": 554.079,
+        "timeEnd": 559.16
+      },
+      "score": 0.9970098733901978
+    },
+    {
+      "id": "m_0100",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 7832,
+        "charEnd": 7837,
+        "timeStart": 561.04,
+        "timeEnd": 566.92
+      },
+      "score": 0.992752194404602
+    },
+    {
+      "id": "m_0101",
+      "label": "location",
+      "surface": "Dusty\nbuilding",
+      "canonical": "Dusty\nbuilding",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8057,
+        "charEnd": 8071,
+        "timeStart": 581.36,
+        "timeEnd": 588.36
+      },
+      "score": 0.7398214936256409
+    },
+    {
+      "id": "m_0102",
+      "label": "location",
+      "surface": "Far corner of the world",
+      "canonical": "Far corner of the world",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8080,
+        "charEnd": 8103,
+        "timeStart": 583.2,
+        "timeEnd": 588.36
+      },
+      "score": 0.8229749202728271
+    },
+    {
+      "id": "m_0103",
+      "label": "person",
+      "surface": "target",
+      "canonical": "target",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8399,
+        "charEnd": 8405,
+        "timeStart": 609.959,
+        "timeEnd": 615.56
+      },
+      "score": 0.7023517489433289
+    },
+    {
+      "id": "m_0104",
+      "label": "event",
+      "surface": "Mission\nfailed",
+      "canonical": "Mission\nfailed",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8453,
+        "charEnd": 8467,
+        "timeStart": 612.44,
+        "timeEnd": 622.3599999999999
+      },
+      "score": 0.8885233998298645
+    },
+    {
+      "id": "m_0105",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8498,
+        "charEnd": 8503,
+        "timeStart": 618.92,
+        "timeEnd": 625.399
+      },
+      "score": 0.9968705773353577
+    },
+    {
+      "id": "m_0106",
+      "label": "technology",
+      "surface": "self-guided\nbullet",
+      "canonical": "self-guided\nbullet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8526,
+        "charEnd": 8544,
+        "timeStart": 618.92,
+        "timeEnd": 628.0790000000001
+      },
+      "score": 0.8245742321014404
+    },
+    {
+      "id": "m_0107",
+      "label": "technology",
+      "surface": "Optical sensors",
+      "canonical": "Optical sensors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8550,
+        "charEnd": 8565,
+        "timeStart": 622.36,
+        "timeEnd": 628.0790000000001
+      },
+      "score": 0.8980011940002441
+    },
+    {
+      "id": "m_0108",
+      "label": "technology",
+      "surface": "realtime\nguidance",
+      "canonical": "realtime\nguidance",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8570,
+        "charEnd": 8587,
+        "timeStart": 622.36,
+        "timeEnd": 630.04
+      },
+      "score": 0.8818628191947937
+    },
+    {
+      "id": "m_0109",
+      "label": "quantity",
+      "surface": "2.2 Miles",
+      "canonical": "2.2 Miles",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8724,
+        "charEnd": 8733,
+        "timeStart": 635.279,
+        "timeEnd": 641.8389999999999
+      },
+      "score": 0.7912338972091675
+    },
+    {
+      "id": "m_0110",
+      "label": "organization",
+      "surface": "Canadian\nspecial forces",
+      "canonical": "Canadian\nspecial forces",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8737,
+        "charEnd": 8760,
+        "timeStart": 635.279,
+        "timeEnd": 644.36
+      },
+      "score": 0.9052934050559998
+    },
+    {
+      "id": "m_0111",
+      "label": "date_time",
+      "surface": "2017",
+      "canonical": "2017",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8764,
+        "charEnd": 8768,
+        "timeStart": 638.36,
+        "timeEnd": 644.36
+      },
+      "score": 0.8777279853820801
+    },
+    {
+      "id": "m_0112",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8784,
+        "charEnd": 8789,
+        "timeStart": 641.839,
+        "timeEnd": 647.7600000000001
+      },
+      "score": 0.9948254823684692
+    },
+    {
+      "id": "m_0113",
+      "label": "quantity",
+      "surface": "5 or six\nmiles",
+      "canonical": "5 or six\nmiles",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8854,
+        "charEnd": 8868,
+        "timeStart": 644.36,
+        "timeEnd": 653.639
+      },
+      "score": 0.7215390205383301
+    },
+    {
+      "id": "m_0114",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8888,
+        "charEnd": 8893,
+        "timeStart": 647.76,
+        "timeEnd": 653.639
+      },
+      "score": 0.988739013671875
+    },
+    {
+      "id": "m_0115",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 8926,
+        "charEnd": 8931,
+        "timeStart": 650.56,
+        "timeEnd": 655.92
+      },
+      "score": 0.99395352602005
+    },
+    {
+      "id": "m_0116",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9071,
+        "charEnd": 9076,
+        "timeStart": 661.36,
+        "timeEnd": 666.399
+      },
+      "score": 0.9934408068656921
+    },
+    {
+      "id": "m_0117",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9467,
+        "charEnd": 9472,
+        "timeStart": 690.639,
+        "timeEnd": 697.279
+      },
+      "score": 0.9940903782844543
+    },
+    {
+      "id": "m_0118",
+      "label": "organization",
+      "surface": "project insect allies",
+      "canonical": "project insect allies",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9504,
+        "charEnd": 9525,
+        "timeStart": 694.399,
+        "timeEnd": 699.76
+      },
+      "score": 0.6127343773841858
+    },
+    {
+      "id": "m_0119",
+      "label": "technology",
+      "surface": "microelectrical mechanical\nsystems",
+      "canonical": "microelectrical mechanical\nsystems",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9672,
+        "charEnd": 9706,
+        "timeStart": 704.56,
+        "timeEnd": 712.32
+      },
+      "score": 0.5471361875534058
+    },
+    {
+      "id": "m_0120",
+      "label": "technology",
+      "surface": "high MMS",
+      "canonical": "high MMS",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9710,
+        "charEnd": 9718,
+        "timeStart": 706.88,
+        "timeEnd": 712.32
+      },
+      "score": 0.5361420512199402
+    },
+    {
+      "id": "m_0121",
+      "label": "technology",
+      "surface": "miniature\nflying cyborgs",
+      "canonical": "miniature\nflying cyborgs",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9769,
+        "charEnd": 9793,
+        "timeStart": 709.8,
+        "timeEnd": 717.88
+      },
+      "score": 0.5016253590583801
+    },
+    {
+      "id": "m_0122",
+      "label": "technology",
+      "surface": "cybernetic implants",
+      "canonical": "cybernetic implants",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9855,
+        "charEnd": 9874,
+        "timeStart": 717.88,
+        "timeEnd": 722.24
+      },
+      "score": 0.8118044137954712
+    },
+    {
+      "id": "m_0123",
+      "label": "technology",
+      "surface": "solar\npowered guidance systems",
+      "canonical": "solar\npowered guidance systems",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9879,
+        "charEnd": 9909,
+        "timeStart": 717.88,
+        "timeEnd": 724.24
+      },
+      "score": 0.8856027126312256
+    },
+    {
+      "id": "m_0124",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9974,
+        "charEnd": 9976,
+        "timeStart": 724.24,
+        "timeEnd": 729.5600000000001
+      },
+      "score": 0.9171854257583618
+    },
+    {
+      "id": "m_0125",
+      "label": "technology",
+      "surface": "remote controlled rats",
+      "canonical": "remote controlled rats",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 9993,
+        "charEnd": 10015,
+        "timeStart": 726.839,
+        "timeEnd": 731.8000000000001
+      },
+      "score": 0.5558581948280334
+    },
+    {
+      "id": "m_0126",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10016,
+        "charEnd": 10021,
+        "timeStart": 726.839,
+        "timeEnd": 731.8000000000001
+      },
+      "score": 0.9954146146774292
+    },
+    {
+      "id": "m_0127",
+      "label": "technology",
+      "surface": "Tronics programmable shape-shifting\nmatter",
+      "canonical": "Tronics programmable shape-shifting\nmatter",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10076,
+        "charEnd": 10118,
+        "timeStart": 731.8,
+        "timeEnd": 738.44
+      },
+      "score": 0.8012885451316833
+    },
+    {
+      "id": "m_0128",
+      "label": "technology",
+      "surface": "nuclear-powered spacecraft",
+      "canonical": "nuclear-powered spacecraft",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10138,
+        "charEnd": 10164,
+        "timeStart": 736.04,
+        "timeEnd": 741.12
+      },
+      "score": 0.8532455563545227
+    },
+    {
+      "id": "m_0129",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10210,
+        "charEnd": 10215,
+        "timeStart": 741.12,
+        "timeEnd": 745.519
+      },
+      "score": 0.997740626335144
+    },
+    {
+      "id": "m_0130",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10218,
+        "charEnd": 10228,
+        "timeStart": 741.12,
+        "timeEnd": 745.519
+      },
+      "score": 0.5094904899597168
+    },
+    {
+      "id": "m_0131",
+      "label": "quantity",
+      "surface": "battalion",
+      "canonical": "battalion",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10284,
+        "charEnd": 10293,
+        "timeStart": 745.519,
+        "timeEnd": 750.04
+      },
+      "score": 0.7795732617378235
+    },
+    {
+      "id": "m_0132",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10429,
+        "charEnd": 10434,
+        "timeStart": 751.839,
+        "timeEnd": 756.72
+      },
+      "score": 0.9970344305038452
+    },
+    {
+      "id": "m_0133",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10672,
+        "charEnd": 10677,
+        "timeStart": 778.839,
+        "timeEnd": 784.44
+      },
+      "score": 0.9969013929367065
+    },
+    {
+      "id": "m_0134",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10821,
+        "charEnd": 10826,
+        "timeStart": 789.199,
+        "timeEnd": 794.8389999999999
+      },
+      "score": 0.9971199035644531
+    },
+    {
+      "id": "m_0135",
+      "label": "technology",
+      "surface": "Warrior web project",
+      "canonical": "Warrior web project",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10829,
+        "charEnd": 10848,
+        "timeStart": 789.199,
+        "timeEnd": 794.8389999999999
+      },
+      "score": 0.8199500441551208
+    },
+    {
+      "id": "m_0136",
+      "label": "technology",
+      "surface": "Exo Suit",
+      "canonical": "Exo Suit",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10909,
+        "charEnd": 10917,
+        "timeStart": 794.839,
+        "timeEnd": 800.399
+      },
+      "score": 0.7874994277954102
+    },
+    {
+      "id": "m_0137",
+      "label": "technology",
+      "surface": "smart suit",
+      "canonical": "smart suit",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10981,
+        "charEnd": 10991,
+        "timeStart": 800.399,
+        "timeEnd": 805.12
+      },
+      "score": 0.5614799857139587
+    },
+    {
+      "id": "m_0138",
+      "label": "technology",
+      "surface": "machine\nlearning",
+      "canonical": "machine\nlearning",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 10998,
+        "charEnd": 11014,
+        "timeStart": 800.399,
+        "timeEnd": 806.88
+      },
+      "score": 0.9227091073989868
+    },
+    {
+      "id": "m_0139",
+      "label": "technology",
+      "surface": "onboard sensors",
+      "canonical": "onboard sensors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11019,
+        "charEnd": 11034,
+        "timeStart": 802.8,
+        "timeEnd": 806.88
+      },
+      "score": 0.856878936290741
+    },
+    {
+      "id": "m_0140",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11148,
+        "charEnd": 11153,
+        "timeStart": 811.12,
+        "timeEnd": 816.079
+      },
+      "score": 0.9785282015800476
+    },
+    {
+      "id": "m_0141",
+      "label": "work_of_media",
+      "surface": "Edge of Tomorrow",
+      "canonical": "Edge of Tomorrow",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11239,
+        "charEnd": 11255,
+        "timeStart": 816.079,
+        "timeEnd": 821.279
+      },
+      "score": 0.9745134711265564
+    },
+    {
+      "id": "m_0142",
+      "label": "technology",
+      "surface": "jetpack",
+      "canonical": "jetpack",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11398,
+        "charEnd": 11405,
+        "timeStart": 824.76,
+        "timeEnd": 829.4399999999999
+      },
+      "score": 0.7517318725585938
+    },
+    {
+      "id": "m_0143",
+      "label": "technology",
+      "surface": "Tallow suit",
+      "canonical": "Tallow suit",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11425,
+        "charEnd": 11436,
+        "timeStart": 826.92,
+        "timeEnd": 832.199
+      },
+      "score": 0.6089949607849121
+    },
+    {
+      "id": "m_0144",
+      "label": "role",
+      "surface": "soldier",
+      "canonical": "soldier",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11445,
+        "charEnd": 11452,
+        "timeStart": 829.44,
+        "timeEnd": 834.8800000000001
+      },
+      "score": 0.773745596408844
+    },
+    {
+      "id": "m_0145",
+      "label": "technology",
+      "surface": "sensors",
+      "canonical": "sensors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11596,
+        "charEnd": 11603,
+        "timeStart": 837.72,
+        "timeEnd": 842.12
+      },
+      "score": 0.5550376176834106
+    },
+    {
+      "id": "m_0146",
+      "label": "technology",
+      "surface": "Tactical augmented\nreality",
+      "canonical": "Tactical augmented\nreality",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11656,
+        "charEnd": 11682,
+        "timeStart": 842.12,
+        "timeEnd": 850.199
+      },
+      "score": 0.766720175743103
+    },
+    {
+      "id": "m_0147",
+      "label": "person",
+      "surface": "soldiers",
+      "canonical": "soldiers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11770,
+        "charEnd": 11778,
+        "timeStart": 850.199,
+        "timeEnd": 854.88
+      },
+      "score": 0.8014365434646606
+    },
+    {
+      "id": "m_0148",
+      "label": "location",
+      "surface": "enemy\nlocations",
+      "canonical": "enemy\nlocations",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11822,
+        "charEnd": 11837,
+        "timeStart": 852.48,
+        "timeEnd": 860.12
+      },
+      "score": 0.6181034445762634
+    },
+    {
+      "id": "m_0149",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11924,
+        "charEnd": 11929,
+        "timeStart": 860.12,
+        "timeEnd": 864.92
+      },
+      "score": 0.9878022074699402
+    },
+    {
+      "id": "m_0150",
+      "label": "person",
+      "surface": "soldiers",
+      "canonical": "soldiers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 11968,
+        "charEnd": 11976,
+        "timeStart": 862.88,
+        "timeEnd": 867.56
+      },
+      "score": 0.7765783071517944
+    },
+    {
+      "id": "m_0151",
+      "label": "organization",
+      "surface": "Air Force",
+      "canonical": "Air Force",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12037,
+        "charEnd": 12046,
+        "timeStart": 867.56,
+        "timeEnd": 872.7589999999999
+      },
+      "score": 0.9567009210586548
+    },
+    {
+      "id": "m_0152",
+      "label": "role",
+      "surface": "Pilots",
+      "canonical": "Pilots",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12055,
+        "charEnd": 12061,
+        "timeStart": 869.24,
+        "timeEnd": 876.44
+      },
+      "score": 0.5990054607391357
+    },
+    {
+      "id": "m_0153",
+      "label": "person",
+      "surface": "soldiers",
+      "canonical": "soldiers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12263,
+        "charEnd": 12271,
+        "timeStart": 884.68,
+        "timeEnd": 889.399
+      },
+      "score": 0.8166211843490601
+    },
+    {
+      "id": "m_0154",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12345,
+        "charEnd": 12350,
+        "timeStart": 889.399,
+        "timeEnd": 893.92
+      },
+      "score": 0.9951574206352234
+    },
+    {
+      "id": "m_0155",
+      "label": "person",
+      "surface": "soldiers",
+      "canonical": "soldiers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12386,
+        "charEnd": 12394,
+        "timeStart": 891.839,
+        "timeEnd": 896.1600000000001
+      },
+      "score": 0.7925468683242798
+    },
+    {
+      "id": "m_0156",
+      "label": "technology",
+      "surface": "drones",
+      "canonical": "drones",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12432,
+        "charEnd": 12438,
+        "timeStart": 896.16,
+        "timeEnd": 901.199
+      },
+      "score": 0.6390538215637207
+    },
+    {
+      "id": "m_0157",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12639,
+        "charEnd": 12644,
+        "timeStart": 907.48,
+        "timeEnd": 912.5600000000001
+      },
+      "score": 0.994835615158081
+    },
+    {
+      "id": "m_0158",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12732,
+        "charEnd": 12737,
+        "timeStart": 915.36,
+        "timeEnd": 920.6
+      },
+      "score": 0.9969307780265808
+    },
+    {
+      "id": "m_0159",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 12842,
+        "charEnd": 12847,
+        "timeStart": 923,
+        "timeEnd": 927.44
+      },
+      "score": 0.9958653450012207
+    },
+    {
+      "id": "m_0160",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13091,
+        "charEnd": 13096,
+        "timeStart": 938.8,
+        "timeEnd": 944.639
+      },
+      "score": 0.9973533153533936
+    },
+    {
+      "id": "m_0161",
+      "label": "organization",
+      "surface": "crisper",
+      "canonical": "crisper",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13110,
+        "charEnd": 13117,
+        "timeStart": 941.56,
+        "timeEnd": 947.279
+      },
+      "score": 0.9555233120918274
+    },
+    {
+      "id": "m_0162",
+      "label": "technology",
+      "surface": "Gene editing\ntechnology",
+      "canonical": "Gene editing\ntechnology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13118,
+        "charEnd": 13141,
+        "timeStart": 941.56,
+        "timeEnd": 950.24
+      },
+      "score": 0.7673788666725159
+    },
+    {
+      "id": "m_0163",
+      "label": "organization",
+      "surface": "crisper",
+      "canonical": "crisper",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13142,
+        "charEnd": 13149,
+        "timeStart": 944.639,
+        "timeEnd": 950.24
+      },
+      "score": 0.9613056778907776
+    },
+    {
+      "id": "m_0164",
+      "label": "organization",
+      "surface": "crisper",
+      "canonical": "crisper",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13198,
+        "charEnd": 13205,
+        "timeStart": 947.279,
+        "timeEnd": 952.319
+      },
+      "score": 0.9683241844177246
+    },
+    {
+      "id": "m_0165",
+      "label": "organization",
+      "surface": "crisper",
+      "canonical": "crisper",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13314,
+        "charEnd": 13321,
+        "timeStart": 954.079,
+        "timeEnd": 958.3599999999999
+      },
+      "score": 0.971554696559906
+    },
+    {
+      "id": "m_0166",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13473,
+        "charEnd": 13475,
+        "timeStart": 964.88,
+        "timeEnd": 969.199
+      },
+      "score": 0.7769380807876587
+    },
+    {
+      "id": "m_0167",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13503,
+        "charEnd": 13508,
+        "timeStart": 966.8,
+        "timeEnd": 971.519
+      },
+      "score": 0.5062299370765686
+    },
+    {
+      "id": "m_0168",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13682,
+        "charEnd": 13687,
+        "timeStart": 975.04,
+        "timeEnd": 979.319
+      },
+      "score": 0.9961691498756409
+    },
+    {
+      "id": "m_0169",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13837,
+        "charEnd": 13842,
+        "timeStart": 985.88,
+        "timeEnd": 990.6
+      },
+      "score": 0.9965656399726868
+    },
+    {
+      "id": "m_0170",
+      "label": "work_of_media",
+      "surface": "Killer Robots",
+      "canonical": "Killer Robots",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13852,
+        "charEnd": 13865,
+        "timeStart": 985.88,
+        "timeEnd": 990.6
+      },
+      "score": 0.840908408164978
+    },
+    {
+      "id": "m_0171",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 13874,
+        "charEnd": 13879,
+        "timeStart": 995.639,
+        "timeEnd": 1001.399
+      },
+      "score": 0.9960887432098389
+    },
+    {
+      "id": "m_0172",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 14167,
+        "charEnd": 14172,
+        "timeStart": 1013.319,
+        "timeEnd": 1018.88
+      },
+      "score": 0.9915671944618225
+    },
+    {
+      "id": "m_0173",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 14223,
+        "charEnd": 14228,
+        "timeStart": 1018.88,
+        "timeEnd": 1023.48
+      },
+      "score": 0.9880613088607788
+    },
+    {
+      "id": "m_0174",
+      "label": "organization",
+      "surface": "Boston Dynamics",
+      "canonical": "Boston Dynamics",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 14278,
+        "charEnd": 14293,
+        "timeStart": 1021.36,
+        "timeEnd": 1025.839
+      },
+      "score": 0.9784049391746521
+    },
+    {
+      "id": "m_0175",
+      "label": "technology",
+      "surface": "LS3",
+      "canonical": "LS3",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 14451,
+        "charEnd": 14454,
+        "timeStart": 1029.959,
+        "timeEnd": 1035.52
+      },
+      "score": 0.8110002875328064
+    },
+    {
+      "id": "m_0176",
+      "label": "technology",
+      "surface": "atlas",
+      "canonical": "atlas",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 14540,
+        "charEnd": 14545,
+        "timeStart": 1039.24,
+        "timeEnd": 1042.64
+      },
+      "score": 0.5567660331726074
+    },
+    {
+      "id": "m_0177",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 14764,
+        "charEnd": 14766,
+        "timeStart": 1054.6,
+        "timeEnd": 1060.7199999999998
+      },
+      "score": 0.8973824381828308
+    },
+    {
+      "id": "m_0178",
+      "label": "person",
+      "surface": "Annie\nJacobson",
+      "canonical": "Annie Jacobson",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 14984,
+        "charEnd": 14998,
+        "timeStart": 1068.48,
+        "timeEnd": 1075.919
+      },
+      "score": 0.9128724932670593
+    },
+    {
+      "id": "m_0179",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15011,
+        "charEnd": 15016,
+        "timeStart": 1070.96,
+        "timeEnd": 1075.919
+      },
+      "score": 0.9828890562057495
+    },
+    {
+      "id": "m_0180",
+      "label": "organization",
+      "surface": "Pentagon",
+      "canonical": "Pentagon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15062,
+        "charEnd": 15070,
+        "timeStart": 1074,
+        "timeEnd": 1079.6
+      },
+      "score": 0.981029748916626
+    },
+    {
+      "id": "m_0181",
+      "label": "technology",
+      "surface": "robotics",
+      "canonical": "robotics",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15095,
+        "charEnd": 15103,
+        "timeStart": 1075.919,
+        "timeEnd": 1083.1200000000001
+      },
+      "score": 0.7952865958213806
+    },
+    {
+      "id": "m_0182",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15104,
+        "charEnd": 15109,
+        "timeStart": 1079.6,
+        "timeEnd": 1085.799
+      },
+      "score": 0.9898953437805176
+    },
+    {
+      "id": "m_0183",
+      "label": "organization",
+      "surface": "Pentagon",
+      "canonical": "Pentagon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15163,
+        "charEnd": 15171,
+        "timeStart": 1083.12,
+        "timeEnd": 1088.6
+      },
+      "score": 0.9884657859802246
+    },
+    {
+      "id": "m_0184",
+      "label": "technology",
+      "surface": "hunter killer drones",
+      "canonical": "hunter killer drones",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15224,
+        "charEnd": 15244,
+        "timeStart": 1088.6,
+        "timeEnd": 1095.3999999999999
+      },
+      "score": 0.8499534726142883
+    },
+    {
+      "id": "m_0185",
+      "label": "technology",
+      "surface": "drones",
+      "canonical": "drones",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15274,
+        "charEnd": 15280,
+        "timeStart": 1091.52,
+        "timeEnd": 1099.36
+      },
+      "score": 0.661480724811554
+    },
+    {
+      "id": "m_0186",
+      "label": "quantity",
+      "surface": "13,000 M",
+      "canonical": "13,000 M",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15294,
+        "charEnd": 15302,
+        "timeStart": 1095.4,
+        "timeEnd": 1102.039
+      },
+      "score": 0.5932417511940002
+    },
+    {
+      "id": "m_0187",
+      "label": "location",
+      "surface": "Target",
+      "canonical": "Target",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15370,
+        "charEnd": 15376,
+        "timeStart": 1102.039,
+        "timeEnd": 1106.679
+      },
+      "score": 0.9169367551803589
+    },
+    {
+      "id": "m_0188",
+      "label": "technology",
+      "surface": "missiles",
+      "canonical": "missiles",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15402,
+        "charEnd": 15410,
+        "timeStart": 1104.32,
+        "timeEnd": 1109.36
+      },
+      "score": 0.8726438879966736
+    },
+    {
+      "id": "m_0189",
+      "label": "quantity",
+      "surface": "mach 20",
+      "canonical": "mach 20",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15440,
+        "charEnd": 15447,
+        "timeStart": 1106.679,
+        "timeEnd": 1111.3200000000002
+      },
+      "score": 0.803187906742096
+    },
+    {
+      "id": "m_0190",
+      "label": "technology",
+      "surface": "Rockets",
+      "canonical": "Rockets",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15484,
+        "charEnd": 15491,
+        "timeStart": 1109.36,
+        "timeEnd": 1113.9189999999999
+      },
+      "score": 0.8360620141029358
+    },
+    {
+      "id": "m_0191",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15522,
+        "charEnd": 15527,
+        "timeStart": 1111.32,
+        "timeEnd": 1116.28
+      },
+      "score": 0.980614960193634
+    },
+    {
+      "id": "m_0192",
+      "label": "technology",
+      "surface": "missiles",
+      "canonical": "missiles",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15555,
+        "charEnd": 15563,
+        "timeStart": 1113.919,
+        "timeEnd": 1118.6000000000001
+      },
+      "score": 0.7358859777450562
+    },
+    {
+      "id": "m_0193",
+      "label": "quantity",
+      "surface": "Hypersonic Speed",
+      "canonical": "Hypersonic Speed",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15582,
+        "charEnd": 15598,
+        "timeStart": 1116.28,
+        "timeEnd": 1122.1589999999999
+      },
+      "score": 0.7325876355171204
+    },
+    {
+      "id": "m_0194",
+      "label": "location",
+      "surface": "Target",
+      "canonical": "Target",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15621,
+        "charEnd": 15627,
+        "timeStart": 1118.6,
+        "timeEnd": 1125.48
+      },
+      "score": 0.9234649538993835
+    },
+    {
+      "id": "m_0195",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15734,
+        "charEnd": 15739,
+        "timeStart": 1127.12,
+        "timeEnd": 1131.4399999999998
+      },
+      "score": 0.9904851317405701
+    },
+    {
+      "id": "m_0196",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15861,
+        "charEnd": 15866,
+        "timeStart": 1143.48,
+        "timeEnd": 1147.72
+      },
+      "score": 0.9928632378578186
+    },
+    {
+      "id": "m_0197",
+      "label": "technology",
+      "surface": "Civilian technology",
+      "canonical": "Civilian technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15901,
+        "charEnd": 15920,
+        "timeStart": 1145.72,
+        "timeEnd": 1151.24
+      },
+      "score": 0.5375980138778687
+    },
+    {
+      "id": "m_0198",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 15959,
+        "charEnd": 15964,
+        "timeStart": 1147.72,
+        "timeEnd": 1152.84
+      },
+      "score": 0.9894774556159973
+    },
+    {
+      "id": "m_0199",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16036,
+        "charEnd": 16041,
+        "timeStart": 1154.32,
+        "timeEnd": 1158.48
+      },
+      "score": 0.9899013042449951
+    },
+    {
+      "id": "m_0200",
+      "label": "organization",
+      "surface": "seci",
+      "canonical": "seci",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16089,
+        "charEnd": 16093,
+        "timeStart": 1158.48,
+        "timeEnd": 1163.88
+      },
+      "score": 0.9231885075569153
+    },
+    {
+      "id": "m_0201",
+      "label": "organization",
+      "surface": "seci",
+      "canonical": "seci",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16106,
+        "charEnd": 16110,
+        "timeStart": 1158.48,
+        "timeEnd": 1163.88
+      },
+      "score": 0.9231929183006287
+    },
+    {
+      "id": "m_0202",
+      "label": "event",
+      "surface": "war games",
+      "canonical": "war games",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16209,
+        "charEnd": 16218,
+        "timeStart": 1165.919,
+        "timeEnd": 1170.1200000000001
+      },
+      "score": 0.7408233880996704
+    },
+    {
+      "id": "m_0203",
+      "label": "event",
+      "surface": "Le War Games",
+      "canonical": "Le War Games",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16235,
+        "charEnd": 16247,
+        "timeStart": 1180,
+        "timeEnd": 1184.919
+      },
+      "score": 0.7579320073127747
+    },
+    {
+      "id": "m_0204",
+      "label": "work_of_media",
+      "surface": "science fiction story",
+      "canonical": "science fiction story",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16277,
+        "charEnd": 16298,
+        "timeStart": 1182.6,
+        "timeEnd": 1187.52
+      },
+      "score": 0.525078296661377
+    },
+    {
+      "id": "m_0205",
+      "label": "person",
+      "surface": "kid genius",
+      "canonical": "kid genius",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16340,
+        "charEnd": 16350,
+        "timeStart": 1184.919,
+        "timeEnd": 1189.5590000000002
+      },
+      "score": 0.7949158549308777
+    },
+    {
+      "id": "m_0206",
+      "label": "person",
+      "surface": "Peter Schwarz",
+      "canonical": "Peter Schwarz",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16376,
+        "charEnd": 16389,
+        "timeStart": 1187.52,
+        "timeEnd": 1191.799
+      },
+      "score": 0.9566535353660583
+    },
+    {
+      "id": "m_0207",
+      "label": "organization",
+      "surface": "Stanford Research Institute",
+      "canonical": "Stanford Research Institute",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16399,
+        "charEnd": 16426,
+        "timeStart": 1189.559,
+        "timeEnd": 1197.039
+      },
+      "score": 0.9621691107749939
+    },
+    {
+      "id": "m_0208",
+      "label": "organization",
+      "surface": "SRI",
+      "canonical": "SRI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16430,
+        "charEnd": 16433,
+        "timeStart": 1191.799,
+        "timeEnd": 1199.28
+      },
+      "score": 0.919608473777771
+    },
+    {
+      "id": "m_0209",
+      "label": "organization",
+      "surface": "SRI",
+      "canonical": "SRI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16434,
+        "charEnd": 16437,
+        "timeStart": 1191.799,
+        "timeEnd": 1199.28
+      },
+      "score": 0.713911235332489
+    },
+    {
+      "id": "m_0210",
+      "label": "organization",
+      "surface": "SRI",
+      "canonical": "SRI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16463,
+        "charEnd": 16466,
+        "timeStart": 1191.799,
+        "timeEnd": 1199.28
+      },
+      "score": 0.9423676133155823
+    },
+    {
+      "id": "m_0211",
+      "label": "organization",
+      "surface": "CIA",
+      "canonical": "CIA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16603,
+        "charEnd": 16606,
+        "timeStart": 1202.679,
+        "timeEnd": 1208.3200000000002
+      },
+      "score": 0.9254518151283264
+    },
+    {
+      "id": "m_0212",
+      "label": "organization",
+      "surface": "NSA",
+      "canonical": "NSA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16607,
+        "charEnd": 16610,
+        "timeStart": 1202.679,
+        "timeEnd": 1208.3200000000002
+      },
+      "score": 0.9295339584350586
+    },
+    {
+      "id": "m_0213",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16615,
+        "charEnd": 16620,
+        "timeStart": 1202.679,
+        "timeEnd": 1208.3200000000002
+      },
+      "score": 0.9835512042045593
+    },
+    {
+      "id": "m_0214",
+      "label": "person",
+      "surface": "Schwarz",
+      "canonical": "Schwarz",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16626,
+        "charEnd": 16633,
+        "timeStart": 1206.32,
+        "timeEnd": 1211.32
+      },
+      "score": 0.9757903218269348
+    },
+    {
+      "id": "m_0215",
+      "label": "group_or_movement",
+      "surface": "hackers",
+      "canonical": "hackers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16685,
+        "charEnd": 16692,
+        "timeStart": 1208.32,
+        "timeEnd": 1213.24
+      },
+      "score": 0.8576862215995789
+    },
+    {
+      "id": "m_0216",
+      "label": "work_of_media",
+      "surface": "movie",
+      "canonical": "movie",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16723,
+        "charEnd": 16728,
+        "timeStart": 1211.32,
+        "timeEnd": 1215.72
+      },
+      "score": 0.8532909154891968
+    },
+    {
+      "id": "m_0217",
+      "label": "technology",
+      "surface": "military supercomputer",
+      "canonical": "military supercomputer",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16751,
+        "charEnd": 16773,
+        "timeStart": 1213.24,
+        "timeEnd": 1217.88
+      },
+      "score": 0.8257837891578674
+    },
+    {
+      "id": "m_0218",
+      "label": "event",
+      "surface": "World War I",
+      "canonical": "World War I",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 16969,
+        "charEnd": 16980,
+        "timeStart": 1229.679,
+        "timeEnd": 1237.24
+      },
+      "score": 0.8772271871566772
+    },
+    {
+      "id": "m_0219",
+      "label": "work_of_media",
+      "surface": "movie",
+      "canonical": "movie",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17142,
+        "charEnd": 17147,
+        "timeStart": 1244.48,
+        "timeEnd": 1249.28
+      },
+      "score": 0.8523520231246948
+    },
+    {
+      "id": "m_0220",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17157,
+        "charEnd": 17162,
+        "timeStart": 1244.48,
+        "timeEnd": 1249.28
+      },
+      "score": 0.9863743782043457
+    },
+    {
+      "id": "m_0221",
+      "label": "technology",
+      "surface": "military supercomputer",
+      "canonical": "military supercomputer",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17186,
+        "charEnd": 17208,
+        "timeStart": 1247.039,
+        "timeEnd": 1250.72
+      },
+      "score": 0.8836261034011841
+    },
+    {
+      "id": "m_0222",
+      "label": "organization",
+      "surface": "SC",
+      "canonical": "SC",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17262,
+        "charEnd": 17264,
+        "timeStart": 1250.72,
+        "timeEnd": 1256.6000000000001
+      },
+      "score": 0.6642717719078064
+    },
+    {
+      "id": "m_0223",
+      "label": "technology",
+      "surface": "artificial\nintelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17530,
+        "charEnd": 17553,
+        "timeStart": 1269.76,
+        "timeEnd": 1276.279
+      },
+      "score": 0.8253656029701233
+    },
+    {
+      "id": "m_0224",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17560,
+        "charEnd": 17562,
+        "timeStart": 1271.4,
+        "timeEnd": 1276.279
+      },
+      "score": 0.8526024222373962
+    },
+    {
+      "id": "m_0225",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17674,
+        "charEnd": 17679,
+        "timeStart": 1280.4,
+        "timeEnd": 1287
+      },
+      "score": 0.9848034381866455
+    },
+    {
+      "id": "m_0226",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17699,
+        "charEnd": 17704,
+        "timeStart": 1280.4,
+        "timeEnd": 1287
+      },
+      "score": 0.9901712536811829
+    },
+    {
+      "id": "m_0227",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17738,
+        "charEnd": 17740,
+        "timeStart": 1283.919,
+        "timeEnd": 1289.48
+      },
+      "score": 0.8601716160774231
+    },
+    {
+      "id": "m_0228",
+      "label": "technology",
+      "surface": "machine learning",
+      "canonical": "machine\nlearning",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17745,
+        "charEnd": 17761,
+        "timeStart": 1287,
+        "timeEnd": 1292.32
+      },
+      "score": 0.6523606181144714
+    },
+    {
+      "id": "m_0229",
+      "label": "organization",
+      "surface": "darp",
+      "canonical": "darp",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17762,
+        "charEnd": 17766,
+        "timeStart": 1287,
+        "timeEnd": 1292.32
+      },
+      "score": 0.9456698894500732
+    },
+    {
+      "id": "m_0230",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17786,
+        "charEnd": 17788,
+        "timeStart": 1289.48,
+        "timeEnd": 1294.679
+      },
+      "score": 0.8292911052703857
+    },
+    {
+      "id": "m_0231",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17825,
+        "charEnd": 17827,
+        "timeStart": 1292.32,
+        "timeEnd": 1298.52
+      },
+      "score": 0.924988329410553
+    },
+    {
+      "id": "m_0232",
+      "label": "technology",
+      "surface": "speech recognition computer",
+      "canonical": "speech recognition computer",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17837,
+        "charEnd": 17864,
+        "timeStart": 1292.32,
+        "timeEnd": 1298.52
+      },
+      "score": 0.7568045258522034
+    },
+    {
+      "id": "m_0233",
+      "label": "date_time",
+      "surface": "1983",
+      "canonical": "1983",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17881,
+        "charEnd": 17885,
+        "timeStart": 1294.679,
+        "timeEnd": 1300.679
+      },
+      "score": 0.6369544863700867
+    },
+    {
+      "id": "m_0234",
+      "label": "quantity",
+      "surface": "billions",
+      "canonical": "billions",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17938,
+        "charEnd": 17946,
+        "timeStart": 1300.679,
+        "timeEnd": 1305.8400000000001
+      },
+      "score": 0.7513019442558289
+    },
+    {
+      "id": "m_0235",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17951,
+        "charEnd": 17953,
+        "timeStart": 1300.679,
+        "timeEnd": 1305.8400000000001
+      },
+      "score": 0.9151208400726318
+    },
+    {
+      "id": "m_0236",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 17981,
+        "charEnd": 17986,
+        "timeStart": 1302.72,
+        "timeEnd": 1308.4
+      },
+      "score": 0.9866772890090942
+    },
+    {
+      "id": "m_0237",
+      "label": "event",
+      "surface": "industrial revolution",
+      "canonical": "industrial revolution",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 18529,
+        "charEnd": 18550,
+        "timeStart": 1359.08,
+        "timeEnd": 1361.6
+      },
+      "score": 0.6015208959579468
+    },
+    {
+      "id": "m_0238",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 18573,
+        "charEnd": 18581,
+        "timeStart": 1361.6,
+        "timeEnd": 1366.76
+      },
+      "score": 0.9776076674461365
+    },
+    {
+      "id": "m_0239",
+      "label": "location",
+      "surface": "Wall Street",
+      "canonical": "Wall Street",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 18661,
+        "charEnd": 18672,
+        "timeStart": 1366.76,
+        "timeEnd": 1372.1589999999999
+      },
+      "score": 0.8333936333656311
+    },
+    {
+      "id": "m_0240",
+      "label": "date_time",
+      "surface": "early 1990s",
+      "canonical": "early 1990s",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 18725,
+        "charEnd": 18736,
+        "timeStart": 1372.159,
+        "timeEnd": 1376.72
+      },
+      "score": 0.5219534039497375
+    },
+    {
+      "id": "m_0241",
+      "label": "event",
+      "surface": "tech boom",
+      "canonical": "tech boom",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 18762,
+        "charEnd": 18771,
+        "timeStart": 1374.679,
+        "timeEnd": 1379.76
+      },
+      "score": 0.8533892631530762
+    },
+    {
+      "id": "m_0242",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 18772,
+        "charEnd": 18780,
+        "timeStart": 1374.679,
+        "timeEnd": 1379.76
+      },
+      "score": 0.9702116250991821
+    },
+    {
+      "id": "m_0243",
+      "label": "organization",
+      "surface": "intelligence\nCommunity",
+      "canonical": "intelligence\nCommunity",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 18974,
+        "charEnd": 18996,
+        "timeStart": 1387.159,
+        "timeEnd": 1394.24
+      },
+      "score": 0.9807419776916504
+    },
+    {
+      "id": "m_0244",
+      "label": "technology",
+      "surface": "digital fingerprint",
+      "canonical": "digital fingerprint",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19036,
+        "charEnd": 19055,
+        "timeStart": 1392.159,
+        "timeEnd": 1396.0800000000002
+      },
+      "score": 0.6637541055679321
+    },
+    {
+      "id": "m_0245",
+      "label": "technology",
+      "surface": "internet",
+      "canonical": "internet",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19078,
+        "charEnd": 19086,
+        "timeStart": 1394.24,
+        "timeEnd": 1399.159
+      },
+      "score": 0.7657023668289185
+    },
+    {
+      "id": "m_0246",
+      "label": "person",
+      "surface": "Joe",
+      "canonical": "Joe",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19254,
+        "charEnd": 19257,
+        "timeStart": 1405.12,
+        "timeEnd": 1409.76
+      },
+      "score": 0.9465612769126892
+    },
+    {
+      "id": "m_0247",
+      "label": "role",
+      "surface": "bad guy",
+      "canonical": "bad guy",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19262,
+        "charEnd": 19269,
+        "timeStart": 1405.12,
+        "timeEnd": 1409.76
+      },
+      "score": 0.8111367225646973
+    },
+    {
+      "id": "m_0248",
+      "label": "person",
+      "surface": "Bob",
+      "canonical": "Bob",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19274,
+        "charEnd": 19277,
+        "timeStart": 1405.12,
+        "timeEnd": 1409.76
+      },
+      "score": 0.9373855590820312
+    },
+    {
+      "id": "m_0249",
+      "label": "role",
+      "surface": "bad guy",
+      "canonical": "bad guy",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19282,
+        "charEnd": 19289,
+        "timeStart": 1405.12,
+        "timeEnd": 1409.76
+      },
+      "score": 0.8871495723724365
+    },
+    {
+      "id": "m_0250",
+      "label": "technology",
+      "surface": "surveillance",
+      "canonical": "surveillance",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19421,
+        "charEnd": 19433,
+        "timeStart": 1413.2,
+        "timeEnd": 1421.3600000000001
+      },
+      "score": 0.5458763241767883
+    },
+    {
+      "id": "m_0251",
+      "label": "nationality_or_ethnicity",
+      "surface": "Americans",
+      "canonical": "Americans",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19441,
+        "charEnd": 19450,
+        "timeStart": 1416.6,
+        "timeEnd": 1424.08
+      },
+      "score": 0.9623467326164246
+    },
+    {
+      "id": "m_0252",
+      "label": "law_or_policy",
+      "surface": "legal",
+      "canonical": "legal",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19455,
+        "charEnd": 19460,
+        "timeStart": 1416.6,
+        "timeEnd": 1424.08
+      },
+      "score": 0.7088028192520142
+    },
+    {
+      "id": "m_0253",
+      "label": "law_or_policy",
+      "surface": "illegal",
+      "canonical": "illegal",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19480,
+        "charEnd": 19487,
+        "timeStart": 1421.36,
+        "timeEnd": 1426.36
+      },
+      "score": 0.7056495547294617
+    },
+    {
+      "id": "m_0254",
+      "label": "date_time",
+      "surface": "2010",
+      "canonical": "2010",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19494,
+        "charEnd": 19498,
+        "timeStart": 1421.36,
+        "timeEnd": 1426.36
+      },
+      "score": 0.7139668464660645
+    },
+    {
+      "id": "m_0255",
+      "label": "law_or_policy",
+      "surface": "law",
+      "canonical": "law",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19507,
+        "charEnd": 19510,
+        "timeStart": 1421.36,
+        "timeEnd": 1426.36
+      },
+      "score": 0.8603510856628418
+    },
+    {
+      "id": "m_0256",
+      "label": "organization",
+      "surface": "intelligence\nCommunity",
+      "canonical": "intelligence\nCommunity",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19546,
+        "charEnd": 19568,
+        "timeStart": 1424.08,
+        "timeEnd": 1430.36
+      },
+      "score": 0.986591637134552
+    },
+    {
+      "id": "m_0257",
+      "label": "organization",
+      "surface": "NSA",
+      "canonical": "NSA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19779,
+        "charEnd": 19782,
+        "timeStart": 1439.679,
+        "timeEnd": 1444.5590000000002
+      },
+      "score": 0.8221814632415771
+    },
+    {
+      "id": "m_0258",
+      "label": "organization",
+      "surface": "CIA",
+      "canonical": "CIA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19786,
+        "charEnd": 19789,
+        "timeStart": 1439.679,
+        "timeEnd": 1444.5590000000002
+      },
+      "score": 0.8291515111923218
+    },
+    {
+      "id": "m_0259",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19793,
+        "charEnd": 19798,
+        "timeStart": 1439.679,
+        "timeEnd": 1444.5590000000002
+      },
+      "score": 0.8688876628875732
+    },
+    {
+      "id": "m_0260",
+      "label": "organization",
+      "surface": "internet startup",
+      "canonical": "internet startup",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 19820,
+        "charEnd": 19836,
+        "timeStart": 1442.44,
+        "timeEnd": 1446.4
+      },
+      "score": 0.6811931133270264
+    },
+    {
+      "id": "m_0261",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20060,
+        "charEnd": 20070,
+        "timeStart": 1455.799,
+        "timeEnd": 1460.279
+      },
+      "score": 0.5960582494735718
+    },
+    {
+      "id": "m_0262",
+      "label": "date_time",
+      "surface": "1994",
+      "canonical": "1994",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20123,
+        "charEnd": 20127,
+        "timeStart": 1460.279,
+        "timeEnd": 1465.84
+      },
+      "score": 0.8513686060905457
+    },
+    {
+      "id": "m_0263",
+      "label": "organization",
+      "surface": "highlands Forum",
+      "canonical": "highlands Forum",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20132,
+        "charEnd": 20147,
+        "timeStart": 1460.279,
+        "timeEnd": 1465.84
+      },
+      "score": 0.931962788105011
+    },
+    {
+      "id": "m_0264",
+      "label": "organization",
+      "surface": "highlands\nForum",
+      "canonical": "highlands Forum",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20174,
+        "charEnd": 20189,
+        "timeStart": 1463.88,
+        "timeEnd": 1469.8799999999999
+      },
+      "score": 0.9390877485275269
+    },
+    {
+      "id": "m_0265",
+      "label": "organization",
+      "surface": "highlands Forum",
+      "canonical": "highlands Forum",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20241,
+        "charEnd": 20256,
+        "timeStart": 1469.88,
+        "timeEnd": 1475.279
+      },
+      "score": 0.9242913126945496
+    },
+    {
+      "id": "m_0266",
+      "label": "organization",
+      "surface": "Highlands\ngroup",
+      "canonical": "Highlands\ngroup",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20260,
+        "charEnd": 20275,
+        "timeStart": 1469.88,
+        "timeEnd": 1477.3200000000002
+      },
+      "score": 0.724461019039154
+    },
+    {
+      "id": "m_0267",
+      "label": "organization",
+      "surface": "technology companies",
+      "canonical": "technology companies",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20320,
+        "charEnd": 20340,
+        "timeStart": 1475.279,
+        "timeEnd": 1478.76
+      },
+      "score": 0.539982259273529
+    },
+    {
+      "id": "m_0268",
+      "label": "location",
+      "surface": "Pentagon",
+      "canonical": "Pentagon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20349,
+        "charEnd": 20357,
+        "timeStart": 1478.76,
+        "timeEnd": 1483
+      },
+      "score": 0.8883877992630005
+    },
+    {
+      "id": "m_0269",
+      "label": "organization",
+      "surface": "highlands forum",
+      "canonical": "highlands Forum",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20362,
+        "charEnd": 20377,
+        "timeStart": 1478.76,
+        "timeEnd": 1483
+      },
+      "score": 0.7989314794540405
+    },
+    {
+      "id": "m_0270",
+      "label": "person",
+      "surface": "government\nofficials",
+      "canonical": "government\nofficials",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20409,
+        "charEnd": 20429,
+        "timeStart": 1481.159,
+        "timeEnd": 1487.679
+      },
+      "score": 0.586498498916626
+    },
+    {
+      "id": "m_0271",
+      "label": "person",
+      "surface": "academics",
+      "canonical": "academics",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20430,
+        "charEnd": 20439,
+        "timeStart": 1483,
+        "timeEnd": 1487.679
+      },
+      "score": 0.7401952743530273
+    },
+    {
+      "id": "m_0272",
+      "label": "person",
+      "surface": "Executives",
+      "canonical": "Executives",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20444,
+        "charEnd": 20454,
+        "timeStart": 1483,
+        "timeEnd": 1487.679
+      },
+      "score": 0.7205113172531128
+    },
+    {
+      "id": "m_0273",
+      "label": "technology",
+      "surface": "Tech",
+      "canonical": "Tech",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20460,
+        "charEnd": 20464,
+        "timeStart": 1485.72,
+        "timeEnd": 1489.52
+      },
+      "score": 0.7402055263519287
+    },
+    {
+      "id": "m_0274",
+      "label": "organization",
+      "surface": "defense companies",
+      "canonical": "defense companies",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20469,
+        "charEnd": 20486,
+        "timeStart": 1485.72,
+        "timeEnd": 1489.52
+      },
+      "score": 0.634556233882904
+    },
+    {
+      "id": "m_0275",
+      "label": "organization",
+      "surface": "highlands Forum",
+      "canonical": "highlands Forum",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20754,
+        "charEnd": 20769,
+        "timeStart": 1503.799,
+        "timeEnd": 1508.8799999999999
+      },
+      "score": 0.6415916681289673
+    },
+    {
+      "id": "m_0276",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20844,
+        "charEnd": 20854,
+        "timeStart": 1508.88,
+        "timeEnd": 1513.6000000000001
+      },
+      "score": 0.6738148331642151
+    },
+    {
+      "id": "m_0277",
+      "label": "law_or_policy",
+      "surface": "Freedom of\nInformation Act",
+      "canonical": "Freedom of\nInformation Act",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 20918,
+        "charEnd": 20944,
+        "timeStart": 1513.6,
+        "timeEnd": 1520.919
+      },
+      "score": 0.8086071610450745
+    },
+    {
+      "id": "m_0278",
+      "label": "technology",
+      "surface": "Tech",
+      "canonical": "Tech",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21049,
+        "charEnd": 21053,
+        "timeStart": 1523.12,
+        "timeEnd": 1528.4799999999998
+      },
+      "score": 0.8391401767730713
+    },
+    {
+      "id": "m_0279",
+      "label": "organization",
+      "surface": "Think Tank",
+      "canonical": "Think Tank",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21099,
+        "charEnd": 21109,
+        "timeStart": 1526.88,
+        "timeEnd": 1530.64
+      },
+      "score": 0.6272304058074951
+    },
+    {
+      "id": "m_0280",
+      "label": "organization",
+      "surface": "mdds",
+      "canonical": "mdds",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21245,
+        "charEnd": 21249,
+        "timeStart": 1536.679,
+        "timeEnd": 1541.919
+      },
+      "score": 0.7776278257369995
+    },
+    {
+      "id": "m_0281",
+      "label": "organization",
+      "surface": "mdds",
+      "canonical": "mdds",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21271,
+        "charEnd": 21275,
+        "timeStart": 1538.96,
+        "timeEnd": 1543.919
+      },
+      "score": 0.742711067199707
+    },
+    {
+      "id": "m_0282",
+      "label": "person",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21287,
+        "charEnd": 21297,
+        "timeStart": 1538.96,
+        "timeEnd": 1543.919
+      },
+      "score": 0.7529850006103516
+    },
+    {
+      "id": "m_0283",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21298,
+        "charEnd": 21309,
+        "timeStart": 1541.919,
+        "timeEnd": 1546.2
+      },
+      "score": 0.6387341618537903
+    },
+    {
+      "id": "m_0284",
+      "label": "organization",
+      "surface": "Highland Forum",
+      "canonical": "Highland Forum",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21358,
+        "charEnd": 21372,
+        "timeStart": 1543.919,
+        "timeEnd": 1548.0800000000002
+      },
+      "score": 0.9239835143089294
+    },
+    {
+      "id": "m_0285",
+      "label": "organization",
+      "surface": "mdds",
+      "canonical": "mdds",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21488,
+        "charEnd": 21492,
+        "timeStart": 1552.039,
+        "timeEnd": 1557.24
+      },
+      "score": 0.6286079287528992
+    },
+    {
+      "id": "m_0286",
+      "label": "organization",
+      "surface": "National Science Foundation",
+      "canonical": "National Science Foundation",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21555,
+        "charEnd": 21582,
+        "timeStart": 1557.24,
+        "timeEnd": 1560.799
+      },
+      "score": 0.9467451572418213
+    },
+    {
+      "id": "m_0287",
+      "label": "person",
+      "surface": "computer scientists",
+      "canonical": "computer scientists",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21583,
+        "charEnd": 21602,
+        "timeStart": 1559.6,
+        "timeEnd": 1563.1589999999999
+      },
+      "score": 0.8544729351997375
+    },
+    {
+      "id": "m_0288",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21616,
+        "charEnd": 21624,
+        "timeStart": 1560.799,
+        "timeEnd": 1565.24
+      },
+      "score": 0.8886390924453735
+    },
+    {
+      "id": "m_0289",
+      "label": "organization",
+      "surface": "NSF",
+      "canonical": "NSF",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21644,
+        "charEnd": 21647,
+        "timeStart": 1560.799,
+        "timeEnd": 1565.24
+      },
+      "score": 0.7705440521240234
+    },
+    {
+      "id": "m_0290",
+      "label": "organization",
+      "surface": "mdds",
+      "canonical": "mdds",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21716,
+        "charEnd": 21720,
+        "timeStart": 1565.24,
+        "timeEnd": 1570.1200000000001
+      },
+      "score": 0.6360805630683899
+    },
+    {
+      "id": "m_0291",
+      "label": "organization",
+      "surface": "CIA",
+      "canonical": "CIA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21921,
+        "charEnd": 21924,
+        "timeStart": 1578.76,
+        "timeEnd": 1583.96
+      },
+      "score": 0.6457112431526184
+    },
+    {
+      "id": "m_0292",
+      "label": "organization",
+      "surface": "NSA",
+      "canonical": "NSA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21925,
+        "charEnd": 21928,
+        "timeStart": 1578.76,
+        "timeEnd": 1583.96
+      },
+      "score": 0.8763424158096313
+    },
+    {
+      "id": "m_0293",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21933,
+        "charEnd": 21938,
+        "timeStart": 1581.279,
+        "timeEnd": 1585.96
+      },
+      "score": 0.9166615605354309
+    },
+    {
+      "id": "m_0294",
+      "label": "organization",
+      "surface": "NSF",
+      "canonical": "NSF",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 21991,
+        "charEnd": 21994,
+        "timeStart": 1583.96,
+        "timeEnd": 1587.679
+      },
+      "score": 0.9061035513877869
+    },
+    {
+      "id": "m_0295",
+      "label": "organization",
+      "surface": "highlands\nforum",
+      "canonical": "highlands Forum",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22038,
+        "charEnd": 22053,
+        "timeStart": 1585.96,
+        "timeEnd": 1592.96
+      },
+      "score": 0.8348010182380676
+    },
+    {
+      "id": "m_0296",
+      "label": "organization",
+      "surface": "Academia",
+      "canonical": "Academia",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22119,
+        "charEnd": 22127,
+        "timeStart": 1590.48,
+        "timeEnd": 1595
+      },
+      "score": 0.6074479222297668
+    },
+    {
+      "id": "m_0297",
+      "label": "person",
+      "surface": "two Stanford Graduate students",
+      "canonical": "two Stanford Graduate students",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22213,
+        "charEnd": 22243,
+        "timeStart": 1599.6,
+        "timeEnd": 1603.7199999999998
+      },
+      "score": 0.7554290890693665
+    },
+    {
+      "id": "m_0298",
+      "label": "technology",
+      "surface": "search engine",
+      "canonical": "search engine",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22257,
+        "charEnd": 22270,
+        "timeStart": 1601.48,
+        "timeEnd": 1608.13
+      },
+      "score": 0.6957138180732727
+    },
+    {
+      "id": "m_0299",
+      "label": "event",
+      "surface": "breakthrough",
+      "canonical": "breakthrough",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22286,
+        "charEnd": 22298,
+        "timeStart": 1609.96,
+        "timeEnd": 1615
+      },
+      "score": 0.6508464813232422
+    },
+    {
+      "id": "m_0300",
+      "label": "person",
+      "surface": "two Stamford students",
+      "canonical": "two Stamford students",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22622,
+        "charEnd": 22643,
+        "timeStart": 1632.64,
+        "timeEnd": 1638.88
+      },
+      "score": 0.6253582239151001
+    },
+    {
+      "id": "m_0301",
+      "label": "technology",
+      "surface": "system",
+      "canonical": "system",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22715,
+        "charEnd": 22721,
+        "timeStart": 1641.399,
+        "timeEnd": 1647.4399999999998
+      },
+      "score": 0.8458704352378845
+    },
+    {
+      "id": "m_0302",
+      "label": "quantity",
+      "surface": "high traffic",
+      "canonical": "high traffic",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 22901,
+        "charEnd": 22913,
+        "timeStart": 1652.919,
+        "timeEnd": 1657.919
+      },
+      "score": 0.8300781846046448
+    },
+    {
+      "id": "m_0303",
+      "label": "technology",
+      "surface": "algorithm",
+      "canonical": "algorithm",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23003,
+        "charEnd": 23012,
+        "timeStart": 1660.679,
+        "timeEnd": 1665.24
+      },
+      "score": 0.753070592880249
+    },
+    {
+      "id": "m_0304",
+      "label": "organization",
+      "surface": "search engine",
+      "canonical": "search engine",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23068,
+        "charEnd": 23081,
+        "timeStart": 1665.24,
+        "timeEnd": 1670.559
+      },
+      "score": 0.7347641587257385
+    },
+    {
+      "id": "m_0305",
+      "label": "technology",
+      "surface": "system",
+      "canonical": "system",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23191,
+        "charEnd": 23197,
+        "timeStart": 1673.159,
+        "timeEnd": 1678.679
+      },
+      "score": 0.8700881004333496
+    },
+    {
+      "id": "m_0306",
+      "label": "technology",
+      "surface": "Association rule",
+      "canonical": "Association rule",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23236,
+        "charEnd": 23252,
+        "timeStart": 1675.84,
+        "timeEnd": 1681.6
+      },
+      "score": 0.6015704870223999
+    },
+    {
+      "id": "m_0307",
+      "label": "organization",
+      "surface": "search engine",
+      "canonical": "search engine",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23436,
+        "charEnd": 23449,
+        "timeStart": 1688.559,
+        "timeEnd": 1692.6789999999999
+      },
+      "score": 0.7679110169410706
+    },
+    {
+      "id": "m_0308",
+      "label": "technology",
+      "surface": "digital\nfingerprint",
+      "canonical": "digital fingerprint",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23858,
+        "charEnd": 23877,
+        "timeStart": 1713.96,
+        "timeEnd": 1719.44
+      },
+      "score": 0.5194163918495178
+    },
+    {
+      "id": "m_0309",
+      "label": "organization",
+      "surface": "CIA",
+      "canonical": "CIA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23898,
+        "charEnd": 23901,
+        "timeStart": 1724.44,
+        "timeEnd": 1729.279
+      },
+      "score": 0.9283460974693298
+    },
+    {
+      "id": "m_0310",
+      "label": "organization",
+      "surface": "NSA",
+      "canonical": "NSA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23902,
+        "charEnd": 23905,
+        "timeStart": 1724.44,
+        "timeEnd": 1729.279
+      },
+      "score": 0.939384937286377
+    },
+    {
+      "id": "m_0311",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23910,
+        "charEnd": 23915,
+        "timeStart": 1724.44,
+        "timeEnd": 1729.279
+      },
+      "score": 0.9479538798332214
+    },
+    {
+      "id": "m_0312",
+      "label": "organization",
+      "surface": "National Science Foundation",
+      "canonical": "National Science Foundation",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23959,
+        "charEnd": 23986,
+        "timeStart": 1729.279,
+        "timeEnd": 1733.12
+      },
+      "score": 0.8869426846504211
+    },
+    {
+      "id": "m_0313",
+      "label": "organization",
+      "surface": "mdds",
+      "canonical": "mdds",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 23991,
+        "charEnd": 23995,
+        "timeStart": 1729.279,
+        "timeEnd": 1733.12
+      },
+      "score": 0.9492422938346863
+    },
+    {
+      "id": "m_0314",
+      "label": "person",
+      "surface": "Sergey Brin",
+      "canonical": "Sergey Brin",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24060,
+        "charEnd": 24071,
+        "timeStart": 1735.6,
+        "timeEnd": 1741.4399999999998
+      },
+      "score": 0.9615640640258789
+    },
+    {
+      "id": "m_0315",
+      "label": "person",
+      "surface": "Larry\npagee",
+      "canonical": "Larry\npagee",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24076,
+        "charEnd": 24087,
+        "timeStart": 1735.6,
+        "timeEnd": 1741.44
+      },
+      "score": 0.9193422198295593
+    },
+    {
+      "id": "m_0316",
+      "label": "organization",
+      "surface": "Google",
+      "canonical": "Google",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24114,
+        "charEnd": 24120,
+        "timeStart": 1742.559,
+        "timeEnd": 1747.6789999999999
+      },
+      "score": 0.940309464931488
+    },
+    {
+      "id": "m_0317",
+      "label": "organization",
+      "surface": "mdds",
+      "canonical": "mdds",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24136,
+        "charEnd": 24140,
+        "timeStart": 1742.559,
+        "timeEnd": 1747.6789999999999
+      },
+      "score": 0.9653283953666687
+    },
+    {
+      "id": "m_0318",
+      "label": "organization",
+      "surface": "Google",
+      "canonical": "Google",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24144,
+        "charEnd": 24150,
+        "timeStart": 1742.559,
+        "timeEnd": 1747.6789999999999
+      },
+      "score": 0.9611894488334656
+    },
+    {
+      "id": "m_0319",
+      "label": "work_of_media",
+      "surface": "the anatomy of a large\nscale hypertextual web search engine",
+      "canonical": "the anatomy of a large\nscale hypertextual web search engine",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24277,
+        "charEnd": 24336,
+        "timeStart": 1752.88,
+        "timeEnd": 1759.919
+      },
+      "score": 0.5371646881103516
+    },
+    {
+      "id": "m_0320",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24348,
+        "charEnd": 24353,
+        "timeStart": 1757.84,
+        "timeEnd": 1761.48
+      },
+      "score": 0.906518816947937
+    },
+    {
+      "id": "m_0321",
+      "label": "organization",
+      "surface": "YouTube",
+      "canonical": "YouTube",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24631,
+        "charEnd": 24638,
+        "timeStart": 1776,
+        "timeEnd": 1782.279
+      },
+      "score": 0.567417562007904
+    },
+    {
+      "id": "m_0322",
+      "label": "organization",
+      "surface": "Google",
+      "canonical": "Google",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24660,
+        "charEnd": 24666,
+        "timeStart": 1778.64,
+        "timeEnd": 1784.48
+      },
+      "score": 0.9445049166679382
+    },
+    {
+      "id": "m_0323",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24726,
+        "charEnd": 24733,
+        "timeStart": 1784.48,
+        "timeEnd": 1789.08
+      },
+      "score": 0.8425428867340088
+    },
+    {
+      "id": "m_0324",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24985,
+        "charEnd": 24992,
+        "timeStart": 1801.08,
+        "timeEnd": 1807.8799999999999
+      },
+      "score": 0.8799692392349243
+    },
+    {
+      "id": "m_0325",
+      "label": "work_of_media",
+      "surface": "theey files",
+      "canonical": "theey files",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 24997,
+        "charEnd": 25008,
+        "timeStart": 1801.08,
+        "timeEnd": 1807.8799999999999
+      },
+      "score": 0.5232910513877869
+    },
+    {
+      "id": "m_0326",
+      "label": "organization",
+      "surface": "Google",
+      "canonical": "Google",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25091,
+        "charEnd": 25097,
+        "timeStart": 1807.88,
+        "timeEnd": 1811.96
+      },
+      "score": 0.5064799189567566
+    },
+    {
+      "id": "m_0327",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25109,
+        "charEnd": 25114,
+        "timeStart": 1809.679,
+        "timeEnd": 1814.48
+      },
+      "score": 0.8735543489456177
+    },
+    {
+      "id": "m_0328",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25145,
+        "charEnd": 25150,
+        "timeStart": 1811.96,
+        "timeEnd": 1816.919
+      },
+      "score": 0.858894407749176
+    },
+    {
+      "id": "m_0329",
+      "label": "person",
+      "surface": "John F Kennedy",
+      "canonical": "John F Kennedy",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25197,
+        "charEnd": 25211,
+        "timeStart": 1823.279,
+        "timeEnd": 1829.08
+      },
+      "score": 0.9732725620269775
+    },
+    {
+      "id": "m_0330",
+      "label": "date_time",
+      "surface": "1961",
+      "canonical": "1961",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25227,
+        "charEnd": 25231,
+        "timeStart": 1825.799,
+        "timeEnd": 1832.6
+      },
+      "score": 0.9521022439002991
+    },
+    {
+      "id": "m_0331",
+      "label": "location",
+      "surface": "America",
+      "canonical": "America",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25232,
+        "charEnd": 25239,
+        "timeStart": 1825.799,
+        "timeEnd": 1832.6
+      },
+      "score": 0.8504095077514648
+    },
+    {
+      "id": "m_0332",
+      "label": "location",
+      "surface": "Cuba",
+      "canonical": "Cuba",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25262,
+        "charEnd": 25266,
+        "timeStart": 1829.08,
+        "timeEnd": 1835.76
+      },
+      "score": 0.7576853036880493
+    },
+    {
+      "id": "m_0333",
+      "label": "location",
+      "surface": "Ethiopia",
+      "canonical": "Ethiopia",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25267,
+        "charEnd": 25275,
+        "timeStart": 1829.08,
+        "timeEnd": 1835.76
+      },
+      "score": 0.6079755425453186
+    },
+    {
+      "id": "m_0334",
+      "label": "location",
+      "surface": "Nicaragua",
+      "canonical": "Nicaragua",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25276,
+        "charEnd": 25285,
+        "timeStart": 1829.08,
+        "timeEnd": 1835.76
+      },
+      "score": 0.6120525598526001
+    },
+    {
+      "id": "m_0335",
+      "label": "location",
+      "surface": "Iran",
+      "canonical": "Iran",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25306,
+        "charEnd": 25310,
+        "timeStart": 1832.6,
+        "timeEnd": 1838.6
+      },
+      "score": 0.5138985514640808
+    },
+    {
+      "id": "m_0336",
+      "label": "location",
+      "surface": "Lebanon",
+      "canonical": "Lebanon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25311,
+        "charEnd": 25318,
+        "timeStart": 1832.6,
+        "timeEnd": 1838.6
+      },
+      "score": 0.6395131945610046
+    },
+    {
+      "id": "m_0337",
+      "label": "person",
+      "surface": "Kennedy",
+      "canonical": "Kennedy",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25414,
+        "charEnd": 25421,
+        "timeStart": 1840.679,
+        "timeEnd": 1845.279
+      },
+      "score": 0.8572157025337219
+    },
+    {
+      "id": "m_0338",
+      "label": "ideology",
+      "surface": "Communism",
+      "canonical": "Communism",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25453,
+        "charEnd": 25462,
+        "timeStart": 1842.96,
+        "timeEnd": 1847.279
+      },
+      "score": 0.9585594534873962
+    },
+    {
+      "id": "m_0339",
+      "label": "organization",
+      "surface": "Soviets",
+      "canonical": "Soviets",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25471,
+        "charEnd": 25478,
+        "timeStart": 1842.96,
+        "timeEnd": 1847.279
+      },
+      "score": 0.6894446611404419
+    },
+    {
+      "id": "m_0340",
+      "label": "quantity",
+      "surface": "billions",
+      "canonical": "billions",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25492,
+        "charEnd": 25500,
+        "timeStart": 1845.279,
+        "timeEnd": 1849.64
+      },
+      "score": 0.7597059011459351
+    },
+    {
+      "id": "m_0341",
+      "label": "technology",
+      "surface": "rocket and missile systems",
+      "canonical": "rocket and missile systems",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25526,
+        "charEnd": 25552,
+        "timeStart": 1847.279,
+        "timeEnd": 1850.96
+      },
+      "score": 0.6245898008346558
+    },
+    {
+      "id": "m_0342",
+      "label": "person",
+      "surface": "JFK",
+      "canonical": "JFK",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25576,
+        "charEnd": 25579,
+        "timeStart": 1850.96,
+        "timeEnd": 1856.159
+      },
+      "score": 0.8965122699737549
+    },
+    {
+      "id": "m_0343",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25699,
+        "charEnd": 25704,
+        "timeStart": 1858.32,
+        "timeEnd": 1863.12
+      },
+      "score": 0.8770641088485718
+    },
+    {
+      "id": "m_0344",
+      "label": "event",
+      "surface": "Cold War",
+      "canonical": "Cold War",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25759,
+        "charEnd": 25767,
+        "timeStart": 1863.12,
+        "timeEnd": 1868
+      },
+      "score": 0.7642130851745605
+    },
+    {
+      "id": "m_0345",
+      "label": "event",
+      "surface": "Regional proxy\nwars",
+      "canonical": "Regional proxy\nwars",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25785,
+        "charEnd": 25804,
+        "timeStart": 1863.12,
+        "timeEnd": 1870.039
+      },
+      "score": 0.7760531306266785
+    },
+    {
+      "id": "m_0346",
+      "label": "organization",
+      "surface": "Soviets",
+      "canonical": "Soviets",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25814,
+        "charEnd": 25821,
+        "timeStart": 1865.679,
+        "timeEnd": 1870.039
+      },
+      "score": 0.6237797737121582
+    },
+    {
+      "id": "m_0347",
+      "label": "location",
+      "surface": "Vietnam",
+      "canonical": "Vietnam",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25933,
+        "charEnd": 25940,
+        "timeStart": 1873.279,
+        "timeEnd": 1878.639
+      },
+      "score": 0.8366314172744751
+    },
+    {
+      "id": "m_0348",
+      "label": "group_or_movement",
+      "surface": "Viet Kong",
+      "canonical": "Viet Kong",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 25964,
+        "charEnd": 25973,
+        "timeStart": 1876.12,
+        "timeEnd": 1880.799
+      },
+      "score": 0.6524754762649536
+    },
+    {
+      "id": "m_0349",
+      "label": "location",
+      "surface": "jungle",
+      "canonical": "jungle",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26002,
+        "charEnd": 26008,
+        "timeStart": 1878.639,
+        "timeEnd": 1882.6789999999999
+      },
+      "score": 0.5100241899490356
+    },
+    {
+      "id": "m_0350",
+      "label": "organization",
+      "surface": "Dara",
+      "canonical": "Dara",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26059,
+        "charEnd": 26063,
+        "timeStart": 1882.679,
+        "timeEnd": 1888.72
+      },
+      "score": 0.7950624227523804
+    },
+    {
+      "id": "m_0351",
+      "label": "person",
+      "surface": "Kennedy",
+      "canonical": "Kennedy",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26116,
+        "charEnd": 26123,
+        "timeStart": 1886.399,
+        "timeEnd": 1891.1999999999998
+      },
+      "score": 0.994327962398529
+    },
+    {
+      "id": "m_0352",
+      "label": "person",
+      "surface": "Kennedy",
+      "canonical": "Kennedy",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26167,
+        "charEnd": 26174,
+        "timeStart": 1891.2,
+        "timeEnd": 1896.24
+      },
+      "score": 0.9937044978141785
+    },
+    {
+      "id": "m_0353",
+      "label": "event",
+      "surface": "operation Ranch Hand",
+      "canonical": "operation Ranch Hand",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26225,
+        "charEnd": 26245,
+        "timeStart": 1896.24,
+        "timeEnd": 1901.039
+      },
+      "score": 0.867353081703186
+    },
+    {
+      "id": "m_0354",
+      "label": "location",
+      "surface": "jungle",
+      "canonical": "jungle",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26275,
+        "charEnd": 26281,
+        "timeStart": 1898.679,
+        "timeEnd": 1902.919
+      },
+      "score": 0.5103673338890076
+    },
+    {
+      "id": "m_0355",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26282,
+        "charEnd": 26287,
+        "timeStart": 1898.679,
+        "timeEnd": 1902.919
+      },
+      "score": 0.9806812405586243
+    },
+    {
+      "id": "m_0356",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26418,
+        "charEnd": 26423,
+        "timeStart": 1907.84,
+        "timeEnd": 1912.559
+      },
+      "score": 0.9804893732070923
+    },
+    {
+      "id": "m_0357",
+      "label": "quantity",
+      "surface": "millions of gallons",
+      "canonical": "millions of gallons",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26566,
+        "charEnd": 26585,
+        "timeStart": 1917.919,
+        "timeEnd": 1922.6390000000001
+      },
+      "score": 0.8068346381187439
+    },
+    {
+      "id": "m_0358",
+      "label": "quantity",
+      "surface": "miles",
+      "canonical": "miles",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26619,
+        "charEnd": 26624,
+        "timeStart": 1919.799,
+        "timeEnd": 1924.32
+      },
+      "score": 0.5954660773277283
+    },
+    {
+      "id": "m_0359",
+      "label": "quantity",
+      "surface": "another application",
+      "canonical": "another application",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26687,
+        "charEnd": 26706,
+        "timeStart": 1924.32,
+        "timeEnd": 1928.96
+      },
+      "score": 0.502882182598114
+    },
+    {
+      "id": "m_0360",
+      "label": "location",
+      "surface": "Farms",
+      "canonical": "Farms",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26754,
+        "charEnd": 26759,
+        "timeStart": 1928.96,
+        "timeEnd": 1934.76
+      },
+      "score": 0.9290838837623596
+    },
+    {
+      "id": "m_0361",
+      "label": "quantity",
+      "surface": "miles",
+      "canonical": "miles",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26787,
+        "charEnd": 26792,
+        "timeStart": 1932.799,
+        "timeEnd": 1936.9189999999999
+      },
+      "score": 0.7303754091262817
+    },
+    {
+      "id": "m_0362",
+      "label": "nationality_or_ethnicity",
+      "surface": "South\nVietnamese",
+      "canonical": "South\nVietnamese",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26822,
+        "charEnd": 26838,
+        "timeStart": 1934.76,
+        "timeEnd": 1941.1200000000001
+      },
+      "score": 0.5419410467147827
+    },
+    {
+      "id": "m_0363",
+      "label": "person",
+      "surface": "DM",
+      "canonical": "DM",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26849,
+        "charEnd": 26851,
+        "timeStart": 1936.919,
+        "timeEnd": 1941.1200000000001
+      },
+      "score": 0.9236221313476562
+    },
+    {
+      "id": "m_0364",
+      "label": "location",
+      "surface": "Farms",
+      "canonical": "Farms",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26869,
+        "charEnd": 26874,
+        "timeStart": 1938.96,
+        "timeEnd": 1943.44
+      },
+      "score": 0.9473823308944702
+    },
+    {
+      "id": "m_0365",
+      "label": "location",
+      "surface": "Viet Kong",
+      "canonical": "Viet Kong",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 26880,
+        "charEnd": 26889,
+        "timeStart": 1938.96,
+        "timeEnd": 1943.44
+      },
+      "score": 0.7614301443099976
+    },
+    {
+      "id": "m_0366",
+      "label": "nationality_or_ethnicity",
+      "surface": "North Vietnamese",
+      "canonical": "North Vietnamese",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27187,
+        "charEnd": 27203,
+        "timeStart": 1958.36,
+        "timeEnd": 1963.6789999999999
+      },
+      "score": 0.7434447407722473
+    },
+    {
+      "id": "m_0367",
+      "label": "nationality_or_ethnicity",
+      "surface": "North Vietnamese",
+      "canonical": "North Vietnamese",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27290,
+        "charEnd": 27306,
+        "timeStart": 1966,
+        "timeEnd": 1969.96
+      },
+      "score": 0.5917297005653381
+    },
+    {
+      "id": "m_0368",
+      "label": "event",
+      "surface": "Vietnam War",
+      "canonical": "Vietnam War",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27512,
+        "charEnd": 27523,
+        "timeStart": 1989.519,
+        "timeEnd": 1993.919
+      },
+      "score": 0.9307889342308044
+    },
+    {
+      "id": "m_0369",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27571,
+        "charEnd": 27576,
+        "timeStart": 1993.919,
+        "timeEnd": 1999.679
+      },
+      "score": 0.9341559410095215
+    },
+    {
+      "id": "m_0370",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27626,
+        "charEnd": 27631,
+        "timeStart": 1996.88,
+        "timeEnd": 2002.0390000000002
+      },
+      "score": 0.9493132829666138
+    },
+    {
+      "id": "m_0371",
+      "label": "facility",
+      "surface": "loudspeakers",
+      "canonical": "loudspeakers",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27738,
+        "charEnd": 27750,
+        "timeStart": 2004.159,
+        "timeEnd": 2009.1200000000001
+      },
+      "score": 0.7103978991508484
+    },
+    {
+      "id": "m_0372",
+      "label": "technology",
+      "surface": "subliminal technology",
+      "canonical": "subliminal technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27769,
+        "charEnd": 27790,
+        "timeStart": 2007.24,
+        "timeEnd": 2011.44
+      },
+      "score": 0.8903121948242188
+    },
+    {
+      "id": "m_0373",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27912,
+        "charEnd": 27915,
+        "timeStart": 2014.48,
+        "timeEnd": 2021.6
+      },
+      "score": 0.9519298672676086
+    },
+    {
+      "id": "m_0374",
+      "label": "location",
+      "surface": "Villages",
+      "canonical": "Villages",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27955,
+        "charEnd": 27963,
+        "timeStart": 2021.6,
+        "timeEnd": 2025.7199999999998
+      },
+      "score": 0.9460891485214233
+    },
+    {
+      "id": "m_0375",
+      "label": "group_or_movement",
+      "surface": "civilians",
+      "canonical": "civilians",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 27998,
+        "charEnd": 28007,
+        "timeStart": 2023.519,
+        "timeEnd": 2029.159
+      },
+      "score": 0.6541365385055542
+    },
+    {
+      "id": "m_0376",
+      "label": "location",
+      "surface": "strategic hamlets",
+      "canonical": "strategic hamlets",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28025,
+        "charEnd": 28042,
+        "timeStart": 2025.72,
+        "timeEnd": 2031.2
+      },
+      "score": 0.9321553707122803
+    },
+    {
+      "id": "m_0377",
+      "label": "quantity",
+      "surface": "4\nmillion people",
+      "canonical": "4\nmillion people",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28060,
+        "charEnd": 28076,
+        "timeStart": 2025.72,
+        "timeEnd": 2033.48
+      },
+      "score": 0.8979088068008423
+    },
+    {
+      "id": "m_0378",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28265,
+        "charEnd": 28274,
+        "timeStart": 2042.559,
+        "timeEnd": 2047.44
+      },
+      "score": 0.9005838632583618
+    },
+    {
+      "id": "m_0379",
+      "label": "date_time",
+      "surface": "1962",
+      "canonical": "1962",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28491,
+        "charEnd": 28495,
+        "timeStart": 2057.359,
+        "timeEnd": 2061.7599999999998
+      },
+      "score": 0.9290403127670288
+    },
+    {
+      "id": "m_0380",
+      "label": "date_time",
+      "surface": "1965",
+      "canonical": "1965",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28499,
+        "charEnd": 28503,
+        "timeStart": 2059.04,
+        "timeEnd": 2064.7599999999998
+      },
+      "score": 0.9380881786346436
+    },
+    {
+      "id": "m_0381",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28504,
+        "charEnd": 28514,
+        "timeStart": 2059.04,
+        "timeEnd": 2064.7599999999998
+      },
+      "score": 0.6899045705795288
+    },
+    {
+      "id": "m_0382",
+      "label": "date_time",
+      "surface": "1967",
+      "canonical": "1967",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28629,
+        "charEnd": 28633,
+        "timeStart": 2067.28,
+        "timeEnd": 2074.679
+      },
+      "score": 0.9435004591941833
+    },
+    {
+      "id": "m_0383",
+      "label": "date_time",
+      "surface": "1969",
+      "canonical": "1969",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28726,
+        "charEnd": 28730,
+        "timeStart": 2078.359,
+        "timeEnd": 2082.96
+      },
+      "score": 0.9040281176567078
+    },
+    {
+      "id": "m_0384",
+      "label": "organization",
+      "surface": "Department of Defense",
+      "canonical": "Department of Defense",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28733,
+        "charEnd": 28754,
+        "timeStart": 2078.359,
+        "timeEnd": 2082.96
+      },
+      "score": 0.8980261087417603
+    },
+    {
+      "id": "m_0385",
+      "label": "event",
+      "surface": "public\noutcry",
+      "canonical": "public\noutcry",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28829,
+        "charEnd": 28842,
+        "timeStart": 2082.96,
+        "timeEnd": 2090.359
+      },
+      "score": 0.6828599572181702
+    },
+    {
+      "id": "m_0386",
+      "label": "person",
+      "surface": "President Nixon",
+      "canonical": "President Nixon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28850,
+        "charEnd": 28865,
+        "timeStart": 2086.24,
+        "timeEnd": 2090.359
+      },
+      "score": 0.8903515934944153
+    },
+    {
+      "id": "m_0387",
+      "label": "date_time",
+      "surface": "1970",
+      "canonical": "1970",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28901,
+        "charEnd": 28905,
+        "timeStart": 2090.359,
+        "timeEnd": 2096.56
+      },
+      "score": 0.9419323205947876
+    },
+    {
+      "id": "m_0388",
+      "label": "date_time",
+      "surface": "1971",
+      "canonical": "1971",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28966,
+        "charEnd": 28970,
+        "timeStart": 2093.359,
+        "timeEnd": 2099.2
+      },
+      "score": 0.9046724438667297
+    },
+    {
+      "id": "m_0389",
+      "label": "event",
+      "surface": "war",
+      "canonical": "war",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 28991,
+        "charEnd": 28994,
+        "timeStart": 2099.2,
+        "timeEnd": 2104.56
+      },
+      "score": 0.742693305015564
+    },
+    {
+      "id": "m_0390",
+      "label": "event",
+      "surface": "war",
+      "canonical": "war",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29142,
+        "charEnd": 29145,
+        "timeStart": 2110,
+        "timeEnd": 2114.96
+      },
+      "score": 0.6228387951850891
+    },
+    {
+      "id": "m_0391",
+      "label": "date_time",
+      "surface": "1907",
+      "canonical": "1907",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29155,
+        "charEnd": 29159,
+        "timeStart": 2110,
+        "timeEnd": 2114.96
+      },
+      "score": 0.942404568195343
+    },
+    {
+      "id": "m_0392",
+      "label": "law_or_policy",
+      "surface": "hay\nconvention",
+      "canonical": "hay\nconvention",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29164,
+        "charEnd": 29178,
+        "timeStart": 2110,
+        "timeEnd": 2117.76
+      },
+      "score": 0.6701345443725586
+    },
+    {
+      "id": "m_0393",
+      "label": "event",
+      "surface": "war",
+      "canonical": "war",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29207,
+        "charEnd": 29210,
+        "timeStart": 2114.96,
+        "timeEnd": 2120.2
+      },
+      "score": 0.7019878625869751
+    },
+    {
+      "id": "m_0394",
+      "label": "event",
+      "surface": "war",
+      "canonical": "war",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29315,
+        "charEnd": 29318,
+        "timeStart": 2120.2,
+        "timeEnd": 2126.0789999999997
+      },
+      "score": 0.7056699395179749
+    },
+    {
+      "id": "m_0395",
+      "label": "date_time",
+      "surface": "1925",
+      "canonical": "1925",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29483,
+        "charEnd": 29487,
+        "timeStart": 2135.48,
+        "timeEnd": 2140.8
+      },
+      "score": 0.9190858006477356
+    },
+    {
+      "id": "m_0396",
+      "label": "law_or_policy",
+      "surface": "Geneva protocol",
+      "canonical": "Geneva protocol",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29492,
+        "charEnd": 29507,
+        "timeStart": 2135.48,
+        "timeEnd": 2140.8
+      },
+      "score": 0.9390956163406372
+    },
+    {
+      "id": "m_0397",
+      "label": "role",
+      "surface": "primary\nmanufacturer",
+      "canonical": "primary\nmanufacturer",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29648,
+        "charEnd": 29668,
+        "timeStart": 2145.359,
+        "timeEnd": 2151.2400000000002
+      },
+      "score": 0.5468043684959412
+    },
+    {
+      "id": "m_0398",
+      "label": "organization",
+      "surface": "dowo chemical\ncompany",
+      "canonical": "dowo chemical\ncompany",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29677,
+        "charEnd": 29698,
+        "timeStart": 2147.599,
+        "timeEnd": 2154.48
+      },
+      "score": 0.6883751749992371
+    },
+    {
+      "id": "m_0399",
+      "label": "organization",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29788,
+        "charEnd": 29801,
+        "timeStart": 2154.48,
+        "timeEnd": 2159.64
+      },
+      "score": 0.9256417751312256
+    },
+    {
+      "id": "m_0400",
+      "label": "date_time",
+      "surface": "1949",
+      "canonical": "1949",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29907,
+        "charEnd": 29911,
+        "timeStart": 2163.48,
+        "timeEnd": 2168.839
+      },
+      "score": 0.9059983491897583
+    },
+    {
+      "id": "m_0401",
+      "label": "law_or_policy",
+      "surface": "Geneva conventions",
+      "canonical": "Geneva conventions",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 29916,
+        "charEnd": 29934,
+        "timeStart": 2163.48,
+        "timeEnd": 2168.839
+      },
+      "score": 0.9795610308647156
+    },
+    {
+      "id": "m_0402",
+      "label": "law_or_policy",
+      "surface": "war crime",
+      "canonical": "war crime",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 30186,
+        "charEnd": 30195,
+        "timeStart": 2180.079,
+        "timeEnd": 2187.28
+      },
+      "score": 0.6039888858795166
+    },
+    {
+      "id": "m_0403",
+      "label": "organization",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 30203,
+        "charEnd": 30216,
+        "timeStart": 2184.16,
+        "timeEnd": 2189.04
+      },
+      "score": 0.9261913895606995
+    },
+    {
+      "id": "m_0404",
+      "label": "law_or_policy",
+      "surface": "war crime",
+      "canonical": "war crime",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 30471,
+        "charEnd": 30480,
+        "timeStart": 2200.2,
+        "timeEnd": 2205.52
+      },
+      "score": 0.6015728712081909
+    },
+    {
+      "id": "m_0405",
+      "label": "organization",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 30488,
+        "charEnd": 30501,
+        "timeStart": 2200.2,
+        "timeEnd": 2205.52
+      },
+      "score": 0.9277286529541016
+    },
+    {
+      "id": "m_0406",
+      "label": "date_time",
+      "surface": "1977",
+      "canonical": "1977",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 30793,
+        "charEnd": 30797,
+        "timeStart": 2221.56,
+        "timeEnd": 2227.92
+      },
+      "score": 0.9055174589157104
+    },
+    {
+      "id": "m_0407",
+      "label": "law_or_policy",
+      "surface": "Geneva\nconventions",
+      "canonical": "Geneva conventions",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 30802,
+        "charEnd": 30820,
+        "timeStart": 2221.56,
+        "timeEnd": 2230.359
+      },
+      "score": 0.9745423197746277
+    },
+    {
+      "id": "m_0408",
+      "label": "date_time",
+      "surface": "1984",
+      "canonical": "1984",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31020,
+        "charEnd": 31024,
+        "timeStart": 2237.24,
+        "timeEnd": 2243.68
+      },
+      "score": 0.7619739770889282
+    },
+    {
+      "id": "m_0409",
+      "label": "organization",
+      "surface": "US veterans",
+      "canonical": "US veterans",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31025,
+        "charEnd": 31036,
+        "timeStart": 2237.24,
+        "timeEnd": 2243.68
+      },
+      "score": 0.6814804673194885
+    },
+    {
+      "id": "m_0410",
+      "label": "organization",
+      "surface": "chemical companies",
+      "canonical": "chemical companies",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31044,
+        "charEnd": 31062,
+        "timeStart": 2241.8,
+        "timeEnd": 2245.04
+      },
+      "score": 0.8498353958129883
+    },
+    {
+      "id": "m_0411",
+      "label": "quantity",
+      "surface": "$180\nmillion",
+      "canonical": "$180\nmillion",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31079,
+        "charEnd": 31091,
+        "timeStart": 2243.68,
+        "timeEnd": 2249.7599999999998
+      },
+      "score": 0.5976719260215759
+    },
+    {
+      "id": "m_0412",
+      "label": "date_time",
+      "surface": "2004",
+      "canonical": "2004",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31164,
+        "charEnd": 31168,
+        "timeStart": 2249.76,
+        "timeEnd": 2254.7200000000003
+      },
+      "score": 0.7122383713722229
+    },
+    {
+      "id": "m_0413",
+      "label": "person",
+      "surface": "Jill Montgomery",
+      "canonical": "Jill Montgomery",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31169,
+        "charEnd": 31184,
+        "timeStart": 2249.76,
+        "timeEnd": 2254.7200000000003
+      },
+      "score": 0.9918941855430603
+    },
+    {
+      "id": "m_0414",
+      "label": "organization",
+      "surface": "Monsanto company",
+      "canonical": "Monsanto company",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31202,
+        "charEnd": 31218,
+        "timeStart": 2252.76,
+        "timeEnd": 2257.5200000000004
+      },
+      "score": 0.9107198715209961
+    },
+    {
+      "id": "m_0415",
+      "label": "date_time",
+      "surface": "1991",
+      "canonical": "1991",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31520,
+        "charEnd": 31524,
+        "timeStart": 2279.4,
+        "timeEnd": 2284.04
+      },
+      "score": 0.935808002948761
+    },
+    {
+      "id": "m_0416",
+      "label": "organization",
+      "surface": "VA",
+      "canonical": "VA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31537,
+        "charEnd": 31539,
+        "timeStart": 2279.4,
+        "timeEnd": 2284.04
+      },
+      "score": 0.8119330406188965
+    },
+    {
+      "id": "m_0417",
+      "label": "person",
+      "surface": "my father-in-law",
+      "canonical": "my father-in-law",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31634,
+        "charEnd": 31650,
+        "timeStart": 2287.76,
+        "timeEnd": 2292.3590000000004
+      },
+      "score": 0.9169052243232727
+    },
+    {
+      "id": "m_0418",
+      "label": "location",
+      "surface": "Vietnam",
+      "canonical": "Vietnam",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31661,
+        "charEnd": 31668,
+        "timeStart": 2287.76,
+        "timeEnd": 2292.3590000000004
+      },
+      "score": 0.797304630279541
+    },
+    {
+      "id": "m_0419",
+      "label": "date_time",
+      "surface": "1991",
+      "canonical": "1991",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31785,
+        "charEnd": 31789,
+        "timeStart": 2298.04,
+        "timeEnd": 2303.16
+      },
+      "score": 0.9452887773513794
+    },
+    {
+      "id": "m_0420",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31837,
+        "charEnd": 31847,
+        "timeStart": 2300.599,
+        "timeEnd": 2307.04
+      },
+      "score": 0.6380487680435181
+    },
+    {
+      "id": "m_0421",
+      "label": "date_time",
+      "surface": "2021",
+      "canonical": "2021",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 31893,
+        "charEnd": 31897,
+        "timeStart": 2303.16,
+        "timeEnd": 2310.1189999999997
+      },
+      "score": 0.8518748879432678
+    },
+    {
+      "id": "m_0422",
+      "label": "date_time",
+      "surface": "1955 and 1975",
+      "canonical": "1955 and 1975",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32155,
+        "charEnd": 32168,
+        "timeStart": 2330.52,
+        "timeEnd": 2338.16
+      },
+      "score": 0.626704216003418
+    },
+    {
+      "id": "m_0423",
+      "label": "quantity",
+      "surface": "2.7 million\npeople",
+      "canonical": "2.7 million\npeople",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32169,
+        "charEnd": 32187,
+        "timeStart": 2330.52,
+        "timeEnd": 2341.6400000000003
+      },
+      "score": 0.8359667062759399
+    },
+    {
+      "id": "m_0424",
+      "label": "location",
+      "surface": "Vietnam",
+      "canonical": "Vietnam",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32205,
+        "charEnd": 32212,
+        "timeStart": 2335.28,
+        "timeEnd": 2341.6400000000003
+      },
+      "score": 0.9270144104957581
+    },
+    {
+      "id": "m_0425",
+      "label": "quantity",
+      "surface": "50",
+      "canonical": "50",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32213,
+        "charEnd": 32215,
+        "timeStart": 2335.28,
+        "timeEnd": 2341.6400000000003
+      },
+      "score": 0.7734455466270447
+    },
+    {
+      "id": "m_0426",
+      "label": "quantity",
+      "surface": "8,000",
+      "canonical": "8,000",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32216,
+        "charEnd": 32221,
+        "timeStart": 2335.28,
+        "timeEnd": 2341.6400000000003
+      },
+      "score": 0.7801823616027832
+    },
+    {
+      "id": "m_0427",
+      "label": "quantity",
+      "surface": "300,000",
+      "canonical": "300,000",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32227,
+        "charEnd": 32234,
+        "timeStart": 2338.16,
+        "timeEnd": 2344.3999999999996
+      },
+      "score": 0.9347874522209167
+    },
+    {
+      "id": "m_0428",
+      "label": "quantity",
+      "surface": "3,000",
+      "canonical": "3,000",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32243,
+        "charEnd": 32248,
+        "timeStart": 2338.16,
+        "timeEnd": 2344.3999999999996
+      },
+      "score": 0.8125889897346497
+    },
+    {
+      "id": "m_0429",
+      "label": "quantity",
+      "surface": "1500",
+      "canonical": "1500",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32277,
+        "charEnd": 32281,
+        "timeStart": 2341.64,
+        "timeEnd": 2348.1189999999997
+      },
+      "score": 0.7833185195922852
+    },
+    {
+      "id": "m_0430",
+      "label": "organization",
+      "surface": "VA",
+      "canonical": "VA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32334,
+        "charEnd": 32336,
+        "timeStart": 2344.4,
+        "timeEnd": 2351.48
+      },
+      "score": 0.8335577249526978
+    },
+    {
+      "id": "m_0431",
+      "label": "quantity",
+      "surface": "300,000 to 400,000",
+      "canonical": "300,000 to 400,000",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32347,
+        "charEnd": 32365,
+        "timeStart": 2348.119,
+        "timeEnd": 2353.44
+      },
+      "score": 0.9194867014884949
+    },
+    {
+      "id": "m_0432",
+      "label": "group_or_movement",
+      "surface": "Ordinary People Like Us",
+      "canonical": "Ordinary People Like Us",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32634,
+        "charEnd": 32657,
+        "timeStart": 2370.04,
+        "timeEnd": 2374.96
+      },
+      "score": 0.7364677786827087
+    },
+    {
+      "id": "m_0433",
+      "label": "law_or_policy",
+      "surface": "law",
+      "canonical": "law",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32898,
+        "charEnd": 32901,
+        "timeStart": 2385.56,
+        "timeEnd": 2390.2
+      },
+      "score": 0.9797413349151611
+    },
+    {
+      "id": "m_0434",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 32906,
+        "charEnd": 32916,
+        "timeStart": 2385.56,
+        "timeEnd": 2390.2
+      },
+      "score": 0.7833006381988525
+    },
+    {
+      "id": "m_0435",
+      "label": "law_or_policy",
+      "surface": "law",
+      "canonical": "law",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33042,
+        "charEnd": 33045,
+        "timeStart": 2392.44,
+        "timeEnd": 2397.359
+      },
+      "score": 0.9828590750694275
+    },
+    {
+      "id": "m_0436",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33088,
+        "charEnd": 33098,
+        "timeStart": 2397.359,
+        "timeEnd": 2403.2
+      },
+      "score": 0.7389495968818665
+    },
+    {
+      "id": "m_0437",
+      "label": "law_or_policy",
+      "surface": "law",
+      "canonical": "law",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33128,
+        "charEnd": 33131,
+        "timeStart": 2399.56,
+        "timeEnd": 2403.2
+      },
+      "score": 0.9789077639579773
+    },
+    {
+      "id": "m_0438",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33205,
+        "charEnd": 33210,
+        "timeStart": 2413.68,
+        "timeEnd": 2417.359
+      },
+      "score": 0.9680987000465393
+    },
+    {
+      "id": "m_0439",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33285,
+        "charEnd": 33290,
+        "timeStart": 2417.359,
+        "timeEnd": 2421.5989999999997
+      },
+      "score": 0.9871151447296143
+    },
+    {
+      "id": "m_0440",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33423,
+        "charEnd": 33428,
+        "timeStart": 2423.8,
+        "timeEnd": 2428.48
+      },
+      "score": 0.981144368648529
+    },
+    {
+      "id": "m_0441",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33459,
+        "charEnd": 33464,
+        "timeStart": 2426.44,
+        "timeEnd": 2430.92
+      },
+      "score": 0.9877155423164368
+    },
+    {
+      "id": "m_0442",
+      "label": "person",
+      "surface": "Annie Jacobson",
+      "canonical": "Annie Jacobson",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33465,
+        "charEnd": 33479,
+        "timeStart": 2428.48,
+        "timeEnd": 2432.64
+      },
+      "score": 0.9638578295707703
+    },
+    {
+      "id": "m_0443",
+      "label": "person",
+      "surface": "Sharon Weinberger",
+      "canonical": "Sharon Weinberger",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33484,
+        "charEnd": 33501,
+        "timeStart": 2428.48,
+        "timeEnd": 2432.64
+      },
+      "score": 0.9591665863990784
+    },
+    {
+      "id": "m_0444",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33638,
+        "charEnd": 33643,
+        "timeStart": 2436.52,
+        "timeEnd": 2440.839
+      },
+      "score": 0.9775978922843933
+    },
+    {
+      "id": "m_0445",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33850,
+        "charEnd": 33855,
+        "timeStart": 2449.68,
+        "timeEnd": 2455.44
+      },
+      "score": 0.9885141253471375
+    },
+    {
+      "id": "m_0446",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33919,
+        "charEnd": 33924,
+        "timeStart": 2452,
+        "timeEnd": 2456.92
+      },
+      "score": 0.9940063953399658
+    },
+    {
+      "id": "m_0447",
+      "label": "law_or_policy",
+      "surface": "laws",
+      "canonical": "laws",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 33940,
+        "charEnd": 33944,
+        "timeStart": 2455.44,
+        "timeEnd": 2459.4
+      },
+      "score": 0.8634238243103027
+    },
+    {
+      "id": "m_0448",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34109,
+        "charEnd": 34114,
+        "timeStart": 2465.88,
+        "timeEnd": 2472.6800000000003
+      },
+      "score": 0.9928222298622131
+    },
+    {
+      "id": "m_0449",
+      "label": "quantity",
+      "surface": "220 people",
+      "canonical": "220 people",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34123,
+        "charEnd": 34133,
+        "timeStart": 2465.88,
+        "timeEnd": 2472.6800000000003
+      },
+      "score": 0.7983647584915161
+    },
+    {
+      "id": "m_0450",
+      "label": "quantity",
+      "surface": "$4 billion",
+      "canonical": "$4 billion",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34168,
+        "charEnd": 34178,
+        "timeStart": 2469.64,
+        "timeEnd": 2474.8799999999997
+      },
+      "score": 0.6311120986938477
+    },
+    {
+      "id": "m_0451",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34246,
+        "charEnd": 34251,
+        "timeStart": 2474.88,
+        "timeEnd": 2479.079
+      },
+      "score": 0.9907671213150024
+    },
+    {
+      "id": "m_0452",
+      "label": "person",
+      "surface": "Annie Jacobson",
+      "canonical": "Annie Jacobson",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34458,
+        "charEnd": 34472,
+        "timeStart": 2487.64,
+        "timeEnd": 2492.359
+      },
+      "score": 0.9684582352638245
+    },
+    {
+      "id": "m_0453",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34648,
+        "charEnd": 34653,
+        "timeStart": 2502.96,
+        "timeEnd": 2509.48
+      },
+      "score": 0.9914975762367249
+    },
+    {
+      "id": "m_0454",
+      "label": "organization",
+      "surface": "Defense contractors",
+      "canonical": "Defense contractors",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34684,
+        "charEnd": 34703,
+        "timeStart": 2506.839,
+        "timeEnd": 2512.39
+      },
+      "score": 0.9304637312889099
+    },
+    {
+      "id": "m_0455",
+      "label": "person",
+      "surface": "Annie Jacobson",
+      "canonical": "Annie Jacobson",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34766,
+        "charEnd": 34780,
+        "timeStart": 2513.839,
+        "timeEnd": 2518.92
+      },
+      "score": 0.9647183418273926
+    },
+    {
+      "id": "m_0456",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34795,
+        "charEnd": 34800,
+        "timeStart": 2516.359,
+        "timeEnd": 2521.64
+      },
+      "score": 0.9890590310096741
+    },
+    {
+      "id": "m_0457",
+      "label": "organization",
+      "surface": "military\nindustrial complex",
+      "canonical": "military\nindustrial complex",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34827,
+        "charEnd": 34854,
+        "timeStart": 2516.359,
+        "timeEnd": 2523.2400000000002
+      },
+      "score": 0.7874242067337036
+    },
+    {
+      "id": "m_0458",
+      "label": "person",
+      "surface": "President Eisenhower",
+      "canonical": "President Eisenhower",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 34956,
+        "charEnd": 34976,
+        "timeStart": 2525.92,
+        "timeEnd": 2529.96
+      },
+      "score": 0.9132242798805237
+    },
+    {
+      "id": "m_0459",
+      "label": "event",
+      "surface": "war",
+      "canonical": "war",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35007,
+        "charEnd": 35010,
+        "timeStart": 2527.56,
+        "timeEnd": 2533.92
+      },
+      "score": 0.8277309536933899
+    },
+    {
+      "id": "m_0460",
+      "label": "event",
+      "surface": "War",
+      "canonical": "war",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35041,
+        "charEnd": 35044,
+        "timeStart": 2529.96,
+        "timeEnd": 2536.64
+      },
+      "score": 0.7862495183944702
+    },
+    {
+      "id": "m_0461",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35060,
+        "charEnd": 35065,
+        "timeStart": 2529.96,
+        "timeEnd": 2536.64
+      },
+      "score": 0.9945893287658691
+    },
+    {
+      "id": "m_0462",
+      "label": "technology",
+      "surface": "cell phones",
+      "canonical": "cell phones",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35127,
+        "charEnd": 35138,
+        "timeStart": 2536.64,
+        "timeEnd": 2541.5589999999997
+      },
+      "score": 0.7403557300567627
+    },
+    {
+      "id": "m_0463",
+      "label": "technology",
+      "surface": "GPS",
+      "canonical": "GPS",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35143,
+        "charEnd": 35146,
+        "timeStart": 2536.64,
+        "timeEnd": 2541.5589999999997
+      },
+      "score": 0.9348286390304565
+    },
+    {
+      "id": "m_0464",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35147,
+        "charEnd": 35152,
+        "timeStart": 2539.24,
+        "timeEnd": 2544.24
+      },
+      "score": 0.9915333390235901
+    },
+    {
+      "id": "m_0465",
+      "label": "technology",
+      "surface": "Prosthetics",
+      "canonical": "Prosthetics",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35171,
+        "charEnd": 35182,
+        "timeStart": 2539.24,
+        "timeEnd": 2544.24
+      },
+      "score": 0.8959577679634094
+    },
+    {
+      "id": "m_0466",
+      "label": "event",
+      "surface": "emergency situations",
+      "canonical": "emergency situations",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35429,
+        "charEnd": 35449,
+        "timeStart": 2555.16,
+        "timeEnd": 2560.64
+      },
+      "score": 0.5111968517303467
+    },
+    {
+      "id": "m_0467",
+      "label": "technology",
+      "surface": "Advanced Medical\nImaging",
+      "canonical": "Advanced Medical\nImaging",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35450,
+        "charEnd": 35474,
+        "timeStart": 2555.16,
+        "timeEnd": 2563.599
+      },
+      "score": 0.9408206343650818
+    },
+    {
+      "id": "m_0468",
+      "label": "technology",
+      "surface": "ultrasound MRI",
+      "canonical": "ultrasound MRI",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35483,
+        "charEnd": 35497,
+        "timeStart": 2557.8,
+        "timeEnd": 2563.599
+      },
+      "score": 0.6487047076225281
+    },
+    {
+      "id": "m_0469",
+      "label": "technology",
+      "surface": "brain\nImaging",
+      "canonical": "brain\nImaging",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35502,
+        "charEnd": 35515,
+        "timeStart": 2557.8,
+        "timeEnd": 2566.7599999999998
+      },
+      "score": 0.919712245464325
+    },
+    {
+      "id": "m_0470",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35544,
+        "charEnd": 35549,
+        "timeStart": 2563.599,
+        "timeEnd": 2569
+      },
+      "score": 0.9839316010475159
+    },
+    {
+      "id": "m_0471",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35588,
+        "charEnd": 35593,
+        "timeStart": 2566.76,
+        "timeEnd": 2571.44
+      },
+      "score": 0.9934855103492737
+    },
+    {
+      "id": "m_0472",
+      "label": "work_of_media",
+      "surface": "A\nFew Good Men",
+      "canonical": "A\nFew Good Men",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35732,
+        "charEnd": 35746,
+        "timeStart": 2573.559,
+        "timeEnd": 2581.359
+      },
+      "score": 0.981174111366272
+    },
+    {
+      "id": "m_0473",
+      "label": "person",
+      "surface": "colonel",
+      "canonical": "colonel",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 35787,
+        "charEnd": 35794,
+        "timeStart": 2579.04,
+        "timeEnd": 2583.4
+      },
+      "score": 0.8094549179077148
+    },
+    {
+      "id": "m_0474",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36013,
+        "charEnd": 36018,
+        "timeStart": 2595.44,
+        "timeEnd": 2601.16
+      },
+      "score": 0.9939715266227722
+    },
+    {
+      "id": "m_0475",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36082,
+        "charEnd": 36087,
+        "timeStart": 2598.2,
+        "timeEnd": 2603.9199999999996
+      },
+      "score": 0.9909266233444214
+    },
+    {
+      "id": "m_0476",
+      "label": "date_time",
+      "surface": "1958",
+      "canonical": "1958",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36102,
+        "charEnd": 36106,
+        "timeStart": 2601.16,
+        "timeEnd": 2605.7599999999998
+      },
+      "score": 0.9566203951835632
+    },
+    {
+      "id": "m_0477",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36140,
+        "charEnd": 36153,
+        "timeStart": 2603.92,
+        "timeEnd": 2608.28
+      },
+      "score": 0.8878382444381714
+    },
+    {
+      "id": "m_0478",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36191,
+        "charEnd": 36201,
+        "timeStart": 2605.76,
+        "timeEnd": 2611.28
+      },
+      "score": 0.6081868410110474
+    },
+    {
+      "id": "m_0479",
+      "label": "quantity",
+      "surface": "66 years",
+      "canonical": "66 years",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36210,
+        "charEnd": 36218,
+        "timeStart": 2608.28,
+        "timeEnd": 2612.92
+      },
+      "score": 0.7955994606018066
+    },
+    {
+      "id": "m_0480",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36219,
+        "charEnd": 36224,
+        "timeStart": 2608.28,
+        "timeEnd": 2612.92
+      },
+      "score": 0.9908381104469299
+    },
+    {
+      "id": "m_0481",
+      "label": "technology",
+      "surface": "UFOs",
+      "canonical": "UFOs",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36315,
+        "charEnd": 36319,
+        "timeStart": 2615.76,
+        "timeEnd": 2619.3590000000004
+      },
+      "score": 0.5375209450721741
+    },
+    {
+      "id": "m_0482",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36378,
+        "charEnd": 36388,
+        "timeStart": 2619.359,
+        "timeEnd": 2624.68
+      },
+      "score": 0.5442859530448914
+    },
+    {
+      "id": "m_0483",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36434,
+        "charEnd": 36439,
+        "timeStart": 2622.4,
+        "timeEnd": 2627.2000000000003
+      },
+      "score": 0.9944034814834595
+    },
+    {
+      "id": "m_0484",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36455,
+        "charEnd": 36460,
+        "timeStart": 2624.68,
+        "timeEnd": 2630.48
+      },
+      "score": 0.9921782612800598
+    },
+    {
+      "id": "m_0485",
+      "label": "organization",
+      "surface": "darpa",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36533,
+        "charEnd": 36538,
+        "timeStart": 2630.48,
+        "timeEnd": 2635.119
+      },
+      "score": 0.9927555918693542
+    },
+    {
+      "id": "m_0486",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36556,
+        "charEnd": 36566,
+        "timeStart": 2632.52,
+        "timeEnd": 2637.48
+      },
+      "score": 0.500777542591095
+    },
+    {
+      "id": "m_0487",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36608,
+        "charEnd": 36613,
+        "timeStart": 2635.119,
+        "timeEnd": 2638.559
+      },
+      "score": 0.9955847859382629
+    },
+    {
+      "id": "m_0488",
+      "label": "event",
+      "surface": "war",
+      "canonical": "war",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36644,
+        "charEnd": 36647,
+        "timeStart": 2638.559,
+        "timeEnd": 2643.52
+      },
+      "score": 0.8558017611503601
+    },
+    {
+      "id": "m_0489",
+      "label": "nationality_or_ethnicity",
+      "surface": "American",
+      "canonical": "American",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36732,
+        "charEnd": 36740,
+        "timeStart": 2643.52,
+        "timeEnd": 2649.92
+      },
+      "score": 0.7951522469520569
+    },
+    {
+      "id": "m_0490",
+      "label": "organization",
+      "surface": "DARPA",
+      "canonical": "DARPA",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36749,
+        "charEnd": 36754,
+        "timeStart": 2643.52,
+        "timeEnd": 2649.92
+      },
+      "score": 0.9924610257148743
+    },
+    {
+      "id": "m_0491",
+      "label": "date_time",
+      "surface": "today",
+      "canonical": "today",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36810,
+        "charEnd": 36815,
+        "timeStart": 2670,
+        "timeEnd": 2674.359
+      },
+      "score": 0.6183242797851562
+    },
+    {
+      "id": "m_0492",
+      "label": "person",
+      "surface": "AJ",
+      "canonical": "AJ",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36827,
+        "charEnd": 36829,
+        "timeStart": 2670,
+        "timeEnd": 2674.359
+      },
+      "score": 0.965090274810791
+    },
+    {
+      "id": "m_0493",
+      "label": "person",
+      "surface": "cyle fish",
+      "canonical": "cyle fish",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36837,
+        "charEnd": 36846,
+        "timeStart": 2670,
+        "timeEnd": 2674.359
+      },
+      "score": 0.6263936758041382
+    },
+    {
+      "id": "m_0494",
+      "label": "date_time",
+      "surface": "today",
+      "canonical": "today",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 36949,
+        "charEnd": 36954,
+        "timeStart": 2677.119,
+        "timeEnd": 2682.1600000000003
+      },
+      "score": 0.6839480400085449
+    },
+    {
+      "id": "m_0495",
+      "label": "date_time",
+      "surface": "today",
+      "canonical": "today",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37018,
+        "charEnd": 37023,
+        "timeStart": 2682.16,
+        "timeEnd": 2686.72
+      },
+      "score": 0.6172456741333008
+    },
+    {
+      "id": "m_0496",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37096,
+        "charEnd": 37103,
+        "timeStart": 2686.72,
+        "timeEnd": 2690.72
+      },
+      "score": 0.8945139050483704
+    },
+    {
+      "id": "m_0497",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37191,
+        "charEnd": 37198,
+        "timeStart": 2690.72,
+        "timeEnd": 2694.1189999999997
+      },
+      "score": 0.9295288324356079
+    },
+    {
+      "id": "m_0498",
+      "label": "date_time",
+      "surface": "today",
+      "canonical": "today",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37199,
+        "charEnd": 37204,
+        "timeStart": 2692.359,
+        "timeEnd": 2695.4
+      },
+      "score": 0.5606237053871155
+    },
+    {
+      "id": "m_0499",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37478,
+        "charEnd": 37485,
+        "timeStart": 2706.359,
+        "timeEnd": 2709.839
+      },
+      "score": 0.9151674509048462
+    },
+    {
+      "id": "m_0500",
+      "label": "work_of_media",
+      "surface": "episodes",
+      "canonical": "episodes",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37502,
+        "charEnd": 37510,
+        "timeStart": 2708.16,
+        "timeEnd": 2711.7599999999998
+      },
+      "score": 0.5482882261276245
+    },
+    {
+      "id": "m_0501",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37543,
+        "charEnd": 37550,
+        "timeStart": 2709.839,
+        "timeEnd": 2713.44
+      },
+      "score": 0.9092836380004883
+    },
+    {
+      "id": "m_0502",
+      "label": "work_of_media",
+      "surface": "episodes",
+      "canonical": "episodes",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37557,
+        "charEnd": 37565,
+        "timeStart": 2709.839,
+        "timeEnd": 2713.44
+      },
+      "score": 0.5537129044532776
+    },
+    {
+      "id": "m_0503",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37639,
+        "charEnd": 37646,
+        "timeStart": 2713.44,
+        "timeEnd": 2717.96
+      },
+      "score": 0.6943004727363586
+    },
+    {
+      "id": "m_0504",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37673,
+        "charEnd": 37681,
+        "timeStart": 2715.8,
+        "timeEnd": 2720.559
+      },
+      "score": 0.9783669114112854
+    },
+    {
+      "id": "m_0505",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37692,
+        "charEnd": 37699,
+        "timeStart": 2717.96,
+        "timeEnd": 2722.559
+      },
+      "score": 0.6627609729766846
+    },
+    {
+      "id": "m_0506",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37747,
+        "charEnd": 37755,
+        "timeStart": 2720.559,
+        "timeEnd": 2724.48
+      },
+      "score": 0.9804748892784119
+    },
+    {
+      "id": "m_0507",
+      "label": "location",
+      "surface": "Discord",
+      "canonical": "Discord",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 37849,
+        "charEnd": 37856,
+        "timeStart": 2726.48,
+        "timeEnd": 2730.96
+      },
+      "score": 0.6007084846496582
+    },
+    {
+      "id": "m_0508",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38113,
+        "charEnd": 38121,
+        "timeStart": 2738.92,
+        "timeEnd": 2743.119
+      },
+      "score": 0.9783018827438354
+    },
+    {
+      "id": "m_0509",
+      "label": "organization",
+      "surface": "wi\nfiles",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38186,
+        "charEnd": 38194,
+        "timeStart": 2741.119,
+        "timeEnd": 2748.6800000000003
+      },
+      "score": 0.9773876070976257
+    },
+    {
+      "id": "m_0510",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38422,
+        "charEnd": 38429,
+        "timeStart": 2757.079,
+        "timeEnd": 2763.6800000000003
+      },
+      "score": 0.9861568212509155
+    },
+    {
+      "id": "m_0511",
+      "label": "work_of_media",
+      "surface": "episode",
+      "canonical": "episode",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38484,
+        "charEnd": 38491,
+        "timeStart": 2760.079,
+        "timeEnd": 2764.7200000000003
+      },
+      "score": 0.7837800979614258
+    },
+    {
+      "id": "m_0512",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38717,
+        "charEnd": 38724,
+        "timeStart": 2777.96,
+        "timeEnd": 2781.119
+      },
+      "score": 0.5242067575454712
+    },
+    {
+      "id": "m_0513",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38755,
+        "charEnd": 38762,
+        "timeStart": 2779.44,
+        "timeEnd": 2782.44
+      },
+      "score": 0.9761614203453064
+    },
+    {
+      "id": "m_0514",
+      "label": "quantity",
+      "surface": "three bucks",
+      "canonical": "three bucks",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38780,
+        "charEnd": 38791,
+        "timeStart": 2781.119,
+        "timeEnd": 2783.96
+      },
+      "score": 0.6806125044822693
+    },
+    {
+      "id": "m_0515",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38886,
+        "charEnd": 38893,
+        "timeStart": 2786.319,
+        "timeEnd": 2790.64
+      },
+      "score": 0.9861854910850525
+    },
+    {
+      "id": "m_0516",
+      "label": "technology",
+      "surface": "wifi",
+      "canonical": "wifi",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38982,
+        "charEnd": 38986,
+        "timeStart": 2790.64,
+        "timeEnd": 2794.7999999999997
+      },
+      "score": 0.795552670955658
+    },
+    {
+      "id": "m_0517",
+      "label": "organization",
+      "surface": "team",
+      "canonical": "team",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 38989,
+        "charEnd": 38993,
+        "timeStart": 2790.64,
+        "timeEnd": 2794.7999999999997
+      },
+      "score": 0.5328821539878845
+    },
+    {
+      "id": "m_0518",
+      "label": "work_of_media",
+      "surface": "Bible",
+      "canonical": "Bible",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 39819,
+        "charEnd": 39824,
+        "timeStart": 2855.4,
+        "timeEnd": 2863.88
+      },
+      "score": 0.5935830473899841
+    },
+    {
+      "id": "m_0519",
+      "label": "person",
+      "surface": "Stanley curi",
+      "canonical": "Stanley curi",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40102,
+        "charEnd": 40114,
+        "timeStart": 2896.599,
+        "timeEnd": 2903.2400000000002
+      },
+      "score": 0.797552764415741
+    },
+    {
+      "id": "m_0520",
+      "label": "event",
+      "surface": "the moon\nlanding",
+      "canonical": "the moon\nlanding",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40120,
+        "charEnd": 40136,
+        "timeStart": 2896.599,
+        "timeEnd": 2907.119
+      },
+      "score": 0.5211058855056763
+    },
+    {
+      "id": "m_0521",
+      "label": "person",
+      "surface": "Sid",
+      "canonical": "Sid",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40447,
+        "charEnd": 40450,
+        "timeStart": 2954.28,
+        "timeEnd": 2962.7200000000003
+      },
+      "score": 0.8856405019760132
+    },
+    {
+      "id": "m_0522",
+      "label": "event",
+      "surface": "solar storm",
+      "canonical": "solar storm",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40459,
+        "charEnd": 40470,
+        "timeStart": 2954.28,
+        "timeEnd": 2962.7200000000003
+      },
+      "score": 0.9014197587966919
+    },
+    {
+      "id": "m_0523",
+      "label": "work_of_media",
+      "surface": "The Secret City",
+      "canonical": "The Secret City",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40494,
+        "charEnd": 40509,
+        "timeStart": 2957.44,
+        "timeEnd": 2965.599
+      },
+      "score": 0.8111656308174133
+    },
+    {
+      "id": "m_0524",
+      "label": "facility",
+      "surface": "Star Gate",
+      "canonical": "Star Gate",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40575,
+        "charEnd": 40584,
+        "timeStart": 2965.599,
+        "timeEnd": 2972.319
+      },
+      "score": 0.5374170541763306
+    },
+    {
+      "id": "m_0525",
+      "label": "person",
+      "surface": "IAT",
+      "canonical": "IAT",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40810,
+        "charEnd": 40813,
+        "timeStart": 2997.839,
+        "timeEnd": 3002.88
+      },
+      "score": 0.6112170219421387
+    },
+    {
+      "id": "m_0526",
+      "label": "date_time",
+      "surface": "Thursday",
+      "canonical": "Thursday",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40849,
+        "charEnd": 40857,
+        "timeStart": 3003.44,
+        "timeEnd": 3008.76
+      },
+      "score": 0.6975268125534058
+    },
+    {
+      "id": "m_0527",
+      "label": "date_time",
+      "surface": "night",
+      "canonical": "night",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40858,
+        "charEnd": 40863,
+        "timeStart": 3003.44,
+        "timeEnd": 3008.76
+      },
+      "score": 0.5043435096740723
+    },
+    {
+      "id": "m_0528",
+      "label": "date_time",
+      "surface": "Wednesday",
+      "canonical": "Wednesday",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40864,
+        "charEnd": 40873,
+        "timeStart": 3006.359,
+        "timeEnd": 3012.319
+      },
+      "score": 0.7386099100112915
+    },
+    {
+      "id": "m_0529",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 40961,
+        "charEnd": 40966,
+        "timeStart": 3023.74,
+        "timeEnd": 3031.5989999999997
+      },
+      "score": 0.5528810024261475
+    },
+    {
+      "id": "m_0530",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 41179,
+        "charEnd": 41184,
+        "timeStart": 3056.69,
+        "timeEnd": 3060.959
+      },
+      "score": 0.5529305338859558
+    },
+    {
+      "id": "m_0531",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "zo68B3UG9VU",
+        "charStart": 41187,
+        "charEnd": 41192,
+        "timeStart": 3063.7,
+        "timeEnd": 3068.8599999999997
+      },
+      "score": 0.5571532249450684
+    }
+  ]
+}

@@ -10,7 +10,6 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
-  statSync,
   writeFileSync,
   renameSync,
 } from "node:fs";
@@ -26,7 +25,12 @@ export type CatalogStatus =
 // single row and write per-video artifacts. The graph-level stages
 // (propagation, truth, novel, contradictions) are tracked on the file-level
 // `graph` watermark instead of on individual rows — see GraphWatermark.
-export type StageName = "fetched" | "nlp" | "ai" | "per-claim";
+export type StageName =
+  | "fetched"
+  | "entities"
+  | "relations"
+  | "ai"
+  | "per-claim";
 
 export interface StageRecord {
   at: string;       // ISO timestamp when the stage last ran
@@ -89,34 +93,22 @@ interface CatalogFile {
   graph?: GraphWatermark;
 }
 
-export const CATALOG_SCHEMA_VERSION = 4;
+export const CATALOG_SCHEMA_VERSION = 5;
 
-// Data-dir used by the v1→v2 migration to infer which stages have already
-// run based on what's on disk. Defaults to the repo data/ dir but overridable
-// for tests.
-let inferDataDir: string | null = null;
-export function setMigrationDataDir(path: string | null): void {
-  inferDataDir = path;
-}
-
-function defaultDataDir(): string {
-  return join(process.cwd(), "data");
-}
-
-function safeMtime(p: string): number {
-  try {
-    return statSync(p).mtimeMs;
-  } catch {
-    return 0;
-  }
+// Historic v1→v2 migration used to read the filesystem to infer which
+// stages had already run. That inference was specific to the retired
+// `nlp` stage, so the hook is now a no-op kept for backwards
+// compatibility with tests that still call it. Safe to drop once the
+// tests are updated.
+export function setMigrationDataDir(_path: string | null): void {
+  /* no-op: migration no longer inspects the filesystem */
 }
 
 // v1→v2: add the `stages` map per row and the top-level `graph` watermark.
-// The upgrade reads the filesystem to infer which stages are already
-// complete, so an existing corpus doesn't need a full re-run.
+// The upgrade preserves any existing `fetched` timestamp but does not try
+// to infer downstream stages — downstream stages (entities/relations/ai)
+// will run fresh on the next pipeline tick.
 function migrateV1toV2(f: CatalogFile): CatalogFile {
-  const dataDir = inferDataDir ?? defaultDataDir();
-  const nlpDir = join(dataDir, "nlp");
   const now = new Date().toISOString();
 
   const nextRows: Record<string, CatalogRow> = {};
@@ -126,11 +118,10 @@ function migrateV1toV2(f: CatalogFile): CatalogFile {
       const legacyFetchedAt = (row as { fetchedAt?: string }).fetchedAt;
       stages.fetched = { at: legacyFetchedAt ?? now };
     }
-    const nlpFile = join(nlpDir, `${id}.json`);
-    const nlpMtime = safeMtime(nlpFile);
-    if (nlpMtime > 0 && !stages.nlp) {
-      stages.nlp = { at: new Date(nlpMtime).toISOString() };
-    }
+    // v1→v2 historically backfilled a `stages.nlp` record from the
+    // mtime of `data/nlp/<id>.json`, but the nlp pipeline stage was
+    // retired in favor of `entities` + `relations` and v4→v5 now
+    // strips any stale `stages.nlp` key anyway. No backfill.
     nextRows[id] = { ...row, stages };
   }
 
@@ -195,6 +186,27 @@ function migrateV3toV4(f: CatalogFile): CatalogFile {
   return { version: 4, rows: nextRows, graph: f.graph };
 }
 
+// v4 → v5: the legacy `nlp` pipeline stage was retired and replaced by
+// the split `entities` + `relations` stages. Old catalog rows may still
+// carry a `stages.nlp` record left behind by the regex+BERT pipeline.
+// Nothing reads that key any more, and leaving it on a row would fool
+// the CLI "stage up-to-date" display into counting it. Strip it.
+function migrateV4toV5(f: CatalogFile): CatalogFile {
+  const nextRows: Record<string, CatalogRow> = {};
+  for (const [id, row] of Object.entries(f.rows)) {
+    if (row.stages && "nlp" in row.stages) {
+      const { nlp: _nlp, ...keptStages } = row.stages as StageMap & {
+        nlp?: unknown;
+      };
+      void _nlp;
+      nextRows[id] = { ...row, stages: keptStages };
+    } else {
+      nextRows[id] = row;
+    }
+  }
+  return { version: 5, rows: nextRows, graph: f.graph };
+}
+
 const migrations: Array<(f: CatalogFile) => CatalogFile> = [
   // Index 0 migrates v0 → v1.
   (f) => ({ version: 1, rows: f.rows ?? {} }),
@@ -204,6 +216,8 @@ const migrations: Array<(f: CatalogFile) => CatalogFile> = [
   migrateV2toV3,
   // Index 3 migrates v3 → v4 (drop `fetchedAt` and `attempts` from rows).
   migrateV3toV4,
+  // Index 4 migrates v4 → v5 (strip legacy `stages.nlp` records).
+  migrateV4toV5,
 ];
 
 export function migrate(raw: unknown): CatalogFile {

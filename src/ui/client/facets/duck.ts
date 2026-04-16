@@ -159,6 +159,7 @@ export function topEntitiesForType(
   activeVideos: Set<string>,
   limit = 25,
   includeIds: Set<string> | null = null,
+  excludeIds: Set<string> | null = null,
 ): { top: FacetRow[]; pinned: FacetRow[] } {
   const totals = new Map<string, number>();
   for (const videoId of activeVideos) {
@@ -173,6 +174,7 @@ export function topEntitiesForType(
 
   const rows: FacetRow[] = [];
   for (const [entityId, total] of totals) {
+    if (excludeIds && excludeIds.has(entityId)) continue;
     const meta = bundle.entities.get(entityId)!;
     rows.push({ entityId, canonical: meta.canonical, type: meta.type, total });
   }

@@ -1,0 +1,6928 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "EieUJvKrjo4",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-15T17:47:00.555Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "location",
+      "surface": "Nellis Air Force Base",
+      "canonical": "Nellis Air Force Base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 123,
+        "charEnd": 144,
+        "timeStart": 8.32,
+        "timeEnd": 12.639
+      },
+      "score": 0.9297375082969666
+    },
+    {
+      "id": "m_0002",
+      "label": "facility",
+      "surface": "mess hall",
+      "canonical": "mess hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 176,
+        "charEnd": 185,
+        "timeStart": 10.24,
+        "timeEnd": 14.719000000000001
+      },
+      "score": 0.9226639866828918
+    },
+    {
+      "id": "m_0003",
+      "label": "facility",
+      "surface": "barracks",
+      "canonical": "barracks",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 227,
+        "charEnd": 235,
+        "timeStart": 12.639,
+        "timeEnd": 16.56
+      },
+      "score": 0.658042311668396
+    },
+    {
+      "id": "m_0004",
+      "label": "location",
+      "surface": "kitchen",
+      "canonical": "kitchen",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 818,
+        "charEnd": 825,
+        "timeStart": 49.12,
+        "timeEnd": 54.718999999999994
+      },
+      "score": 0.7600445747375488
+    },
+    {
+      "id": "m_0005",
+      "label": "person",
+      "surface": "woman",
+      "canonical": "woman",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1060,
+        "charEnd": 1065,
+        "timeStart": 65.04,
+        "timeEnd": 72.08000000000001
+      },
+      "score": 0.5385310053825378
+    },
+    {
+      "id": "m_0006",
+      "label": "location",
+      "surface": "kitchen",
+      "canonical": "kitchen",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1191,
+        "charEnd": 1198,
+        "timeStart": 74.4,
+        "timeEnd": 79.36
+      },
+      "score": 0.7497372031211853
+    },
+    {
+      "id": "m_0007",
+      "label": "date_time",
+      "surface": "March",
+      "canonical": "March",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1544,
+        "charEnd": 1549,
+        "timeStart": 110.56,
+        "timeEnd": 115.71900000000001
+      },
+      "score": 0.9193776845932007
+    },
+    {
+      "id": "m_0008",
+      "label": "date_time",
+      "surface": "1965",
+      "canonical": "1965",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1550,
+        "charEnd": 1554,
+        "timeStart": 112.88,
+        "timeEnd": 118.039
+      },
+      "score": 0.9321403503417969
+    },
+    {
+      "id": "m_0009",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1560,
+        "charEnd": 1572,
+        "timeStart": 112.88,
+        "timeEnd": 118.039
+      },
+      "score": 0.9714224934577942
+    },
+    {
+      "id": "m_0010",
+      "label": "organization",
+      "surface": "Nellis\nAir Force Base",
+      "canonical": "Nellis\nAir Force Base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1584,
+        "charEnd": 1605,
+        "timeStart": 112.88,
+        "timeEnd": 120.119
+      },
+      "score": 0.5994226336479187
+    },
+    {
+      "id": "m_0011",
+      "label": "location",
+      "surface": "Nevada desert",
+      "canonical": "Nevada desert",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1613,
+        "charEnd": 1626,
+        "timeStart": 115.719,
+        "timeEnd": 120.119
+      },
+      "score": 0.8859506845474243
+    },
+    {
+      "id": "m_0012",
+      "label": "organization",
+      "surface": "Air Force",
+      "canonical": "Air Force",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1694,
+        "charEnd": 1703,
+        "timeStart": 120.119,
+        "timeEnd": 125.2
+      },
+      "score": 0.7266067862510681
+    },
+    {
+      "id": "m_0013",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1711,
+        "charEnd": 1718,
+        "timeStart": 122.64,
+        "timeEnd": 127.64
+      },
+      "score": 0.5192638635635376
+    },
+    {
+      "id": "m_0014",
+      "label": "location",
+      "surface": "Area 51",
+      "canonical": "Area 51",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1875,
+        "charEnd": 1882,
+        "timeStart": 132.2,
+        "timeEnd": 138.56
+      },
+      "score": 0.7996280789375305
+    },
+    {
+      "id": "m_0015",
+      "label": "location",
+      "surface": "Area 51",
+      "canonical": "Area 51",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1888,
+        "charEnd": 1895,
+        "timeStart": 132.2,
+        "timeEnd": 138.56
+      },
+      "score": 0.7594740986824036
+    },
+    {
+      "id": "m_0016",
+      "label": "organization",
+      "surface": "Air\nForce",
+      "canonical": "Air Force",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 1935,
+        "charEnd": 1944,
+        "timeStart": 136.36,
+        "timeEnd": 143.92000000000002
+      },
+      "score": 0.5956696271896362
+    },
+    {
+      "id": "m_0017",
+      "label": "role",
+      "surface": "weather\nObserver",
+      "canonical": "weather Observer",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2005,
+        "charEnd": 2021,
+        "timeStart": 141.2,
+        "timeEnd": 148.55999999999997
+      },
+      "score": 0.9346345663070679
+    },
+    {
+      "id": "m_0018",
+      "label": "location",
+      "surface": "Las Vegas",
+      "canonical": "Las Vegas",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2296,
+        "charEnd": 2305,
+        "timeStart": 159.76,
+        "timeEnd": 165.319
+      },
+      "score": 0.8675526976585388
+    },
+    {
+      "id": "m_0019",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2324,
+        "charEnd": 2331,
+        "timeStart": 163,
+        "timeEnd": 167.56
+      },
+      "score": 0.9959008097648621
+    },
+    {
+      "id": "m_0020",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2348,
+        "charEnd": 2352,
+        "timeStart": 163,
+        "timeEnd": 167.56
+      },
+      "score": 0.8460243344306946
+    },
+    {
+      "id": "m_0021",
+      "label": "person",
+      "surface": "Dwight",
+      "canonical": "Dwight",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2363,
+        "charEnd": 2369,
+        "timeStart": 165.319,
+        "timeEnd": 169.599
+      },
+      "score": 0.9959444403648376
+    },
+    {
+      "id": "m_0022",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2398,
+        "charEnd": 2405,
+        "timeStart": 167.56,
+        "timeEnd": 171.64000000000001
+      },
+      "score": 0.9955441355705261
+    },
+    {
+      "id": "m_0023",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2470,
+        "charEnd": 2477,
+        "timeStart": 171.64,
+        "timeEnd": 176.2
+      },
+      "score": 0.9949737787246704
+    },
+    {
+      "id": "m_0024",
+      "label": "person",
+      "surface": "Dwight",
+      "canonical": "Dwight",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2482,
+        "charEnd": 2488,
+        "timeStart": 171.64,
+        "timeEnd": 176.2
+      },
+      "score": 0.9963487386703491
+    },
+    {
+      "id": "m_0025",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2527,
+        "charEnd": 2531,
+        "timeStart": 174.159,
+        "timeEnd": 178.79999999999998
+      },
+      "score": 0.7969486117362976
+    },
+    {
+      "id": "m_0026",
+      "label": "person",
+      "surface": "officers",
+      "canonical": "officers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2559,
+        "charEnd": 2567,
+        "timeStart": 176.2,
+        "timeEnd": 181.959
+      },
+      "score": 0.6231088638305664
+    },
+    {
+      "id": "m_0027",
+      "label": "person",
+      "surface": "Dwight",
+      "canonical": "Dwight",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2638,
+        "charEnd": 2644,
+        "timeStart": 181.959,
+        "timeEnd": 188.08
+      },
+      "score": 0.996649444103241
+    },
+    {
+      "id": "m_0028",
+      "label": "location",
+      "surface": "range 4",
+      "canonical": "range 4",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2725,
+        "charEnd": 2732,
+        "timeStart": 188.08,
+        "timeEnd": 193.31900000000002
+      },
+      "score": 0.9791707992553711
+    },
+    {
+      "id": "m_0029",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2733,
+        "charEnd": 2738,
+        "timeStart": 190.2,
+        "timeEnd": 195.319
+      },
+      "score": 0.9873294830322266
+    },
+    {
+      "id": "m_0030",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2743,
+        "charEnd": 2748,
+        "timeStart": 190.2,
+        "timeEnd": 195.319
+      },
+      "score": 0.9921669960021973
+    },
+    {
+      "id": "m_0031",
+      "label": "location",
+      "surface": "Indian\nSprings",
+      "canonical": "Indian Springs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2844,
+        "charEnd": 2858,
+        "timeStart": 195.319,
+        "timeEnd": 202.31900000000002
+      },
+      "score": 0.8724947571754456
+    },
+    {
+      "id": "m_0032",
+      "label": "location",
+      "surface": "Range 4",
+      "canonical": "range 4",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2908,
+        "charEnd": 2915,
+        "timeStart": 199.799,
+        "timeEnd": 204.92000000000002
+      },
+      "score": 0.9674906134605408
+    },
+    {
+      "id": "m_0033",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2958,
+        "charEnd": 2963,
+        "timeStart": 204.92,
+        "timeEnd": 210.39999999999998
+      },
+      "score": 0.9916505217552185
+    },
+    {
+      "id": "m_0034",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2964,
+        "charEnd": 2971,
+        "timeStart": 204.92,
+        "timeEnd": 210.39999999999998
+      },
+      "score": 0.9950823783874512
+    },
+    {
+      "id": "m_0035",
+      "label": "person",
+      "surface": "Dwight",
+      "canonical": "Dwight",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 2989,
+        "charEnd": 2995,
+        "timeStart": 208.36,
+        "timeEnd": 212.20000000000002
+      },
+      "score": 0.9982028007507324
+    },
+    {
+      "id": "m_0036",
+      "label": "location",
+      "surface": "nuclear bombing\nrange",
+      "canonical": "nuclear bombing\nrange",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3114,
+        "charEnd": 3135,
+        "timeStart": 215.12,
+        "timeEnd": 222.04
+      },
+      "score": 0.6446199417114258
+    },
+    {
+      "id": "m_0037",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3153,
+        "charEnd": 3160,
+        "timeStart": 217.76,
+        "timeEnd": 222.04
+      },
+      "score": 0.9887580871582031
+    },
+    {
+      "id": "m_0038",
+      "label": "person",
+      "surface": "Dwight",
+      "canonical": "Dwight",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3169,
+        "charEnd": 3175,
+        "timeStart": 219.959,
+        "timeEnd": 225.4
+      },
+      "score": 0.9795291423797607
+    },
+    {
+      "id": "m_0039",
+      "label": "person",
+      "surface": "Charlie",
+      "canonical": "Charlie",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3216,
+        "charEnd": 3223,
+        "timeStart": 222.04,
+        "timeEnd": 228.67999999999998
+      },
+      "score": 0.6129100918769836
+    },
+    {
+      "id": "m_0040",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3247,
+        "charEnd": 3252,
+        "timeStart": 225.4,
+        "timeEnd": 231.84
+      },
+      "score": 0.9918094277381897
+    },
+    {
+      "id": "m_0041",
+      "label": "date_time",
+      "surface": "54",
+      "canonical": "54",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3261,
+        "charEnd": 3263,
+        "timeStart": 225.4,
+        "timeEnd": 231.84
+      },
+      "score": 0.877561628818512
+    },
+    {
+      "id": "m_0042",
+      "label": "event",
+      "surface": "atomic\nbomb test",
+      "canonical": "atomic\nbomb test",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3277,
+        "charEnd": 3293,
+        "timeStart": 225.4,
+        "timeEnd": 233.92000000000002
+      },
+      "score": 0.9715260863304138
+    },
+    {
+      "id": "m_0043",
+      "label": "location",
+      "surface": "Frenchman Flats",
+      "canonical": "Frenchman Flats",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3302,
+        "charEnd": 3317,
+        "timeStart": 228.68,
+        "timeEnd": 233.92000000000002
+      },
+      "score": 0.9538220167160034
+    },
+    {
+      "id": "m_0044",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3318,
+        "charEnd": 3323,
+        "timeStart": 228.68,
+        "timeEnd": 233.92000000000002
+      },
+      "score": 0.9872995018959045
+    },
+    {
+      "id": "m_0045",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3517,
+        "charEnd": 3522,
+        "timeStart": 244.079,
+        "timeEnd": 248.92000000000002
+      },
+      "score": 0.991133987903595
+    },
+    {
+      "id": "m_0046",
+      "label": "organization",
+      "surface": "officers",
+      "canonical": "officers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3579,
+        "charEnd": 3587,
+        "timeStart": 246.599,
+        "timeEnd": 251.51899999999998
+      },
+      "score": 0.5643918514251709
+    },
+    {
+      "id": "m_0047",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3655,
+        "charEnd": 3662,
+        "timeStart": 253.159,
+        "timeEnd": 259.479
+      },
+      "score": 0.9863013029098511
+    },
+    {
+      "id": "m_0048",
+      "label": "person",
+      "surface": "Dwight",
+      "canonical": "Dwight",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3673,
+        "charEnd": 3679,
+        "timeStart": 253.159,
+        "timeEnd": 259.479
+      },
+      "score": 0.9827203750610352
+    },
+    {
+      "id": "m_0049",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3799,
+        "charEnd": 3804,
+        "timeStart": 261.44,
+        "timeEnd": 266.24
+      },
+      "score": 0.9917900562286377
+    },
+    {
+      "id": "m_0050",
+      "label": "person",
+      "surface": "Charlie",
+      "canonical": "Charlie",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3880,
+        "charEnd": 3887,
+        "timeStart": 269.24,
+        "timeEnd": 274.479
+      },
+      "score": 0.933974027633667
+    },
+    {
+      "id": "m_0051",
+      "label": "location",
+      "surface": "Range four",
+      "canonical": "Range four",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3904,
+        "charEnd": 3914,
+        "timeStart": 269.24,
+        "timeEnd": 274.479
+      },
+      "score": 0.7909502387046814
+    },
+    {
+      "id": "m_0052",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3970,
+        "charEnd": 3975,
+        "timeStart": 274.479,
+        "timeEnd": 279.75899999999996
+      },
+      "score": 0.9360323548316956
+    },
+    {
+      "id": "m_0053",
+      "label": "person",
+      "surface": "John Zimmerman",
+      "canonical": "John Zimmerman",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 3980,
+        "charEnd": 3994,
+        "timeStart": 274.479,
+        "timeEnd": 279.75899999999996
+      },
+      "score": 0.9646638631820679
+    },
+    {
+      "id": "m_0054",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4031,
+        "charEnd": 4038,
+        "timeStart": 279.759,
+        "timeEnd": 283.759
+      },
+      "score": 0.9835102558135986
+    },
+    {
+      "id": "m_0055",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4131,
+        "charEnd": 4138,
+        "timeStart": 285.039,
+        "timeEnd": 289.12
+      },
+      "score": 0.9819475412368774
+    },
+    {
+      "id": "m_0056",
+      "label": "location",
+      "surface": "infirmary",
+      "canonical": "infirmary",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4150,
+        "charEnd": 4159,
+        "timeStart": 287.44,
+        "timeEnd": 291.16
+      },
+      "score": 0.7505058646202087
+    },
+    {
+      "id": "m_0057",
+      "label": "person",
+      "surface": "nurse",
+      "canonical": "nurse",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4240,
+        "charEnd": 4245,
+        "timeStart": 291.16,
+        "timeEnd": 295.56
+      },
+      "score": 0.8854495882987976
+    },
+    {
+      "id": "m_0058",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4314,
+        "charEnd": 4321,
+        "timeStart": 295.56,
+        "timeEnd": 300.639
+      },
+      "score": 0.9896329641342163
+    },
+    {
+      "id": "m_0059",
+      "label": "person",
+      "surface": "Dwayne",
+      "canonical": "Dwayne",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4332,
+        "charEnd": 4338,
+        "timeStart": 295.56,
+        "timeEnd": 300.639
+      },
+      "score": 0.6851453185081482
+    },
+    {
+      "id": "m_0060",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4351,
+        "charEnd": 4356,
+        "timeStart": 298.12,
+        "timeEnd": 303.88
+      },
+      "score": 0.9216948747634888
+    },
+    {
+      "id": "m_0061",
+      "label": "person",
+      "surface": "John Zimmerman",
+      "canonical": "John Zimmerman",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4379,
+        "charEnd": 4393,
+        "timeStart": 300.639,
+        "timeEnd": 305.919
+      },
+      "score": 0.9847790598869324
+    },
+    {
+      "id": "m_0062",
+      "label": "person",
+      "surface": "nurse",
+      "canonical": "nurse",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4398,
+        "charEnd": 4403,
+        "timeStart": 300.639,
+        "timeEnd": 305.919
+      },
+      "score": 0.8153824210166931
+    },
+    {
+      "id": "m_0063",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4447,
+        "charEnd": 4454,
+        "timeStart": 303.88,
+        "timeEnd": 307.88
+      },
+      "score": 0.9862126111984253
+    },
+    {
+      "id": "m_0064",
+      "label": "person",
+      "surface": "Zimmerman",
+      "canonical": "Zimmerman",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4752,
+        "charEnd": 4761,
+        "timeStart": 322.12,
+        "timeEnd": 327.199
+      },
+      "score": 0.8903536796569824
+    },
+    {
+      "id": "m_0065",
+      "label": "location",
+      "surface": "North\nrange",
+      "canonical": "North\nrange",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4797,
+        "charEnd": 4808,
+        "timeStart": 325.4,
+        "timeEnd": 331.68
+      },
+      "score": 0.8185818195343018
+    },
+    {
+      "id": "m_0066",
+      "label": "location",
+      "surface": "Indian Springs",
+      "canonical": "Indian Springs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4895,
+        "charEnd": 4909,
+        "timeStart": 331.68,
+        "timeEnd": 336.40000000000003
+      },
+      "score": 0.9244571924209595
+    },
+    {
+      "id": "m_0067",
+      "label": "person",
+      "surface": "officer",
+      "canonical": "officer",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4919,
+        "charEnd": 4926,
+        "timeStart": 334.039,
+        "timeEnd": 339.96
+      },
+      "score": 0.8240923881530762
+    },
+    {
+      "id": "m_0068",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 4972,
+        "charEnd": 4979,
+        "timeStart": 336.4,
+        "timeEnd": 343.16999999999996
+      },
+      "score": 0.991724967956543
+    },
+    {
+      "id": "m_0069",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5022,
+        "charEnd": 5027,
+        "timeStart": 339.96,
+        "timeEnd": 346.299
+      },
+      "score": 0.8391238451004028
+    },
+    {
+      "id": "m_0070",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5045,
+        "charEnd": 5052,
+        "timeStart": 350.12,
+        "timeEnd": 355.68
+      },
+      "score": 0.9944735169410706
+    },
+    {
+      "id": "m_0071",
+      "label": "person",
+      "surface": "Sullivan",
+      "canonical": "Sullivan",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5065,
+        "charEnd": 5073,
+        "timeStart": 350.12,
+        "timeEnd": 355.68
+      },
+      "score": 0.9685748815536499
+    },
+    {
+      "id": "m_0072",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5100,
+        "charEnd": 5105,
+        "timeStart": 353.039,
+        "timeEnd": 357.96
+      },
+      "score": 0.9788485765457153
+    },
+    {
+      "id": "m_0073",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5179,
+        "charEnd": 5186,
+        "timeStart": 357.96,
+        "timeEnd": 363.52
+      },
+      "score": 0.9939872026443481
+    },
+    {
+      "id": "m_0074",
+      "label": "facility",
+      "surface": "Shacks",
+      "canonical": "Shacks",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5214,
+        "charEnd": 5220,
+        "timeStart": 361.12,
+        "timeEnd": 365.319
+      },
+      "score": 0.6097918748855591
+    },
+    {
+      "id": "m_0075",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5329,
+        "charEnd": 5334,
+        "timeStart": 366.88,
+        "timeEnd": 371.4
+      },
+      "score": 0.9843649864196777
+    },
+    {
+      "id": "m_0076",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5340,
+        "charEnd": 5347,
+        "timeStart": 366.88,
+        "timeEnd": 371.4
+      },
+      "score": 0.9937667846679688
+    },
+    {
+      "id": "m_0077",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5384,
+        "charEnd": 5394,
+        "timeStart": 371.4,
+        "timeEnd": 375.28
+      },
+      "score": 0.8649755120277405
+    },
+    {
+      "id": "m_0078",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5410,
+        "charEnd": 5417,
+        "timeStart": 372.84,
+        "timeEnd": 376.88
+      },
+      "score": 0.9930619597434998
+    },
+    {
+      "id": "m_0079",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5427,
+        "charEnd": 5432,
+        "timeStart": 372.84,
+        "timeEnd": 376.88
+      },
+      "score": 0.975716233253479
+    },
+    {
+      "id": "m_0080",
+      "label": "facility",
+      "surface": "weather\nShacks",
+      "canonical": "weather\nShacks",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5466,
+        "charEnd": 5480,
+        "timeStart": 375.28,
+        "timeEnd": 382.96
+      },
+      "score": 0.6872047781944275
+    },
+    {
+      "id": "m_0081",
+      "label": "quantity",
+      "surface": "four",
+      "canonical": "four",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5498,
+        "charEnd": 5502,
+        "timeStart": 376.88,
+        "timeEnd": 382.96
+      },
+      "score": 0.7271104454994202
+    },
+    {
+      "id": "m_0082",
+      "label": "location",
+      "surface": "range\n1",
+      "canonical": "range\n1",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5508,
+        "charEnd": 5515,
+        "timeStart": 376.88,
+        "timeEnd": 385.08
+      },
+      "score": 0.7194790244102478
+    },
+    {
+      "id": "m_0083",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5529,
+        "charEnd": 5534,
+        "timeStart": 379.12,
+        "timeEnd": 385.08
+      },
+      "score": 0.9944387674331665
+    },
+    {
+      "id": "m_0084",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5584,
+        "charEnd": 5591,
+        "timeStart": 382.96,
+        "timeEnd": 387.479
+      },
+      "score": 0.9934884309768677
+    },
+    {
+      "id": "m_0085",
+      "label": "location",
+      "surface": "Range four",
+      "canonical": "Range four",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5633,
+        "charEnd": 5643,
+        "timeStart": 387.479,
+        "timeEnd": 392.24
+      },
+      "score": 0.712531566619873
+    },
+    {
+      "id": "m_0086",
+      "label": "location",
+      "surface": "range one",
+      "canonical": "range one",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5661,
+        "charEnd": 5670,
+        "timeStart": 390.199,
+        "timeEnd": 393.759
+      },
+      "score": 0.8909200429916382
+    },
+    {
+      "id": "m_0087",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5671,
+        "charEnd": 5676,
+        "timeStart": 390.199,
+        "timeEnd": 393.759
+      },
+      "score": 0.992885410785675
+    },
+    {
+      "id": "m_0088",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5727,
+        "charEnd": 5734,
+        "timeStart": 393.759,
+        "timeEnd": 397.759
+      },
+      "score": 0.9908440709114075
+    },
+    {
+      "id": "m_0089",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5806,
+        "charEnd": 5811,
+        "timeStart": 397.759,
+        "timeEnd": 402.56
+      },
+      "score": 0.9959779381752014
+    },
+    {
+      "id": "m_0090",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 5896,
+        "charEnd": 5903,
+        "timeStart": 402.56,
+        "timeEnd": 407.759
+      },
+      "score": 0.9940016865730286
+    },
+    {
+      "id": "m_0091",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6020,
+        "charEnd": 6027,
+        "timeStart": 415.16,
+        "timeEnd": 420.03900000000004
+      },
+      "score": 0.9930815100669861
+    },
+    {
+      "id": "m_0092",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6037,
+        "charEnd": 6042,
+        "timeStart": 415.16,
+        "timeEnd": 420.03900000000004
+      },
+      "score": 0.9957860112190247
+    },
+    {
+      "id": "m_0093",
+      "label": "person",
+      "surface": "Sullivan",
+      "canonical": "Sullivan",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6081,
+        "charEnd": 6089,
+        "timeStart": 420.039,
+        "timeEnd": 424.08
+      },
+      "score": 0.6067824959754944
+    },
+    {
+      "id": "m_0094",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6140,
+        "charEnd": 6145,
+        "timeStart": 424.08,
+        "timeEnd": 428.84
+      },
+      "score": 0.9954782128334045
+    },
+    {
+      "id": "m_0095",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6324,
+        "charEnd": 6331,
+        "timeStart": 433.039,
+        "timeEnd": 437.759
+      },
+      "score": 0.9964983463287354
+    },
+    {
+      "id": "m_0096",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6366,
+        "charEnd": 6373,
+        "timeStart": 437.759,
+        "timeEnd": 441.639
+      },
+      "score": 0.9964996576309204
+    },
+    {
+      "id": "m_0097",
+      "label": "quantity",
+      "surface": "months",
+      "canonical": "months",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6463,
+        "charEnd": 6469,
+        "timeStart": 441.639,
+        "timeEnd": 446.68
+      },
+      "score": 0.5243361592292786
+    },
+    {
+      "id": "m_0098",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6470,
+        "charEnd": 6475,
+        "timeStart": 441.639,
+        "timeEnd": 446.68
+      },
+      "score": 0.9869649410247803
+    },
+    {
+      "id": "m_0099",
+      "label": "quantity",
+      "surface": "numbers",
+      "canonical": "numbers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6524,
+        "charEnd": 6531,
+        "timeStart": 446.68,
+        "timeEnd": 451.28000000000003
+      },
+      "score": 0.516128659248352
+    },
+    {
+      "id": "m_0100",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6658,
+        "charEnd": 6665,
+        "timeStart": 457,
+        "timeEnd": 461.4
+      },
+      "score": 0.9977274537086487
+    },
+    {
+      "id": "m_0101",
+      "label": "person",
+      "surface": "Sully",
+      "canonical": "Sully",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6705,
+        "charEnd": 6710,
+        "timeStart": 459.199,
+        "timeEnd": 463.599
+      },
+      "score": 0.9902511835098267
+    },
+    {
+      "id": "m_0102",
+      "label": "quantity",
+      "surface": "numbers",
+      "canonical": "numbers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6736,
+        "charEnd": 6743,
+        "timeStart": 461.4,
+        "timeEnd": 465.919
+      },
+      "score": 0.6773938536643982
+    },
+    {
+      "id": "m_0103",
+      "label": "person",
+      "surface": "Sullivan",
+      "canonical": "Sullivan",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6744,
+        "charEnd": 6752,
+        "timeStart": 461.4,
+        "timeEnd": 465.919
+      },
+      "score": 0.9286431074142456
+    },
+    {
+      "id": "m_0104",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6783,
+        "charEnd": 6790,
+        "timeStart": 463.599,
+        "timeEnd": 467.87899999999996
+      },
+      "score": 0.9964483976364136
+    },
+    {
+      "id": "m_0105",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6853,
+        "charEnd": 6860,
+        "timeStart": 467.879,
+        "timeEnd": 471.44
+      },
+      "score": 0.9971839785575867
+    },
+    {
+      "id": "m_0106",
+      "label": "quantity",
+      "surface": "months",
+      "canonical": "months",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6900,
+        "charEnd": 6906,
+        "timeStart": 471.44,
+        "timeEnd": 476.24
+      },
+      "score": 0.6063671708106995
+    },
+    {
+      "id": "m_0107",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6907,
+        "charEnd": 6914,
+        "timeStart": 471.44,
+        "timeEnd": 476.24
+      },
+      "score": 0.9941220879554749
+    },
+    {
+      "id": "m_0108",
+      "label": "location",
+      "surface": "Indian\nSprings",
+      "canonical": "Indian Springs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 6948,
+        "charEnd": 6962,
+        "timeStart": 474.24,
+        "timeEnd": 481.879
+      },
+      "score": 0.7671666145324707
+    },
+    {
+      "id": "m_0109",
+      "label": "location",
+      "surface": "range",
+      "canonical": "range",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7077,
+        "charEnd": 7082,
+        "timeStart": 484.12,
+        "timeEnd": 489.599
+      },
+      "score": 0.6703050136566162
+    },
+    {
+      "id": "m_0110",
+      "label": "date_time",
+      "surface": "One Day",
+      "canonical": "One Day",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7093,
+        "charEnd": 7100,
+        "timeStart": 484.12,
+        "timeEnd": 489.599
+      },
+      "score": 0.6158016324043274
+    },
+    {
+      "id": "m_0111",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7101,
+        "charEnd": 7108,
+        "timeStart": 484.12,
+        "timeEnd": 489.599
+      },
+      "score": 0.9932403564453125
+    },
+    {
+      "id": "m_0112",
+      "label": "location",
+      "surface": "Range",
+      "canonical": "range",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7124,
+        "charEnd": 7129,
+        "timeStart": 487.08,
+        "timeEnd": 491.71999999999997
+      },
+      "score": 0.6307264566421509
+    },
+    {
+      "id": "m_0113",
+      "label": "location",
+      "surface": "desert",
+      "canonical": "desert",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7163,
+        "charEnd": 7169,
+        "timeStart": 489.599,
+        "timeEnd": 493.24
+      },
+      "score": 0.8984490036964417
+    },
+    {
+      "id": "m_0114",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7246,
+        "charEnd": 7253,
+        "timeStart": 495.96,
+        "timeEnd": 500
+      },
+      "score": 0.9951483607292175
+    },
+    {
+      "id": "m_0115",
+      "label": "location",
+      "surface": "desert",
+      "canonical": "desert",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7483,
+        "charEnd": 7489,
+        "timeStart": 508.12,
+        "timeEnd": 513.159
+      },
+      "score": 0.9332947134971619
+    },
+    {
+      "id": "m_0116",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7510,
+        "charEnd": 7517,
+        "timeStart": 510.879,
+        "timeEnd": 515.279
+      },
+      "score": 0.9948965907096863
+    },
+    {
+      "id": "m_0117",
+      "label": "location",
+      "surface": "desert",
+      "canonical": "desert",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7550,
+        "charEnd": 7556,
+        "timeStart": 513.159,
+        "timeEnd": 519
+      },
+      "score": 0.9044684171676636
+    },
+    {
+      "id": "m_0118",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7655,
+        "charEnd": 7662,
+        "timeStart": 519,
+        "timeEnd": 523.76
+      },
+      "score": 0.9960540533065796
+    },
+    {
+      "id": "m_0119",
+      "label": "location",
+      "surface": "desert",
+      "canonical": "desert",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7712,
+        "charEnd": 7718,
+        "timeStart": 523.76,
+        "timeEnd": 527.76
+      },
+      "score": 0.9231433272361755
+    },
+    {
+      "id": "m_0120",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 7838,
+        "charEnd": 7845,
+        "timeStart": 530.36,
+        "timeEnd": 535.2
+      },
+      "score": 0.9448018074035645
+    },
+    {
+      "id": "m_0121",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8079,
+        "charEnd": 8086,
+        "timeStart": 546.64,
+        "timeEnd": 550.399
+      },
+      "score": 0.9530118107795715
+    },
+    {
+      "id": "m_0122",
+      "label": "facility",
+      "surface": "shack",
+      "canonical": "shack",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8142,
+        "charEnd": 8147,
+        "timeStart": 550.399,
+        "timeEnd": 557.44
+      },
+      "score": 0.6632921695709229
+    },
+    {
+      "id": "m_0123",
+      "label": "group_or_movement",
+      "surface": "tall\nwhites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8320,
+        "charEnd": 8331,
+        "timeStart": 564.16,
+        "timeEnd": 571.04
+      },
+      "score": 0.7524736523628235
+    },
+    {
+      "id": "m_0124",
+      "label": "person",
+      "surface": "Paula",
+      "canonical": "Paula",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8357,
+        "charEnd": 8362,
+        "timeStart": 566.76,
+        "timeEnd": 571.04
+      },
+      "score": 0.7495890855789185
+    },
+    {
+      "id": "m_0125",
+      "label": "group_or_movement",
+      "surface": "people",
+      "canonical": "people",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8484,
+        "charEnd": 8490,
+        "timeStart": 576.44,
+        "timeEnd": 581
+      },
+      "score": 0.5603588819503784
+    },
+    {
+      "id": "m_0126",
+      "label": "location",
+      "surface": "New York City",
+      "canonical": "New York City",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8498,
+        "charEnd": 8511,
+        "timeStart": 576.44,
+        "timeEnd": 581
+      },
+      "score": 0.851747989654541
+    },
+    {
+      "id": "m_0127",
+      "label": "quantity",
+      "surface": "6 ft",
+      "canonical": "6 ft",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8614,
+        "charEnd": 8618,
+        "timeStart": 582.8,
+        "timeEnd": 589.68
+      },
+      "score": 0.6576716303825378
+    },
+    {
+      "id": "m_0128",
+      "label": "location",
+      "surface": "the earth",
+      "canonical": "the earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8782,
+        "charEnd": 8791,
+        "timeStart": 595.8,
+        "timeEnd": 599.7199999999999
+      },
+      "score": 0.5680072903633118
+    },
+    {
+      "id": "m_0129",
+      "label": "location",
+      "surface": "the Earth",
+      "canonical": "the earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8817,
+        "charEnd": 8826,
+        "timeStart": 597.279,
+        "timeEnd": 601.67
+      },
+      "score": 0.6442707180976868
+    },
+    {
+      "id": "m_0130",
+      "label": "person",
+      "surface": "the girl",
+      "canonical": "the girl",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 8886,
+        "charEnd": 8894,
+        "timeStart": 610.24,
+        "timeEnd": 615.48
+      },
+      "score": 0.9447976350784302
+    },
+    {
+      "id": "m_0131",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9076,
+        "charEnd": 9083,
+        "timeStart": 623.6,
+        "timeEnd": 628.64
+      },
+      "score": 0.8578184843063354
+    },
+    {
+      "id": "m_0132",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9436,
+        "charEnd": 9443,
+        "timeStart": 645.36,
+        "timeEnd": 649.92
+      },
+      "score": 0.9949727058410645
+    },
+    {
+      "id": "m_0133",
+      "label": "location",
+      "surface": "shack",
+      "canonical": "shack",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9467,
+        "charEnd": 9472,
+        "timeStart": 645.36,
+        "timeEnd": 649.92
+      },
+      "score": 0.8894225358963013
+    },
+    {
+      "id": "m_0134",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9591,
+        "charEnd": 9598,
+        "timeStart": 657.8,
+        "timeEnd": 664.639
+      },
+      "score": 0.9962421655654907
+    },
+    {
+      "id": "m_0135",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9752,
+        "charEnd": 9759,
+        "timeStart": 672.24,
+        "timeEnd": 677.44
+      },
+      "score": 0.9948225021362305
+    },
+    {
+      "id": "m_0136",
+      "label": "location",
+      "surface": "desert",
+      "canonical": "desert",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9820,
+        "charEnd": 9826,
+        "timeStart": 674.88,
+        "timeEnd": 680.24
+      },
+      "score": 0.923045814037323
+    },
+    {
+      "id": "m_0137",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9844,
+        "charEnd": 9851,
+        "timeStart": 677.44,
+        "timeEnd": 682.2790000000001
+      },
+      "score": 0.997330904006958
+    },
+    {
+      "id": "m_0138",
+      "label": "location",
+      "surface": "Shack",
+      "canonical": "shack",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9879,
+        "charEnd": 9884,
+        "timeStart": 680.24,
+        "timeEnd": 685.16
+      },
+      "score": 0.8813111782073975
+    },
+    {
+      "id": "m_0139",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 9941,
+        "charEnd": 9948,
+        "timeStart": 685.16,
+        "timeEnd": 691.24
+      },
+      "score": 0.9941827654838562
+    },
+    {
+      "id": "m_0140",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10009,
+        "charEnd": 10016,
+        "timeStart": 691.24,
+        "timeEnd": 696.32
+      },
+      "score": 0.9965248703956604
+    },
+    {
+      "id": "m_0141",
+      "label": "location",
+      "surface": "desert",
+      "canonical": "desert",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10088,
+        "charEnd": 10094,
+        "timeStart": 696.32,
+        "timeEnd": 700.2
+      },
+      "score": 0.8855714797973633
+    },
+    {
+      "id": "m_0142",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10228,
+        "charEnd": 10235,
+        "timeStart": 709.76,
+        "timeEnd": 715.12
+      },
+      "score": 0.992404043674469
+    },
+    {
+      "id": "m_0143",
+      "label": "location",
+      "surface": "shack",
+      "canonical": "shack",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10269,
+        "charEnd": 10274,
+        "timeStart": 712.519,
+        "timeEnd": 718.04
+      },
+      "score": 0.6391214728355408
+    },
+    {
+      "id": "m_0144",
+      "label": "person",
+      "surface": "child",
+      "canonical": "child",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10362,
+        "charEnd": 10367,
+        "timeStart": 718.04,
+        "timeEnd": 724.04
+      },
+      "score": 0.942942202091217
+    },
+    {
+      "id": "m_0145",
+      "label": "quantity",
+      "surface": "two\nadults",
+      "canonical": "two\nadults",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10372,
+        "charEnd": 10382,
+        "timeStart": 718.04,
+        "timeEnd": 726.5600000000001
+      },
+      "score": 0.7887560129165649
+    },
+    {
+      "id": "m_0146",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10401,
+        "charEnd": 10408,
+        "timeStart": 724.04,
+        "timeEnd": 728.519
+      },
+      "score": 0.994599461555481
+    },
+    {
+      "id": "m_0147",
+      "label": "location",
+      "surface": "dirt road",
+      "canonical": "dirt road",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10488,
+        "charEnd": 10497,
+        "timeStart": 728.519,
+        "timeEnd": 733.519
+      },
+      "score": 0.5802967548370361
+    },
+    {
+      "id": "m_0148",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10514,
+        "charEnd": 10518,
+        "timeStart": 730.44,
+        "timeEnd": 736.36
+      },
+      "score": 0.5687881708145142
+    },
+    {
+      "id": "m_0149",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10558,
+        "charEnd": 10565,
+        "timeStart": 733.519,
+        "timeEnd": 738.92
+      },
+      "score": 0.994520902633667
+    },
+    {
+      "id": "m_0150",
+      "label": "location",
+      "surface": "the brush",
+      "canonical": "the brush",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10596,
+        "charEnd": 10605,
+        "timeStart": 736.36,
+        "timeEnd": 741.48
+      },
+      "score": 0.523820161819458
+    },
+    {
+      "id": "m_0151",
+      "label": "person",
+      "surface": "extremely tall woman",
+      "canonical": "extremely tall woman",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10630,
+        "charEnd": 10650,
+        "timeStart": 738.92,
+        "timeEnd": 744.16
+      },
+      "score": 0.6035788059234619
+    },
+    {
+      "id": "m_0152",
+      "label": "person",
+      "surface": "child",
+      "canonical": "child",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10684,
+        "charEnd": 10689,
+        "timeStart": 741.48,
+        "timeEnd": 747
+      },
+      "score": 0.9671895503997803
+    },
+    {
+      "id": "m_0153",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 10804,
+        "charEnd": 10811,
+        "timeStart": 752.24,
+        "timeEnd": 759.199
+      },
+      "score": 0.9939804077148438
+    },
+    {
+      "id": "m_0154",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11002,
+        "charEnd": 11009,
+        "timeStart": 770.32,
+        "timeEnd": 776.519
+      },
+      "score": 0.9934040904045105
+    },
+    {
+      "id": "m_0155",
+      "label": "person",
+      "surface": "woman",
+      "canonical": "woman",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11065,
+        "charEnd": 11070,
+        "timeStart": 776.519,
+        "timeEnd": 782.36
+      },
+      "score": 0.7904360294342041
+    },
+    {
+      "id": "m_0156",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11138,
+        "charEnd": 11145,
+        "timeStart": 782.36,
+        "timeEnd": 787.6
+      },
+      "score": 0.9951515197753906
+    },
+    {
+      "id": "m_0157",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11195,
+        "charEnd": 11202,
+        "timeStart": 784.8,
+        "timeEnd": 790.079
+      },
+      "score": 0.9946040511131287
+    },
+    {
+      "id": "m_0158",
+      "label": "person",
+      "surface": "woman",
+      "canonical": "woman",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11263,
+        "charEnd": 11268,
+        "timeStart": 790.079,
+        "timeEnd": 794.519
+      },
+      "score": 0.8482049703598022
+    },
+    {
+      "id": "m_0159",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11329,
+        "charEnd": 11336,
+        "timeStart": 794.519,
+        "timeEnd": 800.199
+      },
+      "score": 0.9946507811546326
+    },
+    {
+      "id": "m_0160",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11486,
+        "charEnd": 11493,
+        "timeStart": 806.92,
+        "timeEnd": 811.12
+      },
+      "score": 0.9940903782844543
+    },
+    {
+      "id": "m_0161",
+      "label": "nationality_or_ethnicity",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11526,
+        "charEnd": 11537,
+        "timeStart": 809.12,
+        "timeEnd": 813.279
+      },
+      "score": 0.588879406452179
+    },
+    {
+      "id": "m_0162",
+      "label": "organization",
+      "surface": "US\ngovernment",
+      "canonical": "US\ngovernment",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11563,
+        "charEnd": 11576,
+        "timeStart": 809.12,
+        "timeEnd": 816.04
+      },
+      "score": 0.842570960521698
+    },
+    {
+      "id": "m_0163",
+      "label": "nationality_or_ethnicity",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11593,
+        "charEnd": 11604,
+        "timeStart": 811.12,
+        "timeEnd": 816.04
+      },
+      "score": 0.5413654446601868
+    },
+    {
+      "id": "m_0164",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11639,
+        "charEnd": 11646,
+        "timeStart": 816.32,
+        "timeEnd": 821.5600000000001
+      },
+      "score": 0.9921538233757019
+    },
+    {
+      "id": "m_0165",
+      "label": "location",
+      "surface": "Indian Springs",
+      "canonical": "Indian Springs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11676,
+        "charEnd": 11690,
+        "timeStart": 819.36,
+        "timeEnd": 823.44
+      },
+      "score": 0.8395829200744629
+    },
+    {
+      "id": "m_0166",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11773,
+        "charEnd": 11780,
+        "timeStart": 825.36,
+        "timeEnd": 830.639
+      },
+      "score": 0.9499553442001343
+    },
+    {
+      "id": "m_0167",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11857,
+        "charEnd": 11867,
+        "timeStart": 830.639,
+        "timeEnd": 835.0790000000001
+      },
+      "score": 0.8198739886283875
+    },
+    {
+      "id": "m_0168",
+      "label": "group_or_movement",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11887,
+        "charEnd": 11898,
+        "timeStart": 832.92,
+        "timeEnd": 837.4399999999999
+      },
+      "score": 0.8309056162834167
+    },
+    {
+      "id": "m_0169",
+      "label": "location",
+      "surface": "Nellis",
+      "canonical": "Nellis",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11922,
+        "charEnd": 11928,
+        "timeStart": 835.079,
+        "timeEnd": 839.56
+      },
+      "score": 0.5921756625175476
+    },
+    {
+      "id": "m_0170",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 11929,
+        "charEnd": 11936,
+        "timeStart": 835.079,
+        "timeEnd": 839.56
+      },
+      "score": 0.9617869853973389
+    },
+    {
+      "id": "m_0171",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12090,
+        "charEnd": 12100,
+        "timeStart": 843.639,
+        "timeEnd": 848.92
+      },
+      "score": 0.8749538064002991
+    },
+    {
+      "id": "m_0172",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12110,
+        "charEnd": 12117,
+        "timeStart": 846.399,
+        "timeEnd": 853.36
+      },
+      "score": 0.9574469327926636
+    },
+    {
+      "id": "m_0173",
+      "label": "role",
+      "surface": "weather Observer",
+      "canonical": "weather Observer",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12129,
+        "charEnd": 12145,
+        "timeStart": 846.399,
+        "timeEnd": 853.36
+      },
+      "score": 0.7826884388923645
+    },
+    {
+      "id": "m_0174",
+      "label": "date_time",
+      "surface": "1896",
+      "canonical": "1896",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12212,
+        "charEnd": 12216,
+        "timeStart": 860.44,
+        "timeEnd": 866.5600000000001
+      },
+      "score": 0.8619945049285889
+    },
+    {
+      "id": "m_0175",
+      "label": "person",
+      "surface": "Colonel\nHG Shaw",
+      "canonical": "Colonel\nHG Shaw",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12217,
+        "charEnd": 12232,
+        "timeStart": 860.44,
+        "timeEnd": 869.56
+      },
+      "score": 0.9556944370269775
+    },
+    {
+      "id": "m_0176",
+      "label": "location",
+      "surface": "loai California",
+      "canonical": "loai California",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12271,
+        "charEnd": 12286,
+        "timeStart": 866.56,
+        "timeEnd": 871.8389999999999
+      },
+      "score": 0.7508914470672607
+    },
+    {
+      "id": "m_0177",
+      "label": "person",
+      "surface": "Colonel Shaw",
+      "canonical": "Colonel Shaw",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12710,
+        "charEnd": 12722,
+        "timeStart": 902.88,
+        "timeEnd": 907.8
+      },
+      "score": 0.9720938205718994
+    },
+    {
+      "id": "m_0178",
+      "label": "date_time",
+      "surface": "November\n25th\n1896",
+      "canonical": "November\n25th\n1896",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12888,
+        "charEnd": 12906,
+        "timeStart": 912.399,
+        "timeEnd": 921.04
+      },
+      "score": 0.9516515135765076
+    },
+    {
+      "id": "m_0179",
+      "label": "quantity",
+      "surface": "Millennia",
+      "canonical": "Millennia",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 12999,
+        "charEnd": 13008,
+        "timeStart": 923.959,
+        "timeEnd": 928.56
+      },
+      "score": 0.5476337671279907
+    },
+    {
+      "id": "m_0180",
+      "label": "person",
+      "surface": "Paul helier",
+      "canonical": "Paul helier",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13009,
+        "charEnd": 13020,
+        "timeStart": 923.959,
+        "timeEnd": 928.56
+      },
+      "score": 0.9393866062164307
+    },
+    {
+      "id": "m_0181",
+      "label": "role",
+      "surface": "Canadian\ndefense minister",
+      "canonical": "Canadian\ndefense minister",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13025,
+        "charEnd": 13050,
+        "timeStart": 923.959,
+        "timeEnd": 930.319
+      },
+      "score": 0.5768947601318359
+    },
+    {
+      "id": "m_0182",
+      "label": "role",
+      "surface": "High ranking government officials",
+      "canonical": "High ranking government officials",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13072,
+        "charEnd": 13105,
+        "timeStart": 928.56,
+        "timeEnd": 932.8
+      },
+      "score": 0.6924287676811218
+    },
+    {
+      "id": "m_0183",
+      "label": "technology",
+      "surface": "squadron of UFOs",
+      "canonical": "squadron of UFOs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13169,
+        "charEnd": 13185,
+        "timeStart": 932.8,
+        "timeEnd": 937.8389999999999
+      },
+      "score": 0.5872035026550293
+    },
+    {
+      "id": "m_0184",
+      "label": "technology",
+      "surface": "Soviet\naircraft",
+      "canonical": "Soviet\naircraft",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13205,
+        "charEnd": 13220,
+        "timeStart": 935.68,
+        "timeEnd": 942.1990000000001
+      },
+      "score": 0.5520861148834229
+    },
+    {
+      "id": "m_0185",
+      "label": "event",
+      "surface": "investigation",
+      "canonical": "investigation",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13225,
+        "charEnd": 13238,
+        "timeStart": 937.839,
+        "timeEnd": 942.1990000000001
+      },
+      "score": 0.727193295955658
+    },
+    {
+      "id": "m_0186",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13371,
+        "charEnd": 13376,
+        "timeStart": 954.199,
+        "timeEnd": 959.959
+      },
+      "score": 0.8786731958389282
+    },
+    {
+      "id": "m_0187",
+      "label": "quantity",
+      "surface": "thousands of\nyears",
+      "canonical": "thousands of\nyears",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13381,
+        "charEnd": 13399,
+        "timeStart": 954.199,
+        "timeEnd": 959.959
+      },
+      "score": 0.5732443928718567
+    },
+    {
+      "id": "m_0188",
+      "label": "nationality_or_ethnicity",
+      "surface": "nordics",
+      "canonical": "nordics",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13607,
+        "charEnd": 13614,
+        "timeStart": 970.88,
+        "timeEnd": 974.8389999999999
+      },
+      "score": 0.511913001537323
+    },
+    {
+      "id": "m_0189",
+      "label": "organization",
+      "surface": "United States government",
+      "canonical": "United States government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13886,
+        "charEnd": 13910,
+        "timeStart": 994.24,
+        "timeEnd": 999.36
+      },
+      "score": 0.7753440737724304
+    },
+    {
+      "id": "m_0190",
+      "label": "date_time",
+      "surface": "early 1954",
+      "canonical": "early 1954",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13914,
+        "charEnd": 13924,
+        "timeStart": 994.24,
+        "timeEnd": 999.36
+      },
+      "score": 0.796933650970459
+    },
+    {
+      "id": "m_0191",
+      "label": "person",
+      "surface": "defense minister",
+      "canonical": "defense minister",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13929,
+        "charEnd": 13945,
+        "timeStart": 997.44,
+        "timeEnd": 1004.519
+      },
+      "score": 0.8693976998329163
+    },
+    {
+      "id": "m_0192",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 13975,
+        "charEnd": 13980,
+        "timeStart": 999.36,
+        "timeEnd": 1005.92
+      },
+      "score": 0.8902984857559204
+    },
+    {
+      "id": "m_0193",
+      "label": "quantity",
+      "surface": "at least two of them",
+      "canonical": "at least two of them",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14009,
+        "charEnd": 14029,
+        "timeStart": 1005.92,
+        "timeEnd": 1013.319
+      },
+      "score": 0.5310208201408386
+    },
+    {
+      "id": "m_0194",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14070,
+        "charEnd": 14080,
+        "timeStart": 1013.44,
+        "timeEnd": 1018.1990000000001
+      },
+      "score": 0.5861203074455261
+    },
+    {
+      "id": "m_0195",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14143,
+        "charEnd": 14153,
+        "timeStart": 1018.199,
+        "timeEnd": 1022.959
+      },
+      "score": 0.6119508147239685
+    },
+    {
+      "id": "m_0196",
+      "label": "facility",
+      "surface": "facilities",
+      "canonical": "facilities",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14263,
+        "charEnd": 14273,
+        "timeStart": 1024.919,
+        "timeEnd": 1029.3190000000002
+      },
+      "score": 0.7897846698760986
+    },
+    {
+      "id": "m_0197",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14277,
+        "charEnd": 14282,
+        "timeStart": 1026.959,
+        "timeEnd": 1031.799
+      },
+      "score": 0.7691782712936401
+    },
+    {
+      "id": "m_0198",
+      "label": "nationality_or_ethnicity",
+      "surface": "American\ncitizens",
+      "canonical": "American\ncitizens",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14343,
+        "charEnd": 14360,
+        "timeStart": 1029.319,
+        "timeEnd": 1036.6
+      },
+      "score": 0.6819837689399719
+    },
+    {
+      "id": "m_0199",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14390,
+        "charEnd": 14400,
+        "timeStart": 1033.88,
+        "timeEnd": 1038.3600000000001
+      },
+      "score": 0.5696141123771667
+    },
+    {
+      "id": "m_0200",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14444,
+        "charEnd": 14457,
+        "timeStart": 1036.6,
+        "timeEnd": 1041.36
+      },
+      "score": 0.6116452813148499
+    },
+    {
+      "id": "m_0201",
+      "label": "technology",
+      "surface": "alien technology",
+      "canonical": "alien technology",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14479,
+        "charEnd": 14495,
+        "timeStart": 1038.36,
+        "timeEnd": 1043.8799999999999
+      },
+      "score": 0.8277227878570557
+    },
+    {
+      "id": "m_0202",
+      "label": "technology",
+      "surface": "propulsion technology",
+      "canonical": "propulsion technology",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14527,
+        "charEnd": 14548,
+        "timeStart": 1041.36,
+        "timeEnd": 1046.12
+      },
+      "score": 0.7112446427345276
+    },
+    {
+      "id": "m_0203",
+      "label": "date_time",
+      "surface": "1791",
+      "canonical": "1791",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14802,
+        "charEnd": 14806,
+        "timeStart": 1064.2,
+        "timeEnd": 1070.3600000000001
+      },
+      "score": 0.7324455380439758
+    },
+    {
+      "id": "m_0204",
+      "label": "date_time",
+      "surface": "1950s",
+      "canonical": "1950s",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14831,
+        "charEnd": 14836,
+        "timeStart": 1064.2,
+        "timeEnd": 1070.3600000000001
+      },
+      "score": 0.7771614193916321
+    },
+    {
+      "id": "m_0205",
+      "label": "technology",
+      "surface": "titanium",
+      "canonical": "titanium",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14842,
+        "charEnd": 14850,
+        "timeStart": 1067.72,
+        "timeEnd": 1072.52
+      },
+      "score": 0.5461298227310181
+    },
+    {
+      "id": "m_0206",
+      "label": "organization",
+      "surface": "Lockheed",
+      "canonical": "Lockheed",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 14968,
+        "charEnd": 14976,
+        "timeStart": 1075.24,
+        "timeEnd": 1080.76
+      },
+      "score": 0.501845121383667
+    },
+    {
+      "id": "m_0207",
+      "label": "organization",
+      "surface": "US Air Force",
+      "canonical": "US Air Force",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15132,
+        "charEnd": 15144,
+        "timeStart": 1087.679,
+        "timeEnd": 1092.4
+      },
+      "score": 0.9222161173820496
+    },
+    {
+      "id": "m_0208",
+      "label": "technology",
+      "surface": "transistors",
+      "canonical": "transistors",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15202,
+        "charEnd": 15213,
+        "timeStart": 1092.4,
+        "timeEnd": 1097.039
+      },
+      "score": 0.9608758687973022
+    },
+    {
+      "id": "m_0209",
+      "label": "technology",
+      "surface": "transistors",
+      "canonical": "transistors",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15240,
+        "charEnd": 15251,
+        "timeStart": 1094.64,
+        "timeEnd": 1099.44
+      },
+      "score": 0.9778040051460266
+    },
+    {
+      "id": "m_0210",
+      "label": "technology",
+      "surface": "Laser Technology",
+      "canonical": "Laser Technology",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15327,
+        "charEnd": 15343,
+        "timeStart": 1099.44,
+        "timeEnd": 1103.1200000000001
+      },
+      "score": 0.8338687419891357
+    },
+    {
+      "id": "m_0211",
+      "label": "date_time",
+      "surface": "1958",
+      "canonical": "1958",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15355,
+        "charEnd": 15359,
+        "timeStart": 1103.12,
+        "timeEnd": 1110
+      },
+      "score": 0.9402621388435364
+    },
+    {
+      "id": "m_0212",
+      "label": "technology",
+      "surface": "fiber optics",
+      "canonical": "fiber optics",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15382,
+        "charEnd": 15394,
+        "timeStart": 1103.12,
+        "timeEnd": 1110
+      },
+      "score": 0.9106612205505371
+    },
+    {
+      "id": "m_0213",
+      "label": "date_time",
+      "surface": "1958",
+      "canonical": "1958",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15407,
+        "charEnd": 15411,
+        "timeStart": 1106.559,
+        "timeEnd": 1112.6
+      },
+      "score": 0.8803578615188599
+    },
+    {
+      "id": "m_0214",
+      "label": "technology",
+      "surface": "microchip",
+      "canonical": "microchip",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15435,
+        "charEnd": 15444,
+        "timeStart": 1110,
+        "timeEnd": 1115.84
+      },
+      "score": 0.9514477849006653
+    },
+    {
+      "id": "m_0215",
+      "label": "technology",
+      "surface": "integrated circuit",
+      "canonical": "integrated circuit",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15474,
+        "charEnd": 15492,
+        "timeStart": 1112.6,
+        "timeEnd": 1115.84
+      },
+      "score": 0.6373670101165771
+    },
+    {
+      "id": "m_0216",
+      "label": "date_time",
+      "surface": "1947",
+      "canonical": "1947",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15599,
+        "charEnd": 15603,
+        "timeStart": 1120.84,
+        "timeEnd": 1126.4399999999998
+      },
+      "score": 0.8879328370094299
+    },
+    {
+      "id": "m_0217",
+      "label": "organization",
+      "surface": "ANC",
+      "canonical": "ANC",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15604,
+        "charEnd": 15607,
+        "timeStart": 1120.84,
+        "timeEnd": 1126.4399999999998
+      },
+      "score": 0.8457605838775635
+    },
+    {
+      "id": "m_0218",
+      "label": "quantity",
+      "surface": "30 tons",
+      "canonical": "30 tons",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15697,
+        "charEnd": 15704,
+        "timeStart": 1132.039,
+        "timeEnd": 1141.08
+      },
+      "score": 0.9220595359802246
+    },
+    {
+      "id": "m_0219",
+      "label": "quantity",
+      "surface": "18,000 vacuum tubes",
+      "canonical": "18,000 vacuum tubes",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15718,
+        "charEnd": 15737,
+        "timeStart": 1132.039,
+        "timeEnd": 1141.08
+      },
+      "score": 0.7259066700935364
+    },
+    {
+      "id": "m_0220",
+      "label": "quantity",
+      "surface": "70,000 resistors",
+      "canonical": "70,000 resistors",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15738,
+        "charEnd": 15754,
+        "timeStart": 1136.28,
+        "timeEnd": 1144.039
+      },
+      "score": 0.7990638017654419
+    },
+    {
+      "id": "m_0221",
+      "label": "quantity",
+      "surface": "10,000 capacitors",
+      "canonical": "10,000 capacitors",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15755,
+        "charEnd": 15772,
+        "timeStart": 1136.28,
+        "timeEnd": 1144.039
+      },
+      "score": 0.7377326488494873
+    },
+    {
+      "id": "m_0222",
+      "label": "quantity",
+      "surface": "5\nmillion hand solder joints",
+      "canonical": "5\nmillion hand solder joints",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15777,
+        "charEnd": 15805,
+        "timeStart": 1136.28,
+        "timeEnd": 1146.799
+      },
+      "score": 0.6479063630104065
+    },
+    {
+      "id": "m_0223",
+      "label": "organization",
+      "surface": "ENC",
+      "canonical": "ENC",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15832,
+        "charEnd": 15835,
+        "timeStart": 1144.039,
+        "timeEnd": 1149.72
+      },
+      "score": 0.6334182620048523
+    },
+    {
+      "id": "m_0224",
+      "label": "date_time",
+      "surface": "1958",
+      "canonical": "1958",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15858,
+        "charEnd": 15862,
+        "timeStart": 1146.799,
+        "timeEnd": 1152.1589999999999
+      },
+      "score": 0.9124203324317932
+    },
+    {
+      "id": "m_0225",
+      "label": "quantity",
+      "surface": "30 tons",
+      "canonical": "30 tons",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15883,
+        "charEnd": 15890,
+        "timeStart": 1146.799,
+        "timeEnd": 1152.1589999999999
+      },
+      "score": 0.9536752104759216
+    },
+    {
+      "id": "m_0226",
+      "label": "technology",
+      "surface": "satellites",
+      "canonical": "satellites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15988,
+        "charEnd": 15998,
+        "timeStart": 1154.48,
+        "timeEnd": 1160.3600000000001
+      },
+      "score": 0.6735174655914307
+    },
+    {
+      "id": "m_0227",
+      "label": "technology",
+      "surface": "wireless\ntech",
+      "canonical": "wireless\ntech",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 15999,
+        "charEnd": 16012,
+        "timeStart": 1154.48,
+        "timeEnd": 1163
+      },
+      "score": 0.6809620261192322
+    },
+    {
+      "id": "m_0228",
+      "label": "technology",
+      "surface": "unmanned aerial Vehicles",
+      "canonical": "unmanned aerial Vehicles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16013,
+        "charEnd": 16037,
+        "timeStart": 1157.799,
+        "timeEnd": 1163
+      },
+      "score": 0.8667007684707642
+    },
+    {
+      "id": "m_0229",
+      "label": "technology",
+      "surface": "night\nvision",
+      "canonical": "night\nvision",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16043,
+        "charEnd": 16055,
+        "timeStart": 1157.799,
+        "timeEnd": 1165.8799999999999
+      },
+      "score": 0.9043145179748535
+    },
+    {
+      "id": "m_0230",
+      "label": "organization",
+      "surface": "United States military",
+      "canonical": "United States military",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16134,
+        "charEnd": 16156,
+        "timeStart": 1165.88,
+        "timeEnd": 1171.44
+      },
+      "score": 0.8952879309654236
+    },
+    {
+      "id": "m_0231",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16197,
+        "charEnd": 16209,
+        "timeStart": 1172.4,
+        "timeEnd": 1177.159
+      },
+      "score": 0.9842689037322998
+    },
+    {
+      "id": "m_0232",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16234,
+        "charEnd": 16245,
+        "timeStart": 1174.84,
+        "timeEnd": 1179.1589999999999
+      },
+      "score": 0.7043142318725586
+    },
+    {
+      "id": "m_0233",
+      "label": "technology",
+      "surface": "Scout ships",
+      "canonical": "Scout ships",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16321,
+        "charEnd": 16332,
+        "timeStart": 1179.159,
+        "timeEnd": 1183.3200000000002
+      },
+      "score": 0.5667983889579773
+    },
+    {
+      "id": "m_0234",
+      "label": "person",
+      "surface": "teacher",
+      "canonical": "teacher",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16493,
+        "charEnd": 16500,
+        "timeStart": 1194.88,
+        "timeEnd": 1201.2800000000002
+      },
+      "score": 0.9286280274391174
+    },
+    {
+      "id": "m_0235",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16622,
+        "charEnd": 16633,
+        "timeStart": 1204.88,
+        "timeEnd": 1210.96
+      },
+      "score": 0.7207137942314148
+    },
+    {
+      "id": "m_0236",
+      "label": "location",
+      "surface": "Urus",
+      "canonical": "Urus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16792,
+        "charEnd": 16796,
+        "timeStart": 1219.679,
+        "timeEnd": 1223.76
+      },
+      "score": 0.8878058791160583
+    },
+    {
+      "id": "m_0237",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16827,
+        "charEnd": 16834,
+        "timeStart": 1225.76,
+        "timeEnd": 1230.12
+      },
+      "score": 0.9550044536590576
+    },
+    {
+      "id": "m_0238",
+      "label": "person",
+      "surface": "teacher",
+      "canonical": "teacher",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16932,
+        "charEnd": 16939,
+        "timeStart": 1233.48,
+        "timeEnd": 1237.52
+      },
+      "score": 0.9465381503105164
+    },
+    {
+      "id": "m_0239",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16940,
+        "charEnd": 16947,
+        "timeStart": 1233.48,
+        "timeEnd": 1237.52
+      },
+      "score": 0.9678357243537903
+    },
+    {
+      "id": "m_0240",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 16968,
+        "charEnd": 16973,
+        "timeStart": 1235.919,
+        "timeEnd": 1240.159
+      },
+      "score": 0.9235866665840149
+    },
+    {
+      "id": "m_0241",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17026,
+        "charEnd": 17031,
+        "timeStart": 1237.52,
+        "timeEnd": 1243.08
+      },
+      "score": 0.9130460619926453
+    },
+    {
+      "id": "m_0242",
+      "label": "organization",
+      "surface": "tall\nwhites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17071,
+        "charEnd": 17082,
+        "timeStart": 1240.159,
+        "timeEnd": 1248.84
+      },
+      "score": 0.8236825466156006
+    },
+    {
+      "id": "m_0243",
+      "label": "technology",
+      "surface": "large black\ntriangular titanium ships",
+      "canonical": "large black\ntriangular titanium ships",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17103,
+        "charEnd": 17140,
+        "timeStart": 1243.08,
+        "timeEnd": 1250.4399999999998
+      },
+      "score": 0.7591912150382996
+    },
+    {
+      "id": "m_0244",
+      "label": "technology",
+      "surface": "Scout\ncrafts",
+      "canonical": "Scout crafts",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17149,
+        "charEnd": 17161,
+        "timeStart": 1245.84,
+        "timeEnd": 1253.36
+      },
+      "score": 0.9400330781936646
+    },
+    {
+      "id": "m_0245",
+      "label": "location",
+      "surface": "solar system",
+      "canonical": "solar system",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17193,
+        "charEnd": 17205,
+        "timeStart": 1250.44,
+        "timeEnd": 1255.64
+      },
+      "score": 0.733960747718811
+    },
+    {
+      "id": "m_0246",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17221,
+        "charEnd": 17226,
+        "timeStart": 1250.44,
+        "timeEnd": 1255.64
+      },
+      "score": 0.6588577032089233
+    },
+    {
+      "id": "m_0247",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17284,
+        "charEnd": 17289,
+        "timeStart": 1255.64,
+        "timeEnd": 1259.76
+      },
+      "score": 0.6546715497970581
+    },
+    {
+      "id": "m_0248",
+      "label": "event",
+      "surface": "full moon",
+      "canonical": "full moon",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17301,
+        "charEnd": 17310,
+        "timeStart": 1255.64,
+        "timeEnd": 1259.76
+      },
+      "score": 0.5037735104560852
+    },
+    {
+      "id": "m_0249",
+      "label": "technology",
+      "surface": "Scout crafts",
+      "canonical": "Scout crafts",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17329,
+        "charEnd": 17341,
+        "timeStart": 1257.84,
+        "timeEnd": 1262.1589999999999
+      },
+      "score": 0.5204917192459106
+    },
+    {
+      "id": "m_0250",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17383,
+        "charEnd": 17390,
+        "timeStart": 1262.159,
+        "timeEnd": 1266.24
+      },
+      "score": 0.9586936831474304
+    },
+    {
+      "id": "m_0251",
+      "label": "technology",
+      "surface": "Scout crafts",
+      "canonical": "Scout crafts",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17408,
+        "charEnd": 17420,
+        "timeStart": 1262.159,
+        "timeEnd": 1266.24
+      },
+      "score": 0.5240581631660461
+    },
+    {
+      "id": "m_0252",
+      "label": "organization",
+      "surface": "government\ncontractors",
+      "canonical": "government\ncontractors",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17441,
+        "charEnd": 17463,
+        "timeStart": 1264,
+        "timeEnd": 1270.64
+      },
+      "score": 0.6197459101676941
+    },
+    {
+      "id": "m_0253",
+      "label": "organization",
+      "surface": "Boeing",
+      "canonical": "Boeing",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17469,
+        "charEnd": 17475,
+        "timeStart": 1266.24,
+        "timeEnd": 1270.64
+      },
+      "score": 0.8698909282684326
+    },
+    {
+      "id": "m_0254",
+      "label": "organization",
+      "surface": "Lockheed",
+      "canonical": "Lockheed",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17480,
+        "charEnd": 17488,
+        "timeStart": 1266.24,
+        "timeEnd": 1270.64
+      },
+      "score": 0.8801791667938232
+    },
+    {
+      "id": "m_0255",
+      "label": "technology",
+      "surface": "alternative energy and\npropulsion device",
+      "canonical": "alternative energy and\npropulsion device",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17718,
+        "charEnd": 17758,
+        "timeStart": 1292.84,
+        "timeEnd": 1301.3999999999999
+      },
+      "score": 0.8383529186248779
+    },
+    {
+      "id": "m_0256",
+      "label": "location",
+      "surface": "San Diego",
+      "canonical": "San Diego",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17883,
+        "charEnd": 17892,
+        "timeStart": 1303.679,
+        "timeEnd": 1308.88
+      },
+      "score": 0.7619805932044983
+    },
+    {
+      "id": "m_0257",
+      "label": "organization",
+      "surface": "Lockheed Martin",
+      "canonical": "Lockheed Martin",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 17994,
+        "charEnd": 18009,
+        "timeStart": 1313.159,
+        "timeEnd": 1318.7600000000002
+      },
+      "score": 0.9148021936416626
+    },
+    {
+      "id": "m_0258",
+      "label": "organization",
+      "surface": "Advanced development program",
+      "canonical": "Advanced development program",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18012,
+        "charEnd": 18040,
+        "timeStart": 1316.279,
+        "timeEnd": 1321.4
+      },
+      "score": 0.5359312891960144
+    },
+    {
+      "id": "m_0259",
+      "label": "organization",
+      "surface": "US government",
+      "canonical": "US\ngovernment",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18148,
+        "charEnd": 18161,
+        "timeStart": 1325.88,
+        "timeEnd": 1330.48
+      },
+      "score": 0.82196444272995
+    },
+    {
+      "id": "m_0260",
+      "label": "group_or_movement",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18198,
+        "charEnd": 18209,
+        "timeStart": 1328.48,
+        "timeEnd": 1332.24
+      },
+      "score": 0.842424750328064
+    },
+    {
+      "id": "m_0261",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18214,
+        "charEnd": 18219,
+        "timeStart": 1328.48,
+        "timeEnd": 1332.24
+      },
+      "score": 0.9755385518074036
+    },
+    {
+      "id": "m_0262",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18270,
+        "charEnd": 18275,
+        "timeStart": 1332.24,
+        "timeEnd": 1337.24
+      },
+      "score": 0.9710257649421692
+    },
+    {
+      "id": "m_0263",
+      "label": "location",
+      "surface": "Nellis",
+      "canonical": "Nellis",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18419,
+        "charEnd": 18425,
+        "timeStart": 1342.159,
+        "timeEnd": 1346.2
+      },
+      "score": 0.6936491131782532
+    },
+    {
+      "id": "m_0264",
+      "label": "person",
+      "surface": "Charles lur",
+      "canonical": "Charles lur",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18426,
+        "charEnd": 18437,
+        "timeStart": 1342.159,
+        "timeEnd": 1346.2
+      },
+      "score": 0.9874106049537659
+    },
+    {
+      "id": "m_0265",
+      "label": "group_or_movement",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18446,
+        "charEnd": 18457,
+        "timeStart": 1342.159,
+        "timeEnd": 1346.2
+      },
+      "score": 0.8522809743881226
+    },
+    {
+      "id": "m_0266",
+      "label": "technology",
+      "surface": "human Tech",
+      "canonical": "human Tech",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18494,
+        "charEnd": 18504,
+        "timeStart": 1346.2,
+        "timeEnd": 1350.1200000000001
+      },
+      "score": 0.6382648348808289
+    },
+    {
+      "id": "m_0267",
+      "label": "date_time",
+      "surface": "early 1950s",
+      "canonical": "early 1950s",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18752,
+        "charEnd": 18763,
+        "timeStart": 1360.039,
+        "timeEnd": 1365
+      },
+      "score": 0.7839570045471191
+    },
+    {
+      "id": "m_0268",
+      "label": "organization",
+      "surface": "entire Aerospace industry",
+      "canonical": "entire Aerospace industry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18768,
+        "charEnd": 18793,
+        "timeStart": 1363,
+        "timeEnd": 1367.679
+      },
+      "score": 0.7022059559822083
+    },
+    {
+      "id": "m_0269",
+      "label": "organization",
+      "surface": "US\nmilitary",
+      "canonical": "US\nmilitary",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18878,
+        "charEnd": 18889,
+        "timeStart": 1367.679,
+        "timeEnd": 1376
+      },
+      "score": 0.8352876305580139
+    },
+    {
+      "id": "m_0270",
+      "label": "technology",
+      "surface": "Tech",
+      "canonical": "Tech",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18915,
+        "charEnd": 18919,
+        "timeStart": 1370.48,
+        "timeEnd": 1376
+      },
+      "score": 0.8710001707077026
+    },
+    {
+      "id": "m_0271",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 18972,
+        "charEnd": 18983,
+        "timeStart": 1376,
+        "timeEnd": 1380.44
+      },
+      "score": 0.7520188093185425
+    },
+    {
+      "id": "m_0272",
+      "label": "location",
+      "surface": "other planets",
+      "canonical": "other planets",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19114,
+        "charEnd": 19127,
+        "timeStart": 1384.76,
+        "timeEnd": 1389.679
+      },
+      "score": 0.603049099445343
+    },
+    {
+      "id": "m_0273",
+      "label": "organization",
+      "surface": "tall\nwhites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19136,
+        "charEnd": 19147,
+        "timeStart": 1384.76,
+        "timeEnd": 1391.559
+      },
+      "score": 0.7156122922897339
+    },
+    {
+      "id": "m_0274",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19180,
+        "charEnd": 19187,
+        "timeStart": 1389.679,
+        "timeEnd": 1393.72
+      },
+      "score": 0.9911693334579468
+    },
+    {
+      "id": "m_0275",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19258,
+        "charEnd": 19269,
+        "timeStart": 1393.72,
+        "timeEnd": 1398.039
+      },
+      "score": 0.8091008067131042
+    },
+    {
+      "id": "m_0276",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19305,
+        "charEnd": 19316,
+        "timeStart": 1395.799,
+        "timeEnd": 1399.68
+      },
+      "score": 0.6160971522331238
+    },
+    {
+      "id": "m_0277",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19411,
+        "charEnd": 19418,
+        "timeStart": 1403.24,
+        "timeEnd": 1407.4
+      },
+      "score": 0.9894970655441284
+    },
+    {
+      "id": "m_0278",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19501,
+        "charEnd": 19508,
+        "timeStart": 1407.4,
+        "timeEnd": 1411.64
+      },
+      "score": 0.9897253513336182
+    },
+    {
+      "id": "m_0279",
+      "label": "organization",
+      "surface": "tall\nwhites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19607,
+        "charEnd": 19618,
+        "timeStart": 1413.4,
+        "timeEnd": 1420.52
+      },
+      "score": 0.5063519477844238
+    },
+    {
+      "id": "m_0280",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19619,
+        "charEnd": 19626,
+        "timeStart": 1415.559,
+        "timeEnd": 1420.52
+      },
+      "score": 0.9921026825904846
+    },
+    {
+      "id": "m_0281",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19692,
+        "charEnd": 19703,
+        "timeStart": 1420.52,
+        "timeEnd": 1425.84
+      },
+      "score": 0.5294228196144104
+    },
+    {
+      "id": "m_0282",
+      "label": "person",
+      "surface": "teacher",
+      "canonical": "teacher",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19722,
+        "charEnd": 19729,
+        "timeStart": 1420.52,
+        "timeEnd": 1425.84
+      },
+      "score": 0.9928876757621765
+    },
+    {
+      "id": "m_0283",
+      "label": "person",
+      "surface": "teacher",
+      "canonical": "teacher",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19774,
+        "charEnd": 19781,
+        "timeStart": 1425.84,
+        "timeEnd": 1429.6
+      },
+      "score": 0.9924461245536804
+    },
+    {
+      "id": "m_0284",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19809,
+        "charEnd": 19816,
+        "timeStart": 1427.6,
+        "timeEnd": 1432.52
+      },
+      "score": 0.9893414974212646
+    },
+    {
+      "id": "m_0285",
+      "label": "person",
+      "surface": "teacher",
+      "canonical": "teacher",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19924,
+        "charEnd": 19931,
+        "timeStart": 1440.919,
+        "timeEnd": 1444.919
+      },
+      "score": 0.9943714737892151
+    },
+    {
+      "id": "m_0286",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19939,
+        "charEnd": 19946,
+        "timeStart": 1440.919,
+        "timeEnd": 1444.919
+      },
+      "score": 0.9903756976127625
+    },
+    {
+      "id": "m_0287",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 19995,
+        "charEnd": 20002,
+        "timeStart": 1444.919,
+        "timeEnd": 1449.0800000000002
+      },
+      "score": 0.9891303777694702
+    },
+    {
+      "id": "m_0288",
+      "label": "person",
+      "surface": "teacher",
+      "canonical": "teacher",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 20059,
+        "charEnd": 20066,
+        "timeStart": 1446.799,
+        "timeEnd": 1452.799
+      },
+      "score": 0.992179274559021
+    },
+    {
+      "id": "m_0289",
+      "label": "person",
+      "surface": "teacher",
+      "canonical": "teacher",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 20173,
+        "charEnd": 20180,
+        "timeStart": 1460.36,
+        "timeEnd": 1465.8799999999999
+      },
+      "score": 0.803032398223877
+    },
+    {
+      "id": "m_0290",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 20398,
+        "charEnd": 20409,
+        "timeStart": 1474.32,
+        "timeEnd": 1479.279
+      },
+      "score": 0.5200895071029663
+    },
+    {
+      "id": "m_0291",
+      "label": "organization",
+      "surface": "tall\nwhites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 20648,
+        "charEnd": 20659,
+        "timeStart": 1488.32,
+        "timeEnd": 1494.84
+      },
+      "score": 0.5599863529205322
+    },
+    {
+      "id": "m_0292",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 20823,
+        "charEnd": 20830,
+        "timeStart": 1500.88,
+        "timeEnd": 1506.3600000000001
+      },
+      "score": 0.9706773161888123
+    },
+    {
+      "id": "m_0293",
+      "label": "quantity",
+      "surface": "age 400",
+      "canonical": "age 400",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21024,
+        "charEnd": 21031,
+        "timeStart": 1516.88,
+        "timeEnd": 1523
+      },
+      "score": 0.6813462376594543
+    },
+    {
+      "id": "m_0294",
+      "label": "quantity",
+      "surface": "average lifespan",
+      "canonical": "average lifespan",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21206,
+        "charEnd": 21222,
+        "timeStart": 1528,
+        "timeEnd": 1533.399
+      },
+      "score": 0.7721081972122192
+    },
+    {
+      "id": "m_0295",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21258,
+        "charEnd": 21265,
+        "timeStart": 1533.399,
+        "timeEnd": 1537.76
+      },
+      "score": 0.9887686967849731
+    },
+    {
+      "id": "m_0296",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21368,
+        "charEnd": 21375,
+        "timeStart": 1537.76,
+        "timeEnd": 1543
+      },
+      "score": 0.9906112551689148
+    },
+    {
+      "id": "m_0297",
+      "label": "location",
+      "surface": "Arcturus",
+      "canonical": "Arcturus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21395,
+        "charEnd": 21403,
+        "timeStart": 1540.08,
+        "timeEnd": 1545.039
+      },
+      "score": 0.9557957053184509
+    },
+    {
+      "id": "m_0298",
+      "label": "location",
+      "surface": "Arcturus",
+      "canonical": "Arcturus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21430,
+        "charEnd": 21438,
+        "timeStart": 1543,
+        "timeEnd": 1548.159
+      },
+      "score": 0.9490688443183899
+    },
+    {
+      "id": "m_0299",
+      "label": "location",
+      "surface": "botus",
+      "canonical": "botus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21466,
+        "charEnd": 21471,
+        "timeStart": 1545.039,
+        "timeEnd": 1551.96
+      },
+      "score": 0.8589547872543335
+    },
+    {
+      "id": "m_0300",
+      "label": "location",
+      "surface": "botus",
+      "canonical": "botus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21480,
+        "charEnd": 21485,
+        "timeStart": 1548.159,
+        "timeEnd": 1554.919
+      },
+      "score": 0.897023618221283
+    },
+    {
+      "id": "m_0301",
+      "label": "location",
+      "surface": "botus",
+      "canonical": "botus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21529,
+        "charEnd": 21534,
+        "timeStart": 1551.96,
+        "timeEnd": 1556.919
+      },
+      "score": 0.9009341597557068
+    },
+    {
+      "id": "m_0302",
+      "label": "location",
+      "surface": "botus",
+      "canonical": "botus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 21604,
+        "charEnd": 21609,
+        "timeStart": 1556.919,
+        "timeEnd": 1562.919
+      },
+      "score": 0.9131829142570496
+    },
+    {
+      "id": "m_0303",
+      "label": "technology",
+      "surface": "remote viewing",
+      "canonical": "remote viewing",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22084,
+        "charEnd": 22098,
+        "timeStart": 1588.64,
+        "timeEnd": 1594.039
+      },
+      "score": 0.992368757724762
+    },
+    {
+      "id": "m_0304",
+      "label": "technology",
+      "surface": "remote viewing",
+      "canonical": "remote viewing",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22105,
+        "charEnd": 22119,
+        "timeStart": 1591.96,
+        "timeEnd": 1596.1200000000001
+      },
+      "score": 0.9915651082992554
+    },
+    {
+      "id": "m_0305",
+      "label": "person",
+      "surface": "Ingo Swan",
+      "canonical": "Ingo Swan",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22237,
+        "charEnd": 22246,
+        "timeStart": 1600.88,
+        "timeEnd": 1606.7990000000002
+      },
+      "score": 0.9445892572402954
+    },
+    {
+      "id": "m_0306",
+      "label": "person",
+      "surface": "Pat price",
+      "canonical": "Pat price",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22247,
+        "charEnd": 22256,
+        "timeStart": 1600.88,
+        "timeEnd": 1606.7990000000002
+      },
+      "score": 0.9741268754005432
+    },
+    {
+      "id": "m_0307",
+      "label": "person",
+      "surface": "Joe mcmonagle",
+      "canonical": "Joe mcmonagle",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22261,
+        "charEnd": 22274,
+        "timeStart": 1600.88,
+        "timeEnd": 1606.7990000000002
+      },
+      "score": 0.9690665006637573
+    },
+    {
+      "id": "m_0308",
+      "label": "organization",
+      "surface": "military intelligence",
+      "canonical": "military intelligence",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22319,
+        "charEnd": 22340,
+        "timeStart": 1606.799,
+        "timeEnd": 1612.279
+      },
+      "score": 0.9246460199356079
+    },
+    {
+      "id": "m_0309",
+      "label": "person",
+      "surface": "Pat price",
+      "canonical": "Pat price",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22345,
+        "charEnd": 22354,
+        "timeStart": 1606.799,
+        "timeEnd": 1612.279
+      },
+      "score": 0.9797542691230774
+    },
+    {
+      "id": "m_0310",
+      "label": "technology",
+      "surface": "remote viewing",
+      "canonical": "remote viewing",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22411,
+        "charEnd": 22425,
+        "timeStart": 1612.279,
+        "timeEnd": 1617.24
+      },
+      "score": 0.9955273270606995
+    },
+    {
+      "id": "m_0311",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22499,
+        "charEnd": 22506,
+        "timeStart": 1617.24,
+        "timeEnd": 1621.52
+      },
+      "score": 0.785803496837616
+    },
+    {
+      "id": "m_0312",
+      "label": "organization",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22529,
+        "charEnd": 22540,
+        "timeStart": 1619.76,
+        "timeEnd": 1626.039
+      },
+      "score": 0.6289462447166443
+    },
+    {
+      "id": "m_0313",
+      "label": "date_time",
+      "surface": "1965",
+      "canonical": "1965",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22566,
+        "charEnd": 22570,
+        "timeStart": 1621.52,
+        "timeEnd": 1627.72
+      },
+      "score": 0.8783623576164246
+    },
+    {
+      "id": "m_0314",
+      "label": "date_time",
+      "surface": "1967",
+      "canonical": "1967",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22574,
+        "charEnd": 22578,
+        "timeStart": 1621.52,
+        "timeEnd": 1627.72
+      },
+      "score": 0.8874703049659729
+    },
+    {
+      "id": "m_0315",
+      "label": "location",
+      "surface": "Vietnam",
+      "canonical": "Vietnam",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22606,
+        "charEnd": 22613,
+        "timeStart": 1626.039,
+        "timeEnd": 1630.64
+      },
+      "score": 0.9175847768783569
+    },
+    {
+      "id": "m_0316",
+      "label": "quantity",
+      "surface": "almost 40 years",
+      "canonical": "almost 40 years",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22663,
+        "charEnd": 22678,
+        "timeStart": 1630.64,
+        "timeEnd": 1635.0800000000002
+      },
+      "score": 0.5749017596244812
+    },
+    {
+      "id": "m_0317",
+      "label": "group_or_movement",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22820,
+        "charEnd": 22831,
+        "timeStart": 1639.32,
+        "timeEnd": 1643.559
+      },
+      "score": 0.5161178112030029
+    },
+    {
+      "id": "m_0318",
+      "label": "facility",
+      "surface": "secret facilities",
+      "canonical": "secret facilities",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22899,
+        "charEnd": 22916,
+        "timeStart": 1643.559,
+        "timeEnd": 1648.98
+      },
+      "score": 0.9752747416496277
+    },
+    {
+      "id": "m_0319",
+      "label": "organization",
+      "surface": "United States government",
+      "canonical": "United States government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22930,
+        "charEnd": 22954,
+        "timeStart": 1646,
+        "timeEnd": 1652.029
+      },
+      "score": 0.8912619948387146
+    },
+    {
+      "id": "m_0320",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 22988,
+        "charEnd": 23000,
+        "timeStart": 1654.679,
+        "timeEnd": 1660.48
+      },
+      "score": 0.959596574306488
+    },
+    {
+      "id": "m_0321",
+      "label": "work_of_media",
+      "surface": "Millennial Hospitality",
+      "canonical": "Millennial Hospitality",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23028,
+        "charEnd": 23050,
+        "timeStart": 1657.36,
+        "timeEnd": 1662.9599999999998
+      },
+      "score": 0.9479140639305115
+    },
+    {
+      "id": "m_0322",
+      "label": "date_time",
+      "surface": "2002",
+      "canonical": "2002",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23054,
+        "charEnd": 23058,
+        "timeStart": 1657.36,
+        "timeEnd": 1662.9599999999998
+      },
+      "score": 0.9225367307662964
+    },
+    {
+      "id": "m_0323",
+      "label": "quantity",
+      "surface": "two more books",
+      "canonical": "two more books",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23153,
+        "charEnd": 23167,
+        "timeStart": 1667.159,
+        "timeEnd": 1671.679
+      },
+      "score": 0.6884029507637024
+    },
+    {
+      "id": "m_0324",
+      "label": "event",
+      "surface": "UFO\nconventions",
+      "canonical": "UFO\nconventions",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23213,
+        "charEnd": 23228,
+        "timeStart": 1669.48,
+        "timeEnd": 1675.919
+      },
+      "score": 0.9122989773750305
+    },
+    {
+      "id": "m_0325",
+      "label": "person",
+      "surface": "George Nory",
+      "canonical": "George Nory",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23310,
+        "charEnd": 23321,
+        "timeStart": 1675.919,
+        "timeEnd": 1680.039
+      },
+      "score": 0.7503349184989929
+    },
+    {
+      "id": "m_0326",
+      "label": "date_time",
+      "surface": "2005",
+      "canonical": "2005",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23325,
+        "charEnd": 23329,
+        "timeStart": 1675.919,
+        "timeEnd": 1680.039
+      },
+      "score": 0.8364265561103821
+    },
+    {
+      "id": "m_0327",
+      "label": "group_or_movement",
+      "surface": "Skeptics",
+      "canonical": "Skeptics",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23500,
+        "charEnd": 23508,
+        "timeStart": 1686.84,
+        "timeEnd": 1690.399
+      },
+      "score": 0.816055178642273
+    },
+    {
+      "id": "m_0328",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23529,
+        "charEnd": 23536,
+        "timeStart": 1688.559,
+        "timeEnd": 1692.799
+      },
+      "score": 0.9363211393356323
+    },
+    {
+      "id": "m_0329",
+      "label": "group_or_movement",
+      "surface": "Believers",
+      "canonical": "Believers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23566,
+        "charEnd": 23575,
+        "timeStart": 1690.399,
+        "timeEnd": 1694.1589999999999
+      },
+      "score": 0.7862150073051453
+    },
+    {
+      "id": "m_0330",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23643,
+        "charEnd": 23650,
+        "timeStart": 1694.159,
+        "timeEnd": 1699.1200000000001
+      },
+      "score": 0.8992443084716797
+    },
+    {
+      "id": "m_0331",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23706,
+        "charEnd": 23713,
+        "timeStart": 1696.519,
+        "timeEnd": 1700.88
+      },
+      "score": 0.9312512874603271
+    },
+    {
+      "id": "m_0332",
+      "label": "location",
+      "surface": "Nellis Air Force Base",
+      "canonical": "Nellis Air Force Base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23721,
+        "charEnd": 23742,
+        "timeStart": 1699.12,
+        "timeEnd": 1703.7199999999998
+      },
+      "score": 0.6604512333869934
+    },
+    {
+      "id": "m_0333",
+      "label": "role",
+      "surface": "weather Observer",
+      "canonical": "weather Observer",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23772,
+        "charEnd": 23788,
+        "timeStart": 1700.88,
+        "timeEnd": 1706.0390000000002
+      },
+      "score": 0.8556820750236511
+    },
+    {
+      "id": "m_0334",
+      "label": "location",
+      "surface": "Vietnam",
+      "canonical": "Vietnam",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23808,
+        "charEnd": 23815,
+        "timeStart": 1703.72,
+        "timeEnd": 1707.96
+      },
+      "score": 0.8309414386749268
+    },
+    {
+      "id": "m_0335",
+      "label": "person",
+      "surface": "David Hilton",
+      "canonical": "David Hilton",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23976,
+        "charEnd": 23988,
+        "timeStart": 1715.519,
+        "timeEnd": 1720.2
+      },
+      "score": 0.8790294528007507
+    },
+    {
+      "id": "m_0336",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 23989,
+        "charEnd": 23994,
+        "timeStart": 1715.519,
+        "timeEnd": 1720.2
+      },
+      "score": 0.7654719948768616
+    },
+    {
+      "id": "m_0337",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24093,
+        "charEnd": 24098,
+        "timeStart": 1723.08,
+        "timeEnd": 1727.519
+      },
+      "score": 0.7438015937805176
+    },
+    {
+      "id": "m_0338",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24163,
+        "charEnd": 24170,
+        "timeStart": 1727.519,
+        "timeEnd": 1732.08
+      },
+      "score": 0.958808422088623
+    },
+    {
+      "id": "m_0339",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24232,
+        "charEnd": 24244,
+        "timeStart": 1732.08,
+        "timeEnd": 1736.1589999999999
+      },
+      "score": 0.962836503982544
+    },
+    {
+      "id": "m_0340",
+      "label": "work_of_media",
+      "surface": "Millennial Hospitality",
+      "canonical": "Millennial Hospitality",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24310,
+        "charEnd": 24332,
+        "timeStart": 1736.159,
+        "timeEnd": 1740.0390000000002
+      },
+      "score": 0.9422909021377563
+    },
+    {
+      "id": "m_0341",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24564,
+        "charEnd": 24569,
+        "timeStart": 1748.72,
+        "timeEnd": 1753.44
+      },
+      "score": 0.8746470808982849
+    },
+    {
+      "id": "m_0342",
+      "label": "location",
+      "surface": "Cree\nAir Force Base",
+      "canonical": "Cree\nAir Force Base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24610,
+        "charEnd": 24629,
+        "timeStart": 1750.6,
+        "timeEnd": 1757.1200000000001
+      },
+      "score": 0.8673939108848572
+    },
+    {
+      "id": "m_0343",
+      "label": "location",
+      "surface": "Indian Springs",
+      "canonical": "Indian Springs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24633,
+        "charEnd": 24647,
+        "timeStart": 1753.44,
+        "timeEnd": 1757.1200000000001
+      },
+      "score": 0.9588072896003723
+    },
+    {
+      "id": "m_0344",
+      "label": "location",
+      "surface": "Nellis",
+      "canonical": "Nellis",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24694,
+        "charEnd": 24700,
+        "timeStart": 1757.12,
+        "timeEnd": 1761.6
+      },
+      "score": 0.8293027281761169
+    },
+    {
+      "id": "m_0345",
+      "label": "location",
+      "surface": "Indian Springs",
+      "canonical": "Indian Springs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24758,
+        "charEnd": 24772,
+        "timeStart": 1761.6,
+        "timeEnd": 1766.7199999999998
+      },
+      "score": 0.9714213609695435
+    },
+    {
+      "id": "m_0346",
+      "label": "location",
+      "surface": "range one",
+      "canonical": "range one",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24789,
+        "charEnd": 24798,
+        "timeStart": 1761.6,
+        "timeEnd": 1766.7199999999998
+      },
+      "score": 0.8902391791343689
+    },
+    {
+      "id": "m_0347",
+      "label": "location",
+      "surface": "Southeast",
+      "canonical": "Southeast",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24806,
+        "charEnd": 24815,
+        "timeStart": 1764.32,
+        "timeEnd": 1769.279
+      },
+      "score": 0.6804313659667969
+    },
+    {
+      "id": "m_0348",
+      "label": "location",
+      "surface": "range three",
+      "canonical": "range three",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24816,
+        "charEnd": 24827,
+        "timeStart": 1764.32,
+        "timeEnd": 1769.279
+      },
+      "score": 0.8544809818267822
+    },
+    {
+      "id": "m_0349",
+      "label": "location",
+      "surface": "range for",
+      "canonical": "range for",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24855,
+        "charEnd": 24864,
+        "timeStart": 1766.72,
+        "timeEnd": 1771.44
+      },
+      "score": 0.6031960248947144
+    },
+    {
+      "id": "m_0350",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24889,
+        "charEnd": 24894,
+        "timeStart": 1769.279,
+        "timeEnd": 1773.64
+      },
+      "score": 0.8287529349327087
+    },
+    {
+      "id": "m_0351",
+      "label": "person",
+      "surface": "Harry",
+      "canonical": "Harry",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24931,
+        "charEnd": 24936,
+        "timeStart": 1771.44,
+        "timeEnd": 1775.2
+      },
+      "score": 0.6503239870071411
+    },
+    {
+      "id": "m_0352",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 24970,
+        "charEnd": 24975,
+        "timeStart": 1773.64,
+        "timeEnd": 1777.76
+      },
+      "score": 0.8788018226623535
+    },
+    {
+      "id": "m_0353",
+      "label": "facility",
+      "surface": "scoutcraft hanger",
+      "canonical": "scoutcraft hanger",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25010,
+        "charEnd": 25027,
+        "timeStart": 1775.2,
+        "timeEnd": 1780.519
+      },
+      "score": 0.8137659430503845
+    },
+    {
+      "id": "m_0354",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25073,
+        "charEnd": 25080,
+        "timeStart": 1780.519,
+        "timeEnd": 1785.24
+      },
+      "score": 0.5129902958869934
+    },
+    {
+      "id": "m_0355",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25125,
+        "charEnd": 25130,
+        "timeStart": 1783.039,
+        "timeEnd": 1787.08
+      },
+      "score": 0.7133923172950745
+    },
+    {
+      "id": "m_0356",
+      "label": "technology",
+      "surface": "Google\nEarth",
+      "canonical": "Google Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25138,
+        "charEnd": 25150,
+        "timeStart": 1783.039,
+        "timeEnd": 1789.88
+      },
+      "score": 0.6756774187088013
+    },
+    {
+      "id": "m_0357",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25212,
+        "charEnd": 25219,
+        "timeStart": 1789.88,
+        "timeEnd": 1793.96
+      },
+      "score": 0.5561849474906921
+    },
+    {
+      "id": "m_0358",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25314,
+        "charEnd": 25319,
+        "timeStart": 1793.96,
+        "timeEnd": 1798.64
+      },
+      "score": 0.7851085066795349
+    },
+    {
+      "id": "m_0359",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25423,
+        "charEnd": 25428,
+        "timeStart": 1803.159,
+        "timeEnd": 1808.679
+      },
+      "score": 0.8004840612411499
+    },
+    {
+      "id": "m_0360",
+      "label": "person",
+      "surface": "Dr Steven Greer",
+      "canonical": "Dr Steven Greer",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25501,
+        "charEnd": 25516,
+        "timeStart": 1808.679,
+        "timeEnd": 1813.3200000000002
+      },
+      "score": 0.8422654271125793
+    },
+    {
+      "id": "m_0361",
+      "label": "facility",
+      "surface": "Skunk Works",
+      "canonical": "Skunk Works",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25563,
+        "charEnd": 25574,
+        "timeStart": 1811.159,
+        "timeEnd": 1815.679
+      },
+      "score": 0.5673112273216248
+    },
+    {
+      "id": "m_0362",
+      "label": "organization",
+      "surface": "Lockheed Martin",
+      "canonical": "Lockheed Martin",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25578,
+        "charEnd": 25593,
+        "timeStart": 1813.32,
+        "timeEnd": 1817.799
+      },
+      "score": 0.980832040309906
+    },
+    {
+      "id": "m_0363",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25598,
+        "charEnd": 25610,
+        "timeStart": 1813.32,
+        "timeEnd": 1817.799
+      },
+      "score": 0.957127034664154
+    },
+    {
+      "id": "m_0364",
+      "label": "organization",
+      "surface": "military\ncontractors",
+      "canonical": "military\ncontractors",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25694,
+        "charEnd": 25714,
+        "timeStart": 1819.96,
+        "timeEnd": 1827.08
+      },
+      "score": 0.5219851136207581
+    },
+    {
+      "id": "m_0365",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25734,
+        "charEnd": 25739,
+        "timeStart": 1821,
+        "timeEnd": 1827.08
+      },
+      "score": 0.8316615223884583
+    },
+    {
+      "id": "m_0366",
+      "label": "technology",
+      "surface": "Google Earth",
+      "canonical": "Google Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25749,
+        "charEnd": 25761,
+        "timeStart": 1823.279,
+        "timeEnd": 1829.399
+      },
+      "score": 0.7068795561790466
+    },
+    {
+      "id": "m_0367",
+      "label": "location",
+      "surface": "the platform",
+      "canonical": "the platform",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25810,
+        "charEnd": 25822,
+        "timeStart": 1831.6,
+        "timeEnd": 1835.9599999999998
+      },
+      "score": 0.6621054410934448
+    },
+    {
+      "id": "m_0368",
+      "label": "quantity",
+      "surface": "each about the size of a bus",
+      "canonical": "each about the size of a bus",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 25854,
+        "charEnd": 25882,
+        "timeStart": 1833.84,
+        "timeEnd": 1838.6
+      },
+      "score": 0.5430589914321899
+    },
+    {
+      "id": "m_0369",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26275,
+        "charEnd": 26280,
+        "timeStart": 1858.76,
+        "timeEnd": 1863.639
+      },
+      "score": 0.67352694272995
+    },
+    {
+      "id": "m_0370",
+      "label": "location",
+      "surface": "Alien playgrounds",
+      "canonical": "Alien playgrounds",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26393,
+        "charEnd": 26410,
+        "timeStart": 1866,
+        "timeEnd": 1871.799
+      },
+      "score": 0.5172629356384277
+    },
+    {
+      "id": "m_0371",
+      "label": "location",
+      "surface": "Cree Air Force Base",
+      "canonical": "Cree\nAir Force Base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26505,
+        "charEnd": 26524,
+        "timeStart": 1878.799,
+        "timeEnd": 1883.1589999999999
+      },
+      "score": 0.8386770486831665
+    },
+    {
+      "id": "m_0372",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26550,
+        "charEnd": 26562,
+        "timeStart": 1881.44,
+        "timeEnd": 1885.2
+      },
+      "score": 0.88667893409729
+    },
+    {
+      "id": "m_0373",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26601,
+        "charEnd": 26605,
+        "timeStart": 1883.159,
+        "timeEnd": 1887.1200000000001
+      },
+      "score": 0.5700520873069763
+    },
+    {
+      "id": "m_0374",
+      "label": "location",
+      "surface": "the\nnorthwest corner",
+      "canonical": "the\nnorthwest corner",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26611,
+        "charEnd": 26631,
+        "timeStart": 1883.159,
+        "timeEnd": 1889.919
+      },
+      "score": 0.5121670365333557
+    },
+    {
+      "id": "m_0375",
+      "label": "quantity",
+      "surface": "in total",
+      "canonical": "in total",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26657,
+        "charEnd": 26665,
+        "timeStart": 1898.32,
+        "timeEnd": 1903.36
+      },
+      "score": 0.5083553791046143
+    },
+    {
+      "id": "m_0376",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26666,
+        "charEnd": 26671,
+        "timeStart": 1898.32,
+        "timeEnd": 1903.36
+      },
+      "score": 0.9833287000656128
+    },
+    {
+      "id": "m_0377",
+      "label": "quantity",
+      "surface": "18\nseparate sites",
+      "canonical": "18\nseparate sites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26689,
+        "charEnd": 26706,
+        "timeStart": 1898.32,
+        "timeEnd": 1905.48
+      },
+      "score": 0.5828129649162292
+    },
+    {
+      "id": "m_0378",
+      "label": "person",
+      "surface": "David",
+      "canonical": "David",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26853,
+        "charEnd": 26858,
+        "timeStart": 1908.6,
+        "timeEnd": 1913.1589999999999
+      },
+      "score": 0.9920591115951538
+    },
+    {
+      "id": "m_0379",
+      "label": "technology",
+      "surface": "Google Earth",
+      "canonical": "Google Earth",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26887,
+        "charEnd": 26899,
+        "timeStart": 1910.96,
+        "timeEnd": 1915.6390000000001
+      },
+      "score": 0.5351895689964294
+    },
+    {
+      "id": "m_0380",
+      "label": "work_of_media",
+      "surface": "his\nvideo",
+      "canonical": "his\nvideo",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26916,
+        "charEnd": 26925,
+        "timeStart": 1910.96,
+        "timeEnd": 1918.0390000000002
+      },
+      "score": 0.5163699388504028
+    },
+    {
+      "id": "m_0381",
+      "label": "date_time",
+      "surface": "2013",
+      "canonical": "2013",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 26934,
+        "charEnd": 26938,
+        "timeStart": 1913.159,
+        "timeEnd": 1918.0390000000002
+      },
+      "score": 0.9474790096282959
+    },
+    {
+      "id": "m_0382",
+      "label": "facility",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27497,
+        "charEnd": 27501,
+        "timeStart": 1954.679,
+        "timeEnd": 1959.679
+      },
+      "score": 0.6059197187423706
+    },
+    {
+      "id": "m_0383",
+      "label": "quantity",
+      "surface": "Miles and Miles",
+      "canonical": "Miles and Miles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27507,
+        "charEnd": 27522,
+        "timeStart": 1957.48,
+        "timeEnd": 1961.88
+      },
+      "score": 0.6165436506271362
+    },
+    {
+      "id": "m_0384",
+      "label": "date_time",
+      "surface": "January 1951",
+      "canonical": "January 1951",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27644,
+        "charEnd": 27656,
+        "timeStart": 1967.12,
+        "timeEnd": 1972.1999999999998
+      },
+      "score": 0.9587132930755615
+    },
+    {
+      "id": "m_0385",
+      "label": "work_of_media",
+      "surface": "article",
+      "canonical": "article",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27660,
+        "charEnd": 27667,
+        "timeStart": 1967.12,
+        "timeEnd": 1972.1999999999998
+      },
+      "score": 0.6965702772140503
+    },
+    {
+      "id": "m_0386",
+      "label": "organization",
+      "surface": "Las Vegas Review\nJournal",
+      "canonical": "Las Vegas Review\nJournal",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27689,
+        "charEnd": 27713,
+        "timeStart": 1970.6,
+        "timeEnd": 1977.96
+      },
+      "score": 0.8658018708229065
+    },
+    {
+      "id": "m_0387",
+      "label": "location",
+      "surface": "Indian\nSprings",
+      "canonical": "Indian Springs",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27734,
+        "charEnd": 27748,
+        "timeStart": 1972.2,
+        "timeEnd": 1981.24
+      },
+      "score": 0.7424454689025879
+    },
+    {
+      "id": "m_0388",
+      "label": "quantity",
+      "surface": "$300 million",
+      "canonical": "$300 million",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27806,
+        "charEnd": 27818,
+        "timeStart": 1977.96,
+        "timeEnd": 1983.88
+      },
+      "score": 0.8927942514419556
+    },
+    {
+      "id": "m_0389",
+      "label": "date_time",
+      "surface": "1951",
+      "canonical": "1951",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27833,
+        "charEnd": 27837,
+        "timeStart": 1981.24,
+        "timeEnd": 1987.2
+      },
+      "score": 0.8301019072532654
+    },
+    {
+      "id": "m_0390",
+      "label": "quantity",
+      "surface": "$ 3.6 billion",
+      "canonical": "$ 3.6 billion",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27869,
+        "charEnd": 27882,
+        "timeStart": 1983.88,
+        "timeEnd": 1989.159
+      },
+      "score": 0.5345557332038879
+    },
+    {
+      "id": "m_0391",
+      "label": "facility",
+      "surface": "freedom tower",
+      "canonical": "freedom tower",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27940,
+        "charEnd": 27953,
+        "timeStart": 1989.159,
+        "timeEnd": 1992.88
+      },
+      "score": 0.693558394908905
+    },
+    {
+      "id": "m_0392",
+      "label": "location",
+      "surface": "New York",
+      "canonical": "New York",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27957,
+        "charEnd": 27965,
+        "timeStart": 1989.159,
+        "timeEnd": 1992.88
+      },
+      "score": 0.8849257230758667
+    },
+    {
+      "id": "m_0393",
+      "label": "work_of_media",
+      "surface": "article",
+      "canonical": "article",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 27970,
+        "charEnd": 27977,
+        "timeStart": 1991.279,
+        "timeEnd": 1995.12
+      },
+      "score": 0.6637172102928162
+    },
+    {
+      "id": "m_0394",
+      "label": "person",
+      "surface": "David Hilton",
+      "canonical": "David Hilton",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28170,
+        "charEnd": 28182,
+        "timeStart": 2002.24,
+        "timeEnd": 2004.88
+      },
+      "score": 0.9307375550270081
+    },
+    {
+      "id": "m_0395",
+      "label": "work_of_media",
+      "surface": "article",
+      "canonical": "article",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28235,
+        "charEnd": 28242,
+        "timeStart": 2004.88,
+        "timeEnd": 2009
+      },
+      "score": 0.9428859949111938
+    },
+    {
+      "id": "m_0396",
+      "label": "organization",
+      "surface": "mcke\nconstruction company",
+      "canonical": "mcke\nconstruction company",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28275,
+        "charEnd": 28300,
+        "timeStart": 2007.32,
+        "timeEnd": 2013.72
+      },
+      "score": 0.9711928367614746
+    },
+    {
+      "id": "m_0397",
+      "label": "location",
+      "surface": "El Paso Texas",
+      "canonical": "El Paso Texas",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28304,
+        "charEnd": 28317,
+        "timeStart": 2009,
+        "timeEnd": 2013.72
+      },
+      "score": 0.9167888760566711
+    },
+    {
+      "id": "m_0398",
+      "label": "organization",
+      "surface": "mcke construction company",
+      "canonical": "mcke\nconstruction company",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28395,
+        "charEnd": 28420,
+        "timeStart": 2015.88,
+        "timeEnd": 2019.88
+      },
+      "score": 0.9632631540298462
+    },
+    {
+      "id": "m_0399",
+      "label": "facility",
+      "surface": "alternate test site facilities",
+      "canonical": "alternate test site facilities",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28466,
+        "charEnd": 28496,
+        "timeStart": 2023.88,
+        "timeEnd": 2028.7990000000002
+      },
+      "score": 0.9363582730293274
+    },
+    {
+      "id": "m_0400",
+      "label": "location",
+      "surface": "Las Vegas Nevada",
+      "canonical": "Las Vegas Nevada",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28506,
+        "charEnd": 28522,
+        "timeStart": 2026.24,
+        "timeEnd": 2032.279
+      },
+      "score": 0.9566683769226074
+    },
+    {
+      "id": "m_0401",
+      "label": "date_time",
+      "surface": "December 23rd 1950",
+      "canonical": "December 23rd 1950",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28543,
+        "charEnd": 28561,
+        "timeStart": 2028.799,
+        "timeEnd": 2037.519
+      },
+      "score": 0.935258150100708
+    },
+    {
+      "id": "m_0402",
+      "label": "date_time",
+      "surface": "May 23rd\n1951",
+      "canonical": "May 23rd\n1951",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28572,
+        "charEnd": 28585,
+        "timeStart": 2028.799,
+        "timeEnd": 2040.279
+      },
+      "score": 0.9324329495429993
+    },
+    {
+      "id": "m_0403",
+      "label": "quantity",
+      "surface": "$680,000",
+      "canonical": "$680,000",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28606,
+        "charEnd": 28614,
+        "timeStart": 2032.279,
+        "timeEnd": 2040.279
+      },
+      "score": 0.738506555557251
+    },
+    {
+      "id": "m_0404",
+      "label": "work_of_media",
+      "surface": "article",
+      "canonical": "article",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28764,
+        "charEnd": 28771,
+        "timeStart": 2046.279,
+        "timeEnd": 2051.44
+      },
+      "score": 0.889840841293335
+    },
+    {
+      "id": "m_0405",
+      "label": "event",
+      "surface": "huge construction\nproject",
+      "canonical": "huge construction\nproject",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28905,
+        "charEnd": 28930,
+        "timeStart": 2056.04,
+        "timeEnd": 2061.76
+      },
+      "score": 0.6791245937347412
+    },
+    {
+      "id": "m_0406",
+      "label": "group_or_movement",
+      "surface": "locals",
+      "canonical": "locals",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28931,
+        "charEnd": 28937,
+        "timeStart": 2057.639,
+        "timeEnd": 2061.76
+      },
+      "score": 0.6706531047821045
+    },
+    {
+      "id": "m_0407",
+      "label": "facility",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28952,
+        "charEnd": 28956,
+        "timeStart": 2057.639,
+        "timeEnd": 2061.76
+      },
+      "score": 0.9582265019416809
+    },
+    {
+      "id": "m_0408",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 28993,
+        "charEnd": 29001,
+        "timeStart": 2061.76,
+        "timeEnd": 2066.5200000000004
+      },
+      "score": 0.9461291432380676
+    },
+    {
+      "id": "m_0409",
+      "label": "quantity",
+      "surface": "300 million",
+      "canonical": "$300 million",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29060,
+        "charEnd": 29071,
+        "timeStart": 2064.159,
+        "timeEnd": 2068.44
+      },
+      "score": 0.9313636422157288
+    },
+    {
+      "id": "m_0410",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29198,
+        "charEnd": 29205,
+        "timeStart": 2082.159,
+        "timeEnd": 2086.44
+      },
+      "score": 0.9652934670448303
+    },
+    {
+      "id": "m_0411",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29466,
+        "charEnd": 29473,
+        "timeStart": 2097.72,
+        "timeEnd": 2102.8799999999997
+      },
+      "score": 0.9105833768844604
+    },
+    {
+      "id": "m_0412",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29531,
+        "charEnd": 29538,
+        "timeStart": 2102.88,
+        "timeEnd": 2106.92
+      },
+      "score": 0.8390900492668152
+    },
+    {
+      "id": "m_0413",
+      "label": "work_of_media",
+      "surface": "walking with the tall whites",
+      "canonical": "walking with the tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29567,
+        "charEnd": 29595,
+        "timeStart": 2105.119,
+        "timeEnd": 2109.1600000000003
+      },
+      "score": 0.8053619265556335
+    },
+    {
+      "id": "m_0414",
+      "label": "person",
+      "surface": "Charles",
+      "canonical": "Charles",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29619,
+        "charEnd": 29626,
+        "timeStart": 2106.92,
+        "timeEnd": 2111.32
+      },
+      "score": 0.8981934785842896
+    },
+    {
+      "id": "m_0415",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29823,
+        "charEnd": 29835,
+        "timeStart": 2117.4,
+        "timeEnd": 2121.8
+      },
+      "score": 0.9812029004096985
+    },
+    {
+      "id": "m_0416",
+      "label": "quantity",
+      "surface": "six of them",
+      "canonical": "six of them",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29925,
+        "charEnd": 29936,
+        "timeStart": 2124.68,
+        "timeEnd": 2128.56
+      },
+      "score": 0.551140308380127
+    },
+    {
+      "id": "m_0417",
+      "label": "work_of_media",
+      "surface": "science\nfiction",
+      "canonical": "science\nfiction",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 29944,
+        "charEnd": 29959,
+        "timeStart": 2124.68,
+        "timeEnd": 2130.76
+      },
+      "score": 0.5821533799171448
+    },
+    {
+      "id": "m_0418",
+      "label": "organization",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30065,
+        "charEnd": 30074,
+        "timeStart": 2132.24,
+        "timeEnd": 2136.72
+      },
+      "score": 0.9356070756912231
+    },
+    {
+      "id": "m_0419",
+      "label": "organization",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30159,
+        "charEnd": 30168,
+        "timeStart": 2136.72,
+        "timeEnd": 2141.48
+      },
+      "score": 0.9484463930130005
+    },
+    {
+      "id": "m_0420",
+      "label": "organization",
+      "surface": "Witnesses",
+      "canonical": "Witnesses",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30215,
+        "charEnd": 30224,
+        "timeStart": 2141.48,
+        "timeEnd": 2148.079
+      },
+      "score": 0.9502736330032349
+    },
+    {
+      "id": "m_0421",
+      "label": "date_time",
+      "surface": "January 13th 2014",
+      "canonical": "January 13th 2014",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30264,
+        "charEnd": 30281,
+        "timeStart": 2144.44,
+        "timeEnd": 2149.68
+      },
+      "score": 0.9375314116477966
+    },
+    {
+      "id": "m_0422",
+      "label": "organization",
+      "surface": "Forbes",
+      "canonical": "Forbes",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30282,
+        "charEnd": 30288,
+        "timeStart": 2144.44,
+        "timeEnd": 2149.68
+      },
+      "score": 0.8599631786346436
+    },
+    {
+      "id": "m_0423",
+      "label": "location",
+      "surface": "Iran",
+      "canonical": "Iran",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30334,
+        "charEnd": 30338,
+        "timeStart": 2149.68,
+        "timeEnd": 2155.48
+      },
+      "score": 0.745180070400238
+    },
+    {
+      "id": "m_0424",
+      "label": "location",
+      "surface": "America",
+      "canonical": "America",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30376,
+        "charEnd": 30383,
+        "timeStart": 2152.44,
+        "timeEnd": 2157.4
+      },
+      "score": 0.7647756934165955
+    },
+    {
+      "id": "m_0425",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30405,
+        "charEnd": 30418,
+        "timeStart": 2155.48,
+        "timeEnd": 2159.52
+      },
+      "score": 0.7998465895652771
+    },
+    {
+      "id": "m_0426",
+      "label": "person",
+      "surface": "Eisenhower",
+      "canonical": "Eisenhower",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30493,
+        "charEnd": 30503,
+        "timeStart": 2159.52,
+        "timeEnd": 2164.2
+      },
+      "score": 0.8285722732543945
+    },
+    {
+      "id": "m_0427",
+      "label": "date_time",
+      "surface": "1954",
+      "canonical": "1954",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30507,
+        "charEnd": 30511,
+        "timeStart": 2159.52,
+        "timeEnd": 2164.2
+      },
+      "score": 0.8899192810058594
+    },
+    {
+      "id": "m_0428",
+      "label": "work_of_media",
+      "surface": "article",
+      "canonical": "article",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30516,
+        "charEnd": 30523,
+        "timeStart": 2162.4,
+        "timeEnd": 2166.8
+      },
+      "score": 0.8099923729896545
+    },
+    {
+      "id": "m_0429",
+      "label": "nationality_or_ethnicity",
+      "surface": "tall whites",
+      "canonical": "tall whites",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30538,
+        "charEnd": 30549,
+        "timeStart": 2162.4,
+        "timeEnd": 2166.8
+      },
+      "score": 0.5448821187019348
+    },
+    {
+      "id": "m_0430",
+      "label": "organization",
+      "surface": "Nazis",
+      "canonical": "Nazis",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30567,
+        "charEnd": 30572,
+        "timeStart": 2164.2,
+        "timeEnd": 2168.359
+      },
+      "score": 0.9083852171897888
+    },
+    {
+      "id": "m_0431",
+      "label": "date_time",
+      "surface": "1930s",
+      "canonical": "1930s",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30589,
+        "charEnd": 30594,
+        "timeStart": 2164.2,
+        "timeEnd": 2168.359
+      },
+      "score": 0.6056569218635559
+    },
+    {
+      "id": "m_0432",
+      "label": "person",
+      "surface": "Edward Snowden",
+      "canonical": "Edward Snowden",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30641,
+        "charEnd": 30655,
+        "timeStart": 2168.359,
+        "timeEnd": 2173
+      },
+      "score": 0.9710580110549927
+    },
+    {
+      "id": "m_0433",
+      "label": "organization",
+      "surface": "Forbes",
+      "canonical": "Forbes",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30706,
+        "charEnd": 30712,
+        "timeStart": 2173,
+        "timeEnd": 2178.4
+      },
+      "score": 0.8829187750816345
+    },
+    {
+      "id": "m_0434",
+      "label": "organization",
+      "surface": "fars news agency",
+      "canonical": "fars news agency",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30756,
+        "charEnd": 30772,
+        "timeStart": 2175.839,
+        "timeEnd": 2180.48
+      },
+      "score": 0.7399965524673462
+    },
+    {
+      "id": "m_0435",
+      "label": "organization",
+      "surface": "Iranian government",
+      "canonical": "Iranian government",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30789,
+        "charEnd": 30807,
+        "timeStart": 2178.4,
+        "timeEnd": 2182.6800000000003
+      },
+      "score": 0.7214841246604919
+    },
+    {
+      "id": "m_0436",
+      "label": "organization",
+      "surface": "Forbes",
+      "canonical": "Forbes",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30808,
+        "charEnd": 30814,
+        "timeStart": 2180.48,
+        "timeEnd": 2184.52
+      },
+      "score": 0.9107102155685425
+    },
+    {
+      "id": "m_0437",
+      "label": "work_of_media",
+      "surface": "article",
+      "canonical": "article",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30824,
+        "charEnd": 30831,
+        "timeStart": 2180.48,
+        "timeEnd": 2184.52
+      },
+      "score": 0.8999727368354797
+    },
+    {
+      "id": "m_0438",
+      "label": "work_of_media",
+      "surface": "Russian disinformation",
+      "canonical": "Russian disinformation",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30847,
+        "charEnd": 30869,
+        "timeStart": 2182.68,
+        "timeEnd": 2186.9199999999996
+      },
+      "score": 0.5644157528877258
+    },
+    {
+      "id": "m_0439",
+      "label": "organization",
+      "surface": "FSB",
+      "canonical": "FSB",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30886,
+        "charEnd": 30889,
+        "timeStart": 2184.52,
+        "timeEnd": 2188.8
+      },
+      "score": 0.8892715573310852
+    },
+    {
+      "id": "m_0440",
+      "label": "organization",
+      "surface": "Russian intelligence",
+      "canonical": "Russian intelligence",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30890,
+        "charEnd": 30910,
+        "timeStart": 2184.52,
+        "timeEnd": 2188.8
+      },
+      "score": 0.8532179594039917
+    },
+    {
+      "id": "m_0441",
+      "label": "organization",
+      "surface": "American Media",
+      "canonical": "American Media",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 30919,
+        "charEnd": 30933,
+        "timeStart": 2186.92,
+        "timeEnd": 2190.839
+      },
+      "score": 0.9399365186691284
+    },
+    {
+      "id": "m_0442",
+      "label": "organization",
+      "surface": "Russian\nmedia",
+      "canonical": "Russian\nmedia",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31063,
+        "charEnd": 31076,
+        "timeStart": 2192.88,
+        "timeEnd": 2199.9599999999996
+      },
+      "score": 0.7567201256752014
+    },
+    {
+      "id": "m_0443",
+      "label": "organization",
+      "surface": "American Media",
+      "canonical": "American Media",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31094,
+        "charEnd": 31108,
+        "timeStart": 2194.72,
+        "timeEnd": 2199.9599999999996
+      },
+      "score": 0.9583103656768799
+    },
+    {
+      "id": "m_0444",
+      "label": "location",
+      "surface": "United\nStates",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31180,
+        "charEnd": 31193,
+        "timeStart": 2199.96,
+        "timeEnd": 2206.64
+      },
+      "score": 0.8101374506950378
+    },
+    {
+      "id": "m_0445",
+      "label": "work_of_media",
+      "surface": "article",
+      "canonical": "article",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31226,
+        "charEnd": 31233,
+        "timeStart": 2203.92,
+        "timeEnd": 2209.079
+      },
+      "score": 0.8399645686149597
+    },
+    {
+      "id": "m_0446",
+      "label": "person",
+      "surface": "Charles Hall",
+      "canonical": "Charles Hall",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31272,
+        "charEnd": 31284,
+        "timeStart": 2206.64,
+        "timeEnd": 2210.5989999999997
+      },
+      "score": 0.9416177272796631
+    },
+    {
+      "id": "m_0447",
+      "label": "group_or_movement",
+      "surface": "shadow\ngovernment",
+      "canonical": "shadow\ngovernment",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31395,
+        "charEnd": 31412,
+        "timeStart": 2212.599,
+        "timeEnd": 2221.96
+      },
+      "score": 0.7117851376533508
+    },
+    {
+      "id": "m_0448",
+      "label": "organization",
+      "surface": "three sisters",
+      "canonical": "three sisters",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31507,
+        "charEnd": 31520,
+        "timeStart": 2221.96,
+        "timeEnd": 2227.8
+      },
+      "score": 0.6660876274108887
+    },
+    {
+      "id": "m_0449",
+      "label": "organization",
+      "surface": "Council on Foreign\nRelations",
+      "canonical": "Council on Foreign\nRelations",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31539,
+        "charEnd": 31567,
+        "timeStart": 2225.04,
+        "timeEnd": 2233
+      },
+      "score": 0.9189296364784241
+    },
+    {
+      "id": "m_0450",
+      "label": "organization",
+      "surface": "bilderbergers",
+      "canonical": "bilderbergers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31572,
+        "charEnd": 31585,
+        "timeStart": 2227.8,
+        "timeEnd": 2233
+      },
+      "score": 0.8534140586853027
+    },
+    {
+      "id": "m_0451",
+      "label": "organization",
+      "surface": "trilateral commission",
+      "canonical": "trilateral commission",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31594,
+        "charEnd": 31615,
+        "timeStart": 2230.44,
+        "timeEnd": 2234.92
+      },
+      "score": 0.9276401400566101
+    },
+    {
+      "id": "m_0452",
+      "label": "organization",
+      "surface": "international banking\ncartel",
+      "canonical": "international banking\ncartel",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31635,
+        "charEnd": 31663,
+        "timeStart": 2233,
+        "timeEnd": 2240.2400000000002
+      },
+      "score": 0.8840862512588501
+    },
+    {
+      "id": "m_0453",
+      "label": "organization",
+      "surface": "oil\ncartel",
+      "canonical": "oil\ncartel",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31668,
+        "charEnd": 31678,
+        "timeStart": 2234.92,
+        "timeEnd": 2242.48
+      },
+      "score": 0.8527650237083435
+    },
+    {
+      "id": "m_0454",
+      "label": "organization",
+      "surface": "various intelligence\norganizations",
+      "canonical": "various intelligence\norganizations",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31690,
+        "charEnd": 31724,
+        "timeStart": 2236.88,
+        "timeEnd": 2246.5989999999997
+      },
+      "score": 0.6218180656433105
+    },
+    {
+      "id": "m_0455",
+      "label": "group_or_movement",
+      "surface": "shadow government",
+      "canonical": "shadow\ngovernment",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31792,
+        "charEnd": 31809,
+        "timeStart": 2246.599,
+        "timeEnd": 2251.04
+      },
+      "score": 0.7994778752326965
+    },
+    {
+      "id": "m_0456",
+      "label": "group_or_movement",
+      "surface": "Shadow government",
+      "canonical": "shadow\ngovernment",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31810,
+        "charEnd": 31827,
+        "timeStart": 2246.599,
+        "timeEnd": 2251.04
+      },
+      "score": 0.6955592632293701
+    },
+    {
+      "id": "m_0457",
+      "label": "location",
+      "surface": "United\nStates",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31844,
+        "charEnd": 31857,
+        "timeStart": 2248.839,
+        "timeEnd": 2255.079
+      },
+      "score": 0.6315917372703552
+    },
+    {
+      "id": "m_0458",
+      "label": "location",
+      "surface": "Western\nWorld",
+      "canonical": "Western\nWorld",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31877,
+        "charEnd": 31890,
+        "timeStart": 2251.04,
+        "timeEnd": 2261.079
+      },
+      "score": 0.5725635886192322
+    },
+    {
+      "id": "m_0459",
+      "label": "person",
+      "surface": "AJ",
+      "canonical": "AJ",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 31976,
+        "charEnd": 31978,
+        "timeStart": 2263.599,
+        "timeEnd": 2267.839
+      },
+      "score": 0.6998155117034912
+    },
+    {
+      "id": "m_0460",
+      "label": "person",
+      "surface": "Char CL",
+      "canonical": "Char CL",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32047,
+        "charEnd": 32054,
+        "timeStart": 2267.839,
+        "timeEnd": 2273.7599999999998
+      },
+      "score": 0.8022218346595764
+    },
+    {
+      "id": "m_0461",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32083,
+        "charEnd": 32091,
+        "timeStart": 2272.319,
+        "timeEnd": 2275.56
+      },
+      "score": 0.7990000247955322
+    },
+    {
+      "id": "m_0462",
+      "label": "organization",
+      "surface": "Wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32340,
+        "charEnd": 32348,
+        "timeStart": 2285.599,
+        "timeEnd": 2291.52
+      },
+      "score": 0.8896528482437134
+    },
+    {
+      "id": "m_0463",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32388,
+        "charEnd": 32395,
+        "timeStart": 2288.48,
+        "timeEnd": 2293.2
+      },
+      "score": 0.5985977649688721
+    },
+    {
+      "id": "m_0464",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32585,
+        "charEnd": 32593,
+        "timeStart": 2299.599,
+        "timeEnd": 2303.56
+      },
+      "score": 0.888465404510498
+    },
+    {
+      "id": "m_0465",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32604,
+        "charEnd": 32611,
+        "timeStart": 2301.48,
+        "timeEnd": 2305.8
+      },
+      "score": 0.5092540383338928
+    },
+    {
+      "id": "m_0466",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32681,
+        "charEnd": 32689,
+        "timeStart": 2305.8,
+        "timeEnd": 2310.2000000000003
+      },
+      "score": 0.9149499535560608
+    },
+    {
+      "id": "m_0467",
+      "label": "technology",
+      "surface": "Discord",
+      "canonical": "Discord",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32717,
+        "charEnd": 32724,
+        "timeStart": 2307.64,
+        "timeEnd": 2312
+      },
+      "score": 0.5140216946601868
+    },
+    {
+      "id": "m_0468",
+      "label": "quantity",
+      "surface": "tens of\nthousands",
+      "canonical": "tens of\nthousands",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32735,
+        "charEnd": 32752,
+        "timeStart": 2307.64,
+        "timeEnd": 2314.1189999999997
+      },
+      "score": 0.803839385509491
+    },
+    {
+      "id": "m_0469",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 32953,
+        "charEnd": 32961,
+        "timeStart": 2319.2,
+        "timeEnd": 2323.319
+      },
+      "score": 0.9603808522224426
+    },
+    {
+      "id": "m_0470",
+      "label": "organization",
+      "surface": "wi\nfiles",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33008,
+        "charEnd": 33016,
+        "timeStart": 2321.24,
+        "timeEnd": 2327.119
+      },
+      "score": 0.9608801007270813
+    },
+    {
+      "id": "m_0471",
+      "label": "work_of_media",
+      "surface": "podcasts",
+      "canonical": "podcasts",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33065,
+        "charEnd": 33073,
+        "timeStart": 2327.119,
+        "timeEnd": 2331.839
+      },
+      "score": 0.6795917749404907
+    },
+    {
+      "id": "m_0472",
+      "label": "event",
+      "surface": "live streams",
+      "canonical": "live streams",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33074,
+        "charEnd": 33086,
+        "timeStart": 2327.119,
+        "timeEnd": 2331.839
+      },
+      "score": 0.8197704553604126
+    },
+    {
+      "id": "m_0473",
+      "label": "event",
+      "surface": "meetups",
+      "canonical": "meetups",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33087,
+        "charEnd": 33094,
+        "timeStart": 2327.119,
+        "timeEnd": 2331.839
+      },
+      "score": 0.9077484011650085
+    },
+    {
+      "id": "m_0474",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33154,
+        "charEnd": 33161,
+        "timeStart": 2331.839,
+        "timeEnd": 2336.48
+      },
+      "score": 0.5504375696182251
+    },
+    {
+      "id": "m_0475",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33197,
+        "charEnd": 33205,
+        "timeStart": 2334.359,
+        "timeEnd": 2337.52
+      },
+      "score": 0.9713160395622253
+    },
+    {
+      "id": "m_0476",
+      "label": "person",
+      "surface": "middle-aged man",
+      "canonical": "middle-aged man",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33303,
+        "charEnd": 33318,
+        "timeStart": 2339.16,
+        "timeEnd": 2343.92
+      },
+      "score": 0.9091472625732422
+    },
+    {
+      "id": "m_0477",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33397,
+        "charEnd": 33404,
+        "timeStart": 2345.52,
+        "timeEnd": 2348.88
+      },
+      "score": 0.5624123811721802
+    },
+    {
+      "id": "m_0478",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33435,
+        "charEnd": 33442,
+        "timeStart": 2347.04,
+        "timeEnd": 2350.88
+      },
+      "score": 0.8964892029762268
+    },
+    {
+      "id": "m_0479",
+      "label": "quantity",
+      "surface": "three bucks",
+      "canonical": "three bucks",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33460,
+        "charEnd": 33471,
+        "timeStart": 2347.04,
+        "timeEnd": 2350.88
+      },
+      "score": 0.538785457611084
+    },
+    {
+      "id": "m_0480",
+      "label": "event",
+      "surface": "intimate\nconversation",
+      "canonical": "intimate\nconversation",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33702,
+        "charEnd": 33723,
+        "timeStart": 2360.48,
+        "timeEnd": 2369.0789999999997
+      },
+      "score": 0.5244928002357483
+    },
+    {
+      "id": "m_0481",
+      "label": "person",
+      "surface": "my wife",
+      "canonical": "my wife",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 33739,
+        "charEnd": 33746,
+        "timeStart": 2363.359,
+        "timeEnd": 2369.0789999999997
+      },
+      "score": 0.7258133292198181
+    },
+    {
+      "id": "m_0482",
+      "label": "person",
+      "surface": "Heckle",
+      "canonical": "Heckle",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 34138,
+        "charEnd": 34144,
+        "timeStart": 2387.88,
+        "timeEnd": 2393.4
+      },
+      "score": 0.5446426868438721
+    },
+    {
+      "id": "m_0483",
+      "label": "work_of_media",
+      "surface": "Bible",
+      "canonical": "Bible",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 34333,
+        "charEnd": 34338,
+        "timeStart": 2418.4,
+        "timeEnd": 2426.88
+      },
+      "score": 0.6285172700881958
+    },
+    {
+      "id": "m_0484",
+      "label": "person",
+      "surface": "Stanley curi",
+      "canonical": "Stanley curi",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 34622,
+        "charEnd": 34634,
+        "timeStart": 2459.64,
+        "timeEnd": 2466.24
+      },
+      "score": 0.8671368360519409
+    },
+    {
+      "id": "m_0485",
+      "label": "event",
+      "surface": "the moon\nlanding",
+      "canonical": "the moon\nlanding",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 34640,
+        "charEnd": 34656,
+        "timeStart": 2459.64,
+        "timeEnd": 2469.2000000000003
+      },
+      "score": 0.5631558299064636
+    },
+    {
+      "id": "m_0486",
+      "label": "work_of_media",
+      "surface": "The\nSmiling man",
+      "canonical": "The\nSmiling man",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 34738,
+        "charEnd": 34753,
+        "timeStart": 2469.2,
+        "timeEnd": 2477.44
+      },
+      "score": 0.7276842594146729
+    },
+    {
+      "id": "m_0487",
+      "label": "date_time",
+      "surface": "Wednesday",
+      "canonical": "Wednesday",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 34850,
+        "charEnd": 34859,
+        "timeStart": 2482.24,
+        "timeEnd": 2490.5989999999997
+      },
+      "score": 0.5951204299926758
+    },
+    {
+      "id": "m_0488",
+      "label": "location",
+      "surface": "planet",
+      "canonical": "planet",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 35083,
+        "charEnd": 35089,
+        "timeStart": 2528.76,
+        "timeEnd": 2534.42
+      },
+      "score": 0.5569115877151489
+    },
+    {
+      "id": "m_0489",
+      "label": "organization",
+      "surface": "dark Watchers",
+      "canonical": "dark Watchers",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 35124,
+        "charEnd": 35137,
+        "timeStart": 2532.2,
+        "timeEnd": 2535.52
+      },
+      "score": 0.6263269186019897
+    },
+    {
+      "id": "m_0490",
+      "label": "date_time",
+      "surface": "Thursday night",
+      "canonical": "Thursday night",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 35360,
+        "charEnd": 35374,
+        "timeStart": 2566.96,
+        "timeEnd": 2576.28
+      },
+      "score": 0.8137242197990417
+    },
+    {
+      "id": "m_0491",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 35488,
+        "charEnd": 35491,
+        "timeStart": 2591.8,
+        "timeEnd": 2596.4
+      },
+      "score": 0.9224302172660828
+    },
+    {
+      "id": "m_0492",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 35663,
+        "charEnd": 35668,
+        "timeStart": 2619.71,
+        "timeEnd": 2623.979
+      },
+      "score": 0.7890194654464722
+    },
+    {
+      "id": "m_0493",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "EieUJvKrjo4",
+        "charStart": 35671,
+        "charEnd": 35676,
+        "timeStart": 2626.72,
+        "timeEnd": 2631.8799999999997
+      },
+      "score": 0.8399390578269958
+    }
+  ]
+}

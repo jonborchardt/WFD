@@ -44,7 +44,12 @@ export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, on
     const out: { top: FacetRow[]; pinned: FacetRow[]; selected: Set<string> }[] = [];
     for (let i = 0; i < groups.length; i++) {
       const scoped = activeVideoIds(bundle, selectionExcluding(selection, type, i));
-      const { top, pinned } = topEntitiesForType(bundle, type, scoped, 15, groups[i]);
+      const otherSelected = new Set<string>();
+      for (let j = 0; j < groups.length; j++) {
+        if (j === i) continue;
+        for (const eid of groups[j]) otherSelected.add(eid);
+      }
+      const { top, pinned } = topEntitiesForType(bundle, type, scoped, 15, groups[i], otherSelected);
       out.push({ top, pinned, selected: groups[i] });
     }
     const max = out.reduce(
@@ -57,11 +62,26 @@ export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, on
   const activeAll = useMemo(() => activeVideoIds(bundle, selection), [bundle, selection]);
   const totalMentions = useMemo(() => totalMentionsForType(bundle, type, activeAll), [bundle, type, activeAll]);
 
+  const searchOptions = useMemo(() => {
+    const opts: { entityId: string; canonical: string }[] = [];
+    for (const meta of bundle.entities.values()) {
+      if (meta.type !== type) continue;
+      opts.push({ entityId: meta.id, canonical: meta.canonical });
+    }
+    opts.sort((a, b) => a.canonical.localeCompare(b.canonical));
+    return opts;
+  }, [bundle, type]);
+
   return (
     <Box sx={{ mb: 2 }}>
       <Typography variant="subtitle2" sx={{ mb: 0.5, textTransform: "uppercase", color: "text.secondary" }}>
         {type} · {totalMentions.toLocaleString()} mentions
       </Typography>
+      {groups.length > 1 && (
+        <Typography variant="caption" sx={{ display: "block", mb: 0.5, color: "text.secondary", fontStyle: "italic" }}>
+          Co-occurrence mode: each slot shows {type}s that appear in videos alongside the selections in the other slot{groups.length > 2 ? "s" : ""}.
+        </Typography>
+      )}
       <Box sx={{ display: "flex", gap: 1, overflowX: "auto", pb: 1 }}>
         {slots.map((s, i) => (
           <FacetBar
@@ -75,6 +95,7 @@ export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, on
             onToggle={(eid: string) => onToggle(type, i, eid)}
             onRemove={() => onRemoveSlot(type, i)}
             removable={i > 0}
+            searchOptions={searchOptions}
           />
         ))}
       </Box>

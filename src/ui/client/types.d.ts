@@ -52,6 +52,8 @@ declare module "@mui/material" {
   export const ListItemIcon: any;
   export const ListItemText: any;
   export const Link: any;
+  export const Autocomplete: any;
+  export const TextField: any;
 }
 declare module "htm" {
   const x: any;

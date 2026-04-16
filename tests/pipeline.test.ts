@@ -2,16 +2,12 @@
 // assertions don't depend on NLP/AI/truth internals or on the network.
 
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, rmSync, writeFileSync, mkdirSync } from "node:fs";
+import { mkdtempSync, rmSync, mkdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Catalog } from "../src/catalog/catalog.js";
 import { runPipeline } from "../src/pipeline/run.js";
-import { VideoStage, GraphStage, PipelineContext } from "../src/pipeline/types.js";
-import { nlpStage } from "../src/pipeline/stages.js";
-import { GraphStore } from "../src/graph/store.js";
-import { readPersistedNlp } from "../src/nlp/persist.js";
-import { readFileSync, existsSync } from "node:fs";
+import { VideoStage, GraphStage } from "../src/pipeline/types.js";
 
 function makeTmp(): string {
   return mkdtempSync(join(tmpdir(), "captions-pipe-"));
@@ -223,79 +219,10 @@ describe("runPipeline", () => {
     expect(calls).toBe(2);
   });
 
-  // Integration: drive the real nlpStage against a fixture transcript on
-  // disk. This covers the stage→module wiring (extract, extractRelationships,
-  // writePersistedNlp, graph store upserts, markGraphDirty) that the
-  // fake-stage tests above deliberately bypass.
-  it("nlpStage: real extractor end-to-end writes nlp file + graph store", async () => {
-    // Lay down a fixture transcript under data/transcripts/.
-    const fixture = {
-      videoId: "aaa",
-      language: "en",
-      kind: "auto",
-      cues: [
-        { start: 0, duration: 3, text: "NASA met with OpenAI in Washington." },
-        { start: 3, duration: 3, text: "The FBI attended a meeting in London." },
-        { start: 6, duration: 3, text: "Anthropic worked for OpenAI on the treaty." },
-      ],
-    };
-    const tDir = join(dir, "transcripts");
-    mkdirSync(tDir, { recursive: true });
-    writeFileSync(join(tDir, "aaa.json"), JSON.stringify(fixture), "utf8");
-    // Mark the catalog row as fetched so dep checks pass, and point it at
-    // the fixture.
-    catalog.update("aaa", {
-      status: "fetched",
-      transcriptPath: join(tDir, "aaa.json"),
-      stages: {
-        fetched: { at: "2025-01-01T00:00:00Z" },
-      },
-    });
-
-    const beforeDirty = catalog.graphState().dirtyAt;
-    // Force a tick so the post-run dirtyAt is strictly greater.
-    await new Promise((r) => setTimeout(r, 5));
-
-    const ctx: PipelineContext = {
-      catalog,
-      dataDir: dir,
-      getStore: (() => {
-        let s: GraphStore | null = null;
-        return () => {
-          if (!s) s = new GraphStore(join(dir, "graph", "graph.json"));
-          return s;
-        };
-      })(),
-    };
-
-    const row = catalog.get("aaa")!;
-    const outcome = await nlpStage.run(row, ctx);
-    expect(outcome.kind).toBe("ok");
-
-    // Persisted per-video NLP file exists and has content.
-    const persisted = readPersistedNlp("aaa", dir);
-    expect(persisted).not.toBeNull();
-    expect(persisted!.entities.length).toBeGreaterThan(0);
-    expect(persisted!.relationships.length).toBeGreaterThan(0);
-
-    // Graph store has the transcript registered and at least one entity.
-    const store = ctx.getStore();
-    expect(store.entities().length).toBeGreaterThan(0);
-    // Every stored relationship must point at our transcript id.
-    for (const r of store.relationships()) {
-      expect(r.evidence.transcriptId).toBe("aaa");
-    }
-
-    // markGraphDirty was called.
-    expect(catalog.graphState().dirtyAt > beforeDirty).toBe(true);
-
-    // Graph store file was written to disk.
-    expect(existsSync(join(dir, "graph", "graph.json"))).toBe(true);
-    const rawGraph = JSON.parse(
-      readFileSync(join(dir, "graph", "graph.json"), "utf8"),
-    );
-    expect(rawGraph.transcripts.aaa).toBe(true);
-  });
+  // Integration coverage for the real neural stages lives in
+  // tests/entities-smoke.test.ts and tests/relations-smoke.test.ts,
+  // which drive the stage functions against fake GLiNER/GLiREL
+  // pipelines injected via the test hooks in tests/helpers/setup.ts.
 
   it("dry-run reports stages without mutating the catalog", async () => {
     const stage: VideoStage = {

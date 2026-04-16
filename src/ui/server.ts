@@ -13,8 +13,6 @@ import { Catalog, CatalogRow, parseIdList } from "../catalog/catalog.js";
 import { transcriptPath } from "../ingest/transcript.js";
 import { limitedFetch } from "../ingest/rate-limiter.js";
 import { renderSpaShell } from "./spa-shell.js";
-import { extract as extractEntities, Transcript as NlpTranscript } from "../nlp/entities.js";
-import { extractRelationships } from "../nlp/relationships.js";
 import { Entity, Relationship } from "../shared/types.js";
 import { CREDIT_FOOTER } from "../shared/credit-footer.js";
 import {
@@ -22,11 +20,10 @@ import {
   EntityVideosIndex,
   readPersistedEntityIndex,
   readPersistedEntityVideos,
-  readPersistedNlp,
   writePersistedEntityIndex,
   writePersistedEntityVideos,
-  writePersistedNlp,
-} from "../nlp/persist.js";
+} from "../graph/entity-index-persist.js";
+import { neuralToGraph } from "../graph/adapt.js";
 import {
   readPersistedEntities,
   type PersistedEntities,
@@ -160,22 +157,23 @@ const nlpCache = new Map<string, NlpResult>();
 let entityIndexCache: EntityIndexEntry[] | null = null;
 let entityVideosCache: EntityVideosIndex | null = null;
 
+// Read the per-video neural output (entities + relations), adapt it
+// into the legacy {entities, relationships} shape every downstream
+// consumer expects, and cache it. Returns null if the entities stage
+// has not been run for this video yet.
 function computeNlp(row: CatalogRow, dataDir?: string): NlpResult | null {
   const cached = nlpCache.get(row.videoId);
   if (cached) return cached;
-  const persisted = readPersistedNlp(row.videoId, dataDir);
-  if (persisted) {
-    nlpCache.set(row.videoId, persisted);
-    return persisted;
-  }
-  const transcript = loadTranscript(row, dataDir);
-  if (!transcript) return null;
-  const t = transcript as NlpTranscript;
-  const entities = extractEntities(t);
-  const relationships = extractRelationships(t, entities);
-  const result = { entities, relationships };
+  const root = dataDir ?? join(process.cwd(), "data");
+  const persistedEntities = readPersistedEntities(row.videoId, root);
+  if (!persistedEntities) return null;
+  const persistedRelations = readPersistedRelations(row.videoId, root);
+  const { entities, relationships } = neuralToGraph(
+    persistedEntities,
+    persistedRelations,
+  );
+  const result: NlpResult = { entities, relationships };
   nlpCache.set(row.videoId, result);
-  writePersistedNlp(row.videoId, result, dataDir);
   return result;
 }
 
@@ -423,7 +421,7 @@ export function renderUnifiedVideoAdmin(
   neuralRelations: PersistedRelations | null,
   aiResponseStale: { since: string; reason: string; nlpAt?: string } | null,
 ): string {
-  const stageRows = (["fetched", "nlp", "per-claim", "ai"] as const)
+  const stageRows = (["fetched", "entities", "relations", "ai", "per-claim"] as const)
     .map((name) => {
       const rec = row.stages?.[name];
       if (!rec) {
@@ -964,6 +962,11 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       return;
     }
     if (url === "/facets" || url.startsWith("/facets?")) {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(renderSpaShell());
+      return;
+    }
+    if (url === "/about" || url.startsWith("/about?")) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(renderSpaShell());
       return;

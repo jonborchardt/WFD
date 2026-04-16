@@ -324,7 +324,7 @@ const HOME_COLUMNS = CATALOG_COLUMNS
   .filter(c => c.key !== "status")
   .map(c => ["lengthSeconds", "viewCount"].includes(c.key) ? { ...c, default: true } : c);
 
-const PIPELINE_STAGES = ["fetched", "nlp", "per-claim", "ai"];
+const PIPELINE_STAGES = ["fetched", "entities", "relations", "ai", "per-claim"];
 
 function stageCellFor(stageName) {
   return (r) => {
@@ -1004,12 +1004,93 @@ function RelationshipsPage({ nav }) {
 
 const IS_STATIC = typeof window !== "undefined" && window.__STATIC__;
 
+/** @param {{ nav: (to: string) => void }} props */
+function AboutPage({ nav }) {
+  return html`
+    <${Container} maxWidth="md" sx=${{ mt: 4, mb: 6 }}>
+      <${Paper} sx=${{ p: { xs: 3, md: 5 } }}>
+        <${Typography} variant="h3" gutterBottom>About this project<//>
+        <${Typography} variant="subtitle1" color="text.secondary" gutterBottom>
+          An independent, evidence-anchored index of <em>The Why Files<//> corpus.
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>What is this?<//>
+        <${Typography} paragraph>
+          <strong>Why Files Database<//> ingests the full YouTube transcript corpus of
+          <${Link} href="https://thewhyfiles.com" target="_blank" rel="noopener"> The Why Files<//>
+          and turns it into something you can actually <em>query<//>: a searchable catalog
+          of videos, an extracted graph of the people, places, organizations, and
+          events discussed across hundreds of episodes, and a set of tools for
+          surfacing contradictions, recurring claims, and novel connections — all of
+          it pointing back to the exact moment in the exact video where something
+          was said.
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>Why build it?<//>
+        <${Typography} paragraph>
+          The corpus is, by design, <strong>contested and controversial<//>: UFOs,
+          cryptids, ancient mysteries, unsolved cases, fringe science. That's
+          exactly the kind of material where a normal "search the video" experience
+          falls apart. You don't want a keyword hit — you want to know every time a
+          given person, place, or event is mentioned, what was claimed about it,
+          who contradicted whom, and which episode introduced which thread.
+        <//>
+        <${Typography} paragraph>
+          Our goal is <strong>not to declare truth<//>. The goal is to make claims,
+          evidence, and contradictions <em>traceable<//>. Every edge in the graph
+          carries an evidence pointer: a transcript id plus a character span, so
+          you can jump straight to the line and hear it in context. No floating
+          claims, no vibes, no "trust us."
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>How it works<//>
+        <${Typography} paragraph>
+          The pipeline runs in stages. First we <strong>fetch<//> transcripts
+          directly from YouTube (politely — transcripts are gold; once we have
+          one, we never re-fetch it). Then a neural NER model
+          (<code>Xenova/bert-base-NER<//>) extracts persons, organizations, and
+          locations, while regex + gazetteer passes pick up times, dates, events,
+          and domain jargon. A relationship extractor then pairs entities sentence
+          by sentence using a predicate table.
+        <//>
+        <${Typography} paragraph>
+          After that, an <strong>AI enrichment<//> pass refines and adds
+          relationships that the deterministic extractors missed. Everything lands
+          in a graph store with per-claim truth scoring, contradiction detection,
+          and loop detection. A separate "skeptic" layer scores speaker
+          credibility from transcript signals. The public site you're reading
+          right now is the read-only front end on top of all of that.
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>What you can do here<//>
+        <${Typography} component="div" paragraph>
+          <ul>
+            <li>Browse the full catalog of ingested videos on the <${Link} component="button" onClick=${() => nav("/")}>home page<//>.</li>
+            <li>Explore the extracted <${Link} component="button" onClick=${() => nav("/relationships")}>relationships graph<//> across the entire corpus.</li>
+            <li>Slice the corpus by entity type, episode, or theme in <${Link} component="button" onClick=${() => nav("/facets")}>facets<//>.</li>
+            <li>Click any entity to see every video it appears in, with jump-to-timestamp links.</li>
+          </ul>
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>Credit<//>
+        <${Typography} paragraph>
+          All transcript content belongs to <${Link} href="https://thewhyfiles.com" target="_blank" rel="noopener">The Why Files<//> and AJ Gentile. This is an
+          independent research index and is not affiliated with, endorsed by, or
+          operated by The Why Files. If you enjoy the show, please support it
+          directly on <${Link} href="https://www.patreon.com/thewhyfiles" target="_blank" rel="noopener">Patreon<//>, the <${Link} href="https://shop.thewhyfiles.com" target="_blank" rel="noopener">Shop<//>, or <${Link} href="https://www.youtube.com/@TheWhyFiles" target="_blank" rel="noopener">YouTube<//>.
+        <//>
+      <//>
+    <//>
+  `;
+}
+
 function App() {
   const [path, nav] = useRoute();
   const videoMatch = path.match(/^\/video\/([A-Za-z0-9_-]+)/);
   const entityMatch = path.match(/^\/entity\/([^?]+)/);
   const isRelationships = path === "/relationships" || path.startsWith("/relationships?");
   const isFacets = path === "/facets" || path.startsWith("/facets?");
+  const isAbout = path === "/about" || path.startsWith("/about?");
   const isAdmin = !IS_STATIC && path.startsWith("/admin");
   const body = videoMatch
     ? html`<${VideoDetail} videoId=${videoMatch[1]} nav=${nav} />`
@@ -1019,9 +1100,11 @@ function App() {
         ? html`<${RelationshipsPage} nav=${nav} />`
         : isFacets
           ? html`<${FacetsPage} nav=${nav} />`
-          : isAdmin
-            ? html`<${AdminPage} nav=${nav} />`
-            : html`<${CatalogList} nav=${nav} />`;
+          : isAbout
+            ? html`<${AboutPage} nav=${nav} />`
+            : isAdmin
+              ? html`<${AdminPage} nav=${nav} />`
+              : html`<${CatalogList} nav=${nav} />`;
   return html`
     <${ThemeProvider} theme=${theme}>
       <${CssBaseline} />
@@ -1031,6 +1114,7 @@ function App() {
           <${Button} color="inherit" onClick=${() => nav("/")}>home<//>
           <${Button} color="inherit" onClick=${() => nav("/facets")}>facets<//>
           <${Button} color="inherit" onClick=${() => nav("/relationships")}>relationships<//>
+          <${Button} color="inherit" onClick=${() => nav("/about")}>about<//>
           ${!IS_STATIC && html`<${Button} color="inherit" onClick=${() => nav("/admin")}>admin<//>`}
         <//>
       <//>

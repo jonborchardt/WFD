@@ -20,6 +20,11 @@ coref — the pipeline still runs.
 import json
 import sys
 import traceback
+import warnings
+
+# Silence huggingface_hub `resume_download` deprecation and any other
+# transient library warnings.
+warnings.filterwarnings("ignore")
 
 
 def fail(msg: str) -> None:

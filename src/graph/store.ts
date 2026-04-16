@@ -18,8 +18,12 @@ import {
   renameSync,
 } from "node:fs";
 import { dirname, join } from "node:path";
-import { Entity, Relationship, RelationshipType } from "../shared/types.js";
-import { isValidRelationship } from "../nlp/relationships.js";
+import {
+  Entity,
+  Relationship,
+  RelationshipType,
+  isValidRelationship,
+} from "../shared/types.js";
 
 interface GraphFile {
   version: number;

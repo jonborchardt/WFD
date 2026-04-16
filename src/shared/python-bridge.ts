@@ -36,7 +36,7 @@ export interface PythonBridgeResult<T> {
 
 const DEFAULTS = {
   pythonBin: "python",
-  timeoutMs: 600_000, // 10 minutes — first-run model downloads can be slow
+  timeoutMs: 1_800_000, // 30 minutes — long transcripts with 300+ chunks need time on CPU
 };
 
 // Test hook: lets unit tests short-circuit every Python bridge call
@@ -75,15 +75,19 @@ export async function runPythonBridge<T>(
 
     let child;
     try {
-      // Silence tqdm progress bars and transformers banner noise by
-      // default — they flood stderr and make the real error/debug lines
-      // hard to find. Callers can override via opts.env if they need
-      // the raw bars back for a specific debug session.
+      // Silence tqdm progress bars, transformers banner noise, and
+      // the huggingface_hub "unauthenticated requests" info print by
+      // default — they flood stderr and make the real error/debug
+      // lines hard to find. Callers can override via opts.env if they
+      // need the raw bars back for a specific debug session.
       const quietEnv: Record<string, string> = {
         TRANSFORMERS_VERBOSITY: "error",
         HF_HUB_DISABLE_PROGRESS_BARS: "1",
+        HF_HUB_DISABLE_IMPLICIT_TOKEN: "1",
+        HF_HUB_DISABLE_TELEMETRY: "1",
         TQDM_DISABLE: "1",
         PYTHONUNBUFFERED: "1",
+        PYTHONWARNINGS: "ignore",
       };
       child = spawn(pythonBin, [scriptAbs], {
         stdio: ["pipe", "pipe", "pipe"],

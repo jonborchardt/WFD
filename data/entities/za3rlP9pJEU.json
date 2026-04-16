@@ -1,0 +1,908 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "za3rlP9pJEU",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T09:37:45.920Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "person",
+      "surface": "alexander the great",
+      "canonical": "alexander the great",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 29,
+        "charEnd": 48,
+        "timeStart": 0.56,
+        "timeEnd": 5.279
+      },
+      "score": 0.9340896606445312
+    },
+    {
+      "id": "m_0002",
+      "label": "person",
+      "surface": "jason jiami",
+      "canonical": "jason jiami",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 53,
+        "charEnd": 64,
+        "timeStart": 2.879,
+        "timeEnd": 8.08
+      },
+      "score": 0.7949489951133728
+    },
+    {
+      "id": "m_0003",
+      "label": "organization",
+      "surface": "ancient romans",
+      "canonical": "ancient romans",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 520,
+        "charEnd": 534,
+        "timeStart": 34.399,
+        "timeEnd": 38.239000000000004
+      },
+      "score": 0.7307597398757935
+    },
+    {
+      "id": "m_0004",
+      "label": "person",
+      "surface": "pope\ngregory",
+      "canonical": "pope\ngregory",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 705,
+        "charEnd": 717,
+        "timeStart": 41.52,
+        "timeEnd": 47.44
+      },
+      "score": 0.838066041469574
+    },
+    {
+      "id": "m_0005",
+      "label": "event",
+      "surface": "plague",
+      "canonical": "plague",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 770,
+        "charEnd": 776,
+        "timeStart": 45.36,
+        "timeEnd": 49.039
+      },
+      "score": 0.7543657422065735
+    },
+    {
+      "id": "m_0006",
+      "label": "facility",
+      "surface": "elevator",
+      "canonical": "elevator",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 1179,
+        "charEnd": 1187,
+        "timeStart": 74.32,
+        "timeEnd": 78.79899999999999
+      },
+      "score": 0.8309440612792969
+    },
+    {
+      "id": "m_0007",
+      "label": "quantity",
+      "surface": "eighty percent",
+      "canonical": "eighty percent",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 1188,
+        "charEnd": 1202,
+        "timeStart": 74.32,
+        "timeEnd": 78.79899999999999
+      },
+      "score": 0.7179274559020996
+    },
+    {
+      "id": "m_0008",
+      "label": "organization",
+      "surface": "lufthansa and air france",
+      "canonical": "lufthansa and air france",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 1261,
+        "charEnd": 1285,
+        "timeStart": 78.799,
+        "timeEnd": 83.759
+      },
+      "score": 0.7414618134498596
+    },
+    {
+      "id": "m_0009",
+      "label": "location",
+      "surface": "west",
+      "canonical": "west",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 1382,
+        "charEnd": 1386,
+        "timeStart": 85.759,
+        "timeEnd": 89.92
+      },
+      "score": 0.5709116458892822
+    },
+    {
+      "id": "m_0010",
+      "label": "location",
+      "surface": "ancient rome",
+      "canonical": "ancient rome",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 1836,
+        "charEnd": 1848,
+        "timeStart": 113.68,
+        "timeEnd": 117.28
+      },
+      "score": 0.8569037914276123
+    },
+    {
+      "id": "m_0011",
+      "label": "nationality_or_ethnicity",
+      "surface": "romans",
+      "canonical": "romans",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 1849,
+        "charEnd": 1855,
+        "timeStart": 113.68,
+        "timeEnd": 117.28
+      },
+      "score": 0.965090274810791
+    },
+    {
+      "id": "m_0012",
+      "label": "date_time",
+      "surface": "19th\ncentury",
+      "canonical": "19th\ncentury",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 2293,
+        "charEnd": 2305,
+        "timeStart": 136.16,
+        "timeEnd": 142.8
+      },
+      "score": 0.5947796702384949
+    },
+    {
+      "id": "m_0013",
+      "label": "location",
+      "surface": "uk",
+      "canonical": "uk",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 2550,
+        "charEnd": 2552,
+        "timeStart": 149.92,
+        "timeEnd": 154.16
+      },
+      "score": 0.7277448177337646
+    },
+    {
+      "id": "m_0014",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 2657,
+        "charEnd": 2665,
+        "timeStart": 164.239,
+        "timeEnd": 167.36
+      },
+      "score": 0.9114720225334167
+    },
+    {
+      "id": "m_0015",
+      "label": "event",
+      "surface": "study",
+      "canonical": "study",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3133,
+        "charEnd": 3138,
+        "timeStart": 189.12,
+        "timeEnd": 192.8
+      },
+      "score": 0.6570561528205872
+    },
+    {
+      "id": "m_0016",
+      "label": "event",
+      "surface": "study",
+      "canonical": "study",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3328,
+        "charEnd": 3333,
+        "timeStart": 199.84,
+        "timeEnd": 204.31900000000002
+      },
+      "score": 0.5979436635971069
+    },
+    {
+      "id": "m_0017",
+      "label": "quantity",
+      "surface": "golf scores",
+      "canonical": "golf scores",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3427,
+        "charEnd": 3438,
+        "timeStart": 206.64,
+        "timeEnd": 210.319
+      },
+      "score": 0.8172352910041809
+    },
+    {
+      "id": "m_0018",
+      "label": "technology",
+      "surface": "youtube algorithm",
+      "canonical": "youtube algorithm",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3502,
+        "charEnd": 3519,
+        "timeStart": 210.319,
+        "timeEnd": 215.28
+      },
+      "score": 0.7179966568946838
+    },
+    {
+      "id": "m_0019",
+      "label": "facility",
+      "surface": "community wells",
+      "canonical": "community wells",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3654,
+        "charEnd": 3669,
+        "timeStart": 219.519,
+        "timeEnd": 223.84
+      },
+      "score": 0.8624206781387329
+    },
+    {
+      "id": "m_0020",
+      "label": "location",
+      "surface": "villages",
+      "canonical": "villages",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3684,
+        "charEnd": 3692,
+        "timeStart": 221.76,
+        "timeEnd": 225.84
+      },
+      "score": 0.6812268495559692
+    },
+    {
+      "id": "m_0021",
+      "label": "location",
+      "surface": "north umberland",
+      "canonical": "north umberland",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3763,
+        "charEnd": 3778,
+        "timeStart": 225.84,
+        "timeEnd": 229.04
+      },
+      "score": 0.5847497582435608
+    },
+    {
+      "id": "m_0022",
+      "label": "location",
+      "surface": "england",
+      "canonical": "england",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3779,
+        "charEnd": 3786,
+        "timeStart": 227.36,
+        "timeEnd": 231.84
+      },
+      "score": 0.6478627920150757
+    },
+    {
+      "id": "m_0023",
+      "label": "person",
+      "surface": "coventina",
+      "canonical": "coventina",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3847,
+        "charEnd": 3856,
+        "timeStart": 229.04,
+        "timeEnd": 233.84
+      },
+      "score": 0.843040943145752
+    },
+    {
+      "id": "m_0024",
+      "label": "quantity",
+      "surface": "sixteen thousand coins",
+      "canonical": "sixteen thousand coins",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3857,
+        "charEnd": 3879,
+        "timeStart": 231.84,
+        "timeEnd": 235.599
+      },
+      "score": 0.8885297775268555
+    },
+    {
+      "id": "m_0025",
+      "label": "organization",
+      "surface": "roman empire",
+      "canonical": "roman empire",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 3907,
+        "charEnd": 3919,
+        "timeStart": 233.84,
+        "timeEnd": 236.64000000000001
+      },
+      "score": 0.6236785650253296
+    },
+    {
+      "id": "m_0026",
+      "label": "organization",
+      "surface": "televangelist organizations",
+      "canonical": "televangelist organizations",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4206,
+        "charEnd": 4233,
+        "timeStart": 268.479,
+        "timeEnd": 272.56
+      },
+      "score": 0.7797172665596008
+    },
+    {
+      "id": "m_0027",
+      "label": "person",
+      "surface": "alexander the great",
+      "canonical": "alexander the great",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4448,
+        "charEnd": 4467,
+        "timeStart": 284.24,
+        "timeEnd": 289.04
+      },
+      "score": 0.9868754148483276
+    },
+    {
+      "id": "m_0028",
+      "label": "location",
+      "surface": "river",
+      "canonical": "river",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4482,
+        "charEnd": 4487,
+        "timeStart": 286.639,
+        "timeEnd": 290.88
+      },
+      "score": 0.5417645573616028
+    },
+    {
+      "id": "m_0029",
+      "label": "person",
+      "surface": "ponce de leon",
+      "canonical": "ponce de leon",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4593,
+        "charEnd": 4606,
+        "timeStart": 292.72,
+        "timeEnd": 296.32000000000005
+      },
+      "score": 0.9557647705078125
+    },
+    {
+      "id": "m_0030",
+      "label": "location",
+      "surface": "florida",
+      "canonical": "florida",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4631,
+        "charEnd": 4638,
+        "timeStart": 294.639,
+        "timeEnd": 298.16
+      },
+      "score": 0.9163473844528198
+    },
+    {
+      "id": "m_0031",
+      "label": "facility",
+      "surface": "fountain of youth",
+      "canonical": "fountain of youth",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4669,
+        "charEnd": 4686,
+        "timeStart": 296.32,
+        "timeEnd": 300
+      },
+      "score": 0.7930475473403931
+    },
+    {
+      "id": "m_0032",
+      "label": "person",
+      "surface": "alexander",
+      "canonical": "alexander",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4840,
+        "charEnd": 4849,
+        "timeStart": 305.039,
+        "timeEnd": 309.84
+      },
+      "score": 0.8389450907707214
+    },
+    {
+      "id": "m_0033",
+      "label": "person",
+      "surface": "ponce leon",
+      "canonical": "ponce leon",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 4854,
+        "charEnd": 4864,
+        "timeStart": 307.44,
+        "timeEnd": 312.24
+      },
+      "score": 0.7369998693466187
+    },
+    {
+      "id": "m_0034",
+      "label": "ideology",
+      "surface": "spiritualism",
+      "canonical": "spiritualism",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 5706,
+        "charEnd": 5718,
+        "timeStart": 363.039,
+        "timeEnd": 367.84
+      },
+      "score": 0.9087613821029663
+    },
+    {
+      "id": "m_0035",
+      "label": "event",
+      "surface": "seances",
+      "canonical": "seances",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 5727,
+        "charEnd": 5734,
+        "timeStart": 363.039,
+        "timeEnd": 367.84
+      },
+      "score": 0.7499948740005493
+    },
+    {
+      "id": "m_0036",
+      "label": "person",
+      "surface": "houdini",
+      "canonical": "houdini",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 5927,
+        "charEnd": 5934,
+        "timeStart": 374,
+        "timeEnd": 378.319
+      },
+      "score": 0.9933795928955078
+    },
+    {
+      "id": "m_0037",
+      "label": "person",
+      "surface": "houdini",
+      "canonical": "houdini",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 5984,
+        "charEnd": 5991,
+        "timeStart": 378.319,
+        "timeEnd": 382.16
+      },
+      "score": 0.9892414212226868
+    },
+    {
+      "id": "m_0038",
+      "label": "ideology",
+      "surface": "spiritualism",
+      "canonical": "spiritualism",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6050,
+        "charEnd": 6062,
+        "timeStart": 382.16,
+        "timeEnd": 386.8
+      },
+      "score": 0.9136764407157898
+    },
+    {
+      "id": "m_0039",
+      "label": "location",
+      "surface": "congress",
+      "canonical": "congress",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6075,
+        "charEnd": 6083,
+        "timeStart": 384,
+        "timeEnd": 389.12
+      },
+      "score": 0.6362581253051758
+    },
+    {
+      "id": "m_0040",
+      "label": "ideology",
+      "surface": "spiritualism",
+      "canonical": "spiritualism",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6105,
+        "charEnd": 6117,
+        "timeStart": 386.8,
+        "timeEnd": 391.36
+      },
+      "score": 0.8770482540130615
+    },
+    {
+      "id": "m_0041",
+      "label": "organization",
+      "surface": "players",
+      "canonical": "players",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6393,
+        "charEnd": 6400,
+        "timeStart": 403.199,
+        "timeEnd": 409.28000000000003
+      },
+      "score": 0.5202112793922424
+    },
+    {
+      "id": "m_0042",
+      "label": "organization",
+      "surface": "players",
+      "canonical": "players",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6447,
+        "charEnd": 6454,
+        "timeStart": 409.28,
+        "timeEnd": 413.039
+      },
+      "score": 0.5592389702796936
+    },
+    {
+      "id": "m_0043",
+      "label": "person",
+      "surface": "jason\ngiambi",
+      "canonical": "jason\ngiambi",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6551,
+        "charEnd": 6563,
+        "timeStart": 413.039,
+        "timeEnd": 418.56
+      },
+      "score": 0.9297429919242859
+    },
+    {
+      "id": "m_0044",
+      "label": "role",
+      "surface": "relief pitcher",
+      "canonical": "relief pitcher",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6691,
+        "charEnd": 6705,
+        "timeStart": 422.24,
+        "timeEnd": 426.40000000000003
+      },
+      "score": 0.866207480430603
+    },
+    {
+      "id": "m_0045",
+      "label": "person",
+      "surface": "turk wendell",
+      "canonical": "turk wendell",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6706,
+        "charEnd": 6718,
+        "timeStart": 422.24,
+        "timeEnd": 426.40000000000003
+      },
+      "score": 0.972111165523529
+    },
+    {
+      "id": "m_0046",
+      "label": "location",
+      "surface": "foul lines",
+      "canonical": "foul lines",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6751,
+        "charEnd": 6761,
+        "timeStart": 424.56,
+        "timeEnd": 428.24
+      },
+      "score": 0.5428748726844788
+    },
+    {
+      "id": "m_0047",
+      "label": "organization",
+      "surface": "psychologists",
+      "canonical": "psychologists",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 6956,
+        "charEnd": 6969,
+        "timeStart": 437.039,
+        "timeEnd": 441.039
+      },
+      "score": 0.525095522403717
+    },
+    {
+      "id": "m_0048",
+      "label": "person",
+      "surface": "aj",
+      "canonical": "aj",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 7836,
+        "charEnd": 7838,
+        "timeStart": 488,
+        "timeEnd": 492.08
+      },
+      "score": 0.8872367739677429
+    },
+    {
+      "id": "m_0049",
+      "label": "person",
+      "surface": "hecklefish",
+      "canonical": "hecklefish",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 7846,
+        "charEnd": 7856,
+        "timeStart": 488,
+        "timeEnd": 492.08
+      },
+      "score": 0.6373031139373779
+    },
+    {
+      "id": "m_0050",
+      "label": "work_of_media",
+      "surface": "this has been the y files",
+      "canonical": "this has been the y files",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 7857,
+        "charEnd": 7882,
+        "timeStart": 490,
+        "timeEnd": 493.44
+      },
+      "score": 0.7977551817893982
+    },
+    {
+      "id": "m_0051",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 7993,
+        "charEnd": 8000,
+        "timeStart": 495.36,
+        "timeEnd": 499.039
+      },
+      "score": 0.5408345460891724
+    },
+    {
+      "id": "m_0052",
+      "label": "technology",
+      "surface": "algorithm",
+      "canonical": "algorithm",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8047,
+        "charEnd": 8056,
+        "timeStart": 499.039,
+        "timeEnd": 503.599
+      },
+      "score": 0.7883021831512451
+    },
+    {
+      "id": "m_0053",
+      "label": "person",
+      "surface": "jim h",
+      "canonical": "jim h",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8129,
+        "charEnd": 8134,
+        "timeStart": 503.599,
+        "timeEnd": 509.44
+      },
+      "score": 0.9426950812339783
+    },
+    {
+      "id": "m_0054",
+      "label": "person",
+      "surface": "daniel",
+      "canonical": "daniel",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8135,
+        "charEnd": 8141,
+        "timeStart": 503.599,
+        "timeEnd": 509.44
+      },
+      "score": 0.9672886729240417
+    },
+    {
+      "id": "m_0055",
+      "label": "person",
+      "surface": "mauricio",
+      "canonical": "mauricio",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8142,
+        "charEnd": 8150,
+        "timeStart": 503.599,
+        "timeEnd": 509.44
+      },
+      "score": 0.9794105291366577
+    },
+    {
+      "id": "m_0056",
+      "label": "person",
+      "surface": "ew",
+      "canonical": "ew",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8151,
+        "charEnd": 8153,
+        "timeStart": 503.599,
+        "timeEnd": 509.44
+      },
+      "score": 0.7358250617980957
+    },
+    {
+      "id": "m_0057",
+      "label": "person",
+      "surface": "grant",
+      "canonical": "grant",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8154,
+        "charEnd": 8159,
+        "timeStart": 503.599,
+        "timeEnd": 509.44
+      },
+      "score": 0.7849600911140442
+    },
+    {
+      "id": "m_0058",
+      "label": "person",
+      "surface": "stella",
+      "canonical": "stella",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8160,
+        "charEnd": 8166,
+        "timeStart": 506.96,
+        "timeEnd": 511.19899999999996
+      },
+      "score": 0.9679006338119507
+    },
+    {
+      "id": "m_0059",
+      "label": "person",
+      "surface": "dalton",
+      "canonical": "dalton",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8167,
+        "charEnd": 8173,
+        "timeStart": 506.96,
+        "timeEnd": 511.19899999999996
+      },
+      "score": 0.943994402885437
+    },
+    {
+      "id": "m_0060",
+      "label": "person",
+      "surface": "sal",
+      "canonical": "sal",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8174,
+        "charEnd": 8177,
+        "timeStart": 506.96,
+        "timeEnd": 511.19899999999996
+      },
+      "score": 0.967902421951294
+    },
+    {
+      "id": "m_0061",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8206,
+        "charEnd": 8213,
+        "timeStart": 509.44,
+        "timeEnd": 512.64
+      },
+      "score": 0.6023752689361572
+    },
+    {
+      "id": "m_0062",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8253,
+        "charEnd": 8260,
+        "timeStart": 511.199,
+        "timeEnd": 514.8000000000001
+      },
+      "score": 0.5125716328620911
+    },
+    {
+      "id": "m_0063",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "za3rlP9pJEU",
+        "charStart": 8279,
+        "charEnd": 8286,
+        "timeStart": 512.64,
+        "timeEnd": 518
+      },
+      "score": 0.8272556662559509
+    }
+  ]
+}

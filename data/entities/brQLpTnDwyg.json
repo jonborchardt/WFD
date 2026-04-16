@@ -1,0 +1,6452 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "brQLpTnDwyg",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T01:20:22.705Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "date_time",
+      "surface": "three and a half billion years ago",
+      "canonical": "three and a half billion years ago",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 114,
+        "charEnd": 148,
+        "timeStart": 8.46,
+        "timeEnd": 13.5
+      },
+      "score": 0.7511054277420044
+    },
+    {
+      "id": "m_0002",
+      "label": "location",
+      "surface": "primordial soup",
+      "canonical": "primordial soup",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 201,
+        "charEnd": 216,
+        "timeStart": 13.5,
+        "timeEnd": 18.119
+      },
+      "score": 0.6921648383140564
+    },
+    {
+      "id": "m_0003",
+      "label": "date_time",
+      "surface": "375 million years ago",
+      "canonical": "375 million years ago",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 547,
+        "charEnd": 568,
+        "timeStart": 33.6,
+        "timeEnd": 39.18
+      },
+      "score": 0.9024434685707092
+    },
+    {
+      "id": "m_0004",
+      "label": "date_time",
+      "surface": "four million years ago",
+      "canonical": "four million years ago",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 615,
+        "charEnd": 637,
+        "timeStart": 39.18,
+        "timeEnd": 43.92
+      },
+      "score": 0.8748570680618286
+    },
+    {
+      "id": "m_0005",
+      "label": "date_time",
+      "surface": "200 000 years\nago",
+      "canonical": "200 000 years\nago",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 742,
+        "charEnd": 759,
+        "timeStart": 45.12,
+        "timeEnd": 53.82
+      },
+      "score": 0.9206294417381287
+    },
+    {
+      "id": "m_0006",
+      "label": "person",
+      "surface": "Homo sapiens",
+      "canonical": "Homo sapiens",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 760,
+        "charEnd": 772,
+        "timeStart": 48.36,
+        "timeEnd": 53.82
+      },
+      "score": 0.5146515965461731
+    },
+    {
+      "id": "m_0007",
+      "label": "organization",
+      "surface": "civilizations",
+      "canonical": "civilizations",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 838,
+        "charEnd": 851,
+        "timeStart": 53.82,
+        "timeEnd": 59.28
+      },
+      "score": 0.5717511773109436
+    },
+    {
+      "id": "m_0008",
+      "label": "organization",
+      "surface": "Science and Technology",
+      "canonical": "Science and Technology",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 989,
+        "charEnd": 1011,
+        "timeStart": 64.199,
+        "timeEnd": 68.939
+      },
+      "score": 0.7293316125869751
+    },
+    {
+      "id": "m_0009",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 1089,
+        "charEnd": 1096,
+        "timeStart": 71.939,
+        "timeEnd": 74.939
+      },
+      "score": 0.7445254325866699
+    },
+    {
+      "id": "m_0010",
+      "label": "location",
+      "surface": "the pole",
+      "canonical": "the pole",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 1151,
+        "charEnd": 1159,
+        "timeStart": 107.52,
+        "timeEnd": 113.78
+      },
+      "score": 0.5642678737640381
+    },
+    {
+      "id": "m_0011",
+      "label": "location",
+      "surface": "real country",
+      "canonical": "real country",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 1741,
+        "charEnd": 1753,
+        "timeStart": 172.26,
+        "timeEnd": 175.85999999999999
+      },
+      "score": 0.6712457537651062
+    },
+    {
+      "id": "m_0012",
+      "label": "event",
+      "surface": "World War\nThree",
+      "canonical": "World War\nThree",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 1769,
+        "charEnd": 1784,
+        "timeStart": 172.26,
+        "timeEnd": 178.14
+      },
+      "score": 0.9940620064735413
+    },
+    {
+      "id": "m_0013",
+      "label": "technology",
+      "surface": "modern Battlefield\ntechnology",
+      "canonical": "modern Battlefield\ntechnology",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 1794,
+        "charEnd": 1823,
+        "timeStart": 173.819,
+        "timeEnd": 180.06
+      },
+      "score": 0.57767653465271
+    },
+    {
+      "id": "m_0014",
+      "label": "technology",
+      "surface": "Logistics",
+      "canonical": "Logistics",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 1828,
+        "charEnd": 1837,
+        "timeStart": 175.86,
+        "timeEnd": 180.06
+      },
+      "score": 0.5338807106018066
+    },
+    {
+      "id": "m_0015",
+      "label": "organization",
+      "surface": "army",
+      "canonical": "army",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 1856,
+        "charEnd": 1860,
+        "timeStart": 178.14,
+        "timeEnd": 182.16
+      },
+      "score": 0.9608633518218994
+    },
+    {
+      "id": "m_0016",
+      "label": "organization",
+      "surface": "Army",
+      "canonical": "army",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2097,
+        "charEnd": 2101,
+        "timeStart": 197.519,
+        "timeEnd": 201.959
+      },
+      "score": 0.9577729105949402
+    },
+    {
+      "id": "m_0017",
+      "label": "role",
+      "surface": "Supreme Allied Commander",
+      "canonical": "Supreme Allied Commander",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2142,
+        "charEnd": 2166,
+        "timeStart": 199.62,
+        "timeEnd": 203.34
+      },
+      "score": 0.9544329047203064
+    },
+    {
+      "id": "m_0018",
+      "label": "quantity",
+      "surface": "thirteen",
+      "canonical": "thirteen",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2335,
+        "charEnd": 2343,
+        "timeStart": 217.56,
+        "timeEnd": 221.22
+      },
+      "score": 0.5013041496276855
+    },
+    {
+      "id": "m_0019",
+      "label": "date_time",
+      "surface": "1947",
+      "canonical": "1947",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2778,
+        "charEnd": 2782,
+        "timeStart": 264.9,
+        "timeEnd": 270.9
+      },
+      "score": 0.9607514142990112
+    },
+    {
+      "id": "m_0020",
+      "label": "organization",
+      "surface": "group of scientists",
+      "canonical": "group of scientists",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2785,
+        "charEnd": 2804,
+        "timeStart": 264.9,
+        "timeEnd": 270.9
+      },
+      "score": 0.6255580186843872
+    },
+    {
+      "id": "m_0021",
+      "label": "person",
+      "surface": "Albert Einstein",
+      "canonical": "Albert Einstein",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2815,
+        "charEnd": 2830,
+        "timeStart": 268.44,
+        "timeEnd": 273.06
+      },
+      "score": 0.9854792356491089
+    },
+    {
+      "id": "m_0022",
+      "label": "technology",
+      "surface": "Doomsday\nClock",
+      "canonical": "Doomsday\nClock",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2843,
+        "charEnd": 2857,
+        "timeStart": 268.44,
+        "timeEnd": 275.46
+      },
+      "score": 0.7608518004417419
+    },
+    {
+      "id": "m_0023",
+      "label": "organization",
+      "surface": "humanity",
+      "canonical": "humanity",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2900,
+        "charEnd": 2908,
+        "timeStart": 273.06,
+        "timeEnd": 277.62
+      },
+      "score": 0.5931222438812256
+    },
+    {
+      "id": "m_0024",
+      "label": "event",
+      "surface": "Total\nAnnihilation",
+      "canonical": "Total\nAnnihilation",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2915,
+        "charEnd": 2933,
+        "timeStart": 273.06,
+        "timeEnd": 280.32
+      },
+      "score": 0.8216824531555176
+    },
+    {
+      "id": "m_0025",
+      "label": "technology",
+      "surface": "Doomsday\nClock",
+      "canonical": "Doomsday\nClock",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2952,
+        "charEnd": 2966,
+        "timeStart": 275.46,
+        "timeEnd": 282.3
+      },
+      "score": 0.6471366882324219
+    },
+    {
+      "id": "m_0026",
+      "label": "quantity",
+      "surface": "90 Seconds To Midnight",
+      "canonical": "90 Seconds To Midnight",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 2973,
+        "charEnd": 2995,
+        "timeStart": 277.62,
+        "timeEnd": 282.3
+      },
+      "score": 0.7381272912025452
+    },
+    {
+      "id": "m_0027",
+      "label": "person",
+      "surface": "Mel",
+      "canonical": "Mel",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3308,
+        "charEnd": 3311,
+        "timeStart": 297.6,
+        "timeEnd": 301.91900000000004
+      },
+      "score": 0.5219654440879822
+    },
+    {
+      "id": "m_0028",
+      "label": "organization",
+      "surface": "the bulletin of the atomic\nscientists",
+      "canonical": "the bulletin of the atomic\nscientists",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3388,
+        "charEnd": 3425,
+        "timeStart": 301.919,
+        "timeEnd": 308.58000000000004
+      },
+      "score": 0.8255661129951477
+    },
+    {
+      "id": "m_0029",
+      "label": "date_time",
+      "surface": "1945",
+      "canonical": "1945",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3444,
+        "charEnd": 3448,
+        "timeStart": 303.54,
+        "timeEnd": 308.58000000000004
+      },
+      "score": 0.9175699353218079
+    },
+    {
+      "id": "m_0030",
+      "label": "technology",
+      "surface": "nuclear technology",
+      "canonical": "nuclear technology",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3510,
+        "charEnd": 3528,
+        "timeStart": 308.58,
+        "timeEnd": 313.25899999999996
+      },
+      "score": 0.8611716032028198
+    },
+    {
+      "id": "m_0031",
+      "label": "person",
+      "surface": "founders",
+      "canonical": "founders",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3556,
+        "charEnd": 3564,
+        "timeStart": 310.8,
+        "timeEnd": 315.66
+      },
+      "score": 0.5197558999061584
+    },
+    {
+      "id": "m_0032",
+      "label": "event",
+      "surface": "Manhattan Project",
+      "canonical": "Manhattan Project",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3625,
+        "charEnd": 3642,
+        "timeStart": 315.66,
+        "timeEnd": 318.96000000000004
+      },
+      "score": 0.7234401702880859
+    },
+    {
+      "id": "m_0033",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3663,
+        "charEnd": 3668,
+        "timeStart": 317.4,
+        "timeEnd": 321.12
+      },
+      "score": 0.5180609226226807
+    },
+    {
+      "id": "m_0034",
+      "label": "event",
+      "surface": "Cold War",
+      "canonical": "Cold War",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3838,
+        "charEnd": 3846,
+        "timeStart": 327.419,
+        "timeEnd": 331.79999999999995
+      },
+      "score": 0.767681896686554
+    },
+    {
+      "id": "m_0035",
+      "label": "date_time",
+      "surface": "Midnight",
+      "canonical": "Midnight",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3916,
+        "charEnd": 3924,
+        "timeStart": 331.8,
+        "timeEnd": 336.78000000000003
+      },
+      "score": 0.5818598866462708
+    },
+    {
+      "id": "m_0036",
+      "label": "date_time",
+      "surface": "1991",
+      "canonical": "1991",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3966,
+        "charEnd": 3970,
+        "timeStart": 333.96,
+        "timeEnd": 338.69899999999996
+      },
+      "score": 0.9016368985176086
+    },
+    {
+      "id": "m_0037",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3976,
+        "charEnd": 3989,
+        "timeStart": 333.96,
+        "timeEnd": 338.69899999999996
+      },
+      "score": 0.8180716633796692
+    },
+    {
+      "id": "m_0038",
+      "label": "location",
+      "surface": "Soviet Union",
+      "canonical": "Soviet Union",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 3998,
+        "charEnd": 4010,
+        "timeStart": 336.78,
+        "timeEnd": 340.85999999999996
+      },
+      "score": 0.7690141797065735
+    },
+    {
+      "id": "m_0039",
+      "label": "law_or_policy",
+      "surface": "Strategic arms reduction treaty",
+      "canonical": "Strategic arms reduction treaty",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4031,
+        "charEnd": 4062,
+        "timeStart": 338.699,
+        "timeEnd": 342.6
+      },
+      "score": 0.9790717959403992
+    },
+    {
+      "id": "m_0040",
+      "label": "organization",
+      "surface": "Doomsday Clock",
+      "canonical": "Doomsday Clock",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4154,
+        "charEnd": 4168,
+        "timeStart": 344.88,
+        "timeEnd": 349.5
+      },
+      "score": 0.6363266706466675
+    },
+    {
+      "id": "m_0041",
+      "label": "date_time",
+      "surface": "2020",
+      "canonical": "2020",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4222,
+        "charEnd": 4226,
+        "timeStart": 346.919,
+        "timeEnd": 351.78
+      },
+      "score": 0.8492498397827148
+    },
+    {
+      "id": "m_0042",
+      "label": "date_time",
+      "surface": "January of 2023",
+      "canonical": "January of 2023",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4279,
+        "charEnd": 4294,
+        "timeStart": 351.78,
+        "timeEnd": 356.82
+      },
+      "score": 0.8221238255500793
+    },
+    {
+      "id": "m_0043",
+      "label": "organization",
+      "surface": "Doomsday Clock",
+      "canonical": "Doomsday Clock",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4299,
+        "charEnd": 4313,
+        "timeStart": 354.84,
+        "timeEnd": 359.46
+      },
+      "score": 0.5984031558036804
+    },
+    {
+      "id": "m_0044",
+      "label": "organization",
+      "surface": "Doomsday Clock",
+      "canonical": "Doomsday Clock",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4493,
+        "charEnd": 4507,
+        "timeStart": 365.82,
+        "timeEnd": 370.139
+      },
+      "score": 0.5600841045379639
+    },
+    {
+      "id": "m_0045",
+      "label": "event",
+      "surface": "global conflict",
+      "canonical": "global conflict",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4541,
+        "charEnd": 4556,
+        "timeStart": 367.919,
+        "timeEnd": 372.71999999999997
+      },
+      "score": 0.8048245310783386
+    },
+    {
+      "id": "m_0046",
+      "label": "event",
+      "surface": "cyber\nterrorism",
+      "canonical": "cyber\nterrorism",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4557,
+        "charEnd": 4572,
+        "timeStart": 367.919,
+        "timeEnd": 374.88
+      },
+      "score": 0.8075236082077026
+    },
+    {
+      "id": "m_0047",
+      "label": "technology",
+      "surface": "artificial intelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4601,
+        "charEnd": 4624,
+        "timeStart": 372.72,
+        "timeEnd": 377.759
+      },
+      "score": 0.9247035980224609
+    },
+    {
+      "id": "m_0048",
+      "label": "event",
+      "surface": "Cuban Missile\nCrisis",
+      "canonical": "Cuban Missile\nCrisis",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 4997,
+        "charEnd": 5017,
+        "timeStart": 397.5,
+        "timeEnd": 405.96
+      },
+      "score": 0.9658079743385315
+    },
+    {
+      "id": "m_0049",
+      "label": "date_time",
+      "surface": "October 16th to 29th\n1962",
+      "canonical": "October 16th to 29th\n1962",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5027,
+        "charEnd": 5052,
+        "timeStart": 400.02,
+        "timeEnd": 407.52
+      },
+      "score": 0.8882631659507751
+    },
+    {
+      "id": "m_0050",
+      "label": "date_time",
+      "surface": "October 25th",
+      "canonical": "October 25th",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5133,
+        "charEnd": 5145,
+        "timeStart": 407.52,
+        "timeEnd": 412.38
+      },
+      "score": 0.8044652342796326
+    },
+    {
+      "id": "m_0051",
+      "label": "facility",
+      "surface": "Air\nForce defense Outpost",
+      "canonical": "Air\nForce defense Outpost",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5160,
+        "charEnd": 5185,
+        "timeStart": 407.52,
+        "timeEnd": 414.72
+      },
+      "score": 0.8801002502441406
+    },
+    {
+      "id": "m_0052",
+      "label": "location",
+      "surface": "Duluth\nMinnesota",
+      "canonical": "Duluth\nMinnesota",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5189,
+        "charEnd": 5205,
+        "timeStart": 410.819,
+        "timeEnd": 417.06
+      },
+      "score": 0.8268780708312988
+    },
+    {
+      "id": "m_0053",
+      "label": "person",
+      "surface": "guard",
+      "canonical": "guard",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5241,
+        "charEnd": 5246,
+        "timeStart": 414.72,
+        "timeEnd": 419.28000000000003
+      },
+      "score": 0.7741634845733643
+    },
+    {
+      "id": "m_0054",
+      "label": "location",
+      "surface": "Wisconsin",
+      "canonical": "Wisconsin",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5383,
+        "charEnd": 5392,
+        "timeStart": 421.919,
+        "timeEnd": 426.35999999999996
+      },
+      "score": 0.6087256073951721
+    },
+    {
+      "id": "m_0055",
+      "label": "person",
+      "surface": "base commander",
+      "canonical": "base commander",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5514,
+        "charEnd": 5528,
+        "timeStart": 430.68,
+        "timeEnd": 434.94
+      },
+      "score": 0.6902397274971008
+    },
+    {
+      "id": "m_0056",
+      "label": "event",
+      "surface": "nuclear war",
+      "canonical": "nuclear war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5584,
+        "charEnd": 5595,
+        "timeStart": 434.94,
+        "timeEnd": 439.56
+      },
+      "score": 0.9731089472770691
+    },
+    {
+      "id": "m_0057",
+      "label": "facility",
+      "surface": "runway",
+      "canonical": "runway",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5668,
+        "charEnd": 5674,
+        "timeStart": 439.56,
+        "timeEnd": 444.539
+      },
+      "score": 0.9240556955337524
+    },
+    {
+      "id": "m_0058",
+      "label": "facility",
+      "surface": "runway",
+      "canonical": "runway",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5750,
+        "charEnd": 5756,
+        "timeStart": 444.539,
+        "timeEnd": 448.259
+      },
+      "score": 0.9129073619842529
+    },
+    {
+      "id": "m_0059",
+      "label": "location",
+      "surface": "Duluth",
+      "canonical": "Duluth",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5858,
+        "charEnd": 5864,
+        "timeStart": 450.96,
+        "timeEnd": 456.419
+      },
+      "score": 0.7543128728866577
+    },
+    {
+      "id": "m_0060",
+      "label": "organization",
+      "surface": "American destroyers",
+      "canonical": "American destroyers",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5938,
+        "charEnd": 5957,
+        "timeStart": 456.419,
+        "timeEnd": 461.039
+      },
+      "score": 0.55119389295578
+    },
+    {
+      "id": "m_0061",
+      "label": "location",
+      "surface": "Moscow",
+      "canonical": "Moscow",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 5994,
+        "charEnd": 6000,
+        "timeStart": 458.699,
+        "timeEnd": 462.90000000000003
+      },
+      "score": 0.801467776298523
+    },
+    {
+      "id": "m_0062",
+      "label": "person",
+      "surface": "captain",
+      "canonical": "captain",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6005,
+        "charEnd": 6012,
+        "timeStart": 458.699,
+        "timeEnd": 462.90000000000003
+      },
+      "score": 0.5775845050811768
+    },
+    {
+      "id": "m_0063",
+      "label": "event",
+      "surface": "nuclear war",
+      "canonical": "nuclear war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6034,
+        "charEnd": 6045,
+        "timeStart": 461.039,
+        "timeEnd": 465.36
+      },
+      "score": 0.9794533848762512
+    },
+    {
+      "id": "m_0064",
+      "label": "organization",
+      "surface": "American\nFleet",
+      "canonical": "American\nFleet",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6112,
+        "charEnd": 6126,
+        "timeStart": 465.36,
+        "timeEnd": 472.139
+      },
+      "score": 0.7277011871337891
+    },
+    {
+      "id": "m_0065",
+      "label": "person",
+      "surface": "Soviet political officer",
+      "canonical": "Soviet political officer",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6131,
+        "charEnd": 6155,
+        "timeStart": 467.22,
+        "timeEnd": 472.139
+      },
+      "score": 0.6887831091880798
+    },
+    {
+      "id": "m_0066",
+      "label": "organization",
+      "surface": "command of the Soviet fleet",
+      "canonical": "command of the Soviet fleet",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6235,
+        "charEnd": 6262,
+        "timeStart": 474.96,
+        "timeEnd": 479.28
+      },
+      "score": 0.7233320474624634
+    },
+    {
+      "id": "m_0067",
+      "label": "person",
+      "surface": "captain",
+      "canonical": "captain",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6322,
+        "charEnd": 6329,
+        "timeStart": 479.28,
+        "timeEnd": 483.05999999999995
+      },
+      "score": 0.6868910193443298
+    },
+    {
+      "id": "m_0068",
+      "label": "date_time",
+      "surface": "1983",
+      "canonical": "1983",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6389,
+        "charEnd": 6393,
+        "timeStart": 483.06,
+        "timeEnd": 488.4
+      },
+      "score": 0.8679213523864746
+    },
+    {
+      "id": "m_0069",
+      "label": "organization",
+      "surface": "Soviet early Warning\nSystems",
+      "canonical": "Soviet early Warning\nSystems",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6394,
+        "charEnd": 6422,
+        "timeStart": 483.06,
+        "timeEnd": 490.86
+      },
+      "score": 0.8666287064552307
+    },
+    {
+      "id": "m_0070",
+      "label": "law_or_policy",
+      "surface": "Soviet\nprotocol",
+      "canonical": "Soviet\nprotocol",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6481,
+        "charEnd": 6496,
+        "timeStart": 488.4,
+        "timeEnd": 495.36
+      },
+      "score": 0.8629708290100098
+    },
+    {
+      "id": "m_0071",
+      "label": "event",
+      "surface": "first strike",
+      "canonical": "first strike",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6542,
+        "charEnd": 6554,
+        "timeStart": 493.02,
+        "timeEnd": 496.79999999999995
+      },
+      "score": 0.6913900971412659
+    },
+    {
+      "id": "m_0072",
+      "label": "role",
+      "surface": "base commander",
+      "canonical": "base commander",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6619,
+        "charEnd": 6633,
+        "timeStart": 496.8,
+        "timeEnd": 501.72
+      },
+      "score": 0.5835102200508118
+    },
+    {
+      "id": "m_0073",
+      "label": "location",
+      "surface": "Hawaii",
+      "canonical": "Hawaii",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6801,
+        "charEnd": 6807,
+        "timeStart": 508.379,
+        "timeEnd": 513.719
+      },
+      "score": 0.8484758138656616
+    },
+    {
+      "id": "m_0074",
+      "label": "quantity",
+      "surface": "one and a half million people",
+      "canonical": "one and a half million people",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6808,
+        "charEnd": 6837,
+        "timeStart": 508.379,
+        "timeEnd": 513.719
+      },
+      "score": 0.8138526678085327
+    },
+    {
+      "id": "m_0075",
+      "label": "date_time",
+      "surface": "2017",
+      "canonical": "2017",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6867,
+        "charEnd": 6871,
+        "timeStart": 510.84,
+        "timeEnd": 516.419
+      },
+      "score": 0.8150120973587036
+    },
+    {
+      "id": "m_0076",
+      "label": "date_time",
+      "surface": "2018",
+      "canonical": "2018",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6877,
+        "charEnd": 6881,
+        "timeStart": 513.719,
+        "timeEnd": 518.7600000000001
+      },
+      "score": 0.5591052174568176
+    },
+    {
+      "id": "m_0077",
+      "label": "date_time",
+      "surface": "November 2017",
+      "canonical": "November 2017",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 6951,
+        "charEnd": 6964,
+        "timeStart": 518.76,
+        "timeEnd": 524.52
+      },
+      "score": 0.8698381781578064
+    },
+    {
+      "id": "m_0078",
+      "label": "technology",
+      "surface": "hwasong-15 missile",
+      "canonical": "hwasong-15 missile",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7001,
+        "charEnd": 7019,
+        "timeStart": 521.7,
+        "timeEnd": 526.8000000000001
+      },
+      "score": 0.8138965368270874
+    },
+    {
+      "id": "m_0079",
+      "label": "technology",
+      "surface": "North Korean missile",
+      "canonical": "North Korean missile",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7030,
+        "charEnd": 7050,
+        "timeStart": 524.52,
+        "timeEnd": 528.959
+      },
+      "score": 0.6416347026824951
+    },
+    {
+      "id": "m_0080",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7082,
+        "charEnd": 7095,
+        "timeStart": 526.8,
+        "timeEnd": 530.6999999999999
+      },
+      "score": 0.7105034589767456
+    },
+    {
+      "id": "m_0081",
+      "label": "organization",
+      "surface": "U.S intelligence",
+      "canonical": "U.S intelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7150,
+        "charEnd": 7166,
+        "timeStart": 530.7,
+        "timeEnd": 534.6
+      },
+      "score": 0.5387588739395142
+    },
+    {
+      "id": "m_0082",
+      "label": "location",
+      "surface": "Hawaii",
+      "canonical": "Hawaii",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7244,
+        "charEnd": 7250,
+        "timeStart": 534.6,
+        "timeEnd": 539.4590000000001
+      },
+      "score": 0.9692336916923523
+    },
+    {
+      "id": "m_0083",
+      "label": "date_time",
+      "surface": "December 1st 2017",
+      "canonical": "December 1st 2017",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7293,
+        "charEnd": 7310,
+        "timeStart": 536.76,
+        "timeEnd": 542.16
+      },
+      "score": 0.92705899477005
+    },
+    {
+      "id": "m_0084",
+      "label": "location",
+      "surface": "Hawaii",
+      "canonical": "Hawaii",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7348,
+        "charEnd": 7354,
+        "timeStart": 542.16,
+        "timeEnd": 547.68
+      },
+      "score": 0.9733591675758362
+    },
+    {
+      "id": "m_0085",
+      "label": "date_time",
+      "surface": "January 13 2018",
+      "canonical": "January 13 2018",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7542,
+        "charEnd": 7557,
+        "timeStart": 554.94,
+        "timeEnd": 561.24
+      },
+      "score": 0.8591411113739014
+    },
+    {
+      "id": "m_0086",
+      "label": "facility",
+      "surface": "every television",
+      "canonical": "every television",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7558,
+        "charEnd": 7574,
+        "timeStart": 554.94,
+        "timeEnd": 561.24
+      },
+      "score": 0.7560631036758423
+    },
+    {
+      "id": "m_0087",
+      "label": "facility",
+      "surface": "every\nradio",
+      "canonical": "every\nradio",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7575,
+        "charEnd": 7586,
+        "timeStart": 554.94,
+        "timeEnd": 563.279
+      },
+      "score": 0.674576997756958
+    },
+    {
+      "id": "m_0088",
+      "label": "facility",
+      "surface": "every cell phone",
+      "canonical": "every cell phone",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7587,
+        "charEnd": 7603,
+        "timeStart": 558.66,
+        "timeEnd": 563.279
+      },
+      "score": 0.6289262175559998
+    },
+    {
+      "id": "m_0089",
+      "label": "location",
+      "surface": "Hawaii",
+      "canonical": "Hawaii",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7747,
+        "charEnd": 7753,
+        "timeStart": 572.519,
+        "timeEnd": 576.42
+      },
+      "score": 0.96590256690979
+    },
+    {
+      "id": "m_0090",
+      "label": "quantity",
+      "surface": "minutes",
+      "canonical": "minutes",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 7876,
+        "charEnd": 7883,
+        "timeStart": 587.519,
+        "timeEnd": 592.2
+      },
+      "score": 0.6572037935256958
+    },
+    {
+      "id": "m_0091",
+      "label": "quantity",
+      "surface": "thousands of people",
+      "canonical": "thousands of people",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8040,
+        "charEnd": 8059,
+        "timeStart": 598.019,
+        "timeEnd": 602.519
+      },
+      "score": 0.8060407042503357
+    },
+    {
+      "id": "m_0092",
+      "label": "person",
+      "surface": "an employee",
+      "canonical": "an employee",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8127,
+        "charEnd": 8138,
+        "timeStart": 602.519,
+        "timeEnd": 607.14
+      },
+      "score": 0.6765077114105225
+    },
+    {
+      "id": "m_0093",
+      "label": "organization",
+      "surface": "Emergency Management agency",
+      "canonical": "Emergency Management agency",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8146,
+        "charEnd": 8173,
+        "timeStart": 605.459,
+        "timeEnd": 609.54
+      },
+      "score": 0.8618594408035278
+    },
+    {
+      "id": "m_0094",
+      "label": "event",
+      "surface": "this is not a drill",
+      "canonical": "this is not a drill",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8250,
+        "charEnd": 8269,
+        "timeStart": 611.22,
+        "timeEnd": 615.72
+      },
+      "score": 0.5679564476013184
+    },
+    {
+      "id": "m_0095",
+      "label": "event",
+      "surface": "military decisions",
+      "canonical": "military decisions",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8687,
+        "charEnd": 8705,
+        "timeStart": 635.279,
+        "timeEnd": 640.68
+      },
+      "score": 0.7361205816268921
+    },
+    {
+      "id": "m_0096",
+      "label": "event",
+      "surface": "military decisions",
+      "canonical": "military decisions",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8737,
+        "charEnd": 8755,
+        "timeStart": 637.74,
+        "timeEnd": 644.1
+      },
+      "score": 0.8644418716430664
+    },
+    {
+      "id": "m_0097",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8772,
+        "charEnd": 8774,
+        "timeStart": 640.68,
+        "timeEnd": 646.279
+      },
+      "score": 0.9643383026123047
+    },
+    {
+      "id": "m_0098",
+      "label": "technology",
+      "surface": "foreign\nintelligence",
+      "canonical": "foreign\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8775,
+        "charEnd": 8795,
+        "timeStart": 644.1,
+        "timeEnd": 652.86
+      },
+      "score": 0.81549072265625
+    },
+    {
+      "id": "m_0099",
+      "label": "work_of_media",
+      "surface": "news",
+      "canonical": "news",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8820,
+        "charEnd": 8824,
+        "timeStart": 650.1,
+        "timeEnd": 655.2
+      },
+      "score": 0.7896072268486023
+    },
+    {
+      "id": "m_0100",
+      "label": "technology",
+      "surface": "traditional computer\nprograms",
+      "canonical": "traditional computer\nprograms",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8840,
+        "charEnd": 8869,
+        "timeStart": 650.1,
+        "timeEnd": 657.42
+      },
+      "score": 0.7764114141464233
+    },
+    {
+      "id": "m_0101",
+      "label": "technology",
+      "surface": "computer program",
+      "canonical": "computer program",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 8957,
+        "charEnd": 8973,
+        "timeStart": 657.42,
+        "timeEnd": 662.3389999999999
+      },
+      "score": 0.6919291019439697
+    },
+    {
+      "id": "m_0102",
+      "label": "facility",
+      "surface": "valve",
+      "canonical": "valve",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9001,
+        "charEnd": 9006,
+        "timeStart": 660.18,
+        "timeEnd": 664.56
+      },
+      "score": 0.6302036643028259
+    },
+    {
+      "id": "m_0103",
+      "label": "technology",
+      "surface": "program",
+      "canonical": "program",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9046,
+        "charEnd": 9053,
+        "timeStart": 662.339,
+        "timeEnd": 666.839
+      },
+      "score": 0.6381703615188599
+    },
+    {
+      "id": "m_0104",
+      "label": "technology",
+      "surface": "software",
+      "canonical": "software",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9147,
+        "charEnd": 9155,
+        "timeStart": 669.48,
+        "timeEnd": 673.44
+      },
+      "score": 0.5411310195922852
+    },
+    {
+      "id": "m_0105",
+      "label": "technology",
+      "surface": "program",
+      "canonical": "program",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9197,
+        "charEnd": 9204,
+        "timeStart": 671.279,
+        "timeEnd": 675.72
+      },
+      "score": 0.559290885925293
+    },
+    {
+      "id": "m_0106",
+      "label": "technology",
+      "surface": "artificial\nintelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9279,
+        "charEnd": 9302,
+        "timeStart": 675.72,
+        "timeEnd": 682.019
+      },
+      "score": 0.7729915380477905
+    },
+    {
+      "id": "m_0107",
+      "label": "technology",
+      "surface": "computer programs",
+      "canonical": "computer programs",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9313,
+        "charEnd": 9330,
+        "timeStart": 677.94,
+        "timeEnd": 682.019
+      },
+      "score": 0.767110288143158
+    },
+    {
+      "id": "m_0108",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9435,
+        "charEnd": 9437,
+        "timeStart": 684.12,
+        "timeEnd": 689.399
+      },
+      "score": 0.9859998822212219
+    },
+    {
+      "id": "m_0109",
+      "label": "technology",
+      "surface": "self-driving cars",
+      "canonical": "self-driving cars",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9520,
+        "charEnd": 9537,
+        "timeStart": 690.899,
+        "timeEnd": 695.82
+      },
+      "score": 0.9074161648750305
+    },
+    {
+      "id": "m_0110",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9542,
+        "charEnd": 9544,
+        "timeStart": 690.899,
+        "timeEnd": 695.82
+      },
+      "score": 0.9906474947929382
+    },
+    {
+      "id": "m_0111",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9573,
+        "charEnd": 9581,
+        "timeStart": 693.959,
+        "timeEnd": 697.1999999999999
+      },
+      "score": 0.95815110206604
+    },
+    {
+      "id": "m_0112",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9597,
+        "charEnd": 9605,
+        "timeStart": 695.82,
+        "timeEnd": 699.6600000000001
+      },
+      "score": 0.9487525224685669
+    },
+    {
+      "id": "m_0113",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9679,
+        "charEnd": 9681,
+        "timeStart": 699.66,
+        "timeEnd": 704.519
+      },
+      "score": 0.9846128225326538
+    },
+    {
+      "id": "m_0114",
+      "label": "location",
+      "surface": "destination",
+      "canonical": "destination",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9764,
+        "charEnd": 9775,
+        "timeStart": 704.519,
+        "timeEnd": 708.62
+      },
+      "score": 0.6281790137290955
+    },
+    {
+      "id": "m_0115",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9816,
+        "charEnd": 9818,
+        "timeStart": 711.48,
+        "timeEnd": 716.7
+      },
+      "score": 0.9821157455444336
+    },
+    {
+      "id": "m_0116",
+      "label": "work_of_media",
+      "surface": "Dali",
+      "canonical": "Dali",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 9847,
+        "charEnd": 9851,
+        "timeStart": 714.6,
+        "timeEnd": 719.16
+      },
+      "score": 0.5821527242660522
+    },
+    {
+      "id": "m_0117",
+      "label": "technology",
+      "surface": "GPT",
+      "canonical": "GPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10143,
+        "charEnd": 10146,
+        "timeStart": 736.38,
+        "timeEnd": 742.26
+      },
+      "score": 0.6623553037643433
+    },
+    {
+      "id": "m_0118",
+      "label": "organization",
+      "surface": "open AI",
+      "canonical": "open AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10181,
+        "charEnd": 10188,
+        "timeStart": 739.56,
+        "timeEnd": 745.1999999999999
+      },
+      "score": 0.8767479658126831
+    },
+    {
+      "id": "m_0119",
+      "label": "date_time",
+      "surface": "late November of 2022",
+      "canonical": "late November of 2022",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10219,
+        "charEnd": 10240,
+        "timeStart": 742.26,
+        "timeEnd": 747.54
+      },
+      "score": 0.8062671422958374
+    },
+    {
+      "id": "m_0120",
+      "label": "technology",
+      "surface": "chat",
+      "canonical": "chat",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10258,
+        "charEnd": 10262,
+        "timeStart": 745.2,
+        "timeEnd": 749.279
+      },
+      "score": 0.6194256544113159
+    },
+    {
+      "id": "m_0121",
+      "label": "technology",
+      "surface": "GPT",
+      "canonical": "GPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10263,
+        "charEnd": 10266,
+        "timeStart": 745.2,
+        "timeEnd": 749.279
+      },
+      "score": 0.9055746793746948
+    },
+    {
+      "id": "m_0122",
+      "label": "person",
+      "surface": "Chachi",
+      "canonical": "Chachi",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10450,
+        "charEnd": 10456,
+        "timeStart": 755.7,
+        "timeEnd": 759.9590000000001
+      },
+      "score": 0.9928105473518372
+    },
+    {
+      "id": "m_0123",
+      "label": "technology",
+      "surface": "chat",
+      "canonical": "chat",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10660,
+        "charEnd": 10664,
+        "timeStart": 766.019,
+        "timeEnd": 772.26
+      },
+      "score": 0.7453515529632568
+    },
+    {
+      "id": "m_0124",
+      "label": "technology",
+      "surface": "GPT",
+      "canonical": "GPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10665,
+        "charEnd": 10668,
+        "timeStart": 768.3,
+        "timeEnd": 775.019
+      },
+      "score": 0.9070501923561096
+    },
+    {
+      "id": "m_0125",
+      "label": "technology",
+      "surface": "gpt4",
+      "canonical": "gpt4",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10672,
+        "charEnd": 10676,
+        "timeStart": 768.3,
+        "timeEnd": 775.019
+      },
+      "score": 0.8470758199691772
+    },
+    {
+      "id": "m_0126",
+      "label": "technology",
+      "surface": "gpt4",
+      "canonical": "gpt4",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10681,
+        "charEnd": 10685,
+        "timeStart": 768.3,
+        "timeEnd": 775.019
+      },
+      "score": 0.8812951445579529
+    },
+    {
+      "id": "m_0127",
+      "label": "person",
+      "surface": "Chachi",
+      "canonical": "Chachi",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10757,
+        "charEnd": 10763,
+        "timeStart": 775.019,
+        "timeEnd": 780.9590000000001
+      },
+      "score": 0.9946184754371643
+    },
+    {
+      "id": "m_0128",
+      "label": "event",
+      "surface": "bar exam",
+      "canonical": "bar exam",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10780,
+        "charEnd": 10788,
+        "timeStart": 778.019,
+        "timeEnd": 782.82
+      },
+      "score": 0.6519531607627869
+    },
+    {
+      "id": "m_0129",
+      "label": "event",
+      "surface": "SATs",
+      "canonical": "SATs",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10789,
+        "charEnd": 10793,
+        "timeStart": 778.019,
+        "timeEnd": 782.82
+      },
+      "score": 0.6686736941337585
+    },
+    {
+      "id": "m_0130",
+      "label": "event",
+      "surface": "GRE",
+      "canonical": "GRE",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10798,
+        "charEnd": 10801,
+        "timeStart": 778.019,
+        "timeEnd": 782.82
+      },
+      "score": 0.5068960785865784
+    },
+    {
+      "id": "m_0131",
+      "label": "technology",
+      "surface": "artificial intelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 10929,
+        "charEnd": 10952,
+        "timeStart": 787.44,
+        "timeEnd": 791.5790000000001
+      },
+      "score": 0.5562588572502136
+    },
+    {
+      "id": "m_0132",
+      "label": "event",
+      "surface": "life-saving\nsurgeries",
+      "canonical": "life-saving\nsurgeries",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11103,
+        "charEnd": 11124,
+        "timeStart": 796.019,
+        "timeEnd": 802.8000000000001
+      },
+      "score": 0.5154840350151062
+    },
+    {
+      "id": "m_0133",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11143,
+        "charEnd": 11145,
+        "timeStart": 798.48,
+        "timeEnd": 802.8000000000001
+      },
+      "score": 0.9881992340087891
+    },
+    {
+      "id": "m_0134",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11242,
+        "charEnd": 11244,
+        "timeStart": 806.16,
+        "timeEnd": 810.66
+      },
+      "score": 0.9859830737113953
+    },
+    {
+      "id": "m_0135",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11297,
+        "charEnd": 11299,
+        "timeStart": 808.5,
+        "timeEnd": 812.579
+      },
+      "score": 0.9882466197013855
+    },
+    {
+      "id": "m_0136",
+      "label": "technology",
+      "surface": "self-driving\ncars",
+      "canonical": "self-driving cars",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11339,
+        "charEnd": 11356,
+        "timeStart": 810.66,
+        "timeEnd": 817.9799999999999
+      },
+      "score": 0.5926562547683716
+    },
+    {
+      "id": "m_0137",
+      "label": "technology",
+      "surface": "Ai",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11492,
+        "charEnd": 11494,
+        "timeStart": 820.92,
+        "timeEnd": 824.579
+      },
+      "score": 0.7170528769493103
+    },
+    {
+      "id": "m_0138",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11640,
+        "charEnd": 11642,
+        "timeStart": 830.1,
+        "timeEnd": 834.26
+      },
+      "score": 0.9885749220848083
+    },
+    {
+      "id": "m_0139",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11666,
+        "charEnd": 11668,
+        "timeStart": 836.459,
+        "timeEnd": 842.2199999999999
+      },
+      "score": 0.9917482137680054
+    },
+    {
+      "id": "m_0140",
+      "label": "technology",
+      "surface": "GPT",
+      "canonical": "GPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11688,
+        "charEnd": 11691,
+        "timeStart": 836.459,
+        "timeEnd": 842.2199999999999
+      },
+      "score": 0.6858817338943481
+    },
+    {
+      "id": "m_0141",
+      "label": "organization",
+      "surface": "Microsoft",
+      "canonical": "Microsoft",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11696,
+        "charEnd": 11705,
+        "timeStart": 839.639,
+        "timeEnd": 844.98
+      },
+      "score": 0.8226615786552429
+    },
+    {
+      "id": "m_0142",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11708,
+        "charEnd": 11712,
+        "timeStart": 839.639,
+        "timeEnd": 844.98
+      },
+      "score": 0.6972681283950806
+    },
+    {
+      "id": "m_0143",
+      "label": "technology",
+      "surface": "gbt4",
+      "canonical": "gbt4",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11731,
+        "charEnd": 11735,
+        "timeStart": 839.639,
+        "timeEnd": 844.98
+      },
+      "score": 0.8586530685424805
+    },
+    {
+      "id": "m_0144",
+      "label": "work_of_media",
+      "surface": "movies",
+      "canonical": "movies",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11914,
+        "charEnd": 11920,
+        "timeStart": 850.56,
+        "timeEnd": 855.3599999999999
+      },
+      "score": 0.805172324180603
+    },
+    {
+      "id": "m_0145",
+      "label": "work_of_media",
+      "surface": "books",
+      "canonical": "books",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11965,
+        "charEnd": 11970,
+        "timeStart": 852.779,
+        "timeEnd": 857.22
+      },
+      "score": 0.5261882543563843
+    },
+    {
+      "id": "m_0146",
+      "label": "technology",
+      "surface": "chat Bots",
+      "canonical": "chat Bots",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 11975,
+        "charEnd": 11984,
+        "timeStart": 855.36,
+        "timeEnd": 860.279
+      },
+      "score": 0.6125366687774658
+    },
+    {
+      "id": "m_0147",
+      "label": "technology",
+      "surface": "chat GPT",
+      "canonical": "chat GPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12079,
+        "charEnd": 12087,
+        "timeStart": 860.279,
+        "timeEnd": 865.2
+      },
+      "score": 0.7132601737976074
+    },
+    {
+      "id": "m_0148",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12144,
+        "charEnd": 12155,
+        "timeStart": 865.2,
+        "timeEnd": 871.26
+      },
+      "score": 0.8894550204277039
+    },
+    {
+      "id": "m_0149",
+      "label": "organization",
+      "surface": "Cyber Arc",
+      "canonical": "Cyber Arc",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12159,
+        "charEnd": 12168,
+        "timeStart": 868.26,
+        "timeEnd": 874.2
+      },
+      "score": 0.9701197743415833
+    },
+    {
+      "id": "m_0150",
+      "label": "technology",
+      "surface": "chat gbt",
+      "canonical": "chat gbt",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12173,
+        "charEnd": 12181,
+        "timeStart": 868.26,
+        "timeEnd": 874.2
+      },
+      "score": 0.7365724444389343
+    },
+    {
+      "id": "m_0151",
+      "label": "technology",
+      "surface": "chat GPT",
+      "canonical": "chat GPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12217,
+        "charEnd": 12225,
+        "timeStart": 871.26,
+        "timeEnd": 876.66
+      },
+      "score": 0.7952855229377747
+    },
+    {
+      "id": "m_0152",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12331,
+        "charEnd": 12333,
+        "timeStart": 878.399,
+        "timeEnd": 883.38
+      },
+      "score": 0.8025140762329102
+    },
+    {
+      "id": "m_0153",
+      "label": "technology",
+      "surface": "chat CPT",
+      "canonical": "chat CPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12412,
+        "charEnd": 12420,
+        "timeStart": 883.38,
+        "timeEnd": 889.079
+      },
+      "score": 0.6286120414733887
+    },
+    {
+      "id": "m_0154",
+      "label": "technology",
+      "surface": "GPT",
+      "canonical": "GPT",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12853,
+        "charEnd": 12856,
+        "timeStart": 910.98,
+        "timeEnd": 915.48
+      },
+      "score": 0.7604802250862122
+    },
+    {
+      "id": "m_0155",
+      "label": "organization",
+      "surface": "police",
+      "canonical": "police",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12961,
+        "charEnd": 12967,
+        "timeStart": 915.48,
+        "timeEnd": 920.399
+      },
+      "score": 0.5699785351753235
+    },
+    {
+      "id": "m_0156",
+      "label": "organization",
+      "surface": "Microsoft",
+      "canonical": "Microsoft",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 12996,
+        "charEnd": 13005,
+        "timeStart": 917.339,
+        "timeEnd": 922.86
+      },
+      "score": 0.9368464946746826
+    },
+    {
+      "id": "m_0157",
+      "label": "technology",
+      "surface": "AI chat bot",
+      "canonical": "AI chat bot",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13008,
+        "charEnd": 13019,
+        "timeStart": 920.399,
+        "timeEnd": 925.139
+      },
+      "score": 0.514498770236969
+    },
+    {
+      "id": "m_0158",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13020,
+        "charEnd": 13024,
+        "timeStart": 920.399,
+        "timeEnd": 925.139
+      },
+      "score": 0.9397799968719482
+    },
+    {
+      "id": "m_0159",
+      "label": "person",
+      "surface": "Jacob roach",
+      "canonical": "Jacob roach",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13140,
+        "charEnd": 13151,
+        "timeStart": 927,
+        "timeEnd": 931.8
+      },
+      "score": 0.963405430316925
+    },
+    {
+      "id": "m_0160",
+      "label": "organization",
+      "surface": "Digital\nTrends",
+      "canonical": "Digital\nTrends",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13155,
+        "charEnd": 13169,
+        "timeStart": 927,
+        "timeEnd": 934.7399999999999
+      },
+      "score": 0.7489518523216248
+    },
+    {
+      "id": "m_0161",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13197,
+        "charEnd": 13201,
+        "timeStart": 929.459,
+        "timeEnd": 934.7399999999999
+      },
+      "score": 0.9412655234336853
+    },
+    {
+      "id": "m_0162",
+      "label": "person",
+      "surface": "Bane",
+      "canonical": "Bane",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13416,
+        "charEnd": 13420,
+        "timeStart": 946.56,
+        "timeEnd": 950.16
+      },
+      "score": 0.8732278347015381
+    },
+    {
+      "id": "m_0163",
+      "label": "organization",
+      "surface": "Microsoft",
+      "canonical": "Microsoft",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13450,
+        "charEnd": 13459,
+        "timeStart": 948.3,
+        "timeEnd": 952.199
+      },
+      "score": 0.9604239463806152
+    },
+    {
+      "id": "m_0164",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13466,
+        "charEnd": 13470,
+        "timeStart": 948.3,
+        "timeEnd": 952.199
+      },
+      "score": 0.7888054251670837
+    },
+    {
+      "id": "m_0165",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13505,
+        "charEnd": 13509,
+        "timeStart": 950.16,
+        "timeEnd": 954
+      },
+      "score": 0.5705753564834595
+    },
+    {
+      "id": "m_0166",
+      "label": "law_or_policy",
+      "surface": "rules",
+      "canonical": "rules",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13601,
+        "charEnd": 13606,
+        "timeStart": 957.6,
+        "timeEnd": 961.9200000000001
+      },
+      "score": 0.8721826076507568
+    },
+    {
+      "id": "m_0167",
+      "label": "technology",
+      "surface": "chatbot",
+      "canonical": "chatbot",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13682,
+        "charEnd": 13689,
+        "timeStart": 961.92,
+        "timeEnd": 966.54
+      },
+      "score": 0.907518208026886
+    },
+    {
+      "id": "m_0168",
+      "label": "law_or_policy",
+      "surface": "rules",
+      "canonical": "rules",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13766,
+        "charEnd": 13771,
+        "timeStart": 966.54,
+        "timeEnd": 971.2199999999999
+      },
+      "score": 0.8841501474380493
+    },
+    {
+      "id": "m_0169",
+      "label": "technology",
+      "surface": "chatbot",
+      "canonical": "chatbot",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13864,
+        "charEnd": 13871,
+        "timeStart": 971.22,
+        "timeEnd": 975.6
+      },
+      "score": 0.9507574439048767
+    },
+    {
+      "id": "m_0170",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13887,
+        "charEnd": 13891,
+        "timeStart": 973.86,
+        "timeEnd": 977.339
+      },
+      "score": 0.9049728512763977
+    },
+    {
+      "id": "m_0171",
+      "label": "technology",
+      "surface": "chatbot",
+      "canonical": "chatbot",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 13997,
+        "charEnd": 14004,
+        "timeStart": 978.839,
+        "timeEnd": 984.1800000000001
+      },
+      "score": 0.9505380988121033
+    },
+    {
+      "id": "m_0172",
+      "label": "person",
+      "surface": "Kevin Roos",
+      "canonical": "Kevin Roos",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14235,
+        "charEnd": 14245,
+        "timeStart": 999.6,
+        "timeEnd": 1003.98
+      },
+      "score": 0.9884551763534546
+    },
+    {
+      "id": "m_0173",
+      "label": "organization",
+      "surface": "New York Times",
+      "canonical": "New York Times",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14253,
+        "charEnd": 14267,
+        "timeStart": 999.6,
+        "timeEnd": 1003.98
+      },
+      "score": 0.893196702003479
+    },
+    {
+      "id": "m_0174",
+      "label": "quantity",
+      "surface": "two-hour",
+      "canonical": "two-hour",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14274,
+        "charEnd": 14282,
+        "timeStart": 1002.06,
+        "timeEnd": 1007.0999999999999
+      },
+      "score": 0.6525540947914124
+    },
+    {
+      "id": "m_0175",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14301,
+        "charEnd": 14305,
+        "timeStart": 1002.06,
+        "timeEnd": 1007.0999999999999
+      },
+      "score": 0.9755655527114868
+    },
+    {
+      "id": "m_0176",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14336,
+        "charEnd": 14340,
+        "timeStart": 1003.98,
+        "timeEnd": 1009.6800000000001
+      },
+      "score": 0.9378746747970581
+    },
+    {
+      "id": "m_0177",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14523,
+        "charEnd": 14527,
+        "timeStart": 1017.839,
+        "timeEnd": 1023.1800000000001
+      },
+      "score": 0.9818930625915527
+    },
+    {
+      "id": "m_0178",
+      "label": "person",
+      "surface": "Kevin Roos",
+      "canonical": "Kevin Roos",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14799,
+        "charEnd": 14809,
+        "timeStart": 1041,
+        "timeEnd": 1046.4
+      },
+      "score": 0.9867056012153625
+    },
+    {
+      "id": "m_0179",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 14837,
+        "charEnd": 14841,
+        "timeStart": 1043.64,
+        "timeEnd": 1047.66
+      },
+      "score": 0.9874194264411926
+    },
+    {
+      "id": "m_0180",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15402,
+        "charEnd": 15404,
+        "timeStart": 1083.179,
+        "timeEnd": 1087.74
+      },
+      "score": 0.749356210231781
+    },
+    {
+      "id": "m_0181",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15554,
+        "charEnd": 15558,
+        "timeStart": 1093.02,
+        "timeEnd": 1097.34
+      },
+      "score": 0.7083166241645813
+    },
+    {
+      "id": "m_0182",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15560,
+        "charEnd": 15565,
+        "timeStart": 1096.05,
+        "timeEnd": 1099.6789999999999
+      },
+      "score": 0.6218801140785217
+    },
+    {
+      "id": "m_0183",
+      "label": "organization",
+      "surface": "Microsoft",
+      "canonical": "Microsoft",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15590,
+        "charEnd": 15599,
+        "timeStart": 1097.34,
+        "timeEnd": 1102.3799999999999
+      },
+      "score": 0.8531410098075867
+    },
+    {
+      "id": "m_0184",
+      "label": "technology",
+      "surface": "Bing",
+      "canonical": "Bing",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15600,
+        "charEnd": 15604,
+        "timeStart": 1097.34,
+        "timeEnd": 1102.3799999999999
+      },
+      "score": 0.7210150957107544
+    },
+    {
+      "id": "m_0185",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15807,
+        "charEnd": 15813,
+        "timeStart": 1112.1,
+        "timeEnd": 1115.84
+      },
+      "score": 0.9808081388473511
+    },
+    {
+      "id": "m_0186",
+      "label": "person",
+      "surface": "Kevin\nRoos",
+      "canonical": "Kevin Roos",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15889,
+        "charEnd": 15899,
+        "timeStart": 1119.9,
+        "timeEnd": 1127.4
+      },
+      "score": 0.8007254600524902
+    },
+    {
+      "id": "m_0187",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15938,
+        "charEnd": 15944,
+        "timeStart": 1125.24,
+        "timeEnd": 1129.32
+      },
+      "score": 0.9835083484649658
+    },
+    {
+      "id": "m_0188",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15957,
+        "charEnd": 15963,
+        "timeStart": 1125.24,
+        "timeEnd": 1129.32
+      },
+      "score": 0.983616828918457
+    },
+    {
+      "id": "m_0189",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15974,
+        "charEnd": 15980,
+        "timeStart": 1127.4,
+        "timeEnd": 1131.6000000000001
+      },
+      "score": 0.9859100580215454
+    },
+    {
+      "id": "m_0190",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15986,
+        "charEnd": 15992,
+        "timeStart": 1127.4,
+        "timeEnd": 1131.6000000000001
+      },
+      "score": 0.9794833660125732
+    },
+    {
+      "id": "m_0191",
+      "label": "organization",
+      "surface": "Microsoft",
+      "canonical": "Microsoft",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 15997,
+        "charEnd": 16006,
+        "timeStart": 1127.4,
+        "timeEnd": 1131.6000000000001
+      },
+      "score": 0.9830787181854248
+    },
+    {
+      "id": "m_0192",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 16167,
+        "charEnd": 16173,
+        "timeStart": 1139.28,
+        "timeEnd": 1145.3999999999999
+      },
+      "score": 0.9886121153831482
+    },
+    {
+      "id": "m_0193",
+      "label": "organization",
+      "surface": "Microsoft",
+      "canonical": "Microsoft",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 16323,
+        "charEnd": 16332,
+        "timeStart": 1149.78,
+        "timeEnd": 1154.22
+      },
+      "score": 0.9820006489753723
+    },
+    {
+      "id": "m_0194",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 16548,
+        "charEnd": 16554,
+        "timeStart": 1162.5,
+        "timeEnd": 1166.52
+      },
+      "score": 0.9964524507522583
+    },
+    {
+      "id": "m_0195",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 16702,
+        "charEnd": 16708,
+        "timeStart": 1175.179,
+        "timeEnd": 1180.0800000000002
+      },
+      "score": 0.9970736503601074
+    },
+    {
+      "id": "m_0196",
+      "label": "person",
+      "surface": "Kevin",
+      "canonical": "Kevin",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 16754,
+        "charEnd": 16759,
+        "timeStart": 1178.1,
+        "timeEnd": 1182.36
+      },
+      "score": 0.9958440661430359
+    },
+    {
+      "id": "m_0197",
+      "label": "person",
+      "surface": "Kevin",
+      "canonical": "Kevin",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 16910,
+        "charEnd": 16915,
+        "timeStart": 1187.52,
+        "timeEnd": 1192.02
+      },
+      "score": 0.9978304505348206
+    },
+    {
+      "id": "m_0198",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 16970,
+        "charEnd": 16976,
+        "timeStart": 1189.44,
+        "timeEnd": 1193.46
+      },
+      "score": 0.998132050037384
+    },
+    {
+      "id": "m_0199",
+      "label": "person",
+      "surface": "Kevin Roos",
+      "canonical": "Kevin Roos",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 17434,
+        "charEnd": 17444,
+        "timeStart": 1221.419,
+        "timeEnd": 1225.38
+      },
+      "score": 0.8488575220108032
+    },
+    {
+      "id": "m_0200",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 17491,
+        "charEnd": 17497,
+        "timeStart": 1225.38,
+        "timeEnd": 1228.919
+      },
+      "score": 0.9963625073432922
+    },
+    {
+      "id": "m_0201",
+      "label": "technology",
+      "surface": "webcam",
+      "canonical": "webcam",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 17567,
+        "charEnd": 17573,
+        "timeStart": 1228.919,
+        "timeEnd": 1233.539
+      },
+      "score": 0.7756420969963074
+    },
+    {
+      "id": "m_0202",
+      "label": "person",
+      "surface": "Seth\nLazar",
+      "canonical": "Seth\nLazar",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 17859,
+        "charEnd": 17869,
+        "timeStart": 1246.799,
+        "timeEnd": 1253.64
+      },
+      "score": 0.9612581729888916
+    },
+    {
+      "id": "m_0203",
+      "label": "role",
+      "surface": "philosophy Professor",
+      "canonical": "philosophy Professor",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 17872,
+        "charEnd": 17892,
+        "timeStart": 1249.26,
+        "timeEnd": 1253.64
+      },
+      "score": 0.6833916306495667
+    },
+    {
+      "id": "m_0204",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 17920,
+        "charEnd": 17926,
+        "timeStart": 1251.72,
+        "timeEnd": 1255.44
+      },
+      "score": 0.9980292916297913
+    },
+    {
+      "id": "m_0205",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 18008,
+        "charEnd": 18014,
+        "timeStart": 1257,
+        "timeEnd": 1262.88
+      },
+      "score": 0.9599074125289917
+    },
+    {
+      "id": "m_0206",
+      "label": "person",
+      "surface": "Sydney",
+      "canonical": "Sydney",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 18162,
+        "charEnd": 18168,
+        "timeStart": 1270.62,
+        "timeEnd": 1275.6
+      },
+      "score": 0.9553481340408325
+    },
+    {
+      "id": "m_0207",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 18551,
+        "charEnd": 18553,
+        "timeStart": 1296.539,
+        "timeEnd": 1301.58
+      },
+      "score": 0.877558708190918
+    },
+    {
+      "id": "m_0208",
+      "label": "person",
+      "surface": "Stuart Russell",
+      "canonical": "Stuart Russell",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 18594,
+        "charEnd": 18608,
+        "timeStart": 1299.24,
+        "timeEnd": 1303.02
+      },
+      "score": 0.9729388952255249
+    },
+    {
+      "id": "m_0209",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 18623,
+        "charEnd": 18628,
+        "timeStart": 1301.58,
+        "timeEnd": 1305.059
+      },
+      "score": 0.6783055663108826
+    },
+    {
+      "id": "m_0210",
+      "label": "technology",
+      "surface": "artificial intelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 18650,
+        "charEnd": 18673,
+        "timeStart": 1303.02,
+        "timeEnd": 1307.1
+      },
+      "score": 0.9134325385093689
+    },
+    {
+      "id": "m_0211",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 18962,
+        "charEnd": 18964,
+        "timeStart": 1319.94,
+        "timeEnd": 1324.74
+      },
+      "score": 0.8909007906913757
+    },
+    {
+      "id": "m_0212",
+      "label": "organization",
+      "surface": "military",
+      "canonical": "military",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19084,
+        "charEnd": 19092,
+        "timeStart": 1327.86,
+        "timeEnd": 1333.1
+      },
+      "score": 0.7098697423934937
+    },
+    {
+      "id": "m_0213",
+      "label": "technology",
+      "surface": "artificial intelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19147,
+        "charEnd": 19170,
+        "timeStart": 1336.94,
+        "timeEnd": 1341.3600000000001
+      },
+      "score": 0.9416640400886536
+    },
+    {
+      "id": "m_0214",
+      "label": "role",
+      "surface": "jobs",
+      "canonical": "jobs",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19241,
+        "charEnd": 19245,
+        "timeStart": 1341.36,
+        "timeEnd": 1345.9799999999998
+      },
+      "score": 0.6634501814842224
+    },
+    {
+      "id": "m_0215",
+      "label": "event",
+      "surface": "Warfare",
+      "canonical": "Warfare",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19287,
+        "charEnd": 19294,
+        "timeStart": 1345.98,
+        "timeEnd": 1351.6200000000001
+      },
+      "score": 0.7758281826972961
+    },
+    {
+      "id": "m_0216",
+      "label": "organization",
+      "surface": "military forces",
+      "canonical": "military forces",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19301,
+        "charEnd": 19316,
+        "timeStart": 1345.98,
+        "timeEnd": 1351.6200000000001
+      },
+      "score": 0.8949391841888428
+    },
+    {
+      "id": "m_0217",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19340,
+        "charEnd": 19342,
+        "timeStart": 1348.919,
+        "timeEnd": 1354.14
+      },
+      "score": 0.8958452343940735
+    },
+    {
+      "id": "m_0218",
+      "label": "technology",
+      "surface": "unmanned aerial\nVehicles",
+      "canonical": "unmanned aerial\nVehicles",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19389,
+        "charEnd": 19413,
+        "timeStart": 1351.62,
+        "timeEnd": 1359.24
+      },
+      "score": 0.9225090146064758
+    },
+    {
+      "id": "m_0219",
+      "label": "technology",
+      "surface": "uavs",
+      "canonical": "uavs",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19414,
+        "charEnd": 19418,
+        "timeStart": 1354.14,
+        "timeEnd": 1359.24
+      },
+      "score": 0.838706910610199
+    },
+    {
+      "id": "m_0220",
+      "label": "technology",
+      "surface": "drones",
+      "canonical": "drones",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19442,
+        "charEnd": 19448,
+        "timeStart": 1356.419,
+        "timeEnd": 1361.46
+      },
+      "score": 0.8278101086616516
+    },
+    {
+      "id": "m_0221",
+      "label": "technology",
+      "surface": "algorithms",
+      "canonical": "algorithms",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19468,
+        "charEnd": 19478,
+        "timeStart": 1356.419,
+        "timeEnd": 1361.46
+      },
+      "score": 0.9026907086372375
+    },
+    {
+      "id": "m_0222",
+      "label": "technology",
+      "surface": "lethal autonomous weapon\nsystems",
+      "canonical": "lethal autonomous weapon\nsystems",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19574,
+        "charEnd": 19606,
+        "timeStart": 1363.5,
+        "timeEnd": 1370.8200000000002
+      },
+      "score": 0.5907973647117615
+    },
+    {
+      "id": "m_0223",
+      "label": "law_or_policy",
+      "surface": "laws",
+      "canonical": "laws",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19610,
+        "charEnd": 19614,
+        "timeStart": 1366.14,
+        "timeEnd": 1370.8200000000002
+      },
+      "score": 0.8946318030357361
+    },
+    {
+      "id": "m_0224",
+      "label": "technology",
+      "surface": "autonomous weapon",
+      "canonical": "autonomous weapon",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19726,
+        "charEnd": 19743,
+        "timeStart": 1373.34,
+        "timeEnd": 1377.48
+      },
+      "score": 0.567625880241394
+    },
+    {
+      "id": "m_0225",
+      "label": "technology",
+      "surface": "autonomous weapon",
+      "canonical": "autonomous weapon",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19840,
+        "charEnd": 19857,
+        "timeStart": 1379.94,
+        "timeEnd": 1384.02
+      },
+      "score": 0.7604387998580933
+    },
+    {
+      "id": "m_0226",
+      "label": "technology",
+      "surface": "sensors",
+      "canonical": "sensors",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19863,
+        "charEnd": 19870,
+        "timeStart": 1382.1,
+        "timeEnd": 1386.12
+      },
+      "score": 0.5052204132080078
+    },
+    {
+      "id": "m_0227",
+      "label": "technology",
+      "surface": "software",
+      "canonical": "software",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19875,
+        "charEnd": 19883,
+        "timeStart": 1382.1,
+        "timeEnd": 1386.12
+      },
+      "score": 0.5979533195495605
+    },
+    {
+      "id": "m_0228",
+      "label": "organization",
+      "surface": "Boston Dynamics",
+      "canonical": "Boston Dynamics",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 19963,
+        "charEnd": 19978,
+        "timeStart": 1386.12,
+        "timeEnd": 1392.62
+      },
+      "score": 0.8558077812194824
+    },
+    {
+      "id": "m_0229",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20069,
+        "charEnd": 20074,
+        "timeStart": 1395.539,
+        "timeEnd": 1400.82
+      },
+      "score": 0.7006086707115173
+    },
+    {
+      "id": "m_0230",
+      "label": "technology",
+      "surface": "atlas",
+      "canonical": "atlas",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20075,
+        "charEnd": 20080,
+        "timeStart": 1395.539,
+        "timeEnd": 1400.82
+      },
+      "score": 0.575932502746582
+    },
+    {
+      "id": "m_0231",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20119,
+        "charEnd": 20121,
+        "timeStart": 1398.419,
+        "timeEnd": 1403.46
+      },
+      "score": 0.5100201964378357
+    },
+    {
+      "id": "m_0232",
+      "label": "organization",
+      "surface": "American Military",
+      "canonical": "American Military",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20274,
+        "charEnd": 20291,
+        "timeStart": 1407.659,
+        "timeEnd": 1413.659
+      },
+      "score": 0.9517120718955994
+    },
+    {
+      "id": "m_0233",
+      "label": "organization",
+      "surface": "ghost\nrobotics",
+      "canonical": "ghost\nrobotics",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20405,
+        "charEnd": 20419,
+        "timeStart": 1416.179,
+        "timeEnd": 1423.4399999999998
+      },
+      "score": 0.9027237892150879
+    },
+    {
+      "id": "m_0234",
+      "label": "date_time",
+      "surface": "2018",
+      "canonical": "2018",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20562,
+        "charEnd": 20566,
+        "timeStart": 1428.48,
+        "timeEnd": 1433.22
+      },
+      "score": 0.813981294631958
+    },
+    {
+      "id": "m_0235",
+      "label": "person",
+      "surface": "Vladimir Putin",
+      "canonical": "Vladimir Putin",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20567,
+        "charEnd": 20581,
+        "timeStart": 1428.48,
+        "timeEnd": 1433.22
+      },
+      "score": 0.9927462935447693
+    },
+    {
+      "id": "m_0236",
+      "label": "location",
+      "surface": "Russia",
+      "canonical": "Russia",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20592,
+        "charEnd": 20598,
+        "timeStart": 1428.48,
+        "timeEnd": 1433.22
+      },
+      "score": 0.5888741612434387
+    },
+    {
+      "id": "m_0237",
+      "label": "technology",
+      "surface": "Poseidon\nnuclear drone",
+      "canonical": "Poseidon\nnuclear drone",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20666,
+        "charEnd": 20688,
+        "timeStart": 1433.22,
+        "timeEnd": 1440.6000000000001
+      },
+      "score": 0.6561341285705566
+    },
+    {
+      "id": "m_0238",
+      "label": "facility",
+      "surface": "Naval bases",
+      "canonical": "Naval bases",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20719,
+        "charEnd": 20730,
+        "timeStart": 1438.14,
+        "timeEnd": 1443.96
+      },
+      "score": 0.8932903409004211
+    },
+    {
+      "id": "m_0239",
+      "label": "quantity",
+      "surface": "two Megaton\nnuclear weapons",
+      "canonical": "two Megaton\nnuclear weapons",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20736,
+        "charEnd": 20763,
+        "timeStart": 1438.14,
+        "timeEnd": 1446.8999999999999
+      },
+      "score": 0.6473613977432251
+    },
+    {
+      "id": "m_0240",
+      "label": "date_time",
+      "surface": "2021",
+      "canonical": "2021",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20767,
+        "charEnd": 20771,
+        "timeStart": 1440.6,
+        "timeEnd": 1446.8999999999999
+      },
+      "score": 0.8510155081748962
+    },
+    {
+      "id": "m_0241",
+      "label": "location",
+      "surface": "Russia",
+      "canonical": "Russia",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20772,
+        "charEnd": 20778,
+        "timeStart": 1440.6,
+        "timeEnd": 1446.8999999999999
+      },
+      "score": 0.6115657687187195
+    },
+    {
+      "id": "m_0242",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20851,
+        "charEnd": 20853,
+        "timeStart": 1446.9,
+        "timeEnd": 1452.8400000000001
+      },
+      "score": 0.9314209222793579
+    },
+    {
+      "id": "m_0243",
+      "label": "quantity",
+      "surface": "1500 miles per hour",
+      "canonical": "1500 miles per hour",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 20867,
+        "charEnd": 20886,
+        "timeStart": 1449.72,
+        "timeEnd": 1455.299
+      },
+      "score": 0.5694525837898254
+    },
+    {
+      "id": "m_0244",
+      "label": "event",
+      "surface": "simulated dogfights",
+      "canonical": "simulated dogfights",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21003,
+        "charEnd": 21022,
+        "timeStart": 1457.64,
+        "timeEnd": 1462.5
+      },
+      "score": 0.654923677444458
+    },
+    {
+      "id": "m_0245",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21035,
+        "charEnd": 21037,
+        "timeStart": 1460.1,
+        "timeEnd": 1464.24
+      },
+      "score": 0.9374208450317383
+    },
+    {
+      "id": "m_0246",
+      "label": "nationality_or_ethnicity",
+      "surface": "American",
+      "canonical": "American",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21145,
+        "charEnd": 21153,
+        "timeStart": 1465.679,
+        "timeEnd": 1470.72
+      },
+      "score": 0.613930344581604
+    },
+    {
+      "id": "m_0247",
+      "label": "technology",
+      "surface": "stealth\nbomber",
+      "canonical": "stealth\nbomber",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21159,
+        "charEnd": 21173,
+        "timeStart": 1465.679,
+        "timeEnd": 1473.419
+      },
+      "score": 0.5455560088157654
+    },
+    {
+      "id": "m_0248",
+      "label": "event",
+      "surface": "nuclear\nstrike",
+      "canonical": "nuclear\nstrike",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21279,
+        "charEnd": 21293,
+        "timeStart": 1473.419,
+        "timeEnd": 1481.64
+      },
+      "score": 0.5226742625236511
+    },
+    {
+      "id": "m_0249",
+      "label": "organization",
+      "surface": "Air\nForce",
+      "canonical": "Air\nForce",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21358,
+        "charEnd": 21367,
+        "timeStart": 1479,
+        "timeEnd": 1485.8400000000001
+      },
+      "score": 0.8944315910339355
+    },
+    {
+      "id": "m_0250",
+      "label": "person",
+      "surface": "Colonel Tucker Hamilton",
+      "canonical": "Colonel Tucker Hamilton",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21368,
+        "charEnd": 21391,
+        "timeStart": 1481.64,
+        "timeEnd": 1485.8400000000001
+      },
+      "score": 0.8173728585243225
+    },
+    {
+      "id": "m_0251",
+      "label": "event",
+      "surface": "air and space conference",
+      "canonical": "air and space conference",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21402,
+        "charEnd": 21426,
+        "timeStart": 1483.679,
+        "timeEnd": 1487.8200000000002
+      },
+      "score": 0.8062564134597778
+    },
+    {
+      "id": "m_0252",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21453,
+        "charEnd": 21455,
+        "timeStart": 1485.84,
+        "timeEnd": 1490.1
+      },
+      "score": 0.9754855632781982
+    },
+    {
+      "id": "m_0253",
+      "label": "technology",
+      "surface": "drone",
+      "canonical": "drone",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21477,
+        "charEnd": 21482,
+        "timeStart": 1487.82,
+        "timeEnd": 1492.02
+      },
+      "score": 0.6730406284332275
+    },
+    {
+      "id": "m_0254",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21569,
+        "charEnd": 21571,
+        "timeStart": 1492.02,
+        "timeEnd": 1496.58
+      },
+      "score": 0.982104480266571
+    },
+    {
+      "id": "m_0255",
+      "label": "quantity",
+      "surface": "points",
+      "canonical": "points",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21584,
+        "charEnd": 21590,
+        "timeStart": 1494.299,
+        "timeEnd": 1498.1399999999999
+      },
+      "score": 0.8189984560012817
+    },
+    {
+      "id": "m_0256",
+      "label": "quantity",
+      "surface": "points",
+      "canonical": "points",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21649,
+        "charEnd": 21655,
+        "timeStart": 1496.58,
+        "timeEnd": 1500.84
+      },
+      "score": 0.8684180974960327
+    },
+    {
+      "id": "m_0257",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21672,
+        "charEnd": 21674,
+        "timeStart": 1498.14,
+        "timeEnd": 1502.94
+      },
+      "score": 0.9836971163749695
+    },
+    {
+      "id": "m_0258",
+      "label": "event",
+      "surface": "nuclear war",
+      "canonical": "nuclear war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 21949,
+        "charEnd": 21960,
+        "timeStart": 1514.039,
+        "timeEnd": 1518.419
+      },
+      "score": 0.55218106508255
+    },
+    {
+      "id": "m_0259",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22169,
+        "charEnd": 22171,
+        "timeStart": 1526.88,
+        "timeEnd": 1531.98
+      },
+      "score": 0.9831920266151428
+    },
+    {
+      "id": "m_0260",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22199,
+        "charEnd": 22201,
+        "timeStart": 1526.88,
+        "timeEnd": 1531.98
+      },
+      "score": 0.9879385828971863
+    },
+    {
+      "id": "m_0261",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22252,
+        "charEnd": 22254,
+        "timeStart": 1531.98,
+        "timeEnd": 1537.559
+      },
+      "score": 0.9859878420829773
+    },
+    {
+      "id": "m_0262",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22305,
+        "charEnd": 22307,
+        "timeStart": 1535.22,
+        "timeEnd": 1539.3600000000001
+      },
+      "score": 0.9821872711181641
+    },
+    {
+      "id": "m_0263",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22329,
+        "charEnd": 22334,
+        "timeStart": 1537.559,
+        "timeEnd": 1541.1589999999999
+      },
+      "score": 0.8631954789161682
+    },
+    {
+      "id": "m_0264",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22362,
+        "charEnd": 22367,
+        "timeStart": 1539.36,
+        "timeEnd": 1543.08
+      },
+      "score": 0.8712939620018005
+    },
+    {
+      "id": "m_0265",
+      "label": "organization",
+      "surface": "openai",
+      "canonical": "openai",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22439,
+        "charEnd": 22445,
+        "timeStart": 1543.08,
+        "timeEnd": 1548.8999999999999
+      },
+      "score": 0.6171551942825317
+    },
+    {
+      "id": "m_0266",
+      "label": "organization",
+      "surface": "chat gbt",
+      "canonical": "chat gbt",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22450,
+        "charEnd": 22458,
+        "timeStart": 1543.08,
+        "timeEnd": 1548.8999999999999
+      },
+      "score": 0.5735020637512207
+    },
+    {
+      "id": "m_0267",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22490,
+        "charEnd": 22492,
+        "timeStart": 1545.84,
+        "timeEnd": 1551.299
+      },
+      "score": 0.9934729933738708
+    },
+    {
+      "id": "m_0268",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22591,
+        "charEnd": 22593,
+        "timeStart": 1553.4,
+        "timeEnd": 1558.44
+      },
+      "score": 0.9860488176345825
+    },
+    {
+      "id": "m_0269",
+      "label": "technology",
+      "surface": "super intelligent AI",
+      "canonical": "super intelligent AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22635,
+        "charEnd": 22655,
+        "timeStart": 1555.74,
+        "timeEnd": 1560.84
+      },
+      "score": 0.5495204925537109
+    },
+    {
+      "id": "m_0270",
+      "label": "quantity",
+      "surface": "one second",
+      "canonical": "one second",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22678,
+        "charEnd": 22688,
+        "timeStart": 1558.44,
+        "timeEnd": 1563.1200000000001
+      },
+      "score": 0.6852261424064636
+    },
+    {
+      "id": "m_0271",
+      "label": "technology",
+      "surface": "Advanced weapon system",
+      "canonical": "Advanced weapon system",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22822,
+        "charEnd": 22844,
+        "timeStart": 1567.799,
+        "timeEnd": 1572.72
+      },
+      "score": 0.5439002513885498
+    },
+    {
+      "id": "m_0272",
+      "label": "technology",
+      "surface": "super intelligent AI",
+      "canonical": "super intelligent AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22847,
+        "charEnd": 22867,
+        "timeStart": 1570.32,
+        "timeEnd": 1575.36
+      },
+      "score": 0.565703809261322
+    },
+    {
+      "id": "m_0273",
+      "label": "quantity",
+      "surface": "one second",
+      "canonical": "one second",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 22891,
+        "charEnd": 22901,
+        "timeStart": 1572.72,
+        "timeEnd": 1577.76
+      },
+      "score": 0.6026381254196167
+    },
+    {
+      "id": "m_0274",
+      "label": "event",
+      "surface": "nuclear war",
+      "canonical": "nuclear war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23034,
+        "charEnd": 23045,
+        "timeStart": 1579.62,
+        "timeEnd": 1587.4799999999998
+      },
+      "score": 0.8624138236045837
+    },
+    {
+      "id": "m_0275",
+      "label": "location",
+      "surface": "Silicon Valley",
+      "canonical": "Silicon Valley",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23121,
+        "charEnd": 23135,
+        "timeStart": 1605.14,
+        "timeEnd": 1609.6200000000001
+      },
+      "score": 0.8596386909484863
+    },
+    {
+      "id": "m_0276",
+      "label": "organization",
+      "surface": "Singularity systems",
+      "canonical": "Singularity systems",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23136,
+        "charEnd": 23155,
+        "timeStart": 1607.279,
+        "timeEnd": 1611.779
+      },
+      "score": 0.9562093019485474
+    },
+    {
+      "id": "m_0277",
+      "label": "person",
+      "surface": "Dr Alan Harper",
+      "canonical": "Dr Alan Harper",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23218,
+        "charEnd": 23232,
+        "timeStart": 1612.98,
+        "timeEnd": 1617.6
+      },
+      "score": 0.979270339012146
+    },
+    {
+      "id": "m_0278",
+      "label": "role",
+      "surface": "chief scientist",
+      "canonical": "chief scientist",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23237,
+        "charEnd": 23252,
+        "timeStart": 1612.98,
+        "timeEnd": 1617.6
+      },
+      "score": 0.9024390578269958
+    },
+    {
+      "id": "m_0279",
+      "label": "technology",
+      "surface": "evolutionary cognitive heuristic\noperator",
+      "canonical": "evolutionary cognitive heuristic\noperator",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23301,
+        "charEnd": 23342,
+        "timeStart": 1617.6,
+        "timeEnd": 1625.039
+      },
+      "score": 0.7170565128326416
+    },
+    {
+      "id": "m_0280",
+      "label": "technology",
+      "surface": "neural\nnetwork algorithm",
+      "canonical": "neural\nnetwork algorithm",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23362,
+        "charEnd": 23386,
+        "timeStart": 1620.24,
+        "timeEnd": 1626.8999999999999
+      },
+      "score": 0.7759833931922913
+    },
+    {
+      "id": "m_0281",
+      "label": "person",
+      "surface": "Harper",
+      "canonical": "Harper",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23490,
+        "charEnd": 23496,
+        "timeStart": 1629.26,
+        "timeEnd": 1634.8799999999999
+      },
+      "score": 0.9311981201171875
+    },
+    {
+      "id": "m_0282",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23516,
+        "charEnd": 23520,
+        "timeStart": 1632.36,
+        "timeEnd": 1636.62
+      },
+      "score": 0.8549365401268005
+    },
+    {
+      "id": "m_0283",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23706,
+        "charEnd": 23710,
+        "timeStart": 1644.72,
+        "timeEnd": 1651.32
+      },
+      "score": 0.8726147413253784
+    },
+    {
+      "id": "m_0284",
+      "label": "role",
+      "surface": "Observer",
+      "canonical": "Observer",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23883,
+        "charEnd": 23891,
+        "timeStart": 1655.24,
+        "timeEnd": 1660.86
+      },
+      "score": 0.7845032811164856
+    },
+    {
+      "id": "m_0285",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 23946,
+        "charEnd": 23950,
+        "timeStart": 1660.86,
+        "timeEnd": 1667.4599999999998
+      },
+      "score": 0.8615965843200684
+    },
+    {
+      "id": "m_0286",
+      "label": "person",
+      "surface": "Harper",
+      "canonical": "Harper",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24001,
+        "charEnd": 24007,
+        "timeStart": 1663.5,
+        "timeEnd": 1669.62
+      },
+      "score": 0.958312451839447
+    },
+    {
+      "id": "m_0287",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24038,
+        "charEnd": 24042,
+        "timeStart": 1667.46,
+        "timeEnd": 1671.08
+      },
+      "score": 0.6691515445709229
+    },
+    {
+      "id": "m_0288",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24086,
+        "charEnd": 24090,
+        "timeStart": 1671.08,
+        "timeEnd": 1676.46
+      },
+      "score": 0.7890022993087769
+    },
+    {
+      "id": "m_0289",
+      "label": "work_of_media",
+      "surface": "video",
+      "canonical": "video",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24182,
+        "charEnd": 24187,
+        "timeStart": 1676.46,
+        "timeEnd": 1681.38
+      },
+      "score": 0.7767614126205444
+    },
+    {
+      "id": "m_0290",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24188,
+        "charEnd": 24192,
+        "timeStart": 1676.46,
+        "timeEnd": 1681.38
+      },
+      "score": 0.7605399489402771
+    },
+    {
+      "id": "m_0291",
+      "label": "location",
+      "surface": "building",
+      "canonical": "building",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24471,
+        "charEnd": 24479,
+        "timeStart": 1699.14,
+        "timeEnd": 1702.98
+      },
+      "score": 0.6953399777412415
+    },
+    {
+      "id": "m_0292",
+      "label": "organization",
+      "surface": "automated cleaning crew",
+      "canonical": "automated cleaning crew",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24482,
+        "charEnd": 24505,
+        "timeStart": 1700.88,
+        "timeEnd": 1704.2990000000002
+      },
+      "score": 0.5569637417793274
+    },
+    {
+      "id": "m_0293",
+      "label": "location",
+      "surface": "building",
+      "canonical": "building",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24535,
+        "charEnd": 24543,
+        "timeStart": 1702.98,
+        "timeEnd": 1706.7
+      },
+      "score": 0.8049141764640808
+    },
+    {
+      "id": "m_0294",
+      "label": "technology",
+      "surface": "Network",
+      "canonical": "Network",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24555,
+        "charEnd": 24562,
+        "timeStart": 1704.299,
+        "timeEnd": 1709.4
+      },
+      "score": 0.8375747799873352
+    },
+    {
+      "id": "m_0295",
+      "label": "technology",
+      "surface": "Network",
+      "canonical": "Network",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24713,
+        "charEnd": 24720,
+        "timeStart": 1713.96,
+        "timeEnd": 1718.22
+      },
+      "score": 0.8664458394050598
+    },
+    {
+      "id": "m_0296",
+      "label": "location",
+      "surface": "building",
+      "canonical": "building",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24874,
+        "charEnd": 24882,
+        "timeStart": 1724.4,
+        "timeEnd": 1729.0800000000002
+      },
+      "score": 0.7626689076423645
+    },
+    {
+      "id": "m_0297",
+      "label": "technology",
+      "surface": "Network",
+      "canonical": "Network",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 24885,
+        "charEnd": 24892,
+        "timeStart": 1726.44,
+        "timeEnd": 1731.419
+      },
+      "score": 0.7049065828323364
+    },
+    {
+      "id": "m_0298",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25005,
+        "charEnd": 25009,
+        "timeStart": 1733.64,
+        "timeEnd": 1738.0200000000002
+      },
+      "score": 0.6248627305030823
+    },
+    {
+      "id": "m_0299",
+      "label": "technology",
+      "surface": "personal computers",
+      "canonical": "personal computers",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25069,
+        "charEnd": 25087,
+        "timeStart": 1738.02,
+        "timeEnd": 1743.4189999999999
+      },
+      "score": 0.7355977892875671
+    },
+    {
+      "id": "m_0300",
+      "label": "technology",
+      "surface": "phones",
+      "canonical": "phones",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25088,
+        "charEnd": 25094,
+        "timeStart": 1738.02,
+        "timeEnd": 1743.4189999999999
+      },
+      "score": 0.5654070377349854
+    },
+    {
+      "id": "m_0301",
+      "label": "technology",
+      "surface": "cars",
+      "canonical": "cars",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25095,
+        "charEnd": 25099,
+        "timeStart": 1740.6,
+        "timeEnd": 1747.08
+      },
+      "score": 0.5294612646102905
+    },
+    {
+      "id": "m_0302",
+      "label": "technology",
+      "surface": "home appliances",
+      "canonical": "home appliances",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25100,
+        "charEnd": 25115,
+        "timeStart": 1740.6,
+        "timeEnd": 1747.08
+      },
+      "score": 0.6051681041717529
+    },
+    {
+      "id": "m_0303",
+      "label": "technology",
+      "surface": "satellite networks",
+      "canonical": "satellite networks",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25116,
+        "charEnd": 25134,
+        "timeStart": 1740.6,
+        "timeEnd": 1747.08
+      },
+      "score": 0.8197128772735596
+    },
+    {
+      "id": "m_0304",
+      "label": "quantity",
+      "surface": "30 billion devices",
+      "canonical": "30 billion devices",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25149,
+        "charEnd": 25167,
+        "timeStart": 1743.419,
+        "timeEnd": 1750.6200000000001
+      },
+      "score": 0.8002029061317444
+    },
+    {
+      "id": "m_0305",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25168,
+        "charEnd": 25172,
+        "timeStart": 1743.419,
+        "timeEnd": 1750.6200000000001
+      },
+      "score": 0.6787853240966797
+    },
+    {
+      "id": "m_0306",
+      "label": "technology",
+      "surface": "Hardware",
+      "canonical": "Hardware",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25224,
+        "charEnd": 25232,
+        "timeStart": 1750.62,
+        "timeEnd": 1755.4799999999998
+      },
+      "score": 0.8066346049308777
+    },
+    {
+      "id": "m_0307",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25243,
+        "charEnd": 25247,
+        "timeStart": 1752.48,
+        "timeEnd": 1757.82
+      },
+      "score": 0.6383047103881836
+    },
+    {
+      "id": "m_0308",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25319,
+        "charEnd": 25323,
+        "timeStart": 1755.48,
+        "timeEnd": 1759.98
+      },
+      "score": 0.6524515748023987
+    },
+    {
+      "id": "m_0309",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25338,
+        "charEnd": 25346,
+        "timeStart": 1757.82,
+        "timeEnd": 1762.86
+      },
+      "score": 0.8520806431770325
+    },
+    {
+      "id": "m_0310",
+      "label": "technology",
+      "surface": "3D printers",
+      "canonical": "3D printers",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25350,
+        "charEnd": 25361,
+        "timeStart": 1757.82,
+        "timeEnd": 1762.86
+      },
+      "score": 0.7881314754486084
+    },
+    {
+      "id": "m_0311",
+      "label": "technology",
+      "surface": "Hardware",
+      "canonical": "Hardware",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25366,
+        "charEnd": 25374,
+        "timeStart": 1759.98,
+        "timeEnd": 1765.53
+      },
+      "score": 0.7959004044532776
+    },
+    {
+      "id": "m_0312",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25390,
+        "charEnd": 25394,
+        "timeStart": 1759.98,
+        "timeEnd": 1765.53
+      },
+      "score": 0.6401298642158508
+    },
+    {
+      "id": "m_0313",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25455,
+        "charEnd": 25459,
+        "timeStart": 1771.62,
+        "timeEnd": 1776.539
+      },
+      "score": 0.5635042190551758
+    },
+    {
+      "id": "m_0314",
+      "label": "facility",
+      "surface": "power stations",
+      "canonical": "power stations",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25501,
+        "charEnd": 25515,
+        "timeStart": 1774.5,
+        "timeEnd": 1778.82
+      },
+      "score": 0.674405038356781
+    },
+    {
+      "id": "m_0315",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25584,
+        "charEnd": 25590,
+        "timeStart": 1778.82,
+        "timeEnd": 1784.1589999999999
+      },
+      "score": 0.8453971743583679
+    },
+    {
+      "id": "m_0316",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25591,
+        "charEnd": 25597,
+        "timeStart": 1781.58,
+        "timeEnd": 1787.039
+      },
+      "score": 0.7933424711227417
+    },
+    {
+      "id": "m_0317",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25639,
+        "charEnd": 25645,
+        "timeStart": 1784.159,
+        "timeEnd": 1789.14
+      },
+      "score": 0.8728560209274292
+    },
+    {
+      "id": "m_0318",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25724,
+        "charEnd": 25730,
+        "timeStart": 1789.14,
+        "timeEnd": 1795.7990000000002
+      },
+      "score": 0.8515005707740784
+    },
+    {
+      "id": "m_0319",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25826,
+        "charEnd": 25830,
+        "timeStart": 1813.86,
+        "timeEnd": 1818.899
+      },
+      "score": 0.5417017340660095
+    },
+    {
+      "id": "m_0320",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 25915,
+        "charEnd": 25920,
+        "timeStart": 1818.899,
+        "timeEnd": 1822.6789999999999
+      },
+      "score": 0.6706971526145935
+    },
+    {
+      "id": "m_0321",
+      "label": "organization",
+      "surface": "stock\nmarkets",
+      "canonical": "stock\nmarkets",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26113,
+        "charEnd": 26126,
+        "timeStart": 1830.179,
+        "timeEnd": 1837.5
+      },
+      "score": 0.7344570755958557
+    },
+    {
+      "id": "m_0322",
+      "label": "quantity",
+      "surface": "currency values",
+      "canonical": "currency values",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26180,
+        "charEnd": 26195,
+        "timeStart": 1834.98,
+        "timeEnd": 1839.96
+      },
+      "score": 0.8819396495819092
+    },
+    {
+      "id": "m_0323",
+      "label": "quantity",
+      "surface": "bank account balances",
+      "canonical": "bank account balances",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26212,
+        "charEnd": 26233,
+        "timeStart": 1837.5,
+        "timeEnd": 1842.299
+      },
+      "score": 0.8110283613204956
+    },
+    {
+      "id": "m_0324",
+      "label": "technology",
+      "surface": "communication networks",
+      "canonical": "communication networks",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26373,
+        "charEnd": 26395,
+        "timeStart": 1849.62,
+        "timeEnd": 1854.7199999999998
+      },
+      "score": 0.9206647872924805
+    },
+    {
+      "id": "m_0325",
+      "label": "facility",
+      "surface": "power grids",
+      "canonical": "power grids",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26475,
+        "charEnd": 26486,
+        "timeStart": 1854.72,
+        "timeEnd": 1860.059
+      },
+      "score": 0.97279953956604
+    },
+    {
+      "id": "m_0326",
+      "label": "location",
+      "surface": "cities",
+      "canonical": "cities",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26503,
+        "charEnd": 26509,
+        "timeStart": 1857.539,
+        "timeEnd": 1862.66
+      },
+      "score": 0.7271726727485657
+    },
+    {
+      "id": "m_0327",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26528,
+        "charEnd": 26533,
+        "timeStart": 1857.539,
+        "timeEnd": 1862.66
+      },
+      "score": 0.7942327857017517
+    },
+    {
+      "id": "m_0328",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26575,
+        "charEnd": 26579,
+        "timeStart": 1865.899,
+        "timeEnd": 1871.1589999999999
+      },
+      "score": 0.755158543586731
+    },
+    {
+      "id": "m_0329",
+      "label": "role",
+      "surface": "Puppeteer",
+      "canonical": "Puppeteer",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26593,
+        "charEnd": 26602,
+        "timeStart": 1865.899,
+        "timeEnd": 1871.1589999999999
+      },
+      "score": 0.8427616953849792
+    },
+    {
+      "id": "m_0330",
+      "label": "location",
+      "surface": "Shadows",
+      "canonical": "Shadows",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26648,
+        "charEnd": 26655,
+        "timeStart": 1869.179,
+        "timeEnd": 1874.3400000000001
+      },
+      "score": 0.6036587357521057
+    },
+    {
+      "id": "m_0331",
+      "label": "facility",
+      "surface": "Singularity systems",
+      "canonical": "Singularity systems",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26740,
+        "charEnd": 26759,
+        "timeStart": 1876.38,
+        "timeEnd": 1880.159
+      },
+      "score": 0.7567793726921082
+    },
+    {
+      "id": "m_0332",
+      "label": "person",
+      "surface": "Harper",
+      "canonical": "Harper",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26760,
+        "charEnd": 26766,
+        "timeStart": 1876.38,
+        "timeEnd": 1880.159
+      },
+      "score": 0.8017259240150452
+    },
+    {
+      "id": "m_0333",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26829,
+        "charEnd": 26834,
+        "timeStart": 1880.159,
+        "timeEnd": 1884.419
+      },
+      "score": 0.8981967568397522
+    },
+    {
+      "id": "m_0334",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26900,
+        "charEnd": 26904,
+        "timeStart": 1884.419,
+        "timeEnd": 1889.7
+      },
+      "score": 0.808405876159668
+    },
+    {
+      "id": "m_0335",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26956,
+        "charEnd": 26958,
+        "timeStart": 1886.82,
+        "timeEnd": 1892.22
+      },
+      "score": 0.7662802934646606
+    },
+    {
+      "id": "m_0336",
+      "label": "person",
+      "surface": "Dr Harper",
+      "canonical": "Dr Harper",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 26987,
+        "charEnd": 26996,
+        "timeStart": 1889.7,
+        "timeEnd": 1894.74
+      },
+      "score": 0.9517564177513123
+    },
+    {
+      "id": "m_0337",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27064,
+        "charEnd": 27068,
+        "timeStart": 1894.74,
+        "timeEnd": 1898.64
+      },
+      "score": 0.7740274667739868
+    },
+    {
+      "id": "m_0338",
+      "label": "technology",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27085,
+        "charEnd": 27089,
+        "timeStart": 1898.64,
+        "timeEnd": 1903.14
+      },
+      "score": 0.591635525226593
+    },
+    {
+      "id": "m_0339",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27285,
+        "charEnd": 27290,
+        "timeStart": 1911,
+        "timeEnd": 1915.559
+      },
+      "score": 0.907881498336792
+    },
+    {
+      "id": "m_0340",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27389,
+        "charEnd": 27391,
+        "timeStart": 1915.559,
+        "timeEnd": 1920.899
+      },
+      "score": 0.9615923762321472
+    },
+    {
+      "id": "m_0341",
+      "label": "location",
+      "surface": "Silicon Valley",
+      "canonical": "Silicon Valley",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27409,
+        "charEnd": 27423,
+        "timeStart": 1918.799,
+        "timeEnd": 1923.299
+      },
+      "score": 0.8398486375808716
+    },
+    {
+      "id": "m_0342",
+      "label": "location",
+      "surface": "the\nworld",
+      "canonical": "the world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27437,
+        "charEnd": 27446,
+        "timeStart": 1918.799,
+        "timeEnd": 1925.34
+      },
+      "score": 0.7016855478286743
+    },
+    {
+      "id": "m_0343",
+      "label": "event",
+      "surface": "Desperate Measures",
+      "canonical": "Desperate Measures",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27477,
+        "charEnd": 27495,
+        "timeStart": 1923.299,
+        "timeEnd": 1927.32
+      },
+      "score": 0.5192411541938782
+    },
+    {
+      "id": "m_0344",
+      "label": "facility",
+      "surface": "power\ngrids",
+      "canonical": "power grids",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27507,
+        "charEnd": 27518,
+        "timeStart": 1923.299,
+        "timeEnd": 1929.4189999999999
+      },
+      "score": 0.6603845357894897
+    },
+    {
+      "id": "m_0345",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27626,
+        "charEnd": 27628,
+        "timeStart": 1932.059,
+        "timeEnd": 1937.22
+      },
+      "score": 0.9419893026351929
+    },
+    {
+      "id": "m_0346",
+      "label": "event",
+      "surface": "Final Act",
+      "canonical": "Final Act",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27732,
+        "charEnd": 27741,
+        "timeStart": 1938.12,
+        "timeEnd": 1943.2199999999998
+      },
+      "score": 0.5292765498161316
+    },
+    {
+      "id": "m_0347",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27744,
+        "charEnd": 27749,
+        "timeStart": 1938.12,
+        "timeEnd": 1943.2199999999998
+      },
+      "score": 0.5843985080718994
+    },
+    {
+      "id": "m_0348",
+      "label": "event",
+      "surface": "the dawn\nof a new age",
+      "canonical": "the dawn\nof a new age",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27859,
+        "charEnd": 27880,
+        "timeStart": 1945.44,
+        "timeEnd": 1950.679
+      },
+      "score": 0.5221758484840393
+    },
+    {
+      "id": "m_0349",
+      "label": "location",
+      "surface": "the world",
+      "canonical": "the world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 27889,
+        "charEnd": 27898,
+        "timeStart": 1963.559,
+        "timeEnd": 1968.12
+      },
+      "score": 0.6565525531768799
+    },
+    {
+      "id": "m_0350",
+      "label": "organization",
+      "surface": "Humanity",
+      "canonical": "humanity",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28022,
+        "charEnd": 28030,
+        "timeStart": 1970.88,
+        "timeEnd": 1975.98
+      },
+      "score": 0.7826642394065857
+    },
+    {
+      "id": "m_0351",
+      "label": "location",
+      "surface": "the world",
+      "canonical": "the world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28051,
+        "charEnd": 28060,
+        "timeStart": 1973.7,
+        "timeEnd": 1977.779
+      },
+      "score": 0.6686789989471436
+    },
+    {
+      "id": "m_0352",
+      "label": "quantity",
+      "surface": "scattered few",
+      "canonical": "scattered few",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28085,
+        "charEnd": 28098,
+        "timeStart": 1975.98,
+        "timeEnd": 1980.179
+      },
+      "score": 0.6928684711456299
+    },
+    {
+      "id": "m_0353",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28099,
+        "charEnd": 28103,
+        "timeStart": 1977.779,
+        "timeEnd": 1982.52
+      },
+      "score": 0.9751974940299988
+    },
+    {
+      "id": "m_0354",
+      "label": "organization",
+      "surface": "Echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28298,
+        "charEnd": 28302,
+        "timeStart": 1990.08,
+        "timeEnd": 1994.46
+      },
+      "score": 0.9834806323051453
+    },
+    {
+      "id": "m_0355",
+      "label": "organization",
+      "surface": "echo",
+      "canonical": "Echo",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28618,
+        "charEnd": 28622,
+        "timeStart": 2011.5,
+        "timeEnd": 2015.64
+      },
+      "score": 0.9890361428260803
+    },
+    {
+      "id": "m_0356",
+      "label": "technology",
+      "surface": "network of\nsatellites",
+      "canonical": "network of\nsatellites",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28625,
+        "charEnd": 28646,
+        "timeStart": 2011.5,
+        "timeEnd": 2018.279
+      },
+      "score": 0.7128970623016357
+    },
+    {
+      "id": "m_0357",
+      "label": "location",
+      "surface": "earth",
+      "canonical": "earth",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28660,
+        "charEnd": 28665,
+        "timeStart": 2013.539,
+        "timeEnd": 2018.279
+      },
+      "score": 0.536918580532074
+    },
+    {
+      "id": "m_0358",
+      "label": "group_or_movement",
+      "surface": "survivors",
+      "canonical": "survivors",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28666,
+        "charEnd": 28675,
+        "timeStart": 2015.64,
+        "timeEnd": 2019.659
+      },
+      "score": 0.7036961913108826
+    },
+    {
+      "id": "m_0359",
+      "label": "location",
+      "surface": "remote areas",
+      "canonical": "remote areas",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28689,
+        "charEnd": 28701,
+        "timeStart": 2015.64,
+        "timeEnd": 2019.659
+      },
+      "score": 0.7684934735298157
+    },
+    {
+      "id": "m_0360",
+      "label": "technology",
+      "surface": "primitive\ntechnology",
+      "canonical": "primitive\ntechnology",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28731,
+        "charEnd": 28751,
+        "timeStart": 2018.279,
+        "timeEnd": 2024.22
+      },
+      "score": 0.8433437347412109
+    },
+    {
+      "id": "m_0361",
+      "label": "person",
+      "surface": "Albert Einstein",
+      "canonical": "Albert Einstein",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28918,
+        "charEnd": 28933,
+        "timeStart": 2029.98,
+        "timeEnd": 2035.32
+      },
+      "score": 0.9864251613616943
+    },
+    {
+      "id": "m_0362",
+      "label": "event",
+      "surface": "the fourth world war",
+      "canonical": "the fourth world war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 28951,
+        "charEnd": 28971,
+        "timeStart": 2032.98,
+        "timeEnd": 2038.26
+      },
+      "score": 0.6300156712532043
+    },
+    {
+      "id": "m_0363",
+      "label": "person",
+      "surface": "Einstein",
+      "canonical": "Einstein",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29020,
+        "charEnd": 29028,
+        "timeStart": 2038.26,
+        "timeEnd": 2044.519
+      },
+      "score": 0.6885461807250977
+    },
+    {
+      "id": "m_0364",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29112,
+        "charEnd": 29114,
+        "timeStart": 2046.6,
+        "timeEnd": 2050.679
+      },
+      "score": 0.9469622373580933
+    },
+    {
+      "id": "m_0365",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29175,
+        "charEnd": 29177,
+        "timeStart": 2050.679,
+        "timeEnd": 2057.159
+      },
+      "score": 0.9694783091545105
+    },
+    {
+      "id": "m_0366",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29207,
+        "charEnd": 29209,
+        "timeStart": 2058.359,
+        "timeEnd": 2062.3199999999997
+      },
+      "score": 0.9717646837234497
+    },
+    {
+      "id": "m_0367",
+      "label": "technology",
+      "surface": "artificial\nintelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29438,
+        "charEnd": 29461,
+        "timeStart": 2069.76,
+        "timeEnd": 2075.82
+      },
+      "score": 0.5671983957290649
+    },
+    {
+      "id": "m_0368",
+      "label": "event",
+      "surface": "pandemic nuclear war",
+      "canonical": "pandemic nuclear war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29580,
+        "charEnd": 29600,
+        "timeStart": 2078.339,
+        "timeEnd": 2083.679
+      },
+      "score": 0.5053120851516724
+    },
+    {
+      "id": "m_0369",
+      "label": "event",
+      "surface": "climate change",
+      "canonical": "climate change",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29604,
+        "charEnd": 29618,
+        "timeStart": 2081.099,
+        "timeEnd": 2086.139
+      },
+      "score": 0.5187665820121765
+    },
+    {
+      "id": "m_0370",
+      "label": "organization",
+      "surface": "Industry leaders",
+      "canonical": "Industry leaders",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29649,
+        "charEnd": 29665,
+        "timeStart": 2083.679,
+        "timeEnd": 2089.32
+      },
+      "score": 0.7201429605484009
+    },
+    {
+      "id": "m_0371",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29709,
+        "charEnd": 29711,
+        "timeStart": 2086.139,
+        "timeEnd": 2091.4190000000003
+      },
+      "score": 0.9463530778884888
+    },
+    {
+      "id": "m_0372",
+      "label": "organization",
+      "surface": "the\nexperts",
+      "canonical": "the\nexperts",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29712,
+        "charEnd": 29723,
+        "timeStart": 2086.139,
+        "timeEnd": 2093.5800000000004
+      },
+      "score": 0.5229297280311584
+    },
+    {
+      "id": "m_0373",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29795,
+        "charEnd": 29797,
+        "timeStart": 2093.58,
+        "timeEnd": 2098.7999999999997
+      },
+      "score": 0.96957927942276
+    },
+    {
+      "id": "m_0374",
+      "label": "event",
+      "surface": "pandemics",
+      "canonical": "pandemics",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29871,
+        "charEnd": 29880,
+        "timeStart": 2098.8,
+        "timeEnd": 2104.02
+      },
+      "score": 0.5573171377182007
+    },
+    {
+      "id": "m_0375",
+      "label": "event",
+      "surface": "nuclear war",
+      "canonical": "nuclear war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29885,
+        "charEnd": 29896,
+        "timeStart": 2098.8,
+        "timeEnd": 2104.02
+      },
+      "score": 0.8327605128288269
+    },
+    {
+      "id": "m_0376",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 29922,
+        "charEnd": 29931,
+        "timeStart": 2101.68,
+        "timeEnd": 2105.8199999999997
+      },
+      "score": 0.9182124733924866
+    },
+    {
+      "id": "m_0377",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30047,
+        "charEnd": 30049,
+        "timeStart": 2107.859,
+        "timeEnd": 2112.5989999999997
+      },
+      "score": 0.9862457513809204
+    },
+    {
+      "id": "m_0378",
+      "label": "technology",
+      "surface": "gbt4",
+      "canonical": "gbt4",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30088,
+        "charEnd": 30092,
+        "timeStart": 2112.599,
+        "timeEnd": 2118.119
+      },
+      "score": 0.5631796717643738
+    },
+    {
+      "id": "m_0379",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30122,
+        "charEnd": 30124,
+        "timeStart": 2112.599,
+        "timeEnd": 2118.119
+      },
+      "score": 0.9555575847625732
+    },
+    {
+      "id": "m_0380",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30250,
+        "charEnd": 30252,
+        "timeStart": 2121.72,
+        "timeEnd": 2125.9199999999996
+      },
+      "score": 0.9727033376693726
+    },
+    {
+      "id": "m_0381",
+      "label": "work_of_media",
+      "surface": "Blade\nRunner",
+      "canonical": "Blade\nRunner",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30313,
+        "charEnd": 30325,
+        "timeStart": 2123.76,
+        "timeEnd": 2129.579
+      },
+      "score": 0.977728545665741
+    },
+    {
+      "id": "m_0382",
+      "label": "work_of_media",
+      "surface": "Terminator",
+      "canonical": "Terminator",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30330,
+        "charEnd": 30340,
+        "timeStart": 2125.92,
+        "timeEnd": 2129.579
+      },
+      "score": 0.8692721128463745
+    },
+    {
+      "id": "m_0383",
+      "label": "work_of_media",
+      "surface": "The Matrix",
+      "canonical": "The Matrix",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30344,
+        "charEnd": 30354,
+        "timeStart": 2125.92,
+        "timeEnd": 2129.579
+      },
+      "score": 0.9430702328681946
+    },
+    {
+      "id": "m_0384",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30408,
+        "charEnd": 30410,
+        "timeStart": 2129.579,
+        "timeEnd": 2133.3590000000004
+      },
+      "score": 0.9797256588935852
+    },
+    {
+      "id": "m_0385",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "earth",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30441,
+        "charEnd": 30446,
+        "timeStart": 2131.5,
+        "timeEnd": 2135.78
+      },
+      "score": 0.5303152799606323
+    },
+    {
+      "id": "m_0386",
+      "label": "person",
+      "surface": "Connor Leahy",
+      "canonical": "Connor Leahy",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30513,
+        "charEnd": 30525,
+        "timeStart": 2135.78,
+        "timeEnd": 2141.82
+      },
+      "score": 0.9012362360954285
+    },
+    {
+      "id": "m_0387",
+      "label": "organization",
+      "surface": "top Labs",
+      "canonical": "top Labs",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 30766,
+        "charEnd": 30774,
+        "timeStart": 2152.079,
+        "timeEnd": 2156.4
+      },
+      "score": 0.5897810459136963
+    },
+    {
+      "id": "m_0388",
+      "label": "quantity",
+      "surface": "five to ten years",
+      "canonical": "five to ten years",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31020,
+        "charEnd": 31037,
+        "timeStart": 2170.02,
+        "timeEnd": 2174.099
+      },
+      "score": 0.6677152514457703
+    },
+    {
+      "id": "m_0389",
+      "label": "event",
+      "surface": "disaster",
+      "canonical": "disaster",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31079,
+        "charEnd": 31087,
+        "timeStart": 2172.3,
+        "timeEnd": 2176.02
+      },
+      "score": 0.5757623910903931
+    },
+    {
+      "id": "m_0390",
+      "label": "person",
+      "surface": "Jeffrey Hinton",
+      "canonical": "Jeffrey Hinton",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31103,
+        "charEnd": 31117,
+        "timeStart": 2174.099,
+        "timeEnd": 2178.48
+      },
+      "score": 0.9532355070114136
+    },
+    {
+      "id": "m_0391",
+      "label": "role",
+      "surface": "The\nGodfather of AI",
+      "canonical": "The\nGodfather of AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31128,
+        "charEnd": 31147,
+        "timeStart": 2174.099,
+        "timeEnd": 2180.4
+      },
+      "score": 0.5935362577438354
+    },
+    {
+      "id": "m_0392",
+      "label": "technology",
+      "surface": "deep learning",
+      "canonical": "deep learning",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31176,
+        "charEnd": 31189,
+        "timeStart": 2178.48,
+        "timeEnd": 2182.079
+      },
+      "score": 0.923206627368927
+    },
+    {
+      "id": "m_0393",
+      "label": "technology",
+      "surface": "modern artificial intelligence",
+      "canonical": "modern artificial intelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31250,
+        "charEnd": 31280,
+        "timeStart": 2182.079,
+        "timeEnd": 2187.0600000000004
+      },
+      "score": 0.8981216549873352
+    },
+    {
+      "id": "m_0394",
+      "label": "role",
+      "surface": "VP",
+      "canonical": "VP",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31303,
+        "charEnd": 31305,
+        "timeStart": 2184.3,
+        "timeEnd": 2189.04
+      },
+      "score": 0.6108740568161011
+    },
+    {
+      "id": "m_0395",
+      "label": "role",
+      "surface": "engineer",
+      "canonical": "engineer",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31310,
+        "charEnd": 31318,
+        "timeStart": 2184.3,
+        "timeEnd": 2189.04
+      },
+      "score": 0.6046338677406311
+    },
+    {
+      "id": "m_0396",
+      "label": "organization",
+      "surface": "Google",
+      "canonical": "Google",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31322,
+        "charEnd": 31328,
+        "timeStart": 2184.3,
+        "timeEnd": 2189.04
+      },
+      "score": 0.9375741481781006
+    },
+    {
+      "id": "m_0397",
+      "label": "technology",
+      "surface": "artificial\nintelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31399,
+        "charEnd": 31422,
+        "timeStart": 2189.04,
+        "timeEnd": 2194.8
+      },
+      "score": 0.7599711418151855
+    },
+    {
+      "id": "m_0398",
+      "label": "organization",
+      "surface": "major corporation",
+      "canonical": "major corporation",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31495,
+        "charEnd": 31512,
+        "timeStart": 2194.8,
+        "timeEnd": 2199.2400000000002
+      },
+      "score": 0.6904340386390686
+    },
+    {
+      "id": "m_0399",
+      "label": "ideology",
+      "surface": "existential\nthreat",
+      "canonical": "existential\nthreat",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31695,
+        "charEnd": 31713,
+        "timeStart": 2204.64,
+        "timeEnd": 2211.06
+      },
+      "score": 0.6139495968818665
+    },
+    {
+      "id": "m_0400",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31874,
+        "charEnd": 31876,
+        "timeStart": 2218.26,
+        "timeEnd": 2222.579
+      },
+      "score": 0.5404492616653442
+    },
+    {
+      "id": "m_0401",
+      "label": "person",
+      "surface": "Eliezer yadkowski",
+      "canonical": "Eliezer yadkowski",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 31958,
+        "charEnd": 31975,
+        "timeStart": 2222.579,
+        "timeEnd": 2226.599
+      },
+      "score": 0.9001736044883728
+    },
+    {
+      "id": "m_0402",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32375,
+        "charEnd": 32377,
+        "timeStart": 2249.7,
+        "timeEnd": 2256.2999999999997
+      },
+      "score": 0.8191507458686829
+    },
+    {
+      "id": "m_0403",
+      "label": "person",
+      "surface": "Putin",
+      "canonical": "Putin",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32646,
+        "charEnd": 32651,
+        "timeStart": 2270.64,
+        "timeEnd": 2274.24
+      },
+      "score": 0.9348630309104919
+    },
+    {
+      "id": "m_0404",
+      "label": "event",
+      "surface": "speech",
+      "canonical": "speech",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32659,
+        "charEnd": 32665,
+        "timeStart": 2272.5,
+        "timeEnd": 2276.52
+      },
+      "score": 0.5741308331489563
+    },
+    {
+      "id": "m_0405",
+      "label": "technology",
+      "surface": "artificial\nintelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32680,
+        "charEnd": 32703,
+        "timeStart": 2272.5,
+        "timeEnd": 2278.9799999999996
+      },
+      "score": 0.9373317360877991
+    },
+    {
+      "id": "m_0406",
+      "label": "location",
+      "surface": "Russia",
+      "canonical": "Russia",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32730,
+        "charEnd": 32736,
+        "timeStart": 2276.52,
+        "timeEnd": 2281.14
+      },
+      "score": 0.7818474173545837
+    },
+    {
+      "id": "m_0407",
+      "label": "role",
+      "surface": "leader",
+      "canonical": "leader",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32776,
+        "charEnd": 32782,
+        "timeStart": 2278.98,
+        "timeEnd": 2283.48
+      },
+      "score": 0.5388980507850647
+    },
+    {
+      "id": "m_0408",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32786,
+        "charEnd": 32788,
+        "timeStart": 2278.98,
+        "timeEnd": 2283.48
+      },
+      "score": 0.841368556022644
+    },
+    {
+      "id": "m_0409",
+      "label": "location",
+      "surface": "world",
+      "canonical": "world",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32818,
+        "charEnd": 32823,
+        "timeStart": 2281.14,
+        "timeEnd": 2286.24
+      },
+      "score": 0.5386909246444702
+    },
+    {
+      "id": "m_0410",
+      "label": "location",
+      "surface": "China",
+      "canonical": "China",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32839,
+        "charEnd": 32844,
+        "timeStart": 2281.14,
+        "timeEnd": 2286.24
+      },
+      "score": 0.6555830240249634
+    },
+    {
+      "id": "m_0411",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32853,
+        "charEnd": 32866,
+        "timeStart": 2283.48,
+        "timeEnd": 2288.64
+      },
+      "score": 0.8449691534042358
+    },
+    {
+      "id": "m_0412",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32930,
+        "charEnd": 32932,
+        "timeStart": 2288.64,
+        "timeEnd": 2293.3199999999997
+      },
+      "score": 0.9437988996505737
+    },
+    {
+      "id": "m_0413",
+      "label": "organization",
+      "surface": "Google",
+      "canonical": "Google",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32933,
+        "charEnd": 32939,
+        "timeStart": 2288.64,
+        "timeEnd": 2293.3199999999997
+      },
+      "score": 0.9630492925643921
+    },
+    {
+      "id": "m_0414",
+      "label": "organization",
+      "surface": "Microsoft",
+      "canonical": "Microsoft",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32944,
+        "charEnd": 32953,
+        "timeStart": 2288.64,
+        "timeEnd": 2293.3199999999997
+      },
+      "score": 0.9527157545089722
+    },
+    {
+      "id": "m_0415",
+      "label": "quantity",
+      "surface": "billions",
+      "canonical": "billions",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32968,
+        "charEnd": 32976,
+        "timeStart": 2291.46,
+        "timeEnd": 2295.2400000000002
+      },
+      "score": 0.8653745055198669
+    },
+    {
+      "id": "m_0416",
+      "label": "technology",
+      "surface": "artificial\nintelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 32982,
+        "charEnd": 33005,
+        "timeStart": 2291.46,
+        "timeEnd": 2297.46
+      },
+      "score": 0.9161160588264465
+    },
+    {
+      "id": "m_0417",
+      "label": "organization",
+      "surface": "Apple",
+      "canonical": "Apple",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33006,
+        "charEnd": 33011,
+        "timeStart": 2293.32,
+        "timeEnd": 2297.46
+      },
+      "score": 0.9125977158546448
+    },
+    {
+      "id": "m_0418",
+      "label": "location",
+      "surface": "Russia",
+      "canonical": "Russia",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33055,
+        "charEnd": 33061,
+        "timeStart": 2295.24,
+        "timeEnd": 2299.6189999999997
+      },
+      "score": 0.5237831473350525
+    },
+    {
+      "id": "m_0419",
+      "label": "location",
+      "surface": "China",
+      "canonical": "China",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33062,
+        "charEnd": 33067,
+        "timeStart": 2295.24,
+        "timeEnd": 2299.6189999999997
+      },
+      "score": 0.6505133509635925
+    },
+    {
+      "id": "m_0420",
+      "label": "location",
+      "surface": "United States",
+      "canonical": "United States",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33076,
+        "charEnd": 33089,
+        "timeStart": 2297.46,
+        "timeEnd": 2302.26
+      },
+      "score": 0.8037253618240356
+    },
+    {
+      "id": "m_0421",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33117,
+        "charEnd": 33119,
+        "timeStart": 2299.619,
+        "timeEnd": 2304.2400000000002
+      },
+      "score": 0.9538892507553101
+    },
+    {
+      "id": "m_0422",
+      "label": "technology",
+      "surface": "Technologies",
+      "canonical": "Technologies",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33184,
+        "charEnd": 33196,
+        "timeStart": 2304.24,
+        "timeEnd": 2308.14
+      },
+      "score": 0.5056622624397278
+    },
+    {
+      "id": "m_0423",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33338,
+        "charEnd": 33349,
+        "timeStart": 2312.88,
+        "timeEnd": 2316.1800000000003
+      },
+      "score": 0.5205256938934326
+    },
+    {
+      "id": "m_0424",
+      "label": "technology",
+      "surface": "artificial\nintelligence",
+      "canonical": "artificial\nintelligence",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33394,
+        "charEnd": 33417,
+        "timeStart": 2314.26,
+        "timeEnd": 2320.5
+      },
+      "score": 0.9500901103019714
+    },
+    {
+      "id": "m_0425",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33467,
+        "charEnd": 33469,
+        "timeStart": 2318.46,
+        "timeEnd": 2322.96
+      },
+      "score": 0.9339265823364258
+    },
+    {
+      "id": "m_0426",
+      "label": "quantity",
+      "surface": "billions",
+      "canonical": "billions",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33677,
+        "charEnd": 33685,
+        "timeStart": 2331.78,
+        "timeEnd": 2335.2200000000003
+      },
+      "score": 0.7893857359886169
+    },
+    {
+      "id": "m_0427",
+      "label": "organization",
+      "surface": "company",
+      "canonical": "company",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33746,
+        "charEnd": 33753,
+        "timeStart": 2335.22,
+        "timeEnd": 2340.06
+      },
+      "score": 0.7272821664810181
+    },
+    {
+      "id": "m_0428",
+      "label": "organization",
+      "surface": "company",
+      "canonical": "company",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33876,
+        "charEnd": 33883,
+        "timeStart": 2344.38,
+        "timeEnd": 2348.7000000000003
+      },
+      "score": 0.7002384066581726
+    },
+    {
+      "id": "m_0429",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 33925,
+        "charEnd": 33927,
+        "timeStart": 2346.48,
+        "timeEnd": 2350.02
+      },
+      "score": 0.9602952003479004
+    },
+    {
+      "id": "m_0430",
+      "label": "organization",
+      "surface": "Rogue\norganizations",
+      "canonical": "Rogue\norganizations",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34018,
+        "charEnd": 34037,
+        "timeStart": 2350.02,
+        "timeEnd": 2356.44
+      },
+      "score": 0.7131409049034119
+    },
+    {
+      "id": "m_0431",
+      "label": "organization",
+      "surface": "hacker groups",
+      "canonical": "hacker groups",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34038,
+        "charEnd": 34051,
+        "timeStart": 2351.82,
+        "timeEnd": 2356.44
+      },
+      "score": 0.6192053556442261
+    },
+    {
+      "id": "m_0432",
+      "label": "group_or_movement",
+      "surface": "cyber\nterrorists",
+      "canonical": "cyber\nterrorists",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34055,
+        "charEnd": 34071,
+        "timeStart": 2351.82,
+        "timeEnd": 2359.02
+      },
+      "score": 0.5967554450035095
+    },
+    {
+      "id": "m_0433",
+      "label": "organization",
+      "surface": "openai",
+      "canonical": "openai",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34088,
+        "charEnd": 34094,
+        "timeStart": 2353.98,
+        "timeEnd": 2359.02
+      },
+      "score": 0.812815248966217
+    },
+    {
+      "id": "m_0434",
+      "label": "technology",
+      "surface": "open\nsource language model",
+      "canonical": "open\nsource language model",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34131,
+        "charEnd": 34157,
+        "timeStart": 2356.44,
+        "timeEnd": 2364
+      },
+      "score": 0.6547800898551941
+    },
+    {
+      "id": "m_0435",
+      "label": "organization",
+      "surface": "governments",
+      "canonical": "governments",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34194,
+        "charEnd": 34205,
+        "timeStart": 2361.54,
+        "timeEnd": 2366.099
+      },
+      "score": 0.6265324354171753
+    },
+    {
+      "id": "m_0436",
+      "label": "organization",
+      "surface": "militaries",
+      "canonical": "militaries",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34210,
+        "charEnd": 34220,
+        "timeStart": 2364,
+        "timeEnd": 2368.38
+      },
+      "score": 0.6843106150627136
+    },
+    {
+      "id": "m_0437",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34250,
+        "charEnd": 34252,
+        "timeStart": 2366.099,
+        "timeEnd": 2370.48
+      },
+      "score": 0.9672645926475525
+    },
+    {
+      "id": "m_0438",
+      "label": "organization",
+      "surface": "criminals",
+      "canonical": "criminals",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34293,
+        "charEnd": 34302,
+        "timeStart": 2368.38,
+        "timeEnd": 2372.099
+      },
+      "score": 0.5009660720825195
+    },
+    {
+      "id": "m_0439",
+      "label": "group_or_movement",
+      "surface": "Bad actors",
+      "canonical": "Bad actors",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34313,
+        "charEnd": 34323,
+        "timeStart": 2368.38,
+        "timeEnd": 2372.099
+      },
+      "score": 0.5426633358001709
+    },
+    {
+      "id": "m_0440",
+      "label": "organization",
+      "surface": "businesses",
+      "canonical": "businesses",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34328,
+        "charEnd": 34338,
+        "timeStart": 2370.48,
+        "timeEnd": 2374.38
+      },
+      "score": 0.5942686200141907
+    },
+    {
+      "id": "m_0441",
+      "label": "technology",
+      "surface": "AI",
+      "canonical": "AI",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34373,
+        "charEnd": 34375,
+        "timeStart": 2372.099,
+        "timeEnd": 2376.48
+      },
+      "score": 0.9682264924049377
+    },
+    {
+      "id": "m_0442",
+      "label": "technology",
+      "surface": "Doomsday\nClock",
+      "canonical": "Doomsday\nClock",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34510,
+        "charEnd": 34524,
+        "timeStart": 2378.94,
+        "timeEnd": 2386.079
+      },
+      "score": 0.831099808216095
+    },
+    {
+      "id": "m_0443",
+      "label": "date_time",
+      "surface": "midnight",
+      "canonical": "Midnight",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34544,
+        "charEnd": 34552,
+        "timeStart": 2381.04,
+        "timeEnd": 2386.079
+      },
+      "score": 0.690549910068512
+    },
+    {
+      "id": "m_0444",
+      "label": "organization",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34661,
+        "charEnd": 34672,
+        "timeStart": 2387.76,
+        "timeEnd": 2392.619
+      },
+      "score": 0.5056977272033691
+    },
+    {
+      "id": "m_0445",
+      "label": "event",
+      "surface": "human extinction",
+      "canonical": "human extinction",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34687,
+        "charEnd": 34703,
+        "timeStart": 2390.4,
+        "timeEnd": 2394.06
+      },
+      "score": 0.6876649260520935
+    },
+    {
+      "id": "m_0446",
+      "label": "event",
+      "surface": "the next war",
+      "canonical": "the next war",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 34850,
+        "charEnd": 34862,
+        "timeStart": 2401.079,
+        "timeEnd": 2405.76
+      },
+      "score": 0.6890860795974731
+    },
+    {
+      "id": "m_0447",
+      "label": "location",
+      "surface": "country",
+      "canonical": "country",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 35154,
+        "charEnd": 35161,
+        "timeStart": 2424.599,
+        "timeEnd": 2427.78
+      },
+      "score": 0.5104466676712036
+    },
+    {
+      "id": "m_0448",
+      "label": "person",
+      "surface": "AJ",
+      "canonical": "AJ",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 35248,
+        "charEnd": 35250,
+        "timeStart": 2429.28,
+        "timeEnd": 2433.3590000000004
+      },
+      "score": 0.9705120325088501
+    },
+    {
+      "id": "m_0449",
+      "label": "person",
+      "surface": "Heckle fish",
+      "canonical": "Heckle fish",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 35258,
+        "charEnd": 35269,
+        "timeStart": 2429.28,
+        "timeEnd": 2433.3590000000004
+      },
+      "score": 0.549826979637146
+    },
+    {
+      "id": "m_0450",
+      "label": "organization",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 35665,
+        "charEnd": 35672,
+        "timeStart": 2450.7,
+        "timeEnd": 2454.359
+      },
+      "score": 0.7421960234642029
+    },
+    {
+      "id": "m_0451",
+      "label": "quantity",
+      "surface": "thousands of people",
+      "canonical": "thousands of people",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 35709,
+        "charEnd": 35728,
+        "timeStart": 2452.92,
+        "timeEnd": 2455.92
+      },
+      "score": 0.6378613710403442
+    },
+    {
+      "id": "m_0452",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 35796,
+        "charEnd": 35803,
+        "timeStart": 2455.92,
+        "timeEnd": 2459.88
+      },
+      "score": 0.6154114603996277
+    },
+    {
+      "id": "m_0453",
+      "label": "technology",
+      "surface": "Wi-fi",
+      "canonical": "Wi-fi",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 35847,
+        "charEnd": 35852,
+        "timeStart": 2459.88,
+        "timeEnd": 2463.119
+      },
+      "score": 0.9283281564712524
+    },
+    {
+      "id": "m_0454",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 36069,
+        "charEnd": 36076,
+        "timeStart": 2468.16,
+        "timeEnd": 2471.2799999999997
+      },
+      "score": 0.8439029455184937
+    },
+    {
+      "id": "m_0455",
+      "label": "quantity",
+      "surface": "three dollars",
+      "canonical": "three dollars",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 36094,
+        "charEnd": 36107,
+        "timeStart": 2470.02,
+        "timeEnd": 2473.14
+      },
+      "score": 0.7214270830154419
+    },
+    {
+      "id": "m_0456",
+      "label": "ideology",
+      "surface": "hell-bent on world domination",
+      "canonical": "hell-bent on world domination",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 36473,
+        "charEnd": 36502,
+        "timeStart": 2492.7,
+        "timeEnd": 2496.66
+      },
+      "score": 0.8193637132644653
+    },
+    {
+      "id": "m_0457",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 36668,
+        "charEnd": 36673,
+        "timeStart": 2504.97,
+        "timeEnd": 2509.08
+      },
+      "score": 0.7744638323783875
+    },
+    {
+      "id": "m_0458",
+      "label": "nationality_or_ethnicity",
+      "surface": "foreign",
+      "canonical": "foreign",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 36675,
+        "charEnd": 36682,
+        "timeStart": 2557.26,
+        "timeEnd": 2559.44
+      },
+      "score": 0.9018123745918274
+    },
+    {
+      "id": "m_0459",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "brQLpTnDwyg",
+        "charStart": 36684,
+        "charEnd": 36689,
+        "timeStart": 2621.46,
+        "timeEnd": 2628.309
+      },
+      "score": 0.7693532705307007
+    }
+  ]
+}

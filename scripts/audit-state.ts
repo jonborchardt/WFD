@@ -1,15 +1,16 @@
 // Read-only pipeline-state audit.
 //
-// For every catalog row, reports whether the transcript file exists, whether
-// a per-video NLP artifact exists, and how their mtimes compare. Output is a
-// plain table plus a JSON summary at the end — check it in as a baseline
-// before running any migration so the before/after diff is visible.
+// For every catalog row, reports whether the transcript file exists,
+// whether a per-video neural entities artifact exists, and how their
+// mtimes compare. Output is a plain table plus a JSON summary at the
+// end — check it in as a baseline before running any migration so the
+// before/after diff is visible.
 
 import { existsSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { Catalog } from "../src/catalog/catalog.js";
-import { nlpPath } from "../src/nlp/persist.js";
+import { entitiesPath } from "../src/entities/index.js";
 import { transcriptPath } from "../src/ingest/transcript.js";
 
 const repoRoot = resolve(fileURLToPath(import.meta.url), "..", "..");
@@ -41,7 +42,7 @@ function main(): void {
       row.transcriptPath ??
       transcriptPath(row.videoId, join(dataDir, "transcripts"));
     const tExists = existsSync(tPath);
-    const nPath = nlpPath(row.videoId, dataDir);
+    const nPath = entitiesPath(row.videoId, dataDir);
     const nExists = existsSync(nPath);
     let nlpState: RowAudit["nlp"] = "missing";
     if (nExists) {
