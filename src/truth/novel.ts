@@ -61,39 +61,69 @@ export function detectNovel(
     }
   }
 
-  // For novelty, iterate over pairs of entities sharing at least one neighbor.
-  const entityIds = [...neighbors.keys()];
+  // Build a per-relationship lookup by entity so we don't linear-scan
+  // all rels inside the inner loop — the old O(N²×E) approach was
+  // combinatorial on large graphs.
+  const relsByEntity = new Map<string, Relationship[]>();
+  for (const r of rels) {
+    for (const ep of [r.subjectId, r.objectId]) {
+      const list = relsByEntity.get(ep) ?? [];
+      list.push(r);
+      relsByEntity.set(ep, list);
+    }
+  }
+
+  // For novelty, iterate over pairs of entities that share at least
+  // one neighbor. Instead of brute-force N² entity pairs, walk each
+  // entity's neighbor set and check neighbors-of-neighbors — this is
+  // O(sum of (degree²)) which is much smaller than O(N²) for sparse
+  // graphs, and the pipeline graph is sparse.
   const candidates = new Map<string, NovelCandidate>();
-  for (let i = 0; i < entityIds.length; i++) {
-    for (let j = i + 1; j < entityIds.length; j++) {
-      const a = entityIds[i];
-      const b = entityIds[j];
-      if (asserted.has(`${a}|${b}`)) continue;
-      const sharedN = intersect(neighbors.get(a)!, neighbors.get(b)!);
-      const sharedT = intersect(transcripts.get(a) ?? new Set<string>(), transcripts.get(b) ?? new Set<string>());
-      if (sharedN.size + sharedT.size < minSupport) continue;
-      const support: Relationship[] = [];
-      for (const r of rels) {
-        const touchesA = r.subjectId === a || r.objectId === a;
-        const touchesB = r.subjectId === b || r.objectId === b;
-        if (!touchesA && !touchesB) continue;
-        if (sharedN.has(r.subjectId) || sharedN.has(r.objectId) || sharedT.has(r.evidence.transcriptId)) {
-          support.push(r);
+  const seen = new Set<string>();
+  for (const [a, aNeighbors] of neighbors) {
+    for (const mid of aNeighbors) {
+      for (const b of neighbors.get(mid) ?? []) {
+        if (b === a) continue;
+        const key = a < b ? `${a}|${b}` : `${b}|${a}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        if (asserted.has(`${a}|${b}`)) continue;
+        const sharedN = intersect(aNeighbors, neighbors.get(b)!);
+        const sharedT = intersect(
+          transcripts.get(a) ?? new Set<string>(),
+          transcripts.get(b) ?? new Set<string>(),
+        );
+        if (sharedN.size + sharedT.size < minSupport) continue;
+        // Collect supporting edges from the per-entity index
+        // instead of scanning every relationship.
+        const support: Relationship[] = [];
+        const supportIds = new Set<string>();
+        for (const ep of [a, b]) {
+          for (const r of relsByEntity.get(ep) ?? []) {
+            if (supportIds.has(r.id)) continue;
+            if (
+              sharedN.has(r.subjectId) ||
+              sharedN.has(r.objectId) ||
+              sharedT.has(r.evidence.transcriptId)
+            ) {
+              support.push(r);
+              supportIds.add(r.id);
+            }
+          }
         }
+        const score =
+          sharedN.size * 2 +
+          sharedT.size +
+          support.reduce((s, r) => s + r.confidence, 0) * 0.1;
+        candidates.set(key, {
+          subjectId: a,
+          objectId: b,
+          score,
+          supportingEdges: support,
+          sharedEntities: [...sharedN],
+          sharedTranscripts: [...sharedT],
+        });
       }
-      const score =
-        [...sharedN].length * 2 +
-        [...sharedT].length +
-        support.reduce((s, r) => s + r.confidence, 0) * 0.1;
-      const key = `${a}|${b}`;
-      candidates.set(key, {
-        subjectId: a,
-        objectId: b,
-        score,
-        supportingEdges: support,
-        sharedEntities: [...sharedN],
-        sharedTranscripts: [...sharedT],
-      });
     }
   }
 

@@ -7,7 +7,7 @@
 // lexically matches) the claim.
 
 import { Relationship } from "../shared/types.js";
-import { Transcript } from "../nlp/entities.js";
+import type { Transcript } from "../entities/index.js";
 import { GraphStore } from "../graph/store.js";
 
 export type Verdict = "true" | "false" | "uncertain";

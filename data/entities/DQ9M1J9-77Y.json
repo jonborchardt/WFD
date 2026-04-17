@@ -1,0 +1,2784 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "DQ9M1J9-77Y",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T07:31:12.460Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "date_time",
+      "surface": "november 28 1953",
+      "canonical": "november 28 1953",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 0,
+        "charEnd": 16,
+        "timeStart": 1.68,
+        "timeEnd": 8.32
+      },
+      "score": 0.9161408543586731
+    },
+    {
+      "id": "m_0002",
+      "label": "location",
+      "surface": "new york city",
+      "canonical": "new york city",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 17,
+        "charEnd": 30,
+        "timeStart": 1.68,
+        "timeEnd": 8.32
+      },
+      "score": 0.916688084602356
+    },
+    {
+      "id": "m_0003",
+      "label": "person",
+      "surface": "the\ndoorman",
+      "canonical": "the\ndoorman",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 107,
+        "charEnd": 118,
+        "timeStart": 8.32,
+        "timeEnd": 15.2
+      },
+      "score": 0.8592879772186279
+    },
+    {
+      "id": "m_0004",
+      "label": "location",
+      "surface": "statler hotel",
+      "canonical": "statler hotel",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 126,
+        "charEnd": 139,
+        "timeStart": 11.04,
+        "timeEnd": 15.2
+      },
+      "score": 0.5590994954109192
+    },
+    {
+      "id": "m_0005",
+      "label": "person",
+      "surface": "night manager",
+      "canonical": "night manager",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 188,
+        "charEnd": 201,
+        "timeStart": 15.2,
+        "timeEnd": 19.759999999999998
+      },
+      "score": 0.9346237778663635
+    },
+    {
+      "id": "m_0006",
+      "label": "person",
+      "surface": "night manager",
+      "canonical": "night manager",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 445,
+        "charEnd": 458,
+        "timeStart": 29.76,
+        "timeEnd": 34.079
+      },
+      "score": 0.9543585181236267
+    },
+    {
+      "id": "m_0007",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 823,
+        "charEnd": 826,
+        "timeStart": 53.6,
+        "timeEnd": 56.6
+      },
+      "score": 0.9000412821769714
+    },
+    {
+      "id": "m_0008",
+      "label": "location",
+      "surface": "room 1018a",
+      "canonical": "room 1018a",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 827,
+        "charEnd": 837,
+        "timeStart": 60.8,
+        "timeEnd": 65.84
+      },
+      "score": 0.5750983953475952
+    },
+    {
+      "id": "m_0009",
+      "label": "person",
+      "surface": "robert\nlashbrook",
+      "canonical": "robert\nlashbrook",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 856,
+        "charEnd": 872,
+        "timeStart": 60.8,
+        "timeEnd": 69.04
+      },
+      "score": 0.9529301524162292
+    },
+    {
+      "id": "m_0010",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 877,
+        "charEnd": 888,
+        "timeStart": 63.359,
+        "timeEnd": 69.04
+      },
+      "score": 0.9904807209968567
+    },
+    {
+      "id": "m_0011",
+      "label": "organization",
+      "surface": "police",
+      "canonical": "police",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 893,
+        "charEnd": 899,
+        "timeStart": 63.359,
+        "timeEnd": 69.04
+      },
+      "score": 0.8767765760421753
+    },
+    {
+      "id": "m_0012",
+      "label": "location",
+      "surface": "bathroom",
+      "canonical": "bathroom",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1001,
+        "charEnd": 1009,
+        "timeStart": 70.88,
+        "timeEnd": 75.439
+      },
+      "score": 0.5019939541816711
+    },
+    {
+      "id": "m_0013",
+      "label": "person",
+      "surface": "man",
+      "canonical": "man",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1016,
+        "charEnd": 1019,
+        "timeStart": 73.04,
+        "timeEnd": 77.43900000000001
+      },
+      "score": 0.5598154067993164
+    },
+    {
+      "id": "m_0014",
+      "label": "organization",
+      "surface": "police",
+      "canonical": "police",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1084,
+        "charEnd": 1090,
+        "timeStart": 75.439,
+        "timeEnd": 79.439
+      },
+      "score": 0.8313496112823486
+    },
+    {
+      "id": "m_0015",
+      "label": "person",
+      "surface": "man",
+      "canonical": "man",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1170,
+        "charEnd": 1173,
+        "timeStart": 81.68,
+        "timeEnd": 86.96000000000001
+      },
+      "score": 0.6290640234947205
+    },
+    {
+      "id": "m_0016",
+      "label": "person",
+      "surface": "man",
+      "canonical": "man",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1202,
+        "charEnd": 1205,
+        "timeStart": 81.68,
+        "timeEnd": 86.96000000000001
+      },
+      "score": 0.6221268773078918
+    },
+    {
+      "id": "m_0017",
+      "label": "location",
+      "surface": "bathroom",
+      "canonical": "bathroom",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1213,
+        "charEnd": 1221,
+        "timeStart": 83.84,
+        "timeEnd": 89.04
+      },
+      "score": 0.6112133264541626
+    },
+    {
+      "id": "m_0018",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1233,
+        "charEnd": 1244,
+        "timeStart": 83.84,
+        "timeEnd": 89.04
+      },
+      "score": 0.9899910688400269
+    },
+    {
+      "id": "m_0019",
+      "label": "person",
+      "surface": "middle-aged man",
+      "canonical": "middle-aged man",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1310,
+        "charEnd": 1325,
+        "timeStart": 89.04,
+        "timeEnd": 93.759
+      },
+      "score": 0.6246562600135803
+    },
+    {
+      "id": "m_0020",
+      "label": "person",
+      "surface": "armin\npastore",
+      "canonical": "armin\npastore",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1437,
+        "charEnd": 1450,
+        "timeStart": 95.92,
+        "timeEnd": 102.56
+      },
+      "score": 0.9206743240356445
+    },
+    {
+      "id": "m_0021",
+      "label": "person",
+      "surface": "pastore",
+      "canonical": "pastore",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1677,
+        "charEnd": 1684,
+        "timeStart": 111.52,
+        "timeEnd": 115.439
+      },
+      "score": 0.832219660282135
+    },
+    {
+      "id": "m_0022",
+      "label": "person",
+      "surface": "operator",
+      "canonical": "operator",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1708,
+        "charEnd": 1716,
+        "timeStart": 111.52,
+        "timeEnd": 115.439
+      },
+      "score": 0.7209143042564392
+    },
+    {
+      "id": "m_0023",
+      "label": "person",
+      "surface": "operator",
+      "canonical": "operator",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1765,
+        "charEnd": 1773,
+        "timeStart": 115.439,
+        "timeEnd": 120.88
+      },
+      "score": 0.6363952159881592
+    },
+    {
+      "id": "m_0024",
+      "label": "person",
+      "surface": "robert\nlashbrook",
+      "canonical": "robert\nlashbrook",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1900,
+        "charEnd": 1916,
+        "timeStart": 122.96,
+        "timeEnd": 129.52
+      },
+      "score": 0.9147681593894958
+    },
+    {
+      "id": "m_0025",
+      "label": "location",
+      "surface": "long island",
+      "canonical": "long island",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1967,
+        "charEnd": 1978,
+        "timeStart": 127.6,
+        "timeEnd": 132.319
+      },
+      "score": 0.7303532361984253
+    },
+    {
+      "id": "m_0026",
+      "label": "person",
+      "surface": "dr harold abramson",
+      "canonical": "dr harold abramson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 1999,
+        "charEnd": 2017,
+        "timeStart": 129.52,
+        "timeEnd": 134.8
+      },
+      "score": 0.8656937479972839
+    },
+    {
+      "id": "m_0027",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2142,
+        "charEnd": 2153,
+        "timeStart": 140.48,
+        "timeEnd": 145.11999999999998
+      },
+      "score": 0.9371694922447205
+    },
+    {
+      "id": "m_0028",
+      "label": "person",
+      "surface": "eric olsen",
+      "canonical": "eric olsen",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2436,
+        "charEnd": 2446,
+        "timeStart": 158.72,
+        "timeEnd": 163.04
+      },
+      "score": 0.8831131458282471
+    },
+    {
+      "id": "m_0029",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2474,
+        "charEnd": 2479,
+        "timeStart": 161.04,
+        "timeEnd": 164.879
+      },
+      "score": 0.6822040677070618
+    },
+    {
+      "id": "m_0030",
+      "label": "date_time",
+      "surface": "1975",
+      "canonical": "1975",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2642,
+        "charEnd": 2646,
+        "timeStart": 173.68,
+        "timeEnd": 179.04000000000002
+      },
+      "score": 0.9081481695175171
+    },
+    {
+      "id": "m_0031",
+      "label": "organization",
+      "surface": "rockefeller commission",
+      "canonical": "rockefeller commission",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2651,
+        "charEnd": 2673,
+        "timeStart": 173.68,
+        "timeEnd": 179.04000000000002
+      },
+      "score": 0.9282253384590149
+    },
+    {
+      "id": "m_0032",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2738,
+        "charEnd": 2741,
+        "timeStart": 179.04,
+        "timeEnd": 183.92
+      },
+      "score": 0.9914917349815369
+    },
+    {
+      "id": "m_0033",
+      "label": "role",
+      "surface": "civilian\nscientist",
+      "canonical": "civilian\nscientist",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2776,
+        "charEnd": 2794,
+        "timeStart": 182.08,
+        "timeEnd": 188.23899999999998
+      },
+      "score": 0.7946141958236694
+    },
+    {
+      "id": "m_0034",
+      "label": "organization",
+      "surface": "department of\nthe navy",
+      "canonical": "department of\nthe navy",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2811,
+        "charEnd": 2833,
+        "timeStart": 183.92,
+        "timeEnd": 190.87900000000002
+      },
+      "score": 0.9067266583442688
+    },
+    {
+      "id": "m_0035",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2886,
+        "charEnd": 2889,
+        "timeStart": 188.239,
+        "timeEnd": 193.20000000000002
+      },
+      "score": 0.9920908212661743
+    },
+    {
+      "id": "m_0036",
+      "label": "location",
+      "surface": "new york",
+      "canonical": "new york",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2957,
+        "charEnd": 2965,
+        "timeStart": 193.2,
+        "timeEnd": 197.76
+      },
+      "score": 0.8227628469467163
+    },
+    {
+      "id": "m_0037",
+      "label": "facility",
+      "surface": "psychiatric\ncare",
+      "canonical": "psychiatric\ncare",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 2970,
+        "charEnd": 2986,
+        "timeStart": 193.2,
+        "timeEnd": 200.56
+      },
+      "score": 0.6606872081756592
+    },
+    {
+      "id": "m_0038",
+      "label": "location",
+      "surface": "new york",
+      "canonical": "new york",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3084,
+        "charEnd": 3092,
+        "timeStart": 200.56,
+        "timeEnd": 204.64000000000001
+      },
+      "score": 0.867660641670227
+    },
+    {
+      "id": "m_0039",
+      "label": "organization",
+      "surface": "the olsen family",
+      "canonical": "the olsen family",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3139,
+        "charEnd": 3155,
+        "timeStart": 204.64,
+        "timeEnd": 209.11999999999998
+      },
+      "score": 0.9027849435806274
+    },
+    {
+      "id": "m_0040",
+      "label": "role",
+      "surface": "scientist",
+      "canonical": "scientist",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3185,
+        "charEnd": 3194,
+        "timeStart": 206.64,
+        "timeEnd": 211.44
+      },
+      "score": 0.6414450407028198
+    },
+    {
+      "id": "m_0041",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3199,
+        "charEnd": 3210,
+        "timeStart": 206.64,
+        "timeEnd": 211.44
+      },
+      "score": 0.9516415596008301
+    },
+    {
+      "id": "m_0042",
+      "label": "location",
+      "surface": "white house",
+      "canonical": "white house",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3264,
+        "charEnd": 3275,
+        "timeStart": 211.44,
+        "timeEnd": 216.159
+      },
+      "score": 0.7548250555992126
+    },
+    {
+      "id": "m_0043",
+      "label": "person",
+      "surface": "president\nford",
+      "canonical": "president\nford",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3280,
+        "charEnd": 3294,
+        "timeStart": 211.44,
+        "timeEnd": 218.959
+      },
+      "score": 0.9275081157684326
+    },
+    {
+      "id": "m_0044",
+      "label": "organization",
+      "surface": "united states government",
+      "canonical": "united states government",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3366,
+        "charEnd": 3390,
+        "timeStart": 218.959,
+        "timeEnd": 223.36
+      },
+      "score": 0.7544042468070984
+    },
+    {
+      "id": "m_0045",
+      "label": "event",
+      "surface": "wrongful death",
+      "canonical": "wrongful death",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3409,
+        "charEnd": 3423,
+        "timeStart": 220.879,
+        "timeEnd": 226.319
+      },
+      "score": 0.6405081152915955
+    },
+    {
+      "id": "m_0046",
+      "label": "organization",
+      "surface": "the olsen family",
+      "canonical": "the olsen family",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3506,
+        "charEnd": 3522,
+        "timeStart": 226.319,
+        "timeEnd": 231.51899999999998
+      },
+      "score": 0.8805373311042786
+    },
+    {
+      "id": "m_0047",
+      "label": "person",
+      "surface": "alice olsen",
+      "canonical": "alice olsen",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3543,
+        "charEnd": 3554,
+        "timeStart": 228.959,
+        "timeEnd": 233.36
+      },
+      "score": 0.9557709097862244
+    },
+    {
+      "id": "m_0048",
+      "label": "role",
+      "surface": "scientist",
+      "canonical": "scientist",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3680,
+        "charEnd": 3689,
+        "timeStart": 238.56,
+        "timeEnd": 243.599
+      },
+      "score": 0.6691217422485352
+    },
+    {
+      "id": "m_0049",
+      "label": "location",
+      "surface": "oval office",
+      "canonical": "oval office",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3750,
+        "charEnd": 3761,
+        "timeStart": 241.2,
+        "timeEnd": 245.83999999999997
+      },
+      "score": 0.5580666661262512
+    },
+    {
+      "id": "m_0050",
+      "label": "person",
+      "surface": "alice olsen",
+      "canonical": "alice olsen",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3762,
+        "charEnd": 3773,
+        "timeStart": 243.599,
+        "timeEnd": 247.67999999999998
+      },
+      "score": 0.9533617496490479
+    },
+    {
+      "id": "m_0051",
+      "label": "role",
+      "surface": "scientist",
+      "canonical": "scientist",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3839,
+        "charEnd": 3848,
+        "timeStart": 247.68,
+        "timeEnd": 251.84
+      },
+      "score": 0.7479623556137085
+    },
+    {
+      "id": "m_0052",
+      "label": "organization",
+      "surface": "government",
+      "canonical": "government",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3881,
+        "charEnd": 3891,
+        "timeStart": 249.439,
+        "timeEnd": 254.239
+      },
+      "score": 0.6772934794425964
+    },
+    {
+      "id": "m_0053",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 3986,
+        "charEnd": 3991,
+        "timeStart": 254.239,
+        "timeEnd": 258.639
+      },
+      "score": 0.8417425751686096
+    },
+    {
+      "id": "m_0054",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4057,
+        "charEnd": 4062,
+        "timeStart": 258.639,
+        "timeEnd": 263.04
+      },
+      "score": 0.7900099158287048
+    },
+    {
+      "id": "m_0055",
+      "label": "event",
+      "surface": "world war ii",
+      "canonical": "world war ii",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4277,
+        "charEnd": 4289,
+        "timeStart": 275.84,
+        "timeEnd": 281.11999999999995
+      },
+      "score": 0.9578904509544373
+    },
+    {
+      "id": "m_0056",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4290,
+        "charEnd": 4295,
+        "timeStart": 275.84,
+        "timeEnd": 281.11999999999995
+      },
+      "score": 0.9222689867019653
+    },
+    {
+      "id": "m_0057",
+      "label": "organization",
+      "surface": "army",
+      "canonical": "army",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4323,
+        "charEnd": 4327,
+        "timeStart": 278.639,
+        "timeEnd": 284
+      },
+      "score": 0.9804196953773499
+    },
+    {
+      "id": "m_0058",
+      "label": "facility",
+      "surface": "biological warfare lab",
+      "canonical": "biological warfare lab",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4366,
+        "charEnd": 4388,
+        "timeStart": 281.12,
+        "timeEnd": 286.479
+      },
+      "score": 0.9014869928359985
+    },
+    {
+      "id": "m_0059",
+      "label": "location",
+      "surface": "fort detrick maryland",
+      "canonical": "fort detrick maryland",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4392,
+        "charEnd": 4413,
+        "timeStart": 284,
+        "timeEnd": 289.36
+      },
+      "score": 0.8517759442329407
+    },
+    {
+      "id": "m_0060",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4414,
+        "charEnd": 4419,
+        "timeStart": 284,
+        "timeEnd": 289.36
+      },
+      "score": 0.827613115310669
+    },
+    {
+      "id": "m_0061",
+      "label": "technology",
+      "surface": "biological weapons of mass\ndestruction",
+      "canonical": "biological weapons of mass\ndestruction",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4514,
+        "charEnd": 4552,
+        "timeStart": 292.32,
+        "timeEnd": 298.72
+      },
+      "score": 0.6844733357429504
+    },
+    {
+      "id": "m_0062",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4582,
+        "charEnd": 4585,
+        "timeStart": 296.72,
+        "timeEnd": 300.40000000000003
+      },
+      "score": 0.9642439484596252
+    },
+    {
+      "id": "m_0063",
+      "label": "organization",
+      "surface": "army",
+      "canonical": "army",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4602,
+        "charEnd": 4606,
+        "timeStart": 296.72,
+        "timeEnd": 300.40000000000003
+      },
+      "score": 0.9749395251274109
+    },
+    {
+      "id": "m_0064",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4633,
+        "charEnd": 4638,
+        "timeStart": 298.72,
+        "timeEnd": 302.8
+      },
+      "score": 0.8644964098930359
+    },
+    {
+      "id": "m_0065",
+      "label": "role",
+      "surface": "lead scientist",
+      "canonical": "lead scientist",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4683,
+        "charEnd": 4697,
+        "timeStart": 302.8,
+        "timeEnd": 307.28000000000003
+      },
+      "score": 0.6680657863616943
+    },
+    {
+      "id": "m_0066",
+      "label": "event",
+      "surface": "operation harness",
+      "canonical": "operation harness",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4702,
+        "charEnd": 4719,
+        "timeStart": 302.8,
+        "timeEnd": 307.28000000000003
+      },
+      "score": 0.9668763875961304
+    },
+    {
+      "id": "m_0067",
+      "label": "location",
+      "surface": "caribbean",
+      "canonical": "caribbean",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4741,
+        "charEnd": 4750,
+        "timeStart": 305.759,
+        "timeEnd": 309.759
+      },
+      "score": 0.6767171025276184
+    },
+    {
+      "id": "m_0068",
+      "label": "event",
+      "surface": "operation sea\nspray",
+      "canonical": "operation sea\nspray",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4813,
+        "charEnd": 4832,
+        "timeStart": 309.759,
+        "timeEnd": 316.15999999999997
+      },
+      "score": 0.9712380170822144
+    },
+    {
+      "id": "m_0069",
+      "label": "location",
+      "surface": "san\nfrancisco bay area",
+      "canonical": "san\nfrancisco bay area",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4891,
+        "charEnd": 4913,
+        "timeStart": 313.84,
+        "timeEnd": 321.36
+      },
+      "score": 0.8584506511688232
+    },
+    {
+      "id": "m_0070",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 4976,
+        "charEnd": 4981,
+        "timeStart": 321.36,
+        "timeEnd": 326.16
+      },
+      "score": 0.8797727227210999
+    },
+    {
+      "id": "m_0071",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5008,
+        "charEnd": 5011,
+        "timeStart": 321.36,
+        "timeEnd": 326.16
+      },
+      "score": 0.9410040378570557
+    },
+    {
+      "id": "m_0072",
+      "label": "location",
+      "surface": "fort terry",
+      "canonical": "fort terry",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5038,
+        "charEnd": 5048,
+        "timeStart": 324.08,
+        "timeEnd": 328.24
+      },
+      "score": 0.8455029129981995
+    },
+    {
+      "id": "m_0073",
+      "label": "location",
+      "surface": "plum\nisland",
+      "canonical": "plum\nisland",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5084,
+        "charEnd": 5095,
+        "timeStart": 326.16,
+        "timeEnd": 332.8
+      },
+      "score": 0.9274147152900696
+    },
+    {
+      "id": "m_0074",
+      "label": "location",
+      "surface": "long island sound",
+      "canonical": "long island sound",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5103,
+        "charEnd": 5120,
+        "timeStart": 328.24,
+        "timeEnd": 332.8
+      },
+      "score": 0.7765103578567505
+    },
+    {
+      "id": "m_0075",
+      "label": "location",
+      "surface": "plum\nisland",
+      "canonical": "plum\nisland",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5121,
+        "charEnd": 5132,
+        "timeStart": 328.24,
+        "timeEnd": 335.28
+      },
+      "score": 0.9572279453277588
+    },
+    {
+      "id": "m_0076",
+      "label": "person",
+      "surface": "olson",
+      "canonical": "olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5244,
+        "charEnd": 5249,
+        "timeStart": 337.199,
+        "timeEnd": 341.84000000000003
+      },
+      "score": 0.9102933406829834
+    },
+    {
+      "id": "m_0077",
+      "label": "event",
+      "surface": "geneva conventions",
+      "canonical": "geneva conventions",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5528,
+        "charEnd": 5546,
+        "timeStart": 354.72,
+        "timeEnd": 361.52000000000004
+      },
+      "score": 0.8925907611846924
+    },
+    {
+      "id": "m_0078",
+      "label": "date_time",
+      "surface": "early 1953",
+      "canonical": "early 1953",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5598,
+        "charEnd": 5608,
+        "timeStart": 357.44,
+        "timeEnd": 363.759
+      },
+      "score": 0.8028165102005005
+    },
+    {
+      "id": "m_0079",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5631,
+        "charEnd": 5642,
+        "timeStart": 361.52,
+        "timeEnd": 365.68
+      },
+      "score": 0.9528971314430237
+    },
+    {
+      "id": "m_0080",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5826,
+        "charEnd": 5829,
+        "timeStart": 372.72,
+        "timeEnd": 378
+      },
+      "score": 0.9952477812767029
+    },
+    {
+      "id": "m_0081",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5912,
+        "charEnd": 5915,
+        "timeStart": 379.919,
+        "timeEnd": 383.19899999999996
+      },
+      "score": 0.9966320395469666
+    },
+    {
+      "id": "m_0082",
+      "label": "person",
+      "surface": "sydney gottlieb",
+      "canonical": "sydney gottlieb",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5939,
+        "charEnd": 5954,
+        "timeStart": 381.199,
+        "timeEnd": 386.88
+      },
+      "score": 0.9782243371009827
+    },
+    {
+      "id": "m_0083",
+      "label": "person",
+      "surface": "robert lashbrook",
+      "canonical": "robert\nlashbrook",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 5959,
+        "charEnd": 5975,
+        "timeStart": 383.199,
+        "timeEnd": 388.88
+      },
+      "score": 0.8799700140953064
+    },
+    {
+      "id": "m_0084",
+      "label": "person",
+      "surface": "sydney gottlieb",
+      "canonical": "sydney gottlieb",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6031,
+        "charEnd": 6046,
+        "timeStart": 388.88,
+        "timeEnd": 394
+      },
+      "score": 0.980311393737793
+    },
+    {
+      "id": "m_0085",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6055,
+        "charEnd": 6058,
+        "timeStart": 388.88,
+        "timeEnd": 394
+      },
+      "score": 0.9962266683578491
+    },
+    {
+      "id": "m_0086",
+      "label": "event",
+      "surface": "cold war",
+      "canonical": "cold war",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6148,
+        "charEnd": 6156,
+        "timeStart": 399.28,
+        "timeEnd": 404.63899999999995
+      },
+      "score": 0.5730555653572083
+    },
+    {
+      "id": "m_0087",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6161,
+        "charEnd": 6164,
+        "timeStart": 399.28,
+        "timeEnd": 404.63899999999995
+      },
+      "score": 0.9984696507453918
+    },
+    {
+      "id": "m_0088",
+      "label": "person",
+      "surface": "sydney gottlieb",
+      "canonical": "sydney gottlieb",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6178,
+        "charEnd": 6193,
+        "timeStart": 402.24,
+        "timeEnd": 406.88
+      },
+      "score": 0.9834181666374207
+    },
+    {
+      "id": "m_0089",
+      "label": "technology",
+      "surface": "mind\ncontrol",
+      "canonical": "mind\ncontrol",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6212,
+        "charEnd": 6224,
+        "timeStart": 402.24,
+        "timeEnd": 408.8
+      },
+      "score": 0.7603174448013306
+    },
+    {
+      "id": "m_0090",
+      "label": "event",
+      "surface": "experiments",
+      "canonical": "experiments",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6480,
+        "charEnd": 6491,
+        "timeStart": 421.039,
+        "timeEnd": 424.96
+      },
+      "score": 0.811267614364624
+    },
+    {
+      "id": "m_0091",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6492,
+        "charEnd": 6503,
+        "timeStart": 421.039,
+        "timeEnd": 424.96
+      },
+      "score": 0.9874639511108398
+    },
+    {
+      "id": "m_0092",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6569,
+        "charEnd": 6580,
+        "timeStart": 424.96,
+        "timeEnd": 429.68
+      },
+      "score": 0.9925105571746826
+    },
+    {
+      "id": "m_0093",
+      "label": "event",
+      "surface": "interrogations",
+      "canonical": "interrogations",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6590,
+        "charEnd": 6604,
+        "timeStart": 427.28,
+        "timeEnd": 432.55999999999995
+      },
+      "score": 0.7934520244598389
+    },
+    {
+      "id": "m_0094",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6608,
+        "charEnd": 6611,
+        "timeStart": 427.28,
+        "timeEnd": 432.55999999999995
+      },
+      "score": 0.9108502864837646
+    },
+    {
+      "id": "m_0095",
+      "label": "facility",
+      "surface": "black\nsites",
+      "canonical": "black\nsites",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6612,
+        "charEnd": 6623,
+        "timeStart": 427.28,
+        "timeEnd": 434.40000000000003
+      },
+      "score": 0.7164413928985596
+    },
+    {
+      "id": "m_0096",
+      "label": "location",
+      "surface": "germany",
+      "canonical": "germany",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6627,
+        "charEnd": 6634,
+        "timeStart": 429.68,
+        "timeEnd": 434.40000000000003
+      },
+      "score": 0.8582858443260193
+    },
+    {
+      "id": "m_0097",
+      "label": "group_or_movement",
+      "surface": "expendables",
+      "canonical": "expendables",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6657,
+        "charEnd": 6668,
+        "timeStart": 432.56,
+        "timeEnd": 437.36
+      },
+      "score": 0.5803777575492859
+    },
+    {
+      "id": "m_0098",
+      "label": "group_or_movement",
+      "surface": "expendables",
+      "canonical": "expendables",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6688,
+        "charEnd": 6699,
+        "timeStart": 434.4,
+        "timeEnd": 439.919
+      },
+      "score": 0.6628305315971375
+    },
+    {
+      "id": "m_0099",
+      "label": "group_or_movement",
+      "surface": "expendables",
+      "canonical": "expendables",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6861,
+        "charEnd": 6872,
+        "timeStart": 446.4,
+        "timeEnd": 451.039
+      },
+      "score": 0.6204481720924377
+    },
+    {
+      "id": "m_0100",
+      "label": "event",
+      "surface": "experiments",
+      "canonical": "experiments",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6894,
+        "charEnd": 6905,
+        "timeStart": 448.72,
+        "timeEnd": 454.319
+      },
+      "score": 0.8886734247207642
+    },
+    {
+      "id": "m_0101",
+      "label": "event",
+      "surface": "electric\nshocks",
+      "canonical": "electric\nshocks",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6915,
+        "charEnd": 6930,
+        "timeStart": 448.72,
+        "timeEnd": 456.31899999999996
+      },
+      "score": 0.5739513039588928
+    },
+    {
+      "id": "m_0102",
+      "label": "event",
+      "surface": "sexual abuse",
+      "canonical": "sexual abuse",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 6941,
+        "charEnd": 6953,
+        "timeStart": 451.039,
+        "timeEnd": 456.31899999999996
+      },
+      "score": 0.6610099673271179
+    },
+    {
+      "id": "m_0103",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7167,
+        "charEnd": 7178,
+        "timeStart": 466,
+        "timeEnd": 470.16
+      },
+      "score": 0.9892087578773499
+    },
+    {
+      "id": "m_0104",
+      "label": "date_time",
+      "surface": "november 1953",
+      "canonical": "november 1953",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7424,
+        "charEnd": 7437,
+        "timeStart": 480.96,
+        "timeEnd": 485.919
+      },
+      "score": 0.9461938142776489
+    },
+    {
+      "id": "m_0105",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7438,
+        "charEnd": 7449,
+        "timeStart": 480.96,
+        "timeEnd": 485.919
+      },
+      "score": 0.9892281293869019
+    },
+    {
+      "id": "m_0106",
+      "label": "location",
+      "surface": "deep creek lake",
+      "canonical": "deep creek lake",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7518,
+        "charEnd": 7533,
+        "timeStart": 485.919,
+        "timeEnd": 489.919
+      },
+      "score": 0.8272493481636047
+    },
+    {
+      "id": "m_0107",
+      "label": "person",
+      "surface": "gottlieb",
+      "canonical": "gottlieb",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7534,
+        "charEnd": 7542,
+        "timeStart": 488.4,
+        "timeEnd": 492.4
+      },
+      "score": 0.8216555118560791
+    },
+    {
+      "id": "m_0108",
+      "label": "nationality_or_ethnicity",
+      "surface": "americans",
+      "canonical": "americans",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7683,
+        "charEnd": 7692,
+        "timeStart": 496.4,
+        "timeEnd": 500.87899999999996
+      },
+      "score": 0.9639556407928467
+    },
+    {
+      "id": "m_0109",
+      "label": "quantity",
+      "surface": "decades",
+      "canonical": "decades",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7753,
+        "charEnd": 7760,
+        "timeStart": 500.879,
+        "timeEnd": 505.36
+      },
+      "score": 0.6218612194061279
+    },
+    {
+      "id": "m_0110",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7761,
+        "charEnd": 7772,
+        "timeStart": 500.879,
+        "timeEnd": 505.36
+      },
+      "score": 0.9901933073997498
+    },
+    {
+      "id": "m_0111",
+      "label": "event",
+      "surface": "gathering",
+      "canonical": "gathering",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7829,
+        "charEnd": 7838,
+        "timeStart": 505.36,
+        "timeEnd": 510.24
+      },
+      "score": 0.6846664547920227
+    },
+    {
+      "id": "m_0112",
+      "label": "person",
+      "surface": "lashbrook",
+      "canonical": "lashbrook",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7949,
+        "charEnd": 7958,
+        "timeStart": 512.08,
+        "timeEnd": 516.399
+      },
+      "score": 0.7299713492393494
+    },
+    {
+      "id": "m_0113",
+      "label": "person",
+      "surface": "got leeb",
+      "canonical": "got leeb",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7959,
+        "charEnd": 7967,
+        "timeStart": 512.08,
+        "timeEnd": 516.399
+      },
+      "score": 0.6509267687797546
+    },
+    {
+      "id": "m_0114",
+      "label": "role",
+      "surface": "second in\ncommand",
+      "canonical": "second in\ncommand",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 7970,
+        "charEnd": 7987,
+        "timeStart": 512.08,
+        "timeEnd": 518.399
+      },
+      "score": 0.6885521411895752
+    },
+    {
+      "id": "m_0115",
+      "label": "person",
+      "surface": "lakua",
+      "canonical": "lakua",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8106,
+        "charEnd": 8111,
+        "timeStart": 520.64,
+        "timeEnd": 525.4399999999999
+      },
+      "score": 0.7520819902420044
+    },
+    {
+      "id": "m_0116",
+      "label": "location",
+      "surface": "france",
+      "canonical": "france",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8117,
+        "charEnd": 8123,
+        "timeStart": 520.64,
+        "timeEnd": 525.4399999999999
+      },
+      "score": 0.7436134815216064
+    },
+    {
+      "id": "m_0117",
+      "label": "person",
+      "surface": "gottlieb",
+      "canonical": "gottlieb",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8147,
+        "charEnd": 8155,
+        "timeStart": 523.44,
+        "timeEnd": 527.6
+      },
+      "score": 0.830373227596283
+    },
+    {
+      "id": "m_0118",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8300,
+        "charEnd": 8311,
+        "timeStart": 536.16,
+        "timeEnd": 540.48
+      },
+      "score": 0.9343933463096619
+    },
+    {
+      "id": "m_0119",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8331,
+        "charEnd": 8334,
+        "timeStart": 536.16,
+        "timeEnd": 540.48
+      },
+      "score": 0.963601291179657
+    },
+    {
+      "id": "m_0120",
+      "label": "location",
+      "surface": "europe",
+      "canonical": "europe",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8364,
+        "charEnd": 8370,
+        "timeStart": 538.48,
+        "timeEnd": 542
+      },
+      "score": 0.8271032571792603
+    },
+    {
+      "id": "m_0121",
+      "label": "event",
+      "surface": "experiments",
+      "canonical": "experiments",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8431,
+        "charEnd": 8442,
+        "timeStart": 543.76,
+        "timeEnd": 547.92
+      },
+      "score": 0.6669604778289795
+    },
+    {
+      "id": "m_0122",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8748,
+        "charEnd": 8753,
+        "timeStart": 560.64,
+        "timeEnd": 565.519
+      },
+      "score": 0.9836286306381226
+    },
+    {
+      "id": "m_0123",
+      "label": "person",
+      "surface": "lash brook",
+      "canonical": "lash brook",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8761,
+        "charEnd": 8771,
+        "timeStart": 560.64,
+        "timeEnd": 565.519
+      },
+      "score": 0.6119062900543213
+    },
+    {
+      "id": "m_0124",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8778,
+        "charEnd": 8783,
+        "timeStart": 563.279,
+        "timeEnd": 568.24
+      },
+      "score": 0.9776915311813354
+    },
+    {
+      "id": "m_0125",
+      "label": "location",
+      "surface": "new york",
+      "canonical": "new york",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8793,
+        "charEnd": 8801,
+        "timeStart": 563.279,
+        "timeEnd": 568.24
+      },
+      "score": 0.8513859510421753
+    },
+    {
+      "id": "m_0126",
+      "label": "person",
+      "surface": "dr harold abramson",
+      "canonical": "dr harold abramson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8815,
+        "charEnd": 8833,
+        "timeStart": 565.519,
+        "timeEnd": 570.72
+      },
+      "score": 0.9269937872886658
+    },
+    {
+      "id": "m_0127",
+      "label": "person",
+      "surface": "dr abramson",
+      "canonical": "dr abramson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8885,
+        "charEnd": 8896,
+        "timeStart": 570.72,
+        "timeEnd": 575.6800000000001
+      },
+      "score": 0.7685925960540771
+    },
+    {
+      "id": "m_0128",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8943,
+        "charEnd": 8946,
+        "timeStart": 573.519,
+        "timeEnd": 577.76
+      },
+      "score": 0.9452583193778992
+    },
+    {
+      "id": "m_0129",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 8985,
+        "charEnd": 8990,
+        "timeStart": 575.68,
+        "timeEnd": 580.16
+      },
+      "score": 0.9790850877761841
+    },
+    {
+      "id": "m_0130",
+      "label": "person",
+      "surface": "dr\nabramson",
+      "canonical": "dr abramson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9035,
+        "charEnd": 9046,
+        "timeStart": 577.76,
+        "timeEnd": 584.24
+      },
+      "score": 0.9035771489143372
+    },
+    {
+      "id": "m_0131",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9057,
+        "charEnd": 9062,
+        "timeStart": 580.16,
+        "timeEnd": 584.24
+      },
+      "score": 0.9744855165481567
+    },
+    {
+      "id": "m_0132",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9143,
+        "charEnd": 9148,
+        "timeStart": 584.24,
+        "timeEnd": 588.88
+      },
+      "score": 0.9717408418655396
+    },
+    {
+      "id": "m_0133",
+      "label": "location",
+      "surface": "statler hotel room 1018a",
+      "canonical": "statler hotel room 1018a",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9321,
+        "charEnd": 9345,
+        "timeStart": 594.32,
+        "timeEnd": 599.44
+      },
+      "score": 0.6556864380836487
+    },
+    {
+      "id": "m_0134",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9346,
+        "charEnd": 9351,
+        "timeStart": 597.76,
+        "timeEnd": 601.519
+      },
+      "score": 0.959312915802002
+    },
+    {
+      "id": "m_0135",
+      "label": "organization",
+      "surface": "c.i.",
+      "canonical": "c.i.",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9610,
+        "charEnd": 9614,
+        "timeStart": 611.12,
+        "timeEnd": 615.68
+      },
+      "score": 0.6722120642662048
+    },
+    {
+      "id": "m_0136",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9667,
+        "charEnd": 9678,
+        "timeStart": 615.68,
+        "timeEnd": 620.3199999999999
+      },
+      "score": 0.9681705236434937
+    },
+    {
+      "id": "m_0137",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9906,
+        "charEnd": 9917,
+        "timeStart": 634,
+        "timeEnd": 639.12
+      },
+      "score": 0.9770762324333191
+    },
+    {
+      "id": "m_0138",
+      "label": "person",
+      "surface": "alice",
+      "canonical": "alice",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9925,
+        "charEnd": 9930,
+        "timeStart": 634,
+        "timeEnd": 639.12
+      },
+      "score": 0.9167290329933167
+    },
+    {
+      "id": "m_0139",
+      "label": "date_time",
+      "surface": "1993",
+      "canonical": "1993",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 9946,
+        "charEnd": 9950,
+        "timeStart": 636.32,
+        "timeEnd": 641.2
+      },
+      "score": 0.6139333248138428
+    },
+    {
+      "id": "m_0140",
+      "label": "person",
+      "surface": "james starr",
+      "canonical": "james starr",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10087,
+        "charEnd": 10098,
+        "timeStart": 643.68,
+        "timeEnd": 648.88
+      },
+      "score": 0.9455965161323547
+    },
+    {
+      "id": "m_0141",
+      "label": "location",
+      "surface": "window",
+      "canonical": "window",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10273,
+        "charEnd": 10279,
+        "timeStart": 655.12,
+        "timeEnd": 660.079
+      },
+      "score": 0.5634217262268066
+    },
+    {
+      "id": "m_0142",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10296,
+        "charEnd": 10301,
+        "timeStart": 657.279,
+        "timeEnd": 662.399
+      },
+      "score": 0.5414157509803772
+    },
+    {
+      "id": "m_0143",
+      "label": "person",
+      "surface": "starr",
+      "canonical": "starr",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10424,
+        "charEnd": 10429,
+        "timeStart": 666,
+        "timeEnd": 670.959
+      },
+      "score": 0.8749232292175293
+    },
+    {
+      "id": "m_0144",
+      "label": "person",
+      "surface": "frank\nolson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10459,
+        "charEnd": 10470,
+        "timeStart": 666,
+        "timeEnd": 673.44
+      },
+      "score": 0.9568701386451721
+    },
+    {
+      "id": "m_0145",
+      "label": "location",
+      "surface": "window",
+      "canonical": "window",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10546,
+        "charEnd": 10552,
+        "timeStart": 673.44,
+        "timeEnd": 678.24
+      },
+      "score": 0.6280856728553772
+    },
+    {
+      "id": "m_0146",
+      "label": "person",
+      "surface": "frank",
+      "canonical": "frank",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10553,
+        "charEnd": 10558,
+        "timeStart": 673.44,
+        "timeEnd": 678.24
+      },
+      "score": 0.7519749999046326
+    },
+    {
+      "id": "m_0147",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10575,
+        "charEnd": 10578,
+        "timeStart": 673.44,
+        "timeEnd": 678.24
+      },
+      "score": 0.9893701076507568
+    },
+    {
+      "id": "m_0148",
+      "label": "date_time",
+      "surface": "1975",
+      "canonical": "1975",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10629,
+        "charEnd": 10633,
+        "timeStart": 678.24,
+        "timeEnd": 684.399
+      },
+      "score": 0.7100963592529297
+    },
+    {
+      "id": "m_0149",
+      "label": "person",
+      "surface": "judge",
+      "canonical": "judge",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10638,
+        "charEnd": 10643,
+        "timeStart": 678.24,
+        "timeEnd": 684.399
+      },
+      "score": 0.9310001134872437
+    },
+    {
+      "id": "m_0150",
+      "label": "person",
+      "surface": "judge",
+      "canonical": "judge",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10676,
+        "charEnd": 10681,
+        "timeStart": 681.44,
+        "timeEnd": 686.0790000000001
+      },
+      "score": 0.9459462761878967
+    },
+    {
+      "id": "m_0151",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10794,
+        "charEnd": 10797,
+        "timeStart": 688.64,
+        "timeEnd": 693.279
+      },
+      "score": 0.9881418347358704
+    },
+    {
+      "id": "m_0152",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 10890,
+        "charEnd": 10901,
+        "timeStart": 696,
+        "timeEnd": 700.48
+      },
+      "score": 0.9600069522857666
+    },
+    {
+      "id": "m_0153",
+      "label": "date_time",
+      "surface": "1954",
+      "canonical": "1954",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11040,
+        "charEnd": 11044,
+        "timeStart": 702.959,
+        "timeEnd": 708.7199999999999
+      },
+      "score": 0.7980311512947083
+    },
+    {
+      "id": "m_0154",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11069,
+        "charEnd": 11080,
+        "timeStart": 706.72,
+        "timeEnd": 711.839
+      },
+      "score": 0.9843934178352356
+    },
+    {
+      "id": "m_0155",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11093,
+        "charEnd": 11096,
+        "timeStart": 708.72,
+        "timeEnd": 713.76
+      },
+      "score": 0.9943147301673889
+    },
+    {
+      "id": "m_0156",
+      "label": "organization",
+      "surface": "department of justice",
+      "canonical": "department of justice",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11126,
+        "charEnd": 11147,
+        "timeStart": 711.839,
+        "timeEnd": 717.12
+      },
+      "score": 0.9424663186073303
+    },
+    {
+      "id": "m_0157",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11162,
+        "charEnd": 11165,
+        "timeStart": 713.76,
+        "timeEnd": 720.3199999999999
+      },
+      "score": 0.9979802966117859
+    },
+    {
+      "id": "m_0158",
+      "label": "law_or_policy",
+      "surface": "authority",
+      "canonical": "authority",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11166,
+        "charEnd": 11175,
+        "timeStart": 713.76,
+        "timeEnd": 720.3199999999999
+      },
+      "score": 0.5022211670875549
+    },
+    {
+      "id": "m_0159",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11185,
+        "charEnd": 11188,
+        "timeStart": 713.76,
+        "timeEnd": 720.3199999999999
+      },
+      "score": 0.9966307282447815
+    },
+    {
+      "id": "m_0160",
+      "label": "law_or_policy",
+      "surface": "immunity",
+      "canonical": "immunity",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11199,
+        "charEnd": 11207,
+        "timeStart": 717.12,
+        "timeEnd": 723.2
+      },
+      "score": 0.5732288360595703
+    },
+    {
+      "id": "m_0161",
+      "label": "law_or_policy",
+      "surface": "license to kill",
+      "canonical": "license to kill",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11242,
+        "charEnd": 11257,
+        "timeStart": 720.32,
+        "timeEnd": 726.1600000000001
+      },
+      "score": 0.6833705306053162
+    },
+    {
+      "id": "m_0162",
+      "label": "date_time",
+      "surface": "1953",
+      "canonical": "1953",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11301,
+        "charEnd": 11305,
+        "timeStart": 723.2,
+        "timeEnd": 728.88
+      },
+      "score": 0.8432652354240417
+    },
+    {
+      "id": "m_0163",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11343,
+        "charEnd": 11346,
+        "timeStart": 726.16,
+        "timeEnd": 731.1999999999999
+      },
+      "score": 0.9965165853500366
+    },
+    {
+      "id": "m_0164",
+      "label": "organization",
+      "surface": "mossad",
+      "canonical": "mossad",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11640,
+        "charEnd": 11646,
+        "timeStart": 745.12,
+        "timeEnd": 749.92
+      },
+      "score": 0.9463233947753906
+    },
+    {
+      "id": "m_0165",
+      "label": "organization",
+      "surface": "israeli intelligence organization",
+      "canonical": "israeli intelligence organization",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11651,
+        "charEnd": 11684,
+        "timeStart": 747.279,
+        "timeEnd": 752.16
+      },
+      "score": 0.5431467294692993
+    },
+    {
+      "id": "m_0166",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11690,
+        "charEnd": 11701,
+        "timeStart": 749.92,
+        "timeEnd": 754.24
+      },
+      "score": 0.9864000082015991
+    },
+    {
+      "id": "m_0167",
+      "label": "event",
+      "surface": "murder",
+      "canonical": "murder",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11737,
+        "charEnd": 11743,
+        "timeStart": 752.16,
+        "timeEnd": 756.399
+      },
+      "score": 0.5714350342750549
+    },
+    {
+      "id": "m_0168",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11853,
+        "charEnd": 11856,
+        "timeStart": 758.48,
+        "timeEnd": 762.9590000000001
+      },
+      "score": 0.9832468628883362
+    },
+    {
+      "id": "m_0169",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11899,
+        "charEnd": 11910,
+        "timeStart": 761.12,
+        "timeEnd": 765.68
+      },
+      "score": 0.9969345331192017
+    },
+    {
+      "id": "m_0170",
+      "label": "location",
+      "surface": "united states",
+      "canonical": "united states",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 11971,
+        "charEnd": 11984,
+        "timeStart": 765.68,
+        "timeEnd": 769.5999999999999
+      },
+      "score": 0.6698880195617676
+    },
+    {
+      "id": "m_0171",
+      "label": "event",
+      "surface": "korean war",
+      "canonical": "korean war",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12014,
+        "charEnd": 12024,
+        "timeStart": 767.6,
+        "timeEnd": 771.76
+      },
+      "score": 0.9579153060913086
+    },
+    {
+      "id": "m_0172",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12228,
+        "charEnd": 12239,
+        "timeStart": 780.079,
+        "timeEnd": 784.3199999999999
+      },
+      "score": 0.997849702835083
+    },
+    {
+      "id": "m_0173",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12297,
+        "charEnd": 12308,
+        "timeStart": 784.32,
+        "timeEnd": 789.0400000000001
+      },
+      "score": 0.9964465498924255
+    },
+    {
+      "id": "m_0174",
+      "label": "technology",
+      "surface": "mk-ultra",
+      "canonical": "mk-ultra",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12378,
+        "charEnd": 12386,
+        "timeStart": 789.04,
+        "timeEnd": 794.959
+      },
+      "score": 0.6431813836097717
+    },
+    {
+      "id": "m_0175",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12416,
+        "charEnd": 12419,
+        "timeStart": 791.92,
+        "timeEnd": 797.279
+      },
+      "score": 0.9936882853507996
+    },
+    {
+      "id": "m_0176",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12431,
+        "charEnd": 12442,
+        "timeStart": 791.92,
+        "timeEnd": 797.279
+      },
+      "score": 0.9949571490287781
+    },
+    {
+      "id": "m_0177",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12636,
+        "charEnd": 12639,
+        "timeStart": 804.32,
+        "timeEnd": 809.12
+      },
+      "score": 0.9905133247375488
+    },
+    {
+      "id": "m_0178",
+      "label": "date_time",
+      "surface": "november",
+      "canonical": "november",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12699,
+        "charEnd": 12707,
+        "timeStart": 809.12,
+        "timeEnd": 814.24
+      },
+      "score": 0.6499728560447693
+    },
+    {
+      "id": "m_0179",
+      "label": "event",
+      "surface": "loyalty test",
+      "canonical": "loyalty test",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12717,
+        "charEnd": 12729,
+        "timeStart": 811.68,
+        "timeEnd": 816.079
+      },
+      "score": 0.6304763555526733
+    },
+    {
+      "id": "m_0180",
+      "label": "person",
+      "surface": "frank olson",
+      "canonical": "frank olson",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12796,
+        "charEnd": 12807,
+        "timeStart": 816.079,
+        "timeEnd": 821.04
+      },
+      "score": 0.9657751321792603
+    },
+    {
+      "id": "m_0181",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12923,
+        "charEnd": 12926,
+        "timeStart": 823.12,
+        "timeEnd": 828.72
+      },
+      "score": 0.9940681457519531
+    },
+    {
+      "id": "m_0182",
+      "label": "organization",
+      "surface": "mk ultra",
+      "canonical": "mk ultra",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 12955,
+        "charEnd": 12963,
+        "timeStart": 826.079,
+        "timeEnd": 830.079
+      },
+      "score": 0.8818041086196899
+    },
+    {
+      "id": "m_0183",
+      "label": "date_time",
+      "surface": "1973",
+      "canonical": "1973",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13058,
+        "charEnd": 13062,
+        "timeStart": 832.639,
+        "timeEnd": 838.399
+      },
+      "score": 0.77494877576828
+    },
+    {
+      "id": "m_0184",
+      "label": "person",
+      "surface": "sydney\ngottlieb",
+      "canonical": "sydney gottlieb",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13139,
+        "charEnd": 13154,
+        "timeStart": 838.399,
+        "timeEnd": 846
+      },
+      "score": 0.9295679330825806
+    },
+    {
+      "id": "m_0185",
+      "label": "person",
+      "surface": "robert lashbrook",
+      "canonical": "robert\nlashbrook",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13155,
+        "charEnd": 13171,
+        "timeStart": 840.88,
+        "timeEnd": 846
+      },
+      "score": 0.9264634847640991
+    },
+    {
+      "id": "m_0186",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13332,
+        "charEnd": 13335,
+        "timeStart": 850.32,
+        "timeEnd": 855.36
+      },
+      "score": 0.9927803874015808
+    },
+    {
+      "id": "m_0187",
+      "label": "organization",
+      "surface": "mkultra",
+      "canonical": "mkultra",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13350,
+        "charEnd": 13357,
+        "timeStart": 852.959,
+        "timeEnd": 856.88
+      },
+      "score": 0.6913366913795471
+    },
+    {
+      "id": "m_0188",
+      "label": "event",
+      "surface": "drug experiments",
+      "canonical": "drug experiments",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13376,
+        "charEnd": 13392,
+        "timeStart": 855.36,
+        "timeEnd": 859.44
+      },
+      "score": 0.7699564099311829
+    },
+    {
+      "id": "m_0189",
+      "label": "date_time",
+      "surface": "today",
+      "canonical": "today",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13494,
+        "charEnd": 13499,
+        "timeStart": 861.44,
+        "timeEnd": 866.48
+      },
+      "score": 0.5069801211357117
+    },
+    {
+      "id": "m_0190",
+      "label": "person",
+      "surface": "aj",
+      "canonical": "aj",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13578,
+        "charEnd": 13580,
+        "timeStart": 869.12,
+        "timeEnd": 873.04
+      },
+      "score": 0.9656745195388794
+    },
+    {
+      "id": "m_0191",
+      "label": "person",
+      "surface": "hecklefish",
+      "canonical": "hecklefish",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13588,
+        "charEnd": 13598,
+        "timeStart": 869.12,
+        "timeEnd": 873.04
+      },
+      "score": 0.6727356910705566
+    },
+    {
+      "id": "m_0192",
+      "label": "work_of_media",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13617,
+        "charEnd": 13624,
+        "timeStart": 871.12,
+        "timeEnd": 874.8
+      },
+      "score": 0.530350923538208
+    },
+    {
+      "id": "m_0193",
+      "label": "organization",
+      "surface": "mkultra",
+      "canonical": "mkultra",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 13967,
+        "charEnd": 13974,
+        "timeStart": 889.279,
+        "timeEnd": 893.279
+      },
+      "score": 0.5492675304412842
+    },
+    {
+      "id": "m_0194",
+      "label": "organization",
+      "surface": "the y files",
+      "canonical": "the y files",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 14213,
+        "charEnd": 14224,
+        "timeStart": 901.12,
+        "timeEnd": 905.12
+      },
+      "score": 0.5219249725341797
+    },
+    {
+      "id": "m_0195",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 14245,
+        "charEnd": 14252,
+        "timeStart": 902.959,
+        "timeEnd": 906.8
+      },
+      "score": 0.8188279271125793
+    },
+    {
+      "id": "m_0196",
+      "label": "location",
+      "surface": "wi-fi store",
+      "canonical": "wi-fi store",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 14295,
+        "charEnd": 14306,
+        "timeStart": 906.8,
+        "timeEnd": 912.7199999999999
+      },
+      "score": 0.7487856149673462
+    },
+    {
+      "id": "m_0197",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "DQ9M1J9-77Y",
+        "charStart": 14480,
+        "charEnd": 14485,
+        "timeStart": 921.89,
+        "timeEnd": 926.029
+      },
+      "score": 0.8791074156761169
+    }
+  ]
+}

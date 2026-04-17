@@ -24,19 +24,25 @@ import { CatalogRow } from "../catalog/catalog.js";
 import { VideoStage, GraphStage, StageOutcome } from "./types.js";
 import { fetchAndStore } from "../ingest/transcript.js";
 import { recordSuccess, recordFailure } from "../catalog/gaps.js";
-import { extract as extractEntities, Transcript, flatten } from "../nlp/entities.js";
-import { extractRelationships } from "../nlp/relationships.js";
-import { loadGazetteer } from "../nlp/gazetteer.js";
-import { runNer } from "../nlp/ner.js";
-import { canonicalizeNerMentions } from "../nlp/canonicalize.js";
+import {
+  readPersistedEntities,
+  runEntitiesStage,
+  type Transcript,
+} from "../entities/index.js";
+import { readPersistedRelations, runRelationsStage } from "../relations/index.js";
+import { neuralToGraph } from "../graph/adapt.js";
+import {
+  buildCorpusEntities,
+  buildMergeClusters,
+  readAliases,
+  writeAliases,
+} from "../graph/canonicalize.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
-  readPersistedNlp,
-  writePersistedNlp,
   writePersistedEntityIndex,
   writePersistedEntityVideos,
-} from "../nlp/persist.js";
+} from "../graph/entity-index-persist.js";
 import {
   buildBundle,
   writeBundles,
@@ -98,52 +104,89 @@ export const fetchedStage: VideoStage = {
   },
 };
 
-export const nlpStage: VideoStage = {
-  name: "nlp",
+// Neural entity extraction — replaces the legacy nlpStage. Runs GLiNER
+// via tools/gliner_sidecar.py, canonicalizes mentions intra-transcript,
+// and writes data/entities/<id>.json. Upserts the adapted Entity
+// records into the graph store and invalidates AI artifacts (the
+// bundle may reference stale entity ids).
+export const entitiesStage: VideoStage = {
+  name: "entities",
   dependsOn: ["fetched"],
   async run(row, ctx): Promise<StageOutcome> {
-    const t = loadTranscript(row, ctx.dataDir);
-    if (!t) return { kind: "skip", reason: "transcript file missing" };
-    const gazetteer = loadGazetteer(ctx.dataDir);
-    const { text } = flatten(t);
-    const rawNer = await runNer(text);
-    const nerMentions = canonicalizeNerMentions(rawNer, { transcriptId: row.videoId, dataDir: ctx.dataDir });
-    const entities = extractEntities(t, { gazetteer, nerMentions });
-    const relationships = extractRelationships(t, entities);
-    writePersistedNlp(
-      row.videoId,
-      { entities, relationships },
-      ctx.dataDir,
+    const outcome = await runEntitiesStage(
+      { videoId: row.videoId, transcriptPath: row.transcriptPath },
+      { dataDir: ctx.dataDir, repoRoot: process.cwd() },
     );
+    if (outcome.kind === "skip") {
+      return { kind: "skip", reason: outcome.reason ?? "entities skipped" };
+    }
 
-    // NLP just regenerated, which means every downstream AI artifact was
-    // built against stale entity/relationship ids. Nuke the bundle so the
-    // next ai-stage run rebuilds it. Do NOT nuke the response file — that
-    // represents operator work. Instead, write a `_stale` marker into it so
-    // the operator (and UI) can tell it needs review.
+    const persisted = readPersistedEntities(row.videoId, ctx.dataDir);
+    if (!persisted) {
+      return { kind: "skip", reason: "entities output not persisted" };
+    }
+
+    // AI bundle may reference stale entity ids; nuke it and mark any
+    // existing response stale.
     invalidateAiArtifacts(row.videoId, ctx.dataDir);
 
-    // Upsert into the graph store so graph-level stages see NLP output, not
-    // only AI output.
+    const { entities } = neuralToGraph(persisted, null);
     const store = ctx.getStore();
     store.registerTranscript(row.videoId);
     for (const e of entities) store.upsertEntity(e);
+    ctx.catalog.markGraphDirty();
+
+    return {
+      kind: "ok",
+      notes: `${persisted.mentions.length} mentions · ${entities.length} entities`,
+    };
+  },
+};
+
+// Neural relation extraction — replaces the regex relationship
+// extractor. Reads data/entities/<id>.json produced by entitiesStage,
+// runs GLiREL via tools/glirel_sidecar.py in one batched spawn per
+// transcript, writes data/relations/<id>.json, and upserts the adapted
+// Relationship records into the graph store.
+export const relationsStage: VideoStage = {
+  name: "relations",
+  dependsOn: ["entities"],
+  async run(row, ctx): Promise<StageOutcome> {
+    const outcome = await runRelationsStage(
+      { videoId: row.videoId, transcriptPath: row.transcriptPath },
+      { dataDir: ctx.dataDir, repoRoot: process.cwd() },
+    );
+    if (outcome.kind === "skip") {
+      return { kind: "skip", reason: outcome.reason ?? "relations skipped" };
+    }
+
+    const persistedEntities = readPersistedEntities(row.videoId, ctx.dataDir);
+    const persistedRelations = readPersistedRelations(row.videoId, ctx.dataDir);
+    if (!persistedEntities || !persistedRelations) {
+      return { kind: "skip", reason: "relations output not persisted" };
+    }
+
+    invalidateAiArtifacts(row.videoId, ctx.dataDir);
+
+    const { relationships } = neuralToGraph(persistedEntities, persistedRelations);
+    const store = ctx.getStore();
+    store.registerTranscript(row.videoId);
     for (const r of relationships) {
       try {
         store.upsertRelationship(r);
       } catch (err) {
-        logger.warn("pipeline.nlp.upsert-skip", {
+        logger.warn("pipeline.relations.upsert-skip", {
           videoId: row.videoId,
           relId: r.id,
           message: (err as Error).message,
         });
       }
     }
-    // Any graph write must bump the watermark.
     ctx.catalog.markGraphDirty();
+
     return {
       kind: "ok",
-      notes: `${entities.length} entities, ${relationships.length} relationships`,
+      notes: `${persistedRelations.edges.length} edges · ${relationships.length} relationships`,
     };
   },
 };
@@ -155,19 +198,20 @@ function responseDir(dataDir: string): string {
   return join(dataDir, "ai", "responses");
 }
 
-// Called by nlpStage after it regenerates per-video NLP output. The bundle
-// and the response were both built against the previous NLP run, and some
-// of their entity ids may no longer exist. We unlink the bundle (AI stage
-// will regenerate it on its next tick) but preserve the response — it is
-// operator labor. Instead, stamp a top-level `_stale` marker into the
-// response JSON so the admin UI and CLI can flag it for review.
+// Called by entitiesStage / relationsStage after they regenerate
+// per-video output. The AI bundle and the AI response were both built
+// against the previous run and their entity ids may no longer match.
+// We unlink the bundle (aiStage will regenerate it on its next tick)
+// but preserve the response — it is operator labor. Instead, stamp a
+// top-level `_stale` marker into the response JSON so the admin UI
+// and CLI can flag it for review.
 function invalidateAiArtifacts(videoId: string, dataDir: string): void {
   const bundlePath = join(bundleDir(dataDir), `${videoId}.bundle.json`);
   if (existsSync(bundlePath)) {
     try {
       unlinkSync(bundlePath);
     } catch (err) {
-      logger.warn("pipeline.nlp.bundle-unlink-failed", {
+      logger.warn("pipeline.entities.bundle-unlink-failed", {
         videoId,
         message: (err as Error).message,
       });
@@ -180,12 +224,12 @@ function invalidateAiArtifacts(videoId: string, dataDir: string): void {
       const now = new Date().toISOString();
       raw._stale = {
         since: now,
-        reason: "nlp regenerated; entity ids may no longer match",
+        reason: "neural extraction regenerated; entity ids may no longer match",
         nlpAt: now,
       };
       writeFileSync(responsePath, JSON.stringify(raw, null, 2), "utf8");
     } catch (err) {
-      logger.warn("pipeline.nlp.response-mark-failed", {
+      logger.warn("pipeline.entities.response-mark-failed", {
         videoId,
         message: (err as Error).message,
       });
@@ -195,7 +239,7 @@ function invalidateAiArtifacts(videoId: string, dataDir: string): void {
 
 export const aiStage: VideoStage = {
   name: "ai",
-  dependsOn: ["nlp"],
+  dependsOn: ["relations"],
   async run(row, ctx): Promise<StageOutcome> {
     const responsePath = join(
       responseDir(ctx.dataDir),
@@ -204,10 +248,9 @@ export const aiStage: VideoStage = {
     const dir = bundleDir(ctx.dataDir);
     const bundlePath = join(dir, `${row.videoId}.bundle.json`);
 
-    // Fast path: bundle already on disk and no response yet. Re-running NER
-    // + entity extraction here would burn cycles every pipeline tick just to
-    // re-derive a bundle we already wrote. The runner re-enters this stage
-    // forever (awaiting outcomes are not recorded), so cheap is the rule.
+    // Fast path: bundle already on disk and no response yet. Re-deriving
+    // entities would burn cycles every pipeline tick just to re-produce
+    // a bundle we already wrote.
     if (!existsSync(responsePath) && existsSync(bundlePath)) {
       return {
         kind: "awaiting",
@@ -217,19 +260,19 @@ export const aiStage: VideoStage = {
 
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
-    const { text: aiText } = flatten(t);
-    const aiNer = canonicalizeNerMentions(await runNer(aiText), {
-      transcriptId: row.videoId,
-      dataDir: ctx.dataDir,
-    });
-    const entities = extractEntities(t, {
-      gazetteer: loadGazetteer(ctx.dataDir),
-      nerMentions: aiNer,
-    });
+
+    const persisted = readPersistedEntities(row.videoId, ctx.dataDir);
+    if (!persisted) {
+      return {
+        kind: "skip",
+        reason: "entities stage output missing — run entities first",
+      };
+    }
+    const { entities } = neuralToGraph(persisted, null);
 
     if (existsSync(responsePath)) {
-      // Operator has dropped a Claude Code response in place. Ingest it and
-      // mark the stage complete.
+      // Operator has dropped a Claude Code response in place. Ingest it
+      // and mark the stage complete.
       const store = ctx.getStore();
       store.registerTranscript(row.videoId);
       for (const e of entities) store.upsertEntity(e);
@@ -250,7 +293,7 @@ export const aiStage: VideoStage = {
 
 export const perClaimStage: VideoStage = {
   name: "per-claim",
-  dependsOn: ["nlp"],
+  dependsOn: ["relations"],
   async run(row, ctx): Promise<StageOutcome> {
     const t = loadTranscript(row, ctx.dataDir);
     if (!t) return { kind: "skip", reason: "transcript file missing" };
@@ -296,13 +339,26 @@ export const contradictionsStage: GraphStage = {
   },
 };
 
-// Aggregates per-video NLP output into the corpus-wide files the UI (and
-// static deploy shim) read: entity-index.json, entity-videos.json, and
-// relationships-graph.json. Runs at graph level so one pass covers the
-// whole catalog after any NLP-producing stage has touched dirtyAt.
+// Aggregates per-video neural output into the corpus-wide files the
+// UI (and static deploy shim) read: entity-index.json,
+// entity-videos.json, and relationships-graph.json. Runs at graph
+// level so one pass covers the whole catalog after any
+// entities-or-relations-producing stage has touched dirtyAt.
 export const indexesStage: GraphStage = {
   name: "indexes",
   async run(ctx): Promise<StageOutcome> {
+    // Step 0: cross-transcript canonicalization. Build transitive merge
+    // clusters from substring containment, fold in the operator-curated
+    // aliases file, and write the resolved map. The alias map is then
+    // used by neuralToGraph() below so merged entities share one graph
+    // node.
+    // Read the operator-curated alias map. buildMergeClusters respects
+    // "not same" pairs so it won't re-propose rejected merges.
+    const aliases = readAliases(ctx.dataDir);
+    const corpus = buildCorpusEntities(ctx.dataDir);
+    buildMergeClusters(corpus, aliases); // side effect: writes nothing, just clusters
+    // aliases is the source of truth — written by the admin page, read here.
+
     const agg = new Map<string, EntityIndexEntry>();
     const videosByEntity: EntityVideosIndex = {};
     const graphNodes = new Map<
@@ -316,11 +372,23 @@ export const indexesStage: GraphStage = {
     let processed = 0;
     for (const row of ctx.catalog.all()) {
       if (row.status !== "fetched") continue;
-      const nlp = readPersistedNlp(row.videoId, ctx.dataDir);
-      if (!nlp) continue;
+      const persistedEntities = readPersistedEntities(
+        row.videoId,
+        ctx.dataDir,
+      );
+      if (!persistedEntities) continue;
+      const persistedRelations = readPersistedRelations(
+        row.videoId,
+        ctx.dataDir,
+      );
+      const { entities, relationships } = neuralToGraph(
+        persistedEntities,
+        persistedRelations,
+        aliases,
+      );
       processed += 1;
-      const entById = new Map(nlp.entities.map((e) => [e.id, e]));
-      for (const rel of nlp.relationships) {
+      const entById = new Map(entities.map((e) => [e.id, e]));
+      for (const rel of relationships) {
         const s = entById.get(rel.subjectId);
         const o = entById.get(rel.objectId);
         if (!s || !o) continue;
@@ -347,7 +415,7 @@ export const indexesStage: GraphStage = {
             count: 1,
           });
       }
-      for (const e of nlp.entities) {
+      for (const e of entities) {
         const existing = agg.get(e.id);
         if (existing) {
           existing.videoCount += 1;
@@ -373,7 +441,10 @@ export const indexesStage: GraphStage = {
       nodes: [...graphNodes.values()],
       edges: [...graphEdges.values()],
     };
-    const dir = join(ctx.dataDir, "nlp");
+    // Keep the aggregated graph file next to the other graph data on
+    // disk so the static deploy shim still finds it at a predictable
+    // location.
+    const dir = join(ctx.dataDir, "graph");
     mkdirSync(dir, { recursive: true });
     writeFileSync(
       join(dir, "relationships-graph.json"),
@@ -404,10 +475,21 @@ export const novelStage: GraphStage = {
 
 export const DEFAULT_VIDEO_STAGES: VideoStage[] = [
   fetchedStage,
-  nlpStage,
+  entitiesStage,
+  relationsStage,
   aiStage,
   perClaimStage,
 ];
+
+// The legacy regex+BERT `nlpStage` was retired once the neural eval
+// passed. Its replacement is the entities + relations pair above.
+// Legacy catalog rows may still carry a `stages.nlp` record from the
+// old pipeline; those records are ignored (no stage listens for the
+// "nlp" name any more) and can be cleared with
+//  `captions delete --stage nlp`.
+// here (entities depends on "fetched", relations depends on "entities",
+// ai then depends on "relations" instead of "nlp"). Once that lands,
+// delete nlpStage and src/nlp/ in the same commit.
 
 export const DEFAULT_GRAPH_STAGES: GraphStage[] = [
   propagationStage,

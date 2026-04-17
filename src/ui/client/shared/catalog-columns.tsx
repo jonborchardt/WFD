@@ -21,7 +21,7 @@ export interface VideoRow {
   isLiveContent?: boolean;
   errorReason?: string;
   lastError?: string;
-  [k: string]: any;
+  [k: string]: unknown;
 }
 
 export interface CatalogColumn {
@@ -29,9 +29,9 @@ export interface CatalogColumn {
   label: string;
   menuLabel?: string;
   default: boolean;
-  headSx?: any;
-  cellSx?: any;
-  render: (r: VideoRow) => any;
+  headSx?: Record<string, unknown>;
+  cellSx?: Record<string, unknown>;
+  render: (r: VideoRow) => React.ReactNode;
 }
 
 export const ENTITY_TYPE_COLOR: Record<string, string> = {
@@ -85,7 +85,7 @@ export const CATALOG_COLUMNS: CatalogColumn[] = [
       <Link
         href={r.sourceUrl || ("https://www.youtube.com/watch?v=" + r.videoId)}
         target="_blank" rel="noopener" underline="hover"
-        onClick={(e: any) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
       >
         {r.title || r.videoId}
       </Link>
@@ -115,7 +115,7 @@ export const CATALOG_COLUMNS: CatalogColumn[] = [
   {
     key: "sourceUrl", label: "Source URL", default: false,
     render: (r) => r.sourceUrl
-      ? <Link href={r.sourceUrl} target="_blank" rel="noopener" underline="hover" onClick={(e: any) => e.stopPropagation()}>{r.sourceUrl}</Link>
+      ? <Link href={r.sourceUrl} target="_blank" rel="noopener" underline="hover" onClick={(e: React.MouseEvent) => e.stopPropagation()}>{r.sourceUrl}</Link>
       : "",
   },
   { key: "transcriptPath", label: "Transcript Path", default: false, render: (r) => r.transcriptPath || "" },

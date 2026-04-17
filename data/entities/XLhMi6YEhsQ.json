@@ -1,0 +1,4632 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "XLhMi6YEhsQ",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-15T21:00:11.393Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "date_time",
+      "surface": "April 7th 2016",
+      "canonical": "April 7th 2016",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 55,
+        "charEnd": 69,
+        "timeStart": 4.24,
+        "timeEnd": 10
+      },
+      "score": 0.9062551856040955
+    },
+    {
+      "id": "m_0002",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 87,
+        "charEnd": 91,
+        "timeStart": 7.759,
+        "timeEnd": 12.2
+      },
+      "score": 0.9810231328010559
+    },
+    {
+      "id": "m_0003",
+      "label": "location",
+      "surface": "the outermost reaches of our solar\nsystem",
+      "canonical": "the outermost reaches of our solar\nsystem",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 172,
+        "charEnd": 213,
+        "timeStart": 12.2,
+        "timeEnd": 18.6
+      },
+      "score": 0.5736327767372131
+    },
+    {
+      "id": "m_0004",
+      "label": "location",
+      "surface": "Pluto",
+      "canonical": "Pluto",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 236,
+        "charEnd": 241,
+        "timeStart": 14.24,
+        "timeEnd": 18.6
+      },
+      "score": 0.8709318041801453
+    },
+    {
+      "id": "m_0005",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 297,
+        "charEnd": 307,
+        "timeStart": 18.6,
+        "timeEnd": 22.8
+      },
+      "score": 0.8823860883712769
+    },
+    {
+      "id": "m_0006",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 691,
+        "charEnd": 695,
+        "timeStart": 43.2,
+        "timeEnd": 49.079
+      },
+      "score": 0.9908838868141174
+    },
+    {
+      "id": "m_0007",
+      "label": "person",
+      "surface": "whoever it was",
+      "canonical": "whoever it was",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 777,
+        "charEnd": 791,
+        "timeStart": 51.92,
+        "timeEnd": 55.92
+      },
+      "score": 0.5086373090744019
+    },
+    {
+      "id": "m_0008",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 805,
+        "charEnd": 809,
+        "timeStart": 51.92,
+        "timeEnd": 55.92
+      },
+      "score": 0.8915216326713562
+    },
+    {
+      "id": "m_0009",
+      "label": "person",
+      "surface": "human",
+      "canonical": "human",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 902,
+        "charEnd": 907,
+        "timeStart": 68.32,
+        "timeEnd": 74
+      },
+      "score": 0.6997084021568298
+    },
+    {
+      "id": "m_0010",
+      "label": "role",
+      "surface": "group\nhost",
+      "canonical": "group\nhost",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1242,
+        "charEnd": 1252,
+        "timeStart": 87.96,
+        "timeEnd": 96
+      },
+      "score": 0.668705403804779
+    },
+    {
+      "id": "m_0011",
+      "label": "location",
+      "surface": "your house",
+      "canonical": "your house",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1259,
+        "charEnd": 1269,
+        "timeStart": 90.479,
+        "timeEnd": 96
+      },
+      "score": 0.5832821130752563
+    },
+    {
+      "id": "m_0012",
+      "label": "person",
+      "surface": "Doris",
+      "canonical": "Doris",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1364,
+        "charEnd": 1369,
+        "timeStart": 98.68,
+        "timeEnd": 104.399
+      },
+      "score": 0.9465335607528687
+    },
+    {
+      "id": "m_0013",
+      "label": "event",
+      "surface": "casino night",
+      "canonical": "casino night",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1564,
+        "charEnd": 1576,
+        "timeStart": 111.04,
+        "timeEnd": 116.119
+      },
+      "score": 0.5647009015083313
+    },
+    {
+      "id": "m_0014",
+      "label": "event",
+      "surface": "party",
+      "canonical": "party",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1852,
+        "charEnd": 1857,
+        "timeStart": 130.319,
+        "timeEnd": 136.04
+      },
+      "score": 0.6998419165611267
+    },
+    {
+      "id": "m_0015",
+      "label": "quantity",
+      "surface": "5 minutes",
+      "canonical": "5 minutes",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1861,
+        "charEnd": 1870,
+        "timeStart": 130.319,
+        "timeEnd": 136.04
+      },
+      "score": 0.6284940838813782
+    },
+    {
+      "id": "m_0016",
+      "label": "quantity",
+      "surface": "5 minutes",
+      "canonical": "5 minutes",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1871,
+        "charEnd": 1880,
+        "timeStart": 130.319,
+        "timeEnd": 136.04
+      },
+      "score": 0.7169334888458252
+    },
+    {
+      "id": "m_0017",
+      "label": "location",
+      "surface": "house",
+      "canonical": "house",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1900,
+        "charEnd": 1905,
+        "timeStart": 133.239,
+        "timeEnd": 137.68
+      },
+      "score": 0.5380439758300781
+    },
+    {
+      "id": "m_0018",
+      "label": "work_of_media",
+      "surface": "YouTubes",
+      "canonical": "YouTubes",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 1919,
+        "charEnd": 1927,
+        "timeStart": 133.239,
+        "timeEnd": 137.68
+      },
+      "score": 0.5891091823577881
+    },
+    {
+      "id": "m_0019",
+      "label": "person",
+      "surface": "Gertie",
+      "canonical": "Gertie",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 2029,
+        "charEnd": 2035,
+        "timeStart": 140.12,
+        "timeEnd": 144.76
+      },
+      "score": 0.8515834808349609
+    },
+    {
+      "id": "m_0020",
+      "label": "organization",
+      "surface": "my.u.com",
+      "canonical": "my.u.com",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 2816,
+        "charEnd": 2824,
+        "timeStart": 189.879,
+        "timeEnd": 195.72
+      },
+      "score": 0.7469748854637146
+    },
+    {
+      "id": "m_0021",
+      "label": "date_time",
+      "surface": "October",
+      "canonical": "October",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 2837,
+        "charEnd": 2844,
+        "timeStart": 193.44,
+        "timeEnd": 197.76
+      },
+      "score": 0.946877121925354
+    },
+    {
+      "id": "m_0022",
+      "label": "organization",
+      "surface": "my.u.com",
+      "canonical": "my.u.com",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 2955,
+        "charEnd": 2963,
+        "timeStart": 200.44,
+        "timeEnd": 206.879
+      },
+      "score": 0.7713791728019714
+    },
+    {
+      "id": "m_0023",
+      "label": "date_time",
+      "surface": "October",
+      "canonical": "October",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 2976,
+        "charEnd": 2983,
+        "timeStart": 200.44,
+        "timeEnd": 206.879
+      },
+      "score": 0.9469283223152161
+    },
+    {
+      "id": "m_0024",
+      "label": "location",
+      "surface": "Mari B",
+      "canonical": "Mari B",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3075,
+        "charEnd": 3081,
+        "timeStart": 210.159,
+        "timeEnd": 216.39999999999998
+      },
+      "score": 0.5235868096351624
+    },
+    {
+      "id": "m_0025",
+      "label": "location",
+      "surface": "orbit of Neptune",
+      "canonical": "orbit of Neptune",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3330,
+        "charEnd": 3346,
+        "timeStart": 235.159,
+        "timeEnd": 240.48
+      },
+      "score": 0.6892954111099243
+    },
+    {
+      "id": "m_0026",
+      "label": "quantity",
+      "surface": "30 AU",
+      "canonical": "30 AU",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3356,
+        "charEnd": 3361,
+        "timeStart": 237.4,
+        "timeEnd": 242.76000000000002
+      },
+      "score": 0.6008862257003784
+    },
+    {
+      "id": "m_0027",
+      "label": "date_time",
+      "surface": "1943",
+      "canonical": "1943",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3808,
+        "charEnd": 3812,
+        "timeStart": 268.6,
+        "timeEnd": 273.8
+      },
+      "score": 0.7826137542724609
+    },
+    {
+      "id": "m_0028",
+      "label": "nationality_or_ethnicity",
+      "surface": "Irish",
+      "canonical": "Irish",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3816,
+        "charEnd": 3821,
+        "timeStart": 268.6,
+        "timeEnd": 273.8
+      },
+      "score": 0.9115791916847229
+    },
+    {
+      "id": "m_0029",
+      "label": "person",
+      "surface": "Kenneth\nEdgeworth",
+      "canonical": "Kenneth\nEdgeworth",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3833,
+        "charEnd": 3850,
+        "timeStart": 268.6,
+        "timeEnd": 276.12
+      },
+      "score": 0.8795482516288757
+    },
+    {
+      "id": "m_0030",
+      "label": "person",
+      "surface": "Edgeworth",
+      "canonical": "Edgeworth",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3953,
+        "charEnd": 3962,
+        "timeStart": 278.32,
+        "timeEnd": 283.44
+      },
+      "score": 0.8359818458557129
+    },
+    {
+      "id": "m_0031",
+      "label": "person",
+      "surface": "Kyper",
+      "canonical": "Kyper",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 3981,
+        "charEnd": 3986,
+        "timeStart": 278.32,
+        "timeEnd": 283.44
+      },
+      "score": 0.618135929107666
+    },
+    {
+      "id": "m_0032",
+      "label": "date_time",
+      "surface": "1992",
+      "canonical": "1992",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4026,
+        "charEnd": 4030,
+        "timeStart": 280.28,
+        "timeEnd": 286.28
+      },
+      "score": 0.5583955645561218
+    },
+    {
+      "id": "m_0033",
+      "label": "person",
+      "surface": "David JT",
+      "canonical": "David JT",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4031,
+        "charEnd": 4039,
+        "timeStart": 283.44,
+        "timeEnd": 288.039
+      },
+      "score": 0.9033868312835693
+    },
+    {
+      "id": "m_0034",
+      "label": "person",
+      "surface": "Jane Lou",
+      "canonical": "Jane Lou",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4057,
+        "charEnd": 4065,
+        "timeStart": 283.44,
+        "timeEnd": 288.039
+      },
+      "score": 0.8508564233779907
+    },
+    {
+      "id": "m_0035",
+      "label": "person",
+      "surface": "Kyper",
+      "canonical": "Kyper",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4087,
+        "charEnd": 4092,
+        "timeStart": 286.28,
+        "timeEnd": 290.96
+      },
+      "score": 0.5013177990913391
+    },
+    {
+      "id": "m_0036",
+      "label": "person",
+      "surface": "Gerard Kyper",
+      "canonical": "Gerard Kyper",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4273,
+        "charEnd": 4285,
+        "timeStart": 297.88,
+        "timeEnd": 302.4
+      },
+      "score": 0.9560871124267578
+    },
+    {
+      "id": "m_0037",
+      "label": "role",
+      "surface": "father of planetary science",
+      "canonical": "father of planetary science",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4313,
+        "charEnd": 4340,
+        "timeStart": 300.12,
+        "timeEnd": 304.08
+      },
+      "score": 0.5071549415588379
+    },
+    {
+      "id": "m_0038",
+      "label": "date_time",
+      "surface": "1951",
+      "canonical": "1951",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4393,
+        "charEnd": 4397,
+        "timeStart": 304.08,
+        "timeEnd": 308.919
+      },
+      "score": 0.6817254424095154
+    },
+    {
+      "id": "m_0039",
+      "label": "location",
+      "surface": "Neptune",
+      "canonical": "Neptune",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4435,
+        "charEnd": 4442,
+        "timeStart": 306.88,
+        "timeEnd": 310.08
+      },
+      "score": 0.5547255277633667
+    },
+    {
+      "id": "m_0040",
+      "label": "location",
+      "surface": "Uranus",
+      "canonical": "Uranus",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4462,
+        "charEnd": 4468,
+        "timeStart": 310.08,
+        "timeEnd": 314.15999999999997
+      },
+      "score": 0.7668970227241516
+    },
+    {
+      "id": "m_0041",
+      "label": "location",
+      "surface": "Uranus",
+      "canonical": "Uranus",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4561,
+        "charEnd": 4567,
+        "timeStart": 314.16,
+        "timeEnd": 319.6
+      },
+      "score": 0.7428769469261169
+    },
+    {
+      "id": "m_0042",
+      "label": "location",
+      "surface": "Uranus",
+      "canonical": "Uranus",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4677,
+        "charEnd": 4683,
+        "timeStart": 322.28,
+        "timeEnd": 327.88
+      },
+      "score": 0.762391209602356
+    },
+    {
+      "id": "m_0043",
+      "label": "location",
+      "surface": "Uranus",
+      "canonical": "Uranus",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4790,
+        "charEnd": 4796,
+        "timeStart": 330.039,
+        "timeEnd": 334.88
+      },
+      "score": 0.5929206013679504
+    },
+    {
+      "id": "m_0044",
+      "label": "location",
+      "surface": "Kyper\nbelt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4843,
+        "charEnd": 4853,
+        "timeStart": 340.319,
+        "timeEnd": 347.88
+      },
+      "score": 0.9811069965362549
+    },
+    {
+      "id": "m_0045",
+      "label": "location",
+      "surface": "Pluto",
+      "canonical": "Pluto",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4892,
+        "charEnd": 4897,
+        "timeStart": 344.919,
+        "timeEnd": 350.28
+      },
+      "score": 0.6680141687393188
+    },
+    {
+      "id": "m_0046",
+      "label": "quantity",
+      "surface": "1500\nMi",
+      "canonical": "1500\nMi",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 4963,
+        "charEnd": 4970,
+        "timeStart": 347.88,
+        "timeEnd": 354.59999999999997
+      },
+      "score": 0.622865617275238
+    },
+    {
+      "id": "m_0047",
+      "label": "organization",
+      "surface": "astronomers",
+      "canonical": "astronomers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5019,
+        "charEnd": 5030,
+        "timeStart": 353.039,
+        "timeEnd": 356.96
+      },
+      "score": 0.7638638615608215
+    },
+    {
+      "id": "m_0048",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5112,
+        "charEnd": 5122,
+        "timeStart": 356.96,
+        "timeEnd": 361.479
+      },
+      "score": 0.974876344203949
+    },
+    {
+      "id": "m_0049",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5146,
+        "charEnd": 5156,
+        "timeStart": 361.479,
+        "timeEnd": 365.8
+      },
+      "score": 0.9790254235267639
+    },
+    {
+      "id": "m_0050",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5323,
+        "charEnd": 5333,
+        "timeStart": 372.4,
+        "timeEnd": 376.67999999999995
+      },
+      "score": 0.9719618558883667
+    },
+    {
+      "id": "m_0051",
+      "label": "quantity",
+      "surface": "at least seven\ndwarf planets",
+      "canonical": "at least seven\ndwarf planets",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5345,
+        "charEnd": 5373,
+        "timeStart": 372.4,
+        "timeEnd": 380.199
+      },
+      "score": 0.6396771669387817
+    },
+    {
+      "id": "m_0052",
+      "label": "quantity",
+      "surface": "roughly\n600 to 900 mi",
+      "canonical": "roughly\n600 to 900 mi",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5392,
+        "charEnd": 5413,
+        "timeStart": 374.24,
+        "timeEnd": 383.199
+      },
+      "score": 0.7535669803619385
+    },
+    {
+      "id": "m_0053",
+      "label": "date_time",
+      "surface": "May 12th 1994",
+      "canonical": "May 12th 1994",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5935,
+        "charEnd": 5948,
+        "timeStart": 415.599,
+        "timeEnd": 421.68
+      },
+      "score": 0.9665514230728149
+    },
+    {
+      "id": "m_0054",
+      "label": "person",
+      "surface": "Michael Irwin",
+      "canonical": "Michael Irwin",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5949,
+        "charEnd": 5962,
+        "timeStart": 415.599,
+        "timeEnd": 421.68
+      },
+      "score": 0.972213625907898
+    },
+    {
+      "id": "m_0055",
+      "label": "person",
+      "surface": "Anna jitk",
+      "canonical": "Anna jitk",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 5967,
+        "charEnd": 5976,
+        "timeStart": 419.599,
+        "timeEnd": 425.08
+      },
+      "score": 0.9761541485786438
+    },
+    {
+      "id": "m_0056",
+      "label": "person",
+      "surface": "Anna jitk",
+      "canonical": "Anna jitk",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6011,
+        "charEnd": 6020,
+        "timeStart": 421.68,
+        "timeEnd": 427.96
+      },
+      "score": 0.9745520949363708
+    },
+    {
+      "id": "m_0057",
+      "label": "role",
+      "surface": "on duty astronomers",
+      "canonical": "on duty astronomers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6046,
+        "charEnd": 6065,
+        "timeStart": 425.08,
+        "timeEnd": 430.31899999999996
+      },
+      "score": 0.6695729494094849
+    },
+    {
+      "id": "m_0058",
+      "label": "facility",
+      "surface": "rod deos machacho observatory",
+      "canonical": "rod deos machacho observatory",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6073,
+        "charEnd": 6102,
+        "timeStart": 427.96,
+        "timeEnd": 433.12
+      },
+      "score": 0.8420010209083557
+    },
+    {
+      "id": "m_0059",
+      "label": "location",
+      "surface": "Canary Islands",
+      "canonical": "Canary Islands",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6110,
+        "charEnd": 6124,
+        "timeStart": 430.319,
+        "timeEnd": 435.68
+      },
+      "score": 0.806607723236084
+    },
+    {
+      "id": "m_0060",
+      "label": "person",
+      "surface": "Anna and\nMichael",
+      "canonical": "Anna and\nMichael",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6559,
+        "charEnd": 6575,
+        "timeStart": 461.479,
+        "timeEnd": 468.56
+      },
+      "score": 0.8427076935768127
+    },
+    {
+      "id": "m_0061",
+      "label": "organization",
+      "surface": "astronomers",
+      "canonical": "astronomers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6678,
+        "charEnd": 6689,
+        "timeStart": 470.8,
+        "timeEnd": 475.24
+      },
+      "score": 0.7626931071281433
+    },
+    {
+      "id": "m_0062",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6717,
+        "charEnd": 6727,
+        "timeStart": 473.44,
+        "timeEnd": 478.639
+      },
+      "score": 0.7730061411857605
+    },
+    {
+      "id": "m_0063",
+      "label": "nationality_or_ethnicity",
+      "surface": "Welsh",
+      "canonical": "Welsh",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6820,
+        "charEnd": 6825,
+        "timeStart": 478.639,
+        "timeEnd": 483.56
+      },
+      "score": 0.7535150051116943
+    },
+    {
+      "id": "m_0064",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6868,
+        "charEnd": 6878,
+        "timeStart": 483.56,
+        "timeEnd": 488.4
+      },
+      "score": 0.6997817754745483
+    },
+    {
+      "id": "m_0065",
+      "label": "date_time",
+      "surface": "April 2016",
+      "canonical": "April 2016",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6944,
+        "charEnd": 6954,
+        "timeStart": 488.4,
+        "timeEnd": 495.159
+      },
+      "score": 0.9718106389045715
+    },
+    {
+      "id": "m_0066",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6955,
+        "charEnd": 6959,
+        "timeStart": 488.4,
+        "timeEnd": 495.159
+      },
+      "score": 0.9571234583854675
+    },
+    {
+      "id": "m_0067",
+      "label": "event",
+      "surface": "New Horizons\nMission",
+      "canonical": "New Horizons\nMission",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6962,
+        "charEnd": 6982,
+        "timeStart": 488.4,
+        "timeEnd": 497.56
+      },
+      "score": 0.538891613483429
+    },
+    {
+      "id": "m_0068",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 6995,
+        "charEnd": 7005,
+        "timeStart": 492.479,
+        "timeEnd": 497.56
+      },
+      "score": 0.9047867059707642
+    },
+    {
+      "id": "m_0069",
+      "label": "location",
+      "surface": "Pluto",
+      "canonical": "Pluto",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7042,
+        "charEnd": 7047,
+        "timeStart": 495.159,
+        "timeEnd": 500.039
+      },
+      "score": 0.8143134117126465
+    },
+    {
+      "id": "m_0070",
+      "label": "event",
+      "surface": "perfect flyby opportunity",
+      "canonical": "perfect flyby opportunity",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7052,
+        "charEnd": 7077,
+        "timeStart": 497.56,
+        "timeEnd": 502.599
+      },
+      "score": 0.6040359139442444
+    },
+    {
+      "id": "m_0071",
+      "label": "event",
+      "surface": "CPU safing event",
+      "canonical": "CPU safing event",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7299,
+        "charEnd": 7315,
+        "timeStart": 519.56,
+        "timeEnd": 525.5999999999999
+      },
+      "score": 0.8092778325080872
+    },
+    {
+      "id": "m_0072",
+      "label": "technology",
+      "surface": "safe mode",
+      "canonical": "safe mode",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7343,
+        "charEnd": 7352,
+        "timeStart": 522.36,
+        "timeEnd": 527.6800000000001
+      },
+      "score": 0.8757116198539734
+    },
+    {
+      "id": "m_0073",
+      "label": "technology",
+      "surface": "safe mode",
+      "canonical": "safe mode",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7353,
+        "charEnd": 7362,
+        "timeStart": 522.36,
+        "timeEnd": 527.6800000000001
+      },
+      "score": 0.8788126111030579
+    },
+    {
+      "id": "m_0074",
+      "label": "organization",
+      "surface": "team",
+      "canonical": "team",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7481,
+        "charEnd": 7485,
+        "timeStart": 529.6,
+        "timeEnd": 535.08
+      },
+      "score": 0.5671849846839905
+    },
+    {
+      "id": "m_0075",
+      "label": "work_of_media",
+      "surface": "The\nCraft",
+      "canonical": "The\nCraft",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7519,
+        "charEnd": 7528,
+        "timeStart": 532.68,
+        "timeEnd": 539.64
+      },
+      "score": 0.9458295702934265
+    },
+    {
+      "id": "m_0076",
+      "label": "technology",
+      "surface": "safe mode",
+      "canonical": "safe mode",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7540,
+        "charEnd": 7549,
+        "timeStart": 535.08,
+        "timeEnd": 539.64
+      },
+      "score": 0.7453836798667908
+    },
+    {
+      "id": "m_0077",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7554,
+        "charEnd": 7558,
+        "timeStart": 535.08,
+        "timeEnd": 539.64
+      },
+      "score": 0.9080690145492554
+    },
+    {
+      "id": "m_0078",
+      "label": "person",
+      "surface": "engineer",
+      "canonical": "engineer",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7559,
+        "charEnd": 7567,
+        "timeStart": 537.64,
+        "timeEnd": 542
+      },
+      "score": 0.8135502934455872
+    },
+    {
+      "id": "m_0079",
+      "label": "person",
+      "surface": "ER",
+      "canonical": "ER",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7594,
+        "charEnd": 7596,
+        "timeStart": 537.64,
+        "timeEnd": 542
+      },
+      "score": 0.6505711078643799
+    },
+    {
+      "id": "m_0080",
+      "label": "person",
+      "surface": "engineer",
+      "canonical": "engineer",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7624,
+        "charEnd": 7632,
+        "timeStart": 539.64,
+        "timeEnd": 544.4399999999999
+      },
+      "score": 0.7131248116493225
+    },
+    {
+      "id": "m_0081",
+      "label": "person",
+      "surface": "ad",
+      "canonical": "ad",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 7835,
+        "charEnd": 7837,
+        "timeStart": 554.16,
+        "timeEnd": 559.12
+      },
+      "score": 0.8378601670265198
+    },
+    {
+      "id": "m_0082",
+      "label": "person",
+      "surface": "ad",
+      "canonical": "ad",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8012,
+        "charEnd": 8014,
+        "timeStart": 563.279,
+        "timeEnd": 569.16
+      },
+      "score": 0.7620893716812134
+    },
+    {
+      "id": "m_0083",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8161,
+        "charEnd": 8165,
+        "timeStart": 575.519,
+        "timeEnd": 579.68
+      },
+      "score": 0.9911164045333862
+    },
+    {
+      "id": "m_0084",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8166,
+        "charEnd": 8170,
+        "timeStart": 575.519,
+        "timeEnd": 579.68
+      },
+      "score": 0.9927880167961121
+    },
+    {
+      "id": "m_0085",
+      "label": "technology",
+      "surface": "artificial gravity",
+      "canonical": "artificial gravity",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8198,
+        "charEnd": 8216,
+        "timeStart": 577.8,
+        "timeEnd": 582.56
+      },
+      "score": 0.9901641011238098
+    },
+    {
+      "id": "m_0086",
+      "label": "date_time",
+      "surface": "1960s",
+      "canonical": "1960s",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8224,
+        "charEnd": 8229,
+        "timeStart": 579.68,
+        "timeEnd": 584.8
+      },
+      "score": 0.5289068222045898
+    },
+    {
+      "id": "m_0087",
+      "label": "facility",
+      "surface": "space stations",
+      "canonical": "space stations",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8263,
+        "charEnd": 8277,
+        "timeStart": 582.56,
+        "timeEnd": 587.56
+      },
+      "score": 0.8829928040504456
+    },
+    {
+      "id": "m_0088",
+      "label": "technology",
+      "surface": "artificial gravity",
+      "canonical": "artificial gravity",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8435,
+        "charEnd": 8453,
+        "timeStart": 592.92,
+        "timeEnd": 596.7199999999999
+      },
+      "score": 0.9891906976699829
+    },
+    {
+      "id": "m_0089",
+      "label": "work_of_media",
+      "surface": "science fiction",
+      "canonical": "science fiction",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8505,
+        "charEnd": 8520,
+        "timeStart": 596.72,
+        "timeEnd": 601
+      },
+      "score": 0.9854325652122498
+    },
+    {
+      "id": "m_0090",
+      "label": "work_of_media",
+      "surface": "science fiction",
+      "canonical": "science fiction",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8545,
+        "charEnd": 8560,
+        "timeStart": 599.12,
+        "timeEnd": 603.2
+      },
+      "score": 0.9874265193939209
+    },
+    {
+      "id": "m_0091",
+      "label": "technology",
+      "surface": "artificial gravity",
+      "canonical": "artificial gravity",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8620,
+        "charEnd": 8638,
+        "timeStart": 603.2,
+        "timeEnd": 608.2
+      },
+      "score": 0.9933156371116638
+    },
+    {
+      "id": "m_0092",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8659,
+        "charEnd": 8665,
+        "timeStart": 605.6,
+        "timeEnd": 610.36
+      },
+      "score": 0.6084744930267334
+    },
+    {
+      "id": "m_0093",
+      "label": "technology",
+      "surface": "artificial gravity",
+      "canonical": "artificial gravity",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8708,
+        "charEnd": 8726,
+        "timeStart": 608.2,
+        "timeEnd": 612.5600000000001
+      },
+      "score": 0.9955665469169617
+    },
+    {
+      "id": "m_0094",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8926,
+        "charEnd": 8932,
+        "timeStart": 622.68,
+        "timeEnd": 628.1999999999999
+      },
+      "score": 0.6231501698493958
+    },
+    {
+      "id": "m_0095",
+      "label": "technology",
+      "surface": "artificial\ngravity",
+      "canonical": "artificial gravity",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 8943,
+        "charEnd": 8961,
+        "timeStart": 622.68,
+        "timeEnd": 630.519
+      },
+      "score": 0.9940599203109741
+    },
+    {
+      "id": "m_0096",
+      "label": "location",
+      "surface": "space station",
+      "canonical": "space station",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9059,
+        "charEnd": 9072,
+        "timeStart": 630.519,
+        "timeEnd": 636.5600000000001
+      },
+      "score": 0.7987869381904602
+    },
+    {
+      "id": "m_0097",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9283,
+        "charEnd": 9293,
+        "timeStart": 644.16,
+        "timeEnd": 649.7199999999999
+      },
+      "score": 0.8531137704849243
+    },
+    {
+      "id": "m_0098",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9324,
+        "charEnd": 9334,
+        "timeStart": 646.76,
+        "timeEnd": 651.8
+      },
+      "score": 0.8821152448654175
+    },
+    {
+      "id": "m_0099",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9440,
+        "charEnd": 9450,
+        "timeStart": 654.72,
+        "timeEnd": 660.1600000000001
+      },
+      "score": 0.9419097900390625
+    },
+    {
+      "id": "m_0100",
+      "label": "technology",
+      "surface": "New Horizons",
+      "canonical": "New Horizons",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9592,
+        "charEnd": 9604,
+        "timeStart": 664.279,
+        "timeEnd": 669.56
+      },
+      "score": 0.8128831386566162
+    },
+    {
+      "id": "m_0101",
+      "label": "technology",
+      "surface": "New\nHorizons",
+      "canonical": "New Horizons",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9685,
+        "charEnd": 9697,
+        "timeStart": 669.56,
+        "timeEnd": 675.68
+      },
+      "score": 0.8754526376724243
+    },
+    {
+      "id": "m_0102",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9751,
+        "charEnd": 9761,
+        "timeStart": 674.079,
+        "timeEnd": 678.8
+      },
+      "score": 0.9486128687858582
+    },
+    {
+      "id": "m_0103",
+      "label": "person",
+      "surface": "Adam",
+      "canonical": "Adam",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9890,
+        "charEnd": 9894,
+        "timeStart": 684,
+        "timeEnd": 689.32
+      },
+      "score": 0.93593829870224
+    },
+    {
+      "id": "m_0104",
+      "label": "technology",
+      "surface": "New Horizons",
+      "canonical": "New Horizons",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9928,
+        "charEnd": 9940,
+        "timeStart": 686.519,
+        "timeEnd": 692.44
+      },
+      "score": 0.8404335975646973
+    },
+    {
+      "id": "m_0105",
+      "label": "organization",
+      "surface": "kbos",
+      "canonical": "kbos",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 9959,
+        "charEnd": 9963,
+        "timeStart": 689.32,
+        "timeEnd": 694.1600000000001
+      },
+      "score": 0.6934323906898499
+    },
+    {
+      "id": "m_0106",
+      "label": "event",
+      "surface": "laws\nof physics",
+      "canonical": "laws\nof physics",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10019,
+        "charEnd": 10034,
+        "timeStart": 692.44,
+        "timeEnd": 699.24
+      },
+      "score": 0.512639045715332
+    },
+    {
+      "id": "m_0107",
+      "label": "technology",
+      "surface": "New Horizons",
+      "canonical": "New Horizons",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10050,
+        "charEnd": 10062,
+        "timeStart": 694.16,
+        "timeEnd": 699.24
+      },
+      "score": 0.8189672827720642
+    },
+    {
+      "id": "m_0108",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10295,
+        "charEnd": 10305,
+        "timeStart": 716.92,
+        "timeEnd": 722.36
+      },
+      "score": 0.8945012092590332
+    },
+    {
+      "id": "m_0109",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10532,
+        "charEnd": 10542,
+        "timeStart": 732.8,
+        "timeEnd": 738.3599999999999
+      },
+      "score": 0.9320439696311951
+    },
+    {
+      "id": "m_0110",
+      "label": "location",
+      "surface": "Planet\nX",
+      "canonical": "Planet X",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10600,
+        "charEnd": 10608,
+        "timeStart": 735.72,
+        "timeEnd": 743.279
+      },
+      "score": 0.8666401505470276
+    },
+    {
+      "id": "m_0111",
+      "label": "location",
+      "surface": "Planet X",
+      "canonical": "Planet X",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10646,
+        "charEnd": 10654,
+        "timeStart": 740.639,
+        "timeEnd": 746
+      },
+      "score": 0.869682788848877
+    },
+    {
+      "id": "m_0112",
+      "label": "location",
+      "surface": "Nibiru",
+      "canonical": "Nibiru",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10658,
+        "charEnd": 10664,
+        "timeStart": 743.279,
+        "timeEnd": 748.6
+      },
+      "score": 0.8250883221626282
+    },
+    {
+      "id": "m_0113",
+      "label": "organization",
+      "surface": "Anunnaki",
+      "canonical": "Anunnaki",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10677,
+        "charEnd": 10685,
+        "timeStart": 743.279,
+        "timeEnd": 748.6
+      },
+      "score": 0.5602824091911316
+    },
+    {
+      "id": "m_0114",
+      "label": "person",
+      "surface": "Chief",
+      "canonical": "Chief",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10729,
+        "charEnd": 10734,
+        "timeStart": 746,
+        "timeEnd": 751.16
+      },
+      "score": 0.7887733578681946
+    },
+    {
+      "id": "m_0115",
+      "label": "location",
+      "surface": "Planet X",
+      "canonical": "Planet X",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10757,
+        "charEnd": 10765,
+        "timeStart": 751.16,
+        "timeEnd": 757.3199999999999
+      },
+      "score": 0.9136059284210205
+    },
+    {
+      "id": "m_0116",
+      "label": "location",
+      "surface": "Pluto",
+      "canonical": "Pluto",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10783,
+        "charEnd": 10788,
+        "timeStart": 751.16,
+        "timeEnd": 757.3199999999999
+      },
+      "score": 0.5786603093147278
+    },
+    {
+      "id": "m_0117",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 10947,
+        "charEnd": 10957,
+        "timeStart": 762.88,
+        "timeEnd": 768.399
+      },
+      "score": 0.9353244304656982
+    },
+    {
+      "id": "m_0118",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11006,
+        "charEnd": 11010,
+        "timeStart": 768.399,
+        "timeEnd": 773.48
+      },
+      "score": 0.9411905407905579
+    },
+    {
+      "id": "m_0119",
+      "label": "quantity",
+      "surface": "decades",
+      "canonical": "decades",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11056,
+        "charEnd": 11063,
+        "timeStart": 770.36,
+        "timeEnd": 775.48
+      },
+      "score": 0.6137275695800781
+    },
+    {
+      "id": "m_0120",
+      "label": "person",
+      "surface": "Dr",
+      "canonical": "Dr",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11307,
+        "charEnd": 11309,
+        "timeStart": 792.959,
+        "timeEnd": 799.3199999999999
+      },
+      "score": 0.8239874839782715
+    },
+    {
+      "id": "m_0121",
+      "label": "person",
+      "surface": "Dracula",
+      "canonical": "Dracula",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11316,
+        "charEnd": 11323,
+        "timeStart": 792.959,
+        "timeEnd": 799.3199999999999
+      },
+      "score": 0.9819955825805664
+    },
+    {
+      "id": "m_0122",
+      "label": "person",
+      "surface": "Dracula",
+      "canonical": "Dracula",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11683,
+        "charEnd": 11690,
+        "timeStart": 815,
+        "timeEnd": 818.959
+      },
+      "score": 0.9870367050170898
+    },
+    {
+      "id": "m_0123",
+      "label": "person",
+      "surface": "Dr",
+      "canonical": "Dr",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11721,
+        "charEnd": 11723,
+        "timeStart": 816.639,
+        "timeEnd": 822.519
+      },
+      "score": 0.7850438356399536
+    },
+    {
+      "id": "m_0124",
+      "label": "quantity",
+      "surface": "30 m",
+      "canonical": "30 m",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11936,
+        "charEnd": 11940,
+        "timeStart": 831.8,
+        "timeEnd": 837.8
+      },
+      "score": 0.6280683279037476
+    },
+    {
+      "id": "m_0125",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11958,
+        "charEnd": 11963,
+        "timeStart": 831.8,
+        "timeEnd": 837.8
+      },
+      "score": 0.8771357536315918
+    },
+    {
+      "id": "m_0126",
+      "label": "event",
+      "surface": "extinction level event",
+      "canonical": "extinction level event",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 11982,
+        "charEnd": 12004,
+        "timeStart": 834.92,
+        "timeEnd": 840.959
+      },
+      "score": 0.9446234703063965
+    },
+    {
+      "id": "m_0127",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12035,
+        "charEnd": 12040,
+        "timeStart": 837.8,
+        "timeEnd": 842.959
+      },
+      "score": 0.9275670051574707
+    },
+    {
+      "id": "m_0128",
+      "label": "location",
+      "surface": "Neptune",
+      "canonical": "Neptune",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12101,
+        "charEnd": 12108,
+        "timeStart": 842.959,
+        "timeEnd": 848.8389999999999
+      },
+      "score": 0.5602670311927795
+    },
+    {
+      "id": "m_0129",
+      "label": "facility",
+      "surface": "James web\nSpace Telescope",
+      "canonical": "James web\nSpace Telescope",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12240,
+        "charEnd": 12265,
+        "timeStart": 850.88,
+        "timeEnd": 857.4399999999999
+      },
+      "score": 0.8812060952186584
+    },
+    {
+      "id": "m_0130",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12366,
+        "charEnd": 12370,
+        "timeStart": 860.04,
+        "timeEnd": 864.12
+      },
+      "score": 0.9710544347763062
+    },
+    {
+      "id": "m_0131",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12450,
+        "charEnd": 12454,
+        "timeStart": 864.12,
+        "timeEnd": 868.759
+      },
+      "score": 0.9726883172988892
+    },
+    {
+      "id": "m_0132",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12656,
+        "charEnd": 12660,
+        "timeStart": 876.639,
+        "timeEnd": 881.04
+      },
+      "score": 0.9962265491485596
+    },
+    {
+      "id": "m_0133",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12666,
+        "charEnd": 12670,
+        "timeStart": 876.639,
+        "timeEnd": 881.04
+      },
+      "score": 0.9971287846565247
+    },
+    {
+      "id": "m_0134",
+      "label": "facility",
+      "surface": "James web Space Telescope",
+      "canonical": "James web\nSpace Telescope",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12673,
+        "charEnd": 12698,
+        "timeStart": 879.279,
+        "timeEnd": 882.8389999999999
+      },
+      "score": 0.7798337340354919
+    },
+    {
+      "id": "m_0135",
+      "label": "location",
+      "surface": "Orion Nebula",
+      "canonical": "Orion Nebula",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12796,
+        "charEnd": 12808,
+        "timeStart": 885.079,
+        "timeEnd": 889.7199999999999
+      },
+      "score": 0.9644153118133545
+    },
+    {
+      "id": "m_0136",
+      "label": "person",
+      "surface": "astronomers",
+      "canonical": "astronomers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 12859,
+        "charEnd": 12870,
+        "timeStart": 887.519,
+        "timeEnd": 891.68
+      },
+      "score": 0.510888934135437
+    },
+    {
+      "id": "m_0137",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13026,
+        "charEnd": 13030,
+        "timeStart": 898.68,
+        "timeEnd": 902.8389999999999
+      },
+      "score": 0.9972510933876038
+    },
+    {
+      "id": "m_0138",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13135,
+        "charEnd": 13139,
+        "timeStart": 905,
+        "timeEnd": 909.72
+      },
+      "score": 0.9964720010757446
+    },
+    {
+      "id": "m_0139",
+      "label": "group_or_movement",
+      "surface": "these people",
+      "canonical": "these people",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13337,
+        "charEnd": 13349,
+        "timeStart": 916.759,
+        "timeEnd": 922.16
+      },
+      "score": 0.5800507664680481
+    },
+    {
+      "id": "m_0140",
+      "label": "location",
+      "surface": "the Kyper belt",
+      "canonical": "the Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13367,
+        "charEnd": 13381,
+        "timeStart": 919.6,
+        "timeEnd": 927.16
+      },
+      "score": 0.6971777081489563
+    },
+    {
+      "id": "m_0141",
+      "label": "person",
+      "surface": "Rebecca Rose",
+      "canonical": "Rebecca Rose",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13436,
+        "charEnd": 13448,
+        "timeStart": 931.48,
+        "timeEnd": 936.3190000000001
+      },
+      "score": 0.9436029195785522
+    },
+    {
+      "id": "m_0142",
+      "label": "event",
+      "surface": "the\nfirst time it happened",
+      "canonical": "the\nfirst time it happened",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13470,
+        "charEnd": 13496,
+        "timeStart": 931.48,
+        "timeEnd": 938.6
+      },
+      "score": 0.7148102521896362
+    },
+    {
+      "id": "m_0143",
+      "label": "location",
+      "surface": "her bedroom",
+      "canonical": "her bedroom",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13643,
+        "charEnd": 13654,
+        "timeStart": 943.68,
+        "timeEnd": 948.199
+      },
+      "score": 0.6474124789237976
+    },
+    {
+      "id": "m_0144",
+      "label": "location",
+      "surface": "her room",
+      "canonical": "her room",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13894,
+        "charEnd": 13902,
+        "timeStart": 960.72,
+        "timeEnd": 964.6
+      },
+      "score": 0.5862525701522827
+    },
+    {
+      "id": "m_0145",
+      "label": "location",
+      "surface": "the room",
+      "canonical": "the room",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 13991,
+        "charEnd": 13999,
+        "timeStart": 967.12,
+        "timeEnd": 971.6
+      },
+      "score": 0.520592987537384
+    },
+    {
+      "id": "m_0146",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14310,
+        "charEnd": 14317,
+        "timeStart": 987.12,
+        "timeEnd": 992.519
+      },
+      "score": 0.9923027753829956
+    },
+    {
+      "id": "m_0147",
+      "label": "person",
+      "surface": "stranger",
+      "canonical": "stranger",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14340,
+        "charEnd": 14348,
+        "timeStart": 989.6,
+        "timeEnd": 994.1990000000001
+      },
+      "score": 0.6467723846435547
+    },
+    {
+      "id": "m_0148",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14563,
+        "charEnd": 14570,
+        "timeStart": 1004.72,
+        "timeEnd": 1009.839
+      },
+      "score": 0.99391770362854
+    },
+    {
+      "id": "m_0149",
+      "label": "person",
+      "surface": "stranger",
+      "canonical": "stranger",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14609,
+        "charEnd": 14617,
+        "timeStart": 1007.24,
+        "timeEnd": 1012.6
+      },
+      "score": 0.704903244972229
+    },
+    {
+      "id": "m_0150",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14688,
+        "charEnd": 14695,
+        "timeStart": 1022.12,
+        "timeEnd": 1027
+      },
+      "score": 0.9935981035232544
+    },
+    {
+      "id": "m_0151",
+      "label": "location",
+      "surface": "school",
+      "canonical": "school",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14761,
+        "charEnd": 14767,
+        "timeStart": 1024.16,
+        "timeEnd": 1029.16
+      },
+      "score": 0.6652371883392334
+    },
+    {
+      "id": "m_0152",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14839,
+        "charEnd": 14846,
+        "timeStart": 1031.319,
+        "timeEnd": 1035.6399999999999
+      },
+      "score": 0.9930872321128845
+    },
+    {
+      "id": "m_0153",
+      "label": "location",
+      "surface": "school",
+      "canonical": "school",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14855,
+        "charEnd": 14861,
+        "timeStart": 1031.319,
+        "timeEnd": 1035.6399999999999
+      },
+      "score": 0.7709839940071106
+    },
+    {
+      "id": "m_0154",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 14983,
+        "charEnd": 14990,
+        "timeStart": 1037.48,
+        "timeEnd": 1041.88
+      },
+      "score": 0.9922592043876648
+    },
+    {
+      "id": "m_0155",
+      "label": "organization",
+      "surface": "The Strangers",
+      "canonical": "The Strangers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15153,
+        "charEnd": 15166,
+        "timeStart": 1055.919,
+        "timeEnd": 1061.1200000000001
+      },
+      "score": 0.8476588129997253
+    },
+    {
+      "id": "m_0156",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15206,
+        "charEnd": 15213,
+        "timeStart": 1059.08,
+        "timeEnd": 1063.96
+      },
+      "score": 0.9955180287361145
+    },
+    {
+      "id": "m_0157",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15329,
+        "charEnd": 15336,
+        "timeStart": 1066.44,
+        "timeEnd": 1070.559
+      },
+      "score": 0.9942209720611572
+    },
+    {
+      "id": "m_0158",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15589,
+        "charEnd": 15596,
+        "timeStart": 1083.2,
+        "timeEnd": 1088.32
+      },
+      "score": 0.9967882633209229
+    },
+    {
+      "id": "m_0159",
+      "label": "organization",
+      "surface": "the strangers",
+      "canonical": "The Strangers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15606,
+        "charEnd": 15619,
+        "timeStart": 1085.28,
+        "timeEnd": 1091.2
+      },
+      "score": 0.7852139472961426
+    },
+    {
+      "id": "m_0160",
+      "label": "event",
+      "surface": "during one of her sessions",
+      "canonical": "during one of her sessions",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15798,
+        "charEnd": 15824,
+        "timeStart": 1097.84,
+        "timeEnd": 1102.76
+      },
+      "score": 0.5118502378463745
+    },
+    {
+      "id": "m_0161",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15845,
+        "charEnd": 15852,
+        "timeStart": 1100.36,
+        "timeEnd": 1105.6399999999999
+      },
+      "score": 0.9871470928192139
+    },
+    {
+      "id": "m_0162",
+      "label": "nationality_or_ethnicity",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15877,
+        "charEnd": 15883,
+        "timeStart": 1102.76,
+        "timeEnd": 1107.919
+      },
+      "score": 0.6268300414085388
+    },
+    {
+      "id": "m_0163",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 15957,
+        "charEnd": 15964,
+        "timeStart": 1107.919,
+        "timeEnd": 1112.6000000000001
+      },
+      "score": 0.9897393584251404
+    },
+    {
+      "id": "m_0164",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16046,
+        "charEnd": 16053,
+        "timeStart": 1112.6,
+        "timeEnd": 1118.1589999999999
+      },
+      "score": 0.9892284870147705
+    },
+    {
+      "id": "m_0165",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16107,
+        "charEnd": 16114,
+        "timeStart": 1118.159,
+        "timeEnd": 1122.7600000000002
+      },
+      "score": 0.9883251190185547
+    },
+    {
+      "id": "m_0166",
+      "label": "location",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16233,
+        "charEnd": 16237,
+        "timeStart": 1126.44,
+        "timeEnd": 1131.88
+      },
+      "score": 0.6279701590538025
+    },
+    {
+      "id": "m_0167",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16454,
+        "charEnd": 16461,
+        "timeStart": 1138.679,
+        "timeEnd": 1143.3600000000001
+      },
+      "score": 0.9878600239753723
+    },
+    {
+      "id": "m_0168",
+      "label": "quantity",
+      "surface": "4 years",
+      "canonical": "4 years",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16542,
+        "charEnd": 16549,
+        "timeStart": 1145.76,
+        "timeEnd": 1151.2
+      },
+      "score": 0.56538325548172
+    },
+    {
+      "id": "m_0169",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16570,
+        "charEnd": 16577,
+        "timeStart": 1149.2,
+        "timeEnd": 1154.3600000000001
+      },
+      "score": 0.9602121114730835
+    },
+    {
+      "id": "m_0170",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16705,
+        "charEnd": 16712,
+        "timeStart": 1156.88,
+        "timeEnd": 1162.5590000000002
+      },
+      "score": 0.9795167446136475
+    },
+    {
+      "id": "m_0171",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16748,
+        "charEnd": 16755,
+        "timeStart": 1159.28,
+        "timeEnd": 1164.9189999999999
+      },
+      "score": 0.9752504825592041
+    },
+    {
+      "id": "m_0172",
+      "label": "location",
+      "surface": "moon base",
+      "canonical": "moon base",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 16827,
+        "charEnd": 16836,
+        "timeStart": 1164.919,
+        "timeEnd": 1168.919
+      },
+      "score": 0.5442039370536804
+    },
+    {
+      "id": "m_0173",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17003,
+        "charEnd": 17010,
+        "timeStart": 1175.76,
+        "timeEnd": 1182.02
+      },
+      "score": 0.975113034248352
+    },
+    {
+      "id": "m_0174",
+      "label": "organization",
+      "surface": "Fleet",
+      "canonical": "Fleet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17043,
+        "charEnd": 17048,
+        "timeStart": 1184.88,
+        "timeEnd": 1189.5200000000002
+      },
+      "score": 0.7782338261604309
+    },
+    {
+      "id": "m_0175",
+      "label": "quantity",
+      "surface": "9-year-old",
+      "canonical": "9-year-old",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17068,
+        "charEnd": 17078,
+        "timeStart": 1184.88,
+        "timeEnd": 1189.5200000000002
+      },
+      "score": 0.6487856507301331
+    },
+    {
+      "id": "m_0176",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17079,
+        "charEnd": 17086,
+        "timeStart": 1187.36,
+        "timeEnd": 1191.84
+      },
+      "score": 0.9777933955192566
+    },
+    {
+      "id": "m_0177",
+      "label": "facility",
+      "surface": "Great Lakes Naval Station",
+      "canonical": "Great Lakes Naval Station",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17157,
+        "charEnd": 17182,
+        "timeStart": 1191.84,
+        "timeEnd": 1195.84
+      },
+      "score": 0.8612691164016724
+    },
+    {
+      "id": "m_0178",
+      "label": "technology",
+      "surface": "trauma-based mind control\nprogramming",
+      "canonical": "trauma-based mind control\nprogramming",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17199,
+        "charEnd": 17236,
+        "timeStart": 1193.88,
+        "timeEnd": 1200.48
+      },
+      "score": 0.5709906220436096
+    },
+    {
+      "id": "m_0179",
+      "label": "organization",
+      "surface": "cia",
+      "canonical": "cia",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17285,
+        "charEnd": 17288,
+        "timeStart": 1197.72,
+        "timeEnd": 1203.1200000000001
+      },
+      "score": 0.8371530771255493
+    },
+    {
+      "id": "m_0180",
+      "label": "event",
+      "surface": "MK\nUltra project",
+      "canonical": "MK\nUltra project",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17291,
+        "charEnd": 17307,
+        "timeStart": 1197.72,
+        "timeEnd": 1205.799
+      },
+      "score": 0.523179829120636
+    },
+    {
+      "id": "m_0181",
+      "label": "technology",
+      "surface": "jump\ngates",
+      "canonical": "jump\ngates",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17367,
+        "charEnd": 17377,
+        "timeStart": 1203.12,
+        "timeEnd": 1211.4
+      },
+      "score": 0.582832932472229
+    },
+    {
+      "id": "m_0182",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17460,
+        "charEnd": 17467,
+        "timeStart": 1211.4,
+        "timeEnd": 1217.8400000000001
+      },
+      "score": 0.9859230518341064
+    },
+    {
+      "id": "m_0183",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17552,
+        "charEnd": 17559,
+        "timeStart": 1229.72,
+        "timeEnd": 1234.44
+      },
+      "score": 0.9718731045722961
+    },
+    {
+      "id": "m_0184",
+      "label": "organization",
+      "surface": "Air Patrol",
+      "canonical": "Air Patrol",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17586,
+        "charEnd": 17596,
+        "timeStart": 1231.84,
+        "timeEnd": 1236.3999999999999
+      },
+      "score": 0.6544952988624573
+    },
+    {
+      "id": "m_0185",
+      "label": "location",
+      "surface": "Mars",
+      "canonical": "Mars",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17601,
+        "charEnd": 17605,
+        "timeStart": 1231.84,
+        "timeEnd": 1236.3999999999999
+      },
+      "score": 0.817740261554718
+    },
+    {
+      "id": "m_0186",
+      "label": "organization",
+      "surface": "dark Fleet",
+      "canonical": "dark Fleet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17680,
+        "charEnd": 17690,
+        "timeStart": 1238.2,
+        "timeEnd": 1243.52
+      },
+      "score": 0.6471045613288879
+    },
+    {
+      "id": "m_0187",
+      "label": "facility",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17691,
+        "charEnd": 17695,
+        "timeStart": 1238.2,
+        "timeEnd": 1243.52
+      },
+      "score": 0.5597561001777649
+    },
+    {
+      "id": "m_0188",
+      "label": "location",
+      "surface": "Mars",
+      "canonical": "Mars",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17699,
+        "charEnd": 17703,
+        "timeStart": 1238.2,
+        "timeEnd": 1243.52
+      },
+      "score": 0.7742643356323242
+    },
+    {
+      "id": "m_0189",
+      "label": "role",
+      "surface": "primary mission",
+      "canonical": "primary mission",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17807,
+        "charEnd": 17822,
+        "timeStart": 1246.24,
+        "timeEnd": 1250.76
+      },
+      "score": 0.691369891166687
+    },
+    {
+      "id": "m_0190",
+      "label": "facility",
+      "surface": "base",
+      "canonical": "base",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 17842,
+        "charEnd": 17846,
+        "timeStart": 1249.08,
+        "timeEnd": 1252.6399999999999
+      },
+      "score": 0.5305954813957214
+    },
+    {
+      "id": "m_0191",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18015,
+        "charEnd": 18022,
+        "timeStart": 1260.52,
+        "timeEnd": 1265.44
+      },
+      "score": 0.9887188673019409
+    },
+    {
+      "id": "m_0192",
+      "label": "technology",
+      "surface": "enhancements",
+      "canonical": "enhancements",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18044,
+        "charEnd": 18056,
+        "timeStart": 1263,
+        "timeEnd": 1267.72
+      },
+      "score": 0.9275257587432861
+    },
+    {
+      "id": "m_0193",
+      "label": "role",
+      "surface": "super\nsoldier",
+      "canonical": "super\nsoldier",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18076,
+        "charEnd": 18089,
+        "timeStart": 1263,
+        "timeEnd": 1270.48
+      },
+      "score": 0.5242878198623657
+    },
+    {
+      "id": "m_0194",
+      "label": "technology",
+      "surface": "enhancements",
+      "canonical": "enhancements",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18090,
+        "charEnd": 18102,
+        "timeStart": 1265.44,
+        "timeEnd": 1270.48
+      },
+      "score": 0.9149823188781738
+    },
+    {
+      "id": "m_0195",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18408,
+        "charEnd": 18415,
+        "timeStart": 1286.2,
+        "timeEnd": 1291.279
+      },
+      "score": 0.9846103191375732
+    },
+    {
+      "id": "m_0196",
+      "label": "organization",
+      "surface": "Mars Defense Force",
+      "canonical": "Mars Defense Force",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18453,
+        "charEnd": 18471,
+        "timeStart": 1288.4,
+        "timeEnd": 1293.72
+      },
+      "score": 0.8692675828933716
+    },
+    {
+      "id": "m_0197",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18558,
+        "charEnd": 18565,
+        "timeStart": 1295.24,
+        "timeEnd": 1301.799
+      },
+      "score": 0.9806855916976929
+    },
+    {
+      "id": "m_0198",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18626,
+        "charEnd": 18636,
+        "timeStart": 1307.36,
+        "timeEnd": 1313.1589999999999
+      },
+      "score": 0.805184543132782
+    },
+    {
+      "id": "m_0199",
+      "label": "location",
+      "surface": "Planet X",
+      "canonical": "Planet X",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18640,
+        "charEnd": 18648,
+        "timeStart": 1307.36,
+        "timeEnd": 1313.1589999999999
+      },
+      "score": 0.9604731202125549
+    },
+    {
+      "id": "m_0200",
+      "label": "location",
+      "surface": "Planet X",
+      "canonical": "Planet X",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18669,
+        "charEnd": 18677,
+        "timeStart": 1310.2,
+        "timeEnd": 1314.1200000000001
+      },
+      "score": 0.9544703364372253
+    },
+    {
+      "id": "m_0201",
+      "label": "location",
+      "surface": "kyber belt",
+      "canonical": "kyber belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18864,
+        "charEnd": 18874,
+        "timeStart": 1323.32,
+        "timeEnd": 1328.08
+      },
+      "score": 0.7035835981369019
+    },
+    {
+      "id": "m_0202",
+      "label": "organization",
+      "surface": "draconians",
+      "canonical": "draconians",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 18883,
+        "charEnd": 18893,
+        "timeStart": 1325.32,
+        "timeEnd": 1329.96
+      },
+      "score": 0.5845986008644104
+    },
+    {
+      "id": "m_0203",
+      "label": "role",
+      "surface": "Soldier",
+      "canonical": "Soldier",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 19081,
+        "charEnd": 19088,
+        "timeStart": 1336.96,
+        "timeEnd": 1342.2
+      },
+      "score": 0.7925739884376526
+    },
+    {
+      "id": "m_0204",
+      "label": "technology",
+      "surface": "Advanced\nholographic technology",
+      "canonical": "Advanced\nholographic technology",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 19668,
+        "charEnd": 19699,
+        "timeStart": 1374,
+        "timeEnd": 1380.919
+      },
+      "score": 0.9368938207626343
+    },
+    {
+      "id": "m_0205",
+      "label": "technology",
+      "surface": "psychic\nmanipulation",
+      "canonical": "psychic\nmanipulation",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 19700,
+        "charEnd": 19720,
+        "timeStart": 1376.279,
+        "timeEnd": 1383.72
+      },
+      "score": 0.8086017966270447
+    },
+    {
+      "id": "m_0206",
+      "label": "technology",
+      "surface": "portal Tech",
+      "canonical": "portal Tech",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 19725,
+        "charEnd": 19736,
+        "timeStart": 1378.24,
+        "timeEnd": 1383.72
+      },
+      "score": 0.8908162117004395
+    },
+    {
+      "id": "m_0207",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 19772,
+        "charEnd": 19779,
+        "timeStart": 1380.919,
+        "timeEnd": 1385.6000000000001
+      },
+      "score": 0.9689410328865051
+    },
+    {
+      "id": "m_0208",
+      "label": "organization",
+      "surface": "Empire",
+      "canonical": "Empire",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20018,
+        "charEnd": 20024,
+        "timeStart": 1397.52,
+        "timeEnd": 1403.039
+      },
+      "score": 0.7340129017829895
+    },
+    {
+      "id": "m_0209",
+      "label": "organization",
+      "surface": "slave Traders",
+      "canonical": "slave Traders",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20028,
+        "charEnd": 20041,
+        "timeStart": 1397.52,
+        "timeEnd": 1403.039
+      },
+      "score": 0.5548850297927856
+    },
+    {
+      "id": "m_0210",
+      "label": "location",
+      "surface": "Planet X",
+      "canonical": "Planet X",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20046,
+        "charEnd": 20054,
+        "timeStart": 1397.52,
+        "timeEnd": 1403.039
+      },
+      "score": 0.9638300538063049
+    },
+    {
+      "id": "m_0211",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20163,
+        "charEnd": 20170,
+        "timeStart": 1405.039,
+        "timeEnd": 1410.48
+      },
+      "score": 0.9664656519889832
+    },
+    {
+      "id": "m_0212",
+      "label": "role",
+      "surface": "patrol pilot",
+      "canonical": "patrol pilot",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20192,
+        "charEnd": 20204,
+        "timeStart": 1407.96,
+        "timeEnd": 1412.2
+      },
+      "score": 0.8872126340866089
+    },
+    {
+      "id": "m_0213",
+      "label": "location",
+      "surface": "Planet X",
+      "canonical": "Planet X",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20280,
+        "charEnd": 20288,
+        "timeStart": 1412.2,
+        "timeEnd": 1417.799
+      },
+      "score": 0.9700380563735962
+    },
+    {
+      "id": "m_0214",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20536,
+        "charEnd": 20543,
+        "timeStart": 1428.36,
+        "timeEnd": 1432.08
+      },
+      "score": 0.9927854537963867
+    },
+    {
+      "id": "m_0215",
+      "label": "quantity",
+      "surface": "20-year commitment",
+      "canonical": "20-year commitment",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20548,
+        "charEnd": 20566,
+        "timeStart": 1428.36,
+        "timeEnd": 1432.08
+      },
+      "score": 0.671649158000946
+    },
+    {
+      "id": "m_0216",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20698,
+        "charEnd": 20705,
+        "timeStart": 1443.2,
+        "timeEnd": 1449.2
+      },
+      "score": 0.9942126870155334
+    },
+    {
+      "id": "m_0217",
+      "label": "location",
+      "surface": "home",
+      "canonical": "home",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20779,
+        "charEnd": 20783,
+        "timeStart": 1449.2,
+        "timeEnd": 1454.52
+      },
+      "score": 0.5411483645439148
+    },
+    {
+      "id": "m_0218",
+      "label": "location",
+      "surface": "Earth",
+      "canonical": "Earth",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20787,
+        "charEnd": 20792,
+        "timeStart": 1449.2,
+        "timeEnd": 1454.52
+      },
+      "score": 0.8511661887168884
+    },
+    {
+      "id": "m_0219",
+      "label": "organization",
+      "surface": "dark fleet",
+      "canonical": "dark Fleet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 20971,
+        "charEnd": 20981,
+        "timeStart": 1462.679,
+        "timeEnd": 1468.3600000000001
+      },
+      "score": 0.8996459245681763
+    },
+    {
+      "id": "m_0220",
+      "label": "date_time",
+      "surface": "2012",
+      "canonical": "2012",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21010,
+        "charEnd": 21014,
+        "timeStart": 1464.919,
+        "timeEnd": 1470.64
+      },
+      "score": 0.9493483304977417
+    },
+    {
+      "id": "m_0221",
+      "label": "quantity",
+      "surface": "age 40",
+      "canonical": "age 40",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21018,
+        "charEnd": 21024,
+        "timeStart": 1464.919,
+        "timeEnd": 1470.64
+      },
+      "score": 0.8882584571838379
+    },
+    {
+      "id": "m_0222",
+      "label": "person",
+      "surface": "Rebecca",
+      "canonical": "Rebecca",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21025,
+        "charEnd": 21032,
+        "timeStart": 1464.919,
+        "timeEnd": 1470.64
+      },
+      "score": 0.9930160045623779
+    },
+    {
+      "id": "m_0223",
+      "label": "event",
+      "surface": "freak accident",
+      "canonical": "freak accident",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21044,
+        "charEnd": 21058,
+        "timeStart": 1468.36,
+        "timeEnd": 1473.039
+      },
+      "score": 0.8613579273223877
+    },
+    {
+      "id": "m_0224",
+      "label": "event",
+      "surface": "Abduction",
+      "canonical": "Abduction",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21227,
+        "charEnd": 21236,
+        "timeStart": 1480.039,
+        "timeEnd": 1483.84
+      },
+      "score": 0.8119791746139526
+    },
+    {
+      "id": "m_0225",
+      "label": "person",
+      "surface": "whistleblowers",
+      "canonical": "whistleblowers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21312,
+        "charEnd": 21326,
+        "timeStart": 1483.84,
+        "timeEnd": 1488.84
+      },
+      "score": 0.5325326919555664
+    },
+    {
+      "id": "m_0226",
+      "label": "organization",
+      "surface": "dark Fleet",
+      "canonical": "dark Fleet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21646,
+        "charEnd": 21656,
+        "timeStart": 1504.12,
+        "timeEnd": 1509.399
+      },
+      "score": 0.6290215849876404
+    },
+    {
+      "id": "m_0227",
+      "label": "organization",
+      "surface": "US Navy",
+      "canonical": "US Navy",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21675,
+        "charEnd": 21682,
+        "timeStart": 1506.44,
+        "timeEnd": 1511.48
+      },
+      "score": 0.9228426218032837
+    },
+    {
+      "id": "m_0228",
+      "label": "organization",
+      "surface": "Galactic\nFederation",
+      "canonical": "Galactic\nFederation",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21711,
+        "charEnd": 21730,
+        "timeStart": 1509.399,
+        "timeEnd": 1516.1200000000001
+      },
+      "score": 0.9547370672225952
+    },
+    {
+      "id": "m_0229",
+      "label": "technology",
+      "surface": "New Horizon spacecraft",
+      "canonical": "New Horizon spacecraft",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21767,
+        "charEnd": 21789,
+        "timeStart": 1513.799,
+        "timeEnd": 1518.48
+      },
+      "score": 0.88546222448349
+    },
+    {
+      "id": "m_0230",
+      "label": "location",
+      "surface": "kyber belt",
+      "canonical": "kyber belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21826,
+        "charEnd": 21836,
+        "timeStart": 1516.12,
+        "timeEnd": 1521.08
+      },
+      "score": 0.9086103439331055
+    },
+    {
+      "id": "m_0231",
+      "label": "nationality_or_ethnicity",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21896,
+        "charEnd": 21902,
+        "timeStart": 1521.08,
+        "timeEnd": 1525.559
+      },
+      "score": 0.5698232650756836
+    },
+    {
+      "id": "m_0232",
+      "label": "organization",
+      "surface": "human race",
+      "canonical": "human race",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21936,
+        "charEnd": 21946,
+        "timeStart": 1523.44,
+        "timeEnd": 1527.919
+      },
+      "score": 0.6039899587631226
+    },
+    {
+      "id": "m_0233",
+      "label": "location",
+      "surface": "the edge of the kyber belt",
+      "canonical": "the edge of the kyber belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 21973,
+        "charEnd": 21999,
+        "timeStart": 1525.559,
+        "timeEnd": 1530.399
+      },
+      "score": 0.7246705293655396
+    },
+    {
+      "id": "m_0234",
+      "label": "location",
+      "surface": "the entire solar system",
+      "canonical": "the entire solar system",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22015,
+        "charEnd": 22038,
+        "timeStart": 1527.919,
+        "timeEnd": 1533.279
+      },
+      "score": 0.7531359791755676
+    },
+    {
+      "id": "m_0235",
+      "label": "organization",
+      "surface": "dark Fleet",
+      "canonical": "dark Fleet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22368,
+        "charEnd": 22378,
+        "timeStart": 1551.919,
+        "timeEnd": 1558.44
+      },
+      "score": 0.513308584690094
+    },
+    {
+      "id": "m_0236",
+      "label": "person",
+      "surface": "Cory",
+      "canonical": "Cory",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22547,
+        "charEnd": 22551,
+        "timeStart": 1563.799,
+        "timeEnd": 1569.1589999999999
+      },
+      "score": 0.9416124820709229
+    },
+    {
+      "id": "m_0237",
+      "label": "location",
+      "surface": "the moon",
+      "canonical": "the moon",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22617,
+        "charEnd": 22625,
+        "timeStart": 1569.159,
+        "timeEnd": 1575.72
+      },
+      "score": 0.6839385032653809
+    },
+    {
+      "id": "m_0238",
+      "label": "date_time",
+      "surface": "2010",
+      "canonical": "2010",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22741,
+        "charEnd": 22745,
+        "timeStart": 1578.039,
+        "timeEnd": 1582.039
+      },
+      "score": 0.9208657145500183
+    },
+    {
+      "id": "m_0239",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22755,
+        "charEnd": 22760,
+        "timeStart": 1578.039,
+        "timeEnd": 1582.039
+      },
+      "score": 0.8520503640174866
+    },
+    {
+      "id": "m_0240",
+      "label": "organization",
+      "surface": "secret space\nprogram",
+      "canonical": "secret space program",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22798,
+        "charEnd": 22818,
+        "timeStart": 1579.88,
+        "timeEnd": 1586.32
+      },
+      "score": 0.9296677708625793
+    },
+    {
+      "id": "m_0241",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22849,
+        "charEnd": 22854,
+        "timeStart": 1584.039,
+        "timeEnd": 1588.399
+      },
+      "score": 0.8955034613609314
+    },
+    {
+      "id": "m_0242",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 22915,
+        "charEnd": 22920,
+        "timeStart": 1586.32,
+        "timeEnd": 1590.6399999999999
+      },
+      "score": 0.8344718813896179
+    },
+    {
+      "id": "m_0243",
+      "label": "person",
+      "surface": "Cory",
+      "canonical": "Cory",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 23537,
+        "charEnd": 23541,
+        "timeStart": 1630.44,
+        "timeEnd": 1635.679
+      },
+      "score": 0.6280819773674011
+    },
+    {
+      "id": "m_0244",
+      "label": "work_of_media",
+      "surface": "20 and back",
+      "canonical": "20 and back",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 23596,
+        "charEnd": 23607,
+        "timeStart": 1635.679,
+        "timeEnd": 1640.52
+      },
+      "score": 0.9636251926422119
+    },
+    {
+      "id": "m_0245",
+      "label": "organization",
+      "surface": "secret space\nprogram",
+      "canonical": "secret space program",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 23616,
+        "charEnd": 23636,
+        "timeStart": 1635.679,
+        "timeEnd": 1642.5590000000002
+      },
+      "score": 0.9308987855911255
+    },
+    {
+      "id": "m_0246",
+      "label": "work_of_media",
+      "surface": "20\nand back",
+      "canonical": "20 and back",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 23705,
+        "charEnd": 23716,
+        "timeStart": 1640.52,
+        "timeEnd": 1647.799
+      },
+      "score": 0.9840443134307861
+    },
+    {
+      "id": "m_0247",
+      "label": "person",
+      "surface": "Cory good",
+      "canonical": "Cory good",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 23887,
+        "charEnd": 23896,
+        "timeStart": 1653.2,
+        "timeEnd": 1657.799
+      },
+      "score": 0.9709623456001282
+    },
+    {
+      "id": "m_0248",
+      "label": "person",
+      "surface": "Michael\nralie",
+      "canonical": "Michael\nralie",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 23928,
+        "charEnd": 23941,
+        "timeStart": 1655.72,
+        "timeEnd": 1662.519
+      },
+      "score": 0.9189648628234863
+    },
+    {
+      "id": "m_0249",
+      "label": "work_of_media",
+      "surface": "Mars records",
+      "canonical": "Mars records",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 23981,
+        "charEnd": 23993,
+        "timeStart": 1659.96,
+        "timeEnd": 1664.72
+      },
+      "score": 0.6293197274208069
+    },
+    {
+      "id": "m_0250",
+      "label": "date_time",
+      "surface": "year 2000",
+      "canonical": "year 2000",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24001,
+        "charEnd": 24010,
+        "timeStart": 1659.96,
+        "timeEnd": 1664.72
+      },
+      "score": 0.6701356172561646
+    },
+    {
+      "id": "m_0251",
+      "label": "person",
+      "surface": "Cory good",
+      "canonical": "Cory good",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24023,
+        "charEnd": 24032,
+        "timeStart": 1662.519,
+        "timeEnd": 1666.88
+      },
+      "score": 0.9742438793182373
+    },
+    {
+      "id": "m_0252",
+      "label": "person",
+      "surface": "albic",
+      "canonical": "albic",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24202,
+        "charEnd": 24207,
+        "timeStart": 1671.559,
+        "timeEnd": 1676.32
+      },
+      "score": 0.7131162881851196
+    },
+    {
+      "id": "m_0253",
+      "label": "event",
+      "surface": "ad Mission",
+      "canonical": "ad Mission",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24309,
+        "charEnd": 24319,
+        "timeStart": 1678.32,
+        "timeEnd": 1682.6789999999999
+      },
+      "score": 0.6269634366035461
+    },
+    {
+      "id": "m_0254",
+      "label": "location",
+      "surface": "Eldridge",
+      "canonical": "Eldridge",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24346,
+        "charEnd": 24354,
+        "timeStart": 1681.08,
+        "timeEnd": 1685
+      },
+      "score": 0.5385950207710266
+    },
+    {
+      "id": "m_0255",
+      "label": "date_time",
+      "surface": "year 2137",
+      "canonical": "year 2137",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24371,
+        "charEnd": 24380,
+        "timeStart": 1682.679,
+        "timeEnd": 1687.1200000000001
+      },
+      "score": 0.6300337910652161
+    },
+    {
+      "id": "m_0256",
+      "label": "person",
+      "surface": "Cory",
+      "canonical": "Cory",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24459,
+        "charEnd": 24463,
+        "timeStart": 1687.12,
+        "timeEnd": 1692
+      },
+      "score": 0.9556223750114441
+    },
+    {
+      "id": "m_0257",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24473,
+        "charEnd": 24478,
+        "timeStart": 1687.12,
+        "timeEnd": 1692
+      },
+      "score": 0.8716764450073242
+    },
+    {
+      "id": "m_0258",
+      "label": "organization",
+      "surface": "secret space program",
+      "canonical": "secret space program",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24555,
+        "charEnd": 24575,
+        "timeStart": 1694,
+        "timeEnd": 1698.76
+      },
+      "score": 0.9358416199684143
+    },
+    {
+      "id": "m_0259",
+      "label": "organization",
+      "surface": "secret space program",
+      "canonical": "secret space program",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24669,
+        "charEnd": 24689,
+        "timeStart": 1701.279,
+        "timeEnd": 1704.679
+      },
+      "score": 0.9720357060432434
+    },
+    {
+      "id": "m_0260",
+      "label": "organization",
+      "surface": "dark Fleet",
+      "canonical": "dark Fleet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24841,
+        "charEnd": 24851,
+        "timeStart": 1715.6,
+        "timeEnd": 1720.8799999999999
+      },
+      "score": 0.8641409873962402
+    },
+    {
+      "id": "m_0261",
+      "label": "organization",
+      "surface": "dark Fleet",
+      "canonical": "dark Fleet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24852,
+        "charEnd": 24862,
+        "timeStart": 1715.6,
+        "timeEnd": 1720.8799999999999
+      },
+      "score": 0.8913012146949768
+    },
+    {
+      "id": "m_0262",
+      "label": "work_of_media",
+      "surface": "story",
+      "canonical": "story",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 24930,
+        "charEnd": 24935,
+        "timeStart": 1720.88,
+        "timeEnd": 1724.64
+      },
+      "score": 0.8155965805053711
+    },
+    {
+      "id": "m_0263",
+      "label": "person",
+      "surface": "Corey",
+      "canonical": "Corey",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25074,
+        "charEnd": 25079,
+        "timeStart": 1730.799,
+        "timeEnd": 1737.1589999999999
+      },
+      "score": 0.6688137054443359
+    },
+    {
+      "id": "m_0264",
+      "label": "person",
+      "surface": "Bill Cooper",
+      "canonical": "Bill Cooper",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25209,
+        "charEnd": 25220,
+        "timeStart": 1739.96,
+        "timeEnd": 1746.039
+      },
+      "score": 0.9509950876235962
+    },
+    {
+      "id": "m_0265",
+      "label": "organization",
+      "surface": "CNN",
+      "canonical": "CNN",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25228,
+        "charEnd": 25231,
+        "timeStart": 1742.919,
+        "timeEnd": 1749.1200000000001
+      },
+      "score": 0.8917413353919983
+    },
+    {
+      "id": "m_0266",
+      "label": "date_time",
+      "surface": "1992",
+      "canonical": "1992",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25235,
+        "charEnd": 25239,
+        "timeStart": 1742.919,
+        "timeEnd": 1749.1200000000001
+      },
+      "score": 0.7635961771011353
+    },
+    {
+      "id": "m_0267",
+      "label": "organization",
+      "surface": "secret space program",
+      "canonical": "secret space program",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25267,
+        "charEnd": 25287,
+        "timeStart": 1746.039,
+        "timeEnd": 1751.72
+      },
+      "score": 0.6785759925842285
+    },
+    {
+      "id": "m_0268",
+      "label": "location",
+      "surface": "Pluto",
+      "canonical": "Pluto",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25291,
+        "charEnd": 25296,
+        "timeStart": 1746.039,
+        "timeEnd": 1751.72
+      },
+      "score": 0.7554327845573425
+    },
+    {
+      "id": "m_0269",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25332,
+        "charEnd": 25342,
+        "timeStart": 1751.72,
+        "timeEnd": 1755.72
+      },
+      "score": 0.5994724631309509
+    },
+    {
+      "id": "m_0270",
+      "label": "organization",
+      "surface": "secret space\nprogram",
+      "canonical": "secret space program",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25354,
+        "charEnd": 25374,
+        "timeStart": 1751.72,
+        "timeEnd": 1757.76
+      },
+      "score": 0.8452336192131042
+    },
+    {
+      "id": "m_0271",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25505,
+        "charEnd": 25509,
+        "timeStart": 1760.76,
+        "timeEnd": 1765.919
+      },
+      "score": 0.9197288751602173
+    },
+    {
+      "id": "m_0272",
+      "label": "organization",
+      "surface": "secret space program",
+      "canonical": "secret space program",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25533,
+        "charEnd": 25553,
+        "timeStart": 1763.84,
+        "timeEnd": 1767.6
+      },
+      "score": 0.8063541054725647
+    },
+    {
+      "id": "m_0273",
+      "label": "organization",
+      "surface": "Navy Department",
+      "canonical": "Navy Department",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25613,
+        "charEnd": 25628,
+        "timeStart": 1767.6,
+        "timeEnd": 1775.1589999999999
+      },
+      "score": 0.8989481925964355
+    },
+    {
+      "id": "m_0274",
+      "label": "person",
+      "surface": "Cory good",
+      "canonical": "Cory good",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 25964,
+        "charEnd": 25973,
+        "timeStart": 1792.039,
+        "timeEnd": 1796.559
+      },
+      "score": 0.8493074774742126
+    },
+    {
+      "id": "m_0275",
+      "label": "location",
+      "surface": "Kyper\nbelt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26163,
+        "charEnd": 26173,
+        "timeStart": 1804.799,
+        "timeEnd": 1812.0800000000002
+      },
+      "score": 0.6814090609550476
+    },
+    {
+      "id": "m_0276",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26399,
+        "charEnd": 26403,
+        "timeStart": 1820.279,
+        "timeEnd": 1825.08
+      },
+      "score": 0.9924488067626953
+    },
+    {
+      "id": "m_0277",
+      "label": "organization",
+      "surface": "New Horizons",
+      "canonical": "New Horizons",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26426,
+        "charEnd": 26438,
+        "timeStart": 1820.279,
+        "timeEnd": 1825.08
+      },
+      "score": 0.6931666731834412
+    },
+    {
+      "id": "m_0278",
+      "label": "organization",
+      "surface": "New Horizons",
+      "canonical": "New Horizons",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26490,
+        "charEnd": 26502,
+        "timeStart": 1825.08,
+        "timeEnd": 1830.36
+      },
+      "score": 0.6912580728530884
+    },
+    {
+      "id": "m_0279",
+      "label": "location",
+      "surface": "Adon",
+      "canonical": "Adon",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26533,
+        "charEnd": 26537,
+        "timeStart": 1827,
+        "timeEnd": 1832.44
+      },
+      "score": 0.834445059299469
+    },
+    {
+      "id": "m_0280",
+      "label": "date_time",
+      "surface": "2016",
+      "canonical": "2016",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26541,
+        "charEnd": 26545,
+        "timeStart": 1827,
+        "timeEnd": 1832.44
+      },
+      "score": 0.84266197681427
+    },
+    {
+      "id": "m_0281",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26546,
+        "charEnd": 26550,
+        "timeStart": 1827,
+        "timeEnd": 1832.44
+      },
+      "score": 0.9918413162231445
+    },
+    {
+      "id": "m_0282",
+      "label": "date_time",
+      "surface": "July 4th 2015",
+      "canonical": "July 4th 2015",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26723,
+        "charEnd": 26736,
+        "timeStart": 1838.399,
+        "timeEnd": 1843.559
+      },
+      "score": 0.9309320449829102
+    },
+    {
+      "id": "m_0283",
+      "label": "location",
+      "surface": "Pluto",
+      "canonical": "Pluto",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26783,
+        "charEnd": 26788,
+        "timeStart": 1843.559,
+        "timeEnd": 1849.1589999999999
+      },
+      "score": 0.7825405597686768
+    },
+    {
+      "id": "m_0284",
+      "label": "work_of_media",
+      "surface": "YouTube\nvideo",
+      "canonical": "YouTube\nvideo",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26854,
+        "charEnd": 26867,
+        "timeStart": 1846.48,
+        "timeEnd": 1855.7600000000002
+      },
+      "score": 0.7379937171936035
+    },
+    {
+      "id": "m_0285",
+      "label": "work_of_media",
+      "surface": "Never Trust what you hear in a\nYouTube video",
+      "canonical": "Never Trust what you hear in a\nYouTube video",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26868,
+        "charEnd": 26912,
+        "timeStart": 1849.159,
+        "timeEnd": 1855.76
+      },
+      "score": 0.5272076725959778
+    },
+    {
+      "id": "m_0286",
+      "label": "organization",
+      "surface": "NASA",
+      "canonical": "NASA",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 26969,
+        "charEnd": 26973,
+        "timeStart": 1861.08,
+        "timeEnd": 1866.519
+      },
+      "score": 0.9440547227859497
+    },
+    {
+      "id": "m_0287",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27035,
+        "charEnd": 27046,
+        "timeStart": 1866.519,
+        "timeEnd": 1871.799
+      },
+      "score": 0.8423426151275635
+    },
+    {
+      "id": "m_0288",
+      "label": "technology",
+      "surface": "computer models",
+      "canonical": "computer models",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27068,
+        "charEnd": 27083,
+        "timeStart": 1868.76,
+        "timeEnd": 1875.039
+      },
+      "score": 0.5196033120155334
+    },
+    {
+      "id": "m_0289",
+      "label": "location",
+      "surface": "distant solar system",
+      "canonical": "distant solar system",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27162,
+        "charEnd": 27182,
+        "timeStart": 1875.039,
+        "timeEnd": 1878.72
+      },
+      "score": 0.6384373903274536
+    },
+    {
+      "id": "m_0290",
+      "label": "location",
+      "surface": "Solar System",
+      "canonical": "Solar System",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27382,
+        "charEnd": 27394,
+        "timeStart": 1889.159,
+        "timeEnd": 1892.3600000000001
+      },
+      "score": 0.825670599937439
+    },
+    {
+      "id": "m_0291",
+      "label": "event",
+      "surface": "planetary census",
+      "canonical": "planetary census",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27397,
+        "charEnd": 27413,
+        "timeStart": 1889.159,
+        "timeEnd": 1892.3600000000001
+      },
+      "score": 0.8655225038528442
+    },
+    {
+      "id": "m_0292",
+      "label": "location",
+      "surface": "solar system",
+      "canonical": "Solar System",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27535,
+        "charEnd": 27547,
+        "timeStart": 1899.039,
+        "timeEnd": 1905.6
+      },
+      "score": 0.829174816608429
+    },
+    {
+      "id": "m_0293",
+      "label": "organization",
+      "surface": "humans",
+      "canonical": "humans",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27591,
+        "charEnd": 27597,
+        "timeStart": 1903.399,
+        "timeEnd": 1907.559
+      },
+      "score": 0.548723042011261
+    },
+    {
+      "id": "m_0294",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27620,
+        "charEnd": 27630,
+        "timeStart": 1905.6,
+        "timeEnd": 1909.6789999999999
+      },
+      "score": 0.9727411866188049
+    },
+    {
+      "id": "m_0295",
+      "label": "facility",
+      "surface": "gas\nstation",
+      "canonical": "gas\nstation",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27638,
+        "charEnd": 27649,
+        "timeStart": 1905.6,
+        "timeEnd": 1912.48
+      },
+      "score": 0.6835554838180542
+    },
+    {
+      "id": "m_0296",
+      "label": "location",
+      "surface": "deep space",
+      "canonical": "deep space",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27685,
+        "charEnd": 27695,
+        "timeStart": 1909.679,
+        "timeEnd": 1916.159
+      },
+      "score": 0.7301190495491028
+    },
+    {
+      "id": "m_0297",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27712,
+        "charEnd": 27722,
+        "timeStart": 1909.679,
+        "timeEnd": 1916.159
+      },
+      "score": 0.9774446487426758
+    },
+    {
+      "id": "m_0298",
+      "label": "technology",
+      "surface": "spacecraft",
+      "canonical": "spacecraft",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27917,
+        "charEnd": 27927,
+        "timeStart": 1923.84,
+        "timeEnd": 1928.84
+      },
+      "score": 0.5487987399101257
+    },
+    {
+      "id": "m_0299",
+      "label": "location",
+      "surface": "Kyper belt",
+      "canonical": "Kyper belt",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 27935,
+        "charEnd": 27945,
+        "timeStart": 1923.84,
+        "timeEnd": 1928.84
+      },
+      "score": 0.9749763607978821
+    },
+    {
+      "id": "m_0300",
+      "label": "person",
+      "surface": "AJ",
+      "canonical": "AJ",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28093,
+        "charEnd": 28095,
+        "timeStart": 1940.24,
+        "timeEnd": 1944.76
+      },
+      "score": 0.9618196487426758
+    },
+    {
+      "id": "m_0301",
+      "label": "work_of_media",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28135,
+        "charEnd": 28143,
+        "timeStart": 1942.159,
+        "timeEnd": 1946.279
+      },
+      "score": 0.7837976813316345
+    },
+    {
+      "id": "m_0302",
+      "label": "organization",
+      "surface": "Wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28399,
+        "charEnd": 28407,
+        "timeStart": 1956.6,
+        "timeEnd": 1961.08
+      },
+      "score": 0.9857363104820251
+    },
+    {
+      "id": "m_0303",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28438,
+        "charEnd": 28446,
+        "timeStart": 1958.76,
+        "timeEnd": 1962.919
+      },
+      "score": 0.9900817275047302
+    },
+    {
+      "id": "m_0304",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28494,
+        "charEnd": 28502,
+        "timeStart": 1962.919,
+        "timeEnd": 1966.96
+      },
+      "score": 0.9936052560806274
+    },
+    {
+      "id": "m_0305",
+      "label": "technology",
+      "surface": "Discord",
+      "canonical": "Discord",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28503,
+        "charEnd": 28510,
+        "timeStart": 1962.919,
+        "timeEnd": 1966.96
+      },
+      "score": 0.7300595045089722
+    },
+    {
+      "id": "m_0306",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28519,
+        "charEnd": 28528,
+        "timeStart": 1962.919,
+        "timeEnd": 1966.96
+      },
+      "score": 0.7246697545051575
+    },
+    {
+      "id": "m_0307",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28652,
+        "charEnd": 28660,
+        "timeStart": 1970.639,
+        "timeEnd": 1975.1999999999998
+      },
+      "score": 0.9894506335258484
+    },
+    {
+      "id": "m_0308",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28668,
+        "charEnd": 28675,
+        "timeStart": 1970.639,
+        "timeEnd": 1975.1999999999998
+      },
+      "score": 0.8226799964904785
+    },
+    {
+      "id": "m_0309",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28755,
+        "charEnd": 28762,
+        "timeStart": 1975.2,
+        "timeEnd": 1979.2
+      },
+      "score": 0.8459265828132629
+    },
+    {
+      "id": "m_0310",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28781,
+        "charEnd": 28789,
+        "timeStart": 1977.039,
+        "timeEnd": 1981.639
+      },
+      "score": 0.9930123686790466
+    },
+    {
+      "id": "m_0311",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28800,
+        "charEnd": 28807,
+        "timeStart": 1979.2,
+        "timeEnd": 1983.72
+      },
+      "score": 0.8070170879364014
+    },
+    {
+      "id": "m_0312",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 28970,
+        "charEnd": 28977,
+        "timeStart": 1986.919,
+        "timeEnd": 1990.1200000000001
+      },
+      "score": 0.8188260197639465
+    },
+    {
+      "id": "m_0313",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 29008,
+        "charEnd": 29015,
+        "timeStart": 1988.32,
+        "timeEnd": 1992.08
+      },
+      "score": 0.9349722266197205
+    },
+    {
+      "id": "m_0314",
+      "label": "quantity",
+      "surface": "$3",
+      "canonical": "$3",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 29033,
+        "charEnd": 29035,
+        "timeStart": 1990.12,
+        "timeEnd": 1994.08
+      },
+      "score": 0.6234431862831116
+    },
+    {
+      "id": "m_0315",
+      "label": "quantity",
+      "surface": "two live streams a week",
+      "canonical": "two live streams a week",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 29188,
+        "charEnd": 29211,
+        "timeStart": 1997.6,
+        "timeEnd": 2001.799
+      },
+      "score": 0.5460896492004395
+    },
+    {
+      "id": "m_0316",
+      "label": "organization",
+      "surface": "channel",
+      "canonical": "channel",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 29287,
+        "charEnd": 29294,
+        "timeStart": 2003.639,
+        "timeEnd": 2007.7199999999998
+      },
+      "score": 0.8450429439544678
+    },
+    {
+      "id": "m_0317",
+      "label": "work_of_media",
+      "surface": "Bible",
+      "canonical": "Bible",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 29766,
+        "charEnd": 29771,
+        "timeStart": 2047.32,
+        "timeEnd": 2055.839
+      },
+      "score": 0.8291458487510681
+    },
+    {
+      "id": "m_0318",
+      "label": "person",
+      "surface": "Stanley curi",
+      "canonical": "Stanley curi",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30050,
+        "charEnd": 30062,
+        "timeStart": 2088.56,
+        "timeEnd": 2095.2
+      },
+      "score": 0.8837679028511047
+    },
+    {
+      "id": "m_0319",
+      "label": "event",
+      "surface": "the moon\nlanding",
+      "canonical": "the moon\nlanding",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30068,
+        "charEnd": 30084,
+        "timeStart": 2088.56,
+        "timeEnd": 2098.879
+      },
+      "score": 0.735352098941803
+    },
+    {
+      "id": "m_0320",
+      "label": "location",
+      "surface": "film set",
+      "canonical": "film set",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30096,
+        "charEnd": 30104,
+        "timeStart": 2091.839,
+        "timeEnd": 2098.879
+      },
+      "score": 0.5893226861953735
+    },
+    {
+      "id": "m_0321",
+      "label": "person",
+      "surface": "The\nSmiling man",
+      "canonical": "The\nSmiling man",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30170,
+        "charEnd": 30185,
+        "timeStart": 2099.16,
+        "timeEnd": 2106.359
+      },
+      "score": 0.7400683164596558
+    },
+    {
+      "id": "m_0322",
+      "label": "event",
+      "surface": "solar storm",
+      "canonical": "solar storm",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30394,
+        "charEnd": 30405,
+        "timeStart": 2146.28,
+        "timeEnd": 2151.76
+      },
+      "score": 0.8179764747619629
+    },
+    {
+      "id": "m_0323",
+      "label": "location",
+      "surface": "planet",
+      "canonical": "planet",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30489,
+        "charEnd": 30495,
+        "timeStart": 2157.72,
+        "timeEnd": 2164.319
+      },
+      "score": 0.5423740148544312
+    },
+    {
+      "id": "m_0324",
+      "label": "location",
+      "surface": "Stargate",
+      "canonical": "Stargate",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30507,
+        "charEnd": 30515,
+        "timeStart": 2157.72,
+        "timeEnd": 2164.319
+      },
+      "score": 0.5429675579071045
+    },
+    {
+      "id": "m_0325",
+      "label": "organization",
+      "surface": "dark Watchers",
+      "canonical": "dark Watchers",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30530,
+        "charEnd": 30543,
+        "timeStart": 2161.2,
+        "timeEnd": 2168.16
+      },
+      "score": 0.5558698177337646
+    },
+    {
+      "id": "m_0326",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30945,
+        "charEnd": 30948,
+        "timeStart": 2215.68,
+        "timeEnd": 2225.319
+      },
+      "score": 0.993726372718811
+    },
+    {
+      "id": "m_0327",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30962,
+        "charEnd": 30965,
+        "timeStart": 2215.68,
+        "timeEnd": 2225.319
+      },
+      "score": 0.9932739734649658
+    },
+    {
+      "id": "m_0328",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 30979,
+        "charEnd": 30982,
+        "timeStart": 2221.72,
+        "timeEnd": 2228.9199999999996
+      },
+      "score": 0.9938814640045166
+    },
+    {
+      "id": "m_0329",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "XLhMi6YEhsQ",
+        "charStart": 31143,
+        "charEnd": 31146,
+        "timeStart": 2239.359,
+        "timeEnd": 2248.5989999999997
+      },
+      "score": 0.9964194297790527
+    }
+  ]
+}

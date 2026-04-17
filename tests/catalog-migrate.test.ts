@@ -20,7 +20,6 @@ import {
   Catalog,
   migrate,
   CATALOG_SCHEMA_VERSION,
-  setMigrationDataDir,
 } from "../src/catalog/catalog.js";
 
 function makeTmp(): string {
@@ -96,49 +95,60 @@ describe("catalog migrate", () => {
     rmSync(tmp, { recursive: true, force: true });
   });
 
-  it("v1→v2 infers stages.fetched from status and stages.nlp from disk", () => {
-    // Stand up a throwaway data dir with one NLP file present.
-    const dataDir = join(tmp, "data");
-    mkdirSync(join(dataDir, "nlp"), { recursive: true });
-    writeFileSync(
-      join(dataDir, "nlp", "aaa.json"),
-      JSON.stringify({ entities: [], relationships: [] }),
-      "utf8",
-    );
-    setMigrationDataDir(dataDir);
-    try {
-      const raw = {
-        version: 1,
-        rows: {
-          aaa: {
-            videoId: "aaa",
-            sourceUrl: "x",
-            status: "fetched",
-            attempts: 1,
-            fetchedAt: "2025-03-01T00:00:00Z",
-          },
-          bbb: {
-            videoId: "bbb",
-            sourceUrl: "y",
-            status: "pending",
-            attempts: 0,
+  it("v1→v2 infers stages.fetched from legacy fetchedAt and seeds graph watermark", () => {
+    const raw = {
+      version: 1,
+      rows: {
+        aaa: {
+          videoId: "aaa",
+          sourceUrl: "x",
+          status: "fetched",
+          attempts: 1,
+          fetchedAt: "2025-03-01T00:00:00Z",
+        },
+        bbb: {
+          videoId: "bbb",
+          sourceUrl: "y",
+          status: "pending",
+          attempts: 0,
+        },
+      },
+    };
+    const migrated = migrate(raw);
+    expect(migrated.version).toBe(CATALOG_SCHEMA_VERSION);
+    expect(migrated.rows.aaa.stages?.fetched).toBeDefined();
+    expect(migrated.rows.aaa.stages?.fetched?.at).toBe("2025-03-01T00:00:00Z");
+    // bbb wasn't fetched → no stages populated.
+    expect(migrated.rows.bbb.stages?.fetched).toBeUndefined();
+    // Graph watermark is seeded as dirty so the first pipeline run
+    // does a full graph-stage pass over the corpus.
+    expect(migrated.graph?.dirtyAt).toBeTruthy();
+    expect(migrated.graph?.stages).toEqual({});
+  });
+
+  it("v4→v5 strips legacy stages.nlp records", () => {
+    const raw = {
+      version: 4,
+      rows: {
+        aaa: {
+          videoId: "aaa",
+          sourceUrl: "x",
+          status: "fetched",
+          stages: {
+            fetched: { at: "2025-01-01T00:00:00Z" },
+            nlp: { at: "2025-01-01T00:01:00Z" },
           },
         },
-      };
-      const migrated = migrate(raw);
-      expect(migrated.version).toBe(CATALOG_SCHEMA_VERSION);
-      expect(migrated.rows.aaa.stages?.fetched).toBeDefined();
-      expect(migrated.rows.aaa.stages?.fetched?.at).toBe("2025-03-01T00:00:00Z");
-      expect(migrated.rows.aaa.stages?.nlp).toBeDefined();
-      // bbb has neither fetched nor an nlp file → no stages populated.
-      expect(migrated.rows.bbb.stages?.fetched).toBeUndefined();
-      expect(migrated.rows.bbb.stages?.nlp).toBeUndefined();
-      // Graph watermark is seeded as dirty.
-      expect(migrated.graph?.dirtyAt).toBeTruthy();
-      expect(migrated.graph?.stages).toEqual({});
-    } finally {
-      setMigrationDataDir(null);
-    }
+      },
+      graph: { dirtyAt: "2025-01-01T00:00:00Z", stages: {} },
+    };
+    const migrated = migrate(raw);
+    expect(migrated.version).toBe(CATALOG_SCHEMA_VERSION);
+    expect(migrated.rows.aaa.stages?.fetched).toBeDefined();
+    // stages.nlp no longer exists on the type; cast to inspect and
+    // assert it was scrubbed.
+    const stages = migrated.rows.aaa.stages as Record<string, unknown>;
+    expect(stages.nlp).toBeUndefined();
   });
 
   it("writes a .v1.bak next to the catalog when auto-migrating on load", () => {
@@ -153,17 +163,12 @@ describe("catalog migrate", () => {
       }),
       "utf8",
     );
-    setMigrationDataDir(join(tmp, "data"));
-    try {
-      const c = new Catalog(path);
-      expect(c.version()).toBe(CATALOG_SCHEMA_VERSION);
-      expect(existsSync(`${path}.v1.bak`)).toBe(true);
-      // The backup still reports v1 on disk.
-      const backup = JSON.parse(readFileSync(`${path}.v1.bak`, "utf8"));
-      expect(backup.version).toBe(1);
-    } finally {
-      setMigrationDataDir(null);
-    }
+    const c = new Catalog(path);
+    expect(c.version()).toBe(CATALOG_SCHEMA_VERSION);
+    expect(existsSync(`${path}.v1.bak`)).toBe(true);
+    // The backup still reports v1 on disk.
+    const backup = JSON.parse(readFileSync(`${path}.v1.bak`, "utf8"));
+    expect(backup.version).toBe(1);
   });
 
   it("setStage and markGraphDirty persist and round-trip", () => {
@@ -198,6 +203,9 @@ describe("catalog migrate", () => {
   });
 
   it("v2→v3 strips legacy `version` fields from stage records", () => {
+    // Use `ai` as the non-fetched stage with version metadata — `nlp`
+    // would work too but the v4→v5 migration strips it afterward, so
+    // it can't carry assertions past that version.
     const raw = {
       version: 2,
       rows: {
@@ -208,7 +216,7 @@ describe("catalog migrate", () => {
           attempts: 1,
           stages: {
             fetched: { at: "2025-01-01T00:00:00Z", version: 1 },
-            nlp: { at: "2025-01-02T00:00:00Z", version: 5, notes: "62 ents" },
+            ai: { at: "2025-01-02T00:00:00Z", version: 5, notes: "62 ents" },
           },
         },
       },
@@ -224,10 +232,10 @@ describe("catalog migrate", () => {
     const fetched = migrated.rows.aaa.stages?.fetched as Record<string, unknown>;
     expect(fetched.version).toBeUndefined();
     expect(fetched.at).toBe("2025-01-01T00:00:00Z");
-    const nlp = migrated.rows.aaa.stages?.nlp as Record<string, unknown>;
-    expect(nlp.version).toBeUndefined();
-    expect(nlp.at).toBe("2025-01-02T00:00:00Z");
-    expect(nlp.notes).toBe("62 ents");
+    const ai = migrated.rows.aaa.stages?.ai as Record<string, unknown>;
+    expect(ai.version).toBeUndefined();
+    expect(ai.at).toBe("2025-01-02T00:00:00Z");
+    expect(ai.notes).toBe("62 ents");
     const prop = migrated.graph?.stages.propagation as Record<string, unknown>;
     expect(prop.version).toBeUndefined();
     expect(prop.at).toBe("2025-01-03T00:00:00Z");

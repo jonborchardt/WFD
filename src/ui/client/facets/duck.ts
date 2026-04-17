@@ -57,7 +57,7 @@ export interface FacetRow {
   pinned?: boolean;
 }
 
-async function fetchJson(url: string): Promise<any> {
+async function fetchJson(url: string): Promise<unknown> {
   const r = await fetch(url);
   if (!r.ok) throw new Error(`fetch ${url}: ${r.status}`);
   return r.json();
@@ -75,7 +75,7 @@ export function loadFacetData(): Promise<FacetBundle> {
       fetchJson("/api/nlp/entity-videos"),
     ]);
 
-    const allVideos = (catalogResult.rows || []) as VideoRow[];
+    const allVideos = ((catalogResult as { rows?: VideoRow[] }).rows || []) as VideoRow[];
     const videos = allVideos.filter((r) => r.status === "fetched");
     const videoById = new Map<string, VideoRow>(videos.map((r) => [r.videoId, r]));
 
@@ -89,7 +89,7 @@ export function loadFacetData(): Promise<FacetBundle> {
     const factsByVideo = new Map<string, Fact[]>();
     const typeTotals = new Map<string, number>();
 
-    const evEntries = Object.entries(entityVideos as Record<string, { videoId: string; mentions: any[] }[]>);
+    const evEntries = Object.entries(entityVideos as Record<string, { videoId: string; mentions: unknown[] }[]>);
     for (const [entityId, refs] of evEntries) {
       const meta = entities.get(entityId);
       if (!meta) continue;
@@ -159,6 +159,7 @@ export function topEntitiesForType(
   activeVideos: Set<string>,
   limit = 25,
   includeIds: Set<string> | null = null,
+  excludeIds: Set<string> | null = null,
 ): { top: FacetRow[]; pinned: FacetRow[] } {
   const totals = new Map<string, number>();
   for (const videoId of activeVideos) {
@@ -173,6 +174,7 @@ export function topEntitiesForType(
 
   const rows: FacetRow[] = [];
   for (const [entityId, total] of totals) {
+    if (excludeIds && excludeIds.has(entityId)) continue;
     const meta = bundle.entities.get(entityId)!;
     rows.push({ entityId, canonical: meta.canonical, type: meta.type, total });
   }

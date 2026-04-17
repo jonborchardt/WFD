@@ -1,0 +1,936 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "TqM-rhKniLE",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-16T11:20:38.006Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "quantity",
+      "surface": "centuries",
+      "canonical": "centuries",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 79,
+        "charEnd": 88,
+        "timeStart": 4.88,
+        "timeEnd": 8.719999999999999
+      },
+      "score": 0.6557748913764954
+    },
+    {
+      "id": "m_0002",
+      "label": "person",
+      "surface": "explorers",
+      "canonical": "explorers",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 89,
+        "charEnd": 98,
+        "timeStart": 4.88,
+        "timeEnd": 8.719999999999999
+      },
+      "score": 0.7358337044715881
+    },
+    {
+      "id": "m_0003",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 149,
+        "charEnd": 159,
+        "timeStart": 8.72,
+        "timeEnd": 12.559000000000001
+      },
+      "score": 0.870529055595398
+    },
+    {
+      "id": "m_0004",
+      "label": "person",
+      "surface": "terminally ill person",
+      "canonical": "terminally ill person",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 276,
+        "charEnd": 297,
+        "timeStart": 15.12,
+        "timeEnd": 18.8
+      },
+      "score": 0.6773605942726135
+    },
+    {
+      "id": "m_0005",
+      "label": "technology",
+      "surface": "mind uploading",
+      "canonical": "mind uploading",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 491,
+        "charEnd": 505,
+        "timeStart": 27.039,
+        "timeEnd": 31.519000000000002
+      },
+      "score": 0.9470848441123962
+    },
+    {
+      "id": "m_0006",
+      "label": "organization",
+      "surface": "startup",
+      "canonical": "startup",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 514,
+        "charEnd": 521,
+        "timeStart": 27.039,
+        "timeEnd": 31.519000000000002
+      },
+      "score": 0.7956429719924927
+    },
+    {
+      "id": "m_0007",
+      "label": "person",
+      "surface": "ray kurzweil",
+      "canonical": "ray kurzweil",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 1009,
+        "charEnd": 1021,
+        "timeStart": 63.12,
+        "timeEnd": 67.119
+      },
+      "score": 0.9610276818275452
+    },
+    {
+      "id": "m_0008",
+      "label": "date_time",
+      "surface": "2045",
+      "canonical": "2045",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 1088,
+        "charEnd": 1092,
+        "timeStart": 67.119,
+        "timeEnd": 71.84
+      },
+      "score": 0.9416357278823853
+    },
+    {
+      "id": "m_0009",
+      "label": "technology",
+      "surface": "whole brain emulation",
+      "canonical": "whole brain emulation",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 1351,
+        "charEnd": 1372,
+        "timeStart": 81.6,
+        "timeEnd": 85.83999999999999
+      },
+      "score": 0.9545684456825256
+    },
+    {
+      "id": "m_0010",
+      "label": "technology",
+      "surface": "brain\nscanning",
+      "canonical": "brain\nscanning",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 1501,
+        "charEnd": 1515,
+        "timeStart": 89.68,
+        "timeEnd": 95.759
+      },
+      "score": 0.5288244485855103
+    },
+    {
+      "id": "m_0011",
+      "label": "quantity",
+      "surface": "80\nbillion neurons",
+      "canonical": "80\nbillion neurons",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 1799,
+        "charEnd": 1817,
+        "timeStart": 106.96,
+        "timeEnd": 114.72
+      },
+      "score": 0.8673999905586243
+    },
+    {
+      "id": "m_0012",
+      "label": "quantity",
+      "surface": "80 billion neurons",
+      "canonical": "80\nbillion neurons",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 1900,
+        "charEnd": 1918,
+        "timeStart": 116.64,
+        "timeEnd": 121.68
+      },
+      "score": 0.9421288371086121
+    },
+    {
+      "id": "m_0013",
+      "label": "quantity",
+      "surface": "100 trillion synapses",
+      "canonical": "100 trillion synapses",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 1942,
+        "charEnd": 1963,
+        "timeStart": 118.64,
+        "timeEnd": 124.64
+      },
+      "score": 0.7481644153594971
+    },
+    {
+      "id": "m_0014",
+      "label": "date_time",
+      "surface": "2019",
+      "canonical": "2019",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2484,
+        "charEnd": 2488,
+        "timeStart": 148.48,
+        "timeEnd": 154.79999999999998
+      },
+      "score": 0.7095189690589905
+    },
+    {
+      "id": "m_0015",
+      "label": "quantity",
+      "surface": "a cubic millimeter of a\nmouse brain",
+      "canonical": "a cubic millimeter of a\nmouse brain",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2489,
+        "charEnd": 2524,
+        "timeStart": 148.48,
+        "timeEnd": 156.8
+      },
+      "score": 0.7933188080787659
+    },
+    {
+      "id": "m_0016",
+      "label": "quantity",
+      "surface": "cubic millimeter",
+      "canonical": "cubic millimeter",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2527,
+        "charEnd": 2543,
+        "timeStart": 151.84,
+        "timeEnd": 156.8
+      },
+      "score": 0.8841670155525208
+    },
+    {
+      "id": "m_0017",
+      "label": "quantity",
+      "surface": "cubic\nmillimeter",
+      "canonical": "cubic millimeter",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2610,
+        "charEnd": 2626,
+        "timeStart": 156.8,
+        "timeEnd": 163.519
+      },
+      "score": 0.6167605519294739
+    },
+    {
+      "id": "m_0018",
+      "label": "quantity",
+      "surface": "100 000 neurons",
+      "canonical": "100 000 neurons",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2695,
+        "charEnd": 2710,
+        "timeStart": 163.519,
+        "timeEnd": 167.92000000000002
+      },
+      "score": 0.7486764192581177
+    },
+    {
+      "id": "m_0019",
+      "label": "quantity",
+      "surface": "over a billion\nsynapses",
+      "canonical": "over a billion\nsynapses",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2715,
+        "charEnd": 2738,
+        "timeStart": 163.519,
+        "timeEnd": 169.519
+      },
+      "score": 0.5702943801879883
+    },
+    {
+      "id": "m_0020",
+      "label": "technology",
+      "surface": "mind uploading",
+      "canonical": "mind uploading",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2785,
+        "charEnd": 2799,
+        "timeStart": 167.92,
+        "timeEnd": 172
+      },
+      "score": 0.5323531031608582
+    },
+    {
+      "id": "m_0021",
+      "label": "quantity",
+      "surface": "two petabytes",
+      "canonical": "two petabytes",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2903,
+        "charEnd": 2916,
+        "timeStart": 173.76,
+        "timeEnd": 178.72
+      },
+      "score": 0.824903666973114
+    },
+    {
+      "id": "m_0022",
+      "label": "quantity",
+      "surface": "two\nmillion gigabytes",
+      "canonical": "two\nmillion gigabytes",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 2940,
+        "charEnd": 2961,
+        "timeStart": 176.4,
+        "timeEnd": 184.56
+      },
+      "score": 0.8325095772743225
+    },
+    {
+      "id": "m_0023",
+      "label": "quantity",
+      "surface": "2 million petabytes",
+      "canonical": "2 million petabytes",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3030,
+        "charEnd": 3049,
+        "timeStart": 184.56,
+        "timeEnd": 191.599
+      },
+      "score": 0.5604628920555115
+    },
+    {
+      "id": "m_0024",
+      "label": "organization",
+      "surface": "google",
+      "canonical": "google",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3114,
+        "charEnd": 3120,
+        "timeStart": 191.599,
+        "timeEnd": 196.879
+      },
+      "score": 0.989077091217041
+    },
+    {
+      "id": "m_0025",
+      "label": "quantity",
+      "surface": "15\nexabytes",
+      "canonical": "15\nexabytes",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3164,
+        "charEnd": 3175,
+        "timeStart": 194.4,
+        "timeEnd": 203.28
+      },
+      "score": 0.7993203997612
+    },
+    {
+      "id": "m_0026",
+      "label": "organization",
+      "surface": "google",
+      "canonical": "google",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3222,
+        "charEnd": 3228,
+        "timeStart": 199.68,
+        "timeEnd": 205.36
+      },
+      "score": 0.9906677603721619
+    },
+    {
+      "id": "m_0027",
+      "label": "organization",
+      "surface": "google",
+      "canonical": "google",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3286,
+        "charEnd": 3292,
+        "timeStart": 205.36,
+        "timeEnd": 209.04000000000002
+      },
+      "score": 0.9859640598297119
+    },
+    {
+      "id": "m_0028",
+      "label": "organization",
+      "surface": "google",
+      "canonical": "google",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3369,
+        "charEnd": 3375,
+        "timeStart": 209.76,
+        "timeEnd": 213.44
+      },
+      "score": 0.9916683435440063
+    },
+    {
+      "id": "m_0029",
+      "label": "quantity",
+      "surface": "2000 exabytes",
+      "canonical": "2000 exabytes",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3612,
+        "charEnd": 3625,
+        "timeStart": 224.72,
+        "timeEnd": 229.68
+      },
+      "score": 0.5423989295959473
+    },
+    {
+      "id": "m_0030",
+      "label": "location",
+      "surface": "alpha centauri",
+      "canonical": "alpha centauri",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 3762,
+        "charEnd": 3776,
+        "timeStart": 234.159,
+        "timeEnd": 239.599
+      },
+      "score": 0.6494095921516418
+    },
+    {
+      "id": "m_0031",
+      "label": "quantity",
+      "surface": "computing\npower",
+      "canonical": "computing\npower",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4053,
+        "charEnd": 4068,
+        "timeStart": 259.84,
+        "timeEnd": 264.15999999999997
+      },
+      "score": 0.8096708655357361
+    },
+    {
+      "id": "m_0032",
+      "label": "law_or_policy",
+      "surface": "moore's law",
+      "canonical": "moore's law",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4111,
+        "charEnd": 4122,
+        "timeStart": 264.16,
+        "timeEnd": 269.199
+      },
+      "score": 0.9641797542572021
+    },
+    {
+      "id": "m_0033",
+      "label": "technology",
+      "surface": "computing\npower",
+      "canonical": "computing\npower",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4135,
+        "charEnd": 4150,
+        "timeStart": 264.16,
+        "timeEnd": 270.88
+      },
+      "score": 0.728887677192688
+    },
+    {
+      "id": "m_0034",
+      "label": "organization",
+      "surface": "mit",
+      "canonical": "mit",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4397,
+        "charEnd": 4400,
+        "timeStart": 278.88,
+        "timeEnd": 283.919
+      },
+      "score": 0.5142540335655212
+    },
+    {
+      "id": "m_0035",
+      "label": "person",
+      "surface": "robert\nmcintyre",
+      "canonical": "robert\nmcintyre",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4410,
+        "charEnd": 4425,
+        "timeStart": 278.88,
+        "timeEnd": 286.23999999999995
+      },
+      "score": 0.9775790572166443
+    },
+    {
+      "id": "m_0036",
+      "label": "organization",
+      "surface": "nectome",
+      "canonical": "nectome",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4434,
+        "charEnd": 4441,
+        "timeStart": 281.28,
+        "timeEnd": 286.23999999999995
+      },
+      "score": 0.9289119243621826
+    },
+    {
+      "id": "m_0037",
+      "label": "organization",
+      "surface": "alcor life extension foundation",
+      "canonical": "alcor life extension foundation",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4718,
+        "charEnd": 4749,
+        "timeStart": 301.6,
+        "timeEnd": 305.759
+      },
+      "score": 0.8220981955528259
+    },
+    {
+      "id": "m_0038",
+      "label": "person",
+      "surface": "robert\nmcintyre",
+      "canonical": "robert\nmcintyre",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4914,
+        "charEnd": 4929,
+        "timeStart": 311.759,
+        "timeEnd": 317.199
+      },
+      "score": 0.9767591953277588
+    },
+    {
+      "id": "m_0039",
+      "label": "technology",
+      "surface": "their technique",
+      "canonical": "their technique",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 4999,
+        "charEnd": 5014,
+        "timeStart": 318.08,
+        "timeEnd": 322.24
+      },
+      "score": 0.5207778811454773
+    },
+    {
+      "id": "m_0040",
+      "label": "organization",
+      "surface": "nectome",
+      "canonical": "nectome",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5088,
+        "charEnd": 5095,
+        "timeStart": 322.24,
+        "timeEnd": 327.28000000000003
+      },
+      "score": 0.9811562299728394
+    },
+    {
+      "id": "m_0041",
+      "label": "technology",
+      "surface": "aldehyde stabilized cryopreservation",
+      "canonical": "aldehyde stabilized cryopreservation",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5106,
+        "charEnd": 5142,
+        "timeStart": 324.32,
+        "timeEnd": 329.84
+      },
+      "score": 0.5905272364616394
+    },
+    {
+      "id": "m_0042",
+      "label": "organization",
+      "surface": "nectome",
+      "canonical": "nectome",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5154,
+        "charEnd": 5161,
+        "timeStart": 327.28,
+        "timeEnd": 331.59999999999997
+      },
+      "score": 0.9891828894615173
+    },
+    {
+      "id": "m_0043",
+      "label": "person",
+      "surface": "ken hayworth",
+      "canonical": "ken hayworth",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5660,
+        "charEnd": 5672,
+        "timeStart": 357.36,
+        "timeEnd": 360.88
+      },
+      "score": 0.9475868344306946
+    },
+    {
+      "id": "m_0044",
+      "label": "person",
+      "surface": "neuroscientist",
+      "canonical": "neuroscientist",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5675,
+        "charEnd": 5689,
+        "timeStart": 358.96,
+        "timeEnd": 363.28
+      },
+      "score": 0.5305217504501343
+    },
+    {
+      "id": "m_0045",
+      "label": "role",
+      "surface": "president",
+      "canonical": "president",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5694,
+        "charEnd": 5703,
+        "timeStart": 358.96,
+        "timeEnd": 363.28
+      },
+      "score": 0.851548433303833
+    },
+    {
+      "id": "m_0046",
+      "label": "organization",
+      "surface": "brain preservation foundation",
+      "canonical": "brain preservation foundation",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5711,
+        "charEnd": 5740,
+        "timeStart": 360.88,
+        "timeEnd": 365.44
+      },
+      "score": 0.916671872138977
+    },
+    {
+      "id": "m_0047",
+      "label": "quantity",
+      "surface": "10 000",
+      "canonical": "10 000",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 5920,
+        "charEnd": 5926,
+        "timeStart": 370.639,
+        "timeEnd": 374.8
+      },
+      "score": 0.585955798625946
+    },
+    {
+      "id": "m_0048",
+      "label": "event",
+      "surface": "procedure",
+      "canonical": "procedure",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 6047,
+        "charEnd": 6056,
+        "timeStart": 378.24,
+        "timeEnd": 382.40000000000003
+      },
+      "score": 0.8592024445533752
+    },
+    {
+      "id": "m_0049",
+      "label": "event",
+      "surface": "procedure",
+      "canonical": "procedure",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 6079,
+        "charEnd": 6088,
+        "timeStart": 379.759,
+        "timeEnd": 384.24
+      },
+      "score": 0.8732922077178955
+    },
+    {
+      "id": "m_0050",
+      "label": "technology",
+      "surface": "uploading",
+      "canonical": "uploading",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 6205,
+        "charEnd": 6214,
+        "timeStart": 390.319,
+        "timeEnd": 394.56
+      },
+      "score": 0.5333616137504578
+    },
+    {
+      "id": "m_0051",
+      "label": "technology",
+      "surface": "malware",
+      "canonical": "malware",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 6519,
+        "charEnd": 6526,
+        "timeStart": 410.8,
+        "timeEnd": 415.44
+      },
+      "score": 0.5103403925895691
+    },
+    {
+      "id": "m_0052",
+      "label": "technology",
+      "surface": "robot",
+      "canonical": "robot",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 6911,
+        "charEnd": 6916,
+        "timeStart": 431.759,
+        "timeEnd": 435.91900000000004
+      },
+      "score": 0.8329628109931946
+    },
+    {
+      "id": "m_0053",
+      "label": "technology",
+      "surface": "robot",
+      "canonical": "robot",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 6932,
+        "charEnd": 6937,
+        "timeStart": 433.36,
+        "timeEnd": 437.68
+      },
+      "score": 0.8825727105140686
+    },
+    {
+      "id": "m_0054",
+      "label": "technology",
+      "surface": "technology",
+      "canonical": "technology",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 7139,
+        "charEnd": 7149,
+        "timeStart": 446.88,
+        "timeEnd": 451.599
+      },
+      "score": 0.5403959155082703
+    },
+    {
+      "id": "m_0055",
+      "label": "location",
+      "surface": "outer reaches of the\ngalaxy",
+      "canonical": "outer reaches of the\ngalaxy",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 7590,
+        "charEnd": 7617,
+        "timeStart": 471.36,
+        "timeEnd": 478.4
+      },
+      "score": 0.5642418265342712
+    },
+    {
+      "id": "m_0056",
+      "label": "location",
+      "surface": "inner\nspace",
+      "canonical": "inner\nspace",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 7646,
+        "charEnd": 7657,
+        "timeStart": 472.96,
+        "timeEnd": 480.639
+      },
+      "score": 0.652332067489624
+    },
+    {
+      "id": "m_0057",
+      "label": "quantity",
+      "surface": "hundreds thousands or even\nmillions of years",
+      "canonical": "hundreds thousands or even\nmillions of years",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 7889,
+        "charEnd": 7933,
+        "timeStart": 488.96,
+        "timeEnd": 495.039
+      },
+      "score": 0.5022338628768921
+    },
+    {
+      "id": "m_0058",
+      "label": "technology",
+      "surface": "conscious sentient program",
+      "canonical": "conscious sentient program",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 8174,
+        "charEnd": 8200,
+        "timeStart": 505.199,
+        "timeEnd": 509.84000000000003
+      },
+      "score": 0.573369026184082
+    },
+    {
+      "id": "m_0059",
+      "label": "technology",
+      "surface": "digital immortality",
+      "canonical": "digital immortality",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 8779,
+        "charEnd": 8798,
+        "timeStart": 544,
+        "timeEnd": 548.48
+      },
+      "score": 0.902333676815033
+    },
+    {
+      "id": "m_0060",
+      "label": "person",
+      "surface": "aj",
+      "canonical": "aj",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 9138,
+        "charEnd": 9140,
+        "timeStart": 564.88,
+        "timeEnd": 569.04
+      },
+      "score": 0.9535574316978455
+    },
+    {
+      "id": "m_0061",
+      "label": "person",
+      "surface": "hecklefish",
+      "canonical": "hecklefish",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 9148,
+        "charEnd": 9158,
+        "timeStart": 564.88,
+        "timeEnd": 569.04
+      },
+      "score": 0.6404768824577332
+    },
+    {
+      "id": "m_0062",
+      "label": "work_of_media",
+      "surface": "y-files",
+      "canonical": "y-files",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 9177,
+        "charEnd": 9184,
+        "timeStart": 567.12,
+        "timeEnd": 570.5600000000001
+      },
+      "score": 0.8250679969787598
+    },
+    {
+      "id": "m_0063",
+      "label": "technology",
+      "surface": "youtube algorithm",
+      "canonical": "youtube algorithm",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 9275,
+        "charEnd": 9292,
+        "timeStart": 572.64,
+        "timeEnd": 577.04
+      },
+      "score": 0.8546666502952576
+    },
+    {
+      "id": "m_0064",
+      "label": "event",
+      "surface": "our destruction",
+      "canonical": "our destruction",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 9348,
+        "charEnd": 9363,
+        "timeStart": 577.04,
+        "timeEnd": 582.16
+      },
+      "score": 0.6326181292533875
+    },
+    {
+      "id": "m_0065",
+      "label": "work_of_media",
+      "surface": "Music",
+      "canonical": "Music",
+      "span": {
+        "transcriptId": "TqM-rhKniLE",
+        "charStart": 9467,
+        "charEnd": 9472,
+        "timeStart": 588.61,
+        "timeEnd": 610.72
+      },
+      "score": 0.5464540123939514
+    }
+  ]
+}

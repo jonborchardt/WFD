@@ -4,6 +4,8 @@
 // package into devDependencies. Swap these for real type packages later if
 // we want tighter checking.
 
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-empty-object-type, @typescript-eslint/no-unused-vars */
+
 declare module "react" {
   export function useState<T>(init?: T | (() => T)): [T, (v: T | ((p: T) => T)) => void];
   export function useEffect(fn: () => any, deps?: any[]): void;
@@ -14,6 +16,10 @@ declare module "react" {
   export const Fragment: any;
   const React: any;
   export default React;
+
+  export type ReactNode = any;
+  export type MouseEvent<T = Element> = globalThis.MouseEvent & { currentTarget: T };
+  export type ChangeEvent<T = Element> = globalThis.Event & { target: T };
 }
 declare module "react/jsx-runtime" {
   export const jsx: any;
@@ -52,10 +58,18 @@ declare module "@mui/material" {
   export const ListItemIcon: any;
   export const ListItemText: any;
   export const Link: any;
+  export const Autocomplete: any;
+  export const TextField: any;
 }
 declare module "htm" {
   const x: any;
   export default x;
+}
+
+declare namespace React {
+  type ReactNode = any;
+  type MouseEvent<T = Element> = globalThis.MouseEvent & { currentTarget: T };
+  type ChangeEvent<T = Element> = globalThis.Event & { target: T };
 }
 
 // JSX plumbing — lets tsc type-check <Component ... /> syntax without the

@@ -27,12 +27,14 @@ export interface Loop {
   summary: string;
 }
 
-// Pairs of predicates we consider mutually exclusive.
+// Pairs of predicates we consider mutually exclusive. Migrated to the
+// neural predicate vocabulary; old pairs (loves/hates, employs/worked-for)
+// have no direct equivalent in the new schema and would need new
+// predicates to return. Add more rows here as the schema grows.
 const EXCLUSIVE: Array<[RelationshipType, RelationshipType]> = [
-  ["loves", "hates"],
-  ["accused", "denied"],
-  ["funds", "funded-by"],
-  ["employs", "worked-for"],
+  ["accused_of", "denies"],
+  ["allied_with", "opposed_by"],
+  ["endorses", "denies"],
 ];
 
 function edgeKey(r: Relationship): string {
@@ -112,9 +114,11 @@ export function detectLoops(store: GraphStore): Loop[] {
   }
   const stack: Relationship[] = [];
   const onStack = new Set<string>();
+  const visited = new Set<string>();
   const seenCycles = new Set<string>();
 
   function dfs(nodeId: string): void {
+    visited.add(nodeId);
     onStack.add(nodeId);
     for (const r of adj.get(nodeId) ?? []) {
       if (onStack.has(r.objectId)) {
@@ -143,15 +147,17 @@ export function detectLoops(store: GraphStore): Loop[] {
         }
         continue;
       }
-      stack.push(r);
-      dfs(r.objectId);
-      stack.pop();
+      if (!visited.has(r.objectId)) {
+        stack.push(r);
+        dfs(r.objectId);
+        stack.pop();
+      }
     }
     onStack.delete(nodeId);
   }
 
   for (const entity of store.entities()) {
-    if (!onStack.has(entity.id)) dfs(entity.id);
+    if (!visited.has(entity.id)) dfs(entity.id);
   }
   return out;
 }

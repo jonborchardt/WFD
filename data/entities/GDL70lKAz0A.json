@@ -1,0 +1,4408 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "GDL70lKAz0A",
+  "model": "urchade/gliner_large-v2.1",
+  "modelVersion": null,
+  "labelsUsed": [
+    "person",
+    "organization",
+    "group_or_movement",
+    "location",
+    "facility",
+    "event",
+    "date_time",
+    "role",
+    "technology",
+    "work_of_media",
+    "law_or_policy",
+    "ideology",
+    "nationality_or_ethnicity",
+    "quantity"
+  ],
+  "corefApplied": false,
+  "generatedAt": "2026-04-15T19:46:31.903Z",
+  "mentions": [
+    {
+      "id": "m_0001",
+      "label": "location",
+      "surface": "home",
+      "canonical": "home",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 181,
+        "charEnd": 185,
+        "timeStart": 11.799,
+        "timeEnd": 16.198999999999998
+      },
+      "score": 0.7886350154876709
+    },
+    {
+      "id": "m_0002",
+      "label": "organization",
+      "surface": "your whole family",
+      "canonical": "your whole family",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 190,
+        "charEnd": 207,
+        "timeStart": 11.799,
+        "timeEnd": 16.198999999999998
+      },
+      "score": 0.6172400116920471
+    },
+    {
+      "id": "m_0003",
+      "label": "person",
+      "surface": "a familiar\nvoice",
+      "canonical": "a familiar\nvoice",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 502,
+        "charEnd": 518,
+        "timeStart": 29.8,
+        "timeEnd": 37.719
+      },
+      "score": 0.6858128905296326
+    },
+    {
+      "id": "m_0004",
+      "label": "quantity",
+      "surface": "every single cell",
+      "canonical": "every single cell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 836,
+        "charEnd": 853,
+        "timeStart": 51,
+        "timeEnd": 55.480000000000004
+      },
+      "score": 0.6055909991264343
+    },
+    {
+      "id": "m_0005",
+      "label": "nationality_or_ethnicity",
+      "surface": "human",
+      "canonical": "human",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1287,
+        "charEnd": 1292,
+        "timeStart": 88.84,
+        "timeEnd": 95.799
+      },
+      "score": 0.5961955785751343
+    },
+    {
+      "id": "m_0006",
+      "label": "person",
+      "surface": "Gertie",
+      "canonical": "Gertie",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1472,
+        "charEnd": 1478,
+        "timeStart": 104.52,
+        "timeEnd": 109.32
+      },
+      "score": 0.7882854342460632
+    },
+    {
+      "id": "m_0007",
+      "label": "location",
+      "surface": "garage",
+      "canonical": "garage",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1592,
+        "charEnd": 1598,
+        "timeStart": 111.2,
+        "timeEnd": 115.52000000000001
+      },
+      "score": 0.7506454586982727
+    },
+    {
+      "id": "m_0008",
+      "label": "person",
+      "surface": "Gertie",
+      "canonical": "Gertie",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1625,
+        "charEnd": 1631,
+        "timeStart": 113.64,
+        "timeEnd": 118.43900000000001
+      },
+      "score": 0.8821602463722229
+    },
+    {
+      "id": "m_0009",
+      "label": "person",
+      "surface": "Beaver Brothers",
+      "canonical": "Beaver Brothers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1640,
+        "charEnd": 1655,
+        "timeStart": 113.64,
+        "timeEnd": 118.43900000000001
+      },
+      "score": 0.8553116917610168
+    },
+    {
+      "id": "m_0010",
+      "label": "person",
+      "surface": "Beaver Brothers",
+      "canonical": "Beaver Brothers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1754,
+        "charEnd": 1769,
+        "timeStart": 120.92,
+        "timeEnd": 124.96000000000001
+      },
+      "score": 0.8828198313713074
+    },
+    {
+      "id": "m_0011",
+      "label": "person",
+      "surface": "Wyatt",
+      "canonical": "Wyatt",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1832,
+        "charEnd": 1837,
+        "timeStart": 124.96,
+        "timeEnd": 131.239
+      },
+      "score": 0.9448990821838379
+    },
+    {
+      "id": "m_0012",
+      "label": "person",
+      "surface": "Morgan",
+      "canonical": "Morgan",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1872,
+        "charEnd": 1878,
+        "timeStart": 128.759,
+        "timeEnd": 133.07999999999998
+      },
+      "score": 0.9281930923461914
+    },
+    {
+      "id": "m_0013",
+      "label": "organization",
+      "surface": "PD",
+      "canonical": "PD",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 1954,
+        "charEnd": 1956,
+        "timeStart": 133.08,
+        "timeEnd": 137.20000000000002
+      },
+      "score": 0.5537720322608948
+    },
+    {
+      "id": "m_0014",
+      "label": "location",
+      "surface": "garage",
+      "canonical": "garage",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2052,
+        "charEnd": 2058,
+        "timeStart": 139.2,
+        "timeEnd": 143.959
+      },
+      "score": 0.7625151872634888
+    },
+    {
+      "id": "m_0015",
+      "label": "location",
+      "surface": "garage",
+      "canonical": "garage",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2223,
+        "charEnd": 2229,
+        "timeStart": 149.08,
+        "timeEnd": 155.64000000000001
+      },
+      "score": 0.7080076932907104
+    },
+    {
+      "id": "m_0016",
+      "label": "organization",
+      "surface": "Shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2355,
+        "charEnd": 2362,
+        "timeStart": 157.92,
+        "timeEnd": 162.92
+      },
+      "score": 0.9721543192863464
+    },
+    {
+      "id": "m_0017",
+      "label": "organization",
+      "surface": "Shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2477,
+        "charEnd": 2484,
+        "timeStart": 168.599,
+        "timeEnd": 173.23899999999998
+      },
+      "score": 0.9769402742385864
+    },
+    {
+      "id": "m_0018",
+      "label": "technology",
+      "surface": "all-in-one Commerce\nplatform",
+      "canonical": "all-in-one Commerce\nplatform",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2493,
+        "charEnd": 2521,
+        "timeStart": 168.599,
+        "timeEnd": 176
+      },
+      "score": 0.5541395545005798
+    },
+    {
+      "id": "m_0019",
+      "label": "organization",
+      "surface": "Shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2559,
+        "charEnd": 2566,
+        "timeStart": 173.239,
+        "timeEnd": 178.159
+      },
+      "score": 0.982406735420227
+    },
+    {
+      "id": "m_0020",
+      "label": "organization",
+      "surface": "Shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2673,
+        "charEnd": 2680,
+        "timeStart": 181.159,
+        "timeEnd": 185.64
+      },
+      "score": 0.9768720269203186
+    },
+    {
+      "id": "m_0021",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2772,
+        "charEnd": 2780,
+        "timeStart": 185.64,
+        "timeEnd": 191.72
+      },
+      "score": 0.8828186988830566
+    },
+    {
+      "id": "m_0022",
+      "label": "quantity",
+      "surface": "175 countries",
+      "canonical": "175 countries",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2798,
+        "charEnd": 2811,
+        "timeStart": 188.44,
+        "timeEnd": 194.12
+      },
+      "score": 0.8675292730331421
+    },
+    {
+      "id": "m_0023",
+      "label": "organization",
+      "surface": "Shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2818,
+        "charEnd": 2825,
+        "timeStart": 191.72,
+        "timeEnd": 196.12
+      },
+      "score": 0.9810954928398132
+    },
+    {
+      "id": "m_0024",
+      "label": "role",
+      "surface": "business partner",
+      "canonical": "business partner",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 2831,
+        "charEnd": 2847,
+        "timeStart": 191.72,
+        "timeEnd": 196.12
+      },
+      "score": 0.6312784552574158
+    },
+    {
+      "id": "m_0025",
+      "label": "organization",
+      "surface": "Shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3148,
+        "charEnd": 3155,
+        "timeStart": 214.36,
+        "timeEnd": 219
+      },
+      "score": 0.982111394405365
+    },
+    {
+      "id": "m_0026",
+      "label": "organization",
+      "surface": "Shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3230,
+        "charEnd": 3237,
+        "timeStart": 219,
+        "timeEnd": 224.28
+      },
+      "score": 0.9794324636459351
+    },
+    {
+      "id": "m_0027",
+      "label": "organization",
+      "surface": "shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3314,
+        "charEnd": 3321,
+        "timeStart": 224.28,
+        "timeEnd": 231.08
+      },
+      "score": 0.9900779724121094
+    },
+    {
+      "id": "m_0028",
+      "label": "organization",
+      "surface": "shopify",
+      "canonical": "Shopify",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3362,
+        "charEnd": 3369,
+        "timeStart": 227.28,
+        "timeEnd": 234.2
+      },
+      "score": 0.97958904504776
+    },
+    {
+      "id": "m_0029",
+      "label": "location",
+      "surface": "studio",
+      "canonical": "studio",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3562,
+        "charEnd": 3568,
+        "timeStart": 241.2,
+        "timeEnd": 245.76
+      },
+      "score": 0.7194735407829285
+    },
+    {
+      "id": "m_0030",
+      "label": "location",
+      "surface": "studio",
+      "canonical": "studio",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3611,
+        "charEnd": 3617,
+        "timeStart": 245.76,
+        "timeEnd": 250.56
+      },
+      "score": 0.7573722004890442
+    },
+    {
+      "id": "m_0031",
+      "label": "person",
+      "surface": "Virgil",
+      "canonical": "Virgil",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3760,
+        "charEnd": 3766,
+        "timeStart": 254.959,
+        "timeEnd": 259.799
+      },
+      "score": 0.9763991236686707
+    },
+    {
+      "id": "m_0032",
+      "label": "person",
+      "surface": "Virgil",
+      "canonical": "Virgil",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 3785,
+        "charEnd": 3791,
+        "timeStart": 254.959,
+        "timeEnd": 259.799
+      },
+      "score": 0.9710367918014526
+    },
+    {
+      "id": "m_0033",
+      "label": "person",
+      "surface": "Noah",
+      "canonical": "Noah",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 4040,
+        "charEnd": 4044,
+        "timeStart": 275.12,
+        "timeEnd": 279.08
+      },
+      "score": 0.9082857370376587
+    },
+    {
+      "id": "m_0034",
+      "label": "nationality_or_ethnicity",
+      "surface": "ancient\nEgyptians",
+      "canonical": "ancient\nEgyptians",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 4502,
+        "charEnd": 4519,
+        "timeStart": 300.919,
+        "timeEnd": 307.72
+      },
+      "score": 0.6219874620437622
+    },
+    {
+      "id": "m_0035",
+      "label": "person",
+      "surface": "Kevin C",
+      "canonical": "Kevin C",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 4581,
+        "charEnd": 4588,
+        "timeStart": 305.36,
+        "timeEnd": 309.56
+      },
+      "score": 0.6099402904510498
+    },
+    {
+      "id": "m_0036",
+      "label": "nationality_or_ethnicity",
+      "surface": "Egyptians",
+      "canonical": "Egyptians",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 4772,
+        "charEnd": 4781,
+        "timeStart": 316.52,
+        "timeEnd": 321.919
+      },
+      "score": 0.9798874855041504
+    },
+    {
+      "id": "m_0037",
+      "label": "location",
+      "surface": "auu",
+      "canonical": "auu",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 4786,
+        "charEnd": 4789,
+        "timeStart": 316.52,
+        "timeEnd": 321.919
+      },
+      "score": 0.7764908075332642
+    },
+    {
+      "id": "m_0038",
+      "label": "location",
+      "surface": "Eternal Paradise",
+      "canonical": "Eternal Paradise",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 4880,
+        "charEnd": 4896,
+        "timeStart": 324.16,
+        "timeEnd": 329.16
+      },
+      "score": 0.7653217911720276
+    },
+    {
+      "id": "m_0039",
+      "label": "person",
+      "surface": "Anubis",
+      "canonical": "Anubis",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 4967,
+        "charEnd": 4973,
+        "timeStart": 329.16,
+        "timeEnd": 333.47900000000004
+      },
+      "score": 0.7920151352882385
+    },
+    {
+      "id": "m_0040",
+      "label": "location",
+      "surface": "the hall of Truth",
+      "canonical": "the hall of Truth",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 5309,
+        "charEnd": 5326,
+        "timeStart": 351.199,
+        "timeEnd": 356.199
+      },
+      "score": 0.5436496138572693
+    },
+    {
+      "id": "m_0041",
+      "label": "person",
+      "surface": "Osiris",
+      "canonical": "Osiris",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 5341,
+        "charEnd": 5347,
+        "timeStart": 353.639,
+        "timeEnd": 358.6
+      },
+      "score": 0.7181819677352905
+    },
+    {
+      "id": "m_0042",
+      "label": "person",
+      "surface": "Maat",
+      "canonical": "Maat",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 5355,
+        "charEnd": 5359,
+        "timeStart": 353.639,
+        "timeEnd": 358.6
+      },
+      "score": 0.6033693552017212
+    },
+    {
+      "id": "m_0043",
+      "label": "location",
+      "surface": "paradise",
+      "canonical": "paradise",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 5583,
+        "charEnd": 5591,
+        "timeStart": 367.84,
+        "timeEnd": 372.31899999999996
+      },
+      "score": 0.6079516410827637
+    },
+    {
+      "id": "m_0044",
+      "label": "person",
+      "surface": "amut",
+      "canonical": "amut",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 5640,
+        "charEnd": 5644,
+        "timeStart": 372.319,
+        "timeEnd": 377.52000000000004
+      },
+      "score": 0.6143567562103271
+    },
+    {
+      "id": "m_0045",
+      "label": "person",
+      "surface": "amut",
+      "canonical": "amut",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 5666,
+        "charEnd": 5670,
+        "timeStart": 372.319,
+        "timeEnd": 377.52000000000004
+      },
+      "score": 0.6702163815498352
+    },
+    {
+      "id": "m_0046",
+      "label": "location",
+      "surface": "Purgatory",
+      "canonical": "Purgatory",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 5990,
+        "charEnd": 5999,
+        "timeStart": 393.319,
+        "timeEnd": 398.319
+      },
+      "score": 0.6919573545455933
+    },
+    {
+      "id": "m_0047",
+      "label": "nationality_or_ethnicity",
+      "surface": "Inuits",
+      "canonical": "Inuits",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6000,
+        "charEnd": 6006,
+        "timeStart": 393.319,
+        "timeEnd": 398.319
+      },
+      "score": 0.8357346653938293
+    },
+    {
+      "id": "m_0048",
+      "label": "location",
+      "surface": "The Milky Way",
+      "canonical": "The Milky Way",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6078,
+        "charEnd": 6091,
+        "timeStart": 398.319,
+        "timeEnd": 402.44
+      },
+      "score": 0.5357726216316223
+    },
+    {
+      "id": "m_0049",
+      "label": "location",
+      "surface": "underworld",
+      "canonical": "underworld",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6138,
+        "charEnd": 6148,
+        "timeStart": 402.44,
+        "timeEnd": 407.68
+      },
+      "score": 0.623071014881134
+    },
+    {
+      "id": "m_0050",
+      "label": "role",
+      "surface": "captain",
+      "canonical": "captain",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6201,
+        "charEnd": 6208,
+        "timeStart": 404,
+        "timeEnd": 411.28
+      },
+      "score": 0.5784376859664917
+    },
+    {
+      "id": "m_0051",
+      "label": "date_time",
+      "surface": "tomorrow",
+      "canonical": "tomorrow",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6242,
+        "charEnd": 6250,
+        "timeStart": 411.28,
+        "timeEnd": 418.08
+      },
+      "score": 0.6474161148071289
+    },
+    {
+      "id": "m_0052",
+      "label": "location",
+      "surface": "holding area",
+      "canonical": "holding area",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6455,
+        "charEnd": 6467,
+        "timeStart": 426.599,
+        "timeEnd": 431.319
+      },
+      "score": 0.6504875421524048
+    },
+    {
+      "id": "m_0053",
+      "label": "person",
+      "surface": "St Peter",
+      "canonical": "St Peter",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6559,
+        "charEnd": 6567,
+        "timeStart": 433.16,
+        "timeEnd": 438.319
+      },
+      "score": 0.8887125253677368
+    },
+    {
+      "id": "m_0054",
+      "label": "event",
+      "surface": "Life review",
+      "canonical": "Life review",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6584,
+        "charEnd": 6595,
+        "timeStart": 435.879,
+        "timeEnd": 440.879
+      },
+      "score": 0.6971052885055542
+    },
+    {
+      "id": "m_0055",
+      "label": "location",
+      "surface": "bad place",
+      "canonical": "bad place",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 6751,
+        "charEnd": 6760,
+        "timeStart": 445.72,
+        "timeEnd": 451.56
+      },
+      "score": 0.6882273554801941
+    },
+    {
+      "id": "m_0056",
+      "label": "ideology",
+      "surface": "atheists",
+      "canonical": "atheists",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 7337,
+        "charEnd": 7345,
+        "timeStart": 488.24,
+        "timeEnd": 493.759
+      },
+      "score": 0.6055690050125122
+    },
+    {
+      "id": "m_0057",
+      "label": "date_time",
+      "surface": "1943",
+      "canonical": "1943",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 7689,
+        "charEnd": 7693,
+        "timeStart": 514.76,
+        "timeEnd": 520.599
+      },
+      "score": 0.9730105400085449
+    },
+    {
+      "id": "m_0058",
+      "label": "role",
+      "surface": "young army recruit",
+      "canonical": "young army recruit",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 7694,
+        "charEnd": 7712,
+        "timeStart": 514.76,
+        "timeEnd": 520.599
+      },
+      "score": 0.7838965654373169
+    },
+    {
+      "id": "m_0059",
+      "label": "person",
+      "surface": "George G\nRichie",
+      "canonical": "George G\nRichie",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 7713,
+        "charEnd": 7728,
+        "timeStart": 514.76,
+        "timeEnd": 523.279
+      },
+      "score": 0.9760019779205322
+    },
+    {
+      "id": "m_0060",
+      "label": "facility",
+      "surface": "isolation room",
+      "canonical": "isolation room",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 7755,
+        "charEnd": 7769,
+        "timeStart": 520.599,
+        "timeEnd": 524.6800000000001
+      },
+      "score": 0.8953538537025452
+    },
+    {
+      "id": "m_0061",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 7865,
+        "charEnd": 7871,
+        "timeStart": 526.68,
+        "timeEnd": 531.1999999999999
+      },
+      "score": 0.9948315024375916
+    },
+    {
+      "id": "m_0062",
+      "label": "organization",
+      "surface": "medical staff",
+      "canonical": "medical staff",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 7906,
+        "charEnd": 7919,
+        "timeStart": 529.64,
+        "timeEnd": 534.08
+      },
+      "score": 0.865138053894043
+    },
+    {
+      "id": "m_0063",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8001,
+        "charEnd": 8007,
+        "timeStart": 534.08,
+        "timeEnd": 538.24
+      },
+      "score": 0.9926772117614746
+    },
+    {
+      "id": "m_0064",
+      "label": "person",
+      "surface": "medical\nofficer",
+      "canonical": "medical\nofficer",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8044,
+        "charEnd": 8059,
+        "timeStart": 536.16,
+        "timeEnd": 542
+      },
+      "score": 0.5709064602851868
+    },
+    {
+      "id": "m_0065",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8080,
+        "charEnd": 8086,
+        "timeStart": 538.24,
+        "timeEnd": 542
+      },
+      "score": 0.9958209991455078
+    },
+    {
+      "id": "m_0066",
+      "label": "person",
+      "surface": "attendant",
+      "canonical": "attendant",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8160,
+        "charEnd": 8169,
+        "timeStart": 543.76,
+        "timeEnd": 548.56
+      },
+      "score": 0.9785345792770386
+    },
+    {
+      "id": "m_0067",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8181,
+        "charEnd": 8187,
+        "timeStart": 543.76,
+        "timeEnd": 548.56
+      },
+      "score": 0.9941206574440002
+    },
+    {
+      "id": "m_0068",
+      "label": "person",
+      "surface": "attendant",
+      "canonical": "attendant",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8255,
+        "charEnd": 8264,
+        "timeStart": 548.56,
+        "timeEnd": 554.3199999999999
+      },
+      "score": 0.9930810332298279
+    },
+    {
+      "id": "m_0069",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8324,
+        "charEnd": 8330,
+        "timeStart": 554.32,
+        "timeEnd": 560
+      },
+      "score": 0.9963682889938354
+    },
+    {
+      "id": "m_0070",
+      "label": "person",
+      "surface": "attendant",
+      "canonical": "attendant",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8466,
+        "charEnd": 8475,
+        "timeStart": 564.72,
+        "timeEnd": 569.44
+      },
+      "score": 0.9954641461372375
+    },
+    {
+      "id": "m_0071",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8490,
+        "charEnd": 8496,
+        "timeStart": 564.72,
+        "timeEnd": 569.44
+      },
+      "score": 0.9957761168479919
+    },
+    {
+      "id": "m_0072",
+      "label": "person",
+      "surface": "attendant",
+      "canonical": "attendant",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8534,
+        "charEnd": 8543,
+        "timeStart": 567.839,
+        "timeEnd": 571.0400000000001
+      },
+      "score": 0.99349445104599
+    },
+    {
+      "id": "m_0073",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8592,
+        "charEnd": 8598,
+        "timeStart": 571.04,
+        "timeEnd": 576.48
+      },
+      "score": 0.9937677383422852
+    },
+    {
+      "id": "m_0074",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8630,
+        "charEnd": 8636,
+        "timeStart": 573.399,
+        "timeEnd": 578.68
+      },
+      "score": 0.9972509741783142
+    },
+    {
+      "id": "m_0075",
+      "label": "location",
+      "surface": "Virginia",
+      "canonical": "Virginia",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8786,
+        "charEnd": 8794,
+        "timeStart": 582.32,
+        "timeEnd": 586.399
+      },
+      "score": 0.9353216290473938
+    },
+    {
+      "id": "m_0076",
+      "label": "organization",
+      "surface": "Army",
+      "canonical": "Army",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8809,
+        "charEnd": 8813,
+        "timeStart": 582.32,
+        "timeEnd": 586.399
+      },
+      "score": 0.8441839814186096
+    },
+    {
+      "id": "m_0077",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8837,
+        "charEnd": 8843,
+        "timeStart": 584.12,
+        "timeEnd": 588.6
+      },
+      "score": 0.9976508021354675
+    },
+    {
+      "id": "m_0078",
+      "label": "location",
+      "surface": "small town",
+      "canonical": "small town",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 8880,
+        "charEnd": 8890,
+        "timeStart": 586.399,
+        "timeEnd": 590.72
+      },
+      "score": 0.7319749593734741
+    },
+    {
+      "id": "m_0079",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9040,
+        "charEnd": 9046,
+        "timeStart": 598,
+        "timeEnd": 602.399
+      },
+      "score": 0.9978182315826416
+    },
+    {
+      "id": "m_0080",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9277,
+        "charEnd": 9283,
+        "timeStart": 611.64,
+        "timeEnd": 615.1999999999999
+      },
+      "score": 0.997974693775177
+    },
+    {
+      "id": "m_0081",
+      "label": "role",
+      "surface": "medic",
+      "canonical": "medic",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9305,
+        "charEnd": 9310,
+        "timeStart": 613.48,
+        "timeEnd": 617.519
+      },
+      "score": 0.7786237597465515
+    },
+    {
+      "id": "m_0082",
+      "label": "technology",
+      "surface": "heart monitor",
+      "canonical": "heart monitor",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9344,
+        "charEnd": 9357,
+        "timeStart": 615.2,
+        "timeEnd": 620.2
+      },
+      "score": 0.8755507469177246
+    },
+    {
+      "id": "m_0083",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9358,
+        "charEnd": 9364,
+        "timeStart": 615.2,
+        "timeEnd": 620.2
+      },
+      "score": 0.9971718192100525
+    },
+    {
+      "id": "m_0084",
+      "label": "location",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9380,
+        "charEnd": 9388,
+        "timeStart": 617.519,
+        "timeEnd": 622.279
+      },
+      "score": 0.8236274123191833
+    },
+    {
+      "id": "m_0085",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9525,
+        "charEnd": 9531,
+        "timeStart": 624.12,
+        "timeEnd": 628.48
+      },
+      "score": 0.989052951335907
+    },
+    {
+      "id": "m_0086",
+      "label": "date_time",
+      "surface": "1965",
+      "canonical": "1965",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9597,
+        "charEnd": 9601,
+        "timeStart": 628.48,
+        "timeEnd": 633.88
+      },
+      "score": 0.9417235851287842
+    },
+    {
+      "id": "m_0087",
+      "label": "person",
+      "surface": "George",
+      "canonical": "George",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9602,
+        "charEnd": 9608,
+        "timeStart": 628.48,
+        "timeEnd": 633.88
+      },
+      "score": 0.9887825846672058
+    },
+    {
+      "id": "m_0088",
+      "label": "person",
+      "surface": "Raymond",
+      "canonical": "Raymond",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9683,
+        "charEnd": 9690,
+        "timeStart": 633.88,
+        "timeEnd": 639.279
+      },
+      "score": 0.7386382222175598
+    },
+    {
+      "id": "m_0089",
+      "label": "person",
+      "surface": "moody",
+      "canonical": "moody",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9691,
+        "charEnd": 9696,
+        "timeStart": 636.04,
+        "timeEnd": 641.1999999999999
+      },
+      "score": 0.7336626648902893
+    },
+    {
+      "id": "m_0090",
+      "label": "person",
+      "surface": "moody",
+      "canonical": "moody",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 9697,
+        "charEnd": 9702,
+        "timeStart": 636.04,
+        "timeEnd": 641.1999999999999
+      },
+      "score": 0.6083088517189026
+    },
+    {
+      "id": "m_0091",
+      "label": "person",
+      "surface": "Moody",
+      "canonical": "moody",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 10260,
+        "charEnd": 10265,
+        "timeStart": 676.399,
+        "timeEnd": 681.88
+      },
+      "score": 0.8097645044326782
+    },
+    {
+      "id": "m_0092",
+      "label": "date_time",
+      "surface": "1975",
+      "canonical": "1975",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 10344,
+        "charEnd": 10348,
+        "timeStart": 681.88,
+        "timeEnd": 687.16
+      },
+      "score": 0.7025800943374634
+    },
+    {
+      "id": "m_0093",
+      "label": "work_of_media",
+      "surface": "Life After Life",
+      "canonical": "Life After Life",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 10354,
+        "charEnd": 10369,
+        "timeStart": 681.88,
+        "timeEnd": 687.16
+      },
+      "score": 0.9278074502944946
+    },
+    {
+      "id": "m_0094",
+      "label": "person",
+      "surface": "Dr\nMichael sabom",
+      "canonical": "Dr\nMichael sabom",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 10516,
+        "charEnd": 10532,
+        "timeStart": 690.959,
+        "timeEnd": 698.2
+      },
+      "score": 0.9683425426483154
+    },
+    {
+      "id": "m_0095",
+      "label": "event",
+      "surface": "Cardiac Arrest",
+      "canonical": "Cardiac Arrest",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 10666,
+        "charEnd": 10680,
+        "timeStart": 702.16,
+        "timeEnd": 707.519
+      },
+      "score": 0.782967209815979
+    },
+    {
+      "id": "m_0096",
+      "label": "organization",
+      "surface": "sabom",
+      "canonical": "sabom",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11338,
+        "charEnd": 11343,
+        "timeStart": 741.24,
+        "timeEnd": 746.0790000000001
+      },
+      "score": 0.6690635681152344
+    },
+    {
+      "id": "m_0097",
+      "label": "person",
+      "surface": "Raymond Moody",
+      "canonical": "Raymond Moody",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11380,
+        "charEnd": 11393,
+        "timeStart": 743.56,
+        "timeEnd": 748.399
+      },
+      "score": 0.9642835259437561
+    },
+    {
+      "id": "m_0098",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11451,
+        "charEnd": 11462,
+        "timeStart": 748.399,
+        "timeEnd": 752.8
+      },
+      "score": 0.8169938921928406
+    },
+    {
+      "id": "m_0099",
+      "label": "organization",
+      "surface": "sabom",
+      "canonical": "sabom",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11631,
+        "charEnd": 11636,
+        "timeStart": 757.48,
+        "timeEnd": 762.04
+      },
+      "score": 0.8716006278991699
+    },
+    {
+      "id": "m_0100",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11658,
+        "charEnd": 11669,
+        "timeStart": 759.92,
+        "timeEnd": 763.92
+      },
+      "score": 0.7941439151763916
+    },
+    {
+      "id": "m_0101",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11681,
+        "charEnd": 11690,
+        "timeStart": 762.04,
+        "timeEnd": 766.7199999999999
+      },
+      "score": 0.613254964351654
+    },
+    {
+      "id": "m_0102",
+      "label": "organization",
+      "surface": "doctors and nurses",
+      "canonical": "doctors and nurses",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11836,
+        "charEnd": 11854,
+        "timeStart": 773.48,
+        "timeEnd": 777.6
+      },
+      "score": 0.6379472017288208
+    },
+    {
+      "id": "m_0103",
+      "label": "person",
+      "surface": "Dr Carl Green",
+      "canonical": "Dr Carl Green",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11910,
+        "charEnd": 11923,
+        "timeStart": 777.6,
+        "timeEnd": 782.24
+      },
+      "score": 0.9668829441070557
+    },
+    {
+      "id": "m_0104",
+      "label": "event",
+      "surface": "Flatline",
+      "canonical": "Flatline",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 11955,
+        "charEnd": 11963,
+        "timeStart": 780.04,
+        "timeEnd": 784.12
+      },
+      "score": 0.5372686386108398
+    },
+    {
+      "id": "m_0105",
+      "label": "person",
+      "surface": "dad",
+      "canonical": "dad",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12166,
+        "charEnd": 12169,
+        "timeStart": 804.12,
+        "timeEnd": 810.199
+      },
+      "score": 0.9075027704238892
+    },
+    {
+      "id": "m_0106",
+      "label": "person",
+      "surface": "my pop",
+      "canonical": "my pop",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12170,
+        "charEnd": 12176,
+        "timeStart": 804.12,
+        "timeEnd": 810.199
+      },
+      "score": 0.6032918691635132
+    },
+    {
+      "id": "m_0107",
+      "label": "person",
+      "surface": "dad",
+      "canonical": "dad",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12192,
+        "charEnd": 12195,
+        "timeStart": 804.12,
+        "timeEnd": 810.199
+      },
+      "score": 0.9306960105895996
+    },
+    {
+      "id": "m_0108",
+      "label": "person",
+      "surface": "teenage girl",
+      "canonical": "teenage girl",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12212,
+        "charEnd": 12224,
+        "timeStart": 807.92,
+        "timeEnd": 812.399
+      },
+      "score": 0.845747709274292
+    },
+    {
+      "id": "m_0109",
+      "label": "location",
+      "surface": "Square",
+      "canonical": "Square",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12253,
+        "charEnd": 12259,
+        "timeStart": 810.199,
+        "timeEnd": 814.56
+      },
+      "score": 0.7077572345733643
+    },
+    {
+      "id": "m_0110",
+      "label": "location",
+      "surface": "Square",
+      "canonical": "Square",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12393,
+        "charEnd": 12399,
+        "timeStart": 816.959,
+        "timeEnd": 825.279
+      },
+      "score": 0.6818897128105164
+    },
+    {
+      "id": "m_0111",
+      "label": "person",
+      "surface": "dad",
+      "canonical": "dad",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12440,
+        "charEnd": 12443,
+        "timeStart": 825.88,
+        "timeEnd": 830.639
+      },
+      "score": 0.9386009573936462
+    },
+    {
+      "id": "m_0112",
+      "label": "location",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12601,
+        "charEnd": 12609,
+        "timeStart": 836.16,
+        "timeEnd": 842.7199999999999
+      },
+      "score": 0.6030861735343933
+    },
+    {
+      "id": "m_0113",
+      "label": "person",
+      "surface": "his mother",
+      "canonical": "his mother",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12779,
+        "charEnd": 12789,
+        "timeStart": 851.12,
+        "timeEnd": 856.6
+      },
+      "score": 0.6779606938362122
+    },
+    {
+      "id": "m_0114",
+      "label": "person",
+      "surface": "Mom",
+      "canonical": "Mom",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12828,
+        "charEnd": 12831,
+        "timeStart": 853.24,
+        "timeEnd": 859
+      },
+      "score": 0.8782299160957336
+    },
+    {
+      "id": "m_0115",
+      "label": "person",
+      "surface": "Dad",
+      "canonical": "dad",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 12915,
+        "charEnd": 12918,
+        "timeStart": 859,
+        "timeEnd": 864
+      },
+      "score": 0.8880035281181335
+    },
+    {
+      "id": "m_0116",
+      "label": "location",
+      "surface": "the hospital",
+      "canonical": "the hospital",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 13199,
+        "charEnd": 13211,
+        "timeStart": 878.839,
+        "timeEnd": 883.0400000000001
+      },
+      "score": 0.6235715746879578
+    },
+    {
+      "id": "m_0117",
+      "label": "date_time",
+      "surface": "1791",
+      "canonical": "1791",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 13597,
+        "charEnd": 13601,
+        "timeStart": 908.16,
+        "timeEnd": 914.48
+      },
+      "score": 0.9458694458007812
+    },
+    {
+      "id": "m_0118",
+      "label": "nationality_or_ethnicity",
+      "surface": "British",
+      "canonical": "British",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 13602,
+        "charEnd": 13609,
+        "timeStart": 908.16,
+        "timeEnd": 914.48
+      },
+      "score": 0.9680309891700745
+    },
+    {
+      "id": "m_0119",
+      "label": "person",
+      "surface": "Admiral",
+      "canonical": "Admiral",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 13610,
+        "charEnd": 13617,
+        "timeStart": 908.16,
+        "timeEnd": 914.48
+      },
+      "score": 0.8878539800643921
+    },
+    {
+      "id": "m_0120",
+      "label": "person",
+      "surface": "Admiral",
+      "canonical": "Admiral",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 13825,
+        "charEnd": 13832,
+        "timeStart": 924.92,
+        "timeEnd": 929.519
+      },
+      "score": 0.7820903658866882
+    },
+    {
+      "id": "m_0121",
+      "label": "person",
+      "surface": "Dr Mary Neil",
+      "canonical": "Dr Mary Neil",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 14156,
+        "charEnd": 14168,
+        "timeStart": 944.639,
+        "timeEnd": 949.04
+      },
+      "score": 0.9574495553970337
+    },
+    {
+      "id": "m_0122",
+      "label": "location",
+      "surface": "Chile",
+      "canonical": "Chile",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 14195,
+        "charEnd": 14200,
+        "timeStart": 947.319,
+        "timeEnd": 951.12
+      },
+      "score": 0.7518112063407898
+    },
+    {
+      "id": "m_0123",
+      "label": "person",
+      "surface": "Minister Don Piper",
+      "canonical": "Minister Don Piper",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 14581,
+        "charEnd": 14599,
+        "timeStart": 973,
+        "timeEnd": 976.839
+      },
+      "score": 0.9365951418876648
+    },
+    {
+      "id": "m_0124",
+      "label": "location",
+      "surface": "Alvin Texas",
+      "canonical": "Alvin Texas",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 14620,
+        "charEnd": 14631,
+        "timeStart": 974.8,
+        "timeEnd": 979.3599999999999
+      },
+      "score": 0.844856321811676
+    },
+    {
+      "id": "m_0125",
+      "label": "event",
+      "surface": "head-on collision",
+      "canonical": "head-on collision",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 14675,
+        "charEnd": 14692,
+        "timeStart": 976.839,
+        "timeEnd": 982.0400000000001
+      },
+      "score": 0.7764917612075806
+    },
+    {
+      "id": "m_0126",
+      "label": "person",
+      "surface": "Don",
+      "canonical": "Don",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 14926,
+        "charEnd": 14929,
+        "timeStart": 990.319,
+        "timeEnd": 996.8389999999999
+      },
+      "score": 0.9226430654525757
+    },
+    {
+      "id": "m_0127",
+      "label": "location",
+      "surface": "Heaven",
+      "canonical": "heaven",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 14950,
+        "charEnd": 14956,
+        "timeStart": 993.199,
+        "timeEnd": 998.639
+      },
+      "score": 0.7270529270172119
+    },
+    {
+      "id": "m_0128",
+      "label": "location",
+      "surface": "heaven",
+      "canonical": "heaven",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15010,
+        "charEnd": 15016,
+        "timeStart": 998.639,
+        "timeEnd": 1002.759
+      },
+      "score": 0.6674338579177856
+    },
+    {
+      "id": "m_0129",
+      "label": "ideology",
+      "surface": "Christian",
+      "canonical": "Christian",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15152,
+        "charEnd": 15161,
+        "timeStart": 1004.6,
+        "timeEnd": 1009.279
+      },
+      "score": 0.5345779061317444
+    },
+    {
+      "id": "m_0130",
+      "label": "person",
+      "surface": "Jesus",
+      "canonical": "Jesus",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15178,
+        "charEnd": 15183,
+        "timeStart": 1006.959,
+        "timeEnd": 1010.88
+      },
+      "score": 0.8884953260421753
+    },
+    {
+      "id": "m_0131",
+      "label": "location",
+      "surface": "heaven",
+      "canonical": "heaven",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15187,
+        "charEnd": 15193,
+        "timeStart": 1006.959,
+        "timeEnd": 1010.88
+      },
+      "score": 0.6728765964508057
+    },
+    {
+      "id": "m_0132",
+      "label": "ideology",
+      "surface": "atheist",
+      "canonical": "atheist",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15197,
+        "charEnd": 15204,
+        "timeStart": 1006.959,
+        "timeEnd": 1010.88
+      },
+      "score": 0.7826363444328308
+    },
+    {
+      "id": "m_0133",
+      "label": "ideology",
+      "surface": "Muslims",
+      "canonical": "Muslims",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15252,
+        "charEnd": 15259,
+        "timeStart": 1010.88,
+        "timeEnd": 1016.56
+      },
+      "score": 0.5255429148674011
+    },
+    {
+      "id": "m_0134",
+      "label": "location",
+      "surface": "Janna",
+      "canonical": "Janna",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15266,
+        "charEnd": 15271,
+        "timeStart": 1010.88,
+        "timeEnd": 1016.56
+      },
+      "score": 0.7401929497718811
+    },
+    {
+      "id": "m_0135",
+      "label": "person",
+      "surface": "Emory",
+      "canonical": "Emory",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15321,
+        "charEnd": 15326,
+        "timeStart": 1016.56,
+        "timeEnd": 1020.7199999999999
+      },
+      "score": 0.9817837476730347
+    },
+    {
+      "id": "m_0136",
+      "label": "quantity",
+      "surface": "first year",
+      "canonical": "first year",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15333,
+        "charEnd": 15343,
+        "timeStart": 1016.56,
+        "timeEnd": 1020.7199999999999
+      },
+      "score": 0.6665462851524353
+    },
+    {
+      "id": "m_0137",
+      "label": "role",
+      "surface": "law student",
+      "canonical": "law student",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15344,
+        "charEnd": 15355,
+        "timeStart": 1016.56,
+        "timeEnd": 1020.7199999999999
+      },
+      "score": 0.7680802345275879
+    },
+    {
+      "id": "m_0138",
+      "label": "person",
+      "surface": "boyfriend",
+      "canonical": "boyfriend",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15407,
+        "charEnd": 15416,
+        "timeStart": 1020.72,
+        "timeEnd": 1025.199
+      },
+      "score": 0.5361583232879639
+    },
+    {
+      "id": "m_0139",
+      "label": "event",
+      "surface": "accident",
+      "canonical": "accident",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15582,
+        "charEnd": 15590,
+        "timeStart": 1041.72,
+        "timeEnd": 1046.28
+      },
+      "score": 0.6353299021720886
+    },
+    {
+      "id": "m_0140",
+      "label": "person",
+      "surface": "Emory",
+      "canonical": "Emory",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15591,
+        "charEnd": 15596,
+        "timeStart": 1041.72,
+        "timeEnd": 1046.28
+      },
+      "score": 0.9788699150085449
+    },
+    {
+      "id": "m_0141",
+      "label": "location",
+      "surface": "the windshield",
+      "canonical": "the windshield",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15623,
+        "charEnd": 15637,
+        "timeStart": 1044.319,
+        "timeEnd": 1047.959
+      },
+      "score": 0.6595675349235535
+    },
+    {
+      "id": "m_0142",
+      "label": "person",
+      "surface": "her parents",
+      "canonical": "her parents",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15854,
+        "charEnd": 15865,
+        "timeStart": 1055.919,
+        "timeEnd": 1060.3200000000002
+      },
+      "score": 0.6421248316764832
+    },
+    {
+      "id": "m_0143",
+      "label": "person",
+      "surface": "Em's father",
+      "canonical": "Em's father",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 15941,
+        "charEnd": 15952,
+        "timeStart": 1060.32,
+        "timeEnd": 1064.9189999999999
+      },
+      "score": 0.6323221325874329
+    },
+    {
+      "id": "m_0144",
+      "label": "person",
+      "surface": "Emory",
+      "canonical": "Emory",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16087,
+        "charEnd": 16092,
+        "timeStart": 1069.36,
+        "timeEnd": 1076.559
+      },
+      "score": 0.9520803093910217
+    },
+    {
+      "id": "m_0145",
+      "label": "person",
+      "surface": "her father",
+      "canonical": "her father",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16120,
+        "charEnd": 16130,
+        "timeStart": 1073.2,
+        "timeEnd": 1078.8400000000001
+      },
+      "score": 0.8877785801887512
+    },
+    {
+      "id": "m_0146",
+      "label": "person",
+      "surface": "Em's father",
+      "canonical": "Em's father",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16216,
+        "charEnd": 16227,
+        "timeStart": 1081.4,
+        "timeEnd": 1085.24
+      },
+      "score": 0.7924689054489136
+    },
+    {
+      "id": "m_0147",
+      "label": "person",
+      "surface": "emry",
+      "canonical": "emry",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16332,
+        "charEnd": 16336,
+        "timeStart": 1087.6,
+        "timeEnd": 1092.1999999999998
+      },
+      "score": 0.9151415824890137
+    },
+    {
+      "id": "m_0148",
+      "label": "person",
+      "surface": "her father",
+      "canonical": "her father",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16342,
+        "charEnd": 16352,
+        "timeStart": 1087.6,
+        "timeEnd": 1092.1999999999998
+      },
+      "score": 0.9540614485740662
+    },
+    {
+      "id": "m_0149",
+      "label": "location",
+      "surface": "ICU",
+      "canonical": "ICU",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16740,
+        "charEnd": 16743,
+        "timeStart": 1117.52,
+        "timeEnd": 1122.84
+      },
+      "score": 0.6497108936309814
+    },
+    {
+      "id": "m_0150",
+      "label": "quantity",
+      "surface": "thousands of people",
+      "canonical": "thousands of people",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16744,
+        "charEnd": 16763,
+        "timeStart": 1117.52,
+        "timeEnd": 1122.84
+      },
+      "score": 0.8253793120384216
+    },
+    {
+      "id": "m_0151",
+      "label": "person",
+      "surface": "Don Piper",
+      "canonical": "Don Piper",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16889,
+        "charEnd": 16898,
+        "timeStart": 1128.08,
+        "timeEnd": 1134.48
+      },
+      "score": 0.9959661960601807
+    },
+    {
+      "id": "m_0152",
+      "label": "date_time",
+      "surface": "January\n18th\n1989",
+      "canonical": "January\n18th\n1989",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16913,
+        "charEnd": 16930,
+        "timeStart": 1128.08,
+        "timeEnd": 1139.559
+      },
+      "score": 0.9497250318527222
+    },
+    {
+      "id": "m_0153",
+      "label": "person",
+      "surface": "Don Piper",
+      "canonical": "Don Piper",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 16931,
+        "charEnd": 16940,
+        "timeStart": 1134.48,
+        "timeEnd": 1139.559
+      },
+      "score": 0.9926390647888184
+    },
+    {
+      "id": "m_0154",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17329,
+        "charEnd": 17335,
+        "timeStart": 1164.76,
+        "timeEnd": 1170.2
+      },
+      "score": 0.9740832448005676
+    },
+    {
+      "id": "m_0155",
+      "label": "date_time",
+      "surface": "1985",
+      "canonical": "1985",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17377,
+        "charEnd": 17381,
+        "timeStart": 1167.24,
+        "timeEnd": 1171.72
+      },
+      "score": 0.9384208917617798
+    },
+    {
+      "id": "m_0156",
+      "label": "location",
+      "surface": "Paris",
+      "canonical": "Paris",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17392,
+        "charEnd": 17397,
+        "timeStart": 1167.24,
+        "timeEnd": 1171.72
+      },
+      "score": 0.9631062150001526
+    },
+    {
+      "id": "m_0157",
+      "label": "person",
+      "surface": "wife",
+      "canonical": "wife",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17407,
+        "charEnd": 17411,
+        "timeStart": 1170.2,
+        "timeEnd": 1173.679
+      },
+      "score": 0.7859112024307251
+    },
+    {
+      "id": "m_0158",
+      "label": "event",
+      "surface": "romantic vacation",
+      "canonical": "romantic vacation",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17437,
+        "charEnd": 17454,
+        "timeStart": 1171.72,
+        "timeEnd": 1175.3600000000001
+      },
+      "score": 0.5928881168365479
+    },
+    {
+      "id": "m_0159",
+      "label": "event",
+      "surface": "college field trip",
+      "canonical": "college field trip",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17492,
+        "charEnd": 17510,
+        "timeStart": 1173.679,
+        "timeEnd": 1177.679
+      },
+      "score": 0.6753937602043152
+    },
+    {
+      "id": "m_0160",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17541,
+        "charEnd": 17547,
+        "timeStart": 1175.36,
+        "timeEnd": 1179.6399999999999
+      },
+      "score": 0.9699757099151611
+    },
+    {
+      "id": "m_0161",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17713,
+        "charEnd": 17719,
+        "timeStart": 1185.52,
+        "timeEnd": 1188.96
+      },
+      "score": 0.9642083644866943
+    },
+    {
+      "id": "m_0162",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17730,
+        "charEnd": 17736,
+        "timeStart": 1187.32,
+        "timeEnd": 1191.08
+      },
+      "score": 0.952552080154419
+    },
+    {
+      "id": "m_0163",
+      "label": "person",
+      "surface": "wife",
+      "canonical": "wife",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17800,
+        "charEnd": 17804,
+        "timeStart": 1188.96,
+        "timeEnd": 1193.159
+      },
+      "score": 0.8644546866416931
+    },
+    {
+      "id": "m_0164",
+      "label": "quantity",
+      "surface": "few hours ago",
+      "canonical": "few hours ago",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17965,
+        "charEnd": 17978,
+        "timeStart": 1199.12,
+        "timeEnd": 1203.9189999999999
+      },
+      "score": 0.6420135498046875
+    },
+    {
+      "id": "m_0165",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 17979,
+        "charEnd": 17985,
+        "timeStart": 1199.12,
+        "timeEnd": 1203.9189999999999
+      },
+      "score": 0.992099940776825
+    },
+    {
+      "id": "m_0166",
+      "label": "location",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18046,
+        "charEnd": 18054,
+        "timeStart": 1203.919,
+        "timeEnd": 1207.919
+      },
+      "score": 0.8423224687576294
+    },
+    {
+      "id": "m_0167",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18055,
+        "charEnd": 18061,
+        "timeStart": 1203.919,
+        "timeEnd": 1207.919
+      },
+      "score": 0.9962779879570007
+    },
+    {
+      "id": "m_0168",
+      "label": "quantity",
+      "surface": "5\nhours",
+      "canonical": "5\nhours",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18131,
+        "charEnd": 18138,
+        "timeStart": 1207.919,
+        "timeEnd": 1216.08
+      },
+      "score": 0.5986468195915222
+    },
+    {
+      "id": "m_0169",
+      "label": "location",
+      "surface": "hospital",
+      "canonical": "hospital",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18151,
+        "charEnd": 18159,
+        "timeStart": 1210.36,
+        "timeEnd": 1216.08
+      },
+      "score": 0.8567349314689636
+    },
+    {
+      "id": "m_0170",
+      "label": "quantity",
+      "surface": "10 hours",
+      "canonical": "10 hours",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18196,
+        "charEnd": 18204,
+        "timeStart": 1213.12,
+        "timeEnd": 1219.36
+      },
+      "score": 0.5450074672698975
+    },
+    {
+      "id": "m_0171",
+      "label": "person",
+      "surface": "his wife",
+      "canonical": "his wife",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18419,
+        "charEnd": 18427,
+        "timeStart": 1227.48,
+        "timeEnd": 1231.4
+      },
+      "score": 0.6438484787940979
+    },
+    {
+      "id": "m_0172",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18595,
+        "charEnd": 18601,
+        "timeStart": 1237.72,
+        "timeEnd": 1241.48
+      },
+      "score": 0.9962217807769775
+    },
+    {
+      "id": "m_0173",
+      "label": "location",
+      "surface": "hallway",
+      "canonical": "hallway",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18773,
+        "charEnd": 18780,
+        "timeStart": 1247.2,
+        "timeEnd": 1251.48
+      },
+      "score": 0.6144063472747803
+    },
+    {
+      "id": "m_0174",
+      "label": "location",
+      "surface": "hospital room",
+      "canonical": "hospital room",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18833,
+        "charEnd": 18846,
+        "timeStart": 1249.48,
+        "timeEnd": 1253.52
+      },
+      "score": 0.5071866512298584
+    },
+    {
+      "id": "m_0175",
+      "label": "location",
+      "surface": "the hallway",
+      "canonical": "the hallway",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18906,
+        "charEnd": 18917,
+        "timeStart": 1253.52,
+        "timeEnd": 1258.72
+      },
+      "score": 0.6111966371536255
+    },
+    {
+      "id": "m_0176",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 18927,
+        "charEnd": 18933,
+        "timeStart": 1256.36,
+        "timeEnd": 1260.9189999999999
+      },
+      "score": 0.9865940809249878
+    },
+    {
+      "id": "m_0177",
+      "label": "location",
+      "surface": "Hell",
+      "canonical": "Hell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 19222,
+        "charEnd": 19226,
+        "timeStart": 1272.44,
+        "timeEnd": 1279.2
+      },
+      "score": 0.7051050066947937
+    },
+    {
+      "id": "m_0178",
+      "label": "work_of_media",
+      "surface": "ghost",
+      "canonical": "ghost",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 19250,
+        "charEnd": 19255,
+        "timeStart": 1275.039,
+        "timeEnd": 1279.2
+      },
+      "score": 0.7656529545783997
+    },
+    {
+      "id": "m_0179",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 19394,
+        "charEnd": 19400,
+        "timeStart": 1296.48,
+        "timeEnd": 1301.279
+      },
+      "score": 0.9870588183403015
+    },
+    {
+      "id": "m_0180",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 19495,
+        "charEnd": 19501,
+        "timeStart": 1301.279,
+        "timeEnd": 1305.799
+      },
+      "score": 0.9910315275192261
+    },
+    {
+      "id": "m_0181",
+      "label": "location",
+      "surface": "hellscape",
+      "canonical": "hellscape",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 19516,
+        "charEnd": 19525,
+        "timeStart": 1303.52,
+        "timeEnd": 1308.24
+      },
+      "score": 0.5584667921066284
+    },
+    {
+      "id": "m_0182",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 19777,
+        "charEnd": 19783,
+        "timeStart": 1322.88,
+        "timeEnd": 1328.2
+      },
+      "score": 0.9972634315490723
+    },
+    {
+      "id": "m_0183",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 19899,
+        "charEnd": 19905,
+        "timeStart": 1330.72,
+        "timeEnd": 1335.24
+      },
+      "score": 0.9974017143249512
+    },
+    {
+      "id": "m_0184",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20019,
+        "charEnd": 20025,
+        "timeStart": 1338.52,
+        "timeEnd": 1343.52
+      },
+      "score": 0.9971076846122742
+    },
+    {
+      "id": "m_0185",
+      "label": "work_of_media",
+      "surface": "movie",
+      "canonical": "movie",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20067,
+        "charEnd": 20072,
+        "timeStart": 1340.919,
+        "timeEnd": 1346.039
+      },
+      "score": 0.590776801109314
+    },
+    {
+      "id": "m_0186",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20235,
+        "charEnd": 20241,
+        "timeStart": 1355.08,
+        "timeEnd": 1359.52
+      },
+      "score": 0.997062623500824
+    },
+    {
+      "id": "m_0187",
+      "label": "quantity",
+      "surface": "very\nfew",
+      "canonical": "very\nfew",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20417,
+        "charEnd": 20425,
+        "timeStart": 1363.919,
+        "timeEnd": 1371.3600000000001
+      },
+      "score": 0.7917593717575073
+    },
+    {
+      "id": "m_0188",
+      "label": "event",
+      "surface": "near-death experiences",
+      "canonical": "near-death experiences",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20426,
+        "charEnd": 20448,
+        "timeStart": 1366.96,
+        "timeEnd": 1371.3600000000001
+      },
+      "score": 0.8213775157928467
+    },
+    {
+      "id": "m_0189",
+      "label": "location",
+      "surface": "hell",
+      "canonical": "Hell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20463,
+        "charEnd": 20467,
+        "timeStart": 1369.24,
+        "timeEnd": 1373.799
+      },
+      "score": 0.96553635597229
+    },
+    {
+      "id": "m_0190",
+      "label": "person",
+      "surface": "Howard",
+      "canonical": "Howard",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20660,
+        "charEnd": 20666,
+        "timeStart": 1380.24,
+        "timeEnd": 1385.96
+      },
+      "score": 0.86280357837677
+    },
+    {
+      "id": "m_0191",
+      "label": "location",
+      "surface": "Hell",
+      "canonical": "Hell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20842,
+        "charEnd": 20846,
+        "timeStart": 1390,
+        "timeEnd": 1394.6
+      },
+      "score": 0.9657256603240967
+    },
+    {
+      "id": "m_0192",
+      "label": "location",
+      "surface": "Hall of truths",
+      "canonical": "Hall of truths",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 20926,
+        "charEnd": 20940,
+        "timeStart": 1396.44,
+        "timeEnd": 1400.2
+      },
+      "score": 0.5764442086219788
+    },
+    {
+      "id": "m_0193",
+      "label": "location",
+      "surface": "hell",
+      "canonical": "Hell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21034,
+        "charEnd": 21038,
+        "timeStart": 1400.2,
+        "timeEnd": 1404.48
+      },
+      "score": 0.9695585370063782
+    },
+    {
+      "id": "m_0194",
+      "label": "organization",
+      "surface": "religions",
+      "canonical": "religions",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21076,
+        "charEnd": 21085,
+        "timeStart": 1404.48,
+        "timeEnd": 1409.1200000000001
+      },
+      "score": 0.5088751912117004
+    },
+    {
+      "id": "m_0195",
+      "label": "organization",
+      "surface": "Skeptics",
+      "canonical": "Skeptics",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21191,
+        "charEnd": 21199,
+        "timeStart": 1411.2,
+        "timeEnd": 1415.919
+      },
+      "score": 0.7660318613052368
+    },
+    {
+      "id": "m_0196",
+      "label": "organization",
+      "surface": "religions",
+      "canonical": "religions",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21237,
+        "charEnd": 21246,
+        "timeStart": 1413.4,
+        "timeEnd": 1418.039
+      },
+      "score": 0.5539608597755432
+    },
+    {
+      "id": "m_0197",
+      "label": "role",
+      "surface": "ancient rulers",
+      "canonical": "ancient rulers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21251,
+        "charEnd": 21265,
+        "timeStart": 1413.4,
+        "timeEnd": 1418.039
+      },
+      "score": 0.5403961539268494
+    },
+    {
+      "id": "m_0198",
+      "label": "location",
+      "surface": "Heaven",
+      "canonical": "heaven",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21290,
+        "charEnd": 21296,
+        "timeStart": 1415.919,
+        "timeEnd": 1419.64
+      },
+      "score": 0.5716692209243774
+    },
+    {
+      "id": "m_0199",
+      "label": "location",
+      "surface": "Hell",
+      "canonical": "Hell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21301,
+        "charEnd": 21305,
+        "timeStart": 1415.919,
+        "timeEnd": 1419.64
+      },
+      "score": 0.9366649985313416
+    },
+    {
+      "id": "m_0200",
+      "label": "location",
+      "surface": "Hell",
+      "canonical": "Hell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21407,
+        "charEnd": 21411,
+        "timeStart": 1421.36,
+        "timeEnd": 1425.84
+      },
+      "score": 0.9289597868919373
+    },
+    {
+      "id": "m_0201",
+      "label": "person",
+      "surface": "mcdougall",
+      "canonical": "mcdougall",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21458,
+        "charEnd": 21467,
+        "timeStart": 1425.84,
+        "timeEnd": 1430.6789999999999
+      },
+      "score": 0.9508549571037292
+    },
+    {
+      "id": "m_0202",
+      "label": "date_time",
+      "surface": "May of this year",
+      "canonical": "May of this year",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21658,
+        "charEnd": 21674,
+        "timeStart": 1436.159,
+        "timeEnd": 1440.0390000000002
+      },
+      "score": 0.8786085247993469
+    },
+    {
+      "id": "m_0203",
+      "label": "organization",
+      "surface": "group of scientists",
+      "canonical": "group of scientists",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 21677,
+        "charEnd": 21696,
+        "timeStart": 1438.36,
+        "timeEnd": 1442.36
+      },
+      "score": 0.55533367395401
+    },
+    {
+      "id": "m_0204",
+      "label": "date_time",
+      "surface": "May 2023",
+      "canonical": "May 2023",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22455,
+        "charEnd": 22463,
+        "timeStart": 1487.96,
+        "timeEnd": 1493.679
+      },
+      "score": 0.8561370372772217
+    },
+    {
+      "id": "m_0205",
+      "label": "event",
+      "surface": "study",
+      "canonical": "study",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22466,
+        "charEnd": 22471,
+        "timeStart": 1492.039,
+        "timeEnd": 1496.24
+      },
+      "score": 0.6614437103271484
+    },
+    {
+      "id": "m_0206",
+      "label": "organization",
+      "surface": "National Academy of Sciences",
+      "canonical": "National Academy of Sciences",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22512,
+        "charEnd": 22540,
+        "timeStart": 1493.679,
+        "timeEnd": 1498.1200000000001
+      },
+      "score": 0.875115692615509
+    },
+    {
+      "id": "m_0207",
+      "label": "person",
+      "surface": "Dr\njimo borin",
+      "canonical": "Dr\njimo borin",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22541,
+        "charEnd": 22554,
+        "timeStart": 1493.679,
+        "timeEnd": 1500.159
+      },
+      "score": 0.962146520614624
+    },
+    {
+      "id": "m_0208",
+      "label": "event",
+      "surface": "study",
+      "canonical": "study",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22569,
+        "charEnd": 22574,
+        "timeStart": 1496.24,
+        "timeEnd": 1500.159
+      },
+      "score": 0.5613911747932434
+    },
+    {
+      "id": "m_0209",
+      "label": "quantity",
+      "surface": "four patients",
+      "canonical": "four patients",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22710,
+        "charEnd": 22723,
+        "timeStart": 1504.32,
+        "timeEnd": 1508.72
+      },
+      "score": 0.7389476895332336
+    },
+    {
+      "id": "m_0210",
+      "label": "facility",
+      "surface": "life support",
+      "canonical": "life support",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22749,
+        "charEnd": 22761,
+        "timeStart": 1506.84,
+        "timeEnd": 1510.9189999999999
+      },
+      "score": 0.5741547346115112
+    },
+    {
+      "id": "m_0211",
+      "label": "person",
+      "surface": "these patients",
+      "canonical": "these patients",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 22782,
+        "charEnd": 22796,
+        "timeStart": 1508.72,
+        "timeEnd": 1513.08
+      },
+      "score": 0.7520096898078918
+    },
+    {
+      "id": "m_0212",
+      "label": "person",
+      "surface": "patients",
+      "canonical": "patients",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 23033,
+        "charEnd": 23041,
+        "timeStart": 1523.6,
+        "timeEnd": 1528.08
+      },
+      "score": 0.7135405540466309
+    },
+    {
+      "id": "m_0213",
+      "label": "facility",
+      "surface": "life support",
+      "canonical": "life support",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 23211,
+        "charEnd": 23223,
+        "timeStart": 1531.919,
+        "timeEnd": 1536.3600000000001
+      },
+      "score": 0.7034226655960083
+    },
+    {
+      "id": "m_0214",
+      "label": "person",
+      "surface": "patient",
+      "canonical": "patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 23519,
+        "charEnd": 23526,
+        "timeStart": 1550.24,
+        "timeEnd": 1555.2
+      },
+      "score": 0.7776453495025635
+    },
+    {
+      "id": "m_0215",
+      "label": "event",
+      "surface": "something strange happened",
+      "canonical": "something strange happened",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 23834,
+        "charEnd": 23860,
+        "timeStart": 1569.88,
+        "timeEnd": 1572.7990000000002
+      },
+      "score": 0.5479699969291687
+    },
+    {
+      "id": "m_0216",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 23880,
+        "charEnd": 23890,
+        "timeStart": 1572.799,
+        "timeEnd": 1578.1589999999999
+      },
+      "score": 0.6134240031242371
+    },
+    {
+      "id": "m_0217",
+      "label": "person",
+      "surface": "patient",
+      "canonical": "patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24093,
+        "charEnd": 24100,
+        "timeStart": 1584.76,
+        "timeEnd": 1589
+      },
+      "score": 0.6235631704330444
+    },
+    {
+      "id": "m_0218",
+      "label": "location",
+      "surface": "spectrum",
+      "canonical": "spectrum",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24186,
+        "charEnd": 24194,
+        "timeStart": 1590.96,
+        "timeEnd": 1596.3600000000001
+      },
+      "score": 0.6156074404716492
+    },
+    {
+      "id": "m_0219",
+      "label": "event",
+      "surface": "spike",
+      "canonical": "spike",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24224,
+        "charEnd": 24229,
+        "timeStart": 1593.32,
+        "timeEnd": 1598.72
+      },
+      "score": 0.8381340503692627
+    },
+    {
+      "id": "m_0220",
+      "label": "event",
+      "surface": "Spike",
+      "canonical": "spike",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24325,
+        "charEnd": 24330,
+        "timeStart": 1598.72,
+        "timeEnd": 1603.1200000000001
+      },
+      "score": 0.7817023992538452
+    },
+    {
+      "id": "m_0221",
+      "label": "person",
+      "surface": "patient",
+      "canonical": "patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24477,
+        "charEnd": 24484,
+        "timeStart": 1606.919,
+        "timeEnd": 1613.7990000000002
+      },
+      "score": 0.9358299970626831
+    },
+    {
+      "id": "m_0222",
+      "label": "location",
+      "surface": "Spectrum",
+      "canonical": "spectrum",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24540,
+        "charEnd": 24548,
+        "timeStart": 1613.799,
+        "timeEnd": 1618.679
+      },
+      "score": 0.5542103052139282
+    },
+    {
+      "id": "m_0223",
+      "label": "person",
+      "surface": "patient",
+      "canonical": "patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24554,
+        "charEnd": 24561,
+        "timeStart": 1613.799,
+        "timeEnd": 1618.679
+      },
+      "score": 0.9495024085044861
+    },
+    {
+      "id": "m_0224",
+      "label": "person",
+      "surface": "skeptic",
+      "canonical": "skeptic",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24658,
+        "charEnd": 24665,
+        "timeStart": 1621,
+        "timeEnd": 1625.2
+      },
+      "score": 0.5675069093704224
+    },
+    {
+      "id": "m_0225",
+      "label": "person",
+      "surface": "patient",
+      "canonical": "patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24799,
+        "charEnd": 24806,
+        "timeStart": 1630.039,
+        "timeEnd": 1634.24
+      },
+      "score": 0.9494777321815491
+    },
+    {
+      "id": "m_0226",
+      "label": "person",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 24831,
+        "charEnd": 24841,
+        "timeStart": 1632.24,
+        "timeEnd": 1636.64
+      },
+      "score": 0.8101813793182373
+    },
+    {
+      "id": "m_0227",
+      "label": "person",
+      "surface": "this patient",
+      "canonical": "this patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 25561,
+        "charEnd": 25573,
+        "timeStart": 1673.08,
+        "timeEnd": 1677.6399999999999
+      },
+      "score": 0.5881761908531189
+    },
+    {
+      "id": "m_0228",
+      "label": "person",
+      "surface": "this\npatient",
+      "canonical": "this patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 26094,
+        "charEnd": 26106,
+        "timeStart": 1704.679,
+        "timeEnd": 1712.519
+      },
+      "score": 0.6875385642051697
+    },
+    {
+      "id": "m_0229",
+      "label": "person",
+      "surface": "this dead patient",
+      "canonical": "this dead patient",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 26115,
+        "charEnd": 26132,
+        "timeStart": 1707.84,
+        "timeEnd": 1712.519
+      },
+      "score": 0.6229835748672485
+    },
+    {
+      "id": "m_0230",
+      "label": "person",
+      "surface": "researchers",
+      "canonical": "researchers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 26398,
+        "charEnd": 26409,
+        "timeStart": 1726.44,
+        "timeEnd": 1730.919
+      },
+      "score": 0.5835933089256287
+    },
+    {
+      "id": "m_0231",
+      "label": "location",
+      "surface": "Time Square",
+      "canonical": "Time Square",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 26950,
+        "charEnd": 26961,
+        "timeStart": 1758.32,
+        "timeEnd": 1763
+      },
+      "score": 0.782212495803833
+    },
+    {
+      "id": "m_0232",
+      "label": "person",
+      "surface": "this\npreviously comos now medically deceased\nperson",
+      "canonical": "this\npreviously comos now medically deceased\nperson",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 27066,
+        "charEnd": 27117,
+        "timeStart": 1764.08,
+        "timeEnd": 1774.519
+      },
+      "score": 0.6648653149604797
+    },
+    {
+      "id": "m_0233",
+      "label": "event",
+      "surface": "near-death experiences",
+      "canonical": "near-death experiences",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 27508,
+        "charEnd": 27530,
+        "timeStart": 1799.84,
+        "timeEnd": 1803.8799999999999
+      },
+      "score": 0.5876124501228333
+    },
+    {
+      "id": "m_0234",
+      "label": "event",
+      "surface": "near-death\nexperiences",
+      "canonical": "near-death experiences",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 27568,
+        "charEnd": 27590,
+        "timeStart": 1801.799,
+        "timeEnd": 1807.679
+      },
+      "score": 0.6818137168884277
+    },
+    {
+      "id": "m_0235",
+      "label": "ideology",
+      "surface": "religion",
+      "canonical": "religion",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 27894,
+        "charEnd": 27902,
+        "timeStart": 1819.919,
+        "timeEnd": 1825.2
+      },
+      "score": 0.5820598602294922
+    },
+    {
+      "id": "m_0236",
+      "label": "ideology",
+      "surface": "religion",
+      "canonical": "religion",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 27914,
+        "charEnd": 27922,
+        "timeStart": 1819.919,
+        "timeEnd": 1825.2
+      },
+      "score": 0.6032589673995972
+    },
+    {
+      "id": "m_0237",
+      "label": "location",
+      "surface": "Cascades",
+      "canonical": "Cascades",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 28692,
+        "charEnd": 28700,
+        "timeStart": 1868.799,
+        "timeEnd": 1873.32
+      },
+      "score": 0.8550776243209839
+    },
+    {
+      "id": "m_0238",
+      "label": "person",
+      "surface": "Neil\nArmstrong",
+      "canonical": "Neil\nArmstrong",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 28758,
+        "charEnd": 28772,
+        "timeStart": 1871.32,
+        "timeEnd": 1877.4399999999998
+      },
+      "score": 0.9790327548980713
+    },
+    {
+      "id": "m_0239",
+      "label": "event",
+      "surface": "Apollo Mission",
+      "canonical": "Apollo Mission",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 28805,
+        "charEnd": 28819,
+        "timeStart": 1875,
+        "timeEnd": 1879.72
+      },
+      "score": 0.9222559928894043
+    },
+    {
+      "id": "m_0240",
+      "label": "group_or_movement",
+      "surface": "Mountaineers",
+      "canonical": "Mountaineers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 29160,
+        "charEnd": 29172,
+        "timeStart": 1895.88,
+        "timeEnd": 1899.5590000000002
+      },
+      "score": 0.7051823139190674
+    },
+    {
+      "id": "m_0241",
+      "label": "location",
+      "surface": "Himalayas",
+      "canonical": "Himalayas",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 29183,
+        "charEnd": 29192,
+        "timeStart": 1895.88,
+        "timeEnd": 1899.5590000000002
+      },
+      "score": 0.7956990599632263
+    },
+    {
+      "id": "m_0242",
+      "label": "date_time",
+      "surface": "1933",
+      "canonical": "1933",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 29256,
+        "charEnd": 29260,
+        "timeStart": 1899.559,
+        "timeEnd": 1904.8799999999999
+      },
+      "score": 0.9146715998649597
+    },
+    {
+      "id": "m_0243",
+      "label": "person",
+      "surface": "Frank SMI",
+      "canonical": "Frank SMI",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 29261,
+        "charEnd": 29270,
+        "timeStart": 1899.559,
+        "timeEnd": 1904.8799999999999
+      },
+      "score": 0.9578516483306885
+    },
+    {
+      "id": "m_0244",
+      "label": "location",
+      "surface": "Mount Everest",
+      "canonical": "Mount Everest",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 29283,
+        "charEnd": 29296,
+        "timeStart": 1903.039,
+        "timeEnd": 1906.799
+      },
+      "score": 0.9661838412284851
+    },
+    {
+      "id": "m_0245",
+      "label": "organization",
+      "surface": "ndes",
+      "canonical": "ndes",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 29963,
+        "charEnd": 29967,
+        "timeStart": 1945.24,
+        "timeEnd": 1949.919
+      },
+      "score": 0.5303931832313538
+    },
+    {
+      "id": "m_0246",
+      "label": "event",
+      "surface": "death",
+      "canonical": "death",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 30317,
+        "charEnd": 30322,
+        "timeStart": 1966,
+        "timeEnd": 1971.799
+      },
+      "score": 0.5056148171424866
+    },
+    {
+      "id": "m_0247",
+      "label": "organization",
+      "surface": "Skeptics",
+      "canonical": "Skeptics",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 30353,
+        "charEnd": 30361,
+        "timeStart": 1968.799,
+        "timeEnd": 1974.08
+      },
+      "score": 0.9435343146324158
+    },
+    {
+      "id": "m_0248",
+      "label": "organization",
+      "surface": "Skeptics",
+      "canonical": "Skeptics",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 30461,
+        "charEnd": 30469,
+        "timeStart": 1976.72,
+        "timeEnd": 1981.519
+      },
+      "score": 0.9489385485649109
+    },
+    {
+      "id": "m_0249",
+      "label": "event",
+      "surface": "near-death experience",
+      "canonical": "near-death experience",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 30557,
+        "charEnd": 30578,
+        "timeStart": 1983.679,
+        "timeEnd": 1988.44
+      },
+      "score": 0.6500996947288513
+    },
+    {
+      "id": "m_0250",
+      "label": "quantity",
+      "surface": "21 GRS",
+      "canonical": "21 GRS",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 30948,
+        "charEnd": 30954,
+        "timeStart": 2004.76,
+        "timeEnd": 2011.919
+      },
+      "score": 0.6286182403564453
+    },
+    {
+      "id": "m_0251",
+      "label": "person",
+      "surface": "mcdougall",
+      "canonical": "mcdougall",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 30996,
+        "charEnd": 31005,
+        "timeStart": 2011.919,
+        "timeEnd": 2015.7990000000002
+      },
+      "score": 0.9286806583404541
+    },
+    {
+      "id": "m_0252",
+      "label": "event",
+      "surface": "experiment",
+      "canonical": "experiment",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31008,
+        "charEnd": 31018,
+        "timeStart": 2011.919,
+        "timeEnd": 2015.7990000000002
+      },
+      "score": 0.9628415703773499
+    },
+    {
+      "id": "m_0253",
+      "label": "quantity",
+      "surface": "six patience",
+      "canonical": "six patience",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31051,
+        "charEnd": 31063,
+        "timeStart": 2014.039,
+        "timeEnd": 2017.8799999999999
+      },
+      "score": 0.6027476787567139
+    },
+    {
+      "id": "m_0254",
+      "label": "event",
+      "surface": "experiment",
+      "canonical": "experiment",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31068,
+        "charEnd": 31078,
+        "timeStart": 2015.799,
+        "timeEnd": 2020.44
+      },
+      "score": 0.9515409469604492
+    },
+    {
+      "id": "m_0255",
+      "label": "event",
+      "surface": "experiment",
+      "canonical": "experiment",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31186,
+        "charEnd": 31196,
+        "timeStart": 2022.76,
+        "timeEnd": 2027.24
+      },
+      "score": 0.9489995837211609
+    },
+    {
+      "id": "m_0256",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31479,
+        "charEnd": 31489,
+        "timeStart": 2044.88,
+        "timeEnd": 2049.56
+      },
+      "score": 0.906123161315918
+    },
+    {
+      "id": "m_0257",
+      "label": "person",
+      "surface": "mcdougall",
+      "canonical": "mcdougall",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31503,
+        "charEnd": 31512,
+        "timeStart": 2047.32,
+        "timeEnd": 2052.119
+      },
+      "score": 0.9773579835891724
+    },
+    {
+      "id": "m_0258",
+      "label": "person",
+      "surface": "McDougall",
+      "canonical": "mcdougall",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31574,
+        "charEnd": 31583,
+        "timeStart": 2052.119,
+        "timeEnd": 2055.679
+      },
+      "score": 0.9904417991638184
+    },
+    {
+      "id": "m_0259",
+      "label": "organization",
+      "surface": "church",
+      "canonical": "church",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31649,
+        "charEnd": 31655,
+        "timeStart": 2055.679,
+        "timeEnd": 2059.399
+      },
+      "score": 0.9702947735786438
+    },
+    {
+      "id": "m_0260",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31739,
+        "charEnd": 31749,
+        "timeStart": 2059.399,
+        "timeEnd": 2063.3199999999997
+      },
+      "score": 0.9204117655754089
+    },
+    {
+      "id": "m_0261",
+      "label": "organization",
+      "surface": "church",
+      "canonical": "church",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31771,
+        "charEnd": 31777,
+        "timeStart": 2061.44,
+        "timeEnd": 2065.359
+      },
+      "score": 0.9719724059104919
+    },
+    {
+      "id": "m_0262",
+      "label": "organization",
+      "surface": "church",
+      "canonical": "church",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31782,
+        "charEnd": 31788,
+        "timeStart": 2061.44,
+        "timeEnd": 2065.359
+      },
+      "score": 0.9733745455741882
+    },
+    {
+      "id": "m_0263",
+      "label": "person",
+      "surface": "McDougall",
+      "canonical": "mcdougall",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31802,
+        "charEnd": 31811,
+        "timeStart": 2063.32,
+        "timeEnd": 2067.56
+      },
+      "score": 0.9901120066642761
+    },
+    {
+      "id": "m_0264",
+      "label": "organization",
+      "surface": "scientists",
+      "canonical": "scientists",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31923,
+        "charEnd": 31933,
+        "timeStart": 2070.599,
+        "timeEnd": 2075.3590000000004
+      },
+      "score": 0.9370569586753845
+    },
+    {
+      "id": "m_0265",
+      "label": "person",
+      "surface": "mcdougall",
+      "canonical": "mcdougall",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 31943,
+        "charEnd": 31952,
+        "timeStart": 2072.919,
+        "timeEnd": 2078.5989999999997
+      },
+      "score": 0.9791162610054016
+    },
+    {
+      "id": "m_0266",
+      "label": "person",
+      "surface": "McDougall",
+      "canonical": "mcdougall",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32010,
+        "charEnd": 32019,
+        "timeStart": 2075.359,
+        "timeEnd": 2080.56
+      },
+      "score": 0.9920927882194519
+    },
+    {
+      "id": "m_0267",
+      "label": "ideology",
+      "surface": "religion",
+      "canonical": "religion",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32328,
+        "charEnd": 32336,
+        "timeStart": 2094.76,
+        "timeEnd": 2098.76
+      },
+      "score": 0.8334603905677795
+    },
+    {
+      "id": "m_0268",
+      "label": "organization",
+      "surface": "governments",
+      "canonical": "governments",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32357,
+        "charEnd": 32368,
+        "timeStart": 2096.679,
+        "timeEnd": 2100.96
+      },
+      "score": 0.5341705679893494
+    },
+    {
+      "id": "m_0269",
+      "label": "ideology",
+      "surface": "religion",
+      "canonical": "religion",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32397,
+        "charEnd": 32405,
+        "timeStart": 2098.76,
+        "timeEnd": 2103.0400000000004
+      },
+      "score": 0.7255010008811951
+    },
+    {
+      "id": "m_0270",
+      "label": "organization",
+      "surface": "state",
+      "canonical": "state",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32459,
+        "charEnd": 32464,
+        "timeStart": 2103.04,
+        "timeEnd": 2107.52
+      },
+      "score": 0.7276167869567871
+    },
+    {
+      "id": "m_0271",
+      "label": "ideology",
+      "surface": "religion",
+      "canonical": "religion",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32478,
+        "charEnd": 32486,
+        "timeStart": 2105.68,
+        "timeEnd": 2110.359
+      },
+      "score": 0.8446429967880249
+    },
+    {
+      "id": "m_0272",
+      "label": "quantity",
+      "surface": "millions",
+      "canonical": "millions",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32491,
+        "charEnd": 32499,
+        "timeStart": 2105.68,
+        "timeEnd": 2110.359
+      },
+      "score": 0.8244908452033997
+    },
+    {
+      "id": "m_0273",
+      "label": "organization",
+      "surface": "military-industrial complex",
+      "canonical": "military-industrial complex",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 32739,
+        "charEnd": 32766,
+        "timeStart": 2122.2,
+        "timeEnd": 2125.3999999999996
+      },
+      "score": 0.6940683126449585
+    },
+    {
+      "id": "m_0274",
+      "label": "location",
+      "surface": "hell",
+      "canonical": "Hell",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33020,
+        "charEnd": 33024,
+        "timeStart": 2138.52,
+        "timeEnd": 2143
+      },
+      "score": 0.7082001566886902
+    },
+    {
+      "id": "m_0275",
+      "label": "event",
+      "surface": "crime",
+      "canonical": "crime",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33069,
+        "charEnd": 33074,
+        "timeStart": 2140.76,
+        "timeEnd": 2145.599
+      },
+      "score": 0.6171712279319763
+    },
+    {
+      "id": "m_0276",
+      "label": "event",
+      "surface": "crime",
+      "canonical": "crime",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33082,
+        "charEnd": 33087,
+        "timeStart": 2143,
+        "timeEnd": 2147.599
+      },
+      "score": 0.5445231795310974
+    },
+    {
+      "id": "m_0277",
+      "label": "location",
+      "surface": "heaven",
+      "canonical": "heaven",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33381,
+        "charEnd": 33387,
+        "timeStart": 2160.359,
+        "timeEnd": 2164.359
+      },
+      "score": 0.8639466166496277
+    },
+    {
+      "id": "m_0278",
+      "label": "event",
+      "surface": "death",
+      "canonical": "death",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33746,
+        "charEnd": 33751,
+        "timeStart": 2182.96,
+        "timeEnd": 2186.96
+      },
+      "score": 0.693699300289154
+    },
+    {
+      "id": "m_0279",
+      "label": "technology",
+      "surface": "mechanism",
+      "canonical": "mechanism",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33776,
+        "charEnd": 33785,
+        "timeStart": 2185.24,
+        "timeEnd": 2189.4399999999996
+      },
+      "score": 0.7942541241645813
+    },
+    {
+      "id": "m_0280",
+      "label": "technology",
+      "surface": "mechanism",
+      "canonical": "mechanism",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33849,
+        "charEnd": 33858,
+        "timeStart": 2189.44,
+        "timeEnd": 2193.48
+      },
+      "score": 0.8207411170005798
+    },
+    {
+      "id": "m_0281",
+      "label": "technology",
+      "surface": "mechanism",
+      "canonical": "mechanism",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 33935,
+        "charEnd": 33944,
+        "timeStart": 2193.48,
+        "timeEnd": 2199.64
+      },
+      "score": 0.8316795825958252
+    },
+    {
+      "id": "m_0282",
+      "label": "person",
+      "surface": "person",
+      "canonical": "person",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 34044,
+        "charEnd": 34050,
+        "timeStart": 2203.88,
+        "timeEnd": 2208.2000000000003
+      },
+      "score": 0.5710119009017944
+    },
+    {
+      "id": "m_0283",
+      "label": "person",
+      "surface": "AJ",
+      "canonical": "AJ",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 34540,
+        "charEnd": 34542,
+        "timeStart": 2239.64,
+        "timeEnd": 2244.2
+      },
+      "score": 0.9483292698860168
+    },
+    {
+      "id": "m_0284",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 34639,
+        "charEnd": 34647,
+        "timeStart": 2247,
+        "timeEnd": 2250.599
+      },
+      "score": 0.6867520809173584
+    },
+    {
+      "id": "m_0285",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 34951,
+        "charEnd": 34958,
+        "timeStart": 2262.119,
+        "timeEnd": 2266.56
+      },
+      "score": 0.6667255759239197
+    },
+    {
+      "id": "m_0286",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35135,
+        "charEnd": 35143,
+        "timeStart": 2272.16,
+        "timeEnd": 2276
+      },
+      "score": 0.867331326007843
+    },
+    {
+      "id": "m_0287",
+      "label": "work_of_media",
+      "surface": "podcast",
+      "canonical": "podcast",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35154,
+        "charEnd": 35161,
+        "timeStart": 2272.16,
+        "timeEnd": 2276
+      },
+      "score": 0.6582669615745544
+    },
+    {
+      "id": "m_0288",
+      "label": "organization",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35226,
+        "charEnd": 35234,
+        "timeStart": 2276,
+        "timeEnd": 2280.359
+      },
+      "score": 0.6109009981155396
+    },
+    {
+      "id": "m_0289",
+      "label": "quantity",
+      "surface": "thousands",
+      "canonical": "thousands",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35280,
+        "charEnd": 35289,
+        "timeStart": 2280.359,
+        "timeEnd": 2284.319
+      },
+      "score": 0.7274922728538513
+    },
+    {
+      "id": "m_0290",
+      "label": "work_of_media",
+      "surface": "wi files",
+      "canonical": "wi files",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35513,
+        "charEnd": 35521,
+        "timeStart": 2291.8,
+        "timeEnd": 2295.8
+      },
+      "score": 0.7223339676856995
+    },
+    {
+      "id": "m_0291",
+      "label": "organization",
+      "surface": "patreon",
+      "canonical": "patreon",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35653,
+        "charEnd": 35660,
+        "timeStart": 2297.119,
+        "timeEnd": 2300.319
+      },
+      "score": 0.8973766565322876
+    },
+    {
+      "id": "m_0292",
+      "label": "quantity",
+      "surface": "three bucks",
+      "canonical": "three bucks",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35678,
+        "charEnd": 35689,
+        "timeStart": 2298.76,
+        "timeEnd": 2301.8
+      },
+      "score": 0.5271233320236206
+    },
+    {
+      "id": "m_0293",
+      "label": "organization",
+      "surface": "Heckle fish",
+      "canonical": "Heckle fish",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 35982,
+        "charEnd": 35993,
+        "timeStart": 2312.76,
+        "timeEnd": 2316.44
+      },
+      "score": 0.884278416633606
+    },
+    {
+      "id": "m_0294",
+      "label": "organization",
+      "surface": "Heckle fish",
+      "canonical": "Heckle fish",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36114,
+        "charEnd": 36125,
+        "timeStart": 2317.72,
+        "timeEnd": 2320.52
+      },
+      "score": 0.9190024137496948
+    },
+    {
+      "id": "m_0295",
+      "label": "organization",
+      "surface": "Heckle fish",
+      "canonical": "Heckle fish",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36168,
+        "charEnd": 36179,
+        "timeStart": 2320.52,
+        "timeEnd": 2324.16
+      },
+      "score": 0.8783366680145264
+    },
+    {
+      "id": "m_0296",
+      "label": "organization",
+      "surface": "Heckle fish",
+      "canonical": "Heckle fish",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36228,
+        "charEnd": 36239,
+        "timeStart": 2322.68,
+        "timeEnd": 2326.72
+      },
+      "score": 0.8890541195869446
+    },
+    {
+      "id": "m_0297",
+      "label": "work_of_media",
+      "surface": "Bible",
+      "canonical": "Bible",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36405,
+        "charEnd": 36410,
+        "timeStart": 2351.839,
+        "timeEnd": 2360.319
+      },
+      "score": 0.7148398160934448
+    },
+    {
+      "id": "m_0298",
+      "label": "person",
+      "surface": "Stanley",
+      "canonical": "Stanley",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36682,
+        "charEnd": 36689,
+        "timeStart": 2393.04,
+        "timeEnd": 2399.72
+      },
+      "score": 0.8812156319618225
+    },
+    {
+      "id": "m_0299",
+      "label": "person",
+      "surface": "Bri",
+      "canonical": "Bri",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36693,
+        "charEnd": 36696,
+        "timeStart": 2393.04,
+        "timeEnd": 2399.72
+      },
+      "score": 0.8205640316009521
+    },
+    {
+      "id": "m_0300",
+      "label": "person",
+      "surface": "The\nSmiling man",
+      "canonical": "The\nSmiling man",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36793,
+        "charEnd": 36808,
+        "timeStart": 2403.2,
+        "timeEnd": 2410.88
+      },
+      "score": 0.905765950679779
+    },
+    {
+      "id": "m_0301",
+      "label": "date_time",
+      "surface": "thday night",
+      "canonical": "thday night",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 36882,
+        "charEnd": 36893,
+        "timeStart": 2415.72,
+        "timeEnd": 2424.0789999999997
+      },
+      "score": 0.6349947452545166
+    },
+    {
+      "id": "m_0302",
+      "label": "person",
+      "surface": "MTH man",
+      "canonical": "MTH man",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37006,
+        "charEnd": 37013,
+        "timeStart": 2449.76,
+        "timeEnd": 2455.8390000000004
+      },
+      "score": 0.6750811338424683
+    },
+    {
+      "id": "m_0303",
+      "label": "event",
+      "surface": "solar\nstorm",
+      "canonical": "solar\nstorm",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37030,
+        "charEnd": 37041,
+        "timeStart": 2449.76,
+        "timeEnd": 2458.319
+      },
+      "score": 0.9776221513748169
+    },
+    {
+      "id": "m_0304",
+      "label": "location",
+      "surface": "secret\nunderground",
+      "canonical": "secret\nunderground",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37073,
+        "charEnd": 37091,
+        "timeStart": 2455.839,
+        "timeEnd": 2465.44
+      },
+      "score": 0.592479407787323
+    },
+    {
+      "id": "m_0305",
+      "label": "facility",
+      "surface": "mysterious number stations",
+      "canonical": "mysterious number stations",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37092,
+        "charEnd": 37118,
+        "timeStart": 2459.16,
+        "timeEnd": 2465.44
+      },
+      "score": 0.5336610078811646
+    },
+    {
+      "id": "m_0306",
+      "label": "location",
+      "surface": "Planet",
+      "canonical": "Planet",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37119,
+        "charEnd": 37125,
+        "timeStart": 2462.04,
+        "timeEnd": 2468.56
+      },
+      "score": 0.8538874983787537
+    },
+    {
+      "id": "m_0307",
+      "label": "location",
+      "surface": "project State",
+      "canonical": "project State",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37133,
+        "charEnd": 37146,
+        "timeStart": 2462.04,
+        "timeEnd": 2468.56
+      },
+      "score": 0.5619665384292603
+    },
+    {
+      "id": "m_0308",
+      "label": "organization",
+      "surface": "dark Watchers",
+      "canonical": "dark Watchers",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37161,
+        "charEnd": 37174,
+        "timeStart": 2465.44,
+        "timeEnd": 2472.64
+      },
+      "score": 0.567046582698822
+    },
+    {
+      "id": "m_0309",
+      "label": "date_time",
+      "surface": "Thursday night",
+      "canonical": "Thursday night",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37308,
+        "charEnd": 37322,
+        "timeStart": 2481.599,
+        "timeEnd": 2487.04
+      },
+      "score": 0.8692425489425659
+    },
+    {
+      "id": "m_0310",
+      "label": "date_time",
+      "surface": "thday night",
+      "canonical": "thday night",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37437,
+        "charEnd": 37448,
+        "timeStart": 2500.4,
+        "timeEnd": 2508.76
+      },
+      "score": 0.7408033013343811
+    },
+    {
+      "id": "m_0311",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37592,
+        "charEnd": 37595,
+        "timeStart": 2522.92,
+        "timeEnd": 2533.44
+      },
+      "score": 0.9934372305870056
+    },
+    {
+      "id": "m_0312",
+      "label": "person",
+      "surface": "Dan",
+      "canonical": "Dan",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37601,
+        "charEnd": 37604,
+        "timeStart": 2522.92,
+        "timeEnd": 2533.44
+      },
+      "score": 0.9932663440704346
+    },
+    {
+      "id": "m_0313",
+      "label": "person",
+      "surface": "Dane",
+      "canonical": "Dane",
+      "span": {
+        "transcriptId": "GDL70lKAz0A",
+        "charStart": 37626,
+        "charEnd": 37630,
+        "timeStart": 2533.44,
+        "timeEnd": 2540.88
+      },
+      "score": 0.8322135806083679
+    }
+  ]
+}

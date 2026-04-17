@@ -1,0 +1,18 @@
+{
+  "gliner": {
+    "modelId": "urchade/gliner_large-v2.1",
+    "minScore": 0.5,
+    "maxChunkChars": 1200
+  },
+  "glirel": {
+    "modelId": "jackboyla/glirel-large-v0",
+    "minScore": 0.25,
+    "maxPairsPerSentence": 10
+  },
+  "coref": {
+    "enabled": false,
+    "pythonBin": "python",
+    "scriptPath": "tools/coref.py",
+    "timeoutMs": 600000
+  }
+}

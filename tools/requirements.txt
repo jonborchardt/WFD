@@ -1,0 +1,25 @@
+# Python preprocessing sidecars for the captions pipeline.
+#
+# Install once:  pip install -r tools/requirements.txt
+#
+# Each package is optional at runtime — the Node side of every stage
+# degrades gracefully to empty output if the corresponding sidecar
+# cannot import its backend. You can install a subset if you only want
+# some of the preprocessing (e.g. entities but not coref).
+
+# Coref resolution (tools/coref.py).
+# NOTE: fastcoref 2.1.6 is pinned against older `transformers`. On
+# Python 3.13+ with recent transformers (>=4.48), FCoref fails with
+# AttributeError: 'FCorefModel' object has no attribute
+# 'all_tied_weights_keys'. Until fastcoref ships a fix, either:
+#   (a) pin `transformers<4.48` alongside fastcoref, or
+#   (b) leave coref disabled in config/models.json (the default).
+# The pipeline degrades gracefully without it — accepts the cross-
+# sentence coref gap as documented in the project plan.
+fastcoref==2.1.6
+
+# Zero-shot entity extraction (tools/gliner.py)
+gliner>=0.2.13
+
+# Zero-shot relation extraction (tools/glirel.py)
+glirel>=1.0.0

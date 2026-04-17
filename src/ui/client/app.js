@@ -196,8 +196,9 @@ function EntitySuggestions({ text, nav, onPick }) {
   `;
 }
 
-function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
+function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly, rowHref }) {
   const cols = columns || CATALOG_COLUMNS;
+  const hrefFor = rowHref || ((r) => "/video/" + r.videoId);
   const [data, setData] = useState({ total: 0, page: 1, pageSize: 25, rows: [] });
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
@@ -305,7 +306,7 @@ function CatalogTable({ nav, showStatusFilter, columns, defaultFailedOnly }) {
           <//>
           <${TableBody}>
             ${data.rows.map(r => html`
-              <${TableRow} key=${r.videoId} hover style=${{ cursor: "pointer" }} onClick=${() => nav("/video/" + r.videoId)}>
+              <${TableRow} key=${r.videoId} hover style=${{ cursor: "pointer" }} onClick=${() => nav(hrefFor(r))}>
                 ${activeCols.map(c => html`
                   <${TableCell} key=${c.key} sx=${c.cellSx || {}}>${c.render(r)}<//>
                 `)}
@@ -323,7 +324,7 @@ const HOME_COLUMNS = CATALOG_COLUMNS
   .filter(c => c.key !== "status")
   .map(c => ["lengthSeconds", "viewCount"].includes(c.key) ? { ...c, default: true } : c);
 
-const PIPELINE_STAGES = ["fetched", "nlp", "per-claim", "ai"];
+const PIPELINE_STAGES = ["fetched", "entities", "relations", "ai", "per-claim"];
 
 function stageCellFor(stageName) {
   return (r) => {
@@ -417,16 +418,20 @@ function UpstreamCheck() {
   `;
 }
 
-function AdminPage({ nav }) {
+function AdminPage() {
+  // Admin video pages are server-rendered HTML (not SPA), so use full
+  // page navigation instead of pushState SPA nav.
+  const adminNav = (to) => { window.location.href = to; };
   return html`
     <${Container} maxWidth="lg" sx=${{ py: 3 }}>
       <${Typography} variant="h4" gutterBottom>Admin<//>
       <${UpstreamCheck} />
       <${CatalogTable}
-        nav=${nav}
+        nav=${adminNav}
         showStatusFilter=${true}
         defaultFailedOnly=${true}
         columns=${ADMIN_COLUMNS}
+        rowHref=${(r) => "/admin/video/" + r.videoId}
       />
     <//>
   `;
@@ -561,7 +566,7 @@ function NlpPanel({ videoId, nlp, nav }) {
           <${Box} sx=${{ display: "flex", flexWrap: "wrap", gap: 0.5, mt: 0.5 }}>
             ${(byType[t] || [])
               .slice()
-              .sort((a, b) => a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
+              .sort((a, b) => b.mentions.length - a.mentions.length || a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
               .map(e => {
                 return html`
                   <${Chip}
@@ -768,65 +773,351 @@ const ENTITY_TYPE_HEX = {
   event: "#ffa726",
   thing: "#29b6f6",
   time: "#bdbdbd",
+  work_of_media: "#ef5350",
+  role: "#78909c",
+  quantity: "#8d6e63",
+  date_time: "#bdbdbd",
+  ideology: "#ec407a",
+  facility: "#5c6bc0",
+  group_or_movement: "#7e57c2",
+  technology: "#26c6da",
+  nationality_or_ethnicity: "#9ccc65",
+  law_or_policy: "#ffca28",
 };
 
 function RelationshipsPage({ nav }) {
-  const [graph, setGraph] = useState(null);
-  const [error, setError] = useState(null);
-  const [, setRf] = useState(null);
   const [flowLib, setFlowLib] = useState(null);
-  const [layout, setLayout] = useState(null);
-  const [positions, setPositions] = useState({});
+  const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const [selectedEdgeId, setSelectedEdgeId] = useState(null);
+  const [layoutAlgo, setLayoutAlgo] = useState("stress");
   const rfInstance = useRef(null);
+  // Stable ref so addSeed/expandMore always call the latest relayout version.
+  const relayoutRef = useRef(() => {});
 
+  // --- Local graph state (grows incrementally) ---
+  // nodeMap: id → { id, type, canonical, weight }
+  const nodeMap = useRef(new Map());
+  // edgeMap: id → { id, source, target, predicate, count }
+  const edgeMap = useRef(new Map());
+  // seeds: set of node ids the user explicitly searched for
+  const seeds = useRef(new Set());
+  // expanded: nodeId → number of neighbors already loaded
+  const expanded = useRef(new Map());
+  // expandTotal: nodeId → total neighbor count on server
+  const expandTotal = useRef(new Map());
+  // positions: nodeId → { x, y } (persisted across relayouts)
+  const positions = useRef({});
+  // bump to trigger re-render
+  const [revision, setRevision] = useState(0);
+  const bump = useCallback(() => setRevision(r => r + 1), []);
+
+  // Load ReactFlow + ELK
   useEffect(() => {
-    Promise.all([
-      import("reactflow"),
-      import("d3-force"),
-    ]).then(([flow, d3]) => {
-      setFlowLib({ flow, d3 });
-    }).catch(e => setError(String(e)));
-    fetch("/api/relationships")
-      .then(r => r.json())
-      .then(g => {
-        if (!g || !Array.isArray(g.nodes) || !Array.isArray(g.edges)) {
-          setGraph({ nodes: [], edges: [] });
-        } else {
-          setGraph(g);
-        }
+    Promise.all([import("reactflow"), import("elkjs/lib/elk.bundled.js")])
+      .then(([flow, elkMod]) => {
+        const ELK = elkMod.default || elkMod;
+        setFlowLib({ flow, elk: new ELK() });
       })
       .catch(e => setError(String(e)));
   }, []);
 
+  // --- Search suggestions (server-side) ---
+  const searchTimer = useRef(null);
   useEffect(() => {
-    if (!graph || !flowLib) return;
-    const { d3 } = flowLib;
-    const simNodes = graph.nodes.map(n => ({ ...n }));
-    const simLinks = graph.edges.map(e => ({ source: e.source, target: e.target }));
-    const sim = d3.forceSimulation(simNodes)
-      .force("charge", d3.forceManyBody().strength(-180))
-      .force("link", d3.forceLink(simLinks).id(d => d.id).distance(90).strength(0.6))
-      .force("center", d3.forceCenter(0, 0))
-      .force("collide", d3.forceCollide().radius(30))
-      .stop();
-    const ticks = Math.min(400, Math.max(120, Math.round(30 + 200 * Math.log2(1 + simNodes.length / 10))));
-    for (let i = 0; i < ticks; i++) sim.tick();
-    const pos = {};
-    for (const n of simNodes) pos[n.id] = { x: n.x, y: n.y };
-    setLayout(pos);
-    setPositions(pos);
-  }, [graph, flowLib]);
+    if (!query.trim()) { setSuggestions([]); return; }
+    clearTimeout(searchTimer.current);
+    searchTimer.current = setTimeout(() => {
+      fetch("/api/graph/search?q=" + encodeURIComponent(query.trim()) + "&limit=10")
+        .then(r => r.json())
+        .then(list => { if (Array.isArray(list)) setSuggestions(list); })
+        .catch(() => {});
+    }, 200);
+    return () => clearTimeout(searchTimer.current);
+  }, [query]);
 
-  const { nodes, edges } = useMemo(() => {
-    if (!graph || !layout) return { nodes: [], edges: [] };
-    const ns = graph.nodes.map(n => {
-      const p = positions[n.id] || layout[n.id] || { x: 0, y: 0 };
+  // --- Fetch connections among all visible nodes ---
+  const fetchConnections = useCallback(async () => {
+    const ids = [...nodeMap.current.keys()];
+    if (ids.length < 2) return;
+    try {
+      const resp = await fetch("/api/graph/connections?ids=" + ids.map(encodeURIComponent).join(","));
+      const data = await resp.json();
+      if (data.edges) {
+        for (const e of data.edges) edgeMap.current.set(e.id, e);
+      }
+    } catch { /* ignore */ }
+  }, []);
+
+  // --- Add a seed node: fetch it + 1 generation (top 20 neighbors) ---
+  const addSeed = useCallback(async (node) => {
+    if (seeds.current.has(node.id)) return;
+    seeds.current.add(node.id);
+    nodeMap.current.set(node.id, node);
+    // Fetch first 20 neighbors
+    try {
+      const resp = await fetch("/api/graph/neighbors?id=" + encodeURIComponent(node.id) + "&offset=0&limit=20");
+      const data = await resp.json();
+      if (data.neighbors) {
+        for (const n of data.neighbors) nodeMap.current.set(n.id, n);
+        for (const e of data.edges) edgeMap.current.set(e.id, e);
+        expanded.current.set(node.id, data.neighbors.length);
+        expandTotal.current.set(node.id, data.total);
+      }
+    } catch { /* ignore */ }
+    // Fetch connections between all visible nodes
+    await fetchConnections();
+    // Layout new nodes
+    relayoutRef.current();
+  }, [fetchConnections]);
+
+  // --- Expand: load 20 more neighbors for a node ---
+  const expandMore = useCallback(async (nodeId) => {
+    const offset = expanded.current.get(nodeId) || 0;
+    try {
+      const resp = await fetch("/api/graph/neighbors?id=" + encodeURIComponent(nodeId) + "&offset=" + offset + "&limit=20");
+      const data = await resp.json();
+      if (data.neighbors) {
+        for (const n of data.neighbors) nodeMap.current.set(n.id, n);
+        for (const e of data.edges) edgeMap.current.set(e.id, e);
+        expanded.current.set(nodeId, offset + data.neighbors.length);
+        expandTotal.current.set(nodeId, data.total);
+      }
+    } catch { /* ignore */ }
+    await fetchConnections();
+    relayoutRef.current();
+  }, [fetchConnections]);
+
+  // --- Remove a node: hide it and any neighbors only connected through it ---
+  const removeNode = useCallback((nodeId) => {
+    seeds.current.delete(nodeId);
+    expanded.current.delete(nodeId);
+    expandTotal.current.delete(nodeId);
+
+    // Remove the node itself
+    nodeMap.current.delete(nodeId);
+    delete positions.current[nodeId];
+
+    // Remove edges involving this node
+    for (const [eid, e] of edgeMap.current) {
+      if (e.source === nodeId || e.target === nodeId) edgeMap.current.delete(eid);
+    }
+
+    // Find orphan neighbors: nodes that are not seeds and have no remaining edges
+    const connectedIds = new Set();
+    for (const e of edgeMap.current.values()) {
+      connectedIds.add(e.source);
+      connectedIds.add(e.target);
+    }
+    for (const id of [...nodeMap.current.keys()]) {
+      if (!seeds.current.has(id) && !connectedIds.has(id)) {
+        nodeMap.current.delete(id);
+        delete positions.current[id];
+      }
+    }
+    bump();
+  }, [bump]);
+
+  // --- Layout engine ---
+  const elkNodeWidth = (n) => Math.max(80, n.canonical.length * 8 + 32);
+  const elkNodeHeight = 36;
+
+  // ELK layout options per algorithm
+  const elkLayoutConfigs = {
+    stress: {
+      "elk.algorithm": "stress",
+      "elk.spacing.nodeNode": "200",
+      "elk.stress.desiredEdgeLength": "400",
+      "elk.separateConnectedComponents": "true",
+      "elk.stress.iterationLimit": "400",
+    },
+    // Radial is computed manually — see below
+    radial: null,
+    force: {
+      "elk.algorithm": "force",
+      "elk.spacing.nodeNode": "200",
+      "elk.force.temperature": "0.01",
+      "elk.force.iterations": "500",
+      "elk.separateConnectedComponents": "true",
+    },
+  };
+
+  // Circular layout (like circo) — all nodes evenly spaced on one ring.
+  function circularLayout(allNodes) {
+    const n = allNodes.length;
+    if (n === 0) return;
+    const maxW = Math.max(...allNodes.map(nd => elkNodeWidth(nd)));
+    const radius = Math.max(200, (n * (maxW + 40)) / (2 * Math.PI));
+    for (let i = 0; i < n; i++) {
+      const angle = (2 * Math.PI * i) / n - Math.PI / 2;
+      positions.current[allNodes[i].id] = {
+        x: radius * Math.cos(angle),
+        y: radius * Math.sin(angle),
+      };
+    }
+    bump();
+  }
+
+  // Radial layout (like twopi) — seed nodes at center, neighbors on
+  // concentric rings by graph distance.
+  function radialLayout(allNodes, allEdges) {
+    if (allNodes.length === 0) return;
+    const nodeIdSet = new Set(allNodes.map(n => n.id));
+    // Build adjacency
+    const adj = new Map();
+    for (const n of allNodes) adj.set(n.id, new Set());
+    for (const e of allEdges) {
+      if (!nodeIdSet.has(e.source) || !nodeIdSet.has(e.target)) continue;
+      adj.get(e.source)?.add(e.target);
+      adj.get(e.target)?.add(e.source);
+    }
+    // BFS from seeds to assign ring levels
+    const level = new Map();
+    const queue = [];
+    for (const id of seeds.current) {
+      if (nodeIdSet.has(id)) { level.set(id, 0); queue.push(id); }
+    }
+    // If no seeds, pick first node
+    if (queue.length === 0 && allNodes.length > 0) {
+      level.set(allNodes[0].id, 0);
+      queue.push(allNodes[0].id);
+    }
+    let qi = 0;
+    while (qi < queue.length) {
+      const cur = queue[qi++];
+      const curLevel = level.get(cur);
+      for (const nb of adj.get(cur) || []) {
+        if (!level.has(nb)) { level.set(nb, curLevel + 1); queue.push(nb); }
+      }
+    }
+    // Assign any disconnected nodes
+    for (const n of allNodes) {
+      if (!level.has(n.id)) level.set(n.id, 1);
+    }
+    // Group by ring
+    const rings = new Map();
+    for (const [id, lv] of level) {
+      if (!rings.has(lv)) rings.set(lv, []);
+      rings.get(lv).push(id);
+    }
+    const maxW = Math.max(...allNodes.map(nd => elkNodeWidth(nd)));
+    const ringSpacing = maxW * 2.5 + 80;
+    // Place center ring at origin, outer rings at increasing radii
+    for (const [lv, ids] of rings) {
+      if (lv === 0) {
+        // Center: spread seeds in a small cluster
+        const r0 = ids.length === 1 ? 0 : 80;
+        for (let i = 0; i < ids.length; i++) {
+          const angle = (2 * Math.PI * i) / ids.length - Math.PI / 2;
+          positions.current[ids[i]] = { x: r0 * Math.cos(angle), y: r0 * Math.sin(angle) };
+        }
+      } else {
+        const radius = lv * ringSpacing;
+        for (let i = 0; i < ids.length; i++) {
+          const angle = (2 * Math.PI * i) / ids.length - Math.PI / 2;
+          positions.current[ids[i]] = { x: radius * Math.cos(angle), y: radius * Math.sin(angle) };
+        }
+      }
+    }
+    bump();
+  }
+
+  const relayout = useCallback(() => {
+    if (!flowLib) { bump(); return; }
+    const { elk } = flowLib;
+    const allNodes = [...nodeMap.current.values()];
+    const allEdges = [...edgeMap.current.values()];
+    if (allNodes.length === 0) { bump(); return; }
+
+    // Deduplicate edges for layout (same merge as rendering)
+    const nodeIdSet = new Set(allNodes.map(n => n.id));
+    const mergedForLayout = new Map();
+    for (const e of allEdges) {
+      if (!nodeIdSet.has(e.source) || !nodeIdSet.has(e.target)) continue;
+      const [lo, hi] = e.source < e.target ? [e.source, e.target] : [e.target, e.source];
+      const key = `${lo}|${e.predicate}|${hi}`;
+      if (!mergedForLayout.has(key)) {
+        mergedForLayout.set(key, { id: key, source: e.source, target: e.target });
+      }
+    }
+
+    // These layouts are computed locally, not via ELK
+    if (layoutAlgo === "circular") {
+      circularLayout(allNodes);
+      return;
+    }
+    if (layoutAlgo === "radial") {
+      radialLayout(allNodes, allEdges);
+      return;
+    }
+
+    const config = elkLayoutConfigs[layoutAlgo] || elkLayoutConfigs.stress;
+    // Sort seeds first — radial uses the first child as root
+    const sortedNodes = [...allNodes].sort((a, b) => {
+      const aS = seeds.current.has(a.id) ? 0 : 1;
+      const bS = seeds.current.has(b.id) ? 0 : 1;
+      return aS - bS;
+    });
+    const elkGraph = {
+      id: "root",
+      layoutOptions: config,
+      children: sortedNodes.map(n => ({
+        id: n.id,
+        width: elkNodeWidth(n),
+        height: elkNodeHeight,
+      })),
+      edges: [...mergedForLayout.values()].map(e => ({
+        id: e.id,
+        sources: [e.source],
+        targets: [e.target],
+      })),
+    };
+
+    elk.layout(elkGraph).then(result => {
+      for (const n of result.children || []) {
+        positions.current[n.id] = { x: n.x, y: n.y };
+      }
+      bump();
+    }).catch(() => { bump(); });
+  }, [flowLib, bump, layoutAlgo]);
+  relayoutRef.current = relayout;
+
+  // Re-layout when algorithm changes
+  useEffect(() => {
+    if (flowLib && nodeMap.current.size > 0) {
+      positions.current = {};
+      relayout();
+    }
+  }, [layoutAlgo]);
+
+  // Fit view after graph changes — use a longer delay so ReactFlow has time
+  // to process the new nodes array before fitView calculates bounds.
+  const prevNodeCount = useRef(0);
+  useEffect(() => {
+    const count = nodeMap.current.size;
+    if (count > 0 && count !== prevNodeCount.current && rfInstance.current) {
+      prevNodeCount.current = count;
+      // Two-stage fit: immediate + delayed to catch late renders
+      setTimeout(() => { rfInstance.current?.fitView({ padding: 0.3, duration: 300 }); }, 100);
+      setTimeout(() => { rfInstance.current?.fitView({ padding: 0.3, duration: 300 }); }, 500);
+    }
+  }, [revision]);
+
+  // Relayout when flowLib first arrives (if we already have nodes)
+  useEffect(() => {
+    if (flowLib && nodeMap.current.size > 0) relayout();
+  }, [flowLib, relayout]);
+
+  // --- Build ReactFlow nodes/edges from current state ---
+  const { rfNodes, rfEdges, gradients } = useMemo(() => {
+    const nodeIdSet = new Set(nodeMap.current.keys());
+    const ns = [...nodeMap.current.values()].map(n => {
+      const p = positions.current[n.id] || { x: 0, y: 0 };
       const color = ENTITY_TYPE_HEX[n.type] || "#888";
-      const dim = query && !n.canonical.toLowerCase().includes(query.toLowerCase());
+      const isSeed = seeds.current.has(n.id);
       const selected = selectedId === n.id;
       return {
         id: n.id,
@@ -835,83 +1126,168 @@ function RelationshipsPage({ nav }) {
         style: {
           background: color,
           color: "#000",
-          border: selected ? "3px solid #fff" : "1px solid rgba(0,0,0,0.3)",
+          border: selected ? "3px solid #fff" : isSeed ? "2px solid #fff" : "1px solid rgba(0,0,0,0.3)",
           borderRadius: 6,
           padding: "4px 8px",
-          fontSize: 12,
-          opacity: dim ? 0.15 : 1,
+          fontSize: isSeed ? 13 : 11,
+          fontWeight: isSeed ? 700 : 400,
+          opacity: 1,
           minWidth: 40,
         },
       };
     });
-    const es = graph.edges.map(e => ({
-      id: e.id,
-      source: e.source,
-      target: e.target,
-      label: e.predicate,
-      labelStyle: { fontSize: 10, fill: "#111" },
-      labelBgStyle: { fill: "#fff", fillOpacity: 0.85 },
-      labelBgPadding: [4, 2],
-      labelBgBorderRadius: 3,
-      style: { stroke: "#888", strokeWidth: Math.min(4, 1 + Math.log2(e.count + 1)) },
-    }));
-    return { nodes: ns, edges: es };
-  }, [graph, layout, positions, query, selectedId]);
+    // Merge edges: A→B and B→A with the same predicate become one edge.
+    const mergedEdges = new Map();
+    for (const e of edgeMap.current.values()) {
+      if (!nodeIdSet.has(e.source) || !nodeIdSet.has(e.target)) continue;
+      // Canonical key: sorted node ids + predicate
+      const [lo, hi] = e.source < e.target ? [e.source, e.target] : [e.target, e.source];
+      const key = `${lo}|${e.predicate}|${hi}`;
+      const existing = mergedEdges.get(key);
+      if (existing) {
+        existing.count += e.count;
+      } else {
+        mergedEdges.set(key, { id: key, source: lo, target: hi, predicate: e.predicate, count: e.count });
+      }
+    }
+    // Per-edge SVG gradients using userSpaceOnUse so the gradient direction
+    // follows the actual source→target positions, not a fixed axis.
+    const gradients = [];
+    const es = [...mergedEdges.values()].map(e => {
+      const srcNode = nodeMap.current.get(e.source);
+      const tgtNode = nodeMap.current.get(e.target);
+      const srcColor = srcNode ? (ENTITY_TYPE_HEX[srcNode.type] || "#888") : "#888";
+      const tgtColor = tgtNode ? (ENTITY_TYPE_HEX[tgtNode.type] || "#888") : "#888";
+      const srcPos = positions.current[e.source] || { x: 0, y: 0 };
+      const tgtPos = positions.current[e.target] || { x: 0, y: 0 };
+      const sameColor = srcColor === tgtColor;
+      // Sanitize the edge id into a valid SVG id (no colons/pipes/spaces)
+      const gradId = "eg-" + e.id.replace(/[^a-zA-Z0-9]/g, "_").slice(0, 80);
+      if (!sameColor) {
+        const sw = srcNode ? elkNodeWidth(srcNode) / 2 : 40;
+        const tw = tgtNode ? elkNodeWidth(tgtNode) / 2 : 40;
+        gradients.push({
+          id: gradId,
+          x1: srcPos.x + sw, y1: srcPos.y + elkNodeHeight / 2,
+          x2: tgtPos.x + tw, y2: tgtPos.y + elkNodeHeight / 2,
+          from: srcColor, to: tgtColor,
+        });
+      }
+      return {
+        id: e.id,
+        source: e.source,
+        target: e.target,
+        type: "smoothstep",
+        label: e.predicate,
+        labelStyle: { fontSize: 10, fill: "#ddd" },
+        labelBgStyle: { fill: "rgba(30,30,30,0.85)" },
+        labelBgPadding: [4, 2],
+        labelBgBorderRadius: 3,
+        style: {
+          stroke: sameColor ? srcColor : `url(#${gradId})`,
+          strokeWidth: Math.min(4, 1 + Math.log2(e.count + 1)),
+          opacity: 0.8,
+        },
+      };
+    });
+    return { rfNodes: ns, rfEdges: es, gradients };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [revision, selectedId]);
 
-  const suggestions = useMemo(() => {
-    if (!graph || !query.trim()) return [];
-    const q = query.toLowerCase();
-    return graph.nodes
-      .filter(n => n.canonical.toLowerCase().includes(q))
-      .sort((a, b) => b.weight - a.weight)
-      .slice(0, 10);
-  }, [graph, query]);
-
+  // --- Focus camera on a node ---
   const focusNode = useCallback((id) => {
-    const p = layout && layout[id];
+    const p = positions.current[id];
     if (!p || !rfInstance.current) return;
     rfInstance.current.setCenter(p.x, p.y, { zoom: 1.3, duration: 500 });
     setSelectedId(id);
-  }, [layout]);
+  }, []);
+
+  // --- Helpers ---
+  const clearAll = useCallback(() => {
+    nodeMap.current.clear();
+    edgeMap.current.clear();
+    seeds.current.clear();
+    expanded.current.clear();
+    expandTotal.current.clear();
+    positions.current = {};
+    setSelectedId(null);
+    setSelectedEdgeId(null);
+    bump();
+  }, [bump]);
 
   if (error) return html`<${Container} sx=${{ py: 3 }}><${Typography} color="error">${error}<//><//>`;
-  if (!graph || !flowLib || !layout) return html`<${Container} sx=${{ py: 3 }}><${Typography}>loading graph…<//><//>`;
 
-  const { flow } = flowLib;
-  const ReactFlow = flow.default || flow.ReactFlow;
-  const { Background, Controls, MiniMap } = flow;
+  const hasNodes = rfNodes.length > 0;
+  const flowReady = flowLib != null;
+
+  // Derive info for the detail panel
+  const selNode = selectedId ? nodeMap.current.get(selectedId) : null;
+  const selEdge = selectedEdgeId ? edgeMap.current.get(selectedEdgeId) : null;
+  const selExpanded = selectedId ? (expanded.current.get(selectedId) || 0) : 0;
+  const selTotal = selectedId ? (expandTotal.current.get(selectedId) || 0) : 0;
+
+  const ReactFlow = flowReady ? (flowLib.flow.default || flowLib.flow.ReactFlow) : null;
+  const Background = flowReady ? flowLib.flow.Background : null;
+  const Controls = flowReady ? flowLib.flow.Controls : null;
+  const MiniMap = flowReady ? flowLib.flow.MiniMap : null;
 
   return html`
     <${Box} sx=${{ position: "relative", height: "calc(100vh - 64px)", width: "100%" }}>
-      <${Paper} sx=${{ position: "absolute", top: 12, left: 12, zIndex: 10, p: 1, width: 320 }}>
+      <${Paper} sx=${{ position: "absolute", top: 12, left: 12, zIndex: 10, p: 1.5, width: 340, maxHeight: "calc(100vh - 100px)", overflow: "auto" }}>
         <${TextField}
           size="small"
           fullWidth
-          placeholder="search nodes…"
+          placeholder="search entities to add to graph…"
           value=${query}
           onChange=${e => { setQuery(e.target.value); setShowDropdown(true); }}
           onFocus=${() => setShowDropdown(true)}
           onKeyDown=${e => {
-            if (e.key === "Enter" && suggestions[0]) { focusNode(suggestions[0].id); setShowDropdown(false); }
-            else if (e.key === "Escape") setShowDropdown(false);
+            if (e.key === "Enter" && suggestions[0]) {
+              addSeed(suggestions[0]);
+              setQuery("");
+              setShowDropdown(false);
+            } else if (e.key === "Escape") setShowDropdown(false);
           }}
         />
         ${showDropdown && suggestions.length > 0 && html`
-          <${Box} sx=${{ mt: 1, maxHeight: 300, overflow: "auto" }}>
+          <${Box} sx=${{ mt: 1, maxHeight: 250, overflow: "auto" }}>
             ${suggestions.map(n => html`
               <${Box}
                 key=${n.id}
                 sx=${{ display: "flex", alignItems: "center", gap: 1, px: 1, py: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" }, borderRadius: 1 }}
-                onClick=${() => { focusNode(n.id); setShowDropdown(false); }}
+                onClick=${() => { addSeed(n); setQuery(""); setShowDropdown(false); }}
               >
                 <${Box} sx=${{ width: 10, height: 10, borderRadius: "50%", bgcolor: ENTITY_TYPE_HEX[n.type] || "#888" }} />
                 <${Typography} variant="body2" sx=${{ flexGrow: 1 }}>${n.canonical}<//>
-                <${Typography} variant="caption" color="text.secondary">${n.weight}<//>
+                <${Typography} variant="caption" color="text.secondary">${n.type} · ${n.weight}<//>
               <//>
             `)}
           <//>
         `}
-        <${Box} sx=${{ mt: 1, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+        ${seeds.current.size > 0 && html`
+          <${Box} sx=${{ mt: 1.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+            ${[...seeds.current].map(id => {
+              const n = nodeMap.current.get(id);
+              if (!n) return null;
+              return html`<${Chip}
+                key=${id}
+                label=${n.canonical}
+                size="small"
+                onDelete=${() => removeNode(id)}
+                onClick=${() => focusNode(id)}
+                sx=${{ bgcolor: ENTITY_TYPE_HEX[n.type] || "#888", color: "#000", fontWeight: 600, "& .MuiChip-deleteIcon": { color: "rgba(0,0,0,0.5)" } }}
+              />`;
+            })}
+            <${Chip}
+              label="clear all"
+              size="small"
+              variant="outlined"
+              onClick=${clearAll}
+              sx=${{ borderStyle: "dashed" }}
+            />
+          <//>
+        `}
+        <${Box} sx=${{ mt: 1.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
           ${Object.entries(ENTITY_TYPE_HEX).map(([t, c]) => html`
             <${Box} key=${t} sx=${{ display: "flex", alignItems: "center", gap: 0.5 }}>
               <${Box} sx=${{ width: 10, height: 10, borderRadius: "50%", bgcolor: c }} />
@@ -919,88 +1295,221 @@ function RelationshipsPage({ nav }) {
             <//>
           `)}
         <//>
+        <${TextField}
+          select
+          size="small"
+          label="layout"
+          value=${layoutAlgo}
+          onChange=${e => setLayoutAlgo(e.target.value)}
+          sx=${{ mt: 1.5, minWidth: 140 }}
+        >
+          <${MenuItem} value="stress">Stress (neato)<//>
+          <${MenuItem} value="radial">Radial (twopi)<//>
+          <${MenuItem} value="circular">Circular (circo)<//>
+          <${MenuItem} value="force">Force<//>
+        <//>
         <${Typography} variant="caption" color="text.secondary" sx=${{ display: "block", mt: 0.5 }}>
-          ${graph.nodes.length} nodes · ${graph.edges.length} edges
+          ${rfNodes.length} nodes · ${rfEdges.length} edges visible
         <//>
       <//>
-      <${ReactFlow}
-        nodes=${nodes}
-        edges=${edges}
-        nodesDraggable=${true}
-        onInit=${(inst) => { rfInstance.current = inst; setRf(inst); inst.fitView({ padding: 0.2 }); }}
-        onNodeDrag=${(_, node) => {
-          setPositions(p => ({ ...p, [node.id]: { x: node.position.x, y: node.position.y } }));
-        }}
-        onNodeDragStop=${(_, node) => {
-          setPositions(p => ({ ...p, [node.id]: { x: node.position.x, y: node.position.y } }));
-        }}
-        onNodeClick=${(_, node) => {
-          setSelectedId(node.id);
-          setSelectedEdgeId(null);
-        }}
-        onNodeDoubleClick=${(_, node) => {
-          nav("/entity/" + encodeURIComponent(node.id));
-        }}
-        onEdgeClick=${(_, edge) => {
-          setSelectedEdgeId(edge.id);
-          setSelectedId(null);
-        }}
-        onPaneClick=${() => { setShowDropdown(false); setSelectedId(null); setSelectedEdgeId(null); }}
-        fitView
-        minZoom=${0.1}
-        maxZoom=${4}
-      >
-        <${Background} />
-        <${Controls} />
-        <${MiniMap} nodeColor=${(n) => n.style?.background || "#888"} pannable zoomable />
-      <//>
-      ${(() => {
-        if (!graph) return null;
-        const nodesById = Object.fromEntries(graph.nodes.map(n => [n.id, n]));
-        const selNode = selectedId ? nodesById[selectedId] : null;
-        const selEdge = selectedEdgeId ? graph.edges.find(e => e.id === selectedEdgeId) : null;
-        if (!selNode && !selEdge) return null;
-        return html`
-          <${Paper} sx=${{ position: "absolute", top: 12, right: 12, zIndex: 10, p: 1.5, width: 300 }}>
-            ${selNode && html`
-              <${Typography} variant="subtitle2">${selNode.canonical}<//>
-              <${Typography} variant="caption" color="text.secondary">${selNode.type} · weight ${selNode.weight}<//>
-              <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
-                <${Button} size="small" variant="outlined" onClick=${() => nav("/entity/" + encodeURIComponent(selNode.id))}>open entity<//>
-                <${Button}
-                  size="small"
-                  variant="outlined"
-                  component="a"
-                  href=${graphNodeIssueUrl(selNode)}
-                  target="_blank"
-                  rel="noopener"
-                >create issue for this node<//>
-              <//>
-            `}
-            ${selEdge && html`
-              <${Typography} variant="subtitle2">
-                ${(nodesById[selEdge.source] || { canonical: selEdge.source }).canonical} ${selEdge.predicate} ${(nodesById[selEdge.target] || { canonical: selEdge.target }).canonical}
-              <//>
-              <${Typography} variant="caption" color="text.secondary">count ${selEdge.count}<//>
-              <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
-                <${Button}
-                  size="small"
-                  variant="outlined"
-                  component="a"
-                  href=${graphEdgeIssueUrl(selEdge, nodesById)}
-                  target="_blank"
-                  rel="noopener"
-                >create issue for this edge<//>
-              <//>
-            `}
+
+      ${!hasNodes && html`
+        <${Box} sx=${{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", flexDirection: "column", gap: 2, opacity: 0.6 }}>
+          <${Typography} variant="h5">Search to explore the graph<//>
+          <${Typography} variant="body2" color="text.secondary">
+            Type an entity name in the search box to add it and its neighbors to the view.
           <//>
-        `;
-      })()}
+        <//>
+      `}
+
+      ${hasNodes && flowReady && ReactFlow && html`
+        <${ReactFlow}
+          nodes=${rfNodes}
+          edges=${rfEdges}
+          nodesDraggable=${true}
+          onInit=${(inst) => { rfInstance.current = inst; inst.fitView({ padding: 0.3 }); }}
+          onNodeDrag=${(_, node) => {
+            positions.current[node.id] = { x: node.position.x, y: node.position.y };
+          }}
+          onNodeDragStop=${(_, node) => {
+            positions.current[node.id] = { x: node.position.x, y: node.position.y };
+            bump();
+          }}
+          onNodeClick=${(_, node) => {
+            setSelectedId(node.id);
+            setSelectedEdgeId(null);
+          }}
+          onNodeDoubleClick=${(_, node) => {
+            nav("/entity/" + encodeURIComponent(node.id));
+          }}
+          onEdgeClick=${(_, edge) => {
+            setSelectedEdgeId(edge.id);
+            setSelectedId(null);
+          }}
+          onPaneClick=${() => { setShowDropdown(false); setSelectedId(null); setSelectedEdgeId(null); }}
+          fitView
+          minZoom=${0.1}
+          maxZoom=${4}
+        >
+          <svg>
+            <defs>
+              ${gradients.map(g => html`
+                <linearGradient key=${g.id} id=${g.id}
+                  gradientUnits="userSpaceOnUse"
+                  x1=${g.x1} y1=${g.y1} x2=${g.x2} y2=${g.y2}
+                >
+                  <stop offset="0%" stopColor=${g.from} />
+                  <stop offset="100%" stopColor=${g.to} />
+                </linearGradient>
+              `)}
+            </defs>
+          </svg>
+          <${Background} />
+          <${Controls} />
+          <${MiniMap} nodeColor=${(n) => n.style?.background || "#888"} pannable zoomable />
+        <//>
+      `}
+
+      ${(selNode || selEdge) && html`
+        <${Paper} sx=${{ position: "absolute", top: 12, right: 12, zIndex: 10, p: 1.5, width: 300, maxHeight: "calc(100vh - 100px)", overflow: "auto" }}>
+          ${selNode && html`
+            <${Typography} variant="subtitle2">${selNode.canonical}<//>
+            <${Typography} variant="caption" color="text.secondary" sx=${{ display: "block" }}>${selNode.type} · weight ${selNode.weight}<//>
+            <${Typography} variant="caption" color="text.secondary" sx=${{ display: "block" }}>
+              ${selExpanded} of ${selTotal} neighbors loaded
+            <//>
+            <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
+              ${selTotal > selExpanded && html`
+                <${Button} size="small" variant="contained" onClick=${() => expandMore(selNode.id)}>
+                  load 20 more neighbors (${selTotal - selExpanded} remaining)
+                <//>
+              `}
+              ${!seeds.current.has(selNode.id) && html`
+                <${Button} size="small" variant="contained" color="secondary" onClick=${() => { addSeed(selNode); }}>
+                  pin as seed
+                <//>
+              `}
+              <${Button} size="small" variant="outlined" color="error" onClick=${() => { removeNode(selNode.id); setSelectedId(null); }}>
+                remove from view
+              <//>
+              <${Button} size="small" variant="outlined" onClick=${() => nav("/entity/" + encodeURIComponent(selNode.id))}>
+                open entity page
+              <//>
+              <${Button}
+                size="small"
+                variant="outlined"
+                component="a"
+                href=${graphNodeIssueUrl(selNode)}
+                target="_blank"
+                rel="noopener"
+              >create issue for this node<//>
+            <//>
+          `}
+          ${selEdge && html`
+            <${Typography} variant="subtitle2">
+              ${(nodeMap.current.get(selEdge.source) || { canonical: selEdge.source }).canonical}
+              ${" "} ${selEdge.predicate} ${" "}
+              ${(nodeMap.current.get(selEdge.target) || { canonical: selEdge.target }).canonical}
+            <//>
+            <${Typography} variant="caption" color="text.secondary">count ${selEdge.count}<//>
+            <${Box} sx=${{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
+              <${Button}
+                size="small"
+                variant="outlined"
+                component="a"
+                href=${graphEdgeIssueUrl(selEdge, Object.fromEntries(nodeMap.current))}
+                target="_blank"
+                rel="noopener"
+              >create issue for this edge<//>
+            <//>
+          `}
+        <//>
+      `}
     <//>
   `;
 }
 
 const IS_STATIC = typeof window !== "undefined" && window.__STATIC__;
+
+/** @param {{ nav: (to: string) => void }} props */
+function AboutPage({ nav }) {
+  return html`
+    <${Container} maxWidth="md" sx=${{ mt: 4, mb: 6 }}>
+      <${Paper} sx=${{ p: { xs: 3, md: 5 } }}>
+        <${Typography} variant="h3" gutterBottom>About this project<//>
+        <${Typography} variant="subtitle1" color="text.secondary" gutterBottom>
+          An independent, evidence-anchored index of <em>The Why Files<//> corpus.
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>What is this?<//>
+        <${Typography} paragraph>
+          <strong>Why Files Database<//> ingests the full YouTube transcript corpus of
+          <${Link} href="https://thewhyfiles.com" target="_blank" rel="noopener"> The Why Files<//>
+          and turns it into something you can actually <em>query<//>: a searchable catalog
+          of videos, an extracted graph of the people, places, organizations, and
+          events discussed across hundreds of episodes, and a set of tools for
+          surfacing contradictions, recurring claims, and novel connections — all of
+          it pointing back to the exact moment in the exact video where something
+          was said.
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>Why build it?<//>
+        <${Typography} paragraph>
+          The corpus is, by design, <strong>contested and controversial<//>: UFOs,
+          cryptids, ancient mysteries, unsolved cases, fringe science. That's
+          exactly the kind of material where a normal "search the video" experience
+          falls apart. You don't want a keyword hit — you want to know every time a
+          given person, place, or event is mentioned, what was claimed about it,
+          who contradicted whom, and which episode introduced which thread.
+        <//>
+        <${Typography} paragraph>
+          Our goal is <strong>not to declare truth<//>. The goal is to make claims,
+          evidence, and contradictions <em>traceable<//>. Every edge in the graph
+          carries an evidence pointer: a transcript id plus a character span, so
+          you can jump straight to the line and hear it in context. No floating
+          claims, no vibes, no "trust us."
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>How it works<//>
+        <${Typography} paragraph>
+          The pipeline runs in stages. First we <strong>fetch<//> transcripts
+          directly from YouTube (politely — transcripts are gold; once we have
+          one, we never re-fetch it). Then a neural NER model
+          (<code>Xenova/bert-base-NER<//>) extracts persons, organizations, and
+          locations, while regex + gazetteer passes pick up times, dates, events,
+          and domain jargon. A relationship extractor then pairs entities sentence
+          by sentence using a predicate table.
+        <//>
+        <${Typography} paragraph>
+          After that, an <strong>AI enrichment<//> pass refines and adds
+          relationships that the deterministic extractors missed. Everything lands
+          in a graph store with per-claim truth scoring, contradiction detection,
+          and loop detection. A separate "skeptic" layer scores speaker
+          credibility from transcript signals. The public site you're reading
+          right now is the read-only front end on top of all of that.
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>What you can do here<//>
+        <${Typography} component="div" paragraph>
+          <ul>
+            <li>Browse the full catalog of ingested videos on the <${Link} component="button" onClick=${() => nav("/")}>home page<//>.</li>
+            <li>Explore the extracted <${Link} component="button" onClick=${() => nav("/relationships")}>relationships graph<//> across the entire corpus.</li>
+            <li>Slice the corpus by entity type, episode, or theme in <${Link} component="button" onClick=${() => nav("/facets")}>facets<//>.</li>
+            <li>Click any entity to see every video it appears in, with jump-to-timestamp links.</li>
+          </ul>
+        <//>
+
+        <${Typography} variant="h5" sx=${{ mt: 4 }} gutterBottom>Credit<//>
+        <${Typography} paragraph>
+          All transcript content belongs to <${Link} href="https://thewhyfiles.com" target="_blank" rel="noopener">The Why Files<//> and AJ Gentile. This is an
+          independent research index and is not affiliated with, endorsed by, or
+          operated by The Why Files. If you enjoy the show, please support it
+          directly on <${Link} href="https://www.patreon.com/thewhyfiles" target="_blank" rel="noopener">Patreon<//>, the <${Link} href="https://shop.thewhyfiles.com" target="_blank" rel="noopener">Shop<//>, or <${Link} href="https://www.youtube.com/@TheWhyFiles" target="_blank" rel="noopener">YouTube<//>.
+        <//>
+      <//>
+    <//>
+  `;
+}
 
 function App() {
   const [path, nav] = useRoute();
@@ -1008,7 +1517,13 @@ function App() {
   const entityMatch = path.match(/^\/entity\/([^?]+)/);
   const isRelationships = path === "/relationships" || path.startsWith("/relationships?");
   const isFacets = path === "/facets" || path.startsWith("/facets?");
+  const isAbout = path === "/about" || path.startsWith("/about?");
   const isAdmin = !IS_STATIC && path.startsWith("/admin");
+  // /admin/video/:id is server-rendered HTML — redirect to a full page load.
+  if (!IS_STATIC && path.match(/^\/admin\/video\/[A-Za-z0-9_-]+/)) {
+    window.location.href = path;
+    return null;
+  }
   const body = videoMatch
     ? html`<${VideoDetail} videoId=${videoMatch[1]} nav=${nav} />`
     : entityMatch
@@ -1017,9 +1532,11 @@ function App() {
         ? html`<${RelationshipsPage} nav=${nav} />`
         : isFacets
           ? html`<${FacetsPage} nav=${nav} />`
-          : isAdmin
-            ? html`<${AdminPage} nav=${nav} />`
-            : html`<${CatalogList} nav=${nav} />`;
+          : isAbout
+            ? html`<${AboutPage} nav=${nav} />`
+            : isAdmin
+              ? html`<${AdminPage} />`
+              : html`<${CatalogList} nav=${nav} />`;
   return html`
     <${ThemeProvider} theme=${theme}>
       <${CssBaseline} />
@@ -1029,6 +1546,7 @@ function App() {
           <${Button} color="inherit" onClick=${() => nav("/")}>home<//>
           <${Button} color="inherit" onClick=${() => nav("/facets")}>facets<//>
           <${Button} color="inherit" onClick=${() => nav("/relationships")}>relationships<//>
+          <${Button} color="inherit" onClick=${() => nav("/about")}>about<//>
           ${!IS_STATIC && html`<${Button} color="inherit" onClick=${() => nav("/admin")}>admin<//>`}
         <//>
       <//>
