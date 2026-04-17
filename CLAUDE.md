@@ -170,12 +170,41 @@ and `createRelationship` are defined here — both enforce the evidence invarian
 fetched → entities → relations → ai
                   ↘        ↘
                    →  per-claim
+
+graph-level (run once after all per-video stages):
+  propagation → contradictions → novel → indexes
 ```
 
 `aiStage.dependsOn: ["relations"]`. `perClaimStage.dependsOn: ["relations"]`.
 Graph-level stages (`propagation`, `contradictions`, `novel`, `indexes`)
 read the `graph.dirtyAt` watermark which gets bumped whenever `entities`
 or `relations` upserts into the graph store.
+
+## Cross-transcript canonicalization
+
+Duplicate entities across videos (e.g. "Dan" vs "Dan Brown", "America"
+vs "United States") are merged via the alias system:
+
+1. **Review:** browse `/admin/aliases` in the dev UI. Proposed clusters
+   are shown with checkboxes — checked = same entity, unchecked =
+   different entity. Click **save** to record the decision.
+2. **Rebuild:** run `captions pipeline --stage indexes` (or a full
+   `captions pipeline`). The `indexes` graph stage reads
+   `data/aliases.json` and applies the merge map when building the
+   corpus-wide entity index and relationship graph.
+3. **Repeat:** reload `/admin/aliases`. New transitive clusters may
+   appear from accepted merges. Do another round until the pending
+   list is clean.
+
+Data model in `data/aliases.json`:
+- `"entity_a": "entity_b"` — a and b are the same; a merges into b
+- `"entity_a~~entity_b": "__not_same__"` — a and b are different; never
+  re-propose this pair
+- `"cluster||identity": "__dismissed__"` — entire cluster dismissed
+
+The alias map is applied in [src/graph/adapt.ts](src/graph/adapt.ts)
+`neuralToGraph()` — entity ids resolve through the chain before graph
+insertion.
 
 ## Conventions
 

@@ -303,6 +303,122 @@ function buildRelationshipsGraph(catalog: Catalog, dataDir?: string): Relationsh
   return relationshipsGraphCache;
 }
 
+// ---------------------------------------------------------------------------
+// Indexed graph — lazy-built from the pre-built relationships graph so
+// search / neighbor / connections queries are O(1) lookups instead of
+// full scans over 9k+ nodes / 24k+ edges.
+// ---------------------------------------------------------------------------
+interface IndexedGraph {
+  nodeMap: Map<string, GraphNode>;
+  /** adjacency: nodeId → array of { neighbor node, edge } */
+  adj: Map<string, Array<{ node: GraphNode; edge: GraphEdge }>>;
+}
+let indexedGraphCache: IndexedGraph | null = null;
+
+function getIndexedGraph(catalog: Catalog, dataDir?: string): IndexedGraph {
+  if (indexedGraphCache) return indexedGraphCache;
+  const g = buildRelationshipsGraph(catalog, dataDir);
+  const nodeMap = new Map<string, GraphNode>();
+  for (const n of g.nodes) nodeMap.set(n.id, n);
+  const adj = new Map<string, Array<{ node: GraphNode; edge: GraphEdge }>>();
+  for (const e of g.edges) {
+    const sNode = nodeMap.get(e.source);
+    const tNode = nodeMap.get(e.target);
+    if (!sNode || !tNode) continue;
+    let sList = adj.get(e.source);
+    if (!sList) { sList = []; adj.set(e.source, sList); }
+    sList.push({ node: tNode, edge: e });
+    let tList = adj.get(e.target);
+    if (!tList) { tList = []; adj.set(e.target, tList); }
+    tList.push({ node: sNode, edge: e });
+  }
+  // Sort each adjacency list by edge count desc so "top N" is just a slice.
+  for (const list of adj.values()) {
+    list.sort((a, b) => b.edge.count - a.edge.count);
+  }
+  indexedGraphCache = { nodeMap, adj };
+  return indexedGraphCache;
+}
+
+function graphSearch(
+  catalog: Catalog,
+  query: string,
+  limit: number,
+  dataDir?: string,
+): GraphNode[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const { nodeMap } = getIndexedGraph(catalog, dataDir);
+  const hits: Array<{ node: GraphNode; score: number }> = [];
+  for (const n of nodeMap.values()) {
+    const c = n.canonical.toLowerCase();
+    if (c === q) hits.push({ node: n, score: 100 + n.weight });
+    else if (c.startsWith(q)) hits.push({ node: n, score: 50 + n.weight });
+    else if (c.includes(q)) hits.push({ node: n, score: 10 + n.weight });
+  }
+  hits.sort((a, b) => b.score - a.score);
+  return hits.slice(0, limit).map((h) => h.node);
+}
+
+interface NeighborResult {
+  node: GraphNode;
+  neighbors: GraphNode[];
+  edges: GraphEdge[];
+  total: number;
+}
+
+function graphNeighbors(
+  catalog: Catalog,
+  nodeId: string,
+  offset: number,
+  limit: number,
+  dataDir?: string,
+): NeighborResult | null {
+  const { nodeMap, adj } = getIndexedGraph(catalog, dataDir);
+  const node = nodeMap.get(nodeId);
+  if (!node) return null;
+  const list = adj.get(nodeId) ?? [];
+  const slice = list.slice(offset, offset + limit);
+  return {
+    node,
+    neighbors: slice.map((s) => s.node),
+    edges: slice.map((s) => s.edge),
+    total: list.length,
+  };
+}
+
+interface ConnectionsResult {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+}
+
+function graphConnections(
+  catalog: Catalog,
+  nodeIds: string[],
+  dataDir?: string,
+): ConnectionsResult {
+  const { nodeMap, adj } = getIndexedGraph(catalog, dataDir);
+  const idSet = new Set(nodeIds);
+  const nodes: GraphNode[] = [];
+  for (const id of idSet) {
+    const n = nodeMap.get(id);
+    if (n) nodes.push(n);
+  }
+  // Find all edges where both endpoints are in the requested set.
+  const edgesSeen = new Set<string>();
+  const edges: GraphEdge[] = [];
+  for (const id of idSet) {
+    for (const entry of adj.get(id) ?? []) {
+      const otherId = entry.edge.source === id ? entry.edge.target : entry.edge.source;
+      if (idSet.has(otherId) && !edgesSeen.has(entry.edge.id)) {
+        edgesSeen.add(entry.edge.id);
+        edges.push(entry.edge);
+      }
+    }
+  }
+  return { nodes, edges };
+}
+
 function getEntityVideos(catalog: Catalog, dataDir?: string): EntityVideosIndex {
   if (entityVideosCache) return entityVideosCache;
   const persisted = readPersistedEntityVideos(dataDir);
@@ -785,6 +901,32 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     }
     if (url === "/api/relationships" || url.startsWith("/api/relationships?")) {
       sendJson(res, 200, buildRelationshipsGraph(opts.catalog, opts.dataDir));
+      return;
+    }
+    // --- Incremental graph API (search → expand → connect) ----------------
+    if (url.startsWith("/api/graph/search")) {
+      const u = new URL(url, "http://local");
+      const q = u.searchParams.get("q") || "";
+      const limit = Math.min(50, Number(u.searchParams.get("limit") || 10));
+      sendJson(res, 200, graphSearch(opts.catalog, q, limit, opts.dataDir));
+      return;
+    }
+    if (url.startsWith("/api/graph/neighbors")) {
+      const u = new URL(url, "http://local");
+      const id = u.searchParams.get("id") || "";
+      const offset = Math.max(0, Number(u.searchParams.get("offset") || 0));
+      const limit = Math.min(100, Number(u.searchParams.get("limit") || 20));
+      const result = graphNeighbors(opts.catalog, id, offset, limit, opts.dataDir);
+      if (!result) { sendJson(res, 404, { error: "node not found" }); return; }
+      sendJson(res, 200, result);
+      return;
+    }
+    if (url.startsWith("/api/graph/connections")) {
+      const u = new URL(url, "http://local");
+      const idsParam = u.searchParams.get("ids") || "";
+      const ids = idsParam.split(",").map((s) => s.trim()).filter(Boolean);
+      if (ids.length === 0) { sendJson(res, 400, { error: "ids required" }); return; }
+      sendJson(res, 200, graphConnections(opts.catalog, ids, opts.dataDir));
       return;
     }
     if (url === "/api/nlp/entity-index" || url.startsWith("/api/nlp/entity-index?")) {
