@@ -1,24 +1,20 @@
-// Rows-in video table. The home page's CatalogTable (app.js) fetches from
-// /api/catalog and owns its own query state; this variant takes an already-
-// filtered array of rows and renders them using the same column definitions.
-// Used by the facets page where filtering happens in-browser.
-
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Paper, Table, TableHead, TableBody, TableRow, TableCell, TablePagination,
   Box, Button, Menu, MenuItem, Checkbox, ListItemIcon, ListItemText, Typography,
 } from "@mui/material";
-import { CATALOG_COLUMNS, CatalogColumn, VideoRow } from "./catalog-columns.js";
+import { CATALOG_COLUMNS } from "./catalog-columns";
+import type { CatalogColumn, VideoRow } from "../types";
 
 interface Props {
   rows: VideoRow[];
   columns?: CatalogColumn[];
-  nav?: (to: string) => void;
-  onRowClick?: (r: VideoRow) => void;
   title?: string;
 }
 
-export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Props) {
+export function SimpleVideoTable({ rows, columns, title }: Props) {
+  const nav = useNavigate();
   const cols = columns || CATALOG_COLUMNS;
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(25);
@@ -35,19 +31,14 @@ export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Prop
     return rows.slice(start, start + pageSize);
   }, [rows, page, pageSize]);
 
-  const handleClick = (r: VideoRow) => {
-    if (onRowClick) onRowClick(r);
-    else if (nav) nav("/video/" + r.videoId);
-  };
-
   const pagination = (
     <TablePagination
       component="div"
       count={rows.length}
       page={page}
-      onPageChange={(_: unknown, p: number) => setPage(p)}
+      onPageChange={(_, p) => setPage(p)}
       rowsPerPage={pageSize}
-      onRowsPerPageChange={(e: React.ChangeEvent<HTMLInputElement>) => { setPageSize(parseInt(e.target.value, 10)); setPage(0); }}
+      onRowsPerPageChange={(e) => { setPageSize(parseInt(e.target.value, 10)); setPage(0); }}
       rowsPerPageOptions={[10, 25, 50, 100]}
     />
   );
@@ -58,7 +49,7 @@ export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Prop
         <Typography variant="body2" sx={{ flexGrow: 1, color: "text.secondary" }}>
           {title || `${rows.length} video${rows.length === 1 ? "" : "s"}`}
         </Typography>
-        <Button size="small" variant="outlined" onClick={(e: React.MouseEvent<HTMLButtonElement>) => setMenuAnchor(e.currentTarget)}>
+        <Button size="small" variant="outlined" onClick={(e) => setMenuAnchor(e.currentTarget)}>
           columns ▾
         </Button>
         <Menu
@@ -67,7 +58,7 @@ export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Prop
           onClose={() => setMenuAnchor(null)}
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
           transformOrigin={{ vertical: "top", horizontal: "right" }}
-          PaperProps={{ sx: { maxHeight: 400 } }}
+          slotProps={{ paper: { sx: { maxHeight: 400 } } }}
         >
           {cols.map((c) => (
             <MenuItem key={c.key} onClick={() => setVisible((v) => ({ ...v, [c.key]: !v[c.key] }))} dense>
@@ -88,7 +79,7 @@ export function SimpleVideoTable({ rows, columns, nav, onRowClick, title }: Prop
         </TableHead>
         <TableBody>
           {sliced.map((r) => (
-            <TableRow key={r.videoId} hover style={{ cursor: "pointer" }} onClick={() => handleClick(r)}>
+            <TableRow key={r.videoId} hover style={{ cursor: "pointer" }} onClick={() => nav("/video/" + r.videoId)}>
               {activeCols.map((c) => (
                 <TableCell key={c.key} sx={c.cellSx || {}}>{c.render(r)}</TableCell>
               ))}

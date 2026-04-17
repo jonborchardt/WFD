@@ -1,24 +1,8 @@
-// Query layer for the facets page.
-//
-// Thin abstraction over an in-memory dataset of (video, entity, mentionCount)
-// rows plus a video-metadata lookup. This is the ONLY module that touches raw
-// JSON endpoints or runs aggregate math — every React component asks questions
-// via the functions exported here.
-//
-// Why not DuckDB-WASM for V1: the corpus is ~400 videos and a few thousand
-// (video × entity) rows — pure JS Map/array ops run the worst-case facet
-// query in sub-millisecond time with zero download cost. The module's shape
-// is deliberately SQL-like so swapping in DuckDB-WASM later is a drop-in
-// replacement: same inputs, same outputs.
-//
-// Data sources — go through /api/* so the same code path works in both the
-// dev server (real routes) and the static GitHub Pages build (intercepted by
-// scripts/static-shim.js, which resolves from data/ on disk). Backing files:
-//   data/catalog/catalog.json         — video metadata
-//   data/nlp/entity-index.json        — { id, type, canonical, mentionCount, videoCount }[]
-//   data/nlp/entity-videos.json       — { [entityId]: [{ videoId, mentions: span[] }] }
+// Query layer for the facets page — adapted from src/ui/client/facets/duck.ts
+// Uses static data fetchers instead of /api/* endpoints.
 
-import type { VideoRow } from "../shared/catalog-columns.js";
+import type { VideoRow } from "../../types";
+import { fetchCatalog, fetchEntityIndex, fetchEntityVideos } from "../../lib/data";
 
 export interface EntityMeta {
   id: string;
@@ -57,30 +41,22 @@ export interface FacetRow {
   pinned?: boolean;
 }
 
-async function fetchJson(url: string): Promise<unknown> {
-  const r = await fetch(url);
-  if (!r.ok) throw new Error(`fetch ${url}: ${r.status}`);
-  return r.json();
-}
-
 let loadPromise: Promise<FacetBundle> | null = null;
 
-// One-shot load. Cached so re-navigating to the page is free.
 export function loadFacetData(): Promise<FacetBundle> {
   if (loadPromise) return loadPromise;
   loadPromise = (async () => {
-    const [catalogResult, entityIndex, entityVideos] = await Promise.all([
-      fetchJson("/api/catalog?pageSize=100000&page=1"),
-      fetchJson("/api/nlp/entity-index"),
-      fetchJson("/api/nlp/entity-videos"),
+    const [catalog, entityIndex, entityVideosRaw] = await Promise.all([
+      fetchCatalog(),
+      fetchEntityIndex(),
+      fetchEntityVideos(),
     ]);
 
-    const allVideos = ((catalogResult as { rows?: VideoRow[] }).rows || []) as VideoRow[];
-    const videos = allVideos.filter((r) => r.status === "fetched");
+    const videos = catalog.filter((r) => r.status === "fetched");
     const videoById = new Map<string, VideoRow>(videos.map((r) => [r.videoId, r]));
 
     const entities = new Map<string, EntityMeta>();
-    for (const e of entityIndex as EntityMeta[]) {
+    for (const e of entityIndex) {
       entities.set(e.id, { id: e.id, type: e.type, canonical: e.canonical });
     }
 
@@ -89,7 +65,7 @@ export function loadFacetData(): Promise<FacetBundle> {
     const factsByVideo = new Map<string, Fact[]>();
     const typeTotals = new Map<string, number>();
 
-    const evEntries = Object.entries(entityVideos as Record<string, { videoId: string; mentions: unknown[] }[]>);
+    const evEntries = Object.entries(entityVideosRaw);
     for (const [entityId, refs] of evEntries) {
       const meta = entities.get(entityId);
       if (!meta) continue;
@@ -118,14 +94,6 @@ export function loadFacetData(): Promise<FacetBundle> {
   return loadPromise;
 }
 
-// Compute the active video-id set for a given selection state.
-//
-// Semantics:
-//   - OR within a group (multi-select inside one facet is OR)
-//   - AND across groups of the same type (second facet narrows the first)
-//   - AND across types (person AND org narrows both)
-//
-// Empty selection → all fetched videos. Empty group is ignored.
 export function activeVideoIds(bundle: FacetBundle, selection: Selection): Set<string> {
   let active: Set<string> | null = null;
   for (const { groups } of selection) {
@@ -150,9 +118,6 @@ export function activeVideoIds(bundle: FacetBundle, selection: Selection): Set<s
   return active;
 }
 
-// Compute top-N bars for one entity type, scoped to the given active video
-// set. Returns `top` (descending by total) and `pinned` (always-visible
-// entities whose ids are in `includeIds` but fell out of the top-N).
 export function topEntitiesForType(
   bundle: FacetBundle,
   type: string,
@@ -201,7 +166,6 @@ export function topEntitiesForType(
   return { top, pinned };
 }
 
-// Total mention count across entities of `type` in `activeVideos`.
 export function totalMentionsForType(bundle: FacetBundle, type: string, activeVideos: Set<string>): number {
   let total = 0;
   for (const videoId of activeVideos) {
