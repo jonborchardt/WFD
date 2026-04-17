@@ -219,7 +219,8 @@ that produces a static site deployable to GitHub Pages.
 
 ### Commands (run from `web/`)
 
-- `npm run dev` — Vite dev server at `http://localhost:5173/captions/`.
+- `npm run dev` — Vite dev server at `http://localhost:5173/WFD/` (base
+  path matches the GitHub Pages repo — override with `VITE_BASE=/foo/`).
   A custom Vite plugin serves `../data/` at `/data/` so the app reads
   real corpus data during development.
 - `npm run build` — `tsc` + `vite build` + copy `index.html` → `404.html`

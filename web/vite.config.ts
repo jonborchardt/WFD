@@ -10,10 +10,14 @@ const MIME: Record<string, string> = {
   ".txt": "text/plain",
 };
 
-/** Serve repo `data/` directory at `/data/` (and `/captions/data/`) during dev. */
+// Base path for the site. Override via VITE_BASE=/foo/ when deploying to a
+// different repo path or root domain. Must start and end with `/`.
+const base = process.env.VITE_BASE || "/WFD/";
+
+/** Serve repo `data/` directory at `<base>data/` (and bare `/data/`) during dev. */
 function serveData(): Plugin {
   const dataRoot = resolve(__dirname, "../data");
-  const prefixes = ["/captions/data/", "/data/"];
+  const prefixes = [base + "data/", "/data/"];
   return {
     name: "serve-data",
     configureServer(server) {
@@ -43,7 +47,7 @@ function serveData(): Plugin {
 
 export default defineConfig({
   plugins: [react(), serveData()],
-  base: "/captions/",
+  base,
   build: {
     outDir: "dist",
   },
