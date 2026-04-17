@@ -7,12 +7,11 @@
 
 import { createServer, IncomingMessage, ServerResponse } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
+import { join } from "node:path";
 import { Catalog, CatalogRow, parseIdList } from "../catalog/catalog.js";
 import { transcriptPath } from "../ingest/transcript.js";
 import { limitedFetch } from "../ingest/rate-limiter.js";
-import { renderSpaShell } from "./spa-shell.js";
+
 import { Entity, Relationship } from "../shared/types.js";
 import { CREDIT_FOOTER } from "../shared/credit-footer.js";
 import {
@@ -33,7 +32,6 @@ import {
   writeAliases,
   notSameKey,
   isSentinel,
-  type AliasMap,
 } from "../graph/canonicalize.js";
 import {
   readPersistedEntities,
@@ -1040,50 +1038,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       return;
     }
 
-    const clientDir = join(dirname(fileURLToPath(import.meta.url)), "client");
-    const staticAsset: Record<string, string> = {
-      "/client.js": join(clientDir, "app.js"),
-      "/query.js": join(dirname(fileURLToPath(import.meta.url)), "query.js"),
-      "/static-shim.js": join(
-        dirname(fileURLToPath(import.meta.url)),
-        "..",
-        "..",
-        "scripts",
-        "static-shim.js",
-      ),
-    };
-    if (staticAsset[url]) {
-      try {
-        const body = readFileSync(staticAsset[url], "utf8");
-        res.writeHead(200, {
-          "content-type": "application/javascript; charset=utf-8",
-          "cache-control": "no-cache",
-        });
-        res.end(body);
-      } catch (e) {
-        res.writeHead(500);
-        res.end(`${url}: ` + (e as Error).message);
-      }
-      return;
-    }
-    // Serve tsc-compiled output for /facets/* and /shared/* modules. These
-    // are .js files emitted in-place by `npm run build:client` next to their
-    // .tsx sources. No path traversal allowed.
-    if (url.startsWith("/facets/") || url.startsWith("/shared/")) {
-      const rel = url.replace(/^\//, "").split("?")[0];
-      if (!rel.includes("..") && rel.endsWith(".js")) {
-        const p = join(clientDir, rel);
-        if (existsSync(p)) {
-          res.writeHead(200, {
-            "content-type": "application/javascript; charset=utf-8",
-            "cache-control": "no-cache",
-          });
-          res.end(readFileSync(p, "utf8"));
-          return;
-        }
-      }
-    }
-
     // Aliases admin page — shows pending merge proposals and accepted
     // aliases. Operators accept/reject individual proposals via POST.
     if (url === "/admin/aliases" || url.startsWith("/admin/aliases?")) {
@@ -1239,12 +1193,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       });
       return;
     }
-    // SPA shell + legacy HTML routes (kept for non-JS clients / tests).
-    if (url === "/" || url.startsWith("/?") || url === "/admin" || url.startsWith("/admin?")) {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderSpaShell());
-      return;
-    }
     // Read-only NLP inspection page. Pure HTML, no SPA bundle, no editing —
     // hand-editing NER output is not supported, and downstream refinements
     // live in the ai stage's bundles/responses on disk.
@@ -1273,32 +1221,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           aiResponseStale,
         ),
       );
-      return;
-    }
-    const m = url.match(/^\/video\/([A-Za-z0-9_-]+)/);
-    if (m) {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderSpaShell());
-      return;
-    }
-    if (url === "/relationships" || url.startsWith("/relationships?")) {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderSpaShell());
-      return;
-    }
-    if (url === "/facets" || url.startsWith("/facets?")) {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderSpaShell());
-      return;
-    }
-    if (url === "/about" || url.startsWith("/about?")) {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderSpaShell());
-      return;
-    }
-    if (url.startsWith("/entity/")) {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(renderSpaShell());
       return;
     }
     res.writeHead(404);

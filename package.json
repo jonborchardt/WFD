@@ -8,9 +8,7 @@
     "captions": "dist/cli/index.js"
   },
   "scripts": {
-    "build": "tsc && tsc -p tsconfig.client.json",
-    "build:client": "tsc -p tsconfig.client.json",
-    "watch:client": "tsc -p tsconfig.client.json --watch",
+    "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src/",

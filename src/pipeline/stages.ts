@@ -35,7 +35,6 @@ import {
   buildCorpusEntities,
   buildMergeClusters,
   readAliases,
-  writeAliases,
 } from "../graph/canonicalize.js";
 import {
   EntityIndexEntry,

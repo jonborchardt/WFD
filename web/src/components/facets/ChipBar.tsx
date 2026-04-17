@@ -1,11 +1,7 @@
-// Active-filter chip row. Shows every currently-selected entity across all
-// types and slots. Clicking × on a chip removes just that entity from its
-// slot (via onToggle, which is a pure flip).
-
-import { Box, Chip, Button, Typography } from "@mui/material";
 import { Fragment } from "react";
-import { ENTITY_TYPE_COLOR } from "../shared/catalog-columns.js";
-import type { FacetBundle, Selection } from "./duck.js";
+import { Box, Chip, Button, Typography } from "@mui/material";
+import { ENTITY_TYPE_COLOR } from "../catalog-columns";
+import type { FacetBundle, Selection } from "./duck";
 
 interface Props {
   selection: Selection;

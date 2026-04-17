@@ -116,10 +116,16 @@ Pipeline shape, roughly in order:
    rules, contradiction and loop detection, novel-link surfacing.
 8. [src/skeptic/](src/skeptic/) — speaker credibility scoring from
    transcript signals.
-9. [src/ui/](src/ui/) + [src/web/](src/web/) — navigation, graph
-   visualization, public read-only site. The React SPA at `/admin/` and
-   the HTML-rendered `/admin/video/:id` unified page surface entities,
-   relations, stage status, and a tuning troubleshooting table.
+9. [src/ui/](src/ui/) + [src/web/](src/web/) — local dev server with
+   admin UI. The React SPA at `/admin/` and the HTML-rendered
+   `/admin/video/:id` unified page surface entities, relations, stage
+   status, and a tuning troubleshooting table.
+10. [web/](web/) — **public static site** (React + TypeScript + Vite).
+   Standalone project, deployed to GitHub Pages. Reads prebuilt JSON
+   from `data/` via Vite middleware in dev; for production, data files
+   are copied into `dist/data/` at deploy time. No server APIs — all
+   search, filtering, and graph exploration run client-side. See
+   [web/ commands](#web-public-site) below.
 
 ### Shared types
 
@@ -205,6 +211,58 @@ Data model in `data/aliases.json`:
 The alias map is applied in [src/graph/adapt.ts](src/graph/adapt.ts)
 `neuralToGraph()` — entity ids resolve through the chain before graph
 insertion.
+
+## Web (public site)
+
+The [web/](web/) directory is a standalone React + TypeScript + Vite project
+that produces a static site deployable to GitHub Pages.
+
+### Commands (run from `web/`)
+
+- `npm run dev` — Vite dev server at `http://localhost:5173/captions/`.
+  A custom Vite plugin serves `../data/` at `/data/` so the app reads
+  real corpus data during development.
+- `npm run build` — `tsc` + `vite build` + copy `index.html` → `404.html`
+  for SPA deep-link support on GitHub Pages.
+- `npm run preview` — preview the production build locally.
+
+### Deploy to GitHub Pages
+
+```bash
+cd web && npm run build
+cp -r ../data/catalog ../data/entities ../data/relations ../data/graph dist/data/
+# optionally: cp -r ../data/transcripts dist/data/  (large; video detail degrades gracefully)
+# then push dist/ to gh-pages
+```
+
+### Architecture
+
+- **No symlink, no artifact generator.** Dev uses a Vite middleware plugin
+  ([web/vite.config.ts](web/vite.config.ts)) that serves `../data/` at
+  `/data/`. Build output contains only the React app; data is layered in
+  at deploy time.
+- **Client-side NLP adaptation.** Per-video `data/entities/<id>.json` and
+  `data/relations/<id>.json` are fetched and adapted into display shapes
+  by [web/src/lib/data.ts](web/src/lib/data.ts) `adaptNlp()`.
+- **Client-side graph exploration.** The relationships page loads
+  `data/graph/relationships-graph.json` once and does search, neighbor
+  expansion, and connection queries in-browser. No server APIs.
+- **Lazy loading.** The RelationshipsPage (ReactFlow + ELK, ~1.5 MB) is
+  code-split and only loaded when the user navigates to `/relationships`.
+- **React Router** with `basename="/captions/"` and `404.html` SPA fallback.
+
+### Admin mode
+
+`web/` is the **single UI codebase** for both public and admin. Admin
+features (pipeline stage columns, upstream check, failed-only filter) are
+gated on `import.meta.env.VITE_ADMIN`, set in `web/.env.development`.
+In dev, Vite proxies `/api/*` to the local Node server on port 4173.
+In production builds, `VITE_ADMIN` is unset → admin code is tree-shaken
+out entirely (no admin chunk in `dist/`).
+
+The old `src/ui/client/` SPA has been deleted. `src/ui/server.ts` now
+serves only `/api/*` routes and server-rendered admin pages
+(`/admin/video/:id`, `/admin/aliases`). It no longer serves the SPA shell.
 
 ## Conventions
 

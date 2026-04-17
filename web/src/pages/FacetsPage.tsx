@@ -1,19 +1,14 @@
-// Top-level page. Wires data loading, selection state, facet groups, chip
-// bar, and the shared video table.
-
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, Typography, Box, CircularProgress, Alert } from "@mui/material";
-import { loadFacetData, activeVideoIds, type FacetBundle } from "./duck.js";
-import { useSelectionState } from "./state.js";
-import { FacetGroup } from "./FacetGroup.js";
-import { ChipBar } from "./ChipBar.js";
-import { SimpleVideoTable } from "../shared/simple-video-table.js";
+import { loadFacetData, activeVideoIds, type FacetBundle } from "../components/facets/duck";
+import { useSelectionState } from "../components/facets/state";
+import { FacetGroup } from "../components/facets/FacetGroup";
+import { ChipBar } from "../components/facets/ChipBar";
+import { SimpleVideoTable } from "../components/SimpleVideoTable";
 
-interface Props {
-  nav: (to: string) => void;
-}
-
-export function FacetsPage({ nav }: Props) {
+export function FacetsPage() {
+  const nav = useNavigate();
   const [bundle, setBundle] = useState<FacetBundle | null>(null);
   const [error, setError] = useState<string | null>(null);
   const { selection, ensureType, toggle, removeGroup, clearAll } = useSelectionState();
@@ -78,7 +73,7 @@ export function FacetsPage({ nav }: Props) {
         ))}
       </Box>
       <Box sx={{ mt: 2 }}>
-        <SimpleVideoTable rows={activeRows} nav={nav} title={activeRows.length + " videos match"} />
+        <SimpleVideoTable rows={activeRows} title={activeRows.length + " videos match"} />
       </Box>
     </Container>
   );

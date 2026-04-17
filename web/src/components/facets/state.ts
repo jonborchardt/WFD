@@ -1,18 +1,5 @@
-// Selection state for the facets page.
-//
-// Shape: Selection = SelectionEntry[], one per entity type in first-touch
-// order. Each entry has `groups: Set<entityId>[]` — every group is a facet
-// slot rendered in the UI.
-//
-// Invariants:
-//   - A type entry always has ≥1 group (the primary facet).
-//   - A new empty group spawns when the previous group gets its first click
-//     (that's how the coref facet appears).
-//   - Selections are OR within a group, AND across groups of the same type,
-//     AND across types. See duck.ts::activeVideoIds.
-
 import { useCallback, useState } from "react";
-import type { Selection } from "./duck.js";
+import type { Selection } from "./duck";
 
 function cloneGroups(groups: Set<string>[]): Set<string>[] {
   return groups.map((g) => new Set(g));

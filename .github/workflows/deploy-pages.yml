@@ -1,19 +1,16 @@
 name: deploy-pages
 
 on:
+  workflow_dispatch: {}
   push:
     branches: [main]
     paths:
+      - "web/**"
       - "data/catalog/**"
-      - "data/transcripts/**"
-      - "data/nlp/**"
-      - "src/ui/client/**"
-      - "src/ui/query.js"
-      - "scripts/static-shim.js"
-      - "tsconfig.client.json"
-      - "package.json"
+      - "data/entities/**"
+      - "data/relations/**"
+      - "data/graph/**"
       - ".github/workflows/deploy-pages.yml"
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,38 +22,60 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
       - name: Install deps
-        run: npm ci || npm install
-      - name: Compile client TSX
-        run: npm run build:client
-      - name: Assemble site
+        working-directory: web
+        run: npm ci
+
+      - name: Test
+        working-directory: web
+        run: npm test
+
+      - name: Build
+        working-directory: web
+        run: npm run build
+
+      - name: Layer data into dist/
         run: |
-          mkdir -p _site/data _site/facets _site/shared
-          cp -r data/catalog _site/data/
-          cp -r data/transcripts _site/data/
-          cp -r data/nlp _site/data/
-          REPO="${GITHUB_REPOSITORY##*/}"
-          sed "s|<head>|<head><base href=\"/${REPO}/\">|" src/ui/client/index.html > _site/index.html
-          cp _site/index.html _site/404.html
-          cp src/ui/client/app.js _site/client.js
-          cp src/ui/query.js _site/query.js
-          cp scripts/static-shim.js _site/static-shim.js
-          cp src/ui/client/facets/*.js _site/facets/
-          cp src/ui/client/shared/*.js _site/shared/
-          touch _site/.nojekyll
+          mkdir -p web/dist/data
+          for d in catalog entities relations graph; do
+            if [ -d "data/$d" ]; then
+              cp -r "data/$d" "web/dist/data/$d"
+            fi
+          done
+          # Transcripts are large; include only if the directory is under 500 MB
+          if [ -d data/transcripts ]; then
+            size=$(du -sm data/transcripts | cut -f1)
+            if [ "$size" -lt 500 ]; then
+              cp -r data/transcripts web/dist/data/transcripts
+            else
+              echo "skipping transcripts/ (${size} MB)"
+            fi
+          fi
+          touch web/dist/.nojekyll
+
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -1,14 +1,6 @@
-// One row of facets for a single entity type.
-//
-// Renders N side-by-side <FacetBar>s — one per selection slot for this type.
-// Each slot's top-25 is computed against the global active-video set AND-
-// narrowed by all OTHER slots of the same type. That's the coref trick: the
-// second slot of "person" shows the persons that co-occur in videos where
-// slot #1's selections live.
-
 import { useEffect, useMemo } from "react";
 import { Box, Typography } from "@mui/material";
-import { FacetBar } from "./FacetBar.js";
+import { FacetBar } from "./FacetBar";
 import {
   activeVideoIds,
   topEntitiesForType,
@@ -16,7 +8,7 @@ import {
   type FacetBundle,
   type Selection,
   type FacetRow,
-} from "./duck.js";
+} from "./duck";
 
 interface Props {
   type: string;

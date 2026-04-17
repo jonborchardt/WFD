@@ -1,12 +1,5 @@
-// Single bar chart for one entity-type facet slot.
-//
-// Props are deliberately minimal — the slot is dumb: it gets pre-sorted rows
-// and a selection set, and just renders. The parent (FacetGroup) owns the
-// math. Keeping this component thin makes it easy to swap out the bar
-// rendering for something fancier later.
-
 import { Box, Typography, IconButton, Tooltip, Autocomplete, TextField } from "@mui/material";
-import type { FacetRow } from "./duck.js";
+import type { FacetRow } from "./duck";
 
 export interface SearchOption {
   entityId: string;
@@ -98,14 +91,14 @@ export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggl
         value={null}
         blurOnSelect
         clearOnBlur
-        onChange={(_: any, val: SearchOption | null) => { if (val) onToggle(val.entityId); }}
-        renderOption={(props: any, option: SearchOption) => (
+        onChange={(_: unknown, val: SearchOption | null) => { if (val) onToggle(val.entityId); }}
+        renderOption={(props: React.HTMLAttributes<HTMLLIElement>, option: SearchOption) => (
           <Box component="li" {...props} sx={{ display: "flex", justifyContent: "space-between", fontSize: 12 }}>
             <span>{option.canonical}</span>
             <span style={{ color: "#999", marginLeft: 8, fontVariantNumeric: "tabular-nums" }}>{option.mentions.toLocaleString()}</span>
           </Box>
         )}
-        renderInput={(params: any) => (
+        renderInput={(params) => (
           <TextField {...params} placeholder={"search " + type + "…"} variant="outlined" />
         )}
         sx={{ mb: 0.5, "& .MuiInputBase-root": { fontSize: 12, py: 0 } }}
