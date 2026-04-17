@@ -30,9 +30,15 @@ import type {
   PersistedEntities,
 } from "../entities/index.js";
 import type { PersistedRelations } from "../relations/index.js";
+import { type AliasMap, resolveKey } from "./canonicalize.js";
 
-function entityIdFor(label: string, canonical: string): string {
-  return `${label}:${canonical.trim().toLowerCase()}`;
+function entityIdFor(
+  label: string,
+  canonical: string,
+  aliases?: AliasMap,
+): string {
+  const raw = `${label}:${canonical.trim().toLowerCase()}`;
+  return aliases ? resolveKey(raw, aliases) : raw;
 }
 
 function mentionToSpan(m: EntityMention): TranscriptSpan {
@@ -50,6 +56,7 @@ function mentionToSpan(m: EntityMention): TranscriptSpan {
 // rewrite endpoints.
 export function persistedEntitiesToGraph(
   persisted: PersistedEntities,
+  aliases?: AliasMap,
 ): {
   entities: Entity[];
   mentionToEntityId: Map<string, string>;
@@ -57,7 +64,7 @@ export function persistedEntitiesToGraph(
   const byId = new Map<string, Entity>();
   const mentionToEntityId = new Map<string, string>();
   for (const m of persisted.mentions) {
-    const id = entityIdFor(m.label, m.canonical);
+    const id = entityIdFor(m.label, m.canonical, aliases);
     mentionToEntityId.set(m.id, id);
     const existing = byId.get(id);
     const span = mentionToSpan(m);
@@ -122,12 +129,14 @@ export function persistedRelationsToGraph(
 export function neuralToGraph(
   persistedEntities: PersistedEntities | null,
   persistedRelations: PersistedRelations | null,
+  aliases?: AliasMap,
 ): { entities: Entity[]; relationships: Relationship[] } {
   if (!persistedEntities) {
     return { entities: [], relationships: [] };
   }
   const { entities, mentionToEntityId } = persistedEntitiesToGraph(
     persistedEntities,
+    aliases,
   );
   const relationships = persistedRelations
     ? persistedRelationsToGraph(persistedRelations, mentionToEntityId)

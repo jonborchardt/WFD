@@ -566,7 +566,7 @@ function NlpPanel({ videoId, nlp, nav }) {
           <${Box} sx=${{ display: "flex", flexWrap: "wrap", gap: 0.5, mt: 0.5 }}>
             ${(byType[t] || [])
               .slice()
-              .sort((a, b) => a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
+              .sort((a, b) => b.mentions.length - a.mentions.length || a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
               .map(e => {
                 return html`
                   <${Chip}

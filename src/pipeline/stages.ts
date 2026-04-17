@@ -32,6 +32,12 @@ import {
 import { readPersistedRelations, runRelationsStage } from "../relations/index.js";
 import { neuralToGraph } from "../graph/adapt.js";
 import {
+  buildCorpusEntities,
+  buildMergeClusters,
+  readAliases,
+  writeAliases,
+} from "../graph/canonicalize.js";
+import {
   EntityIndexEntry,
   EntityVideosIndex,
   writePersistedEntityIndex,
@@ -341,6 +347,18 @@ export const contradictionsStage: GraphStage = {
 export const indexesStage: GraphStage = {
   name: "indexes",
   async run(ctx): Promise<StageOutcome> {
+    // Step 0: cross-transcript canonicalization. Build transitive merge
+    // clusters from substring containment, fold in the operator-curated
+    // aliases file, and write the resolved map. The alias map is then
+    // used by neuralToGraph() below so merged entities share one graph
+    // node.
+    // Read the operator-curated alias map. buildMergeClusters respects
+    // "not same" pairs so it won't re-propose rejected merges.
+    const aliases = readAliases(ctx.dataDir);
+    const corpus = buildCorpusEntities(ctx.dataDir);
+    buildMergeClusters(corpus, aliases); // side effect: writes nothing, just clusters
+    // aliases is the source of truth — written by the admin page, read here.
+
     const agg = new Map<string, EntityIndexEntry>();
     const videosByEntity: EntityVideosIndex = {};
     const graphNodes = new Map<
@@ -366,6 +384,7 @@ export const indexesStage: GraphStage = {
       const { entities, relationships } = neuralToGraph(
         persistedEntities,
         persistedRelations,
+        aliases,
       );
       processed += 1;
       const entById = new Map(entities.map((e) => [e.id, e]));

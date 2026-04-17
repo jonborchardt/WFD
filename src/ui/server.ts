@@ -25,6 +25,17 @@ import {
 } from "../graph/entity-index-persist.js";
 import { neuralToGraph } from "../graph/adapt.js";
 import {
+  buildCorpusEntities,
+  buildMergeClusters,
+  classifyClusters,
+  readAliases,
+  recordReview,
+  writeAliases,
+  notSameKey,
+  isSentinel,
+  type AliasMap,
+} from "../graph/canonicalize.js";
+import {
   readPersistedEntities,
   type PersistedEntities,
 } from "../entities/index.js";
@@ -243,6 +254,23 @@ let relationshipsGraphCache: RelationshipsGraph | null = null;
 
 function buildRelationshipsGraph(catalog: Catalog, dataDir?: string): RelationshipsGraph {
   if (relationshipsGraphCache) return relationshipsGraphCache;
+  // The indexesStage pre-builds this file during each pipeline run,
+  // so we read from disk instead of recomputing from 200+ per-video
+  // entity/relations files — that recomputation blocked the HTTP
+  // response for 30+ seconds on large corpora.
+  const root = dataDir ?? join(process.cwd(), "data");
+  const prebuilt = join(root, "graph", "relationships-graph.json");
+  if (existsSync(prebuilt)) {
+    try {
+      const raw = JSON.parse(readFileSync(prebuilt, "utf8")) as RelationshipsGraph;
+      relationshipsGraphCache = raw;
+      return raw;
+    } catch {
+      // Fall through to on-demand build.
+    }
+  }
+  // Fallback: build on demand if the pre-built file doesn't exist yet
+  // (first run before indexesStage has fired).
   const nodes = new Map<string, GraphNode>();
   const edges = new Map<string, GraphEdge>();
   for (const row of catalog.all()) {
@@ -914,6 +942,161 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       }
     }
 
+    // Aliases admin page — shows pending merge proposals and accepted
+    // aliases. Operators accept/reject individual proposals via POST.
+    if (url === "/admin/aliases" || url.startsWith("/admin/aliases?")) {
+      const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      const corpus = buildCorpusEntities(dataRoot);
+      const aliases = readAliases(dataRoot);
+      const clusters = buildMergeClusters(corpus, aliases);
+      const classified = classifyClusters(clusters, aliases);
+      const pendingClusters = classified.filter((c) => c.status === "pending");
+      const resolvedClusters = classified.filter((c) => c.status === "resolved");
+      const mergeCount = Object.keys(aliases).filter(
+        (k) => !isSentinel(aliases[k]) && !k.includes("~~") && !k.includes("||"),
+      ).length;
+      const notSameCount = Object.keys(aliases).filter(
+        (k) => aliases[k] === "__not_same__",
+      ).length;
+
+      function renderClusterCard(c: typeof classified[0], grayed: boolean): string {
+        const nonCanonical = c.members.filter((m) => m !== c.canonicalKey);
+        const checkboxes = nonCanonical
+          .map((m) => {
+            const form = c.memberForms[c.members.indexOf(m)];
+            const isAccepted = aliases[m] !== undefined && !isSentinel(aliases[m]);
+            const isNotSame = aliases[notSameKey(m, c.canonicalKey)] === "__not_same__";
+            const marker = isAccepted ? " = same" : isNotSame ? " = different" : "";
+            const checked = grayed ? isAccepted : true;
+            return `<label style="display:block;padding:2px 0${grayed ? ";opacity:0.5" : ""}">
+              <input type="checkbox" name="member" value="${escapeHtml(m)}" ${checked ? "checked" : ""} ${grayed ? "disabled" : ""} />
+              ${escapeHtml(form)}${marker ? `<span class="sub">${marker}</span>` : ""}
+            </label>`;
+          })
+          .join("");
+        const buttons = grayed
+          ? `<button onclick="undoCluster(this)" data-canonical="${escapeHtml(c.canonicalKey)}" data-members='${escapeHtml(JSON.stringify(nonCanonical))}' style="color:var(--muted)">undo</button>`
+          : `<button onclick="selectAll(this)">all</button>
+             <button onclick="deselectAll(this)">none</button>
+             <button onclick="saveCluster(this)" data-canonical="${escapeHtml(c.canonicalKey)}">save</button>`;
+        return `<div class="alias-card" style="border:1px solid var(--border);border-radius:4px;padding:12px;margin-bottom:8px${grayed ? ";opacity:0.6" : ""}">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <strong>[${escapeHtml(c.label)}]</strong>
+              merge into <strong>${escapeHtml(c.canonicalForm)}</strong>
+              <span class="sub">(${c.totalCooccurrences} co-occur, ${c.members.length} members)</span>
+            </div>
+            <div style="display:flex;gap:4px">${buttons}</div>
+          </div>
+          <div style="margin-top:8px;padding-left:12px">${checkboxes}</div>
+        </div>`;
+      }
+
+      const pendingCards = pendingClusters.map((c) => renderClusterCard(c, false)).join("");
+      const resolvedCards = resolvedClusters.map((c) => renderClusterCard(c, true)).join("");
+
+      const aliasScript = `
+        function post(action, body) {
+          return fetch('/admin/aliases/' + action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body,
+          });
+        }
+        function deselectAll(btn) {
+          var card = btn.closest('.alias-card');
+          var boxes = card.querySelectorAll('input[name=member]:not(:disabled)');
+          for (var i = 0; i < boxes.length; i++) boxes[i].checked = false;
+        }
+        function selectAll(btn) {
+          var card = btn.closest('.alias-card');
+          var boxes = card.querySelectorAll('input[name=member]:not(:disabled)');
+          for (var i = 0; i < boxes.length; i++) boxes[i].checked = true;
+        }
+        function saveCluster(btn) {
+          var card = btn.closest('.alias-card');
+          var canonical = btn.getAttribute('data-canonical');
+          var allBoxes = card.querySelectorAll('input[name=member]');
+          var checked = [], all = [];
+          for (var i = 0; i < allBoxes.length; i++) {
+            all.push(allBoxes[i].value);
+            if (allBoxes[i].checked) checked.push(allBoxes[i].value);
+          }
+          var params = 'canonical=' + encodeURIComponent(canonical)
+            + '&checked=' + encodeURIComponent(JSON.stringify(checked))
+            + '&all=' + encodeURIComponent(JSON.stringify(all));
+          post('save', params).then(function() {
+            card.style.opacity = '0.5';
+            card.style.pointerEvents = 'none';
+          });
+        }
+        function undoCluster(btn) {
+          var canonical = btn.getAttribute('data-canonical');
+          var members = JSON.parse(btn.getAttribute('data-members'));
+          var params = 'canonical=' + encodeURIComponent(canonical)
+            + '&members=' + encodeURIComponent(JSON.stringify(members));
+          post('undo', params).then(function() {
+            var card = btn.closest('.alias-card');
+            card.style.display = 'none';
+          });
+        }
+      `;
+
+      const body = `
+        <h1>Entity aliases</h1>
+        <p>${corpus.size} corpus entities · ${pendingClusters.length} pending · ${resolvedClusters.length} resolved · ${mergeCount} merges · ${notSameCount} not-same pairs</p>
+        <p>Check = same entity, uncheck = different entity. Click <strong>save</strong> to record your decision. After a round, run <code>captions pipeline --stage indexes</code> to rebuild the graph.</p>
+
+        <h2>Pending <span class="sub">${pendingClusters.length}</span></h2>
+        ${pendingCards || '<p>None — all clusters resolved.</p>'}
+
+        <h2>Resolved <span class="sub">${resolvedClusters.length}</span></h2>
+        ${resolvedCards || '<p>None yet.</p>'}
+        <script>${aliasScript}</script>
+      `;
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(layout("aliases — captions", body));
+      return;
+    }
+    // Save/undo alias decisions (POST).
+    if (url.startsWith("/admin/aliases/") && req.method === "POST") {
+      const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      let postBody = "";
+      req.on("data", (chunk: Buffer) => { postBody += chunk.toString(); });
+      req.on("end", () => {
+        const params = new URLSearchParams(postBody);
+        const aliases = readAliases(dataRoot);
+        if (url.endsWith("/save")) {
+          // Checked = same, unchecked = not same.
+          const canonical = params.get("canonical") ?? "";
+          let checked: string[] = [];
+          let all: string[] = [];
+          try {
+            checked = JSON.parse(params.get("checked") ?? "[]") as string[];
+            all = JSON.parse(params.get("all") ?? "[]") as string[];
+          } catch { /* ignore */ }
+          recordReview(aliases, canonical, checked, all);
+        } else if (url.endsWith("/undo")) {
+          // Remove all merge and not-same entries for members of this cluster.
+          const canonical = params.get("canonical") ?? "";
+          let members: string[] = [];
+          try {
+            members = JSON.parse(params.get("members") ?? "[]") as string[];
+          } catch { /* ignore */ }
+          for (const m of members) {
+            delete aliases[m];
+            delete aliases[notSameKey(m, canonical)];
+          }
+        } else {
+          res.writeHead(400);
+          res.end("unknown action");
+          return;
+        }
+        writeAliases(dataRoot, aliases);
+        sendJson(res, 200, { ok: true });
+      });
+      return;
+    }
     // SPA shell + legacy HTML routes (kept for non-JS clients / tests).
     if (url === "/" || url.startsWith("/?") || url === "/admin" || url.startsWith("/admin?")) {
       res.writeHead(200, { "content-type": "text/html" });
