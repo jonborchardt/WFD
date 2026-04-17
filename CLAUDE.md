@@ -78,6 +78,12 @@ traceback is available in the error field on the returned result. Set
 Config lives in:
 
 - [config/entity-labels.json](config/entity-labels.json) — 14 GLiNER labels
+  as `{ name, hidden? }` objects. `hidden: true` keeps the label in GLiNER
+  (still a valid relationship endpoint) but hides it from facets, search
+  suggestions, the relationship graph, and the per-video entity list. The
+  web side mirrors the hidden set in
+  [web/src/lib/entity-visibility.ts](web/src/lib/entity-visibility.ts) —
+  keep them in sync.
 - [config/relation-labels.json](config/relation-labels.json) — 29 predicates
   with per-predicate thresholds
 - [config/models.json](config/models.json) — model ids, thresholds, chunk

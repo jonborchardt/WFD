@@ -3,6 +3,7 @@ import { Box, Typography, Chip, Link } from "@mui/material";
 import { ENTITY_TYPE_COLOR } from "./catalog-columns";
 import { SuggestChip } from "./SuggestChip";
 import { fmtTimestamp, deepLink } from "../lib/format";
+import { isVisibleType } from "../lib/entity-visibility";
 import type { VideoNlp } from "../types";
 
 interface Props {
@@ -16,10 +17,18 @@ export function NlpPanel({ videoId, nlp }: Props) {
 
   const { entities, relationships } = nlp;
   const byType: Record<string, typeof entities> = {};
-  for (const e of entities) (byType[e.type] ||= []).push(e);
-  const order = ["person", "organization", "location", "misc", "time"];
+  for (const e of entities) {
+    if (!isVisibleType(e.type)) continue;
+    (byType[e.type] ||= []).push(e);
+  }
+  const order = ["person", "organization", "location", "misc", "time"].filter(isVisibleType);
   const extraTypes = Object.keys(byType).filter((t) => !order.includes(t)).sort();
   const visibleTypes = [...order, ...extraTypes];
+  const visibleEntityCount = visibleTypes.reduce((n, t) => n + (byType[t]?.length || 0), 0);
+  const visibleMentionCount = visibleTypes.reduce(
+    (n, t) => n + (byType[t]?.reduce((m, e) => m + e.mentions.length, 0) || 0),
+    0,
+  );
   const entById = Object.fromEntries(entities.map((e) => [e.id, e]));
 
   return (
@@ -27,7 +36,7 @@ export function NlpPanel({ videoId, nlp }: Props) {
       <Typography variant="h6" sx={{ mb: 1 }}>
         Entities{" "}
         <Typography component="span" variant="caption" color="text.secondary">
-          {entities.length} unique · {entities.reduce((n, e) => n + e.mentions.length, 0)} mentions
+          {visibleEntityCount} unique · {visibleMentionCount} mentions
         </Typography>
       </Typography>
       {visibleTypes.map((t) => (
