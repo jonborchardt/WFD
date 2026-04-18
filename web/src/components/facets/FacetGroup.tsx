@@ -1,6 +1,8 @@
 import { useEffect, useMemo } from "react";
 import { Box, Typography } from "@mui/material";
 import { FacetBar } from "./FacetBar";
+import { BrushFacet, TIME_FACET_TYPES } from "./BrushFacet";
+import { SimpleFacet, SIMPLE_FACET_TYPES } from "./SimpleFacet";
 import {
   activeVideoIds,
   topEntitiesForType,
@@ -15,6 +17,7 @@ interface Props {
   selection: Selection;
   bundle: FacetBundle;
   onToggle: (type: string, groupIdx: number, entityId: string) => void;
+  onSetGroup: (type: string, groupIdx: number, ids: Set<string>) => void;
   onRemoveSlot: (type: string, groupIdx: number) => void;
   onEnsureType: (type: string) => void;
 }
@@ -26,7 +29,40 @@ function selectionExcluding(selection: Selection, type: string, slotIdx: number)
   });
 }
 
-export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, onEnsureType }: Props) {
+// Time-axis brush variant. Used for decade / year / specific_month /
+// specific_week — dates, not categories, so a column of checkboxes
+// would be the wrong control.
+function TimeFacetGroup({ type, selection, bundle, onSetGroup, onEnsureType }: Props) {
+  useEffect(() => { onEnsureType(type); }, [type, onEnsureType]);
+
+  const entry = selection.find((e) => e.type === type);
+  const selected: Set<string> = entry?.groups[0] || new Set<string>();
+
+  const activeAll = useMemo(() => activeVideoIds(bundle, selection), [bundle, selection]);
+  const totalMentions = useMemo(
+    () => totalMentionsForType(bundle, type, activeAll),
+    [bundle, type, activeAll],
+  );
+
+  return (
+    <Box sx={{ mb: 1 }}>
+      <Typography variant="caption" sx={{ display: "block", mb: 0.25, textTransform: "uppercase", color: "text.secondary", fontSize: 10, lineHeight: 1.2 }}>
+        {type} · {totalMentions.toLocaleString()} mentions
+      </Typography>
+      <BrushFacet
+        type={type}
+        selection={selection}
+        bundle={bundle}
+        selected={selected}
+        onSetGroup={(ids) => onSetGroup(type, 0, ids)}
+      />
+    </Box>
+  );
+}
+
+// Column-of-bars variant with co-occurrence slots, search, and
+// per-entity click-to-toggle. The original behaviour.
+function ColumnFacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, onEnsureType }: Props) {
   useEffect(() => { onEnsureType(type); }, [type, onEnsureType]);
 
   const entry = selection.find((e) => e.type === type);
@@ -67,16 +103,16 @@ export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, on
   }, [bundle, type]);
 
   return (
-    <Box sx={{ mb: 2 }}>
-      <Typography variant="subtitle2" sx={{ mb: 0.5, textTransform: "uppercase", color: "text.secondary" }}>
+    <Box sx={{ mb: 1 }}>
+      <Typography variant="caption" sx={{ display: "block", mb: 0.25, textTransform: "uppercase", color: "text.secondary", fontSize: 10, lineHeight: 1.2 }}>
         {type} · {totalMentions.toLocaleString()} mentions
       </Typography>
       {groups.length > 1 && (
-        <Typography variant="caption" sx={{ display: "block", mb: 0.5, color: "text.secondary", fontStyle: "italic" }}>
-          Co-occurrence mode: each slot shows {type}s that appear in videos alongside the selections in the other slot{groups.length > 2 ? "s" : ""}.
+        <Typography variant="caption" sx={{ display: "block", mb: 0.25, color: "text.secondary", fontStyle: "italic", fontSize: 10 }}>
+          Co-occurrence: each slot shows {type}s that co-occur with the other slot{groups.length > 2 ? "s" : ""}.
         </Typography>
       )}
-      <Box sx={{ display: "flex", gap: 1, overflowX: "auto", pb: 1 }}>
+      <Box sx={{ display: "flex", gap: 0.5, overflowX: "auto", pb: 0.5 }}>
         {slots.map((s, i) => (
           <FacetBar
             key={i}
@@ -95,4 +131,48 @@ export function FacetGroup({ type, selection, bundle, onToggle, onRemoveSlot, on
       </Box>
     </Box>
   );
+}
+
+// Simple toggle-bar variant. No search, no co-occurrence slots — just
+// click a bar to include/exclude that category. Used for small
+// closed-set types like time_of_day (morning/day/evening/night).
+function SimpleFacetGroup({ type, selection, bundle, onSetGroup, onEnsureType }: Props) {
+  useEffect(() => { onEnsureType(type); }, [type, onEnsureType]);
+
+  const entry = selection.find((e) => e.type === type);
+  const selected: Set<string> = entry?.groups[0] || new Set<string>();
+
+  const activeAll = useMemo(() => activeVideoIds(bundle, selection), [bundle, selection]);
+  const totalMentions = useMemo(
+    () => totalMentionsForType(bundle, type, activeAll),
+    [bundle, type, activeAll],
+  );
+
+  const toggleOne = (eid: string) => {
+    const next = new Set(selected);
+    if (next.has(eid)) next.delete(eid);
+    else next.add(eid);
+    onSetGroup(type, 0, next);
+  };
+
+  return (
+    <Box sx={{ mb: 1 }}>
+      <Typography variant="caption" sx={{ display: "block", mb: 0.25, textTransform: "uppercase", color: "text.secondary", fontSize: 10, lineHeight: 1.2 }}>
+        {type} · {totalMentions.toLocaleString()} mentions
+      </Typography>
+      <SimpleFacet
+        type={type}
+        selection={selection}
+        bundle={bundle}
+        selected={selected}
+        onToggle={toggleOne}
+      />
+    </Box>
+  );
+}
+
+export function FacetGroup(props: Props) {
+  if (TIME_FACET_TYPES.has(props.type)) return <TimeFacetGroup {...props} />;
+  if (SIMPLE_FACET_TYPES.has(props.type)) return <SimpleFacetGroup {...props} />;
+  return <ColumnFacetGroup {...props} />;
 }

@@ -7,7 +7,14 @@
 // reach outside the web/ project. If you add a new hidden label there, update
 // this set too.
 
-export const HIDDEN_ENTITY_TYPES: ReadonlySet<string> = new Set(["quantity"]);
+export const HIDDEN_ENTITY_TYPES: ReadonlySet<string> = new Set([
+  "quantity",
+  // `date_time` is the raw GLiNER extraction; the date-normalize stage
+  // projects it into the derived types below (year, decade, etc), which
+  // are the ones users actually filter on. Hiding the raw form avoids a
+  // noisy duplicate facet.
+  "date_time",
+]);
 
 export function isVisibleType(type: string): boolean {
   return !HIDDEN_ENTITY_TYPES.has(type);

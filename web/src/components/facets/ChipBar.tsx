@@ -53,14 +53,14 @@ export function ChipBar({ selection, bundle, onToggle, onClearAll }: Props) {
   }
   if (slots.length === 0) {
     return (
-      <Box sx={{ py: 1, color: "text.secondary" }}>
-        <Typography variant="body2">No filters — showing all videos. Click a bar to start.</Typography>
+      <Box sx={{ py: 0.25, color: "text.secondary" }}>
+        <Typography variant="caption">no filters — showing all videos</Typography>
       </Box>
     );
   }
   return (
-    <Box sx={{ py: 1, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 0.5 }}>
-      <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>filters:</Typography>
+    <Box sx={{ py: 0.25, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 0.5 }}>
+      <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5, fontSize: 10 }}>filters:</Typography>
       {slots.map((slot, slotIdx) => (
         <Fragment key={slot.type + ":" + slot.gi}>
           {slotIdx > 0 && <OpBadge op="AND" />}

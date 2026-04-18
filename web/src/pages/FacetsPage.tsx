@@ -11,7 +11,7 @@ export function FacetsPage() {
   const nav = useNavigate();
   const [bundle, setBundle] = useState<FacetBundle | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const { selection, ensureType, toggle, removeGroup, clearAll } = useSelectionState();
+  const { selection, ensureType, toggle, setGroup, removeGroup, clearAll } = useSelectionState();
 
   useEffect(() => {
     let cancelled = false;
@@ -50,28 +50,63 @@ export function FacetsPage() {
   }
 
   return (
-    <Container maxWidth="xl" sx={{ py: 3 }}>
-      <Typography variant="h5" sx={{ mb: 1 }}>Entity Facets</Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-        Click bars to filter. Counts are total mentions (not distinct videos).
-        Selecting a bar in one facet spawns a second facet of the same type —
-        that second facet shows entities that co-occur with the first. Stack
-        more to drill deeper.
-      </Typography>
-      <ChipBar selection={selection} bundle={bundle} onToggle={toggle} onClearAll={clearAll} />
-      <Box sx={{ mt: 1 }}>
-        {bundle.typesInOrder.map((type) => (
-          <FacetGroup
-            key={type}
-            type={type}
-            selection={selection}
-            bundle={bundle}
-            onToggle={toggle}
-            onRemoveSlot={removeGroup}
-            onEnsureType={ensureType}
-          />
-        ))}
+    <Container maxWidth="xl" sx={{ py: 1.5 }}>
+      <Box sx={{ display: "flex", alignItems: "baseline", gap: 1.5, mb: 0.5 }}>
+        <Typography variant="h6" sx={{ m: 0 }}>Entity Facets</Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.4 }}>
+          click a bar to filter · select one to spawn a co-occurrence slot · drag on time charts to brush
+        </Typography>
       </Box>
+      <ChipBar selection={selection} bundle={bundle} onToggle={toggle} onClearAll={clearAll} />
+      {(() => {
+        const TIME_GROUP = new Set([
+          "decade", "year", "specific_month", "specific_week",
+          "time_of_day", "specific_date_time",
+        ]);
+        const timeTypes = bundle.typesInOrder.filter((t) => TIME_GROUP.has(t));
+        const otherTypes = bundle.typesInOrder.filter((t) => !TIME_GROUP.has(t));
+        return (
+          <>
+            {timeTypes.length > 0 && (
+              <Box
+                sx={{
+                  mt: 0.5,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                  gap: 1,
+                }}
+              >
+                {timeTypes.map((type) => (
+                  <FacetGroup
+                    key={type}
+                    type={type}
+                    selection={selection}
+                    bundle={bundle}
+                    onToggle={toggle}
+                    onSetGroup={setGroup}
+                    onRemoveSlot={removeGroup}
+                    onEnsureType={ensureType}
+                  />
+                ))}
+              </Box>
+            )}
+            <Box sx={{ mt: 0.5 }}>
+              {otherTypes.map((type) => (
+                <FacetGroup
+                  key={type}
+                  type={type}
+                  selection={selection}
+                  bundle={bundle}
+                  onToggle={toggle}
+                  onSetGroup={setGroup}
+                  onRemoveSlot={removeGroup}
+                  onEnsureType={ensureType}
+                />
+              ))}
+            </Box>
+          </>
+        );
+      })()}
       <Box sx={{ mt: 2 }}>
         <SimpleVideoTable rows={activeRows} title={activeRows.length + " videos match"} />
       </Box>
