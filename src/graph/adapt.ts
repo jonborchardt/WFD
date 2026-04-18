@@ -30,6 +30,7 @@ import type {
   PersistedEntities,
 } from "../entities/index.js";
 import type { PersistedRelations } from "../relations/index.js";
+import type { PersistedDerivedDates } from "../date_normalize/types.js";
 import { type AliasMap, resolveKey } from "./canonicalize.js";
 
 function entityIdFor(
@@ -53,17 +54,22 @@ function mentionToSpan(m: EntityMention): TranscriptSpan {
 
 // Convert a PersistedEntities payload into graph-ready Entity records
 // plus a mention-id → entity-id map so the relation adapter can
-// rewrite endpoints.
+// rewrite endpoints. If a derived-dates payload is supplied, its
+// mentions are merged in alongside the GLiNER output so the graph sees
+// time_of_day / year / decade / ... entities too.
 export function persistedEntitiesToGraph(
   persisted: PersistedEntities,
   aliases?: AliasMap,
+  derived?: PersistedDerivedDates | null,
 ): {
   entities: Entity[];
   mentionToEntityId: Map<string, string>;
 } {
   const byId = new Map<string, Entity>();
   const mentionToEntityId = new Map<string, string>();
-  for (const m of persisted.mentions) {
+  const all: EntityMention[] = [...persisted.mentions];
+  if (derived) all.push(...derived.mentions);
+  for (const m of all) {
     const id = entityIdFor(m.label, m.canonical, aliases);
     mentionToEntityId.set(m.id, id);
     const existing = byId.get(id);
@@ -125,11 +131,13 @@ export function persistedRelationsToGraph(
 
 // Convenience: adapt both persisted payloads in one call. Accepts null
 // for either side and returns empty arrays in that case, which is the
-// behaviour the UI server and indexes stage want.
+// behaviour the UI server and indexes stage want. If a derived-dates
+// payload is supplied, its mentions are folded into the entity set.
 export function neuralToGraph(
   persistedEntities: PersistedEntities | null,
   persistedRelations: PersistedRelations | null,
   aliases?: AliasMap,
+  derivedDates?: PersistedDerivedDates | null,
 ): { entities: Entity[]; relationships: Relationship[] } {
   if (!persistedEntities) {
     return { entities: [], relationships: [] };
@@ -137,6 +145,7 @@ export function neuralToGraph(
   const { entities, mentionToEntityId } = persistedEntitiesToGraph(
     persistedEntities,
     aliases,
+    derivedDates ?? null,
   );
   const relationships = persistedRelations
     ? persistedRelationsToGraph(persistedRelations, mentionToEntityId)

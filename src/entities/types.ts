@@ -25,7 +25,13 @@ export type EntityLabel =
   | "law_or_policy"
   | "ideology"
   | "nationality_or_ethnicity"
-  | "quantity";
+  | "quantity"
+  | "time_of_day"
+  | "specific_date_time"
+  | "specific_week"
+  | "specific_month"
+  | "year"
+  | "decade";
 
 // Transcript shape we consume. Matches src/nlp/entities.ts Transcript
 // structurally so callers can pass either interchangeably during the
@@ -62,6 +68,10 @@ export interface EntityMention {
   canonical: string;        // chosen canonical form within this transcript
   span: EntitySpan;
   score: number;            // GLiNER confidence, 0..1
+  // Set only for mentions produced by the date-normalize stage. Points
+  // at the source date_time mention id (e.g. "m_0012"). GLiNER output
+  // never sets this field.
+  derivedFrom?: string;
 }
 
 // The on-disk format written to data/entities/<videoId>.json.

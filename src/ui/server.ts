@@ -41,6 +41,7 @@ import {
   readPersistedRelations,
   type PersistedRelations,
 } from "../relations/index.js";
+import { readPersistedDerivedDates } from "../date_normalize/index.js";
 import {
   filterRows as qFilterRows,
   augmentWithEntityMatches,
@@ -177,9 +178,12 @@ function computeNlp(row: CatalogRow, dataDir?: string): NlpResult | null {
   const persistedEntities = readPersistedEntities(row.videoId, root);
   if (!persistedEntities) return null;
   const persistedRelations = readPersistedRelations(row.videoId, root);
+  const derivedDates = readPersistedDerivedDates(row.videoId, root);
   const { entities, relationships } = neuralToGraph(
     persistedEntities,
     persistedRelations,
+    undefined,
+    derivedDates,
   );
   const result: NlpResult = { entities, relationships };
   nlpCache.set(row.videoId, result);

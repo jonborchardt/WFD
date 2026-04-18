@@ -21,6 +21,12 @@ export const ENTITY_TYPE_HEX: Record<string, string> = {
   technology: "#26c6da",
   nationality_or_ethnicity: "#9ccc65",
   law_or_policy: "#ffca28",
+  time_of_day: "#90a4ae",
+  specific_date_time: "#9e9e9e",
+  specific_week: "#bdbdbd",
+  specific_month: "#cfd8dc",
+  year: "#b0bec5",
+  decade: "#78909c",
 };
 
 export interface EdgeGradient {
