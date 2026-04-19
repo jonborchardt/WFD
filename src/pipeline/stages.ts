@@ -30,6 +30,10 @@ import {
   type Transcript,
 } from "../entities/index.js";
 import { readPersistedRelations, runRelationsStage } from "../relations/index.js";
+import {
+  readPersistedDerivedDates,
+  runDateNormalizeStage,
+} from "../date_normalize/index.js";
 import { neuralToGraph } from "../graph/adapt.js";
 import {
   buildCorpusEntities,
@@ -138,6 +142,46 @@ export const entitiesStage: VideoStage = {
     return {
       kind: "ok",
       notes: `${persisted.mentions.length} mentions · ${entities.length} entities`,
+    };
+  },
+};
+
+// Normalize GLiNER date_time mentions into derived entity types
+// (time_of_day / specific_date_time / specific_week / specific_month /
+// year / decade). Purely derivational — no model call, no transcript
+// read. Output goes to data/date-normalize/<id>.json as a sidecar;
+// the entities file is never mutated.
+export const dateNormalizeStage: VideoStage = {
+  name: "date-normalize",
+  dependsOn: ["entities"],
+  async run(row, ctx): Promise<StageOutcome> {
+    const outcome = await runDateNormalizeStage(
+      { videoId: row.videoId },
+      { dataDir: ctx.dataDir },
+    );
+    if (outcome.kind === "skip") {
+      return { kind: "skip", reason: outcome.reason ?? "date-normalize skipped" };
+    }
+
+    const derived = readPersistedDerivedDates(row.videoId, ctx.dataDir);
+    if (!derived) {
+      return { kind: "skip", reason: "derived-dates output not persisted" };
+    }
+
+    // AI bundle was built against the prior entity set.
+    invalidateAiArtifacts(row.videoId, ctx.dataDir);
+
+    // Do NOT upsert derived entities into graph.json here. The
+    // propagation / contradictions / novel graph stages only care about
+    // relationships (derived entities are never relation endpoints),
+    // and the indexes stage rebuilds entity-index.json from per-video
+    // files directly. Writing 55+ MB of graph.json for every mention
+    // would dominate pipeline runtime with no downstream consumer.
+    ctx.catalog.markGraphDirty();
+
+    return {
+      kind: "ok",
+      notes: `${derived.mentions.length} derived mentions`,
     };
   },
 };
@@ -380,10 +424,12 @@ export const indexesStage: GraphStage = {
         row.videoId,
         ctx.dataDir,
       );
+      const derivedDates = readPersistedDerivedDates(row.videoId, ctx.dataDir);
       const { entities, relationships } = neuralToGraph(
         persistedEntities,
         persistedRelations,
         aliases,
+        derivedDates,
       );
       processed += 1;
       const entById = new Map(entities.map((e) => [e.id, e]));
@@ -475,6 +521,7 @@ export const novelStage: GraphStage = {
 export const DEFAULT_VIDEO_STAGES: VideoStage[] = [
   fetchedStage,
   entitiesStage,
+  dateNormalizeStage,
   relationsStage,
   aiStage,
   perClaimStage,

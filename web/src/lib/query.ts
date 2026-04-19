@@ -1,6 +1,7 @@
 // Port of src/ui/query.js — pure filter/sort/paginate logic.
 
 import type { VideoRow, EntityIndexEntry, EntityVideosIndex } from "../types";
+import { isVisibleType } from "./entity-visibility";
 
 export interface ListQuery {
   channel?: string;
@@ -90,7 +91,7 @@ export function searchEntityIndex(
   opts: { q?: string; type?: string; limit?: number },
 ): EntityIndexEntry[] {
   const needle = (opts.q || "").trim().toLowerCase();
-  let out = index;
+  let out = index.filter((e) => isVisibleType(e.type));
   if (opts.type) out = out.filter((e) => e.type === opts.type);
   if (needle) out = out.filter((e) => e.canonical.toLowerCase().includes(needle));
   out = out.slice().sort((a, b) => {

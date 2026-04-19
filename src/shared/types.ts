@@ -32,7 +32,15 @@ export type EntityLabel =
   | "law_or_policy"
   | "ideology"
   | "nationality_or_ethnicity"
-  | "quantity";
+  | "quantity"
+  // Derived from date_time mentions by the date-normalize stage. Not
+  // GLiNER labels; never sent to the sidecar. See src/date_normalize/.
+  | "time_of_day"
+  | "specific_date_time"
+  | "specific_week"
+  | "specific_month"
+  | "year"
+  | "decade";
 
 export interface Entity {
   id: string;

@@ -58,11 +58,7 @@ export default defineConfig({
         target: "http://localhost:4173",
         changeOrigin: true,
       },
-      "/admin/video": {
-        target: "http://localhost:4173",
-        changeOrigin: true,
-      },
-      "/admin/aliases": {
+      "/admin": {
         target: "http://localhost:4173",
         changeOrigin: true,
       },

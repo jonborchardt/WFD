@@ -8,10 +8,11 @@ import type ELKCtor from "elkjs/lib/elk.bundled.js";
 type ELKInstance = InstanceType<typeof ELKCtor>;
 type ElkLayoutResult = Awaited<ReturnType<ELKInstance["layout"]>>;
 import {
-  Box, Paper, TextField, Typography, Chip, MenuItem, Button, CircularProgress,
+  Box, Paper, TextField, Typography, Chip, MenuItem, Button, CircularProgress, Collapse,
 } from "@mui/material";
 import { fetchRelationshipsGraph } from "../lib/data";
 import { graphNodeIssueUrl, graphEdgeIssueUrl } from "../lib/issues";
+import { EntityMenuButton } from "../components/EntityMenu";
 import {
   buildIndex, searchNodes, getNeighbors, getConnections, type GraphIndex,
 } from "../lib/graph-index";
@@ -20,6 +21,7 @@ import {
   circularLayout, radialLayout, type Positions,
 } from "../lib/graph-layouts";
 import { buildRenderData, ENTITY_TYPE_HEX } from "../lib/graph-render";
+import { isVisibleType } from "../lib/entity-visibility";
 import type { GraphNode, GraphEdge } from "../types";
 
 // Union type for the dynamically-imported reactflow module
@@ -37,6 +39,9 @@ export function RelationshipsPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedEdgeId, setSelectedEdgeId] = useState<string | null>(null);
   const [layoutAlgo, setLayoutAlgo] = useState("stress");
+  const [showSeeds, setShowSeeds] = useState(true);
+  const [showKey, setShowKey] = useState(false);
+  const [showLayout, setShowLayout] = useState(false);
   const rfInstance = useRef<ReactFlowInstance | null>(null);
   const relayoutRef = useRef<() => void>(() => {});
 
@@ -205,6 +210,16 @@ export function RelationshipsPage() {
     if (flowLib && nodeMap.current.size > 0) relayout();
   }, [flowLib, relayout]);
 
+  const didAutoSeed = useRef(false);
+  useEffect(() => {
+    if (didAutoSeed.current) return;
+    if (!graphIndex || !flowLib) return;
+    const def = graphIndex.nodes.get("facility:goat lab");
+    if (!def) return;
+    didAutoSeed.current = true;
+    addSeed(def);
+  }, [graphIndex, flowLib, addSeed]);
+
   const { rfNodes, rfEdges, gradients } = useMemo(
     () => buildRenderData(nodeMap.current, edgeMap.current, positions.current, seeds.current, selectedId),
     [revision, selectedId],
@@ -296,48 +311,88 @@ export function RelationshipsPage() {
           </Box>
         )}
         {seeds.current.size > 0 && (
-          <Box sx={{ mt: 1.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-            {[...seeds.current].map((id) => {
-              const n = nodeMap.current.get(id);
-              if (!n) return null;
-              return (
-                <Chip
-                  key={id}
-                  label={n.canonical}
-                  size="small"
-                  onDelete={() => removeNode(id)}
-                  onClick={() => focusNode(id)}
-                  sx={{ bgcolor: ENTITY_TYPE_HEX[n.type] || "#888", color: "#000", fontWeight: 600, "& .MuiChip-deleteIcon": { color: "rgba(0,0,0,0.5)" } }}
-                />
-              );
-            })}
-            <Chip label="clear all" size="small" variant="outlined" onClick={clearAll} sx={{ borderStyle: "dashed" }} />
+          <Box sx={{ mt: 1.5 }}>
+            <Box
+              onClick={() => setShowSeeds((v) => !v)}
+              sx={{ display: "flex", alignItems: "center", gap: 0.5, cursor: "pointer", userSelect: "none", color: "text.secondary", "&:hover": { color: "text.primary" } }}
+            >
+              <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                {showSeeds ? "▾" : "▸"} seeds ({seeds.current.size})
+              </Typography>
+            </Box>
+            <Collapse in={showSeeds}>
+              <Box sx={{ mt: 0.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                {[...seeds.current].map((id) => {
+                  const n = nodeMap.current.get(id);
+                  if (!n) return null;
+                  return (
+                    <Chip
+                      key={id}
+                      label={n.canonical}
+                      size="small"
+                      onDelete={() => removeNode(id)}
+                      onClick={() => focusNode(id)}
+                      sx={{ bgcolor: ENTITY_TYPE_HEX[n.type] || "#888", color: "#000", fontWeight: 600, "& .MuiChip-deleteIcon": { color: "rgba(0,0,0,0.5)" } }}
+                    />
+                  );
+                })}
+                <Chip label="clear all" size="small" variant="outlined" onClick={clearAll} sx={{ borderStyle: "dashed" }} />
+              </Box>
+            </Collapse>
           </Box>
         )}
-        <Box sx={{ mt: 1.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-          {Object.entries(ENTITY_TYPE_HEX).map(([t, c]) => (
-            <Box key={t} sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-              <Box sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: c }} />
-              <Typography variant="caption">{t}</Typography>
+        <Box sx={{ mt: 1.5 }}>
+          <Box
+            onClick={() => setShowKey((v) => !v)}
+            sx={{ display: "flex", alignItems: "center", gap: 0.5, cursor: "pointer", userSelect: "none", color: "text.secondary", "&:hover": { color: "text.primary" } }}
+          >
+            <Typography variant="caption" sx={{ fontWeight: 600 }}>
+              {showKey ? "▾" : "▸"} key
+            </Typography>
+          </Box>
+          <Collapse in={showKey}>
+            <Box sx={{ mt: 0.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+              {Object.entries(ENTITY_TYPE_HEX)
+                .filter(([t]) => isVisibleType(t))
+                .map(([t, c]) => (
+                  <Box key={t} sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                    <Box sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: c }} />
+                    <Typography variant="caption">{t}</Typography>
+                  </Box>
+                ))}
             </Box>
-          ))}
+          </Collapse>
         </Box>
-        <TextField
-          select
-          size="small"
-          label="layout"
-          value={layoutAlgo}
-          onChange={(e) => setLayoutAlgo(e.target.value)}
-          sx={{ mt: 1.5, minWidth: 140 }}
-        >
-          <MenuItem value="stress">Stress (neato)</MenuItem>
-          <MenuItem value="radial">Radial (twopi)</MenuItem>
-          <MenuItem value="circular">Circular (circo)</MenuItem>
-          <MenuItem value="force">Force</MenuItem>
-        </TextField>
-        <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
-          {rfNodes.length} nodes · {rfEdges.length} edges visible
-        </Typography>
+        <Box sx={{ mt: 1.5 }}>
+          <Box
+            onClick={() => setShowLayout((v) => !v)}
+            sx={{ display: "flex", alignItems: "center", gap: 0.5, cursor: "pointer", userSelect: "none", color: "text.secondary", "&:hover": { color: "text.primary" } }}
+          >
+            <Typography variant="caption" sx={{ fontWeight: 600 }}>
+              {showLayout ? "▾" : "▸"} layout & options
+            </Typography>
+          </Box>
+          <Collapse in={showLayout}>
+            <Box sx={{ mt: 0.5 }}>
+              <TextField
+                select
+                size="small"
+                label="layout"
+                value={layoutAlgo}
+                onChange={(e) => setLayoutAlgo(e.target.value)}
+                sx={{ minWidth: 140 }}
+              >
+                <MenuItem value="stress">Stress (neato)</MenuItem>
+                <MenuItem value="radial">Radial (twopi)</MenuItem>
+                <MenuItem value="circular">Circular (circo)</MenuItem>
+                <MenuItem value="force">Force</MenuItem>
+              </TextField>
+              <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
+                {rfNodes.length} nodes · {rfEdges.length} edges visible
+              </Typography>
+            </Box>
+          </Collapse>
+        </Box>
       </Paper>
 
       {!hasNodes && (
@@ -410,6 +465,13 @@ export function RelationshipsPage() {
                 <Button size="small" variant="outlined" component="a" href={graphNodeIssueUrl(selNode)} target="_blank" rel="noopener">
                   create issue for this node
                 </Button>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, pt: 0.5, borderTop: 1, borderColor: "divider" }}>
+                  <Typography variant="caption" color="text.secondary">edit this entity:</Typography>
+                  <EntityMenuButton
+                    entity={{ key: selNode.id, canonical: selNode.canonical, label: selNode.type }}
+                    where="/relationships"
+                  />
+                </Box>
               </Box>
             </>
           )}

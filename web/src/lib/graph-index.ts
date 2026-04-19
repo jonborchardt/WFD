@@ -3,6 +3,7 @@
 // provided — same semantics, runs in-browser.
 
 import type { GraphNode, GraphEdge } from "../types";
+import { isVisibleType } from "./entity-visibility";
 
 export interface GraphIndex {
   nodes: Map<string, GraphNode>;
@@ -11,9 +12,11 @@ export interface GraphIndex {
 }
 
 export function buildIndex(nodes: GraphNode[], edges: GraphEdge[]): GraphIndex {
-  const nodeMap = new Map(nodes.map((n) => [n.id, n]));
+  const visible = nodes.filter((n) => isVisibleType(n.type));
+  const nodeMap = new Map(visible.map((n) => [n.id, n]));
+  const keptEdges = edges.filter((e) => nodeMap.has(e.source) && nodeMap.has(e.target));
   const adj = new Map<string, GraphEdge[]>();
-  for (const e of edges) {
+  for (const e of keptEdges) {
     let arr = adj.get(e.source);
     if (!arr) { arr = []; adj.set(e.source, arr); }
     arr.push(e);
@@ -21,7 +24,7 @@ export function buildIndex(nodes: GraphNode[], edges: GraphEdge[]): GraphIndex {
     if (!arr) { arr = []; adj.set(e.target, arr); }
     arr.push(e);
   }
-  return { nodes: nodeMap, edges, adjEdges: adj };
+  return { nodes: nodeMap, edges: keptEdges, adjEdges: adj };
 }
 
 export function searchNodes(index: GraphIndex, q: string, limit: number): GraphNode[] {

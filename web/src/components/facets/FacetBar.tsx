@@ -1,5 +1,6 @@
 import { Box, Typography, IconButton, Tooltip, Autocomplete, TextField } from "@mui/material";
 import type { FacetRow } from "./duck";
+import { EntityMenuButton } from "../EntityMenu";
 
 export interface SearchOption {
   entityId: string;
@@ -32,17 +33,18 @@ function Bar({ row, selected, scale, onClick, type }: BarProps) {
     <Box
       onClick={onClick}
       sx={{
-        display: "flex", alignItems: "center", gap: 1, px: 1, py: 0.25,
-        cursor: "pointer", borderRadius: 1,
+        display: "flex", alignItems: "center", gap: 0.75, px: 0.5, py: 0,
+        cursor: "pointer", borderRadius: 0.5,
         bgcolor: selected ? "action.selected" : "transparent",
         "&:hover": { bgcolor: "action.hover" },
         opacity: row.total === 0 && !selected ? 0.5 : 1,
+        minHeight: 18,
       }}
     >
-      <Box sx={{ width: 140, minWidth: 140, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontSize: 12 }}>
+      <Box sx={{ width: 120, minWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontSize: 11, lineHeight: 1.2 }}>
         {row.canonical}
       </Box>
-      <Box sx={{ flexGrow: 1, height: 14, bgcolor: "action.disabledBackground", borderRadius: 0.5, position: "relative" }}>
+      <Box sx={{ flexGrow: 1, height: 10, bgcolor: "action.disabledBackground", borderRadius: 0.5, position: "relative" }}>
         <Box sx={{
           position: "absolute", left: 0, top: 0, bottom: 0,
           width: width + "%",
@@ -50,8 +52,17 @@ function Bar({ row, selected, scale, onClick, type }: BarProps) {
           borderRadius: 0.5,
         }} />
       </Box>
-      <Box sx={{ width: 48, textAlign: "right", fontSize: 11, color: "text.secondary", fontVariantNumeric: "tabular-nums" }}>
+      <Box sx={{ width: 40, textAlign: "right", fontSize: 10, color: "text.secondary", fontVariantNumeric: "tabular-nums" }}>
         {row.total.toLocaleString()}
+      </Box>
+      <Box
+        sx={{ width: 20, flexShrink: 0 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <EntityMenuButton
+          entity={{ key: row.entityId, canonical: row.canonical, label: type }}
+          where="/facets"
+        />
       </Box>
     </Box>
   );
@@ -72,13 +83,13 @@ interface FacetBarProps {
 
 export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggle, onRemove, removable, searchOptions }: FacetBarProps) {
   return (
-    <Box sx={{ border: 1, borderColor: "divider", borderRadius: 1, p: 1, width: 320, minWidth: 320 }}>
-      <Box sx={{ display: "flex", alignItems: "center", mb: 0.5 }}>
-        <Typography variant="caption" sx={{ flexGrow: 1, textTransform: "uppercase", color: "text.secondary" }}>{title}</Typography>
+    <Box sx={{ border: 1, borderColor: "divider", borderRadius: 0.5, p: 0.5, width: 300, minWidth: 300 }}>
+      <Box sx={{ display: "flex", alignItems: "center", mb: 0.25, minHeight: 18 }}>
+        <Typography variant="caption" sx={{ flexGrow: 1, textTransform: "uppercase", color: "text.secondary", fontSize: 10, lineHeight: 1 }}>{title}</Typography>
         {removable && (
           <Tooltip title="remove this facet">
-            <IconButton size="small" onClick={onRemove} sx={{ p: 0.25 }}>
-              <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
+            <IconButton size="small" onClick={onRemove} sx={{ p: 0, width: 16, height: 16 }}>
+              <span style={{ fontSize: 13, lineHeight: 1 }}>×</span>
             </IconButton>
           </Tooltip>
         )}
@@ -93,7 +104,7 @@ export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggl
         clearOnBlur
         onChange={(_: unknown, val: SearchOption | null) => { if (val) onToggle(val.entityId); }}
         renderOption={(props: React.HTMLAttributes<HTMLLIElement>, option: SearchOption) => (
-          <Box component="li" {...props} sx={{ display: "flex", justifyContent: "space-between", fontSize: 12 }}>
+          <Box component="li" {...props} sx={{ display: "flex", justifyContent: "space-between", fontSize: 11, py: 0.25 }}>
             <span>{option.canonical}</span>
             <span style={{ color: "#999", marginLeft: 8, fontVariantNumeric: "tabular-nums" }}>{option.mentions.toLocaleString()}</span>
           </Box>
@@ -101,17 +112,22 @@ export function FacetBar({ title, type, top, pinned, selected, maxTotal, onToggl
         renderInput={(params) => (
           <TextField {...params} placeholder={"search " + type + "…"} variant="outlined" />
         )}
-        sx={{ mb: 0.5, "& .MuiInputBase-root": { fontSize: 12, py: 0 } }}
+        sx={{
+          mb: 0.25,
+          "& .MuiInputBase-root": { fontSize: 11, py: 0, minHeight: 26 },
+          "& .MuiOutlinedInput-root": { py: 0 },
+          "& .MuiAutocomplete-input": { py: "2px !important" },
+        }}
       />
       {pinned.length > 0 && (
-        <Box sx={{ borderBottom: 1, borderColor: "divider", pb: 0.5, mb: 0.5 }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider", pb: 0.25, mb: 0.25 }}>
           {pinned.map((r) => (
             <Bar key={r.entityId} row={r} type={type} selected={selected.has(r.entityId)} scale={maxTotal} onClick={() => onToggle(r.entityId)} />
           ))}
         </Box>
       )}
       {top.length === 0 && pinned.length === 0 && (
-        <Typography variant="caption" color="text.secondary" sx={{ px: 1 }}>no {type} entities in current filter</Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ px: 0.5, fontSize: 10 }}>no {type} entities in current filter</Typography>
       )}
       {top.map((r) => (
         <Bar key={r.entityId} row={r} type={type} selected={selected.has(r.entityId)} scale={maxTotal} onClick={() => onToggle(r.entityId)} />

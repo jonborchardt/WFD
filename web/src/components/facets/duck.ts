@@ -3,6 +3,7 @@
 
 import type { VideoRow } from "../../types";
 import { fetchCatalog, fetchEntityIndex, fetchEntityVideos } from "../../lib/data";
+import { isVisibleType } from "../../lib/entity-visibility";
 
 export interface EntityMeta {
   id: string;
@@ -86,6 +87,7 @@ export function loadFacetData(): Promise<FacetBundle> {
     }
 
     const typesInOrder = [...typeTotals.entries()]
+      .filter(([t]) => isVisibleType(t))
       .sort((a, b) => b[1] - a[1])
       .map(([t]) => t);
 

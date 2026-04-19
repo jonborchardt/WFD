@@ -28,6 +28,7 @@ export type CatalogStatus =
 export type StageName =
   | "fetched"
   | "entities"
+  | "date-normalize"
   | "relations"
   | "ai"
   | "per-claim";

@@ -76,7 +76,26 @@ export const CATALOG_COLUMNS: CatalogColumn[] = [
 
 // --- Admin-only columns (pipeline stage status) ---
 
-const PIPELINE_STAGES = ["fetched", "entities", "relations", "ai", "per-claim"];
+// Display order in the admin table. `ai` comes after `per-claim`.
+const DISPLAY_STAGES = ["fetched", "entities", "relations", "per-claim", "ai"];
+
+// Actual dependency graph: ai and per-claim are parallel siblings after relations.
+const STAGE_PREREQS: Record<string, string[]> = {
+  fetched: [],
+  entities: ["fetched"],
+  relations: ["fetched", "entities"],
+  ai: ["fetched", "entities", "relations"],
+  "per-claim": ["fetched", "entities", "relations"],
+};
+
+// Only `ai` is visible by default; the rest can be enabled via column menu.
+const STAGE_DEFAULT_VISIBLE: Record<string, boolean> = {
+  fetched: false,
+  entities: false,
+  relations: false,
+  "per-claim": false,
+  ai: true,
+};
 
 function stageCellFor(stageName: string) {
   return (r: VideoRow) => {
@@ -84,8 +103,7 @@ function stageCellFor(stageName: string) {
     if (stages[stageName]) {
       return <Chip size="small" color="success" label="pass" />;
     }
-    const idx = PIPELINE_STAGES.indexOf(stageName);
-    const priorAllPass = PIPELINE_STAGES.slice(0, idx).every((s) => stages[s]);
+    const priorAllPass = (STAGE_PREREQS[stageName] || []).every((s) => stages[s]);
     const hasError = r.status === "failed-retryable" || r.status === "failed-needs-user" || !!r.lastError;
     if (priorAllPass && hasError) {
       const reason = r.errorReason || r.lastError || "failed";
@@ -99,10 +117,10 @@ function stageCellFor(stageName: string) {
   };
 }
 
-const STAGE_COLUMNS: CatalogColumn[] = PIPELINE_STAGES.map((s) => ({
+const STAGE_COLUMNS: CatalogColumn[] = DISPLAY_STAGES.map((s) => ({
   key: "stage:" + s,
   label: s,
-  default: true,
+  default: STAGE_DEFAULT_VISIBLE[s] ?? false,
   render: stageCellFor(s),
 }));
 

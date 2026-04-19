@@ -12,6 +12,7 @@ import { EntityLabel } from "./types.js";
 
 export interface LoadedConfig {
   labels: EntityLabel[];
+  hiddenLabels: EntityLabel[];
   gliner: {
     modelId: string;
     minScore: number;
@@ -47,6 +48,7 @@ const DEFAULT: LoadedConfig = {
     "nationality_or_ethnicity",
     "quantity",
   ],
+  hiddenLabels: ["quantity"],
   gliner: {
     modelId: "urchade/gliner_large-v2.1",
     minScore: 0.5,
@@ -78,10 +80,9 @@ export function loadConfig(repoRoot: string = process.cwd()): LoadedConfig {
   const labelsFile = readJson(resolve(repoRoot, "config/entity-labels.json"));
   const modelsFile = readJson(resolve(repoRoot, "config/models.json"));
 
-  const labels =
-    labelsFile && Array.isArray(labelsFile.labels)
-      ? (labelsFile.labels as EntityLabel[])
-      : DEFAULT.labels;
+  const parsed = parseLabelEntries(labelsFile?.labels);
+  const labels = parsed ? parsed.labels : DEFAULT.labels;
+  const hiddenLabels = parsed ? parsed.hiddenLabels : DEFAULT.hiddenLabels;
 
   const gliner = {
     ...DEFAULT.gliner,
@@ -96,5 +97,26 @@ export function loadConfig(repoRoot: string = process.cwd()): LoadedConfig {
     ...((modelsFile?.coref as Partial<LoadedConfig["coref"]>) ?? {}),
   };
 
-  return { labels, gliner, glirel, coref };
+  return { labels, hiddenLabels, gliner, glirel, coref };
+}
+
+// config/entity-labels.json now holds `{ name, hidden? }` objects. A hidden
+// label is still passed to GLiNER (so it can still be the object of a
+// relationship like `works_for → "5 million"`), but the UI hides it from
+// facets, search, graph, and per-video entity lists.
+function parseLabelEntries(raw: unknown):
+  | { labels: EntityLabel[]; hiddenLabels: EntityLabel[] }
+  | null {
+  if (!Array.isArray(raw)) return null;
+  const labels: EntityLabel[] = [];
+  const hiddenLabels: EntityLabel[] = [];
+  for (const entry of raw) {
+    if (typeof entry !== "object" || entry === null) return null;
+    const obj = entry as { name?: unknown; hidden?: unknown };
+    if (typeof obj.name !== "string") return null;
+    const name = obj.name as EntityLabel;
+    labels.push(name);
+    if (obj.hidden === true) hiddenLabels.push(name);
+  }
+  return { labels, hiddenLabels };
 }

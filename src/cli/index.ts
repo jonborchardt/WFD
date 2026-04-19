@@ -41,6 +41,7 @@ import { Ingester } from "../ingest/ingester.js";
 import { runPipeline } from "../pipeline/run.js";
 import { runEntitiesStage } from "../entities/index.js";
 import { runRelationsStage } from "../relations/index.js";
+import { runDateNormalizeStage } from "../date_normalize/index.js";
 
 function dataDir(): string {
   return process.env.CAPTIONS_DATA_DIR
@@ -71,6 +72,8 @@ function usage(): void {
       "  delete --stage <name> [--video <id>] [--dry-run]",
       "                             clear a stage from catalog rows so it re-runs",
       "  entities --video <id>      run the new neural entities stage (parallel output)",
+      "  date-normalize --video <id>",
+      "                             derive time_of_day/year/decade/... entities from date_time mentions",
       "  relations --video <id>     run the new neural relations stage (depends on entities output)",
       "  neural --video <id>        run entities + relations in sequence",
       "",
@@ -327,6 +330,49 @@ async function cmdEntities(flags: Parsed["flags"]): Promise<number> {
   }
   console.log(`--  ${videoId}  ${outcome.reason ?? "skipped"}`);
   return 1;
+}
+
+// Derives additional entities (time_of_day / year / decade / ...) from
+// the date_time mentions produced by `captions entities`. Writes a
+// sidecar at data/date-normalize/<id>.json. The entities file is not
+// modified — the graph adapter merges the sidecar at graph-build time.
+//
+// No --video → iterate every catalog row that has entities output. The
+// pass is pure JSON work (no model spawn), so whole-corpus is cheap.
+async function cmdDateNormalize(flags: Parsed["flags"]): Promise<number> {
+  const videoId = typeof flags.video === "string" ? flags.video : undefined;
+  const dir = dataDir();
+  const catalog = catalogFromDataDir(dir);
+  const rows = videoId
+    ? catalog.all().filter((r) => r.videoId === videoId)
+    : catalog.all();
+  if (videoId && rows.length === 0) {
+    console.error(`captions date-normalize: no catalog row for ${videoId}`);
+    return 1;
+  }
+
+  let ok = 0;
+  let skipped = 0;
+  for (const row of rows) {
+    const outcome = await runDateNormalizeStage(
+      { videoId: row.videoId },
+      { dataDir: dir },
+    );
+    if (outcome.kind === "ok") {
+      console.log(`ok  ${row.videoId}  ${outcome.notes ?? ""}`);
+      ok += 1;
+    } else {
+      console.log(`--  ${row.videoId}  ${outcome.reason ?? "skipped"}`);
+      skipped += 1;
+    }
+  }
+  // Only bump the graph watermark — don't upsert into graph.json here.
+  // The indexes stage rebuilds entity-index.json / entity-videos.json
+  // from per-video files on disk, not from graph.json, and upserting
+  // thousands of entities rewrites the 50+ MB graph.json on every call.
+  if (ok > 0) catalog.markGraphDirty();
+  console.log(`\ndate-normalize: ok=${ok} skipped=${skipped} total=${rows.length}`);
+  return 0;
 }
 
 // Commit 2: scoring pass. Runs the neural relations stage for one video
@@ -649,6 +695,9 @@ async function main(): Promise<void> {
       break;
     case "entities":
       code = await cmdEntities(parsed.flags);
+      break;
+    case "date-normalize":
+      code = await cmdDateNormalize(parsed.flags);
       break;
     case "relations":
       code = await cmdRelations(parsed.flags);

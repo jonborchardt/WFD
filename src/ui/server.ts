@@ -32,6 +32,10 @@ import {
   writeAliases,
   notSameKey,
   isSentinel,
+  isHidden,
+  resolveKey,
+  entityKeyOf,
+  SENTINEL_HIDDEN,
 } from "../graph/canonicalize.js";
 import {
   readPersistedEntities,
@@ -41,6 +45,7 @@ import {
   readPersistedRelations,
   type PersistedRelations,
 } from "../relations/index.js";
+import { readPersistedDerivedDates } from "../date_normalize/index.js";
 import {
   filterRows as qFilterRows,
   augmentWithEntityMatches,
@@ -177,9 +182,12 @@ function computeNlp(row: CatalogRow, dataDir?: string): NlpResult | null {
   const persistedEntities = readPersistedEntities(row.videoId, root);
   if (!persistedEntities) return null;
   const persistedRelations = readPersistedRelations(row.videoId, root);
+  const derivedDates = readPersistedDerivedDates(row.videoId, root);
   const { entities, relationships } = neuralToGraph(
     persistedEntities,
     persistedRelations,
+    undefined,
+    derivedDates,
   );
   const result: NlpResult = { entities, relationships };
   nlpCache.set(row.videoId, result);
@@ -482,7 +490,7 @@ export function renderListPage(result: ListResult, q: ListQuery): string {
     .map(
       (r) => `
     <tr>
-      <td><a href="/video/${escapeHtml(r.videoId)}">${escapeHtml(r.videoId)}</a></td>
+      <td><a href="/WFD/video/${escapeHtml(r.videoId)}">${escapeHtml(r.videoId)}</a></td>
       <td>${escapeHtml(r.title ?? "")}</td>
       <td>${escapeHtml(r.channel ?? "")}</td>
       <td>${escapeHtml(r.status)}</td>
@@ -577,9 +585,12 @@ export function renderUnifiedVideoAdmin(
     ? neuralEntities.mentions
         .map((m) => {
           const link = `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, m.span.timeStart))}">${formatTime(m.span.timeStart)}</a>`;
+          const entityKey = entityKeyOf(m.label, m.canonical);
+          const canonicalLink = `<a href="/admin/entity/${escapeHtml(encodeURIComponent(entityKey))}">${escapeHtml(m.canonical)}</a>`;
+          const actions = `<span class="entity-actions" data-entity-key="${escapeHtml(entityKey)}" data-entity-label="${escapeHtml(m.label)}" data-entity-canonical="${escapeHtml(m.canonical)}" data-video-id="${escapeHtml(row.videoId)}"><button class="entity-menu-toggle" onclick="openEntityMenu(this)" title="entity actions" style="border:none;background:none;cursor:pointer;padding:0 4px">⋯</button></span>`;
           return `<tr>
             <td>${escapeHtml(m.label)}</td>
-            <td>${escapeHtml(m.canonical)}</td>
+            <td>${canonicalLink} ${actions}</td>
             <td>${escapeHtml(m.surface)}</td>
             <td data-sort-value="${m.score}">${m.score.toFixed(2)}</td>
             <td data-sort-value="${m.span.timeStart}">${link}</td>
@@ -597,12 +608,17 @@ export function renderUnifiedVideoAdmin(
           const subj = mentionById.get(e.subjectMentionId);
           const obj = mentionById.get(e.objectMentionId);
           const link = `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, e.evidence.timeStart))}">${formatTime(e.evidence.timeStart)}</a>`;
+          const subjectKey = subj ? entityKeyOf(subj.label, subj.canonical) : e.subjectMentionId;
+          const objectKey = obj ? entityKeyOf(obj.label, obj.canonical) : e.objectMentionId;
+          const subjectText = subj?.canonical ?? e.subjectMentionId;
+          const objectText = obj?.canonical ?? e.objectMentionId;
+          const relActions = `<span class="relation-actions" data-video-id="${escapeHtml(row.videoId)}" data-subject-key="${escapeHtml(subjectKey)}" data-predicate="${escapeHtml(e.predicate)}" data-object-key="${escapeHtml(objectKey)}" data-time-start="${e.evidence.timeStart}" data-subject-text="${escapeHtml(subjectText)}" data-object-text="${escapeHtml(objectText)}"><button class="rel-menu-toggle" onclick="openRelationMenu(this)" title="relationship actions" style="border:none;background:none;cursor:pointer;padding:0 4px">✎</button></span>`;
           return `<tr>
-            <td>${escapeHtml(subj?.canonical ?? e.subjectMentionId)}</td>
+            <td>${escapeHtml(subjectText)}</td>
             <td>${escapeHtml(e.predicate)}</td>
-            <td>${escapeHtml(obj?.canonical ?? e.objectMentionId)}</td>
+            <td>${escapeHtml(objectText)}</td>
             <td data-sort-value="${e.score}">${e.score.toFixed(2)}</td>
-            <td data-sort-value="${e.evidence.timeStart}">${link}</td>
+            <td data-sort-value="${e.evidence.timeStart}">${link} ${relActions}</td>
           </tr>`;
         })
         .join("")
@@ -648,7 +664,7 @@ export function renderUnifiedVideoAdmin(
     <h1>${escapeHtml(row.title ?? row.videoId)}</h1>
     <p>
       <code>${escapeHtml(row.videoId)}</code> ·
-      <a href="/video/${escapeHtml(row.videoId)}">public video page</a> ·
+      <a href="/WFD/video/${escapeHtml(row.videoId)}">public video page</a> ·
       channel: ${escapeHtml(row.channel ?? "")} ·
       status: ${escapeHtml(row.status)}
     </p>
@@ -800,10 +816,227 @@ const SORTABLE_SCRIPT = `
 })();
 `;
 
+// Shared popover for per-entity actions (hide / merge into… / unhide
+// / unmerge). Any table or list whose rows carry the data attributes
+// `data-entity-key`, `data-entity-label`, and `data-entity-canonical`
+// on a `<span class="entity-actions">` wrapper gets a ⋯ button that
+// opens a small menu. All actions POST to /api/aliases/ and update
+// the DOM in place on success.
+const ENTITY_MENU_SCRIPT = `
+(function(){
+  var openMenu = null;
+  function closeMenu(){ if (openMenu){ openMenu.remove(); openMenu = null; } }
+  document.addEventListener('click', function(e){
+    if (openMenu && !openMenu.contains(e.target) && !e.target.classList.contains('entity-menu-toggle')) {
+      closeMenu();
+    }
+  });
+  async function post(path, params){
+    var r = await fetch(path, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(params).toString(),
+    });
+    return r.json().catch(function(){ return { ok: false }; });
+  }
+  function markActioned(el, text){
+    var wrap = el.closest('.entity-actions') || el;
+    wrap.style.opacity = '0.4';
+    var tag = document.createElement('span');
+    tag.className = 'sub';
+    tag.style.marginLeft = '6px';
+    tag.textContent = text;
+    wrap.appendChild(tag);
+  }
+  window.openEntityMenu = function(btn){
+    closeMenu();
+    var wrap = btn.closest('.entity-actions');
+    var key = wrap.getAttribute('data-entity-key');
+    var label = wrap.getAttribute('data-entity-label');
+    var canonical = wrap.getAttribute('data-entity-canonical');
+    var status = wrap.getAttribute('data-entity-status') || 'active';
+    var menu = document.createElement('div');
+    menu.className = 'entity-menu';
+    menu.style.cssText = 'position:absolute;z-index:1000;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px;min-width:260px;box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:13px';
+    var rect = btn.getBoundingClientRect();
+    menu.style.top = (rect.bottom + window.scrollY + 2) + 'px';
+    menu.style.left = (rect.left + window.scrollX) + 'px';
+    var header = document.createElement('div');
+    header.style.cssText = 'padding:4px 6px;border-bottom:1px solid var(--border);margin-bottom:4px';
+    header.innerHTML = '<strong>' + escapeText(canonical) + '</strong><br><span class="sub">' + escapeText(label) + ' · <code>' + escapeText(key) + '</code></span>';
+    menu.appendChild(header);
+    if (status === 'hidden') {
+      menu.appendChild(actionButton('unhide', function(){
+        post('/api/aliases/unhide', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'unhidden'); });
+      }));
+    } else if (status === 'merged') {
+      menu.appendChild(actionButton('unmerge', function(){
+        post('/api/aliases/unmerge', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'unmerged'); });
+      }));
+      menu.appendChild(actionButton('hide', function(){
+        post('/api/aliases/hide', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'hidden'); });
+      }));
+    } else {
+      var videoId = wrap.getAttribute('data-video-id') || '';
+      menu.appendChild(actionButton('hide entirely', function(){
+        post('/api/aliases/hide', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'hidden'); });
+      }));
+      // Rename display — free-form text, no merge.
+      menu.appendChild(actionButton('rename display…', function(){
+        var v = prompt('Display text for ' + canonical + ' (this key stays the same):', canonical);
+        if (!v || v === canonical) return;
+        post('/api/aliases/display', { key: key, value: v }).then(function(){
+          closeMenu(); markActioned(wrap, 'renamed → "' + v + '"');
+        });
+      }));
+      // Merge-into search input with "+ create new" fallback. If a
+      // videoId is present, add a scope toggle (corpus vs this video).
+      var box = document.createElement('div');
+      box.style.cssText = 'padding:4px 6px;margin-top:4px;border-top:1px solid var(--border)';
+      var lbl = document.createElement('div');
+      lbl.className = 'sub';
+      lbl.textContent = videoId ? 'merge into… (scope below)' : 'merge into…';
+      box.appendChild(lbl);
+      var scope = 'corpus';
+      if (videoId) {
+        var toggleWrap = document.createElement('div');
+        toggleWrap.style.cssText = 'font-size:11px;margin:2px 0';
+        toggleWrap.innerHTML =
+          '<label><input type="radio" name="scope_' + key + '" value="corpus" checked> corpus</label> ' +
+          '<label><input type="radio" name="scope_' + key + '" value="video"> this video only</label>';
+        toggleWrap.addEventListener('change', function(e){
+          scope = e.target.value;
+        });
+        box.appendChild(toggleWrap);
+      }
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = 'search same-label entities, or type a new name';
+      input.style.cssText = 'width:100%;padding:4px;border:1px solid var(--border);border-radius:3px;font-size:13px';
+      box.appendChild(input);
+      var results = document.createElement('div');
+      results.style.cssText = 'max-height:180px;overflow:auto;margin-top:4px';
+      box.appendChild(results);
+      menu.appendChild(box);
+      function doMerge(toKey, displayText) {
+        if (scope === 'video' && videoId) {
+          post('/api/aliases/video-merge', { videoId: videoId, from: key, to: toKey }).then(function(){
+            closeMenu(); markActioned(wrap, 'video merge → ' + displayText);
+          });
+        } else {
+          post('/api/aliases/merge', { from: key, to: toKey }).then(function(){
+            closeMenu(); markActioned(wrap, 'merged → ' + displayText);
+          });
+        }
+      }
+      function doCreatePhantom(name) {
+        // Only corpus scope: per-video merges require an existing target.
+        if (scope === 'video') {
+          alert('Per-video rename needs an existing target entity. Create it at corpus level first.');
+          return;
+        }
+        post('/api/aliases/create-phantom', { label: label, name: name, mergeFrom: key }).then(function(r){
+          closeMenu(); markActioned(wrap, 'merged → "' + name + '" (new)');
+        });
+      }
+      var debounce;
+      input.addEventListener('input', function(){
+        clearTimeout(debounce);
+        debounce = setTimeout(function(){
+          var q = input.value.trim();
+          results.innerHTML = '<div class="sub" style="padding:4px">searching…</div>';
+          fetch('/api/aliases/search?q=' + encodeURIComponent(q) + '&label=' + encodeURIComponent(label))
+            .then(function(r){ return r.json(); })
+            .then(function(data){
+              results.innerHTML = '';
+              var items = (data.results || []).filter(function(r){ return r.key !== key; });
+              var hasExact = items.some(function(r){
+                return r.canonical.toLowerCase() === q.toLowerCase();
+              });
+              items.forEach(function(r){
+                var row = document.createElement('div');
+                row.style.cssText = 'padding:4px 6px;cursor:pointer;border-radius:3px';
+                row.innerHTML = '<strong>' + escapeText(r.canonical) + '</strong> <span class="sub">(' + r.mentions + ' mentions, ' + r.videos + ' videos)</span>';
+                row.addEventListener('mouseenter', function(){ row.style.background = '#f5f5f5'; });
+                row.addEventListener('mouseleave', function(){ row.style.background = ''; });
+                row.addEventListener('click', function(){ doMerge(r.key, r.canonical); });
+                results.appendChild(row);
+              });
+              if (q && !hasExact) {
+                var create = document.createElement('div');
+                create.style.cssText = 'padding:4px 6px;cursor:pointer;border-radius:3px;border-top:1px dashed var(--border);margin-top:4px;color:var(--accent)';
+                create.innerHTML = '+ create new: <strong>"' + escapeText(q) + '"</strong>';
+                create.addEventListener('mouseenter', function(){ create.style.background = '#f5f5f5'; });
+                create.addEventListener('mouseleave', function(){ create.style.background = ''; });
+                create.addEventListener('click', function(){ doCreatePhantom(q); });
+                results.appendChild(create);
+              }
+              if (items.length === 0 && !q) {
+                results.innerHTML = '<div class="sub" style="padding:4px">type to search</div>';
+              }
+            });
+        }, 150);
+      });
+      setTimeout(function(){ input.focus(); }, 0);
+    }
+    document.body.appendChild(menu);
+    openMenu = menu;
+  };
+  function actionButton(text, onClick){
+    var b = document.createElement('button');
+    b.textContent = text;
+    b.style.cssText = 'display:block;width:100%;text-align:left;padding:4px 6px;border:none;background:none;cursor:pointer;border-radius:3px;font-size:13px';
+    b.addEventListener('mouseenter', function(){ b.style.background = '#f5f5f5'; });
+    b.addEventListener('mouseleave', function(){ b.style.background = ''; });
+    b.addEventListener('click', onClick);
+    return b;
+  }
+  function escapeText(s){
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  // Relation-specific menu. Attached to a <span class="relation-actions">
+  // wrapper with data-video-id, data-subject-key, data-predicate,
+  // data-object-key, data-time-start, and the display texts for subject
+  // and object.
+  window.openRelationMenu = function(btn){
+    closeMenu();
+    var wrap = btn.closest('.relation-actions');
+    var videoId = wrap.getAttribute('data-video-id');
+    var subjectKey = wrap.getAttribute('data-subject-key');
+    var objectKey = wrap.getAttribute('data-object-key');
+    var predicate = wrap.getAttribute('data-predicate');
+    var timeStart = wrap.getAttribute('data-time-start');
+    var subjectText = wrap.getAttribute('data-subject-text');
+    var objectText = wrap.getAttribute('data-object-text');
+    var compositeKey = subjectKey + '|' + predicate + '|' + objectKey + '|' + Math.floor(parseFloat(timeStart || '0'));
+    var menu = document.createElement('div');
+    menu.className = 'entity-menu';
+    menu.style.cssText = 'position:absolute;z-index:1000;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px;min-width:280px;box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:13px';
+    var rect = btn.getBoundingClientRect();
+    menu.style.top = (rect.bottom + window.scrollY + 2) + 'px';
+    menu.style.left = (rect.left + window.scrollX) + 'px';
+    var header = document.createElement('div');
+    header.style.cssText = 'padding:4px 6px;border-bottom:1px solid var(--border);margin-bottom:4px';
+    header.innerHTML = '<strong>' + escapeText(subjectText) + '</strong> <span class="sub">' + escapeText(predicate) + '</span> <strong>' + escapeText(objectText) + '</strong>';
+    menu.appendChild(header);
+    menu.appendChild(actionButton('delete this relationship (this video only)', function(){
+      post('/api/aliases/delete-relation', { videoId: videoId, key: compositeKey }).then(function(){
+        closeMenu();
+        markActioned(wrap, 'deleted');
+        var row = wrap.closest('tr');
+        if (row) row.style.opacity = '0.4';
+      });
+    }));
+    document.body.appendChild(menu);
+    openMenu = menu;
+  };
+})();
+`;
+
 function layout(title: string, body: string): string {
   return `<!doctype html><html><head><meta charset="utf-8"/><title>${escapeHtml(title)}</title>
   <style>${PAGE_STYLE}</style></head>
-  <body><header><a href="/">← catalog</a><a href="/admin">admin</a><a href="/relationships">graph</a><a href="/facets">facets</a></header>${body}<script>${SORTABLE_SCRIPT}</script>${CREDIT_FOOTER}</body></html>`;
+  <body><header><a href="/WFD/">← catalog</a><a href="/WFD/admin">admin</a><a href="/admin/aliases">aliases</a><a href="/WFD/relationships">graph</a><a href="/WFD/facets">facets</a></header>${body}<script>${SORTABLE_SCRIPT}</script><script>${ENTITY_MENU_SCRIPT}</script>${CREDIT_FOOTER}</body></html>`;
 }
 
 export function escapeHtml(s: string): string {
@@ -1042,6 +1275,9 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     // aliases. Operators accept/reject individual proposals via POST.
     if (url === "/admin/aliases" || url.startsWith("/admin/aliases?")) {
       const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      const aliasQ = new URL(url, "http://local").searchParams;
+      const appliedMsg = aliasQ.get("applied");
+      const appliedOk = aliasQ.get("ok") !== "0";
       const corpus = buildCorpusEntities(dataRoot);
       const aliases = readAliases(dataRoot);
       const clusters = buildMergeClusters(corpus, aliases);
@@ -1087,9 +1323,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           <div style="margin-top:8px;padding-left:12px">${checkboxes}</div>
         </div>`;
       }
-
-      const pendingCards = pendingClusters.map((c) => renderClusterCard(c, false)).join("");
-      const resolvedCards = resolvedClusters.map((c) => renderClusterCard(c, true)).join("");
 
       const aliasScript = `
         function post(action, body) {
@@ -1138,20 +1371,381 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         }
       `;
 
+      // Flat editable list of current merges and hidden entities.
+      // Paired with a search box that filters both this table and the
+      // pending-cluster cards below.
+      const mergeEntries = Object.entries(aliases)
+        .filter(([k, v]) => !isSentinel(v) && !k.includes("~~") && !k.includes("||"))
+        .sort(([a], [b]) => a.localeCompare(b));
+      const hiddenEntries = Object.entries(aliases)
+        .filter(([k, v]) => v === SENTINEL_HIDDEN && !k.includes("~~") && !k.includes("||"))
+        .sort(([a], [b]) => a.localeCompare(b));
+
+      const mergeRows = mergeEntries
+        .map(([from, to]) => {
+          const fromEnt = corpus.get(from);
+          const toEnt = corpus.get(to);
+          const label = fromEnt?.label ?? from.split(":")[0];
+          const fromCanonical = fromEnt?.canonical ?? from.split(":").slice(1).join(":");
+          const toCanonical = toEnt?.canonical ?? to.split(":").slice(1).join(":");
+          const mentions = fromEnt?.totalMentions ?? 0;
+          return `<tr data-search="${escapeHtml((fromCanonical + " " + toCanonical + " " + label).toLowerCase())}">
+            <td>${escapeHtml(label)}</td>
+            <td><a href="/admin/entity/${escapeHtml(encodeURIComponent(from))}">${escapeHtml(fromCanonical)}</a></td>
+            <td>→</td>
+            <td class="merge-target" data-from="${escapeHtml(from)}" data-label="${escapeHtml(label)}"><a href="/admin/entity/${escapeHtml(encodeURIComponent(to))}">${escapeHtml(toCanonical)}</a> <button class="edit-target" onclick="editTarget(this)" style="border:none;background:none;cursor:pointer;font-size:12px;color:var(--muted)">edit</button></td>
+            <td data-sort-value="${mentions}">${mentions}</td>
+            <td><button onclick="unmerge('${escapeHtml(from)}', this)" style="color:var(--muted)">undo</button></td>
+          </tr>`;
+        })
+        .join("");
+
+      const hiddenRows = hiddenEntries
+        .map(([key]) => {
+          const ent = corpus.get(key);
+          const label = ent?.label ?? key.split(":")[0];
+          const canonical = ent?.canonical ?? key.split(":").slice(1).join(":");
+          const mentions = ent?.totalMentions ?? 0;
+          return `<tr data-search="${escapeHtml((canonical + " " + label).toLowerCase())}">
+            <td>${escapeHtml(label)}</td>
+            <td><a href="/admin/entity/${escapeHtml(encodeURIComponent(key))}">${escapeHtml(canonical)}</a></td>
+            <td data-sort-value="${mentions}">${mentions}</td>
+            <td><button onclick="unhide('${escapeHtml(key)}', this)" style="color:var(--muted)">unhide</button></td>
+          </tr>`;
+        })
+        .join("");
+
+      const pendingCardsWithSearch = pendingClusters
+        .map((c) => {
+          const searchable = [c.canonicalForm, ...c.memberForms, c.label]
+            .join(" ")
+            .toLowerCase();
+          return `<div data-search="${escapeHtml(searchable)}">${renderClusterCard(c, false)}</div>`;
+        })
+        .join("");
+      const resolvedCardsWithSearch = resolvedClusters
+        .map((c) => {
+          const searchable = [c.canonicalForm, ...c.memberForms, c.label]
+            .join(" ")
+            .toLowerCase();
+          return `<div data-search="${escapeHtml(searchable)}">${renderClusterCard(c, true)}</div>`;
+        })
+        .join("");
+
+      const flatListScript = `
+        function filterAll() {
+          var q = document.getElementById('alias-search').value.toLowerCase().trim();
+          var items = document.querySelectorAll('[data-search]');
+          for (var i = 0; i < items.length; i++) {
+            var hay = items[i].getAttribute('data-search');
+            items[i].style.display = (!q || hay.indexOf(q) >= 0) ? '' : 'none';
+          }
+        }
+        async function rebuildIndexes() {
+          var btn = document.getElementById('rebuild-btn');
+          var status = document.getElementById('rebuild-status');
+          btn.disabled = true;
+          status.textContent = 'rebuilding…';
+          try {
+            var r = await fetch('/api/indexes/rebuild', { method: 'POST' });
+            var data = await r.json();
+            if (data.ok) {
+              status.textContent = 'done: ' + (data.outcome && data.outcome.notes || 'ok');
+            } else {
+              status.textContent = 'error: ' + (data.error || 'unknown');
+            }
+          } catch (e) {
+            status.textContent = 'error: ' + e.message;
+          } finally {
+            btn.disabled = false;
+          }
+        }
+        async function unmerge(key, btn) {
+          var r = await fetch('/api/aliases/unmerge', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'key=' + encodeURIComponent(key),
+          });
+          if (r.ok) btn.closest('tr').style.opacity = '0.4';
+        }
+        async function unhide(key, btn) {
+          var r = await fetch('/api/aliases/unhide', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'key=' + encodeURIComponent(key),
+          });
+          if (r.ok) btn.closest('tr').style.opacity = '0.4';
+        }
+        function editTarget(btn) {
+          var cell = btn.closest('.merge-target');
+          var from = cell.getAttribute('data-from');
+          var label = cell.getAttribute('data-label');
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.placeholder = 'search new target…';
+          input.style.cssText = 'width:200px;padding:2px 4px;font-size:13px';
+          var results = document.createElement('div');
+          results.style.cssText = 'position:absolute;background:var(--bg);border:1px solid var(--border);border-radius:3px;max-height:160px;overflow:auto;z-index:100;min-width:220px';
+          cell.innerHTML = '';
+          cell.appendChild(input);
+          cell.appendChild(results);
+          input.focus();
+          var debounce;
+          input.addEventListener('input', function() {
+            clearTimeout(debounce);
+            debounce = setTimeout(async function() {
+              var q = input.value.trim();
+              var r = await fetch('/api/aliases/search?q=' + encodeURIComponent(q) + '&label=' + encodeURIComponent(label));
+              var data = await r.json();
+              results.innerHTML = '';
+              (data.results || []).filter(function(x) { return x.key !== from; }).forEach(function(x) {
+                var row = document.createElement('div');
+                row.style.cssText = 'padding:3px 6px;cursor:pointer';
+                row.textContent = x.canonical + ' (' + x.mentions + ')';
+                row.addEventListener('mouseenter', function() { row.style.background = '#f5f5f5'; });
+                row.addEventListener('mouseleave', function() { row.style.background = ''; });
+                row.addEventListener('click', async function() {
+                  await fetch('/api/aliases/merge', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'from=' + encodeURIComponent(from) + '&to=' + encodeURIComponent(x.key),
+                  });
+                  cell.innerHTML = '<a href="/admin/entity/' + encodeURIComponent(x.key) + '">' + x.canonical + '</a> <span class="sub">(updated, reload to re-edit)</span>';
+                });
+                results.appendChild(row);
+              });
+            }, 150);
+          });
+        }
+      `;
+
+      const toast = appliedMsg
+        ? `<div style="background:${appliedOk ? "#e8f5e9" : "#ffebee"};color:${appliedOk ? "var(--good)" : "var(--bad)"};border:1px solid ${appliedOk ? "#c8e6c9" : "#ffcdd2"};padding:8px 12px;border-radius:4px;margin-bottom:1em">
+            ${appliedOk ? "✓" : "✗"} ${escapeHtml(appliedMsg)}
+          </div>`
+        : "";
+
       const body = `
         <h1>Entity aliases</h1>
-        <p>${corpus.size} corpus entities · ${pendingClusters.length} pending · ${resolvedClusters.length} resolved · ${mergeCount} merges · ${notSameCount} not-same pairs</p>
-        <p>Check = same entity, uncheck = different entity. Click <strong>save</strong> to record your decision. After a round, run <code>captions pipeline --stage indexes</code> to rebuild the graph.</p>
+        ${toast}
+        <p>${corpus.size} corpus entities · ${mergeCount} merges · ${hiddenEntries.length} hidden · ${notSameCount} not-same pairs · ${pendingClusters.length} pending clusters</p>
 
-        <h2>Pending <span class="sub">${pendingClusters.length}</span></h2>
-        ${pendingCards || '<p>None — all clusters resolved.</p>'}
+        <p style="display:flex;gap:8px;align-items:center;margin:1em 0">
+          <input id="alias-search" type="text" placeholder="search all tables and clusters by canonical, label, or key..." oninput="filterAll()" style="flex:1;padding:6px 8px;border:1px solid var(--border);border-radius:3px;font-size:14px"/>
+          <button id="rebuild-btn" onclick="rebuildIndexes()" style="padding:6px 14px;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:white;border-radius:3px">rebuild graph</button>
+          <span id="rebuild-status" class="sub"></span>
+        </p>
 
-        <h2>Resolved <span class="sub">${resolvedClusters.length}</span></h2>
-        ${resolvedCards || '<p>None yet.</p>'}
+        <h2>Current merges <span class="sub">${mergeCount}</span></h2>
+        <table class="sortable">
+          <thead><tr>
+            <th>label</th><th>from</th><th></th><th>to (click edit to change)</th>
+            <th data-sort-type="number">mentions</th><th>action</th>
+          </tr></thead>
+          <tbody>${mergeRows || '<tr><td colspan="6">no merges yet</td></tr>'}</tbody>
+        </table>
+
+        <h2>Hidden entities <span class="sub">${hiddenEntries.length}</span></h2>
+        <table class="sortable">
+          <thead><tr>
+            <th>label</th><th>canonical</th>
+            <th data-sort-type="number">mentions</th><th>action</th>
+          </tr></thead>
+          <tbody>${hiddenRows || '<tr><td colspan="4">none</td></tr>'}</tbody>
+        </table>
+
+        <h2>Pending clusters <span class="sub">${pendingClusters.length}</span></h2>
+        <p>Check = same entity, uncheck = different entity. Click <strong>save</strong> to record your decision. After a round of saves, run <code>captions pipeline --stage indexes</code> to rebuild the graph.</p>
+        ${pendingCardsWithSearch || '<p>None — all clusters resolved.</p>'}
+
+        <h2>Resolved clusters <span class="sub">${resolvedClusters.length}</span></h2>
+        ${resolvedCardsWithSearch || '<p>None yet.</p>'}
         <script>${aliasScript}</script>
+        <script>${flatListScript}</script>
       `;
       res.writeHead(200, { "content-type": "text/html" });
       res.end(layout("aliases — captions", body));
+      return;
+    }
+    // Rebuild the corpus-wide aggregated indexes (entity-index.json,
+    // entity-videos.json, relationships-graph.json) in-process. Same
+    // work as `captions pipeline --stage indexes` but without the
+    // subprocess, so the admin UI's "apply changes" button gets an
+    // immediate result.
+    if (url === "/api/indexes/rebuild" && req.method === "POST") {
+      (async () => {
+        try {
+          // Lazy-import to avoid a cycle at module load time.
+          const { indexesStage } = await import("../pipeline/stages.js");
+          const { GraphStore } = await import("../graph/store.js");
+          const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+          let storeInst: InstanceType<typeof GraphStore> | null = null;
+          const ctx = {
+            catalog: opts.catalog,
+            dataDir: dataRoot,
+            getStore: () => {
+              if (!storeInst) storeInst = new GraphStore(join(dataRoot, "graph", "graph.json"));
+              return storeInst;
+            },
+          };
+          const outcome = await indexesStage.run(ctx);
+          nlpCache.clear();
+          entityIndexCache = null;
+          entityVideosCache = null;
+          relationshipsGraphCache = null;
+          sendJson(res, 200, { ok: true, outcome });
+        } catch (err) {
+          sendJson(res, 500, { error: (err as Error).message });
+        }
+      })();
+      return;
+    }
+    // Autocomplete feed for the entity popover "merge into…" input.
+    // Returns up to 20 entities whose canonical contains the query,
+    // optionally filtered to a specific label. Sorted by mention count
+    // descending so the most prominent candidates land first.
+    if (url.startsWith("/api/aliases/search")) {
+      const u = new URL(url, "http://local");
+      const q = (u.searchParams.get("q") ?? "").toLowerCase().trim();
+      const label = u.searchParams.get("label") ?? "";
+      const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      const aliases = readAliases(dataRoot);
+      const corpus = buildCorpusEntities(dataRoot);
+      const matches: Array<{
+        key: string;
+        label: string;
+        canonical: string;
+        mentions: number;
+        videos: number;
+      }> = [];
+      for (const e of corpus.values()) {
+        if (label && e.label !== label) continue;
+        if (q && !e.canonical.toLowerCase().includes(q)) continue;
+        if (isSentinel(aliases[e.key] ?? "")) continue;
+        matches.push({
+          key: e.key,
+          label: e.label,
+          canonical: e.canonical,
+          mentions: e.totalMentions,
+          videos: e.videoIds.size,
+        });
+      }
+      matches.sort((a, b) => b.mentions - a.mentions);
+      sendJson(res, 200, { results: matches.slice(0, 20) });
+      return;
+    }
+    // Per-entity alias actions: fast, single-key edits from the entity
+    // popover menu on /admin/video/:id, /admin/entity/:key, and (once
+    // VITE_ADMIN is wired up) the relationships graph page.
+    if (url.startsWith("/api/aliases/") && req.method === "POST") {
+      const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      let postBody = "";
+      req.on("data", (chunk: Buffer) => { postBody += chunk.toString(); });
+      req.on("end", () => {
+        const params = new URLSearchParams(postBody);
+        const aliases = readAliases(dataRoot);
+        const action = url.slice("/api/aliases/".length);
+        if (action === "hide") {
+          const key = params.get("key") ?? "";
+          if (!key) return sendJson(res, 400, { error: "missing key" });
+          // Remove any existing merge target so `key` resolves to itself,
+          // then mark it hidden.
+          if (aliases[key] && !isSentinel(aliases[key])) delete aliases[key];
+          aliases[key] = SENTINEL_HIDDEN;
+        } else if (action === "unhide") {
+          const key = params.get("key") ?? "";
+          if (!key) return sendJson(res, 400, { error: "missing key" });
+          if (aliases[key] === SENTINEL_HIDDEN) delete aliases[key];
+        } else if (action === "merge") {
+          const from = params.get("from") ?? "";
+          const to = params.get("to") ?? "";
+          if (!from || !to) return sendJson(res, 400, { error: "missing from/to" });
+          if (from === to) return sendJson(res, 400, { error: "from === to" });
+          aliases[from] = to;
+        } else if (action === "unmerge") {
+          const key = params.get("key") ?? "";
+          if (!key) return sendJson(res, 400, { error: "missing key" });
+          if (aliases[key] !== undefined && !isSentinel(aliases[key])) {
+            delete aliases[key];
+          }
+        } else if (action === "display") {
+          // Override how an entity renders in the UI without changing
+          // its key. Write to display:<key>.
+          const key = params.get("key") ?? "";
+          const value = params.get("value") ?? "";
+          if (!key || !value) return sendJson(res, 400, { error: "missing key/value" });
+          aliases[`display:${key}`] = value;
+        } else if (action === "undisplay") {
+          const key = params.get("key") ?? "";
+          if (!key) return sendJson(res, 400, { error: "missing key" });
+          delete aliases[`display:${key}`];
+        } else if (action === "video-merge") {
+          // Per-video merge: this key in this video only should render
+          // as another entity. Target must be an existing corpus key.
+          const videoId = params.get("videoId") ?? "";
+          const from = params.get("from") ?? "";
+          const to = params.get("to") ?? "";
+          if (!videoId || !from || !to)
+            return sendJson(res, 400, { error: "missing videoId/from/to" });
+          aliases[`video:${videoId}:${from}`] = to;
+        } else if (action === "video-unmerge") {
+          const videoId = params.get("videoId") ?? "";
+          const from = params.get("from") ?? "";
+          if (!videoId || !from)
+            return sendJson(res, 400, { error: "missing videoId/from" });
+          delete aliases[`video:${videoId}:${from}`];
+        } else if (action === "delete-relation") {
+          // Suppress one relationship in one video. `key` is the
+          // composite: subjectKey|predicate|objectKey|timeStart.
+          const videoId = params.get("videoId") ?? "";
+          const key = params.get("key") ?? "";
+          if (!videoId || !key)
+            return sendJson(res, 400, { error: "missing videoId/key" });
+          aliases[`del:${videoId}:${key}`] = "true";
+        } else if (action === "undelete-relation") {
+          const videoId = params.get("videoId") ?? "";
+          const key = params.get("key") ?? "";
+          if (!videoId || !key)
+            return sendJson(res, 400, { error: "missing videoId/key" });
+          delete aliases[`del:${videoId}:${key}`];
+        } else if (action === "create-phantom") {
+          // Create a phantom entity: a key with a display override,
+          // targeted by one or more merges. `name` is the display
+          // text; `label` is the entity label; `mergeFrom` (optional)
+          // is an existing key to merge into the phantom.
+          const label = params.get("label") ?? "";
+          const name = params.get("name") ?? "";
+          const mergeFrom = params.get("mergeFrom") ?? "";
+          if (!label || !name) return sendJson(res, 400, { error: "missing label/name" });
+          const phantomKey = `${label}:${name.trim().toLowerCase().replace(/\s+/g, " ")}`;
+          aliases[`display:${phantomKey}`] = name;
+          if (mergeFrom && mergeFrom !== phantomKey) {
+            aliases[mergeFrom] = phantomKey;
+          }
+          // Return the phantom key so the caller can use it.
+          writeAliases(dataRoot, aliases);
+          nlpCache.clear();
+          entityIndexCache = null;
+          entityVideosCache = null;
+          relationshipsGraphCache = null;
+          opts.catalog.markGraphDirty();
+          return sendJson(res, 200, { ok: true, phantomKey });
+        } else {
+          return sendJson(res, 400, { error: "unknown action" });
+        }
+        writeAliases(dataRoot, aliases);
+        // Bust the caches so the UI sees the update on next read.
+        nlpCache.clear();
+        entityIndexCache = null;
+        entityVideosCache = null;
+        relationshipsGraphCache = null;
+        // Bump the graph watermark so `pipeline --stage indexes` actually
+        // re-runs. Alias edits don't touch per-video outputs, so without
+        // this the indexes stage stays "up to date" and the rebuilt graph
+        // never picks up the merges.
+        opts.catalog.markGraphDirty();
+        sendJson(res, 200, { ok: true });
+      });
       return;
     }
     // Save/undo alias decisions (POST).
@@ -1196,6 +1790,163 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
     // Read-only NLP inspection page. Pure HTML, no SPA bundle, no editing —
     // hand-editing NER output is not supported, and downstream refinements
     // live in the ai stage's bundles/responses on disk.
+    // Per-entity admin page. Shows everything we know about one entity
+    // key: current alias/hidden state, mention count, video list, and
+    // the same ⋯ popover for hide/merge actions.
+    // GET /admin/apply?op=...&... — one-click apply entry point for
+    // links embedded in GitHub issue bodies. Silent apply, then
+    // redirect to /admin/aliases with an ?applied=<summary> query the
+    // aliases page reads into a toast banner.
+    if (url.startsWith("/admin/apply")) {
+      const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      const u = new URL(url, "http://local");
+      const op = u.searchParams.get("op") ?? "";
+      const aliases = readAliases(dataRoot);
+      let summary = "";
+      let ok = true;
+      if (op === "hide") {
+        const key = u.searchParams.get("key") ?? "";
+        if (!key) { ok = false; summary = "missing key"; }
+        else {
+          if (aliases[key] && !isSentinel(aliases[key])) delete aliases[key];
+          aliases[key] = SENTINEL_HIDDEN;
+          summary = `hid ${key}`;
+        }
+      } else if (op === "merge") {
+        const from = u.searchParams.get("from") ?? "";
+        const to = u.searchParams.get("to") ?? "";
+        if (!from || !to || from === to) { ok = false; summary = "bad from/to"; }
+        else { aliases[from] = to; summary = `merged ${from} → ${to}`; }
+      } else if (op === "display") {
+        const key = u.searchParams.get("key") ?? "";
+        const value = u.searchParams.get("value") ?? "";
+        if (!key || !value) { ok = false; summary = "missing key/value"; }
+        else { aliases[`display:${key}`] = value; summary = `display ${key} = "${value}"`; }
+      } else if (op === "video-merge") {
+        const videoId = u.searchParams.get("videoId") ?? "";
+        const from = u.searchParams.get("from") ?? "";
+        const to = u.searchParams.get("to") ?? "";
+        if (!videoId || !from || !to) { ok = false; summary = "missing videoId/from/to"; }
+        else { aliases[`video:${videoId}:${from}`] = to; summary = `video:${videoId} ${from} → ${to}`; }
+      } else if (op === "delete-relation") {
+        const videoId = u.searchParams.get("videoId") ?? "";
+        const key = u.searchParams.get("key") ?? "";
+        if (!videoId || !key) { ok = false; summary = "missing videoId/key"; }
+        else { aliases[`del:${videoId}:${key}`] = "true"; summary = `deleted relation in ${videoId}`; }
+      } else {
+        ok = false;
+        summary = `unknown op: ${op}`;
+      }
+      if (ok) {
+        writeAliases(dataRoot, aliases);
+        nlpCache.clear();
+        entityIndexCache = null;
+        entityVideosCache = null;
+        relationshipsGraphCache = null;
+        opts.catalog.markGraphDirty();
+      }
+      const target = `/admin/aliases?applied=${encodeURIComponent(summary)}&ok=${ok ? 1 : 0}`;
+      res.writeHead(303, { location: target });
+      res.end();
+      return;
+    }
+    const adminEntity = url.match(/^\/admin\/entity\/(.+?)(?:\?|$)/);
+    if (adminEntity) {
+      const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
+      const key = decodeURIComponent(adminEntity[1]);
+      const aliases = readAliases(dataRoot);
+      const corpus = buildCorpusEntities(dataRoot);
+      const entity = corpus.get(key);
+      const resolved = resolveKey(key, aliases);
+      const mergedInto = resolved !== key ? resolved : null;
+      const hidden = isHidden(key, aliases);
+
+      let status: "active" | "merged" | "hidden" = "active";
+      if (hidden) status = "hidden";
+      else if (mergedInto) status = "merged";
+
+      const statusBadge =
+        status === "hidden"
+          ? `<span class="pill bad">hidden</span>`
+          : status === "merged"
+          ? `<span class="pill warn">merged → ${escapeHtml(mergedInto ?? "")}</span>`
+          : `<span class="pill ok">active</span>`;
+
+      if (!entity) {
+        const body = `<h1>${escapeHtml(key)}</h1>
+          <p>${statusBadge}</p>
+          <p>No mentions found in the corpus under this key. It may be an alias target that only appears via other entities merging into it, or the key may be stale.</p>`;
+        res.writeHead(200, { "content-type": "text/html" });
+        res.end(layout(`entity — ${key}`, body));
+        return;
+      }
+
+      // Collect per-video mentions from the entity index videos file.
+      const videoIdx = readPersistedEntityVideos(dataRoot) ?? {};
+      // The index is keyed on post-alias entity ids. Look up both the
+      // raw key and any merge target so we surface the same evidence
+      // the graph/ui actually display.
+      const refs =
+        videoIdx[resolved] ?? videoIdx[key] ?? [];
+      const videoRows = refs
+        .slice()
+        .sort((a, b) => b.mentions.length - a.mentions.length)
+        .slice(0, 50)
+        .map((ref) => {
+          const row = opts.catalog.get(ref.videoId);
+          const title = row?.title ?? ref.videoId;
+          const first = ref.mentions[0];
+          const link = first
+            ? `<a target="_blank" href="${escapeHtml(deepLink(ref.videoId, first.timeStart))}">${formatTime(first.timeStart)}</a>`
+            : "—";
+          return `<tr>
+            <td><a href="/admin/video/${escapeHtml(ref.videoId)}">${escapeHtml(ref.videoId)}</a></td>
+            <td>${escapeHtml(title)}</td>
+            <td data-sort-value="${ref.mentions.length}">${ref.mentions.length}</td>
+            <td>${link}</td>
+          </tr>`;
+        })
+        .join("");
+
+      const mergedFrom = Object.entries(aliases)
+        .filter(([, v]) => v === key && !isSentinel(v))
+        .map(([k]) => k);
+      const mergedFromRows = mergedFrom
+        .map((k) => {
+          const e = corpus.get(k);
+          return `<tr>
+            <td><a href="/admin/entity/${escapeHtml(encodeURIComponent(k))}">${escapeHtml(k)}</a></td>
+            <td>${escapeHtml(e?.canonical ?? k)}</td>
+            <td>${e?.totalMentions ?? "—"}</td>
+          </tr>`;
+        })
+        .join("");
+
+      const actions = `<span class="entity-actions" data-entity-key="${escapeHtml(key)}" data-entity-label="${escapeHtml(entity.label)}" data-entity-canonical="${escapeHtml(entity.canonical)}" data-entity-status="${status}"><button class="entity-menu-toggle" onclick="openEntityMenu(this)" style="border:1px solid var(--border);background:var(--bg);cursor:pointer;padding:4px 10px;border-radius:3px">actions ⋯</button></span>`;
+
+      const body = `
+        <h1>${escapeHtml(entity.canonical)}</h1>
+        <p>
+          <code>${escapeHtml(key)}</code> · [${escapeHtml(entity.label)}] · ${statusBadge} · ${entity.totalMentions} mentions · ${entity.videoIds.size} videos
+        </p>
+        <p>${actions}</p>
+
+        <h2>Appears in <span class="sub">${refs.length} videos</span></h2>
+        <table class="sortable">
+          <thead><tr><th>videoId</th><th>title</th><th data-sort-type="number">mentions</th><th>first</th></tr></thead>
+          <tbody>${videoRows || '<tr><td colspan="4">none</td></tr>'}</tbody>
+        </table>
+
+        <h2>Merged-from <span class="sub">${mergedFrom.length}</span></h2>
+        <table class="sortable">
+          <thead><tr><th>key</th><th>canonical</th><th data-sort-type="number">mentions</th></tr></thead>
+          <tbody>${mergedFromRows || '<tr><td colspan="3">no entities merge into this one</td></tr>'}</tbody>
+        </table>
+      `;
+      res.writeHead(200, { "content-type": "text/html" });
+      res.end(layout(`entity — ${entity.canonical}`, body));
+      return;
+    }
     // Unified per-video admin page — neural entities + relations on one
     // screen with a troubleshooting section. Safe to call before any
     // neural stage has run; the render function shows a "run `captions
