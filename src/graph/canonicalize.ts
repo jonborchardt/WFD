@@ -1,19 +1,23 @@
 // Cross-transcript entity canonicalization.
 //
-// Data model in data/aliases.json:
-//
-//   "entity_key": "canonical_key"          → these are the same entity
-//   "entity_a~~entity_b": "__not_same__"   → these are NOT the same entity
-//   "cluster_cid": "__dismissed__"         → entire cluster dismissed (noise)
-//
-// The admin page shows proposed clusters. For each, the operator checks
-// which members ARE the same as the canonical. Checked → stored as
-// merge. Unchecked → stored as "not same" pair with the canonical.
-// Either way the cluster is fully resolved and grayed out on next load.
+// The on-disk file (data/aliases.json) is structured per
+// src/graph/aliases-schema.ts (v2). This module keeps a flat
+// `AliasMap` (Record<string,string>) as the runtime representation so
+// the hot-path helpers (resolveKey, isDeleted, etc.) stay fast and
+// simple. `readAliases` loads the structured file and compiles the
+// flat map; `writeAliases` is deprecated — callers should use the
+// typed mutators from aliases-schema.ts directly.
 
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { PersistedEntities } from "../entities/index.js";
+import {
+  buildAliasMap,
+  readAliasesFile,
+  writeAliasesFile,
+  migrateFromFlat,
+  aliasesPath as schemaAliasesPath,
+} from "./aliases-schema.js";
 
 export interface CorpusEntity {
   key: string;
@@ -37,28 +41,36 @@ export interface MergeCluster {
 
 export type AliasMap = Record<string, string>;
 
-// Sentinel values stored in the alias map.
+// Sentinel values stored in the flat runtime AliasMap. These never
+// appear in the on-disk v2 file — they're internal only, compiled by
+// buildAliasMap() from the structured entries.
 const NOT_SAME = "__not_same__";
 const DISMISSED = "__dismissed__";
-const HIDDEN = "__hidden__";
+const DELETED = "__deleted__";
 
 export function isSentinel(v: string): boolean {
   return (
     v === NOT_SAME ||
     v === DISMISSED ||
-    v === HIDDEN ||
+    v === DELETED ||
+    // Legacy flat-format sentinels. Still accepted so in-flight data
+    // from before the migration doesn't trip helpers.
+    v === "__hidden__" ||
     v === "__rejected__"
   );
 }
 
-export function isHidden(key: string, aliases: AliasMap): boolean {
-  // Follow the merge chain first so hiding the canonical also hides
-  // everything merged into it.
+// True if the entity (or any entity it merges into) has been deleted
+// by the operator. "Delete" and "hide" used to be separate concepts;
+// they're now one — a deleted entity is dropped from the graph and
+// any relationship touching it is dropped too.
+export function isDeleted(key: string, aliases: AliasMap): boolean {
   const resolved = resolveKey(key, aliases);
-  return aliases[resolved] === HIDDEN;
+  const v = aliases[resolved];
+  return v === DELETED || v === "__hidden__";
 }
 
-export const SENTINEL_HIDDEN = HIDDEN;
+export const SENTINEL_DELETED = DELETED;
 export const SENTINEL_NOT_SAME = NOT_SAME;
 export const SENTINEL_DISMISSED = DISMISSED;
 
@@ -125,22 +137,28 @@ export function isRelationDeleted(
 }
 
 export function aliasesPath(dataDir: string): string {
-  return join(dataDir, "aliases.json");
+  return schemaAliasesPath(dataDir);
 }
 
+// Load the structured v2 aliases file and compile the flat runtime
+// AliasMap that the hot-path helpers below consume. Transparently
+// migrates v1 flat files on first read (writes the v2 form back).
 export function readAliases(dataDir: string): AliasMap {
-  const p = aliasesPath(dataDir);
-  if (!existsSync(p)) return {};
-  try {
-    return JSON.parse(readFileSync(p, "utf8")) as AliasMap;
-  } catch {
-    return {};
-  }
+  const file = readAliasesFile(dataDir);
+  return buildAliasMap(file);
 }
 
-export function writeAliases(dataDir: string, aliases: AliasMap): void {
-  if (!existsSync(dataDir)) mkdirSync(dataDir, { recursive: true });
-  writeFileSync(aliasesPath(dataDir), JSON.stringify(aliases, null, 2), "utf8");
+// Deprecated compatibility shim. The old flat format is being phased
+// out; callers that need to mutate the file should use the typed
+// helpers from src/graph/aliases-schema.ts (addMerge, addDeletedEntity,
+// addDisplay, etc.) so sections stay well-formed.
+//
+// When this shim is called we reconstruct a v2 file from the flat
+// Map and write it. That path exists because some tests and the
+// cluster-review POST path still mutate the flat Map directly.
+export function writeAliases(dataDir: string, flat: AliasMap): void {
+  const file = migrateFromFlat(flat);
+  writeAliasesFile(dataDir, file);
 }
 
 // Canonical normalization used by both the corpus builder (this file)

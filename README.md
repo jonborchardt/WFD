@@ -23,6 +23,8 @@ and contradictions **traceable**.
   which no single video states directly, are flagged for review.
 - **Speaker credibility over time.** Skeptic scoring tracks how a given speaker's
   claims have held up across the corpus.
+- **Suggest an edit** on any entity or relationship from the public site —
+  opens a prefilled GitHub issue so the corpus can be corrected over time.
 
 ## How it works
 
@@ -30,44 +32,59 @@ The pipeline runs roughly in this order:
 
 1. **Ingest** — fetch transcripts from YouTube, politely rate-limited, stored locally.
 2. **Catalog** — track which videos we have, which we're missing, and what's stale.
-3. **NLP extraction** — pull entities and relationships out of each transcript.
-   Every relationship carries a pointer to the exact span it came from.
-4. **AI enrichment** — a batch pass refines and adds relationships the first
-   NLP stage missed.
-5. **Graph** — entities, edges, and evidence are stored in a queryable graph.
-6. **Truth** — per-claim truthiness is scored and propagated across the graph.
+3. **Entities** — zero-shot neural entity extraction (GLiNER via a Python
+   sidecar). Fourteen labels: person, organization, location, facility, event,
+   date_time, role, technology, and more.
+4. **Date-normalize** — derive typed date entities (year, decade, specific
+   date/week/month, time_of_day) from the raw `date_time` mentions.
+5. **Relations** — zero-shot neural relation extraction (GLiREL via a Python
+   sidecar). Twenty-nine predicates with per-predicate thresholds. Every
+   relationship carries a pointer to the exact span it came from.
+6. **AI enrichment** — a batch pass refines and adds relationships the
+   extractors missed. Not a runtime API call; operator runs it via Claude Code.
+7. **Graph** — entities, edges, and evidence are stored in a queryable graph.
+   An adapter layer applies cross-transcript canonicalization (the aliases
+   override system — see below) before writing the graph.
+8. **Truth** — per-claim truthiness is scored and propagated across the graph.
    Contradictions and circular reasoning are detected.
-7. **Skeptic** — per-speaker credibility is derived from how their claims fare.
-8. **Web UI** — a public, read-only site lets anyone navigate the map and trace
-   claims back to source.
+9. **Skeptic** — per-speaker credibility is derived from how their claims fare.
+10. **Web UI** — a public, read-only site lets anyone navigate the map and
+    trace claims back to source.
 
 ## Ground rules
 
 - **Evidence is mandatory.** No floating claims. Every relationship and every
   truth judgment must point to a transcript span.
 - **Read-only in public.** The public site never mutates the graph. Corrections
-  and edit requests go through a separate review queue.
+  go through GitHub issues via a suggest-an-edit flow on every entity and
+  relationship.
 - **Local-first.** Transcripts and the derived index live on disk; the corpus
   itself is not committed to this repo.
+- **No regex in the extraction path.** The neural pipeline (GLiNER + GLiREL)
+  replaced the old regex+BERT extractor wholesale. Patterns belong in config
+  files and alias overrides, not code.
 
 ## Status
 
-Early. All pipeline stages are implemented in some form, but nothing here is
-production-hardened and the public site is still coming together. Expect rough
-edges, incomplete data, and active changes.
+All pipeline stages are implemented and running. 200+ videos processed end to
+end with neural extraction, cross-transcript canonicalization, and truth
+propagation. Not production-hardened and the public site is still coming
+together. Expect rough edges, incomplete data, and active changes.
 
 ## Contributing
 
 Want to help, report a bad claim, suggest a source, or just ask a question?
-Open a GitHub issue on this repo. That's the whole process for now — no PR
-template, no Discord, no mailing list. Just issues.
+Open a GitHub issue on this repo, or use the **suggest an edit** menu on any
+entity or relationship in the public site — it prefills a structured issue
+automatically.
 
 ## Running it yourself
 
-Requires Node >= 20.
+Requires Node >= 20 and Python 3 (for the extraction sidecars).
 
 ```bash
 npm install
+python -m pip install -r tools/requirements.txt
 npm run build
 npm test
 ```
@@ -88,13 +105,18 @@ npm run add -- "https://www.youtube.com/watch?v=VIDEOID"
 #    so you can batch-edit the seed file and run this once.
 npm run ingest
 
-# 3. Run the staged pipeline: nlp → ai → per-claim, then graph
-#    stages (propagation, contradictions, novel, indexes). The
-#    `indexes` stage writes the aggregated files the UI reads.
+# 3. Run the staged pipeline: entities → date-normalize → relations →
+#    ai → per-claim, then graph stages (propagation, contradictions,
+#    novel, indexes). The `indexes` stage writes the aggregated files
+#    the UI reads.
 npm run pipeline
 
-# 4. Serve the UI (read-only; no background work on boot).
+# 4. Serve the local admin UI + API on :4173.
 npm run dev
+
+# 5. (Optional) run the public site dev server on :5173 for the
+#    React pages (proxies /api and /admin through to :4173).
+cd web && npm run dev
 ```
 
 Other commands:
@@ -103,6 +125,7 @@ Other commands:
 npm run heal    # reset failed rows + clear stale transcriptPath fields
 npm run audit   # print a state summary of the catalog
 npm run cli -- status [--video ID]   # per-row stage map
+npm run cli -- neural --video ID     # entities + relations for one video
 ```
 
 The `ai` stage is a checkpoint: it writes a Claude Code prompt bundle under
@@ -112,19 +135,44 @@ Code against the bundle, drop the reply at
 it. Re-running the pipeline is always safe — stages are idempotent and only
 stale work runs.
 
+### Curation and overrides (admin only, localhost)
+
+Extraction is never perfect. The admin UI at `http://localhost:4173/admin`
+lets you curate the corpus without touching per-video extraction output:
+
+- **`/admin/video/:id`** — all entities and relationships for one video, with
+  a ⋯ menu on each for hide / rename / merge actions.
+- **`/admin/entity/:id`** — every video an entity appears in, with the same
+  action menu.
+- **`/admin/aliases`** — flat editable list of all overrides; search bar,
+  cluster-review for proposed merges, and a **rebuild graph** button that
+  re-aggregates in-process.
+
+All overrides live in `data/aliases.json` as a flat append-only file. See
+[CLAUDE.md](CLAUDE.md) for the full schema.
+
+### Source tree
+
 ```
 src/
-├── ingest/     # youtube transcript fetcher + rate limiter
-├── catalog/    # video <-> transcript catalog, gap detection
-├── nlp/        # entity + relationship extraction
-├── ai/         # claude-code-driven enrichment pass
-├── graph/      # relationship graph store and queries
-├── truth/      # truthiness, propagation, contradiction & loop detection
-├── skeptic/    # speaker-credibility scoring
-├── ui/         # navigation + graph visualization
-├── web/        # public read-only site
-├── cli/        # captions CLI entrypoint
-└── shared/     # cross-cutting types and utilities
+├── ingest/          # youtube transcript fetcher + rate limiter
+├── catalog/         # video ↔ transcript catalog, gap detection
+├── entities/        # GLiNER sidecar + intra-transcript canonicalization
+├── date_normalize/  # derive typed date entities from date_time mentions
+├── relations/       # GLiREL sidecar + relation extraction
+├── ai/              # claude-code-driven enrichment pass
+├── graph/           # relationship graph, adapter, cross-transcript aliases
+├── truth/           # truthiness propagation, contradictions, novel links
+├── skeptic/         # speaker-credibility scoring
+├── ui/              # admin UI + JSON API (node:http, no framework)
+├── cli/             # captions CLI entrypoint
+├── shared/          # cross-cutting types, python-bridge
+└── pipeline/        # stage runner
+
+tools/               # python sidecars (gliner, glirel, coref)
+config/              # runtime knobs: labels, predicates, model ids, thresholds
+web/                 # public static site (react + vite, github pages)
 ```
 
-See [CLAUDE.md](CLAUDE.md) for contributor and agent guidance.
+See [CLAUDE.md](CLAUDE.md) for contributor and agent guidance, including the
+full aliases-override data model.

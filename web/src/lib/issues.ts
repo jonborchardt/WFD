@@ -104,17 +104,17 @@ interface EntityRef {
   label: string;      // entity label
 }
 
-export function hideEntityIssueUrl(e: EntityRef, where: string): string {
-  const apply = applyLink("hide", { key: e.key });
-  const title = `[edit-request] hide entity "${e.canonical}"`;
+export function deleteEntityIssueUrl(e: EntityRef, where: string): string {
+  const apply = applyLink("delete", { key: e.key });
+  const title = `[edit-request] delete entity "${e.canonical}"`;
   const lines = [
-    `**Action:** hide entity (drop from graph)`,
+    `**Action:** delete entity (drop from graph)`,
     `**Entity key:** \`${e.key}\``,
     `**Canonical:** ${e.canonical}`,
     `**Label:** ${e.label}`,
     `**Seen on:** ${where}`,
     "",
-    "**Reason:** <!-- why should this be hidden? -->",
+    "**Reason:** <!-- why should this be deleted? -->",
     "",
     "---",
     "",
@@ -126,7 +126,7 @@ export function hideEntityIssueUrl(e: EntityRef, where: string): string {
     new URLSearchParams({
       title,
       body: lines.join("\n"),
-      labels: "edit-request,hide",
+      labels: "edit-request,delete",
     }).toString()
   );
 }

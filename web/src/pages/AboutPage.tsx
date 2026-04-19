@@ -44,17 +44,22 @@ export function AboutPage() {
         <Typography paragraph>
           The pipeline runs in stages. First we <strong>fetch</strong> transcripts
           directly from YouTube (politely — transcripts are gold; once we have
-          one, we never re-fetch it). Then a neural NER model extracts persons,
-          organizations, and locations, while a relation extraction model pairs
-          entities using a predicate table.
+          one, we never re-fetch it). Then a pair of zero-shot neural models
+          does the heavy lifting: <strong>GLiNER</strong> pulls out entities
+          across fourteen label types (people, organizations, locations,
+          facilities, events, dates, roles, technologies, works of media, laws,
+          ideologies, and more) and <strong>GLiREL</strong> scores relations
+          between them against a vocabulary of predicates.
         </Typography>
         <Typography paragraph>
           After that, an <strong>AI enrichment</strong> pass refines and adds
-          relationships that the deterministic extractors missed. Everything lands
-          in a graph store with per-claim truth scoring, contradiction detection,
-          and loop detection. A separate "skeptic" layer scores speaker
-          credibility from transcript signals. The public site you're reading
-          right now is the read-only front end on top of all of that.
+          relationships the neural models missed. A cross-transcript alias
+          layer merges duplicates (e.g. "Dan" and "Dan Brown" across 40
+          videos) and filters known noise. Everything lands in a graph store
+          with per-claim truth scoring, contradiction detection, and loop
+          detection. A separate "skeptic" layer scores speaker credibility
+          from transcript signals. The public site you're reading right now
+          is the read-only front end on top of all of that.
         </Typography>
 
         <Typography variant="h5" sx={{ mt: 4 }} gutterBottom>What you can do here</Typography>
@@ -64,6 +69,7 @@ export function AboutPage() {
             <li>Explore the extracted <Link component="button" onClick={() => nav("/relationships")}>relationships graph</Link> across the entire corpus.</li>
             <li>Slice the corpus by entity type, episode, or theme in <Link component="button" onClick={() => nav("/facets")}>facets</Link>.</li>
             <li>Click any entity to see every video it appears in, with jump-to-timestamp links.</li>
+            <li><strong>Spotted something wrong?</strong> Every entity and relationship has a <code>⋯</code> menu (or shift+click) that opens a prefilled GitHub issue so we can fix it.</li>
           </ul>
         </Typography>
 

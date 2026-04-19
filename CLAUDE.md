@@ -239,34 +239,74 @@ Universal per-entity popover. Shows:
 - **CLI**: `captions pipeline --stage indexes` does the same out of
   band. Works because every alias write bumps `graph.dirtyAt`.
 
-### Data model in `data/aliases.json`
+### Data model in `data/aliases.json` (v2)
 
-One flat, append-only JSON object. Prefixes disambiguate key types so
-AI can emit entries one line at a time without nested structure.
+Structured JSON, one section per override kind. Human-readable so you
+can eyeball a whole section at once, and AI-appendable because every
+entry is a fully-qualified typed record with no compound keys.
 
+The schema lives in [src/graph/aliases-schema.ts](src/graph/aliases-schema.ts).
+
+```jsonc
+{
+  "schemaVersion": 2,
+  "merges": [
+    { "from": "person:dan", "to": "person:dan brown" }
+  ],
+  "deletedEntities": [
+    { "key": "organization:music" }
+  ],
+  "display": [
+    { "key": "person:aj gentile", "display": "AJ Gentile" }
+  ],
+  "notSame": [
+    { "a": "person:frank", "b": "person:frank black" }
+  ],
+  "dismissed": [
+    { "members": ["location:mexico", "location:indonesia"] }
+  ],
+  "videoMerges": [
+    { "videoId": "abc123", "from": "person:frank", "to": "person:frank black" }
+  ],
+  "deletedRelations": [
+    {
+      "videoId": "xyz456",
+      "subject": "organization:npr",
+      "predicate": "funded_by",
+      "object": "event:kickstarter campaign",
+      "timeStart": 1243
+    }
+  ]
+}
 ```
-"<entityKey>": "<targetKey>"                 → merge
-"<entityKey>": "__hidden__"                  → drop from graph entirely
-"<a>~~<b>": "__not_same__"                   → never propose as pair
-"<key1>||<key2>||…": "__dismissed__"         → cluster dismissed
-"display:<entityKey>": "Display Text"        → rename without merging
-"video:<videoId>:<fromKey>": "<toKey>"       → per-video rename only
-"del:<videoId>:<composite>": "true"          → suppress one relationship
-```
 
-Composite rel key = `<subjectKey>|<predicate>|<objectKey>|<timeStart>`
-(seconds, floored — stable across re-extractions).
+**Section semantics:**
+- `merges` — `from` is the same entity as `to`; folded into `to` at aggregation.
+- `deletedEntities` — this entity is dropped from the graph entirely; relations touching it also drop. "Hide" and "delete" collapsed into this one concept.
+- `display` — render this entity with the provided string in place of its extracted canonical. Key unchanged.
+- `notSame` — operator asserted these two entities are different. They won't be proposed together in future cluster-review rounds.
+- `dismissed` — operator already reviewed this cluster; don't reappear.
+- `videoMerges` — per-video alias. Applies only when aggregating that specific video.
+- `deletedRelations` — suppress one specific relationship in one video. `(videoId, subject, predicate, object, timeStart)` is the natural key.
+
+**Stable sort**: every write sorts each section by natural key, so diffs stay minimal across edits.
+
+**Legacy v1 format** (flat `Record<string, string>` with prefixed keys like `display:`, `video:<vid>:`, `del:<vid>:`, `~~`, `||`, and sentinel values `__hidden__` / `__deleted__` / `__not_same__` / `__dismissed__`) is auto-migrated on first read. The migration writes the v2 form back atomically.
+
+### Runtime representation
+
+`readAliases(dataDir)` in [src/graph/canonicalize.ts](src/graph/canonicalize.ts) loads the v2 file and compiles a flat `AliasMap` for the hot-path helpers: `resolveKey`, `isDeleted`, `isRelationDeleted`, `getDisplayOverride`, `getVideoAlias`. Callers that need to mutate should use the typed helpers in `src/graph/aliases-schema.ts` (`addMerge`, `addDeletedEntity`, `addDisplay`, `addNotSame`, `addDismissed`, `addVideoMerge`, `addDeletedRelation`, plus their `remove*` counterparts).
 
 ### Adapter precedence
 
 Per mention in [src/graph/adapt.ts](src/graph/adapt.ts) `neuralToGraph()`:
 
-1. Apply `video:<vid>:` alias if set (per-video rename)
+1. Apply `videoMerges` alias if set (per-video rename)
 2. Resolve corpus merge chain (up to 10 hops)
-3. Drop if resolved key is hidden
-4. Entity.canonical = `display:<resolvedKey>` override, else extracted canonical
+3. Drop if resolved key is in `deletedEntities`
+4. Entity.canonical = `display` override if set, else extracted canonical
 
-Per edge: drop if composite `del:<vid>:` key is set.
+Per edge: drop if composite `(videoId, subject, predicate, object, timeStart)` is in `deletedRelations`.
 
 ### Entity action menu
 
@@ -295,8 +335,8 @@ Surfaces wired up:
 ### API surface (all local-only, no auth)
 
 Write endpoints (POST form-urlencoded):
-- `/api/aliases/hide` · `key`
-- `/api/aliases/unhide` · `key`
+- `/api/aliases/delete` · `key` (alias `/hide` kept for old clients)
+- `/api/aliases/undelete` · `key` (alias `/unhide` kept)
 - `/api/aliases/merge` · `from`, `to`
 - `/api/aliases/unmerge` · `key`
 - `/api/aliases/display` · `key`, `value`
@@ -339,8 +379,8 @@ promotion).
 
 ### API surface (all local-only, no auth)
 
-- `POST /api/aliases/hide` — `key`
-- `POST /api/aliases/unhide` — `key`
+- `POST /api/aliases/delete` — `key`
+- `POST /api/aliases/undelete` — `key`
 - `POST /api/aliases/merge` — `from`, `to`
 - `POST /api/aliases/unmerge` — `key`
 - `GET /api/aliases/search?q=&label=` — autocomplete feed
