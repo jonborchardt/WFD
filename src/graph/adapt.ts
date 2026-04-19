@@ -38,7 +38,7 @@ import {
   entityKeyOf,
   getDisplayOverride,
   getVideoAlias,
-  isHidden,
+  isDeleted,
   isRelationDeleted,
   resolveKey,
   type AliasMap,
@@ -60,7 +60,7 @@ function resolveMentionKey(
       ? getVideoAlias(videoId, raw, aliases) ?? raw
       : raw;
   const afterCorpus = resolveKey(afterVideo, aliases);
-  if (isHidden(afterCorpus, aliases)) return null;
+  if (isDeleted(afterCorpus, aliases)) return null;
   return afterCorpus;
 }
 

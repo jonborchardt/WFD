@@ -32,10 +32,10 @@ import {
   writeAliases,
   notSameKey,
   isSentinel,
-  isHidden,
+  isDeleted,
   resolveKey,
   entityKeyOf,
-  SENTINEL_HIDDEN,
+  SENTINEL_DELETED,
 } from "../graph/canonicalize.js";
 import {
   readPersistedEntities,
@@ -865,21 +865,21 @@ const ENTITY_MENU_SCRIPT = `
     header.style.cssText = 'padding:4px 6px;border-bottom:1px solid var(--border);margin-bottom:4px';
     header.innerHTML = '<strong>' + escapeText(canonical) + '</strong><br><span class="sub">' + escapeText(label) + ' · <code>' + escapeText(key) + '</code></span>';
     menu.appendChild(header);
-    if (status === 'hidden') {
-      menu.appendChild(actionButton('unhide', function(){
-        post('/api/aliases/unhide', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'unhidden'); });
+    if (status === 'deleted') {
+      menu.appendChild(actionButton('undelete', function(){
+        post('/api/aliases/undelete', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'undeleted'); });
       }));
     } else if (status === 'merged') {
       menu.appendChild(actionButton('unmerge', function(){
         post('/api/aliases/unmerge', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'unmerged'); });
       }));
-      menu.appendChild(actionButton('hide', function(){
-        post('/api/aliases/hide', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'hidden'); });
+      menu.appendChild(actionButton('delete', function(){
+        post('/api/aliases/delete', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'deleted'); });
       }));
     } else {
       var videoId = wrap.getAttribute('data-video-id') || '';
-      menu.appendChild(actionButton('hide entirely', function(){
-        post('/api/aliases/hide', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'hidden'); });
+      menu.appendChild(actionButton('delete', function(){
+        post('/api/aliases/delete', { key: key }).then(function(){ closeMenu(); markActioned(wrap, 'deleted'); });
       }));
       // Rename display — free-form text, no merge.
       menu.appendChild(actionButton('rename display…', function(){
@@ -1371,14 +1371,17 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         }
       `;
 
-      // Flat editable list of current merges and hidden entities.
+      // Flat editable list of current merges and deleted entities.
       // Paired with a search box that filters both this table and the
       // pending-cluster cards below.
       const mergeEntries = Object.entries(aliases)
         .filter(([k, v]) => !isSentinel(v) && !k.includes("~~") && !k.includes("||"))
         .sort(([a], [b]) => a.localeCompare(b));
-      const hiddenEntries = Object.entries(aliases)
-        .filter(([k, v]) => v === SENTINEL_HIDDEN && !k.includes("~~") && !k.includes("||"))
+      const deletedEntries = Object.entries(aliases)
+        .filter(([k, v]) =>
+          (v === SENTINEL_DELETED || v === "__hidden__") &&
+          !k.includes("~~") && !k.includes("||"),
+        )
         .sort(([a], [b]) => a.localeCompare(b));
 
       const mergeRows = mergeEntries
@@ -1400,7 +1403,7 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         })
         .join("");
 
-      const hiddenRows = hiddenEntries
+      const deletedEntityRows = deletedEntries
         .map(([key]) => {
           const ent = corpus.get(key);
           const label = ent?.label ?? key.split(":")[0];
@@ -1410,7 +1413,7 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
             <td>${escapeHtml(label)}</td>
             <td><a href="/admin/entity/${escapeHtml(encodeURIComponent(key))}">${escapeHtml(canonical)}</a></td>
             <td data-sort-value="${mentions}">${mentions}</td>
-            <td><button onclick="unhide('${escapeHtml(key)}', this)" style="color:var(--muted)">unhide</button></td>
+            <td><button onclick="undelete('${escapeHtml(key)}', this)" style="color:var(--muted)">undelete</button></td>
           </tr>`;
         })
         .join("");
@@ -1468,8 +1471,8 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           });
           if (r.ok) btn.closest('tr').style.opacity = '0.4';
         }
-        async function unhide(key, btn) {
-          var r = await fetch('/api/aliases/unhide', {
+        async function undelete(key, btn) {
+          var r = await fetch('/api/aliases/undelete', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: 'key=' + encodeURIComponent(key),
@@ -1528,7 +1531,7 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       const body = `
         <h1>Entity aliases</h1>
         ${toast}
-        <p>${corpus.size} corpus entities · ${mergeCount} merges · ${hiddenEntries.length} hidden · ${notSameCount} not-same pairs · ${pendingClusters.length} pending clusters</p>
+        <p>${corpus.size} corpus entities · ${mergeCount} merges · ${deletedEntries.length} deleted · ${notSameCount} not-same pairs · ${pendingClusters.length} pending clusters</p>
 
         <p style="display:flex;gap:8px;align-items:center;margin:1em 0">
           <input id="alias-search" type="text" placeholder="search all tables and clusters by canonical, label, or key..." oninput="filterAll()" style="flex:1;padding:6px 8px;border:1px solid var(--border);border-radius:3px;font-size:14px"/>
@@ -1545,13 +1548,13 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           <tbody>${mergeRows || '<tr><td colspan="6">no merges yet</td></tr>'}</tbody>
         </table>
 
-        <h2>Hidden entities <span class="sub">${hiddenEntries.length}</span></h2>
+        <h2>Deleted entities <span class="sub">${deletedEntries.length}</span></h2>
         <table class="sortable">
           <thead><tr>
             <th>label</th><th>canonical</th>
             <th data-sort-type="number">mentions</th><th>action</th>
           </tr></thead>
-          <tbody>${hiddenRows || '<tr><td colspan="4">none</td></tr>'}</tbody>
+          <tbody>${deletedEntityRows || '<tr><td colspan="4">none</td></tr>'}</tbody>
         </table>
 
         <h2>Pending clusters <span class="sub">${pendingClusters.length}</span></h2>
@@ -1645,17 +1648,18 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
         const params = new URLSearchParams(postBody);
         const aliases = readAliases(dataRoot);
         const action = url.slice("/api/aliases/".length);
-        if (action === "hide") {
+        if (action === "delete" || action === "hide") {
+          // `hide` is kept as an alias for pre-rename clients.
           const key = params.get("key") ?? "";
           if (!key) return sendJson(res, 400, { error: "missing key" });
-          // Remove any existing merge target so `key` resolves to itself,
-          // then mark it hidden.
           if (aliases[key] && !isSentinel(aliases[key])) delete aliases[key];
-          aliases[key] = SENTINEL_HIDDEN;
-        } else if (action === "unhide") {
+          aliases[key] = SENTINEL_DELETED;
+        } else if (action === "undelete" || action === "unhide") {
           const key = params.get("key") ?? "";
           if (!key) return sendJson(res, 400, { error: "missing key" });
-          if (aliases[key] === SENTINEL_HIDDEN) delete aliases[key];
+          if (aliases[key] === SENTINEL_DELETED || aliases[key] === "__hidden__") {
+            delete aliases[key];
+          }
         } else if (action === "merge") {
           const from = params.get("from") ?? "";
           const to = params.get("to") ?? "";
@@ -1804,13 +1808,13 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       const aliases = readAliases(dataRoot);
       let summary = "";
       let ok = true;
-      if (op === "hide") {
+      if (op === "delete" || op === "hide") {
         const key = u.searchParams.get("key") ?? "";
         if (!key) { ok = false; summary = "missing key"; }
         else {
           if (aliases[key] && !isSentinel(aliases[key])) delete aliases[key];
-          aliases[key] = SENTINEL_HIDDEN;
-          summary = `hid ${key}`;
+          aliases[key] = SENTINEL_DELETED;
+          summary = `deleted ${key}`;
         }
       } else if (op === "merge") {
         const from = u.searchParams.get("from") ?? "";
@@ -1859,15 +1863,15 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       const entity = corpus.get(key);
       const resolved = resolveKey(key, aliases);
       const mergedInto = resolved !== key ? resolved : null;
-      const hidden = isHidden(key, aliases);
+      const hidden = isDeleted(key, aliases);
 
-      let status: "active" | "merged" | "hidden" = "active";
-      if (hidden) status = "hidden";
+      let status: "active" | "merged" | "deleted" = "active";
+      if (hidden) status = "deleted";
       else if (mergedInto) status = "merged";
 
       const statusBadge =
-        status === "hidden"
-          ? `<span class="pill bad">hidden</span>`
+        status === "deleted"
+          ? `<span class="pill bad">deleted</span>`
           : status === "merged"
           ? `<span class="pill warn">merged → ${escapeHtml(mergedInto ?? "")}</span>`
           : `<span class="pill ok">active</span>`;

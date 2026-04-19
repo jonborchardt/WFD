@@ -22,7 +22,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { IS_ADMIN } from "../lib/admin";
 import {
-  hideEntityIssueUrl,
+  deleteEntityIssueUrl,
   renameEntityIssueUrl,
   mergeEntityIssueUrl,
   deleteRelationIssueUrl,
@@ -264,9 +264,9 @@ function AdminEntityMenu({
     <div>
       {header}
       <MenuItem onClick={() => applyAction(
-        () => post("/api/aliases/hide", { key: entity.key }),
-        "hidden",
-      )}>hide entirely</MenuItem>
+        () => post("/api/aliases/delete", { key: entity.key }),
+        "deleted",
+      )}>delete</MenuItem>
       <MenuItem onClick={() => setMode("rename")}>rename display…</MenuItem>
       <MenuItem onClick={() => setMode("merge")}>
         merge into… {videoId ? "(corpus or this video)" : ""}
@@ -295,9 +295,9 @@ function PublicEntityMenu({
       <div>
         {header}
         <MenuItem onClick={() => {
-          window.open(hideEntityIssueUrl(entity, where), "_blank");
+          window.open(deleteEntityIssueUrl(entity, where), "_blank");
           onClose();
-        }}>suggest: hide this entity</MenuItem>
+        }}>suggest: delete this entity</MenuItem>
         <MenuItem onClick={() => setAction("rename")}>suggest: rename display…</MenuItem>
         <MenuItem onClick={() => setAction("merge")}>suggest: merge into…</MenuItem>
       </div>
