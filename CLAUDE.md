@@ -194,29 +194,160 @@ or `relations` upserts into the graph store.
 
 ## Cross-transcript canonicalization
 
-Duplicate entities across videos (e.g. "Dan" vs "Dan Brown", "America"
-vs "United States") are merged via the alias system:
+Duplicate and junk entities across videos (e.g. "Dan" vs "Dan Brown",
+"America" vs "United States", or generic nouns like "channel" /
+"music") are curated via the alias system. All actions persist
+immediately to `data/aliases.json` and bump `graph.dirtyAt` so the
+next indexes rebuild picks them up.
 
-1. **Review:** browse `/admin/aliases` in the dev UI. Proposed clusters
-   are shown with checkboxes — checked = same entity, unchecked =
-   different entity. Click **save** to record the decision.
-2. **Rebuild:** run `captions pipeline --stage indexes` (or a full
-   `captions pipeline`). The `indexes` graph stage reads
-   `data/aliases.json` and applies the merge map when building the
-   corpus-wide entity index and relationship graph.
-3. **Repeat:** reload `/admin/aliases`. New transitive clusters may
-   appear from accepted merges. Do another round until the pending
-   list is clean.
+### Where to do the work
 
-Data model in `data/aliases.json`:
-- `"entity_a": "entity_b"` — a and b are the same; a merges into b
-- `"entity_a~~entity_b": "__not_same__"` — a and b are different; never
-  re-propose this pair
-- `"cluster||identity": "__dismissed__"` — entire cluster dismissed
+- **`/admin/aliases`** — the curation hub. Three sections:
+  1. **Current merges** — flat editable table of every `from → to`
+     alias. Click **edit** in the target cell to change where a key
+     merges into via autocomplete. Click **undo** to drop a merge.
+  2. **Hidden entities** — entities you've decided should not appear
+     in the graph at all (generic noise like "music", "channel").
+     **unhide** to restore.
+  3. **Pending clusters** — proposed merge groups built from
+     substring containment + co-occurrence. Checkboxes: checked =
+     same entity, unchecked = different. **save** records both
+     (checked ones → merge, unchecked ones → `__not_same__` pair).
+     The top-of-page search box live-filters every table and
+     cluster card.
+- **`/admin/entity/:key`** — per-entity page. Status badge
+  (active / merged / hidden), list of videos it appears in, list of
+  entities that merge into it, and the same ⋯ action menu.
+- **`/admin/video/:id`** — the neural entities table has a `⋯`
+  button on every row that opens the action menu inline.
 
-The alias map is applied in [src/graph/adapt.ts](src/graph/adapt.ts)
-`neuralToGraph()` — entity ids resolve through the chain before graph
-insertion.
+### The `⋯` action menu
+
+Universal per-entity popover. Shows:
+- **hide entirely** — adds `key → __hidden__`; drops the entity (and
+  every relationship that touches it) from the graph.
+- **merge into…** — live-autocomplete scoped to the same label.
+  Click a result to write `key → target`.
+- **unmerge** / **unhide** when the entity is already in one of
+  those states.
+
+### Applying decisions
+
+- **`rebuild graph` button** on `/admin/aliases` — runs the indexes
+  stage in-process; the corpus-wide files regenerate without
+  leaving the browser.
+- **CLI**: `captions pipeline --stage indexes` does the same out of
+  band. Works because every alias write bumps `graph.dirtyAt`.
+
+### Data model in `data/aliases.json`
+
+One flat, append-only JSON object. Prefixes disambiguate key types so
+AI can emit entries one line at a time without nested structure.
+
+```
+"<entityKey>": "<targetKey>"                 → merge
+"<entityKey>": "__hidden__"                  → drop from graph entirely
+"<a>~~<b>": "__not_same__"                   → never propose as pair
+"<key1>||<key2>||…": "__dismissed__"         → cluster dismissed
+"display:<entityKey>": "Display Text"        → rename without merging
+"video:<videoId>:<fromKey>": "<toKey>"       → per-video rename only
+"del:<videoId>:<composite>": "true"          → suppress one relationship
+```
+
+Composite rel key = `<subjectKey>|<predicate>|<objectKey>|<timeStart>`
+(seconds, floored — stable across re-extractions).
+
+### Adapter precedence
+
+Per mention in [src/graph/adapt.ts](src/graph/adapt.ts) `neuralToGraph()`:
+
+1. Apply `video:<vid>:` alias if set (per-video rename)
+2. Resolve corpus merge chain (up to 10 hops)
+3. Drop if resolved key is hidden
+4. Entity.canonical = `display:<resolvedKey>` override, else extracted canonical
+
+Per edge: drop if composite `del:<vid>:` key is set.
+
+### Entity action menu
+
+Every entity and relationship on an admin surface has a per-item menu
+triggered by a visible `⋯` button (entity) or `✎` button (relation),
+plus shift+click on the chip/row.
+
+- **Admin mode** (`VITE_ADMIN=true` on the React side, always-on for
+  server-rendered admin pages): all actions. Each POSTs to
+  `/api/aliases/<op>`.
+- **Public** (production static site): one action — "suggest an edit"
+  — opens a prefilled GitHub issue (see
+  [web/src/lib/issues.ts](web/src/lib/issues.ts)). Each issue body
+  includes a `http://localhost:4173/admin/apply?op=…` link an admin
+  can click to execute without leaving the browser.
+
+Surfaces wired up:
+- `/admin/video/:id` entities table — `⋯` menu
+- `/admin/video/:id` relations table — `✎` menu
+- `/admin/entity/:key` — `⋯` menu in the header
+- `/admin/aliases` — flat editable list + cluster review
+- `/video/:id` — `⋯` menu on entity chips, `✎` menu on relation rows
+- `/relationships` — `⋯` menu in the node detail panel
+- `/facets` — `⋯` menu at the end of each facet-bar row
+
+### API surface (all local-only, no auth)
+
+Write endpoints (POST form-urlencoded):
+- `/api/aliases/hide` · `key`
+- `/api/aliases/unhide` · `key`
+- `/api/aliases/merge` · `from`, `to`
+- `/api/aliases/unmerge` · `key`
+- `/api/aliases/display` · `key`, `value`
+- `/api/aliases/undisplay` · `key`
+- `/api/aliases/video-merge` · `videoId`, `from`, `to`
+- `/api/aliases/video-unmerge` · `videoId`, `from`
+- `/api/aliases/delete-relation` · `videoId`, `key` (composite)
+- `/api/aliases/undelete-relation` · `videoId`, `key`
+- `/api/aliases/create-phantom` · `label`, `name`, `mergeFrom?` →
+  writes `display:<phantom>` and optionally merges `mergeFrom` into
+  the phantom. Returns the phantom key.
+
+Read endpoint:
+- `GET /api/aliases/search?q=&label=` → top 20 entities by mention
+  count whose canonical contains the query.
+
+Indexes + apply-link endpoints:
+- `POST /api/indexes/rebuild` → in-process indexes stage
+- `GET /admin/apply?op=<hide|merge|display|video-merge|delete-relation>&…`
+  → silent apply, redirects to `/admin/aliases?applied=<summary>&ok=0|1`
+  (toast banner at page top)
+
+All writes bust `nlpCache`, `entityIndexCache`, `entityVideosCache`,
+and `relationshipsGraphCache`, and bump `graph.dirtyAt`.
+
+### Phantom entities
+
+When admin picks "merge into new name…" and types a string that
+doesn't match any existing entity, the server writes two entries:
+
+```
+"display:<label>:<normalized_typed>": "Typed Name"   // display override
+"<source_key>": "<label>:<normalized_typed>"          // merge into phantom
+```
+
+Phantoms have no mentions of their own but act as the merge target
+and the display-name source for everything that merges into them.
+They inherit their label from the source entity (no cross-label
+promotion).
+
+### API surface (all local-only, no auth)
+
+- `POST /api/aliases/hide` — `key`
+- `POST /api/aliases/unhide` — `key`
+- `POST /api/aliases/merge` — `from`, `to`
+- `POST /api/aliases/unmerge` — `key`
+- `GET /api/aliases/search?q=&label=` — autocomplete feed
+- `POST /api/indexes/rebuild` — in-process indexes stage
+
+All writes bust `nlpCache`, `entityIndexCache`, `entityVideosCache`,
+and `relationshipsGraphCache`, and bump `graph.dirtyAt`.
 
 ## Web (public site)
 

@@ -4,19 +4,22 @@
 // consumed by src/graph/, src/truth/, and the UI server.
 //
 // The on-disk per-video shapes are:
-//   data/entities/<id>.json  → PersistedEntities { mentions[] }
-//   data/relations/<id>.json → PersistedRelations { edges[] }
+//   data/entities/<id>.json       → PersistedEntities { mentions[] }
+//   data/relations/<id>.json      → PersistedRelations { edges[] }
+//   data/date-normalize/<id>.json → PersistedDerivedDates { mentions[] }
 //
 // The downstream shapes are:
 //   Entity       { id, type, canonical, aliases, mentions[] }
 //   Relationship { id, subjectId, predicate, objectId, evidence, ... }
 //
-// The grouping rule: mentions with the same (label, lowercased
-// canonical) collapse into one Entity record. The entity id is
-// `${type}:${canonical.toLowerCase()}` — this mirrors the old nlp
-// module's keying so downstream code doesn't need schema changes.
-// Relation endpoints, which the neural pipeline records as mention ids
-// (m_0001, ...), are rewritten to these entity ids during adaptation.
+// Alias application order (per mention):
+//   1. Apply per-video alias (video:<vid>:<key> → target) if set
+//   2. Resolve corpus merge chain (key → target[, target, ...])
+//   3. Drop mention if resolved key is hidden
+//   4. Entity.canonical comes from display:<resolvedKey> override
+//      when set, otherwise from the extracted canonical
+//
+// Per edge: drop if its composite del-key is in the alias map.
 
 import {
   createRelationship,
@@ -31,15 +34,34 @@ import type {
 } from "../entities/index.js";
 import type { PersistedRelations } from "../relations/index.js";
 import type { PersistedDerivedDates } from "../date_normalize/types.js";
-import { type AliasMap, resolveKey } from "./canonicalize.js";
+import {
+  entityKeyOf,
+  getDisplayOverride,
+  getVideoAlias,
+  isHidden,
+  isRelationDeleted,
+  resolveKey,
+  type AliasMap,
+} from "./canonicalize.js";
 
-function entityIdFor(
+// Resolve a mention's key through (per-video alias?) → corpus merge →
+// return the final entity id. `null` means the mention should be
+// dropped because its final resolution is hidden.
+function resolveMentionKey(
   label: string,
   canonical: string,
-  aliases?: AliasMap,
-): string {
-  const raw = `${label}:${canonical.trim().toLowerCase()}`;
-  return aliases ? resolveKey(raw, aliases) : raw;
+  aliases: AliasMap | undefined,
+  videoId: string | undefined,
+): string | null {
+  const raw = entityKeyOf(label, canonical);
+  if (!aliases) return raw;
+  const afterVideo =
+    videoId !== undefined
+      ? getVideoAlias(videoId, raw, aliases) ?? raw
+      : raw;
+  const afterCorpus = resolveKey(afterVideo, aliases);
+  if (isHidden(afterCorpus, aliases)) return null;
+  return afterCorpus;
 }
 
 function mentionToSpan(m: EntityMention): TranscriptSpan {
@@ -55,25 +77,33 @@ function mentionToSpan(m: EntityMention): TranscriptSpan {
 // Convert a PersistedEntities payload into graph-ready Entity records
 // plus a mention-id → entity-id map so the relation adapter can
 // rewrite endpoints. If a derived-dates payload is supplied, its
-// mentions are merged in alongside the GLiNER output so the graph sees
-// time_of_day / year / decade / ... entities too.
+// mentions are merged in alongside the GLiNER output.
 export function persistedEntitiesToGraph(
   persisted: PersistedEntities,
   aliases?: AliasMap,
   derived?: PersistedDerivedDates | null,
+  videoId?: string,
 ): {
   entities: Entity[];
   mentionToEntityId: Map<string, string>;
 } {
   const byId = new Map<string, Entity>();
   const mentionToEntityId = new Map<string, string>();
+  const vid = videoId ?? persisted.transcriptId;
   const all: EntityMention[] = [...persisted.mentions];
   if (derived) all.push(...derived.mentions);
   for (const m of all) {
-    const id = entityIdFor(m.label, m.canonical, aliases);
+    const id = resolveMentionKey(m.label, m.canonical, aliases, vid);
+    if (id === null) continue; // hidden
     mentionToEntityId.set(m.id, id);
     const existing = byId.get(id);
     const span = mentionToSpan(m);
+    // Prefer a display override if set; otherwise keep the extracted
+    // canonical from the first mention (which is the longest/most-
+    // frequent form picked by the intra-transcript canonicalizer).
+    const displayOverride = aliases
+      ? getDisplayOverride(id, aliases)
+      : undefined;
     if (existing) {
       existing.mentions.push(span);
       if (
@@ -87,7 +117,7 @@ export function persistedEntitiesToGraph(
       byId.set(id, {
         id,
         type: m.label as EntityLabel,
-        canonical: m.canonical,
+        canonical: displayOverride ?? m.canonical,
         aliases:
           m.surface && m.surface !== m.canonical ? [m.surface] : [],
         mentions: [span],
@@ -98,18 +128,35 @@ export function persistedEntitiesToGraph(
 }
 
 // Convert a PersistedRelations payload into graph-ready Relationship
-// records. Drops any edge whose endpoints don't resolve in the
-// mention-id map — this preserves the evidence invariant.
+// records. Drops any edge whose endpoints don't resolve, whose
+// subject == object after aliasing, or whose composite del-key is set
+// in the alias map.
 export function persistedRelationsToGraph(
   persisted: PersistedRelations,
   mentionToEntityId: Map<string, string>,
+  aliases?: AliasMap,
+  videoId?: string,
 ): Relationship[] {
   const out: Relationship[] = [];
+  const vid = videoId ?? persisted.transcriptId;
   for (const e of persisted.edges) {
     const subjectId = mentionToEntityId.get(e.subjectMentionId);
     const objectId = mentionToEntityId.get(e.objectMentionId);
     if (!subjectId || !objectId) continue;
     if (subjectId === objectId) continue;
+    if (
+      aliases &&
+      isRelationDeleted(
+        vid,
+        subjectId,
+        e.predicate,
+        objectId,
+        e.evidence.timeStart,
+        aliases,
+      )
+    ) {
+      continue;
+    }
     try {
       out.push(
         createRelationship({
@@ -122,22 +169,19 @@ export function persistedRelationsToGraph(
         }),
       );
     } catch {
-      // Malformed evidence span — skip rather than crash.
       continue;
     }
   }
   return out;
 }
 
-// Convenience: adapt both persisted payloads in one call. Accepts null
-// for either side and returns empty arrays in that case, which is the
-// behaviour the UI server and indexes stage want. If a derived-dates
-// payload is supplied, its mentions are folded into the entity set.
+// Convenience: adapt both persisted payloads in one call.
 export function neuralToGraph(
   persistedEntities: PersistedEntities | null,
   persistedRelations: PersistedRelations | null,
   aliases?: AliasMap,
   derivedDates?: PersistedDerivedDates | null,
+  videoId?: string,
 ): { entities: Entity[]; relationships: Relationship[] } {
   if (!persistedEntities) {
     return { entities: [], relationships: [] };
@@ -146,9 +190,15 @@ export function neuralToGraph(
     persistedEntities,
     aliases,
     derivedDates ?? null,
+    videoId,
   );
   const relationships = persistedRelations
-    ? persistedRelationsToGraph(persistedRelations, mentionToEntityId)
+    ? persistedRelationsToGraph(
+        persistedRelations,
+        mentionToEntityId,
+        aliases,
+        videoId,
+      )
     : [];
   return { entities, relationships };
 }

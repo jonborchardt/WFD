@@ -40,14 +40,88 @@ export type AliasMap = Record<string, string>;
 // Sentinel values stored in the alias map.
 const NOT_SAME = "__not_same__";
 const DISMISSED = "__dismissed__";
+const HIDDEN = "__hidden__";
 
 export function isSentinel(v: string): boolean {
-  return v === NOT_SAME || v === DISMISSED || v === "__rejected__";
+  return (
+    v === NOT_SAME ||
+    v === DISMISSED ||
+    v === HIDDEN ||
+    v === "__rejected__"
+  );
 }
+
+export function isHidden(key: string, aliases: AliasMap): boolean {
+  // Follow the merge chain first so hiding the canonical also hides
+  // everything merged into it.
+  const resolved = resolveKey(key, aliases);
+  return aliases[resolved] === HIDDEN;
+}
+
+export const SENTINEL_HIDDEN = HIDDEN;
+export const SENTINEL_NOT_SAME = NOT_SAME;
+export const SENTINEL_DISMISSED = DISMISSED;
 
 // Key for a "not same" pair. Always sorted so A~~B === B~~A.
 export function notSameKey(a: string, b: string): string {
   return a < b ? `${a}~~${b}` : `${b}~~${a}`;
+}
+
+// Prefix helpers for the extended alias-map key types. All three live
+// in the same flat aliases.json so AI can emit them one line at a
+// time; the prefixes disambiguate.
+//
+//   display:<entityKey>              → "Custom Display Name"
+//   video:<videoId>:<entityKey>      → targetEntityKey  (per-video merge)
+//   del:<videoId>:<compositeRelKey>  → "true"           (per-video rel delete)
+
+export function displayKey(entityKey: string): string {
+  return `display:${entityKey}`;
+}
+
+export function videoAliasKey(videoId: string, fromKey: string): string {
+  return `video:${videoId}:${fromKey}`;
+}
+
+export function deletedRelationKey(
+  videoId: string,
+  subjectKey: string,
+  predicate: string,
+  objectKey: string,
+  timeStart: number,
+): string {
+  return `del:${videoId}:${subjectKey}|${predicate}|${objectKey}|${Math.floor(timeStart)}`;
+}
+
+export function getDisplayOverride(
+  entityKey: string,
+  aliases: AliasMap,
+): string | undefined {
+  const v = aliases[displayKey(entityKey)];
+  return v && !isSentinel(v) ? v : undefined;
+}
+
+export function getVideoAlias(
+  videoId: string,
+  fromKey: string,
+  aliases: AliasMap,
+): string | undefined {
+  const v = aliases[videoAliasKey(videoId, fromKey)];
+  return v && !isSentinel(v) ? v : undefined;
+}
+
+export function isRelationDeleted(
+  videoId: string,
+  subjectKey: string,
+  predicate: string,
+  objectKey: string,
+  timeStart: number,
+  aliases: AliasMap,
+): boolean {
+  return (
+    aliases[deletedRelationKey(videoId, subjectKey, predicate, objectKey, timeStart)] ===
+    "true"
+  );
 }
 
 export function aliasesPath(dataDir: string): string {
@@ -69,8 +143,21 @@ export function writeAliases(dataDir: string, aliases: AliasMap): void {
   writeFileSync(aliasesPath(dataDir), JSON.stringify(aliases, null, 2), "utf8");
 }
 
-function normalize(s: string): string {
+// Canonical normalization used by both the corpus builder (this file)
+// and the graph adapter (src/graph/adapt.ts) so every entity key is
+// computed the same way regardless of which module generates it.
+export function normalizeCanonical(s: string): string {
   return s.toLowerCase().trim().replace(/\s+/g, " ");
+}
+
+// Build the full entity key (label + ":" + normalized canonical) used
+// everywhere as an entity's stable identifier.
+export function entityKeyOf(label: string, canonical: string): string {
+  return `${label}:${normalizeCanonical(canonical)}`;
+}
+
+function normalize(s: string): string {
+  return normalizeCanonical(s);
 }
 
 const NO_SUBSTRING_LABELS = new Set(["date_time", "quantity"]);

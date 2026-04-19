@@ -7,6 +7,7 @@ import { useMemo } from "react";
 import { Box, Typography } from "@mui/material";
 import type { FacetBundle, Selection } from "./duck";
 import { activeVideoIds, topEntitiesForType } from "./duck";
+import { EntityMenuButton } from "../EntityMenu";
 
 export const SIMPLE_FACET_TYPES: ReadonlySet<string> = new Set(["time_of_day"]);
 
@@ -88,6 +89,15 @@ export function SimpleFacet({ type, selection, bundle, selected, onToggle }: Pro
             </Box>
             <Box sx={{ width: 40, textAlign: "right", fontSize: 10, color: "text.secondary", fontVariantNumeric: "tabular-nums" }}>
               {r.total.toLocaleString()}
+            </Box>
+            <Box
+              sx={{ width: 20, flexShrink: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <EntityMenuButton
+                entity={{ key: r.entityId, canonical: r.canonical, label: type }}
+                where="/facets"
+              />
             </Box>
           </Box>
         );

@@ -85,3 +85,179 @@ export function suggestIssueUrl(
   });
   return WFD_ISSUES_URL + "?" + params.toString();
 }
+
+// Alias / override action suggestions. The public site renders a menu
+// that lands the user in a GitHub issue prefilled with structured
+// fields. Each issue body includes a localhost apply link that an
+// admin can one-click to write the aliases entry directly.
+
+const LOCAL_APPLY_ROOT = "http://localhost:4173/admin/apply";
+
+function applyLink(op: string, params: Record<string, string>): string {
+  const qs = new URLSearchParams({ op, ...params });
+  return `${LOCAL_APPLY_ROOT}?${qs.toString()}`;
+}
+
+interface EntityRef {
+  key: string;        // e.g. "person:dan"
+  canonical: string;  // display text
+  label: string;      // entity label
+}
+
+export function hideEntityIssueUrl(e: EntityRef, where: string): string {
+  const apply = applyLink("hide", { key: e.key });
+  const title = `[edit-request] hide entity "${e.canonical}"`;
+  const lines = [
+    `**Action:** hide entity (drop from graph)`,
+    `**Entity key:** \`${e.key}\``,
+    `**Canonical:** ${e.canonical}`,
+    `**Label:** ${e.label}`,
+    `**Seen on:** ${where}`,
+    "",
+    "**Reason:** <!-- why should this be hidden? -->",
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,hide",
+    }).toString()
+  );
+}
+
+export function renameEntityIssueUrl(
+  e: EntityRef,
+  suggested: string,
+  where: string,
+): string {
+  const apply = applyLink("display", { key: e.key, value: suggested });
+  const title = `[edit-request] rename "${e.canonical}" → "${suggested}"`;
+  const lines = [
+    `**Action:** rename display text`,
+    `**Entity key:** \`${e.key}\``,
+    `**Current:** ${e.canonical}`,
+    `**Suggested:** ${suggested}`,
+    `**Label:** ${e.label}`,
+    `**Seen on:** ${where}`,
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,rename",
+    }).toString()
+  );
+}
+
+export function mergeEntityIssueUrl(
+  from: EntityRef,
+  to: EntityRef,
+  where: string,
+): string {
+  const apply = applyLink("merge", { from: from.key, to: to.key });
+  const title = `[edit-request] merge "${from.canonical}" → "${to.canonical}"`;
+  const lines = [
+    `**Action:** merge`,
+    `**From:** \`${from.key}\` (${from.canonical})`,
+    `**Into:** \`${to.key}\` (${to.canonical})`,
+    `**Label:** ${from.label}`,
+    `**Seen on:** ${where}`,
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,merge",
+    }).toString()
+  );
+}
+
+export function videoRenameIssueUrl(
+  e: EntityRef,
+  target: EntityRef,
+  videoId: string,
+): string {
+  const apply = applyLink("video-merge", {
+    videoId,
+    from: e.key,
+    to: target.key,
+  });
+  const title = `[edit-request] (video ${videoId}) rename "${e.canonical}" → "${target.canonical}"`;
+  const lines = [
+    `**Action:** per-video rename`,
+    `**Video ID:** ${videoId}`,
+    `**Entity:** \`${e.key}\` (${e.canonical})`,
+    `**Target:** \`${target.key}\` (${target.canonical})`,
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,video-rename",
+    }).toString()
+  );
+}
+
+export function deleteRelationIssueUrl(
+  videoId: string,
+  subjectKey: string,
+  subjectText: string,
+  predicate: string,
+  objectKey: string,
+  objectText: string,
+  timeStart: number,
+): string {
+  const compositeKey = `${subjectKey}|${predicate}|${objectKey}|${Math.floor(timeStart)}`;
+  const apply = applyLink("delete-relation", {
+    videoId,
+    key: compositeKey,
+  });
+  const title = `[edit-request] delete "${subjectText} ${predicate} ${objectText}" in ${videoId}`;
+  const lines = [
+    `**Action:** delete relationship (per-video)`,
+    `**Video ID:** ${videoId}`,
+    `**Subject:** ${subjectText} (\`${subjectKey}\`)`,
+    `**Predicate:** ${predicate}`,
+    `**Object:** ${objectText} (\`${objectKey}\`)`,
+    `**Time:** ${Math.floor(timeStart)}s`,
+    "",
+    "**Reason:** <!-- why is this wrong? -->",
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,delete-rel",
+    }).toString()
+  );
+}

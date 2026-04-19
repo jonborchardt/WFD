@@ -1,5 +1,6 @@
 import { Box, Typography, IconButton, Tooltip, Autocomplete, TextField } from "@mui/material";
 import type { FacetRow } from "./duck";
+import { EntityMenuButton } from "../EntityMenu";
 
 export interface SearchOption {
   entityId: string;
@@ -53,6 +54,15 @@ function Bar({ row, selected, scale, onClick, type }: BarProps) {
       </Box>
       <Box sx={{ width: 40, textAlign: "right", fontSize: 10, color: "text.secondary", fontVariantNumeric: "tabular-nums" }}>
         {row.total.toLocaleString()}
+      </Box>
+      <Box
+        sx={{ width: 20, flexShrink: 0 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <EntityMenuButton
+          entity={{ key: row.entityId, canonical: row.canonical, label: type }}
+          where="/facets"
+        />
       </Box>
     </Box>
   );

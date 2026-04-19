@@ -2,9 +2,17 @@ import { useNavigate } from "react-router-dom";
 import { Box, Typography, Chip, Link } from "@mui/material";
 import { ENTITY_TYPE_COLOR } from "./catalog-columns";
 import { SuggestChip } from "./SuggestChip";
+import { EntityMenuButton, RelationMenuButton } from "./EntityMenu";
 import { fmtTimestamp, deepLink } from "../lib/format";
 import { isVisibleType } from "../lib/entity-visibility";
 import type { VideoNlp } from "../types";
+
+// Split an entity id like "person:dan brown" into { label, canonical }.
+function splitEntityId(id: string): { label: string; canonical: string } {
+  const idx = id.indexOf(":");
+  if (idx < 0) return { label: "misc", canonical: id };
+  return { label: id.slice(0, idx), canonical: id.slice(idx + 1) };
+}
 
 interface Props {
   videoId: string;
@@ -46,17 +54,29 @@ export function NlpPanel({ videoId, nlp }: Props) {
             {(byType[t] || [])
               .slice()
               .sort((a, b) => b.mentions.length - a.mentions.length || a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
-              .map((e) => (
-                <Chip
-                  key={e.id}
-                  size="small"
-                  color={ENTITY_TYPE_COLOR[t] || "default"}
-                  variant="outlined"
-                  label={e.canonical}
-                  clickable
-                  onClick={() => nav("/entity/" + encodeURIComponent(e.id))}
-                />
-              ))}
+              .map((e) => {
+                const split = splitEntityId(e.id);
+                return (
+                  <Box key={e.id} sx={{ display: "inline-flex", alignItems: "center" }}>
+                    <Chip
+                      size="small"
+                      color={ENTITY_TYPE_COLOR[t] || "default"}
+                      variant="outlined"
+                      label={e.canonical}
+                      clickable
+                      onClick={(ev) => {
+                        if (ev.shiftKey) return; // shift+click opens menu via the button
+                        nav("/entity/" + encodeURIComponent(e.id));
+                      }}
+                    />
+                    <EntityMenuButton
+                      entity={{ key: e.id, canonical: e.canonical, label: split.label }}
+                      videoId={videoId}
+                      where={`/video/${videoId}`}
+                    />
+                  </Box>
+                );
+              })}
             <SuggestChip area={"new " + t} videoId={videoId} label={"suggest " + t + "\u2026"} />
           </Box>
         </Box>
@@ -84,6 +104,15 @@ export function NlpPanel({ videoId, nlp }: Props) {
                 <Typography variant="caption" color="text.secondary">{r.predicate}</Typography>
                 <Chip size="small" label={o.canonical} variant="outlined" color={ENTITY_TYPE_COLOR[o.type] || "default"} clickable onClick={() => nav("/entity/" + encodeURIComponent(o.id))} />
                 <Typography variant="caption" color="text.secondary">{r.confidence.toFixed(2)}</Typography>
+                <RelationMenuButton
+                  videoId={videoId}
+                  relation={{
+                    subject: { key: s.id, canonical: s.canonical, label: s.type },
+                    predicate: r.predicate,
+                    object: { key: o.id, canonical: o.canonical, label: o.type },
+                    timeStart: r.evidence.timeStart,
+                  }}
+                />
               </Box>
             );
           })}

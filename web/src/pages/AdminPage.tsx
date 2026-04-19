@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Stack, Link } from "@mui/material";
 import { UpstreamCheck } from "../components/UpstreamCheck";
 import { AdminCatalogTable } from "../components/AdminCatalogTable";
 import type { VideoRow } from "../types";
@@ -12,6 +12,9 @@ export function AdminPage() {
   return (
     <Container maxWidth="lg" sx={{ py: 3 }}>
       <Typography variant="h4" gutterBottom>Admin</Typography>
+      <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
+        <Link href="/admin/aliases">aliases</Link>
+      </Stack>
       <UpstreamCheck />
       <AdminCatalogTable onRowClick={handleRowClick} />
     </Container>

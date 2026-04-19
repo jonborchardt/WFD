@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { fetchRelationshipsGraph } from "../lib/data";
 import { graphNodeIssueUrl, graphEdgeIssueUrl } from "../lib/issues";
+import { EntityMenuButton } from "../components/EntityMenu";
 import {
   buildIndex, searchNodes, getNeighbors, getConnections, type GraphIndex,
 } from "../lib/graph-index";
@@ -464,6 +465,13 @@ export function RelationshipsPage() {
                 <Button size="small" variant="outlined" component="a" href={graphNodeIssueUrl(selNode)} target="_blank" rel="noopener">
                   create issue for this node
                 </Button>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, pt: 0.5, borderTop: 1, borderColor: "divider" }}>
+                  <Typography variant="caption" color="text.secondary">edit this entity:</Typography>
+                  <EntityMenuButton
+                    entity={{ key: selNode.id, canonical: selNode.canonical, label: selNode.type }}
+                    where="/relationships"
+                  />
+                </Box>
               </Box>
             </>
           )}
