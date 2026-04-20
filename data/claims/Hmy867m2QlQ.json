@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "Hmy867m2QlQ",
+  "generatedAt": "2026-04-20T01:32:00.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "Hmy867m2QlQ:c_0001",
+      "videoId": "Hmy867m2QlQ",
+      "text": "ASMR (Autonomous Sensory Meridian Response) is a pleasurable, tingling feeling that some people experience when exposed to certain stimuli, typically described as starting at the top of the head and running down the spine.",
+      "kind": "definitional",
+      "entities": [
+        "person:asmar",
+        "technology:autonomous sensory meridian response",
+        "location:top of the head"
+      ],
+      "relationships": [
+        "r_0001",
+        "r_0002"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 702,
+          "charEnd": 846,
+          "timeStart": 43.43,
+          "timeEnd": 57.38,
+          "quote": "Asmar Autonomous\nSensory Meridian Response, which is a\npleasurable, tingling feeling that some people\nexperience when exposed to certain\nstimuli"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.9,
+      "rationale": "This is the standard definition of ASMR as established in the academic and popular literature; the term was coined in 2010 by Jennifer Allen and the head-to-spine tingle description matches the canonical phenomenology reported in survey studies. The host garbles the name as 'Asmar' but the substance is correct.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0002",
+      "videoId": "Hmy867m2QlQ",
+      "text": "Not everyone experiences ASMR, and those who do have idiosyncratic triggers that vary from person to person — common ones include whispering, finger tapping, clicking, and hair brushing.",
+      "kind": "empirical",
+      "entities": [
+        "person:asmar",
+        "person:people"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 1308,
+          "charEnd": 1355,
+          "timeStart": 78.95,
+          "timeEnd": 82.85,
+          "quote": "the people that\ndo they have different triggers"
+        },
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 1357,
+          "charEnd": 1551,
+          "timeStart": 83.02,
+          "timeEnd": 94.7,
+          "quote": "Common triggers are whispering, finger\ntapping, clicking, hair brushing.\nSome people, if you crumple a piece of\npaper right up against their ear, they'll have\nwhat some folks call a brain orgasm"
+        }
+      ],
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "Survey research (Barratt & Davis 2015 PeerJ paper, Poerio et al. 2018 in PLOS ONE) confirms that only a subset of the population reports ASMR sensitivity and that the trigger inventory the host names — whispering, tapping, clicking, brushing — matches the most-frequent triggers reported across studies.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "Hmy867m2QlQ:c_0001",
+          "kind": "presupposes",
+          "rationale": "Trigger variability presupposes the response itself."
+        }
+      ]
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0003",
+      "videoId": "Hmy867m2QlQ",
+      "text": "In a 2018 University of Sheffield study, about half of the 112 participants exposed to ASMR videos experienced the response while the other half did not.",
+      "kind": "empirical",
+      "entities": [
+        "date_time:twenty eighteen",
+        "organization:university of sheffield",
+        "quantity:one hundred and twelve people",
+        "quantity:half",
+        "person:asmar"
+      ],
+      "relationships": [
+        "r_0003"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 1944,
+          "charEnd": 2106,
+          "timeStart": 123.08,
+          "timeEnd": 131.94,
+          "quote": "The University of Sheffield exposed one hundred\nand twelve people to ask similar videos.\nAbout half the people\nexperience the response.\nThe other half got nothing"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "rationale": "Poerio et al. (2018) is the well-known University of Sheffield ASMR study, but it actually recruited 1002 participants in two studies; the closer match to '112 people exposed to videos' is one of the controlled physiological sub-experiments where ~110 participants were used. The 'about half experienced it' framing is broadly consistent with reported response rates among non-pre-screened samples but the specifics in the host's gloss are slightly garbled.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0004",
+      "videoId": "Hmy867m2QlQ",
+      "text": "ASMR may be related to misophonia, a condition where hearing a particular sound (e.g., nails on a chalkboard) elicits an automatic, intense negative emotional and physiological response.",
+      "kind": "speculative",
+      "entities": [
+        "person:asmar"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 2161,
+          "charEnd": 2289,
+          "timeStart": 133.31,
+          "timeEnd": 144.89,
+          "quote": "Asmar could be\nlinked to Misophonia, which is we're hearing a\nsound could elicit a negative emotional\nand physiological response"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "There is suggestive academic literature linking ASMR sensitivity and misophonia (both involve unusual auditory-affective coupling, and individuals high in one are slightly more likely to score high on the other in some surveys), but the relationship is not well-established and the two phenomena have opposite valence. The 'could be linked' phrasing is appropriately tentative.",
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0005",
+      "videoId": "Hmy867m2QlQ",
+      "text": "ASMR — like misophonia — may be a form of synesthesia, a condition in which one sensory experience involuntarily triggers a reaction in a different sense (e.g., hearing colors, tasting sounds).",
+      "kind": "speculative",
+      "entities": [
+        "person:asmar"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 2434,
+          "charEnd": 2664,
+          "timeStart": 152.39,
+          "timeEnd": 167.45,
+          "quote": "Misophonia like Asmar could be a type\nof synesthesia, which is we're experiencing one\nsense causes an involuntary reaction\nin a completely different sense.\nSo people with severe synesthesia say they\ncan hear colors or taste sounds"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "The 'ASMR-as-synesthesia' framing has been floated in the popular press and in a couple of speculative papers (e.g., a 2017 BioImpacts theory piece), but it is not the dominant scientific account. Synesthesia involves cross-sensory perception (audio→color), whereas ASMR is more accurately described as a sensory-affective response. The host presents it as one hypothesis among several, which is fair, but the underlying claim is not well-supported.",
+      "hostStance": "uncertain",
+      "dependencies": [
+        {
+          "target": "Hmy867m2QlQ:c_0004",
+          "kind": "elaborates",
+          "rationale": "Builds on the misophonia link by proposing synesthesia as the umbrella mechanism."
+        }
+      ]
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0006",
+      "videoId": "Hmy867m2QlQ",
+      "text": "Bob Ross is the prototypical ASMR creator avant la lettre — his television painting show hits multiple ASMR triggers (gentle whispering, knife-on-canvas scraping, repetitive brush sounds, and intimate direct-address camera work) and he is enormously popular within the ASMR community.",
+      "kind": "opinion",
+      "entities": [
+        "person:bob ross",
+        "person:asmar",
+        "person:asima",
+        "work_of_media:painting",
+        "work_of_media:tape",
+        "location:studio"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 4399,
+          "charEnd": 4531,
+          "timeStart": 283.64,
+          "timeEnd": 295.19,
+          "quote": "We get the Greek god of Samaa, Bob Ross.\nDr. Craig Richard, a professor at Shenandoah\nUniversity, wrote a book called Brain\nTingle's"
+        },
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 4577,
+          "charEnd": 4656,
+          "timeStart": 295.31,
+          "timeEnd": 299.87,
+          "quote": "Dr Richard recalls experiencing asthma as a\nchild while watching Bob Ross paint"
+        },
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 4809,
+          "charEnd": 4858,
+          "timeStart": 306.83,
+          "timeEnd": 317.66,
+          "quote": "Bob Ross is hugely popular in the Asima\ncommunity"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Widely accepted in the ASMR community: Bob Ross is one of the most-cited 'unintentional ASMR' figures, and Craig Richard's book Brain Tingles does in fact discuss Ross at length. The popularity claim is well-attested by the scale of Bob Ross compilations on YouTube and his consistent appearance in trigger studies.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0007",
+      "videoId": "Hmy867m2QlQ",
+      "text": "Dr. Craig Richard, a professor at Shenandoah University, wrote 'Brain Tingles', a popular guide to ASMR.",
+      "kind": "historical",
+      "entities": [
+        "person:dr. craig richard",
+        "role:professor",
+        "organization:shenandoah university",
+        "work_of_media:brain tingle"
+      ],
+      "relationships": [
+        "r_0004",
+        "r_0006",
+        "r_0010"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 4440,
+          "charEnd": 4531,
+          "timeStart": 288.41,
+          "timeEnd": 295.19,
+          "quote": "Dr. Craig Richard, a professor at Shenandoah\nUniversity, wrote a book called Brain\nTingle's"
+        }
+      ],
+      "confidence": 0.99,
+      "directTruth": 0.95,
+      "rationale": "Verifiable: Craig Richard is indeed a professor of biopharmaceutical sciences at Shenandoah University, founder of ASMR University, and author of 'Brain Tingles: The Secret to Triggering Autonomous Sensory Meridian Response' (2018, Adams Media). All three facts check out.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0008",
+      "videoId": "Hmy867m2QlQ",
+      "text": "For some viewers, the ASMR trigger is not the simulated touch but the personal attention itself: brain scans of people experiencing tingles resemble those of people being groomed or gently cared for, which is why many ASMR creators role-play caring activities like hair washing, makeup, or playing the gentle teacher.",
+      "kind": "empirical",
+      "entities": [
+        "person:asmar",
+        "person:people",
+        "technology:brain scans",
+        "organization:asrm",
+        "role:teacher",
+        "event:first day of class"
+      ],
+      "relationships": [
+        "r_0011"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 5484,
+          "charEnd": 5709,
+          "timeStart": 353.79,
+          "timeEnd": 367.23,
+          "quote": "Brain scans of people experiencing Tingle's have\nsimilar scans to people that are being\ngroomed or gently cared for.\nAnd for people with this trigger, it's not\nthe touching that causes the tingles, it's the\npersonal attention"
+        },
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 5711,
+          "charEnd": 5828,
+          "timeStart": 367.32,
+          "timeEnd": 375.36,
+          "quote": "Many Asmar content creators or role-play,\ncaring, grooming activities like hair washing,\nhair brushing or blow drying"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.65,
+      "rationale": "The personal-attention explanation is supported by Lochte et al. (2018) fMRI work showing activation in regions associated with social bonding (mPFC, nucleus accumbens) during ASMR experiences, and the role-play caregiving genre on YouTube is real and dominant. The 'grooming brain scan similarity' is more of a journalistic gloss than a precise neuroimaging finding, but the underlying social-affective hypothesis is mainstream.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0009",
+      "videoId": "Hmy867m2QlQ",
+      "text": "For ASMR-sensitive people, the experience produces measurable physiological calming effects — lowered heart rate, reduced blood pressure, and reduced fight-or-flight hormones (cortisol, adrenaline) — comparable to the benefits people get from meditation.",
+      "kind": "empirical",
+      "entities": [
+        "person:asmar",
+        "person:people"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 6188,
+          "charEnd": 6458,
+          "timeStart": 403.74,
+          "timeEnd": 419.73,
+          "quote": "Asmar sensitive, the\nexperience has been proven to lower their\nheart rate, reduce their blood pressure and\nreduce levels of fight or\nflight hormones in their bloodstreams.\nHormones like cortisol and adrenaline.\nThese are the same benefits\nthat people get from meditation"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.55,
+      "rationale": "Partially correct: Poerio et al. (2018) did find that ASMR-responsive participants showed significantly reduced heart rates while watching ASMR videos. However, the 'reduces cortisol and adrenaline' claim is not directly demonstrated in published studies — those measurements have been proposed but not robustly replicated. The 'same benefits as meditation' equivalence is a popular-press flourish rather than a peer-reviewed finding.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Hmy867m2QlQ:c_0010",
+      "videoId": "Hmy867m2QlQ",
+      "text": "Why ASMR works for some people and not others remains unknown, and likely depends on a mix of unique physiological characteristics plus cultural and developmental environment.",
+      "kind": "speculative",
+      "entities": [
+        "person:asmar",
+        "person:asima",
+        "person:people"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 6599,
+          "charEnd": 6762,
+          "timeStart": 426.93,
+          "timeEnd": 440.55,
+          "quote": "Every\nindividual has unique physiological characteristics and\nthere are other factors like the culture in\nwhich they live or the environment where they\nwere raised"
+        },
+        {
+          "transcriptId": "Hmy867m2QlQ",
+          "charStart": 6764,
+          "charEnd": 6871,
+          "timeStart": 435.48,
+          "timeEnd": 442.68,
+          "quote": "Asima, is just another example about\nhow the human brain is fascinating and\ncomplicated and downright weird"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Honest summary of the field's current state: the responder/non-responder split is real but its mechanistic basis (genetic, developmental, cultural priors, individual differences in interoception) is not yet established. The host's 'we don't know yet' is the right epistemic stance.",
+      "hostStance": "uncertain",
+      "inVerdictSection": true
+    }
+  ]
+}

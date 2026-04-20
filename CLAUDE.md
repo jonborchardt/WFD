@@ -115,20 +115,29 @@ Pipeline shape, roughly in order:
    relations, refining and adding relationships. This is **not** a runtime
    API call to Claude — it's a batch pass invoked via Claude Code.
    [src/ai/curate/](src/ai/curate/) is a sibling: scripted bulk alias
-   curation (Plan 1). See the "AI alias curation" section below.
-6. [src/graph/](src/graph/) — storage and query layer for entities /
+   curation (Plan 1). [src/ai/claims/](src/ai/claims/) is the scripting
+   for the per-video claim-extraction session (Plan 2 Part 2). See the
+   "AI alias curation" and "AI claim extraction" sections below.
+6. [src/claims/](src/claims/) — schema, persist helpers, and strict
+   validators for `data/claims/<videoId>.json`. Written by an AI session
+   (not by an automated pipeline stage) — see Plan 2. Validators
+   enforce: every evidence quote must equal `flattenedText.slice(charStart,
+   charEnd)` exactly; every entity key must exist in this video's
+   entities or in a display-overridden alias; no pronouns; relationship
+   ids must reference real edges; confidence/directTruth ∈ [0,1].
+7. [src/graph/](src/graph/) — storage and query layer for entities /
    edges / evidence. Adapter at [src/graph/adapt.ts](src/graph/adapt.ts)
    converts the per-video neural output (mention ids) into graph-shaped
    `Entity` and `Relationship` records (entity ids `${type}:${canonical}`).
-7. [src/truth/](src/truth/) — per-relationship truthiness, propagation
+8. [src/truth/](src/truth/) — per-relationship truthiness, propagation
    rules, contradiction and loop detection, novel-link surfacing.
-8. [src/skeptic/](src/skeptic/) — speaker credibility scoring from
+9. [src/skeptic/](src/skeptic/) — speaker credibility scoring from
    transcript signals.
-9. [src/ui/](src/ui/) + [src/web/](src/web/) — local dev server with
+10. [src/ui/](src/ui/) + [src/web/](src/web/) — local dev server with
    admin UI. The React SPA at `/admin/` and the HTML-rendered
    `/admin/video/:id` unified page surface entities, relations, stage
    status, and a tuning troubleshooting table.
-10. [web/](web/) — **public static site** (React + TypeScript + Vite).
+11. [web/](web/) — **public static site** (React + TypeScript + Vite).
    Standalone project, deployed to GitHub Pages. Reads prebuilt JSON
    from `data/` via Vite middleware in dev; for production, data files
    are copied into `dist/data/` at deploy time. No server APIs — all
@@ -434,6 +443,67 @@ Tune by editing the blocklist / label allowlist in `propose.mjs`.
 The scripts are intentionally heuristic, not neural — the tradeoff is
 coverage (seconds to scan 200+ videos) vs. precision (some calls will
 be wrong, which is why everything is reversible).
+
+## AI claim extraction (per-video, AI session)
+
+Plan 2 Part 2: Claude reads `data/transcripts/<id>.json` plus the
+existing `data/entities/<id>.json` and `data/relations/<id>.json`,
+extracts 3–15 thesis-level claims per video, and writes
+`data/claims/<id>.json`. Schema and validators in
+[src/claims/](src/claims/); session scaffolding in
+[src/ai/claims/](src/ai/claims/); the playbook lives in the
+[ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)
+skill.
+
+A claim is a thesis (Wikipedia-section-title-worthy, debatable), not a
+fact atom. Fact atoms belong in `data/relations/<id>.json`. Claims may
+cite relationship ids as evidence and may declare cross-claim
+dependencies (`supports` / `contradicts` / `presupposes` /
+`elaborates`) — the dependency graph is what Plan 3's reasoning code
+will consume.
+
+**Invocation** — from a Claude Code session, ask for the
+[ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)
+skill ("extract claims for N videos"). Or directly:
+
+```
+node src/ai/claims/pick-videos.mjs --count 20    # picks N videos that have entities + relations but no claim file yet
+node src/ai/claims/prepare.mjs <videoId>         # writes _claims_tmp/<id>.input.json
+# Claude reads the bundle, writes data/claims/<id>.json directly
+node src/ai/claims/validate.mjs <videoId>        # gates each write — exits non-zero on bad payload
+node src/ai/claims/summary.mjs                   # batch summary + per-video timings
+```
+
+**Resumability is automatic.** `pick-videos.mjs` filters out videos
+that already have a claim file, so re-running after a killed session
+picks up only the gaps. Atomic writes via temp+rename mean a partial
+write can never produce a corrupt file.
+
+**Parallelization.** Each video is independent — multiple agents can
+work on disjoint slices in parallel by passing pinned ids
+(`--video <id>`) instead of `--count`. Per-video state is on disk;
+the only shared mutable file is `_claims_tmp/timings.json`, which
+agents re-read before each write.
+
+**Skip cases.** If `prepare.mjs` reports `flattenedTextLength` < 200
+or `entities.count == 0`, skip the video — there's no source text or
+no entity allowlist to construct valid claims against. Two upstream
+failure modes produce these:
+1. Transcripts marked `kind: "unavailable"` (single dummy cue) — fix
+   by re-running `captions ingest` for that id, or accept it as
+   permanently captionless.
+2. Transcripts present but `data/entities/<id>.json` and
+   `data/relations/<id>.json` are empty stubs — GLiNER/GLiREL ran but
+   produced nothing. Likely silent sidecar failure; re-run
+   `captions pipeline --video <id> --stage entities` with
+   `CAPTIONS_PY_DEBUG=1` to inspect.
+
+**Quality bar enforcement.** The validator does not police thesis
+quality, only structural correctness. Quality is enforced in the
+skill prompt (real `rationale` strings, no tautologies, `directTruth`
+omitted when uncertain rather than defaulting to 0.5). Spot-check by
+sampling claim files; full re-run is cheap because writes are
+idempotent (delete the file and re-pick).
 
 ## Web (public site)
 

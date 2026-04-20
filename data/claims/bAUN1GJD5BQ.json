@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "bAUN1GJD5BQ",
+  "generatedAt": "2026-04-20T04:08:30.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "bAUN1GJD5BQ:c_0001",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "A human head almost certainly remains conscious for several seconds after decapitation — extrapolating from a 2011 Dutch experiment that recorded mouse brain activity for ~4 seconds post-decapitation and other small-mammal studies showing up to 29 seconds of awareness.",
+      "kind": "empirical",
+      "entities": [
+        "organization:dutch scientists",
+        "date_time:2011",
+        "technology:brain scanner",
+        "event:decapitation",
+        "quantity:up to 29 seconds"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 0,
+          "charEnd": 456,
+          "timeStart": 1,
+          "timeEnd": 32,
+          "quote": "in 2011 dutch scientists connected mice to a brain scanner and cut their heads off they discovered that mice remained conscious for up to four\nseconds after decapitation other studies show that small mammals remained aware for up to 29 seconds now if this is also\ntrue for humans it would provide enough time for a pretty gruesome experience and might also explain some pretty grisly stories from history so does a\nhuman head remain conscious after being s"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.65,
+      "rationale": "Kongsuwan et al. (Univ. Nijmegen / Radboud, 2011) did publish EEG recordings showing organized brain activity for roughly 4 seconds in decapitated rats, not mice — the host's species is slightly off but the general finding is real. Studies across small mammals do consistently find seconds-scale persistence of EEG signal post-decapitation, though 'consciousness' is a much harder question than 'EEG signal'.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0002",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "There is a long historical record of decapitated heads showing eye motion, facial expression, or even communicative response — the so-called 'lucid decapitation' phenomenon — including the famous (apocryphal-tinged) French Revolution story of a man retrieving his guillotined friend's head and exchanging blinking responses.",
+      "kind": "historical",
+      "entities": [
+        "event:french revolution",
+        "person:friend",
+        "person:victim"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 456,
+          "charEnd": 1311,
+          "timeStart": 26,
+          "timeEnd": 78,
+          "quote": "eparated from its body it sure does let's find out why\n[Music]\na common method of execution throughout history has been beheading and it's easy to see why it sends a powerful message that kept citizens in line for thousands\nof years throughout history we find many stories about how some decapitated heads still move their eyes or make facial expressions usually of anguish or\ndespair some have even made sounds despite being severed from the rest of their body there's even a famous story about a man who attended the execution of his friend during the french\nrevolution the seconds after the guillotine fell the man retrieved the severed head and asked it a series of questions and through blinking and\nfacial expressions the victim allegedly communicated with his friend this type of post head chopped off consciousness is called lucid decapitation so\n"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "Anecdotal reports of post-decapitation movement and expression are real and abundant in 18th–19th century European medical commentary. The specific 'communicated by blinking' Revolutionary anecdote is folkloric and lacks rigorous documentation; lumping voluntary communication with reflex twitches is exactly the question the rest of the video tries to settle.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0003",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "After Charlotte Corday's 1793 execution for murder, an executioner's assistant slapped her severed head and witnesses reported it took on an angry, aware-seeming expression — sparking the modern medical debate over post-decapitation consciousness, which French doctors initially dismissed as nervous spasms.",
+      "kind": "historical",
+      "entities": [
+        "person:charlotte corday",
+        "date_time:1793",
+        "event:murder",
+        "role:executioner",
+        "nationality_or_ethnicity:french"
+      ],
+      "relationships": [
+        "r_0001",
+        "r_0002"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 1311,
+          "charEnd": 2098,
+          "timeStart": 78,
+          "timeEnd": 127,
+          "quote": "scientists and doctors started to ask the question does a person really stay conscious and aware after losing their head well the answer is not only is it\npossible but it's medically proven debate on the subject started ever since charlotte corday was guillotined in 1793\nfor murder the executioner's assistant lifted her head by the hair and slapped it on both cheeks for some reason and eyewitnesses reported that quote her\nface took on an angry expression and for a moment or two there was a look of a ghastly stare which implied that the head was aware of its ignominious\nsituation the it means humiliating i know what it means anyway french doctors argue that witnesses were\nconfusing nervous spasms with voluntary motion and very little research was conducted on the subject until "
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The Charlotte Corday slap-and-blush incident (executioner's assistant Legros) is real and is one of the most-cited historical anecdotes in this debate. Whether her face actually 'took on an angry expression' depends on the eyewitness reliability — contemporary accounts do say so, though the standard medical interpretation is post-mortem reflex.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0004",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "In 1905, French physician Dr Beaurieux performed a controlled observation of guillotined criminal Henri Languille's severed head and reported that calling Languille's name twice elicited two distinct, focused, eye-opening responses with pupils fixing on his — strong qualitative evidence for residual consciousness lasting tens of seconds.",
+      "kind": "empirical",
+      "entities": [
+        "date_time:1905",
+        "person:barrow",
+        "person:dr barreaux",
+        "person:henri lungieel",
+        "person:longhill",
+        "event:guillotining",
+        "nationality_or_ethnicity:french"
+      ],
+      "relationships": [
+        "r_0003",
+        "r_0008"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 2098,
+          "charEnd": 3300,
+          "timeStart": 119,
+          "timeEnd": 214,
+          "quote": "1905 when\na french doctor named barrow was allowed to make an investigation of a severed head his um\nsubject was a criminal named henri lungieel and immediately after guillotining here's what dr barreaux wrote in his journal after the\ndecapitation the eyelids and lips spasmed for about five seconds the face relaxed the leads half closed leaving\nonly the whites visible it was then that they called out in a strong voice longhill as in so the eyelids slowly\nlift up this even movement quite distinct and normal such as with people awakened or torn from their thoughts\nnext longeel's eyes definitely fixed on mine and the pupils focused i was not then dealing with a vague dull look i\nwas dealing with undeniably living eyes which were looking at me after several seconds the eyelids closed again i\nminutescalled out again and once more without any spasm the eyelids lifted and living eyes fixed themselves on mine with more\npenetration since the first time since there was a further closing of the eyelids but now less complete i attempted this third call but there was\nno further movement and the eyes took on the glazed look which they have in the dead\n[Music]\num are you okay dear sport hello oh bo"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.6,
+      "rationale": "Beaurieux's 1905 published observations of Henri Languille are widely cited in the medical literature on decapitation. The host's transcription mangles names ('Barreaux' for Beaurieux, 'Languille' becomes 'Lungieel'/'Longhill') but the substance of the report is accurate. Whether the eye fixations indicate true consciousness vs. brainstem reflex is still debated; the observation itself is genuine.",
+      "dependencies": [
+        {
+          "target": "bAUN1GJD5BQ:c_0001",
+          "kind": "supports",
+          "rationale": "Provides historical human evidence consistent with the rodent finding."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0005",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "By the 1950s, an official French government study by doctors Piedelièvre and Fournier concluded that death by guillotine is not instantaneous, with 'every vital element' surviving decapitation for some interval — a quiet medical retreat from the long-standing claim of painless beheading.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1950s",
+        "person:pio de livre and fournier",
+        "event:death by guillotine",
+        "organization:government of france"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 3300,
+          "charEnd": 3722,
+          "timeStart": 205,
+          "timeEnd": 245,
+          "quote": "y not again\nsorry folks the human gets a little squeamish uh oh we'll be back after these messages\nby the mid 20th century the government of france wasn't so sure beheading was as painless as its supporters claimed in the 1950s a study by doctors pio de\nlivre and fournier concluded that death by guillotine is not instantaneous the report said every vital element survives\ndecapitation the last man to be guillotined in f"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The 1956 Piedelièvre-Fournier report to the French Académie de Médecine is real and did argue against the 'instantaneous death' premise of the guillotine. This is referenced in standard medical-history surveys of the guillotine's humane-execution rationale.",
+      "dependencies": [
+        {
+          "target": "bAUN1GJD5BQ:c_0001",
+          "kind": "supports",
+          "rationale": "Same claim, official-medical pedigree."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0006",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "Hamida Djandoubi, executed in 1977, was the last person guillotined in France (and in Western Europe), four years before France formally abolished capital punishment in 1981 — and France had already banned public executions after Eugène Weidmann's 1939 beheading was secretly filmed at Versailles and the footage circulated.",
+      "kind": "historical",
+      "entities": [
+        "person:hamida danjubi",
+        "person:don jubi",
+        "date_time:1977",
+        "location:france",
+        "law_or_policy:capital punishment",
+        "date_time:1981",
+        "person:eugene wiedman",
+        "date_time:1939",
+        "location:versailles",
+        "work_of_media:horrible film"
+      ],
+      "relationships": [
+        "r_0010",
+        "r_0015"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 3722,
+          "charEnd": 4220,
+          "timeStart": 238,
+          "timeEnd": 270,
+          "quote": "rance was tunisian-born killer hamida danjubi in 1977. don jubi\nbecame the last person in western europe to be executed by the state before france officially abolished capital punishment in 1981. the french\nauthorities had already banned public executions after the heading of eugene wiedman in 1939 this event was secretly filmed by a member of the crowd in\nversailles and once the horrible film made the rounds the government preferred to do its killing in private however there is one decapitate"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "All four facts here check out cleanly: Djandoubi 1977 last guillotined in France, French capital punishment abolished by Badinter's law in 1981, Weidmann's 1939 execution at Versailles secretly filmed, public executions banned shortly after.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0007",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "The preserved severed head of Diogo Alves — Portugal's first serial killer, hanged in 1841 — has been kept in a glass jar at the University of Lisbon's Faculty of Medicine for over 150 years for scientific study.",
+      "kind": "historical",
+      "entities": [
+        "person:diogo alves",
+        "location:portugal",
+        "date_time:1841",
+        "event:hanging",
+        "organization:university of lisbon",
+        "facility:facility of medicine",
+        "organization:medical school",
+        "quantity:150 years"
+      ],
+      "relationships": [
+        "r_0023",
+        "r_0033"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 4220,
+          "charEnd": 4790,
+          "timeStart": 262,
+          "timeEnd": 307,
+          "quote": "d head which\nstill sort of lives on at the university of lisbon's facility of medicine diogo alves was portugal's first serial killer and one of the last people to be\nexecuted in the country in 1841. his severed head was actually cut off and studied by scientists following his hanging and is now preserved in a glass\njar in the medical school they had this head for 150 years yup why keep it sometimes it's just really\nhard to throw things away\n[Music]\nokay so chopping off your head doesn't result in immediate death but just how long do you actually survive some doct"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Diogo Alves's preserved head at the University of Lisbon Faculty of Medicine is real and a well-known macabre curio of Portuguese medical history. He is sometimes described as Portugal's first serial killer; he was hanged in 1841.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0008",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "Realistic survival of consciousness after decapitation is on the order of a few seconds (until brain anoxia stops motor function), not the 15 minutes some doctors have claimed, while the headless body can persist for about another minute until the heart stops.",
+      "kind": "empirical",
+      "entities": [
+        "event:decapitation"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 4796,
+          "charEnd": 5500,
+          "timeStart": 299,
+          "timeEnd": 349,
+          "quote": "ve said a human head could\nsurvive up to 15 minutes but it's probably just a few seconds when the brain runs out of oxygen this is called anoxia and all motor functions stop\nthough the headless body lives on for about another minute until the heart stops pumping but if we look at some other animals some of them can survive for longer than you think\ncockroaches can live for weeks without their head and if the wound is able to seal itself off well it just keeps on going\nheadlessly a decapitated snake's head can still bite you and release venom without its body headless frogs still jump snapping turtles still snap for\nhours just the heads but the craziest headless animal has got to be the chicken s"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "A few seconds is the consensus modern estimate, consistent with the rodent EEG data and with cerebral oxygen reserves. The '15 minutes' figure is fringe and biologically implausible. The headless body persisting for ~a minute is consistent with reflex spinal activity and residual cardiac function.",
+      "dependencies": [
+        {
+          "target": "bAUN1GJD5BQ:c_0001",
+          "kind": "elaborates",
+          "rationale": "Quantifies the duration estimate."
+        }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0009",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "Many non-mammal animals can survive remarkably long after decapitation: cockroaches for weeks if their wound seals, decapitated snake heads can still bite and inject venom, headless frogs jump, snapping turtles still snap — illustrating how much of basic motor behavior is decentralized to the body and reflex circuits.",
+      "kind": "empirical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 5320,
+          "charEnd": 5500,
+          "timeStart": 331,
+          "timeEnd": 349,
+          "quote": "e you and release venom without its body headless frogs still jump snapping turtles still snap for\nhours just the heads but the craziest headless animal has got to be the chicken s"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "All four animal claims are well attested: cockroach physiology lacks centralized respiration and they can survive for over a week post-decapitation; snake-head bite-and-envenomate reflexes are common in herpetology; headless-frog and snapping-turtle motor reflexes are textbook examples. The video's framing is accurate.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "bAUN1GJD5BQ:c_0010",
+      "videoId": "bAUN1GJD5BQ",
+      "text": "The most extreme documented case of post-decapitation survival is Mike the Headless Chicken — a Colorado rooster owned by farmer Lloyd Olson whose 1945 botched beheading left enough brainstem intact to keep him alive for 18 months, during which he toured the country and appeared on the cover of Life magazine.",
+      "kind": "historical",
+      "entities": [
+        "person:miracle mike",
+        "person:lloyd olson",
+        "person:lloyd",
+        "person:farmer",
+        "location:colorado"
+      ],
+      "relationships": [
+        "r_0049"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "bAUN1GJD5BQ",
+          "charStart": 5500,
+          "charEnd": 6500,
+          "timeStart": 341,
+          "timeEnd": 414,
+          "quote": "pecifically miracle mike no the movie\nwith the male strippers no no no that's magic mike yeah i don't think you're right about that i am\nmiracle mike was a chicken who belonged to a farmer in colorado named lloyd olson and lloyd was planning on having a little chicken dinner but after chopping\noff miracle mike's head he kept walking around the farmer kept walking around no miracle mike the chicken what yup he was\nable to balance himself run around and was still trying to peck for food so lloyd decided to keep him as a pet oh no this\nthis isn't real oh it is lloyd fed miracle mike a mixture of milk and water with an eye dropper to keep him alive and even dropped small grains\nof corn down mike's neck hole gross just get a puppy for crying out loud this is crazy what's\neven crazier is miracle mike lived for 18 more months without his head he went on tour made public appearances he was\neven on the cover of time life magazine that's a terrible way to become famous miracle mike was considere"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "'Miracle Mike' / 'Mike the Headless Chicken' is a real, well-documented case from Fruita, Colorado (Lloyd Olson, 1945). Mike survived ~18 months because the axe stroke left the jugular vein, brainstem, and one ear intact. He did appear in Life magazine and was put on tour. Minor note: it was Life magazine, not 'Time Life'.",
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    }
+  ]
+}

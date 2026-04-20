@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "BR_8AxIwKV8",
+  "generatedAt": "2026-04-20T04:26:56.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "BR_8AxIwKV8:c_0001",
+      "videoId": "BR_8AxIwKV8",
+      "text": "Any random shuffle of a standard 52-card deck almost certainly produces an arrangement that has never occurred before in human history and likely never will again — because the number of permutations is so vast it dwarfs every shuffle ever performed.",
+      "kind": "empirical",
+      "entities": [
+        "location:history",
+        "location:world",
+        "event:poker night",
+        "location:casino"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 0,
+          "charEnd": 700,
+          "timeStart": 3,
+          "timeEnd": 44.16,
+          "quote": "I'm going to do something that's never been\ndone before, ever in history, and you are\ngoing to witness it already there.\nThis is probably the first time that a deck\nof cards has ever been arranged in this\nspecific order in history.\nFirst time, I think, of all the decks of\ncards being shuffled around the world right now.\nThink of all the decks of cards\nshuffled around the world throughout history, every\ngunslinger saloon, every poker night, every game\nof go fish, even taking into account\nevery casino game ever played, every cheesy magic\ntrick you've ever seen every time you\nplayed solitaire on your computer.\nEven considering all of that, given the law\nof probability, the order of the cards in"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "True and a standard probability-theory observation: 52! ≈ 8.07 × 10^67. Even with billions of people shuffling decks for thousands of years, the cumulative count of historical shuffles is far below this. So any well-randomized shuffle is, with overwhelming probability, unique to that moment in history.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0002",
+      "videoId": "BR_8AxIwKV8",
+      "text": "The Birthday Paradox: in a random group of just 23 people there is a 50% chance that two share a birthday, because what matters is not your birthday vs everyone else's (22 chances) but every pair-comparison among the 23 (253 chances).",
+      "kind": "definitional",
+      "entities": [
+        "quantity:two hundred and fifty three",
+        "quantity:fifty percent",
+        "quantity:chances",
+        "quantity:birthday",
+        "quantity:ninety nine percent"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 1700,
+          "charEnd": 2900,
+          "timeStart": 114.29,
+          "timeEnd": 182.36,
+          "quote": "ogether if you find two that have the\nsame birthday? Here's a hint.\nNot that many in a random group of only\ntwenty three people, the chances of two of them\nsharing the same birthday is fifty percent.\nThis is called the birthday paradox or the\nbirthday problem, because it's not literally a\nparadox, but it's definitely unintuitive when you first\nhear it at least was for me.\nSo why does it seem so weird?\nWell, it turns out we're all\na little self-centered, aren't we?\nMuch a little snowflakes.\nSo the first thing we want to do is\ncompare our own birthday against the other twenty two\npeople in the room. That's not how you do it.\nIt's only twenty two chances to find a match.\nThe chances are not that high.\nInstead, what we do is compare all\ntwenty three birthdays against each other.\nThat gives us one, two plus twenty one\nplus twenty and so on and so on.\nUltimately two hundred and fifty three comparisons\ngiven that there are usually three\nhundred and sixty five days in a year, two\nhundred and fifty three chances to find a\nbirthday match. It's 50 percent now.\nJust throw sixty people in a row.\nChances of finding birthday\nbuddy's ninety nine percent.\nNow there's an actual formula for this whic"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Standard textbook probability. The 23-people / 50% threshold and the 60-people / ~99% threshold (more precisely ~99.4%) are correct. The pair-counting intuition (C(23,2)=253) is the right way to explain the unintuitive result.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0003",
+      "videoId": "BR_8AxIwKV8",
+      "text": "If you wrap a rope around the Earth at the equator and then want it to hover one foot above the ground, you only need to add about 6.28 feet of rope — and the same is true if you wrap a rope around a tennis ball, because the answer depends only on the change in radius, not the original size.",
+      "kind": "definitional",
+      "entities": [
+        "location:equator",
+        "quantity:one foot",
+        "quantity:six point to eight feet",
+        "quantity:eight inches",
+        "quantity:forty five thousand kilometers",
+        "quantity:one point nine one meters"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 2900,
+          "charEnd": 3900,
+          "timeStart": 177.32,
+          "timeEnd": 233.48,
+          "quote": "h I\ncannot explain, but I can link it in the\ndescription below. Here's another one that\nbroke my brain at first.\nLet's say you have a rope wrapped\naround the earth at the equator.\nThe length of the rope is going to\nbe about twenty five thousand miles long, right?\nForty five thousand kilometers.\nLet's say you want that rope to\nhover one foot off the ground.\nThirty centimeters. How much more rope do you need\nto add that whole thing to make that\nhappen? The answer, six point to eight feet.\nOne point nine one meters.\nThat's it. That's it.\nOK, OK, that's weird enough.\nRight? But here's where the puzzle takes\nthe express train to crazy town.\nOK, the earth is really big.\nSo let's try the puzzle with\nsomething really small, like tennis ball.\nHow long a rope to\nget around the tennis ball?\nEight inches. Twenty centimeters to\nnow do the same thing.\nWe want that rope to hover\none foot above the tennis ball.\nHow much more rope do we need to add?\nSame answer. Six point to eight feet.\nYou're sure? I'"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Direct consequence of the circumference formula C = 2πr. Increasing the radius by 1 ft increases the circumference by 2π ft ≈ 6.283 ft regardless of starting radius. One small caveat: Earth's equator is ~24,901 mi (~40,075 km), not 25,000 mi / 45,000 km, but that doesn't affect the puzzle's punchline.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0004",
+      "videoId": "BR_8AxIwKV8",
+      "text": "Multiplying 9 by any positive integer and then summing the digits of the result repeatedly until you reach a single digit always yields 9 — a digital-root property that follows from 9 being one less than the base 10.",
+      "kind": "definitional",
+      "entities": [
+        "quantity:nine",
+        "quantity:two",
+        "quantity:twenty seven"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 7700,
+          "charEnd": 8800,
+          "timeStart": 456.7,
+          "timeEnd": 532.09,
+          "quote": " works.\nNine times five is forty five.\nFour plus five equals nine.\nEasy right now.\nNine times one hundred and one.\nThat's nine hundred and nine nine\nzero plus nine equals eighteen.\nRemember we need a single\ndigit so we keep going.\nOne plus eight equals getting the hang of it.\nAll right, let's go bonkers now.\nLet's go crazy. Nine times the number\nof days in the year three.\nSixty five times the number of\nbones in the human body.\nTwo hundred, six times the\nnumber of Marvel MCU movies.\nTwenty three. I didn't say good ones.\nI just total. The answer is fifteen\nmillion five hundred sixty four thousand three\nhundred thirty one plus five is six plus that\nnext five brings you to eleven plus your\nnext six gives you seventeen at four,\ntwenty one at three or twenty four.\nThe next three brings to twenty seven at\nzero zero gives you twenty seven single digit,\ntwo plus seven equals nine.\nNow if you want to challenge me on how many days\nthere are in a year or bones in the body\nor a number of MCU movies, that's cool.\nYou do you. But whatever numbers you plug in\nand multiply by nine, your single digit "
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Standard digital-root identity: any multiple of 9 has digit-sum that is itself a multiple of 9, and iterating digit-sums on a positive multiple of 9 converges to 9. This is a textbook elementary number-theory result.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0005",
+      "videoId": "BR_8AxIwKV8",
+      "text": "The lily-pad puzzle: if a patch of lily pads doubles in size every day and fully covers the lake on day 48, the lake is exactly half-covered on day 47 (not day 24) — exposing how System-1 intuition reflexively halves the final number even when the doubling premise demands the answer be one day earlier.",
+      "kind": "definitional",
+      "entities": [
+        "location:lake",
+        "location:patch",
+        "quantity:forty eight",
+        "quantity:forty seven",
+        "quantity:twenty four",
+        "quantity:day forty eight",
+        "quantity:day forty seven",
+        "person:hellfish"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 11700,
+          "charEnd": 12500,
+          "timeStart": 702.28,
+          "timeEnd": 749.86,
+          "quote": "away here goes in a lake.\nThere's a patch of blue kneepads.\nNow, every day the patch doubles in size if\nit takes forty eight days for the patch to\ncover the entire lake.\nHow many days before half\nthe lake is covered?\nHellfish, what do you got. Twenty four.\nOh. What do I did wrong.\nThe answer is forty seven.\nI'll think about it. If the size of the patch\ndoubles every day and fills the lake on day\nforty eight, that must mean that half the lake\nwas covered just the day before day forty\nseven. That just blew my tidy soulsby mind.\nWhen our brains are solving problems like\nthis, we have two modes intuitive and\ndeliberative, fast and slow.\nAt first glance, twenty four makes sense because\ntwenty four is half of forty eight.\nIt's a really easy math problem to solve\nand our brains love solving probl"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.97,
+      "rationale": "Classic Cognitive Reflection Test (CRT) item by Shane Frederick (2005). Mathematically obvious from the doubling premise. The System-1 / System-2 framing the host invokes is from Daniel Kahneman, well-supported in cognitive psychology.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0006",
+      "videoId": "BR_8AxIwKV8",
+      "text": "If you could fold a single (theoretical, infinitely large) piece of 0.1 mm paper in half repeatedly, only ~23 folds reaches 1 km thickness, ~30 folds reaches 100 km (space), ~42 folds reaches the Moon, ~51 folds reaches the Sun, and just 103 folds reaches the edge of the observable universe.",
+      "kind": "definitional",
+      "entities": [
+        "quantity:ten millimeters",
+        "location:the moon",
+        "location:the sun",
+        "location:the end of the observable universe",
+        "quantity:ninety three billion light years"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 14600,
+          "charEnd": 15500,
+          "timeStart": 868.96,
+          "timeEnd": 920.61,
+          "quote": "you're\ngoing to run out of strength\nor you run out of paper.\nBut what if we had a theoretical piece\nof paper that was infinitely long and infinitely\nwide, but still only ten millimeters thick?\nHow many times would you have to fold it?\nBefore it was one kilometer high.\nJust twenty three folds at 30 folds, that\nstack of paper will be one hundred kilometers\nhigh. That means we're in space people.\nLet's keep folding at 40 to fold.\nYou reach the moon. Fifty one folds, get\nyou all the way to the sun.\nHow many times would you have to fold a\nsingle sheet of paper that would create a stack\nso high that you could reach the end\nof the observable universe, which is ninety three\nbillion light years away?\nHow many folds?\nYou'd only have to fold the paper?\nOne hundred and three times. Exponential growth\ncan create some really big numbers.\nBut you know what? Those numbers are nothing\ncompared to what we"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Exponential-folding example is a long-standing math-popularization staple and the order of magnitude of '~100 folds reaches the observable universe' is correct. Note: standard paper is ~0.1 mm thick, not '10 mm' as the host says (likely a misspeak — 10 mm thick paper would reach the observable universe in much fewer folds). The conclusions still hold up at the order-of-magnitude level since each extra fold buys a factor of 2.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0007",
+      "videoId": "BR_8AxIwKV8",
+      "text": "There are more ways to shuffle a deck of 52 cards (52! ≈ 8 × 10^67) than there are atoms on Earth — and shuffling once per second through every possible arrangement would take more than a 'novemdecillion' years (a trillion times a trillion times a trillion times a trillion times a trillion years).",
+      "kind": "empirical",
+      "entities": [
+        "quantity:fifty two factorial",
+        "quantity:five thousand permutations",
+        "quantity:forty thousand permutations",
+        "quantity:million years",
+        "quantity:a trillion times",
+        "quantity:a trillion"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 18400,
+          "charEnd": 18857,
+          "timeStart": 1090.11,
+          "timeEnd": 1151.4,
+          "quote": " five thousand permutations.\nEight cards is over forty thousand permutations\nand a deck of 52 cards.\nThat's fifty two factorial permutations, which is\neight times ten to the sixth seventh\npower, which is all this.\nThat means there are more ways to shuffle an\nordinary deck of 52 cards than there are\natoms on the earth.\nPutting it another way, if you shuffle to\nan ordinary deck of cards once every second,\nwhich I can't do. But if you did, in\norder to shuf"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "52! is correctly ~8×10^67. Atoms on Earth is roughly 10^50, so 52! is many orders of magnitude greater. 'More than atoms on Earth' is true. The 'a trillion^5 years' description tracks: 10^60 ≈ trillion^5, and 8×10^67 seconds is roughly 2.5×10^60 years which is on that order. Solid math claim.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {"target": "BR_8AxIwKV8:c_0001", "kind": "supports", "rationale": "The factorial computation explains why every shuffle is unique."}
+      ]
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0008",
+      "videoId": "BR_8AxIwKV8",
+      "text": "In 1940 mathematician Edward Kasner coined 'googol' for 10^100 in his book 'Mathematics and the Imagination'; his nephew Peter then proposed the 'googolplex' (10^googol), and Kasner himself called this number unfathomable — writing it out longhand would produce a notebook heavier than the Earth.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1940",
+        "person:edward kassner",
+        "person:peter kassner",
+        "quantity:googolplex",
+        "organization:google",
+        "person:larry page"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 19700,
+          "charEnd": 20800,
+          "timeStart": 1170.32,
+          "timeEnd": 1239.71,
+          "quote": " these\ntheoretical imaginary stuffs.\nIn 1940, mathematician Edward Kassner wrote\na book called Mathematics and the\nImagination. Now, in that book, he coined a term\nfor one followed by 100 zeros or 10 to\nthe power of a hundred. He called it a\nGoogle, which is just a word that his nephew,\nPeter Kassner, being the show off, that he\nis then proposed an even bigger number called\na googolplex, which is ten to the power of\nGoogle, or one followed by a Google Zeros.\nWell, Kassner himself called\nthis number unfathomable.\nThat I say write a googolplex is a number so\nlarge that if you wrote it out in an actual\nnotebook, your notebook would weigh more than the\nentire Earth, all the earth fun fact.\nThe original Google search engine was based\non sites back linking to each other.\nSo they called the algorithm back rub.\nThat name was clearly awful.\nSo they decided to change it to Google\nbecause they wanted to index an unfathomable,\nunfathomable a little Web pages.\nThe only reason Google is spelled the way it\nis, is because Larry Page misspelled it when\nhe registered the domain name.\nSo the name of on"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Kasner's 'Mathematics and the Imagination' was published in 1940, the googol/googolplex story is exactly as told (his nephew Milton Sirotta, age 9, coined 'googol' — the host's name 'Peter Kassner' is incorrect; it was Milton Sirotta). The Google-search backstory (BackRub renamed Google) is accurate; the 'misspelled by Larry Page' claim has been told but is somewhat folkloric — variants attribute it to Sean Anderson typing the domain check.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0009",
+      "videoId": "BR_8AxIwKV8",
+      "text": "In 1971 mathematician Ronald Graham defined Graham's number as the solution to a Ramsey-theory problem; it is so large that it requires 64 'steps' to construct, after a few of which the formula already contains 7.6 trillion threes, and there is not enough physical space in the observable universe to write its decimal digits.",
+      "kind": "historical",
+      "entities": [
+        "date_time:nineteen seventy one",
+        "person:ronald gramme",
+        "person:graham",
+        "organization:physics astronomy",
+        "person:john bia",
+        "organization:ucla"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 20800,
+          "charEnd": 21800,
+          "timeStart": 1235.45,
+          "timeEnd": 1297.64,
+          "quote": "e of the biggest companies\nin history is actually a typo, seem to be\ndoing OK with it. Numbers get even\nbigger than a googolplex, much bigger.\nIn nineteen seventy one, mathematician Ronald Gramme\nestablished a number as the solution\nto a mathematical riddle.\nLink, link, link grammes.\nNo, as it came to be\nknown is so mind boggling.\nThe human brain can't even picture it.\nThere's sixty four steps required to obtain\nGraham's number, and after the first few\nsteps the sequence contains seven\npoint six trillion threes.\nI don't know what happens after those\nfew steps, but it sounds sounds awful.\nAccording to the website Physics Astronomy, if\nyou even try to imagine Graham's number,\nyour head would break down into a mental\nblack hole because it cannot store the\ninformation required to envisage it.\nI think that means see, and if you think\nthat sounds like an exaggeration, so did I.\nBut John BIA's, who's a mathematical physicist\nat UCLA, he said the mental hole\ndescription is a ridiculous underes"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Graham's number was published by Ronald Graham (with Bruce Rothschild) in the 1970s as an upper bound for a Ramsey-theory problem. The 64-step construction via Knuth up-arrow notation is correct. 'Not enough room in the observable universe to write its digits' is true — even g_1 (the first construction step) far exceeds the universe's atom count. The cited physicist is John Baez (host transcribed as 'John BIA'); Baez was at UC Riverside, not UCLA, but the underlying point about the number's incomprehensible size is widely accepted.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "BR_8AxIwKV8:c_0010",
+      "videoId": "BR_8AxIwKV8",
+      "text": "Math becomes counterintuitive (the deck-shuffle, birthday-paradox, rope-around-Earth, lily-pad, paper-folding, factorial-explosion, googolplex, Graham's-number examples) precisely because human cognition has evolved for moderate-scale linear estimation and reflexively under-estimates exponential and combinatorial growth.",
+      "kind": "opinion",
+      "entities": [
+        "quantity:googolplex",
+        "person:graham",
+        "quantity:fifty two factorial"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "BR_8AxIwKV8",
+          "charStart": 11700,
+          "charEnd": 12500,
+          "timeStart": 702.28,
+          "timeEnd": 749.86,
+          "quote": "away here goes in a lake.\nThere's a patch of blue kneepads.\nNow, every day the patch doubles in size if\nit takes forty eight days for the patch to\ncover the entire lake.\nHow many days before half\nthe lake is covered?\nHellfish, what do you got. Twenty four.\nOh. What do I did wrong.\nThe answer is forty seven.\nI'll think about it. If the size of the patch\ndoubles every day and fills the lake on day\nforty eight, that must mean that half the lake\nwas covered just the day before day forty\nseven. That just blew my tidy soulsby mind.\nWhen our brains are solving problems like\nthis, we have two modes intuitive and\ndeliberative, fast and slow.\nAt first glance, twenty four makes sense because\ntwenty four is half of forty eight.\nIt's a really easy math problem to solve\nand our brains love solving probl"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "This is the unifying meta-claim of the video and is well supported by cognitive psychology. Humans systematically under-estimate exponential growth (Wagenaar & Sagaria 1975 and many subsequent studies) and combinatorial explosion. The host's particular examples are all genuine cases of this cognitive bias.",
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {"target": "BR_8AxIwKV8:c_0001", "kind": "supports"},
+        {"target": "BR_8AxIwKV8:c_0002", "kind": "supports"},
+        {"target": "BR_8AxIwKV8:c_0005", "kind": "supports"},
+        {"target": "BR_8AxIwKV8:c_0006", "kind": "supports"},
+        {"target": "BR_8AxIwKV8:c_0007", "kind": "supports"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "z_YeaMO2X0s",
+  "generatedAt": "2026-04-20T03:42:24.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "z_YeaMO2X0s:c_0001",
+      "videoId": "z_YeaMO2X0s",
+      "text": "The mainstream image of the Knights Templar as humble warrior monks protecting Christian pilgrims is a cover story; their real founding mission was to recover ancient Atlantean technology buried beneath the Temple Mount in Jerusalem.",
+      "kind": "speculative",
+      "entities": [
+        "organization:knights templar",
+        "location:jerusalem",
+        "location:atlantis",
+        "location:temple mount",
+        "group_or_movement:brothers of the east"
+      ],
+      "relationships": [
+        "r_0028",
+        "r_0112"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 59,
+          "charEnd": 183,
+          "timeStart": 4.799,
+          "timeEnd": 15.759,
+          "quote": "The accepted narrative describes the\nKnights Templar as humble warrior monks\nprotecting Christians on the road to\nJerusalem."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.05,
+      "rationale": "The Knights Templar's stated purpose really was to protect Christian pilgrims to the Holy Land; modern historians treat the warrior-monk identity as primary, not as cover. The 'they were really hunting Atlantean tech' framing comes from esoteric/Templar-revivalist circles (Timothy Hogan and his predecessors), not from documentary evidence. The host frames this as the secret 'real' mission, which is the controversial thesis the rest of the video defends.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0002",
+      "videoId": "z_YeaMO2X0s",
+      "text": "The Knights Templar were officially formed in 1118, but the order grew out of an earlier secret society called the Brothers of the East, headquartered in Constantinople, who told the founding knights about Atlantis and pointed them at the Temple Mount.",
+      "kind": "historical",
+      "entities": [
+        "organization:knights templar",
+        "date_time:1118",
+        "group_or_movement:brothers of the east",
+        "location:constantinople",
+        "location:istanbul",
+        "person:depay"
+      ],
+      "relationships": [
+        "r_0028"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 3565,
+          "charEnd": 3655,
+          "timeStart": 237.04,
+          "timeEnd": 246.48,
+          "quote": "The Knights Templar were formed in 1118.\nAt least that's when they were\nofficially formed."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.35,
+      "rationale": "The 1118 founding date for the Templars is reasonably well attested (some sources say 1119). However, the 'Brothers of the East as a Constantinople-based secret order who briefed Hugues de Payens about Atlantean tech' is not documented in mainstream history; it is part of the modern Templar-revivalist legend the host is retelling. The historical core (formal founding around 1118 by Hugues de Payens and a small band of knights in Jerusalem) is true; the secret-order back-story is not.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "z_YeaMO2X0s:c_0001", "kind": "supports", "rationale": "Provides the alleged origin mechanism for the cover-story claim." }
+      ]
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0003",
+      "videoId": "z_YeaMO2X0s",
+      "text": "An advanced, peaceful, globe-spanning civilization called Atlantis once existed and was wiped out in a single day by earthquakes, volcanoes, and a great flood, leaving behind powerful artifacts that the Knights Templar later recovered.",
+      "kind": "speculative",
+      "entities": [
+        "location:atlantis",
+        "event:great flood",
+        "person:plato",
+        "group_or_movement:brothers of the east"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 5193,
+          "charEnd": 5273,
+          "timeStart": 358.88,
+          "timeEnd": 367.52,
+          "quote": "It was the story of an ancient\ncivilization that thrived thousands of\nyears ago."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.05,
+      "rationale": "Atlantis is a literary device introduced by Plato in Timaeus and Critias; there is no archaeological or geological evidence for a globe-spanning advanced civilization wiped out in a single day. The flood-myth correlation across cultures is real, but most scholars attribute it to ordinary catastrophic flooding events plus shared narrative templates, not a single Atlantean cataclysm.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0004",
+      "videoId": "z_YeaMO2X0s",
+      "text": "The Knights Templar excavated beneath the Temple Mount in Jerusalem and recovered six Arks of the Covenant along with the Spear of Destiny, the Holy Grail, and the Emerald Tablet.",
+      "kind": "speculative",
+      "entities": [
+        "organization:knights templar",
+        "location:jerusalem",
+        "location:temple mount",
+        "work_of_media:emerald tablet"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 8911,
+          "charEnd": 9073,
+          "timeStart": 612.8,
+          "timeEnd": 626.76,
+          "quote": "The Knights found a large box made of\nacacia wood and gold. There was no\nquestion they had found the legendary\nArk of the Covenant. And then they found\nfive more."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.03,
+      "rationale": "There is no evidence the Templars excavated under the Temple Mount, let alone recovered six Arks of the Covenant. The Templar HQ on the mount is real; the digging-and-finding-relics narrative is post-medieval legend amplified by 19th-20th century esoteric writers and modern fiction. No archaeological record supports it.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "z_YeaMO2X0s:c_0003", "kind": "presupposes", "rationale": "Requires Atlantis-as-real for the 'arks store mana to power pyramids' framing." }
+      ]
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0005",
+      "videoId": "z_YeaMO2X0s",
+      "text": "The Anunnaki were extraterrestrials from a planet beyond Neptune called Nibiru who arrived on Earth roughly 450,000 years ago to mine gold and genetically engineered Homo sapiens as a labor force.",
+      "kind": "speculative",
+      "entities": [
+        "organization:anunnaki"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 12289,
+          "charEnd": 12420,
+          "timeStart": 844.48,
+          "timeEnd": 856.3199999999999,
+          "quote": "The Anunnaki were gods\nworshiped by the ancient Samrians, but\nthey were actually aliens from a planet\nbeyond Neptune called Nibiru."
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.02,
+      "rationale": "This is Zecharia Sitchin's ancient-astronaut hypothesis. The Anunnaki are real Sumerian deities; the rest (Nibiru as a planet, ancient mining mission, genetic engineering of humans) has no support in Sumerology, astronomy, or genetics. Sitchin's translations are widely rejected by Assyriologists.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0006",
+      "videoId": "z_YeaMO2X0s",
+      "text": "Beneath the Temple Mount the Templars also unearthed an ossuary containing the bones of Jesus, Mary Magdalene, John the Baptist, and the children Mary had with both men, which would invalidate core Christian doctrine if revealed.",
+      "kind": "speculative",
+      "entities": [
+        "organization:knights templar",
+        "person:jesus",
+        "person:mary magdalene",
+        "person:john the baptist",
+        "organization:catholic church"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 15195,
+          "charEnd": 15278,
+          "timeStart": 1025.36,
+          "timeEnd": 1034.64,
+          "quote": "The knights found the bones of\nMary Magdalene, John the Baptist, and\nJesus himself."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.02,
+      "rationale": "No such ossuary has ever been documented. The Talpiot 'Jesus family tomb' from 1980 is the closest real-world analogue, and most scholars reject the Jesus-of-Nazareth identification of those ossuaries on statistical and naming grounds. The Mary-Magdalene-Jesus-bloodline storyline is a Holy-Blood-Holy-Grail / Da Vinci Code construction popularized in the 1980s-2000s, not Templar-era evidence.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0007",
+      "videoId": "z_YeaMO2X0s",
+      "text": "Outwardly devout Catholics, the Knights Templar were secretly Christian gnostics who believed spirituality is found within the individual without need for priests or church, anticipating the 'God-given rights' language of the American founding.",
+      "kind": "historical",
+      "entities": [
+        "organization:knights templar",
+        "ideology:gnosticism",
+        "organization:catholic church",
+        "ideology:god-given rights"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 16830,
+          "charEnd": 16889,
+          "timeStart": 1133.12,
+          "timeEnd": 1141.32,
+          "quote": "But in secret,\nthe Knights Templar were Christian\ngnostics."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.2,
+      "rationale": "Some Templars were accused of heretical practices at their trial (denying Christ, idol worship, etc.), but most modern historians read the confessions as products of torture rather than evidence of an organized gnostic underground. The neat 'they were systematic gnostics' framing is a modern reconstruction. The 'God-given rights' linkage to the Declaration of Independence is anachronistic — the Lockean natural-rights tradition has its own genealogy independent of any Templar transmission.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0008",
+      "videoId": "z_YeaMO2X0s",
+      "text": "On Friday October 13, 1307, King Philip IV of France had the Templar leadership arrested and tortured into confessing heresy, but a 2001 discovery in the Vatican archives (the Chinon Parchment) shows Pope Clement V actually absolved the Templar leaders before Philip pressured him to disband the order in 1312.",
+      "kind": "historical",
+      "entities": [
+        "person:king philip iv",
+        "person:king philip",
+        "person:pope clement",
+        "person:jacqu de mole",
+        "organization:knights templar",
+        "date_time:1312",
+        "ideology:heresy"
+      ],
+      "relationships": [
+        "r_0310",
+        "r_0318"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 20997,
+          "charEnd": 21102,
+          "timeStart": 1409.6,
+          "timeEnd": 1420.799,
+          "quote": "On Friday the 13th of October 1307, 100\nTemplars, including the Grandmaster\nJacqu de Mole, were arrested."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The October 13, 1307 mass arrest, the torture, the forced confessions, the 1312 dissolution at the Council of Vienne, and Jacques de Molay's execution in 1314 are well-documented historical facts. The Chinon Parchment is real — rediscovered in the Vatican Secret Archive by Barbara Frale in 2001 — and does indicate that Clement V absolved the Templar leadership while still ultimately suppressing the order under royal pressure. The host's account is essentially correct.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0009",
+      "videoId": "z_YeaMO2X0s",
+      "text": "Forewarned of the arrest order by their spies, the Templars secretly sailed their entire treasure fleet out of La Rochelle on October 12, 1307, escaping with the Atlantean artifacts and forbidden documents.",
+      "kind": "speculative",
+      "entities": [
+        "organization:knights templar",
+        "person:king philip",
+        "event:arrest order"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 23190,
+          "charEnd": 23318,
+          "timeStart": 1549.44,
+          "timeEnd": 1563.3600000000001,
+          "quote": "On\nOctober 12th, the night before the\narrest order was given, the Templar's\nentire fleet of ships disappeared into\nthe darkness."
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.15,
+      "rationale": "The 'vanishing Templar fleet from La Rochelle' is a popular legend with very thin documentary support — there is no contemporary record of an organized fleet escape on the eve of the arrests. The Templar treasury was indeed never fully accounted for after 1307, which fuels the speculation, but the specific 'fleet sailed October 12' narrative is reconstruction, not record.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "z_YeaMO2X0s:c_0008", "kind": "elaborates", "rationale": "Adds the escape narrative on top of the documented arrest." }
+      ]
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0010",
+      "videoId": "z_YeaMO2X0s",
+      "text": "After 1312 the Knights Templar continued underground by reconstituting as other orders — the Freemasons in Scotland, the Knights of Christ in Portugal, and Rosicrucians in Germany — and even shaped Columbus's voyage and the symbolism of Rosslyn Chapel.",
+      "kind": "speculative",
+      "entities": [
+        "organization:knights templar",
+        "organization:freemasons",
+        "location:scotland",
+        "location:portugal",
+        "person:columbus",
+        "facility:rosland chapel"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 24103,
+          "charEnd": 24191,
+          "timeStart": 1614,
+          "timeEnd": 1623.76,
+          "quote": "In Scotland, they became\nFreemasons. Portugal, they were known as\nthe Knights of Christ."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.4,
+      "rationale": "The Order of Christ in Portugal genuinely did absorb Portuguese Templar holdings after 1319 — that part is straightforwardly true. The Freemason-as-Templar-successor claim is contested: Freemasonry organizes itself as descending from medieval stonemason guilds, and the formal Templar-Mason link is a 18th-century invention (Andrew Michael Ramsay's 1737 oration). Rosicrucianism's Templar pedigree is similarly an esoteric reconstruction.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0011",
+      "videoId": "z_YeaMO2X0s",
+      "text": "Carvings of corn and trillium — both plants native only to the Americas — appear in Rosslyn Chapel, which was built around 1446, decades before Columbus's 1492 voyage; this is taken as proof the Templars reached the New World first.",
+      "kind": "empirical",
+      "entities": [
+        "facility:rosland chapel",
+        "location:rosland chapel",
+        "person:columbus",
+        "location:new world",
+        "organization:knights templar"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 26350,
+          "charEnd": 26579,
+          "timeStart": 1757.039,
+          "timeEnd": 1773.12,
+          "quote": "This is a picture of corn over one of\nthe windows in Rosland Chapel. And\nhere's one of Trillium. But corn and\ntrillium are native to North America.\nRosland Chapel was built almost 50 years\nbefore Columbus sailed to the New World."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.2,
+      "rationale": "The carvings exist, but botanists and architectural historians dispute the identifications. The 'corn' is more plausibly stylized wheat, strawberries, or a generic decorative motif; the 'trillium' identification is similarly contested. Mainstream Rosslyn scholarship (Michael T. R. B. Turnbull and others) treats the pre-Columbian-American-plants reading as a stretch popularized by Knight & Lomas in the 1990s.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0012",
+      "videoId": "z_YeaMO2X0s",
+      "text": "Timothy Hogan, current Grandmaster of the Order of the Temple of Secret Initiates, claims the Templars still secretly hold the recovered artifacts in seven vaults inside the United States and intend to release them soon, with no single government or religion controlling the rollout.",
+      "kind": "speculative",
+      "entities": [
+        "person:timothy hogan",
+        "person:tim",
+        "organization:templar orders",
+        "organization:order of the temple of secret initiates",
+        "organization:otsi"
+      ],
+      "relationships": [
+        "r_0409",
+        "r_0448"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 32323,
+          "charEnd": 32393,
+          "timeStart": 2140.4,
+          "timeEnd": 2146.7999999999997,
+          "quote": "Timothy Hogan is the current Grandmaster\nof one of the Templar orders."
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Timothy Hogan is a real, public figure who really does claim grandmastership of a modern Templar revival order and really does talk about hidden vaults and imminent disclosure. Whether the artifacts exist is what the host eventually flags as the unresolved question, so I'm leaving directTruth unset here — this claim describes Hogan's claims, not a fact about the world.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0013",
+      "videoId": "z_YeaMO2X0s",
+      "text": "The entire Templar/Atlantis/artifact narrative comes from one source — Timothy Hogan — and there is no physical evidence to corroborate the bold claims, so belief in the story ultimately reduces to whether you trust Hogan personally.",
+      "kind": "opinion",
+      "entities": [
+        "person:timothy hogan",
+        "person:tim",
+        "organization:knights templar",
+        "location:atlantis"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 34536,
+          "charEnd": 34677,
+          "timeStart": 2277.04,
+          "timeEnd": 2288.8799999999997,
+          "quote": "It's a fascinating story, but is it\ntrue? Well, there's nothing to debunk\nabout his story, but there's also no\nphysical evidence to prove it."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "This is the host's own framing in his verdict section, and it's accurate as a description of the epistemic situation: there's no documentary corpus, no archaeology, no peer-reviewed literature backing the artifact claims — just one charismatic narrator. The host correctly notes that lack of debunking is not evidence of truth.",
+      "hostStance": "asserts",
+      "inVerdictSection": true,
+      "dependencies": [
+        { "target": "z_YeaMO2X0s:c_0012", "kind": "elaborates", "rationale": "Reframes Hogan's claims as personal-credibility-bound." },
+        { "target": "z_YeaMO2X0s:c_0004", "kind": "contradicts", "rationale": "Withholds belief in the very arks-recovery claim made earlier." }
+      ]
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0014",
+      "videoId": "z_YeaMO2X0s",
+      "text": "Hogan's professional and family Templar biography (descent from Joseph Warren of the Revolutionary War, father Steven Hogan as mayor of Aurora Colorado, and his early initiation into Masonic/Templar traditions) checks out factually, even if his cosmological claims do not.",
+      "kind": "empirical",
+      "entities": [
+        "person:timothy hogan",
+        "person:tim",
+        "person:paul rivere",
+        "event:revolutionary war",
+        "person:steven de hogan",
+        "location:aurora",
+        "location:colorado"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 39951,
+          "charEnd": 40078,
+          "timeStart": 2594.56,
+          "timeEnd": 2604.56,
+          "quote": "Now, I've seen these claims\nchallenged online, but everything I\ncould find says that Tim is telling the\ntruth about his family."
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Steven Hogan was indeed mayor of Aurora, Colorado (2011-2018), and the Steven D. Hogan Parkway is a real road project named in his honor. The Joseph Warren ancestry is the kind of genealogical claim that's hard to verify in seconds but the host says he confirmed it. Separating biographical truth from theological claim is a sound move.",
+      "hostStance": "asserts",
+      "inVerdictSection": true
+    },
+    {
+      "id": "z_YeaMO2X0s:c_0015",
+      "videoId": "z_YeaMO2X0s",
+      "text": "An immanent divine principle exists within every person — the host believes this regardless of whether the Templar artifact story is literally true, and frames it as compatible rather than competing with traditional religious faith.",
+      "kind": "opinion",
+      "entities": [
+        "person:tim",
+        "ideology:gnosticism"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "z_YeaMO2X0s",
+          "charStart": 45416,
+          "charEnd": 45570,
+          "timeStart": 2933.04,
+          "timeEnd": 2944.2400000000002,
+          "quote": "But that could be my own bias because I\nalso believe that the divine God, the\nuniversal energy, the whatever you call\nit, I believe that is in each of us."
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Pure metaphysical opinion — the host explicitly flags it as personal belief/bias. Not the kind of claim that has a truth value the way an empirical claim does, so directTruth omitted.",
+      "hostStance": "asserts",
+      "inVerdictSection": true
+    }
+  ]
+}

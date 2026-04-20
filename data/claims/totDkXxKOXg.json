@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "totDkXxKOXg",
+  "generatedAt": "2026-04-20T02:05:20.460Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "totDkXxKOXg:c_0001",
+      "videoId": "totDkXxKOXg",
+      "text": "Until very recently in human history, the color blue effectively 'didn't exist' in widespread human experience because cultures had not coined a word to perceptually distinguish it from green or black.",
+      "kind": "historical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 302,
+          "charEnd": 328,
+          "timeStart": 17.119,
+          "timeEnd": 22.75,
+          "quote": "blue just didn't\nexist yet"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.6,
+      "rationale": "This is the central thesis of Lazarus Geiger / Guy Deutscher / Jules Davidoff's research on linguistic relativity and color perception. The framing 'blue didn't exist' is rhetorical exaggeration: ancient eyes saw the same wavelengths as ours, but they lacked a categorical label, which made it harder to distinguish and almost never named in writing. Partially true — the linguistic and historical record genuinely supports the absence of a 'blue' lexeme in many ancient languages — but the strong claim that humans literally couldn't perceive blue is overstated.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0002",
+      "videoId": "totDkXxKOXg",
+      "text": "Homer's Iliad and Odyssey are the foundational texts of ancient Greek literature and remain the headwaters from which much of modern Western literature is derivative.",
+      "kind": "definitional",
+      "entities": [
+        "person:homer",
+        "work_of_media:iliad",
+        "work_of_media:odyssey",
+        "nationality_or_ethnicity:greeks"
+      ],
+      "relationships": [
+        "r_0002",
+        "r_0013"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 620,
+          "charEnd": 744,
+          "timeStart": 47.76,
+          "timeEnd": 58.64,
+          "quote": "homer wrote the iliad and the odyssey\nand these two epic poems are considered\nthe foundation of all ancient greek\nliterature"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.9,
+      "rationale": "Standard literary-historical consensus. Whether Homer was a single person is debated (the 'Homeric Question'), but the foundational status of the Iliad and Odyssey for Greek literature and Western literary tradition is uncontroversial. Auerbach, Nagy, and most classicists endorse this framing.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0003",
+      "videoId": "totDkXxKOXg",
+      "text": "William Gladstone, the four-time British Prime Minister, was struck while reading the Odyssey by Homer's odd color vocabulary — calling the sea 'wine dark', honey 'green', and sheep 'violet' — and inferred Homer might have been colorblind.",
+      "kind": "historical",
+      "entities": [
+        "person:william gladstone",
+        "person:gladstone",
+        "role:four-time prime minister",
+        "location:great britain",
+        "person:homer",
+        "work_of_media:odyssey",
+        "location:wine dark sea"
+      ],
+      "relationships": [
+        "r_0020"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 555,
+          "charEnd": 581,
+          "timeStart": 41.04,
+          "timeEnd": 47.76,
+          "quote": "he was a huge fan\nof homer"
+        },
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 814,
+          "charEnd": 1170,
+          "timeStart": 58.64,
+          "timeEnd": 79.28,
+          "quote": "gladstone was reading the odyssey and\nnoticed homer described the wine dark\nsea not blue not green wine dark and\nthis description got gladstone\ninterested in other ways homer used\ncolor to describe things homer describes\nhoney as being green and sheep as being\nviolet colored glad still wondered if\nhomer was colorblind and saw blue as\nmaybe something else"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Historically accurate. Gladstone's 1858 'Studies on Homer and the Homeric Age' devoted a chapter to Homer's color usage and proposed that the Greeks saw colors differently. He was indeed a four-time PM and an obsessive Homer scholar. The 'colorblind Homer' inference is correctly attributed to him; modern scholars (e.g., Lazarus Geiger) reframed it as linguistic rather than physiological.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0004",
+      "videoId": "totDkXxKOXg",
+      "text": "Gladstone counted color references across thousands of pages of Homer and found black mentioned ~200 times, white ~100, red 13, yellow and green fewer than 10, and blue zero — establishing a striking statistical absence.",
+      "kind": "empirical",
+      "entities": [
+        "person:gladstone",
+        "person:homer",
+        "quantity:thousands of pages"
+      ],
+      "relationships": [
+        "r_0050"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 1174,
+          "charEnd": 1404,
+          "timeStart": 79.28,
+          "timeEnd": 100.32,
+          "quote": "he went through\nthousands of pages of homer's writing\nand counted his references to color\nblack is mentioned almost 200 times\nwhite about a hundred times red is\nmentioned 13 times yellow and green\nfewer than 10 times but blue\nzero"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The counts approximately match Gladstone's published tabulations. Some modern scholars dispute exact numbers (different translations and editions yield different counts), but the qualitative finding — black/white dominate, red is third, blue is essentially absent — is robust and has been re-verified by Berlin & Kay's 1969 work and later corpus linguists.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "totDkXxKOXg:c_0003",
+          "kind": "elaborates",
+          "rationale": "Quantitative follow-up to Gladstone's qualitative observation"
+        }
+      ]
+    },
+    {
+      "id": "totDkXxKOXg:c_0005",
+      "videoId": "totDkXxKOXg",
+      "text": "The absence of 'blue' is not unique to Homer or Greek — researchers find it missing from the Quran, the Hebrew Bible, ancient Chinese, Hindu, and Icelandic texts, all of which use color words in roughly the same proportions Homer did.",
+      "kind": "empirical",
+      "entities": [
+        "person:homer",
+        "work_of_media:ancient texts",
+        "work_of_media:the quran",
+        "work_of_media:the hebrew bible",
+        "organization:scientists"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 1395,
+          "charEnd": 1893,
+          "timeStart": 95.92,
+          "timeEnd": 129.44,
+          "quote": "blue\nzero so gladstone looked through other\nancient greek writing nothing was ever\ndescribed as being blue gladstone's\ninitial thought was maybe the greeks saw\ncolor differently than other people so\nresearchers analyzed ancient texts from\nall over the world the quran the hebrew\nbible ancient chinese hindu icelandic no\nblue not once these ancient texts\nreference colors with pretty much the\nsame proportion as homer's epics black\nand white appear a lot red a few times\nyellow and green appear very"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "This generalization is well attested in linguistic anthropology — Lazarus Geiger (1860s) first showed the cross-cultural pattern, Berlin & Kay (1969) systematized it, and subsequent fieldwork on dozens of languages largely confirmed the staged emergence. Specific claim that the Quran, Hebrew Bible, etc. lack 'blue' is true in the strict sense (the Hebrew tekhelet is a dye, not a basic color term, etc.).",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "totDkXxKOXg:c_0004",
+          "kind": "supports",
+          "rationale": "Generalizes the Homer-only finding to a global pattern"
+        }
+      ]
+    },
+    {
+      "id": "totDkXxKOXg:c_0006",
+      "videoId": "totDkXxKOXg",
+      "text": "Across virtually all languages, color words emerge in the same evolutionary sequence: first black and white, then red, then either yellow or green, with blue being the very last basic color term to appear.",
+      "kind": "empirical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 2149,
+          "charEnd": 2431,
+          "timeStart": 144.879,
+          "timeEnd": 162.959,
+          "quote": "almost universally names for colors\nemerge in the same order first a\nlanguage creates the words for black and\nwhite the next color is always red after\nred it's either yellow or green the last\ncolor to appear in every major language\nis blue and this makes sense if you\nthink about it"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "This is essentially Berlin & Kay's 1969 hierarchy, which is the standard empirical result in cross-linguistic color cognition. The 'every major language' framing slightly overstates — there are exceptions and refinements (Kay & Maffi 1999) — but the basic ordering is one of the most robust findings in linguistic typology.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0007",
+      "videoId": "totDkXxKOXg",
+      "text": "Blue is rare in nature — almost no animals produce blue pigment, and most apparent blues (butterfly wings, peacock feathers, blue eyes, blue toads) are structural color from microscopic light-scattering, not pigment — so cultures had little practical need to lexicalize 'blue'.",
+      "kind": "empirical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 2432,
+          "charEnd": 3251,
+          "timeStart": 160.959,
+          "timeEnd": 213.679,
+          "quote": "how often does blue\nappear in nature we see black and white\neverywhere blood is red so humans are\nfamiliar with that color but what in\nnature is blue only 10 of flowers are\nblue so pretty rare but even more rare\nin animals birds mammals reptiles none\nof them produce blue pigment yes there\nare a couple of blue butterflies but\nthat's not pigment they're actually\nbrown the color blue is created because\nof the way their wings are structured at\nthe microscopic level same with blue\nfeathers of peacocks or blue jays blue\ntoads even people with blue eyes that\nblue isn't pigment it's the microscopic\nstructure of the eye or the feathers or\nthe skin that scatters the light in a\nway that appears blue and since blue is\nso rare in nature most ancient cultures\ndidn't see blue as a separate color but\nrather a shade of green"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Biologically accurate. True blue pigment in animals is genuinely vanishingly rare (the obrina olivewing butterfly is one of the few exceptions); peacock, morpho butterfly, blue jay, and blue-eye coloration are all structural/scattering effects, not pigment. The '10% of flowers' figure is in the right ballpark per botanical surveys. The causal link to lexicalization is plausible and aligns with the rarity-drives-non-naming hypothesis.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "totDkXxKOXg:c_0006",
+          "kind": "supports",
+          "rationale": "Provides the ecological mechanism for why blue is last in the lexical hierarchy"
+        }
+      ]
+    },
+    {
+      "id": "totDkXxKOXg:c_0008",
+      "videoId": "totDkXxKOXg",
+      "text": "The color blue only emerged as a distinct named category once the Egyptians invented a synthetic blue dye, which spread through the ancient world and prompted languages to evolve a new lexeme; before that, the sky was 'light black' and the Nile was 'green'.",
+      "kind": "historical",
+      "entities": [
+        "location:the nile river",
+        "location:ancient world"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 3333,
+          "charEnd": 3744,
+          "timeStart": 215.92,
+          "timeEnd": 244.32,
+          "quote": "the ocean\nwasn't blue it was a shade of green the\nsky wasn't blue it was light black blue\nfinally emerges as its own color when\nthe egyptians invented a way to produce\na blue dye suddenly the light black sky\nwas blue the nile river green for\nthousands of years finally became blue\nas egyptian blue dye made its way around\nthe ancient world languages evolved to\naccommodate this new color but before\nthat nothing"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Egyptian blue (calcium copper silicate) is the world's earliest known synthetic pigment, used from c. 3100 BCE onward, and its diffusion did make blue physically and culturally salient in Mediterranean contexts. The strong claim that the dye 'caused' the lexicalization of blue is suggestive but contested — Berlin & Kay's hierarchy attributes it more to ecological-perceptual factors than to a single technological invention. The host treats one possible mechanism as the mechanism.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0009",
+      "videoId": "totDkXxKOXg",
+      "text": "Researcher Jules Davidoff's experiment with the Himba tribe of Africa — who have no word for 'blue' but many words for shades of green — showed Himba participants struggled to single out a blue square from 11 green squares but could effortlessly distinguish a slightly different green that Westerners cannot.",
+      "kind": "empirical",
+      "entities": [
+        "person:jules davidoff",
+        "nationality_or_ethnicity:himba",
+        "nationality_or_ethnicity:himba tribe",
+        "location:africa",
+        "quantity:12 squares",
+        "quantity:11 of the squares"
+      ],
+      "relationships": [
+        "r_0056",
+        "r_0052"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 3901,
+          "charEnd": 4346,
+          "timeStart": 249.599,
+          "timeEnd": 279.68,
+          "quote": "jules davidoff conducted an\nexperiment with the himba tribe in\nafrica and like ancient cultures the\nhimba have no word for blue to the himba\nblue is just a shade of green so himba\nparticipants were shown 12 squares on a\nscreen 11 of the squares were green one\nwas blue can you pick out the blue\nsquare now of course you can you found\nit immediately but the himba had trouble\nwith this color they had a lower\nreaction time than you or i would but"
+        },
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 4948,
+          "charEnd": 5391,
+          "timeStart": 311.36,
+          "timeEnd": 350.8,
+          "quote": "this square is slightly lighter than the\nothers and most of us can't see any\ndifference if we study the colors and\ntry to really focus we might get it but\nit's not easy but the himba they saw\nthis different green as easily as we\nfound the blue square the himba don't\njust have one word for green they have\nunique words and whole categories of\nwords for many shades of green because\nof this the himba people are already\nprimed to recognize them"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "The Davidoff/Roberson Himba experiments are real and were published (Roberson, Davidoff et al. 2005). However, replication has been mixed and the strong 'they couldn't see the blue' framing was later criticized — including by Davidoff himself. The host correctly notes (in claim 10) that media reports overstated this. Net: the experiment exists, the slowed-reaction effect is real, but the magnitude has often been embellished in popularization.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0010",
+      "videoId": "totDkXxKOXg",
+      "text": "The widely-circulated claim that the Himba 'literally couldn't see the blue square' is a media fabrication invented by outlets like the BBC and Business Insider — illustrating that mainstream science journalism sacrifices accuracy for narrative.",
+      "kind": "opinion",
+      "entities": [
+        "nationality_or_ethnicity:himba",
+        "organization:bbc",
+        "organization:business insider",
+        "organization:media"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 4347,
+          "charEnd": 4691,
+          "timeStart": 273.519,
+          "timeEnd": 296.08,
+          "quote": "quick side note you'll see lots of\nreports about this study that say the\nhimba couldn't see the blue square at\nall that's not true the bbc and business\ninsider made that part up it's a\ncomplete fabrication oh wait a minute i\nthought the media follows the science\nwell so the media only follows science\nif it fits their story uh it would seem\nso"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The factual core is accurate: numerous popular outlets did report that the Himba 'couldn't see' blue, and this overstates Davidoff's actual findings (slower reaction time, not zero perception). Davidoff has personally complained about this misreporting. The broader editorializing about 'media follows narrative not science' is opinion. The first half of the claim is empirically well-supported; the second is host commentary.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "totDkXxKOXg:c_0009",
+          "kind": "elaborates",
+          "rationale": "Corrects a common over-reading of the same Himba experiment"
+        }
+      ]
+    },
+    {
+      "id": "totDkXxKOXg:c_0011",
+      "videoId": "totDkXxKOXg",
+      "text": "Until a culture has a word for a color, that color is genuinely difficult for its members to perceive and define — the word 'pink', for example, doesn't appear in English until roughly the 13th century, and before then 'pink' was simply 'a lighter shade of red'.",
+      "kind": "historical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 5598,
+          "charEnd": 5714,
+          "timeStart": 350.8,
+          "timeEnd": 360.879,
+          "quote": "the word pink doesn't appear in\nenglish until about the 13th century\nbefore then\npink was red a lighter shade of red"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "The word 'pink' as a color name actually entered English much later — around the late 17th century, derived from the flower Dianthus 'pinks'. The 13th-century date appears to be wrong; the host may be confusing it with the flower-name's earlier use or with another color word like 'rose'. The broader linguistic-relativity point about color terms emerging slowly is sound, but this specific historical claim is dubious.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0012",
+      "videoId": "totDkXxKOXg",
+      "text": "Isaac Newton's seven-color spectrum (red, orange, yellow, green, blue, indigo, violet) was an arbitrary numerological choice — Newton initially saw 11 bands, then 5, and finally settled on 7 to match the days of the week and Pythagoras's 7 musical notes, rather than from quantitative measurement.",
+      "kind": "historical",
+      "entities": [
+        "person:isaac newton",
+        "person:newton",
+        "person:pythagoras"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 6350,
+          "charEnd": 6830,
+          "timeStart": 396.0,
+          "timeEnd": 424.72,
+          "quote": "newton himself had trouble separating\nthe bands he initially thought there\nwere 11 unique colors but then he\nthought maybe just five but a week has\nseven days and there are seven tonal\nnotes in a musical octave and pythagoras\nthought seven was a magical number so\nnewton said effort let's call it seven\ncolors in modern science we measure\ncolors in nanometers so we could say\nwith precision that pure yellow is 580\nnanometers but newton didn't use\nwavelengths he just eyeballed it"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Newton's 7-color choice is widely documented as having been influenced by his Pythagorean/musical-harmony aesthetics rather than any optical necessity. He explicitly drew analogy to musical scales in the Opticks. The 11-then-5-then-7 progression is reported in several Newton biographies (e.g., Westfall). The point that this was qualitative eyeballing rather than wavelength measurement is correct — wavelengths were not measured until the 19th century.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0013",
+      "videoId": "totDkXxKOXg",
+      "text": "Normal human vision is trichromatic (three cone types — red, green, blue — yielding ~1 million distinguishable colors), colorblind people are dichromatic (two cones, ~10,000 shades), and a small number of women are tetrachromatic — possessing a fourth cone that can in principle distinguish ~100 million colors.",
+      "kind": "empirical",
+      "entities": [
+        "quantity:trichromatic",
+        "quantity:a million",
+        "person:colorblind men",
+        "person:doctor",
+        "location:northern england",
+        "quantity:a hundred million colors"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 7135,
+          "charEnd": 7822,
+          "timeStart": 441.599,
+          "timeEnd": 482.319,
+          "quote": "vision is trichromatic this means\nwe have three different photoreceptors\nin our eyes that detect color called\ncones we have cones for red green and\nblue and every color we see is a\ncombination of these and this allows us\nto see about a million different colors\nand people who are colorblind only have\ntwo functioning cone cells which lets\nthem only see about 10 000 shades this\nis diachromatic vision and most mammals\nare dichromats but a few years ago a\ndoctor in northern england was found to\nhave four types of cone cells so her\nvision isn't trichromatic it's\ntetrachromatic this means she doesn't\njust see a million colors she can\ndistinguish up to a hundred million\ndifferent colors"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "Standard color vision physiology is correct: trichromacy with red/green/blue cones, ~1 million distinguishable colors as the textbook estimate, dichromacy in colorblindness, and most non-primate mammals being dichromats. The 'doctor in northern England' refers to Dr. Gabriele Jordan's identification of Mrs. cDa29 (Dr. Concetta Antico is a separate, US case) — the 100-million-color upper bound is theoretical (4^4 / 3^4 × 1M); the actual perceptual gain is debated and may be much smaller in practice.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "totDkXxKOXg:c_0014",
+      "videoId": "totDkXxKOXg",
+      "text": "Because ~8% of men are colorblind (carrying a mutant cone gene on the X chromosome), simple genetics predicts ~12% of women should be tetrachromatic — meaning millions of women may have a hidden ability to see ~100x more colors than the rest of us, but mostly don't realize it.",
+      "kind": "speculative",
+      "entities": [
+        "person:colorblind men",
+        "quantity:one in twelve men",
+        "person:woman",
+        "quantity:a hundred million colors"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 8262,
+          "charEnd": 8594,
+          "timeStart": 502.0,
+          "timeEnd": 528.48,
+          "quote": "about one in twelve men are\ncolorblind so about eight percent of\nthem based on this statistic around 12\npercent of the entire female population\nshould be tetrachromatic with the\nability to see a hundred million colors\na hundred times more than the rest of us\nso where are all these women and what\nextra 99 million colors do they see"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.4,
+      "rationale": "The genetic arithmetic is roughly right (Hardy-Weinberg from a recessive X-linked allele predicts ~12% of women carry the heterozygous condition). However, the leap from 'genetically tetrachromatic' to 'functionally tetrachromatic' is huge — Jordan's research suggests only a small fraction of those with the genotype actually display measurable enhanced discrimination. The '100 million colors' figure is a theoretical maximum, not an empirical observation. Reasonably popular framing, but oversimplified.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "totDkXxKOXg:c_0013",
+          "kind": "elaborates",
+          "rationale": "Extends the tetrachromacy finding to a population-level prediction"
+        }
+      ]
+    },
+    {
+      "id": "totDkXxKOXg:c_0015",
+      "videoId": "totDkXxKOXg",
+      "text": "Tetrachromatic women generally don't realize they have access to extra colors — paralleling how ancient peoples were unprimed to see blue — but in lab vision tests, primed tetrachromats can rapidly and accurately distinguish color subtleties invisible to trichromatic observers.",
+      "kind": "empirical",
+      "entities": [
+        "person:woman",
+        "event:vision test"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 8595,
+          "charEnd": 9292,
+          "timeStart": 524.72,
+          "timeEnd": 563.44,
+          "quote": "well they don't even know they have\naccess to these colors just like the\nancient people weren't primed to see\nblue as its own color women with\ntetrachromatic vision haven't been\nprimed to see all these new colors so\none tetrachromatic woman was given a\nvision test and she was shown a sequence\nof colors in rapid succession people\nwith normal vision see these colors as\nidentical but this woman was able to see\nthe subtle differences her brain was\nprimed to make her aware that some of\nthe colors she was going to see could be\ndifferent and she was able to pick out\nthese small changes instantly and\naccurately so what do these colors look\nlike to the rest of us well there's no\nway to describe it"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "The host is paraphrasing Jordan's lab study where one subject (cDa29) outperformed trichromats on color-discrimination tasks. That single subject's results are real and replicable in that lab. Whether the findings generalize, and whether the 'priming' explanation is correct, is more speculative. The analogy to ancient blue-perception is rhetorically pleasing but not yet demonstrated as a mechanistic parallel.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "totDkXxKOXg:c_0014",
+          "kind": "supports",
+          "rationale": "Provides the empirical evidence behind the population-level prediction"
+        },
+        {
+          "target": "totDkXxKOXg:c_0001",
+          "kind": "elaborates",
+          "rationale": "Re-applies the linguistic-relativity thesis to modern tetrachromats"
+        }
+      ]
+    },
+    {
+      "id": "totDkXxKOXg:c_0016",
+      "videoId": "totDkXxKOXg",
+      "text": "Color is not a property of objects but a wavelength interpretation produced jointly by light, the visual system, and culture/language — meaning, in a strong sense, color does not exist outside of perception.",
+      "kind": "definitional",
+      "entities": [
+        "person:bolado",
+        "organization:university college london",
+        "person:isaac newton"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "totDkXxKOXg",
+          "charStart": 9794,
+          "charEnd": 10262,
+          "timeStart": 591.279,
+          "timeEnd": 620.19,
+          "quote": "isaac newton learned that\ncolors are not part of material objects\ncolor is just the way light is absorbed\nreflected and scattered by a surface and\nif you think of it that way color\ndoesn't really exist it's just an\ninterpretation of a wavelength bolado a\nneuroscientist at university college\nlondon said there's such a thing as\nlight there's such a thing as energy\nthere's no such thing as color color is\nnothing more than the product of light\nour culture our language"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "This is the orthodox modern view in neuroscience and philosophy of perception (color as a 'response-dependent' or 'dispositional' property). 'Bolado' is likely Beau Lotto, a well-known UCL neuroscientist who has popularized exactly this framing. The host correctly conveys mainstream visual neuroscience consensus, though the 'color doesn't exist' phrasing is rhetorically aggressive — there are realist counter-positions in philosophy of color (e.g., physicalist or dispositionalist accounts that grant color objective status).",
+      "hostStance": "asserts",
+      "inVerdictSection": true,
+      "dependencies": [
+        {
+          "target": "totDkXxKOXg:c_0001",
+          "kind": "supports",
+          "rationale": "Provides the theoretical underpinning for why language-shaped perception of color is possible at all"
+        }
+      ]
+    }
+  ]
+}
