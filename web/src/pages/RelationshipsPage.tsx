@@ -10,7 +10,7 @@ type ElkLayoutResult = Awaited<ReturnType<ELKInstance["layout"]>>;
 import {
   Box, Paper, TextField, Typography, Chip, MenuItem, Button, CircularProgress, Collapse,
 } from "@mui/material";
-import { fetchRelationshipsGraph } from "../lib/data";
+import { fetchRelationshipsGraph, fetchEdgeTruth, fetchClaimsIndex } from "../lib/data";
 import { graphNodeIssueUrl, graphEdgeIssueUrl } from "../lib/issues";
 import { EntityMenuButton } from "../components/EntityMenu";
 import {
@@ -22,7 +22,13 @@ import {
 } from "../lib/graph-layouts";
 import { buildRenderData, ENTITY_TYPE_HEX } from "../lib/graph-render";
 import { isVisibleType } from "../lib/entity-visibility";
-import type { GraphNode, GraphEdge } from "../types";
+import type {
+  GraphNode,
+  GraphEdge,
+  EdgeTruthFile,
+  ClaimsIndexEntry,
+} from "../types";
+import { TruthBar } from "../components/TruthBar";
 
 // Union type for the dynamically-imported reactflow module
 type ReactFlowLib = typeof import("reactflow");
@@ -42,6 +48,9 @@ export function RelationshipsPage() {
   const [showSeeds, setShowSeeds] = useState(true);
   const [showKey, setShowKey] = useState(false);
   const [showLayout, setShowLayout] = useState(false);
+  const [colorByTruth, setColorByTruth] = useState(false);
+  const [edgeTruth, setEdgeTruth] = useState<EdgeTruthFile | null>(null);
+  const [claimsById, setClaimsById] = useState<Map<string, ClaimsIndexEntry>>(new Map());
   const rfInstance = useRef<ReactFlowInstance | null>(null);
   const relayoutRef = useRef<() => void>(() => {});
 
@@ -59,6 +68,12 @@ export function RelationshipsPage() {
     fetchRelationshipsGraph().then((data) => {
       if (data) setGraphIndex(buildIndex(data.nodes, data.edges));
       else setError("Failed to load graph data");
+    });
+    fetchEdgeTruth().then((d) => setEdgeTruth(d));
+    fetchClaimsIndex().then((idx) => {
+      const m = new Map<string, ClaimsIndexEntry>();
+      for (const c of idx?.claims ?? []) m.set(c.id, c);
+      setClaimsById(m);
     });
   }, []);
 
@@ -221,8 +236,16 @@ export function RelationshipsPage() {
   }, [graphIndex, flowLib, addSeed]);
 
   const { rfNodes, rfEdges, gradients } = useMemo(
-    () => buildRenderData(nodeMap.current, edgeMap.current, positions.current, seeds.current, selectedId),
-    [revision, selectedId],
+    () =>
+      buildRenderData(
+        nodeMap.current,
+        edgeMap.current,
+        positions.current,
+        seeds.current,
+        selectedId,
+        { colorByTruth, edgeTruth },
+      ),
+    [revision, selectedId, colorByTruth, edgeTruth],
   );
 
   const focusNode = useCallback((id: string) => {
@@ -390,6 +413,30 @@ export function RelationshipsPage() {
               <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
                 {rfNodes.length} nodes · {rfEdges.length} edges visible
               </Typography>
+              {edgeTruth && (
+                <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 1 }}>
+                  <Button
+                    size="small"
+                    variant={colorByTruth ? "contained" : "outlined"}
+                    onClick={() => setColorByTruth((v) => !v)}
+                  >
+                    {colorByTruth ? "truth coloring on" : "color edges by truth"}
+                  </Button>
+                  <Typography variant="caption" color="text.secondary">
+                    {edgeTruth.edgeCount} edges have truth
+                  </Typography>
+                </Box>
+              )}
+              {colorByTruth && (
+                <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <Box sx={{ width: 12, height: 8, background: "rgb(211, 47, 47)" }} />
+                  <Typography variant="caption">false</Typography>
+                  <Box sx={{ width: 12, height: 8, background: "rgb(158, 158, 158)", mx: 0.5 }} />
+                  <Typography variant="caption">neutral</Typography>
+                  <Box sx={{ width: 12, height: 8, background: "rgb(46, 125, 50)", mx: 0.5 }} />
+                  <Typography variant="caption">true</Typography>
+                </Box>
+              )}
             </Box>
           </Collapse>
         </Box>
@@ -483,6 +530,46 @@ export function RelationshipsPage() {
                 {(nodeMap.current.get(selEdge.target) || { canonical: selEdge.target }).canonical}
               </Typography>
               <Typography variant="caption" color="text.secondary">count {selEdge.count}</Typography>
+              {(() => {
+                if (!edgeTruth) return null;
+                const a = edgeTruth.edges[`${selEdge.source}|${selEdge.predicate}|${selEdge.target}`];
+                const b = edgeTruth.edges[`${selEdge.target}|${selEdge.predicate}|${selEdge.source}`];
+                const entry = a ?? b ?? null;
+                if (!entry) {
+                  return (
+                    <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
+                      no claim cites this edge
+                    </Typography>
+                  );
+                }
+                return (
+                  <Box sx={{ mt: 1 }}>
+                    <TruthBar value={entry.truth} source="derived" label="edge truth" />
+                    <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 0.5 }}>
+                      averaged from {entry.claimCount} citing claim{entry.claimCount > 1 ? "s" : ""}
+                    </Typography>
+                    {entry.supportingClaimIds.slice(0, 5).map((cid) => {
+                      const claim = claimsById.get(cid);
+                      return (
+                        <Box
+                          key={cid}
+                          sx={{ p: 0.5, borderLeft: "2px solid #ddd", pl: 1, my: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" } }}
+                          onClick={() => claim && nav(`/video/${claim.videoId}#claim-${cid}`)}
+                        >
+                          <Typography variant="caption" sx={{ display: "block" }}>
+                            {claim ? claim.text : cid}
+                          </Typography>
+                        </Box>
+                      );
+                    })}
+                    {entry.supportingClaimIds.length > 5 && (
+                      <Typography variant="caption" color="text.secondary">
+                        + {entry.supportingClaimIds.length - 5} more
+                      </Typography>
+                    )}
+                  </Box>
+                );
+              })()}
               <Box sx={{ mt: 1, display: "flex", flexDirection: "column", gap: 0.5 }}>
                 <Button
                   size="small"

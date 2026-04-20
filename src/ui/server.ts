@@ -38,6 +38,12 @@ import {
   SENTINEL_DELETED,
 } from "../graph/canonicalize.js";
 import {
+  addClaimTruthOverride,
+  removeClaimTruthOverride,
+  addClaimDeletion,
+  removeClaimDeletion,
+} from "../graph/aliases-schema.js";
+import {
   readPersistedEntities,
   type PersistedEntities,
 } from "../entities/index.js";
@@ -1712,6 +1718,42 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           if (!videoId || !key)
             return sendJson(res, 400, { error: "missing videoId/key" });
           delete aliases[`del:${videoId}:${key}`];
+        } else if (
+          action === "claim-truth-override" ||
+          action === "claim-untruth-override" ||
+          action === "delete-claim" ||
+          action === "undelete-claim"
+        ) {
+          // Claim-level sections (claimTruthOverrides / claimDeletions) live
+          // only in the v2 structured file, not in the flat runtime map.
+          // Use the typed mutators directly; do NOT write the flat map
+          // afterwards or we'd clobber the structured sections.
+          const claimId = params.get("claimId") ?? "";
+          if (!claimId) return sendJson(res, 400, { error: "missing claimId" });
+          try {
+            if (action === "claim-truth-override") {
+              const dt = Number(params.get("directTruth"));
+              if (!Number.isFinite(dt) || dt < 0 || dt > 1) {
+                return sendJson(res, 400, { error: "directTruth not in [0,1]" });
+              }
+              const rationale = params.get("rationale") ?? undefined;
+              addClaimTruthOverride(dataRoot, claimId, dt, rationale);
+            } else if (action === "claim-untruth-override") {
+              removeClaimTruthOverride(dataRoot, claimId);
+            } else if (action === "delete-claim") {
+              addClaimDeletion(dataRoot, claimId);
+            } else {
+              removeClaimDeletion(dataRoot, claimId);
+            }
+          } catch (err) {
+            return sendJson(res, 400, { error: (err as Error).message });
+          }
+          nlpCache.clear();
+          entityIndexCache = null;
+          entityVideosCache = null;
+          relationshipsGraphCache = null;
+          opts.catalog.markGraphDirty();
+          return sendJson(res, 200, { ok: true });
         } else if (action === "create-phantom") {
           // Create a phantom entity: a key with a display override,
           // targeted by one or more merges. `name` is the display

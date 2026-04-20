@@ -1,8 +1,9 @@
 // Build ReactFlow nodes/edges from the current visible graph state.
 
 import type { Node, Edge } from "reactflow";
-import type { GraphNode, GraphEdge } from "../types";
+import type { GraphNode, GraphEdge, EdgeTruthFile } from "../types";
 import { elkNodeWidth, ELK_NODE_HEIGHT, type Positions } from "./graph-layouts";
+import { truthColor } from "./truth-palette";
 
 export const ENTITY_TYPE_HEX: Record<string, string> = {
   person: "#42a5f5",
@@ -42,12 +43,20 @@ export interface RenderResult {
   gradients: EdgeGradient[];
 }
 
+export interface RenderOptions {
+  // When provided, edges for which edge-truth has a derived truth are
+  // colored by the truth palette instead of by entity-type gradient.
+  colorByTruth?: boolean;
+  edgeTruth?: EdgeTruthFile | null;
+}
+
 export function buildRenderData(
   nodeMap: Map<string, GraphNode>,
   edgeMap: Map<string, GraphEdge>,
   positions: Positions,
   seeds: Set<string>,
   selectedId: string | null,
+  options: RenderOptions = {},
 ): RenderResult {
   const nodeIdSet = new Set(nodeMap.keys());
   const rfNodes: Node[] = [...nodeMap.values()].map((n) => {
@@ -103,6 +112,23 @@ export function buildRenderData(
         from: srcColor, to: tgtColor,
       });
     }
+    // Optional truth overlay — color edges by avg derived truth of the
+    // claims citing this edge. Looks up both directions because the
+    // rendered edge is undirected (lo|predicate|hi) while edge-truth is
+    // keyed on the original subject|predicate|object order.
+    let truthStroke: string | null = null;
+    if (options.colorByTruth && options.edgeTruth) {
+      const aKey = `${e.source}|${e.predicate}|${e.target}`;
+      const bKey = `${e.target}|${e.predicate}|${e.source}`;
+      const a = options.edgeTruth.edges[aKey];
+      const b = options.edgeTruth.edges[bKey];
+      let t: number | null = null;
+      if (a && b) t = (a.truth + b.truth) / 2;
+      else if (a) t = a.truth;
+      else if (b) t = b.truth;
+      if (t !== null) truthStroke = truthColor(t);
+    }
+
     return {
       id: e.id,
       source: e.source,
@@ -114,9 +140,9 @@ export function buildRenderData(
       labelBgPadding: [4, 2],
       labelBgBorderRadius: 3,
       style: {
-        stroke: sameColor ? srcColor : `url(#${gradId})`,
+        stroke: truthStroke ?? (sameColor ? srcColor : `url(#${gradId})`),
         strokeWidth: Math.min(4, 1 + Math.log2(e.count + 1)),
-        opacity: 0.8,
+        opacity: options.colorByTruth && !truthStroke ? 0.35 : 0.8,
       },
     };
   });

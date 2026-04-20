@@ -2,10 +2,25 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Container, Typography, Box, Paper, Button, Link, Chip } from "@mui/material";
 import { NlpPanel } from "../components/NlpPanel";
+import { ClaimsPanel } from "../components/ClaimsPanel";
 import { SuggestChip } from "../components/SuggestChip";
-import { fetchCatalog, fetchTranscript, fetchVideoNlp } from "../lib/data";
+import {
+  fetchCatalog,
+  fetchTranscript,
+  fetchVideoNlp,
+  fetchClaims,
+  fetchClaimsIndex,
+  fetchContradictions,
+} from "../lib/data";
 import { fmtDate, fmtTimestamp } from "../lib/format";
-import type { VideoRow, Transcript, VideoNlp } from "../types";
+import type {
+  VideoRow,
+  Transcript,
+  VideoNlp,
+  PersistedClaims,
+  ClaimsIndexEntry,
+  ClaimContradiction,
+} from "../types";
 
 export function VideoDetailPage() {
   const { videoId } = useParams<{ videoId: string }>();
@@ -13,6 +28,9 @@ export function VideoDetailPage() {
   const [row, setRow] = useState<VideoRow | null>(null);
   const [transcript, setTranscript] = useState<Transcript | null>(null);
   const [nlp, setNlp] = useState<VideoNlp | null>(null);
+  const [claims, setClaims] = useState<PersistedClaims | null>(null);
+  const [claimIndex, setClaimIndex] = useState<ClaimsIndexEntry[] | null>(null);
+  const [videoContradictions, setVideoContradictions] = useState<ClaimContradiction[] | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,6 +39,9 @@ export function VideoDetailPage() {
     setRow(null);
     setTranscript(null);
     setNlp(null);
+    setClaims(null);
+    setClaimIndex(null);
+    setVideoContradictions(null);
 
     fetchCatalog().then((rows) => {
       const found = rows.find((r) => r.videoId === videoId);
@@ -29,6 +50,21 @@ export function VideoDetailPage() {
     });
     fetchTranscript(videoId).then(setTranscript);
     fetchVideoNlp(videoId).then(setNlp);
+    fetchClaims(videoId).then(setClaims);
+    fetchClaimsIndex().then((idx) => {
+      if (!idx) return setClaimIndex([]);
+      setClaimIndex(idx.claims.filter((c) => c.videoId === videoId));
+    });
+    fetchContradictions().then((cx) => {
+      if (!cx) return setVideoContradictions([]);
+      // Keep any contradiction that touches a claim belonging to this video.
+      // Claim ids start with "<videoId>:".
+      setVideoContradictions(
+        cx.contradictions.filter(
+          (c) => c.left.startsWith(`${videoId}:`) || c.right.startsWith(`${videoId}:`),
+        ),
+      );
+    });
   }, [videoId]);
 
   if (loading) return <Container sx={{ py: 3 }}><Typography>loading...</Typography></Container>;
@@ -67,6 +103,14 @@ export function VideoDetailPage() {
       )}
       {!transcript && <Typography sx={{ mt: 2 }}>no transcript available</Typography>}
       {transcript && <NlpPanel videoId={row.videoId} nlp={nlp} />}
+      {transcript && (
+        <ClaimsPanel
+          videoId={row.videoId}
+          claims={claims}
+          indexEntries={claimIndex ?? undefined}
+          contradictions={videoContradictions ?? undefined}
+        />
+      )}
       {transcript && (
         <>
           <Paper sx={{ mt: 2, p: 2, maxHeight: "70vh", overflow: "auto" }}>

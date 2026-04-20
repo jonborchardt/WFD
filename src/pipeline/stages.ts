@@ -40,6 +40,7 @@ import {
   buildMergeClusters,
   readAliases,
 } from "../graph/canonicalize.js";
+import { readAliasesFile } from "../graph/aliases-schema.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
@@ -55,6 +56,9 @@ import { extractClaims, attachTruthiness } from "../truth/per-claim.js";
 import { propagate } from "../truth/propagation.js";
 import { buildConflictReport } from "../truth/contradictions.js";
 import { detectNovel } from "../truth/novel.js";
+import { buildClaimIndexes } from "../truth/claim-indexes.js";
+import { computeEdgeTruth } from "../truth/edge-truth.js";
+import type { Claim } from "../claims/types.js";
 import { logger } from "../shared/logger.js";
 
 // Helper: load a parsed transcript from disk or return null.
@@ -132,6 +136,7 @@ export const entitiesStage: VideoStage = {
     // AI bundle may reference stale entity ids; nuke it and mark any
     // existing response stale.
     invalidateAiArtifacts(row.videoId, ctx.dataDir);
+    markClaimsStale(row.videoId, ctx.dataDir, "entities regenerated");
 
     const { entities } = neuralToGraph(persisted, null);
     const store = ctx.getStore();
@@ -210,6 +215,7 @@ export const relationsStage: VideoStage = {
     }
 
     invalidateAiArtifacts(row.videoId, ctx.dataDir);
+    markClaimsStale(row.videoId, ctx.dataDir, "relations regenerated");
 
     const { relationships } = neuralToGraph(persistedEntities, persistedRelations);
     const store = ctx.getStore();
@@ -248,6 +254,25 @@ function responseDir(dataDir: string): string {
 // but preserve the response — it is operator labor. Instead, stamp a
 // top-level `_stale` marker into the response JSON so the admin UI
 // and CLI can flag it for review.
+// Stamp a top-level `_stale` marker into data/claims/<videoId>.json when
+// an upstream stage (entities, relations) regenerates. The file is never
+// deleted — it represents AI session labor. The UI and CLI read the
+// marker to flag the claims for re-extraction.
+function markClaimsStale(videoId: string, dataDir: string, reason: string): void {
+  const p = join(dataDir, "claims", `${videoId}.json`);
+  if (!existsSync(p)) return;
+  try {
+    const raw = JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>;
+    raw._stale = { since: new Date().toISOString(), reason };
+    writeFileSync(p, JSON.stringify(raw, null, 2), "utf8");
+  } catch (err) {
+    logger.warn("pipeline.claims.stale-mark-failed", {
+      videoId,
+      message: (err as Error).message,
+    });
+  }
+}
+
 function invalidateAiArtifacts(videoId: string, dataDir: string): void {
   const bundlePath = join(bundleDir(dataDir), `${videoId}.bundle.json`);
   if (existsSync(bundlePath)) {
@@ -503,6 +528,150 @@ export const indexesStage: GraphStage = {
   },
 };
 
+// Reads every data/claims/<id>.json, runs claim propagation +
+// contradiction detection, writes three corpus-wide reports alongside the
+// per-video claim files:
+//   data/claims/claims-index.json      flat list with derivedTruth + source tag
+//   data/claims/dependency-graph.json  DAG edges
+//   data/claims/contradictions.json    pair / broken-presupposition / cross-video
+//
+// Operator-set truth overrides and deletions (aliases sections
+// claimTruthOverrides / claimDeletions) are applied before propagation so
+// derived truth respects them. See src/truth/claim-indexes.ts.
+export const claimIndexesStage: GraphStage = {
+  name: "claim-indexes",
+  async run(ctx): Promise<StageOutcome> {
+    const claimsDir = join(ctx.dataDir, "claims");
+    if (!existsSync(claimsDir)) {
+      return { kind: "skip", reason: "data/claims/ missing" };
+    }
+
+    const { readdirSync } = await import("node:fs");
+    const files = readdirSync(claimsDir).filter(
+      (f) =>
+        f.endsWith(".json") &&
+        f !== "claims-index.json" &&
+        f !== "dependency-graph.json" &&
+        f !== "contradictions.json",
+    );
+
+    const allClaims: Claim[] = [];
+    let videoCount = 0;
+    for (const f of files) {
+      try {
+        const raw = JSON.parse(
+          readFileSync(join(claimsDir, f), "utf8"),
+        ) as { claims?: Claim[] };
+        if (!Array.isArray(raw.claims)) continue;
+        videoCount += 1;
+        for (const c of raw.claims) allClaims.push(c);
+      } catch (err) {
+        logger.warn("pipeline.claim-indexes.read-failed", {
+          file: f,
+          message: (err as Error).message,
+        });
+      }
+    }
+
+    const aliases = readAliasesFile(ctx.dataDir);
+    const aliasMap = readAliases(ctx.dataDir);
+    const deletedClaimIds = new Set(
+      (aliases.claimDeletions ?? []).map((e) => e.claimId),
+    );
+    const truthOverrides = (aliases.claimTruthOverrides ?? []).map((e) => ({
+      claimId: e.claimId,
+      directTruth: e.directTruth,
+      rationale: e.rationale,
+    }));
+
+    const result = buildClaimIndexes({
+      claims: allClaims,
+      videoCount,
+      truthOverrides,
+      deletedClaimIds,
+    });
+
+    // Build per-video "persisted edge id → aggregated graph edge id" map
+    // so edge truth can join against relationships-graph.json. Alias
+    // resolution here mirrors the adapter used in the `indexes` stage, so
+    // both outputs agree on the final key.
+    const videoIds = new Set(result.index.claims.map((c) => c.videoId));
+    const perVideoEdgeToGraphEdge = new Map<string, Map<string, string>>();
+    for (const vid of videoIds) {
+      const persistedEntities = readPersistedEntities(vid, ctx.dataDir);
+      const persistedRelations = readPersistedRelations(vid, ctx.dataDir);
+      if (!persistedEntities || !persistedRelations) continue;
+      const mentionToEntityKey = new Map<string, string>();
+      for (const m of persistedEntities.mentions) {
+        mentionToEntityKey.set(
+          m.id,
+          `${m.label}:${m.canonical.toLowerCase().trim()}`,
+        );
+      }
+      const rel = new Map<string, string>();
+      for (const pe of persistedRelations.edges) {
+        const subjKey = mentionToEntityKey.get(pe.subjectMentionId);
+        const objKey = mentionToEntityKey.get(pe.objectMentionId);
+        if (!subjKey || !objKey) continue;
+        const subjResolved = resolveAliasKey(subjKey, aliasMap);
+        const objResolved = resolveAliasKey(objKey, aliasMap);
+        if (!subjResolved || !objResolved || subjResolved === objResolved) continue;
+        rel.set(pe.id, `${subjResolved}|${pe.predicate}|${objResolved}`);
+      }
+      perVideoEdgeToGraphEdge.set(vid, rel);
+    }
+
+    const edgeTruth = computeEdgeTruth(result.index.claims, perVideoEdgeToGraphEdge);
+
+    writeFileSync(
+      join(claimsDir, "claims-index.json"),
+      JSON.stringify(result.index, null, 2),
+      "utf8",
+    );
+    writeFileSync(
+      join(claimsDir, "dependency-graph.json"),
+      JSON.stringify(result.dependencyGraph, null, 2),
+      "utf8",
+    );
+    writeFileSync(
+      join(claimsDir, "contradictions.json"),
+      JSON.stringify(result.contradictions, null, 2),
+      "utf8",
+    );
+    writeFileSync(
+      join(claimsDir, "edge-truth.json"),
+      JSON.stringify(edgeTruth, null, 2),
+      "utf8",
+    );
+
+    return {
+      kind: "ok",
+      notes:
+        `videos=${videoCount} claims=${allClaims.length} ` +
+        `contradictions=${result.contradictions.total} ` +
+        `edges-with-truth=${edgeTruth.edgeCount}`,
+    };
+  },
+};
+
+// Follow alias merge chain up to 10 hops. Mirrors resolveKey in
+// src/graph/canonicalize.ts but inlined so claim-indexes stays a leaf
+// of the dependency tree.
+function resolveAliasKey(
+  key: string,
+  aliases: Record<string, string>,
+): string | null {
+  let cur = key;
+  for (let i = 0; i < 10; i++) {
+    if (aliases[cur] === "__deleted__" || aliases[cur] === "__hidden__") return null;
+    const next = aliases[cur];
+    if (!next || next === cur) return cur;
+    if (next.startsWith("__")) return cur;
+    cur = next;
+  }
+  return cur;
+}
+
 export const novelStage: GraphStage = {
   name: "novel",
   async run(ctx): Promise<StageOutcome> {
@@ -542,4 +711,5 @@ export const DEFAULT_GRAPH_STAGES: GraphStage[] = [
   contradictionsStage,
   novelStage,
   indexesStage,
+  claimIndexesStage,
 ];

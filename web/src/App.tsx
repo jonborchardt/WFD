@@ -7,6 +7,8 @@ import { VideoDetailPage } from "./pages/VideoDetailPage";
 import { EntityDetailPage } from "./pages/EntityDetailPage";
 import { FacetsPage } from "./pages/FacetsPage";
 import { AboutPage } from "./pages/AboutPage";
+import { ClaimsPage } from "./pages/ClaimsPage";
+import { ContradictionsPage } from "./pages/ContradictionsPage";
 import { IS_ADMIN } from "./lib/admin";
 
 // Lazy-load heavy pages
@@ -30,6 +32,8 @@ export function App() {
         <Route path="entity/:entityId" element={<EntityDetailPage />} />
         <Route path="relationships" element={<Suspense fallback={<Loading />}><RelationshipsPage /></Suspense>} />
         <Route path="facets" element={<FacetsPage />} />
+        <Route path="claims" element={<ClaimsPage />} />
+        <Route path="contradictions" element={<ContradictionsPage />} />
         <Route path="about" element={<AboutPage />} />
         {AdminPage && (
           <Route path="admin" element={<Suspense fallback={<Loading />}><AdminPage /></Suspense>} />

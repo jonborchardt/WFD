@@ -10,6 +10,11 @@ import type {
   VideoNlp,
   GraphNode,
   GraphEdge,
+  PersistedClaims,
+  ClaimsIndexFile,
+  DependencyGraphFile,
+  ContradictionsFile,
+  EdgeTruthFile,
 } from "../types";
 import { adaptNlp } from "./adapt-nlp";
 
@@ -91,4 +96,50 @@ export function fetchRelationshipsGraph(): Promise<RelationshipsGraph | null> {
     graphPromise = fetchJson<RelationshipsGraph>("graph/relationships-graph.json");
   }
   return graphPromise;
+}
+
+// --- Claims (Plan 5) ---
+
+export async function fetchClaims(videoId: string): Promise<PersistedClaims | null> {
+  return fetchJson<PersistedClaims>(`claims/${videoId}.json`);
+}
+
+let claimsIndexPromise: Promise<ClaimsIndexFile | null> | null = null;
+
+export function fetchClaimsIndex(): Promise<ClaimsIndexFile | null> {
+  if (!claimsIndexPromise) {
+    claimsIndexPromise = fetchJson<ClaimsIndexFile>("claims/claims-index.json");
+  }
+  return claimsIndexPromise;
+}
+
+let dependencyGraphPromise: Promise<DependencyGraphFile | null> | null = null;
+
+export function fetchDependencyGraph(): Promise<DependencyGraphFile | null> {
+  if (!dependencyGraphPromise) {
+    dependencyGraphPromise = fetchJson<DependencyGraphFile>(
+      "claims/dependency-graph.json",
+    );
+  }
+  return dependencyGraphPromise;
+}
+
+let contradictionsPromise: Promise<ContradictionsFile | null> | null = null;
+
+export function fetchContradictions(): Promise<ContradictionsFile | null> {
+  if (!contradictionsPromise) {
+    contradictionsPromise = fetchJson<ContradictionsFile>(
+      "claims/contradictions.json",
+    );
+  }
+  return contradictionsPromise;
+}
+
+let edgeTruthPromise: Promise<EdgeTruthFile | null> | null = null;
+
+export function fetchEdgeTruth(): Promise<EdgeTruthFile | null> {
+  if (!edgeTruthPromise) {
+    edgeTruthPromise = fetchJson<EdgeTruthFile>("claims/edge-truth.json");
+  }
+  return edgeTruthPromise;
 }

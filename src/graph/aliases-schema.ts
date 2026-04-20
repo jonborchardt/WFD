@@ -53,6 +53,22 @@ export interface DeletedRelationEntry {
   timeStart: number;  // seconds, floored
 }
 
+// Operator-supplied truth anchor for a claim (Plan 5, Phase 4). Applied
+// during the `claim-indexes` graph stage as a pinned directTruth before
+// propagation.
+export interface ClaimTruthOverrideEntry {
+  claimId: string;
+  directTruth: number;   // 0..1
+  rationale?: string;
+}
+
+// Operator decision to hide a claim from the corpus-wide index entirely.
+// The per-video claim file is never mutated; the claim is simply dropped
+// at aggregation time.
+export interface ClaimDeletionEntry {
+  claimId: string;
+}
+
 export interface AliasesFile {
   schemaVersion: 2;
   merges: MergeEntry[];
@@ -62,6 +78,8 @@ export interface AliasesFile {
   dismissed: DismissedClusterEntry[];
   videoMerges: VideoMergeEntry[];
   deletedRelations: DeletedRelationEntry[];
+  claimTruthOverrides: ClaimTruthOverrideEntry[];
+  claimDeletions: ClaimDeletionEntry[];
 }
 
 // Sentinels used internally in the flat AliasMap runtime rep. They
@@ -85,6 +103,8 @@ export function emptyAliasesFile(): AliasesFile {
     dismissed: [],
     videoMerges: [],
     deletedRelations: [],
+    claimTruthOverrides: [],
+    claimDeletions: [],
   };
 }
 
@@ -132,6 +152,8 @@ function normalizeFile(raw: Partial<AliasesFile>): AliasesFile {
     dismissed: raw.dismissed ?? empty.dismissed,
     videoMerges: raw.videoMerges ?? empty.videoMerges,
     deletedRelations: raw.deletedRelations ?? empty.deletedRelations,
+    claimTruthOverrides: raw.claimTruthOverrides ?? empty.claimTruthOverrides,
+    claimDeletions: raw.claimDeletions ?? empty.claimDeletions,
   };
 }
 
@@ -166,6 +188,12 @@ function sortFile(file: AliasesFile): AliasesFile {
       a.predicate.localeCompare(b.predicate) ||
       a.object.localeCompare(b.object) ||
       a.timeStart - b.timeStart,
+    ),
+    claimTruthOverrides: [...(file.claimTruthOverrides ?? [])].sort((a, b) =>
+      a.claimId.localeCompare(b.claimId),
+    ),
+    claimDeletions: [...(file.claimDeletions ?? [])].sort((a, b) =>
+      a.claimId.localeCompare(b.claimId),
     ),
   };
 }
@@ -423,5 +451,49 @@ export function removeDeletedRelation(
           e.timeStart === ts
         ),
     );
+  });
+}
+
+export function addClaimTruthOverride(
+  dataDir: string,
+  claimId: string,
+  directTruth: number,
+  rationale?: string,
+): void {
+  if (!(directTruth >= 0 && directTruth <= 1)) {
+    throw new Error(`directTruth ${directTruth} not in [0,1]`);
+  }
+  mutate(dataDir, (f) => {
+    f.claimTruthOverrides = f.claimTruthOverrides.filter(
+      (e) => e.claimId !== claimId,
+    );
+    const entry: ClaimTruthOverrideEntry = { claimId, directTruth };
+    if (rationale !== undefined && rationale !== "") entry.rationale = rationale;
+    f.claimTruthOverrides.push(entry);
+  });
+}
+
+export function removeClaimTruthOverride(
+  dataDir: string,
+  claimId: string,
+): void {
+  mutate(dataDir, (f) => {
+    f.claimTruthOverrides = f.claimTruthOverrides.filter(
+      (e) => e.claimId !== claimId,
+    );
+  });
+}
+
+export function addClaimDeletion(dataDir: string, claimId: string): void {
+  mutate(dataDir, (f) => {
+    if (!f.claimDeletions.some((e) => e.claimId === claimId)) {
+      f.claimDeletions.push({ claimId });
+    }
+  });
+}
+
+export function removeClaimDeletion(dataDir: string, claimId: string): void {
+  mutate(dataDir, (f) => {
+    f.claimDeletions = f.claimDeletions.filter((e) => e.claimId !== claimId);
   });
 }
