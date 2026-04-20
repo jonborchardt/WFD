@@ -151,6 +151,24 @@ lets you curate the corpus without touching per-video extraction output:
 All overrides live in `data/aliases.json` as a flat append-only file. See
 [CLAUDE.md](CLAUDE.md) for the full schema.
 
+#### Bulk curation (AI-driven)
+
+When new videos are added, per-video short-name → full-name coreference
+(e.g. `person:paul` → `person:paul mccartney` in a Beatles video) needs
+to be re-proposed across the corpus. Rather than curating every entity by
+hand, invoke the **[ai-alias-curation](.claude/skills/ai-alias-curation/SKILL.md)**
+skill from Claude Code:
+
+```
+# In a Claude Code session:
+"run alias curation"
+```
+
+It runs [src/ai/curate/](src/ai/curate/) over the whole corpus — propose,
+inspect, apply, rebuild — in ~25 seconds. The heuristic respects existing
+`notSame` pairs and operator decisions. Every write is reversible via the
+⋯ menu on `/admin/aliases` or by restoring `_curate_tmp/aliases.before.json`.
+
 ### Source tree
 
 ```

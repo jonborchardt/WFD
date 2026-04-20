@@ -114,6 +114,8 @@ Pipeline shape, roughly in order:
 5. [src/ai/](src/ai/) — Claude-Code-driven enrichment that runs *after*
    relations, refining and adding relationships. This is **not** a runtime
    API call to Claude — it's a batch pass invoked via Claude Code.
+   [src/ai/curate/](src/ai/curate/) is a sibling: scripted bulk alias
+   curation (Plan 1). See the "AI alias curation" section below.
 6. [src/graph/](src/graph/) — storage and query layer for entities /
    edges / evidence. Adapter at [src/graph/adapt.ts](src/graph/adapt.ts)
    converts the per-video neural output (mention ids) into graph-shaped
@@ -388,6 +390,50 @@ promotion).
 
 All writes bust `nlpCache`, `entityIndexCache`, `entityVideosCache`,
 and `relationshipsGraphCache`, and bump `graph.dirtyAt`.
+
+## AI alias curation (bulk, scripted)
+
+Hand-curating every alias in `/admin/aliases` doesn't scale once the
+corpus passes ~200 videos. [src/ai/curate/](src/ai/curate/) runs a
+heuristic pass over the whole corpus in seconds, proposing:
+
+- **videoMerges** — short canonical → long canonical within the same
+  video when the short is a token-level subsequence of the long, both
+  have ≥3-char tokens, the short isn't a common-noun (see
+  `COMMON_NOUN_BLOCKLIST` in [src/ai/curate/propose.mjs](src/ai/curate/propose.mjs)),
+  and exactly one such long form exists in that video. Handles
+  in-video coreference like `person:paul` → `person:paul mccartney`
+  in a Beatles video.
+- **corpus merges** — `L:the X` → `L:X` when both exist (determiner
+  dedup).
+- **deletedEntities** — canonicals containing `[music]` (transcript
+  marker pollution).
+
+Respects `notSame` pairs and never touches `data/entities/<id>.json`
+or `data/relations/<id>.json`. Every write is reversible via the ⋯
+menu on `/admin/aliases` or by restoring the backup at
+`_curate_tmp/aliases.before.json`.
+
+**Invocation** — from a Claude Code session, ask for the
+[ai-alias-curation](.claude/skills/ai-alias-curation/SKILL.md) skill
+("run alias curation"). Or directly:
+
+```
+npm run build   # ensure dist/graph/aliases-schema.js is fresh
+node src/ai/curate/build-corpus.mjs
+node src/ai/curate/propose.mjs
+node src/ai/curate/apply.mjs
+npx captions pipeline --stage indexes
+```
+
+`apply.mjs` bumps `catalog.graph.dirtyAt` so graph-level stages
+re-run on the next `pipeline` invocation. Re-run whenever new videos
+are added; apply is idempotent — already-handled entries are skipped.
+
+Tune by editing the blocklist / label allowlist in `propose.mjs`.
+The scripts are intentionally heuristic, not neural — the tradeoff is
+coverage (seconds to scan 200+ videos) vs. precision (some calls will
+be wrong, which is why everything is reversible).
 
 ## Web (public site)
 
