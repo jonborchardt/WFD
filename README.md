@@ -169,6 +169,74 @@ inspect, apply, rebuild — in ~25 seconds. The heuristic respects existing
 `notSame` pairs and operator decisions. Every write is reversible via the
 ⋯ menu on `/admin/aliases` or by restoring `_curate_tmp/aliases.before.json`.
 
+#### Claim extraction (AI-driven, per-video)
+
+Each video also gets 3–15 thesis-level claims with evidence quotes,
+direct-truth scores, and cross-claim dependencies — written to
+`data/claims/<id>.json` by an AI session. Invoke the
+**[ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)**
+skill from Claude Code:
+
+```
+# In a Claude Code session, after a few new videos were ingested:
+"extract claims for 5 videos"
+# Or for full-corpus parallel runs:
+"extract claims for 50 videos using 5 parallel agents"
+```
+
+It runs [src/ai/claims/](src/ai/claims/) — picks N videos that have
+entities + relations but no claim file yet, packages each input
+bundle, validates each write, and prints a per-video timing summary.
+Resumable across sessions: `pick-videos.mjs` filters out done videos
+automatically, so a killed session re-picks only the gaps.
+
+For corpus health gaps that block claim extraction (videos with
+unavailable transcripts or empty NER output), see
+[plans/04-claims-coverage-gaps.md](plans/04-claims-coverage-gaps.md).
+
+### When a new video is added — full workflow
+
+End-to-end runbook for one or more new videos. Each step is idempotent
+and only stale work runs, so re-running the whole sequence is always
+safe.
+
+```bash
+# 1. Add the video(s).
+npm run add -- "https://www.youtube.com/watch?v=VIDEOID"
+#    Or batch via data/seeds/videos.txt + npm run ingest.
+
+# 2. Fetch transcripts.
+npm run ingest
+
+# 3. Run all per-video pipeline stages (entities → date-normalize →
+#    relations → ai → per-claim) and graph-level stages (propagation,
+#    contradictions, novel, indexes).
+npm run pipeline
+```
+
+Then in a Claude Code session, run the two AI skills:
+
+```
+# 4. Re-curate aliases against the expanded corpus
+#    (per-video coreference, deletes [music] artifacts, etc.).
+"run alias curation"
+
+# 5. Write claim files for the new videos.
+#    For 1–10 new videos, sequential is fine:
+"extract claims for 10 videos"
+#    For larger batches, parallelize across agents:
+"extract claims for 50 videos using 5 parallel agents"
+```
+
+After all five steps, the new videos are queryable on
+`http://localhost:4173/admin/video/:id` (admin) and on the public
+site after a `web && npm run build` + deploy.
+
+If any video shows up with empty entities/relations after step 3 or
+gets skipped by the claim extraction in step 5, follow
+[plans/04-claims-coverage-gaps.md](plans/04-claims-coverage-gaps.md)
+to diagnose the upstream NER failure.
+
 ### Source tree
 
 ```

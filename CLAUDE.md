@@ -130,7 +130,12 @@ Pipeline shape, roughly in order:
    converts the per-video neural output (mention ids) into graph-shaped
    `Entity` and `Relationship` records (entity ids `${type}:${canonical}`).
 8. [src/truth/](src/truth/) — per-relationship truthiness, propagation
-   rules, contradiction and loop detection, novel-link surfacing.
+   rules, contradiction and loop detection, novel-link surfacing. Also
+   per-claim reasoning (Plan 3): `claim-propagation.ts` (derived truth
+   over the claim DAG), `claim-contradictions.ts` (pair /
+   broken-presupposition / cross-video conflicts), and
+   `claim-counterfactual.ts` (on-demand "if X were false, what moves?"
+   queries).
 9. [src/skeptic/](src/skeptic/) — speaker credibility scoring from
    transcript signals.
 10. [src/ui/](src/ui/) + [src/web/](src/web/) — local dev server with
@@ -444,6 +449,108 @@ The scripts are intentionally heuristic, not neural — the tradeoff is
 coverage (seconds to scan 200+ videos) vs. precision (some calls will
 be wrong, which is why everything is reversible).
 
+## When new videos are added — full runbook
+
+Idempotent end-to-end workflow. Every step is safe to re-run; only
+stale work executes (timestamp-driven staleness). Run from the repo
+root.
+
+### 1. Add the video(s) to the catalog
+
+```
+npm run add -- "https://www.youtube.com/watch?v=VIDEOID"
+```
+
+Or batch: edit `data/seeds/videos.txt` (one URL or id per line), then
+`npm run ingest` will pick them up before fetching.
+
+### 2. Fetch transcripts
+
+```
+npm run ingest
+```
+
+Self-rate-limited YouTube fetch. Writes to `data/transcripts/<id>.json`.
+Transcripts are gold (see Invariants) — once written, never refetched
+unless the file is manually deleted.
+
+### 3. Run the staged pipeline
+
+```
+npm run pipeline
+```
+
+Walks per-video stages in order (`entities` → `date-normalize` →
+`relations` → `ai` → `per-claim`) followed by graph-level stages
+(`propagation`, `contradictions`, `novel`, `indexes`). Only stale
+stages run.
+
+If any new video produces empty `data/entities/<id>.json` (zero
+mentions despite a real transcript), the GLiNER sidecar silently
+failed. Diagnose with:
+
+```
+CAPTIONS_PY_DEBUG=1 npx captions delete --stage entities --video <id>
+CAPTIONS_PY_DEBUG=1 npx captions pipeline --video <id> --stage entities
+```
+
+See [plans/04-claims-coverage-gaps.md](plans/04-claims-coverage-gaps.md)
+for the full diagnosis tree.
+
+### 4. Re-curate aliases (Claude Code session)
+
+In a Claude Code session, ask:
+
+```
+run alias curation
+```
+
+This invokes the [ai-alias-curation](.claude/skills/ai-alias-curation/SKILL.md)
+skill — proposes per-video short→long merges (e.g.
+`person:paul` → `person:paul mccartney` in a Beatles video),
+corpus-wide `the X` → `X` dedup, `[music]` artifact deletions —
+applies them, rebuilds indexes. ~25 seconds.
+
+### 5. Extract claims (Claude Code session)
+
+In the same or a fresh Claude Code session:
+
+```
+extract claims for N videos
+# or for parallel runs across many new videos:
+extract claims for N videos using K parallel agents
+```
+
+This invokes the [ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)
+skill. `pick-videos.mjs` automatically filters to videos that have
+entities + relations but no claim file yet — so calling with
+`--count N` (or letting the skill default to N) picks only the gaps.
+
+Per-video wall time: ~4–6 min (ranges 2–8 min for short vs long
+transcripts). Token cost: ~30–45k input + 6–8k output per video.
+Parallel agents trade tokens for wall time — use 4–10 agents for
+batches >20 videos.
+
+### 6. (No step 6.) Verify
+
+The new videos are queryable on `/admin/video/:id` (start the dev
+server with `npm run dev`). For the public static site:
+
+```
+cd web && npm run build
+cp -r ../data/catalog ../data/entities ../data/relations ../data/graph dist/data/
+# optionally: cp -r ../data/transcripts dist/data/
+# then push dist/ to gh-pages
+```
+
+The corpus-wide claim aggregator (`claim-indexes` graph stage) is
+deferred — until it lands, claims are loaded per-video in the UI.
+The Plan 3 reasoning-layer derivatives (`claims-index.json`,
+`dependency-graph.json`, `contradictions.json` — written by
+`src/ai/reasoning/run.mjs --out data/claims`) do land in
+`data/claims/` alongside the per-video files; they're the staging
+target for that future graph stage.
+
 ## AI claim extraction (per-video, AI session)
 
 Plan 2 Part 2: Claude reads `data/transcripts/<id>.json` plus the
@@ -497,6 +604,28 @@ failure modes produce these:
    produced nothing. Likely silent sidecar failure; re-run
    `captions pipeline --video <id> --stage entities` with
    `CAPTIONS_PY_DEBUG=1` to inspect.
+
+**Reasoning layer (Plan 3).** Once claim files exist, the modules in
+[src/truth/](src/truth/) (`claim-propagation`, `claim-contradictions`,
+`claim-counterfactual`) compute derived truth over the claim DAG,
+surface contradictions, and answer counterfactual queries. Pure code,
+no AI session. Driver scripts in
+[src/ai/reasoning/](src/ai/reasoning/); playbook in
+[ai-reasoning-layer](.claude/skills/ai-reasoning-layer/SKILL.md).
+
+Two modes:
+
+- **Sample** (default): `pick-videos.mjs --count 2` + `run.mjs` →
+  reports land in `_reasoning_tmp/` (gitignored).
+- **Full-corpus** (autonomous, no approval gate):
+  `pick-videos.mjs --all` + `run.mjs --out data/claims` → reports
+  land in `data/claims/` alongside the per-video files.
+
+End-to-end full-corpus runtime on ~2300 claims across 210 videos:
+~1 s (load 100 ms, propagation 20 ms, contradictions 900 ms — the
+O(V² × claims²) cross-video pair walk dominates). `run.mjs` is also
+the reference implementation for the future `claim-indexes` pipeline
+stage.
 
 **Quality bar enforcement.** The validator does not police thesis
 quality, only structural correctness. Quality is enforced in the
