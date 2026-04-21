@@ -242,8 +242,35 @@ export function ClaimGraphPage() {
     rebuildFromSeeds([]);
   }, [rebuildFromSeeds]);
 
-  // Auto-run on initial load if query present.
+  // Multi-seed URL entry point. When the faceted claims / contradictions
+  // pages ship a filtered list to the graph, they pass
+  // `?kind=<k>&seeds=<id1>,<id2>,…`. Parse that once on mount, hydrate
+  // activeSeeds, rebuild, and swallow the default single-seed auto-run
+  // (`&q=`) so we don't double-build.
+  const multiSeedRanRef = useRef(false);
   useEffect(() => {
+    if (!ready || multiSeedRanRef.current) return;
+    const raw = params.get("seeds");
+    if (!raw) return;
+    multiSeedRanRef.current = true;
+    const kind = (params.get("kind") as ActiveSeed["kind"]) ?? "claim";
+    const ids = raw.split(",").map((s) => s.trim()).filter(Boolean);
+    // Resolve a display label from the option pool where available so
+    // the pills show human-readable text, not raw ids.
+    const optById = new Map(options.map((o) => [o.id, o]));
+    const seeds: ActiveSeed[] = ids.map((id) => {
+      const opt = optById.get(id);
+      return { kind, id, label: opt?.label ?? id };
+    });
+    setActiveSeeds(seeds);
+    rebuildFromSeeds(seeds);
+    setQuery("");
+  }, [ready, params, options, rebuildFromSeeds]);
+
+  // Auto-run on initial load if query present (single-seed path).
+  // Skipped when the multi-seed effect above fired.
+  useEffect(() => {
+    if (multiSeedRanRef.current) return;
     if (ready && query && !data) runSearch();
   }, [ready, query, data, runSearch]);
 

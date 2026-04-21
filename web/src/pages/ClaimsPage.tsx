@@ -1,306 +1,906 @@
-import { useEffect, useMemo, useState } from "react";
+// Faceted claims browser. Rail on the left groups cards into
+// semantic sections (sort, claim type, magnitudes, flags, entities,
+// video); results on the right. Mirrors the home-page rail idiom.
+//
+// Filter state round-trips through the URL so any filtered + sorted
+// view is deep-linkable.
+
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Box,
-  Container,
-  Typography,
-  Chip,
-  Tab,
-  Tabs,
-  ToggleButton,
-  ToggleButtonGroup,
-  TextField,
-  Link as MuiLink,
-  Stack,
+  Box, Button, Chip, Container, Link as MuiLink, Stack,
+  TextField, Typography,
 } from "@mui/material";
-import {
-  fetchClaimsIndex,
-  fetchContradictions,
-  fetchDependencyGraph,
-} from "../lib/data";
-import { TruthBar } from "../components/TruthBar";
 import { PageLoading } from "../components/PageLoading";
+import { TruthBar } from "../components/TruthBar";
+import { FacetCard } from "../components/facets/FacetCard";
+import { BarListFacet, type BarRow } from "../components/facets/BarListFacet";
+import { NumericRangeFacet } from "../components/facets/NumericRangeFacet";
+import { DateBrushFacet } from "../components/facets/DateBrushFacet";
+import { SortFacet, type SortOption } from "../components/facets/SortFacet";
+import { FacetSection } from "../components/facets/FacetSection";
+import { GraphSeedsButton } from "../components/facets/GraphSeedsButton";
+import {
+  binUnitInterval, loadClaimsBundle, truthValue,
+  type ClaimsBundle,
+} from "../components/facets/claims-duck";
+import {
+  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr, fmtDay,
+  parseDateRange, parseRange, rangeStr, splitEntityKey,
+} from "../lib/facet-helpers";
 import { matchesTopic } from "../lib/claim-search";
 import { beginLoad } from "../lib/loading";
 import type { ClaimsIndexEntry } from "../types";
 
-type SortMode = "certain" | "uncertain" | "contradicted";
+const SORT_OPTIONS: SortOption[] = [
+  { value: "certain", label: "most certain",
+    hint: "truth furthest from 0.5" },
+  { value: "uncertain", label: "most uncertain",
+    hint: "truth closest to 0.5" },
+  { value: "contradicted", label: "most contradicted",
+    hint: "by contradiction count" },
+  { value: "cited", label: "most cited",
+    hint: "highest incoming dep count" },
+  { value: "conf-high", label: "highest confidence" },
+  { value: "conf-low", label: "lowest confidence" },
+];
 
-export function ClaimsPage() {
-  const nav = useNavigate();
-  const [entries, setEntries] = useState<ClaimsIndexEntry[] | null>(null);
-  const [contradictionCount, setContradictionCount] = useState<Map<string, number>>(new Map());
-  const [depCounts, setDepCounts] = useState<Map<string, { out: number; in: number }>>(new Map());
-  const [sort, setSort] = useState<SortMode>("certain");
-  const [kindFilter, setKindFilter] = useState<string>("");
-  const [query, setQuery] = useState("");
-  const [tagQuery, setTagQuery] = useState("");
+const KIND_ORDER = [
+  "empirical", "historical", "speculative", "opinion", "definitional",
+];
+const STANCE_ORDER = ["asserts", "denies", "uncertain", "steelman"];
+const SOURCE_ORDER = ["direct", "derived", "override", "uncalibrated"];
 
-  useEffect(() => {
-    const endLoad = beginLoad();
-    Promise.allSettled([
-      fetchClaimsIndex().then((idx) => setEntries(idx?.claims ?? [])),
-      fetchContradictions().then((cx) => {
-        const m = new Map<string, number>();
-        for (const c of cx?.contradictions ?? []) {
-          m.set(c.left, (m.get(c.left) ?? 0) + 1);
-          m.set(c.right, (m.get(c.right) ?? 0) + 1);
-        }
-        setContradictionCount(m);
-      }),
-      fetchDependencyGraph().then((d) => {
-        const m = new Map<string, { out: number; in: number }>();
-        for (const e of d?.edges ?? []) {
-          const from = m.get(e.from) ?? { out: 0, in: 0 };
-          from.out += 1;
-          m.set(e.from, from);
-          const to = m.get(e.to) ?? { out: 0, in: 0 };
-          to.in += 1;
-          m.set(e.to, to);
-        }
-        setDepCounts(m);
-      }),
-    ]).finally(endLoad);
-  }, []);
+const KIND_COLOR: Record<string, string> = {
+  empirical: "#1976d2",
+  historical: "#6d4c41",
+  speculative: "#8e24aa",
+  opinion: "#ef6c00",
+  definitional: "#00838f",
+};
 
-  // Rows that pass text + topic filters, before the kind tab is applied.
-  // Used both to feed the final list and to compute per-kind counts for
-  // the tab labels.
-  const beforeKind = useMemo(() => {
-    if (!entries) return [];
-    const q = query.trim().toLowerCase();
-    return entries.filter((c) => {
-      if (q && !c.text.toLowerCase().includes(q)) return false;
-      if (!matchesTopic(c, tagQuery)) return false;
-      return true;
-    });
-  }, [entries, query, tagQuery]);
+const PER_TYPE_VISIBLE = 8;
 
-  const kindCounts = useMemo(() => {
-    const out: Record<string, { matched: number; total: number }> = {};
-    const all = entries ?? [];
-    for (const c of all) {
-      const slot = out[c.kind] ?? { matched: 0, total: 0 };
-      slot.total += 1;
-      out[c.kind] = slot;
-    }
-    for (const c of beforeKind) {
-      const slot = out[c.kind] ?? { matched: 0, total: 0 };
-      slot.matched += 1;
-      out[c.kind] = slot;
+// ── filter state ─────────────────────────────────────────────────
+type YesNo = "yes" | "no";
+
+interface FilterState {
+  q: string;
+  kinds: Set<string>;
+  stances: Set<string>;             // includes "__none__" sentinel
+  sources: Set<string>;
+  truthRange: [number, number] | null;
+  confRange: [number, number] | null;
+  dateRange: [number, number] | null;
+  verdict: Set<YesNo>;              // empty = any
+  contradicted: Set<YesNo>;
+  hasIn: Set<YesNo>;
+  hasOut: Set<YesNo>;
+  entities: Set<string>;            // AND across selected
+  videos: Set<string>;
+  sort: string;
+}
+
+// Every set-valued key on FilterState. Used by helpers that iterate
+// over "all the set facets" without special-casing each one.
+const STRING_SET_KEYS = [
+  "kinds", "stances", "sources", "entities", "videos",
+] as const;
+type StringSetKey = (typeof STRING_SET_KEYS)[number];
+const BOOL_SET_KEYS = [
+  "verdict", "contradicted", "hasIn", "hasOut",
+] as const;
+type BoolSetKey = (typeof BOOL_SET_KEYS)[number];
+
+const EMPTY_FILTER: FilterState = {
+  q: "",
+  kinds: new Set(),
+  stances: new Set(),
+  sources: new Set(),
+  truthRange: null,
+  confRange: null,
+  dateRange: null,
+  verdict: new Set(),
+  contradicted: new Set(),
+  hasIn: new Set(),
+  hasOut: new Set(),
+  entities: new Set(),
+  videos: new Set(),
+  sort: "certain",
+};
+
+function parseFiltersFromUrl(): FilterState {
+  if (typeof window === "undefined") return { ...EMPTY_FILTER };
+  const p = new URLSearchParams(window.location.search);
+  const setOf = (k: string) => new Set(
+    (p.get(k) || "").split(",").filter(Boolean),
+  );
+  const boolSet = (k: string): Set<YesNo> => {
+    const out = new Set<YesNo>();
+    for (const v of (p.get(k) || "").split(",").filter(Boolean)) {
+      if (v === "yes" || v === "no") out.add(v);
     }
     return out;
-  }, [entries, beforeKind]);
+  };
+  return {
+    q: p.get("q") || "",
+    kinds: setOf("kind"),
+    stances: setOf("stance"),
+    sources: setOf("src"),
+    truthRange: parseRange(p.get("truth")),
+    confRange: parseRange(p.get("conf")),
+    dateRange: parseDateRange(p.get("date")),
+    verdict: boolSet("verdict"),
+    contradicted: boolSet("cx"),
+    hasIn: boolSet("depin"),
+    hasOut: boolSet("depout"),
+    entities: setOf("entity"),
+    videos: setOf("video"),
+    sort: p.get("sort") || "certain",
+  };
+}
+
+function writeFiltersToUrl(s: FilterState) {
+  const p = new URLSearchParams();
+  if (s.q) p.set("q", s.q);
+  const setParam = (k: string, v: Set<string>) => {
+    if (v.size > 0) p.set(k, [...v].join(","));
+  };
+  setParam("kind", s.kinds);
+  setParam("stance", s.stances);
+  setParam("src", s.sources);
+  if (s.truthRange) p.set("truth", rangeStr(s.truthRange));
+  if (s.confRange) p.set("conf", rangeStr(s.confRange));
+  if (s.dateRange) p.set("date", dateRangeStr(s.dateRange));
+  setParam("verdict", s.verdict);
+  setParam("cx", s.contradicted);
+  setParam("depin", s.hasIn);
+  setParam("depout", s.hasOut);
+  setParam("entity", s.entities);
+  setParam("video", s.videos);
+  if (s.sort !== "certain") p.set("sort", s.sort);
+  const qs = p.toString();
+  window.history.replaceState({}, "",
+    window.location.pathname + (qs ? "?" + qs : ""));
+}
+
+// ── filter application ───────────────────────────────────────────
+function passes(
+  c: ClaimsIndexEntry, s: FilterState, bundle: ClaimsBundle,
+): boolean {
+  if (s.q.trim()) {
+    const q = s.q.trim().toLowerCase();
+    if (!c.text.toLowerCase().includes(q) && !matchesTopic(c, s.q)) return false;
+  }
+  if (s.kinds.size > 0 && !s.kinds.has(c.kind)) return false;
+  if (s.stances.size > 0 && !s.stances.has(c.hostStance ?? "__none__")) return false;
+  if (s.sources.size > 0 && !s.sources.has(c.truthSource)) return false;
+  if (s.truthRange) {
+    const t = truthValue(c);
+    if (t === null || t < s.truthRange[0] || t > s.truthRange[1]) return false;
+  }
+  if (s.confRange) {
+    const cv = c.confidence;
+    if (cv == null || cv < s.confRange[0] || cv > s.confRange[1]) return false;
+  }
+  if (s.dateRange) {
+    const ms = bundle.videosById.get(c.videoId)?.publishMs ?? null;
+    if (ms === null || ms < s.dateRange[0] || ms > s.dateRange[1]) return false;
+  }
+  if (s.verdict.size > 0 && !s.verdict.has(c.inVerdictSection ? "yes" : "no")) return false;
+  if (s.contradicted.size > 0) {
+    const has = (bundle.contradictionCount.get(c.id) ?? 0) > 0;
+    if (!s.contradicted.has(has ? "yes" : "no")) return false;
+  }
+  if (s.hasIn.size > 0) {
+    const has = (bundle.depCounts.get(c.id)?.in ?? 0) > 0;
+    if (!s.hasIn.has(has ? "yes" : "no")) return false;
+  }
+  if (s.hasOut.size > 0) {
+    const has = (bundle.depCounts.get(c.id)?.out ?? 0) > 0;
+    if (!s.hasOut.has(has ? "yes" : "no")) return false;
+  }
+  if (s.videos.size > 0 && !s.videos.has(c.videoId)) return false;
+  if (s.entities.size > 0) {
+    const ce = new Set(c.entities);
+    for (const e of s.entities) if (!ce.has(e)) return false;
+  }
+  return true;
+}
+
+// Apply every filter except one, so facet counts reflect the rest
+// of the active filter. Mirrors the home page's scoped-count pattern.
+function filterExcept(
+  claims: ClaimsIndexEntry[], s: FilterState, bundle: ClaimsBundle,
+  exclude: keyof FilterState,
+): ClaimsIndexEntry[] {
+  const stripped: FilterState = { ...s };
+  switch (exclude) {
+    case "kinds": stripped.kinds = new Set(); break;
+    case "stances": stripped.stances = new Set(); break;
+    case "sources": stripped.sources = new Set(); break;
+    case "truthRange": stripped.truthRange = null; break;
+    case "confRange": stripped.confRange = null; break;
+    case "dateRange": stripped.dateRange = null; break;
+    case "verdict": stripped.verdict = new Set(); break;
+    case "contradicted": stripped.contradicted = new Set(); break;
+    case "hasIn": stripped.hasIn = new Set(); break;
+    case "hasOut": stripped.hasOut = new Set(); break;
+    case "entities": stripped.entities = new Set(); break;
+    case "videos": stripped.videos = new Set(); break;
+    case "q": stripped.q = ""; break;
+  }
+  return claims.filter((c) => passes(c, stripped, bundle));
+}
+
+// ── the page ─────────────────────────────────────────────────────
+export function ClaimsPage() {
+  const nav = useNavigate();
+  const [bundle, setBundle] = useState<ClaimsBundle | null>(null);
+  const [filter, setFilter] = useState<FilterState>(() => parseFiltersFromUrl());
+  // Free-text input is held separately and debounced into filter.q
+  // so keystrokes don't trigger the full filter walk per character.
+  // 180 ms matches the home page's search autocomplete feel.
+  const [qInput, setQInput] = useState(filter.q);
+  const [entitySearch, setEntitySearch] = useState<Record<string, string>>({});
+  const [videoSearch, setVideoSearch] = useState("");
+  const [showAllByType, setShowAllByType] =
+    useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    const end = beginLoad();
+    loadClaimsBundle().then(setBundle).finally(end);
+  }, []);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setFilter((f) => f.q === qInput ? f : { ...f, q: qInput });
+    }, 180);
+    return () => clearTimeout(t);
+  }, [qInput]);
+
+  // Skip the first effect run — filter is initialized from the URL,
+  // so writing it back immediately is a no-op that inflates history.
+  const hydratedRef = useRef(false);
+  useEffect(() => {
+    if (!hydratedRef.current) { hydratedRef.current = true; return; }
+    writeFiltersToUrl(filter);
+  }, [filter]);
+
+  const setF = (p: Partial<FilterState>) => setFilter((f) => ({ ...f, ...p }));
+  const toggleString = (key: StringSetKey, value: string) => {
+    setFilter((f) => {
+      const next = new Set(f[key]);
+      if (next.has(value)) next.delete(value);
+      else next.add(value);
+      return { ...f, [key]: next };
+    });
+  };
+  const toggleBool = (key: BoolSetKey, value: YesNo) => {
+    setFilter((f) => {
+      const next = new Set(f[key]);
+      if (next.has(value)) next.delete(value);
+      else next.add(value);
+      return { ...f, [key]: next };
+    });
+  };
+  const clearAll = () => setFilter({ ...EMPTY_FILTER });
 
   const filtered = useMemo(() => {
-    if (kindFilter === "") return beforeKind;
-    return beforeKind.filter((c) => c.kind === kindFilter);
-  }, [beforeKind, kindFilter]);
+    if (!bundle) return [];
+    return bundle.claims.filter((c) => passes(c, filter, bundle));
+  }, [bundle, filter]);
 
   const sorted = useMemo(() => {
+    if (!bundle) return [];
     const rows = [...filtered];
-    if (sort === "certain") {
-      rows.sort((a, b) => {
-        const ta = truthValue(a) ?? 0.5;
-        const tb = truthValue(b) ?? 0.5;
-        return Math.abs(tb - 0.5) - Math.abs(ta - 0.5);
-      });
-    } else if (sort === "uncertain") {
-      rows.sort((a, b) => {
-        const ta = truthValue(a) ?? 0.5;
-        const tb = truthValue(b) ?? 0.5;
-        return Math.abs(ta - 0.5) - Math.abs(tb - 0.5);
-      });
-    } else {
-      rows.sort(
-        (a, b) => (contradictionCount.get(b.id) ?? 0) - (contradictionCount.get(a.id) ?? 0),
-      );
+    switch (filter.sort) {
+      case "certain":
+        rows.sort((a, b) =>
+          Math.abs((truthValue(b) ?? 0.5) - 0.5)
+          - Math.abs((truthValue(a) ?? 0.5) - 0.5));
+        break;
+      case "uncertain":
+        rows.sort((a, b) =>
+          Math.abs((truthValue(a) ?? 0.5) - 0.5)
+          - Math.abs((truthValue(b) ?? 0.5) - 0.5));
+        break;
+      case "contradicted":
+        rows.sort((a, b) =>
+          (bundle.contradictionCount.get(b.id) ?? 0)
+          - (bundle.contradictionCount.get(a.id) ?? 0));
+        break;
+      case "cited":
+        rows.sort((a, b) =>
+          (bundle.depCounts.get(b.id)?.in ?? 0)
+          - (bundle.depCounts.get(a.id)?.in ?? 0));
+        break;
+      case "conf-high":
+        rows.sort((a, b) => (b.confidence ?? 0) - (a.confidence ?? 0));
+        break;
+      case "conf-low":
+        rows.sort((a, b) => (a.confidence ?? 0) - (b.confidence ?? 0));
+        break;
     }
-    return rows.slice(0, 200);
-  }, [filtered, sort, contradictionCount]);
+    return rows;
+  }, [filtered, filter.sort, bundle]);
 
-  if (!entries) {
-    return <PageLoading label="loading claims…" hint="fetching claims index" />;
+  if (!bundle) {
+    return <PageLoading
+      label="loading claims…"
+      hint="fetching claims-index + contradictions + dependency-graph"
+    />;
+  }
+
+  // ── per-facet counts (each scoped to "all other filters") ──────
+  const kindRows = makeCountRows(
+    KIND_ORDER.map((k) => [k, k] as const),
+    filterExcept(bundle.claims, filter, bundle, "kinds"),
+    (c) => c.kind,
+  );
+  const stanceRows = makeCountRows(
+    [
+      ...STANCE_ORDER.map((s) => [s, s] as const),
+      ["__none__", "(none)"] as const,
+    ],
+    filterExcept(bundle.claims, filter, bundle, "stances"),
+    (c) => c.hostStance ?? "__none__",
+  );
+  const sourceRows = makeCountRows(
+    SOURCE_ORDER.map((s) => [s, s] as const),
+    filterExcept(bundle.claims, filter, bundle, "sources"),
+    (c) => c.truthSource,
+  );
+  const verdictRows = makeCountRows(
+    [["yes", "verdict section"], ["no", "not in verdict"]],
+    filterExcept(bundle.claims, filter, bundle, "verdict"),
+    (c) => c.inVerdictSection ? "yes" : "no",
+  );
+  const contradictedRows = makeCountRows(
+    [["yes", "contradicted"], ["no", "none"]],
+    filterExcept(bundle.claims, filter, bundle, "contradicted"),
+    (c) => (bundle.contradictionCount.get(c.id) ?? 0) > 0 ? "yes" : "no",
+  );
+  const hasInRows = makeCountRows(
+    [["yes", "cited by others"], ["no", "none"]],
+    filterExcept(bundle.claims, filter, bundle, "hasIn"),
+    (c) => (bundle.depCounts.get(c.id)?.in ?? 0) > 0 ? "yes" : "no",
+  );
+  const hasOutRows = makeCountRows(
+    [["yes", "cites others"], ["no", "none"]],
+    filterExcept(bundle.claims, filter, bundle, "hasOut"),
+    (c) => (bundle.depCounts.get(c.id)?.out ?? 0) > 0 ? "yes" : "no",
+  );
+
+  const truthScope = filterExcept(bundle.claims, filter, bundle, "truthRange");
+  const confScope = filterExcept(bundle.claims, filter, bundle, "confRange");
+  const dateScope = filterExcept(bundle.claims, filter, bundle, "dateRange");
+  const entityScope = filterExcept(bundle.claims, filter, bundle, "entities");
+  const videoScope = filterExcept(bundle.claims, filter, bundle, "videos");
+
+  const truthBins = binUnitInterval(truthScope.map(truthValue), 0.05);
+  const confBins = binUnitInterval(confScope.map((c) => c.confidence), 0.05);
+  const dateTimestamps: number[] = [];
+  for (const c of dateScope) {
+    const ms = bundle.videosById.get(c.videoId)?.publishMs;
+    if (ms != null) dateTimestamps.push(ms);
+  }
+
+  // Per-entity-type rows. Each entry stored under its full key
+  // (type:canonical) so toggling matches the claim's entity list.
+  const entityByType = new Map<string, Map<string, { label: string; count: number }>>();
+  for (const c of entityScope) {
+    for (const ek of c.entities) {
+      const { type, canonical } = splitEntityKey(ek);
+      let bucket = entityByType.get(type);
+      if (!bucket) { bucket = new Map(); entityByType.set(type, bucket); }
+      const slot = bucket.get(ek) ?? { label: canonical, count: 0 };
+      slot.count += 1;
+      bucket.set(ek, slot);
+    }
+  }
+  const orderedTypes = [
+    ...ENTITY_PRIORITY.filter((t) => entityByType.has(t)),
+    ...[...entityByType.keys()].filter((t) => !ENTITY_PRIORITY.includes(t)),
+  ];
+
+  // videoId is the stable selection id; label is the truncated title,
+  // with the full title on hover.
+  const videoCounts = new Map<string, number>();
+  for (const c of videoScope) {
+    videoCounts.set(c.videoId, (videoCounts.get(c.videoId) ?? 0) + 1);
+  }
+  const videoRows: BarRow[] = [...videoCounts.entries()]
+    .map(([id, count]) => {
+      const meta = bundle.videosById.get(id);
+      return {
+        id,
+        label: meta?.shortLabel ?? id,
+        title: meta?.title ?? id,
+        count,
+      };
+    })
+    .filter((r) => {
+      if (!videoSearch) return true;
+      const q = videoSearch.toLowerCase();
+      return r.label.toLowerCase().includes(q)
+        || (r.title?.toLowerCase().includes(q) ?? false)
+        || r.id.toLowerCase().includes(q);
+    })
+    .sort((a, b) => b.count - a.count);
+
+  // Active filter chips rendered above the results.
+  interface ActiveChip { key: string; label: string; onClear: () => void; }
+  const activeChips: ActiveChip[] = [];
+  if (filter.q) activeChips.push({
+    key: "q", label: `text: ${filter.q}`, onClear: () => setF({ q: "" }),
+  });
+  for (const key of STRING_SET_KEYS) {
+    if (key === "videos") continue; // handled below with title resolution
+    for (const v of filter[key]) {
+      activeChips.push({
+        key: `${key}:${v}`,
+        label: `${STRING_KEY_LABEL[key]}: ${v}`,
+        onClear: () => toggleString(key, v),
+      });
+    }
+  }
+  for (const key of BOOL_SET_KEYS) {
+    for (const v of filter[key]) activeChips.push({
+      key: `${key}:${v}`,
+      label: BOOL_CHIP_LABEL[key][v],
+      onClear: () => toggleBool(key, v),
+    });
+  }
+  if (filter.truthRange) activeChips.push({
+    key: "truth",
+    label: `truth ${filter.truthRange[0].toFixed(2)}–${filter.truthRange[1].toFixed(2)}`,
+    onClear: () => setF({ truthRange: null }),
+  });
+  if (filter.confRange) activeChips.push({
+    key: "conf",
+    label: `conf ${filter.confRange[0].toFixed(2)}–${filter.confRange[1].toFixed(2)}`,
+    onClear: () => setF({ confRange: null }),
+  });
+  if (filter.dateRange) activeChips.push({
+    key: "date",
+    label: `date ${fmtDay(filter.dateRange[0])}–${fmtDay(filter.dateRange[1])}`,
+    onClear: () => setF({ dateRange: null }),
+  });
+  for (const id of filter.videos) {
+    const t = bundle.videosById.get(id);
+    activeChips.push({
+      key: `video:${id}`,
+      label: `video: ${t?.shortLabel ?? id}`,
+      onClear: () => toggleString("videos", id),
+    });
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 3 }}>
-      <Typography variant="h5" sx={{ mb: 2 }}>
+    <Container maxWidth={false} sx={{ px: 2, py: 2, maxWidth: 1800 }}>
+      <Typography variant="h5" sx={{ mb: 1 }}>
         Claims{" "}
         <Typography component="span" variant="caption" color="text.secondary">
-          {filtered.length === entries.length
-            ? `${entries.length} in corpus`
-            : `${filtered.length} match · ${entries.length} in corpus`}
+          {filtered.length === bundle.claims.length
+            ? `${bundle.claims.length} in corpus`
+            : `${filtered.length} match · ${bundle.claims.length} in corpus`}
         </Typography>
       </Typography>
 
-      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 1, alignItems: "center" }}>
-        <TextField
-          size="small"
-          label="text search"
-          placeholder="matches claim text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          sx={{ width: 240 }}
-          InputLabelProps={{ shrink: true }}
-        />
-        <TextField
-          size="small"
-          label="topic search"
-          placeholder="tag, entity, or kind"
-          value={tagQuery}
-          onChange={(e) => setTagQuery(e.target.value)}
-          sx={{ width: 240 }}
-          InputLabelProps={{ shrink: true }}
-        />
-      </Box>
+      <Box sx={{ display: "flex", gap: 2 }}>
+        {/* ── rail ────────────────────────────────────────────── */}
+        <Box sx={{
+          flex: "1 1 0", minWidth: 0,
+          maxWidth: "calc((100% - 16px) / 3)",
+        }}>
+          <TextField
+            size="small"
+            placeholder="search claim text, entities, kind…"
+            value={qInput}
+            onChange={(e) => setQInput(e.target.value)}
+            fullWidth
+            sx={{ mb: 1 }}
+          />
 
-      <Tabs
-        value={kindFilter}
-        onChange={(_, v) => setKindFilter(v as string)}
-        sx={{ mb: 1 }}
-        variant="scrollable"
-        scrollButtons="auto"
-      >
-        <Tab value="" label={`all (${beforeKind.length} / ${entries.length})`} />
-        {(["empirical", "historical", "speculative", "opinion", "definitional"] as const).map((k) => {
-          const c = kindCounts[k] ?? { matched: 0, total: 0 };
-          return <Tab key={k} value={k} label={`${k} (${c.matched} / ${c.total})`} />;
-        })}
-      </Tabs>
-
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap", mb: 2 }}>
-        <Typography variant="caption" color="text.secondary" sx={{ minWidth: 50 }}>sort by:</Typography>
-        <ToggleButtonGroup
-          size="small"
-          exclusive
-          value={sort}
-          onChange={(_, v) => v && setSort(v)}
-        >
-          <ToggleButton value="certain">most certain</ToggleButton>
-          <ToggleButton value="uncertain">most uncertain</ToggleButton>
-          <ToggleButton value="contradicted">most contradicted</ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
-
-      {sorted.map((c) => {
-        const contradictions = contradictionCount.get(c.id) ?? 0;
-        const deps = depCounts.get(c.id) ?? { out: 0, in: 0 };
-        return (
-          <Box
-            key={c.id}
-            sx={{
-              border: "1px solid",
-              borderColor: "divider",
-              borderRadius: 1,
-              p: 1.5,
-              mb: 1,
-              cursor: "pointer",
-              "&:hover": { backgroundColor: "action.hover" },
-            }}
-            onClick={() => nav(`/claim/${encodeURIComponent(c.id)}`)}
-          >
-            <Stack direction="row" spacing={1} sx={{ mb: 0.5, alignItems: "center", flexWrap: "wrap" }}>
-              <Chip size="small" label={c.kind} sx={{ fontSize: "0.7rem" }} />
-              {c.hostStance && (
-                <Chip
-                  size="small"
-                  label={`host: ${c.hostStance}`}
-                  variant="outlined"
-                  sx={{ fontSize: "0.7rem" }}
-                />
-              )}
-              {c.inVerdictSection && (
-                <Chip size="small" variant="outlined" label="verdict" sx={{ fontSize: "0.7rem" }} />
-              )}
-              <MuiLink
-                component="button"
-                variant="caption"
-                onClick={(e) => { e.stopPropagation(); nav(`/video/${c.videoId}`); }}
-              >
-                {c.videoId}
-              </MuiLink>
-              {contradictions > 0 && (
-                <Chip
-                  size="small"
-                  label={`⚠ ${contradictions} contradiction${contradictions > 1 ? "s" : ""}`}
-                  color="warning"
-                  variant="outlined"
-                  sx={{ fontSize: "0.7rem" }}
-                />
-              )}
-              {(deps.in > 0 || deps.out > 0) && (
-                <Chip
-                  size="small"
-                  variant="outlined"
-                  label={`${deps.out} out · ${deps.in} in`}
-                  sx={{ fontSize: "0.7rem" }}
-                  title="outgoing / incoming dependencies"
-                />
-              )}
-            </Stack>
-
-            <Typography variant="body2" sx={{ mb: 0.5 }}>{c.text}</Typography>
-
-            <Stack spacing={0.25} sx={{ mb: 0.5 }}>
-              <TruthBar
-                value={c.derivedTruth ?? c.directTruth ?? null}
-                source={c.truthSource}
-                label="truth"
-              />
-              <TruthBar value={c.confidence} label="confidence" />
-            </Stack>
-
-            {c.tags && c.tags.length > 0 && (
-              <Box sx={{ mb: 0.5 }}>
-                {c.tags.map((t) => (
-                  <Typography
-                    key={t}
-                    component="span"
-                    variant="caption"
-                    sx={{ color: "text.secondary", mr: 0.5, fontFamily: "monospace" }}
-                  >
-                    #{t}
-                  </Typography>
-                ))}
-              </Box>
-            )}
-
-            {c.entities.length > 0 && (
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, alignItems: "center" }}>
-                <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
-                  entities:
-                </Typography>
-                {c.entities.slice(0, 6).map((k) => (
-                  <Chip
-                    key={k}
-                    size="small"
-                    variant="outlined"
-                    clickable
-                    label={k}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      nav(`/entity/${encodeURIComponent(k)}`);
-                    }}
-                    sx={{ fontSize: "0.7rem" }}
-                  />
-                ))}
-                {c.entities.length > 6 && (
-                  <Typography variant="caption" color="text.secondary">
-                    +{c.entities.length - 6} more
-                  </Typography>
-                )}
-              </Box>
+          <Box sx={{ display: "flex", alignItems: "baseline", gap: 1, mb: 1 }}>
+            <Typography variant="h6" sx={{ m: 0 }}>filters</Typography>
+            <Box flex={1} />
+            {activeChips.length > 0 && (
+              <Button size="small" onClick={clearAll}>
+                clear all ({activeChips.length})
+              </Button>
             )}
           </Box>
-        );
-      })}
+
+          <FacetSection title="sort">
+            <FacetCard label="sort by" color="#ffb74d">
+              <SortFacet
+                options={SORT_OPTIONS}
+                value={filter.sort}
+                onChange={(v) => setF({ sort: v })}
+              />
+            </FacetCard>
+          </FacetSection>
+
+          <FacetSection title="claim type">
+            <FacetCard
+              label="kind" color="#1976d2"
+              selected={filter.kinds.size} total={kindRows.length}
+            >
+              <BarListFacet
+                rows={kindRows} selected={filter.kinds}
+                onToggle={(v) => toggleString("kinds", v)}
+              />
+            </FacetCard>
+            <FacetCard
+              label="host stance" color="#26a69a"
+              selected={filter.stances.size} total={stanceRows.length}
+            >
+              <BarListFacet
+                rows={stanceRows} selected={filter.stances}
+                onToggle={(v) => toggleString("stances", v)}
+              />
+            </FacetCard>
+            <FacetCard
+              label="truth source" color="#9c27b0"
+              selected={filter.sources.size} total={sourceRows.length}
+            >
+              <BarListFacet
+                rows={sourceRows} selected={filter.sources}
+                onToggle={(v) => toggleString("sources", v)}
+              />
+            </FacetCard>
+          </FacetSection>
+
+          <FacetSection title="magnitudes">
+            <FacetCard
+              label="truth range" color="#388e3c"
+              selected={filter.truthRange ? 1 : 0}
+            >
+              <NumericRangeFacet
+                bins={truthBins} domain={[0, 1]}
+                selected={filter.truthRange}
+                onChange={(r) => setF({ truthRange: r })}
+              />
+            </FacetCard>
+            <FacetCard
+              label="confidence" color="#689f38"
+              selected={filter.confRange ? 1 : 0}
+            >
+              <NumericRangeFacet
+                bins={confBins} domain={[0, 1]}
+                selected={filter.confRange}
+                onChange={(r) => setF({ confRange: r })}
+              />
+            </FacetCard>
+            <FacetCard
+              label="publish date" color="#1565c0"
+              selected={filter.dateRange ? 1 : 0}
+            >
+              <DateBrushFacet
+                timestamps={dateTimestamps}
+                selected={filter.dateRange}
+                onChange={(r) => setF({ dateRange: r })}
+              />
+            </FacetCard>
+          </FacetSection>
+
+          <FacetSection title="flags">
+            <FacetCard
+              label="verdict" color="#f57c00"
+              selected={filter.verdict.size} total={2}
+            >
+              <BarListFacet
+                rows={verdictRows}
+                selected={filter.verdict as Set<string>}
+                onToggle={(v) => toggleBool("verdict", v as YesNo)}
+              />
+            </FacetCard>
+            <FacetCard
+              label="contradictions" color="#d32f2f"
+              selected={filter.contradicted.size} total={2}
+            >
+              <BarListFacet
+                rows={contradictedRows}
+                selected={filter.contradicted as Set<string>}
+                onToggle={(v) => toggleBool("contradicted", v as YesNo)}
+              />
+            </FacetCard>
+            <FacetCard
+              label="cited by (incoming)" color="#5e35b1"
+              selected={filter.hasIn.size} total={2}
+            >
+              <BarListFacet
+                rows={hasInRows}
+                selected={filter.hasIn as Set<string>}
+                onToggle={(v) => toggleBool("hasIn", v as YesNo)}
+              />
+            </FacetCard>
+            <FacetCard
+              label="cites (outgoing)" color="#3949ab"
+              selected={filter.hasOut.size} total={2}
+            >
+              <BarListFacet
+                rows={hasOutRows}
+                selected={filter.hasOut as Set<string>}
+                onToggle={(v) => toggleBool("hasOut", v as YesNo)}
+              />
+            </FacetCard>
+          </FacetSection>
+
+          <FacetSection title="entities">
+            {orderedTypes.map((type) => {
+              const bucket = entityByType.get(type)!;
+              const color = ENTITY_TYPE_COLOR[type] || "#90caf9";
+              const q = (entitySearch[type] || "").toLowerCase();
+              const all: BarRow[] = [...bucket.entries()]
+                .map(([id, v]) => ({ id, label: v.label, count: v.count }))
+                .filter((r) => !q || r.label.toLowerCase().includes(q))
+                .sort((a, b) => b.count - a.count);
+              const limit = showAllByType[type] ? 200 : PER_TYPE_VISIBLE;
+              const selectedInType = [...filter.entities]
+                .filter((k) => splitEntityKey(k).type === type).length;
+              return (
+                <FacetCard
+                  key={type}
+                  label={type} color={color}
+                  selected={selectedInType} total={all.length}
+                >
+                  <TextField
+                    size="small"
+                    placeholder="search…"
+                    value={entitySearch[type] || ""}
+                    onChange={(e) => setEntitySearch((s) => ({
+                      ...s, [type]: e.target.value,
+                    }))}
+                    fullWidth
+                    sx={compactInputSx}
+                  />
+                  <BarListFacet
+                    rows={all.slice(0, limit)}
+                    selected={filter.entities}
+                    onToggle={(v) => toggleString("entities", v)}
+                    color={color}
+                  />
+                  {all.length > PER_TYPE_VISIBLE && (
+                    <Button
+                      size="small"
+                      onClick={() => setShowAllByType((s) => ({
+                        ...s, [type]: !s[type],
+                      }))}
+                      sx={{ fontSize: 10, py: 0, minHeight: 20, px: 0.5 }}
+                    >
+                      {showAllByType[type]
+                        ? "top 8"
+                        : `+${all.length - PER_TYPE_VISIBLE} more`}
+                    </Button>
+                  )}
+                </FacetCard>
+              );
+            })}
+          </FacetSection>
+
+          <FacetSection title="video">
+            <FacetCard
+              label="video" color="#455a64"
+              selected={filter.videos.size} total={videoRows.length}
+            >
+              <TextField
+                size="small"
+                placeholder="search title or id…"
+                value={videoSearch}
+                onChange={(e) => setVideoSearch(e.target.value)}
+                fullWidth
+                sx={compactInputSx}
+              />
+              <BarListFacet
+                rows={videoRows.slice(0, 12)}
+                selected={filter.videos}
+                onToggle={(v) => toggleString("videos", v)}
+              />
+            </FacetCard>
+          </FacetSection>
+        </Box>
+
+        {/* ── results ─────────────────────────────────────────── */}
+        <Box sx={{ flex: "2 1 0", minWidth: 0 }}>
+          {activeChips.length > 0 && (
+            <Box sx={{
+              py: 0.5, display: "flex", flexWrap: "wrap",
+              alignItems: "center", gap: 0.5, mb: 2,
+            }}>
+              <Typography variant="caption" color="text.secondary" sx={{
+                mr: 0.5, fontSize: 10,
+              }}>
+                filters:
+              </Typography>
+              {activeChips.map((c) => (
+                <Chip key={c.key} size="small" label={c.label} onDelete={c.onClear} />
+              ))}
+              <Button size="small" onClick={clearAll} sx={{ ml: 1 }}>
+                clear all
+              </Button>
+            </Box>
+          )}
+
+          <Box sx={{
+            display: "flex", alignItems: "center", gap: 1, mb: 1,
+          }}>
+            <Typography variant="caption" color="text.secondary">
+              showing {Math.min(sorted.length, 200)} of {sorted.length}
+              {sorted.length > 200 && " — refine filters to narrow"}
+            </Typography>
+            <Box flex={1} />
+            <GraphSeedsButton claimIds={sorted.map((c) => c.id)} />
+          </Box>
+
+          {sorted.slice(0, 200).map((c) => (
+            <ClaimResultRow key={c.id} claim={c} nav={nav} bundle={bundle} />
+          ))}
+        </Box>
+      </Box>
     </Container>
   );
 }
 
-function truthValue(c: ClaimsIndexEntry): number | null {
-  if (c.derivedTruth !== null && c.derivedTruth !== undefined) return c.derivedTruth;
-  if (c.directTruth !== null && c.directTruth !== undefined) return c.directTruth;
-  return null;
+// ── small building blocks ────────────────────────────────────────
+const compactInputSx = {
+  mb: 0.25,
+  "& .MuiInputBase-input": { fontSize: 11, py: 0.25, px: 0.5 },
+};
+
+const STRING_KEY_LABEL: Record<StringSetKey, string> = {
+  kinds: "kind",
+  stances: "stance",
+  sources: "source",
+  entities: "entity",
+  videos: "video",
+};
+
+const BOOL_CHIP_LABEL: Record<BoolSetKey, Record<YesNo, string>> = {
+  verdict:       { yes: "verdict section", no: "not in verdict" },
+  contradicted:  { yes: "contradicted",    no: "no contradictions" },
+  hasIn:         { yes: "cited by others", no: "not cited" },
+  hasOut:        { yes: "cites others",    no: "no outgoing deps" },
+};
+
+// Build pre-sorted BarRows with per-bucket counts from a projection.
+function makeCountRows<T>(
+  entries: ReadonlyArray<readonly [string, string]>,
+  items: T[],
+  project: (item: T) => string,
+): BarRow[] {
+  const rows: BarRow[] = entries.map(([id, label]) => ({ id, label, count: 0 }));
+  const byId = new Map(rows.map((r) => [r.id, r] as const));
+  for (const it of items) {
+    const row = byId.get(project(it));
+    if (row) row.count += 1;
+  }
+  return rows;
+}
+
+// ── result row ──────────────────────────────────────────────────
+interface RowProps {
+  claim: ClaimsIndexEntry;
+  nav: ReturnType<typeof useNavigate>;
+  bundle: ClaimsBundle;
+}
+function ClaimResultRow({ claim, nav, bundle }: RowProps) {
+  const contradictions = bundle.contradictionCount.get(claim.id) ?? 0;
+  const deps = bundle.depCounts.get(claim.id) ?? { in: 0, out: 0 };
+  const meta = bundle.videosById.get(claim.videoId);
+  const videoLabel = meta?.shortLabel ?? claim.videoId;
+  const videoTitle = meta?.title ?? claim.videoId;
+  return (
+    <Box
+      sx={{
+        border: "1px solid", borderColor: "divider",
+        borderRadius: 1, p: 1.5, mb: 1, cursor: "pointer",
+        "&:hover": { backgroundColor: "action.hover" },
+      }}
+      onClick={() => nav(`/claim/${encodeURIComponent(claim.id)}`)}
+    >
+      <Stack direction="row" spacing={1} sx={{
+        mb: 0.5, alignItems: "center", flexWrap: "wrap",
+      }}>
+        <Chip
+          size="small"
+          label={claim.kind}
+          sx={{
+            backgroundColor: KIND_COLOR[claim.kind] ?? "#757575",
+            color: "white", fontSize: "0.7rem",
+          }}
+        />
+        {claim.hostStance && (
+          <Chip size="small" label={`host: ${claim.hostStance}`}
+            variant="outlined" sx={{ fontSize: "0.7rem" }} />
+        )}
+        {claim.inVerdictSection && (
+          <Chip size="small" variant="outlined" label="verdict"
+            sx={{ fontSize: "0.7rem" }} />
+        )}
+        <MuiLink
+          component="button"
+          variant="caption"
+          title={videoTitle === videoLabel ? undefined : videoTitle}
+          onClick={(e) => {
+            e.stopPropagation();
+            nav(`/video/${claim.videoId}`);
+          }}
+        >
+          {videoLabel}
+        </MuiLink>
+        {contradictions > 0 && (
+          <Chip
+            size="small"
+            label={`⚠ ${contradictions} contradiction${contradictions > 1 ? "s" : ""}`}
+            color="warning" variant="outlined"
+            sx={{ fontSize: "0.7rem" }}
+          />
+        )}
+        {(deps.in > 0 || deps.out > 0) && (
+          <Chip
+            size="small" variant="outlined"
+            label={`${deps.out} out · ${deps.in} in`}
+            sx={{ fontSize: "0.7rem" }}
+            title="outgoing / incoming dependencies"
+          />
+        )}
+      </Stack>
+      <Typography variant="body2" sx={{ mb: 0.5 }}>{claim.text}</Typography>
+      <Stack spacing={0.25} sx={{ mb: 0.5 }}>
+        <TruthBar
+          value={claim.derivedTruth ?? claim.directTruth ?? null}
+          source={claim.truthSource}
+          label="truth"
+        />
+        <TruthBar value={claim.confidence} label="confidence" />
+      </Stack>
+      {claim.tags && claim.tags.length > 0 && (
+        <Box sx={{ mb: 0.5 }}>
+          {claim.tags.map((t) => (
+            <Typography
+              key={t}
+              component="span"
+              variant="caption"
+              sx={{
+                color: "text.secondary", mr: 0.5,
+                fontFamily: "monospace",
+              }}
+            >
+              #{t}
+            </Typography>
+          ))}
+        </Box>
+      )}
+      {claim.entities.length > 0 && (
+        <Box sx={{
+          display: "flex", flexWrap: "wrap", gap: 0.5, alignItems: "center",
+        }}>
+          <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
+            entities:
+          </Typography>
+          {claim.entities.slice(0, 6).map((k) => (
+            <Chip
+              key={k}
+              size="small"
+              variant="outlined"
+              clickable
+              label={k}
+              onClick={(e) => {
+                e.stopPropagation();
+                nav(`/entity/${encodeURIComponent(k)}`);
+              }}
+              sx={{ fontSize: "0.7rem" }}
+            />
+          ))}
+          {claim.entities.length > 6 && (
+            <Typography variant="caption" color="text.secondary">
+              +{claim.entities.length - 6} more
+            </Typography>
+          )}
+        </Box>
+      )}
+    </Box>
+  );
 }
