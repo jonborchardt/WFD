@@ -62,14 +62,37 @@ export function AboutPage() {
           is the read-only front end on top of all of that.
         </Typography>
 
+        <Typography variant="h5" sx={{ mt: 4 }} gutterBottom>Claims &amp; contradictions</Typography>
+        <Typography paragraph>
+          On top of the relationship graph, an AI pass over each transcript
+          extracts <strong>claims</strong>: thesis-level statements the host
+          makes, each with evidence quotes, a truth score, and (where
+          relevant) <em>dependencies</em> on other claims — "this follows
+          from," "this contradicts," "this presupposes." A reasoning layer
+          then propagates truth through the claim graph, flags
+          contradictions (within a single episode, between episodes, or when
+          a presupposition is broken), and supports counterfactual queries:
+          "if this claim were false, which others would move?"
+        </Typography>
+        <Typography paragraph>
+          Everything is searchable by <strong>tag</strong> and filterable
+          by truth, kind, and stance. Each claim row carries a truth bar
+          and a confidence bar so you can see at a glance whether the
+          AI thinks the host is asserting something firmly, steelmanning
+          a fringe idea, or explicitly debunking it.
+        </Typography>
+
         <Typography variant="h5" sx={{ mt: 4 }} gutterBottom>What you can do here</Typography>
         <Typography component="div" paragraph>
           <ul>
             <li>Browse the full catalog of ingested videos on the <Link component="button" onClick={() => nav("/")}>home page</Link>.</li>
-            <li>Explore the extracted <Link component="button" onClick={() => nav("/relationships")}>relationships graph</Link> across the entire corpus.</li>
+            <li>Explore the extracted <Link component="button" onClick={() => nav("/relationships")}>relationships graph</Link> across the entire corpus, optionally colored by derived truth.</li>
+            <li>Read thesis-level <Link component="button" onClick={() => nav("/claims")}>claims</Link> with truth + evidence, sorted by certainty or by contradiction count.</li>
+            <li>Inspect flagged <Link component="button" onClick={() => nav("/contradictions")}>contradictions</Link> — within-video, cross-video, or broken presuppositions.</li>
+            <li>Visualize <Link component="button" onClick={() => nav("/claim-graph")}>claim graph</Link> — seed by an entity, video, or claim and see dependencies, contradictions, and shared-evidence links.</li>
             <li>Slice the corpus by entity type, episode, or theme in <Link component="button" onClick={() => nav("/facets")}>facets</Link>.</li>
             <li>Click any entity to see every video it appears in, with jump-to-timestamp links.</li>
-            <li><strong>Spotted something wrong?</strong> Every entity and relationship has a <code>⋯</code> menu (or shift+click) that opens a prefilled GitHub issue so we can fix it.</li>
+            <li><strong>Spotted something wrong?</strong> Every entity, relationship, claim, and contradiction has a pencil (<code>✎</code>) edit button that opens a prefilled GitHub issue so we can fix it. You can suggest truth changes, better wording, new tags, or flag a contradiction the detector missed.</li>
           </ul>
         </Typography>
 

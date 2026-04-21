@@ -3,7 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Container, Typography, Box, Paper, Button, Link, Chip, TextField, Stack } from "@mui/material";
 import { ENTITY_TYPE_COLOR } from "../components/catalog-columns";
 import { EntitySuggestions } from "../components/EntitySuggestions";
+import { PageLoading } from "../components/PageLoading";
 import { fetchCatalog, fetchEntityIndex, fetchEntityVideos } from "../lib/data";
+import { beginLoad } from "../lib/loading";
 import { fmtTimestamp } from "../lib/format";
 import type { VideoRow, EntityIndexEntry, TranscriptSpan } from "../types";
 
@@ -29,6 +31,7 @@ export function EntityDetailPage() {
   useEffect(() => {
     if (!entityId) return;
     setLoading(true);
+    const endLoad = beginLoad();
     Promise.all([fetchEntityIndex(), fetchEntityVideos(), fetchCatalog()]).then(([index, ev, catalog]) => {
       const found = index.find((e) => e.id === entityId) || null;
       setEntity(found);
@@ -57,10 +60,10 @@ export function EntityDetailPage() {
       });
       setVideos(vids);
       setLoading(false);
-    });
+    }).finally(endLoad);
   }, [entityId]);
 
-  if (loading) return <Container sx={{ py: 3 }}><Typography>loading...</Typography></Container>;
+  if (loading) return <PageLoading label="loading entity…" />;
 
   const type = entity?.type || entityId.split(":")[0];
   const canonical = entity?.canonical || entityId.split(":").slice(1).join(":");

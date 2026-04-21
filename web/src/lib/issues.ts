@@ -222,6 +222,143 @@ export function videoRenameIssueUrl(
   );
 }
 
+// ---- Claim / contradiction edit-requests ---------------------------
+
+export function claimTruthIssueUrl(
+  claim: { id: string; videoId: string; text: string; directTruth?: number | null },
+  suggestedTruth: number,
+  rationale: string,
+): string {
+  const apply = applyLink("claim-truth-override", {
+    claimId: claim.id,
+    directTruth: String(suggestedTruth),
+    rationale,
+  });
+  const title = `[edit-request] claim truth → ${suggestedTruth.toFixed(2)} (${claim.id})`;
+  const lines = [
+    `**Action:** override claim truth`,
+    `**Claim ID:** \`${claim.id}\``,
+    `**Video:** https://www.youtube.com/watch?v=${claim.videoId}`,
+    `**Claim text:** ${claim.text}`,
+    `**Current truth:** ${claim.directTruth ?? "—"}`,
+    `**Suggested truth:** ${suggestedTruth.toFixed(2)}`,
+    "",
+    `**Rationale / evidence:** ${rationale}`,
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,claim-truth",
+    }).toString()
+  );
+}
+
+export function claimFieldIssueUrl(
+  claim: { id: string; videoId: string; text: string },
+  field: "text" | "kind" | "hostStance" | "rationale" | "tags",
+  suggestedValue: string,
+): string {
+  const apply = applyLink("claim-field-override", {
+    claimId: claim.id,
+    [field]: suggestedValue,
+  });
+  const title = `[edit-request] claim ${field} (${claim.id})`;
+  const lines = [
+    `**Action:** edit claim ${field}`,
+    `**Claim ID:** \`${claim.id}\``,
+    `**Video:** https://www.youtube.com/watch?v=${claim.videoId}`,
+    `**Claim text:** ${claim.text}`,
+    `**Field:** ${field}`,
+    `**Suggested value:** ${suggestedValue}`,
+    "",
+    "**Reason / evidence:** <!-- why this change? -->",
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: `edit-request,claim-${field}`,
+    }).toString()
+  );
+}
+
+export function contradictionDismissIssueUrl(
+  leftId: string,
+  rightId: string,
+  reason: string,
+): string {
+  const apply = applyLink("dismiss-contradiction", {
+    a: leftId,
+    b: rightId,
+    reason,
+  });
+  const title = `[edit-request] dismiss contradiction (${leftId} ↔ ${rightId})`;
+  const lines = [
+    `**Action:** dismiss contradiction (not a real conflict)`,
+    `**Claim A:** \`${leftId}\``,
+    `**Claim B:** \`${rightId}\``,
+    `**Reason:** ${reason}`,
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,dismiss-contradiction",
+    }).toString()
+  );
+}
+
+export function customContradictionIssueUrl(
+  leftId: string,
+  rightId: string,
+  summary: string,
+): string {
+  const apply = applyLink("custom-contradiction", {
+    a: leftId,
+    b: rightId,
+    summary,
+  });
+  const title = `[edit-request] flag new contradiction (${leftId} ↔ ${rightId})`;
+  const lines = [
+    `**Action:** flag new contradiction (detector missed)`,
+    `**Claim A:** \`${leftId}\``,
+    `**Claim B:** \`${rightId}\``,
+    `**Summary:** ${summary}`,
+    "",
+    "---",
+    "",
+    `**Admin apply link (localhost only):** ${apply}`,
+  ];
+  return (
+    CAPTIONS_ISSUES_URL +
+    "?" +
+    new URLSearchParams({
+      title,
+      body: lines.join("\n"),
+      labels: "edit-request,flag-contradiction",
+    }).toString()
+  );
+}
+
 export function deleteRelationIssueUrl(
   videoId: string,
   subjectKey: string,

@@ -10,7 +10,7 @@
 //     link baked into the body.
 //
 // Triggers:
-//   - Visible ⋯/✎ icon button (always present)
+//   - Visible ✎ pencil icon button (always present)
 //   - shift+click anywhere on the entity chip or relationship row
 //
 // The popover renders through a React portal into document.body with
@@ -170,12 +170,20 @@ export function EntityMenuButton(props: EntityMenuProps) {
       <button
         ref={btnRef}
         onClick={(e) => { e.stopPropagation(); setOpen(true); }}
-        title="entity actions"
+        title="edit entity"
+        aria-label="edit entity"
         style={{
           border: "none", background: "none", cursor: "pointer",
-          padding: "0 4px", fontSize: 14, color: "#888",
+          padding: "0 4px", color: "#888",
+          display: "inline-flex", alignItems: "center",
         }}
-      >⋯</button>
+      >
+        {/* pencil icon — inline SVG keeps the button free of MUI
+            IconButton styling so it fits tightly inside entity chips */}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+        </svg>
+      </button>
       {open && btnRef.current && (
         <Popover anchor={btnRef.current} onClose={() => setOpen(false)}>
           {IS_ADMIN ? (

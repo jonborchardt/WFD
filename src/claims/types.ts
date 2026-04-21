@@ -50,6 +50,11 @@ export interface Claim {
   dependencies?: ClaimDependency[];
   inVerdictSection?: boolean;
   hostStance?: HostStance;
+  // Free-form short tags for search / grouping. Lowercase kebab-case by
+  // convention (e.g. ["ufo", "area-51", "government-cover-up"]). AI may
+  // seed these during claim extraction; admin can override via
+  // aliases.json `claimTagOverrides[]`.
+  tags?: string[];
 }
 
 export interface PersistedClaims {

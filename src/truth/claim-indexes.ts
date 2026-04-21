@@ -39,6 +39,8 @@ export interface ClaimsIndexEntry {
   truthSource: TruthSource;
   overrideRationale?: string;
   inVerdictSection?: boolean;
+  tags: string[];
+  fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale" | "tags">;
 }
 
 export interface ClaimsIndexFile {
@@ -77,6 +79,27 @@ export interface ClaimOverrideEntry {
   rationale?: string;
 }
 
+export interface ClaimFieldOverride {
+  claimId: ClaimId;
+  text?: string;
+  kind?: Claim["kind"];
+  hostStance?: Claim["hostStance"];
+  rationale?: string;
+  tags?: string[];
+}
+
+export interface ContradictionDismissal {
+  a: ClaimId;
+  b: ClaimId;
+}
+
+export interface CustomContradictionInput {
+  a: ClaimId;
+  b: ClaimId;
+  summary: string;
+  sharedEntities?: string[];
+}
+
 export interface BuildClaimIndexesInput {
   claims: Claim[];
   videoCount: number;
@@ -84,6 +107,12 @@ export interface BuildClaimIndexesInput {
   truthOverrides?: ClaimOverrideEntry[];
   /** Claim ids to drop entirely before any reasoning. */
   deletedClaimIds?: ReadonlySet<ClaimId>;
+  /** Text-style admin overrides applied before reasoning. */
+  fieldOverrides?: ClaimFieldOverride[];
+  /** Contradictions the operator has dismissed (by sorted claim-id pair). */
+  dismissedContradictions?: ContradictionDismissal[];
+  /** Admin-authored contradictions to surface as `kind: "manual"`. */
+  customContradictions?: CustomContradictionInput[];
 }
 
 export interface BuildClaimIndexesResult {
@@ -100,7 +129,25 @@ export function buildClaimIndexes(
   const overrideById = new Map<ClaimId, ClaimOverrideEntry>();
   for (const o of overrides) overrideById.set(o.claimId, o);
 
-  const claims = input.claims.filter((c) => !deleted.has(c.id));
+  const fieldOverrideById = new Map<ClaimId, ClaimFieldOverride>();
+  for (const o of input.fieldOverrides ?? []) fieldOverrideById.set(o.claimId, o);
+
+  // Apply field overrides up front so propagation and contradiction
+  // detection see the admin-corrected view.
+  const claims = input.claims
+    .filter((c) => !deleted.has(c.id))
+    .map((c) => {
+      const fo = fieldOverrideById.get(c.id);
+      if (!fo) return c;
+      return {
+        ...c,
+        text: fo.text ?? c.text,
+        kind: (fo.kind ?? c.kind) as Claim["kind"],
+        hostStance: (fo.hostStance ?? c.hostStance) as Claim["hostStance"],
+        rationale: fo.rationale ?? c.rationale,
+        tags: fo.tags ?? c.tags,
+      };
+    });
 
   const pinned = new Map<ClaimId, number>();
   for (const o of overrides) {
@@ -119,6 +166,21 @@ export function buildClaimIndexes(
     else if (derived !== null && derived !== direct) truthSource = "derived";
     else if (direct !== null) truthSource = "direct";
     else truthSource = "uncalibrated";
+    const fo = fieldOverrideById.get(c.id);
+    let fieldOverrides: ClaimsIndexEntry["fieldOverrides"];
+    if (fo) {
+      // Only list fields whose override is actually set. Stage-side
+      // loaders may materialize undefined keys (e.g. `{ claimId, text,
+      // kind, ... }` built from a v2 file where only `tags` was set),
+      // so filter by defined value rather than by key presence.
+      const keys: Array<"text" | "kind" | "hostStance" | "rationale" | "tags"> = [];
+      if (fo.text !== undefined) keys.push("text");
+      if (fo.kind !== undefined) keys.push("kind");
+      if (fo.hostStance !== undefined) keys.push("hostStance");
+      if (fo.rationale !== undefined) keys.push("rationale");
+      if (fo.tags !== undefined) keys.push("tags");
+      if (keys.length > 0) fieldOverrides = keys;
+    }
     return {
       id: c.id,
       videoId: c.videoId,
@@ -138,6 +200,8 @@ export function buildClaimIndexes(
       truthSource,
       overrideRationale: override?.rationale,
       inVerdictSection: c.inVerdictSection,
+      tags: c.tags ?? [],
+      fieldOverrides,
     };
   });
 
@@ -178,15 +242,45 @@ export function buildClaimIndexes(
     if (!override) return c;
     return { ...c, directTruth: override.directTruth };
   });
-  const conflicts = detectClaimContradictions(claimsForContradiction);
+  const detected = detectClaimContradictions(claimsForContradiction);
+
+  // Drop dismissed contradictions.
+  const dismissed = new Set<string>();
+  for (const d of input.dismissedContradictions ?? []) {
+    dismissed.add(pairKey(d.a, d.b));
+  }
+  const surviving = detected.filter(
+    (c) => !dismissed.has(pairKey(c.left, c.right)),
+  );
+
+  // Append custom (admin-authored) contradictions.
+  const claimIds = new Set(claims.map((c) => c.id));
+  const custom: ClaimContradiction[] = [];
+  for (const cx of input.customContradictions ?? []) {
+    if (!claimIds.has(cx.a) || !claimIds.has(cx.b)) continue;
+    if (dismissed.has(pairKey(cx.a, cx.b))) continue;
+    custom.push({
+      kind: "manual",
+      left: cx.a,
+      right: cx.b,
+      sharedEntities: cx.sharedEntities,
+      summary: cx.summary,
+    });
+  }
+  const all = [...surviving, ...custom];
+
   const byKind: Record<string, number> = {};
-  for (const c of conflicts) byKind[c.kind] = (byKind[c.kind] ?? 0) + 1;
+  for (const c of all) byKind[c.kind] = (byKind[c.kind] ?? 0) + 1;
   const contradictions: ContradictionsFile = {
     generatedAt,
-    total: conflicts.length,
+    total: all.length,
     byKind,
-    contradictions: conflicts,
+    contradictions: all,
   };
 
   return { index, dependencyGraph, contradictions };
+}
+
+function pairKey(a: string, b: string): string {
+  return a < b ? `${a}~~${b}` : `${b}~~${a}`;
 }

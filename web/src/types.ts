@@ -174,6 +174,7 @@ export interface Claim {
   dependencies?: ClaimDependency[];
   inVerdictSection?: boolean;
   hostStance?: HostStance | null;
+  tags?: string[];
 }
 
 export interface PersistedClaims {
@@ -186,12 +187,14 @@ export interface PersistedClaims {
 }
 
 export interface ClaimsIndexEntry extends Omit<Claim,
-  "evidence" | "rationale" | "dependencies"
+  "evidence" | "rationale" | "dependencies" | "tags"
 > {
   derivedTruth: number | null;
   truthSource: TruthSource;
   overrideRationale?: string;
   dependencies: ClaimDependency[];
+  tags: string[];
+  fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale" | "tags">;
 }
 
 export interface ClaimsIndexFile {
@@ -218,11 +221,12 @@ export interface DependencyGraphFile {
 }
 
 export interface ClaimContradiction {
-  kind: "pair" | "broken-presupposition" | "cross-video";
+  kind: "pair" | "broken-presupposition" | "cross-video" | "manual";
   left: string;
   right: string;
   sharedEntities?: string[];
   similarity?: number;
+  matchReason?: "jaccard" | "strong-overlap";
   summary: string;
 }
 

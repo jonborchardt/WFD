@@ -143,3 +143,13 @@ export function fetchEdgeTruth(): Promise<EdgeTruthFile | null> {
   }
   return edgeTruthPromise;
 }
+
+// Bust every cached corpus-level promise that reflects claim/contradiction
+// state. Callers mutate via /api/aliases/* then call this + re-fetch the
+// specific data they render, instead of doing window.location.reload().
+export function invalidateClaimsCaches(): void {
+  claimsIndexPromise = null;
+  dependencyGraphPromise = null;
+  contradictionsPromise = null;
+  edgeTruthPromise = null;
+}

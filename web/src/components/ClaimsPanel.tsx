@@ -11,14 +11,16 @@ import type {
 interface Props {
   videoId: string;
   claims: PersistedClaims | null;
-  indexEntries?: ClaimsIndexEntry[];          // corpus-wide, optional
-  contradictions?: ClaimContradiction[];      // corpus-wide, optional
+  indexEntries?: ClaimsIndexEntry[];          // this video's claims from the corpus index
+  contradictions?: ClaimContradiction[];      // touching this video
+  corpusIndex?: ClaimsIndexEntry[];           // full corpus (for counterfactual)
+  onMutated?: () => void;
 }
 
 // Per-video claims section. Renders nothing (apart from a muted hint) if
 // the video has no claim file. Inbound deps + cross-video contradiction
 // info are derived once and passed to each ClaimRow.
-export function ClaimsPanel({ videoId, claims, indexEntries, contradictions }: Props) {
+export function ClaimsPanel({ videoId, claims, indexEntries, contradictions, corpusIndex, onMutated }: Props) {
   const indexById = useMemo(() => {
     const m = new Map<string, ClaimsIndexEntry>();
     for (const e of indexEntries ?? []) m.set(e.id, e);
@@ -93,12 +95,14 @@ export function ClaimsPanel({ videoId, claims, indexEntries, contradictions }: P
           <ClaimRow
             key={c.id}
             videoId={videoId}
-            claim={c}
+            claim={{ ...c, tags: idx?.tags ?? c.tags }}
             derivedTruth={idx?.derivedTruth ?? null}
             truthSource={idx?.truthSource}
             overrideRationale={idx?.overrideRationale}
             inboundDeps={inboundByClaim.get(c.id)}
             contradictions={contradictionsByClaim.get(c.id)}
+            corpusIndex={corpusIndex}
+            onMutated={onMutated}
           />
         );
       })}

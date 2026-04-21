@@ -200,13 +200,33 @@ fetched → entities → relations → ai
                    →  per-claim
 
 graph-level (run once after all per-video stages):
-  propagation → contradictions → novel → indexes
+  propagation → contradictions → novel → indexes → claim-indexes
 ```
 
 `aiStage.dependsOn: ["relations"]`. `perClaimStage.dependsOn: ["relations"]`.
-Graph-level stages (`propagation`, `contradictions`, `novel`, `indexes`)
-read the `graph.dirtyAt` watermark which gets bumped whenever `entities`
-or `relations` upserts into the graph store.
+Graph-level stages (`propagation`, `contradictions`, `novel`, `indexes`,
+`claim-indexes`) read the `graph.dirtyAt` watermark which gets bumped
+whenever `entities` or `relations` upserts into the graph store.
+
+Additionally, **claim-file staleness**: when `entities` or `relations`
+regenerates a per-video output, a top-level `_stale` marker is stamped
+into `data/claims/<videoId>.json` (the file is never deleted — it
+represents AI labor). The admin video page surfaces the marker as a
+banner so operators know to re-run `/ai-claims-extraction` for that id.
+
+The `claim-indexes` stage reads every `data/claims/<id>.json`, applies
+the claim-level aliases sections (`claimTruthOverrides`, `claimDeletions`,
+`claimFieldOverrides`, `contradictionDismissals`, `customContradictions`)
+and writes four corpus files under `data/claims/`:
+
+- `claims-index.json` — flat list with `derivedTruth` + `truthSource`
+  (`direct` / `derived` / `override` / `uncalibrated`) per claim.
+- `dependency-graph.json` — claim DAG edges with kinds.
+- `contradictions.json` — pair / broken-presupposition / cross-video /
+  manual, respecting dismissals.
+- `edge-truth.json` — `${subjectId}|${predicate}|${objectId}` →
+  averaged derived truth of citing claims, for the relationships-graph
+  truth overlay.
 
 ## Cross-transcript canonicalization
 
@@ -292,6 +312,21 @@ The schema lives in [src/graph/aliases-schema.ts](src/graph/aliases-schema.ts).
       "object": "event:kickstarter campaign",
       "timeStart": 1243
     }
+  ],
+  "claimTruthOverrides": [
+    { "claimId": "abc123:c_0002", "directTruth": 0.15, "rationale": "cited source retracted" }
+  ],
+  "claimDeletions": [
+    { "claimId": "abc123:c_0007" }
+  ],
+  "claimFieldOverrides": [
+    { "claimId": "abc123:c_0003", "text": "cleaner rephrased claim", "tags": ["ufo", "area-51"] }
+  ],
+  "contradictionDismissals": [
+    { "a": "abc123:c_0001", "b": "xyz456:c_0004", "reason": "different contexts" }
+  ],
+  "customContradictions": [
+    { "a": "abc123:c_0001", "b": "xyz456:c_0004", "summary": "operator-authored conflict the detector missed" }
   ]
 }
 ```
@@ -304,6 +339,11 @@ The schema lives in [src/graph/aliases-schema.ts](src/graph/aliases-schema.ts).
 - `dismissed` — operator already reviewed this cluster; don't reappear.
 - `videoMerges` — per-video alias. Applies only when aggregating that specific video.
 - `deletedRelations` — suppress one specific relationship in one video. `(videoId, subject, predicate, object, timeStart)` is the natural key.
+- `claimTruthOverrides` — pin a claim's `directTruth` (and optional rationale). Applied as an anchor during the `claim-indexes` propagation, so dependents recompute accordingly. Rendered in the UI as "truth 0.15 (override)".
+- `claimDeletions` — drop a claim entirely from the corpus-wide index. Per-video claim file is never mutated.
+- `claimFieldOverrides` — replace any subset of `text` / `kind` / `hostStance` / `rationale` / `tags` for a single claim. Omitted fields fall through to the on-disk value. Applied before propagation so overrides are consistent across reasoning + UI.
+- `contradictionDismissals` — mark a detected contradiction pair (keyed by sorted claim ids) as not-a-conflict. Filtered out of `contradictions.json` at aggregation time.
+- `customContradictions` — operator-authored contradictions the detector missed. Surface in `contradictions.json` with `kind: "manual"`.
 
 **Stable sort**: every write sorts each section by natural key, so diffs stay minimal across edits.
 
@@ -653,10 +693,35 @@ that produces a static site deployable to GitHub Pages.
 
 ```bash
 cd web && npm run build
-cp -r ../data/catalog ../data/entities ../data/relations ../data/graph dist/data/
+cp -r ../data/catalog ../data/entities ../data/relations ../data/graph ../data/claims dist/data/
 # optionally: cp -r ../data/transcripts dist/data/  (large; video detail degrades gracefully)
 # then push dist/ to gh-pages
 ```
+
+### Routes
+
+Public routes:
+- `/` — catalog
+- `/video/:id` — video detail with entities, relations, and a Claims panel
+  (truth bars, expandable evidence, inbound+outbound dep chips, contradiction
+  badges, counterfactual toggle)
+- `/entity/:key` — per-entity rollup
+- `/relationships` — ReactFlow+ELK graph with "color by truth" toggle,
+  edge-detail panel listing citing claims
+- `/claims` — corpus-wide claim browser, sortable (most certain / most
+  uncertain / most contradicted), filterable by kind + text + tag
+- `/contradictions` — tabbed browser for pair / broken-presupposition /
+  cross-video / manual contradictions, filterable by text + tag
+- `/claim-graph` — ReactFlow view of a claim neighborhood seeded by entity,
+  video, or claim id; edges show `supports`/`contradicts`/`presupposes`/
+  `elaborates`/`shared-evidence`/`contradiction`; nodes colored by derived
+  truth
+- `/facets`, `/about`
+
+Admin-only adds `/admin` and the ⋯ menu on claim rows (override truth,
+edit text/kind/stance/rationale/tags, delete), the ✎ menu on
+contradictions (dismiss, un-dismiss, add custom, remove custom), and the
+⋯ menu on edges/entities.
 
 ### Architecture
 

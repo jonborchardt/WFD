@@ -479,7 +479,13 @@ export function RelationshipsPage() {
           </svg>
           <Background />
           <Controls />
-          <MiniMap nodeColor={(n: RfNode) => (n.style?.background as string | undefined) || "#888"} pannable zoomable />
+          <MiniMap
+            pannable
+            zoomable
+            nodeColor={(n: RfNode) => (n.style?.background as string | undefined) || "#9e9e9e"}
+            maskColor="rgba(0,0,0,0.55)"
+            style={{ background: "#1e1e1e", border: "1px solid rgba(255,255,255,0.15)" }}
+          />
         </ReactFlow>
       )}
 

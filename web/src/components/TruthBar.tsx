@@ -11,9 +11,10 @@ interface Props {
 
 // A single horizontal bar showing a 0..1 score. Colored by the truth
 // palette for truth values; rendered neutral gray for raw confidence bars
-// when `source === undefined` and `label === "confidence"`.
+// (detected via label). Track + midline are theme-adaptive so the bar
+// reads correctly in dark mode.
 export function TruthBar({ value, source, label = "truth", width = 160 }: Props) {
-  if (value === null || value === undefined) {
+  if (value === null || value === undefined || !Number.isFinite(value)) {
     return (
       <Typography variant="caption" color="text.secondary" sx={{ fontStyle: "italic" }}>
         {label === "confidence" ? "—" : "uncalibrated"}
@@ -22,7 +23,6 @@ export function TruthBar({ value, source, label = "truth", width = 160 }: Props)
   }
   const pct = Math.max(0, Math.min(1, value));
   const isTruth = label !== "confidence";
-  const fill = isTruth ? truthColor(pct) : "#757575";
   const tip = isTruth
     ? `${label} ${pct.toFixed(2)} · ${truthLabel(pct)}${source ? ` (${source})` : ""}`
     : `${label} ${pct.toFixed(2)}`;
@@ -34,7 +34,7 @@ export function TruthBar({ value, source, label = "truth", width = 160 }: Props)
             width,
             height: 8,
             borderRadius: 1,
-            background: "#e0e0e0",
+            backgroundColor: "action.disabledBackground",
             position: "relative",
             overflow: "hidden",
           }}
@@ -46,7 +46,8 @@ export function TruthBar({ value, source, label = "truth", width = 160 }: Props)
               top: 0,
               bottom: 0,
               width: `${pct * 100}%`,
-              background: fill,
+              background: isTruth ? truthColor(pct) : undefined,
+              backgroundColor: isTruth ? undefined : "text.secondary",
             }}
           />
           {isTruth && (
@@ -57,7 +58,8 @@ export function TruthBar({ value, source, label = "truth", width = 160 }: Props)
                 top: 0,
                 bottom: 0,
                 width: 1,
-                background: "rgba(255,255,255,0.7)",
+                backgroundColor: "background.paper",
+                opacity: 0.7,
               }}
             />
           )}

@@ -18,7 +18,7 @@
 // Graph stages read the `graph.dirtyAt` watermark. A stage is stale when its
 // last-run timestamp is older than dirtyAt (or absent).
 
-import { existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { CatalogRow } from "../catalog/catalog.js";
 import { VideoStage, GraphStage, StageOutcome } from "./types.js";
@@ -38,7 +38,10 @@ import { neuralToGraph } from "../graph/adapt.js";
 import {
   buildCorpusEntities,
   buildMergeClusters,
+  entityKeyOf,
+  isDeleted,
   readAliases,
+  resolveKey,
 } from "../graph/canonicalize.js";
 import { readAliasesFile } from "../graph/aliases-schema.js";
 import {
@@ -546,13 +549,18 @@ export const claimIndexesStage: GraphStage = {
       return { kind: "skip", reason: "data/claims/ missing" };
     }
 
-    const { readdirSync } = await import("node:fs");
+    // Exclude the corpus-level reports that live alongside per-video
+    // claim files — they would fail the `claims: Claim[]` shape check
+    // anyway, but skipping them up front avoids noisy logger warnings
+    // on a routine stage run.
+    const CORPUS_REPORT_NAMES = new Set([
+      "claims-index.json",
+      "dependency-graph.json",
+      "contradictions.json",
+      "edge-truth.json",
+    ]);
     const files = readdirSync(claimsDir).filter(
-      (f) =>
-        f.endsWith(".json") &&
-        f !== "claims-index.json" &&
-        f !== "dependency-graph.json" &&
-        f !== "contradictions.json",
+      (f) => f.endsWith(".json") && !CORPUS_REPORT_NAMES.has(f),
     );
 
     const allClaims: Claim[] = [];
@@ -583,12 +591,34 @@ export const claimIndexesStage: GraphStage = {
       directTruth: e.directTruth,
       rationale: e.rationale,
     }));
+    const fieldOverrides = (aliases.claimFieldOverrides ?? []).map((e) => ({
+      claimId: e.claimId,
+      text: e.text,
+      kind: e.kind as Claim["kind"] | undefined,
+      hostStance: e.hostStance as Claim["hostStance"] | undefined,
+      rationale: e.rationale,
+      tags: e.tags,
+    }));
+    const dismissedContradictions = (aliases.contradictionDismissals ?? []).map(
+      (e) => ({ a: e.a, b: e.b }),
+    );
+    const customContradictions = (aliases.customContradictions ?? []).map(
+      (e) => ({
+        a: e.a,
+        b: e.b,
+        summary: e.summary,
+        sharedEntities: e.sharedEntities,
+      }),
+    );
 
     const result = buildClaimIndexes({
       claims: allClaims,
       videoCount,
       truthOverrides,
       deletedClaimIds,
+      fieldOverrides,
+      dismissedContradictions,
+      customContradictions,
     });
 
     // Build per-video "persisted edge id → aggregated graph edge id" map
@@ -603,20 +633,18 @@ export const claimIndexesStage: GraphStage = {
       if (!persistedEntities || !persistedRelations) continue;
       const mentionToEntityKey = new Map<string, string>();
       for (const m of persistedEntities.mentions) {
-        mentionToEntityKey.set(
-          m.id,
-          `${m.label}:${m.canonical.toLowerCase().trim()}`,
-        );
+        mentionToEntityKey.set(m.id, entityKeyOf(m.label, m.canonical));
       }
       const rel = new Map<string, string>();
       for (const pe of persistedRelations.edges) {
-        const subjKey = mentionToEntityKey.get(pe.subjectMentionId);
-        const objKey = mentionToEntityKey.get(pe.objectMentionId);
-        if (!subjKey || !objKey) continue;
-        const subjResolved = resolveAliasKey(subjKey, aliasMap);
-        const objResolved = resolveAliasKey(objKey, aliasMap);
-        if (!subjResolved || !objResolved || subjResolved === objResolved) continue;
-        rel.set(pe.id, `${subjResolved}|${pe.predicate}|${objResolved}`);
+        const subjRaw = mentionToEntityKey.get(pe.subjectMentionId);
+        const objRaw = mentionToEntityKey.get(pe.objectMentionId);
+        if (!subjRaw || !objRaw) continue;
+        if (isDeleted(subjRaw, aliasMap) || isDeleted(objRaw, aliasMap)) continue;
+        const subj = resolveKey(subjRaw, aliasMap);
+        const obj = resolveKey(objRaw, aliasMap);
+        if (subj === obj) continue;
+        rel.set(pe.id, `${subj}|${pe.predicate}|${obj}`);
       }
       perVideoEdgeToGraphEdge.set(vid, rel);
     }
@@ -654,23 +682,6 @@ export const claimIndexesStage: GraphStage = {
   },
 };
 
-// Follow alias merge chain up to 10 hops. Mirrors resolveKey in
-// src/graph/canonicalize.ts but inlined so claim-indexes stays a leaf
-// of the dependency tree.
-function resolveAliasKey(
-  key: string,
-  aliases: Record<string, string>,
-): string | null {
-  let cur = key;
-  for (let i = 0; i < 10; i++) {
-    if (aliases[cur] === "__deleted__" || aliases[cur] === "__hidden__") return null;
-    const next = aliases[cur];
-    if (!next || next === cur) return cur;
-    if (next.startsWith("__")) return cur;
-    cur = next;
-  }
-  return cur;
-}
 
 export const novelStage: GraphStage = {
   name: "novel",

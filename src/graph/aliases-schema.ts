@@ -69,6 +69,38 @@ export interface ClaimDeletionEntry {
   claimId: string;
 }
 
+// Operator override of text-style claim fields. Only fields the admin
+// sets override the stored claim; omitted fields fall through to the
+// on-disk value. Never mutates data/claims/<videoId>.json — the per-
+// video file stays canonical source.
+export interface ClaimFieldOverrideEntry {
+  claimId: string;
+  text?: string;
+  kind?: string;          // one of ClaimKind values
+  hostStance?: string;    // one of HostStance values
+  rationale?: string;
+  tags?: string[];        // replaces the claim's own tags when present
+}
+
+// Operator decision to dismiss a detected contradiction. Keyed by the
+// sorted pair of claim ids (so left/right order is canonical). Dismissed
+// contradictions are filtered out of contradictions.json at aggregation
+// time.
+export interface ContradictionDismissalEntry {
+  a: string;  // claim id, lo
+  b: string;  // claim id, hi
+  reason?: string;
+}
+
+// Operator-authored contradiction that the detector missed. Surfaced in
+// contradictions.json with `kind: "manual"` and the operator's note.
+export interface CustomContradictionEntry {
+  a: string;           // claim id, lo
+  b: string;           // claim id, hi
+  summary: string;
+  sharedEntities?: string[];
+}
+
 export interface AliasesFile {
   schemaVersion: 2;
   merges: MergeEntry[];
@@ -80,6 +112,9 @@ export interface AliasesFile {
   deletedRelations: DeletedRelationEntry[];
   claimTruthOverrides: ClaimTruthOverrideEntry[];
   claimDeletions: ClaimDeletionEntry[];
+  claimFieldOverrides: ClaimFieldOverrideEntry[];
+  contradictionDismissals: ContradictionDismissalEntry[];
+  customContradictions: CustomContradictionEntry[];
 }
 
 // Sentinels used internally in the flat AliasMap runtime rep. They
@@ -105,6 +140,9 @@ export function emptyAliasesFile(): AliasesFile {
     deletedRelations: [],
     claimTruthOverrides: [],
     claimDeletions: [],
+    claimFieldOverrides: [],
+    contradictionDismissals: [],
+    customContradictions: [],
   };
 }
 
@@ -154,6 +192,9 @@ function normalizeFile(raw: Partial<AliasesFile>): AliasesFile {
     deletedRelations: raw.deletedRelations ?? empty.deletedRelations,
     claimTruthOverrides: raw.claimTruthOverrides ?? empty.claimTruthOverrides,
     claimDeletions: raw.claimDeletions ?? empty.claimDeletions,
+    claimFieldOverrides: raw.claimFieldOverrides ?? empty.claimFieldOverrides,
+    contradictionDismissals: raw.contradictionDismissals ?? empty.contradictionDismissals,
+    customContradictions: raw.customContradictions ?? empty.customContradictions,
   };
 }
 
@@ -195,6 +236,15 @@ function sortFile(file: AliasesFile): AliasesFile {
     claimDeletions: [...(file.claimDeletions ?? [])].sort((a, b) =>
       a.claimId.localeCompare(b.claimId),
     ),
+    claimFieldOverrides: [...(file.claimFieldOverrides ?? [])].sort((a, b) =>
+      a.claimId.localeCompare(b.claimId),
+    ),
+    contradictionDismissals: [...(file.contradictionDismissals ?? [])]
+      .map((e) => (e.a < e.b ? e : { ...e, a: e.b, b: e.a }))
+      .sort((x, y) => x.a.localeCompare(y.a) || x.b.localeCompare(y.b)),
+    customContradictions: [...(file.customContradictions ?? [])]
+      .map((e) => (e.a < e.b ? e : { ...e, a: e.b, b: e.a }))
+      .sort((x, y) => x.a.localeCompare(y.a) || x.b.localeCompare(y.b)),
   };
 }
 
@@ -495,5 +545,120 @@ export function addClaimDeletion(dataDir: string, claimId: string): void {
 export function removeClaimDeletion(dataDir: string, claimId: string): void {
   mutate(dataDir, (f) => {
     f.claimDeletions = f.claimDeletions.filter((e) => e.claimId !== claimId);
+  });
+}
+
+// Merge fields into an existing override record, or create a new one.
+// `patch` may contain any subset of the override-able fields; anything
+// absent is left unchanged on the existing record.
+export function setClaimFieldOverride(
+  dataDir: string,
+  claimId: string,
+  patch: Partial<Omit<ClaimFieldOverrideEntry, "claimId">>,
+): void {
+  mutate(dataDir, (f) => {
+    const existing = f.claimFieldOverrides.find((e) => e.claimId === claimId);
+    const merged: ClaimFieldOverrideEntry = { ...(existing ?? { claimId }), ...patch, claimId };
+    // Drop empty-string fields so the override doesn't accidentally
+    // overwrite an on-disk value with emptiness.
+    for (const k of ["text", "kind", "hostStance", "rationale"] as const) {
+      if (merged[k] !== undefined && (merged[k] as string).trim() === "") {
+        delete merged[k];
+      }
+    }
+    // Normalize tags: lowercase, trim, dedupe, sort. An empty array means
+    // the operator wants to clear tags; undefined means "no change".
+    if (merged.tags !== undefined) {
+      const cleaned = [
+        ...new Set(merged.tags.map((t) => t.trim().toLowerCase()).filter(Boolean)),
+      ].sort();
+      if (cleaned.length === 0) {
+        delete merged.tags;
+      } else {
+        merged.tags = cleaned;
+      }
+    }
+    f.claimFieldOverrides = f.claimFieldOverrides.filter((e) => e.claimId !== claimId);
+    // Only write the entry if it contains at least one override field.
+    const hasContent =
+      merged.text !== undefined ||
+      merged.kind !== undefined ||
+      merged.hostStance !== undefined ||
+      merged.rationale !== undefined ||
+      (merged.tags !== undefined && merged.tags.length > 0);
+    if (hasContent) f.claimFieldOverrides.push(merged);
+  });
+}
+
+export function removeClaimFieldOverride(dataDir: string, claimId: string): void {
+  mutate(dataDir, (f) => {
+    f.claimFieldOverrides = f.claimFieldOverrides.filter((e) => e.claimId !== claimId);
+  });
+}
+
+function sortedPair(a: string, b: string): [string, string] {
+  return a < b ? [a, b] : [b, a];
+}
+
+export function addContradictionDismissal(
+  dataDir: string,
+  a: string,
+  b: string,
+  reason?: string,
+): void {
+  const [lo, hi] = sortedPair(a, b);
+  mutate(dataDir, (f) => {
+    f.contradictionDismissals = f.contradictionDismissals.filter(
+      (e) => !(e.a === lo && e.b === hi),
+    );
+    const entry: ContradictionDismissalEntry = { a: lo, b: hi };
+    if (reason && reason.trim()) entry.reason = reason;
+    f.contradictionDismissals.push(entry);
+  });
+}
+
+export function removeContradictionDismissal(
+  dataDir: string,
+  a: string,
+  b: string,
+): void {
+  const [lo, hi] = sortedPair(a, b);
+  mutate(dataDir, (f) => {
+    f.contradictionDismissals = f.contradictionDismissals.filter(
+      (e) => !(e.a === lo && e.b === hi),
+    );
+  });
+}
+
+export function addCustomContradiction(
+  dataDir: string,
+  a: string,
+  b: string,
+  summary: string,
+  sharedEntities?: string[],
+): void {
+  const [lo, hi] = sortedPair(a, b);
+  mutate(dataDir, (f) => {
+    f.customContradictions = f.customContradictions.filter(
+      (e) => !(e.a === lo && e.b === hi),
+    );
+    const entry: CustomContradictionEntry = { a: lo, b: hi, summary };
+    if (sharedEntities && sharedEntities.length > 0) {
+      entry.sharedEntities = [...new Set(sharedEntities)].sort();
+    }
+    f.customContradictions.push(entry);
+  });
+}
+
+export function removeCustomContradiction(
+  dataDir: string,
+  a: string,
+  b: string,
+): void {
+  const [lo, hi] = sortedPair(a, b);
+  mutate(dataDir, (f) => {
+    f.customContradictions = f.customContradictions.filter(
+      (e) => !(e.a === lo && e.b === hi),
+    );
   });
 }

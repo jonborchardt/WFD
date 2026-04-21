@@ -20,18 +20,29 @@
 import type { Claim, ClaimId, HostStance } from "../claims/types.js";
 
 export interface ClaimContradiction {
-  kind: "pair" | "broken-presupposition" | "cross-video";
+  kind: "pair" | "broken-presupposition" | "cross-video" | "manual";
   left: ClaimId;
   right: ClaimId;
   sharedEntities?: string[];
   similarity?: number;
+  // For cross-video only: which path triggered the match. "jaccard" means
+  // the text-similarity threshold was cleared directly; "strong-overlap"
+  // means Jaccard was weak but ≥ strongEntityOverlap entities were shared,
+  // so the entity co-occurrence path fired. Useful for UI triage because
+  // strong-overlap matches tend to be noisier.
+  matchReason?: "jaccard" | "strong-overlap";
   summary: string;
 }
 
 export interface ClaimContradictionOptions {
-  // Jaccard threshold for the cross-video pattern. 0.25 catches thematic
-  // overlap without flagging every video that mentions the same entity.
+  // Minimum Jaccard on claim text to flag cross-video pairs as topical.
+  // Below this threshold we fall back to shared-entity count (see
+  // `strongEntityOverlap`) as a topicality proxy.
   crossVideoJaccard?: number;
+  // Minimum shared entities when text similarity is weak. Entity
+  // co-occurrence stands in as a topicality signal when wording
+  // diverges.
+  strongEntityOverlap?: number;
   // True truth anchor for the pair test. Two claims whose directTruth are
   // both ≥ this are considered "both asserted true". Default 0.5.
   pairTruthFloor?: number;
@@ -43,7 +54,8 @@ export function detectClaimContradictions(
   claims: Claim[],
   opts: ClaimContradictionOptions = {},
 ): ClaimContradiction[] {
-  const crossVideoJaccard = opts.crossVideoJaccard ?? 0.25;
+  const crossVideoJaccard = opts.crossVideoJaccard ?? 0.10;
+  const strongEntityOverlap = opts.strongEntityOverlap ?? 2;
   const pairFloor = opts.pairTruthFloor ?? 0.5;
   const presupFloor = opts.brokenPresupFloor ?? 0.3;
 
@@ -114,18 +126,31 @@ export function detectClaimContradictions(
         for (const b of bList) {
           const shared = [...aEnts].filter((k) => b.entities.includes(k));
           if (shared.length === 0) continue;
-          if (!stanceOpposed(a.hostStance, b.hostStance, a.directTruth, b.directTruth)) {
-            continue;
-          }
           const sim = jaccard(tokens.get(a.id)!, tokens.get(b.id)!);
-          if (sim < crossVideoJaccard) continue;
+          const jaccardOk = sim >= crossVideoJaccard;
+          const strongOk = shared.length >= strongEntityOverlap;
+          if (!jaccardOk && !strongOk) continue;
+
+          // Cross-video contradictions require explicit `asserts` vs
+          // `denies` host-stance opposition. Truth-gap-only signals
+          // (stance ambiguous or stance-same with different directTruth)
+          // are dominated by AI scoring jitter on near-duplicate claims
+          // and produce noise like two videos listing the same set of
+          // historical figures with different scores. For a real
+          // disagreement one source has to affirm what the other denies.
+          if (!explicitStanceOpposed(a.hostStance, b.hostStance)) continue;
+
+          const matchReason: "jaccard" | "strong-overlap" = jaccardOk
+            ? "jaccard"
+            : "strong-overlap";
           out.push({
             kind: "cross-video",
             left: a.id,
             right: b.id,
             sharedEntities: shared,
             similarity: sim,
-            summary: `${a.videoId} ${a.hostStance ?? "?"} vs ${b.videoId} ${b.hostStance ?? "?"} — shared: ${shared.slice(0, 3).join(", ")} — jaccard=${sim.toFixed(2)}`,
+            matchReason,
+            summary: `${a.videoId} ${a.hostStance ?? "?"} vs ${b.videoId} ${b.hostStance ?? "?"} — shared: ${shared.slice(0, 3).join(", ")} — jaccard=${sim.toFixed(2)} (${matchReason})`,
           });
         }
       }
@@ -140,20 +165,15 @@ export function detectClaimContradictions(
 //   - one directTruth is ≥ 0.6 and the other is ≤ 0.4 (truth gap)
 // We require at least one of these signals — shared entities alone doesn't
 // mean the claims disagree.
-function stanceOpposed(
+// Cross-video contradictions fire only when one source asserts what
+// the other denies. Truth-gap-only signals (same stance, different
+// directTruth) produced too much noise on this corpus — mostly AI
+// scoring jitter on near-duplicate claims listing the same entities.
+function explicitStanceOpposed(
   a: HostStance | undefined,
   b: HostStance | undefined,
-  aTruth: number | undefined,
-  bTruth: number | undefined,
 ): boolean {
-  if ((a === "asserts" && b === "denies") || (a === "denies" && b === "asserts")) {
-    return true;
-  }
-  if (aTruth !== undefined && bTruth !== undefined) {
-    if (aTruth >= 0.6 && bTruth <= 0.4) return true;
-    if (aTruth <= 0.4 && bTruth >= 0.6) return true;
-  }
-  return false;
+  return (a === "asserts" && b === "denies") || (a === "denies" && b === "asserts");
 }
 
 function tokenize(s: string): Set<string> {

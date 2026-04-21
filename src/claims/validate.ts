@@ -284,6 +284,18 @@ export function validateClaim(
     errors.push(`${p}: inVerdictSection must be boolean`);
   }
 
+  if (claim.tags !== undefined) {
+    if (!Array.isArray(claim.tags)) {
+      errors.push(`${p}: tags must be array`);
+    } else {
+      for (const t of claim.tags) {
+        if (typeof t !== "string" || t.trim().length === 0) {
+          errors.push(`${p}: tag "${t}" must be non-empty string`);
+        }
+      }
+    }
+  }
+
   return errors;
 }
 
