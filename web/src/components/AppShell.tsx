@@ -23,7 +23,6 @@ export function AppShell() {
             Why Files Database
           </Typography>
           <Button color="inherit" onClick={() => nav("/")}>home</Button>
-          <Button color="inherit" onClick={() => nav("/facets")}>facets</Button>
           <Button color="inherit" onClick={() => nav("/relationships")}>relationships</Button>
           <Button color="inherit" onClick={() => nav("/claims")}>claims</Button>
           <Button color="inherit" onClick={() => nav("/claim-graph")}>claim graph</Button>

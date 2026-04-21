@@ -2,10 +2,9 @@ import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { CircularProgress, Box } from "@mui/material";
 import { AppShell } from "./components/AppShell";
-import { CatalogPage } from "./pages/CatalogPage";
 import { VideoDetailPage } from "./pages/VideoDetailPage";
 import { EntityDetailPage } from "./pages/EntityDetailPage";
-import { FacetsPage } from "./pages/FacetsPage";
+import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ClaimsPage } from "./pages/ClaimsPage";
 import { ClaimDetailPage } from "./pages/ClaimDetailPage";
@@ -31,12 +30,11 @@ export function App() {
   return (
     <Routes>
       <Route element={<AppShell />}>
-        <Route index element={<CatalogPage />} />
+        <Route index element={<HomePage />} />
         <Route path="video/:videoId" element={<VideoDetailPage />} />
         <Route path="entity/:entityId" element={<EntityDetailPage />} />
         <Route path="relationships" element={<Suspense fallback={<Loading />}><RelationshipsPage /></Suspense>} />
         <Route path="claim-graph" element={<Suspense fallback={<Loading />}><ClaimGraphPage /></Suspense>} />
-        <Route path="facets" element={<FacetsPage />} />
         <Route path="claims" element={<ClaimsPage />} />
         <Route path="claim/:claimId" element={<ClaimDetailPage />} />
         <Route path="contradictions" element={<ContradictionsPage />} />
