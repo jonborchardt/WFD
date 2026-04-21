@@ -32,8 +32,8 @@ import {
   type ClaimsBundle,
 } from "../components/facets/claims-duck";
 import {
-  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr, fmtDay,
-  parseDateRange, parseRange, rangeStr, splitEntityKey,
+  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr, entityChipSx,
+  fmtDay, parseDateRange, parseRange, rangeStr, splitEntityKey,
 } from "../lib/facet-helpers";
 import { invalidateClaimsCaches } from "../lib/data";
 import { matchesTopic } from "../lib/claim-search";
@@ -689,6 +689,7 @@ function ContradictionRow({ cx, bundle, nav, onMutated }: ContradictionRowProps)
             label={e}
             clickable
             onClick={() => nav(`/entity/${encodeURIComponent(e)}`)}
+            sx={entityChipSx(e)}
           />
         ))}
         {(cx.sharedEntities?.length ?? 0) > 4 && (

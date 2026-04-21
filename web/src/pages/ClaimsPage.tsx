@@ -32,8 +32,8 @@ import {
   type ClaimsBundle,
 } from "../components/facets/claims-duck";
 import {
-  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr, fmtDay,
-  parseDateRange, parseRange, rangeStr, splitEntityKey,
+  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr, entityChipSx,
+  fmtDay, parseDateRange, parseRange, rangeStr, splitEntityKey,
 } from "../lib/facet-helpers";
 import { matchesTopic } from "../lib/claim-search";
 import { beginLoad } from "../lib/loading";
@@ -899,7 +899,7 @@ function ClaimResultRow({ claim, nav, bundle }: RowProps) {
                 e.stopPropagation();
                 nav(`/entity/${encodeURIComponent(k)}`);
               }}
-              sx={{ fontSize: "0.7rem" }}
+              sx={{ fontSize: "0.7rem", ...entityChipSx(k) }}
             />
           ))}
           {claim.entities.length > 6 && (
