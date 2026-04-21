@@ -89,6 +89,11 @@ export function ClaimGraphPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeSeeds, setActiveSeeds] = useState<ActiveSeed[]>([]);
   const [showLegend, setShowLegend] = useState(false);
+  // Seeds panel is collapsible. Default open when the list is small
+  // enough to read at a glance; default closed once the user arrives
+  // from a "graph these" bulk seeding (where the chips would eat
+  // most of the sidebar).
+  const [showSeeds, setShowSeeds] = useState(true);
   const rfInstance = useRef<ReactFlowInstance | null>(null);
 
   // Option pools for autocomplete. Each is loaded once.
@@ -265,6 +270,9 @@ export function ClaimGraphPage() {
     setActiveSeeds(seeds);
     rebuildFromSeeds(seeds);
     setQuery("");
+    // Bulk seeding arrives with many chips — collapse by default so
+    // the sidebar stays scannable. User can toggle back open.
+    if (seeds.length > 6) setShowSeeds(false);
   }, [ready, params, options, rebuildFromSeeds]);
 
   // Auto-run on initial load if query present (single-seed path).
@@ -497,26 +505,34 @@ export function ClaimGraphPage() {
 
         {activeSeeds.length > 0 && (
           <Box sx={{ mt: 1.5 }}>
-            <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 0.5 }}>
-              active seeds ({activeSeeds.length}):
-            </Typography>
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              {activeSeeds.map((s) => (
-                <Chip
-                  key={`${s.kind}:${s.id}`}
-                  size="small"
-                  variant="outlined"
-                  label={
-                    <span>
-                      <span style={{ opacity: 0.6 }}>{s.kind}:</span>{" "}
-                      {s.label.length > 40 ? s.label.slice(0, 40) + "…" : s.label}
-                    </span>
-                  }
-                  onDelete={() => removeSeed(s.kind, s.id)}
-                  title={`${s.kind} · ${s.id}`}
-                />
-              ))}
-            </Box>
+            <MuiLink
+              component="button"
+              variant="caption"
+              underline="hover"
+              onClick={() => setShowSeeds((v) => !v)}
+              sx={{ display: "block", mb: 0.5, color: "text.secondary" }}
+            >
+              {showSeeds ? "▾" : "▸"} active seeds ({activeSeeds.length})
+            </MuiLink>
+            <Collapse in={showSeeds}>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                {activeSeeds.map((s) => (
+                  <Chip
+                    key={`${s.kind}:${s.id}`}
+                    size="small"
+                    variant="outlined"
+                    label={
+                      <span>
+                        <span style={{ opacity: 0.6 }}>{s.kind}:</span>{" "}
+                        {s.label.length > 40 ? s.label.slice(0, 40) + "…" : s.label}
+                      </span>
+                    }
+                    onDelete={() => removeSeed(s.kind, s.id)}
+                    title={`${s.kind} · ${s.id}`}
+                  />
+                ))}
+              </Box>
+            </Collapse>
           </Box>
         )}
 

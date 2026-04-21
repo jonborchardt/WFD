@@ -5,7 +5,7 @@ import { AppShell } from "./components/AppShell";
 import { VideoDetailPage } from "./pages/VideoDetailPage";
 import { EntityDetailPage } from "./pages/EntityDetailPage";
 import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
+import { VideosPage } from "./pages/VideosPage";
 import { ClaimsPage } from "./pages/ClaimsPage";
 import { ClaimDetailPage } from "./pages/ClaimDetailPage";
 import { ContradictionsPage } from "./pages/ContradictionsPage";
@@ -31,14 +31,19 @@ export function App() {
     <Routes>
       <Route element={<AppShell />}>
         <Route index element={<HomePage />} />
+        <Route path="videos" element={<VideosPage />} />
+        <Route path="about" element={<HomePage />} />
         <Route path="video/:videoId" element={<VideoDetailPage />} />
         <Route path="entity/:entityId" element={<EntityDetailPage />} />
-        <Route path="relationships" element={<Suspense fallback={<Loading />}><RelationshipsPage /></Suspense>} />
-        <Route path="claim-graph" element={<Suspense fallback={<Loading />}><ClaimGraphPage /></Suspense>} />
+        <Route path="entity-graph" element={<Suspense fallback={<Loading />}><RelationshipsPage /></Suspense>} />
+        <Route path="argument-map" element={<Suspense fallback={<Loading />}><ClaimGraphPage /></Suspense>} />
         <Route path="claims" element={<ClaimsPage />} />
         <Route path="claim/:claimId" element={<ClaimDetailPage />} />
         <Route path="contradictions" element={<ContradictionsPage />} />
-        <Route path="about" element={<AboutPage />} />
+        {/* Kept as aliases so existing bookmarks and any stashed
+            "graph these" links with a querystring still resolve. */}
+        <Route path="relationships" element={<Suspense fallback={<Loading />}><RelationshipsPage /></Suspense>} />
+        <Route path="claim-graph" element={<Suspense fallback={<Loading />}><ClaimGraphPage /></Suspense>} />
         {AdminPage && (
           <Route path="admin" element={<Suspense fallback={<Loading />}><AdminPage /></Suspense>} />
         )}

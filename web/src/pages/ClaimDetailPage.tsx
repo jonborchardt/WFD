@@ -288,9 +288,9 @@ export function ClaimDetailPage() {
         <Button
           size="small"
           variant="outlined"
-          onClick={() => nav(`/claim-graph?kind=claim&q=${encodeURIComponent(claimId)}`)}
+          onClick={() => nav(`/argument-map?kind=claim&q=${encodeURIComponent(claimId)}`)}
         >
-          explore in claim graph
+          explore in argument map
         </Button>
       </Stack>
     </Container>

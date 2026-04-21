@@ -1,6 +1,6 @@
 // "graph these" button — ships the currently-filtered claim IDs to
-// /claim-graph via `?kind=claim&seeds=id1,id2,…`. The graph page reads
-// that multi-seed param on mount (see ClaimGraphPage).
+// the argument map via `?kind=claim&seeds=id1,id2,…`. The graph page
+// reads that multi-seed param on mount (see ClaimGraphPage).
 //
 // Caps the seed count for graph legibility and URL length; when the
 // user's filter exceeds the cap we still navigate but mark it so the
@@ -42,7 +42,7 @@ export function GraphSeedsButton({ claimIds, label }: Props) {
           seeds: deduped.join(","),
         });
         if (truncated) qs.set("capped", "1");
-        nav(`/claim-graph?${qs.toString()}`);
+        nav(`/argument-map?${qs.toString()}`);
       }}
       title={truncated
         ? `capped to ${GRAPH_SEED_CAP} claims for graph legibility`

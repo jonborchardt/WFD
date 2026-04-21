@@ -13,22 +13,47 @@ export function AppShell() {
   const loadingCount = useLoadingCount();
   return (
     <>
-      <AppBar position="static" color="default">
-        <Toolbar>
+      <AppBar
+        position="sticky"
+        color="default"
+        elevation={1}
+        sx={{ top: 0, zIndex: (t) => t.zIndex.appBar }}
+      >
+        <Toolbar
+          variant="dense"
+          sx={{
+            minHeight: 40,
+            maxWidth: 1600,
+            width: "100%",
+            mx: "auto",
+            px: { xs: 1.5, sm: 2 },
+          }}
+        >
           <Typography
-            variant="h6"
-            sx={{ cursor: "pointer", flexGrow: 1 }}
+            variant="subtitle1"
+            sx={{ cursor: "pointer", flexGrow: 1, fontWeight: 600, lineHeight: 1 }}
             onClick={() => nav("/")}
           >
-            Why Files Database
+            {/* Tighten the space between "Why" and "Files" so the
+                channel name reads as one unit, not "Why" + "Files
+                Database" — the corpus is The Why Files, not some
+                "why-files" thing. nbsp glues them; the inner span
+                carries a small negative word-spacing. */}
+            <Box
+              component="span"
+              sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
+            >
+              Why{"\u00a0"}Files
+            </Box>{" "}
+            Database
           </Typography>
-          <Button color="inherit" onClick={() => nav("/")}>home</Button>
-          <Button color="inherit" onClick={() => nav("/relationships")}>relationships</Button>
-          <Button color="inherit" onClick={() => nav("/claims")}>claims</Button>
-          <Button color="inherit" onClick={() => nav("/claim-graph")}>claim graph</Button>
-          <Button color="inherit" onClick={() => nav("/contradictions")}>contradictions</Button>
-          <Button color="inherit" onClick={() => nav("/about")}>about</Button>
-          {IS_ADMIN && <Button color="inherit" onClick={() => nav("/admin")}>admin</Button>}
+          <Button size="small" color="inherit" onClick={() => nav("/")}>home</Button>
+          <Button size="small" color="inherit" onClick={() => nav("/videos")}>videos</Button>
+          <Button size="small" color="inherit" onClick={() => nav("/claims")}>claims</Button>
+          <Button size="small" color="inherit" onClick={() => nav("/contradictions")}>contradictions</Button>
+          <Button size="small" color="inherit" onClick={() => nav("/entity-graph")}>entity graph</Button>
+          <Button size="small" color="inherit" onClick={() => nav("/argument-map")}>argument map</Button>
+          {IS_ADMIN && <Button size="small" color="inherit" onClick={() => nav("/admin")}>admin</Button>}
           {ADMIN_BUILD && (
             <Chip
               size="small"
