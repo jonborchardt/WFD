@@ -8,8 +8,10 @@ import type ELKCtor from "elkjs/lib/elk.bundled.js";
 type ELKInstance = InstanceType<typeof ELKCtor>;
 type ElkLayoutResult = Awaited<ReturnType<ELKInstance["layout"]>>;
 import {
-  Box, Paper, TextField, Typography, Chip, MenuItem, Button, CircularProgress, Collapse,
+  Box, Paper, TextField, Typography, Chip, MenuItem, Button, CircularProgress, Stack,
 } from "@mui/material";
+import { CollapseSection } from "../components/CollapseSection";
+import { SpacingSlider } from "../components/SpacingSlider";
 import { fetchRelationshipsGraph, fetchEdgeTruth, fetchClaimsIndex } from "../lib/data";
 import { graphNodeIssueUrl, graphEdgeIssueUrl } from "../lib/issues";
 import { EntityMenuButton } from "../components/EntityMenu";
@@ -17,7 +19,7 @@ import {
   buildIndex, searchNodes, getNeighbors, getConnections, type GraphIndex,
 } from "../lib/graph-index";
 import {
-  ELK_LAYOUT_CONFIGS, ELK_NODE_HEIGHT, elkNodeWidth,
+  elkLayoutConfig, ELK_NODE_HEIGHT, elkNodeWidth,
   circularLayout, radialLayout, type Positions,
 } from "../lib/graph-layouts";
 import { buildRenderData, ENTITY_TYPE_HEX } from "../lib/graph-render";
@@ -45,9 +47,10 @@ export function RelationshipsPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedEdgeId, setSelectedEdgeId] = useState<string | null>(null);
   const [layoutAlgo, setLayoutAlgo] = useState("stress");
+  const [spacing, setSpacing] = useState(200);
   const [showSeeds, setShowSeeds] = useState(true);
-  const [showKey, setShowKey] = useState(false);
-  const [showLayout, setShowLayout] = useState(false);
+  const [showLegend, setShowLegend] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const [colorByTruth, setColorByTruth] = useState(false);
   const [edgeTruth, setEdgeTruth] = useState<EdgeTruthFile | null>(null);
   const [claimsById, setClaimsById] = useState<Map<string, ClaimsIndexEntry>>(new Map());
@@ -160,12 +163,12 @@ export function RelationshipsPage() {
     if (allNodes.length === 0) { bump(); return; }
 
     if (layoutAlgo === "circular") {
-      positions.current = { ...positions.current, ...circularLayout(allNodes) };
+      positions.current = { ...positions.current, ...circularLayout(allNodes, spacing) };
       bump();
       return;
     }
     if (layoutAlgo === "radial") {
-      positions.current = { ...positions.current, ...radialLayout(allNodes, allEdges, seeds.current) };
+      positions.current = { ...positions.current, ...radialLayout(allNodes, allEdges, seeds.current, spacing) };
       bump();
       return;
     }
@@ -181,7 +184,7 @@ export function RelationshipsPage() {
         mergedForLayout.set(key, { id: key, source: e.source, target: e.target });
       }
     }
-    const config = ELK_LAYOUT_CONFIGS[layoutAlgo] || ELK_LAYOUT_CONFIGS.stress;
+    const config = elkLayoutConfig(layoutAlgo, spacing) || elkLayoutConfig("stress", spacing);
     const sortedNodes = [...allNodes].sort((a, b) => {
       const aS = seeds.current.has(a.id) ? 0 : 1;
       const bS = seeds.current.has(b.id) ? 0 : 1;
@@ -201,7 +204,7 @@ export function RelationshipsPage() {
       }
       bump();
     }).catch(() => { bump(); });
-  }, [flowLib, bump, layoutAlgo]);
+  }, [flowLib, bump, layoutAlgo, spacing]);
   relayoutRef.current = relayout;
 
   useEffect(() => {
@@ -209,7 +212,7 @@ export function RelationshipsPage() {
       positions.current = {};
       relayout();
     }
-  }, [layoutAlgo]);
+  }, [layoutAlgo, spacing]);
 
   const prevNodeCount = useRef(0);
   useEffect(() => {
@@ -303,6 +306,7 @@ export function RelationshipsPage() {
   return (
     <Box sx={{ position: "relative", height: "calc(100vh - 64px)", width: "100%" }}>
       <Paper sx={{ position: "absolute", top: 12, left: 12, zIndex: 10, p: 1.5, width: 340, maxHeight: "calc(100vh - 100px)", overflow: "auto" }}>
+        <Typography variant="subtitle2" sx={{ mb: 1 }}>Entity graph</Typography>
         <TextField
           size="small"
           fullWidth
@@ -334,112 +338,110 @@ export function RelationshipsPage() {
           </Box>
         )}
         {seeds.current.size > 0 && (
-          <Box sx={{ mt: 1.5 }}>
-            <Box
-              onClick={() => setShowSeeds((v) => !v)}
-              sx={{ display: "flex", alignItems: "center", gap: 0.5, cursor: "pointer", userSelect: "none", color: "text.secondary", "&:hover": { color: "text.primary" } }}
-            >
-              <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                {showSeeds ? "▾" : "▸"} seeds ({seeds.current.size})
-              </Typography>
-            </Box>
-            <Collapse in={showSeeds}>
-              <Box sx={{ mt: 0.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                {[...seeds.current].map((id) => {
-                  const n = nodeMap.current.get(id);
-                  if (!n) return null;
-                  return (
-                    <Chip
-                      key={id}
-                      label={n.canonical}
-                      size="small"
-                      onDelete={() => removeNode(id)}
-                      onClick={() => focusNode(id)}
-                      sx={{ bgcolor: ENTITY_TYPE_HEX[n.type] || "#888", color: "#000", fontWeight: 600, "& .MuiChip-deleteIcon": { color: "rgba(0,0,0,0.5)" } }}
-                    />
-                  );
-                })}
-                <Chip label="clear all" size="small" variant="outlined" onClick={clearAll} sx={{ borderStyle: "dashed" }} />
-              </Box>
-            </Collapse>
-          </Box>
+          <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
+            <Button size="small" variant="text" onClick={clearAll}>
+              clear
+            </Button>
+          </Stack>
         )}
-        <Box sx={{ mt: 1.5 }}>
-          <Box
-            onClick={() => setShowKey((v) => !v)}
-            sx={{ display: "flex", alignItems: "center", gap: 0.5, cursor: "pointer", userSelect: "none", color: "text.secondary", "&:hover": { color: "text.primary" } }}
+
+        {seeds.current.size > 0 && (
+          <CollapseSection
+            title="seeds"
+            count={seeds.current.size}
+            open={showSeeds}
+            onToggle={() => setShowSeeds((v) => !v)}
           >
-            <Typography variant="caption" sx={{ fontWeight: 600 }}>
-              {showKey ? "▾" : "▸"} key
-            </Typography>
-          </Box>
-          <Collapse in={showKey}>
             <Box sx={{ mt: 0.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              {Object.entries(ENTITY_TYPE_HEX)
-                .filter(([t]) => isVisibleType(t))
-                .map(([t, c]) => (
-                  <Box key={t} sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                    <Box sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: c }} />
-                    <Typography variant="caption">{t}</Typography>
-                  </Box>
-                ))}
-            </Box>
-          </Collapse>
-        </Box>
-        <Box sx={{ mt: 1.5 }}>
-          <Box
-            onClick={() => setShowLayout((v) => !v)}
-            sx={{ display: "flex", alignItems: "center", gap: 0.5, cursor: "pointer", userSelect: "none", color: "text.secondary", "&:hover": { color: "text.primary" } }}
-          >
-            <Typography variant="caption" sx={{ fontWeight: 600 }}>
-              {showLayout ? "▾" : "▸"} layout & options
-            </Typography>
-          </Box>
-          <Collapse in={showLayout}>
-            <Box sx={{ mt: 0.5 }}>
-              <TextField
-                select
-                size="small"
-                label="layout"
-                value={layoutAlgo}
-                onChange={(e) => setLayoutAlgo(e.target.value)}
-                sx={{ minWidth: 140 }}
-              >
-                <MenuItem value="stress">Stress (neato)</MenuItem>
-                <MenuItem value="radial">Radial (twopi)</MenuItem>
-                <MenuItem value="circular">Circular (circo)</MenuItem>
-                <MenuItem value="force">Force</MenuItem>
-              </TextField>
-              <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
-                {rfNodes.length} nodes · {rfEdges.length} edges visible
-              </Typography>
-              {edgeTruth && (
-                <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 1 }}>
-                  <Button
+              {[...seeds.current].map((id) => {
+                const n = nodeMap.current.get(id);
+                if (!n) return null;
+                return (
+                  <Chip
+                    key={id}
+                    label={n.canonical}
                     size="small"
-                    variant={colorByTruth ? "contained" : "outlined"}
-                    onClick={() => setColorByTruth((v) => !v)}
-                  >
-                    {colorByTruth ? "truth coloring on" : "color edges by truth"}
-                  </Button>
-                  <Typography variant="caption" color="text.secondary">
-                    {edgeTruth.edgeCount} edges have truth
-                  </Typography>
-                </Box>
-              )}
-              {colorByTruth && (
-                <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 0.5 }}>
-                  <Box sx={{ width: 12, height: 8, background: "rgb(211, 47, 47)" }} />
-                  <Typography variant="caption">false</Typography>
-                  <Box sx={{ width: 12, height: 8, background: "rgb(158, 158, 158)", mx: 0.5 }} />
-                  <Typography variant="caption">neutral</Typography>
-                  <Box sx={{ width: 12, height: 8, background: "rgb(46, 125, 50)", mx: 0.5 }} />
-                  <Typography variant="caption">true</Typography>
-                </Box>
-              )}
+                    onDelete={() => removeNode(id)}
+                    onClick={() => focusNode(id)}
+                    sx={{ bgcolor: ENTITY_TYPE_HEX[n.type] || "#888", color: "#000", fontWeight: 600, "& .MuiChip-deleteIcon": { color: "rgba(0,0,0,0.5)" } }}
+                  />
+                );
+              })}
             </Box>
-          </Collapse>
-        </Box>
+          </CollapseSection>
+        )}
+
+        <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 1 }}>
+          {rfNodes.length} nodes · {rfEdges.length} edges
+        </Typography>
+
+        <CollapseSection
+          title="options"
+          open={showOptions}
+          onToggle={() => setShowOptions((v) => !v)}
+        >
+          <Box sx={{ mt: 0.5 }}>
+            <TextField
+              select
+              size="small"
+              label="layout"
+              value={layoutAlgo}
+              onChange={(e) => setLayoutAlgo(e.target.value)}
+              fullWidth
+            >
+              <MenuItem value="force">Force</MenuItem>
+              <MenuItem value="stress">Stress</MenuItem>
+              <MenuItem value="radial">Radial</MenuItem>
+              <MenuItem value="circular">Circular</MenuItem>
+            </TextField>
+            <SpacingSlider value={spacing} min={50} max={500} onChange={setSpacing} />
+            {edgeTruth && (
+              <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 1 }}>
+                <Button
+                  size="small"
+                  variant={colorByTruth ? "contained" : "outlined"}
+                  onClick={() => setColorByTruth((v) => !v)}
+                >
+                  {colorByTruth ? "truth coloring on" : "color edges by truth"}
+                </Button>
+                <Typography variant="caption" color="text.secondary">
+                  {edgeTruth.edgeCount} have truth
+                </Typography>
+              </Box>
+            )}
+          </Box>
+        </CollapseSection>
+
+        <CollapseSection
+          title="legend"
+          open={showLegend}
+          onToggle={() => setShowLegend((v) => !v)}
+        >
+          <Typography variant="caption" sx={{ fontWeight: 600, display: "block", mt: 0.5 }}>node color = type</Typography>
+          <Box sx={{ mt: 0.25, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+            {Object.entries(ENTITY_TYPE_HEX)
+              .filter(([t]) => isVisibleType(t))
+              .map(([t, c]) => (
+                <Box key={t} sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <Box sx={{ width: 16, height: 10, borderRadius: 0.5, bgcolor: c }} />
+                  <Typography variant="caption">{t}</Typography>
+                </Box>
+              ))}
+          </Box>
+          {colorByTruth && (
+            <>
+              <Typography variant="caption" sx={{ fontWeight: 600, display: "block", mt: 1 }}>edge color = truth</Typography>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mt: 0.5 }}>
+                <Box sx={{ width: 16, height: 4, background: "rgb(211, 47, 47)" }} />
+                <Typography variant="caption">false</Typography>
+                <Box sx={{ width: 16, height: 4, background: "rgb(158, 158, 158)", mx: 0.5 }} />
+                <Typography variant="caption">neutral</Typography>
+                <Box sx={{ width: 16, height: 4, background: "rgb(46, 125, 50)", mx: 0.5 }} />
+                <Typography variant="caption">true</Typography>
+              </Box>
+            </>
+          )}
+        </CollapseSection>
       </Paper>
 
       {!hasNodes && (

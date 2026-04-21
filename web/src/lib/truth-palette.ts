@@ -6,7 +6,9 @@
 
 export const TRUTH_TRUE = "#2e7d32";
 export const TRUTH_FALSE = "#c62828";
-export const TRUTH_NEUTRAL = "#555";
+// 6-digit hex — the private `hex()` parser below reads two chars per
+// channel and returns NaN for a 3-digit input like "#555".
+export const TRUTH_NEUTRAL = "#555555";
 
 export function truthColor(t: number): string {
   const clamped = Math.max(0, Math.min(1, t));
