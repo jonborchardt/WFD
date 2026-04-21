@@ -35,6 +35,7 @@ import {
   type ClaimGraphData,
   type ClaimGraphNode,
 } from "../lib/claim-graph-build";
+import { entityChipSx } from "../lib/facet-helpers";
 import { truthColor } from "../lib/truth-palette";
 import { TruthBar } from "../components/TruthBar";
 import type {
@@ -640,7 +641,10 @@ export function ClaimGraphPage() {
           <TruthBar value={sel.claim.confidence} label="confidence" />
           <Box sx={{ mt: 1, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
             {sel.claim.entities.slice(0, 8).map((e) => (
-              <Chip key={e} size="small" variant="outlined" label={e} onClick={() => nav(`/entity/${encodeURIComponent(e)}`)} />
+              <Chip key={e} size="small" variant="outlined" label={e}
+                onClick={() => nav(`/entity/${encodeURIComponent(e)}`)}
+                sx={entityChipSx(e)}
+              />
             ))}
           </Box>
           {sel.claim.tags && sel.claim.tags.length > 0 && (
