@@ -3,10 +3,15 @@ import { Box, Chip, Slider, Typography, Link, Collapse, Stack } from "@mui/mater
 import { useNavigate } from "react-router-dom";
 import { TruthBar } from "./TruthBar";
 import { ClaimMenu } from "./ClaimMenu";
+import { DepRow } from "./DepRow";
 import { entityChipSx } from "../lib/facet-helpers";
 import { deepLink, fmtTimestamp } from "../lib/format";
-import { truthColor } from "../lib/truth-palette";
-import { runCounterfactual, type CounterfactualResult } from "../lib/counterfactual";
+import { truthColor, truthSideColor } from "../lib/truth-palette";
+import {
+  runCounterfactual,
+  type CounterfactualResult,
+  type CounterfactualRow,
+} from "../lib/counterfactual";
 import type {
   Claim,
   ClaimContradiction,
@@ -44,7 +49,7 @@ interface Props {
   onMutated?: () => void;
 }
 
-export function ClaimRow({
+export function ClaimDetailCard({
   videoId,
   claim,
   derivedTruth,
@@ -110,9 +115,17 @@ export function ClaimRow({
 
   function runCf(assumed: number) {
     if (!corpusIndex) return;
-    const full = runCounterfactual(corpusIndex, claim.id, assumed);
+    // Always keep the dependency neighborhood visible, even when those
+    // claims didn't shift — runCounterfactual will emit unchanged rows
+    // for any id in this set.
+    const neighborIds = new Set<string>();
+    for (const d of claim.dependencies ?? []) neighborIds.add(d.target);
+    for (const d of inboundDeps ?? []) neighborIds.add(d.target);
+    const full = runCounterfactual(corpusIndex, claim.id, assumed, {
+      includeIds: neighborIds,
+    });
     setCfPinned(assumed);
-    setCfResult({ ...full, rows: full.rows.slice(0, 10) });
+    setCfResult({ ...full, rows: full.rows.slice(0, 20) });
   }
 
   function toggleCf() {
@@ -138,11 +151,14 @@ export function ClaimRow({
       ? "direct"
       : "uncalibrated");
 
+  const kColor = KIND_COLOR[claim.kind] ?? "#757575";
+
   return (
     <Box
       sx={{
         border: "1px solid",
         borderColor: "divider",
+        borderLeft: `5px solid ${truthSideColor(truthValue ?? null)}`,
         borderRadius: 1,
         p: 1.5,
         mb: 1,
@@ -150,37 +166,9 @@ export function ClaimRow({
       }}
       id={`claim-${claim.id}`}
     >
-      <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 0.5, flexWrap: "wrap" }}>
-        <Chip
-          size="small"
-          label={claim.kind}
-          sx={{
-            backgroundColor: KIND_COLOR[claim.kind] ?? "#757575",
-            color: "white",
-            fontSize: "0.7rem",
-          }}
-        />
-        {claim.hostStance && (
-          <Chip
-            size="small"
-            label={`host: ${claim.hostStance}`}
-            variant="outlined"
-            sx={{ fontSize: "0.7rem" }}
-          />
-        )}
-        {claim.inVerdictSection && (
-          <Chip size="small" label="verdict" variant="outlined" sx={{ fontSize: "0.7rem" }} />
-        )}
-        {contradictions && contradictions.length > 0 && (
-          <Chip
-            size="small"
-            label={`⚠ ${contradictions.length} contradiction${contradictions.length > 1 ? "s" : ""}`}
-            color="warning"
-            variant="outlined"
-            sx={{ fontSize: "0.7rem" }}
-          />
-        )}
-        <Box sx={{ flexGrow: 1 }} />
+      <Box sx={{
+        position: "absolute", top: 8, right: 8,
+      }}>
         <ClaimMenu
           claim={{
             id: claim.id,
@@ -195,35 +183,49 @@ export function ClaimRow({
           hasOverride={truthSource === "override"}
           onMutated={onMutated}
         />
-      </Stack>
+      </Box>
 
-      <Typography variant="body2" sx={{ mb: 1 }}>
+      <Typography variant="body1" sx={{ mb: 1, fontWeight: 500, pr: 4 }}>
         {claim.text}
       </Typography>
 
-      <Stack spacing={0.25}>
-        <TruthBar value={truthValue} source={source} label="truth" />
-        <TruthBar value={claim.confidence} label="confidence" />
+      <Box sx={{ mb: 0.75 }}>
+        <TruthBar value={truthValue} source={source} label="truth" width={200} />
+      </Box>
+
+      <Stack direction="row" spacing={1} sx={{
+        mb: 0.75, color: "text.secondary",
+        alignItems: "center", flexWrap: "wrap",
+      }}>
+        <Typography variant="caption" sx={{
+          color: kColor, fontWeight: 700, letterSpacing: 0.5,
+          textTransform: "uppercase", fontSize: 10,
+        }}>
+          {claim.kind}
+        </Typography>
+        {claim.hostStance && (
+          <Typography variant="caption">· host {claim.hostStance}</Typography>
+        )}
+        {claim.inVerdictSection && (
+          <Typography variant="caption">· verdict</Typography>
+        )}
+        {contradictions && contradictions.length > 0 && (
+          <Typography variant="caption" sx={{ color: "warning.main" }}>
+            · ⚠ {contradictions.length} contradiction
+            {contradictions.length > 1 ? "s" : ""}
+          </Typography>
+        )}
+        {claim.confidence != null && (
+          <Typography variant="caption">
+            · conf {claim.confidence.toFixed(2)}
+          </Typography>
+        )}
       </Stack>
 
       {overrideRationale && (
         <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
           override: {overrideRationale}
         </Typography>
-      )}
-
-      {claim.tags && claim.tags.length > 0 && (
-        <Box sx={{ mt: 0.5, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-          {claim.tags.map((t) => (
-            <Typography
-              key={t}
-              variant="caption"
-              sx={{ color: "text.secondary", fontFamily: "monospace" }}
-            >
-              #{t}
-            </Typography>
-          ))}
-        </Box>
       )}
 
       {claim.entities.length > 0 && (
@@ -296,27 +298,25 @@ export function ClaimRow({
             {showDeps ? "▾" : "▸"} deps ({(claim.dependencies?.length ?? 0) + (inboundDeps?.length ?? 0)})
           </Link>
           <Collapse in={showDeps}>
-            <Box sx={{ mt: 0.5, pl: 1.5, display: "flex", flexWrap: "wrap", gap: 0.5, borderLeft: "2px solid", borderColor: "divider" }}>
+            <Box sx={{ mt: 0.5, pl: 1.5, borderLeft: "2px solid", borderColor: "divider" }}>
               {(claim.dependencies ?? []).map((d, i) => (
-                <Chip
+                <DepRow
                   key={`out-${i}`}
-                  size="small"
-                  variant="outlined"
-                  clickable
-                  label={`${d.kind} → ${shortId(d.target)}`}
+                  direction="out"
+                  kind={d.kind}
+                  targetId={d.target}
+                  corpusIndex={corpusIndex}
                   onClick={() => scrollToClaim(d.target)}
-                  sx={{ fontSize: "0.7rem" }}
                 />
               ))}
               {(inboundDeps ?? []).map((d, i) => (
-                <Chip
+                <DepRow
                   key={`in-${i}`}
-                  size="small"
-                  variant="outlined"
-                  clickable
-                  label={`${d.target ? shortId(d.target) : "?"} ${d.kind} → this`}
+                  direction="in"
+                  kind={d.kind}
+                  targetId={d.target}
+                  corpusIndex={corpusIndex}
                   onClick={() => scrollToClaim(d.target)}
-                  sx={{ fontSize: "0.7rem", opacity: 0.75 }}
                 />
               ))}
             </Box>
@@ -396,7 +396,14 @@ export function ClaimRow({
                   }}
                   marks={[
                     { value: 0, label: "false" },
-                    { value: expectedTruth, label: "expected" },
+                    // Drop the "expected" text label when the mark is
+                    // close to either endpoint; the two labels collide
+                    // visually. The tick itself still renders.
+                    {
+                      value: expectedTruth,
+                      label: expectedTruth > 0.2 && expectedTruth < 0.8
+                        ? "expected" : undefined,
+                    },
                     { value: 1, label: "true" },
                   ]}
                   sx={{ flex: 1, mx: 1 }}
@@ -410,34 +417,26 @@ export function ClaimRow({
                   drag the slider to pin this claim's truth and see which other claims shift. default is its expected value.
                 </Typography>
               )}
-              {cfResult !== null && cfResult.visibleCount === 0 && (
+              {cfResult !== null && cfResult.rows.length === 0 && (
                 <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
-                  {cfResult.smallShiftCount > 0
-                    ? `${cfResult.smallShiftCount} dependent claim${cfResult.smallShiftCount > 1 ? "s" : ""} shifted by less than 0.005 under pin ${cfPinned?.toFixed(2)} — the dependency is heavily diluted by other anchors.`
-                    : `pinning to ${cfPinned?.toFixed(2)} produced no shift in any dependent claim — their own anchors (or other supporting claims) dominate the blend.`}
+                  no dependent claims in the graph to show.
                 </Typography>
               )}
-              {cfResult !== null && cfResult.visibleCount > 0 && (
+              {cfResult !== null && cfResult.rows.length > 0 && (
                 <>
-                  <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 0.5 }}>
-                    top {cfResult.rows.length} shift{cfResult.rows.length > 1 ? "s" : ""} under pin {cfPinned?.toFixed(2)}
+                  <Typography variant="caption" color="text.secondary" sx={{
+                    display: "block", mb: 0.75,
+                  }}>
+                    {cfResult.visibleCount} shift
+                    {cfResult.visibleCount === 1 ? "" : "s"} under pin
+                    {" "}{cfPinned?.toFixed(2)}
+                    {cfResult.rows.length > cfResult.visibleCount &&
+                      ` · ${cfResult.rows.length - cfResult.visibleCount} unchanged`}
                     {cfResult.smallShiftCount > 0 &&
-                      ` · ${cfResult.smallShiftCount} smaller shift${cfResult.smallShiftCount > 1 ? "s" : ""} not shown`}
-                    :
+                      ` · ${cfResult.smallShiftCount} below 0.005 not shown`}
                   </Typography>
                   {cfResult.rows.map((r) => (
-                    <Box key={r.id} sx={{ display: "flex", gap: 1, alignItems: "center", py: 0.25 }}>
-                      <Typography variant="caption" sx={{ width: 72, fontFamily: "monospace", color: r.delta > 0 ? "success.main" : "error.main" }}>
-                        {(r.delta > 0 ? "+" : "") + r.delta.toFixed(2)}
-                      </Typography>
-                      <Typography variant="caption" sx={{ flexGrow: 1, cursor: "pointer" }} onClick={() => scrollToClaim(r.id)}>
-                        {r.text.length > 80 ? r.text.slice(0, 80) + "…" : r.text}
-                      </Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        {r.baseline === null ? "—" : r.baseline.toFixed(2)} → {r.counterfactual.toFixed(2)}
-                        {r.appeared && " (newly derived)"}
-                      </Typography>
-                    </Box>
+                    <CounterfactualRow key={r.id} row={r} />
                   ))}
                 </>
               )}
@@ -449,12 +448,77 @@ export function ClaimRow({
   );
 }
 
-function shortId(id: string): string {
-  const i = id.lastIndexOf(":");
-  return i > 0 ? id.slice(i + 1) : id;
-}
-
 function scrollToClaim(id: string): void {
   const el = document.getElementById(`claim-${id}`);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function truncate(s: string, n: number): string {
+  return s.length > n ? s.slice(0, n) + "…" : s;
+}
+
+function CounterfactualRow({ row }: { row: CounterfactualRow }) {
+  const hasShift = Math.abs(row.delta) >= 0.005;
+  const deltaColor =
+    row.delta > 0 ? "success.main"
+    : row.delta < 0 ? "error.main"
+    : "text.disabled";
+  return (
+    <Box
+      sx={{
+        display: "flex", gap: 1, alignItems: "flex-start",
+        py: 0.5, cursor: "pointer",
+        "&:hover": { backgroundColor: "action.hover" },
+        opacity: hasShift ? 1 : 0.65,
+      }}
+      onClick={() => scrollToClaim(row.id)}
+    >
+      <Stack spacing={0.25} sx={{ flexShrink: 0 }}>
+        <Stack direction="row" spacing={0.5} alignItems="center">
+          <Typography variant="caption" color="text.secondary" sx={{
+            width: 30, fontSize: 9, letterSpacing: 0.5,
+            textTransform: "uppercase", textAlign: "right",
+          }}>
+            was
+          </Typography>
+          <TruthBar
+            value={row.baseline}
+            label="truth"
+            minLabelWidth={0}
+          />
+        </Stack>
+        <Stack direction="row" spacing={0.5} alignItems="center">
+          <Typography variant="caption" color="text.secondary" sx={{
+            width: 30, fontSize: 9, letterSpacing: 0.5,
+            textTransform: "uppercase", textAlign: "right",
+          }}>
+            now
+          </Typography>
+          <TruthBar
+            value={row.counterfactual}
+            label="truth"
+            minLabelWidth={0}
+          />
+        </Stack>
+      </Stack>
+      <Typography variant="caption" sx={{
+        width: 52, fontFamily: "monospace", color: deltaColor,
+        textAlign: "right", mt: 0.25,
+      }}>
+        {hasShift
+          ? (row.delta > 0 ? "+" : "") + row.delta.toFixed(2)
+          : "—"}
+      </Typography>
+      <Typography variant="body2" sx={{
+        flexGrow: 1, lineHeight: 1.35, minWidth: 0, mt: 0.25,
+      }}>
+        {truncate(row.text, 120)}
+        {row.appeared && (
+          <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 0.5 }}>
+            (newly derived)
+          </Typography>
+        )}
+      </Typography>
+    </Box>
+  );
 }

@@ -42,7 +42,16 @@ export function runCounterfactual(
   claims: ClaimsIndexEntry[],
   pinId: string,
   pinTruth: number,
-  opts: { maxIterations?: number; epsilon?: number; neighborWeight?: number } = {},
+  opts: {
+    maxIterations?: number;
+    epsilon?: number;
+    neighborWeight?: number;
+    /** Additional claim ids to always include in the result (as
+     * unchanged rows if they didn't shift under the pin). Used by the
+     * UI to keep the dependency neighborhood of the pinned claim
+     * visible even when the pin didn't actually move their truth. */
+    includeIds?: Iterable<string>;
+  } = {},
 ): CounterfactualResult {
   const baseline = propagate(claims, new Map(), opts);
   const pinned = new Map<string, number>();
@@ -50,6 +59,7 @@ export function runCounterfactual(
   const cf = propagate(claims, pinned, opts);
 
   const rows: CounterfactualRow[] = [];
+  const seen = new Set<string>();
   let visibleCount = 0;
   let smallShiftCount = 0;
   for (const c of claims) {
@@ -73,6 +83,7 @@ export function runCounterfactual(
         delta,
         appeared: true,
       });
+      seen.add(c.id);
       visibleCount += 1;
       continue;
     }
@@ -93,9 +104,34 @@ export function runCounterfactual(
       counterfactual: a!,
       delta,
     });
+    seen.add(c.id);
     visibleCount += 1;
   }
   rows.sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta));
+
+  // Append unchanged neighborhood rows so the caller can render the
+  // full dep subgraph of the pin, not only the claims that shifted.
+  if (opts.includeIds) {
+    const byId = new Map(claims.map((c) => [c.id, c] as const));
+    for (const id of opts.includeIds) {
+      if (id === pinId || seen.has(id)) continue;
+      const c = byId.get(id);
+      if (!c) continue;
+      const b = baseline.get(c.id);
+      const a = cf.get(c.id);
+      if (a === undefined && b === undefined) continue;
+      rows.push({
+        id: c.id,
+        text: c.text,
+        videoId: c.videoId,
+        baseline: b ?? null,
+        counterfactual: (a ?? b)!,
+        delta: 0,
+      });
+      seen.add(c.id);
+    }
+  }
+
   return { rows, visibleCount, smallShiftCount };
 }
 

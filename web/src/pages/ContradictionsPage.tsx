@@ -6,12 +6,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Box, Button, Chip, Link as MuiLink, Stack,
-  TextField, Typography,
+  Box, Button, Chip, TextField, Typography,
 } from "@mui/material";
 import { PageLoading } from "../components/PageLoading";
-import { TruthBar } from "../components/TruthBar";
-import { ContradictionMenu } from "../components/ContradictionMenu";
+import { ContradictionResultRow } from "../components/ContradictionResultRow";
 import { FacetCard } from "../components/facets/FacetCard";
 import { BarListFacet, type BarRow } from "../components/facets/BarListFacet";
 import { NumericRangeFacet } from "../components/facets/NumericRangeFacet";
@@ -32,13 +30,14 @@ import {
   type ClaimsBundle,
 } from "../components/facets/claims-duck";
 import {
-  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr, entityChipSx,
+  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr,
   fmtDay, parseDateRange, parseRange, rangeStr, splitEntityKey,
 } from "../lib/facet-helpers";
 import { invalidateClaimsCaches } from "../lib/data";
 import { matchesTopic } from "../lib/claim-search";
 import { beginLoad } from "../lib/loading";
-import type { ClaimContradiction, ClaimsIndexEntry } from "../types";
+import type { ClaimContradiction } from "../types";
+
 
 const SORT_OPTIONS: SortOption[] = [
   { value: "shared-desc", label: "most shared entities" },
@@ -599,7 +598,7 @@ export function ContradictionsPage() {
         onClearAll={hasChips ? clearAll : undefined}
       />
       {sorted.slice(0, 200).map((c, i) => (
-        <ContradictionRow
+        <ContradictionResultRow
           key={`${c.left}-${c.right}-${i}`}
           cx={c}
           bundle={bundle}
@@ -650,135 +649,3 @@ function makeCountRows<T>(
   return rows;
 }
 
-// ── result row ───────────────────────────────────────────────────
-interface ContradictionRowProps {
-  cx: ClaimContradiction;
-  bundle: ClaimsBundle;
-  nav: ReturnType<typeof useNavigate>;
-  onMutated: () => void;
-}
-
-function ContradictionRow({ cx, bundle, nav, onMutated }: ContradictionRowProps) {
-  const left = bundle.claimsById.get(cx.left);
-  const right = bundle.claimsById.get(cx.right);
-  return (
-    <Box sx={{
-      border: "1px solid", borderColor: "divider",
-      borderRadius: 1, p: 1.5, mb: 1.5,
-    }}>
-      <Stack direction="row" spacing={1} sx={{
-        mb: 1, flexWrap: "wrap", alignItems: "center",
-      }}>
-        <Chip size="small" label={cx.kind} color="warning" />
-        {cx.matchReason && (
-          <Chip size="small" variant="outlined" label={`via ${cx.matchReason}`} />
-        )}
-        {(cx.sharedEntities?.length ?? 0) > 0 && (
-          <Chip size="small" variant="outlined"
-            label={`${cx.sharedEntities!.length} shared`} />
-        )}
-        {cx.similarity !== undefined && (
-          <Chip size="small" variant="outlined"
-            label={`jaccard=${cx.similarity.toFixed(2)}`} />
-        )}
-        {(cx.sharedEntities ?? []).slice(0, 4).map((e) => (
-          <Chip
-            key={e}
-            size="small"
-            variant="outlined"
-            label={e}
-            clickable
-            onClick={() => nav(`/entity/${encodeURIComponent(e)}`)}
-            sx={entityChipSx(e)}
-          />
-        ))}
-        {(cx.sharedEntities?.length ?? 0) > 4 && (
-          <Typography variant="caption" color="text.secondary">
-            +{cx.sharedEntities!.length - 4} more
-          </Typography>
-        )}
-        <Box sx={{ flexGrow: 1 }} />
-        <ContradictionMenu
-          leftId={cx.left}
-          rightId={cx.right}
-          isCustom={cx.kind === "manual"}
-          onMutated={onMutated}
-        />
-      </Stack>
-      <Typography variant="caption" color="text.secondary" sx={{
-        display: "block", mb: 1,
-      }}>
-        {cx.summary}
-      </Typography>
-      <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
-        <MiniClaim claim={left} id={cx.left} bundle={bundle} nav={nav} />
-        <MiniClaim claim={right} id={cx.right} bundle={bundle} nav={nav} />
-      </Stack>
-    </Box>
-  );
-}
-
-interface MiniClaimProps {
-  claim: ClaimsIndexEntry | undefined;
-  id: string;
-  bundle: ClaimsBundle;
-  nav: ReturnType<typeof useNavigate>;
-}
-
-function MiniClaim({ claim, id, bundle, nav }: MiniClaimProps) {
-  if (!claim) {
-    return (
-      <Box sx={{
-        flex: 1, p: 1, backgroundColor: "action.hover", borderRadius: 1,
-      }}>
-        <Typography variant="caption" color="text.secondary">
-          {id} (missing from index)
-        </Typography>
-      </Box>
-    );
-  }
-  const meta = bundle.videosById.get(claim.videoId);
-  const label = meta?.shortLabel ?? claim.videoId;
-  const full = meta?.title ?? claim.videoId;
-  return (
-    <Box
-      sx={{
-        flex: 1, p: 1, border: "1px solid", borderColor: "divider",
-        borderRadius: 1, cursor: "pointer",
-        "&:hover": { backgroundColor: "action.hover" },
-      }}
-      onClick={() => nav(`/claim/${encodeURIComponent(claim.id)}`)}
-    >
-      <Stack direction="row" spacing={1} sx={{
-        mb: 0.5, alignItems: "center", flexWrap: "wrap",
-      }}>
-        <Chip size="small" label={claim.kind} sx={{ fontSize: "0.7rem" }} />
-        {claim.hostStance && (
-          <Chip
-            size="small"
-            variant="outlined"
-            label={`host: ${claim.hostStance}`}
-            sx={{ fontSize: "0.7rem" }}
-          />
-        )}
-        <MuiLink
-          component="button"
-          variant="caption"
-          title={full === label ? undefined : full}
-          onClick={(e) => {
-            e.stopPropagation();
-            nav(`/video/${claim.videoId}`);
-          }}
-        >
-          {label}
-        </MuiLink>
-      </Stack>
-      <Typography variant="body2" sx={{ mb: 0.5 }}>{claim.text}</Typography>
-      <TruthBar
-        value={claim.derivedTruth ?? claim.directTruth ?? null}
-        source={claim.truthSource}
-        label="truth"
-      />
-    </Box>
-  );
-}

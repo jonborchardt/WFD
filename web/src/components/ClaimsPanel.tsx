@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Box, Typography, Alert } from "@mui/material";
-import { ClaimRow } from "./ClaimRow";
+import { ClaimDetailCard } from "./ClaimDetailCard";
 import type {
   PersistedClaims,
   ClaimsIndexEntry,
@@ -19,7 +19,7 @@ interface Props {
 
 // Per-video claims section. Renders nothing (apart from a muted hint) if
 // the video has no claim file. Inbound deps + cross-video contradiction
-// info are derived once and passed to each ClaimRow.
+// info are derived once and passed to each ClaimDetailCard.
 export function ClaimsPanel({ videoId, claims, indexEntries, contradictions, corpusIndex, onMutated }: Props) {
   const indexById = useMemo(() => {
     const m = new Map<string, ClaimsIndexEntry>();
@@ -92,7 +92,7 @@ export function ClaimsPanel({ videoId, claims, indexEntries, contradictions, cor
       {claims.claims.map((c) => {
         const idx = indexById.get(c.id);
         return (
-          <ClaimRow
+          <ClaimDetailCard
             key={c.id}
             videoId={videoId}
             claim={{ ...c, tags: idx?.tags ?? c.tags }}

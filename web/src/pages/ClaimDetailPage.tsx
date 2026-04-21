@@ -10,9 +10,15 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { ClaimRow } from "../components/ClaimRow";
-import { TruthBar } from "../components/TruthBar";
+import { ClaimDetailCard } from "../components/ClaimDetailCard";
+import {
+  StancePanel,
+} from "../components/ContradictionResultRow";
 import { ContradictionMenu } from "../components/ContradictionMenu";
+import { DepRow } from "../components/DepRow";
+import {
+  loadClaimsBundle, type ClaimsBundle,
+} from "../components/facets/claims-duck";
 import { PageLoading } from "../components/PageLoading";
 import { beginLoad } from "../lib/loading";
 import {
@@ -34,7 +40,7 @@ import type {
 
 // Per-claim landing page. Linked from /claims and from claim-graph
 // double-clicks. Shows:
-//   - the claim itself (full ClaimRow with evidence, deps, counterfactual)
+//   - the claim itself (full ClaimDetailCard with evidence, deps, counterfactual)
 //   - every contradiction that touches this claim (both sides)
 //   - the 1-hop dependency neighborhood (dependencies + dependents)
 //   - a link to open the wider claim-graph seeded on this claim
@@ -49,6 +55,7 @@ export function ClaimDetailPage() {
   const [corpusIndex, setCorpusIndex] = useState<ClaimsIndexEntry[] | null>(null);
   const [allContradictions, setAllContradictions] = useState<ClaimContradiction[] | null>(null);
   const [deps, setDeps] = useState<DependencyGraphFile | null>(null);
+  const [bundle, setBundle] = useState<ClaimsBundle | null>(null);
   const [reloadTick, setReloadTick] = useState(0);
   const refresh = () => {
     invalidateClaimsCaches();
@@ -70,6 +77,7 @@ export function ClaimDetailPage() {
       fetchClaimsIndex().then((idx) => setCorpusIndex(idx?.claims ?? [])),
       fetchContradictions().then((cx) => setAllContradictions(cx?.contradictions ?? [])),
       fetchDependencyGraph().then(setDeps),
+      loadClaimsBundle().then(setBundle),
     ]).finally(endLoad);
   }, [claimId, videoId, reloadTick]);
 
@@ -89,14 +97,22 @@ export function ClaimDetailPage() {
     [allContradictions, claimId],
   );
 
+  // Exclude "contradicts" — those already appear in the
+  // Contradictions section above, with richer metadata (kind,
+  // match reason, shared entities). Also drop self-edges so a
+  // claim never shows up as its own dependency.
   const inbound = useMemo(() => {
     if (!deps || !claimId) return [];
-    return deps.edges.filter((e) => e.to === claimId);
+    return deps.edges.filter((e) =>
+      e.to === claimId && e.from !== claimId && e.kind !== "contradicts",
+    );
   }, [deps, claimId]);
 
   const outbound = useMemo(() => {
     if (!deps || !claimId) return [];
-    return deps.edges.filter((e) => e.from === claimId);
+    return deps.edges.filter((e) =>
+      e.from === claimId && e.to !== claimId && e.kind !== "contradicts",
+    );
   }, [deps, claimId]);
 
   if (!claimId) {
@@ -136,7 +152,7 @@ export function ClaimDetailPage() {
 
       {/* The claim itself */}
       <Box sx={{ mt: 2 }}>
-        <ClaimRow
+        <ClaimDetailCard
           videoId={videoId}
           claim={{ ...claim, tags: indexEntry?.tags ?? claim.tags }}
           derivedTruth={indexEntry?.derivedTruth ?? null}
@@ -164,25 +180,56 @@ export function ClaimDetailPage() {
           </Typography>
           {contradictionsForClaim.map((cx, i) => {
             const otherId = cx.left === claimId ? cx.right : cx.left;
-            const other = corpusIndex.find((c) => c.id === otherId);
+            const otherClaim = bundle?.claimsById.get(otherId);
+            const sharedCount = cx.sharedEntities?.length ?? 0;
             return (
               <Box
                 key={i}
                 sx={{
-                  border: "1px solid",
-                  borderColor: "divider",
-                  borderRadius: 1,
-                  p: 1.5,
-                  mb: 1,
+                  border: "1px solid", borderColor: "divider",
+                  borderRadius: 1, p: 1.5, mb: 1.5,
                 }}
               >
-                <Stack direction="row" spacing={1} sx={{ mb: 0.5, alignItems: "center", flexWrap: "wrap" }}>
-                  <Chip size="small" color="warning" label={cx.kind} />
+                {bundle && (
+                  <StancePanel
+                    claim={otherClaim}
+                    id={otherId}
+                    bundle={bundle}
+                    nav={nav}
+                  />
+                )}
+                <Stack direction="row" spacing={1} sx={{
+                  mt: 1, opacity: 0.7, flexWrap: "wrap", alignItems: "center",
+                  color: "text.secondary",
+                }}>
+                  <Typography variant="caption" sx={{
+                    fontSize: 10, textTransform: "uppercase", letterSpacing: 0.5,
+                  }}>
+                    {cx.kind}
+                  </Typography>
                   {cx.matchReason && (
-                    <Chip size="small" variant="outlined" label={`via ${cx.matchReason}`} />
+                    <Typography variant="caption">· via {cx.matchReason}</Typography>
+                  )}
+                  {sharedCount > 0 && (
+                    <Typography variant="caption">· {sharedCount} shared</Typography>
                   )}
                   {cx.similarity !== undefined && (
-                    <Chip size="small" variant="outlined" label={`jaccard=${cx.similarity.toFixed(2)}`} />
+                    <Typography variant="caption">
+                      · jaccard {cx.similarity.toFixed(2)}
+                    </Typography>
+                  )}
+                  {(cx.sharedEntities ?? []).slice(0, 4).map((e) => (
+                    <Chip
+                      key={e} size="small" variant="outlined" clickable
+                      label={e}
+                      onClick={() => nav(`/entity/${encodeURIComponent(e)}`)}
+                      sx={{ fontSize: 10, height: 20 }}
+                    />
+                  ))}
+                  {sharedCount > 4 && (
+                    <Typography variant="caption">
+                      +{sharedCount - 4} more
+                    </Typography>
                   )}
                   <Box sx={{ flexGrow: 1 }} />
                   <ContradictionMenu
@@ -192,91 +239,42 @@ export function ClaimDetailPage() {
                     onMutated={refresh}
                   />
                 </Stack>
-                <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 1 }}>
-                  {cx.summary}
-                </Typography>
-                {other ? (
-                  <Box
-                    sx={{
-                      p: 1,
-                      borderLeft: "3px solid",
-                      borderColor: "warning.light",
-                      backgroundColor: "action.hover",
-                      cursor: "pointer",
-                      "&:hover": { backgroundColor: "action.selected" },
-                    }}
-                    onClick={() => nav(`/claim/${encodeURIComponent(otherId)}`)}
-                  >
-                    <Stack direction="row" spacing={1} sx={{ mb: 0.5, alignItems: "center" }}>
-                      <Chip size="small" label={other.kind} />
-                      {other.hostStance && (
-                        <Chip size="small" variant="outlined" label={`host: ${other.hostStance}`} />
-                      )}
-                      <Typography variant="caption" color="text.secondary">{other.videoId}</Typography>
-                    </Stack>
-                    <Typography variant="body2" sx={{ mb: 0.5 }}>{other.text}</Typography>
-                    <TruthBar
-                      value={other.derivedTruth ?? other.directTruth ?? null}
-                      source={other.truthSource}
-                      label="truth"
-                    />
-                  </Box>
-                ) : (
-                  <Typography variant="caption" color="text.secondary">{otherId} (not in index)</Typography>
-                )}
               </Box>
             );
           })}
         </Paper>
       )}
 
-      {/* Dependency neighborhood */}
+      {/* Non-contradictory related claims: supports, presupposes,
+          and elaborates. Contradicts is shown above in its own box. */}
       {(inbound.length > 0 || outbound.length > 0) && (
         <Paper sx={{ mt: 3, p: 2 }}>
           <Typography variant="h6" sx={{ mb: 1 }}>
-            Dependencies{" "}
+            Non-contradictory related claims{" "}
             <Typography component="span" variant="caption" color="text.secondary">
-              {outbound.length} outgoing · {inbound.length} incoming
+              {relatedCountLabel([...outbound, ...inbound])}
             </Typography>
           </Typography>
-          {outbound.length > 0 && (
-            <Box sx={{ mb: 1 }}>
-              <Typography variant="caption" color="text.secondary">this claim →</Typography>
-              {outbound.map((e, i) => {
-                const t = corpusIndex.find((c) => c.id === e.to);
-                return (
-                  <Box
-                    key={`out-${i}`}
-                    sx={{ pl: 1, my: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" } }}
-                    onClick={() => nav(`/claim/${encodeURIComponent(e.to)}`)}
-                  >
-                    <Typography variant="caption" sx={{ fontWeight: 600 }}>{e.kind}</Typography>
-                    {" "}
-                    <Typography variant="caption" color="text.secondary">→ {t?.text ?? e.to}</Typography>
-                  </Box>
-                );
-              })}
-            </Box>
-          )}
-          {inbound.length > 0 && (
-            <Box>
-              <Typography variant="caption" color="text.secondary">→ this claim</Typography>
-              {inbound.map((e, i) => {
-                const t = corpusIndex.find((c) => c.id === e.from);
-                return (
-                  <Box
-                    key={`in-${i}`}
-                    sx={{ pl: 1, my: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" } }}
-                    onClick={() => nav(`/claim/${encodeURIComponent(e.from)}`)}
-                  >
-                    <Typography variant="caption" sx={{ fontWeight: 600 }}>{e.kind}</Typography>
-                    {" "}
-                    <Typography variant="caption" color="text.secondary">← {t?.text ?? e.from}</Typography>
-                  </Box>
-                );
-              })}
-            </Box>
-          )}
+          {outbound.map((e, i) => (
+            <DepRow
+              key={`out-${i}`}
+              direction="out"
+              kind={e.kind}
+              targetId={e.to}
+              corpusIndex={corpusIndex}
+              onClick={() => nav(`/claim/${encodeURIComponent(e.to)}`)}
+            />
+          ))}
+          {inbound.map((e, i) => (
+            <DepRow
+              key={`in-${i}`}
+              direction="in"
+              kind={e.kind}
+              targetId={e.from}
+              corpusIndex={corpusIndex}
+              onClick={() => nav(`/claim/${encodeURIComponent(e.from)}`)}
+            />
+          ))}
         </Paper>
       )}
 
@@ -295,4 +293,21 @@ export function ClaimDetailPage() {
       </Stack>
     </Container>
   );
+}
+
+// Build the "N supporting · M presupposing · K elaborating" line
+// shown under the Related claims heading. Directions collapsed
+// because the row cards already show direction per entry.
+function relatedCountLabel(edges: Array<{ kind: string }>): string {
+  const counts: Record<string, number> = {};
+  for (const e of edges) counts[e.kind] = (counts[e.kind] ?? 0) + 1;
+  const parts: string[] = [];
+  const add = (kind: string, word: string) => {
+    const n = counts[kind] ?? 0;
+    if (n > 0) parts.push(`${n} ${word}`);
+  };
+  add("supports", "supporting");
+  add("presupposes", "presupposing");
+  add("elaborates", "elaborating");
+  return parts.join(" · ");
 }

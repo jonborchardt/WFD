@@ -1,15 +1,25 @@
-// Shared color ramp for truth values. 0 = red, 0.5 = neutral gray,
-// 1 = green. Consumers: the TruthBar component, the relationships
-// graph edge overlay, the contradictions page.
+// Shared color ramp for truth values. Interpolates through the
+// same three colors the TruthBar databar uses: red (#c62828) at 0,
+// neutral gray (#555) at 0.5, green (#2e7d32) at 1. Consumers: the
+// TruthBar component, the relationships graph edge overlay, the
+// counterfactual slider swatch.
+
+export const TRUTH_TRUE = "#2e7d32";
+export const TRUTH_FALSE = "#c62828";
+export const TRUTH_NEUTRAL = "#555";
 
 export function truthColor(t: number): string {
   const clamped = Math.max(0, Math.min(1, t));
-  if (clamped < 0.5) {
-    // red (#d32f2f) → gray (#9e9e9e)
-    return mix("#d32f2f", "#9e9e9e", clamped * 2);
-  }
-  // gray (#9e9e9e) → green (#2e7d32)
-  return mix("#9e9e9e", "#2e7d32", (clamped - 0.5) * 2);
+  if (clamped < 0.5) return mix(TRUTH_FALSE, TRUTH_NEUTRAL, clamped * 2);
+  return mix(TRUTH_NEUTRAL, TRUTH_TRUE, (clamped - 0.5) * 2);
+}
+
+// Three-stop discrete version used for truth-colored borders on
+// claim/dep cards. Matches the TruthBar fill colors exactly so a
+// card's border and its bar agree on "which side" the claim is on.
+export function truthSideColor(t: number | null | undefined): string {
+  if (t == null || !Number.isFinite(t) || t === 0.5) return TRUTH_NEUTRAL;
+  return t > 0.5 ? TRUTH_TRUE : TRUTH_FALSE;
 }
 
 export function truthLabel(t: number): string {

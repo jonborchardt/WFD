@@ -8,11 +8,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Box, Button, Chip, Link as MuiLink, Stack,
-  TextField, Typography,
+  Box, Button, TextField, Typography,
 } from "@mui/material";
 import { PageLoading } from "../components/PageLoading";
-import { TruthBar } from "../components/TruthBar";
+import { ClaimResultRow } from "../components/ClaimResultRow";
 import { FacetCard } from "../components/facets/FacetCard";
 import { BarListFacet, type BarRow } from "../components/facets/BarListFacet";
 import { NumericRangeFacet } from "../components/facets/NumericRangeFacet";
@@ -32,12 +31,13 @@ import {
   type ClaimsBundle,
 } from "../components/facets/claims-duck";
 import {
-  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr, entityChipSx,
+  ENTITY_PRIORITY, ENTITY_TYPE_COLOR, dateRangeStr,
   fmtDay, parseDateRange, parseRange, rangeStr, splitEntityKey,
 } from "../lib/facet-helpers";
 import { matchesTopic } from "../lib/claim-search";
 import { beginLoad } from "../lib/loading";
 import type { ClaimsIndexEntry } from "../types";
+
 
 const SORT_OPTIONS: SortOption[] = [
   { value: "certain", label: "most certain",
@@ -57,14 +57,6 @@ const KIND_ORDER = [
 ];
 const STANCE_ORDER = ["asserts", "denies", "uncertain", "steelman"];
 const SOURCE_ORDER = ["direct", "derived", "override", "uncalibrated"];
-
-const KIND_COLOR: Record<string, string> = {
-  empirical: "#1976d2",
-  historical: "#6d4c41",
-  speculative: "#8e24aa",
-  opinion: "#ef6c00",
-  definitional: "#00838f",
-};
 
 const PER_TYPE_VISIBLE = 8;
 
@@ -733,7 +725,12 @@ export function ClaimsPage() {
         onClearAll={hasChips ? clearAll : undefined}
       />
       {sorted.slice(0, 200).map((c) => (
-        <ClaimResultRow key={c.id} claim={c} nav={nav} bundle={bundle} />
+        <ClaimResultRow
+          key={c.id}
+          claim={c}
+          nav={nav}
+          bundle={bundle}
+        />
       ))}
     </>
   );
@@ -787,128 +784,3 @@ function makeCountRows<T>(
   return rows;
 }
 
-// ── result row ──────────────────────────────────────────────────
-interface RowProps {
-  claim: ClaimsIndexEntry;
-  nav: ReturnType<typeof useNavigate>;
-  bundle: ClaimsBundle;
-}
-function ClaimResultRow({ claim, nav, bundle }: RowProps) {
-  const contradictions = bundle.contradictionCount.get(claim.id) ?? 0;
-  const deps = bundle.depCounts.get(claim.id) ?? { in: 0, out: 0 };
-  const meta = bundle.videosById.get(claim.videoId);
-  const videoLabel = meta?.shortLabel ?? claim.videoId;
-  const videoTitle = meta?.title ?? claim.videoId;
-  return (
-    <Box
-      sx={{
-        border: "1px solid", borderColor: "divider",
-        borderRadius: 1, p: 1.5, mb: 1, cursor: "pointer",
-        "&:hover": { backgroundColor: "action.hover" },
-      }}
-      onClick={() => nav(`/claim/${encodeURIComponent(claim.id)}`)}
-    >
-      <Stack direction="row" spacing={1} sx={{
-        mb: 0.5, alignItems: "center", flexWrap: "wrap",
-      }}>
-        <Chip
-          size="small"
-          label={claim.kind}
-          sx={{
-            backgroundColor: KIND_COLOR[claim.kind] ?? "#757575",
-            color: "white", fontSize: "0.7rem",
-          }}
-        />
-        {claim.hostStance && (
-          <Chip size="small" label={`host: ${claim.hostStance}`}
-            variant="outlined" sx={{ fontSize: "0.7rem" }} />
-        )}
-        {claim.inVerdictSection && (
-          <Chip size="small" variant="outlined" label="verdict"
-            sx={{ fontSize: "0.7rem" }} />
-        )}
-        <MuiLink
-          component="button"
-          variant="caption"
-          title={videoTitle === videoLabel ? undefined : videoTitle}
-          onClick={(e) => {
-            e.stopPropagation();
-            nav(`/video/${claim.videoId}`);
-          }}
-        >
-          {videoLabel}
-        </MuiLink>
-        {contradictions > 0 && (
-          <Chip
-            size="small"
-            label={`⚠ ${contradictions} contradiction${contradictions > 1 ? "s" : ""}`}
-            color="warning" variant="outlined"
-            sx={{ fontSize: "0.7rem" }}
-          />
-        )}
-        {(deps.in > 0 || deps.out > 0) && (
-          <Chip
-            size="small" variant="outlined"
-            label={`${deps.out} out · ${deps.in} in`}
-            sx={{ fontSize: "0.7rem" }}
-            title="outgoing / incoming dependencies"
-          />
-        )}
-      </Stack>
-      <Typography variant="body2" sx={{ mb: 0.5 }}>{claim.text}</Typography>
-      <Stack spacing={0.25} sx={{ mb: 0.5 }}>
-        <TruthBar
-          value={claim.derivedTruth ?? claim.directTruth ?? null}
-          source={claim.truthSource}
-          label="truth"
-        />
-        <TruthBar value={claim.confidence} label="confidence" />
-      </Stack>
-      {claim.tags && claim.tags.length > 0 && (
-        <Box sx={{ mb: 0.5 }}>
-          {claim.tags.map((t) => (
-            <Typography
-              key={t}
-              component="span"
-              variant="caption"
-              sx={{
-                color: "text.secondary", mr: 0.5,
-                fontFamily: "monospace",
-              }}
-            >
-              #{t}
-            </Typography>
-          ))}
-        </Box>
-      )}
-      {claim.entities.length > 0 && (
-        <Box sx={{
-          display: "flex", flexWrap: "wrap", gap: 0.5, alignItems: "center",
-        }}>
-          <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
-            entities:
-          </Typography>
-          {claim.entities.slice(0, 6).map((k) => (
-            <Chip
-              key={k}
-              size="small"
-              variant="outlined"
-              clickable
-              label={k}
-              onClick={(e) => {
-                e.stopPropagation();
-                nav(`/entity/${encodeURIComponent(k)}`);
-              }}
-              sx={{ fontSize: "0.7rem", ...entityChipSx(k) }}
-            />
-          ))}
-          {claim.entities.length > 6 && (
-            <Typography variant="caption" color="text.secondary">
-              +{claim.entities.length - 6} more
-            </Typography>
-          )}
-        </Box>
-      )}
-    </Box>
-  );
-}
