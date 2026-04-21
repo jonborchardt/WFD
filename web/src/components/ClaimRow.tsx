@@ -3,6 +3,7 @@ import { Box, Chip, Slider, Typography, Link, Collapse, Stack } from "@mui/mater
 import { useNavigate } from "react-router-dom";
 import { TruthBar } from "./TruthBar";
 import { ClaimMenu } from "./ClaimMenu";
+import { entityChipSx } from "../lib/facet-helpers";
 import { deepLink, fmtTimestamp } from "../lib/format";
 import { truthColor } from "../lib/truth-palette";
 import { runCounterfactual, type CounterfactualResult } from "../lib/counterfactual";
@@ -245,7 +246,7 @@ export function ClaimRow({
                   clickable
                   label={k}
                   onClick={() => nav(`/entity/${encodeURIComponent(k)}`)}
-                  sx={{ fontSize: "0.7rem" }}
+                  sx={{ fontSize: "0.7rem", ...entityChipSx(k) }}
                 />
               ))}
             </Box>

@@ -27,7 +27,7 @@ interface Props {
 
 // Parse the canonical form into a UTC timestamp (ms). Returns null if
 // the canonical does not look like this type's expected shape.
-function timeValue(type: string, canonical: string): number | null {
+export function timeValue(type: string, canonical: string): number | null {
   if (type === "year") {
     if (!/^\d{4}$/.test(canonical)) return null;
     return Date.UTC(parseInt(canonical, 10), 0, 1);
@@ -50,7 +50,7 @@ function timeValue(type: string, canonical: string): number | null {
   return null;
 }
 
-function axisLabel(type: string, t: number): string {
+export function axisLabel(type: string, t: number): string {
   const d = new Date(t);
   const y = d.getUTCFullYear();
   if (type === "year") return `${y}`;

@@ -34,6 +34,21 @@ export function splitEntityKey(key: string): { type: string; canonical: string }
   return { type: key.slice(0, i), canonical: key.slice(i + 1) };
 }
 
+// Shared `sx` for any outlined MUI Chip that represents an entity,
+// anywhere in the app. Keeps colors consistent with the facet rail
+// and chip strip so an organization chip in a claim body reads the
+// same color as its organization facet card.
+export function entityChipSx(entityKey: string) {
+  const color = ENTITY_TYPE_COLOR[splitEntityKey(entityKey).type];
+  if (!color) return undefined;
+  return {
+    borderColor: color,
+    color,
+    "& .MuiChip-deleteIcon": { color, opacity: 0.6 },
+    "& .MuiChip-deleteIcon:hover": { color, opacity: 1 },
+  };
+}
+
 // ── numeric range round-tripping ──────────────────────────────────
 // Used for 0..1 facets (truth, confidence, similarity) and integer
 // facets (shared-entity count). Two floats separated by a dash.

@@ -8,7 +8,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Box, Button, Chip, Container, Link as MuiLink, Stack,
+  Box, Button, Chip, Link as MuiLink, Stack,
   TextField, Typography,
 } from "@mui/material";
 import { PageLoading } from "../components/PageLoading";
@@ -18,7 +18,14 @@ import { BarListFacet, type BarRow } from "../components/facets/BarListFacet";
 import { NumericRangeFacet } from "../components/facets/NumericRangeFacet";
 import { DateBrushFacet } from "../components/facets/DateBrushFacet";
 import { SortFacet, type SortOption } from "../components/facets/SortFacet";
+import {
+  buildEntityBucketsByType, buildEntityChipSlots, stripEntityType,
+} from "../components/facets/entity-buckets";
 import { FacetSection } from "../components/facets/FacetSection";
+import { FilterChipStrip, type ChipSlot } from "../components/facets/FilterChipStrip";
+import {
+  DebouncedSearchField, FacetsPageHeader, FacetsPageOuter, RailResultsLayout,
+} from "../components/facets/FacetsPageShell";
 import { GraphSeedsButton } from "../components/facets/GraphSeedsButton";
 import {
   binUnitInterval, loadClaimsBundle, truthValue,
@@ -202,8 +209,22 @@ function passes(
   }
   if (s.videos.size > 0 && !s.videos.has(c.videoId)) return false;
   if (s.entities.size > 0) {
+    // Within one entity type: OR (pick any of these people). Across
+    // entity types: AND (this person AND in this location). Matches
+    // how the chip strip groups selections visually.
     const ce = new Set(c.entities);
-    for (const e of s.entities) if (!ce.has(e)) return false;
+    const byType = new Map<string, string[]>();
+    for (const e of s.entities) {
+      const t = splitEntityKey(e).type;
+      const arr = byType.get(t) ?? [];
+      arr.push(e);
+      byType.set(t, arr);
+    }
+    for (const values of byType.values()) {
+      let any = false;
+      for (const v of values) if (ce.has(v)) { any = true; break; }
+      if (!any) return false;
+    }
   }
   return true;
 }
@@ -238,10 +259,6 @@ export function ClaimsPage() {
   const nav = useNavigate();
   const [bundle, setBundle] = useState<ClaimsBundle | null>(null);
   const [filter, setFilter] = useState<FilterState>(() => parseFiltersFromUrl());
-  // Free-text input is held separately and debounced into filter.q
-  // so keystrokes don't trigger the full filter walk per character.
-  // 180 ms matches the home page's search autocomplete feel.
-  const [qInput, setQInput] = useState(filter.q);
   const [entitySearch, setEntitySearch] = useState<Record<string, string>>({});
   const [videoSearch, setVideoSearch] = useState("");
   const [showAllByType, setShowAllByType] =
@@ -251,13 +268,6 @@ export function ClaimsPage() {
     const end = beginLoad();
     loadClaimsBundle().then(setBundle).finally(end);
   }, []);
-
-  useEffect(() => {
-    const t = setTimeout(() => {
-      setFilter((f) => f.q === qInput ? f : { ...f, q: qInput });
-    }, 180);
-    return () => clearTimeout(t);
-  }, [qInput]);
 
   // Skip the first effect run — filter is initialized from the URL,
   // so writing it back immediately is a no-op that inflates history.
@@ -375,7 +385,6 @@ export function ClaimsPage() {
   const truthScope = filterExcept(bundle.claims, filter, bundle, "truthRange");
   const confScope = filterExcept(bundle.claims, filter, bundle, "confRange");
   const dateScope = filterExcept(bundle.claims, filter, bundle, "dateRange");
-  const entityScope = filterExcept(bundle.claims, filter, bundle, "entities");
   const videoScope = filterExcept(bundle.claims, filter, bundle, "videos");
 
   const truthBins = binUnitInterval(truthScope.map(truthValue), 0.05);
@@ -386,19 +395,15 @@ export function ClaimsPage() {
     if (ms != null) dateTimestamps.push(ms);
   }
 
-  // Per-entity-type rows. Each entry stored under its full key
-  // (type:canonical) so toggling matches the claim's entity list.
-  const entityByType = new Map<string, Map<string, { label: string; count: number }>>();
-  for (const c of entityScope) {
-    for (const ek of c.entities) {
-      const { type, canonical } = splitEntityKey(ek);
-      let bucket = entityByType.get(type);
-      if (!bucket) { bucket = new Map(); entityByType.set(type, bucket); }
-      const slot = bucket.get(ek) ?? { label: canonical, count: 0 };
-      slot.count += 1;
-      bucket.set(ek, slot);
-    }
-  }
+  const entityByType = buildEntityBucketsByType(
+    bundle.claims,
+    filter.entities,
+    (type) => {
+      const stripped = stripEntityType(filter, type);
+      return bundle.claims.filter((c) => passes(c, stripped, bundle));
+    },
+    (c) => c.entities,
+  );
   const orderedTypes = [
     ...ENTITY_PRIORITY.filter((t) => entityByType.has(t)),
     ...[...entityByType.keys()].filter((t) => !ENTITY_PRIORITY.includes(t)),
@@ -429,89 +434,89 @@ export function ClaimsPage() {
     })
     .sort((a, b) => b.count - a.count);
 
-  // Active filter chips rendered above the results.
-  interface ActiveChip { key: string; label: string; onClear: () => void; }
-  const activeChips: ActiveChip[] = [];
-  if (filter.q) activeChips.push({
-    key: "q", label: `text: ${filter.q}`, onClear: () => setF({ q: "" }),
+  // Active-filter chip strip, one slot per facet. Within-facet:
+  // entities are AND (every selected key must be on the claim); all
+  // other multi-value facets are OR. Between-facet: always AND.
+  const chipSlots: ChipSlot[] = [];
+  if (filter.q) chipSlots.push({
+    key: "q", conj: "OR",
+    items: [{
+      id: "q", label: `text: ${filter.q}`,
+      onClear: () => setF({ q: "" }),
+    }],
   });
   for (const key of STRING_SET_KEYS) {
-    if (key === "videos") continue; // handled below with title resolution
-    for (const v of filter[key]) {
-      activeChips.push({
-        key: `${key}:${v}`,
+    if (key === "videos") continue; // title resolution handled below
+    if (key === "entities") continue; // grouped per-type below
+    const values = [...filter[key]];
+    if (values.length === 0) continue;
+    chipSlots.push({
+      key, conj: "OR",
+      items: values.map((v) => ({
+        id: v,
         label: `${STRING_KEY_LABEL[key]}: ${v}`,
         onClear: () => toggleString(key, v),
-      });
-    }
+      })),
+    });
   }
+  chipSlots.push(...buildEntityChipSlots(
+    filter.entities,
+    (v) => toggleString("entities", v),
+  ));
   for (const key of BOOL_SET_KEYS) {
-    for (const v of filter[key]) activeChips.push({
-      key: `${key}:${v}`,
-      label: BOOL_CHIP_LABEL[key][v],
-      onClear: () => toggleBool(key, v),
+    const values = [...filter[key]];
+    if (values.length === 0) continue;
+    chipSlots.push({
+      key, conj: "OR",
+      items: values.map((v) => ({
+        id: v,
+        label: BOOL_CHIP_LABEL[key][v],
+        onClear: () => toggleBool(key, v),
+      })),
     });
   }
-  if (filter.truthRange) activeChips.push({
-    key: "truth",
-    label: `truth ${filter.truthRange[0].toFixed(2)}–${filter.truthRange[1].toFixed(2)}`,
-    onClear: () => setF({ truthRange: null }),
+  if (filter.truthRange) chipSlots.push({
+    key: "truth", conj: "OR", items: [{
+      id: "truth",
+      label: `truth ${filter.truthRange[0].toFixed(2)}–${filter.truthRange[1].toFixed(2)}`,
+      onClear: () => setF({ truthRange: null }),
+    }],
   });
-  if (filter.confRange) activeChips.push({
-    key: "conf",
-    label: `conf ${filter.confRange[0].toFixed(2)}–${filter.confRange[1].toFixed(2)}`,
-    onClear: () => setF({ confRange: null }),
+  if (filter.confRange) chipSlots.push({
+    key: "conf", conj: "OR", items: [{
+      id: "conf",
+      label: `conf ${filter.confRange[0].toFixed(2)}–${filter.confRange[1].toFixed(2)}`,
+      onClear: () => setF({ confRange: null }),
+    }],
   });
-  if (filter.dateRange) activeChips.push({
-    key: "date",
-    label: `date ${fmtDay(filter.dateRange[0])}–${fmtDay(filter.dateRange[1])}`,
-    onClear: () => setF({ dateRange: null }),
+  if (filter.dateRange) chipSlots.push({
+    key: "date", conj: "OR", items: [{
+      id: "date",
+      label: `date ${fmtDay(filter.dateRange[0])}–${fmtDay(filter.dateRange[1])}`,
+      onClear: () => setF({ dateRange: null }),
+    }],
   });
-  for (const id of filter.videos) {
-    const t = bundle.videosById.get(id);
-    activeChips.push({
-      key: `video:${id}`,
-      label: `video: ${t?.shortLabel ?? id}`,
-      onClear: () => toggleString("videos", id),
-    });
-  }
+  if (filter.videos.size > 0) chipSlots.push({
+    key: "videos", conj: "OR",
+    items: [...filter.videos].map((id) => {
+      const t = bundle.videosById.get(id);
+      return {
+        id,
+        label: `video: ${t?.shortLabel ?? id}`,
+        title: t?.title,
+        onClear: () => toggleString("videos", id),
+      };
+    }),
+  });
+  const hasChips = chipSlots.length > 0;
 
-  return (
-    <Container maxWidth={false} sx={{ px: 2, py: 2, maxWidth: 1800 }}>
-      <Typography variant="h5" sx={{ mb: 1 }}>
-        Claims{" "}
-        <Typography component="span" variant="caption" color="text.secondary">
-          {filtered.length === bundle.claims.length
-            ? `${bundle.claims.length} in corpus`
-            : `${filtered.length} match · ${bundle.claims.length} in corpus`}
-        </Typography>
-      </Typography>
-
-      <Box sx={{ display: "flex", gap: 2 }}>
-        {/* ── rail ────────────────────────────────────────────── */}
-        <Box sx={{
-          flex: "1 1 0", minWidth: 0,
-          maxWidth: "calc((100% - 16px) / 3)",
-        }}>
-          <TextField
-            size="small"
-            placeholder="search claim text, entities, kind…"
-            value={qInput}
-            onChange={(e) => setQInput(e.target.value)}
-            fullWidth
-            sx={{ mb: 1 }}
-          />
-
-          <Box sx={{ display: "flex", alignItems: "baseline", gap: 1, mb: 1 }}>
-            <Typography variant="h6" sx={{ m: 0 }}>filters</Typography>
-            <Box flex={1} />
-            {activeChips.length > 0 && (
-              <Button size="small" onClick={clearAll}>
-                clear all ({activeChips.length})
-              </Button>
-            )}
-          </Box>
-
+  const rail = (
+    <>
+      <DebouncedSearchField
+        value={filter.q}
+        onCommit={(v) => setF({ q: v })}
+        placeholder="search claim text, entities, kind…"
+      />
           <FacetSection title="sort">
             <FacetCard label="sort by" color="#ffb74d">
               <SortFacet
@@ -632,19 +637,37 @@ export function ClaimsPage() {
             {orderedTypes.map((type) => {
               const bucket = entityByType.get(type)!;
               const color = ENTITY_TYPE_COLOR[type] || "#90caf9";
+              const selectedInType = [...filter.entities]
+                .filter((k) => splitEntityKey(k).type === type).length;
+              // Bucket empty → no search, no "+ more", just a note.
+              // The card itself stays in place so the rail doesn't
+              // reflow with every filter tweak.
+              if (bucket.size === 0) {
+                return (
+                  <FacetCard
+                    key={type}
+                    label={type} color={color}
+                    selected={selectedInType} total={0}
+                  >
+                    <Typography variant="caption" color="text.secondary" sx={{
+                      display: "block", px: 0.5, fontSize: 10,
+                    }}>
+                      no matches under current filter
+                    </Typography>
+                  </FacetCard>
+                );
+              }
               const q = (entitySearch[type] || "").toLowerCase();
               const all: BarRow[] = [...bucket.entries()]
                 .map(([id, v]) => ({ id, label: v.label, count: v.count }))
                 .filter((r) => !q || r.label.toLowerCase().includes(q))
                 .sort((a, b) => b.count - a.count);
               const limit = showAllByType[type] ? 200 : PER_TYPE_VISIBLE;
-              const selectedInType = [...filter.entities]
-                .filter((k) => splitEntityKey(k).type === type).length;
               return (
                 <FacetCard
                   key={type}
                   label={type} color={color}
-                  selected={selectedInType} total={all.length}
+                  selected={selectedInType} total={bucket.size}
                 >
                   <TextField
                     size="small"
@@ -700,46 +723,31 @@ export function ClaimsPage() {
               />
             </FacetCard>
           </FacetSection>
-        </Box>
+    </>
+  );
 
-        {/* ── results ─────────────────────────────────────────── */}
-        <Box sx={{ flex: "2 1 0", minWidth: 0 }}>
-          {activeChips.length > 0 && (
-            <Box sx={{
-              py: 0.5, display: "flex", flexWrap: "wrap",
-              alignItems: "center", gap: 0.5, mb: 2,
-            }}>
-              <Typography variant="caption" color="text.secondary" sx={{
-                mr: 0.5, fontSize: 10,
-              }}>
-                filters:
-              </Typography>
-              {activeChips.map((c) => (
-                <Chip key={c.key} size="small" label={c.label} onDelete={c.onClear} />
-              ))}
-              <Button size="small" onClick={clearAll} sx={{ ml: 1 }}>
-                clear all
-              </Button>
-            </Box>
-          )}
+  const results = (
+    <>
+      <FilterChipStrip
+        slots={chipSlots}
+        onClearAll={hasChips ? clearAll : undefined}
+      />
+      {sorted.slice(0, 200).map((c) => (
+        <ClaimResultRow key={c.id} claim={c} nav={nav} bundle={bundle} />
+      ))}
+    </>
+  );
 
-          <Box sx={{
-            display: "flex", alignItems: "center", gap: 1, mb: 1,
-          }}>
-            <Typography variant="caption" color="text.secondary">
-              showing {Math.min(sorted.length, 200)} of {sorted.length}
-              {sorted.length > 200 && " — refine filters to narrow"}
-            </Typography>
-            <Box flex={1} />
-            <GraphSeedsButton claimIds={sorted.map((c) => c.id)} />
-          </Box>
-
-          {sorted.slice(0, 200).map((c) => (
-            <ClaimResultRow key={c.id} claim={c} nav={nav} bundle={bundle} />
-          ))}
-        </Box>
-      </Box>
-    </Container>
+  return (
+    <FacetsPageOuter>
+      <FacetsPageHeader
+        title="Claims"
+        matchCount={filtered.length}
+        totalCount={bundle.claims.length}
+        suffix={<GraphSeedsButton claimIds={sorted.map((c) => c.id)} />}
+      />
+      <RailResultsLayout rail={rail} results={results} />
+    </FacetsPageOuter>
   );
 }
 

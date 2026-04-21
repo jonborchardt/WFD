@@ -6,7 +6,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Box, Button, Chip, Container, Link as MuiLink, Stack,
+  Box, Button, Chip, Link as MuiLink, Stack,
   TextField, Typography,
 } from "@mui/material";
 import { PageLoading } from "../components/PageLoading";
@@ -17,7 +17,14 @@ import { BarListFacet, type BarRow } from "../components/facets/BarListFacet";
 import { NumericRangeFacet } from "../components/facets/NumericRangeFacet";
 import { DateBrushFacet } from "../components/facets/DateBrushFacet";
 import { SortFacet, type SortOption } from "../components/facets/SortFacet";
+import {
+  buildEntityBucketsByType, buildEntityChipSlots, stripEntityType,
+} from "../components/facets/entity-buckets";
 import { FacetSection } from "../components/facets/FacetSection";
+import { FilterChipStrip, type ChipSlot } from "../components/facets/FilterChipStrip";
+import {
+  DebouncedSearchField, FacetsPageHeader, FacetsPageOuter, RailResultsLayout,
+} from "../components/facets/FacetsPageShell";
 import { GraphSeedsButton } from "../components/facets/GraphSeedsButton";
 import {
   binIntegerCounts, binUnitInterval, invalidateClaimsBundle,
@@ -156,8 +163,21 @@ function passes(
   }
 
   if (s.entities.size > 0) {
+    // Within one entity type: OR. Across entity types: AND. Matches
+    // how the chip strip groups selections visually.
     const she = new Set(c.sharedEntities ?? []);
-    for (const e of s.entities) if (!she.has(e)) return false;
+    const byType = new Map<string, string[]>();
+    for (const e of s.entities) {
+      const t = splitEntityKey(e).type;
+      const arr = byType.get(t) ?? [];
+      arr.push(e);
+      byType.set(t, arr);
+    }
+    for (const values of byType.values()) {
+      let any = false;
+      for (const v of values) if (she.has(v)) { any = true; break; }
+      if (!any) return false;
+    }
   }
 
   if (q) {
@@ -194,7 +214,6 @@ export function ContradictionsPage() {
   const nav = useNavigate();
   const [bundle, setBundle] = useState<ClaimsBundle | null>(null);
   const [filter, setFilter] = useState<FilterState>(() => parseFromUrl());
-  const [qInput, setQInput] = useState(filter.q);
   const [entitySearch, setEntitySearch] = useState<Record<string, string>>({});
   const [videoSearch, setVideoSearch] = useState("");
   const [showAllByType, setShowAllByType] =
@@ -205,13 +224,6 @@ export function ContradictionsPage() {
     const end = beginLoad();
     loadClaimsBundle().then(setBundle).finally(end);
   }, [reloadTick]);
-
-  useEffect(() => {
-    const t = setTimeout(() => {
-      setFilter((f) => f.q === qInput ? f : { ...f, q: qInput });
-    }, 180);
-    return () => clearTimeout(t);
-  }, [qInput]);
 
   const hydratedRef = useRef(false);
   useEffect(() => {
@@ -270,7 +282,6 @@ export function ContradictionsPage() {
   const sharedScope = applyExcept(bundle.contradictions, filter, bundle, "sharedRange");
   const simScope = applyExcept(bundle.contradictions, filter, bundle, "simRange");
   const dateScope = applyExcept(bundle.contradictions, filter, bundle, "dateRange");
-  const entityScope = applyExcept(bundle.contradictions, filter, bundle, "entities");
   const videoScope = applyExcept(bundle.contradictions, filter, bundle, "videos");
 
   const kindRows = makeCountRows(KIND_LABELS, kindScope, (c) => c.kind);
@@ -301,18 +312,15 @@ export function ContradictionsPage() {
     if (candidates.length > 0) dateTimestamps.push(Math.min(...candidates));
   }
 
-  // Entity rows per type, keyed on the shared-entities list.
-  const entityByType = new Map<string, Map<string, { label: string; count: number }>>();
-  for (const c of entityScope) {
-    for (const ek of c.sharedEntities ?? []) {
-      const { type, canonical } = splitEntityKey(ek);
-      let bucket = entityByType.get(type);
-      if (!bucket) { bucket = new Map(); entityByType.set(type, bucket); }
-      const slot = bucket.get(ek) ?? { label: canonical, count: 0 };
-      slot.count += 1;
-      bucket.set(ek, slot);
-    }
-  }
+  const entityByType = buildEntityBucketsByType(
+    bundle.contradictions,
+    filter.entities,
+    (type) => {
+      const stripped = stripEntityType(filter, type);
+      return bundle.contradictions.filter((c) => passes(c, stripped, bundle));
+    },
+    (c) => c.sharedEntities,
+  );
   const orderedTypes = [
     ...ENTITY_PRIORITY.filter((t) => entityByType.has(t)),
     ...[...entityByType.keys()].filter((t) => !ENTITY_PRIORITY.includes(t)),
@@ -350,43 +358,68 @@ export function ContradictionsPage() {
     })
     .sort((a, b) => b.count - a.count);
 
-  // Active filter chips
-  interface ActiveChip { key: string; label: string; onClear: () => void; }
-  const activeChips: ActiveChip[] = [];
-  if (filter.q) activeChips.push({
-    key: "q", label: `text: ${filter.q}`, onClear: () => setF({ q: "" }),
+  // Active-filter chip strip, one slot per facet. All facets here
+  // are OR within the slot; between slots is AND (standard).
+  const chipSlots: ChipSlot[] = [];
+  if (filter.q) chipSlots.push({
+    key: "q", conj: "OR",
+    items: [{
+      id: "q", label: `text: ${filter.q}`,
+      onClear: () => setF({ q: "" }),
+    }],
   });
   for (const key of STRING_SET_KEYS) {
     if (key === "videos") continue;
-    for (const v of filter[key]) activeChips.push({
-      key: `${key}:${v}`,
-      label: `${STRING_KEY_LABEL[key]}: ${v}`,
-      onClear: () => toggleString(key, v),
+    if (key === "entities") continue; // grouped per-type below
+    const values = [...filter[key]];
+    if (values.length === 0) continue;
+    chipSlots.push({
+      key, conj: "OR",
+      items: values.map((v) => ({
+        id: v,
+        label: `${STRING_KEY_LABEL[key]}: ${v}`,
+        onClear: () => toggleString(key, v),
+      })),
     });
   }
-  if (filter.sharedRange) activeChips.push({
-    key: "shared",
-    label: `shared ${filter.sharedRange[0]}–${filter.sharedRange[1]}`,
-    onClear: () => setF({ sharedRange: null }),
+  chipSlots.push(...buildEntityChipSlots(
+    filter.entities,
+    (v) => toggleString("entities", v),
+  ));
+  if (filter.sharedRange) chipSlots.push({
+    key: "shared", conj: "OR", items: [{
+      id: "shared",
+      label: `shared ${filter.sharedRange[0]}–${filter.sharedRange[1]}`,
+      onClear: () => setF({ sharedRange: null }),
+    }],
   });
-  if (filter.simRange) activeChips.push({
-    key: "sim",
-    label: `similarity ${filter.simRange[0].toFixed(2)}–${filter.simRange[1].toFixed(2)}`,
-    onClear: () => setF({ simRange: null }),
+  if (filter.simRange) chipSlots.push({
+    key: "sim", conj: "OR", items: [{
+      id: "sim",
+      label: `similarity ${filter.simRange[0].toFixed(2)}–${filter.simRange[1].toFixed(2)}`,
+      onClear: () => setF({ simRange: null }),
+    }],
   });
-  if (filter.dateRange) activeChips.push({
-    key: "date",
-    label: `date ${fmtDay(filter.dateRange[0])}–${fmtDay(filter.dateRange[1])}`,
-    onClear: () => setF({ dateRange: null }),
+  if (filter.dateRange) chipSlots.push({
+    key: "date", conj: "OR", items: [{
+      id: "date",
+      label: `date ${fmtDay(filter.dateRange[0])}–${fmtDay(filter.dateRange[1])}`,
+      onClear: () => setF({ dateRange: null }),
+    }],
   });
-  for (const id of filter.videos) {
-    const t = bundle.videosById.get(id);
-    activeChips.push({
-      key: `video:${id}`,
-      label: `video: ${t?.shortLabel ?? id}`,
-      onClear: () => toggleString("videos", id),
-    });
-  }
+  if (filter.videos.size > 0) chipSlots.push({
+    key: "videos", conj: "OR",
+    items: [...filter.videos].map((id) => {
+      const t = bundle.videosById.get(id);
+      return {
+        id,
+        label: `video: ${t?.shortLabel ?? id}`,
+        title: t?.title,
+        onClear: () => toggleString("videos", id),
+      };
+    }),
+  });
+  const hasChips = chipSlots.length > 0;
 
   // Seeds for the "graph these" button: both sides of every filtered
   // pair, order preserved so the first few contradictions' claims
@@ -396,42 +429,13 @@ export function ContradictionsPage() {
     graphSeeds.push(c.left, c.right);
   }
 
-  return (
-    <Container maxWidth={false} sx={{ px: 2, py: 2, maxWidth: 1800 }}>
-      <Typography variant="h5" sx={{ mb: 1 }}>
-        Contradictions{" "}
-        <Typography component="span" variant="caption" color="text.secondary">
-          {filtered.length === bundle.contradictions.length
-            ? `${bundle.contradictions.length} in corpus`
-            : `${filtered.length} match · ${bundle.contradictions.length} in corpus`}
-        </Typography>
-      </Typography>
-
-      <Box sx={{ display: "flex", gap: 2 }}>
-        {/* ── rail ────────────────────────────────────────────── */}
-        <Box sx={{
-          flex: "1 1 0", minWidth: 0,
-          maxWidth: "calc((100% - 16px) / 3)",
-        }}>
-          <TextField
-            size="small"
-            placeholder="search summary, either claim, shared entity…"
-            value={qInput}
-            onChange={(e) => setQInput(e.target.value)}
-            fullWidth
-            sx={{ mb: 1 }}
-          />
-
-          <Box sx={{ display: "flex", alignItems: "baseline", gap: 1, mb: 1 }}>
-            <Typography variant="h6" sx={{ m: 0 }}>filters</Typography>
-            <Box flex={1} />
-            {activeChips.length > 0 && (
-              <Button size="small" onClick={clearAll}>
-                clear all ({activeChips.length})
-              </Button>
-            )}
-          </Box>
-
+  const rail = (
+    <>
+      <DebouncedSearchField
+        value={filter.q}
+        onCommit={(v) => setF({ q: v })}
+        placeholder="search summary, either claim, shared entity…"
+      />
           <FacetSection title="sort">
             <FacetCard label="sort by" color="#ffb74d">
               <SortFacet
@@ -502,19 +506,34 @@ export function ContradictionsPage() {
             {orderedTypes.map((type) => {
               const bucket = entityByType.get(type)!;
               const color = ENTITY_TYPE_COLOR[type] || "#90caf9";
+              const selectedInType = [...filter.entities]
+                .filter((k) => splitEntityKey(k).type === type).length;
+              if (bucket.size === 0) {
+                return (
+                  <FacetCard
+                    key={type}
+                    label={type} color={color}
+                    selected={selectedInType} total={0}
+                  >
+                    <Typography variant="caption" color="text.secondary" sx={{
+                      display: "block", px: 0.5, fontSize: 10,
+                    }}>
+                      no matches under current filter
+                    </Typography>
+                  </FacetCard>
+                );
+              }
               const q = (entitySearch[type] || "").toLowerCase();
               const all: BarRow[] = [...bucket.entries()]
                 .map(([id, v]) => ({ id, label: v.label, count: v.count }))
                 .filter((r) => !q || r.label.toLowerCase().includes(q))
                 .sort((a, b) => b.count - a.count);
               const limit = showAllByType[type] ? 200 : PER_TYPE_VISIBLE;
-              const selectedInType = [...filter.entities]
-                .filter((k) => splitEntityKey(k).type === type).length;
               return (
                 <FacetCard
                   key={type}
                   label={type} color={color}
-                  selected={selectedInType} total={all.length}
+                  selected={selectedInType} total={bucket.size}
                 >
                   <TextField
                     size="small"
@@ -570,52 +589,37 @@ export function ContradictionsPage() {
               />
             </FacetCard>
           </FacetSection>
-        </Box>
+    </>
+  );
 
-        {/* ── results ─────────────────────────────────────────── */}
-        <Box sx={{ flex: "2 1 0", minWidth: 0 }}>
-          {activeChips.length > 0 && (
-            <Box sx={{
-              py: 0.5, display: "flex", flexWrap: "wrap",
-              alignItems: "center", gap: 0.5, mb: 2,
-            }}>
-              <Typography variant="caption" color="text.secondary" sx={{
-                mr: 0.5, fontSize: 10,
-              }}>
-                filters:
-              </Typography>
-              {activeChips.map((c) => (
-                <Chip key={c.key} size="small" label={c.label} onDelete={c.onClear} />
-              ))}
-              <Button size="small" onClick={clearAll} sx={{ ml: 1 }}>
-                clear all
-              </Button>
-            </Box>
-          )}
+  const results = (
+    <>
+      <FilterChipStrip
+        slots={chipSlots}
+        onClearAll={hasChips ? clearAll : undefined}
+      />
+      {sorted.slice(0, 200).map((c, i) => (
+        <ContradictionRow
+          key={`${c.left}-${c.right}-${i}`}
+          cx={c}
+          bundle={bundle}
+          nav={nav}
+          onMutated={onMutated}
+        />
+      ))}
+    </>
+  );
 
-          <Box sx={{
-            display: "flex", alignItems: "center", gap: 1, mb: 1,
-          }}>
-            <Typography variant="caption" color="text.secondary">
-              showing {Math.min(sorted.length, 200)} of {sorted.length}
-              {sorted.length > 200 && " — refine filters to narrow"}
-            </Typography>
-            <Box flex={1} />
-            <GraphSeedsButton claimIds={graphSeeds} />
-          </Box>
-
-          {sorted.slice(0, 200).map((c, i) => (
-            <ContradictionRow
-              key={`${c.left}-${c.right}-${i}`}
-              cx={c}
-              bundle={bundle}
-              nav={nav}
-              onMutated={onMutated}
-            />
-          ))}
-        </Box>
-      </Box>
-    </Container>
+  return (
+    <FacetsPageOuter>
+      <FacetsPageHeader
+        title="Contradictions"
+        matchCount={filtered.length}
+        totalCount={bundle.contradictions.length}
+        suffix={<GraphSeedsButton claimIds={graphSeeds} />}
+      />
+      <RailResultsLayout rail={rail} results={results} />
+    </FacetsPageOuter>
   );
 }
 

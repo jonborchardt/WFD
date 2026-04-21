@@ -23,7 +23,7 @@
 // (coarse → fine), then person / organization / location / event /
 // thing / topic / misc, then anything else.
 
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Box, Typography, Chip, TextField, Button, IconButton, Autocomplete,
 } from "@mui/material";
@@ -32,11 +32,18 @@ import {
   type FacetBundle, type Selection,
 } from "../components/facets/duck";
 import {
-  BrushFacet, TIME_FACET_TYPES,
+  BrushFacet, TIME_FACET_TYPES, axisLabel, timeValue,
 } from "../components/facets/BrushFacet";
 import {
   SimpleFacet, SIMPLE_FACET_TYPES,
 } from "../components/facets/SimpleFacet";
+import { FacetSection } from "../components/facets/FacetSection";
+import {
+  FilterChipStrip, type ChipSlot,
+} from "../components/facets/FilterChipStrip";
+import {
+  FacetsPageHeader, FacetsPageOuter, RailResultsLayout,
+} from "../components/facets/FacetsPageShell";
 import { SimpleVideoTable } from "../components/SimpleVideoTable";
 import { beginLoad } from "../lib/loading";
 import { ENTITY_TYPE_COLOR } from "../components/catalog-columns";
@@ -107,21 +114,6 @@ function videosForSlots(
     }
   }
   return active ?? new Set(bundle.videoById.keys());
-}
-
-function OpBadge({ op }: { op: "AND" | "OR" }) {
-  return (
-    <Box sx={{
-      fontSize: 10, fontWeight: 700, letterSpacing: 0.5,
-      color: op === "AND" ? "primary.main" : "text.secondary",
-      border: 1,
-      borderColor: op === "AND" ? "primary.main" : "divider",
-      borderRadius: 0.5, px: 0.5, py: 0.125,
-      bgcolor: "action.hover", lineHeight: 1.4,
-    }}>
-      {op}
-    </Box>
-  );
 }
 
 function parseSlotMapFromUrl(): SlotMap {
@@ -289,9 +281,6 @@ export function VideosPage() {
   };
 
   const clearAll = () => { setSlotMap({}); setActiveSlot({}); };
-
-  const totalSelected = Object.values(slotMap)
-    .reduce((acc, slots) => acc + slots.reduce((n, s) => n + s.size, 0), 0);
 
   interface FlatSlot {
     type: string;
@@ -542,14 +531,8 @@ export function VideosPage() {
     );
   };
 
-  return (
-    <Box sx={{
-      display: "flex", gap: 2, px: 2, py: 2, maxWidth: 1800, mx: "auto",
-    }}>
-      <Box sx={{
-        flex: "1 1 0", minWidth: 0,
-        maxWidth: "calc((100% - 16px) / 3)",
-      }}>
+  const rail = (
+    <>
         <Autocomplete
           options={allSearchOptions}
           getOptionLabel={(o) => o.canonical}
@@ -602,26 +585,7 @@ export function VideosPage() {
           sx={{ mb: 1 }}
         />
 
-        <Box sx={{
-          display: "flex", alignItems: "baseline", gap: 1, mb: 1,
-        }}>
-          <Typography variant="h6" sx={{ m: 0 }}>filters</Typography>
-          <Typography variant="caption" color="text.secondary">
-            {entityTypes.length + timeTypes.length} types
-          </Typography>
-          <Box flex={1} />
-          {totalSelected > 0 && (
-            <Button size="small" onClick={clearAll}>
-              clear all ({totalSelected})
-            </Button>
-          )}
-        </Box>
-
-        <Box sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-          gap: 1,
-        }}>
+        <FacetSection title="time">
           {timeTypes.map((type) => {
             const slots = getSlots(slotMap, type);
             const sel = slots[0] || new Set<string>();
@@ -687,65 +651,68 @@ export function VideosPage() {
               </Box>
             );
           })}
-          {entityTypes.map((type) => renderEntityCard(type))}
-        </Box>
-      </Box>
+        </FacetSection>
 
-      <Box sx={{ flex: "2 1 0", minWidth: 0 }}>
-        {chipSlots.length > 0 && (
-          <Box sx={{
-            py: 0.5, display: "flex", flexWrap: "wrap",
-            alignItems: "center", gap: 0.5, mb: 2,
-          }}>
-            <Typography variant="caption" color="text.secondary" sx={{
-              mr: 0.5, fontSize: 10,
-            }}>
-              filters:
-            </Typography>
-            {chipSlots.map((slot, slotIdx) => (
-              <Fragment key={`${slot.type}:${slot.gi}`}>
-                {slotIdx > 0 && <OpBadge op="AND" />}
-                {slot.items.length > 1 ? (
-                  <Box sx={{
-                    display: "inline-flex", alignItems: "center", gap: 0.5,
-                    px: 0.5, py: 0.25, border: 1,
-                    borderStyle: "dashed", borderColor: "divider",
-                    borderRadius: 1,
-                  }}>
-                    {slot.items.map((c, i) => (
-                      <Fragment key={c.eid}>
-                        {i > 0 && <OpBadge op="OR" />}
-                        <Chip
-                          size="small"
-                          label={c.canonical}
-                          color={ENTITY_TYPE_COLOR[slot.type] || "default"}
-                          onDelete={() => toggle(slot.type, slot.gi, c.eid)}
-                        />
-                      </Fragment>
-                    ))}
-                  </Box>
-                ) : (
-                  <Chip
-                    size="small"
-                    label={slot.items[0].canonical}
-                    color={ENTITY_TYPE_COLOR[slot.type] || "default"}
-                    onDelete={() =>
-                      toggle(slot.type, slot.gi, slot.items[0].eid)
-                    }
-                  />
-                )}
-              </Fragment>
-            ))}
-            <Button size="small" onClick={clearAll} sx={{ ml: 1 }}>
-              clear all
-            </Button>
-          </Box>
-        )}
-        <SimpleVideoTable
-          rows={activeRows}
-          title={`${activeRows.length} videos`}
+        <FacetSection title="entities">
+          {entityTypes.map((type) => renderEntityCard(type))}
+        </FacetSection>
+    </>
+  );
+
+  const results = (
+    <>
+        <FilterChipStrip
+          slots={chipSlots.map<ChipSlot>((slot) => {
+            // Time brushes drop one entity id per year / decade /
+            // week / month in range — rendering them as a long row
+            // of per-year chips drowns the chip strip. Compress to a
+            // single "start – end" chip; delete clears the whole slot.
+            const isTimeBrush =
+              TIME_FACET_TYPES.has(slot.type) && slot.items.length > 1;
+            const color = ENTITY_TYPE_COLOR[slot.type];
+            if (isTimeBrush) {
+              const times = slot.items
+                .map((c) => timeValue(slot.type, c.canonical))
+                .filter((t): t is number => t !== null);
+              const min = Math.min(...times);
+              const max = Math.max(...times);
+              return {
+                key: `${slot.type}:${slot.gi}`,
+                conj: "OR",
+                color,
+                items: [],
+                compactLabel:
+                  `${axisLabel(slot.type, min)} – ${axisLabel(slot.type, max)}`,
+                compactTitle:
+                  `${slot.items.length} ${slot.type} values in range`,
+                onCompactClear: () => setTimeSlot0(slot.type, new Set()),
+              };
+            }
+            return {
+              key: `${slot.type}:${slot.gi}`,
+              conj: "OR",
+              color,
+              items: slot.items.map((c) => ({
+                id: c.eid,
+                label: c.canonical,
+                onClear: () => toggle(slot.type, slot.gi, c.eid),
+              })),
+            };
+          })}
+          onClearAll={chipSlots.length > 0 ? clearAll : undefined}
         />
-      </Box>
-    </Box>
+        <SimpleVideoTable rows={activeRows} />
+    </>
+  );
+
+  return (
+    <FacetsPageOuter>
+      <FacetsPageHeader
+        title="Videos"
+        matchCount={activeRows.length}
+        totalCount={bundle.videos.length}
+      />
+      <RailResultsLayout rail={rail} results={results} />
+    </FacetsPageOuter>
   );
 }

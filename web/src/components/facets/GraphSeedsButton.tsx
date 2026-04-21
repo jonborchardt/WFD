@@ -48,7 +48,7 @@ export function GraphSeedsButton({ claimIds, label }: Props) {
         ? `capped to ${GRAPH_SEED_CAP} claims for graph legibility`
         : undefined}
     >
-      {label ?? `graph these (${deduped.length})`}
+      {label ?? "graph these"}
     </Button>
   );
 }
