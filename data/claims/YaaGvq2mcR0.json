@@ -1,75 +1,106 @@
 {
   "schemaVersion": 1,
   "transcriptId": "YaaGvq2mcR0",
-  "generatedAt": "2026-04-19T18:45:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b2",
   "claims": [
     {
       "id": "YaaGvq2mcR0:c_0001",
       "videoId": "YaaGvq2mcR0",
-      "text": "A secret cabal — synonymous with the Illuminati — is using a long-running NASA-and-UN-led program called Project Blue Beam to dissolve borders, dismantle religions, and impose a New World Order under their control.",
-      "kind": "speculative",
+      "text": "Project Bluebeam is a conspiracy claim that a secret organization plans to dissolve borders, dismantle religions, and turn technology against humanity to usher in a new world order.",
+      "kind": "definitional",
       "entities": [
         "organization:project bluebeam",
-        "organization:illuminati",
-        "organization:nasa",
-        "organization:united nations",
-        "ideology:new world order"
+        "ideology:new world order",
+        "organization:elites"
       ],
-      "relationships": ["r_0016", "r_0019", "r_0020"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 8,
-          "charEnd": 238,
-          "timeStart": 1.38,
-          "timeEnd": 18,
-          "quote": "your world is not as it seems everything\nyou know to be true is a lie hidden\nbehind the facade of our everyday lives\nis a secret and Powerful organization\nwith a dangerous agenda to manipulate\nthe minds of the masses and Usher in "
+          "charStart": 279,
+          "charEnd": 486,
+          "timeStart": 18,
+          "timeEnd": 32.82,
+          "quote": "project bluebeam if the program is\nsuccessful we won't see it coming\nborders between nations will be\ndissolved all religions will be\ndismantled and Technology will be turned\nagainst us the architects of proj"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.05,
-      "rationale": "This is the umbrella thesis of the Project Blue Beam conspiracy theory, originally promoted by Serge Monast in his 1994 book. There is no evidence NASA or the UN run such a program; both are well-monitored public institutions, and the claim assumes capacities (global hologram broadcast, mass mind control via satellites) that do not exist. The host walks back the totalizing version in the verdict.",
+      "rationale": "Framing sentence for the conspiracy theory being explored. The episode itself argues against the plausibility of the overall plan, and there is no real evidence that any such coordinated program exists. Very low directTruth as a factual claim about the world.",
+      "tags": ["project-bluebeam", "conspiracy", "new-world-order"],
       "hostStance": "asserts"
     },
     {
       "id": "YaaGvq2mcR0:c_0002",
       "videoId": "YaaGvq2mcR0",
-      "text": "Quebec investigative journalist Serge Monast (born 1945) was the first to expose Project Blue Beam, publishing the original 1994 book of that name based on his investigations into a secret elite cabal.",
+      "text": "Serge Monast was a Quebec-born investigative journalist (b. 1945) who believed a secret cabal of Illuminati-like elites controlled the world.",
       "kind": "historical",
       "entities": [
-        "person:surgeman",
+        "person:serge manast",
         "location:quebec",
         "date_time:1945",
-        "date_time:1994",
-        "role:investigative journalist"
+        "role:investigative journalist",
+        "organization:illuminati"
       ],
-      "relationships": ["r_0001", "r_0014"],
+      "relationships": ["r_0001", "r_0003"],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 808,
-          "charEnd": 1048,
-          "timeStart": 55.039,
-          "timeEnd": 73.38,
-          "quote": "was a mysterious and controversial\nfigure born in Quebec in 1945 he was an\ninvestigative journalist who became\nweary of the direction in which society\nwas headed he believed that there was a\nsecret cabal of powerful Elites who were\ncontroll"
+          "charStart": 845,
+          "charEnd": 990,
+          "timeStart": 57.42,
+          "timeEnd": 68.7,
+          "quote": "gure born in Quebec in 1945 he was an\ninvestigative journalist who became\nweary of the direction in which society\nwas headed he believed that the"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Serge Monast was a real Québécois journalist (1945–1996) who published 'Project Blue Beam (NASA)' in 1994. The biographical core is true. Whether his investigations actually 'exposed' a real program — vs. synthesized one from open speculation — is the contested part addressed in later claims. The host is reporting the biographical scaffolding accurately.",
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.65,
+      "rationale": "Monast (the subject's actual name) was born in Quebec in 1945 and did work as a journalist/conspiracy writer. The factual biography is accurate; the 'secret Illuminati cabal' belief is his claim, not a verified fact, so directTruth is moderate.",
+      "tags": ["serge-monast", "biography", "illuminati"]
     },
     {
       "id": "YaaGvq2mcR0:c_0003",
       "videoId": "YaaGvq2mcR0",
-      "text": "Project Blue Beam was conceived during the Cold War, when the U.S. and Soviet Union were privately experimenting with mind control and psychic warfare alongside their public arms race — making it a continuation of programs like the CIA's MK-Ultra (started 1953), but using technology rather than drugs.",
+      "text": "In 1994, Monast released the book Project Bluebeam outlining an alleged plan to create a one-world government.",
       "kind": "historical",
       "entities": [
-        "organization:project bluebeam",
-        "location:united states",
-        "location:soviet union",
+        "person:serge manast",
+        "date_time:1994",
+        "work_of_media:project bluebeam",
+        "organization:one world government"
+      ],
+      "relationships": ["r_0014"],
+      "evidence": [
+        {
+          "transcriptId": "YaaGvq2mcR0",
+          "charStart": 1680,
+          "charEnd": 1820,
+          "timeStart": 103.92,
+          "timeEnd": 117.42,
+          "quote": " was in\ndanger in 1994 he released his book\nproject bluebeam which outlines the plan\nto create a one world government and a\nnew world order "
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Monast did self-publish his Project Blue Beam tract in 1994; the book exists and is widely cited in conspiracy circles. Historical fact about the book's existence is reliable; the plan it describes is not.",
+      "tags": ["serge-monast", "1994", "book"],
+      "dependencies": [
+        {
+          "target": "YaaGvq2mcR0:c_0002",
+          "kind": "elaborates",
+          "rationale": "Attaches the book to the author's biography established upstream."
+        }
+      ]
+    },
+    {
+      "id": "YaaGvq2mcR0:c_0004",
+      "videoId": "YaaGvq2mcR0",
+      "text": "The CIA's MK Ultra mind-control program began in 1953 and used drugs on subjects, often without consent.",
+      "kind": "historical",
+      "entities": [
         "organization:cia",
+        "technology:mk ultra program",
         "date_time:1953",
         "technology:mind control"
       ],
@@ -77,333 +108,435 @@
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 1820,
-          "charEnd": 2080,
-          "timeStart": 113.46,
-          "timeEnd": 132.239,
-          "quote": "project bluebeam was\nconceived during the Cold War the United\nStates and the Soviet Union were\nspending vast amounts of money and\nresources on technology to gain the\nupper hand no idea was off the table now\npublicly the superpowers were building\ntanks and plan"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.4,
-      "rationale": "MK-Ultra is real and the 1953 founding date is correct. Cold War mind-control research did happen on both sides. However, the claim that 'Project Blue Beam was conceived during the Cold War' as a coherent multi-agency program presupposes Blue Beam exists as more than Monast's writing, which the verdict section largely retracts. So the framing chains real history to an unsupported continuation.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "YaaGvq2mcR0:c_0004",
-      "videoId": "YaaGvq2mcR0",
-      "text": "Step one of Project Blue Beam: artificial earthquakes triggered at strategic sites worldwide will surface staged 'archaeological discoveries' that discredit every existing religion's doctrines, creating a crisis of faith that softens believers up for the new one-world religion.",
-      "kind": "speculative",
-      "entities": [
-        "event:project bluebeam",
-        "event:artificial earthquakes",
-        "event:archaeological discoveries"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "YaaGvq2mcR0",
-          "charStart": 3857,
-          "charEnd": 4117,
-          "timeStart": 238.92,
-          "timeEnd": 256.799,
-          "quote": "first stage of the project we'll see a\nbreakdown of all archaeological\nknowledge this is done by creating\nartificial earthquakes these earthquakes\nwould be at strategically placed\nlocations around the globe at these\nlocations new discoveries will be made\nthat "
+          "charStart": 2261,
+          "charEnd": 2460,
+          "timeStart": 138.239,
+          "timeEnd": 155.16,
+          "quote": "obably the cia's MK Ultra program\nwhich began in 1953 but Project Blue\nbeam is a dramatic step forward while\nprograms like MK Ultra use drugs for\nmind control project bluebeam uses\ntechnology so inst"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "The host explicitly debunks this in the verdict: 'earthquakes can be created but they can't be created discreetly — you need large teams of people and huge equipment.' Induced seismicity from injection wells exists but is small-magnitude and untargetable to specific archaeological sites. The 'forge artifacts via earthquake' premise has no plausible operational pathway.",
-      "hostStance": "asserts"
+      "directTruth": 0.95,
+      "rationale": "MK Ultra is extensively documented in the Church Committee reports (1975) and declassified files. The 1953 start date and drug-based methods are historical fact.",
+      "tags": ["mk-ultra", "cia", "declassified", "mind-control"]
     },
     {
       "id": "YaaGvq2mcR0:c_0005",
       "videoId": "YaaGvq2mcR0",
-      "text": "Step two — the 'space show' — uses a satellite network with lasers to project massive 3D holographic deities tailored to each region's dominant religion (Jesus, Muhammad, Buddha, Krishna), then merges them into one figure who reveals himself as the Antichrist of the new one-world faith.",
-      "kind": "speculative",
+      "text": "Project Bluebeam is structured as a four-step plan using advanced technology and psychological manipulation to blur reality.",
+      "kind": "definitional",
       "entities": [
-        "technology:holograms",
-        "person:jesus",
-        "person:antichrist",
-        "ideology:new religion"
+        "organization:project bluebeam",
+        "quantity:four steps",
+        "technology:advanced techno technology"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 5181,
-          "charEnd": 5431,
-          "timeStart": 313.8,
-          "timeEnd": 331.25899999999996,
-          "quote": "space show 3D holographic images and\nsounds will be projected from a network\nof satellites these satellites will use\nlasers to project images down to earth\nthese images will be designed to seduce\npeople into believing in a new God\nHolograms and augme"
-        },
-        {
-          "transcriptId": "YaaGvq2mcR0",
-          "charStart": 5890,
-          "charEnd": 6130,
-          "timeStart": 355.38,
-          "timeEnd": 374.46,
-          "quote": "then the projections of Jesus Muhammad\nBuddha and Krishna will merge into one\nand explanations of mysteries and\nRevelations will be disclosed this one\nGod will in fact be the Antichrist who\nwill explain that the various scriptures\nhad been "
+          "charStart": 2583,
+          "charEnd": 2780,
+          "timeStart": 156.599,
+          "timeEnd": 174.78,
+          "quote": "four-step\nplan that uses a combination of advanced\ntechno technology and psychological\nmanipulation to create an illusion so\nconvincing that no one can distinguish\nreality from the illusion\nwe must"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.02,
-      "rationale": "The host directly debunks this: 'A hologram is an object that can be seen floating in space by an observer without a camera — but Holograms need a substrate or a medium.' Sky-projected, sourceless holograms at planetary scale are physically impossible — light needs to scatter off particulate, and even good Pepper's Ghost / volumetric displays require carefully controlled angles and substrates. The technology to produce these effects sky-wide does not exist.",
-      "hostStance": "asserts"
+      "directTruth": 0.7,
+      "rationale": "The four-step framing is Monast's own structural claim about his theory; it is an accurate summary of his text. directTruth reflects the accuracy of the summary, not the reality of the alleged plan.",
+      "tags": ["project-bluebeam", "four-steps", "framing"],
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "YaaGvq2mcR0:c_0003",
+          "kind": "elaborates",
+          "rationale": "Summarizes the structure of the book introduced upstream."
+        }
+      ]
     },
     {
       "id": "YaaGvq2mcR0:c_0006",
       "videoId": "YaaGvq2mcR0",
-      "text": "Step three uses ELF/VLF/LF microwave-band radio waves transmitted from satellites to penetrate every human skull and inject artificial 'thoughts' indistinguishable from one's own conscience, weaponizing the ambient electromagnetic environment we already swim in.",
+      "text": "Step one of Project Bluebeam proposes triggering artificial earthquakes at strategic sites to fake archaeological discoveries that discredit existing religions.",
       "kind": "speculative",
       "entities": [
-        "technology:microwaves",
-        "technology:mind control",
-        "organization:project bluebeam"
+        "event:artificial earthquakes",
+        "event:archaeological discoveries",
+        "location:strategically placed locations",
+        "ideology:all religions"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 7699,
-          "charEnd": 7939,
-          "timeStart": 468.78,
-          "timeEnd": 486.36,
-          "quote": "step three is mind control using\nmicrowaves so they put secret messages\nin popcorn and Frozen Guinness no not\nmicrowave ovens microwaves are small\nradio waves oh these electromagnetic\nwaves are all around us all the time\nthey're in the air "
+          "charStart": 3920,
+          "charEnd": 4073,
+          "timeStart": 240.84,
+          "timeEnd": 252.78,
+          "quote": "logical\nknowledge this is done by creating\nartificial earthquakes these earthquakes\nwould be at strategically placed\nlocations around the globe at these\n"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.1,
-      "rationale": "Specific mind-influence effects from ELF/VLF have been investigated (e.g., Frey microwave auditory effect), but these are limited in range, require coherent signals, and cannot inject articulate semantic content into thoughts. There is no demonstrated technology that can broadcast directed semantic content to specific individuals globally via radio. Adjacent real tech (TMS, ECS, BCIs that the host mentions next) operates only with direct hardware contact and at small scale.",
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.05,
+      "rationale": "This is Monast's step one. The plan is operationally implausible (host himself argues large-scale discreet earthquake engineering is impossible) and there is no evidence any actor is pursuing it. Very low directTruth.",
+      "tags": ["project-bluebeam", "step-one", "earthquakes", "archaeology"],
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "YaaGvq2mcR0:c_0011",
+          "kind": "contradicts",
+          "rationale": "[debunks] Host directly rebuts this step's feasibility in the verdict section."
+        }
+      ]
     },
     {
       "id": "YaaGvq2mcR0:c_0007",
       "videoId": "YaaGvq2mcR0",
-      "text": "Step four — the most insidious — stages a fake alien invasion sufficiently terrifying that nuclear-armed nations exhaust their arsenals trying to fight it, after which the UN reveals the deception and forces global disarmament; the recent rash of unidentified-object shootdowns over the U.S. may be the rollout already underway.",
-      "kind": "speculative",
+      "text": "The 1947 Dead Sea Scrolls discovery produced new religious texts that caused scholars to question how complete the Bible was.",
+      "kind": "historical",
       "entities": [
-        "event:alien invasion",
-        "organization:united nations",
-        "technology:nuclear weapons",
-        "organization:unidentified objects",
-        "event:false flag operations"
+        "work_of_media:bible",
+        "date_time:1947",
+        "work_of_media:book of tobit",
+        "person:shepherd"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 9520,
-          "charEnd": 9780,
-          "timeStart": 586.68,
-          "timeEnd": 605.279,
-          "quote": "step four is the most\nInsidious of all it describes how\nproject bluebeam will create a fake\ndisaster or crisis that will bring the\nworld together but not through hope or\nthrough peace the world will come\ntogether for fear this event will be so\nfrightening that"
-        },
-        {
-          "transcriptId": "YaaGvq2mcR0",
-          "charStart": 10892,
-          "charEnd": 11152,
-          "timeStart": 672.42,
-          "timeEnd": 691.98,
-          "quote": "Serge benass said the fourth step in\nproject bluebeam would be what he called\na universal Supernatural manifestation\nwith electronic means in other words a\nfalse flag attack one is to make mankind\nbelieve that an alien invasion is about\nto occur at every major"
+          "charStart": 4273,
+          "charEnd": 4440,
+          "timeStart": 261.419,
+          "timeEnd": 274.5,
+          "quote": "Dead Sea Scrolls for hundreds of\nyears the Bible was thought to be\ncomplete then in 1947 a Shepherd finds\nsome clay jars in a cave suddenly there\nare new religious tex"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.1,
-      "rationale": "The 'fake alien invasion → forced disarmament' chain is internally incoherent: nation-states with nuclear arsenals are not in fact going to expend them on unidentified objects without reverse-engineering capture attempts, and the UN has no enforcement mechanism to compel post-fact disarmament. The 2023 unidentified-object shootdowns the host references were almost certainly civilian/research balloons (NORAD increased radar-filter sensitivity after the Chinese balloon incident).",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "The Dead Sea Scrolls were discovered in the Qumran caves starting in 1946-47 by Bedouin shepherds. The scrolls include early versions of biblical books and non-canonical texts. Well-established archaeological history.",
+      "tags": ["dead-sea-scrolls", "qumran", "1947", "bible"]
     },
     {
       "id": "YaaGvq2mcR0:c_0008",
       "videoId": "YaaGvq2mcR0",
-      "text": "Real-world false flag operations do happen — Operation Northwoods (1962) was a U.S. Joint Chiefs proposal to attack U.S. civilians and blame Cuba (Kennedy rejected it), and the Gulf of Tonkin's second 1964 attack on the USS Maddox never occurred but was used to escalate the Vietnam War — establishing a documented precedent for the kind of deception Project Blue Beam alleges.",
-      "kind": "historical",
+      "text": "Step two of Project Bluebeam proposes a 'space show' using satellite-projected lasers to display convincing holographic deities in the sky.",
+      "kind": "speculative",
       "entities": [
-        "date_time:1962",
-        "date_time:1964",
-        "location:vietnam",
-        "location:united states",
-        "event:false flag operations"
+        "event:space show",
+        "technology:holograms",
+        "technology:lasers",
+        "facility:network of satellites"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 22310,
-          "charEnd": 22570,
-          "timeStart": 1365.659,
-          "timeEnd": 1383.6,
-          "quote": "operation Northwoods the plan\nand called for the shooting down of the\nU.S civilian aircraft attacks on U.S\nbases and the staging of attacks on U.S\ncities all to create the illusion that\nAmerica was being attacked by Cuba\nPresident Kennedy rejected the idea but"
-        },
-        {
-          "transcriptId": "YaaGvq2mcR0",
-          "charStart": 22717,
-          "charEnd": 22977,
-          "timeStart": 1389.179,
-          "timeEnd": 1411.3799999999999,
-          "quote": "Gulf of\nTonkin off the coast of Vietnam the U.S\nimmediately escalated its involvement in\nthe Vietnam War but the second attack on\nthe Maddox it never happened the United\nStates would see 50 000 soldiers killed\nand over 300 000 wounded in a losing War\nbased par"
+          "charStart": 5170,
+          "charEnd": 5328,
+          "timeStart": 311.759,
+          "timeEnd": 325.08,
+          "quote": "called the\nspace show 3D holographic images and\nsounds will be projected from a network\nof satellites these satellites will use\nlasers to project images down "
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "Operation Northwoods is fully documented (declassified Joint Chiefs memo, March 1962). The second Gulf of Tonkin incident has been definitively shown to not have occurred — confirmed by NSA historian Robert Hanyok's 2005 declassified study of intercepts. The casualty figures are roughly correct (~58,000 U.S. KIA, ~150,000 wounded, though the 300,000 figure is closer to the wounded-in-action plus injured tally). This is the strongest historical anchor in the video.",
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.05,
+      "rationale": "No satellite system capable of projecting free-space 3D images of this scale exists or is known to be in development. The host later explains that holograms require a substrate and cannot be convincingly projected into empty sky.",
+      "tags": ["project-bluebeam", "step-two", "holograms", "satellites"],
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "YaaGvq2mcR0:c_0012",
+          "kind": "contradicts",
+          "rationale": "[debunks] Pepper's-ghost and hologram-substrate physics rule out convincing sky-scale sky-holograms."
+        }
+      ]
     },
     {
       "id": "YaaGvq2mcR0:c_0009",
       "videoId": "YaaGvq2mcR0",
-      "text": "Monast's children were taken into state wardship in September 1996 to receive government public education, and on December 4th 1996 he was arrested for spreading misinformation and the next day found dead in his apartment of an alleged heart attack at age 51 — a suspiciously timed silencing of a whistleblower.",
+      "text": "Step three uses electromagnetic waves (ELF/VLF/LF) to beam voices directly into people's minds, while Neuralink-style BCIs show the reverse (mind controlling machine) already exists.",
+      "kind": "speculative",
+      "entities": [
+        "technology:neurolink",
+        "technology:mind control",
+        "organization:project bluebeam",
+        "technology:electronically augmented two-way communication"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YaaGvq2mcR0",
+          "charStart": 9420,
+          "charEnd": 9590,
+          "timeStart": 580.2,
+          "timeEnd": 595.68,
+          "quote": "ike\nneurolink where the mind can control a\nmachine project bluebeam lets a machine\ncontrol the Mind step four is the most\nInsidious of all it describes how\nproject bluebe"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "Neuralink-style BCIs do exist in limited research form, but there is no public, deployed technology that beams intelligible voices into a person's brain via ELF/VLF waves. The step-three claim is not supported.",
+      "tags": ["project-bluebeam", "neurolink", "mind-control", "elf"],
+      "hostStance": "uncertain",
+      "dependencies": [
+        {
+          "target": "YaaGvq2mcR0:c_0013",
+          "kind": "elaborates",
+          "rationale": "Connects step-three speculation to the real TMS/BCI research discussed in the verdict section."
+        }
+      ]
+    },
+    {
+      "id": "YaaGvq2mcR0:c_0010",
+      "videoId": "YaaGvq2mcR0",
+      "text": "Serge Monast died of a heart attack on December 5, 1996 at age 51, a day after being arrested for spreading misinformation.",
       "kind": "historical",
       "entities": [
-        "person:surgeman",
-        "person:serge benass",
-        "date_time:september 1996",
-        "date_time:december 4th 1996"
+        "person:serge manast",
+        "date_time:december 4th 1996",
+        "quantity:age of 51",
+        "event:heart attack"
       ],
       "relationships": ["r_0049"],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 15553,
-          "charEnd": 15793,
-          "timeStart": 961.38,
-          "timeEnd": 980.16,
-          "quote": "September 1996 his two homeschooled\nchildren were taken from him and made\nWards of the state so they could receive\na public education run by the government\nyep he never saw them again on December\n4th 1996 Serge menast was arrested for\nsprea"
+          "charStart": 15920,
+          "charEnd": 16080,
+          "timeStart": 982.68,
+          "timeEnd": 998.01,
+          "quote": "e was in perfect\nhealth the official report is he died of\na heart attack at the age of 51. and so\nsergeman asked the man who refused to be\nsilenced was finally "
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.45,
-      "rationale": "Monast did die December 5, 1996 of a reported heart attack at 51, the day after being held overnight by police on an unrelated matter (his wife/family/movement maintain he was 'silenced'; published Quebec coroner accounts attribute natural causes). The custody-of-children claim is repeated in conspiracy literature but is not well sourced. Mid-range directTruth: the death date and circumstances are real, but the causal 'silenced' framing is interpretive.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "YaaGvq2mcR0:c_0010",
-      "videoId": "YaaGvq2mcR0",
-      "text": "Project Blue Beam is most likely fiction reverse-engineered from Star Trek: a Gene Roddenberry biography released months before Monast's 1994 book contained the unmade Roddenberry script 'The God Thing' (alien posing as God via tech), and the 1991 TNG episode 'Devil's Due' uses holograms and mind control to do exactly what Monast describes — published 18 months before his book.",
-      "kind": "speculative",
-      "entities": [
-        "work_of_media:star trek",
-        "person:gene rodberry",
-        "date_time:1991",
-        "person:surgeman"
-      ],
-      "relationships": ["r_0056", "r_0057"],
-      "evidence": [
-        {
-          "transcriptId": "YaaGvq2mcR0",
-          "charStart": 24256,
-          "charEnd": 24516,
-          "timeStart": 1479.659,
-          "timeEnd": 1497.12,
-          "quote": "the God thing the plot of the movie was\nhow an alien convinces everyone on Earth\nthat it's a god using technology in 1991\nan episode of stars Trek the Next\nGeneration was released called Devil's\nDue the plot was about an alien using\ntechnology to convince a pl"
-        }
-      ],
-      "confidence": 0.9,
+      "confidence": 0.95,
       "directTruth": 0.7,
-      "rationale": "Both works exist as the host describes: 'The God Thing' is a real Roddenberry script (later novelized by Michael Jan Friedman in 2002, but the manuscript circulated in early-90s biographies including David Alexander's 1994 'Star Trek Creator'). 'Devil's Due' is TNG S4E13, aired Feb 1991. The claim of plot-template borrowing is plausible and is the cleanest deflationary explanation for where Monast's specific imagery came from. Probably true as a chain-of-influence claim.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
+      "rationale": "Monast did die in December 1996 at age 51; the official cause of death was heart attack. The timing relative to an arrest is a genuine biographical fact. Causation (suspicious death) is conspiracy speculation; the bare facts are supported.",
+      "tags": ["serge-monast", "death", "1996"],
       "dependencies": [
         {
-          "target": "YaaGvq2mcR0:c_0001",
-          "kind": "contradicts",
-          "rationale": "If the four-step plan is downstream of Star Trek scripts, it isn't a real institutional program."
+          "target": "YaaGvq2mcR0:c_0002",
+          "kind": "elaborates",
+          "rationale": "Continues Monast's biography through his death."
         }
       ]
     },
     {
       "id": "YaaGvq2mcR0:c_0011",
       "videoId": "YaaGvq2mcR0",
-      "text": "Even if the elites wanted to execute Project Blue Beam, they can't — a worldwide hologram-and-mind-control conspiracy requires armies of carpenters, electricians, network engineers and frontline soldiers willing to turn against their families and neighbors, which the host argues simply will not happen at scale.",
-      "kind": "opinion",
+      "text": "Artificial earthquakes cannot be engineered at strategic locations discreetly because the required teams and equipment are too large to hide.",
+      "kind": "empirical",
       "entities": [
-        "organization:elites",
-        "organization:project bluebeam"
+        "event:artificial earthquakes",
+        "location:certain precise locations of the planet"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 24962,
-          "charEnd": 25222,
-          "timeStart": 1519.44,
-          "timeEnd": 1540.74,
-          "quote": "you couldn't\npull off a worldwide conspiracy like\nthis without an army of people\nsupporting it an army of Regular People\nLike Us just think of the technical\nexpertise required the number of\ncomputer Engineers Carpenters\nelectricians here's what I want you to\nd"
+          "charStart": 16690,
+          "charEnd": 16890,
+          "timeStart": 1029,
+          "timeEnd": 1044.6,
+          "quote": "t certain precise\nlocations of the planet were supposedly\nnew discoveries will suddenly explain\nthe wrong meaning of all major religions\nbasic doctrines and yes earthquakes can\nbe created but they can"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.75,
-      "rationale": "This is a sound general epistemic point about large conspiracies: secret-keeping decays exponentially with the number of participants (David Grimes 2016 PLOS ONE estimated upper bounds on conspiracy survival vs. participant count). The host's specific craft-knowledge example is rhetorically apt. The argument is persuasive though not dispositive — 'too many participants' has been an under-rated check on grand-cabal scenarios.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
-      "dependencies": [
-        {
-          "target": "YaaGvq2mcR0:c_0001",
-          "kind": "contradicts",
-          "rationale": "Generalized 'too many participants required' argument against the umbrella thesis."
-        }
-      ]
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Induced seismicity from fracking, mining, and large reservoirs is real and well-studied, but targeting precise sites while concealing the operation is operationally implausible given monitoring by USGS and independent seismologists.",
+      "tags": ["induced-seismicity", "debunking", "feasibility"],
+      "hostStance": "denies",
+      "inVerdictSection": true
     },
     {
       "id": "YaaGvq2mcR0:c_0012",
       "videoId": "YaaGvq2mcR0",
-      "text": "Government attempts to abolish religion — Roman persecution of Christians, the Soviet Union's anti-religious campaign, and Mao-era China's suppression of worship and execution of religious leaders — have failed every time across history; therefore the religious-eradication step of Project Blue Beam would also fail.",
-      "kind": "historical",
+      "text": "Free-space holograms convincing to billions do not exist; even Pepper's-ghost illusions need a physical substrate and fail at the wrong angle.",
+      "kind": "empirical",
       "entities": [
-        "location:soviet union",
-        "ideology:socialist utopia"
+        "technology:holograms",
+        "person:john henry pepper"
       ],
-      "relationships": ["r_0050"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 16392,
-          "charEnd": 16652,
-          "timeStart": 1014.24,
-          "timeEnd": 1030.919,
-          "quote": "but is it true well there's no way to\nfully debunk a theory like this because\nanything happening behind the scenes is\npresumably still behind the scenes but\nlet me give you the complete picture so\nyou can make up your own mind according\nto manast Step One is i"
+          "charStart": 19432,
+          "charEnd": 19600,
+          "timeStart": 1192.679,
+          "timeEnd": 1206.6,
+          "quote": "Pepper's ghost\nafter John Henry pepper who popularized\nit the effect is created using a sheet\nof glass placed at an angle between the\nviewer and the object the object i"
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.75,
-      "rationale": "Historical record supports this: Roman persecution did not extinguish Christianity (which became Rome's state religion under Constantine); Soviet anti-religious campaigns (1920s–80s) saw the Russian Orthodox Church survive and rebound; Cultural Revolution destruction of Buddhist/Christian sites in China was followed by partial restoration. The general inference — that institutional religion is resilient against state suppression — has good empirical backing.",
-      "hostStance": "asserts",
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Optical-physics fact: holograms require a medium to scatter light, and free-space volumetric displays remain a niche research area. Pepper's-ghost is a Victorian-era stage trick that depends on angle and lighting, as the host correctly explains.",
+      "tags": ["holograms", "peppers-ghost", "optics", "debunking"],
+      "hostStance": "denies",
       "inVerdictSection": true,
       "dependencies": [
         {
-          "target": "YaaGvq2mcR0:c_0004",
-          "kind": "contradicts"
+          "target": "YaaGvq2mcR0:c_0008",
+          "kind": "contradicts",
+          "rationale": "[debunks] Physics of hologram projection directly rebuts the step-two 'space show' proposal."
         }
       ]
     },
     {
       "id": "YaaGvq2mcR0:c_0013",
       "videoId": "YaaGvq2mcR0",
-      "text": "Sky-projection 'holograms' as imagined in Project Blue Beam don't physically exist: a true hologram requires a physical medium or substrate to scatter the light, and the technology to make a region-wide convincing free-space projection of a deity simply isn't available with current physics, only AR through devices and Pepper's-ghost stage tricks.",
-      "kind": "definitional",
+      "text": "Transcranial magnetic stimulation (TMS) and brain-computer interfaces are real technologies used to treat depression and allow thought-driven computer control.",
+      "kind": "empirical",
       "entities": [
-        "technology:holograms",
-        "technology:augmented reality"
+        "technology:tms",
+        "technology:bcis",
+        "technology:neurolink",
+        "technology:transcranial magnetic stimulation"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YaaGvq2mcR0",
-          "charStart": 18472,
-          "charEnd": 18732,
-          "timeStart": 1135.74,
-          "timeEnd": 1154.88,
-          "quote": "the\ntechnology to make that kind of hologram\nconvincing enough just doesn't exist now\nfor a few years there have been videos\nfloating around the internet showing\nvery realistic Holograms as a way to\nsupport the existence of project\nbluebeam none of these are r"
+          "charStart": 20755,
+          "charEnd": 20925,
+          "timeStart": 1273.86,
+          "timeEnd": 1289.58,
+          "quote": "TMS uses\nmagnetic fields to stimulate activity in\nspecific areas of the brain and TMS has\nbeen used to treat mental health\nconditions such as depression and\nanxiety brain"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "Physically correct: light only becomes visible when it scatters off something, so free-space holograms require either particulate media (fog, smoke), volumetric laser ionization in air (small-scale lab demos only, e.g., Aerial Burton's millimeter-scale plasma displays), or screen substrates. Region-wide deity projections in clear sky are not feasible with known physics.",
+      "rationale": "TMS is FDA-approved for treatment-resistant depression. BCIs have demonstrated thought-to-cursor control in both non-invasive (EEG) and invasive (Utah array, Neuralink) forms. Both are established, not speculation.",
+      "tags": ["tms", "bci", "neurolink", "medicine"]
+    },
+    {
+      "id": "YaaGvq2mcR0:c_0014",
+      "videoId": "YaaGvq2mcR0",
+      "text": "In 1962 the US Department of Defense proposed Operation Northwoods, a false-flag plan to attack US civilian targets and blame Cuba.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1962",
+        "organization:united states department of defense",
+        "event:operation northwoods",
+        "location:cuba",
+        "person:president kennedy"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YaaGvq2mcR0",
+          "charStart": 22240,
+          "charEnd": 22470,
+          "timeStart": 1360.02,
+          "timeEnd": 1379.28,
+          "quote": "ns do happen in 1962\nthe United States Department of Defense\nproposed operation Northwoods the plan\nand called for the shooting down of the\nU.S civilian aircraft attacks on U.S\nbases and the staging of attacks on U.S\ncities all to"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Operation Northwoods was declassified in 1997; memoranda from the Joint Chiefs to SecDef McNamara proposed false-flag attacks on US civilians to justify war with Cuba. Kennedy rejected it. All documented.",
+      "tags": ["operation-northwoods", "false-flag", "declassified", "1962"],
+      "dependencies": [
+        {
+          "target": "YaaGvq2mcR0:c_0015",
+          "kind": "supports",
+          "rationale": "Establishes a historical precedent that false-flag operations have been seriously proposed by the US government."
+        }
+      ]
+    },
+    {
+      "id": "YaaGvq2mcR0:c_0015",
+      "videoId": "YaaGvq2mcR0",
+      "text": "The second Gulf of Tonkin attack on the USS Maddox (1964), used to escalate the Vietnam War, did not actually happen.",
+      "kind": "historical",
+      "entities": [
+        "location:tonkin",
+        "location:maddox",
+        "location:vietnam",
+        "date_time:1964"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YaaGvq2mcR0",
+          "charStart": 22710,
+          "charEnd": 22900,
+          "timeStart": 1389.179,
+          "timeEnd": 1407.059,
+          "quote": "in the Gulf of\nTonkin off the coast of Vietnam the U.S\nimmediately escalated its involvement in\nthe Vietnam War but the second attack on\nthe Maddox it never happened the United\nStates would "
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Declassified NSA historical analysis (Hanyok 2001, released 2005) confirmed the August 4, 1964 second Gulf of Tonkin 'attack' did not occur. This is one of the best-documented pretext incidents in US history.",
+      "tags": ["gulf-of-tonkin", "vietnam-war", "false-flag", "declassified"]
+    },
+    {
+      "id": "YaaGvq2mcR0:c_0016",
+      "videoId": "YaaGvq2mcR0",
+      "text": "The Project Bluebeam narrative likely drew from Gene Roddenberry's unreleased 'God Thing' Star Trek script and the 1991 TNG episode Devil's Due.",
+      "kind": "empirical",
+      "entities": [
+        "work_of_media:star trek",
+        "person:gene rodberry",
+        "person:roddenberry",
+        "date_time:1991"
+      ],
+      "relationships": ["r_0056", "r_0057"],
+      "evidence": [
+        {
+          "transcriptId": "YaaGvq2mcR0",
+          "charStart": 24220,
+          "charEnd": 24540,
+          "timeStart": 1477.559,
+          "timeEnd": 1499.4,
+          "quote": "denberry wrote the movie was called\nthe God thing the plot of the movie was\nhow an alien convinces everyone on Earth\nthat it's a god using technology in 1991\nan episode of stars Trek the Next\nGeneration was released called Devil's\nDue the plot was about an alien using\ntechnology to convince a planet that\nshe's God so s"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.65,
+      "rationale": "'The God Thing' is a real Roddenberry script that was never produced; 'Devil's Due' (TNG S04E13, Feb 1991) does feature an entity posing as a god via technology. Temporal sequence (pre-dates 1994 Bluebeam book) supports the influence claim, though direct causation is inference.",
+      "tags": ["star-trek", "roddenberry", "devils-due", "influence"],
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "YaaGvq2mcR0:c_0003",
+          "kind": "contradicts",
+          "rationale": "[alternative] Suggests the book's plot came from sci-fi rather than from observed evidence of a real plan."
+        }
+      ]
+    },
+    {
+      "id": "YaaGvq2mcR0:c_0017",
+      "videoId": "YaaGvq2mcR0",
+      "text": "A worldwide Bluebeam conspiracy is impossible because the elites depend on working-class people for technical expertise and infrastructure.",
+      "kind": "opinion",
+      "entities": [
+        "organization:elites",
+        "location:bohemian grove",
+        "organization:bilderberg",
+        "location:davos"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YaaGvq2mcR0",
+          "charStart": 25225,
+          "charEnd": 25410,
+          "timeStart": 1535.34,
+          "timeEnd": 1551.059,
+          "quote": "o to Bilderberg or Davos or Bohemian\nGrove and ask any of those super wealthy\nElites what the IP and TCP stands for\nInternet Protocol ask them how far apart\nyou should space your studs "
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Host's verdict editorial. Argument is rhetorical rather than empirical — directTruth omitted because this is a values/opinion claim rather than a testable proposition.",
+      "tags": ["verdict", "elites", "opinion"],
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
         {
-          "target": "YaaGvq2mcR0:c_0005",
-          "kind": "contradicts"
+          "target": "YaaGvq2mcR0:c_0001",
+          "kind": "contradicts",
+          "rationale": "[alternative] Rejects the premise of a feasible top-down global conspiracy."
         }
       ]
     }

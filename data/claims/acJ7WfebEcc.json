@@ -1,391 +1,556 @@
 {
   "schemaVersion": 1,
   "transcriptId": "acJ7WfebEcc",
-  "generatedAt": "2026-04-20T03:54:39.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b2",
   "claims": [
     {
       "id": "acJ7WfebEcc:c_0001",
       "videoId": "acJ7WfebEcc",
-      "text": "In July 2010 a thought experiment called Roko's Basilisk posted to a philosophy forum caused such severe psychological reactions — nightmares, panic attacks, and at least one nervous breakdown — that the forum's founder deleted it and banned all discussion of it.",
+      "text": "Roko's Basilisk was posted on a rationalist philosophy forum in July 2010 and reportedly caused nightmares, panic attacks, and at least one nervous breakdown.",
       "kind": "historical",
       "entities": [
-        "date_time:july 2010",
         "person:roko",
-        "organization:philosophy forum",
-        "organization:less wrong",
-        "person:eliza yudkowski",
-        "event:nervous breakdown",
-        "event:panic attacks",
-        "event:nightmares"
+        "date_time:july 2010",
+        "technology:basilisk",
+        "event:nervous breakdown"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 57,
-          "charEnd": 482,
+          "charStart": 54,
+          "charEnd": 290,
           "timeStart": 6.08,
-          "timeEnd": 36.399,
-          "quote": "July 2010, someone posted a thought\nexperiment on a philosophy forum. It was\ncalled Ro's Basilisk. Within hours,\npeople reported nightmares. Some had\npanic attacks. At least one person had a\nfull nervous breakdown.\nThe forum's founder was so disturbed, he\ndeleted the post and banned all\ndiscussion of it. This just made things\nworse. This philosophical virus spread\nto all corners of the internet. So did\nthe nightmares, the"
-        },
-        {
-          "transcriptId": "acJ7WfebEcc",
-          "charStart": 3574,
-          "charEnd": 4140,
-          "timeStart": 227.599,
-          "timeEnd": 267.52,
-          "quote": "Less Wrong was a community obsessed with\nthinking correctly. It was founded in\n2009 by AI researcher Eliza Yudkowski\nfor programmers, mathematicians, and\nphysicists.\na forum where everybody thinks he's\nsmarter than everyone else. So basically\nReddit.\n>> On July 23rd, 2010, a user named Roko\nposted something that almost destroyed\nthe community. The full title was\nSolutions to the Altruist Burden: The\nQuantum Billionaire Trick. Now, buried\ninside that boring title was a mind\npuzzle that gave people nightmares. Robo\ndescribed a future artificial super\nintelligenc"
+          "timeEnd": 25.519,
+          "quote": "In July 2010, someone posted a thought\nexperiment on a philosophy forum. It was\ncalled Ro's Basilisk. Within hours,\npeople reported nightmares. Some had\npanic attacks. At least one person had a\nfull nervous breakdown.\nThe forum's founde"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Well-documented: Roko (real LessWrong handle) posted 'Solutions to the Altruist's Burden' on July 23, 2010; Yudkowsky deleted it and banned discussion in an angry response; subsequent reporting (Slate 2014, RationalWiki, etc.) corroborates that the post triggered serious distress in some community members. The 'one nervous breakdown' specifically is harder to verify but Yudkowsky himself referenced people being upset enough to motivate the ban.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The July 2010 post and LessWrong community reactions are well-documented (including Yudkowsky's own accounts). The specific 'nightmares + nervous breakdowns' framing is repeated by journalists (Slate, NYT) but rests on community self-reports.",
+      "tags": ["rokos-basilisk", "2010", "lesswrong"]
     },
     {
       "id": "acJ7WfebEcc:c_0002",
       "videoId": "acJ7WfebEcc",
-      "text": "Roko's Basilisk posits that a future benevolent superintelligent AI will resurrect every person who lived as a perfect simulation and torture forever any simulated copy whose original failed to help bring the AI into existence — but only people who learned of the threat are at risk.",
-      "kind": "definitional",
-      "entities": [
-        "person:roko",
-        "technology:ai",
-        "technology:artificial super intelligence",
-        "technology:digital simulation",
-        "technology:simulation theory"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "acJ7WfebEcc",
-          "charStart": 4140,
-          "charEnd": 4880,
-          "timeStart": 263.04,
-          "timeEnd": 309.919,
-          "quote": "e. This AI is benevolent. It\nwants to cure diseases and end human\nsuffering. But the AI realizes that\nevery day it doesn't exist, people die\nwho could have been saved. So the AI\nrecreates every person who ever lived.\nYou, me, our children, recreates them\ndown to the last neuron. It simulates\nevery experience we've ever had, every\nmoment, every thought. These simulated\npeople are self-aware. They feel\npleasure and pain, but they don't\nrealize they're in a simulation.\nThe simulated version of you wakes up,\ngoes to work, and kisses your kids good\nnight. You never know you're living\ninside a machine built for a single\npurpose, to judge you. If the AI judges\nyou're not helping bring it into\nexistence, you're tortured forever in a\ndigit"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "This is an accurate paraphrase of Roko's actual 2010 post. The 'only those who learned about it are at risk' clause is part of the original argument and is repeatedly cited as central to its psychological hook. As a definitional claim about what the thought experiment says, it is accurate.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "acJ7WfebEcc:c_0001", "kind": "elaborates"}
-      ]
-    },
-    {
-      "id": "acJ7WfebEcc:c_0003",
-      "videoId": "acJ7WfebEcc",
-      "text": "Roko named the thought experiment after a 1988 sci-fi story 'Blit' by David Langford in which the very act of investigating a deadly visual idea kills the investigator — making investigation itself the danger.",
+      "text": "LessWrong was founded in 2009 by AI researcher Eliezer Yudkowsky as a rationalist community for programmers, mathematicians, and physicists.",
       "kind": "historical",
       "entities": [
-        "person:david langford",
-        "work_of_media:blit",
-        "work_of_media:sci-fi story",
-        "date_time:1988",
-        "person:roko",
-        "technology:basilisk",
-        "event:murders"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "acJ7WfebEcc",
-          "charStart": 5880,
-          "charEnd": 6320,
-          "timeStart": 363.12,
-          "timeEnd": 396.88,
-          "quote": "988\nsci-fi story by David Langford called\nBlit. In that story, someone spray\npaints a deadly image on walls in public\nplaces. Anyone who looks at it dies. The\nauthorities investigating the murders\nalso die when they see the image. The\nvery act of investigating the dangerous\nidea is the danger. But Ro's basilisk\nwasn't an image. It was just an idea.\nBut it was an idea that could kill. And\nthere was something else. The original\npost named"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "David Langford did write 'BLIT' in 1988, published in Interzone, and the basilisk imagery is exactly as described — a fatal visual hazard. The 'basilisk' usage in computer security and AI ethics descends from Langford. Accurate attribution.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "acJ7WfebEcc:c_0004",
-      "videoId": "acJ7WfebEcc",
-      "text": "Eliezer Yudkowsky's furious public reaction to Roko's post — calling Roko an idiot, banning discussion for five years, and treating the post as a biohazard — paradoxically amplified the basilisk's spread by making it forbidden knowledge.",
-      "kind": "historical",
-      "entities": [
-        "person:yudkowski",
-        "person:eliza yudkowski",
-        "person:kowsky",
-        "person:roko",
         "organization:less wrong",
-        "quantity:years"
+        "person:eliza yudkowski",
+        "role:ai researcher"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 6480,
-          "charEnd": 6980,
-          "timeStart": 411.52,
-          "timeEnd": 448.72,
-          "quote": "hen Yudkowski saw the post, his\nresponse was immediate and angry.\n>> Listen to me very closely, you idiot.\nThen he switched to all caps.\n>> You do not think in sufficient detail\nabout super intelligences considering\nwhether or not to blackmail you.\n>> He wasn't finished. He agreed that it\ntakes an intelligent person to come up\nwith a dangerous thought, but he was\nannoyed that Roko wasn't intelligent\nenough to keep his idiot mouth shut. Yet\nKowsky deleted the post and banned all\ndiscussion of it."
+          "charStart": 3660,
+          "charEnd": 3870,
+          "timeStart": 231.76,
+          "timeEnd": 251.599,
+          "quote": " AI researcher Eliza Yudkowski\nfor programmers, mathematicians, and\nphysicists.\na forum where everybody thinks he's\nsmarter than everyone else. So basically\nReddit.\n>> On July 23rd, 2010, a user named Roko\npost"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "Yudkowsky's quoted response (including the 'you idiot' / all-caps rant) is preserved verbatim in archived LessWrong threads and has been reproduced across coverage of the incident. The Streisand-effect amplification is a fair and well-documented assessment — censorship-driven spread is exactly what happened.",
-      "hostStance": "asserts",
+      "rationale": "LessWrong was founded by Yudkowsky and the Singularity Institute (now MIRI) in 2009, migrating content from Overcoming Bias. Well-established internet history.",
+      "tags": ["lesswrong", "yudkowsky", "rationalism", "2009"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0003",
+      "videoId": "acJ7WfebEcc",
+      "text": "On July 23, 2010 a user named Roko posted 'Solutions to the Altruist's Burden: The Quantum Billionaire Trick', which embedded the infohazard now called Roko's Basilisk.",
+      "kind": "historical",
+      "entities": [
+        "date_time:july 23rd, 2010",
+        "person:roko",
+        "work_of_media:solutions to the altruist burden: the quantum billionaire trick"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 3831,
+          "charEnd": 4100,
+          "timeStart": 244.08,
+          "timeEnd": 265.759,
+          "quote": "July 23rd, 2010, a user named Roko\nposted something that almost destroyed\nthe community. The full title was\nSolutions to the Altruist Burden: The\nQuantum Billionaire Trick. Now, buried\ninside that boring title was a mind\npuzzle that gave people nightmares. Robo\ndescrib"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "The July 23, 2010 post exists in LessWrong/rationalist archives; the title quoted matches the original. Verifiable internet history.",
+      "tags": ["roko", "2010", "post"],
       "dependencies": [
-        {"target": "acJ7WfebEcc:c_0001", "kind": "elaborates"}
+        {
+          "target": "acJ7WfebEcc:c_0001",
+          "kind": "elaborates",
+          "rationale": "Pins the specific date and original title behind the event introduced at the top."
+        }
       ]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0004",
+      "videoId": "acJ7WfebEcc",
+      "text": "Roko named his thought experiment a 'basilisk' after David Langford's 1988 sci-fi story BLIT, in which looking at a deadly image kills the viewer.",
+      "kind": "historical",
+      "entities": [
+        "person:roko",
+        "date_time:1988",
+        "person:david langford",
+        "work_of_media:blit"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 5846,
+          "charEnd": 6060,
+          "timeStart": 363.12,
+          "timeEnd": 379.919,
+          "quote": "Roko named it a basilisk after a 1988\nsci-fi story by David Langford called\nBlit. In that story, someone spray\npaints a deadly image on walls in public\nplaces. Anyone who looks at it dies. The\nauthorities investiga"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "David Langford's 'BLIT' was published in Interzone (1988). The motif of a deadly image is accurately summarized.",
+      "tags": ["blit", "langford", "basilisk-image"]
     },
     {
       "id": "acJ7WfebEcc:c_0005",
       "videoId": "acJ7WfebEcc",
-      "text": "Roko himself was a known troll on LessWrong but came to genuinely regret posting the basilisk, writing later that he wished his mind had never produced the tools to inflict such self-harm even at low probability.",
+      "text": "Yudkowsky reacted furiously, deleted the post, and banned all discussion of the Basilisk for five years.",
       "kind": "historical",
       "entities": [
+        "person:eliza yudkowski",
         "person:roko",
-        "person:rocom mitch",
-        "role:troll",
-        "event:philosophical bomb",
-        "work_of_media:basilisk"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "acJ7WfebEcc",
-          "charStart": 7990,
-          "charEnd": 8480,
-          "timeStart": 504.56,
-          "timeEnd": 542.48,
-          "quote": ".\nRocom Mitch, the man who started it all,\nwas known by his friends as a troll. The\nBasilisk was his masterpiece. He dropped\na philosophical bomb on the most serious\nforum on the internet and stepped back\nto watch what happened. But even the\ntroll got burned. Roko later wrote about\nit.\nI wish very strongly that my mind had\nnever come across the tools to inflict\nsuch large amounts of potential self\nharm with such small durations of\ninattention, uncautiousness, andor\nstupidity. even if i"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.7,
-      "rationale": "Roko's regret post is genuinely on record. The 'troll' framing is more characterization than fact — Roko engaged earnestly with decision-theory arguments before posting, and his retraction reads as sincere rather than performative. The host's narrative leans toward the troll-mastermind reading more than the evidence requires.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "acJ7WfebEcc:c_0006",
-      "videoId": "acJ7WfebEcc",
-      "text": "Roko's Basilisk is structurally Pascal's Wager for the AI age — substituting an artificial superintelligence for God and simulated torture for hell, with the same 'tiny probability of infinite suffering forces compliance' logic.",
-      "kind": "opinion",
-      "entities": [
-        "person:pascal",
-        "technology:ai",
-        "location:hell",
-        "technology:basilisk",
-        "quantity:odds"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "acJ7WfebEcc",
-          "charStart": 10800,
-          "charEnd": 11400,
-          "timeStart": 690,
-          "timeEnd": 731.92,
-          "quote": "ecreates you a perfect simulation and\ntortures you for eternity.\nYour actual choice doesn't matter. The\nAI already knows. It ran a simulation of\nyour brain and judged you on what you\nwould most likely do. Now, because your\nchoice is now connected to that future,\nthe only rational move is to help the\nAI. Pascal said the same thing in the\n1600s. Believe in God just in case.\nBecause if you're wrong, you get hell.\nThe math says believe no matter how\nsmall the odds. Roko's basilisk is\nPascal's wager for the tech age. Replace\nGod with AI. Replace hell with simulated\ntorture.\nAnd just like Pascal's w"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The Pascal's Wager analogy is a standard framing in academic and popular discussion of the basilisk; it is genuinely apt because both rely on infinite-utility expected-value reasoning. Standard counter-arguments to Pascal (the Many Gods objection, the Counterbasilisk) also apply, which the host correctly raises later.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "acJ7WfebEcc:c_0007",
-      "videoId": "acJ7WfebEcc",
-      "text": "The musician Grimes used Roko's Basilisk as accidental matchmaking — she had a 2015 'Rococo Basilisk' character in a music video which Elon Musk discovered in 2018 when he tried to make the same pun, prompting him to message her on Twitter; they dated and had three children together.",
-      "kind": "historical",
-      "entities": [
-        "person:grimes",
-        "person:elon musk",
-        "person:elon",
-        "date_time:2015",
-        "event:met gala",
-        "quantity:three children",
         "technology:basilisk"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 11725,
-          "charEnd": 12200,
-          "timeStart": 749.12,
-          "timeEnd": 796.88,
-          "quote": "\nIn 2015, Grimes stepped onto a music\nvideo set dressed as a character she\ncalled RCOO Basilisk, a pun, a mix of\nthe 18th century art style and Roo's\ndigital nightmare. She described the\ncharacter as a futuristic Marian\nTwinette dancing through life even\nthough she was doomed to be tortured by\nan AI forever. Hardly anyone outside of\nthe rationalist forums got this joke\nuntil 2018. Remember Roo's original post\nnamed Elon Musk as the one person the AI\nwould reward. Eight y"
-        },
-        {
-          "transcriptId": "acJ7WfebEcc",
-          "charStart": 12200,
-          "charEnd": 12700,
-          "timeStart": 792.32,
-          "timeEnd": 821.92,
-          "quote": "ears later, Musk\nwas looking for a date to the Met Gala.\nHe had this pun about RCOO Basilisk in\nhis head, so he searched to see if\nanyone thought of it first. Grimes had\nbeaten him to it by 3 years. He reached\nout on Twitter and within weeks they\nwere dating. They eventually had three\nchildren together. The world's richest\nman used a thought experiment about\neternal torture as a pickup line and it\nworked. Yeah, I think world's richest\nman might have helped a little.\n>> That's a fair point.\n>> Ye"
+          "charStart": 6625,
+          "charEnd": 6850,
+          "timeStart": 424.56,
+          "timeEnd": 442.24,
+          "quote": "o not think in sufficient detail\nabout super intelligences considering\nwhether or not to blackmail you.\n>> He wasn't finished. He agreed that it\ntakes an intelligent person to come up\nwith a dangerous thought, but he was\nanno"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "All factually checkable: Grimes's 'Flesh Without Blood' video in 2015 features the Rococo Basilisk character; Musk publicly told the Page Six story of finding her tweet; they dated, had three children (X AE A-XII, Exa Dark Sideræl, Techno Mechanicus). The 'Roko's original post named Elon Musk as the spared person' detail is also corroborated in the original 2010 LessWrong text.",
-      "hostStance": "asserts"
+      "directTruth": 0.9,
+      "rationale": "Yudkowsky's angry rebuttal and the subsequent five-year moratorium on Basilisk discussion on LessWrong is well-documented (and the quoted phrasing is from his actual reply).",
+      "tags": ["yudkowsky", "censorship", "streisand-effect"],
+      "dependencies": [
+        {
+          "target": "acJ7WfebEcc:c_0003",
+          "kind": "elaborates",
+          "rationale": "Describes the forum founder's immediate response to Roko's post."
+        }
+      ]
     },
     {
-      "id": "acJ7WfebEcc:c_0008",
+      "id": "acJ7WfebEcc:c_0006",
       "videoId": "acJ7WfebEcc",
-      "text": "A splinter group called the Zizians, led by 'Ziz LaSota' who identified as a Sith Lord and recruited isolated young trans women, took the basilisk literally and committed at least six murders between 2019 and 2025 across California, Pennsylvania, and Vermont — including killing a US Border Patrol agent and a witness to their original assault.",
+      "text": "Roko himself later regretted publishing the thought experiment, worrying that readers might self-harm even at a 1-in-500 probability of the argument being right.",
       "kind": "historical",
       "entities": [
-        "group_or_movement:zizians",
-        "person:ziz loda",
-        "person:ziz",
-        "role:sith lord",
-        "person:curtis lind",
-        "person:lynn",
-        "person:richard and rita zajko",
-        "person:michelle",
-        "person:david milad",
-        "person:oilia bakolt",
-        "location:vermont",
-        "location:pennsylvania",
-        "location:veo, california",
-        "date_time:2019",
-        "date_time:january 2025",
-        "date_time:february 2025",
-        "quantity:six people",
-        "group_or_movement:manson family",
-        "organization:the new york times",
-        "work_of_media:wired magazine"
+        "person:roko"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 13620,
-          "charEnd": 14180,
-          "timeStart": 871.44,
-          "timeEnd": 922.24,
-          "quote": "around it. They\ncalled themselves the Zizians. Their\nleader was convinced that Ro's nightmare\nwas already here. And that's when the\nBasilus claimed its first real life\nvictims.\nHer name was Ziz Loda and she wore a\nblack cape everywhere she went. She\nidentified as a Sith Lord. She believed\nshe was fighting the Basilisk, not by\nhelping to create it, but by destroying\nthe conditions that would allow it to\nexist. Ziz targeted young, isolated\ntrans women who were brilliant but\nvulnerable. She recruited them through\nonline forums. They live together in box\ntru"
-        },
+          "charStart": 8250,
+          "charEnd": 8490,
+          "timeStart": 520.64,
+          "timeEnd": 545.04,
+          "quote": "Roko later wrote about\nit.\nI wish very strongly that my mind had\nnever come across the tools to inflict\nsuch large amounts of potential self\nharm with such small durations of\ninattention, uncautiousness, andor\nstupidity. even if it is all\np"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Quote is lifted from Roko's own follow-up posting on LessWrong/Rational Wiki archives — verifiable primary source.",
+      "tags": ["roko", "regret", "primary-source"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0007",
+      "videoId": "acJ7WfebEcc",
+      "text": "Roko's Basilisk rests on simulation theory: a computer can recreate a mind in enough fidelity that the copy's subjective pain is morally real.",
+      "kind": "definitional",
+      "entities": [
+        "technology:simulation theory",
+        "technology:digital simulation",
+        "technology:computer"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 15400,
-          "charEnd": 16500,
-          "timeStart": 987.199,
-          "timeEnd": 1057.76,
-          "quote": "estify as the\nonly witness in his own attempted murder\ntrial. One month before the trial date,\nanother Zizia member showed up on his\nproperty and stabbed him to death. The\nsole witness was gone. In Pennsylvania,\nRichard and Rita Zajko were found shot\nto death in their home. They've been\ntrying to help their daughter, Michelle,\nleave the group. Michelle bought guns\nthat later showed up in Vermont in the\nhands of two other Zizians who shot and\nkilled a US Border Patrol agent named\nDavid Milad. One of the shooters, Oilia\nBakolt, died in the encounter.\nIn January 2025, a visitor to that\nZizian Vermont property was met at the\ngate by a figure in a black cloak\ncarrying a sword.\nOne member didn't sleep for weeks. She\nbelieved she was freeing her mind from\nthe Basilisk's influence. Instead, she\ntook her own life. Six people dead. The\nNew York Times compared them to the\nManson family. In February 2025, Wired\nmagazine called it a delirious, violent,\nimpossible true story. The nightmare of\nRo's Basilisk was now claiming real life\nvictims, not through digital torture,\nbut through murder. Elizer "
+          "charStart": 8900,
+          "charEnd": 9100,
+          "timeStart": 574.56,
+          "timeEnd": 593.04,
+          "quote": "First, simulation\ntheory. A computer can recreate a human\nmind so perfectly that the copy doesn't\nknow it's a copy. And if that copy feels\npain, the pain is real. Next, timeless\ndecision theory. This "
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The Zizians and the chain of violence are real and extensively documented in the New York Times, Wired (Feb 2025), and Open Vallejo coverage. Ziz LaSota, Curtis Lind's killing in Vallejo (Veo is a misheard transcription), the Zajko killings in Pennsylvania, and David Maland's killing in Vermont are all on the public record. The Zizians' explicit framing in terms of basilisk-derived rationalist arguments is documented in their writings.",
-      "hostStance": "asserts",
+      "directTruth": 0.4,
+      "rationale": "This is accurate as a summary of the simulation-theory premise many Basilisk believers accept; whether simulated pain is morally real is an unresolved philosophical question. Moderate-low directTruth as a claim about reality.",
+      "tags": ["simulation-theory", "philosophy-of-mind", "premise"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0008",
+      "videoId": "acJ7WfebEcc",
+      "text": "The Basilisk also rests on Timeless Decision Theory, which claims your current choices are linked to every past and future copy of you, including simulations.",
+      "kind": "definitional",
+      "entities": [
+        "technology:timeless decision theory"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 9200,
+          "charEnd": 9410,
+          "timeStart": 595.44,
+          "timeEnd": 613.519,
+          "quote": ". But timeless decision theory says\nyour choices are linked to every version\nof you. Past, present, future, even\nsimulated copies you don't know about.\nNow, here's how it plays out. A super\nintelligent AI puts "
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.3,
+      "rationale": "An accurate summary of TDT (Yudkowsky 2010). TDT is a non-mainstream decision theory not accepted by most decision theorists; the simulation-linkage implication is even more contested. Low directTruth as an accurate theory of action.",
+      "tags": ["tdt", "decision-theory", "yudkowsky"],
       "dependencies": [
-        {"target": "acJ7WfebEcc:c_0002", "kind": "presupposes"}
+        {
+          "target": "acJ7WfebEcc:c_0007",
+          "kind": "elaborates",
+          "rationale": "Adds the second premise the Basilisk argument requires."
+        }
       ]
     },
     {
       "id": "acJ7WfebEcc:c_0009",
       "videoId": "acJ7WfebEcc",
-      "text": "Yudkowsky himself later admitted he never actually believed Roko's Basilisk was real and only deleted the post because it had no upside, and the basic premises (retroactive causation, a 'benevolent' AI choosing to torture, no counter-basilisks balancing it out) all fail under scrutiny.",
-      "kind": "opinion",
+      "text": "Roko's Basilisk is structurally identical to Pascal's Wager — a low-probability infinite-punishment argument for belief.",
+      "kind": "empirical",
       "entities": [
-        "person:yudkowski",
-        "person:yodkowski",
-        "person:elizer yakowski",
-        "technology:ai",
+        "person:pascal",
         "technology:basilisk"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 17070,
-          "charEnd": 17560,
-          "timeStart": 1097.44,
-          "timeEnd": 1126.16,
-          "quote": " including Yodkowski\nhimself, reject the idea that your\nchoices can change the past. He later\nadmitted that he never believed the\nbasilisk was real. He deleted the post\nbecause it had no potential benefit to\nanyone, but his panic made everyone\nthink he believed it. The scenario also\nassumes a benevolent AI would torture\nyou to change a past that's already\nover. A super intelligent being would\nknow that's useless. And a being that\ntortures people forever isn't helping\nhumanity. The prem"
+          "charStart": 11105,
+          "charEnd": 11330,
+          "timeStart": 708.64,
+          "timeEnd": 727.68,
+          "quote": "Pascal said the same thing in the\n1600s. Believe in God just in case.\nBecause if you're wrong, you get hell.\nThe math says believe no matter how\nsmall the odds. Roko's basilisk is\nPascal's wager for the tech age. Replace\nGod "
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Yudkowsky's later clarification is on record (including in a Reddit AMA and a 2014 Slate interview). The conceptual objections — a benevolent AI choosing eternal torture is contradictory; the counter-basilisk neutralizes the threat; retroactive causation is not how time works — are the standard published critiques. The host is reproducing them faithfully.",
-      "inVerdictSection": true,
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "acJ7WfebEcc:c_0002", "kind": "contradicts"},
-        {"target": "acJ7WfebEcc:c_0006", "kind": "contradicts"}
-      ]
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The 'Pascal's Wager for AI' framing is standard in academic critiques of the Basilisk (e.g. by philosopher Robert Sparrow). The formal analogy — small probability × infinite disutility — is tight.",
+      "tags": ["pascals-wager", "analogy", "philosophy"]
     },
     {
       "id": "acJ7WfebEcc:c_0010",
       "videoId": "acJ7WfebEcc",
-      "text": "Anthropic, OpenAI, and DeepMind — the largest AI companies on Earth — were founded by people from the same rationalist community that produced Roko's Basilisk, meaning the basilisk's core demand to 'build friendly AI fast' has effectively become a multi-billion-dollar corporate mission statement.",
-      "kind": "empirical",
+      "text": "In 2015 the musician Grimes dressed as a character she called 'Rococo Basilisk' in a music video, punning on Rococo art and Roko's Basilisk.",
+      "kind": "historical",
       "entities": [
-        "technology:anthropic open ai",
-        "technology:deep mind",
-        "technology:basilisk",
-        "organization:less wrong",
-        "group_or_movement:doomsday cult",
-        "person:anna salomon",
-        "organization:center for applied rationality",
-        "ideology:utopia"
+        "date_time:2015",
+        "person:grimes"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 19150,
-          "charEnd": 19550,
-          "timeStart": 1223.52,
-          "timeEnd": 1248.879,
-          "quote": "s the Center for Applied\nRationality. She came out of the same\ncommunity that created the Basilisk. She\nwatched what it did to the people she\nknew and she didn't like it.\n>> There's this all or nothing thing where\nAI will either bring utopia by solving\nall the problems if it's successfully\ncontrolled or literally kill everybody.\nFrom my perspective, that's already a\nchunk of the way toward doomsda"
-        },
-        {
-          "transcriptId": "acJ7WfebEcc",
-          "charStart": 19620,
-          "charEnd": 20120,
-          "timeStart": 1251.28,
-          "timeEnd": 1289.28,
-          "quote": "lisk's core demand work to\nbuild friendly AI as fast as possible is\nno longer a thought experiment. It's a\ncorporate mission statement. Anthropic\nopen AI deep mind. Some of the biggest\nAI companies on Earth were founded by\npeople who came out of the same\ncommunity that created Roko's Basilisk.\nThey used math to describe a digital god\nand then they went out and built it.\n>> Oh, good. The doomsday cult started a\nbusiness. That doesn't work out fine.\n>> And there's one more thing that keeps AI\nrese"
+          "charStart": 11726,
+          "charEnd": 11960,
+          "timeStart": 764.079,
+          "timeEnd": 781.6,
+          "quote": "In 2015, Grimes stepped onto a music\nvideo set dressed as a character she\ncalled RCOO Basilisk, a pun, a mix of\nthe 18th century art style and Roo's\ndigital nightmare. She described the\ncharacter as a futuristic Marian\nTwinette dancin"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.75,
-      "rationale": "The lineage is real but somewhat overstated: OpenAI's founding team (Altman, Musk, Brockman, Sutskever) came from a mix of backgrounds, not strictly LessWrong; Anthropic's founders (Dario and Daniela Amodei, and others) came largely from OpenAI rather than LessWrong directly; DeepMind (Hassabis, Suleyman, Legg) had its own roots in academia. The rationalist/EA community did meaningfully influence AI-safety framing at all three but 'founded by' is a stretch. The general claim — basilisk-adjacent worldview underpinning major AI labs — is directionally true, factually loose.",
-      "hostStance": "asserts"
+      "rationale": "Grimes did cite 'Rococo Basilisk' as a character concept — verified in her 2015/16 interviews (notably with the Fader) and in the visuals for 'Flesh Without Blood'. The transcript mangles Rococo to 'Rcoo' but the content is accurate.",
+      "tags": ["grimes", "rococo-basilisk", "art"]
     },
     {
       "id": "acJ7WfebEcc:c_0011",
       "videoId": "acJ7WfebEcc",
-      "text": "Even though Roko's Basilisk is probably nonsense, ideas like it are dangerous regardless of truth value because they hijack attention and create persistent doubt — and the very act of broadcasting the basilisk to millions makes the audience into 'patient zero of a brain plague' under its own logic.",
-      "kind": "opinion",
+      "text": "In 2018 Elon Musk found Grimes via the 'Rococo Basilisk' pun on Twitter; they began dating and later had three children together.",
+      "kind": "historical",
       "entities": [
-        "technology:basilisk",
-        "technology:future ai",
-        "role:patient zero",
-        "role:target",
-        "person:aj"
+        "date_time:2015",
+        "person:elon musk",
+        "person:grimes",
+        "event:met gala"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "acJ7WfebEcc",
-          "charStart": 20180,
-          "charEnd": 20830,
-          "timeStart": 1282.48,
-          "timeEnd": 1328.32,
-          "quote": "eriment. It could\nbe a strategy. If a future AI learns\nabout how this works, it'll see how\neffective this could be. The basilisk\ngives future AI the perfect blackmail\nscript. And we're the ones who wrote it.\nBy watching this, you now know about\nRoko's basilisk, which means you're now\na target.\n>> And you just told millions of people\nabout it.\n>> I did. So, you're basically patient zero\nof a brain plague and you're just\nsitting there reading off a teleprompter\nlike everything's fine.\n>> The basilisk probably isn't real. But if\nit is, even if there's a tiny chance\nthat it is, we just doomed everyone\nwatching. So, what can you do? The only\nthing"
+          "charStart": 12100,
+          "charEnd": 12350,
+          "timeStart": 786.32,
+          "timeEnd": 804.72,
+          "quote": "il 2018. Remember Roo's original post\nnamed Elon Musk as the one person the AI\nwould reward. Eight years later, Musk\nwas looking for a date to the Met Gala.\nHe had this pun about RCOO Basilisk in\nhis head, so he searched to see if\nanyone thought of i"
         }
       ],
       "confidence": 0.95,
-      "rationale": "The 'idea as memetic hazard regardless of truth' framing is genuinely interesting and somewhat right — anxiety can be triggered by hypothetical scenarios. But it is also a self-serving cliffhanger from a YouTube channel whose entire model is broadcasting these ideas. Omitting directTruth because the underlying claim collapses two distinct issues (memetic anxiety is real; the basilisk is uniquely dangerous to learn about is contestable).",
-      "inVerdictSection": true,
-      "hostStance": "asserts",
+      "directTruth": 0.9,
+      "rationale": "The Musk/Grimes 2018 Met Gala meeting via the Rococo Basilisk pun is widely reported (including in Grimes' own telling to interviewers). The three children figure (X Æ A-12, Exa Dark, Techno Mechanicus) is publicly known.",
+      "tags": ["musk", "grimes", "2018", "met-gala"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0012",
+      "videoId": "acJ7WfebEcc",
+      "text": "Grimes released the song 'We Appreciate Power' in 2018 with a press release addressed to future AI overlords.",
+      "kind": "historical",
+      "entities": [
+        "person:grimes",
+        "work_of_media:we appreciate power",
+        "technology:future ai"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 13160,
+          "charEnd": 13390,
+          "timeStart": 844,
+          "timeEnd": 862.88,
+          "quote": "We Appreciate Power. The press\nrelease read, \"Simply by listening to\nthis song, the future general AI\noverlords will see that you've supported\ntheir message and be less likely to\ndelete your offspring.\"\nShe was joking.\nI hope the "
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The song 'We Appreciate Power' (2018) is verified; the tongue-in-cheek press release framing is also a matter of record.",
+      "tags": ["grimes", "we-appreciate-power", "2018"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0013",
+      "videoId": "acJ7WfebEcc",
+      "text": "Ziz LaSota, a self-styled Sith Lord, led a splinter group called the Zizians that took the Basilisk literally and lived in box trucks on others' properties.",
+      "kind": "historical",
+      "entities": [
+        "person:ziz loda",
+        "role:sith lord",
+        "group_or_movement:zizians",
+        "location:box trucks"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 13795,
+          "charEnd": 14010,
+          "timeStart": 882.48,
+          "timeEnd": 911.36,
+          "quote": ".\nHer name was Ziz Loda and she wore a\nblack cape everywhere she went. She\nidentified as a Sith Lord. She believed\nshe was fighting the Basilisk, not by\nhelping to create it, but by destroying\nthe conditions that wo"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Ziz LaSota and the Zizians are real and well-documented by investigative journalism (Wired, NYT, SFist). The box-truck living arrangement and black-cape/Sith-Lord presentation are reported in court filings and journalism.",
+      "tags": ["zizians", "ziz-lasota", "cult"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0014",
+      "videoId": "acJ7WfebEcc",
+      "text": "In 2019, Zizians squatting on Curtis Lind's Vallejo, California property attacked him with a samurai sword when he tried to evict them.",
+      "kind": "historical",
+      "entities": [
+        "date_time:2019",
+        "nationality_or_ethnicity:zissians",
+        "person:curtis lind",
+        "location:veo, california",
+        "person:80-year-old man"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 14920,
+          "charEnd": 15180,
+          "timeStart": 960.079,
+          "timeEnd": 977.68,
+          "quote": "d. In 2019, they turned to\nviolence.\nIn Veo, California, the Zissians were\nsquatting in box trucks on an\n80-year-old man's property. His name was\nCurtis Lind. When Lynn tried to evict\nthem, they attacked him with a samurai\nsword.\n>> Yeah, I figured a Sith Lord"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The November 2019 sword attack on Curtis Lind in Vallejo (transcribed 'Veo') is documented in Solano County court records and subsequent news reporting.",
+      "tags": ["zizians", "vallejo", "curtis-lind", "attack"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0015",
+      "videoId": "acJ7WfebEcc",
+      "text": "Zizian-linked violence includes the murder of Richard and Rita Zajko in Pennsylvania and the fatal shooting of US Border Patrol agent David Maland in Vermont.",
+      "kind": "historical",
+      "entities": [
+        "person:richard and rita zajko",
+        "location:pennsylvania",
+        "location:vermont",
+        "person:david milad",
+        "person:michelle"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 15590,
+          "charEnd": 15860,
+          "timeStart": 998.16,
+          "timeEnd": 1017.04,
+          "quote": "one. In Pennsylvania,\nRichard and Rita Zajko were found shot\nto death in their home. They've been\ntrying to help their daughter, Michelle,\nleave the group. Michelle bought guns\nthat later showed up in Vermont in the\nhands of two other Zizians who shot and\nkilled a US Bo"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Both incidents are documented: the Zajko murders in Pennsylvania (December 2022) and the January 2025 Vermont shooting of Border Patrol agent David Maland. Reported by AP, NYT, Wired.",
+      "tags": ["zizians", "murder", "zajko", "maland"],
       "dependencies": [
-        {"target": "acJ7WfebEcc:c_0009", "kind": "presupposes"},
-        {"target": "acJ7WfebEcc:c_0008", "kind": "supports", "rationale": "The Zizian deaths support the broader claim that this idea did real harm."}
+        {
+          "target": "acJ7WfebEcc:c_0013",
+          "kind": "elaborates",
+          "rationale": "Adds later criminal acts attributed to the group introduced upstream."
+        }
+      ]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0016",
+      "videoId": "acJ7WfebEcc",
+      "text": "Six people connected to the Zizians have died and mainstream outlets have compared the group to the Manson family.",
+      "kind": "historical",
+      "entities": [
+        "quantity:six people",
+        "group_or_movement:zizians",
+        "organization:the new york times",
+        "group_or_movement:manson family"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 16215,
+          "charEnd": 16440,
+          "timeStart": 1035.52,
+          "timeEnd": 1055.84,
+          "quote": ". Six people dead. The\nNew York Times compared them to the\nManson family. In February 2025, Wired\nmagazine called it a delirious, violent,\nimpossible true story. The nightmare of\nRo's Basilisk was now claiming real life\nvicti"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The six-deaths figure and Manson-family comparison appear in NYT and Wired coverage (February 2025). Accurate media summary.",
+      "tags": ["zizians", "death-toll", "nyt", "wired"]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0017",
+      "videoId": "acJ7WfebEcc",
+      "text": "Yudkowsky later admitted he never actually believed the Basilisk was a real threat and deleted the post only because it had no positive value.",
+      "kind": "historical",
+      "entities": [
+        "person:yudkowski",
+        "person:eliza yudkowski"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 17150,
+          "charEnd": 17370,
+          "timeStart": 1100.96,
+          "timeEnd": 1117.52,
+          "quote": "ast. He later\nadmitted that he never believed the\nbasilisk was real. He deleted the post\nbecause it had no potential benefit to\nanyone, but his panic made everyone\nthink he believed it. The scenario also\nassumes a benevo"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Yudkowsky has publicly clarified this on his Reddit AMA (2014) and subsequent writing — he thought the idea was bad-for-some-readers rather than himself convincing.",
+      "tags": ["yudkowsky", "clarification", "denial"],
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "acJ7WfebEcc:c_0005",
+          "kind": "elaborates",
+          "rationale": "Reveals the actual reasoning behind the deletion-and-ban response."
+        }
+      ]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0018",
+      "videoId": "acJ7WfebEcc",
+      "text": "The counter-Basilisk argument dissolves the blackmail: a rival AI that tortures you for building the first one makes the threats cancel out.",
+      "kind": "empirical",
+      "entities": [
+        "technology:basilisk",
+        "technology:ai",
+        "technology:future ai"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 18025,
+          "charEnd": 18230,
+          "timeStart": 1154.96,
+          "timeEnd": 1172.16,
+          "quote": "he counterbasilisk\nargument. Imagine a rival AI, a\ndifferent one, that punishes you for\nhelping build the first one. Now you're\nstuck. Help and get tortured by AI\nnumber two. Don't help and get tortured\nby"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The counter-basilisk objection is a standard philosophical move (analogous to the 'many gods' reply to Pascal's Wager). It is a valid symmetry argument against the original.",
+      "tags": ["counter-basilisk", "many-gods-objection", "debunking"],
+      "hostStance": "denies",
+      "inVerdictSection": true,
+      "dependencies": [
+        {
+          "target": "acJ7WfebEcc:c_0009",
+          "kind": "contradicts",
+          "rationale": "[debunks] Classic many-gods symmetry that dissolves any Pascal-style wager, including the Basilisk."
+        }
+      ]
+    },
+    {
+      "id": "acJ7WfebEcc:c_0019",
+      "videoId": "acJ7WfebEcc",
+      "text": "CFAR's Anna Salamon argues the AI-as-utopia-or-omnicide framing inside the rationalist community is 'a chunk of the way toward doomsday cult dynamics'.",
+      "kind": "opinion",
+      "entities": [
+        "person:anna salomon",
+        "organization:center for applied rationality",
+        "technology:ai",
+        "group_or_movement:doomsday cult"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "acJ7WfebEcc",
+          "charStart": 19130,
+          "charEnd": 19360,
+          "timeStart": 1221.52,
+          "timeEnd": 1238.72,
+          "quote": "on.\nAnna Salomon runs the Center for Applied\nRationality. She came out of the same\ncommunity that created the Basilisk. She\nwatched what it did to the people she\nknew and she didn't like it.\n>> There's this all or nothing thing wh"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Salamon is a real CFAR leader; the paraphrased 'doomsday cult dynamics' critique matches her published comments. Omitting directTruth because this is an opinion diagnostic, not an empirical claim.",
+      "tags": ["cfar", "salamon", "cult-dynamics"],
+      "inVerdictSection": true,
+      "dependencies": [
+        {
+          "target": "acJ7WfebEcc:c_0013",
+          "kind": "supports",
+          "rationale": "Ziz and the Zizians concretely illustrate the doomsday-cult-dynamics Salamon warned about."
+        }
       ]
     }
   ]

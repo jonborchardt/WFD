@@ -1,470 +1,477 @@
 {
   "schemaVersion": 1,
   "transcriptId": "PxY3KZ3pQ3o",
-  "generatedAt": "2026-04-20T02:08:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "PxY3KZ3pQ3o:c_0001",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "On June 25, 2007 the CIA quietly published a 693-page collection of internal misconduct records, known as the 'Family Jewels,' which documented assassination plots, mind-control experiments, journalists on the agency payroll, and surveillance of hundreds of thousands of Americans — operations that had been concealed since 1973.",
+      "text": "On June 25, 2007 the CIA released 693 pages known as the 'Family Jewels,' documenting decades of illegal domestic operations that had been kept secret since 1973.",
       "kind": "historical",
       "entities": [
         "organization:cia",
-        "date_time:june 25th, 2007",
-        "quantity:693 pages",
-        "date_time:1973",
         "work_of_media:family jewels",
-        "event:assassination plots",
-        "event:mind control experiments",
-        "person:journalists",
-        "nationality_or_ethnicity:americans"
+        "date_time:june 25th, 2007",
+        "date_time:1973"
       ],
-      "relationships": ["r_0001", "r_0007"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 67,
-          "charEnd": 559,
+          "charStart": 91,
+          "charEnd": 121,
           "timeStart": 17.119,
-          "timeEnd": 56.64,
-          "quote": "On June 25th, 2007, the CIA quietly\nreleased 693 pages of their darkest\nsecrets to the website. No announcement,\nno press conference, just a document\ndump of operations. so illegal they've\nbeen hidden since 1973.\nThe CIA called this collection their\nfamily jewels. Assassination plots, mind\ncontrol experiments, journalists on CIA\npayroll, surveillance of hundreds of\nthousands of Americans who'd committed\nno crimes. These weren't conspiracy\ntheories. These were real. Each page of\nthe famil"
+          "timeEnd": 26,
+          "quote": "CIA quietly\nreleased 693 pages"
         }
       ],
-      "confidence": 0.98,
+      "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "The Family Jewels release is well-documented public history. The CIA did release a heavily redacted version of the 700-page Family Jewels report on June 25, 2007 (CIA press release; New York Times coverage). The contents — assassination plots (Castro), MKUltra, Operation CHAOS surveillance, journalist relationships — are accurately summarized. Minor caveat: the document was 702 pages with some still-redacted material, and there was a CIA press release accompanying it, so 'no announcement' is slightly overstated. Otherwise factually accurate.",
+      "rationale": "The Family Jewels release on June 25, 2007 is well-documented historical fact. The CIA posted the declassified 702-page compilation (693 plus cover) on its electronic reading room — page count, date, and provenance are verifiable against the public record.",
+      "tags": [
+        "cia",
+        "family-jewels",
+        "declassification"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0002",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "The Family Jewels is not a record of isolated abuses but evidence that decades of illegal CIA conduct were the agency's official policy, sanctioned at the highest levels.",
-      "kind": "opinion",
+      "text": "The CIA illegally opened and scanned 28 million pieces of mail between the US and Soviet Union over 20 years via Operation HT Lingual.",
+      "kind": "historical",
       "entities": [
-        "organization:cia",
-        "work_of_media:family jewels",
-        "law_or_policy:official policy",
-        "event:operations"
+        "organization:cia"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 280,
-          "charEnd": 781,
-          "timeStart": 33.04,
-          "timeEnd": 73.88,
-          "quote": "The CIA called this collection their\nfamily jewels. Assassination plots, mind\ncontrol experiments, journalists on CIA\npayroll, surveillance of hundreds of\nthousands of Americans who'd committed\nno crimes. These weren't conspiracy\ntheories. These were real. Each page of\nthe family jewels revealed operations\napproved at the highest levels.\noperations that violated every law meant\nto constrain the CIA. And taken\ntogether, they revealed something darker\nthan isolated crimes. They told a story.\nThe st"
+          "charStart": 4613,
+          "charEnd": 4667,
+          "timeStart": 343.6,
+          "timeEnd": 353.039,
+          "quote": "28\nmillion letters over 20 years were\nillegally opened"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.7,
-      "rationale": "The Church Committee findings broadly support the 'systemic, not rogue' framing — a number of programs (CHAOS, mail-opening, COINTELPRO coordination, MKUltra) had high-level CIA, NSC, or presidential approval at various points. However the strong claim that every illegal action was 'official policy' is an interpretive overlay; some operations were genuinely concealed even from CIA leadership (MKUltra's full scope was largely Sidney Gottlieb's compartmented operation). Roughly correct but partly editorial framing.",
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "HT Lingual (mail intercept, 1952-1973) is extensively documented in the Church Committee final reports. The ~28 million figure aligns with Church Committee findings on mail intercepted at JFK airport alone.",
+      "tags": [
+        "ht-lingual",
+        "mail-surveillance",
+        "cia"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0003",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "In 1973, new CIA Director James Schlesinger ordered every department head to report any activity that may have violated the agency's charter, intending a routine review but instead producing the binder of misconduct that would become the Family Jewels.",
+      "text": "Seymour Hersh broke the CIA domestic surveillance story on the front page of the New York Times on December 22, 1974, after earlier winning a 1969 Pulitzer Prize for exposing the My Lai massacre.",
       "kind": "historical",
       "entities": [
-        "organization:cia",
-        "person:james slesinger",
-        "date_time:1973",
-        "date_time:may 9th",
-        "event:watergate break-in scandal",
-        "law_or_policy:charter"
+        "person:seymour hersh",
+        "person:hersh"
       ],
-      "relationships": ["r_0023"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 3589,
-          "charEnd": 4014,
-          "timeStart": 280.24,
-          "timeEnd": 313.44,
-          "quote": "It starts in 1973 when\nthe walls started closing in on the CIA.\nOn May 9th, James Slesinger had been CIA\ndirector for only 3 months, and his\ntiming couldn't have been worse. The\nWatergate break-in scandal was\nspreading. The five intruders were all\nconnected to the CIA, some as officers,\nsome as assets. The planners of the\nbreak-in were E. Howard Hunt and G.\nGordon Litty. Hunt was former CIA. Ly\nwas former FBI with a backg"
-        },
-        {
-          "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 4540,
-          "charEnd": 5037,
-          "timeStart": 341.759,
-          "timeEnd": 375.28,
-          "quote": "One department admitted to opening mail\nbetween the US and Soviet Union. 28\nmillion letters over 20 years were\nillegally opened and scanned. The Office\nof Security confessed to wiretapping\nAmerican journalists who'd been asking\ntoo many questions. Every department\nsubmitted reports. Every report was\nworse than the last. There were\ndisclosures of surveillance operations,\nnot against foreign spies, against\nAmericans. Anyone who questioned\nauthority was a CIA target. Some\nprograms were classifie"
+          "charStart": 6068,
+          "charEnd": 6113,
+          "timeStart": 445.44,
+          "timeEnd": 452.24,
+          "quote": "Seymour Hersh had already won a Puliter\nPrize"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Schlesinger did issue the May 9, 1973 directive asking employees to report activities outside the CIA's charter, in the wake of Watergate's exposure of CIA links to the burglars. The resulting compendium became the 'Family Jewels.' The HTLINGUAL mail-opening program (1952-1973) opened around 215,000-250,000 letters per year per CIA estimates — 28 million over 20 years is plausibly inflated, but in the right order of magnitude.",
+      "directTruth": 0.95,
+      "rationale": "Hersh's 1969 Pulitzer for the My Lai reporting and his December 22 1974 NYT front-page scoop on CIA domestic spying are both matters of documented journalism history.",
+      "tags": [
+        "hersh",
+        "pulitzer",
+        "journalism",
+        "cia"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0004",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "Seymour Hersh's December 22, 1974 New York Times front-page story exposed a massive CIA domestic-intelligence operation with files on roughly 10,000 American citizens — anti-war activists, civil rights leaders, journalists, and members of Congress — and triggered the cascade of investigations that would force the agency's misconduct into public view.",
+      "text": "CIA Operation CHAOS indexed 300,000 Americans in its computer system — anti-war activists, civil rights leaders, journalists, and 14 members of Congress — despite never finding any foreign influence in the anti-war movement.",
       "kind": "historical",
       "entities": [
-        "person:seymour hersh",
-        "person:hersh",
-        "organization:new york times",
+        "event:operation chaos",
         "organization:cia",
-        "date_time:december 22nd, 1974",
-        "quantity:10,000",
-        "nationality_or_ethnicity:americans",
-        "group_or_movement:anti-war activists",
-        "group_or_movement:civil rights leaders",
-        "person:journalists",
         "organization:congress"
       ],
-      "relationships": ["r_0073"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 6690,
-          "charEnd": 7176,
-          "timeStart": 482.4,
-          "timeEnd": 523.12,
-          "quote": "On December\n22nd, 1974, the Times ran Hersh's story\non the front page.\nThe article detailed a massive\nintelligence operation with files on\n10,000 American citizens. Not foreign\nagents, not terrorists, Americans,\nanti-war activists, civil rights\nleaders, journalists, even members of\nCongress. The backlash was instant. The\npublic was outraged and the press\nwouldn't let it go. The next morning,\nthe Department of Justice announced an\ninvestigation and CIA Director William\nColby was sum"
+          "charStart": 9917,
+          "charEnd": 9952,
+          "timeStart": 711.12,
+          "timeEnd": 720.72,
+          "quote": "chaos had indexed\n300,000 Americans"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "Verifiable. Hersh's story 'Huge C.I.A. Operation Reported in U.S. Against Antiwar Forces, Other Dissidents in Nixon Years' did run on the front page of the New York Times on December 22, 1974, and it did describe files on roughly 10,000 Americans — figures that matched what Operation CHAOS had compiled. The story directly precipitated the Rockefeller Commission and Church Committee investigations.",
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Operation CHAOS indexing figures (approx 300,000 names; 7,200 individual dossiers; 1,000 organizations) match the Rockefeller Commission and Church Committee final reports. The 14-congressmen surveillance list is also documented.",
+      "tags": [
+        "operation-chaos",
+        "surveillance",
+        "first-amendment"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0005",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "Operation CHAOS (1967-1974) ran under Presidents Johnson and Nixon as a CIA program to find foreign influence in the American anti-war movement; it found none, but indexed roughly 300,000 Americans and built dedicated dossiers on 7,200 of them — all of which violated the CIA's charter against domestic surveillance.",
+      "text": "FBI COINTELPRO conducted over 2,000 documented illegal actions against civil rights leaders and anti-war activists, including sending a suicide-suggestion blackmail letter to Martin Luther King Jr.",
       "kind": "historical",
       "entities": [
-        "event:operation chaos",
-        "organization:cia",
-        "person:president johnson",
-        "person:nixon",
-        "group_or_movement:anti-war movement",
-        "quantity:300,000 americans",
-        "quantity:7,200 americans",
-        "law_or_policy:charter",
-        "person:richard ober",
-        "date_time:1967",
-        "date_time:1973"
-      ],
-      "relationships": ["r_0142", "r_0143", "r_0176", "r_0185"],
-      "evidence": [
-        {
-          "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 9496,
-          "charEnd": 9939,
-          "timeStart": 684.8,
-          "timeEnd": 720.72,
-          "quote": "Operation Chaos, known by\nits cryptonym Chaos. Started in 1967\nunder President Johnson and expanded\nunder Nixon. The mission was simple.\nFind foreign influence in the anti-war\nmovement. proved that Moscow or Beijing\nwere behind the protests. They never\nfound any foreign influence, not one\ncase. The anti-war movement was made up\nof Americans, but they kept looking for\ncommunists, and the program kept\ngrowing. By 1973, chaos had indexed\n300,"
-        },
-        {
-          "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 9908,
-          "charEnd": 10202,
-          "timeStart": 711.12,
-          "timeEnd": 735.44,
-          "quote": "By 1973, chaos had indexed\n300,000 Americans in its computer\nsystem. Not suspected spies, not foreign\nagents. Americans exercising their First\nAmendment rights, college students,\nclergy, professors, journalists, anyone\nwho questioned the Vietnam War was a\npotential target. Richard Ober ran the"
-        }
-      ],
-      "confidence": 0.96,
-      "directTruth": 0.92,
-      "rationale": "Well documented by the Church Committee (Final Report Book III). CHAOS started in 1967 under Johnson's CIA Director Richard Helms in response to LBJ's demand for proof of foreign funding of the anti-war movement; expanded under Nixon. The program's own final report acknowledged it found no significant foreign influence. The 300,000-name index and ~7,200 personality files are the figures in the Church Committee report. Richard Ober did head the operation under James Angleton's counterintelligence staff.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "PxY3KZ3pQ3o:c_0002", "kind": "supports", "rationale": "CHAOS as charter-violating, leadership-approved program is concrete evidence for the systemic-misconduct thesis."}
-      ]
-    },
-    {
-      "id": "PxY3KZ3pQ3o:c_0006",
-      "videoId": "PxY3KZ3pQ3o",
-      "text": "Working in parallel with the CIA, the FBI's COINTELPRO carried out over 2,000 documented covert actions against domestic dissidents — including a campaign of surveillance, blackmail, and an anonymous letter telling Martin Luther King Jr. to commit suicide before accepting the Nobel Peace Prize, likely written by FBI assistant director William Sullivan.",
-      "kind": "historical",
-      "entities": [
-        "organization:fbi",
         "organization:cointel pro",
-        "quantity:2,000 documented actions",
-        "person:dr. martin luther king",
+        "person:martin luther king jr.",
         "person:dr. king",
-        "person:king",
-        "person:william sullivan",
-        "role:assistant director",
-        "event:nobel peace prize",
-        "law_or_policy:first amendment"
+        "person:j. edgar hoover"
       ],
-      "relationships": ["r_0241", "r_0244"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 12837,
-          "charEnd": 13140,
-          "timeStart": 902.88,
-          "timeEnd": 925.04,
-          "quote": "When it came to crushing Americans First\nAmendment rights, the CIA and the FBI\nwere perfect partners. The CIA surveiled\ndescent and the FBI dismantled it. The\nprogram was called Quintel PRO, short\nfor Counter Intelligence Program.\nOfficially, it targeted domestic\nsubversives. Unofficially, it was a war"
+          "charStart": 14815,
+          "charEnd": 14863,
+          "timeStart": 1040.079,
+          "timeEnd": 1049.2,
+          "quote": "King, there is only\none thing left for you to do"
         },
         {
           "transcriptId": "PxY3KZ3pQ3o",
           "charStart": 15266,
-          "charEnd": 15815,
+          "charEnd": 15317,
           "timeStart": 1069.919,
-          "timeEnd": 1114.48,
-          "quote": "COINTEL Pro conducted over 2,000\ndocumented actions. They forged letters\nto create conflicts, planted negative\nstories in newspapers, sent people to\nprison on false charges, incited\nviolence between groups, destroyed\nmarriages, ruined careers, drove people\nto suicide. The CIA watched the FBI\ndestroyed. But controlling people\nthrough force wasn't enough. They wanted\nto control people without realizing they\nwere being manipulated. To do that, they\ndeployed an even more powerful weapon,\nthe media.\nThere's a reason that protecting the\npress shows "
+          "timeEnd": 1077.12,
+          "quote": "COINTEL Pro conducted over 2,000\ndocumented actions"
         }
       ],
-      "confidence": 0.96,
+      "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "COINTELPRO is well documented (Church Committee Book III); FBI itself released documents acknowledging ~2,000 operations against the New Left, civil rights groups, the Klan, etc. The 'suicide letter' to King is real and the Church Committee identified Sullivan's office as its likely source; a draft was indeed found in Sullivan's files. The CIA/FBI 'perfect partners' framing is the host's editorial gloss — the two agencies often had jurisdictional friction, though they did cooperate on CHAOS.",
+      "rationale": "The 'suicide letter' sent to MLK in November 1964 is an established historical fact — the Church Committee documented the operation and a draft was found in William Sullivan's files. The 2,000+ COINTELPRO actions figure is from Church Committee data.",
+      "tags": [
+        "cointelpro",
+        "mlk",
+        "fbi",
+        "suicide-letter"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "PxY3KZ3pQ3o:c_0006",
+      "videoId": "PxY3KZ3pQ3o",
+      "text": "Over 400 American journalists at major outlets (NYT, CBS, Time, Newsweek, AP, Reuters, Washington Post) secretly carried out assignments for the CIA over 25 years through Operation Mockingbird.",
+      "kind": "historical",
+      "entities": [
+        "event:operation mockingbird",
+        "organization:cia"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "PxY3KZ3pQ3o",
+          "charStart": 16863,
+          "charEnd": 16934,
+          "timeStart": 1181.2,
+          "timeEnd": 1191.84,
+          "quote": "More than\n400 American journalists had secretly\ncarried out assignments"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The 400+ journalists figure comes from Carl Bernstein's 1977 Rolling Stone exposé 'The CIA and the Media', which cited CIA documents. The Church Committee confirmed substantial CIA-media collaboration. 'Operation Mockingbird' is an informal umbrella label; the underlying collaboration is real and documented.",
+      "tags": [
+        "operation-mockingbird",
+        "cia",
+        "journalism",
+        "media"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0007",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "Through Operation Mockingbird (begun in the early Cold War under Allen Dulles and Frank Wisner), the CIA recruited more than 400 American journalists across major outlets — the New York Times, CBS, Time, Newsweek, AP, Reuters, the Washington Post — to plant or kill stories on the agency's behalf, with publishers' direct cooperation.",
-      "kind": "historical",
+      "text": "CIA-media collaboration on domestic narrative control via press manipulation is still ongoing today on social media platforms like Twitter and Facebook through FBI/government coordination.",
+      "kind": "speculative",
       "entities": [
-        "event:operation mockingbird",
         "organization:cia",
-        "person:allen dulles",
-        "person:frank wisner",
-        "quantity:hundreds",
-        "person:journalists",
-        "organization:new york times",
-        "organization:cbs",
-        "organization:time magazine",
-        "organization:newsweek",
-        "organization:the ap",
-        "organization:reuters",
-        "organization:washington post",
-        "person:arthur hayes salsberg",
-        "person:william paley"
+        "technology:social media"
       ],
-      "relationships": ["r_0258", "r_0261", "r_0266"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 16095,
-          "charEnd": 16599,
-          "timeStart": 1124.88,
-          "timeEnd": 1160.48,
-          "quote": "Operation\nMockingbird, but there was no official\nname for it. Inside the agency, Frank\nWisner, who ran covert operations,\ncalled it his mighty woriter, a massive\norgan that would play any tune he\nwanted. It started in the early days of\nthe Cold War under Allen Dulles. The CIA\nneeded to influence public opinion\nagainst the Soviets, and major news\norganizations were more than happy to\nhelp. Publishers, editors, reporters. A\nfewer patriots who thought they were\nserving their country. Some enjoyed\nplayi"
-        },
-        {
-          "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 16863,
-          "charEnd": 17286,
-          "timeStart": 1181.2,
-          "timeEnd": 1212.4,
-          "quote": "More than\n400 American journalists had secretly\ncarried out assignments for the CIA for\n25 years. And not small town papers.\nThese were reporters at the New York\nTimes, CBS, Time Magazine, Newsweek, The\nAP, Reuters, Washington Post, the\nbiggest names in American media. Some\njournalists were full CIA employees\nusing journalism as cover. And the\npublishers knew Arthur Hayes Salsberg at\nthe New York Times, William Paley at"
+          "charStart": 23759,
+          "charEnd": 23932,
+          "timeStart": 1650.32,
+          "timeEnd": 1665.76,
+          "quote": "Twitter, Facebook, and other\nsocial media platforms have already been\nexposed as either working with or being\ncoerced by the FBI and other government\nagencies. This is fact."
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.7,
-      "rationale": "Carl Bernstein's October 1977 Rolling Stone investigation 'The CIA and the Media' is the source of the '400+ journalists over 25 years' figure, which originated with the CIA's own internal review for the Church Committee. Wisner's 'Mighty Wurlitzer' is real; Allen Dulles did expand the program. However the 'Operation Mockingbird' label has murky provenance — it appears in CIA documents but may have been a much narrower wiretap operation than the omnibus media-influence program the name now refers to. The general thesis (CIA cultivated assets in major US news orgs) is supported; the precise scope and whether named publishers actively 'cooperated' as opposed to tolerated is more contested.",
-      "hostStance": "asserts"
+      "confidence": 0.8,
+      "directTruth": 0.5,
+      "rationale": "The 2022-2023 'Twitter Files' releases documented FBI-platform coordination on content moderation. The scope (routine counter-disinformation consultation vs systematic narrative control) remains contested. directTruth moderate — the existence of coordination is established, but the 'Mockingbird still going on' framing is interpretive.",
+      "tags": [
+        "mockingbird",
+        "social-media",
+        "fbi",
+        "modern"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "PxY3KZ3pQ3o:c_0006",
+          "kind": "elaborates",
+          "rationale": "Host argues the historical Mockingbird pattern never ended and is now operating in a new medium — an extrapolation from the 1950s-70s record."
+        }
+      ]
     },
     {
       "id": "PxY3KZ3pQ3o:c_0008",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "MKUltra, run by CIA chief chemist Sidney Gottlieb from 1953 to 1973, was an umbrella of 149 sub-projects across 80 institutions in which the agency dosed unwitting subjects with LSD, conducted 'depatterning' experiments at Allen Memorial Institute under Dr. Ewen Cameron, and ran the Operation Midnight Climax brothel-with-two-way-mirrors stings in San Francisco and New York.",
+      "text": "MK Ultra was a CIA mind-control research program from 1953 to 1973 comprising 149 sub-projects across 80 institutions including 44 colleges, 15 foundations, and 12 hospitals.",
       "kind": "historical",
       "entities": [
         "organization:mk ultra",
-        "facility:mk ultra",
-        "person:sydney gotautle",
-        "person:gotley",
-        "person:sydney gotley",
         "organization:cia",
-        "role:chief chemist",
-        "date_time:1953",
-        "date_time:1973",
-        "quantity:149 sub projects",
-        "quantity:80 institutions",
-        "facility:allen memorial institute",
-        "person:dr. euan cameron",
-        "location:montreal",
-        "event:operation midnight climax",
-        "location:san francisco",
-        "location:new york"
+        "person:sydney gotley"
       ],
-      "relationships": ["r_0269", "r_0285", "r_0303", "r_0316"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 19353,
-          "charEnd": 19898,
-          "timeStart": 1350.24,
-          "timeEnd": 1395.84,
-          "quote": "The program was called MK Ultra, run by\nSydney Gotautle, the CIA's chief\nchemist. His colleagues called him the\nblack sorcerer. From 1953 to 1973,\nGotautle had unlimited funds and zero\noversight. His mission, develop mind\ncontrol techniques for the CIA. MK Ultra\nwasn't one program. It was 149 sub\nprojects, 80 institutions were involved,\n44 colleges and universities, 15\nresearch foundations, 12 hospitals, 185\nprivate researchers.\nGeorgetown University Hospital got\n$375,000\nto run a hospital safe house. The CIA\nwould bring subjects there, do"
-        },
-        {
-          "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 20468,
-          "charEnd": 20878,
-          "timeStart": 1433.76,
-          "timeEnd": 1461.279,
-          "quote": "Operation Midnight Climax was an\ninteresting sub project. The CIA set up\nbrothel in San Francisco and New York,\ntwo-way mirrors in every room.\nProstitutes on CIA payroll would bring\nmen back, slip LSD into their drinks,\nand CIA officers would watch from behind\nthe mirrors. They photographed\neverything. The men never knew they'd\nbeen drugged. They went home to their\nfamilies thinking they'd lost their\nminds."
-        },
-        {
-          "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 20879,
-          "charEnd": 21349,
-          "timeStart": 1455.679,
-          "timeEnd": 1490.48,
-          "quote": "Dr. Euan Cameron ran experiments\nat Allen Memorial Institute in Montreal.\nHe called it depatterning, erasing minds\nthrough torture. Patients were put in\ndrug-induced comas for weeks, given\nelectric shock at 30 times normal\nintensity, and forced to listen to\nrecorded messages for 16 hours a day.\nSome victims forgot their families. They\nforgot their names. Their entire lives\nwere erased.\n>> I was exploited unwittingly for nearly\nthree decades of my life. And the only\n"
+          "charStart": 19610,
+          "charEnd": 19760,
+          "timeStart": 1365.84,
+          "timeEnd": 1384.559,
+          "quote": "Ultra\nwasn't one program. It was 149 sub\nprojects, 80 institutions were involved,\n44 colleges and universities, 15\nresearch foundations, 12 hospitals,"
         }
       ],
-      "confidence": 0.97,
+      "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "MKUltra's existence, scope (149 subprojects), Gottlieb's leadership, the Cameron 'psychic driving' experiments at Allen Memorial in Montreal, and Operation Midnight Climax in safe-house apartments in San Francisco and Greenwich Village are all documented in the 1977 Senate Select Committee hearings (Project MKULTRA, the CIA's Program of Research in Behavioral Modification). Funding flowed through cutouts to dozens of universities and hospitals. The dramatic 'erasing minds through torture' framing is the host editorializing on what Cameron and Gottlieb did.",
+      "rationale": "MK Ultra's 149 sub-projects and the institutional count are from the 1977 Senate Select Committee hearings (Rockefeller Commission documents). The 1953-1973 timeline and Sidney Gottlieb's directorship are all established historical record.",
+      "tags": [
+        "mk-ultra",
+        "gottlieb",
+        "mind-control",
+        "cia"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0009",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "MKUltra biochemist Frank Olsen did not commit suicide as the CIA officially claimed when he went out a 10th-floor New York hotel window on November 28, 1953 — a 1994 forensic exhumation showed blunt-force head trauma inconsistent with a fall through glass, and his family received $750,000 in government hush money.",
-      "kind": "speculative",
+      "text": "Frank Olsen did not jump from his hotel window — he had blunt-force head trauma before the fall, his family received $750,000 in hush money, and the CIA admitted only to dosing him with LSD nine days earlier.",
+      "kind": "empirical",
       "entities": [
         "person:frank olsen",
         "person:olsen",
-        "person:olsson",
-        "organization:cia",
-        "organization:mk ultra",
-        "date_time:november 28th, 1953",
-        "person:gotley",
-        "quantity:$750,000"
+        "organization:cia"
       ],
-      "relationships": ["r_0322", "r_0349"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 21827,
-          "charEnd": 22312,
-          "timeStart": 1522.88,
-          "timeEnd": 1557.44,
-          "quote": "Then there was Frank Olsen, a scientist\nworking in MK Ultra. He expressed\nethical concerns about the CIA's\nmethods. He told a supervisor he wanted\nto resign. A few days later, Gotley's\nteam slipped LSD into Olsson's drink at\na CIA retreat. On November 28th, 1953, 9\ndays after being dosed, Olsen went\nthrough a 10th floor hotel window. The\nCIA said he jumped. Suicide. Case\nclosed. For 20 years, Gotley ran MK\nUltra with very little oversight and a\ntremendous amount of power. But now,"
-        },
-        {
-          "transcriptId": "PxY3KZ3pQ3o",
           "charStart": 24311,
-          "charEnd": 24811,
+          "charEnd": 24357,
           "timeStart": 1686.32,
-          "timeEnd": 1721.44,
-          "quote": "Frank Olsen didn't jump from that hotel\nwindow. He had blunt force trauma to his\nhead before he fell. No cuts from window\nglass. His family received $750,000\nin hush money. The CIA admitted drugging\nhim with LSD 9 days before his death,\nbut that's about it. There's a link\nbelow to the full story. The Family\nJewels documents expose a lot of CIA\nsecrets, but some mysteries are still\nunexplained. Item one in the Family\nJewels is completely redacted. The whole\nthing is blacked out. And after\neveryth"
+          "timeEnd": 1693.279,
+          "quote": "Frank Olsen didn't jump from that hotel\nwindow"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.55,
-      "rationale": "Documented facts: Olsen was dosed with LSD without consent at a CIA-Army retreat at Deep Creek Lake, MD on Nov 19, 1953. He fell from the 13th floor of the Statler Hotel in NYC on Nov 28, 1953. The Olsen family received $750,000 from Congress in 1976. James Starrs's 1994 forensic exhumation did report a hematoma on the skull suggesting blunt force trauma before the fall. However a 1996 Manhattan DA investigation declined to reclassify the death and the murder thesis remains contested — Eric Olson believes his father was assassinated to silence him about the CIA's involvement in interrogation work in Korea, but no direct evidence of homicide has surfaced. The host states it as fact, but it remains unproven.",
-      "hostStance": "asserts",
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "The 1994 forensic exhumation (Dr. James Starrs) found evidence suggesting Olsen was struck in the head before the fall. The $750,000 settlement to the Olsen family in 1976 is public record. CIA's 1975 admission of dosing Olsen with LSD is also documented. Host's 'didn't jump' is consistent with the Starrs evidence but has never been criminally adjudicated.",
+      "tags": [
+        "frank-olsen",
+        "mk-ultra",
+        "cover-up"
+      ],
       "inVerdictSection": true,
-      "dependencies": [
-        {"target": "PxY3KZ3pQ3o:c_0008", "kind": "elaborates", "rationale": "Olsen worked under Gottlieb in MKUltra; this claim extends the MKUltra story with a specific death."}
-      ]
+      "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0010",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "Most MKUltra records were intentionally destroyed by Sidney Gottlieb in 1973 on his own order, and Gottlieb was never prosecuted; what is known about the program survives only because financial files in CIA accounting escaped the destruction order.",
+      "text": "Dr. Ewen Cameron used MK Ultra funding at Montreal's Allan Memorial Institute to perform 'depatterning' — drug-induced comas, electric shock at 30x normal intensity, and 16-hour daily recorded-message loops that erased patients' memories.",
       "kind": "historical",
       "entities": [
-        "organization:mk ultra",
-        "person:sydney gotley",
-        "person:sydney gotautle",
-        "person:gotley",
-        "date_time:1973",
-        "quantity:thousands of documents"
+        "person:dr. euan cameron"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 22063,
-          "charEnd": 22675,
-          "timeStart": 1539.84,
-          "timeEnd": 1582.72,
-          "quote": "at. On November 28th, 1953, 9\ndays after being dosed, Olsen went\nthrough a 10th floor hotel window. The\nCIA said he jumped. Suicide. Case\nclosed. For 20 years, Gotley ran MK\nUltra with very little oversight and a\ntremendous amount of power. But now,\nCongress was asking questions. If MK\nUltra got exposed, it would be a huge\nproblem. So, Sydney Gotautle came up\nwith a solution. He ordered all MK Ultra\nrecords destroyed. Thousands of\ndocuments, 20 years of experiments into\nthe fire. Well, most of them anyway.\nThis is usually the part of the story\nwhere I debunk whatever myth or legend\nwe've explored today. E"
+          "charStart": 20879,
+          "charEnd": 20978,
+          "timeStart": 1455.679,
+          "timeEnd": 1466.48,
+          "quote": "Dr. Euan Cameron ran experiments\nat Allen Memorial Institute in Montreal.\nHe called it depatterning"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.92,
-      "rationale": "Documented and admitted by the CIA: in 1973 CIA Director Richard Helms ordered (and Gottlieb supervised) the destruction of MKUltra records. The program's existence was only reconstructed because budget/financial records survived in a separate filing system and were uncovered by a 1977 FOIA request. Gottlieb was never charged. The host accurately summarizes this.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "Ewen Cameron's depatterning experiments at Allan Memorial (McGill, 1957-1964) are extensively documented, including the Canadian government settlement paid to victims in 1992-1994. Every detail the host cites matches the published record.",
+      "tags": [
+        "ewen-cameron",
+        "mk-ultra",
+        "depatterning"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0011",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "After 9/11 the Patriot Act and FISA-court approvals turned the kind of mass-surveillance programs that scandalized Congress in the 1970s into legalized standard procedure, with FISA approving 99.97% of government surveillance requests under both Republican and Democratic administrations.",
-      "kind": "empirical",
+      "text": "Sidney Gottlieb ordered almost all MK Ultra records destroyed in 1973, and he was never held accountable for the program.",
+      "kind": "historical",
       "entities": [
-        "event:9/11",
-        "organization:congress",
-        "law_or_policy:patriot act",
-        "organization:cia",
-        "law_or_policy:mass surveillance",
-        "organization:fisa court",
-        "quantity:99.97%",
-        "organization:republicans",
-        "organization:democrats",
-        "person:bush",
-        "person:obama",
-        "person:trump",
-        "person:biden"
+        "person:sydney gotley",
+        "person:gotley",
+        "organization:mk ultra"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 25391,
-          "charEnd": 25887,
-          "timeStart": 1759.279,
-          "timeEnd": 1797.919,
-          "quote": "After 9/11, Congress passed\nthe Patriot Act. Suddenly, what got the\nCIA in trouble in the 1970s became\nstandard procedure. Mass surveillance\nlegal. Collecting data on Americans\nwithout warrants legal with a FISA court\nrubber stamp. Those secret courts\napproved 99.97%\nof government surveillance requests.\nThat's not oversight. That's theater.\nBoth parties voted for it. Both parties\nrenewed it. Republicans championed it\nunder Bush. Democrats expanded it under\nObama. Trump reauthorized it. Biden"
+          "charStart": 22401,
+          "charEnd": 22483,
+          "timeStart": 1559.84,
+          "timeEnd": 1570.08,
+          "quote": "Sydney Gotautle came up\nwith a solution. He ordered all MK Ultra\nrecords destroyed"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.75,
-      "rationale": "The Patriot Act (Oct 2001) did substantially expand government surveillance authorities. The 99.97% FISA approval figure is roughly accurate for the historical record of FISA Section 105 (electronic surveillance) requests through ~2012 — published Justice Department reports show denial rates well under 1%. However critics counter that many applications are modified and that FISA Section 702 metadata bulk-collection is a different beast from the targeted CHAOS-style files. Bipartisan reauthorization is well documented. The 'rubber stamp' framing is editorial but not unreasonable.",
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "Gottlieb's 1973 records destruction order is historical fact — only budget records survived (which is how Church Committee reconstructed what it could). He testified under immunity in 1977 and was never prosecuted.",
+      "tags": [
+        "gottlieb",
+        "mk-ultra",
+        "records-destruction",
+        "accountability"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "PxY3KZ3pQ3o:c_0012",
       "videoId": "PxY3KZ3pQ3o",
-      "text": "The host's overall verdict is that the Family Jewels exposure should have been a cautionary tale but instead became a series of tests by the intelligence community of how much surveillance and lawbreaking the public would accept — tests Americans have failed for fifty years.",
+      "text": "Host asserts that everything described in this episode — Family Jewels operations, Chaos, COINTELPRO, Mockingbird, MK Ultra — is factually true and not conspiracy theory.",
       "kind": "opinion",
       "entities": [
         "organization:cia",
-        "organization:fbi",
-        "organization:intelligence apparatus",
-        "organization:intelligence community",
-        "group_or_movement:american people",
-        "group_or_movement:we the people",
-        "quantity:50 years",
         "work_of_media:family jewels"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "PxY3KZ3pQ3o",
-          "charStart": 27057,
-          "charEnd": 27909,
-          "timeStart": 1881.039,
-          "timeEnd": 1934.24,
-          "quote": "Exposing the CIA's family jewels should\nhave been a cautionary tale, a warning.\nInstead, the intelligence community\nturned this into a series of tests. They\ntested the American people to see how\nmany laws they would be allowed to\nbreak. They tested us to see what\nfreedoms we would surrender. They tested\nus to see if we would hold anyone\naccountable.\nThe CIA, FBI, and our entire\nintelligence apparatus has been testing\nus for 50 years. And for 50 years, we\nthe people have failed every test. So,\nwhat can we do? Probably nothing. The\nlast person to openly say the CIA needed\nan overhaul was John F. Kennedy. How'd\nthat work out?\nPresident Kennedy died at 100 p.m.\nCentral Standard Time.\n>> Thank you so much for hanging out with\nme today. My name is AJ. This has been a\nW file stripped episode. If you had fun\nor learned anything, I don't know how\nmu"
+          "charStart": 22674,
+          "charEnd": 22715,
+          "timeStart": 1582.72,
+          "timeEnd": 1590.159,
+          "quote": "Except everything\nin this episode is true"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.4,
-      "rationale": "This is the host's editorial verdict. The descriptive part — that post-1975 reform momentum dissipated and that the surveillance state expanded again under FISA, the Patriot Act, and Section 702 — is broadly defensible. The 'tests' framing personifies the agencies and the JFK insinuation (linking 'overhauled the CIA' to his assassination) is conspiratorial; there is no proven CIA role in JFK's death despite long-standing speculation, and Kennedy's 'splinter the CIA' line was about the Bay of Pigs aftermath, not a comprehensive reform program.",
-      "hostStance": "asserts",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Host's explicit framing that breaks the usual 'debunk at the end' format. The core operations described (Chaos, Mockingbird, MK Ultra, COINTELPRO) are in fact documented in the Church Committee and Rockefeller Commission reports, so the framing is largely accurate with minor interpretive choices noted in other claims.",
+      "tags": [
+        "host-thesis",
+        "verdict",
+        "family-jewels"
+      ],
       "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "PxY3KZ3pQ3o:c_0013",
+      "videoId": "PxY3KZ3pQ3o",
+      "text": "After 9/11 the Patriot Act legalized mass surveillance practices that had been illegal under the CIA charter in the 1970s, with FISA courts rubber-stamping 99.97% of government surveillance requests.",
+      "kind": "empirical",
+      "entities": [
+        "law_or_policy:patriot act",
+        "organization:fisa court",
+        "organization:nsa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "PxY3KZ3pQ3o",
+          "charStart": 25629,
+          "charEnd": 25658,
+          "timeStart": 1774.559,
+          "timeEnd": 1781.6,
+          "quote": "secret courts\napproved 99.97%"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The 99.97% FISA approval figure aligns with DOJ annual reports (between 1979 and 2013, FISA court denied only 11 of ~33,900 applications). Patriot Act mass-surveillance provisions directly authorize bulk data collection exposed by Edward Snowden in 2013. Host's framing is supported.",
+      "tags": [
+        "patriot-act",
+        "fisa",
+        "surveillance",
+        "post-9-11"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
-        {"target": "PxY3KZ3pQ3o:c_0011", "kind": "supports", "rationale": "The Patriot Act/FISA expansion is the concrete evidence the host adduces for the 'failed every test' verdict."}
+        {
+          "target": "PxY3KZ3pQ3o:c_0004",
+          "kind": "elaborates",
+          "rationale": "Host argues that what took CHAOS years to collect manually on 300,000 Americans, post-Patriot-Act NSA collects on everyone in minutes — continuity of surveillance power."
+        }
       ]
+    },
+    {
+      "id": "PxY3KZ3pQ3o:c_0014",
+      "videoId": "PxY3KZ3pQ3o",
+      "text": "The CIA's illegal operations were not rogue agent abuses but were approved and initiated at the highest levels, including by presidents — Eisenhower was first to suggest assassinations.",
+      "kind": "historical",
+      "entities": [
+        "organization:cia"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "PxY3KZ3pQ3o",
+          "charStart": 8546,
+          "charEnd": 8679,
+          "timeStart": 615.68,
+          "timeEnd": 631.92,
+          "quote": "assassinations.\nEisenhower was the first to suggest it.\nAnd so this was this was really not a\nrogue uh president, I mean rogue agency"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "The Church Committee's assassination plot findings (Lumumba, Castro, etc.) traced authorization to the Eisenhower-Kennedy-Johnson NSC. 'Rogue presidency, not rogue agency' is a direct paraphrase of the Committee's own framing in its assassination reports.",
+      "tags": [
+        "assassinations",
+        "eisenhower",
+        "presidential-authority"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     }
   ]
 }

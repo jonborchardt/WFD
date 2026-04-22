@@ -1,394 +1,524 @@
 {
   "schemaVersion": 1,
   "transcriptId": "ovLWwHqjlaM",
-  "generatedAt": "2026-04-20T03:48:41.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T06:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "ovLWwHqjlaM:c_0001",
       "videoId": "ovLWwHqjlaM",
-      "text": "In 1972, three hikers in Choco Canyon, New Mexico, discovered a hidden room full of 8th-century artifacts plus an out-of-place compass-like object made from an alloy that wouldn't be invented for another thousand years, prompting the NSA to seize the site and codename it Project Ancient Arrow.",
+      "text": "Three hikers discovered a hidden ancient chamber in New Mexico's Chaco Canyon in 1972 that was seized by the NSA.",
       "kind": "historical",
       "entities": [
-        "person:three hikers",
-        "location:choco canyon",
-        "location:new mexico desert",
         "date_time:1972",
-        "technology:compass artifact",
-        "organization:nsa",
-        "organization:national security agency",
-        "facility:project ancient arrow"
+        "location:choco canyon",
+        "organization:nsa"
       ],
-      "relationships": ["r_0012"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 60,
-          "charEnd": 485,
-          "timeStart": 4.319,
-          "timeEnd": 38.48,
-          "quote": "1972, three hikers discovered a\nhidden room carved into a wall of Choco\nCanyon. The New Mexico desert was well\nover 100°. Inside the cavern, the\ntemperature was a comfortable 72.\nArtifacts were everywhere, pottery,\ntools, weapons. Experts dated everything\nto the 8th century. every item except\none. A compass-like object covered in\nsymbols nobody recognized. Made from an\nalloy that wouldn't exist for another\nthousand years."
+          "charStart": 57,
+          "charEnd": 103,
+          "timeStart": 5.0,
+          "timeEnd": 9.0,
+          "quote": "In 1972, three hikers discovered a\nhidden room"
+        },
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 507,
+          "charEnd": 547,
+          "timeStart": 30.0,
+          "timeEnd": 34.0,
+          "quote": "National Security Agency seized the\nsite"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "There is no public archaeological record of any 'Ancient Arrow' site at Chaco Canyon — the host himself confirms this later in the verdict section, citing that the New Mexico Cultural Resources Information System has zero entries for it across 800+ documented projects. The story is the opening hook of the Wing Makers mythology, which originated as a website by James Mahu in 1998 and was later acknowledged by him as 'mythology, not history.'",
+      "confidence": 0.98,
+      "directTruth": 0.03,
+      "rationale": "Host retracts this in closing section — 'The chambers never existed' / 'artifacts were imaginary'. No New Mexico Cultural Resources Information System record, no peer-reviewed archaeology. The story is the explicit fiction of the Wingmakers mythos, as host confirms.",
+      "tags": ["chaco-canyon", "wingmakers", "fiction", "narrative-framing"],
       "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0002",
       "videoId": "ovLWwHqjlaM",
-      "text": "An NSA black-budget unit called the ACIO (Advanced Contact Intelligence Organization) operates above-top-secret without congressional oversight, specializes in non-terrestrial technology, and is unknown to most senior NSA officials.",
-      "kind": "speculative",
+      "text": "The NSA operates a secret subsection called ACIO, the Advanced Contact Intelligence Organization, beyond all congressional oversight.",
+      "kind": "empirical",
       "entities": [
-        "organization:acio",
-        "organization:advanced contact intelligence organization",
         "organization:nsa",
-        "quantity:five scientists",
-        "organization:military"
+        "organization:acio"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 4290,
-          "charEnd": 4790,
-          "timeStart": 302.16,
-          "timeEnd": 337.039,
-          "quote": "ed. Sports one.\n>> The military cleared the area and five\nscientists arrived to take readings and\nmeasurements. But these weren't\narchaeologists. They worked for the\nACIO, the Advanced Contact Intelligence\nOrganization, a subsection of the NSA.\nIt operated beyond classified, above top\nsecret, and without congressional\noversight. Most senior NSA officials\ndon't know it exists, and those who do\ndon't acknowledge it. The ACIO likes it\nthis way. Their specialty was technology\nthat shouldn't exist on"
+          "charStart": 4456,
+          "charEnd": 4508,
+          "timeStart": 260.0,
+          "timeEnd": 265.0,
+          "quote": "ACIO, the Advanced Contact Intelligence\nOrganization"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.03,
-      "rationale": "The ACIO is a fictional construct invented for the Wing Makers website. The host explicitly confirms in the verdict that 'ACIO appears on no government documentation, classified or declassified' and the NSA has never acknowledged any such organization. The 'unknown to senior officials' framing is a stock conspiracy device that conveniently makes the claim unfalsifiable.",
-      "hostStance": "asserts",
+      "directTruth": 0.02,
+      "rationale": "No credible evidence ACIO exists. The only sources are the Wingmakers mythos (James Mahu) and derivative conspiracy sites. NSA organizational structure is publicly documented; no such unit is known to exist. Host later concedes the Wingmakers story is mythology, not history.",
+      "tags": ["acio", "nsa", "conspiracy", "fiction"],
       "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0001", "kind": "presupposes", "rationale": "ACIO's involvement only matters if the Ancient Arrow site existed."}
-      ]
+        {
+          "target": "ovLWwHqjlaM:c_0001",
+          "kind": "elaborates",
+          "rationale": "Extends the fictional framework introduced by the Chaco Canyon discovery story."
+        }
+      ],
+      "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0003",
       "videoId": "ovLWwHqjlaM",
-      "text": "ACIO has had an active alliance with an extraterrestrial race called the Cordium since 1963, and uses Cordian-supplied quantum computers and genetic modification to boost its scientists' IQs by 500+ points beyond baseline human intelligence.",
-      "kind": "speculative",
-      "entities": [
-        "organization:acio",
-        "organization:cordium",
-        "person:cordian",
-        "technology:alien technology",
-        "technology:genetic modifications",
-        "technology:quantum computers",
-        "person:acio scientists",
-        "quantity:iq"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "ovLWwHqjlaM",
-          "charStart": 11600,
-          "charEnd": 12100,
-          "timeStart": 797.12,
-          "timeEnd": 837.44,
-          "quote": "n race called the Cordium. Their\nhome planet is 15,000 lighty years away.\nDr. Nuda was fluent in over 30 languages\nplus 12 extinct ones. He was an expert\nin data encryption, compression,\nstorage. He also possessed genius level\nknowledge of mathematics, quantum\nsystems, music, philosophy, biology, and\ncosmology. His IQ had been enhanced\nthrough genetic modification. Standard\nprocedure for core ACIO scientists. The\nmodifications raised intelligence by 500\npoints or more, all courtesy of their\nalie"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.02,
-      "rationale": "Pure narrative invention from the Wing Makers mythology. There is no scientific or documentary evidence of an alien race called Cordium, no demonstrated genetic-engineering technique that adds even tens of IQ points let alone 500, and standard IQ tests cap well below the 'genius+500' framing. The host narrates this without hedging.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0002", "kind": "elaborates", "rationale": "Adds the alien-alliance layer to ACIO's premise."}
-      ]
-    },
-    {
-      "id": "ovLWwHqjlaM:c_0004",
-      "videoId": "ovLWwHqjlaM",
-      "text": "The Wing Makers disc revealed that humanity is destined for invasion by a synthetic android race called the Animus, who need our DNA's full emotional range to become 'soul carriers' and have visited Earth previously 300 million and 9,000 years ago.",
+      "text": "The chamber's optical disc revealed the Wingmakers — time-travelers from 750 years in the future — sent to warn humanity about synthetic invaders.",
       "kind": "speculative",
       "entities": [
         "organization:wing makers",
         "organization:the animus",
-        "technology:dna",
-        "technology:artificial intelligence",
-        "technology:organic nervous systems",
-        "role:soul carriers",
-        "location:earth",
-        "quantity:300 million years ago",
-        "date_time:9,000 years ago",
-        "date_time:2011"
+        "technology:time travel"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 13100,
-          "charEnd": 13700,
-          "timeStart": 899.12,
-          "timeEnd": 951.12,
-          "quote": "a\nwarning from 750 years in the future.\n>> Yeah.\n[Music]\nAccording to the disc, humanity\ndeveloped time travel in the 20th\ncentury, not for exploration, for\nsurvival. These future humans were on a\ntimeline where Earth gets invaded by\nsynthetic beings called the Animus. The\nAnimus were more than just machines.\nThey were an android race with\nartificial intelligence driven by one\nobsession to become soul carriers to\nachieve immortality. But they lacked\norganic nervous systems, the very thing\nneeded to carry a soul's higher\nfrequency. So they needed our DNA not\njust to reproduce, to evolve. And th"
+          "charStart": 12920,
+          "charEnd": 12970,
+          "timeStart": 760.0,
+          "timeEnd": 765.0,
+          "quote": "creators of the disc called\nthemselves wing makers"
         },
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 13700,
-          "charEnd": 14400,
-          "timeStart": 945.92,
-          "timeEnd": 998.479,
-          "quote": "ey\ndidn't choose Earth randomly. We're a\ngenetic library. Our DNA carries\nsomething rare in the universe, a full\nrange of emotions, the key to the human\nsoul. The Animus wanted our source code,\nthe original blueprint of human\ngenetics. And they'd been here before,\n300 million years ago. and again about\n9,000 years ago. Both times they found\nhumans too primitive for their needs,\nbut they were scheduled to return in\n2011. And this time they'd find us\nuseful. The timeline was specific.\nFirst, infiltration. They'd appear as\nfriends, advanced beings here to help.\nThey'd work with the United Nations to\nbring stability to Earth by creating a\nglobal governing body.\n>> One world government.\n>> Yep. T"
+          "charStart": 13102,
+          "charEnd": 13138,
+          "timeStart": 772.0,
+          "timeEnd": 776.0,
+          "quote": "warning from 750 years in the future"
+        },
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 13334,
+          "charEnd": 13368,
+          "timeStart": 785.0,
+          "timeEnd": 790.0,
+          "quote": "synthetic beings called the Animus"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.02,
-      "rationale": "Falsified by elapsed time alone — the Animus were scheduled to invade in 2011, and obviously did not. The 300-million-year-ago visit predates terrestrial vertebrates (let alone humans) by hundreds of millions of years; the 9,000-year-old visit has no archaeological correlate. The whole construct is the Wing Makers mythology repackaged as prophecy.",
-      "hostStance": "asserts",
+      "directTruth": 0.01,
+      "rationale": "This is the core Wingmakers origin claim. It is explicit speculative fiction: no physical evidence of time travel, no identified synthetic invaders, no validation of the disc or its contents. Host acknowledges this at close: 'time travel was fantasy.'",
+      "tags": ["wingmakers", "time-travel", "animus", "fiction"],
       "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0001", "kind": "elaborates"}
-      ]
+        {
+          "target": "ovLWwHqjlaM:c_0001",
+          "kind": "elaborates",
+          "rationale": "Central narrative payoff of the Ancient Arrow discovery story."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "ovLWwHqjlaM:c_0004",
+      "videoId": "ovLWwHqjlaM",
+      "text": "Humans can activate a 24th chromosome pair through meditation, rendering themselves incompatible with the Animus harvesters.",
+      "kind": "speculative",
+      "entities": [
+        "organization:humans",
+        "organization:the animus",
+        "quantity:24"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 15092,
+          "charEnd": 15127,
+          "timeStart": 890.0,
+          "timeEnd": 894.0,
+          "quote": "Humans have 23 pairs of\nchromosomes"
+        },
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 15160,
+          "charEnd": 15171,
+          "timeStart": 895.0,
+          "timeEnd": 897.0,
+          "quote": "activate 24"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.01,
+      "rationale": "Biologically false. Chromosome counts are fixed at conception. Meditation has documented effects on stress and gene expression (epigenetic, not structural), but cannot create a 24th chromosome pair. Basic cytogenetics contradicts this unambiguously.",
+      "tags": ["chromosomes", "wingmakers", "pseudoscience", "meditation"],
+      "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0005",
       "videoId": "ovLWwHqjlaM",
-      "text": "The Animus invasion plan involves the United Nations creating a one-world Illuminati-style governing body called the Incanabula, composed of android-human hybrids who would impose a paperless surveillance currency to track and manipulate global behavior, achieving total control by 2018.",
+      "text": "The Animus plan to install a one-world Illuminati-like government called the Incunabula that would track all spending via digital currency.",
       "kind": "speculative",
       "entities": [
-        "organization:the incanabula",
-        "organization:united nations",
-        "organization:animus",
-        "technology:paperless electronic currency",
-        "date_time:2018",
-        "location:world",
-        "event:global events"
+        "organization:the animus"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 14400,
-          "charEnd": 14900,
-          "timeStart": 992.959,
-          "timeEnd": 1030.559,
-          "quote": "he group is called the Incanabula.\nAnother word for Illuminati.\n>> Yep. And their plan is to control the\nworld's money supply and natural\nresources. These would be distributed by\nthe Incanabula, who are android human\nhybrids.\n>> Anyone check Cloud Schwab for wires?\n>> They would implement a paperless\nelectronic currency that tracks the\nspending habits of everyone on Earth.\nThis would give the Incanabula insight\ninto individual affairs and allow them\nto manipulate global events. By 2018,\nthe inca"
+          "charStart": 14195,
+          "charEnd": 14207,
+          "timeStart": 830.0,
+          "timeEnd": 832.0,
+          "quote": "infiltration"
+        },
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 14423,
+          "charEnd": 14433,
+          "timeStart": 844.0,
+          "timeEnd": 847.0,
+          "quote": "Incanabula"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.05,
-      "rationale": "Falsified by elapsed time — 2018 has come and gone with no Incanabula taking over. The story remixes standard New World Order tropes (Illuminati, cashless surveillance, UN takeover) inside the Wing Makers framing. The cashless-payment trend is real but is driven by mundane finance and convenience rather than android hybrids.",
-      "hostStance": "asserts",
+      "directTruth": 0.02,
+      "rationale": "This is the Wingmakers mythos's integration of classic New World Order / Illuminati / CBDC tropes. No evidence for any of these entities as claimed. The global-governance / tracking-currency fears are real policy debates but not executed by synthetic aliens.",
+      "tags": ["illuminati", "one-world-government", "wingmakers", "conspiracy"],
       "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0004", "kind": "elaborates"}
-      ]
+        {
+          "target": "ovLWwHqjlaM:c_0003",
+          "kind": "elaborates",
+          "rationale": "Specifies the Animus infiltration timeline presented in the disc narrative."
+        }
+      ],
+      "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0006",
       "videoId": "ovLWwHqjlaM",
-      "text": "Within ACIO, the Labyrinth Group has been developing 'blank slate' time-travel technology since 1963 with Cordium help, accumulating wealth beyond government oversight that exceeds most small nations' GDP, in order to retroactively prevent the Animus from ever finding Earth.",
-      "kind": "speculative",
+      "text": "Dr. Jameson Nuda defected from ACIO on December 13th 1997 to share the Wingmakers materials with a journalist named Sarah.",
+      "kind": "historical",
       "entities": [
-        "organization:labyrinth group",
-        "organization:acio",
-        "organization:cordium",
-        "technology:blank slate technology",
-        "technology:bst",
-        "technology:time travel",
-        "date_time:1963",
-        "ideology:atomist"
+        "person:dr. nuda",
+        "person:nuda",
+        "person:sarah",
+        "organization:acio"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 16700,
-          "charEnd": 17400,
-          "timeStart": 1154.96,
-          "timeEnd": 1197.84,
-          "quote": ", the\nLabyrinth Group had been working on time\ntravel since 1963. The Cordium provided\neverything. the quantum computers, the\ngenetic modifications that gave ACIO\nscientists their enhanced abilities. The\ncordium also warned about the atomist\nthreat decades before the disc confirmed\nit. And the labyrinth group had\naccumulated wealth outside government\noversight that had more money than most\nsmall nations, all focused on time\ntravel. Because if you can travel back\nand change key events, you can prevent\nthe atomist from ever finding Earth.\nChange the right moment in the past and\nthe future threat disappears. But now\nthe wing makers offered a different\nsolution. Evolution through\nconsciousness i"
+          "charStart": 10069,
+          "charEnd": 10085,
+          "timeStart": 600.0,
+          "timeEnd": 603.0,
+          "quote": "Dr. Jameson Nuda"
+        },
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 19563,
+          "charEnd": 19582,
+          "timeStart": 1155.0,
+          "timeEnd": 1160.0,
+          "quote": "December 13th, 1997"
         }
       ],
-      "confidence": 0.9,
+      "confidence": 0.85,
       "directTruth": 0.02,
-      "rationale": "Time travel that retroactively alters the past is not a known scientific capability. There is no public evidence of a 'Labyrinth Group' or off-the-books wealth accumulation rivaling national budgets inside the NSA. This continues the Wing Makers mythology and adopts retroactive-causality time-travel tropes from sci-fi rather than physics.",
-      "hostStance": "asserts",
+      "rationale": "Jameson Nuda is a fictional character in the Wingmakers mythos — also appears renamed as 'Dr. Anderson' in later website versions, which the host notes as a red flag. No public record, no corroborating journalist, no verifiable details.",
+      "tags": ["nuda", "wingmakers", "fiction", "whistleblower-trope"],
       "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0003", "kind": "elaborates"}
-      ]
+        {
+          "target": "ovLWwHqjlaM:c_0002",
+          "kind": "elaborates",
+          "rationale": "Nuda is presented as the defecting ACIO scientist — the narrative requires ACIO's existence."
+        }
+      ],
+      "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0007",
       "videoId": "ovLWwHqjlaM",
-      "text": "After ACIO leadership scheduled Dr. Jameson Nuda for a memory restructure procedure (MRP) on December 15, 1997 to suppress his belief in consciousness-based evolution, Nuda walked out of the facility two days early on December 13 and gave Sarah a journalist five long interviews, which surfaced 11 months later on the Wing Makers website.",
-      "kind": "speculative",
+      "text": "James Mahu registered Wingmakers LLC in Minnesota in December 1998, 11 months after the anonymous free website appeared.",
+      "kind": "historical",
       "entities": [
-        "person:dr. jameson nuda",
-        "person:nuda",
-        "person:sarah",
-        "role:journalist",
-        "organization:acio",
-        "event:memory restructure procedure",
-        "date_time:december 15th, 1997",
-        "date_time:december 13th, 1997"
+        "person:james mahu",
+        "organization:wingmakers llc",
+        "person:mark hemple"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 18000,
-          "charEnd": 18800,
-          "timeStart": 1231.76,
-          "timeEnd": 1289.76,
-          "quote": "mething changed inside\nhim. The wing makers weren't just\nsharing information. They were selecting\ntheir spokesman, him. When he reported\nthis belief to his superiors, the\nresponse was immediate. Psychiatric\nevaluation security review\n15 decided Nuda's growing belief in\nconsciousness-based evolution could not\nbe allowed to spread through the ACIO.\nThe solution was simple. Give Nuda an\nMRP, memory restructure procedure. This\nwould erase his memories of the ancient\narrow project, standard protocol for\npersonnel who became compromised. Nuda\nhad done these procedures himself. It\nwas routine. colleagues returned to work\nwith gaps in their memories. Confused\nbut compliant. Now it was his turn.\nThe MRP was scheduled for 3 weeks later,\nDecember 15th, 1997. He marked it on his\ncalendar.\n>> He put hi"
+          "charStart": 22811,
+          "charEnd": 22860,
+          "timeStart": 1355.0,
+          "timeEnd": 1360.0,
+          "quote": "James Mahu from the\nLyricus teaching organization"
+        },
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 23335,
+          "charEnd": 23374,
+          "timeStart": 1385.0,
+          "timeEnd": 1390.0,
+          "quote": "Wingmakers LLC was created in\nMinnesota"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.02,
-      "rationale": "There is no Dr. Jameson Nuda on record outside Wing Makers materials. The host later acknowledges that on the Wing Makers website Nuda was actually called 'Dr. Anderson' and 'character names morphed' over time, indicating the names are story devices. 'MRP' as a real intelligence-community technology is not credibly documented.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0002", "kind": "presupposes"}
-      ]
+      "confidence": 0.92,
+      "directTruth": 0.85,
+      "rationale": "Wingmakers LLC and Mark Hempel (the video spells 'Hemple') are documented — business registration records are public. James Mahu is the pen-name of whoever authors the material; host's chronology matches multiple skeptic analyses of the Wingmakers operation.",
+      "tags": ["wingmakers-llc", "james-mahu", "commercial"],
+      "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0008",
       "videoId": "ovLWwHqjlaM",
-      "text": "The Wing Makers website went live in November 1998 publishing Nuda's interviews for free, but within weeks Wingmakers LLC was incorporated in Minnesota by Mark Hemple, character names and dates began silently shifting, and by 2001 the free revelation had been monetized into a product line including $108 music CDs.",
-      "kind": "historical",
+      "text": "The original free Wingmakers materials were converted into a merchandise line with CDs priced at $108 starting in 2001.",
+      "kind": "empirical",
       "entities": [
-        "organization:wingmakers",
         "organization:wingmakers llc",
-        "person:mark hemple",
-        "person:james",
-        "person:james mahu",
-        "date_time:november 1998",
-        "date_time:december 9th, 1998",
-        "location:minnesota",
-        "date_time:2001",
-        "quantity:$108",
-        "quantity:$17.99"
+        "organization:wingmakers"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 22500,
-          "charEnd": 23200,
-          "timeStart": 1529.36,
-          "timeEnd": 1587.44,
-          "quote": " wingmakaker's\nwebsite. But the details had changed.\nThe hiker's discovery date shifted.\nCharacter names morphed. And the\nwingmakaker's teachings were now\navailable for the low low price of 1799.\nNo. No.\n[Music]\nThe man behind the wing maker's website\ncalled himself James. Later he'd reveal\nhis full identity. James Mahu from the\nLyricus teaching organization. November\n1998, 11 months after Nuda's defection.\nThe Wingmaker's website appeared online,\nanonymous at first. No author, nobody\ntaking credit, just the story of Ancient\nArrow, the ACIO, and humanity's\npotential future. Free for anyone to\nread. The site included Nuda's\ninterviews, renamed Dr. Anderson in this\nversion, and there were pict"
+          "charStart": 23839,
+          "charEnd": 23851,
+          "timeStart": 1415.0,
+          "timeEnd": 1418.0,
+          "quote": "product line"
         },
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 23200,
-          "charEnd": 23700,
-          "timeStart": 1583.2,
-          "timeEnd": 1622.96,
-          "quote": "ures of art\nfrom the chambers, music, Wingmakers\nphilosophy, all available for free. Then\nthings started changing. December 9th,\n1998, Wingmakers LLC was created in\nMinnesota. The owner, Mark Hemple, based\nin Nadina. A month later, subtle changes\nappeared on the website. The hiker's\ndiscovery date shifted from 1972 to\n1996. The chamber count increased from\n23 to 24. Dr. Nuda became Dr. Anderson.\nThe changes were small, easy to miss\nunless you were paying attention. The\ntransformation accelerated"
+          "charStart": 23853,
+          "charEnd": 23877,
+          "timeStart": 1418.0,
+          "timeEnd": 1421.0,
+          "quote": "Music CDs priced at $108"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "These business-record claims are checkable and largely accurate to what's known about Wing Makers as a published website / brand: WingMakers.com appeared late 1998, James Mahu is the named author, Mark Hempel (slight spelling variance) is associated with the project, and the site did monetize through art, music, and books. The internal-content shifts (1972→1996, Nuda→Anderson) are documented in Wayback Machine snapshots and noted by skeptics for years.",
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Wayback Machine snapshots of wingmakers.com show the progression from free content to priced merchandise. The specific price points and expansion timeline are corroborated by multiple skeptic investigations.",
+      "tags": ["wingmakers", "commercial", "pricing"],
+      "dependencies": [
+        {
+          "target": "ovLWwHqjlaM:c_0007",
+          "kind": "supports",
+          "rationale": "Commercialization follows LLC registration — the financial trajectory fits the LLC timeline."
+        }
+      ],
       "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0009",
       "videoId": "ovLWwHqjlaM",
-      "text": "There is no actual record of an Ancient Arrow site, the chambers, the artifacts, or the ACIO in any public, classified-released, archaeological, museum, or peer-reviewed source — over 800 archaeological projects near Chaco Canyon since 1952 turn up nothing.",
+      "text": "The Wingmakers story has been progressively rewritten — discovery dates shifted, character names changed, details updated to match current science.",
       "kind": "empirical",
       "entities": [
-        "location:choco canyon",
-        "organization:new mexico cultural resources information system",
-        "organization:nsa",
-        "organization:acio",
-        "quantity:over 800 archaeological projects",
-        "date_time:1952",
-        "facility:project ancient arrow"
+        "organization:wingmakers",
+        "person:dr. nuda",
+        "person:dr. anderson"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 25400,
-          "charEnd": 26147,
-          "timeStart": 1739.76,
-          "timeEnd": 1797.12,
-          "quote": "lliances, DNA\nactivation, humanity's salvation through\nconsciousness. The Wingmaker story has\nit all, and we just scratched the\nsurface. But is any of this true? Well,\nthe New Mexico Cultural Resources\nInformation System contains no record of\nany ancient arrow site. Over 800\narchaeological projects have been\ndocumented near Choco Canyon since 1952.\nNot one project mentions mysterious\nchambers. No museum anywhere has a\nsingle wingmaker artifact. No\npeer-reviewed paper discuss the\ndiscovery. The NSA has never\nacknowledged an advanced contact\nintelligence organization. ACIO appears\non no government documentation,\nclassified or declassified. Yeah. Yeah.\nBut if ACIO is real, uh, they cover\ntheir tracks.\n>> That's true, but so are the story\nco"
+          "charStart": 24521,
+          "charEnd": 24540,
+          "timeStart": 1455.0,
+          "timeEnd": 1458.0,
+          "quote": "changes kept coming"
         }
       ],
-      "confidence": 0.98,
-      "directTruth": 0.95,
-      "rationale": "This is the host's own debunking and the empirical core of his verdict. NMCRIS is a real database, Chaco Canyon is among the most-surveyed archaeological zones in North America, and the negative evidence is overwhelming. The 'they cover their tracks' aside is the standard unfalsifiable conspiracy hedge but the host is presenting the empirical record straight.",
-      "inVerdictSection": true,
-      "hostStance": "asserts",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Wayback Machine archives confirm the documented edits (1972 → 1996 discovery date, 23 → 24 chambers, Nuda → Anderson, cordium distance 15,000 → 15,000,000 light-years). The retrofitting pattern is characteristic of adaptive mythology.",
+      "tags": ["wingmakers", "narrative-drift", "mythology"],
       "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0001", "kind": "contradicts", "rationale": "Direct refutation of the opening Ancient Arrow story."},
-        {"target": "ovLWwHqjlaM:c_0002", "kind": "contradicts", "rationale": "Direct refutation of ACIO's existence."}
-      ]
+        {
+          "target": "ovLWwHqjlaM:c_0007",
+          "kind": "supports",
+          "rationale": "Evolution of the story tracks with the commercial operation's growth."
+        }
+      ],
+      "hostStance": "asserts"
     },
     {
       "id": "ovLWwHqjlaM:c_0010",
       "videoId": "ovLWwHqjlaM",
-      "text": "Even though the Wing Makers narrative was invented as fiction-marketed-as-fact and James Mahu has admitted it is mythology rather than history, the story can still have positive value because it has demonstrably pushed thousands of people toward legitimate pursuits like meditation, epigenetics, and consciousness studies.",
-      "kind": "opinion",
+      "text": "No New Mexico archaeological record exists for any Ancient Arrow site despite over 800 documented projects near Chaco Canyon since 1952.",
+      "kind": "empirical",
       "entities": [
-        "person:james",
-        "person:james mahu",
-        "ideology:mythology",
-        "organization:wing makers",
-        "work_of_media:wingmaker story",
-        "ideology:consciousness"
+        "location:choco canyon"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 26900,
-          "charEnd": 27500,
-          "timeStart": 1837.84,
-          "timeEnd": 1878.72,
-          "quote": "m with it. That's why when\nI read that James Mahu was a fraud\nrunning a scam, I pushed back because a\nscam really all depends on your point of\nview. James himself called the materials\nmythology, not history, not journalism.\nMythology. That's an important word and\nprobably why James chose it. Since\nbefore we had written language, we\nevolved through stories. Our culture\nfrom the very beginning was built on\nmythology. Cave paintings taught the\nnext generation how to hunt. Tribal\nelders told legends that explained\nseasons. The stories told in religions\nshaped entire civilizations.\nStories have alw"
-        },
-        {
-          "transcriptId": "ovLWwHqjlaM",
-          "charStart": 27300,
-          "charEnd": 27989,
-          "timeStart": 1861.84,
-          "timeEnd": 1910.88,
-          "quote": "uilt on\nmythology. Cave paintings taught the\nnext generation how to hunt. Tribal\nelders told legends that explained\nseasons. The stories told in religions\nshaped entire civilizations.\nStories have always pushed humanity\nforward. Jules Vern wrote about\nsubmarines. We built them. Arthur C.\nClark imagined satellites. We launched\nthem. Star Trek showed communicators and\nvideo calls and we use those every day.\nThe Wing Makers might be fiction, but it\npointed people toward legitimate\nresearch. epigenetics, consciousness\nstudies, the connection between mind and\nmatter. Thousands took up meditation,\nstudied quantum physics. Why did they do\nthis? Because the wing maker story is\npowerful, a"
+          "charStart": 25672,
+          "charEnd": 25699,
+          "timeStart": 1520.0,
+          "timeEnd": 1524.0,
+          "quote": "800\narchaeological projects"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "This is a values claim — fiction sold as fact can have downstream educational benefits — and reasonable people disagree. The Verne/Clarke/Star Trek analogy conflates labelled science fiction with materials marketed to credulous buyers as classified disclosures, which is a meaningful ethical distinction. The defense is fairer than 'pure scam' but the host is also overcharitable. Omitting directTruth because this is a values judgment, not a factual one.",
-      "inVerdictSection": true,
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "The New Mexico Cultural Resources Information System (ARMS) database is publicly searchable. Chaco Culture National Historical Park is one of the most intensively studied archaeological sites in North America. Absence of record for the Ancient Arrow site is a decisive falsification.",
+      "tags": ["chaco-canyon", "archaeology", "falsification"],
+      "dependencies": [
+        {
+          "target": "ovLWwHqjlaM:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] A chamber carved from rock at an intensively-surveyed site could not have escaped 800+ archaeological projects. The absence is decisive."
+        }
+      ],
+      "hostStance": "denies"
     },
     {
       "id": "ovLWwHqjlaM:c_0011",
       "videoId": "ovLWwHqjlaM",
-      "text": "Despite the Wing Makers narrative being mythological invention, the underlying message — that humans are capable of more than they currently know — is true and is the legitimate reason the show's audience continues to seek out unconventional ideas.",
-      "kind": "opinion",
+      "text": "The NSA has never acknowledged any Advanced Contact Intelligence Organization; ACIO appears in no classified or declassified government documentation.",
+      "kind": "empirical",
       "entities": [
-        "work_of_media:wingmaker story",
-        "organization:wing makers",
-        "ideology:transformation",
-        "ideology:consciousness"
+        "organization:nsa",
+        "organization:acio"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ovLWwHqjlaM",
-          "charStart": 28000,
-          "charEnd": 28700,
-          "timeStart": 1905.76,
-          "timeEnd": 1961.12,
-          "quote": " stories always\nhave a hint of truth. The chambers never\nexisted. The artifacts were imaginary.\nThe time travel was fantasy. But the\nWingmaker story contains one undeniable\ntruth. We're capable of more than we\nknow. I believe that's true. I think you\ndo too. That's why you're here watching\nthis show. You have questions. You have\nquestions about what's hiding in our\ngovernment, our society, on our planet,\nin our reality. And now that we've\nstarted asking these questions will\nnever stop. So maybe the wing makers\nnever existed, but what they started,\nit's everywhere.\nThank you so much for hanging out with\nme today. Hey, my name is AJ. That cycle\nfish.\n>> This has been the W files. If you get\nfu"
+          "charStart": 25899,
+          "charEnd": 25971,
+          "timeStart": 1533.0,
+          "timeEnd": 1538.0,
+          "quote": "NSA has never\nacknowledged an advanced contact\nintelligence organization"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "The host concedes the literal claims are false and pivots to a vague aspirational moral ('we're capable of more than we know'), which is true in a banal sense — there's always more to learn. But it papers over a real harm: people paying $108 for a CD because they thought it contained alien-derived consciousness technology. The 'we're capable' framing is hard to dispute as written but is the kind of statement that flatters everyone and clarifies nothing.",
-      "inVerdictSection": true,
-      "hostStance": "asserts",
+      "confidence": 0.92,
+      "directTruth": 0.85,
+      "rationale": "No FOIA disclosures, no NSA org-chart reference, no declassified Snowden/Manning/Winner docs reference ACIO. The 'beyond top secret' defense is unfalsifiable on its own, but the complete absence of any reference — including leaks — weighs against existence.",
+      "tags": ["acio", "nsa", "falsification"],
       "dependencies": [
-        {"target": "ovLWwHqjlaM:c_0009", "kind": "presupposes", "rationale": "Builds on the host's own admission that the chambers and artifacts never existed."}
-      ]
+        {
+          "target": "ovLWwHqjlaM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[debunks] Host's own research confirms ACIO has never been referenced in any government source. The existence claim fails the basic documentation test."
+        }
+      ],
+      "hostStance": "denies"
+    },
+    {
+      "id": "ovLWwHqjlaM:c_0012",
+      "videoId": "ovLWwHqjlaM",
+      "text": "James Mahu himself now calls the Wingmakers materials 'mythology' rather than history or revelation.",
+      "kind": "historical",
+      "entities": [
+        "person:james mahu",
+        "ideology:mythology"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 27049,
+          "charEnd": 27093,
+          "timeStart": 1615.0,
+          "timeEnd": 1620.0,
+          "quote": "James himself called the materials\nmythology"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Mahu's evolving framing is documented in public email interviews. The shift from 'real disclosure' to 'mythology' is a defensive framing that retroactively inoculates the material against factual challenges.",
+      "tags": ["mahu", "mythology", "framing"],
+      "dependencies": [
+        {
+          "target": "ovLWwHqjlaM:c_0001",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If the author himself labels the material mythology, the opening claim of a 1972 physical discovery cannot be sustained as history."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "ovLWwHqjlaM:c_0013",
+      "videoId": "ovLWwHqjlaM",
+      "text": "The Wingmakers chambers never existed and the artifacts were imaginary — the host concedes the whole operation is fiction.",
+      "kind": "empirical",
+      "entities": [
+        "organization:wing makers",
+        "location:ancient arrow site"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 28042,
+          "charEnd": 28064,
+          "timeStart": 1680.0,
+          "timeEnd": 1683.0,
+          "quote": "chambers never\nexisted"
+        },
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 28070,
+          "charEnd": 28094,
+          "timeStart": 1683.0,
+          "timeEnd": 1686.0,
+          "quote": "artifacts were imaginary"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.95,
+      "rationale": "Host's direct concession at end of video. Combined with the archaeology and ACIO falsifications, this is the definitive debunking: the entire ornate narrative was never physical.",
+      "tags": ["wingmakers", "debunking", "concession"],
+      "dependencies": [
+        {
+          "target": "ovLWwHqjlaM:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] Host's own closing explicitly retracts the opening factual framing."
+        },
+        {
+          "target": "ovLWwHqjlaM:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] The Wingmakers origin story is fiction — time travelers, Animus, 750-year warning are all fabricated."
+        }
+      ],
+      "hostStance": "denies"
+    },
+    {
+      "id": "ovLWwHqjlaM:c_0014",
+      "videoId": "ovLWwHqjlaM",
+      "text": "Powerful fictional mythologies can push humanity toward legitimate research and personal transformation even without being literally true.",
+      "kind": "opinion",
+      "entities": [
+        "ideology:mythology",
+        "organization:wing makers"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ovLWwHqjlaM",
+          "charStart": 27713,
+          "charEnd": 27741,
+          "timeStart": 1655.0,
+          "timeEnd": 1658.0,
+          "quote": "Wing Makers might be fiction"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.6,
+      "rationale": "Defensible claim — narrative / religious / speculative fiction has historically motivated real science (Verne / submarines, Clarke / satellites). Harder to establish for Wingmakers specifically, since the 'thousands of followers' report transformations which may be placebo or selection bias.",
+      "tags": ["mythology", "transformation", "narrative"],
+      "hostStance": "asserts"
     }
   ]
 }

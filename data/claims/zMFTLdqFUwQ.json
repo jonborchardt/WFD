@@ -1,332 +1,387 @@
 {
   "schemaVersion": 1,
   "transcriptId": "zMFTLdqFUwQ",
-  "generatedAt": "2026-04-20T02:55:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "zMFTLdqFUwQ:c_0001",
       "videoId": "zMFTLdqFUwQ",
-      "text": "Two independent doomsday predictions — Isaac Newton's 1704 calculation pointing to ~2060 and a 1973 MIT computer model pointing to ~2040 (with first signs visible by 2020) — have converged on roughly the same end-of-civilization window.",
+      "text": "In 1704 Isaac Newton used a series of calculations to predict the world would end around the year 2060.",
       "kind": "historical",
       "entities": [
-        "person:isaac newton",
+        "person:isaac newton"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zMFTLdqFUwQ",
+          "charStart": 39,
+          "charEnd": 112,
+          "timeStart": 4.839,
+          "timeEnd": 11.679,
+          "quote": "Isaac Newton predicted the world would\nend sometime around the year 20160"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Newton's 2060 end-times calculation, from his Daniel/Revelation manuscripts discovered in the 1980s, is genuine. Host's '20160' in transcript is an automatic-captions corruption of '2060'. The underlying historical claim is well-documented.",
+      "tags": ["isaac-newton", "apocalypse", "1704", "prediction"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "zMFTLdqFUwQ:c_0002",
+      "videoId": "zMFTLdqFUwQ",
+      "text": "A 1973 MIT computer program predicted that life as we know it will end around the year 2040, with the first signs appearing in 2020.",
+      "kind": "empirical",
+      "entities": [
         "organization:mit",
-        "date_time:1973",
         "date_time:2040",
-        "date_time:20160",
+        "date_time:2020",
+        "date_time:1973"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zMFTLdqFUwQ",
+          "charStart": 144,
+          "charEnd": 235,
+          "timeStart": 8.719,
+          "timeEnd": 19.96,
+          "quote": "a\ncomputer at MIT made the prediction that\nLife as we know it will end around the\nyear 2040"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "The MIT program is real — it refers to the World3 model behind the 1972 Limits to Growth report, commissioned by the Club of Rome. The 2040/2020-first-signs framing matches the standard-run scenario. Host accurately reports the model's output; whether the output is correct is a separate question.",
+      "tags": ["mit", "world3", "limits-to-growth", "2040"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "zMFTLdqFUwQ:c_0001",
+          "kind": "elaborates",
+          "rationale": "Positions the MIT prediction as a modern scientific counterpart to Newton's much older apocalyptic calculation."
+        }
+      ]
+    },
+    {
+      "id": "zMFTLdqFUwQ:c_0003",
+      "videoId": "zMFTLdqFUwQ",
+      "text": "MIT's World3 model predicted that once population, agriculture, resources, industrial output, and pollution all converge, quality of life will decline and society will collapse around 2020.",
+      "kind": "empirical",
+      "entities": [
+        "organization:mit",
         "date_time:2020"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 0,
-          "charEnd": 313,
-          "timeStart": 1.48,
-          "timeEnd": 25.039,
-          "quote": "in 1704 using a series of calculations\nIsaac Newton predicted the world would\nend sometime around the year 20160\nalmost 300 years later in 1973 a\ncomputer at MIT made the prediction that\nLife as we know it will end around the\nyear 2040 it also predicted that some of\nthe first signs would be seen in the\nyear 2020"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "Newton's 2060 prediction is real — letters at the National Library of Israel show his 1704 calculation based on the Book of Daniel pointing to 2060 as the earliest date for the apocalypse (the host says '20160' which is a transcription error for '2060'). The MIT 1972/1973 limits-to-growth simulation is real and did project societal collapse by ~2040. So both predictions exist as historical fact, but framing them as 'converging' is misleading: Newton's was theological numerology, MIT's was input-driven simulation; their methods, assumptions, and meanings are unrelated.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "zMFTLdqFUwQ:c_0002",
-      "videoId": "zMFTLdqFUwQ",
-      "text": "When the MIT model talks about 'the end of the world,' it does not mean planetary destruction or extinction — it specifically means the collapse of complex industrial society.",
-      "kind": "definitional",
-      "entities": [
-        "organization:mit",
-        "event:collapse",
-        "event:end of the world"
-      ],
-      "relationships": [],
-      "evidence": [
+          "charStart": 2498,
+          "charEnd": 2595,
+          "timeStart": 146.879,
+          "timeEnd": 155,
+          "quote": "MIT researchers developed the\nprogram which they called world 3 to\nsimulate Global sustainability"
+        },
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 945,
-          "charEnd": 1055,
-          "timeStart": 61.84,
-          "timeEnd": 71.28,
-          "quote": "doesn't mean the end of the\nplanet or even the end of life on the\nplanet it just means the collapse of\nsociety"
+          "charStart": 5908,
+          "charEnd": 5955,
+          "timeStart": 352.68,
+          "timeEnd": 360.96,
+          "quote": "this convergence was\npredicted to occur in 2020"
         }
       ],
-      "confidence": 0.98,
-      "directTruth": 0.95,
-      "rationale": "Accurate framing. The Limits to Growth model output 'standard run' shows population overshoot and rapid decline in industrial output, food per capita, and services — what the modelers (Donella Meadows et al.) explicitly called 'overshoot and collapse,' not extinction. This is faithful to the source.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "zMFTLdqFUwQ:c_0003",
-      "videoId": "zMFTLdqFUwQ",
-      "text": "The MIT collapse model is built on System Dynamics — a methodology pioneered by Jay Wright Forrester for modeling how feedback loops between stocks and flows produce emergent behavior in complex systems.",
-      "kind": "definitional",
-      "entities": [
-        "person:jay wright forester",
-        "technology:system dynamics"
-      ],
-      "relationships": [],
-      "evidence": [
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "rationale": "The World3 standard run does project collapse beginning in the 2020s. Graham Turner's 2014 MIT/CSIRO update found the standard run tracked observed data reasonably well through 2010. But 'collapse in 2020' is stronger than the model actually says — it projects gradual decline, not a discrete event.",
+      "tags": ["world3", "collapse", "2020", "convergence"],
+      "dependencies": [
         {
-          "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 1056,
-          "charEnd": 1156,
-          "timeStart": 66.96,
-          "timeEnd": 76.24,
-          "quote": "the model is based on the work\nof Jay Wright Forester who's considered\nthe father of System Dynamics"
+          "target": "zMFTLdqFUwQ:c_0002",
+          "kind": "elaborates",
+          "rationale": "Specifies the mechanism (five-factor convergence) behind the 2040-collapse headline."
         }
-      ],
-      "confidence": 0.98,
-      "directTruth": 0.95,
-      "rationale": "Jay Forrester (MIT, 1918-2016) is widely credited as the founder of System Dynamics; his books 'Industrial Dynamics' (1961), 'Urban Dynamics' (1969), and 'World Dynamics' (1971) established the field. World3 / Limits to Growth was built directly on his World2 model. Accurate.",
-      "hostStance": "asserts"
+      ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0004",
       "videoId": "zMFTLdqFUwQ",
-      "text": "MIT's 'World3' simulation modeled five interacting global factors — population, agriculture, non-renewable resources, industrial output, and pollution — and the researchers, who expected an optimistic result, instead got a forecast of civilizational collapse.",
+      "text": "The Club of Rome was created in 1968 by the Morgenthau group at a meeting at Rockefeller's Bellagio estate, organized by Italian industrialist Aurelio Peccei.",
       "kind": "historical",
       "entities": [
-        "organization:mit",
-        "person:researchers",
-        "quantity:population",
-        "quantity:agricultural production",
-        "quantity:non-renewable resource depletion",
-        "quantity:industrial output",
-        "quantity:pollution generation"
+        "organization:club of rome",
+        "date_time:1968"
       ],
-      "relationships": [],
+      "relationships": ["r_0012", "r_0013"],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 2494,
-          "charEnd": 2988,
-          "timeStart": 146.879,
-          "timeEnd": 181.559,
-          "quote": "now MIT researchers developed the\nprogram which they called world 3 to\nsimulate Global sustainability and it\nwas built using System Dynamics the\nstudy looked at the five factors thought\nmost likely to affect growth on earth\npopulation increase agricultural\nproduction non-renewable resource\ndepletion industrial output and\npollution generation the scientists who\nparticipated in this research were\nexcited to see a bright future in the\nresults instead the program predicted\nthe end of the\nworld"
+          "charStart": 3472,
+          "charEnd": 3556,
+          "timeStart": 206.08,
+          "timeEnd": 214.28,
+          "quote": "1968 by the\nMorgan thou group during a meeting at\nrockefeller's private estate pagia"
+        },
+        {
+          "transcriptId": "zMFTLdqFUwQ",
+          "charStart": 3580,
+          "charEnd": 3644,
+          "timeStart": 212.84,
+          "timeEnd": 221.599,
+          "quote": "the meeting was\norganized by orelio pce an Italian\nindustrialist"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "World3 is real (Donella & Dennis Meadows, Jorgen Randers, William Behrens) and modeled exactly those five sectors. The 'standard run' did show overshoot. The 'researchers expected optimism but got collapse' framing is historically accurate per Donella Meadows' own retrospective writing — she said they were surprised by how robust the collapse result was across parameter choices. Solid descriptive claim.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Club of Rome was founded in April 1968 by Aurelio Peccei and Alexander King at Rockefeller's Bellagio estate in Italy — well-documented on the organization's own website. Transcript's 'Morgan thou' and 'orelio pce' / 'pagia' are auto-caption corruptions. Date and location correct.",
+      "tags": ["club-of-rome", "1968", "bellagio", "peccei"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "zMFTLdqFUwQ:c_0002",
+          "kind": "elaborates",
+          "rationale": "Introduces the Club of Rome as the sponsor behind MIT's World3 research."
+        }
+      ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0005",
       "videoId": "zMFTLdqFUwQ",
-      "text": "The Club of Rome — the elite organization that commissioned the World3 model — was founded in 1968 at a Rockefeller estate by industrialist Aurelio Peccei (Fiat / Olivetti) and the Morgan thou group, claiming it pursued world peace and prosperity through a 'new world order.'",
-      "kind": "historical",
+      "text": "The Club of Rome claims the future survival of mankind depends on a new global community under a single form of government — a New World Order.",
+      "kind": "empirical",
       "entities": [
-        "organization:club of rome",
-        "date_time:1968",
-        "person:orelio pce",
-        "organization:aletti corporation",
-        "organization:morgan thou group",
+        "organization:the club of rome",
         "ideology:new world order"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 3449,
-          "charEnd": 3815,
-          "timeStart": 206.08,
-          "timeEnd": 229.28,
-          "quote": "of Rome was created in 1968 by the\nMorgan thou group during a meeting at\nrockefeller's private estate pagia yeah\nthis sounds right the meeting was\norganized by orelio pce an Italian\nindustrialist who had close ties to the\naletti corporation and Fiat now P\nclaimed to have solutions for world\npeace and prosperity which could be\naccomplished through a new world order"
+          "charStart": 4682,
+          "charEnd": 4809,
+          "timeStart": 276.28,
+          "timeEnd": 287.08,
+          "quote": "The Club of Rome claims that the future\nsurvival of mankind depends on a new\nGlobal Community under a single form of\ngovernment"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "The Club of Rome was founded April 1968 at Rockefeller's Bellagio estate (the host's 'pagia' is a transcription artifact for Bellagio). Aurelio Peccei (Olivetti/Fiat) and Alexander King were the co-founders. The 'Morgenthau group' framing is unusual — the meeting was at Rockefeller property and Peccei did have establishment ties. The 'new world order' phrasing is conspiracist gloss; the Club of Rome's own language was 'world problematique' and 'global humanism.'",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.35,
+      "rationale": "Club of Rome has advocated 'global governance' in some publications (notably The First Global Revolution, 1991) but 'single form of government' / 'New World Order' framing overstates their public positions — they advocate coordinated policy, not unified government. Host is repeating a conspiracy-adjacent summary.",
+      "tags": ["club-of-rome", "new-world-order", "global-governance"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "zMFTLdqFUwQ:c_0004",
+          "kind": "elaborates",
+          "rationale": "Describes the ideological agenda attributed to the organization founded in 1968."
+        }
+      ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0006",
       "videoId": "zMFTLdqFUwQ",
-      "text": "The Club of Rome's stated ideology — that human survival requires a single global government and that overpopulation is the gravest threat — has fed allegations that the group quietly endorses massive depopulation 'by any means necessary.'",
-      "kind": "speculative",
+      "text": "The biggest threat to mankind identified by the Club of Rome is overpopulation.",
+      "kind": "empirical",
       "entities": [
-        "organization:the club of rome",
-        "ideology:new world order",
-        "quantity:overpopulation"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 4682,
-          "charEnd": 5050,
-          "timeStart": 276.28,
-          "timeEnd": 302.96,
-          "quote": "The Club of Rome claims that the future\nsurvival of mankind depends on a new\nGlobal Community under a single form of\ngovernment New World Order right and the\nbiggest threat to this new world order\nand the biggest threat to mankind is\noverpopulation now it's been alleged\nthat the club of Rome supports massive\ndepopulation using any means necessary\nany means any means"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.3,
-      "rationale": "The Club of Rome does have publications arguing global governance is required for sustainability — see their 2018 'Come On!' report and 1991 'The First Global Revolution.' They have flagged population as a sustainability variable. However, the 'depopulation by any means necessary' allegation is conspiracist framing not present in any Club of Rome publication; it's projected onto them by anti-globalist commentary. Ideology partially accurate; depopulation accusation is contested-to-false.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "zMFTLdqFUwQ:c_0007",
-      "videoId": "zMFTLdqFUwQ",
-      "text": "In August 1980 Club of Rome member Howard Odum publicly stated the U.S. needed to cut its population by two-thirds within fifty years — without specifying how.",
-      "kind": "historical",
-      "entities": [
-        "date_time:august 1980",
-        "person:howard odum",
         "organization:club of rome"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 5054,
-          "charEnd": 5210,
-          "timeStart": 297.72,
-          "timeEnd": 312.639,
-          "quote": "August 1980\nHoward Odum who was a member of the club\nof Rome was quoted saying it's necessary\nthat the US cut its population by 2/3\nwithin the next 50 years"
+          "charStart": 4840,
+          "charEnd": 4930,
+          "timeStart": 285.24,
+          "timeEnd": 294.68,
+          "quote": "biggest threat to this new world order\nand the biggest threat to mankind is\noverpopulation"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.4,
-      "rationale": "Howard T. Odum (ecologist, University of Florida) wrote about energy carrying capacity and did argue that industrial civilization at his level of energy use was unsustainable; statements about needing population reduction appear in his work. However, his Club of Rome membership status is unclear in standard membership records, and the specific '2/3 cut by 2030' quote, while in the spirit of his energy ecology arguments, hasn't been pinned to an August 1980 source by mainstream historians. Probably-real-ish but lacks clean attribution.",
-      "hostStance": "asserts"
+      "directTruth": 0.6,
+      "rationale": "Limits to Growth treats exponential population growth as one of five primary drivers of collapse — 'biggest threat' oversimplifies but captures the emphasis. The neo-Malthusian framing is genuinely associated with early Club of Rome outputs.",
+      "tags": ["club-of-rome", "overpopulation", "limits-to-growth"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "zMFTLdqFUwQ:c_0005",
+          "kind": "elaborates",
+          "rationale": "Overpopulation is identified as the specific threat that the 'new global community' is supposedly meant to address."
+        }
+      ]
     },
     {
-      "id": "zMFTLdqFUwQ:c_0008",
+      "id": "zMFTLdqFUwQ:c_0007",
       "videoId": "zMFTLdqFUwQ",
-      "text": "The Club of Rome published World3's results in 1973 as 'The Limits to Growth' — a book arguing that pollution, resource depletion, and population trends would cause quality of life to collapse around 2020 once factors converged.",
+      "text": "Howard Odum, a Club of Rome member, said in August 1980 that the US must cut its population by two-thirds within the next 50 years.",
       "kind": "historical",
       "entities": [
+        "person:howard odum",
         "organization:club of rome",
-        "work_of_media:the limits to growth",
-        "date_time:1973",
-        "date_time:2020",
-        "event:collapse"
+        "date_time:august 1980"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 5374,
-          "charEnd": 5955,
-          "timeStart": 321.4,
-          "timeEnd": 360.96,
-          "quote": "MIT computer program was\ndesigned to look at the current\nprojected Trends around pollution\nnatural resources consumption and\npopulation growth and see what would\nhappen the results were published by the\nclub of Rome in a book called the limits\nto growth released in\n1973 some immediately criticized the\ndata being inaccurate but supporters\nclaimed this was Western Society\navoiding responsibility the program's\nresults show that once all factors\nconverge quality of life will quickly\ndecline ultimately leading to collapse\nof society this convergence was\npredicted to occur in 2020"
+          "charStart": 5066,
+          "charEnd": 5185,
+          "timeStart": 301.24,
+          "timeEnd": 311.52,
+          "quote": "Howard Odum who was a member of the club\nof Rome was quoted saying it's necessary\nthat the US cut its population by 2/3"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.65,
-      "rationale": "Limits to Growth was published in 1972 (not 1973 — close enough), the host has the year slightly off. The 'collapse around 2020' framing isn't quite right either — World3's standard run shows industrial output peaking in the 2010s and declining through mid-century; 'collapse in 2020' is a popular gloss. Recent Gaya Herrington reanalysis (2021) found tracking with the standard-run scenario, which gives the host's framing partial empirical support. Mostly true with date imprecision.",
+      "confidence": 0.7,
+      "rationale": "Howard T. Odum was a real systems ecologist who wrote about carrying capacity, but the specific 1980 quote as reported is not verifiable in his published work. The attribution is common in conspiratorial writing but the sourcing chain is unclear. Omitting directTruth because provenance cannot be established.",
+      "tags": ["howard-odum", "depopulation", "1980"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        {"target": "zMFTLdqFUwQ:c_0004", "kind": "elaborates"}
+        {
+          "target": "zMFTLdqFUwQ:c_0006",
+          "kind": "supports",
+          "rationale": "A Club of Rome member advocating specific depopulation targets reinforces the broader overpopulation-as-core-threat framing."
+        }
+      ]
+    },
+    {
+      "id": "zMFTLdqFUwQ:c_0008",
+      "videoId": "zMFTLdqFUwQ",
+      "text": "The Limits to Growth model's predicted collapse can only be prevented if nations like the USA and China stop devouring global resources.",
+      "kind": "empirical",
+      "entities": [
+        "organization:club of rome",
+        "location:china"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zMFTLdqFUwQ",
+          "charStart": 6057,
+          "charEnd": 6157,
+          "timeStart": 362.52,
+          "timeEnd": 371.72,
+          "quote": "the collapse can only be\nprevented if Nations like the USA and\nChina stop devouring global resources"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "The model's policy implication — resource consumption must level off to avoid overshoot — is accurate summary of Limits to Growth remediation scenarios. 'Only' is stronger than the book, which presented multiple mixed-policy paths.",
+      "tags": ["limits-to-growth", "usa", "china", "resources"],
+      "dependencies": [
+        {
+          "target": "zMFTLdqFUwQ:c_0003",
+          "kind": "elaborates",
+          "rationale": "Describes the prescribed policy remedy for the World3 collapse trajectory."
+        }
       ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0009",
       "videoId": "zMFTLdqFUwQ",
-      "text": "The Limits to Growth model failed to anticipate emerging-economy growth — India, Pakistan, Indonesia, Philippines, North Korea, Peru, Sri Lanka, Ukraine — where ~2 billion people now drive carbon emissions up 5-20%, putting the world back on the model's collapse trajectory.",
+      "text": "The Limits to Growth model failed to predict the explosion of growth in emerging countries where carbon emissions are now up 5-20%.",
       "kind": "empirical",
       "entities": [
-        "work_of_media:the limits to growth",
         "location:emerging countries",
-        "location:india",
-        "location:pakistan",
-        "location:indonesia",
-        "location:the philippines",
-        "location:north korea",
-        "location:peru",
-        "location:sri lanka",
-        "location:ukraine",
         "quantity:carbon emissions"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 6359,
-          "charEnd": 6845,
+          "charStart": 6363,
+          "charEnd": 6459,
           "timeStart": 379.039,
-          "timeEnd": 419.36,
-          "quote": "but what the limits to\ngrowth model fail to predict is the\nexplosion of growth in emerging\ncountries India Pakistan Indonesia the\nPhilippines North Korea Peru Sri Lanka\nUkraine carbon emissions are up between\n5 and 20% in those countries and over 2\nbillion people live there that's a\nquarter of the world's population now\nthose economies are not going to slow\ndown anytime soon and their carbon\nemissions are only going up so clearly\nat least according to this model we're\nstill at\nrisk"
+          "timeEnd": 391.919,
+          "quote": "what the limits to\ngrowth model fail to predict is the\nexplosion of growth in emerging\ncountries"
         }
       ],
-      "confidence": 0.9,
+      "confidence": 0.8,
       "directTruth": 0.55,
-      "rationale": "Emerging-economy carbon growth is real — India, Indonesia, Vietnam etc. have rising emissions while OECD declines. The combined population figure (~2 billion across the cited countries) is roughly accurate. The 5-20% emissions-growth range is broadly consistent with IEA data for India and several SE Asian economies, though individual country rates vary widely. North Korea on the list is odd (its emissions are a small fraction of others). 'Putting us back on the collapse path' is interpretive but not unreasonable. Mostly accurate with cherry-picked country list.",
-      "hostStance": "asserts",
+      "rationale": "Emerging-country emission growth post-2000 is well-documented (India, Indonesia, etc.). Whether the 1972 World3 model explicitly failed on this point is a more specific charge — the original standard-run aggregated global industrial output and did not break out non-OECD growth. Half credit.",
+      "tags": ["emerging-markets", "carbon-emissions", "world3", "critique"],
       "dependencies": [
-        {"target": "zMFTLdqFUwQ:c_0008", "kind": "elaborates"}
+        {
+          "target": "zMFTLdqFUwQ:c_0003",
+          "kind": "contradicts",
+          "rationale": "[undercuts] A failure to anticipate emerging-country emission growth weakens confidence in the model's 2020-collapse projection."
+        }
       ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0010",
       "videoId": "zMFTLdqFUwQ",
-      "text": "The Club of Rome's commissioning of MIT was rigged: they had already concluded global collapse was imminent before hiring the scientists, who 'coincidentally' produced the conclusion that fit the agenda — making the World3 results agenda-driven motivated reasoning rather than independent science.",
+      "text": "The Club of Rome had already concluded there is a threat of imminent global collapse before hiring the MIT scientists who coincidentally reached the same conclusion.",
       "kind": "speculative",
       "entities": [
         "organization:club of rome",
-        "person:scientists",
-        "person:jce",
-        "event:global collapse"
+        "organization:mit"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
           "charStart": 7193,
-          "charEnd": 7435,
-          "timeStart": 434.0,
-          "timeEnd": 452.96,
-          "quote": "the club of Rome already had\ncome to the conclusion that there is a\nthreat of imminent Global collapse they\narrived at this conclusion before hiring\nthe scientist at M who coincidentally\ncame up with this exact conclusion that\nfits the agenda"
+          "charEnd": 7360,
+          "timeStart": 434,
+          "timeEnd": 447.52,
+          "quote": "the club of Rome already had\ncome to the conclusion that there is a\nthreat of imminent Global collapse they\narrived at this conclusion before hiring\nthe scientist at M"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.45,
-      "rationale": "It is true that the Club of Rome had a particular orientation (limits, sustainability, global governance) before commissioning the work — Peccei's earlier writings and the 'Predicament of Mankind' framing predate the model. However, World3 was a parameter-driven simulation with documented inputs and methodology; multiple subsequent independent reanalyses (Herrington, Turner) have largely tracked its standard run. The 'rigged conclusion' framing oversimplifies — the model has assumptions, but it isn't pure conclusion-fitting. Mixed truth.",
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "It's true that Peccei's concerns about 'the problematique' preceded the World3 commissioning — that sequence is documented. But framing MIT as 'coincidentally' reaching the sponsor's expected conclusion is insinuation, not demonstrated bias. The Forrester-Meadows group had independent research autonomy.",
+      "tags": ["club-of-rome", "mit", "conflict-of-interest", "bias"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        {"target": "zMFTLdqFUwQ:c_0008", "kind": "contradicts"}
+        {
+          "target": "zMFTLdqFUwQ:c_0003",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If the conclusion was pre-determined by the sponsor, the scientific weight of World3's collapse projection is weakened."
+        }
       ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0011",
       "videoId": "zMFTLdqFUwQ",
-      "text": "Big Tobacco systematically purchased misleading science — the most famous being the 1954 'Frank Statement to Cigarette Smokers,' published in 400+ newspapers, which falsely claimed there was no proof cigarettes cause lung cancer.",
+      "text": "The 1954 Frank Statement to Cigarette Smokers, published in over 400 newspapers and funded by tobacco companies, falsely claimed there is no proof cigarette smoking causes lung cancer.",
       "kind": "historical",
       "entities": [
         "organization:tobacco companies",
-        "date_time:1954",
-        "quantity:over 400 newspapers"
+        "date_time:1954"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 7497,
-          "charEnd": 7993,
-          "timeStart": 452.96,
-          "timeEnd": 486.599,
-          "quote": "for a long time tobacco companies paid\nscientists to publish misleading\ninformation the most famous of these was\ncalled a Frank statement to cigarette\nsmokers which was published in over 400\nnewspapers in 1954 and the study said\nthere is no proof that cigarette smoking\ncauses lung cancer tens of thousands of\ndoctors General Practitioners surgeons\nSpecialists doctors in every branch of\nmedicine were included and according to\nthis Nationwide survey more do smoke\ncamels than any other cigarette"
+          "charStart": 7726,
+          "charEnd": 7785,
+          "timeStart": 465.759,
+          "timeEnd": 473.12,
+          "quote": "there is no proof that cigarette smoking\ncauses lung cancer"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The 'Frank Statement to Cigarette Smokers' was published January 4, 1954 in 448 newspapers across 258 cities — historical fact, available in tobacco-litigation document archives. It was the founding salvo of the Tobacco Industry Research Committee's decades-long disinformation campaign. Allan Brandt's 'The Cigarette Century' and the Master Settlement document discovery are definitive sources. Highly accurate.",
+      "directTruth": 0.95,
+      "rationale": "The 1954 'A Frank Statement to Cigarette Smokers' is extensively documented in the tobacco master settlement archives and by Brandt (The Cigarette Century). Ran as full-page ads in ~400 US newspapers, funded by the Tobacco Industry Research Committee. Explicitly disputed smoking-cancer link despite internal industry knowledge to the contrary.",
+      "tags": ["tobacco", "frank-statement", "1954", "scientific-fraud"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "zMFTLdqFUwQ:c_0012",
       "videoId": "zMFTLdqFUwQ",
-      "text": "When a 1981 Japanese study (Hirayama) proved secondhand smoke kills, Big Tobacco bought counter-science; in the 1990s they sponsored studies arguing dirty air filters were more dangerous to lungs than cigarettes.",
+      "text": "In 1981 a Japanese study proved the dangerous effects of secondhand smoke, and Big Tobacco responded by buying science that said otherwise.",
       "kind": "historical",
       "entities": [
-        "date_time:1981",
         "event:japanese study",
+        "date_time:1981",
         "organization:big tobacco"
       ],
       "relationships": [],
@@ -334,109 +389,113 @@
         {
           "transcriptId": "zMFTLdqFUwQ",
           "charStart": 8003,
-          "charEnd": 8263,
+          "charEnd": 8076,
           "timeStart": 483.479,
-          "timeEnd": 502.56,
-          "quote": "in 1981 a Japanese study proved the\ndangerous effects of secondhand smoke\nagain big tobacco bought themselves some\nscience that said otherwise now in the\n'90s they sponsored studies saying that\ndirty air filters were more dangerous to\nthe lungs than cigarettes"
+          "timeEnd": 491.36,
+          "quote": "in 1981 a Japanese study proved the\ndangerous effects of secondhand smoke"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "Takeshi Hirayama's 1981 BMJ study on secondhand smoke and lung cancer in non-smoking Japanese wives is historical fact and is widely cited as the first major epidemiological evidence. Tobacco industry pushback against Hirayama is documented in litigation discovery — internal memos at Philip Morris attacking his methodology. The 'dirty air filters worse than cigarettes' claim corresponds to industry-funded indoor-air-quality studies in the 1990s aimed at deflecting from secondhand smoke regulations. Accurate.",
+      "directTruth": 0.9,
+      "rationale": "The 1981 Takeshi Hirayama study (British Medical Journal) on non-smoking wives of smokers is the canonical early secondhand-smoke study. Tobacco industry's response — decades of counter-funding including ETS consultancy programs — is well-documented in Oreskes and Conway's Merchants of Doubt.",
+      "tags": ["secondhand-smoke", "hirayama", "1981", "industry-science"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        {"target": "zMFTLdqFUwQ:c_0011", "kind": "supports"}
+        {
+          "target": "zMFTLdqFUwQ:c_0011",
+          "kind": "elaborates",
+          "rationale": "Both claims are instances of the same tobacco-industry funded-science playbook across decades."
+        }
       ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0013",
       "videoId": "zMFTLdqFUwQ",
-      "text": "The same paid-science pattern appears across industries: 1960s sugar companies paid Harvard scientists to publish papers exonerating sugar from obesity and heart disease, and as recently as 2017 Coca-Cola and Mars funded research diverting attention from sugar's role in obesity and diabetes.",
+      "text": "In the 1960s sugar companies paid Harvard scientists to report that sugar doesn't make you fat and has no role in heart disease.",
       "kind": "historical",
       "entities": [
-        "organization:sugar companies",
-        "location:harvard",
-        "date_time:2017",
-        "organization:coca-cola",
-        "organization:mars candy company"
+        "location:harvard"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 8279,
-          "charEnd": 8571,
+          "charStart": 8290,
+          "charEnd": 8374,
           "timeStart": 500.44,
-          "timeEnd": 520.959,
-          "quote": "in the 60s sugar companies paid\nscientists at Harvard to report that\nSugar doesn't make you fat and doesn't\nhave a role in heart disease and as\nrecently as 2017 Coca-Cola and the Mars\ncandy company funded research to divert\nattention away from their products\nconnected to obesity and diabetes"
+          "timeEnd": 508,
+          "quote": "sugar companies paid\nscientists at Harvard to report that\nSugar doesn't make you fat"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The 1967 NEJM article by Stare and Hegsted (both Harvard School of Public Health) attacking the role of sugar in heart disease and shifting blame to fat was paid for by the Sugar Research Foundation, as Cristin Kearns documented in JAMA Internal Medicine (2016). The 2015 NYT exposé on Coca-Cola's Global Energy Balance Network and the 2017 Mars sponsored 'Eat Right' research are well-documented. Highly accurate.",
+      "directTruth": 0.95,
+      "rationale": "The 1967 Sugar Research Foundation-funded Harvard review (Hegsted, Stare, McGandy) blaming fat rather than sugar for heart disease was exposed by Kearns et al. in JAMA Internal Medicine 2016. A well-documented case of paid science.",
+      "tags": ["sugar", "harvard", "industry-science", "hegsted"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        {"target": "zMFTLdqFUwQ:c_0011", "kind": "supports"}
+        {
+          "target": "zMFTLdqFUwQ:c_0011",
+          "kind": "elaborates",
+          "rationale": "Same industry-captured-science pattern across tobacco and sugar industries."
+        }
       ]
     },
     {
       "id": "zMFTLdqFUwQ:c_0014",
       "videoId": "zMFTLdqFUwQ",
-      "text": "Industry funding pollutes most published science: 70% of all scientific research is funded by private companies, and of recent food-industry sponsored studies, 70% returned sponsor-favorable results, 25% neutral, and under 5% sponsor-unfavorable.",
+      "text": "Of the most recent 50 food-industry-sponsored studies, 70% yielded results favorable to the sponsor, 25% were neutral, and fewer than 5% contradicted the sponsor's product.",
       "kind": "empirical",
-      "entities": [
-        "quantity:70%",
-        "quantity:25%",
-        "quantity:less than 5%",
-        "organization:food industry",
-        "organization:private companies"
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zMFTLdqFUwQ",
+          "charStart": 8693,
+          "charEnd": 8802,
+          "timeStart": 525.68,
+          "timeEnd": 536.64,
+          "quote": "most recent 50 food industry sponsored\nstudies 70% of them yielded results that\nwere favorable to the sponsor"
+        }
       ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "The 70/25/5 breakdown resembles Lesser et al. 2007 PLoS Medicine systematic review of industry-funded nutrition studies, which found sponsorship was associated with favorable conclusions. Exact percentages may be rounded/reordered from the original but general pattern is well-supported.",
+      "tags": ["food-industry", "funding-bias", "scientific-integrity"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "zMFTLdqFUwQ:c_0010",
+          "kind": "supports",
+          "rationale": "Industry-funded-research bias is the general pattern the Club-of-Rome/MIT insinuation fits into."
+        }
+      ]
+    },
+    {
+      "id": "zMFTLdqFUwQ:c_0015",
+      "videoId": "zMFTLdqFUwQ",
+      "text": "70% of all scientific research is funded by private companies and that money often comes with strings.",
+      "kind": "empirical",
+      "entities": [],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zMFTLdqFUwQ",
           "charStart": 8584,
-          "charEnd": 8926,
+          "charEnd": 8685,
           "timeStart": 517.76,
-          "timeEnd": 542.839,
-          "quote": "70% of all scientific research\nis funded by private companies and that\nmoney often comes with strings of the\nmost recent 50 food industry sponsored\nstudies 70% of them yielded results that\nwere favorable to the sponsor 25% of\nthem were neutral and less than 5% of\nthe studies came to conclusions that did\nnot favor the spons sponsor's product"
+          "timeEnd": 528.16,
+          "quote": "70% of all scientific research\nis funded by private companies and that\nmoney often comes with strings"
         }
       ],
-      "confidence": 0.9,
+      "confidence": 0.85,
       "directTruth": 0.5,
-      "rationale": "The '70% of research is privately funded' figure is roughly defensible for U.S. R&D spending overall (NSF data shows business funds about 70-72% of total R&D), though that conflates basic research with product development. Sponsorship bias in nutrition science is a documented phenomenon — Lesser et al. PLoS Med 2007 and Bes-Rastrollo et al. PLoS Med 2013 both found significant funder-favorable bias. The exact 70/25/5 split for 'most recent 50 food industry studies' has the look of a host-paraphrased figure rather than a peer-reviewed citation, but the directional claim is accurate.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "zMFTLdqFUwQ:c_0015",
-      "videoId": "zMFTLdqFUwQ",
-      "text": "AJ's verdict: trust no scientific study uncritically — when media cite research, ask who paid for it, because more often than not there's a sponsor agenda and most people (including media) won't bother to check.",
-      "kind": "opinion",
-      "entities": [
-        "person:aj",
-        "organization:media",
-        "person:scientists",
-        "role:messenger"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "zMFTLdqFUwQ",
-          "charStart": 8963,
-          "charEnd": 9340,
-          "timeStart": 542.839,
-          "timeEnd": 567.519,
-          "quote": "we're constantly bombarded by scientific\nstudies on everything which ones can we\ntrust none of them none of them now the\nnext time the media throws data at you\nthat they got from a scientific paper\ntake a minute to look at who paid for\nthe research more often than not there's\nan agenda unfortunately most people\nincluding the media won't take the time\nto find out who benefits"
-        }
-      ],
-      "confidence": 0.95,
-      "rationale": "Host-verdict opinion. The 'trust none of them' is hyperbolic — a more defensible position is 'check funding before trusting headline.' The advice to follow the funding is reasonable and matches academic findings on sponsorship bias. Pure stance, not a falsifiable empirical claim, so directTruth omitted.",
-      "hostStance": "asserts",
+      "rationale": "OECD/NSF data: in the US business funds ~70% of R&D performance, but 'scientific research' globally is closer to ~60% business-funded and much of basic research is public. The 70% figure is defensible for US total R&D but overstates for basic biomedical or policy research. Partial truth.",
+      "tags": ["research-funding", "private-industry", "verdict"],
       "inVerdictSection": true,
-      "dependencies": [
-        {"target": "zMFTLdqFUwQ:c_0010", "kind": "presupposes"},
-        {"target": "zMFTLdqFUwQ:c_0014", "kind": "presupposes"}
-      ]
+      "hostStance": "asserts"
     }
   ]
 }

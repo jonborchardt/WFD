@@ -1,57 +1,126 @@
 {
   "schemaVersion": 1,
   "transcriptId": "V7b2X8rqpsM",
-  "generatedAt": "2026-04-20T01:30:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "V7b2X8rqpsM:c_0001",
       "videoId": "V7b2X8rqpsM",
-      "text": "John Titor (spelled 'Teeter' by the auto-transcript) was a self-described temporal soldier from 2036 who first contacted the public in July 1998 via faxes to Art Bell's Coast to Coast AM, then in November 2000 began posting on the Time Travel Institute message board claiming he had been sent back in time on a mission to retrieve an IBM 5100 computer.",
-      "kind": "historical",
+      "text": "John Titor was a real time traveler from the year 2036 sent back to collect an IBM 5100 computer.",
+      "kind": "speculative",
       "entities": [
         "person:john teeter",
+        "person:teeter",
         "date_time:2036",
-        "person:art bell",
-        "organization:coast to coast am",
-        "date_time:1998",
-        "organization:time travel institute",
-        "organization:ibm",
-        "date_time:november 2nd 2000"
+        "organization:ibm"
       ],
-      "relationships": [
-        "r_0011",
-        "r_0012",
-        "r_0016",
-        "r_0017"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 679,
-          "charEnd": 794,
-          "timeStart": 54.42,
-          "timeEnd": 66.96,
-          "quote": "on July 29 1998 Art Bell host of Coast\nto Coast AM was running what he called\nopen timelines he wanted calls from\np"
-        },
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 3471,
-          "charEnd": 3700,
-          "timeStart": 242.519,
-          "timeEnd": 260.699,
-          "quote": "a little over two years after the time\ntraveler sent faxes to Art Bell a user\nwho called himself time traveler zero\nand later John Teeter created an account\non a message board called the time\ntravel Institute on November 2nd 2000"
+          "charStart": 566,
+          "charEnd": 657,
+          "timeStart": 40.92,
+          "timeEnd": 50.399,
+          "quote": "was born in the year 2036 John a\ntemporal Soldier would be sent back in\ntime his mission sa"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.7,
-      "rationale": "The historical existence of the Titor posts is well-documented: Art Bell did host Coast to Coast AM and ran open lines for time-traveler claimants; the Time Travel Institute forum posts dated November 2000 onward are real archived artifacts. The authorship is contested (see later claims) but the posts themselves and their content are real. The 'real time-traveler from 2036' framing is the host neutrally describing what Titor said, not asserting it is true.",
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.05,
+      "rationale": "Central premise of the video. Host later acknowledges leading hoax-exposure research by Joseph Matheny and by John Razimus that names specific people who likely authored the posts; multiple predictions failed (Civil War by 2005, nuclear war 2015, no post-2004 Olympics). Near-zero directTruth.",
+      "tags": ["titor", "time-travel", "claim"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
     },
     {
       "id": "V7b2X8rqpsM:c_0002",
       "videoId": "V7b2X8rqpsM",
-      "text": "Titor's stated motive for retrieving an IBM 5100 — that it was needed to debug legacy code threatened by the 2038 Unix epochalypse — is technically coherent because the 5100 secretly retained the ability to run APL programs from older IBM mainframes, a feature IBM never advertised publicly.",
+      "text": "Anonymous faxes claiming to be from a time traveler were received by Art Bell on Coast to Coast AM on July 29, 1998.",
+      "kind": "historical",
+      "entities": [
+        "person:art bell",
+        "date_time:1998"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V7b2X8rqpsM",
+          "charStart": 679,
+          "charEnd": 729,
+          "timeStart": 54.42,
+          "timeEnd": 60.539,
+          "quote": "on July 29 1998 Art Bell host of Coast\nto Coast AM"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Art Bell's July 29, 1998 Open Timelines broadcast is documented in the show's archives; the 1998 time-traveler faxes are the opening salvo of the Titor legend and are preserved online. The broadcast did happen; the fax's origin is what remains contested.",
+      "tags": ["art-bell", "coast-to-coast", "1998"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0003",
+      "videoId": "V7b2X8rqpsM",
+      "text": "Time travel was invented in 2034 at CERN using a Singularity engine from rotating micro black holes.",
+      "kind": "speculative",
+      "entities": [
+        "organization:cern",
+        "date_time:2034",
+        "technology:singularity engine",
+        "technology:time machine"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V7b2X8rqpsM",
+          "charStart": 1041,
+          "charEnd": 1073,
+          "timeStart": 82.5,
+          "timeEnd": 86.42,
+          "quote": "time travel was invented in 2034"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.03,
+      "rationale": "We are currently past several Titor milestones (Civil War by 2005, nuclear war 2015) without them occurring, and CERN's LHC does not produce manipulable Kerr black holes. The 2034 date is future but the technology described is not on any credible research trajectory.",
+      "tags": ["cern", "time-travel", "singularity"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0004",
+      "videoId": "V7b2X8rqpsM",
+      "text": "Frank Tipler's 1974 paper on a rotating cylinder proposed a theoretical method of time travel.",
+      "kind": "historical",
+      "entities": [
+        "person:frank tipler",
+        "technology:tipler sinusoid",
+        "date_time:1974"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V7b2X8rqpsM",
+          "charStart": 4361,
+          "charEnd": 4481,
+          "timeStart": 302.88,
+          "timeEnd": 312.12,
+          "quote": "tipler cylinder is a\ntheoretical method of time travel\noutlined in a paper by Frank tipler in\n1974 so we're off to an in"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Frank Tipler's 1974 paper 'Rotating cylinders and the possibility of global causality violation' (Physical Review D) is genuine published physics. Checkable citation.",
+      "tags": ["tipler", "physics", "1974"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0005",
+      "videoId": "V7b2X8rqpsM",
+      "text": "The IBM 5100 was needed to debug legacy Unix code because of a time-overflow problem in 2038.",
       "kind": "empirical",
       "entities": [
         "organization:ibm",
@@ -62,375 +131,321 @@
       "evidence": [
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 4977,
-          "charEnd": 5120,
-          "timeStart": 344.88,
-          "timeEnd": 361.199,
-          "quote": "Y2K did cause some\nsporadic problems something similar is\ngoing to to happen in 2038 and it could\nbe worse Unix systems measure time in\nseconds"
-        },
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 6018,
-          "charEnd": 6281,
-          "timeStart": 418.56,
-          "timeEnd": 441.06,
-          "quote": "most\npersonal computers like the IBM 5100\ncould only support the basic programming\nlanguage but the 5100 had special\nfunctionality that was hidden from the\npublic it could run programs written in\nbasic but it could also run APL programs\nwritten for IBM mainframes"
+          "charStart": 4663,
+          "charEnd": 4761,
+          "timeStart": 323.039,
+          "timeEnd": 332.58,
+          "quote": "5100 was needed to debug\nLegacy computer programs in 2036 because\nUnix has a problem in 2038 well "
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The Unix Y2038 problem (signed 32-bit time_t overflow on 19 Jan 2038) is real and documented. The IBM 5100's hidden APL/BASIC microcode capability is also documented — it was an emulator mode IBM did not publicize. This is one of the technically strongest pieces of the Titor narrative and is the main reason it has fooled people for 25+ years.",
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "rationale": "The Unix Year 2038 problem is real (signed 32-bit time_t overflow on January 19, 2038). The IBM 5100 did have an undocumented APL capability. However the assumption that future engineers would need a 60-year-old machine to fix this (rather than emulators or source code already archived) is dubious. Medium directTruth because the component facts are right but the joining inference is weak.",
+      "tags": ["ibm-5100", "y2038", "unix"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "V7b2X8rqpsM:c_0003",
+      "id": "V7b2X8rqpsM:c_0006",
       "videoId": "V7b2X8rqpsM",
-      "text": "Titor's mechanism for time travel — rotating-singularity 'tipler sinusoid' devices invented at CERN in 2034 and built by General Electric — is dressed up in real physics terminology (Frank Tipler's 1974 cylinder paper, Kerr black holes, the Everett-Wheeler many-worlds interpretation) but no such device or research program exists.",
-      "kind": "speculative",
-      "entities": [
-        "technology:tipler sinusoid",
-        "person:frank tipler",
-        "organization:cern",
-        "date_time:2034",
-        "organization:general electric",
-        "date_time:1974"
-      ],
-      "relationships": [
-        "r_0008"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 1041,
-          "charEnd": 1214,
-          "timeStart": 82.5,
-          "timeEnd": 98.939,
-          "quote": "time travel was invented in 2034\noffshoots of certain successful Fusion\nreactor research allowed scientists at\nCERN to produce the world's first\ncontained Singularity engine"
-        },
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 4340,
-          "charEnd": 4459,
-          "timeStart": 300.0,
-          "timeEnd": 315.6,
-          "quote": "tipler\nsinusoid or a tipler cylinder is a\ntheoretical method of time travel\noutlined in a paper by Frank tipler in\n1974"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.1,
-      "rationale": "Frank Tipler's 1974 paper on causality violation in massive rotating cylinders is real; Kerr black holes and Everett-Wheeler many-worlds are real physics. But CERN does not have any singularity-engine program, GE does not build time machines, and 'closed timelike curves' remain a theoretical curiosity that requires unphysical conditions (infinite cylinders or exotic matter). The framing is sci-fi window-dressing on real terminology.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "V7b2X8rqpsM:c_0004",
-      "videoId": "V7b2X8rqpsM",
-      "text": "Titor's predicted near-future timeline — a U.S. civil war beginning in 2004-2005, a brief but devastating World War III in 2015 with Russia and China killing roughly three billion people, and the U.S. fragmenting into five regions with the federal capital relocated to Omaha — has comprehensively failed to occur.",
+      "text": "A second American Civil War would begin in 2004 or 2005 according to Titor's predictions.",
       "kind": "empirical",
       "entities": [
         "event:civil war",
         "event:second civil war",
-        "event:world war",
-        "event:world war iii",
-        "location:russia",
-        "location:china",
         "location:united states",
-        "date_time:2015",
-        "date_time:2005",
-        "location:omaha nebraska",
-        "quantity:nearly 3 billion people"
-      ],
-      "relationships": [
-        "r_0044"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 8131,
-          "charEnd": 8390,
-          "timeStart": 544.019,
-          "timeEnd": 566.219,
-          "quote": "the Civil War in the United\nStates starts in 2004 and the war\naffects everyone at the age of 13 John\njoins a shotgun infantry unit called the\nFighting Diamondbacks and the war\ncontinues until 2015 and finally ends\nwith what he calls a very short World\nWar III"
-        },
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 19522,
-          "charEnd": 19590,
-          "timeStart": 1276.5,
-          "timeEnd": 1282.919,
-          "quote": "predicted a Civil War in the United\nStates that would begin in 2005."
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "Empirically and uncontroversially false: there was no U.S. civil war in 2004-2005, no World War III in 2015, no Russian/Chinese nuclear strike on U.S. cities, and no relocation of the U.S. capital to Omaha. The host himself acknowledges all of this. The only ambiguity is the apologist 'many-worlds dodge' that any failed prediction came true on a different timeline, which is unfalsifiable.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "V7b2X8rqpsM:c_0005",
-      "videoId": "V7b2X8rqpsM",
-      "text": "When confronted with these prediction failures, believers retreat to the many-worlds defense — Titor came from a different 'world line' so divergence between his timeline and ours explains every miss — which makes the entire claim unfalsifiable and therefore evidentially worthless.",
-      "kind": "opinion",
-      "entities": [
-        "person:john teeter",
-        "location:world line",
-        "group_or_movement:true believers"
+        "person:john teeter"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 7053,
-          "charEnd": 7159,
-          "timeStart": 486.06,
-          "timeEnd": 494.94,
-          "quote": "predictions like that could be wrong\nbecause he was from a different timeline\nwhich he called A World line"
+          "charStart": 8135,
+          "charEnd": 8198,
+          "timeStart": 544.019,
+          "timeEnd": 551.7,
+          "quote": "Civil War in the United\nStates starts in 2004 and the war\naffec"
         },
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 21467,
-          "charEnd": 21559,
-          "timeStart": 1388.58,
-          "timeEnd": 1399.139,
-          "quote": "True\nBelievers and there are still a lot of\nthose always fall back on the many\nworlds theory"
+          "charStart": 19522,
+          "charEnd": 19603,
+          "timeStart": 1276.5,
+          "timeEnd": 1282.919,
+          "quote": "predicted a Civil War in the United\nStates that would begin in 2005.\nobviously th"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "This is a textbook example of an unfalsifiable rescue: any wrong prediction is shielded by 'different timeline'. The host's framing is correct that this defense renders the original claim non-empirical. Marked 'opinion' because the meta-claim about epistemics is interpretive, not factual, but the underlying logic is widely accepted in philosophy of science (Popper-style demarcation).",
+      "directTruth": 0.02,
+      "rationale": "Failed prediction — no American civil war started in 2004 or 2005. Host himself concedes 'obviously that didn't happen'. Near-zero directTruth.",
+      "tags": ["civil-war", "failed-prediction", "titor"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "V7b2X8rqpsM:c_0004",
-          "kind": "supports",
-          "rationale": "The unfalsifiability charge bites only because the timeline predictions (c_0004) failed."
+          "target": "V7b2X8rqpsM:c_0001",
+          "kind": "presupposes",
+          "rationale": "The prediction only matters if Titor's account is treated as testimony."
         }
       ]
     },
     {
-      "id": "V7b2X8rqpsM:c_0006",
+      "id": "V7b2X8rqpsM:c_0007",
       "videoId": "V7b2X8rqpsM",
-      "text": "A handful of Titor's more diffuse predictions — a mad-cow disease outbreak in the early 2000s, the internet evolving toward something like the cell-phone system, a decentralized video-creator industry rivaling television, and a Higgs-boson-style breakthrough at CERN — were in fact correct, though all of them are arguably the kind of educated guess a tech-literate hoaxer in 2000 could have made.",
+      "text": "A nuclear World War III in 2015 would kill about three billion people, leaving the United States split into five regions.",
       "kind": "empirical",
       "entities": [
+        "event:civil war",
+        "location:united states",
+        "date_time:2015",
+        "person:john teeter"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V7b2X8rqpsM",
+          "charStart": 8536,
+          "charEnd": 8567,
+          "timeStart": 570.48,
+          "timeEnd": 573.18,
+          "quote": "three billion people are killed"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.01,
+      "rationale": "Another failed Titor prediction — no 2015 nuclear war occurred. Near-zero directTruth.",
+      "tags": ["world-war-3", "failed-prediction", "titor"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "V7b2X8rqpsM:c_0001",
+          "kind": "presupposes",
+          "rationale": "Prediction tied to Titor's credibility."
+        }
+      ]
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0008",
+      "videoId": "V7b2X8rqpsM",
+      "text": "Titor correctly predicted the early-2000s mad cow disease outbreak.",
+      "kind": "historical",
+      "entities": [
         "event:mad cow disease",
-        "technology:internet",
+        "person:john teeter"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V7b2X8rqpsM",
+          "charStart": 20240,
+          "charEnd": 20283,
+          "timeStart": 1317.72,
+          "timeEnd": 1322.82,
+          "quote": "mad cow disease outbreak in the early\n2000s"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.3,
+      "rationale": "There were real BSE cases in the early 2000s but mad cow was already a hot topic in 2000-2001 (British outbreak peaked 1992-1993; CJD link established by 1996). 'Predicting' an ongoing outbreak at a slightly later date is not meaningful precognition.",
+      "tags": ["mad-cow", "prediction"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0009",
+      "videoId": "V7b2X8rqpsM",
+      "text": "Titor correctly predicted that breakthrough high-energy physics at CERN would culminate with confirmation of the Higgs boson in 2013.",
+      "kind": "historical",
+      "entities": [
         "organization:cern",
+        "date_time:2013",
+        "person:john teeter"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V7b2X8rqpsM",
+          "charStart": 21003,
+          "charEnd": 21040,
+          "timeStart": 1362.299,
+          "timeEnd": 1368.179,
+          "quote": "in 2013 the Higgs\nboson was confirmed"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.25,
+      "rationale": "The 2012 CERN Higgs announcement (confirmed 2013) is real. But Titor's generic mention of 'breakthroughs in high energy physics at CERN' is vague enough that almost any notable CERN result over 30 years would count as fulfillment — this is retrofitting, not prediction.",
+      "tags": ["higgs-boson", "cern", "retrofit"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0010",
+      "videoId": "V7b2X8rqpsM",
+      "text": "Stephen Hawking initially held that information entering a black hole is lost forever, a position he later reversed.",
+      "kind": "historical",
+      "entities": [
         "person:stephen hawking"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 20228,
-          "charEnd": 20335,
-          "timeStart": 1315.679,
-          "timeEnd": 1326.84,
-          "quote": "there was a\nmad cow disease outbreak in the early\n2000s to America's First confirmed case\nof bovine spongif"
-        },
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 21011,
-          "charEnd": 21140,
-          "timeStart": 1362.299,
-          "timeEnd": 1376.28,
-          "quote": "the Higgs\nboson was confirmed Stephen Hawking\noriginally thought that everything that\nenters a black hole disappears forever\nPete"
+          "charStart": 21041,
+          "charEnd": 21136,
+          "timeStart": 1365.78,
+          "timeEnd": 1371.78,
+          "quote": "Stephen Hawking\noriginally thought that everything that\nenters a black hole disappears forever\n"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.65,
-      "rationale": "These individual hits are real: BSE was confirmed in U.S. cattle in 2003-2004; the smartphone-mediated mobile internet came to dominate by the late 2000s; YouTube/streaming did decentralize video; the Higgs was confirmed at CERN in July 2012; Hawking did publicly walk back the strict information-loss view in the mid-2000s. directTruth around 0.65 because the individual facts are true but the host's framing slightly inflates how impressive the predictions are — they are mostly extrapolations a tech-aware writer could make.",
+      "directTruth": 0.9,
+      "rationale": "The Hawking black-hole information paradox and his public concession in 2004 (paying off the Preskill bet) is documented physics history.",
+      "tags": ["hawking", "black-hole", "information-paradox"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "V7b2X8rqpsM:c_0007",
+      "id": "V7b2X8rqpsM:c_0011",
       "videoId": "V7b2X8rqpsM",
-      "text": "The leading attribution candidate for Titor is Joseph Matheny, a writer and trans-media artist behind 'Ong's Hat' — one of the earliest alternate-reality games — who has openly claimed he and three undisclosed collaborators built the Titor story as an internet-myth experiment, and whose tech and theoretical-physics background match the technical depth of the posts.",
-      "kind": "historical",
+      "text": "Joseph Matheny and three collaborators fabricated the John Titor story as an internet-mythology experiment.",
+      "kind": "empirical",
       "entities": [
         "person:joseph matheny",
         "person:matheny",
-        "role:trans media artist"
+        "person:john teeter"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V7b2X8rqpsM",
           "charStart": 22119,
-          "charEnd": 22220,
-          "timeStart": 1431.0,
-          "timeEnd": 1440.059,
-          "quote": "Joseph Matheny he's described\nas a writer and trans media artist and\nhe's mostly known for aung's hat"
+          "charEnd": 22133,
+          "timeStart": 1431,
+          "timeEnd": 1433.58,
+          "quote": "Joseph Matheny"
         },
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 23507,
-          "charEnd": 23554,
-          "timeStart": 1508.64,
-          "timeEnd": 1516.26,
-          "quote": "ong's hat had references\nto theoretical physics"
+          "charStart": 22340,
+          "charEnd": 22404,
+          "timeStart": 1445.039,
+          "timeEnd": 1449.539,
+          "quote": "he along with three other people\ndeveloped the John Teeter story"
         }
       ],
-      "confidence": 0.85,
+      "confidence": 0.8,
       "directTruth": 0.5,
-      "rationale": "Joseph Matheny is real and is well-known in ARG history for Ong's Hat (one of the earliest networked-fiction projects, tracing back to the early-90s BBS scene). He has indeed publicly claimed credit for Titor in interviews. Whether the claim itself is true is unproven — he refuses to name collaborators or provide artifacts — so directTruth ~0.5: he is a plausible author but the attribution is not established.",
-      "hostStance": "uncertain"
-    },
-    {
-      "id": "V7b2X8rqpsM:c_0008",
-      "videoId": "V7b2X8rqpsM",
-      "text": "An alternative attribution, championed by independent researcher 'Hoax Hunter' John Rasmus Houston, identifies cybersecurity professional Maury Haber as the likely Titor author, with his brother Larry Haber — a Florida entertainment attorney who registered the John Titor Foundation LLC in 2003 and the John Titor trademark in 2007 — providing the legal scaffolding to monetize the story.",
-      "kind": "historical",
-      "entities": [
-        "person:maury haber",
-        "person:larry haber",
-        "person:richard haber",
-        "location:florida"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 25017,
-          "charEnd": 25067,
-          "timeStart": 1600.86,
-          "timeEnd": 1607.52,
-          "quote": "convinced that\nJohn Teeter is actually Maury Haber"
-        },
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 25387,
-          "charEnd": 25539,
-          "timeStart": 1625.279,
-          "timeEnd": 1639.679,
-          "quote": "in 2003 he registered the John Teeter\nFoundation LLC a for-profit business and\nthis LLC published John teeter's posts\nas a book called A Time Traveler's"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.55,
-      "rationale": "The Larry Haber commercial-trademark facts are documented in public USPTO and Florida state filings — the John Titor Foundation LLC and trademark are real. Maury Haber's authorship is a strong circumstantial inference (text comparisons, P.O. box overlaps) but not confirmed by Maury himself. directTruth slightly above 0.5 because the commercial half is verified and the authorial half is the most-evidenced suspect after Matheny.",
-      "hostStance": "uncertain"
-    },
-    {
-      "id": "V7b2X8rqpsM:c_0009",
-      "videoId": "V7b2X8rqpsM",
-      "text": "Larry Haber's dual posture — claiming to represent the Titor family as their attorney while simultaneously running a for-profit LLC that publishes Titor's posts as a book and holds the Titor trademark — is a textbook conflict of interest that strongly suggests the family is fictional and Haber is in business with himself.",
-      "kind": "opinion",
-      "entities": [
-        "person:larry haber",
-        "organization:teeter family"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 25771,
-          "charEnd": 25881,
-          "timeStart": 1650.419,
-          "timeEnd": 1659.6,
-          "quote": "isn't that a conflict of interest\nI think it is but I guess Larry Haber\nand the Teeter family are okay with it"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.7,
-      "rationale": "The structural conflict — same person serving as fiduciary to the supposed real family and as commercial owner of their identity — is a fair professional-ethics critique. It does not prove the family is fictional, but combined with the absence of any public-facing 'Titor family' member, the inference that Haber is shielding either a hoax or a contrived claim is reasonable. Marked opinion because it is a judgment, not a falsifiable fact.",
+      "rationale": "Matheny has publicly claimed authorship in multiple interviews and his background in Ong's Hat ARG and tech industry makes his authorship plausible. However he has refused to name his three collaborators or provide hard evidence, so the claim rests on his word.",
+      "tags": ["matheny", "ong-hat", "arg"],
+      "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "V7b2X8rqpsM:c_0008",
-          "kind": "supports",
-          "rationale": "The commercial LLC and trademark are themselves the conflict; Haber's role is the bridge between the legal facts and the inference."
+          "target": "V7b2X8rqpsM:c_0001",
+          "kind": "contradicts",
+          "rationale": "[alternative] Provides an ordinary explanation (an ARG-style internet myth) for the Titor posts."
         }
       ]
     },
     {
-      "id": "V7b2X8rqpsM:c_0010",
-      "videoId": "V7b2X8rqpsM",
-      "text": "Titor promised believer Pamela that he would send a 'departure video' authenticated by a secret song known only to the two of them, but more than two decades later no such video has surfaced and the song has never been revealed — a textbook missing-payoff pattern for a hoax.",
-      "kind": "empirical",
-      "entities": [
-        "person:pamela",
-        "work_of_media:departure video",
-        "work_of_media:secret song"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 16687,
-          "charEnd": 16921,
-          "timeStart": 1095.48,
-          "timeEnd": 1116.12,
-          "quote": "John\nprovided Pamela with a secret song to\nact as a password this is something only\nthe two of them know so she could\nidentify imposters but to this day the\ndeparture video has not arrived and\nPamela has never revealed the secret\nsong"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The non-arrival of the departure video and continuing non-disclosure of the secret song are factually accurate as of 2026 — neither has surfaced in 25+ years of intense fan scrutiny. The 'this fits a hoax pattern' framing is reasonable: a real time-traveler's mailed-back artifact would be the strongest single evidence piece, and its persistent absence is telling.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "V7b2X8rqpsM:c_0011",
-      "videoId": "V7b2X8rqpsM",
-      "text": "Titor's farewell sermon — that contemporary Americans are 'lazy, self-centered, civically ignorant sheep' watching their constitution be torn away — is moralizing political commentary dressed up as a future-historian's lament, structurally identical to the way other political-fiction narrators (e.g., John Connor in the Terminator films) use the future to scold the present.",
-      "kind": "opinion",
-      "entities": [
-        "person:john teeter",
-        "law_or_policy:constitution"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "V7b2X8rqpsM",
-          "charStart": 16010,
-          "charEnd": 16131,
-          "timeStart": 1051.62,
-          "timeEnd": 1061.94,
-          "quote": "no one likes you in the future this time\nperiod is looked at as being full of\nlazy self-centered civically ignorant\nsheep"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.75,
-      "rationale": "The Titor narrative explicitly recycles John Connor / Sarah Connor tonal beats — Matheny himself states this was intentional in the host's account of his interviews. Reading the screed as didactic political ventriloquism rather than a sincere future-warning is a defensible literary judgment.",
-      "hostStance": "asserts"
-    },
-    {
       "id": "V7b2X8rqpsM:c_0012",
       "videoId": "V7b2X8rqpsM",
-      "text": "AJ's verdict: while he cannot conclusively determine whether Titor is real, he treats the prepper checklist Titor left behind (food/water/firearms/first-aid/Constitution-reading/community of trusted neighbors) as good general advice and is taking it for his own family — a weak Pascal's-wager framing where compliance is cheap so the EV favors hedging.",
-      "kind": "opinion",
+      "text": "John Titor is actually Maury Haber, eventually enlisting his lawyer brother Larry Haber to represent the story.",
+      "kind": "empirical",
       "entities": [
-        "person:aj",
-        "law_or_policy:u.s constitution"
+        "person:maury haber",
+        "person:larry haber",
+        "person:richard haber",
+        "person:john teeter"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 27525,
-          "charEnd": 27611,
-          "timeStart": 1761.36,
-          "timeEnd": 1769.82,
-          "quote": "do not eat or use products\nfrom any animal that is fed and needs\nparts of its own dead"
-        },
+          "charStart": 25032,
+          "charEnd": 25067,
+          "timeStart": 1603.38,
+          "timeEnd": 1605.84,
+          "quote": "John Teeter is actually Maury Haber"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.45,
+      "rationale": "John Razimus's text-comparison and P.O.-box tracking identifies Maury Haber as a leading candidate; the family's demonstrable commercial interest in the Titor brand (registered trademark, LLC, book publication) is suggestive. But the evidence is circumstantial and no party has confirmed authorship.",
+      "tags": ["haber", "maury-haber", "identity"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0013",
+      "videoId": "V7b2X8rqpsM",
+      "text": "Larry Haber trademarked 'John Titor' in 2007 and published the Titor posts as a for-profit book, a conflict of interest with representing the Titor family.",
+      "kind": "historical",
+      "entities": [
+        "person:larry haber",
+        "person:john teeter",
+        "organization:teeter family",
+        "date_time:2007"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "V7b2X8rqpsM",
-          "charStart": 28523,
-          "charEnd": 28667,
-          "timeStart": 1825.559,
-          "timeEnd": 1841.58,
-          "quote": "be skeptical\nof John Teeter at your own risk me\nI'm not willing to take the chance\nthank you so much for hanging out with\nme today my name is AJ"
+          "charStart": 25545,
+          "charEnd": 25607,
+          "timeStart": 1636.86,
+          "timeEnd": 1642.14,
+          "quote": "Larry Haber also registered John Teeter\nas a trademark in 2007"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.5,
-      "rationale": "The advice (food prep, first aid, community) is genuinely sensible regardless of Titor's veracity, so the Pascal-wager framing is not unreasonable. directTruth at 0.5 because the host is self-aware that this is a credulity-flavored hedge rather than an empirical endorsement; he is asserting a personal disposition, not a falsifiable claim about the world.",
-      "hostStance": "asserts",
+      "directTruth": 0.85,
+      "rationale": "USPTO trademark record and Florida LLC filings are public record and confirm the registrations. The conflict-of-interest interpretation is host editorializing but on the facts is well-grounded.",
+      "tags": ["haber", "trademark", "conflict-of-interest"],
       "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "V7b2X8rqpsM:c_0001",
-          "kind": "elaborates",
-          "rationale": "The verdict pivots back to the Titor framing introduced in the opening claim."
+          "target": "V7b2X8rqpsM:c_0012",
+          "kind": "supports",
+          "rationale": "Commercial exploitation of the Titor identity by the Haber family is consistent with their being its creators."
+        }
+      ]
+    },
+    {
+      "id": "V7b2X8rqpsM:c_0014",
+      "videoId": "V7b2X8rqpsM",
+      "text": "The tipler sinusoid described in Titor's first post drew directly from Frank Tipler's 1974 rotating-cylinder paper, showing genuine physics literacy.",
+      "kind": "empirical",
+      "entities": [
+        "technology:tipler sinusoid",
+        "person:frank tipler",
+        "person:john teeter"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V7b2X8rqpsM",
+          "charStart": 4051,
+          "charEnd": 4100,
+          "timeStart": 283.139,
+          "timeEnd": 288.84,
+          "quote": "tipler sinusoid\nI will be happy to post pictures "
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.7,
+      "rationale": "The Tipler reference and Kerr-metric rotating-black-hole framing are real theoretical physics. This is evidence that the Titor author was scientifically literate, not evidence that Titor is real — supports the Matheny/Haber attribution more than the time-traveler thesis.",
+      "tags": ["tipler", "physics", "post"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "V7b2X8rqpsM:c_0011",
+          "kind": "supports",
+          "rationale": "Technical plausibility of posts is consistent with authorship by tech-literate hoaxers."
         }
       ]
     }

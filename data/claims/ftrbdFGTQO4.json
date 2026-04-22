@@ -1,411 +1,414 @@
 {
   "schemaVersion": 1,
   "transcriptId": "ftrbdFGTQO4",
-  "generatedAt": "2026-04-20T03:15:00.000Z",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "ftrbdFGTQO4:c_0001",
       "videoId": "ftrbdFGTQO4",
-      "text": "On September 1, 1859 astronomer Richard Carrington became the first eyewitness to a major coronal mass ejection by directly observing a flash of intense white light bursting from a sunspot roughly ten times the size of Earth.",
+      "text": "On September 1, 1859 astronomer Richard Carrington was observing the sun when he saw a sunspot about ten times the size of Earth emit a flash of intense white light, the first recorded observation of a major coronal mass ejection.",
       "kind": "historical",
       "entities": [
-        "person:richard carrington",
-        "date_time:september 1st 1859",
-        "event:coronal mass ejection",
-        "quantity:about 10 times the size of the earth"
+        "date_time:1859",
+        "location:earth",
+        "event:carrington event"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ftrbdFGTQO4",
-          "charStart": 818,
-          "charEnd": 919,
-          "timeStart": 58.64,
-          "timeEnd": 67.2,
-          "quote": "on september 1st astronomer richard\ncarrington was studying the sun when he\nnoticed something unusual"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 1077,
-          "charEnd": 1181,
-          "timeStart": 73.36,
-          "timeEnd": 82.799,
-          "quote": "carrington didn't realize was he had\nbecome the first eyewitness of a major\ncoronal mass ejection or cme"
+          "charStart": 800,
+          "charEnd": 960,
+          "timeStart": 50.24,
+          "timeEnd": 60.48,
+          "quote": "d out why\n[Music]\non september 1st astronomer richard\ncarrington was studying the sun when he\nnoticed something unusual at about 11\na.m he was observing a huge "
         }
       ],
-      "confidence": 0.99,
-      "directTruth": 0.95,
-      "rationale": "Well-established history: Carrington's September 1, 1859 observation of a white-light solar flare from his Redhill observatory is the canonical first observation, independently corroborated by Richard Hodgson the same day. The sunspot group AR-A6520 was very large (estimated 10x Earth-area is in the right order of magnitude). Modern reconstructions class the associated CME as one of the most extreme in the historical record."
+      "confidence": 0.95,
+      "directTruth": 0.88,
+      "rationale": "Richard Carrington's September 1, 1859 white-light flare observation at his Redhill (UK) observatory is extensively documented and is the canonical first recorded solar flare observation. The Earth-sized sunspot and CME framing match modern consensus.",
+      "hostStance": "asserts"
     },
     {
       "id": "ftrbdFGTQO4:c_0002",
       "videoId": "ftrbdFGTQO4",
-      "text": "The 1859 Carrington Event caused the strongest geomagnetic storm in recorded history: telegraph lines in Europe and North America shorted out, equipment threw sparks and burst into flames, and disconnected telegraphs continued to operate from induced current alone.",
+      "text": "About 17 hours after the 1859 flare, the Carrington-event CME hit Earth and produced auroras visible as far south as Miami, Cuba, and Colombia and north of Brisbane in the southern hemisphere.",
       "kind": "historical",
       "entities": [
-        "event:carrington event",
-        "technology:telegraph lines",
-        "technology:telegraphs",
-        "facility:equipment",
-        "location:europe",
+        "location:north america",
+        "location:miami",
+        "location:cuba",
+        "location:brisbane",
+        "event:carrington event"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 1219,
+          "charEnd": 1380,
+          "timeStart": 78.72,
+          "timeEnd": 89.28,
+          "quote": "17 hours later\nthe night sky in north america lit up\nlike the day aurora borealis typically\nseen near the north pole were visible in\nmiami and cuba and as far so"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.82,
+      "rationale": "Contemporary newspaper reports document auroras at Carribbean and South American latitudes during the Carrington event. The 17-hour transit time matches the observed September 1–2, 1859 sequence.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "ftrbdFGTQO4:c_0001", "kind": "elaborates" }
+      ]
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0003",
+      "videoId": "ftrbdFGTQO4",
+      "text": "During the 1859 storm telegraph lines in Europe and North America shorted, threw sparks, and in some cases burst into flames, injuring telegraph operators with electric shocks.",
+      "kind": "historical",
+      "entities": [
+        "location:north america",
+        "location:europe"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 1650,
+          "charEnd": 1810,
+          "timeStart": 107.04,
+          "timeEnd": 118.24,
+          "quote": " around the world telegraph lines\nwere shorting out in europe and north\namerica equipment was throwing sparks\nand some burst into flames telegraph\noperators wer"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Newspapers from September 1859 describe telegraph office fires, sparks, and operator electric shocks, along with the famous anomaly of telegraphs continuing to transmit with power supplies disconnected. Well-documented.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "ftrbdFGTQO4:c_0002", "kind": "elaborates" }
+      ]
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0004",
+      "videoId": "ftrbdFGTQO4",
+      "text": "The Kew Observatory in London recorded a major geomagnetic disturbance simultaneous with Carrington's flare observation, establishing the first correlation between solar flares and Earth's magnetic field.",
+      "kind": "historical",
+      "entities": [
+        "location:london",
+        "organization:scientists"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 2500,
+          "charEnd": 2660,
+          "timeStart": 160.88,
+          "timeEnd": 171.2,
+          "quote": "the eruption the q\nobservatory in london reported a large\nmagnetic disturbance in the ionosphere\nthis allowed scientists to correctly\nlink geomagnetic storms wi"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.82,
+      "rationale": "Kew Observatory did record a magnetometer trace coincident with Carrington's flare. This simultaneous observation is the foundational datum linking solar activity to geomagnetic storms and is standard in space-weather histories.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "ftrbdFGTQO4:c_0001", "kind": "supports" }
+      ]
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0005",
+      "videoId": "ftrbdFGTQO4",
+      "text": "Coronal mass ejections occur two or three times a day on average, but once or twice every hundred years the sun produces superstorms capable of reaching Earth.",
+      "kind": "empirical",
+      "entities": [
+        "organization:cme",
+        "organization:cmes",
+        "event:solar storm",
+        "event:solar storms"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 3790,
+          "charEnd": 3950,
+          "timeStart": 246.0,
+          "timeEnd": 257.12,
+          "quote": " sun\non average cmes happen two or three\ntimes a day but once or twice every\nhundred years the sun creates super\nstorms that hit the earth and when they\ndo the "
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.68,
+      "rationale": "Average CME rates of one-to-several per day match SOHO-era observations. The 'once or twice every hundred years' superstorm rate is a common heuristic but the true return period for Carrington-class events is uncertain (estimates range roughly 100–500 years).",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0006",
+      "videoId": "ftrbdFGTQO4",
+      "text": "Ice core samples show powerful solar storms struck Earth multiple times between 7000 and 5000 BC, and a 774 AD event (the Miyake event) produced the largest carbon-14 spike ever recorded.",
+      "kind": "empirical",
+      "entities": [
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 4070,
+          "charEnd": 4230,
+          "timeStart": 264.24,
+          "timeEnd": 273.36,
+          "quote": "e ice core samples\nshow powerful solar storms hit the earth\nseveral times between 7000 and 5000 bc\nin 774 a.d an extreme solar storm called\nthe miyake event cau"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.78,
+      "rationale": "The 774 AD Miyake event was first identified in tree-ring carbon-14 records by Miyake et al. 2012 and subsequently cross-confirmed in polar ice beryllium-10. Ice-core evidence of Holocene superstorms including the 7000–5000 BC window is supported.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0007",
+      "videoId": "ftrbdFGTQO4",
+      "text": "A 993 AD solar storm left a carbon-14 spike in tree trunks that archaeologists use to date ancient wood, including to confirm Norse arrival in North America roughly 500 years before Columbus.",
+      "kind": "historical",
+      "entities": [
         "location:north america"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ftrbdFGTQO4",
-          "charStart": 1668,
-          "charEnd": 1786,
-          "timeStart": 107.04,
-          "timeEnd": 117.119,
-          "quote": "telegraph lines\nwere shorting out in europe and north\namerica equipment was throwing sparks\nand some burst into flames"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 2094,
-          "charEnd": 2135,
-          "timeStart": 129.84,
-          "timeEnd": 136.64,
-          "quote": "this\nbecame known as the carrington event"
-        }
-      ],
-      "confidence": 0.99,
-      "directTruth": 0.92,
-      "rationale": "Documented in primary sources. Period newspapers and telegraph-company records describe operators receiving shocks, paper igniting, and lines continuing to transmit after batteries were disconnected. The naming 'Carrington Event' is also accurate.",
-      "dependencies": [
-        {
-          "target": "ftrbdFGTQO4:c_0001",
-          "kind": "elaborates",
-          "rationale": "Describes the terrestrial impact of the CME Carrington observed."
-        }
-      ]
-    },
-    {
-      "id": "ftrbdFGTQO4:c_0003",
-      "videoId": "ftrbdFGTQO4",
-      "text": "Carrington-class solar superstorms are recurring rather than one-off — ice-core, tree-ring and historical-aurora records show events of comparable scale, including the 774 AD Miyake event (the largest carbon-14 spike ever recorded) and storms in 993, 1052, 1279, 1582, 1730, 1770 and 1989.",
-      "kind": "empirical",
-      "entities": [
-        "event:miyake event",
-        "date_time:774 a.d",
-        "date_time:993 a.d",
-        "date_time:1052",
-        "date_time:1279",
-        "date_time:1582",
-        "date_time:1730",
-        "date_time:1770",
-        "date_time:1989"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 4169,
-          "charEnd": 4284,
-          "timeStart": 262,
-          "timeEnd": 273.44,
-          "quote": "in 774 a.d an extreme solar storm called\nthe miyake event caused the largest rise\nin carbon 14 levels ever recorded"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The 774 AD Miyake event (Miyake et al., Nature 2012) is real and is indeed the largest known C-14 spike, attributed to either an extreme solar event or a nearby supernova — the solar interpretation is now favored. The 993 AD event is also confirmed by independent C-14 records and was used to date Norse settlement at L'Anse aux Meadows. Historical aurora chronologies do show storm activity in the listed years."
-    },
-    {
-      "id": "ftrbdFGTQO4:c_0004",
-      "videoId": "ftrbdFGTQO4",
-      "text": "Modern infrastructure makes us vastly more vulnerable than 1859: the comparatively modest 1989 storm took down the Quebec power grid, blacked out millions for nine hours, fried satellites and disrupted Russian radio — and it was a fraction of the strength of the Carrington Event.",
-      "kind": "historical",
-      "entities": [
-        "date_time:1989",
-        "event:carrington event",
-        "location:quebec province",
-        "location:russia",
-        "technology:satellites",
-        "facility:power grids"
-      ],
-      "relationships": [
-        "r_0022"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 5654,
-          "charEnd": 5739,
-          "timeStart": 352,
-          "timeEnd": 361.6,
-          "quote": "in 1989 the earth was hit by a\nsolar storm that disrupted radio signals\nacross russia"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 6054,
-          "charEnd": 6133,
-          "timeStart": 373.84,
-          "timeEnd": 383.919,
-          "quote": "millions of\npeople in quebec province were put in\ntotal blackout for nine hours"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 6230,
-          "charEnd": 6319,
-          "timeStart": 386.08,
-          "timeEnd": 396.319,
-          "quote": "the solar storms of 1989 and\n2003 were a fraction of the strength of\nthe carrington event"
-        }
-      ],
-      "confidence": 0.98,
-      "directTruth": 0.92,
-      "rationale": "Verified. The March 13, 1989 geomagnetic storm caused a full collapse of the Hydro-Québec grid leaving ~6 million people without power for ~9 hours, damaged transformers in New Jersey, and is widely estimated at roughly one third the intensity of Carrington. The Halloween 2003 storms damaged satellites including SOHO and ADEOS-II. The 'fraction of Carrington' framing is accurate."
-    },
-    {
-      "id": "ftrbdFGTQO4:c_0005",
-      "videoId": "ftrbdFGTQO4",
-      "text": "A Carrington-class CME would cascade catastrophically through modern civilization within hours: GPS and satellite networks would fry, power grids and transformers would burn out, water and fuel pumps would stop, telecoms and the internet would go dark, and many governments would impose martial law or collapse outright.",
-      "kind": "speculative",
-      "entities": [
-        "organization:cme",
-        "event:carrington event",
-        "facility:power grids",
-        "facility:transformers",
-        "technology:satellites",
-        "technology:gps system",
-        "technology:telecommunications",
-        "law_or_policy:martial law",
-        "organization:governments"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 11749,
-          "charEnd": 11816,
-          "timeStart": 740.8,
-          "timeEnd": 747.6,
-          "quote": "right now there are over nineteen\n000 satellites orbiting the earth"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 12284,
-          "charEnd": 12388,
-          "timeStart": 771.12,
-          "timeEnd": 779.92,
-          "quote": "most governments would have to impose\nmartial law immediately and many\ngovernments would simply collapse"
-        }
-      ],
-      "confidence": 0.92,
-      "directTruth": 0.55,
-      "rationale": "The directionality is right and supported by Lloyd's of London 2013, NASA/NAS 'Severe Space Weather Events' (2008) and FEMA studies — a Carrington-class storm now would cause trillions in damage, multi-month grid outages in worst-affected regions, and cascading societal stress. The specific 'martial law / governments collapse outright' framing is at the worst-case end of those models. directTruth is moderate because the qualitative scenario is plausible but the most catastrophic predictions (continental years-long blackouts, government collapse) are upper-tail.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "ftrbdFGTQO4:c_0006",
-      "videoId": "ftrbdFGTQO4",
-      "text": "In July 2012 a CME of comparable magnitude to the Carrington Event missed Earth by only nine days — if it had hit, ~25% of Earth's population could have lost power for weeks, 160 million Americans for months, and US damage alone would have run into the trillions.",
-      "kind": "historical",
-      "entities": [
-        "date_time:2012",
-        "date_time:july",
-        "organization:cme",
-        "event:carrington event",
-        "nationality_or_ethnicity:americans",
-        "quantity:trillions of dollars"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 12487,
-          "charEnd": 12558,
-          "timeStart": 795.2,
-          "timeEnd": 802.56,
-          "quote": "in july 2012 the largest cma in a\ncentury missed the earth by nine days"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 12633,
-          "charEnd": 12735,
-          "timeStart": 802.56,
-          "timeEnd": 813.12,
-          "quote": "if that\nsolar storm hit us a quarter of the\nearth's population could have been\nwithout power for weeks"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 12736,
-          "charEnd": 12789,
-          "timeStart": 810.68,
-          "timeEnd": 817.36,
-          "quote": "160 million americans would be in the\ndark for months"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 12844,
-          "charEnd": 12904,
-          "timeStart": 817.36,
-          "timeEnd": 823.279,
-          "quote": "damage in the u.s alone would have cost\ntrillions of dollars"
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.85,
-      "rationale": "The July 23, 2012 CME (observed by STEREO-A) is real and is widely characterized as the most powerful since 1859 — Earth's orbital position was such that the ejection passed through where Earth had been ~9 days earlier. Damage estimates (Baker et al., NASA 2012; Lloyd's 2013) put US-only impact in the $0.6-2.6 trillion range, consistent with 'trillions.' The 160-million figure aligns with NERC modeling of vulnerable East Coast / Gulf transformer corridors."
-    },
-    {
-      "id": "ftrbdFGTQO4:c_0007",
-      "videoId": "ftrbdFGTQO4",
-      "text": "Our entire early-warning capability against a Carrington-class storm is one satellite — the Advanced Composition Explorer (ACE) at ~900,000 miles from Earth — which gives roughly 30 minutes to ground planes, safe satellites and power down grids.",
-      "kind": "empirical",
-      "entities": [
-        "organization:advanced composition explorer",
-        "organization:cme",
-        "quantity:900 000 miles",
-        "quantity:half an hour",
-        "technology:satellites"
-      ],
-      "relationships": [
-        "r_0031"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 13792,
-          "charEnd": 13865,
-          "timeStart": 874.639,
-          "timeEnd": 884.399,
-          "quote": "the advanced\ncomposition explorer sits about 900 000\nmiles from the earth"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 14001,
-          "charEnd": 14114,
-          "timeStart": 889.44,
-          "timeEnd": 900.32,
-          "quote": "we have 30 minutes\nfor planes to be grounded for satellites\nto be put into safe mode and grids to be\npowered down"
+          "charStart": 4280,
+          "charEnd": 4440,
+          "timeStart": 278.16,
+          "timeEnd": 288.08,
+          "quote": "rded in 993\na.d a storm left evidence in tree trunks\nthat archaeologists still use to date\nancient wood materials and this is one\nof the ways they confirmed tha"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Mostly correct. ACE (launched 1997) sits at the L1 Lagrange point ~1.5 million km / ~932,000 miles from Earth, so '900,000 miles' is essentially right. ACE plus DSCOVR (since 2015) plus Wind do provide CME magnetic-field measurements with ~15-60 min lead time depending on CME speed. The video is slightly out of date in framing ACE as the only such asset, but the order of magnitude on warning time is accurate."
+      "directTruth": 0.85,
+      "rationale": "The 992–993 AD Miyake event was used by Kuitems et al. (Nature 2021) to precisely date Norse occupation at L'Anse aux Meadows to AD 1021. The '500 years before Columbus' framing is accurate.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "ftrbdFGTQO4:c_0006", "kind": "elaborates" }
+      ]
     },
     {
       "id": "ftrbdFGTQO4:c_0008",
       "videoId": "ftrbdFGTQO4",
-      "text": "The base-rate risk is non-trivial: about a 4% annual chance of a severe solar storm and 0.7% of a Carrington-level event, rising to 28% / 4% during the solar maximum — and we are currently inside Solar Cycle 25 (begun 2019, peaking ~2025).",
-      "kind": "empirical",
+      "text": "In 1989 a solar storm knocked out power in Quebec province for nine hours, disrupted Russian radio signals, caused satellite drift, and induced sensor malfunctions on the Space Shuttle Discovery.",
+      "kind": "historical",
       "entities": [
-        "quantity:four percent",
-        "event:carrington level event",
-        "event:severe solar storm",
-        "event:solar maximum",
-        "date_time:2019",
-        "date_time:2025"
+        "date_time:1989",
+        "event:solar storm",
+        "location:quebec province"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ftrbdFGTQO4",
-          "charStart": 14190,
-          "charEnd": 14329,
-          "timeStart": 900.32,
-          "timeEnd": 913.04,
-          "quote": "now on average there's a four\npercent chance of a severe solar storm\nin any given year and a 0.7 percent\nchance of a carrington level event"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 14447,
-          "charEnd": 14532,
-          "timeStart": 920.32,
-          "timeEnd": 931.68,
-          "quote": "we're currently in solar cycle 25\nwhich began in 2019 and is expected to\npeak in 2025"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 14534,
-          "charEnd": 14667,
-          "timeStart": 925.36,
-          "timeEnd": 938.72,
-          "quote": "during the solar maximum\nchances of a severe solar storm go to 28\nand chance of a carrington superstorm go\nto four percent every year"
+          "charStart": 5640,
+          "charEnd": 5800,
+          "timeStart": 368.4,
+          "timeEnd": 378.24,
+          "quote": "ally\nhappened in 1989 the earth was hit by a\nsolar storm that disrupted radio signals\nacross russia oh the russians had to be\nannoyed oh they were at first they"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.55,
-      "rationale": "The Solar Cycle 25 timing is correct (began Dec 2019, NOAA SWPC's revised forecast moved peak to mid-late 2024 — close to 2025). The probability figures cite Riley (2012) 'On the probability of occurrence of extreme space weather events' which gave ~12% per decade for a Carrington-class event under one model, but other studies (Love 2012, Tsubouchi & Omura 2007) give substantially lower estimates. The 28% / 4% solar-max numbers are at the high end of the literature.",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The March 13, 1989 geomagnetic storm caused the Hydro-Québec grid collapse for nine hours and produced documented satellite and shuttle anomalies. Historically solid.",
       "hostStance": "asserts"
     },
     {
       "id": "ftrbdFGTQO4:c_0009",
       "videoId": "ftrbdFGTQO4",
-      "text": "Governments and grid operators have not made the infrastructure investments necessary to withstand a Carrington-class storm, so individuals and local communities must take responsibility for their own preparedness — food, water, thermal blankets, hand-crank radios, hygiene supplies kept on hand at all times.",
-      "kind": "opinion",
+      "text": "The 2003 Halloween solar storm put millions of people in the US and Canada in darkness for 12 hours.",
+      "kind": "historical",
       "entities": [
-        "organization:government",
-        "organization:governments",
-        "person:aj"
+        "date_time:2003",
+        "event:solar storm"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ftrbdFGTQO4",
-          "charStart": 15143,
-          "charEnd": 15196,
-          "timeStart": 962.24,
-          "timeEnd": 970.959,
-          "quote": "we can't\ncount on the government we absolutely\ncannot"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 15325,
-          "charEnd": 15403,
-          "timeStart": 972.48,
-          "timeEnd": 980.959,
-          "quote": "make sure your\nfamily has a readiness plan maintain a\nsupply of food and water"
-        },
-        {
-          "transcriptId": "ftrbdFGTQO4",
-          "charStart": 15739,
-          "charEnd": 15790,
-          "timeStart": 996.48,
-          "timeEnd": 1005.839,
-          "quote": "it's just\na matter of time before the lights go\nout"
+          "charStart": 6110,
+          "charEnd": 6270,
+          "timeStart": 396.32,
+          "timeEnd": 406.16,
+          "quote": "blackout for nine hours in 2003\nanother storm put millions of people in\nthe u.s and canada in darkness for 12\nhours and the solar storms of 1989 and\n2003 were a"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.6,
-      "rationale": "Mixed. Factually, US grid hardening efforts (FERC reliability standards, NERC TPL-007 GMD standard, transformer-spare initiatives) have advanced since 2013 — so 'no resources are coming' is somewhat overstated. The personal-preparedness recommendations (water, food, hand-crank radio, blankets) are standard FEMA / Red Cross guidance for any extended power outage and are sound advice. The framing 'matter of time before the lights go out' matches the long-tail risk but treats certainty rather than probability.",
-      "inVerdictSection": true,
-      "hostStance": "asserts"
+      "confidence": 0.7,
+      "directTruth": 0.35,
+      "rationale": "The October 2003 Halloween storms did cause a Sweden grid outage and widespread satellite damage, but the specific claim of 'millions in US/Canada darkness for 12 hours' overstates the North American impact, which was more limited than the 1989 Quebec event.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "ftrbdFGTQO4:c_0008", "kind": "elaborates" }
+      ]
     },
     {
       "id": "ftrbdFGTQO4:c_0010",
       "videoId": "ftrbdFGTQO4",
-      "text": "After a Carrington-class strike civilization could be set back roughly 200 years technologically and recovery could take months to a decade, depending on transformer-replacement bottlenecks and supply-chain integrity.",
-      "kind": "speculative",
+      "text": "In July 2012 the largest CME in a century missed Earth by nine days; had it hit, a quarter of Earth's population would have been without power for weeks and US damage alone would have cost trillions.",
+      "kind": "empirical",
       "entities": [
-        "event:carrington event",
-        "facility:transformers",
-        "organization:civilization"
+        "date_time:2012",
+        "date_time:july",
+        "organization:cme"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "ftrbdFGTQO4",
-          "charStart": 13090,
-          "charEnd": 13139,
-          "timeStart": 829.44,
-          "timeEnd": 836.88,
-          "quote": "an instant 200 year\nthrust backward in technology"
+          "charStart": 12480,
+          "charEnd": 12640,
+          "timeStart": 834.8,
+          "timeEnd": 846.72,
+          "quote": "Music]\nin july 2012 the largest cma in a\ncentury missed the earth by nine days\nthat was the luckiest thing to happen to\nour species in hundreds of years if that"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.4,
-      "rationale": "The '10 years to repair some grids' estimate comes from the 2008 NAS report, primarily driven by long lead times for high-voltage transformer manufacturing (which is largely overseas). The '200 years backward' framing is rhetorical — it captures an emotional intuition but isn't quantitative. Months-to-years for partial recovery is well-supported; 'thrown back 200 years' is hyperbole.",
+      "directTruth": 0.78,
+      "rationale": "The July 23, 2012 CME was a Carrington-class event that crossed Earth's orbit nine days after Earth had passed the impact point. Observed by STEREO-A. NASA risk estimates match the video's framing. The trillions-dollar figure is a reasonable upper bound.",
+      "hostStance": "asserts",
       "dependencies": [
-        {
-          "target": "ftrbdFGTQO4:c_0005",
-          "kind": "elaborates",
-          "rationale": "Quantifies the recovery timeline of the cascade scenario."
-        }
+        { "target": "ftrbdFGTQO4:c_0005", "kind": "elaborates" }
       ]
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0011",
+      "videoId": "ftrbdFGTQO4",
+      "text": "NASA's STEREO spacecraft launched in 2006 can spot a CME almost immediately, but cannot determine the CME's magnetic field orientation, which is the key determinant of Earth impact severity.",
+      "kind": "empirical",
+      "entities": [
+        "organization:stereo",
+        "organization:cme",
+        "date_time:2006"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 13240,
+          "charEnd": 13400,
+          "timeStart": 886.64,
+          "timeEnd": 896.72,
+          "quote": "stressful well\nnasa's solar terrestrial relations\nobservatory spacecraft called stereo\nlaunched in 2006 and it can spot a cme\nalmost immediately\nbut oh no but t"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.78,
+      "rationale": "STEREO-A and STEREO-B launched October 25, 2006 for heliospheric imaging. STEREO coronagraphs detect CMEs but do not directly resolve their magnetic-field orientation — this is accurate.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0012",
+      "videoId": "ftrbdFGTQO4",
+      "text": "The Advanced Composition Explorer (ACE), stationed about 900,000 miles from Earth, can measure a CME's magnetic field orientation and gives roughly 30 minutes of warning time before impact.",
+      "kind": "empirical",
+      "entities": [
+        "facility:equipment",
+        "organization:cme"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 13790,
+          "charEnd": 13950,
+          "timeStart": 923.68,
+          "timeEnd": 933.84,
+          "quote": "w the advanced\ncomposition explorer sits about 900 000\nmiles from the earth and this satellite\ncan detect the cme's magnetic field\nwhich gives us how much time "
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "ACE orbits L1 at roughly 1.5 million km (~930,000 miles) from Earth and does measure solar-wind magnetic field upstream. The 30-minute warning is a standard reference figure, depending on CME speed.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "ftrbdFGTQO4:c_0011", "kind": "elaborates" }
+      ]
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0013",
+      "videoId": "ftrbdFGTQO4",
+      "text": "On average, there is a roughly four percent chance of a severe solar storm in any given year and a 0.7 percent chance of a Carrington-level event.",
+      "kind": "empirical",
+      "entities": [
+        "event:solar storm",
+        "quantity:four percent"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 14200,
+          "charEnd": 14360,
+          "timeStart": 952.32,
+          "timeEnd": 961.84,
+          "quote": "rage there's a four\npercent chance of a severe solar storm\nin any given year and a 0.7 percent\nchance of a carrington level event\nbut every 11 years the sun ent"
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.45,
+      "rationale": "Probability estimates for Carrington-level events vary widely in the literature. Pete Riley's 2012 paper famously estimated ~12% per decade (close to this 0.7% per year), but subsequent analyses span a factor of several. The numbers here are plausible but uncertain.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0014",
+      "videoId": "ftrbdFGTQO4",
+      "text": "Solar cycle 25 began in 2019 and is expected to peak in 2025, raising annual odds to 28% for severe storms and 4% for a Carrington-class superstorm.",
+      "kind": "empirical",
+      "entities": [
+        "event:solar maximum",
+        "date_time:2019"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 14450,
+          "charEnd": 14610,
+          "timeStart": 969.12,
+          "timeEnd": 978.16,
+          "quote": "re currently in solar cycle 25\nwhich began in 2019 and is expected to\npeak in 2025. during the solar maximum\nchances of a severe solar storm go to 28\nand chance"
+        }
+      ],
+      "confidence": 0.65,
+      "directTruth": 0.4,
+      "rationale": "Solar Cycle 25 did begin around December 2019 and is peaking around 2024–2025. The specific 28% / 4% odds during maximum appear to be a rough reformulation of Riley-style statistics scaled to cycle-maximum periods — order-of-magnitude plausible, not precise.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "ftrbdFGTQO4:c_0013", "kind": "elaborates" }
+      ]
+    },
+    {
+      "id": "ftrbdFGTQO4:c_0015",
+      "videoId": "ftrbdFGTQO4",
+      "text": "Governments have not diverted sufficient resources toward solar-storm preparedness because a four-percent annual risk is insufficiently alarming, leaving individual preparedness (food, water, thermal blankets, radios) as the practical defense.",
+      "kind": "opinion",
+      "entities": [
+        "organization:governments",
+        "quantity:resources"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "ftrbdFGTQO4",
+          "charStart": 14760,
+          "charEnd": 14921,
+          "timeStart": 988.64,
+          "timeEnd": 998.32,
+          "quote": "ed in recent years a\nfour percent chance is just not scary\nenough for governments to take the\nnecessary action we need more resources\ndiverted to research more s"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.5,
+      "rationale": "Government under-investment in space-weather hardening is a legitimate critique echoed by NOAA and NASA advisory panels. The implicit prescription for personal prepping is an opinion (solar storms differ from other disasters in that no amount of personal gear prevents grid collapse).",
+      "hostStance": "asserts"
     }
   ]
 }

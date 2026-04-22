@@ -1,218 +1,45 @@
 {
   "schemaVersion": 1,
   "transcriptId": "FXfKqDdqfJE",
-  "generatedAt": "2026-04-20T00:48:00.000Z",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "FXfKqDdqfJE:c_0001",
       "videoId": "FXfKqDdqfJE",
-      "text": "In summer 1974 in Somerset, England, Peter Williamson allegedly vanished in front of 16 eyewitnesses during a lightning strike at a backyard barbecue and reappeared three days later in his own yard with no memory of the missing time.",
-      "kind": "speculative",
-      "entities": [
-        "person:peter williamson",
-        "person:peter",
-        "location:somerset england",
-        "location:somerset",
-        "date_time:summer of 1974",
-        "event:lightning strike",
-        "event:disappearance"
-      ],
-      "relationships": [
-        "r_0005",
-        "r_0091"
-      ],
+      "text": "In summer 1974, Peter Williamson was hosting a backyard barbecue in Somerset, England when a lightning strike caused him to vanish in front of 16 witnesses.",
+      "kind": "historical",
+      "entities": ["person:peter williamson", "location:somerset", "date_time:1974"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "FXfKqDdqfJE",
           "charStart": 8,
-          "charEnd": 83,
-          "timeStart": 0.919,
-          "timeEnd": 9.759,
-          "quote": "it was the summer of 1974 in Somerset\nEngland Peter Williamson was flipping"
+          "charEnd": 127,
+          "timeStart": 0.92,
+          "timeEnd": 14.32,
+          "quote": "it was the summer of 1974 in Somerset\nEngland Peter Williamson was flipping\nburgers on the grill when a storm rolled\nin"
         },
         {
           "transcriptId": "FXfKqDdqfJE",
           "charStart": 5822,
           "charEnd": 5912,
-          "timeStart": 401.319,
+          "timeStart": 401.32,
           "timeEnd": 409.72,
           "quote": "16 people gave the same\neyewitness statement Peter was struck by\nlightning and disappeared"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "The host narrates this as the central anecdote of the video but later debunks key supporting claims (no Somerset newspaper coverage, no police records, no census/property records of a Peter Williamson). The story's primary source chain (Jenny Randles 2002 → Rodney Davies 1996 → Colin Parsons) lacks corroborating contemporaneous documentation.",
-      "hostStance": "uncertain"
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "The host explicitly reports at the end of the episode that no contemporaneous Somerset 1974 newspapers, police records, property records, or census entries corroborate this story. It appears to be an urban legend repeated across cryptic-encounter paperbacks. Low directTruth.",
+      "hostStance": "asserts"
     },
     {
       "id": "FXfKqDdqfJE:c_0002",
       "videoId": "FXfKqDdqfJE",
-      "text": "On Peter's reappearance he was wearing dry corduroy trousers labeled by tailor Herbert Fox monogrammed 'JB', allegedly impossible because the Fox shop had burned down 20+ years earlier and the trouser zipper was a 1968 design.",
-      "kind": "speculative",
-      "entities": [
-        "person:peter",
-        "person:herbert fox",
-        "person:jb",
-        "person:john blackwood",
-        "date_time:1968",
-        "date_time:1953"
-      ],
-      "relationships": [
-        "r_0061",
-        "r_0063"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "FXfKqDdqfJE",
-          "charStart": 6816,
-          "charEnd": 6921,
-          "timeStart": 469.84,
-          "timeEnd": 479.08,
-          "quote": "everything was wet but Peter's clothes\nwere completely dry and then she noticed\nthose weren't his clothes"
-        },
-        {
-          "transcriptId": "FXfKqDdqfJE",
-          "charStart": 12443,
-          "charEnd": 12483,
-          "timeStart": 827.839,
-          "timeEnd": 842.68,
-          "quote": "because it burned down over 20 years\nago"
-        },
-        {
-          "transcriptId": "FXfKqDdqfJE",
-          "charStart": 13496,
-          "charEnd": 13566,
-          "timeStart": 901.12,
-          "timeEnd": 908.759,
-          "quote": "the Zipper was designed in 1968 14 years\nafter the tayor shop was gone"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.05,
-      "rationale": "These specific 'impossible artifact' details (defunct tailor, anachronistic zipper) come exclusively from Colin Parsons' account. No independent forensic record of the trousers is presented, and no contemporary physical evidence is in any archive — the entire chain rests on Parsons' unverified testimony.",
-      "hostStance": "uncertain",
-      "dependencies": [
-        {
-          "target": "FXfKqDdqfJE:c_0001",
-          "kind": "presupposes",
-          "rationale": "The trouser story is meaningless without Peter having vanished and reappeared in the first place."
-        }
-      ]
-    },
-    {
-      "id": "FXfKqDdqfJE:c_0003",
-      "videoId": "FXfKqDdqfJE",
-      "text": "Investigator Colin Parsons interpreted the Peter Williamson disappearance as a transit between parallel universes triggered by lightning, treating the foreign cigarettes (a slightly-off Senior Service logo) as the hardest-to-fake evidence.",
-      "kind": "speculative",
-      "entities": [
-        "person:colin parsons",
-        "person:colin parson",
-        "person:peter",
-        "organization:senior service",
-        "date_time:1974"
-      ],
-      "relationships": [
-        "r_0053"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "FXfKqDdqfJE",
-          "charStart": 16300,
-          "charEnd": 16381,
-          "timeStart": 1071.36,
-          "timeEnd": 1080.84,
-          "quote": "Peter was at that hospital\njust in another reality transported\nthere by lightning"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.1,
-      "rationale": "Parsons' parallel-universe interpretation is reported faithfully but his entire investigative track record (per the host's own research) is 18 crossword puzzle books and no corroborated paranormal investigations. The interpretation is the source's, not the host's, and rests on the unverified evidence base.",
-      "hostStance": "uncertain",
-      "dependencies": [
-        {
-          "target": "FXfKqDdqfJE:c_0001",
-          "kind": "presupposes",
-          "rationale": "Parsons' theory only makes sense if the disappearance happened."
-        }
-      ]
-    },
-    {
-      "id": "FXfKqDdqfJE:c_0004",
-      "videoId": "FXfKqDdqfJE",
-      "text": "The host's own primary-source check found no Somerset newspaper coverage of the 1974 disappearance, no police records, and no property/census evidence of a Peter Williamson living in Somerset, undercutting the foundational story.",
-      "kind": "empirical",
-      "entities": [
-        "person:peter williamson",
-        "location:somerset",
-        "date_time:1974",
-        "event:disappearance"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "FXfKqDdqfJE",
-          "charStart": 18905,
-          "charEnd": 19058,
-          "timeStart": 1228.28,
-          "timeEnd": 1242.52,
-          "quote": "no newspapers from Somerset in\n1974 mention his disappearance no police\nrecords no property records or censes\nshow up Peter Williamson living in the\narea"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "This is the host doing standard archive verification — absence of evidence in newspaper, police, property, and census databases is independently checkable in principle. Most likely accurate given the story propagated only through three paranormal-genre books with no primary citations.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "FXfKqDdqfJE:c_0001",
-          "kind": "contradicts",
-          "rationale": "Absence of any contemporaneous record directly undermines the alleged 'national television alert' and police search."
-        }
-      ]
-    },
-    {
-      "id": "FXfKqDdqfJE:c_0005",
-      "videoId": "FXfKqDdqfJE",
-      "text": "The story's source chain runs from Colin Parsons' Encounters with the Unknown through Rodney Davies' 1996 Supernatural Vanishings to Jenny Randles' 2002 Time Storms, none of which cite primary documentary evidence.",
+      "text": "Hugh Everett III proposed the many-worlds interpretation of quantum mechanics in 1957, positing that every measurement splits reality rather than collapsing a wavefunction.",
       "kind": "historical",
-      "entities": [
-        "person:colin parsons",
-        "person:rodney davies",
-        "person:jenny randles",
-        "work_of_media:supernatural vanishings",
-        "event:time storms",
-        "date_time:2002",
-        "date_time:1996"
-      ],
-      "relationships": [
-        "r_0083"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "FXfKqDdqfJE",
-          "charStart": 19271,
-          "charEnd": 19378,
-          "timeStart": 1249.72,
-          "timeEnd": 1260.2,
-          "quote": "Colin Parsons all\nI could find is that he wrote 18\nCrossroad puzzle books no other\ninvestigative journalism"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The host explicitly traces the citation chain and notes the lack of primary sources at the chain's root. Verifiable via library catalogs / book indexes; the publication years and titles are checkable historical facts.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "FXfKqDdqfJE:c_0006",
-      "videoId": "FXfKqDdqfJE",
-      "text": "Hugh Everett proposed the many-worlds interpretation of quantum mechanics in 1957, in which every measurement of a superposed system splits reality into infinite parallel branches rather than collapsing the wavefunction.",
-      "kind": "definitional",
-      "entities": [
-        "person:everett",
-        "technology:quantum mechanics",
-        "date_time:1957"
-      ],
+      "entities": ["technology:quantum mechanics"],
       "relationships": [],
       "evidence": [
         {
@@ -224,134 +51,293 @@
           "quote": "whoever proposed this in\n1957 with his many worlds theory of\nQuant mechanics"
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.97,
       "directTruth": 0.95,
-      "rationale": "Everett's 1957 thesis 'Relative State Formulation of Quantum Mechanics' is uncontroversially the origin of the many-worlds interpretation. The host's framing is correct (the speech-to-text rendering 'whoever' is a transcription artifact for 'Hugh Everett').",
+      "rationale": "Hugh Everett III's 1957 Princeton doctoral thesis 'On the Foundations of Quantum Mechanics' introduced the many-worlds formalism (published as 'Relative State Formulation of Quantum Mechanics' in Reviews of Modern Physics). Historically accurate.",
       "hostStance": "asserts"
     },
     {
-      "id": "FXfKqDdqfJE:c_0007",
+      "id": "FXfKqDdqfJE:c_0003",
       "videoId": "FXfKqDdqfJE",
-      "text": "In 2014 physicists at Griffith University proposed the 'many interacting worlds' theory, in which a finite set of classical parallel universes interact via gravity rather than via wavefunction collapse, recovering quantum behavior as cross-world interference.",
-      "kind": "definitional",
-      "entities": [
-        "organization:griffith university",
-        "organization:griffith team",
-        "date_time:2014",
-        "technology:quantum mechanics"
+      "text": "Google announced Willow, a 105-qubit quantum computer that performed a benchmark calculation in 5 minutes which would take a classical supercomputer 10^25 years.",
+      "kind": "historical",
+      "entities": ["organization:google"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 3916,
+          "charEnd": 4034,
+          "timeStart": 260.92,
+          "timeEnd": 272.4,
+          "quote": "a few months ago Google\nunveiled project\nWillow a 105 cubic quantum computer that\nsolves problem problems in 5 minutes"
+        }
       ],
-      "relationships": [
-        "r_0012",
-        "r_0013"
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Google announced Willow in December 2024 with 105 qubits. They reported a random-circuit-sampling benchmark completing in 5 minutes that a classical supercomputer would need ~10^25 years for. These are Google's own published figures — accurate to their announcement, though comparison methodology is disputed.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "FXfKqDdqfJE:c_0004",
+      "videoId": "FXfKqDdqfJE",
+      "text": "Google's Willow announcement explicitly invoked the many-worlds multiverse, stating quantum computation may be occurring across parallel universes — a framing that drew significant scientific criticism.",
+      "kind": "historical",
+      "entities": ["organization:google", "technology:quantum mechanics"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 20181,
+          "charEnd": 20293,
+          "timeStart": 1300.04,
+          "timeEnd": 1309.48,
+          "quote": "it lends Credence to the notion that\nQuantum computation occurs in many\nparallel universes in line with the idea"
+        }
       ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Hartmut Neven's December 2024 blog post announcing Willow did explicitly claim the result 'lends credence' to the many-worlds interpretation. This was widely criticized by physicists (Scott Aaronson, Mikhail Lukin, and others) as overreach. Claim is accurate about what Google said.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "FXfKqDdqfJE:c_0003", "kind": "elaborates" }]
+    },
+    {
+      "id": "FXfKqDdqfJE:c_0005",
+      "videoId": "FXfKqDdqfJE",
+      "text": "In 2014, physicists at Griffith University proposed the Many Interacting Worlds theory, in which parallel universes interact through gravitational influence rather than remaining permanently isolated.",
+      "kind": "historical",
+      "entities": ["technology:quantum mechanics"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "FXfKqDdqfJE",
           "charStart": 4362,
           "charEnd": 4443,
           "timeStart": 292.52,
-          "timeEnd": 304.639,
+          "timeEnd": 304.64,
           "quote": "in 2014 the many\nworlds Theory got an upgrade\nphysicists from Griffith University"
         }
       ],
-      "confidence": 0.9,
+      "confidence": 0.92,
       "directTruth": 0.85,
-      "rationale": "Hall, Deckert, and Wiseman (Griffith University) published 'Quantum Phenomena Modeled by Interactions between Many Classical Worlds' in Physical Review X in 2014. The proposal is real and peer-reviewed; whether it 'explains' consciousness etc. as the host later suggests is a separate, more speculative claim.",
+      "rationale": "Michael Hall, Dirk-André Deckert, and Howard Wiseman of Griffith University published 'Quantum Phenomena Modelled by Interactions between Many Classical Worlds' in Physical Review X in October 2014. The paper is real and the 'interacting worlds' framing is accurate; whether interaction is via 'gravity' per se overstates — it's a classical interaction between parallel-world trajectories.",
       "hostStance": "asserts"
+    },
+    {
+      "id": "FXfKqDdqfJE:c_0006",
+      "videoId": "FXfKqDdqfJE",
+      "text": "On the third day after his vanishing, Peter Williamson reappeared in his own backyard, dry despite rain, wearing unfamiliar green corduroy pants.",
+      "kind": "historical",
+      "entities": ["person:peter williamson"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 6539,
+          "charEnd": 6625,
+          "timeStart": 452.04,
+          "timeEnd": 460.2,
+          "quote": "on the third day at about 8:00 a.m.\nshe heard the gardener frantically\ncalling for her"
+        },
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 7196,
+          "charEnd": 7304,
+          "timeStart": 500.24,
+          "timeEnd": 508.24,
+          "quote": "he was wearing he didn't remember\nthat either now you go missing for Tre\ndays and show up in the wrong pants"
+        }
+      ],
+      "confidence": 0.4,
+      "directTruth": 0.1,
+      "rationale": "Part of the same unverified urban legend; with no contemporaneous records, the details of reappearance rest entirely on Colin Parsons's 1996 book, which the host notes cites no primary sources. Low directTruth.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "FXfKqDdqfJE:c_0001", "kind": "elaborates" }]
+    },
+    {
+      "id": "FXfKqDdqfJE:c_0007",
+      "videoId": "FXfKqDdqfJE",
+      "text": "The tailor Herbert Fox, whose label appeared on Peter's pants, had actually died and his shop had burned down over 20 years before the 1974 incident.",
+      "kind": "historical",
+      "entities": ["person:herbert fox"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 12404,
+          "charEnd": 12483,
+          "timeStart": 797,
+          "timeEnd": 805,
+          "quote": "those pants were from his shop why\nnot because it burned down over 20 years\nago"
+        }
+      ],
+      "confidence": 0.4,
+      "directTruth": 0.1,
+      "rationale": "Same unverified urban legend; the tailor detail is structurally the 'impossible evidence' plot point and no archival corroboration exists for the Williamson story at all. Low directTruth.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "FXfKqDdqfJE:c_0006", "kind": "elaborates" }]
     },
     {
       "id": "FXfKqDdqfJE:c_0008",
       "videoId": "FXfKqDdqfJE",
-      "text": "Google's project Willow announcement included the company's own statement that the chip's performance lends credence to multiverse-style quantum computation, a claim that drew significant scientific criticism.",
-      "kind": "empirical",
-      "entities": [
-        "organization:google",
-        "technology:quantum computer",
-        "technology:quantum computation"
-      ],
+      "text": "When Peter visited the real hospital where Dr Nent worked, the doctor did not recognize him and Peter's name was absent from all intake forms from the night of his supposed admission.",
+      "kind": "historical",
+      "entities": ["person:dr nent", "person:peter"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "FXfKqDdqfJE",
-          "charStart": 3916,
-          "charEnd": 3992,
-          "timeStart": 260.919,
-          "timeEnd": 271.08,
-          "quote": "a few months ago Google\nunveiled project\nWillow a 105 cubic quantum computer"
+          "charStart": 14782,
+          "charEnd": 14817,
+          "timeStart": 971.48,
+          "timeEnd": 980.12,
+          "quote": "Peter's friend's\ndoctor was Dr nent"
+        },
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 16092,
+          "charEnd": 16138,
+          "timeStart": 1058.72,
+          "timeEnd": 1067.2,
+          "quote": "his name wasn't on it his name\nwasn't\nanywhere"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.9,
-      "rationale": "Google announced Willow (105 qubit) in December 2024 and Hartmut Neven's blog post did invoke many-worlds language, which prompted public pushback from physicists (Aaronson, Preskill, etc.). The host's framing matches what was reported.",
-      "hostStance": "asserts"
+      "confidence": 0.4,
+      "directTruth": 0.1,
+      "rationale": "Same unverified urban legend. The no-intake-record detail drives the 'parallel universe hospital' inference but has no source outside the paperback chain.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "FXfKqDdqfJE:c_0006", "kind": "elaborates" }]
     },
     {
       "id": "FXfKqDdqfJE:c_0009",
       "videoId": "FXfKqDdqfJE",
-      "text": "The host argues that Peter and Colin's experience pattern matches a Mandela-effect — a shared but factually wrong memory — implying the case may be a memory-distortion phenomenon rather than literal cross-universe travel.",
-      "kind": "speculative",
-      "entities": [
-        "ideology:mandela effect",
-        "person:peter",
-        "person:colin",
-        "person:nelson mandela"
-      ],
+      "text": "The Peter Williamson story appears in Rodney Davies's 1996 book 'Supernatural Vanishings', which sourced it from Colin Parsons's 'Encounters with the Unknown' — the ultimate (and unsourced) origin of the legend.",
+      "kind": "historical",
+      "entities": ["event:time storms", "person:peter williamson", "person:colin parsons"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "FXfKqDdqfJE",
-          "charStart": 16967,
-          "charEnd": 17063,
-          "timeStart": 1111.08,
-          "timeEnd": 1118.679,
-          "quote": "what Peter and Colin are describing is a\nMandela effect these are shared memories\nthat are wrong"
+          "charStart": 18365,
+          "charEnd": 18463,
+          "timeStart": 1195.68,
+          "timeEnd": 1205.88,
+          "quote": "Peter Williamson story appeared in\nthe book Supernatural vanishings by\nRodney Davies that was\n1996"
+        },
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 18464,
+          "charEnd": 18533,
+          "timeStart": 1201.48,
+          "timeEnd": 1211.16,
+          "quote": "he got the story from Colin\nParson's book encounters with the\nunknown"
         }
       ],
-      "confidence": 0.8,
-      "directTruth": 0.4,
-      "rationale": "The Mandela-effect framing is a common but contested explanation; mainstream cognitive science attributes such effects to ordinary confabulation and false-memory dynamics rather than anything paranormal. The host's framing is suggestive rather than mechanistic.",
-      "hostStance": "uncertain",
-      "dependencies": [
-        {
-          "target": "FXfKqDdqfJE:c_0001",
-          "kind": "contradicts",
-          "rationale": "If the case is a Mandela effect (shared false memory), then the literal disappearance did not occur."
-        }
-      ]
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The host identified the specific book lineage himself — Rodney Davies 1996 'Supernatural Vanishings' and Colin Parsons's paperback. These books do exist and the host's investigation of the paper trail is verifiable.",
+      "hostStance": "asserts"
     },
     {
       "id": "FXfKqDdqfJE:c_0010",
       "videoId": "FXfKqDdqfJE",
-      "text": "AJ closes by arguing — citing Feynman's 'nobody understands quantum mechanics' and Heisenberg's 'stranger than we can think' — that quantum reality is intentionally beyond human comprehension and he finds that comforting evidence of a designed framework.",
-      "kind": "opinion",
-      "entities": [
-        "person:rich fineman",
-        "person:heisenberg",
-        "technology:quantum mechanics",
-        "person:aj"
-      ],
+      "text": "No newspapers, police records, or property records from Somerset in 1974 document Peter Williamson's disappearance — undermining the factual basis of the story.",
+      "kind": "empirical",
+      "entities": ["location:somerset", "date_time:1974", "person:peter williamson"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "FXfKqDdqfJE",
-          "charStart": 20465,
-          "charEnd": 20560,
-          "timeStart": 1316.84,
-          "timeEnd": 1326.96,
-          "quote": "rich Fineman famously\nsaid I think I could safely say that\nnobody understands quantum mechanics"
-        },
-        {
-          "transcriptId": "FXfKqDdqfJE",
-          "charStart": 20826,
-          "charEnd": 20927,
-          "timeStart": 1345.48,
-          "timeEnd": 1354.6,
-          "quote": "verer Heisenberg said the\nuniverse is not only stranger than we\nthink it's Stranger than we can think"
+          "charStart": 18905,
+          "charEnd": 19004,
+          "timeStart": 1228.28,
+          "timeEnd": 1237.56,
+          "quote": "no newspapers from Somerset in\n1974 mention his disappearance no police\nrecords no property records"
         }
       ],
-      "confidence": 0.85,
-      "rationale": "Pure host opinion / closing reflection. Both quotes are real (Feynman 1965 Messenger Lectures; Haldane is the more frequently cited author of the Heisenberg-attributed quote, but Heisenberg expressed similar views). No falsifiable truth value to assign — the speaker is offering personal comfort, not a testable claim.",
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The host reports conducting this archival check himself. A well-publicized police search with 'national television' coverage in 1974 UK would leave a substantial newspaper record. Its absence is strong negative evidence.",
+      "hostStance": "denies",
+      "dependencies": [
+        { "target": "FXfKqDdqfJE:c_0001", "kind": "contradicts", "rationale": "[debunks] Absence of any period archival trail falsifies the public-vanishing claim at its core." },
+        { "target": "FXfKqDdqfJE:c_0006", "kind": "contradicts", "rationale": "[debunks] Same archival silence falsifies the three-day-return corollary." }
+      ]
+    },
+    {
+      "id": "FXfKqDdqfJE:c_0011",
+      "videoId": "FXfKqDdqfJE",
+      "text": "Colin Parsons — the investigative source for the Williamson story — wrote only crossword puzzle books and has no other investigative journalism credits, further undercutting the story's credibility.",
+      "kind": "empirical",
+      "entities": ["person:colin parsons"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 19271,
+          "charEnd": 19378,
+          "timeStart": 1249.72,
+          "timeEnd": 1260.2,
+          "quote": "Colin Parsons all\nI could find is that he wrote 18\nCrossroad puzzle books no other\ninvestigative journalism"
+        }
+      ],
+      "confidence": 0.88,
+      "directTruth": 0.8,
+      "rationale": "Colin Parsons wrote multiple paranormal paperbacks and crossword puzzle books in the 1990s. He is not listed in journalism or academic databases. The credibility-undermining inference is defensible.",
+      "hostStance": "denies",
+      "dependencies": [
+        { "target": "FXfKqDdqfJE:c_0009", "kind": "elaborates" },
+        { "target": "FXfKqDdqfJE:c_0010", "kind": "supports" }
+      ]
+    },
+    {
+      "id": "FXfKqDdqfJE:c_0012",
+      "videoId": "FXfKqDdqfJE",
+      "text": "Richard Feynman famously observed in 1964 that 'nobody understands quantum mechanics' — a benchmark the host uses to frame the Williamson story as hovering at the edge of physics rather than inside it.",
+      "kind": "historical",
+      "entities": ["technology:quantum mechanics"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 20492,
+          "charEnd": 20560,
+          "timeStart": 1319.64,
+          "timeEnd": 1326.96,
+          "quote": "I think I could safely say that\nnobody understands quantum mechanics"
+        }
+      ],
+      "confidence": 0.97,
+      "directTruth": 0.95,
+      "rationale": "The Feynman quote is from his 1964 Messenger Lectures at Cornell, published as 'The Character of Physical Law'. Widely cited, verbatim accurate.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "FXfKqDdqfJE:c_0013",
+      "videoId": "FXfKqDdqfJE",
+      "text": "Verdict: the Williamson story is probably a fabricated or highly embellished urban legend despite its appealing quantum framing — the physics theories it invokes are real but there is no empirical evidence connecting lightning to actual universe-hopping.",
+      "kind": "speculative",
+      "entities": ["person:peter williamson", "technology:quantum mechanics"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "FXfKqDdqfJE",
+          "charStart": 19618,
+          "charEnd": 19725,
+          "timeStart": 1275,
+          "timeEnd": 1286,
+          "quote": "the physics\nbehind the story is real the many worlds\ninterpretation and the many interacting\nworlds concept"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The host's final verdict separates the real quantum physics from the unsourced 1996 narrative. The verdict is consistent with his archival findings — physics exists, story doesn't.",
       "hostStance": "asserts",
+      "dependencies": [
+        { "target": "FXfKqDdqfJE:c_0010", "kind": "supports" },
+        { "target": "FXfKqDdqfJE:c_0011", "kind": "supports" },
+        { "target": "FXfKqDdqfJE:c_0002", "kind": "supports" }
+      ],
       "inVerdictSection": true
     }
   ]

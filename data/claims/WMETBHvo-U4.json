@@ -1,207 +1,388 @@
 {
   "schemaVersion": 1,
   "transcriptId": "WMETBHvo-U4",
-  "generatedAt": "2026-04-20T03:58:30.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T14:19:24.926Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-resume",
   "claims": [
     {
       "id": "WMETBHvo-U4:c_0001",
       "videoId": "WMETBHvo-U4",
-      "text": "The 'Nevada Triangle,' a roughly 25,000-square-mile region of the Sierra Nevada mountains spanning Las Vegas, Fresno, and Reno, has reportedly claimed about 2,000 aircraft over the past 60 years - a per-area crash rate far exceeding the much-better-known Bermuda Triangle.",
+      "text": "The Nevada Triangle, a ~25,000 square-mile region of the Sierra Nevada spanning Las Vegas, Fresno, and Reno, has claimed approximately 2,000 aircraft in the past 60 years.",
       "kind": "empirical",
       "entities": [
         "location:nevada triangle",
         "location:sierra nevada mountains",
-        "location:nevada",
-        "location:california",
-        "location:bermuda triangle",
         "location:las vegas",
         "location:fresno",
-        "quantity:two thousand aircraft",
-        "quantity:square miles",
-        "quantity:twenty five thousand"
+        "quantity:two thousand aircraft"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 0,
-          "charEnd": 700,
-          "timeStart": 1.14,
-          "timeEnd": 45.41,
-          "quote": "We've all heard of the Bermuda Triangle, right,\nwhere over the past 60 years, about 50\nships and 20 planes have mysteriously crashed\nor just vanished over the Atlantic.\nBut have you ever heard\nof the Nevada triangle?\nIt's much smaller than the Bermuda\nTriangle and much more dangerous.\nNot talking 20 planes at 200 planes.\nIn the past 60 years, the Nevada\ntriangle has claimed two thousand aircraft.\nAnd we really watch that\nalmost one plane a week.\nYeah, and it's not just the number of\ncrashes in the Nevada triangle that's so strange.\nIt's the fact that nobody\nreally talks about it.\nLet's find out why. A region of\nthe Sierra Nevada mountains between Nevada and\nCalifornia, some 2000 planes have "
+          "charStart": 323,
+          "charEnd": 399,
+          "timeStart": 17.64,
+          "timeEnd": 22.14,
+          "quote": "In the past 60 years, the Nevada\ntriangle has claimed two thousand aircraft."
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.6,
-      "rationale": "There really is a high concentration of aircraft wrecks in the central Sierra Nevada - the Civil Air Patrol catalog lists hundreds of crash sites in this corridor. The 2,000 figure is a popular Discovery Channel / 'Nevada Triangle' documentary number; rigorous tallies usually come in lower (a few hundred to ~1,000 over 60 years). The geographic framing as a 'triangle' bracketing the major desert airports is correct.",
+      "directTruth": 0.4,
+      "rationale": "The 2,000-crash figure is widely repeated online but traces back to the Nevada Aerospace Museum/NTSB totals for the broader Sierra Nevada region over ~60 years, including routine general-aviation losses. The specific 'Triangle' geometry and the claim that this is unusually high relative to comparable terrain/flight-density regions is disputed — NTSB data shows Sierra Nevada crash density is roughly in line with other high-terrain high-traffic corridors.",
+      "tags": [
+        "nevada-triangle",
+        "crash-statistics",
+        "geography"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "WMETBHvo-U4:c_0002",
       "videoId": "WMETBHvo-U4",
-      "text": "An unusual share of Nevada Triangle disappearances involve highly experienced pilots flying state-of-the-art military aircraft, not weekend hobbyists - which makes simple pilot error a less satisfying explanation than terrain or weather alone.",
+      "text": "The Bermuda Triangle has claimed about 50 ships and 20 planes over the past 60 years.",
       "kind": "empirical",
       "entities": [
-        "organization:air force",
-        "role:pilot",
-        "technology:state of the art military aircraft"
+        "location:bermuda triangle",
+        "location:atlantic",
+        "quantity:about 50 ships and 20 planes"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 1748,
-          "charEnd": 2400,
-          "timeStart": 103.64,
-          "timeEnd": 137.96,
-          "quote": "many of those cases, the pilots were\nhighly trained Air Force pilots flying state of\nthe art military aircraft.\nThe most famous crash involved famous aviator\nSteve Fossett, who vanished in 2007.\nHis disappearance ignited a massive search that\nled to the discovery of eight more\nwrecks. A Fossett was\nnot some weekend warrior.\nI mean, this guy held world\nrecords for flying solo aircraft gliders.\nHe even flew around the world in\na hot air balloon, which sounds terrifying.\nThis guy was also an expert\nin cross-country skiing, mountain climbing.\nHe did ultramarathons, a triathlete.\nSo if there's one guy who could\nsurvive anything, it was Steve Fossett"
+          "charStart": 54,
+          "charEnd": 132,
+          "timeStart": 1.14,
+          "timeEnd": 9.21,
+          "quote": "over the past 60 years, about 50\nships and 20 planes have mysteriously crashed"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.7,
-      "rationale": "It is true that the area is heavily used for military training (Naval Air Station Fallon, Edwards/China Lake transit, etc.) and that several high-profile crashes have involved military jets and credentialed civil aviators. The framing that pilot skill should make crashes 'unexplained' actually understates how unforgiving Sierra mountain weather is to even very experienced pilots.",
+      "directTruth": 0.4,
+      "rationale": "Host uses these figures to argue the Nevada Triangle is more deadly. The Bermuda Triangle numbers are themselves disputed — Larry Kusche's 'The Bermuda Triangle Mystery—Solved' (1975) showed most cited cases were fabricated, occurred outside the triangle, or were ordinary losses. USCG and Lloyd's of London both state the region has no higher loss rate than comparable ocean areas. Numbers are impressionistic, not statistically meaningful.",
+      "tags": [
+        "bermuda-triangle",
+        "comparison",
+        "loss-statistics"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "WMETBHvo-U4:c_0003",
       "videoId": "WMETBHvo-U4",
-      "text": "World-record aviator Steve Fossett vanished on September 3, 2007 over Nevada in a single-engine Bellanca; despite a month-long search he was declared dead, and only the following year did a hiker find his ID and a crash site about 65 miles from his takeoff point, with two confirmed bone fragments recovered nearby.",
+      "text": "Record-setting aviator Steve Fossett disappeared on September 3, 2007 while flying a single-engine plane over Nevada's Great Basin Desert, and his plane wreckage was located about 65 miles from his takeoff point in 2008 with only two of his bones recovered.",
       "kind": "historical",
       "entities": [
         "person:steve fossett",
-        "person:fossett",
-        "person:fawcett",
-        "location:nevada",
-        "location:great basin desert",
-        "date_time:september 3rd",
         "date_time:2007",
-        "event:major search effort"
+        "date_time:september 3rd",
+        "location:great basin desert"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 1860,
-          "charEnd": 2900,
+          "charStart": 1906,
+          "charEnd": 1941,
           "timeStart": 109.67,
-          "timeEnd": 165.8,
-          "quote": "The most famous crash involved famous aviator\nSteve Fossett, who vanished in 2007.\nHis disappearance ignited a massive search that\nled to the discovery of eight more\nwrecks. A Fossett was\nnot some weekend warrior.\nI mean, this guy held world\nrecords for flying solo aircraft gliders.\nHe even flew around the world in\na hot air balloon, which sounds terrifying.\nThis guy was also an expert\nin cross-country skiing, mountain climbing.\nHe did ultramarathons, a triathlete.\nSo if there's one guy who could\nsurvive anything, it was Steve Fossett.\nBut on September 3rd, Fossett flying his\nsingle engine plane over Nevada's Great Basin\ndesert, took off and never returned after a\nmajor search effort that lasted over a month.\nHe was declared dead. Then the following year,\nFawcett's ID cards were found by a hiker.\nA few days later, the crash site was\nlocated about sixty five miles from where Fossett\ntook off. Two bones were also found about\na half mile from the crash site.\nAnd the bones were later confirmed\nto be belonging to Steve Fossett.\nW"
+          "timeEnd": 114.38,
+          "quote": "Steve Fossett, who vanished in 2007"
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 2424,
+          "charEnd": 2495,
+          "timeStart": 138.08,
+          "timeEnd": 147.74,
+          "quote": "Fossett flying his\nsingle engine plane over Nevada's Great Basin\ndesert"
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 2686,
+          "charEnd": 2763,
+          "timeStart": 152.6,
+          "timeEnd": 160.91,
+          "quote": "the crash site was\nlocated about sixty five miles from where Fossett\ntook off"
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 2765,
+          "charEnd": 2829,
+          "timeStart": 157.04,
+          "timeEnd": 160.91,
+          "quote": "Two bones were also found about\na half mile from the crash site."
         }
       ],
-      "confidence": 0.97,
+      "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "Fossett's September 3, 2007 disappearance is one of the most-covered aviation stories of the 2000s. The hiker discovery of his ID in October 2008, the subsequent crash site location in the Sierras east of Mammoth Lakes, and DNA-confirmed bone fragments are all in the official NTSB report and contemporaneous news coverage.",
+      "rationale": "Well-documented: Fossett disappeared Sep 3 2007, declared dead Feb 2008, wreckage found Sep 29 2008 near Mammoth Lakes CA by hiker Preston Morrow. DNA-confirmed bone fragments recovered. Host's account matches NTSB report WPR08MA389 and contemporary NYT/AP coverage.",
+      "tags": [
+        "steve-fossett",
+        "aviation-accident",
+        "2007"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "WMETBHvo-U4:c_0004",
       "videoId": "WMETBHvo-U4",
-      "text": "A 1943 B-24 bomber crash in the Sierras illustrates the region's pattern: the original aircraft vanished on a training flight from Hammer Field, a search-and-rescue B-24 sent the next day also disappeared, and the second wreck wasn't found until Huntington Lake Reservoir was drained for dam repairs in 1955.",
-      "kind": "historical",
+      "text": "Most of the land in the Nevada Triangle is owned by the U.S. government, and Area 51 sits inside the Triangle just northwest of Las Vegas.",
+      "kind": "empirical",
       "entities": [
-        "date_time:1943",
-        "date_time:1955",
-        "location:fresno",
-        "location:huntington lake reservoir",
-        "location:california",
-        "location:tucson",
-        "event:night training mission"
+        "location:nevada triangle",
+        "organization:united states government",
+        "location:area 51",
+        "location:las vegas"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 3068,
-          "charEnd": 4000,
-          "timeStart": 173.87,
-          "timeEnd": 230.97,
-          "quote": "One of the first planes lost in the\ntriangle was a B twenty four bomber that\ncrashed in 1943.\nThe bomber with a full crew, was on\na routine night training mission taking off from\nWhammer Field in Fresno, and it was\nsupposed to fly from California to Tucson.\nGwon gone, never made it.\nAn extensive search began the very next day when\nnine be twenty four percent out to find\nthe missing plane. But rather than\nfinding it, another bomber went missing.\nIt just vanished. Then in 1955 when Huntington\nLake Reservoir was drained for repairs to\nthe dam there it was.\nThe investigation to the second bomber stated\nthat the plane had experienced high wind\nturbulence and began to\nlose hydraulic pressure.\nWhen the captain saw what looked like a snow\ncovered clearing, he told his crew to bail,\nbut only to jump. But the two soldiers\nwho parachuted in survived made statements that\nthe lake wasn't frozen.\nWhen the plane was finally found.\nIt"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The 1943 B-24 disappearance from Hammer Field (often misspelled in transcripts as 'Whammer'), the lost search-bomber follow-up, and the 1955 Huntington Lake Reservoir drainage discovery are all documented in Army Air Forces and Forest Service records. Wind turbulence and downdrafts off the Sierra crest are the standard official explanation.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "WMETBHvo-U4:c_0007",
-          "kind": "supports"
-        }
-      ]
-    },
-    {
-      "id": "WMETBHvo-U4:c_0005",
-      "videoId": "WMETBHvo-U4",
-      "text": "Air Force Lieutenant David Steeves vanished over the Sierras in May 1957 in a T-33 trainer, was declared dead, then walked out of the wilderness 54 days later claiming he had survived after ejecting and crawling 20 miles to an abandoned cabin - a story dismissed as Cold War defection until Boy Scouts found his ejected canopy 20 years later.",
-      "kind": "historical",
-      "entities": [
-        "person:david steeves",
-        "organization:air force",
-        "date_time:may 9th",
-        "date_time:1957",
-        "location:kings canyon national park",
-        "location:fresno",
-        "location:hamilton air force base",
-        "organization:boy scouts",
-        "technology:t-3 training jet"
-      ],
-      "relationships": [],
-      "evidence": [
+          "charStart": 1102,
+          "charEnd": 1153,
+          "timeStart": 64.52,
+          "timeEnd": 66.61999999999999,
+          "quote": "Most of it belongs to\nthe United States government."
+        },
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 4680,
-          "charEnd": 5800,
-          "timeStart": 261.48,
-          "timeEnd": 318.26,
-          "quote": "Another crazy story happened in 1957.\nOn May 9th, Air Force Lieutenant David Steeves\nwas piloting a T-3 training jet taking off\nfrom Hamilton Air Force Base near San\nFrancisco on a flight to Arizona.\nThe plane disappeared after a\nthorough search without success.\nThe Air Force declared the twenty\nthree year old pilot officially dead.\nBut fifty four days later, he reappeared\ngaunt and dressed in tattered clothing.\nHe had made his way to a camp in the\nback country of Kings Canyon National Park, east of\nFresno. He said something in the plane exploded,\nso he ejected and dragging his parachute\nto keep warm and injured from his landing.\nHe crawled over twenty miles in freezing\ntemperatures for fifteen days without food or\nshelter. Eventually, he came upon an abandoned cabin\nwhere he found a few cans of food\nand fishing gear. He said he survived\nby fishing and hunting with his pistol.\nThere were some who questioned his story, even\nspeculating that he sold his plane to the\nRussians. And Steve's always maintained that\nhe was telling the truth.\nBut he died only a few years later.\nWith his story still in doubt.\nWhy"
+          "charStart": 1194,
+          "charEnd": 1229,
+          "timeStart": 67.34,
+          "timeEnd": 71.6,
+          "quote": "northwest of Vegas?\nThat's Area 51."
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "The David Steeves story is a documented USAF case from May 9, 1957: T-33 explosion, 54-day survival walk-out from Kings Canyon, public disbelief and accusations of selling the jet to the Soviets, and the 1977 Boy Scouts canopy find that vindicated him posthumously. The host gets the aircraft type slightly wrong ('T-3' should be T-33).",
+      "rationale": "Accurate: BLM, USFS, DOD, and Nellis Range Complex administer the bulk of Nevada's public land (~85% federal ownership statewide). Area 51 (Homey Airport/Groom Lake) is in southern Nevada ~83 miles NNW of Las Vegas, inside any reasonable Triangle boundary that includes Vegas as a vertex.",
+      "tags": [
+        "area-51",
+        "federal-land",
+        "nevada"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "WMETBHvo-U4:c_0005",
+      "videoId": "WMETBHvo-U4",
+      "text": "The first Nevada Triangle aircraft disappearance was reported in 1938, the same year Area 51 began secret research operations.",
+      "kind": "historical",
+      "entities": [
+        "date_time:nineteen thirty eight",
+        "location:area 51"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 1277,
+          "charEnd": 1314,
+          "timeStart": 71.63,
+          "timeEnd": 75.8,
+          "quote": "first report is nineteen thirty eight"
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 1346,
+          "charEnd": 1406,
+          "timeStart": 77.84,
+          "timeEnd": 81.41,
+          "quote": "They began doing research in\nnineteen thirty eight they see."
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Area 51 did not exist in 1938. The Groom Lake site was first surveyed by the USAF/CIA in 1955 for U-2 testing, and the Nevada Test & Training Range was established in 1940. The 1938 claim appears to be a confabulation — possibly a transcript error or host misstatement. No publicly available record shows a 1938 Area 51 research program or a 1938 Nevada Triangle disappearance of note.",
+      "tags": [
+        "area-51",
+        "1938",
+        "factual-error"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "WMETBHvo-U4:c_0006",
       "videoId": "WMETBHvo-U4",
-      "text": "On July 11, 1986, Major Ross Mulhare flew a then-still-classified F-117 Nighthawk into a Sierra mountain near Bakersfield; congressional sources later said he was flying an experimental aircraft with classified materials and structural features, but the official cause has never been publicly confirmed.",
+      "text": "In 1943, two B-24 bombers successively disappeared in the Sierra Nevada — the second while searching for the first — and the second was only found in 1955 when Huntington Lake was drained.",
       "kind": "historical",
       "entities": [
-        "person:major ross mulheron",
-        "date_time:july 11th, 1986",
-        "location:california",
-        "organization:congressional sources",
-        "organization:lockheed martin",
-        "technology:classified design",
-        "technology:structural features"
+        "date_time:1943",
+        "location:huntington lake reservoir",
+        "date_time:1955"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 6849,
-          "charEnd": 7400,
-          "timeStart": 386.69,
-          "timeEnd": 427.52,
-          "quote": "On July 11th, 1986, Major Ross Mulheron flew\nan F 117 into a mountain near Bakersfield,\nCalifornia, and the cause of the\ncrash has never been officially revealed.\nWhat do you mean officially?\nWell, congressional sources have said he was\nflying an experimental aircraft designed with\nspecial materials and structural features, structural\nfeatures, a disc shaped, we don't\nknow. Still, classified design is Blaen, Lockheed\nMartin, Double Myplace, and the stories\ngo on and on. So what is it that's\ncausing aircraft to go missing within the Nevada\ntriang"
+          "charStart": 3119,
+          "charEnd": 3161,
+          "timeStart": 173.87,
+          "timeEnd": 182.27,
+          "quote": "B twenty four bomber that\ncrashed in 1943."
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 3553,
+          "charEnd": 3613,
+          "timeStart": 202.11,
+          "timeEnd": 209.25,
+          "quote": "Huntington\nLake Reservoir was drained for repairs to\nthe dam"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "Major Ross Mulhare did die crashing an F-117A in the Sequoia National Forest on July 11, 1986. The aircraft type was still classified at the time (the F-117's existence was not officially acknowledged until November 1988), so the immediate official cause was withheld. Subsequent reporting attributes the crash to pilot fatigue / spatial disorientation, not exotic structural features.",
-      "hostStance": "uncertain"
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "A B-24 did crash December 5, 1943 after taking off from Fresno/Hammer Field, and the wreckage was found in 1960 at Hester Lake. The Huntington Lake story likely conflates two separate B-24 incidents — the Huntington Lake 1955 recovery involves a different B-24 that crashed in October 1943. Host approximately correct on the broad strokes, off on specifics.",
+      "tags": [
+        "b-24-bomber",
+        "1943",
+        "huntington-lake"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "WMETBHvo-U4:c_0007",
       "videoId": "WMETBHvo-U4",
-      "text": "The mainstream meteorological explanation for the Nevada Triangle is the 'mountain wave' phenomenon: the Sierra Nevada crest sits perpendicular to the jet stream and generates violent downdrafts capable of overpowering an aircraft's climb rate, as appears to have happened to Steve Fossett's plane.",
+      "text": "Air Force Lieutenant David Steeves, pronounced dead after vanishing on May 9, 1957 in a T-33 trainer, reappeared 54 days later having survived in Kings Canyon National Park by fishing and hunting with his pistol.",
+      "kind": "historical",
+      "entities": [
+        "person:david steeves",
+        "date_time:1957",
+        "date_time:may 9th",
+        "location:kings canyon national park",
+        "technology:t-3 training jet",
+        "organization:air force"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 4751,
+          "charEnd": 4796,
+          "timeStart": 264.21,
+          "timeEnd": 269.72999999999996,
+          "quote": "David Steeves\nwas piloting a T-3 training jet"
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 5042,
+          "charEnd": 5094,
+          "timeStart": 279.3,
+          "timeEnd": 284.16,
+          "quote": "he reappeared\ngaunt and dressed in tattered clothing"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Steeves's 1957 survival is documented in Time, Life, and Air Force accident files. Host says 'T-3' which is a transcript artifact — the actual aircraft was a T-33 Shooting Star. 54-day survival, Kings Canyon location, and the later vindication when Boy Scouts found the canopy (1977) are all accurate.",
+      "tags": [
+        "david-steeves",
+        "t-33",
+        "survival-story"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "WMETBHvo-U4:c_0008",
+      "videoId": "WMETBHvo-U4",
+      "text": "Nevada Triangle disappearances are caused by secret prototype aircraft testing out of Area 51.",
+      "kind": "speculative",
+      "entities": [
+        "location:area 51",
+        "organization:air force",
+        "technology:secret prototype aircraft",
+        "group_or_movement:conspiracy theorists"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 7925,
+          "charEnd": 8033,
+          "timeStart": 452.39,
+          "timeEnd": 461.18,
+          "quote": "conspiracy theorists that claim the reason\nso many flights have disappeared has\nsomething to do with Area 51"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.15,
+      "rationale": "Host introduces this conspiracy framing explicitly to refute it via the 'geography and atmospheric conditions' alternative. Area 51 flight testing is real (U-2, A-12, SR-71, F-117, B-2 all tested there) but the 2,000-disappearance figure — even if accepted — includes decades of small-aircraft accidents across a huge area, not clustered around Groom Lake airspace. directTruth low: attribution of broad civilian aviation losses to secret-craft encounters has no supporting evidence.",
+      "tags": [
+        "area-51",
+        "conspiracy-theory",
+        "secret-aircraft"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "denies"
+    },
+    {
+      "id": "WMETBHvo-U4:c_0009",
+      "videoId": "WMETBHvo-U4",
+      "text": "Most experts attribute Nevada Triangle crashes to mountain-wave turbulence where Sierra Nevada terrain running perpendicular to the jet stream creates violent downdrafts.",
       "kind": "empirical",
       "entities": [
-        "location:sierra nevada mountains",
+        "location:sierra nevada mountains"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 8202,
+          "charEnd": 8261,
+          "timeStart": 467.24,
+          "timeEnd": 471.59000000000003,
+          "quote": "Sierra Nevada mountains run perpendicular\nto the jet stream"
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 8107,
+          "charEnd": 8201,
+          "timeStart": 462.62,
+          "timeEnd": 471.59000000000003,
+          "quote": "most experts think the disappearances are\ndue to the geography and the atmospheric\nconditions."
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 8371,
+          "charEnd": 8432,
+          "timeStart": 474.23,
+          "timeEnd": 480.91999999999996,
+          "quote": "mountain wave, where planes are seemingly\nripped from the air"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Accurate characterization of the dominant meteorological explanation. Mountain-wave turbulence and lee-side downdrafts over the Sierra Nevada are well-documented in FAA weather advisories and NOAA mountain-wave forecasting. Fossett's case specifically has been analyzed (Vick 2009) as consistent with strong lee-side downdraft. This is the mainstream aviation-safety reading.",
+      "tags": [
+        "mountain-wave",
+        "jet-stream",
+        "aviation-meteorology"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "WMETBHvo-U4:c_0008",
+          "kind": "contradicts",
+          "rationale": "[alternative] Offers the mundane meteorological cause for the crashes as alternative to the Area 51 conspiracy framing."
+        }
+      ]
+    },
+    {
+      "id": "WMETBHvo-U4:c_0010",
+      "videoId": "WMETBHvo-U4",
+      "text": "Steve Fossett's aircraft, able to climb at only 500 fpm, was destroyed by a theorized 650-fpm downdraft which no aircraft in its class could have escaped.",
+      "kind": "speculative",
+      "entities": [
         "person:steve fossett",
-        "person:fossett",
-        "organization:ntsb",
         "quantity:650 cpk",
         "quantity:500 copies"
       ],
@@ -209,54 +390,137 @@
       "evidence": [
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 7327,
-          "charEnd": 8200,
-          "timeStart": 419.21,
-          "timeEnd": 471.59,
-          "quote": "what is it that's\ncausing aircraft to go missing within the Nevada\ntriangle, as some claim the area's climate\ncreates a special type of atmosphere, a\ncondition that can actually rip\nthe aircraft from the sky.\nNow, Steve Fossett case.\nSome believe conditions created a 650\nCPK downdraft at the most.\nHis aircraft could climb at 500 copies.\nSo that speed difference meant he\nhad no chance of surviving.\nIf that's what happened, if that's what\nhappened, the NTSB didn't find any mechanical\nissues with the plane. So what was it?\nAnd why have so many other\naircraft disappeared in the same area?\nWell, conspiracy theorists that claim the reason\nso many flights have disappeared has\nsomething to do with Area 51, where the\nAir Force is known to test secret prototype\naircraft yet.\nBut most experts think the disappearances are\ndue to the geography and the atmospheric\nconditions"
+          "charStart": 7407,
+          "charEnd": 7535,
+          "timeStart": 423.53,
+          "timeEnd": 430.53,
+          "quote": "some claim the area's climate\ncreates a special type of atmosphere, a\ncondition that can actually rip\nthe aircraft from the sky."
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.9,
-      "rationale": "Mountain-wave turbulence on the lee side of the Sierras is a well-known and well-documented hazard in aviation meteorology - the FAA, NOAA, and AOPA all describe it. Sierra wave downdrafts of 600-1500+ feet per minute have been measured, easily exceeding the climb rate of light aircraft. The NTSB's Fossett report listed downdrafts as a probable factor.",
+      "confidence": 0.75,
+      "directTruth": 0.55,
+      "rationale": "The 650 fpm downdraft figure and Bellanca Decathlon's ~500 fpm climb ceiling are both reasonable; 'CPK' and 'copies' are transcript corruption of 'fpm'. Vick's 2009 analysis of Fossett's accident explicitly proposed lee-side downdraft. Whether that specific downdraft magnitude occurred has never been verified — NTSB did not ascribe a specific cause beyond 'in-flight collision with mountainous terrain'.",
+      "tags": [
+        "steve-fossett",
+        "downdraft",
+        "mountain-wave"
+      ],
+      "inVerdictSection": true,
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "dependencies": [
+        {
+          "target": "WMETBHvo-U4:c_0003",
+          "kind": "elaborates",
+          "rationale": "Specific mechanism hypothesized for the Fossett crash covered in the earlier factual claim."
+        },
+        {
+          "target": "WMETBHvo-U4:c_0009",
+          "kind": "supports",
+          "rationale": "[supports] Specific application of the general mountain-wave explanation."
+        }
+      ]
     },
     {
-      "id": "WMETBHvo-U4:c_0008",
+      "id": "WMETBHvo-U4:c_0011",
       "videoId": "WMETBHvo-U4",
-      "text": "In the host's verdict, the conspiracy explanation - that secret Air Force prototype testing out of Area 51 is responsible for the Nevada Triangle disappearances - is less well supported than the prosaic combination of mountain-wave weather, rugged terrain, and dense vegetation that conceals crash sites for decades.",
-      "kind": "opinion",
+      "text": "The NTSB found no mechanical issues with Fossett's aircraft, ruling out equipment failure as the cause of the crash.",
+      "kind": "empirical",
       "entities": [
-        "location:area 51",
-        "organization:air force",
+        "person:steve fossett",
+        "organization:ntsb"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 7782,
+          "charEnd": 7836,
+          "timeStart": 441.71,
+          "timeEnd": 448.61,
+          "quote": "NTSB didn't find any mechanical\nissues with the plane."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "NTSB accident report WPR08MA389 lists 'undetermined' as the probable cause, noting the aircraft impacted terrain during a steep descent. Engine and flight-control examinations did not reveal pre-impact mechanical failure. Host's claim matches the report.",
+      "tags": [
+        "ntsb",
+        "fossett",
+        "mechanical-cause"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "WMETBHvo-U4:c_0012",
+      "videoId": "WMETBHvo-U4",
+      "text": "Rugged terrain and dense vegetation in the Sierra Nevada explain why so many crash sites are never found — the search for Fossett alone uncovered eight other previously-lost wrecks.",
+      "kind": "empirical",
+      "entities": [
         "location:sierra nevada mountains",
-        "group_or_movement:conspiracy theorists",
-        "technology:secret prototype aircraft",
+        "person:steve fossett",
         "quantity:eight other crash sites"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "WMETBHvo-U4",
-          "charStart": 8202,
-          "charEnd": 8900,
-          "timeStart": 467.24,
-          "timeEnd": 515.23,
-          "quote": "Sierra Nevada mountains run perpendicular\nto the jet stream, which creates\nvolatile, unpredictable winds and downdrafts.\nThis weather phenomenon is sometimes called the\nmountain wave, where planes are seemingly\nripped from the air and\ncrashed to the ground.\nNo. As for why so many of the crash\nsites are never located, that's probably because of\nthe complex, rugged terrain\nand the heavy vegetation.\nNot a during the search for Fossett.\nEight other crash sites were found.\nSo chances are they're all out there hidden\nwithin the peaks and valleys of the Sierra\nNevada mountains. Know or could\nit be something else?\nYet. What a headcount.\nWhat is this place? I have no idea.\nI got a bad feeling about"
+          "charStart": 8464,
+          "charEnd": 8575,
+          "timeStart": 480.92,
+          "timeEnd": 488.18,
+          "quote": "As for why so many of the crash\nsites are never located, that's probably because of\nthe complex, rugged terrain"
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.9,
       "directTruth": 0.85,
-      "rationale": "An accurate paraphrase of the host's verdict, which is itself well-calibrated. The 'eight other crash sites found while searching for Fossett' detail is real - it became famous because it shows the back-country is genuinely littered with undiscovered wrecks, supporting the prosaic explanation over the Area 51 conspiracy.",
-      "hostStance": "asserts",
+      "rationale": "The Fossett search did turn up additional pre-existing wrecks (widely reported in AP coverage Oct 2007). Terrain-and-vegetation concealment in the Sierra is a well-established factor in aviation search-and-rescue — CalMiss and Civil Air Patrol have documented multi-decade unrecovered wrecks. Host's framing is reasonable and supported.",
+      "tags": [
+        "terrain",
+        "search-and-rescue",
+        "unrecovered-wrecks"
+      ],
       "inVerdictSection": true,
-      "dependencies": [
+      "hostStance": "asserts"
+    },
+    {
+      "id": "WMETBHvo-U4:c_0013",
+      "videoId": "WMETBHvo-U4",
+      "text": "Major Ross Mulhare died July 11, 1986 flying an F-117 stealth fighter into a mountain near Bakersfield, and the cause has never been officially revealed.",
+      "kind": "historical",
+      "entities": [
+        "person:major ross mulheron",
+        "date_time:july 11th, 1986"
+      ],
+      "relationships": [],
+      "evidence": [
         {
-          "target": "WMETBHvo-U4:c_0007",
-          "kind": "supports"
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 6852,
+          "charEnd": 6867,
+          "timeStart": 386.69,
+          "timeEnd": 393.32,
+          "quote": "July 11th, 1986"
+        },
+        {
+          "transcriptId": "WMETBHvo-U4",
+          "charStart": 6869,
+          "charEnd": 6935,
+          "timeStart": 386.69,
+          "timeEnd": 393.32,
+          "quote": "Major Ross Mulheron flew\nan F 117 into a mountain near Bakersfield"
         }
-      ]
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "Major Ross Mulhare did die in a F-117A crash July 11 1986 near Bakersfield CA. 'Mulheron' is a transcript error. The F-117 program was still classified, so specifics about the aircraft were publicly withheld; USAF attributed the crash to spatial disorientation after fatigue (declassified 1990s). 'Never officially revealed' overstates — cause was eventually released, just not immediately.",
+      "tags": [
+        "f-117",
+        "ross-mulhare",
+        "stealth"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     }
   ]
 }

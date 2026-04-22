@@ -1,86 +1,172 @@
 {
   "schemaVersion": 1,
   "transcriptId": "hSldb9IMDVU",
-  "generatedAt": "2026-04-20T02:28:58.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T14:21:59.150Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-resume",
   "claims": [
     {
       "id": "hSldb9IMDVU:c_0001",
       "videoId": "hSldb9IMDVU",
-      "text": "An 18-mile-long string of wire — known as an eruv — encircles the entire island of Manhattan, is inspected and repaired weekly, and costs roughly $150,000 a year to maintain, yet most New Yorkers don't know it exists.",
+      "text": "An 18-mile-long wire circles the island of Manhattan and is inspected daily and repaired as needed at an annual maintenance cost of about $150,000.",
       "kind": "empirical",
       "entities": [
         "location:manhattan",
         "location:manhattan island",
-        "location:new york city",
-        "quantity:18 miles",
-        "quantity:$150,000"
+        "quantity:$150,000",
+        "quantity:18 miles"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "hSldb9IMDVU",
-          "charStart": 0,
+          "charStart": 24,
           "charEnd": 80,
           "timeStart": 0.88,
           "timeEnd": 7.48,
-          "quote": "did you know there's an 18m long string\nof wire circling the island of Manhattan"
+          "quote": "18m long string\nof wire circling the island of Manhattan"
         },
         {
           "transcriptId": "hSldb9IMDVU",
-          "charStart": 81,
+          "charStart": 171,
           "charEnd": 209,
-          "timeStart": 5.92,
+          "timeStart": 9.44,
           "timeEnd": 16.240000000000002,
-          "quote": "every morning the wire is checked for\nbrakes and snags and every day it's\nrepaired and it cost about\n$150,000 a year to maintain"
+          "quote": "cost about\n$150,000 a year to maintain"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
-      "rationale": "The Manhattan Eruv is real. It encircles most of Manhattan (not literally the whole island — Hell's Kitchen, the financial district, and parts of upper Manhattan are excluded). The ~18-mile length and ~$150,000 annual maintenance cost are the figures widely reported (NPR, NY Times). Inspection cadence is real but it's a Thursday/Friday inspection by rabbi-led teams, not literally every morning — host slightly overstates frequency.",
+      "rationale": "The Manhattan eruv is well-documented in NY Times and academic sources (Fonrobert 2005, Stolzenberg 1996). ~18 mile perimeter and annual maintenance in the low six figures are consistent with published estimates (community fundraising reports $100-150k/year). Host's figures match the public record.",
+      "tags": [
+        "eruv",
+        "manhattan",
+        "infrastructure"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "hSldb9IMDVU:c_0002",
       "videoId": "hSldb9IMDVU",
-      "text": "In observant Judaism the Sabbath runs from Friday sunset through Saturday and is a day of rest in which 'work' is defined broadly — not just construction but also building, cooking, sewing, lighting fires, finishing objects, and using electricity are all forbidden.",
+      "text": "Observant Jews keep Shabbat from Friday sunset through Saturday evening as a day of rest, abstaining from any activity defined as work.",
       "kind": "definitional",
       "entities": [
         "event:sabbath",
-        "ideology:judaism",
+        "event:shabbat",
         "nationality_or_ethnicity:jewish people",
         "date_time:friday night",
-        "date_time:sunset",
-        "date_time:saturday"
+        "date_time:sunset"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "hSldb9IMDVU",
           "charStart": 449,
-          "charEnd": 572,
+          "charEnd": 530,
           "timeStart": 32.279,
-          "timeEnd": 42.48,
-          "quote": "Sabbath begins every Friday night at\nSunset and goes all the way through\nSaturday and Jewish people who observe\nthe sabbath"
+          "timeEnd": 40,
+          "quote": "Sabbath begins every Friday night at\nSunset and goes all the way through\nSaturday"
         },
         {
           "transcriptId": "hSldb9IMDVU",
-          "charStart": 573,
-          "charEnd": 628,
-          "timeStart": 37.76,
-          "timeEnd": 44.84,
-          "quote": "Saturday is a day of rest\nmeaning you don't work at all"
+          "charStart": 599,
+          "charEnd": 664,
+          "timeStart": 40,
+          "timeEnd": 46.718999999999994,
+          "quote": "meaning you don't work at all and work\ndoesn't just mean your job"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Halakhic Sabbath law is exactly as the host describes: from Friday sunset to Saturday nightfall, the 39 melachot (categories of work derived from the Tabernacle's construction) are forbidden — including building, cooking, baking, kindling fire, and (by halakhic extension) using electricity. Standard Orthodox practice. Solid.",
+      "directTruth": 0.95,
+      "rationale": "Accurate summary of Shabbat observance in halakhic tradition. Friday-sunset to Saturday-nightfall (three-stars visible) timing is the mainstream Orthodox practice. The 39 melakhot (categories of prohibited work) are codified in Mishnah Shabbat 7:2.",
+      "tags": [
+        "shabbat",
+        "judaism",
+        "halakha"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "hSldb9IMDVU:c_0003",
       "videoId": "hSldb9IMDVU",
-      "text": "One of the trickier Sabbath restrictions prohibits carrying anything from a domestic ('private') area to a public area — including keys, wallets, strollers with children, or even canes for those who need them — making everyday outdoor life difficult on the Sabbath.",
+      "text": "The 39 prohibited Shabbat activities are defined as the kinds of work originally required to build the Tabernacle — including building, grinding, baking, sewing, fire-starting, tying, and tearing.",
+      "kind": "definitional",
+      "entities": [
+        "event:sabbath",
+        "ideology:judaism"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 665,
+          "charEnd": 749,
+          "timeStart": 42.48,
+          "timeEnd": 51.64,
+          "quote": "work is\ndefined as any activity that was\nnecessary in the building of the\nTabernacle"
+        },
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 927,
+          "charEnd": 1022,
+          "timeStart": 58.64,
+          "timeEnd": 68.15899999999999,
+          "quote": "starting a fire not even small tasks\nlike tying tearing or putting finishing\ntouches on objects"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Correct halakhic principle — the 39 melakhot derive from the m'lekhet ha-mishkan (labor of the Tabernacle) per Mishnah Shabbat 7:2. Host accurately identifies representative categories (boneh, tochen, ofeh, tofer, mav'ir, kosher, korea'). Well within mainstream Orthodox/Conservative halakhic teaching.",
+      "tags": [
+        "melakhot",
+        "tabernacle",
+        "halakha"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "hSldb9IMDVU:c_0002",
+          "kind": "elaborates",
+          "rationale": "Specifies what 'work' means in the Shabbat-observance summary."
+        }
+      ]
+    },
+    {
+      "id": "hSldb9IMDVU:c_0004",
+      "videoId": "hSldb9IMDVU",
+      "text": "Electricity use is prohibited on Shabbat.",
+      "kind": "definitional",
+      "entities": [
+        "event:sabbath"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 1026,
+          "charEnd": 1064,
+          "timeStart": 63.559,
+          "timeEnd": 70.799,
+          "quote": "and also no\nelectricity on the Sabbath"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "The mainstream Orthodox position does prohibit completing electrical circuits on Shabbat, but the halakhic basis is contested: Chazon Ish held it as boneh (building), Rav Shlomo Zalman Auerbach disagreed. Pre-set timers, indirect use (grama), and necessity cases all complicate the categorical prohibition. Host's flat statement oversimplifies a genuine rabbinic debate.",
+      "tags": [
+        "electricity",
+        "shabbat",
+        "halakhic-debate"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "hSldb9IMDVU:c_0005",
+      "videoId": "hSldb9IMDVU",
+      "text": "On Shabbat, carrying objects from a domestic area to a public area — including keys, wallets, canes, or strollers with children — is forbidden under halakha.",
       "kind": "definitional",
       "entities": [
         "event:sabbath",
@@ -96,52 +182,45 @@
           "timeStart": 86.28,
           "timeEnd": 93.399,
           "quote": "no carrying anything from a domestic\narea to a public area"
+        },
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 2241,
+          "charEnd": 2288,
+          "timeStart": 141.68,
+          "timeEnd": 148.83999999999997,
+          "quote": "you can't carry a\nchild or even push a stroller"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "Hotzaah, the prohibition on carrying between private (reshut hayachid) and public (reshut harabim) domains on Shabbat, is one of the 39 melachot and is correctly described. The practical consequences (no wallet, keys, stroller) are exactly the lived experience this rule creates for observant families.",
-      "dependencies": [
-        {"target": "hSldb9IMDVU:c_0002", "kind": "elaborates"}
+      "rationale": "Correct: hotza'ah (transferring between domains) is one of the 39 melakhot. The reshut ha-rabim / reshut ha-yachid distinction and its implications for canes, strollers, and keys are standard in halakhic manuals like Shemirat Shabbat KeHilchatah. The specific list matches widely-published Orthodox practice.",
+      "tags": [
+        "hotzaah",
+        "carrying",
+        "shabbat"
       ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "hSldb9IMDVU:c_0004",
+      "id": "hSldb9IMDVU:c_0006",
       "videoId": "hSldb9IMDVU",
-      "text": "The eruv is a halakhic workaround: an unbroken continuous wire (originally a literal wall) circling a large public area, which symbolically converts everything inside its boundary into a single private domain — letting observant Jews carry items, push strollers, and use canes outdoors on the Sabbath.",
+      "text": "An eruv is an unbroken continuous string or wire enclosing a public area so that, halakhically, the space is reclassified as a private domain where carrying is permitted on Shabbat.",
       "kind": "definitional",
       "entities": [
-        "organization:rabbis",
-        "location:public area",
-        "location:domestic area",
-        "event:sabbath"
+        "event:sabbath",
+        "organization:rabbis"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "hSldb9IMDVU",
-          "charStart": 2513,
-          "charEnd": 2560,
-          "timeStart": 157.08,
-          "timeEnd": 164,
-          "quote": "this is where the\nwire around New York comes in"
-        },
-        {
-          "transcriptId": "hSldb9IMDVU",
           "charStart": 2561,
-          "charEnd": 2662,
+          "charEnd": 2629,
           "timeStart": 159.12,
-          "timeEnd": 171.48,
-          "quote": "it's\ncalled an AO and an AO is an unbroken\ncontinuous string or wire that circles a\nlarge public area"
-        },
-        {
-          "transcriptId": "hSldb9IMDVU",
-          "charStart": 2667,
-          "charEnd": 2703,
-          "timeStart": 166.48,
-          "timeEnd": 173.72,
-          "quote": "originally a ruven\nwere actual walls"
+          "timeEnd": 169.2,
+          "quote": "it's\ncalled an AO and an AO is an unbroken\ncontinuous string or wire"
         },
         {
           "transcriptId": "hSldb9IMDVU",
@@ -153,23 +232,62 @@
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The eruv (plural eruvin) concept is well-established in rabbinic halakha — the Talmud devotes the entire tractate Eruvin to its rules. The 'unifies multiple private domains into one' framing is correct (eruv chatzerot specifically). Modern eruvs typically use a combination of existing walls, fences, telephone wires, and added wire-on-pole 'lechi/korah' constructions. Host's account is accurate if simplified.",
-      "dependencies": [
-        {"target": "hSldb9IMDVU:c_0003", "kind": "elaborates", "rationale": "The eruv is the halakhic mechanism that mitigates the carrying prohibition described in c_0003."}
+      "directTruth": 0.95,
+      "rationale": "Correct halakhic characterization of an eruv chatzerot. 'AO' is a transcript artifact of 'eruv'. The boundary must be continuous (closed) and legally tied to a symbolic shared meal so the enclosed space counts as one common courtyard. Host's description matches the Talmudic Eruvin tractate and current Orthodox practice.",
+      "tags": [
+        "eruv-definition",
+        "halakha",
+        "shabbat"
       ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "hSldb9IMDVU:c_0005",
+          "kind": "contradicts",
+          "rationale": "[alternative] An eruv creates a halakhic workaround to the otherwise-strict carrying prohibition, reclassifying public-area carrying as permitted."
+        }
+      ]
+    },
+    {
+      "id": "hSldb9IMDVU:c_0007",
+      "videoId": "hSldb9IMDVU",
+      "text": "Eruvin were originally built from actual walls but are now symbolic boundaries marked by wires, poles, and pre-existing fences.",
+      "kind": "historical",
+      "entities": [
+        "organization:rabbis"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 2667,
+          "charEnd": 2734,
+          "timeStart": 166.48,
+          "timeEnd": 175.959,
+          "quote": "originally a ruven\nwere actual walls but now they're\nsymbolic walls"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Accurate: Talmudic-era eruvin used physical courtyard walls and doorposts (lechayayim/korah). Modern urban eruvin use utility poles and a single suspended wire as the 'lintel' (tzurat hapesach) connecting them. The evolution from real-wall to symbolic-wall is standard in halakhic commentary (Rema OC 362-365).",
+      "tags": [
+        "eruv-history",
+        "halakha",
+        "urban-eruv"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "hSldb9IMDVU:c_0005",
+      "id": "hSldb9IMDVU:c_0008",
       "videoId": "hSldb9IMDVU",
-      "text": "Eruvim have proliferated dramatically — going from only a handful in the United States in the 1990s to hundreds today — and the Manhattan eruv is the world's most expensive and serves the largest population.",
-      "kind": "historical",
+      "text": "The number of eruvin in the United States grew from just a few in the 1990s to hundreds today.",
+      "kind": "empirical",
       "entities": [
         "location:united states",
-        "location:manhattan",
-        "organization:mayu",
-        "quantity:hundreds"
+        "date_time:saturday",
+        "organization:rabbis"
       ],
       "relationships": [],
       "evidence": [
@@ -180,7 +298,32 @@
           "timeStart": 193,
           "timeEnd": 202.44,
           "quote": "in the 1990s there were only a few\naen in the United States but now there\nare hundreds"
-        },
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "The growth trajectory is real — the Union of Orthodox Congregations' eruv directory lists ~200+ North American eruvin today, up from a handful in the 1980s-90s. The '1990s few' figure slightly understates (NYC, LA, Baltimore had eruvin before 1990) but the order-of-magnitude growth is correct.",
+      "tags": [
+        "eruv-growth",
+        "united-states",
+        "orthodox-demographics"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "hSldb9IMDVU:c_0009",
+      "videoId": "hSldb9IMDVU",
+      "text": "The Manhattan eruv is the most expensive eruv in the world and the one serving the largest population, having grown from a small Upper West Side community enclosure to cover almost the entire island — except Hell's Kitchen.",
+      "kind": "empirical",
+      "entities": [
+        "organization:mayu",
+        "location:manhattan",
+        "location:upper west side",
+        "location:hell's kitchen"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "hSldb9IMDVU",
           "charStart": 3220,
@@ -188,23 +331,89 @@
           "timeStart": 205.72,
           "timeEnd": 215.39999999999998,
           "quote": "the most\nexpensive Ave in the world and the one\nwith the largest population is the Mayu\nin Manhattan"
+        },
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 3325,
+          "charEnd": 3443,
+          "timeStart": 211.599,
+          "timeEnd": 222.76,
+          "quote": "it began as a small\ncommunity enclosure in the upper west\nside and now it covers almost the entire\nisland of Manhattan"
+        },
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 3444,
+          "charEnd": 3480,
+          "timeStart": 217.84,
+          "timeEnd": 225.07999999999998,
+          "quote": "what area isn't\ncoved Hell's Kitchen"
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.7,
-      "rationale": "Eruvim have indeed expanded substantially in the US since the 1990s — sourcebooks and academic studies (Adam Mintz's work on the modern eruv movement) confirm this. The Manhattan eruv is among the largest and most expensive in the world; whether it's the absolute largest by population is plausible but disputed (Boro Park / Brooklyn eruvim are also massive). The 'most expensive' framing is widely repeated.",
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "The Manhattan eruv did originate as an Upper West Side project (Lincoln Square Synagogue, ~1994) and has expanded. 'Most expensive' and 'largest population' are plausible superlatives but not rigorously verified — the Brooklyn / Boro Park eruvin serve larger Orthodox populations. The Hell's Kitchen exclusion is accurate per current eruv maps. 'Mayu' is a transcript artifact.",
+      "tags": [
+        "manhattan-eruv",
+        "upper-west-side",
+        "hells-kitchen"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "hSldb9IMDVU:c_0006",
+      "id": "hSldb9IMDVU:c_0010",
       "videoId": "hSldb9IMDVU",
-      "text": "The Manhattan eruv covers nearly all of the island except Hell's Kitchen, is inspected weekly by rabbis driving the wire's length, repaired by a construction team on Thursdays and Fridays, and has remained intact for over 20 years through vandalism, two hurricanes, and a Thanksgiving Day Parade float incident.",
+      "text": "Every morning a rabbi drives the entire Manhattan eruv perimeter to inspect for breaks, and a construction team is dispatched Thursday-Friday to repair any damage before Shabbat.",
+      "kind": "empirical",
+      "entities": [
+        "person:rabbi",
+        "organization:construction team",
+        "location:manhattan"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 3492,
+          "charEnd": 3550,
+          "timeStart": 219.879,
+          "timeEnd": 229,
+          "quote": "every\nmorning a rabbi drives the entire length\nof the wire"
+        },
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 3621,
+          "charEnd": 3691,
+          "timeStart": 229,
+          "timeEnd": 235.72,
+          "quote": "he goes out with a construction\nteam to make sure the wire is repaired"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The inspection-and-repair cycle is well-documented in NYT coverage of the Manhattan eruv (Brownfield 2007, Kilgannon 2018). A pre-Shabbat weekly check with post-inspection repair crew is standard procedure. 'Every morning' may slightly overstate — the weekly pre-Shabbat inspection is the main cycle — but the practice exists.",
+      "tags": [
+        "manhattan-eruv",
+        "inspection",
+        "maintenance"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "hSldb9IMDVU:c_0001",
+          "kind": "elaborates",
+          "rationale": "Specifies the maintenance process behind the annual cost figure in c_0001."
+        }
+      ]
+    },
+    {
+      "id": "hSldb9IMDVU:c_0011",
+      "videoId": "hSldb9IMDVU",
+      "text": "The Manhattan eruv has survived vandalism, two hurricanes, and a Thanksgiving Day Parade float incident, and has remained intact for over 20 years.",
       "kind": "historical",
       "entities": [
         "location:manhattan",
-        "location:hell's kitchen",
-        "person:rabbi",
-        "organization:construction team",
         "event:thanksgiving day",
         "person:spongebob"
       ],
@@ -212,35 +421,92 @@
       "evidence": [
         {
           "transcriptId": "hSldb9IMDVU",
-          "charStart": 3444,
-          "charEnd": 3491,
-          "timeStart": 217.84,
-          "timeEnd": 225.07999999999998,
-          "quote": "what area isn't\ncoved Hell's Kitchen checks out"
-        },
-        {
-          "transcriptId": "hSldb9IMDVU",
-          "charStart": 3492,
-          "charEnd": 3592,
-          "timeStart": 219.879,
-          "timeEnd": 230.959,
-          "quote": "every\nmorning a rabbi drives the entire length\nof the wire and notes places where it\ncould be broken"
-        },
-        {
-          "transcriptId": "hSldb9IMDVU",
           "charStart": 3744,
-          "charEnd": 3797,
+          "charEnd": 3847,
           "timeStart": 235.72,
-          "timeEnd": 242.12,
-          "quote": "the Manhattan a has\nsurvived vandalism two hurricanes"
+          "timeEnd": 247.439,
+          "quote": "the Manhattan a has\nsurvived vandalism two hurricanes even\none really aggressive Thanksgiving Day\nfloat"
+        },
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 3913,
+          "charEnd": 3952,
+          "timeStart": 245.239,
+          "timeEnd": 252.56,
+          "quote": "20\nyears the a roof has remained intact"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.8,
-      "rationale": "The Manhattan eruv's exclusion of Hell's Kitchen (and the western part of Midtown) is correct. The weekly inspection and repair pattern is real (the inspections are typically done by the Boro Park Eruv Committee or the Manhattan Eruv Inc., often with Rabbi Adam Mintz historically associated). Survived Hurricane Sandy (2012) — that's the 'two hurricanes' the host mentions. The float anecdote is a charming detail but not independently confirmed.",
-      "dependencies": [
-        {"target": "hSldb9IMDVU:c_0001", "kind": "elaborates"}
+      "confidence": 0.8,
+      "directTruth": 0.7,
+      "rationale": "Hurricane Sandy (2012) and Hurricane Irene (2011) did damage eruv segments and required emergency pre-Shabbat repairs. Thanksgiving Day Parade snag incidents have been reported in NYT. 20+ year continuity of the expanded Manhattan eruv (since ~1999 UWS-to-midtown expansion) is consistent with the timeline. 'SpongeBob' is flavor but the underlying float-snag events are real.",
+      "tags": [
+        "manhattan-eruv",
+        "hurricane-damage",
+        "resilience"
       ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "hSldb9IMDVU:c_0012",
+      "videoId": "hSldb9IMDVU",
+      "text": "Nearly every major city in the western world has an almost-invisible eruv wire running around it.",
+      "kind": "empirical",
+      "entities": [
+        "location:western world"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 3964,
+          "charEnd": 4048,
+          "timeStart": 250.319,
+          "timeEnd": 260.959,
+          "quote": "an almost invisible wire running\naround almost every major city in the\nwestern world"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.5,
+      "rationale": "Overstated. Eruvin exist in most cities with significant Orthodox Jewish populations (NYC, LA, Chicago, London, Paris, Melbourne, Toronto), but 'almost every major city in the western world' is too broad — cities without established Orthodox communities generally don't have eruvin. The claim is approximately half right: eruvin are common in western cities with Jewish communities, not all western cities.",
+      "tags": [
+        "eruv-distribution",
+        "western-cities",
+        "overstatement"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "hSldb9IMDVU:c_0013",
+      "videoId": "hSldb9IMDVU",
+      "text": "God established the Shabbat rules so that observant Jews would have one day each week for pleasurable activities like eating, family time, and sex.",
+      "kind": "opinion",
+      "entities": [
+        "person:god",
+        "event:sabbath",
+        "nationality_or_ethnicity:jewish people"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hSldb9IMDVU",
+          "charStart": 1065,
+          "charEnd": 1095,
+          "timeStart": 65.92,
+          "timeEnd": 72.799,
+          "quote": "who set up\nall these rules God"
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.3,
+      "rationale": "This is theological interpretation rather than descriptive claim. While 'oneg Shabbat' (Shabbat delight, per Isaiah 58:13) is a recognized halakhic principle emphasizing pleasurable observance, the host's causal framing ('God set up these rules so that...') imposes a teleological interpretation of divine intent that is one reading among several (others: covenantal, creational, commemorative). directTruth low because the claim is irreducibly theological.",
+      "tags": [
+        "shabbat-purpose",
+        "theology",
+        "oneg-shabbat"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     }
   ]

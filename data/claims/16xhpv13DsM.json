@@ -1,29 +1,24 @@
 {
   "schemaVersion": 1,
   "transcriptId": "16xhpv13DsM",
-  "generatedAt": "2026-04-20T01:36:30.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4-7[1m]/plan-03-v2",
   "claims": [
     {
       "id": "16xhpv13DsM:c_0001",
       "videoId": "16xhpv13DsM",
-      "text": "Animal rain — fish, frogs, snakes, spiders, blood, even chunks of meat falling from the sky — is not folkloric exaggeration but a recurring, geographically widespread phenomenon documented across cultures for at least two thousand years.",
+      "text": "Rainfall of non-water material (fish, frogs, spiders, worms, blood, meat) is a real, recurring meteorological phenomenon documented across centuries and continents.",
       "kind": "empirical",
-      "entities": [
-        "location:europe",
-        "location:honduras",
-        "location:india",
-        "location:australia"
-      ],
+      "entities": ["person:pliny the elder", "date_time:first century a.d."],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 320,
-          "charEnd": 431,
-          "timeStart": 17.07,
-          "timeEnd": 24.42,
-          "quote": "Things like frogs, snakes, spiders, animal flesh,\neven blood have rained down all over\nthe world for centuries."
+          "charStart": 1370,
+          "charEnd": 1427,
+          "timeStart": 94.62,
+          "timeEnd": 99.73,
+          "quote": "Animal rain has been\ndocumented throughout human history."
         },
         {
           "transcriptId": "16xhpv13DsM",
@@ -34,23 +29,55 @@
           "quote": "Pliny the Elder talked about a storm of frogs\nand fish as early as the first century A.D."
         }
       ],
-      "confidence": 0.97,
+      "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "The existence of recurring animal-rain reports across many cultures and centuries is well-attested in newspapers, scientific journals, and folklore. The mechanisms are debated; the existence of the phenomenon is not. Pliny the Elder's Natural History does mention rains of fish and frogs (book IX), so the historical attribution is real.",
-      "hostStance": "asserts"
+      "rationale": "The premise of the video — animal rain events happen — is corroborated by many specific dated newspaper accounts (Memphis 1877, Kansas City 1873, Kerala 2001, Goulburn 2015, etc.) and by Pliny's first-century record. Modern meteorology accepts tornadic waterspouts as a transport mechanism for at least some reported events.",
+      "tags": ["animal-rain", "meteorology", "fortean"],
+      "hostStance": "asserts",
+      "inVerdictSection": false
     },
     {
       "id": "16xhpv13DsM:c_0002",
       "videoId": "16xhpv13DsM",
-      "text": "The town of Yoro in landlocked Honduras hosts a recurring 'Lluvia de Peces' (Rain of Fish) every spring in which thousands of fully aquatic fish appear in the streets, even though the nearest body of water is roughly 120 miles away — and it is celebrated as a festival.",
-      "kind": "historical",
-      "entities": [
-        "location:honduras"
+      "text": "The prevailing scientific hypothesis is that tornadic waterspouts lift small animals into parent clouds and deposit them far inland.",
+      "kind": "empirical",
+      "entities": ["location:tropics", "location:great lakes"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 1920,
+          "charEnd": 2043,
+          "timeStart": 125.57,
+          "timeEnd": 133.84,
+          "quote": "The current working\nhypothesis is that animal rain involves tornadic\nwaterspouts, which are tornadoes\nthat form over water."
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 2044,
+          "charEnd": 2085,
+          "timeStart": 137.98,
+          "timeEnd": 142.56,
+          "quote": "Water spouts usually occur in the tropics"
+        }
       ],
-      "relationships": [
-        "r_0005",
-        "r_0007"
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The waterspout/vortex hypothesis is a mainstream meteorological explanation with a plausible physical mechanism (buffeting small flat objects inside a convective cell). The host frames it as the 'current working hypothesis,' not as definitive.",
+      "dependencies": [
+        { "target": "16xhpv13DsM:c_0001", "kind": "elaborates", "rationale": "Identifies the leading mechanism for the phenomenon claimed in c_0001." }
       ],
+      "tags": ["waterspout", "meteorology", "mechanism"],
+      "hostStance": "asserts",
+      "inVerdictSection": false
+    },
+    {
+      "id": "16xhpv13DsM:c_0003",
+      "videoId": "16xhpv13DsM",
+      "text": "Honduras experiences an annual 'rain of fish' in the town of Yoro despite being a landlocked region with no ocean within roughly 120 miles.",
+      "kind": "empirical",
+      "entities": ["location:honduras", "location:town of yoro", "event:yoovidhya case", "quantity:one hundred and twenty miles"],
+      "relationships": ["r_0001", "r_0005"],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
@@ -62,332 +89,377 @@
         },
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 580,
-          "charEnd": 754,
+          "charStart": 585,
+          "charEnd": 683,
           "timeStart": 32.85,
           "timeEnd": 41.55,
-          "quote": "Now, Honduras is a landlocked nation with the\nnearest body of water, one hundred and\ntwenty miles away. Yet every spring it rains thousands\nof fish all over the town of Yoro."
-        }
-      ],
-      "confidence": 0.93,
-      "directTruth": 0.7,
-      "rationale": "Yoro's annual Lluvia de Peces festival is real and the appearance of small fish in the streets after spring storms is well-documented. The 120-miles-from-water and 'rains' claims are the conventional folk framing; some scientists argue the fish actually come from underground rivers (the host even mentions this) rather than literally falling from the sky. So the social phenomenon is fully real, the literal-rain mechanism is contested.",
-      "dependencies": [
-        {
-          "target": "16xhpv13DsM:c_0001",
-          "kind": "elaborates"
-        }
-      ],
-      "hostStance": "asserts"
-    },
-    {
-      "id": "16xhpv13DsM:c_0003",
-      "videoId": "16xhpv13DsM",
-      "text": "The current scientific working hypothesis for animal rain is that tornadic waterspouts — tornadoes that form over warm tropical water — can lift small, light, flat aquatic animals into a parent cloud where they may travel for miles before being dropped, but this mechanism does not adequately explain single-species deposits, dry/calm weather events, or country-wide simultaneous falls.",
-      "kind": "empirical",
-      "entities": [
-        "organization:scientists",
-        "organization:zoologists"
-      ],
-      "relationships": [],
-      "evidence": [
+          "quote": "Honduras is a landlocked nation with the\nnearest body of water, one hundred and\ntwenty miles away."
+        },
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 1920,
-          "charEnd": 2043,
-          "timeStart": 125.57,
-          "timeEnd": 133.84,
-          "quote": "The current working\nhypothesis is that animal rain involves tornadic\nwaterspouts, which are tornadoes\nthat form over water."
+          "charStart": 701,
+          "charEnd": 754,
+          "timeStart": 36.6,
+          "timeEnd": 41.55,
+          "quote": "it rains thousands\nof fish all over the town of Yoro."
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.55,
-      "rationale": "Waterspouts are the standard textbook explanation in atmospheric-sciences sources (e.g. NWS, NOAA), and the mechanism is plausible for fish-rain near coastlines. The host's critique — that single-species deposits and dry-weather falls aren't well explained by waterspouts — is a fair scientific objection raised in the meteorology literature too. So the hypothesis is real and partly explanatory but genuinely incomplete.",
-      "hostStance": "uncertain"
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The Lluvia de Peces in Yoro is a well-documented local tradition recorded by multiple outside observers (including National Geographic). Note: Honduras actually has a Caribbean and Pacific coast; the '120 miles' refers to distance from Yoro, not Honduras as a whole — the host's framing is slightly loose.",
+      "tags": ["honduras", "yoro", "fish-rain"],
+      "hostStance": "asserts"
     },
     {
       "id": "16xhpv13DsM:c_0004",
       "videoId": "16xhpv13DsM",
-      "text": "On May 15, 2015, residents of Goulburn (here transcribed 'Ingleburn') in Australia witnessed millions of baby spiders raining down and blanketing the countryside in silk — a known but spectacular instance of 'ballooning,' in which spiders climb to a high point and release silk parachutes to ride wind currents to new territory.",
-      "kind": "historical",
-      "entities": [
-        "location:australia"
-      ],
+      "text": "The mass spider rain in Goulburn, Australia was caused by ballooning, not precipitation — spiders climb high, spin silk sails, and are carried on the wind.",
+      "kind": "empirical",
+      "entities": ["location:goulburn, australia", "date_time:may 15th, 20 15", "quantity:millions"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 4868,
-          "charEnd": 5030,
-          "timeStart": 322.23,
-          "timeEnd": 334.27,
-          "quote": "On May 15th, 20 15 residents of\nGoulburn, Australia witnessed millions of baby spiders\nliterally raining down and blanketing the\ncountryside in silky white whips."
-        },
-        {
-          "transcriptId": "16xhpv13DsM",
-          "charStart": 5031,
+          "charStart": 5068,
           "charEnd": 5121,
           "timeStart": 334.47,
           "timeEnd": 341.64,
-          "quote": "What happened in this case is called\nballooning, which is a form of spider\ntransportation."
+          "quote": "ballooning, which is a form of spider\ntransportation."
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 5218,
+          "charEnd": 5291,
+          "timeStart": 345.0,
+          "timeEnd": 352.0,
+          "quote": "sort\nof parachute that catches a breeze, which can carry\nthem a long way."
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.9,
       "directTruth": 0.9,
-      "rationale": "The May 2015 mass-ballooning event in the Southern Tablelands of NSW (Goulburn) is well-documented — photographed widely, covered in major outlets, and studied by Australian arachnologists. Ballooning as a dispersal mechanism is uncontroversial science going back to at least Darwin. Both halves of the claim are solidly true.",
+      "rationale": "Ballooning is a well-established entomological behavior (documented in Darwin and confirmed by modern research including electrostatic lift studies). The Goulburn 2015 event was widely reported and matched ballooning's signature: mass aerial dispersal on calm days.",
+      "dependencies": [
+        { "target": "16xhpv13DsM:c_0002", "kind": "contradicts", "rationale": "[alternative] Spider rain has a non-waterspout mechanism, showing the waterspout hypothesis does not cover all animal-rain reports." }
+      ],
+      "tags": ["spiders", "ballooning", "goulburn"],
       "hostStance": "asserts"
     },
     {
       "id": "16xhpv13DsM:c_0005",
       "videoId": "16xhpv13DsM",
-      "text": "In 2015, thousands of live worms appeared on a snowy Norwegian mountain whose underlying soil was frozen solid a meter down, an event that has recurred in Scandinavia since the 1920s and remains scientifically unexplained.",
+      "text": "The red 'blood rain' on Kerala in 2001 was not blood or extraterrestrial matter but colored by airborne algal spores (Trentepohlia).",
       "kind": "empirical",
-      "entities": [
-        "location:norway",
-        "date_time:2015"
-      ],
+      "entities": ["location:kerala", "location:india", "date_time:2001", "date_time:2012", "event:red rain", "location:austria"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 6220,
-          "charEnd": 6335,
-          "timeStart": 403.92,
-          "timeEnd": 413.4,
-          "quote": "Thousands of worms appeared on a snowy mountain\nin Norway in 2015, and scientists still\ndon't know how it happened."
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.6,
-      "rationale": "There are credible 2015 Norwegian press reports of worms found on snow in mountainous regions (notably near Bergen and Sogn), and similar recurring events appear in Scandinavian archives. The 'still no explanation' framing slightly overstates — biologists generally favor wind-lifting from nearby unfrozen patches — but the precise mechanism for whole-mountain coverage really is unsettled.",
-      "dependencies": [
+          "charStart": 8529,
+          "charEnd": 8612,
+          "timeStart": 555.35,
+          "timeEnd": 565.4,
+          "quote": "In 2001, blood rain received international attention\nwhen it fell on Kerala, India."
+        },
         {
-          "target": "16xhpv13DsM:c_0003",
-          "kind": "contradicts",
-          "rationale": "Calm, cold, snow-covered conditions don't fit the waterspout hypothesis."
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 8853,
+          "charEnd": 8924,
+          "timeStart": 574.94,
+          "timeEnd": 579.59,
+          "quote": "rain contained spores of\na specific type of algae indigenous to Austria"
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 9030,
+          "charEnd": 9132,
+          "timeStart": 583.28,
+          "timeEnd": 594.95,
+          "quote": "Studies have confirmed with certainty that the\nmicroalgae Trenta FOLIA is indeed turning\nthe rain red."
         }
       ],
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Host explicitly presents this as the settled scientific conclusion ('studies have confirmed with certainty'). This matches the peer-reviewed literature on Trentepohlia spores in Kerala rain (Sampath et al. and subsequent work).",
+      "tags": ["kerala", "red-rain", "algae", "trentepohlia"],
+      "hostStance": "asserts",
+      "inVerdictSection": true
     },
     {
       "id": "16xhpv13DsM:c_0006",
       "videoId": "16xhpv13DsM",
-      "text": "Most premodern 'blood rain' is not actually blood: in 2001 and 2012 the famous red rains of Kerala, India were ultimately attributed to airborne microalgae spores (Trentepohlia) carried into the upper atmosphere, while the 1893 Italian event involved Saharan dust mixed with storm clouds — but the imagery has historically been read as a supernatural omen, e.g. a 787 A.D. red rain said to predict the Viking invasion of England.",
+      "text": "The initial atmospheric-meteor-burst theory for the Kerala red rain is wrong.",
       "kind": "empirical",
-      "entities": [
-        "location:kerala",
-        "date_time:2001",
-        "date_time:2012",
-        "location:india",
-        "location:england"
-      ],
+      "entities": ["event:atmospheric meteor burst", "location:kerala", "event:red rain"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 8821,
-          "charEnd": 8902,
-          "timeStart": 570.02,
-          "timeEnd": 579.59,
-          "quote": "further studies\nshowed that the rain contained spores of\na specific type of algae"
+          "charStart": 8707,
+          "charEnd": 8788,
+          "timeStart": 565.4,
+          "timeEnd": 569.81,
+          "quote": "This led to a theory that the red\nrain was caused by an atmospheric meteor burst."
         },
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 7899,
-          "charEnd": 8032,
-          "timeStart": 510.96,
-          "timeEnd": 522.47,
-          "quote": "in\nthe year seven eighty seven, and there was a\nrecorded rate of blood that was later said\nto predict the Viking invasion of England."
+          "charStart": 8853,
+          "charEnd": 8924,
+          "timeStart": 574.94,
+          "timeEnd": 579.59,
+          "quote": "rain contained spores of\na specific type of algae indigenous to Austria"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The Kerala red rain microalgae explanation (Sampath et al., later Louis & Kumar work) is the consensus position; the supernatural panspermia interpretation has been retracted in mainstream literature. The Saharan-dust mechanism for European red rain is well-documented in atmospheric science. The 787 AD red rain is recorded in the Anglo-Saxon Chronicle entry for that year, which does also mention Northmen.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "Host presents the meteor-burst theory specifically to reject it in favor of the algal-spore explanation. The scientific consensus likewise rejects it.",
+      "dependencies": [
+        { "target": "16xhpv13DsM:c_0005", "kind": "contradicts", "rationale": "[debunks] The algal-spore finding (c_0005) directly falsifies the meteor-burst theory." }
+      ],
+      "tags": ["kerala", "red-rain", "meteor-theory"],
+      "hostStance": "denies"
     },
     {
       "id": "16xhpv13DsM:c_0007",
       "videoId": "16xhpv13DsM",
-      "text": "On March 3, 1876, the 'Kentucky meat shower' really did occur — chunks of unidentified flesh fell from the sky on a Bath County farm in quantities a contemporary Scientific American article noted were tasted (and judged lamb or deer) by witnesses, and Transylvania University analysis suggested the tissue was lung from a horse or human infant.",
+      "text": "The famous 1877 Memphis 'snake rain' was almost certainly earthworms, not snakes.",
       "kind": "historical",
-      "entities": [
-        "location:kentucky",
-        "date_time:eighteen seventy six"
-      ],
+      "entities": ["location:memphis", "date_time:eighteen seventy seven", "event:snake rain"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 9140,
-          "charEnd": 9258,
-          "timeStart": 588.8,
-          "timeEnd": 598.76,
-          "quote": "blood rain is not\nactually blood except when it is March 3rd.\nEighteen seventy six was the\nfamous Kentucky meat store."
+          "charStart": 11497,
+          "charEnd": 11598,
+          "timeStart": 748.75,
+          "timeEnd": 755.08,
+          "quote": "There was actually only one eyewitness to the\nMemphis snake rain and she didn't really\nsee them fall."
         },
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 9490,
-          "charEnd": 9591,
-          "timeStart": 616.11,
-          "timeEnd": 626.22,
-          "quote": "an issue of Scientific\nAmerican, two gentlemen who tasted the meat\nthought it was either lamb or deer"
+          "charStart": 11786,
+          "charEnd": 11863,
+          "timeStart": 763.39,
+          "timeEnd": 767.68,
+          "quote": "They gathered up their bodies in horseshoe\nshapes and creep along the ground."
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 11918,
+          "charEnd": 12004,
+          "timeStart": 771.7,
+          "timeEnd": 776.8,
+          "quote": "The infamous snake reign of Memphis of\neighteen seventy seven was probably earthworms,"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.85,
-      "rationale": "The Kentucky meat shower of March 3, 1876 is a real, contemporaneously reported event covered by the New York Times and Scientific American. Transylvania University's analysis (and the lamb/deer tasting anecdote) are part of the documented record. The leading modern explanation — vulture regurgitation — is itself sourced from local newspaper reportage and is plausible but unproven.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "Host reaches this conclusion as an explicit verdict after walking through the single eyewitness's own description (black, clumped, turning flesh-colored when rinsed, moving in horseshoe shapes). That behavior profile fits earthworms, not snakes.",
+      "dependencies": [
+        { "target": "16xhpv13DsM:c_0008", "kind": "supports", "rationale": "Worm misidentification explains why the 1877 report was propagated uncritically." }
+      ],
+      "tags": ["memphis", "snake-rain", "worms", "misidentification"],
+      "hostStance": "asserts",
+      "inVerdictSection": true
     },
     {
       "id": "16xhpv13DsM:c_0008",
       "videoId": "16xhpv13DsM",
-      "text": "The famous 1877 Memphis 'snake rain' that has been retold for nearly 150 years was almost certainly not snakes at all — there was only one eyewitness, she did not see anything fall, and her description (black creatures clumped together that turned flesh-colored when rinsed and moved by gathering their bodies into horseshoe shapes) matches earthworms, not snakes.",
+      "text": "The 1877 Memphis snake rain story spread nationally because 19th-century newspapers reprinted it without fact-checking the original account.",
       "kind": "historical",
-      "entities": [
-        "location:memphis",
-        "date_time:eighteen seventy seven"
-      ],
-      "relationships": [],
+      "entities": ["organization:the new york times", "date_time:eighteen seventy seven", "location:memphis"],
+      "relationships": ["r_0106"],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 11918,
-          "charEnd": 12003,
-          "timeStart": 771.7,
-          "timeEnd": 776.8,
-          "quote": "The infamous snake reign of Memphis of\neighteen seventy seven was probably earthworms"
-        },
-        {
-          "transcriptId": "16xhpv13DsM",
-          "charStart": 11632,
-          "charEnd": 11863,
-          "timeStart": 755.2,
-          "timeEnd": 767.68,
-          "quote": "She said the snakes were black and clumped\ntogether, but when rinsed with water, they\nturned flesh in color.\nThey also didn't move like snakes, she said.\nThey gathered up their bodies in horseshoe\nshapes and creep along the ground."
+          "charStart": 11268,
+          "charEnd": 11333,
+          "timeStart": 729.04,
+          "timeEnd": 734.08,
+          "quote": "In eighteen seventy seven, it was picked up by\nThe New York Times"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.75,
-      "rationale": "The 'earthworms not snakes' debunking is supported by a careful reading of the original 1877 newspaper accounts, which do show only one direct witness whose description (looping locomotion, color-change on rinsing) is much more consistent with annelids than with reptiles. The host's framing — that 19th-century papers regurgitated each other without checking — is also broadly accurate journalism history.",
-      "dependencies": [
-        {
-          "target": "16xhpv13DsM:c_0001",
-          "kind": "contradicts",
-          "rationale": "Suggests at least some classic animal-rain reports are misidentified rather than literal."
-        }
-      ],
+      "confidence": 0.8,
+      "rationale": "Host asserts NYT reprint seeded nationwide spread and characterizes 19th-century reprint culture as uncritical ('they just regurgitated the same story'). Plausible but single-quote evidence; no specific citations given, so directTruth is left unset.",
+      "tags": ["journalism", "memphis", "snake-rain"],
       "hostStance": "asserts"
     },
     {
       "id": "16xhpv13DsM:c_0009",
       "videoId": "16xhpv13DsM",
-      "text": "In June 2010, Hungary experienced multi-day countrywide rains of live tiny frogs in conditions with no reported wind or waterspout activity — a pattern (large area, multi-day duration, calm weather) that the standard waterspout explanation cannot account for, prompting some zoologists to invoke migratory behavior instead.",
-      "kind": "historical",
-      "entities": [
-        "location:hungary",
-        "date_time:june of 2010",
-        "organization:zoologists"
-      ],
+      "text": "Neither the waterspout hypothesis nor the bird-drop hypothesis adequately explains the 2009 countrywide tadpole rain in Japan.",
+      "kind": "speculative",
+      "entities": ["location:japan", "location:ishikawa", "date_time:2009", "event:tadpole downpour", "organization:local meteorologists"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 14134,
-          "charEnd": 14248,
-          "timeStart": 910.87,
-          "timeEnd": 919.99,
-          "quote": "In June of 2010 in Hungary, thousands of tiny\nfrogs rained all over the country and many\nof them were still alive."
+          "charStart": 12311,
+          "charEnd": 12368,
+          "timeStart": 801.27,
+          "timeEnd": 806.56,
+          "quote": "the entire country of\nJapan was covered in dead tadpoles."
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 13087,
+          "charEnd": 13130,
+          "timeStart": 842.55,
+          "timeEnd": 851.34,
+          "quote": "the weather was clear, the winds\nwere light"
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 12976,
+          "charEnd": 13002,
+          "timeStart": 835.62,
+          "timeEnd": 840.72,
+          "quote": "I\nbelieve neither of them."
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.5,
-      "rationale": "Reports of frog rain in Hungary in 2010 do exist in regional press; whether the event was as countrywide and as multi-day as the host claims is harder to verify from outside Hungarian-language sources. The migratory-behavior alternative is a real biological phenomenon (mass froglet emergences after rain) that probably explains many 'frog rain' reports without requiring anything to literally fall.",
+      "rationale": "Host explicitly rejects both mainstream explanations. The argument from scale (entire country) and clear weather is reasonable, but the 'entire country' framing appears to be hyperbole — reports were limited to scattered incidents in multiple locales, not a continuous blanket. Truth unset because this is argument-from-incredulity.",
       "dependencies": [
-        {
-          "target": "16xhpv13DsM:c_0003",
-          "kind": "contradicts",
-          "rationale": "Long, calm, country-scale events don't fit waterspout dispersal."
-        }
+        { "target": "16xhpv13DsM:c_0002", "kind": "contradicts", "rationale": "[undercuts] If waterspouts can't explain a clear-weather event, the waterspout hypothesis has coverage gaps." }
       ],
+      "tags": ["japan", "tadpoles", "unexplained"],
       "hostStance": "asserts"
     },
     {
       "id": "16xhpv13DsM:c_0010",
       "videoId": "16xhpv13DsM",
-      "text": "The 1958 Steve McQueen film 'The Blob' was inspired by a real 1954 Philadelphia police report of a six-foot-wide domed disc of quivering jelly that dissolved into a sticky scum when handled — a specimen of the recurring worldwide phenomenon known as 'star jelly,' which evaporates so quickly that no large samples have ever been preserved and one National Geographic Society analysis found no DNA in it at all.",
+      "text": "Historical blood-rain events were interpreted as supernatural omens, including as predictors of the Viking invasion of England and the arrival of the Black Plague.",
       "kind": "historical",
-      "entities": [
-        "person:steve mcqueen",
-        "work_of_media:the blob",
-        "location:philadelphia",
-        "date_time:1991"
-      ],
-      "relationships": [
-        "r_0121"
-      ],
+      "entities": ["event:viking invasion", "event:black plague", "location:germany", "date_time:thirteen forty seven"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 15812,
-          "charEnd": 16012,
-          "timeStart": 1016.84,
-          "timeEnd": 1033.82,
-          "quote": "But the blob was inspired by a real\nevent in nineteen fifty four, Philadelphia policeman\nreported the discovery of a domed disc of\nquivering jelly six feet in diameter and one\nfoot thick at the center"
+          "charStart": 7829,
+          "charEnd": 7898,
+          "timeStart": 510.96,
+          "timeEnd": 515.67,
+          "quote": "every time it occurred, it was\nconsidered supernatural and a bad omen"
         },
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 17011,
-          "charEnd": 17111,
-          "timeStart": 1092.56,
-          "timeEnd": 1099.31,
-          "quote": "scientists in the\nNational Geographic Society tested the sample.\nIn the US they found no DNA at all."
+          "charStart": 7947,
+          "charEnd": 8032,
+          "timeStart": 515.67,
+          "timeEnd": 522.47,
+          "quote": "recorded rate of blood that was later said\nto predict the Viking invasion of England."
         }
       ],
-      "confidence": 0.88,
+      "confidence": 0.8,
       "directTruth": 0.7,
-      "rationale": "The 1954 Philadelphia 'flying saucer jelly' incident (police officers John Collins, Joseph Keenan, and Howard Yates) is a real news story, and Jack H. Harris (producer of The Blob) did cite it as inspiration. Star jelly is a real recurring phenomenon with multiple proposed natural origins (frog spawn, slime mold, cyanobacterial mats); 'no DNA found' is true of certain isolated samples but not a general property of all star jelly.",
+      "rationale": "Medieval chronicles do record blood-rain events as portents; this is well-attested historically (though the retrospective linking to specific catastrophes like the Black Plague is obviously post-hoc). The claim is about how they were interpreted, not about their predictive validity.",
+      "tags": ["blood-rain", "medieval", "omens"],
       "hostStance": "asserts"
     },
     {
       "id": "16xhpv13DsM:c_0011",
       "videoId": "16xhpv13DsM",
-      "text": "Animal-rain folklore is real biology in many cases (mass dispersal events, migratory aggregations, vulture regurgitation, microbe-pigmented rain) but in others — like the Memphis snake rain or the still-mysterious snowy-mountain worms — the host concedes science genuinely doesn't have a complete explanation, leaving room for theories ranging from wrath of God to alien intervention.",
-      "kind": "opinion",
-      "entities": [
-        "organization:scientists",
-        "organization:zoologists"
+      "text": "The 1958 film The Blob was inspired by a 1954 Philadelphia police report of a large disc of quivering jelly that dissolved on contact.",
+      "kind": "historical",
+      "entities": ["work_of_media:the blob", "date_time:nineteen fifty eight", "date_time:nineteen fifty four", "location:philadelphia", "person:jack harris", "location:pennsylvania"],
+      "relationships": ["r_0117", "r_0121"],
+      "evidence": [
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 15812,
+          "charEnd": 15876,
+          "timeStart": 1016.84,
+          "timeEnd": 1025.27,
+          "quote": "But the blob was inspired by a real\nevent in nineteen fifty four"
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 16122,
+          "charEnd": 16235,
+          "timeStart": 1038.17,
+          "timeEnd": 1044.35,
+          "quote": "The producer, The Blob, Jack Harris, is from\nPennsylvania and he was fascinated with the\nlocal star jelly legend."
+        }
       ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "The 1954 Philadelphia 'flying saucer' / jelly incident is a genuine news story (covered by Time magazine at the time), and Jack Harris's Pennsylvania roots are established. The specific causal claim that the incident inspired the screenplay is widely reported but not formally documented in Harris's published interviews at the same strength.",
+      "tags": ["the-blob", "star-jelly", "philadelphia", "film-history"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "16xhpv13DsM:c_0012",
+      "videoId": "16xhpv13DsM",
+      "text": "Samples of star jelly tested by the National Geographic Society contained no detectable DNA, leaving its origin scientifically unresolved.",
+      "kind": "empirical",
+      "entities": ["organization:national geographic society"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 16901,
-          "charEnd": 17006,
-          "timeStart": 1087.97,
+          "charStart": 17011,
+          "charEnd": 17075,
+          "timeStart": 1092.56,
           "timeEnd": 1097.0,
-          "quote": "Star jelly usually dissolves or evaporates as soon\nas it's discovered, so we don't have a\nlot of samples."
+          "quote": "scientists in the\nNational Geographic Society tested the sample."
         },
         {
           "transcriptId": "16xhpv13DsM",
-          "charStart": 13569,
-          "charEnd": 13687,
-          "timeStart": 876.21,
-          "timeEnd": 881.94,
-          "quote": "It might not have been a metaphor.\nThis is a real thing that happens periodically\nin different places around the world"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "The host's overall verdict is sober and broadly defensible: animal rain is a real, partially-understood meteorological/biological phenomenon, and skipping straight to paranormal explanations is unjustified, but the scientific record genuinely does not yet explain every recorded event. The 'wrath of God / alien intervention' alternatives are mentioned for color, not endorsed.",
-      "inVerdictSection": true,
-      "dependencies": [
+          "charStart": 17076,
+          "charEnd": 17111,
+          "timeStart": 1097.0,
+          "timeEnd": 1099.31,
+          "quote": "In the US they found no DNA at all."
+        },
         {
-          "target": "16xhpv13DsM:c_0003",
-          "kind": "supports",
-          "rationale": "Both acknowledge the standard hypothesis covers part but not all of the phenomenon."
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 16782,
+          "charEnd": 16870,
+          "timeStart": 1076.27,
+          "timeEnd": 1086.02,
+          "quote": "explanations range from frog eggs\nto bacteria to alien organic\nmatter to the paranormal."
         }
       ],
-      "hostStance": "uncertain"
+      "confidence": 0.7,
+      "rationale": "The 'no DNA' assertion is attributed to NatGeo but given without a specific citation. Published scientific analyses of star jelly have produced mixed results (some samples show bacterial DNA, others organic debris), so the universal 'no DNA' framing is an oversimplification. Truth unset.",
+      "dependencies": [
+        { "target": "16xhpv13DsM:c_0011", "kind": "elaborates", "rationale": "Provides the scientific-mystery angle that connects to the Blob inspiration." }
+      ],
+      "tags": ["star-jelly", "natgeo", "unexplained"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "16xhpv13DsM:c_0013",
+      "videoId": "16xhpv13DsM",
+      "text": "Many documented animal-rain incidents occurred without any reported storm, wind, or waterspout activity, making a single meteorological explanation insufficient.",
+      "kind": "empirical",
+      "entities": ["location:hungary", "date_time:june of 2010", "organization:zoologists"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 14134,
+          "charEnd": 14213,
+          "timeStart": 910.87,
+          "timeEnd": 917.53,
+          "quote": "In June of 2010 in Hungary, thousands of tiny\nfrogs rained all over the country"
+        },
+        {
+          "transcriptId": "16xhpv13DsM",
+          "charStart": 14380,
+          "charEnd": 14442,
+          "timeStart": 922.78,
+          "timeEnd": 928.81,
+          "quote": "there were no reports of weird\nweather or wind or waterspouts."
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Host asserts multiple clear-weather incidents (Hungary 2010, Japan 2009, Norway worms) fall outside the waterspout explanation. True as a coverage claim about the waterspout hypothesis, but not necessarily evidence against it holding for other events. DirectTruth unset — it's a meta-claim about explanatory scope.",
+      "dependencies": [
+        { "target": "16xhpv13DsM:c_0002", "kind": "contradicts", "rationale": "[undercuts] Clear-weather incidents reduce the probative value of a pure-waterspout explanation across the full phenomenon." },
+        { "target": "16xhpv13DsM:c_0001", "kind": "supports", "rationale": "Reinforces that the phenomenon is broader than any single mechanism, consistent with the overall thesis." }
+      ],
+      "tags": ["hungary", "frogs", "waterspout-limits"],
+      "hostStance": "asserts"
     }
   ]
 }

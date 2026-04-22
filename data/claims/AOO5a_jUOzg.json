@@ -1,364 +1,355 @@
 {
   "schemaVersion": 1,
   "transcriptId": "AOO5a_jUOzg",
-  "generatedAt": "2026-04-20T03:57:04.192Z",
+  "generatedAt": "2026-04-22T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "AOO5a_jUOzg:c_0001",
       "videoId": "AOO5a_jUOzg",
-      "text": "Spontaneous human combustion (SHC) is a real and recurring forensic puzzle: hundreds of cases dating back to the late 15th century in which a victim is reduced almost entirely to ash inside a chair while the surrounding room is largely unburned and coated in pale yellow grease.",
+      "text": "In December 2010 in Galway, Ireland, 76-year-old Michael Faraday was found burned to death and the coroner officially ruled the cause of death as spontaneous human combustion.",
       "kind": "historical",
-      "entities": [
-        "technology:human combustion",
-        "person:polonis vorstias",
-        "date_time:late 15th century",
-        "location:milan",
-        "quantity:hundreds of them"
-      ],
+      "entities": ["person:faraday"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 3013,
-          "charEnd": 3317,
-          "timeStart": 191,
-          "timeEnd": 209,
-          "quote": "spontaneous human combustion is not a recent phenomenon one of the first known cases happened in Milan in the late 15th century Italian night polonis vorstias\nwas a heavy drinker one night after throwing back a few in front of several witnesses he started belching fire he then burst into flames and died"
-        },
-        {
-          "transcriptId": "AOO5a_jUOzg",
-          "charStart": 6105,
-          "charEnd": 6150,
-          "timeStart": 375,
-          "timeEnd": 384,
-          "quote": "and the stories go on and on hundreds of them"
+          "charStart": 1140,
+          "charEnd": 1285,
+          "timeStart": 78.7,
+          "timeEnd": 86.5,
+          "quote": "Michael Faraday was found burned to death the official cause of\ndeath recorded by the coroner was spontaneous human combustion early that morning"
         }
       ],
-      "confidence": 0.97,
-      "rationale": "There are hundreds of historical SHC reports going back to early modern Europe (Bianchini's 1731 case is one of the earliest scientifically described). The phenomenology — small island of intense burning, unburned extremities, greasy residue — is consistent across the case literature. Whether SHC is genuinely spontaneous or always has a mundane ignition source is the key contested question, addressed by later claims.",
-      "directTruth": 0.7,
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The Michael Faraday case in Galway is a genuine 2010 coroner's ruling — the first and only time a coroner in Ireland/UK formally recorded spontaneous human combustion as a cause of death. The facts are widely reported in mainstream UK and Irish press.",
+      "hostStance": "asserts",
+      "tags": ["shc", "ireland", "2010"]
     },
     {
       "id": "AOO5a_jUOzg:c_0002",
       "videoId": "AOO5a_jUOzg",
-      "text": "The 1951 St. Petersburg, Florida case of Mary Reeser is the canonical SHC case: an FBI investigation found her body almost entirely cremated alongside one undamaged slipper-clad foot, melted human fat in the rug, and oddly localized heat damage (only above the ~3-foot mark on the walls).",
+      "text": "Michael Faraday's body was found incinerated in his chair next to the fireplace, yet nothing else in the room was burned and no accelerant was found.",
       "kind": "historical",
-      "entities": [
-        "person:mary reeser",
-        "person:mary",
-        "person:dr richard reeser",
-        "date_time:july 1951",
-        "organization:fbi",
-        "person:landlady",
-        "quantity:3 000 degrees",
-        "quantity:three or four hours"
-      ],
+      "entities": ["person:faraday", "location:fireplace"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 6206,
-          "charEnd": 6272,
-          "timeStart": 384,
-          "timeEnd": 399,
-          "quote": "in July 1951 Dr Richard Reeser was\nvisiting his mother Mary Reeser"
-        },
-        {
-          "transcriptId": "AOO5a_jUOzg",
-          "charStart": 6926,
-          "charEnd": 7073,
-          "timeStart": 423,
-          "timeEnd": 447,
-          "quote": "all\nthat was left of Mary Reeser was a pile of soot a few pieces of spine a shrunken skull and one of Mary's undamaged feet\nstill wearing a slipper"
-        },
-        {
-          "transcriptId": "AOO5a_jUOzg",
-          "charStart": 8200,
-          "charEnd": 8348,
-          "timeStart": 498,
-          "timeEnd": 518,
-          "quote": "the FBI found no trace of anything flammable\nnot her chair her clothes nothing but they did find something unexpected in Mary's rug melted human fat"
+          "charStart": 1385,
+          "charEnd": 1520,
+          "timeStart": 94.4,
+          "timeEnd": 102.3,
+          "quote": "m Faraday's house Faraday wouldn't answer the door when the fire department arrived Michael Faraday was found\ncompletely incinerated si"
         }
       ],
-      "confidence": 0.99,
-      "rationale": "The Mary Reeser case is the most thoroughly documented SHC case on record (FBI investigation, multiple inquiry reports). The host's specifics — the slippered foot, the lack of accelerant, the melted fat in the rug — match the case file. Calling it 'spontaneous' is the contested interpretive layer; the physical findings are real.",
-      "directTruth": 0.95,
-      "dependencies": [
-        {
-          "target": "AOO5a_jUOzg:c_0001",
-          "kind": "elaborates"
-        }
-      ],
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Coroner's inquest reporting confirms the scene details: incinerated body in chair next to fireplace with no surrounding damage, no accelerant found, matched the pattern the coroner cited from Knight's forensic pathology text.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "AOO5a_jUOzg:c_0001", "kind": "elaborates" }],
+      "tags": ["shc", "forensics"]
     },
     {
       "id": "AOO5a_jUOzg:c_0003",
       "videoId": "AOO5a_jUOzg",
-      "text": "The 2010 inquest into Michael Faraday in Galway, Ireland is the only modern case where a coroner officially recorded 'spontaneous human combustion' as the cause of death.",
+      "text": "Thanksgiving weekend 1979 Beatrice Oczki, a diabetic, alcoholic, and heavy smoker, was found reduced to ash in her chair with her legs unburned and with oily residue coating the house.",
       "kind": "historical",
-      "entities": [
-        "date_time:december 2010",
-        "person:michael faraday",
-        "person:faraday",
-        "location:galway ireland",
-        "quantity:76 year old",
-        "person:professor bernard knight",
-        "person:dr knight",
-        "technology:human combustion"
-      ],
+      "entities": ["person:beatrice", "person:frank"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 1093,
-          "charEnd": 1266,
-          "timeStart": 71,
-          "timeEnd": 87,
-          "quote": "in December 2010 in Galway Ireland 76 year old Michael Faraday was found burned to death the official cause of\ndeath recorded by the coroner was spontaneous human combustion"
+          "charStart": 2077,
+          "charEnd": 2256,
+          "timeStart": 133.7,
+          "timeEnd": 141.6,
+          "quote": "Beatrice ozke said goodbye to her son Frank Frank didn't realize\nthat this would be the last time he saw his mother alive Beatrice had a number of health problems she was a diabet"
         },
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 1871,
-          "charEnd": 2047,
-          "timeStart": 111,
-          "timeEnd": 133,
-          "quote": "this fire\nwas thoroughly investigated and I'm left with a conclusion that this fits into the category of spontaneous human combustion for which there is no\nadequate explanation"
+          "charStart": 2300,
+          "charEnd": 2498,
+          "timeStart": 149.5,
+          "timeEnd": 157.3,
+          "quote": " the next day Beatrice's daughter-in-law stopped by and smelt smoke she called the fire department when they arrived the scene was all too\nfamiliar Beatrice was reduced to a pile of Ash but her legs"
         }
       ],
-      "confidence": 0.98,
-      "rationale": "The Michael Faraday case (Galway, December 2010) is correctly attributed: West Galway coroner Dr Ciaran McLoughlin returned an SHC verdict in September 2011, the first time on record in Ireland or the UK. The host's quote from the verdict is faithful.",
-      "directTruth": 0.9,
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The Beatrice Oczki 1979 case in Glassport/Crystal Falls is one of the canonical 'wick effect' case studies — the health profile (diabetic, alcoholic, heavy smoker) and scene details are consistent with the publicly reported facts.",
+      "hostStance": "asserts",
+      "tags": ["shc", "1979", "oczki"]
     },
     {
       "id": "AOO5a_jUOzg:c_0004",
       "videoId": "AOO5a_jUOzg",
-      "text": "Larry Arnold's 'pyrotron' theory — that a hypothetical subatomic particle interacts with human cells to produce a chain reaction equivalent to a microscopic nuclear explosion — has no support in physics and is one of several speculative SHC mechanisms proposed by believers.",
-      "kind": "speculative",
-      "entities": [
-        "person:larry arnold",
-        "work_of_media:ablaze",
-        "event:microscopic nuclear explosion",
-        "location:the subatomic level",
-        "quantity:the tremendous amount of energy"
-      ],
+      "text": "In the 18th century, French innkeeper Nicole Millet was consumed by spontaneous human combustion with only her skull, bones and unburned legs remaining, even though her husband was nearly convicted of her murder.",
+      "kind": "historical",
+      "entities": ["person:nicole malay"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 9273,
-          "charEnd": 9534,
-          "timeStart": 565,
-          "timeEnd": 592,
-          "quote": "Larry Arnold investigated over 400 cases of\npossible spontaneous human combustion and released a book called Ablaze according to his research there's a subatomic particle called a pyroton that\ninteracts with human cells to create a microscopic nuclear explosion"
+          "charStart": 3381,
+          "charEnd": 3568,
+          "timeStart": 212.4,
+          "timeEnd": 220.3,
+          "quote": "Nicole Malay also a serious Drinker was the victim of spontaneous human combustion all that\nremained of Malay was her skull a few bones and her unburned legs all in a pile of Ash she was "
         }
       ],
-      "confidence": 0.97,
-      "rationale": "The pyrotron is not a recognized particle in physics; no peer-reviewed source supports a 'human Hiroshima effect' at the subatomic level. Arnold's book exists and the proposal is real, but the proposed mechanism is essentially pseudo-physics.",
-      "directTruth": 0.05,
-      "hostStance": "steelman"
+      "confidence": 0.8,
+      "directTruth": 0.5,
+      "rationale": "The 1725 Nicole Millet case in Rheims is well-documented in early medical-forensic literature; the murder acquittal of her husband Jean Millet following the testimony of Dr. Claude-Nicolas Le Cat is historically accurate and influential on early SHC belief.",
+      "hostStance": "asserts",
+      "tags": ["shc", "18th-century", "millet"]
     },
     {
       "id": "AOO5a_jUOzg:c_0005",
       "videoId": "AOO5a_jUOzg",
-      "text": "Brian J. Ford's New Scientist proposal that excess body acetone (elevated by alcoholism, diabetes, or ketogenic diets) makes human tissue flammable is a more credible biological mechanism than the pyrotron, but remains unproven and untested in living humans.",
-      "kind": "speculative",
-      "entities": [
-        "person:brian j ford",
-        "person:brian ford",
-        "person:a biologist"
-      ],
+      "text": "In 1938 a 22-year-old Phyllis Newcombe suddenly burst into flames while leaving a dance at Shire Hall in England; no cigarette, match, or ignition source could be found.",
+      "kind": "historical",
+      "entities": ["person:phyllis newcomb"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 10108,
-          "charEnd": 10247,
-          "timeStart": 623,
-          "timeEnd": 639,
-          "quote": "a new scientist magazine a biologist Brian J Ford suggested that spontaneous\ncombustion could be caused by a buildup of acetone in the body"
-        },
-        {
-          "transcriptId": "AOO5a_jUOzg",
-          "charStart": 10520,
-          "charEnd": 10733,
-          "timeStart": 646,
-          "timeEnd": 669,
-          "quote": "Brian Ford said diabetes or a specific\nkind of diet can cause combustion he mentioned that cells in ketosis could become flammable and ketosis is a metabolic state that happens when the\nbody is deprived of sucrose"
+          "charStart": 4159,
+          "charEnd": 4398,
+          "timeStart": 259.6,
+          "timeEnd": 267.5,
+          "quote": "Phyllis Newcomb was leaving a dance at Shire Hall in England when she suddenly burst into flames she ran back into the hall and collapsed she\nlater died in the hospital investigators could find no evidence of a cigarette or match or anythi"
         }
       ],
-      "confidence": 0.97,
-      "rationale": "Ford's 2012 New Scientist piece really did argue elevated acetone could enable rapid combustion of fatty tissue under the right conditions. The chemistry of acetone flammability is real, but his specific application to SHC has not been independently replicated and remains an unproven hypothesis.",
-      "directTruth": 0.3,
-      "hostStance": "steelman"
+      "confidence": 0.8,
+      "directTruth": 0.55,
+      "rationale": "The Phyllis Newcombe 1938 Chelmsford Shire Hall case is well-attested in contemporary British newspapers and coroner's records. Cellulose-based dress fabrics of the period could be extremely flammable, so the 'no ignition source' conclusion is disputable but the factual outline holds.",
+      "hostStance": "asserts",
+      "tags": ["shc", "1938", "newcombe"]
     },
     {
       "id": "AOO5a_jUOzg:c_0006",
       "videoId": "AOO5a_jUOzg",
-      "text": "The mainstream skeptical explanation — the 'wick effect' — accounts for nearly all modern SHC cases: a small ignition source (cigarette, fireplace ember) sets fire to clothing, which then acts like a candle wick burning slowly through melted body fat over hours, producing the characteristic localized destruction.",
-      "kind": "empirical",
-      "entities": [
-        "organization:skeptics",
-        "organization:scientists",
-        "technology:human combustion",
-        "event:cigarette burns",
-        "location:fireplace"
-      ],
+      "text": "In July 1951 Mary Reeser was reduced to ashes in her armchair in St. Petersburg Florida after taking strong sedatives before bed; only a slippered foot and a shrunken skull remained.",
+      "kind": "historical",
+      "entities": ["person:mary reeser", "person:mary"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 10946,
-          "charEnd": 11054,
-          "timeStart": 681,
-          "timeEnd": 689,
-          "quote": "for a rational explanation of spontaneous human combustion Skeptics and most scientists cite the wick effect"
+          "charStart": 6261,
+          "charEnd": 6436,
+          "timeStart": 385.5,
+          "timeEnd": 393.4,
+          "quote": "Mary Reeser Mary was depressed that she couldn't travel for the summer so she told her son that she was going to take a couple of secondol\ntablets and maybe two more before be"
         },
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 11726,
-          "charEnd": 11897,
-          "timeStart": 721,
-          "timeEnd": 738,
-          "quote": "with human combustion the wick is the victim's clothing as the\nbody burns fat tissue is melted fat is also a hydrocarbon so it burns low and slow and is converted into gas"
-        },
-        {
-          "transcriptId": "AOO5a_jUOzg",
-          "charStart": 12045,
-          "charEnd": 12261,
-          "timeStart": 738,
-          "timeEnd": 763,
-          "quote": "this has been\ntested a few times with pig flesh which is similar to human flesh as long as a heat Source can stay connected to something flammable for long enough to\ncause a small fire the wick effect is a real thing"
+          "charStart": 6738,
+          "charEnd": 6960,
+          "timeStart": 409.1,
+          "timeEnd": 424.8,
+          "quote": "around five in the morning Mary's\nlandlady smelled smoke she went back to check on Mary and noticed the doorknob was hot when the landlady and a couple of neighbors got into the apartment all\nthat was left of Mary Reeser w"
         }
       ],
-      "confidence": 0.99,
-      "rationale": "The wick effect is the consensus forensic explanation for almost all modern SHC cases. It has been demonstrated experimentally with pig carcasses (Dr John DeHaan's BBC test), accounts for the localized burning pattern and grease residue, and is supported by the demographics of SHC victims (elderly, immobilized, often with sedatives/alcohol on board).",
-      "directTruth": 0.9,
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The Mary Reeser 1951 case in St. Petersburg FL is one of the most extensively documented 'SHC' cases, with FBI forensic analysis conducted. Sedative use, shrunken skull, intact slippered foot, and melted-fat residue are all on the FBI record.",
+      "hostStance": "asserts",
+      "tags": ["shc", "mary-reeser", "1951"]
     },
     {
       "id": "AOO5a_jUOzg:c_0007",
       "videoId": "AOO5a_jUOzg",
-      "text": "A reliable demographic profile emerges from modern SHC cases: victims tend to be overweight, elderly and infirm (immobilized in a chair or bed), heavy smokers, alcoholics or sedated, and living alone — a perfect storm of fuel, ignition source, incapacitation, and lack of intervention.",
+      "text": "Cremating a human body requires temperatures of 3000 degrees burning for three or four hours, which exceeds what a cigarette or fireplace alone could produce.",
       "kind": "empirical",
-      "entities": [
-        "quantity:overweight",
-        "group_or_movement:elderly smokers",
-        "person:smoker",
-        "location:living alone",
-        "quantity:lots of victims"
-      ],
+      "entities": ["person:mary reeser"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 12910,
-          "charEnd": 13378,
-          "timeStart": 788,
-          "timeEnd": 821,
-          "quote": "considering all these factors we can\ncreate a pretty accurate profile of a victim of spontaneous human combustion these people tend to be overweight more fat means more fuel for the fire they\ntend to be elderly and infirmed so stuck in a chair or in bed which would allow a large fire to develop from a small one there's frequently an incapacitating\nsubstance involved like sleeping pills lots of victims are alcoholics and finally the victims tend to be heavy smokers"
+          "charStart": 7420,
+          "charEnd": 7620,
+          "timeStart": 448.4,
+          "timeEnd": 456.3,
+          "quote": "ppear in other cases too an investigator said in order for Mary's body to be so thoroughly cremated\nher body would have to burn at 3 000 degrees for three or four hours now this is much hotter than a "
         }
       ],
-      "confidence": 0.98,
-      "rationale": "This demographic pattern is well established in the forensic literature on SHC and is the basis for the wick-effect consensus. Each element (immobility, intoxication, smoking, body fat) genuinely correlates with the recorded cases.",
-      "directTruth": 0.9,
-      "dependencies": [
-        {
-          "target": "AOO5a_jUOzg:c_0006",
-          "kind": "supports"
-        }
-      ],
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "rationale": "Modern commercial cremation runs 1400-1800°F (760-980°C), not 3000°F — the stated figure is often cited in SHC literature but is actually higher than professional cremator operating temperatures. DirectTruth omitted because the specific figure is contested even though the general 'lots of heat for a long time' intuition is not wrong.",
+      "hostStance": "asserts",
+      "tags": ["cremation", "temperature", "forensics"]
     },
     {
       "id": "AOO5a_jUOzg:c_0008",
       "videoId": "AOO5a_jUOzg",
-      "text": "The 1982 Jeannie Saffin case is the strongest counterexample to the wick-effect explanation — fire was witnessed by her father and brother-in-law to come from her mouth in mid-day with no obvious ignition source — though even there a plausible mundane explanation (her father's pipe ash + open kitchen window + flammable polyester dress) exists.",
+      "text": "A subatomic particle called the 'pyroton' interacts with human cells to trigger a microscopic nuclear chain reaction that vaporizes the body — the 'human Hiroshima' effect.",
       "kind": "speculative",
-      "entities": [
-        "person:jeannie saffin",
-        "person:jeannie",
-        "person:john saffin",
-        "person:john sappin",
-        "person:don carroll",
-        "date_time:september 1982",
-        "event:sapin case",
-        "person:john hamer",
-        "role:former british police officer"
-      ],
+      "entities": [],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 14295,
-          "charEnd": 14661,
-          "timeStart": 870,
-          "timeEnd": 902,
-          "quote": "in September 1982 Jeannie saffin was sitting in the\nkitchen with her father John sappin and brother-in-law Don Carroll it was the middle of the day no fire was anywhere near her out of the corner of his eye\nJohn saw a flash of light he looked at Genie and she had fire coming out of her mouth Don Carroll and John saffin said\nthat the fire was coming from inside her"
-        },
-        {
-          "transcriptId": "AOO5a_jUOzg",
-          "charStart": 16636,
-          "charEnd": 16972,
-          "timeStart": 1013,
-          "timeEnd": 1038,
-          "quote": "now there were two fire sources in her kitchen the pilot light from the stove that wouldn't do it and her father's\npipe he had just finished smoking and tapped out his ashes the kitchen window was open which caused the cross Breeze burning Ash could have caught that\nbreeze and landed on Genie who is wearing a flammable polyester dress"
+          "charStart": 9425,
+          "charEnd": 9620,
+          "timeStart": 558.6,
+          "timeEnd": 566.4,
+          "quote": "subatomic particle called a pyroton that\ninteracts with human cells to create a microscopic nuclear explosion it appears in some cases there was what we would call the human Hiroshima effect that"
         }
       ],
-      "confidence": 0.96,
-      "rationale": "The Saffin case (Edmonton, 1982) is real and is frequently cited by SHC believers because of the witnesses. The autopsy contradicted the family's account on key details (no internal burns, clothes were burned), as the host correctly notes. The mundane pipe-ash-plus-polyester explanation is a fair reconstruction.",
-      "directTruth": 0.5,
-      "hostStance": "uncertain"
+      "confidence": 0.9,
+      "directTruth": 0.02,
+      "rationale": "The 'pyroton' is an invented particle in Larry Arnold's 1995 book Ablaze — no such particle exists in the Standard Model and no peer-reviewed physics literature acknowledges it. The 'human Hiroshima' framing also contradicts the basic physics of radioactive decay. Pseudoscience.",
+      "hostStance": "asserts",
+      "tags": ["pyroton", "arnold", "pseudoscience"]
     },
     {
       "id": "AOO5a_jUOzg:c_0009",
       "videoId": "AOO5a_jUOzg",
-      "text": "The host's verdict is that the vast majority of SHC cases are explainable by the wick effect plus the elderly-smoker-with-mobility-issues demographic profile, but a small residue of cases (like Saffin) genuinely resist mundane explanation and the phenomenon should not be dismissed as fiction.",
-      "kind": "opinion",
-      "entities": [
-        "technology:human combustion",
-        "quantity:the vast majority of spontaneous human combustion cases",
-        "group_or_movement:elderly smokers",
-        "ideology:believers",
-        "organization:skeptics",
-        "event:dying in a tragic accidental fire"
+      "text": "A buildup of acetone in the body from alcohol use, diabetes, or ketosis (keto diet) can cause cells to become flammable and lead to spontaneous combustion.",
+      "kind": "speculative",
+      "entities": ["person:brian j ford", "person:brian ford"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 10228,
+          "charEnd": 10400,
+          "timeStart": 613.6,
+          "timeEnd": 621.5,
+          "quote": "acetone in the body yes what now acetone nail polish remover is acetone\nit's a highly flammable and highly volatile substance all humans have a small amount of acetone in t"
+        }
       ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Biologist Brian J. Ford proposed this in a 2012 New Scientist article, demonstrating pig-tissue ignition after acetone immersion. The fatal problem: in-vivo acetone levels in even severe ketosis are ~3 orders of magnitude too low to enable combustion; his own pig samples required artificial saturation. Not accepted science.",
+      "hostStance": "asserts",
+      "tags": ["acetone", "ford", "ketosis"]
+    },
+    {
+      "id": "AOO5a_jUOzg:c_0010",
+      "videoId": "AOO5a_jUOzg",
+      "text": "The 'wick effect' — victim's body fat slowly burning like candle wax wicked up through clothing — explains most modern cases of spontaneous human combustion.",
+      "kind": "empirical",
+      "entities": ["organization:skeptics"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 11043,
+          "charEnd": 11240,
+          "timeStart": 676.6,
+          "timeEnd": 692.3,
+          "quote": "wick effect\nin a candle the wick is a piece of braided fiber usually cotton in the center of wax wax is a hydrocarbon with a low melting point and a slow burning\ntemperature as the wick slowly burn"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The wick effect has been reproduced experimentally (notably the 1998 BBC QED pig-corpse demonstration by Dr. John DeHaan) and is accepted by most forensic fire investigators as the mechanism for nearly all claimed SHC cases. It is the mainstream scientific explanation.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "AOO5a_jUOzg:c_0008", "kind": "contradicts", "rationale": "[alternative] Wick-effect explains SHC via ordinary combustion chemistry; pyroton invokes exotic physics. Competing explanations of the same cases." },
+        { "target": "AOO5a_jUOzg:c_0009", "kind": "contradicts", "rationale": "[alternative] Wick-effect vs. acetone-autoignition are alternative proposed mechanisms." }
+      ],
+      "tags": ["wick-effect", "forensics", "mainstream"]
+    },
+    {
+      "id": "AOO5a_jUOzg:c_0011",
+      "videoId": "AOO5a_jUOzg",
+      "text": "In September 1982 Jeannie Saffin spontaneously ignited in the kitchen with her father and brother-in-law present as witnesses; fire appeared to come from inside her body.",
+      "kind": "historical",
+      "entities": ["person:jeannie saffin", "person:don carroll"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 14313,
+          "charEnd": 14520,
+          "timeStart": 857.5,
+          "timeEnd": 873.2,
+          "quote": "Jeannie saffin was sitting in the\nkitchen with her father John sappin and brother-in-law Don Carroll it was the middle of the day no fire was anywhere near her out of the corner of his eye\nJohn saw a flash o"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.35,
+      "rationale": "The Jean Saffin 1982 Edmonton case had eyewitnesses (father + brother-in-law) who reported fire from her mouth. However the autopsy found the injuries were external, her clothes DID burn, and a plausible ignition source (father's pipe + cross-breeze through open window onto her nylon dress) was present.",
+      "hostStance": "asserts",
+      "tags": ["shc", "saffin", "1982"]
+    },
+    {
+      "id": "AOO5a_jUOzg:c_0012",
+      "videoId": "AOO5a_jUOzg",
+      "text": "Typical victims of apparent spontaneous human combustion fit a profile: elderly, overweight, immobile, heavy smokers or near a fire source, often intoxicated or sedated, and living alone.",
+      "kind": "empirical",
+      "entities": ["person:victim", "organization:skeptics"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "AOO5a_jUOzg",
+          "charStart": 15175,
+          "charEnd": 15350,
+          "timeStart": 912.6,
+          "timeEnd": 928.3,
+          "quote": " a\nrole they drop a cigarette it starts a small fire and the victim is unable to move because he or she is too intoxicated or too immobile or both the\nsmall fire eventually Bu"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The victim profile (elderly, smoker, alcohol/medication, mobility-limited, living alone) matches published surveys of SHC cases (Nickell & Fisher's case analyses, Benecke 1998). This is an empirically-grounded observation.",
+      "hostStance": "asserts",
+      "tags": ["profile", "forensics", "demographics"]
+    },
+    {
+      "id": "AOO5a_jUOzg:c_0013",
+      "videoId": "AOO5a_jUOzg",
+      "text": "Applying Occam's razor, the vast majority of spontaneous human combustion cases can be explained by ordinary accidental fires in elderly immobile smokers with alcohol and mobility issues.",
+      "kind": "opinion",
+      "entities": [],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
           "charStart": 17508,
-          "charEnd": 17839,
-          "timeStart": 1055,
-          "timeEnd": 1089,
-          "quote": "Occam's razor\nsays the simplest answer is usually the correct one I believe that the vast majority of spontaneous human combustion cases can be explained elderly smokers\nliving alone with mobility issues who have a fondness for drink now they're at risk from all sorts to things not least of which dying in a tragic Accidental\nFire"
-        },
+          "charEnd": 17690,
+          "timeStart": 1038.5,
+          "timeEnd": 1054.2,
+          "quote": "Occam's razor\nsays the simplest answer is usually the correct one I believe that the vast majority of spontaneous human combustion cases can be explained elderly smokers\nliving alone"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "Host synthesis aligning with the consensus of forensic fire investigators. Treated as opinion because of the 'I believe' framing but the underlying empirical claim (cases are explicable by mundane mechanisms) is widely shared.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "AOO5a_jUOzg:c_0010", "kind": "supports" }],
+      "tags": ["occams-razor", "verdict"]
+    },
+    {
+      "id": "AOO5a_jUOzg:c_0014",
+      "videoId": "AOO5a_jUOzg",
+      "text": "Spontaneous human combustion is a genuinely paranormal phenomenon in which human bodies ignite from an internal cause with no external ignition source.",
+      "kind": "speculative",
+      "entities": ["person:victim"],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "AOO5a_jUOzg",
-          "charStart": 17840,
-          "charEnd": 18030,
-          "timeStart": 1082,
-          "timeEnd": 1097,
-          "quote": "the simplest answer is usually the correct one but not always sometimes the correct answer is not so simple\nsometimes the answer is so difficult that it's completely beyond our understanding"
+          "charStart": 4159,
+          "charEnd": 4398,
+          "timeStart": 259.6,
+          "timeEnd": 267.5,
+          "quote": "Phyllis Newcomb was leaving a dance at Shire Hall in England when she suddenly burst into flames she ran back into the hall and collapsed she\nlater died in the hospital investigators could find no evidence of a cigarette or match or anythi"
         }
       ],
-      "confidence": 0.98,
-      "rationale": "The host's calibrated 'mostly mundane, occasionally mysterious' verdict matches the consensus position of forensic skeptics like Joe Nickell and Dr John DeHaan, who acknowledge the wick effect handles most cases but a small handful remain unexplained. Reasonable take.",
-      "directTruth": 0.85,
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Extracted as a denies claim because the host dismantles this framing in the verdict section — attributing virtually all cases to mundane wick-effect mechanisms. The 'internal ignition with no cause' version is the popular mythology he is refuting.",
+      "hostStance": "denies",
       "dependencies": [
-        {
-          "target": "AOO5a_jUOzg:c_0006",
-          "kind": "supports"
-        },
-        {
-          "target": "AOO5a_jUOzg:c_0008",
-          "kind": "elaborates"
-        }
+        { "target": "AOO5a_jUOzg:c_0013", "kind": "contradicts", "rationale": "[alternative] Paranormal-SHC vs. mundane-accidental-fire are the two competing frames for the same body of cases." },
+        { "target": "AOO5a_jUOzg:c_0010", "kind": "contradicts", "rationale": "[alternative] If wick-effect explains the cases, then paranormal-ignition SHC is not needed as an explanation." }
       ],
-      "inVerdictSection": true,
-      "hostStance": "asserts"
+      "tags": ["shc", "paranormal", "denied"]
     }
   ]
 }

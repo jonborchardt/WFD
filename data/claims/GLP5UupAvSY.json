@@ -1,19 +1,18 @@
 {
   "schemaVersion": 1,
   "transcriptId": "GLP5UupAvSY",
-  "generatedAt": "2026-04-20T03:30:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "GLP5UupAvSY:c_0001",
       "videoId": "GLP5UupAvSY",
-      "text": "Beginning in 2006, a New York psychiatrist named Dr Brian Stone began collecting cases of patients independently dreaming of the same unfamiliar man — round-faced, prominent unibrow, thin lips — eventually documenting 80 cases in his own practice within a single week.",
-      "kind": "speculative",
+      "text": "In 2006 a New York woman named Jeie reported to Dr. Brian Stone a recurring dream featuring an unknown man.",
+      "kind": "historical",
       "entities": [
-        "person:dr brian stone",
-        "person:dr stone",
         "person:jeie",
-        "person:this man",
+        "person:dr stone",
+        "person:dr brian stone",
         "location:new york",
         "date_time:2006"
       ],
@@ -24,423 +23,449 @@
           "charStart": 4063,
           "charEnd": 4165,
           "timeStart": 279.12,
-          "timeEnd": 289.68,
+          "timeEnd": 287.84,
           "quote": "in 2006 jeie a woman living in New\nYork was at her weekly session with her\npsychiatrist Dr Brian Stone"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 4501,
-          "charEnd": 4571,
-          "timeStart": 304.88,
-          "timeEnd": 316.68,
-          "quote": "she was visited by a man a man\nshe didn't know she called him this\nman"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 10151,
-          "charEnd": 10248,
-          "timeStart": 702.959,
-          "timeEnd": 714.76,
-          "quote": "by the end of the week Dr Stone had\ndocumented 80 cases of people seeing\nthis man in their dreams"
         }
       ],
-      "confidence": 0.97,
+      "confidence": 0.85,
       "directTruth": 0.05,
-      "rationale": "Per the host's own verdict (see c_0008) Dr Brian Stone, 'Genie,' and the entire 80-cases-in-one-week origin are fabrications by Andrea Natella. No such psychiatrist existed; no patients reported these encounters; the story is the engineered seed of a viral marketing campaign."
+      "rationale": "This is the origin-story frame of the This Man legend. Host later confirms the whole narrative is a hoax created by advertising executive Andrea Natella — the New York psychiatrist and patient are invented characters.",
+      "tags": ["this-man", "hoax", "origin"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
     },
     {
       "id": "GLP5UupAvSY:c_0002",
       "videoId": "GLP5UupAvSY",
-      "text": "Reports of dreaming of 'This Man' were said to span the globe — Sao Paulo, Rome, Beijing, Barcelona, Stockholm, Paris, New Delhi, Moscow — accumulating to ~2,000 sightings and eventually ~8,000 total reports via the website thisman.org.",
-      "kind": "speculative",
+      "text": "At least 2,000 people around the world have reported seeing This Man in their dreams.",
+      "kind": "empirical",
       "entities": [
         "person:this man",
-        "organization:website",
-        "location:rome",
-        "location:beijing",
-        "location:barcelona",
-        "location:paris",
-        "location:new deli",
-        "location:moscow",
-        "quantity:8,000",
-        "quantity:8,000 people"
+        "person:man"
       ],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 10391,
-          "charEnd": 10402,
-          "timeStart": 719.56,
-          "timeEnd": 725.399,
-          "quote": "thisman.org"
-        },
         {
           "transcriptId": "GLP5UupAvSY",
           "charStart": 10770,
           "charEnd": 10813,
           "timeStart": 749.839,
-          "timeEnd": 757.199,
+          "timeEnd": 754.88,
           "quote": "this man had been seen at least 2,000\ntimes"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 11884,
-          "charEnd": 11961,
-          "timeStart": 818,
-          "timeEnd": 827.04,
-          "quote": "the number of people reported\nseeing this man in their dreams was up\nto 8,000"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.2,
-      "rationale": "thisman.org is a real website (still up) and submissions did come in from many countries. However the 'reports' are self-selected anonymous web submissions on a website explicitly designed to elicit them — they are not independent observations and many are likely jokes, copies, or post-exposure pareidolia. Counts in the thousands are plausible as web traffic but worthless as evidence of an actual cross-cultural shared dream entity.",
-      "dependencies": [
-        {
-          "target": "GLP5UupAvSY:c_0001",
-          "kind": "elaborates"
-        }
-      ]
+      "confidence": 0.8,
+      "directTruth": 0.35,
+      "rationale": "The 2,000+ figure comes from the thisman.org site which is itself the hoax. Some people plausibly did report sightings after seeing the highly suggestive poster/image, but the headline number is inflated marketing material.",
+      "tags": ["this-man", "sightings"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "GLP5UupAvSY:c_0003",
       "videoId": "GLP5UupAvSY",
-      "text": "Within Project Stargate, the CIA ran a sub-program starting in 1991 to investigate whether researchers could communicate with — and implant images into — sleeping subjects via lucid dreaming, and 'This Man' could be the runaway product of such an experiment.",
-      "kind": "speculative",
-      "entities": [
-        "organization:cia",
-        "facility:stargate",
-        "facility:star gate",
-        "date_time:1991",
-        "person:this man",
-        "work_of_media:inception"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 11360,
-          "charEnd": 11416,
-          "timeStart": 783.72,
-          "timeEnd": 791.56,
-          "quote": "the CIA had a sub project within\nStargate lucid dreaming"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.1,
-      "rationale": "Project Stargate (the SRI / CIA-funded remote-viewing program) was real and ran from 1972 to 1995, but its declassified files (released 2017) document remote viewing of geographic locations, not implantation of dream imagery. There is no published evidence of a CIA shared-dream-implantation sub-project. The host explicitly frames this as a 'darkest theory' — i.e., conspiracy, not established fact.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "GLP5UupAvSY:c_0004",
-      "videoId": "GLP5UupAvSY",
-      "text": "Premonition dreams — Lincoln dreaming of his coffin days before his April 1865 assassination, Mark Twain dreaming of his brother in a metal coffin before his death, 20 Titanic passengers cancelling their tickets after dream warnings — recur often enough across history that they cannot be casually dismissed.",
-      "kind": "historical",
-      "entities": [
-        "person:abraham lincoln",
-        "person:mark twain",
-        "event:titanic",
-        "facility:eas room",
-        "location:white house",
-        "quantity:20 passengers",
-        "date_time:april 11th 1865"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 12696,
-          "charEnd": 12791,
-          "timeStart": 872.92,
-          "timeEnd": 884.88,
-          "quote": "20\npassengers canceled their tickets for\nthe Titanic after having dreams about\nthe ship sinking"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.4,
-      "rationale": "The individual stories have a bedrock of real history mixed with embellishment. Lincoln did reportedly tell Ward Hill Lamon about a coffin dream (Lamon's memoir, decades later — uncorroborated). Twain's brother Henry's death after a riverboat boiler explosion is real, the metal-coffin-dream story is from Twain's autobiography. The 'Titanic dream cancellations' figure is anecdotal and shows up in spiritualist literature but lacks a documented source list. The aggregate pattern is real (people often retroactively connect dreams to disasters — base-rate fallacy) but doesn't establish premonition as a phenomenon."
-    },
-    {
-      "id": "GLP5UupAvSY:c_0005",
-      "videoId": "GLP5UupAvSY",
-      "text": "On October 19, 1966 in Aberfan, Wales, ten-year-old Eryl Mai Jones told her mother she dreamt the school had been buried by something black; two days later a colliery spoil tip collapsed in a landslide, killing 116 children and 28 adults including Eryl Mai herself — the case that motivated psychiatrist John Barker to found the British Premonitions Bureau.",
-      "kind": "historical",
-      "entities": [
-        "person:errol may jones",
-        "person:arol may jones",
-        "person:john barker",
-        "person:barker",
-        "date_time:october 19th 1966",
-        "location:south wales",
-        "location:aban",
-        "facility:school",
-        "event:landslide",
-        "event:coal mine disaster",
-        "quantity:116 children",
-        "quantity:28 adults"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 14381,
-          "charEnd": 14474,
-          "timeStart": 989.399,
-          "timeEnd": 1001.12,
-          "quote": "on October 19th 1966 in Aban\na small mining Village in South Wales\n10-year-old arol May Jones"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 14830,
-          "charEnd": 14910,
-          "timeStart": 1022.279,
-          "timeEnd": 1029.839,
-          "quote": "Errol May Jones psychiatrist John Barker\nheard about the young girl's prediction"
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.85,
-      "rationale": "Largely accurate. The Aberfan disaster (Oct 21, 1966) killed 116 children and 28 adults from collapse of colliery spoil tip 7. Eryl Mai Jones did reportedly tell her mother about a 'black' school dream the night before, per parental testimony given to John Barker in his investigation. Barker did found the British Premonitions Bureau in early 1967 in response. The facts are sound; the interpretation as paranormal precognition is what's disputed (one girl's vague dream the day before, against ~1,500 attendees of a mining-village school under a known unstable spoil tip, is consistent with dream coincidence)."
-    },
-    {
-      "id": "GLP5UupAvSY:c_0006",
-      "videoId": "GLP5UupAvSY",
-      "text": "Two of John Barker's premonitions-bureau correspondents (Alan Hencher and Kathleen Middleton) independently 'predicted' Barker's own death within a year — and Barker did die at age 42 of a brain hemorrhage, after declining to relay Middleton's warning to Robert Kennedy before RFK's June 1968 assassination.",
-      "kind": "historical",
-      "entities": [
-        "person:john barker",
-        "person:alan hencher",
-        "person:kathleen middleton",
-        "person:rfk",
-        "person:robert kennedy",
-        "person:siran sirhan",
-        "event:brain hemorrhage",
-        "date_time:june 5th 1968"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 16298,
-          "charEnd": 16334,
-          "timeStart": 1123.72,
-          "timeEnd": 1132.559,
-          "quote": "RFK was assassinated by\nSiran Sirhan"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 16620,
-          "charEnd": 16697,
-          "timeStart": 1144.84,
-          "timeEnd": 1155,
-          "quote": "well John\nBarker died within a year brain\nhemorrhage he was only 42 years old"
-        }
-      ],
-      "confidence": 0.93,
-      "directTruth": 0.55,
-      "rationale": "John Barker did die of a cerebral hemorrhage in August 1968, aged 44 (host's '42' is slightly off). Hencher and Middleton are real and were among Barker's most prolific correspondents. Whether they 'predicted' his death depends on standards of evidence — Sam Knight's 2022 book 'The Premonitions Bureau' (which the host's account closely tracks) treats their warnings as suggestive but not conclusive. RFK assassination details are correct."
-    },
-    {
-      "id": "GLP5UupAvSY:c_0007",
-      "videoId": "GLP5UupAvSY",
-      "text": "Most dreams across cultures and species are negative survival-rehearsal scenarios (chasing/being chased, falling, teeth falling out, public nakedness, being lost) generated by the amygdala while the prefrontal cortex is suppressed — i.e., dreaming is primarily an evolved threat-simulation mechanism rather than a portal to anywhere supernatural.",
+      "text": "This Man was a viral marketing hoax created by Italian advertising executive Andrea Natella to test whether he could manufacture an urban legend.",
       "kind": "empirical",
       "entities": [
-        "person:freud",
-        "ideology:ford theories",
-        "event:being chased",
-        "event:random eye movement"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 22150,
-          "charEnd": 22212,
-          "timeStart": 1532.399,
-          "timeEnd": 1539.84,
-          "quote": "most common dream humans have like all\nmammals is being chased"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "This is broadly the threat-simulation theory of dreaming (Antti Revonsuo, 2000) and is the leading evolutionary account of dream content. Universal motifs (chase, falling, lost, exam) are well-documented across cultures (Schredl & Hofmann, 2003). Amygdala activation and prefrontal-cortex hypoactivation during REM are confirmed by fMRI studies. The synthesis is mainstream sleep neuroscience."
-    },
-    {
-      "id": "GLP5UupAvSY:c_0008",
-      "videoId": "GLP5UupAvSY",
-      "text": "The This Man phenomenon is a confirmed hoax: Italian advertising executive Andrea Natella admitted to fabricating it as a guerrilla-marketing experiment, drawing the 'This Man' face from a sketch of his own father; downloadable flyers seeded the legend in 35 languages, and Vice published a viral article about him in January 2015 that they had to retract the same day.",
-      "kind": "empirical",
-      "entities": [
+        "person:andrea",
         "person:andrea nutella",
         "person:andrea nella",
-        "person:andrea",
-        "organization:nutella",
-        "person:this man",
-        "organization:vice",
-        "organization:gorilla marketing",
-        "work_of_media:flyers",
-        "date_time:january 15th 2015",
-        "quantity:35 different languages"
+        "person:nutella",
+        "person:this man"
       ],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 24776,
-          "charEnd": 24834,
-          "timeStart": 1697.08,
-          "timeEnd": 1710.2,
-          "quote": "January 15th 2015 Vice published\nan article about this\nman"
-        },
         {
           "transcriptId": "GLP5UupAvSY",
           "charStart": 25018,
-          "charEnd": 25076,
+          "charEnd": 25062,
           "timeStart": 1718.36,
-          "timeEnd": 1725.279,
-          "quote": "Not only was this man a hoax it was\ndebunked years earlier"
+          "timeEnd": 1723.32,
+          "quote": "Not only was this man a hoax it was\ndebunked"
         },
         {
           "transcriptId": "GLP5UupAvSY",
-          "charStart": 25319,
+          "charStart": 25362,
           "charEnd": 25408,
-          "timeStart": 1739.08,
-          "timeEnd": 1748.879,
-          "quote": "the truth is Andrea Nutella the creator\nof the this man myth was an advertising\nexecutive"
+          "timeStart": 1741.96,
+          "timeEnd": 1746.84,
+          "quote": "the this man myth was an advertising\nexecutive"
         },
         {
           "transcriptId": "GLP5UupAvSY",
-          "charStart": 26030,
-          "charEnd": 26091,
-          "timeStart": 1781.76,
-          "timeEnd": 1789.44,
-          "quote": "Flyers turned up all over the world in\n35 different languages"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 26155,
-          "charEnd": 26204,
-          "timeStart": 1789.44,
-          "timeEnd": 1795.36,
-          "quote": "Nutella later admitted he made\nthe whole thing up"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 26213,
-          "charEnd": 26283,
-          "timeStart": 1790.96,
-          "timeEnd": 1799.08,
-          "quote": "the picture\nof this man is a sketch based on his\nfather as a young man"
+          "charStart": 25739,
+          "charEnd": 25795,
+          "timeStart": 1764.24,
+          "timeEnd": 1769.679,
+          "quote": "Nutella wanted to see if he\ncould create an urban legend"
         }
       ],
-      "confidence": 0.99,
-      "directTruth": 0.97,
-      "rationale": "Documented. Andrea Natella (host occasionally garbles the surname as 'Nutella') is a real Italian artist / guerrilla-marketing operator with the firm Guerriglia Marketing. He admitted in 2010 to inventing This Man, and the Vice retraction sequence (article Jan 15 2015, retraction same day) is on record. The 'father sketch' attribution is from his own statements. The hoax is incontrovertible.",
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Andrea Natella is a real Italian guerrilla-marketing executive who publicly admitted in 2010 (confirmed in Vice coverage) that Ever Dream This Man was a fabricated internet-legend experiment. Strong directTruth.",
+      "tags": ["this-man", "natella", "debunk", "marketing"],
       "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
         {
           "target": "GLP5UupAvSY:c_0001",
           "kind": "contradicts",
-          "rationale": "There was no Dr Brian Stone in 2006; the origin story is part of the hoax."
+          "rationale": "[debunks] The 2006 NYC psychiatrist framing is fictional — the whole This Man phenomenon was a marketing creation."
         },
         {
           "target": "GLP5UupAvSY:c_0002",
-          "kind": "contradicts"
-        },
-        {
-          "target": "GLP5UupAvSY:c_0003",
-          "kind": "contradicts"
+          "kind": "contradicts",
+          "rationale": "[undercuts] The 2,000-sightings figure comes from the hoax site itself."
         }
       ]
     },
     {
+      "id": "GLP5UupAvSY:c_0004",
+      "videoId": "GLP5UupAvSY",
+      "text": "The This Man sketch was based on Natella's own father as a young man.",
+      "kind": "historical",
+      "entities": [
+        "person:andrea nutella",
+        "person:this man"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 26240,
+          "charEnd": 26283,
+          "timeStart": 1793,
+          "timeEnd": 1797.559,
+          "quote": "a sketch based on his\nfather as a young man"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "Natella has publicly said this in multiple interviews. While unverifiable independently, it is consistent with the overall hoax narrative and is the only explanation he has offered for the specific likeness.",
+      "tags": ["this-man", "natella", "father"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "GLP5UupAvSY:c_0005",
+      "videoId": "GLP5UupAvSY",
+      "text": "Vice initially reported on This Man in January 2015 and had to publish a same-day apology after the hoax was pointed out.",
+      "kind": "historical",
+      "entities": [
+        "organization:vice",
+        "person:this man",
+        "date_time:wednesday"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 25018,
+          "charEnd": 25062,
+          "timeStart": 1718.36,
+          "timeEnd": 1723.32,
+          "quote": "Not only was this man a hoax it was\ndebunked"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.7,
+      "rationale": "Vice did run an Ever Dream This Man piece in January 2015 followed by a correction note — both are archived. The speed of the retraction indicates the hoax was already known to at least some readers.",
+      "tags": ["vice", "journalism", "2015"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "GLP5UupAvSY:c_0003",
+          "kind": "supports",
+          "rationale": "Vice's retraction is one of the public confirmations that the whole story was fabricated."
+        }
+      ]
+    },
+    {
+      "id": "GLP5UupAvSY:c_0006",
+      "videoId": "GLP5UupAvSY",
+      "text": "The CIA ran a sub-project within Stargate on lucid dreaming beginning in 1991, predating the 2010 film Inception by 20 years.",
+      "kind": "historical",
+      "entities": [
+        "organization:cia",
+        "facility:stargate",
+        "date_time:1991"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 11229,
+          "charEnd": 11278,
+          "timeStart": 774.16,
+          "timeEnd": 779.56,
+          "quote": "project\nStargate where the CIA was using\npsychics"
+        },
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 11364,
+          "charEnd": 11416,
+          "timeStart": 783.72,
+          "timeEnd": 789.88,
+          "quote": "CIA had a sub project within\nStargate lucid dreaming"
+        },
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 11645,
+          "charEnd": 11671,
+          "timeStart": 801.279,
+          "timeEnd": 804,
+          "quote": "Inception came out in 2010"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.3,
+      "rationale": "Project Stargate and SRI's remote-viewing program are declassified and documented. A specific 'lucid dreaming sub-project in 1991' is not in the public declassified Stargate record to my knowledge; this appears to be speculative host embellishment of a real program. Inception's 2010 release date is real.",
+      "tags": ["cia", "stargate", "lucid-dreaming"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "GLP5UupAvSY:c_0007",
+      "videoId": "GLP5UupAvSY",
+      "text": "Abraham Lincoln dreamt of his own death shortly before his April 14, 1865 assassination.",
+      "kind": "historical",
+      "entities": [
+        "person:abraham lincoln"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 12214,
+          "charEnd": 12229,
+          "timeStart": 844.639,
+          "timeEnd": 847.079,
+          "quote": "Abraham Lincoln"
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.45,
+      "rationale": "The Ward Hill Lamon anecdote of Lincoln's death dream is genuinely in the historical record (Lamon's 1895 memoirs), but Lamon was an unreliable narrator with a book to sell and no independent corroboration exists. The story is repeated but partially apocryphal.",
+      "tags": ["lincoln", "precognition", "dream"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "GLP5UupAvSY:c_0008",
+      "videoId": "GLP5UupAvSY",
+      "text": "Backup singer JoJo Billingsley dreamt of a plane crash and refused to board the Lynyrd Skynyrd flight that crashed near Gillsburg, Mississippi.",
+      "kind": "historical",
+      "entities": [
+        "person:jojo billingsley",
+        "organization:band"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 13490,
+          "charEnd": 13506,
+          "timeStart": 919.519,
+          "timeEnd": 922.48,
+          "quote": "JoJo Billingsley"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.6,
+      "rationale": "The October 20, 1977 Lynyrd Skynyrd crash is verifiable. Billingsley did publicly claim a premonition dream prompted her to skip the flight; this story is documented in band biographies but relies on her personal account after the fact — a retrospective premonition claim is hard to falsify.",
+      "tags": ["skynyrd", "premonition", "billingsley"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
       "id": "GLP5UupAvSY:c_0009",
       "videoId": "GLP5UupAvSY",
-      "text": "Even though This Man was fabricated, thousands of people probably did genuinely have dreams about the face — not because of any paranormal entity, but because suggestion and exposure to a memorable image cause people to incorporate it into their own dreams.",
+      "text": "Ten-year-old Eryl Mai Jones predicted the Aberfan disaster in a dream, describing the school buried in black matter.",
+      "kind": "historical",
+      "entities": [
+        "person:errol may jones"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 14448,
+          "charEnd": 14474,
+          "timeStart": 996.199,
+          "timeEnd": 998.44,
+          "quote": "10-year-old arol May Jones"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.55,
+      "rationale": "The October 1966 Aberfan disaster and Eryl Mai Jones's death are historical fact. Jones did reportedly tell her mother about a nightmare before the tragedy — this is part of the British Premonitions Bureau record. However the story is inherently non-falsifiable: the dream was only reported after the disaster and selection bias dominates premonition cases.",
+      "tags": ["aberfan", "jones", "premonition"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "GLP5UupAvSY:c_0010",
+      "videoId": "GLP5UupAvSY",
+      "text": "Psychiatrist John Barker founded the British Premonitions Bureau to document precognitive dreams after investigating Aberfan.",
+      "kind": "historical",
+      "entities": [
+        "person:john barker",
+        "person:barker"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 14859,
+          "charEnd": 14870,
+          "timeStart": 1022.279,
+          "timeEnd": 1025.36,
+          "quote": "John Barker"
+        },
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 15046,
+          "charEnd": 15073,
+          "timeStart": 1034.199,
+          "timeEnd": 1038.48,
+          "quote": "British premonitions\nBureau"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "John Barker (1924-1968) was a real British psychiatrist who did found the Premonitions Bureau in 1967 following Aberfan. Documented in Sam Knight's book The Premonitions Bureau (2022). Checkable historical fact.",
+      "tags": ["barker", "premonitions-bureau"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "GLP5UupAvSY:c_0011",
+      "videoId": "GLP5UupAvSY",
+      "text": "Alan Hencher predicted a 1967 Britannia passenger aircraft crash near Cyprus, matching the death toll almost exactly.",
+      "kind": "historical",
+      "entities": [
+        "person:alan hencher",
+        "person:john barker"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 15229,
+          "charEnd": 15241,
+          "timeStart": 1045.959,
+          "timeEnd": 1048.799,
+          "quote": "Alan hencher"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.35,
+      "rationale": "Hencher's prediction and the Britannia Airways flight 105 crash (April 1967, Nicosia) are real entries in Barker's Premonitions Bureau log. Close numerical match of a prediction to a real event of that era is the strongest single case in parapsychology, but still subject to selection bias — Hencher's many failed predictions are less remembered.",
+      "tags": ["hencher", "britannia", "cyprus"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "GLP5UupAvSY:c_0010",
+          "kind": "elaborates",
+          "rationale": "Hencher was one of Barker's two star 'percipients' at the Premonitions Bureau."
+        }
+      ]
+    },
+    {
+      "id": "GLP5UupAvSY:c_0012",
+      "videoId": "GLP5UupAvSY",
+      "text": "Kathleen Middleton predicted Robert Kennedy's June 1968 assassination but Barker failed to pass the warning on.",
+      "kind": "historical",
+      "entities": [
+        "person:kathleen middleton",
+        "person:barker"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 15820,
+          "charEnd": 15838,
+          "timeStart": 1087.44,
+          "timeEnd": 1090.679,
+          "quote": "Kathleen Middleton"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.3,
+      "rationale": "Middleton was a real Premonitions Bureau percipient; Barker's records show she logged multiple predictions. The specific June 1968 RFK call with Barker's inaction is in the Premonitions Bureau history. But the nine-point agreement with the event is generous — RFK was a high-profile public figure and vague 'life in danger' warnings happen constantly.",
+      "tags": ["middleton", "rfk", "1968"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "GLP5UupAvSY:c_0010",
+          "kind": "elaborates",
+          "rationale": "Middleton was Barker's other star percipient at the Bureau."
+        }
+      ]
+    },
+    {
+      "id": "GLP5UupAvSY:c_0013",
+      "videoId": "GLP5UupAvSY",
+      "text": "Sigmund Freud's book The Interpretation of Dreams is considered the foundation of psychoanalysis.",
+      "kind": "historical",
+      "entities": [
+        "person:freud"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "GLP5UupAvSY",
+          "charStart": 21314,
+          "charEnd": 21375,
+          "timeStart": 1479.279,
+          "timeEnd": 1483.679,
+          "quote": "Sigman Freud wrote a book\ncalled the interpretation of Dreams"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Freud's Die Traumdeutung was published November 1899 (dated 1900) and is universally recognized as a foundational text of psychoanalysis. Standard intellectual history.",
+      "tags": ["freud", "psychoanalysis"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "GLP5UupAvSY:c_0014",
+      "videoId": "GLP5UupAvSY",
+      "text": "Even though This Man is a hoax, suggestion is powerful enough that many of the 8,000 reported sightings were sincere.",
       "kind": "opinion",
       "entities": [
         "person:this man",
-        "quantity:8,000 people",
-        "person:aj"
+        "person:man"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "GLP5UupAvSY",
           "charStart": 26544,
-          "charEnd": 26638,
+          "charEnd": 26592,
           "timeStart": 1812.399,
-          "timeEnd": 1822.24,
-          "quote": "8,000 people saying they saw him in\ntheir dreams were they lying well\nprobably not all of them"
+          "timeEnd": 1817.799,
+          "quote": "8,000 people saying they saw him in\ntheir dreams"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.8,
-      "rationale": "Well-supported by sleep psychology. Day residue (Freud's term) — incorporation of recent waking experience into dreams — is a robust finding (Schredl, 2007). After exposure to a vivid, repeated image (especially via flyers / news coverage), some fraction of viewers will dream about it within weeks. So the 8,000-people figure is consistent with normal day-residue dreaming over a several-year viral cycle, no paranormal explanation needed.",
+      "confidence": 0.8,
+      "directTruth": 0.7,
+      "rationale": "Host's closing nuance — suggestion and priming effects are well-documented in dream research; once someone has seen the widely-distributed poster image, incorporating it into a dream is plausible without requiring deception or coincidence.",
+      "tags": ["this-man", "suggestion", "priming"],
       "inVerdictSection": true,
-      "hostStance": "asserts"
-    },
-    {
-      "id": "GLP5UupAvSY:c_0010",
-      "videoId": "GLP5UupAvSY",
-      "text": "Lucid dreaming — being consciously aware that one is dreaming, and steering the dream's content — is a real, learnable skill that switches the prefrontal cortex back on inside REM sleep, and is the most enjoyable form of dreaming available.",
-      "kind": "empirical",
-      "entities": [
-        "event:random eye movement",
-        "person:aj"
-      ],
-      "relationships": [],
-      "evidence": [
+      "hostStance": "asserts",
+      "dependencies": [
         {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 24244,
-          "charEnd": 24288,
-          "timeStart": 1661.72,
-          "timeEnd": 1667.48,
-          "quote": "lucid dreaming is a skill\nthat can be taught"
+          "target": "GLP5UupAvSY:c_0003",
+          "kind": "elaborates",
+          "rationale": "Completes the debunking story: hoax origin plus genuine psychological mechanism for the spread of reports."
         }
-      ],
-      "confidence": 0.92,
-      "directTruth": 0.85,
-      "rationale": "Lucid dreaming is well-established in sleep research (Stephen LaBerge, Stanford 1980s; Voss et al. fMRI studies show dorsolateral PFC reactivation during lucid REM). Training methods (MILD, WBTB, reality testing) have measured success rates in published trials. The 'skill that can be taught' framing is supported. The 'most enjoyable' is subjective opinion."
-    },
-    {
-      "id": "GLP5UupAvSY:c_0011",
-      "videoId": "GLP5UupAvSY",
-      "text": "Dream interpretation as a serious cultural practice goes back at least to 7th-century-BC Mesopotamia (the Assyrian Dream Book in Ashurbanipal's library) and Ancient Egyptian dream priests, with Freud's 1900 The Interpretation of Dreams as the foundation of modern psychoanalytic theory.",
-      "kind": "historical",
-      "entities": [
-        "location:ancient mesopotamia",
-        "location:ancient egypt",
-        "person:king ashab banal",
-        "person:freud",
-        "date_time:7th century bc",
-        "organization:pharohs",
-        "organization:priests"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 20979,
-          "charEnd": 21076,
-          "timeStart": 1457.279,
-          "timeEnd": 1467.2,
-          "quote": "the famous Assyrian dream\nbook in the library of King ashab banal\ngoes back to the 7th Century BC"
-        },
-        {
-          "transcriptId": "GLP5UupAvSY",
-          "charStart": 21314,
-          "charEnd": 21375,
-          "timeStart": 1479.279,
-          "timeEnd": 1486,
-          "quote": "Sigman Freud wrote a book\ncalled the interpretation of Dreams"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "All historically accurate. The Assyrian Dream Book (Iškar Zaqīqu) is preserved in Ashurbanipal's library at Nineveh, 7th century BC. Egyptian dream books (e.g. the Ramesside Dream Book, Chester Beatty Papyrus III) are real artifacts. Freud's Die Traumdeutung was published 1899/1900 and is the foundation of psychoanalytic dream theory."
+      ]
     }
   ]
 }

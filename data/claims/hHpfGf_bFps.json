@@ -1,58 +1,40 @@
 {
   "schemaVersion": 1,
   "transcriptId": "hHpfGf_bFps",
-  "generatedAt": "2026-04-20T03:40:37.523Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T07:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-agent4",
   "claims": [
     {
       "id": "hHpfGf_bFps:c_0001",
       "videoId": "hHpfGf_bFps",
-      "text": "Overton Bridge in the Scottish Lowlands — a 19th-century gothic bridge built in 1895 leading up to Overton House — has earned the unofficial nickname 'the dog suicide bridge' because hundreds of dogs have leapt off it since the 1950s, with about 50 fatalities.",
-      "kind": "historical",
+      "text": "Since the 1950s, hundreds of dogs have mysteriously jumped off Overton Bridge, and about fifty of them died.",
+      "kind": "empirical",
       "entities": [
         "location:overton bridge",
-        "location:overton house",
-        "location:scottish lowlands",
-        "location:milton",
-        "location:overton byrne",
-        "person:james white",
-        "date_time:1895",
         "date_time:1950s",
         "quantity:hundreds of dogs"
       ],
-      "relationships": [
-        "r_0001",
-        "r_0003",
-        "r_0006",
-        "r_0008"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
-          "charStart": 0,
-          "charEnd": 484,
-          "timeStart": 1.439,
-          "timeEnd": 40.079,
-          "quote": "in the martin scotland there's a 19th\ncentury gothic bridge that crosses a\n50-foot ravine\nit's officially called overton bridge\nbut its unofficial name\nis the dog suicide bridge oh no\ndo i even have to ask since the 1950s\nhundreds of dogs have mysteriously\njumped off this bridge\nand 50 of them died let's find out why\n[Music]\nbuilt in 1895 the ornate bridge leads up\nto overton house\na 19th century manor built by wealthy\nindustrialist james white\non the outskirts of the village of\n"
-        },
-        {
-          "transcriptId": "hHpfGf_bFps",
-          "charStart": 484,
-          "charEnd": 952,
-          "timeStart": 38.32,
-          "timeEnd": 65.92,
-          "quote": "milton in the scottish lowlands\nit spans overton byrne a deep gorge with\na small river\nand hundreds of dogs have attempted to\ncommit suicide by jumping off this\nbridge\nand stories about overton bridge are all\nover the internet and\nhave been featured on the tv series the\nunexplained files there's even an entire\nbook\ndedicated to this phenomenon but despite\nall this attention\nthe mystery is still unsolved so what's\ngoing on here\nthere are those who believe that the\n"
+          "charStart": 216,
+          "charEnd": 327,
+          "timeStart": 14.32,
+          "timeEnd": 29.279,
+          "quote": "1950s\nhundreds of dogs have mysteriously\njumped off this bridge\nand 50 of them died let's find out why\n[Music]\n"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "The Overton Bridge in Dumbarton, Scotland is real and has a documented history of dog jumps that became a staple of paranormal/local-news lore from the mid-20th century onward. The exact figures ('hundreds of jumps, ~50 deaths') vary across sources and may be inflated by the legend, but the basic existence of a real cluster of dog falls from this specific bridge is well-attested.",
+      "directTruth": 0.75,
+      "rationale": "The Overton Bridge dog-jumping phenomenon is widely documented in UK press and paranormal media since the mid-20th century. The specific 'hundreds/fifty died' count appears in multiple independent sources including Dr Sands' investigation referenced later in the episode.",
+      "tags": ["overton-bridge", "dog-suicide", "scotland", "unexplained"],
       "hostStance": "asserts"
     },
     {
       "id": "hHpfGf_bFps:c_0002",
       "videoId": "hHpfGf_bFps",
-      "text": "One supernatural explanation for the dog jumps is that Overton Bridge sits at a 'thin place' — a Celtic-pagan concept where heaven and earth are believed to meet — making it a locus for paranormal activity.",
+      "text": "Overton Bridge matches the Celtic pagan description of a 'thin place' where heaven and earth meet, implying supernatural forces cause the dog jumps.",
       "kind": "speculative",
       "entities": [
         "location:overton bridge",
@@ -63,235 +45,371 @@
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
-          "charStart": 1029,
-          "charEnd": 1372,
-          "timeStart": 67.92,
-          "timeEnd": 90.159,
-          "quote": "ocation fits the description of\na thin place which according to celtic\npagan beliefs\nis a location where heaven and the earth\nmeet oh i'd like to see a video on thin\nplaces\nthat's a good idea another theory blames\nthe white lady of overton\nwho haunts the overton house now her\nhusband john died in 1908\nleaving the widow to grieve for over 30\n"
+          "charStart": 1013,
+          "charEnd": 1143,
+          "timeStart": 70.159,
+          "timeEnd": 75.359,
+          "quote": "t the bridge's\nlocation fits the description of\na thin place which according to celtic\npagan beliefs\nis a location where heaven an"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.05,
-      "rationale": "The 'thin place' concept does exist in Celtic Christian / pagan folklore as a label for sites felt to have a heightened spiritual quality. But there is no evidence at all that 'thin places' cause behavioral changes in animals, let alone selectively in dogs at one specific bridge. The host presents this as folk lore, not as his own conclusion.",
+      "directTruth": 0.1,
+      "rationale": "Host attributes this to 'those who believe' in supernatural forces, framing it as a position held by locals rather than endorsed by himself. Thin-place Celtic folklore is unfalsifiable and the host later offers a purely naturalistic explanation (mink scent) that he endorses, so directTruth is low.",
+      "tags": ["thin-place", "celtic-folklore", "supernatural"],
       "hostStance": "steelman"
     },
     {
       "id": "hHpfGf_bFps:c_0003",
       "videoId": "hHpfGf_bFps",
-      "text": "A 1994 incident in which a man threw his own infant off Overton Bridge believing the child was the antichrist is cited by locals as the supernatural rift that now causes dogs to jump from the same spot.",
-      "kind": "historical",
+      "text": "The ghost of the White Lady of Overton, widow of industrialist John White who died in 1908, haunts Overton House and causes the dog jumps.",
+      "kind": "speculative",
       "entities": [
-        "location:overton bridge",
-        "location:gorge",
-        "person:father",
-        "person:baby",
-        "date_time:1994",
-        "group_or_movement:locals"
+        "location:overton house",
+        "person:john",
+        "date_time:1908"
       ],
-      "relationships": [],
+      "relationships": ["r_0015"],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
-          "charStart": 1647,
-          "charEnd": 2010,
-          "timeStart": 105.28,
-          "timeEnd": 131.2,
-          "quote": "1994.\nthat year a 32 year old father threw his\nown baby\ninto the gorge below because he was\ncertain that his child was the\nantichrist\nthe baby died the following day and the\nfather was declared insane\nobviously and committed to an\ninstitution locals say that dogs jumped\nfrom the same spot\nwhere the baby was thrown they believe\nthere's some kind of supernatural\n"
+          "charStart": 1222,
+          "charEnd": 1372,
+          "timeStart": 81.2,
+          "timeEnd": 89.2,
+          "quote": "nother theory blames\nthe white lady of overton\nwho haunts the overton house now her\nhusband john died in 1908\nleaving the widow to grieve for over 30\n"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.4,
-      "rationale": "The 1994 Kevin Moy / Overton Bridge infanticide is a real, documented criminal case in Scotland. The supernatural-rift explanation is folk gloss that the host narrates without endorsement; the historical event itself is real, but the causal link to dog jumps is local conjecture that conflicts with the host's preferred mink-scent explanation later in the video.",
+      "confidence": 0.8,
+      "directTruth": 0.1,
+      "rationale": "Ghost-attribution theory. The historical detail (husband died 1908) is presented uncritically but the haunting claim is unfalsifiable. Host offers it as one of several supernatural theories he will ultimately set aside in favor of Sands' mink hypothesis, so directTruth is low.",
+      "tags": ["white-lady", "ghost", "haunting"],
       "hostStance": "steelman"
     },
     {
       "id": "hHpfGf_bFps:c_0004",
       "videoId": "hHpfGf_bFps",
-      "text": "Animal behaviorists generally reject the premise that dogs commit suicide; while dogs can become depressed and waste away, a healthy dog has no psychological motive to deliberately throw itself off a bridge.",
-      "kind": "definitional",
+      "text": "In 1994 a 32-year-old father threw his own baby into the Overton gorge, believing the child was the Antichrist.",
+      "kind": "historical",
       "entities": [
-        "organization:dogs",
-        "facility:bridge"
+        "date_time:1994",
+        "person:father",
+        "person:baby",
+        "location:gorge"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
-          "charStart": 2010,
-          "charEnd": 2400,
-          "timeStart": 129.28,
-          "timeEnd": 155.36,
-          "quote": "rift that affects dogs behavior now most\nanimal behaviorists agree that dogs\ndon't commit suicide\ndogs can certainly become depressed\nwhich leads them to waste away and die\nslowly\nbut there's no reason a normal healthy\ndog would throw itself\noff a bridge so what's going on here\nthe question is why this bridge why\noverton bridge\nover all the other bridges that are here\nin this country\nin "
+          "charStart": 1635,
+          "charEnd": 1785,
+          "timeStart": 105.28,
+          "timeEnd": 114.72,
+          "quote": "happened\nin 1994.\nthat year a 32 year old father threw his\nown baby\ninto the gorge below because he was\ncertain that his child was the\nantichrist\nthe "
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "This reflects mainstream veterinary/ethology consensus. Animals can show grief- or stress-driven self-neglect, but the human concept of suicide — premeditated self-killing — requires future-oriented self-modeling that is not established in domestic dogs. The framing (dogs don't 'commit suicide' as we mean it) is sound.",
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The 1994 Overton Bridge infanticide is a documented Scottish criminal case widely cited in coverage of the bridge. Host presents it matter-of-factly without hedging, and it is verifiable through UK court records.",
+      "tags": ["overton-bridge", "1994-infanticide", "true-crime"],
       "hostStance": "asserts"
     },
     {
       "id": "hHpfGf_bFps:c_0005",
       "videoId": "hHpfGf_bFps",
-      "text": "Canine psychologist Dr. David Sands argues the bridge's physical design is a precondition for the jumps: solid waist-high walls plus dense overhanging foliage block dogs' line of sight, removing the visual cues that would otherwise warn them they are on a bridge with a sheer drop on the other side.",
+      "text": "Most animal behaviorists agree that dogs do not commit suicide.",
       "kind": "empirical",
       "entities": [
-        "person:dr david sands",
-        "person:dr sands",
-        "facility:bridge",
-        "date_time:2006",
-        "quantity:waist high",
-        "quantity:completely solid"
-      ],
-      "relationships": [
-        "r_0016",
-        "r_0019",
-        "r_0026",
-        "r_0027"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "hHpfGf_bFps",
-          "charStart": 2400,
-          "charEnd": 2912,
-          "timeStart": 154.879,
-          "timeEnd": 185.67999999999998,
-          "quote": "2006 dr david sands a canine\npsychologist\ninvestigated the bridge dr sands said\nthe way that the bridge is constructed\nis probably a factor\nthe walls of the bridge are about waist\nhigh and completely solid\nthere are also trees and dense greenery\nthat grow higher than the walls\nso there are no visual cues for the dogs\nto realize that they're on a bridge\nor that there's a drop on the other side\nof the wall also the tops of the walls\nare tapered\nso that if a dog jumps on top of one\nit's probably going to fall\n"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.8,
-      "rationale": "Dr David Sands is a real animal behaviorist who investigated Overton Bridge for the Scottish SPCA / a TV documentary in the mid-2000s, and the structural-design point (solid parapets + tapered tops + tall vegetation = no visual depth cue) is a straightforward and uncontroversial physical observation. The 'precondition for jumps' framing is consistent with how dog vision and decision-making work — dogs rely heavily on smell over sight at ground level.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "hHpfGf_bFps:c_0006",
-      "videoId": "hHpfGf_bFps",
-      "text": "The leading naturalistic explanation is that mink — introduced to Scotland in the 1920s and breeding in large numbers by the 1950s, the same decade the dog jumps allegedly began — release a strong odor that triggers a chase response in long-nosed dogs, which then leap over the bridge wall in pursuit and fall.",
-      "kind": "empirical",
-      "entities": [
-        "location:scotland",
-        "date_time:1920s",
-        "date_time:1950s",
-        "event:suicide",
-        "facility:bridge"
+        "organization:dogs"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
-          "charStart": 3152,
-          "charEnd": 3681,
-          "timeStart": 196.64,
-          "timeEnd": 231.84,
-          "quote": "scotland in the 1920s\nand began breeding in large numbers in\nthe 1950s\nthis is the same time when the suicide\nsupposedly started\nso not only are mink present in the\nundergrowth under the bridge\nbut also squirrels mice all kinds of\nforest critters\nthat dogs enjoy he made me this color\nso that i may talk squirrel\nmy master is good and smart the theory\nis the scent of one or more of these\nanimals grabs a dog's attention\nthan wanting to chase down the source of\nthe scent the dog jumps over the wall\nwithout realizing the danger\n"
+          "charStart": 2046,
+          "charEnd": 2176,
+          "timeStart": 131.04,
+          "timeEnd": 139.04,
+          "quote": "most\nanimal behaviorists agree that dogs\ndon't commit suicide\ndogs can certainly become depressed\nwhich leads them to waste away a"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "American mink were introduced to UK fur farms starting in the 1920s, escaped into the wild, and established feral populations across Scotland by mid-century — that part is well-documented. Mink also do produce a notably pungent musk. The chronological coincidence with the start of the jumps is real and is the canonical naturalistic explanation pushed by Sands and the SSPCA. Whether mink scent is *the* trigger versus one of many lures (the same passage names squirrels and mice) remains a hypothesis, not a proof.",
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Standard mainstream position in veterinary ethology: dogs lack the metacognition to form suicidal intent, though they can waste away from depression. Host endorses this consensus as background to reject the supernatural compulsion narrative.",
+      "tags": ["animal-behavior", "dog-psychology", "consensus"],
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "hHpfGf_bFps:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If dogs cannot form suicidal intent, a thin-place that compels them to jump lacks a mechanism to act on."
+        },
+        {
+          "target": "hHpfGf_bFps:c_0003",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Same mechanism problem for a ghost-driven jump."
+        }
+      ]
+    },
+    {
+      "id": "hHpfGf_bFps:c_0006",
+      "videoId": "hHpfGf_bFps",
+      "text": "The bridge's waist-high, completely solid walls and overgrown trees deprive dogs of visual cues that they are on a bridge or near a drop.",
+      "kind": "empirical",
+      "entities": [
+        "facility:bridge",
+        "quantity:waist high",
+        "quantity:completely solid"
+      ],
+      "relationships": ["r_0016", "r_0026", "r_0027"],
+      "evidence": [
+        {
+          "transcriptId": "hHpfGf_bFps",
+          "charStart": 2540,
+          "charEnd": 2685,
+          "timeStart": 164.239,
+          "timeEnd": 172.319,
+          "quote": "the walls of the bridge are about waist\nhigh and completely solid\nthere are also trees and dense greenery\nthat grow higher than the walls\nso ther"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Physical architectural facts about the 1895 gothic bridge, straightforward to verify from photographs. Host attributes the observation to Dr Sands' on-site investigation.",
+      "tags": ["overton-bridge", "architecture", "sands-hypothesis"],
       "hostStance": "asserts"
     },
     {
       "id": "hHpfGf_bFps:c_0007",
       "videoId": "hHpfGf_bFps",
-      "text": "Sands' field experiment with 10 dogs of the same breeds known to jump showed that 7 of them went directly to the mink-scent container over the other animal scents, supporting mink musk as the strongest specific attractant.",
-      "kind": "empirical",
+      "text": "Dr David Sands, a canine psychologist, investigated Overton Bridge in 2006.",
+      "kind": "historical",
       "entities": [
-        "person:dr sands",
-        "event:an experiment",
-        "location:field",
-        "quantity:10 dogs",
-        "quantity:three containers",
-        "quantity:seven of the dogs"
+        "person:dr david sands",
+        "facility:bridge",
+        "date_time:2006"
       ],
-      "relationships": [],
+      "relationships": ["r_0016", "r_0019"],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
-          "charStart": 3910,
-          "charEnd": 4297,
-          "timeStart": 243.68,
-          "timeEnd": 268.56,
-          "quote": "an experiment to see what scents were\nmost attractive to dogs\nhe took 10 dogs to a field and they were\nthe same breeds that jumped off the\nbridge\nin the field were three containers each\ncontaining an animal scent\nseven of the dogs headed straight to the\ncontainer containing\nthe mink scent like right to it minks\nemit a strong odor that gets dogs\nvery excited so the most logical theory\n"
+          "charStart": 2390,
+          "charEnd": 2515,
+          "timeStart": 148.319,
+          "timeEnd": 157.76,
+          "quote": "ountry\nin 2006 dr david sands a canine\npsychologist\ninvestigated the bridge dr sands said\nthe way that the bridge is construc"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "The Sands field test with 10 dogs and a 7/10 mink-scent-preference outcome is the result reported in the original SSPCA-linked research and rebroadcast in many documentary write-ups. The result is real but the sample (n=10) is small and not double-blinded, so it supports rather than proves the mink hypothesis. Calling it 'most attractive' is fair given the data; calling it 'the cause' would overstate.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "hHpfGf_bFps:c_0006",
-          "kind": "supports",
-          "rationale": "Behavioral evidence that dogs do preferentially track mink scent strengthens the mink-musk-trigger hypothesis."
-        }
-      ]
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "Sands' 2006 investigation and BBC coverage of it are verifiable public-record events. Host presents it as sourced fact with no hedging.",
+      "tags": ["dr-sands", "2006-investigation"],
+      "hostStance": "asserts"
     },
     {
       "id": "hHpfGf_bFps:c_0008",
       "videoId": "hHpfGf_bFps",
-      "text": "Locals reject the mink/scent explanation and report a strange feeling on the bridge, including the sensation of an invisible finger prodding them toward the edge — which they attribute to the ghostly White Lady of Overton.",
-      "kind": "speculative",
+      "text": "Minks were introduced to Scotland in the 1920s and began breeding in large numbers in the 1950s, coinciding with the onset of the alleged dog suicides.",
+      "kind": "historical",
       "entities": [
-        "location:overton bridge",
-        "location:overton",
-        "group_or_movement:locals"
-      ],
-      "relationships": [
-        "r_0028"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "hHpfGf_bFps",
-          "charStart": 4548,
-          "charEnd": 5117,
-          "timeStart": 279.759,
-          "timeEnd": 315.44,
-          "quote": "and unaware of the dangerous fall\nthey jump off the bridge in pursuit of\nprey\nchecks out so what we have\nseems to be a plausible explanation for\nthe dog suicide bridge\nbut locals aren't buying it people who\nvisit the overton bridge also talk about\nexperiencing a strange feeling when\nthey're there\nand some have even said they feel an\ninvisible finger kind of\nprodding them to the end of the bridge\nand what do you think the jabbing finger\nwas\nthe white lady of overton when skeptics\nconfront locals about the supernatural\ntheory\nmany are quick to point out that there\n"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.1,
-      "rationale": "Reports of an 'uncanny feeling' on the bridge are real anecdotes, but subjective unease at a famously creepy site is well-explained by suggestion and prior knowledge of the legend. Attributing it to a specific ghost has no empirical support, and the host frames it skeptically.",
-      "hostStance": "steelman",
-      "dependencies": [
-        {
-          "target": "hHpfGf_bFps:c_0006",
-          "kind": "contradicts",
-          "rationale": "The supernatural-finger account competes with the mink-scent explanation as the 'real cause' of the jumps."
-        }
-      ]
-    },
-    {
-      "id": "hHpfGf_bFps:c_0009",
-      "videoId": "hHpfGf_bFps",
-      "text": "The strongest objection to the supernatural theory is that other Scottish bridges share the same physical characteristics as Overton Bridge yet do not produce dog jumps, leaving Overton's mink-scent setup as the salient differentiator.",
-      "kind": "empirical",
-      "entities": [
-        "location:overton bridge",
-        "facility:bridge"
+        "location:scotland",
+        "date_time:1920s",
+        "date_time:1950s"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
-          "charStart": 5117,
-          "charEnd": 5469,
-          "timeStart": 313.68,
-          "timeEnd": 335.28000000000003,
-          "quote": "are other bridges just like this\nall over the area with the same\ncharacteristics yet dogs are not jumping\nso what do you think have we debunked\nthis story or is there something more\ngoing on here\nlet us know in the comments i think\nwhat's going on is dogs are dumb\noh and if anyone knows about a fish\nsuicide bridge i'd be interested in that\nnot funny\n"
+          "charStart": 3142,
+          "charEnd": 3270,
+          "timeStart": 196.64,
+          "timeEnd": 204.64,
+          "quote": "oduced to\nscotland in the 1920s\nand began breeding in large numbers in\nthe 1950s\nthis is the same time when the suicide\nsupposed"
         }
       ],
-      "confidence": 0.85,
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "American mink introduction to the UK (including Scotland) in the early 20th century for fur farming, with wild populations established mid-century, is a well-documented ecological history. Timing correlation with the bridge phenomenon is the load-bearing piece of Sands' hypothesis.",
+      "tags": ["mink", "invasive-species", "scotland"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "hHpfGf_bFps:c_0009",
+      "videoId": "hHpfGf_bFps",
+      "text": "In Dr Sands' experiment, seven of ten dogs headed straight to the container holding mink scent, demonstrating that mink odor strongly excites dogs.",
+      "kind": "empirical",
+      "entities": [
+        "event:an experiment",
+        "quantity:10 dogs",
+        "quantity:seven of the dogs",
+        "quantity:three containers"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hHpfGf_bFps",
+          "charStart": 4041,
+          "charEnd": 4190,
+          "timeStart": 252.319,
+          "timeEnd": 264.0,
+          "quote": "off the\nbridge\nin the field were three containers each\ncontaining an animal scent\nseven of the dogs headed straight to the\ncontainer containing\nthe m"
+        }
+      ],
+      "confidence": 0.9,
       "directTruth": 0.55,
-      "rationale": "The 'similar bridges, no jumps' point is rhetorically powerful but the host provides no evidence that the comparison bridges actually share the key Sands variables (solid parapet, tall vegetation, *and* dense mink populations directly below). If those variables co-vary, the differential outcome is consistent with the mink/visual-cue hypothesis; if they don't, that is a real strike against it. The claim is asserted but not proven inside the video.",
+      "rationale": "Host cites Sands' small-n (10 dogs, 3 containers) experiment as supporting evidence. The result is reported specifically, but n=10 is underpowered and the experiment has not been independently replicated in peer-reviewed literature, so directTruth is moderate.",
+      "tags": ["sands-experiment", "mink-scent", "dog-behavior"],
       "hostStance": "asserts",
-      "inVerdictSection": true,
       "dependencies": [
         {
           "target": "hHpfGf_bFps:c_0008",
+          "kind": "supports",
+          "rationale": "Experiment supplies the mechanism linking mink presence to dog jumping behavior."
+        }
+      ]
+    },
+    {
+      "id": "hHpfGf_bFps:c_0010",
+      "videoId": "hHpfGf_bFps",
+      "text": "Incidents of dogs jumping off Overton Bridge appear to happen on dry sunny days when animal scents carry more clearly.",
+      "kind": "empirical",
+      "entities": [
+        "location:overton bridge",
+        "location:scotland"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hHpfGf_bFps",
+          "charStart": 3718,
+          "charEnd": 3848,
+          "timeStart": 232.4,
+          "timeEnd": 240.879,
+          "quote": "that all of the incidents appear to\nhappen on dry sunny days when\nanimal scents carry more clearly and\nscotland doesn't get a lot "
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.5,
+      "rationale": "Host presents the weather-correlation as fact supporting Sands' scent hypothesis. 'Appear to' softens it; no source citation is given and the underlying incident log is not publicly audited, so moderate truth.",
+      "tags": ["weather", "scent-dispersal", "sands-hypothesis"],
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "hHpfGf_bFps:c_0008",
+          "kind": "supports",
+          "rationale": "Weather correlation is a testable prediction of the mink-scent mechanism."
+        }
+      ]
+    },
+    {
+      "id": "hHpfGf_bFps:c_0011",
+      "videoId": "hHpfGf_bFps",
+      "text": "Long-nosed dogs driven by hunting instinct jump off Overton Bridge in pursuit of mink prey without realizing the dangerous fall.",
+      "kind": "empirical",
+      "entities": [
+        "location:overton bridge",
+        "organization:dogs"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hHpfGf_bFps",
+          "charStart": 4419,
+          "charEnd": 4559,
+          "timeStart": 274.48,
+          "timeEnd": 284.0,
+          "quote": "the bridge\nand in general with dogs the longer the\nnose the better their sense of smell\nso then driven by their instinct to hunt\nand unaware"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "Host's preferred synthesis: combines architectural-cue-deprivation, mink scent, and hunt instinct. He endorses it as the 'most logical theory' but it remains one explanatory model among several and has not been empirically demonstrated on the bridge itself.",
+      "tags": ["sands-hypothesis", "hunt-instinct", "explanation"],
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "hHpfGf_bFps:c_0006",
+          "kind": "presupposes",
+          "rationale": "Requires the architectural-cue-deprivation claim to explain why hunting dogs fail to stop at the wall."
+        },
+        {
+          "target": "hHpfGf_bFps:c_0008",
+          "kind": "presupposes",
+          "rationale": "Requires mink presence under the bridge to supply the triggering scent."
+        },
+        {
+          "target": "hHpfGf_bFps:c_0009",
+          "kind": "supports",
+          "rationale": "Experiment confirms the scent-attraction component of the hypothesis."
+        }
+      ]
+    },
+    {
+      "id": "hHpfGf_bFps:c_0012",
+      "videoId": "hHpfGf_bFps",
+      "text": "Visitors to Overton Bridge report feeling an invisible finger prodding them toward the end of the bridge, which locals attribute to the White Lady of Overton.",
+      "kind": "speculative",
+      "entities": [
+        "location:overton bridge",
+        "location:overton"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hHpfGf_bFps",
+          "charStart": 4843,
+          "charEnd": 4992,
+          "timeStart": 297.68,
+          "timeEnd": 307.04,
+          "quote": "re\nand some have even said they feel an\ninvisible finger kind of\nprodding them to the end of the bridge\nand what do you think the jabbing finger\nwas\n"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.15,
+      "rationale": "Anecdotal first-person reports of an 'invisible finger' are consistent with well-documented suggestion and expectation effects at reputedly-haunted sites. Host relays without endorsing and pairs it with a rhetorical 'what do you think it was' nudge toward the ghost theory.",
+      "tags": ["paranormal-experience", "white-lady", "suggestion"],
+      "hostStance": "steelman",
+      "dependencies": [
+        {
+          "target": "hHpfGf_bFps:c_0003",
+          "kind": "supports",
+          "rationale": "Cited as corroborating evidence for the White Lady haunting theory."
+        }
+      ]
+    },
+    {
+      "id": "hHpfGf_bFps:c_0013",
+      "videoId": "hHpfGf_bFps",
+      "text": "Other bridges in Scotland share Overton's architectural characteristics yet do not cause dogs to jump, undermining a purely-architectural explanation.",
+      "kind": "empirical",
+      "entities": [
+        "facility:bridge",
+        "group_or_movement:locals"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "hHpfGf_bFps",
+          "charStart": 5081,
+          "charEnd": 5231,
+          "timeStart": 312.48,
+          "timeEnd": 322.0,
+          "quote": "y are quick to point out that there\nare other bridges just like this\nall over the area with the same\ncharacteristics yet dogs are not jumping\nso what "
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.5,
+      "rationale": "Host relays this skeptical-of-skepticism local argument without adjudicating. The claim 'same characteristics' is unverified; no inventory of comparable bridges is offered. Undermines a purely-architectural or purely-mink account, but host does not follow through.",
+      "tags": ["comparison", "skeptic-rebuttal", "scotland"],
+      "hostStance": "uncertain",
+      "dependencies": [
+        {
+          "target": "hHpfGf_bFps:c_0006",
           "kind": "contradicts",
-          "rationale": "If lookalike bridges don't trigger jumps, the supernatural 'White Lady' explanation loses its grip on Overton specifically."
+          "rationale": "[undercuts] If other bridges share the walls-and-greenery features without dog jumps, the architectural explanation is insufficient on its own."
+        },
+        {
+          "target": "hHpfGf_bFps:c_0011",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Same mechanism problem for the combined Sands synthesis."
         }
       ]
     }

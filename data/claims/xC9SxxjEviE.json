@@ -1,423 +1,411 @@
 {
   "schemaVersion": 1,
   "transcriptId": "xC9SxxjEviE",
-  "generatedAt": "2026-04-20T01:40:30.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T04:35:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "xC9SxxjEviE:c_0001",
       "videoId": "xC9SxxjEviE",
-      "text": "Anneliese Michel — born into a devoutly Catholic family, intellectually normal as a child — was diagnosed at 16 with temporal lobe epilepsy, a neurological disorder that can produce hallucinations and personality changes; her religious family eventually rejected medical treatment and asked the church to perform an exorcism instead.",
+      "text": "Anneliese Michel was diagnosed with epilepsy and received anti-convulsive medication and psychotherapy before her condition took a dark turn at age 21.",
       "kind": "historical",
       "entities": [
+        "person:annelise",
         "person:annalize",
-        "organization:family",
-        "organization:church"
+        "person:michelle"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 1135,
-          "charEnd": 1212,
-          "timeStart": 68.82,
-          "timeEnd": 77.22,
-          "quote": "born into a devoutly Catholic Family\nannalize Michelle had a normal childhood"
+          "charStart": 1486,
+          "charEnd": 1494,
+          "timeStart": 91.08,
+          "timeEnd": 94.86,
+          "quote": "epilepsy"
         },
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 1457,
-          "charEnd": 1577,
-          "timeStart": 91.08,
-          "timeEnd": 100.799,
-          "quote": "diagnosed with temporal lobe epilepsy a\nneurological disorder that can cause\nhallucinations and affect one's\npersonality"
+          "charStart": 1172,
+          "charEnd": 1180,
+          "timeStart": 71.28,
+          "timeEnd": 77.22,
+          "quote": "annalize"
         }
       ],
-      "confidence": 0.96,
-      "directTruth": 0.9,
-      "rationale": "Anneliese Michel (1952–1976) was indeed raised in a strictly Catholic Bavarian family, and was diagnosed in 1968 with temporal lobe epilepsy. The neurological framing of her hallucinations and personality changes is consistent with mainstream medical reviews of her case. The biographical facts here are uncontroversial.",
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Well-documented: Anneliese Michel (1952-1976) was diagnosed with temporal-lobe epilepsy, prescribed Tegretol and Dilantin, and underwent psychiatric treatment before and during the period described. Court trial records establish the medical facts.",
+      "tags": ["anneliese-michel", "epilepsy", "medical-history"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "xC9SxxjEviE:c_0002",
       "videoId": "xC9SxxjEviE",
-      "text": "Anneliese underwent 67 (the host says 16) exorcism sessions over roughly 10 months and died at 23 weighing under 70 pounds, with the official cause of death listed as malnutrition and dehydration; her parents and the two officiating priests were later convicted in German court of negligent homicide.",
+      "text": "Anneliese Michel underwent 16 exorcisms during which she screamed, growled, spoke unfamiliar languages, broke her own bones, and displayed superhuman strength.",
       "kind": "historical",
       "entities": [
         "person:annalize",
-        "person:priest",
-        "organization:family",
+        "person:annelise",
         "event:exorcism"
       ],
-      "relationships": [],
+      "relationships": ["r_0004"],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 2383,
+          "charStart": 2538,
           "charEnd": 2550,
-          "timeStart": 142.319,
+          "timeStart": 150.72,
           "timeEnd": 155.28,
-          "quote": "annalize was 23 her family\nturned to the church for help they\nwanted a priest to perform an exorcism\nover the next 10 months she would\nundergo a series of 16 exorcisms"
+          "quote": "16 exorcisms"
         },
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 3258,
-          "charEnd": 3390,
-          "timeStart": 220.319,
-          "timeEnd": 230.76,
-          "quote": "away when she was only 23 years\nold she weighed less than 70 pounds and\nthe official cause of death was\nmalnutrition and dehydration"
-        },
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 3596,
-          "charEnd": 3703,
-          "timeStart": 238.68,
-          "timeEnd": 246.9,
-          "quote": "er family and the priests were actually\nconvicted of negligence and abuse though\nthey didn't serve any time"
+          "charStart": 2864,
+          "charEnd": 2883,
+          "timeStart": 199.319,
+          "timeEnd": 203.76,
+          "quote": "superhuman strength"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.85,
-      "rationale": "Anneliese died in 1976 weighing about 30 kg (~66 lbs) of malnutrition and dehydration; the four defendants (parents and two priests) were convicted of negligent homicide and given suspended sentences. The host's count of '16 exorcisms' under-counts (most sources say 67 sessions over 10 months); but the death, weight, conviction, and no-jail-time framing are all accurate. Adjusting directTruth slightly down because of the session-count discrepancy.",
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "rationale": "The 16 exorcism sessions are documented. The screaming, growling, and self-injury are also documented. 'Superhuman strength' and 'languages she had never learned' are contested — the trial expert witnesses attributed these to epileptic psychosis rather than demonic capacity.",
+      "tags": ["anneliese-michel", "exorcism", "symptoms"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
       "dependencies": [
         {
           "target": "xC9SxxjEviE:c_0001",
-          "kind": "elaborates"
+          "kind": "elaborates",
+          "rationale": "Symptoms framed as demonic followed the epilepsy diagnosis."
         }
-      ],
-      "hostStance": "asserts"
+      ]
     },
     {
       "id": "xC9SxxjEviE:c_0003",
       "videoId": "xC9SxxjEviE",
-      "text": "The 1973 release of William Friedkin's 'The Exorcist' was a cultural phenomenon — one of the highest-grossing films of all time — that effectively brought exorcism, previously avoided or denied by the Catholic Church, into mainstream Western consciousness.",
+      "text": "Anneliese Michel died at 23 weighing under 70 pounds from malnutrition and dehydration.",
       "kind": "historical",
       "entities": [
-        "work_of_media:the exorcist",
-        "event:exorcism",
-        "organization:catholic church"
+        "person:annalize",
+        "person:annelise"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 4293,
-          "charEnd": 4451,
-          "timeStart": 284.22,
-          "timeEnd": 295.979,
-          "quote": "when The Exorcist was released in 1973\nit was a phenomenon people lined up for\nhours to see it it ended up being one of\nthe highest grossing films of all time"
+          "charStart": 3281,
+          "charEnd": 3390,
+          "timeStart": 220.319,
+          "timeEnd": 230.76,
+          "quote": "23 years\nold she weighed less than 70 pounds and\nthe official cause of death was\nmalnutrition and dehydration"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.9,
-      "rationale": "The Exorcist (1973) was a massive cultural and commercial event, with inflation-adjusted box office placing it among the all-time top horror films, and it is well-documented in religious-studies and pop-culture histories that it triggered a renewal of public interest in (and church attention to) exorcism rites.",
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Autopsy confirmed Michel died July 1, 1976 at age 23 weighing ~30 kg (~68 lb) from malnutrition and dehydration. The Klingenberg court convicted her parents and two priests of negligent homicide. Well-documented.",
+      "tags": ["anneliese-michel", "death", "klingenberg-trial"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "xC9SxxjEviE:c_0004",
       "videoId": "xC9SxxjEviE",
-      "text": "William Peter Blatty's novel that became 'The Exorcist' is loosely based on the real 1949 case of a 13-year-old Maryland boy publicly known as 'Roland Doe' or 'Robbie Manheim' but actually named Ronald Hunter — who, after the exorcism, grew up to become a NASA engineer working on Apollo and the Space Shuttle, retired in 2001, and died in 2020 having spent his life hiding his identity.",
+      "text": "William Blatty's novel The Exorcist is based on real events — specifically the 1949 exorcism of a boy then known as Roland Doe whose real name was Ronald Hunter.",
       "kind": "historical",
       "entities": [
-        "person:ronald hunter",
-        "person:ronald",
         "work_of_media:the exorcist",
-        "organization:nasa"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 4850,
-          "charEnd": 4949,
-          "timeStart": 316.08,
-          "timeEnd": 327.0,
-          "quote": "his real name was Ronald\nHunter when Ronald was 13 he was\ndevastated by the recent loss of his\naunt"
-        },
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 6609,
-          "charEnd": 6739,
-          "timeStart": 413.819,
-          "timeEnd": 424.8,
-          "quote": "Ronald humpler went on to\nlead a normal life in fact he became a\nNASA engineer who worked on the Apollo\nand space shuttle missions"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "The Maryland boy at the center of the 1949 St. Louis exorcism is now widely identified, after research by Mark Opsasnick and others, as Ronald Edwin Hunkeler (the host's transcript renders this as 'Hunter'/'Hunkler'). He did work as a NASA engineer at Goddard, and his identity was confirmed publicly only after his death in 2020. Most of the claim checks out; the exact phrasing 'Apollo and Space Shuttle' is consistent with the published reporting on his career.",
-      "dependencies": [
-        {
-          "target": "xC9SxxjEviE:c_0003",
-          "kind": "supports",
-          "rationale": "Provides the real-events basis for the novel/film that drove the cultural shift in c_0003."
-        }
-      ],
-      "hostStance": "asserts"
-    },
-    {
-      "id": "xC9SxxjEviE:c_0005",
-      "videoId": "xC9SxxjEviE",
-      "text": "In 2011 Latoya Ammons moved with her three children into a house in Gary, Indiana, where over the following months she, her mother Rosa, the children, hospital staff, a child-services caseworker, several police officers including a 36-year veteran captain, and a Catholic priest all reported witnessing demonic-possession phenomena — including a child walking backwards up a wall and across the ceiling — events that are documented in official Department of Child Services and Gary PD reports.",
-      "kind": "historical",
-      "entities": [
-        "person:latoya ammons",
-        "person:latoya",
-        "person:rosa",
-        "location:indiana",
-        "person:captain austin",
-        "organization:dcs"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 7237,
-          "charEnd": 7341,
-          "timeStart": 453.599,
-          "timeEnd": 463.199,
-          "quote": "in 2011 Latoya Ammons along with her\nthree children moved into a house on a\nquiet street in Gary Indiana"
-        },
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 11283,
-          "charEnd": 11409,
-          "timeStart": 682.019,
-          "timeEnd": 696.12,
-          "quote": "the\nnine-year-old had a weird grin on his\nface and then while holding Rose's hands\nwalked backwards up a wall into the\nceiling"
-        }
-      ],
-      "confidence": 0.93,
-      "directTruth": 0.4,
-      "rationale": "The Ammons case is unusually well-documented for a possession story — the DCS report by Valerie Washington and the Gary PD report by Capt. Charles Austin are both real and have been published (Indianapolis Star did an extensive 2014 investigation). The factual core — that these reports exist and contain these claims — is true. The metaphysical content (actual possession) is unverified, and skeptics have offered plausible alternative explanations (suggestion, financial motive, prior religious priming) discussed by the host himself in c_0010.",
-      "hostStance": "uncertain"
-    },
-    {
-      "id": "xC9SxxjEviE:c_0006",
-      "videoId": "xC9SxxjEviE",
-      "text": "Father Gabriele Amorth was the Vatican's chief exorcist for over 30 years — a real and continuously held church post — performed thousands of exorcisms, wrote several books on the subject, and required every applicant to first pass medical and psychiatric examination, ultimately judging less than 0.5% of those who contacted him to be genuinely possessed.",
-      "kind": "historical",
-      "entities": [
-        "person:father amort",
-        "person:father remort",
-        "person:father mort",
-        "organization:vatican",
-        "role:exorcist",
-        "event:exorcism"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 14618,
-          "charEnd": 14721,
-          "timeStart": 886.5,
-          "timeEnd": 894.959,
-          "quote": "for over 30 years he was\nthe vatican's chief Exorcist which is a\nreal title of a real job in the church"
-        },
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 15767,
-          "charEnd": 15871,
-          "timeStart": 947.94,
-          "timeEnd": 958.079,
-          "quote": "father remort\nsaid that less than half of one percent\nof people who contacted him are actually\npossessed"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Fr. Gabriele Amorth (1925–2016) was indeed appointed exorcist of the Diocese of Rome in 1986 and served decades; he claimed in interviews to have performed many tens of thousands of exorcisms (a figure some scholars find inflated). The medical-and-psychiatric prerequisite is genuine Catholic practice (codified in De Exorcismis et Supplicationibus Quibusdam, 1999/2004). The 'less than 0.5%' framing matches Amorth's own published statements.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "xC9SxxjEviE:c_0007",
-      "videoId": "xC9SxxjEviE",
-      "text": "In 2016, shortly before his death at 91, Father Amorth allowed William Friedkin (the director of The Exorcist) to film an actual exorcism — of a young woman named Christina — and the rite was unsuccessful: she remained possessed, Friedkin lost contact, and she was never heard from again.",
-      "kind": "historical",
-      "entities": [
-        "person:father amort",
-        "person:christina",
-        "event:exorcism",
-        "work_of_media:the exorcist"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 16512,
-          "charEnd": 16610,
-          "timeStart": 1001.04,
-          "timeEnd": 1013.899,
-          "quote": "in 2016\nfather amort allowed William freaking to\nfilm an exorcism on a young woman named\nChristina"
-        }
-      ],
-      "confidence": 0.88,
-      "directTruth": 0.6,
-      "rationale": "Friedkin did film an Amorth-led exorcism of an Italian woman called 'Cristina' in 2016 (released as the documentary 'The Devil and Father Amorth' in 2017); Amorth died later that year. The framing that the rite 'didn't work' is more nuanced than the host says — Friedkin reported in interviews that he later visited Cristina but her condition had not improved. So the basic factual claim is solid; 'never heard from again' is somewhat dramatic.",
-      "dependencies": [
-        {
-          "target": "xC9SxxjEviE:c_0006",
-          "kind": "elaborates"
-        }
-      ],
-      "hostStance": "asserts"
-    },
-    {
-      "id": "xC9SxxjEviE:c_0008",
-      "videoId": "xC9SxxjEviE",
-      "text": "Modern Western psychiatry now formally recognizes possession-like states — coded in the DSM as Possession Trance Disorder (PTD) under the dissociative disorders — acknowledging that something genuinely happens to some patients that conventional medication and therapy can't fully explain or treat.",
-      "kind": "definitional",
-      "entities": [
-        "event:possession",
-        "event:the possession"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "xC9SxxjEviE",
-          "charStart": 21598,
-          "charEnd": 21718,
-          "timeStart": 1299.72,
-          "timeEnd": 1312.62,
-          "quote": "possession is now recognized in the DSM\nspecifically its possession trans\ndisorder or ptd but it's a pretty new\naddition"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "The DSM-5 does include 'Dissociative Identity Disorder' criteria that encompass possession-form presentations, and ICD-11 has 'Trance and Possession Disorder' as a distinct entry. So the claim that modern psychiatry recognizes it is accurate, though the host's framing slightly overstates how new the addition is and how unique the inability to treat it is — many of these cases respond to standard dissociative-disorder therapies.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "xC9SxxjEviE:c_0009",
-      "videoId": "xC9SxxjEviE",
-      "text": "Most reported possession cases can be plausibly explained by underlying psychiatric and neurological conditions — epilepsy, schizophrenia, dissociative identity disorder, bipolar disorder — refracted through devout religious upbringing that primes both patient and witnesses to interpret symptoms as demonic; mainstream treatment often fails, but exorcism's apparent successes can be explained as suggestion-driven recovery in a culturally appropriate idiom.",
-      "kind": "opinion",
-      "entities": [
-        "event:possession",
-        "group_or_movement:skeptics",
-        "person:annalize",
+        "date_time:1949",
+        "person:ronald",
         "person:ronald hunter"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 21303,
-          "charEnd": 21597,
-          "timeStart": 1280.039,
-          "timeEnd": 1302.48,
-          "quote": "people claiming to be possessed\nshow symptoms of epilepsy schizophrenia\nmultiple personality disorder\ndisassociative identity disorder bipolar\ndisorder and many other conditions but\nthe medications and therapy commonly\nused to treat these illnesses often\ndoesn't work but sometimes exorcisms do"
+          "charStart": 4634,
+          "charEnd": 4759,
+          "timeStart": 302.28,
+          "timeEnd": 313.32,
+          "quote": "William\nblatty but his novel is actually based\non real events bloody read about a boy\nwho underwent several exorcisms in 1949"
         },
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 22069,
-          "charEnd": 22243,
-          "timeStart": 1327.679,
-          "timeEnd": 1340.34,
-          "quote": "Ronald Hunter the boy whose\nstory kicked off the modern exorcism\nphase he admitted he was baking he said\nhe was a bad kid acting out against his\nmother who was very religious"
+          "charStart": 4868,
+          "charEnd": 4900,
+          "timeStart": 316.08,
+          "timeEnd": 322.8,
+          "quote": "Ronald\nHunter when Ronald was 13"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.7,
-      "rationale": "The neurological/psychiatric framing of possession is the mainstream view in Western medicine and medical anthropology, with strong supporting evidence: Anneliese's epilepsy was documented; Hunkeler later said he had been faking; Latoya Ammons's children had multiple worldly-incentive explanations the host details. The 'exorcism works as culturally adapted suggestion' framing is supported by anthropological literature on healing rituals across cultures. Reasonable but not certain.",
-      "dependencies": [
-        {
-          "target": "xC9SxxjEviE:c_0001",
-          "kind": "supports",
-          "rationale": "Anneliese's documented epilepsy is a key example."
-        },
-        {
-          "target": "xC9SxxjEviE:c_0004",
-          "kind": "supports"
-        }
-      ],
+      "confidence": 0.95,
+      "directTruth": 0.6,
+      "rationale": "Blatty did cite a 1949 Washington Post article about a boy in Mount Rainier, MD. The boy's real identity (Ronald Edwin Hunkeler, not 'Hunter' — transcript has it as Hunter) was confirmed posthumously in 2021. 'Based on real events' is correct in the inspiration sense; the novel's supernatural details are fiction.",
+      "tags": ["the-exorcist", "blatty", "hunkeler", "1949"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "xC9SxxjEviE:c_0010",
+      "id": "xC9SxxjEviE:c_0005",
       "videoId": "xC9SxxjEviE",
-      "text": "The Ammons-house witnesses had strong nonparanormal motives that should temper the case's evidentiary weight: all the key witnesses including Capt. Austin already believed in the paranormal and were primed to interpret events through that frame, several pursued and obtained media/movie deals (Reverend Maginot signed with the Conjuring producers, Captain Austin spoke about hoping for notoriety), Latoya was behind on rent and the owner reported no other tenants experienced anything strange, and Zak Bagans bought and demolished the house as part of producing a documentary.",
-      "kind": "opinion",
+      "text": "Ronald Hunter later admitted he was faking his possession and was a bad kid acting out against his religious mother.",
+      "kind": "historical",
       "entities": [
-        "person:latoya ammons",
-        "person:captain austin",
-        "person:latoya",
-        "location:house"
+        "person:ronald hunter",
+        "person:ronald"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 24349,
-          "charEnd": 24504,
-          "timeStart": 1453.559,
-          "timeEnd": 1466.34,
-          "quote": "all the witnesses in\nthat case including police captain\nAustin are highly superstitious and\nbelieve in the Paranormal they were\nprimed to believe the story"
+          "charStart": 22069,
+          "charEnd": 22201,
+          "timeStart": 1327.679,
+          "timeEnd": 1338.6,
+          "quote": "Ronald Hunter the boy whose\nstory kicked off the modern exorcism\nphase he admitted he was baking he said\nhe was a bad kid acting out"
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.75,
-      "rationale": "The financial and media-incentive framing is fair journalism: Maginot did secure media deals; Captain Austin has been quoted in coverage discussing notoriety; Bagans did purchase and demolish the house and produced the 'Demon House' documentary. None of this proves fraud, but it does correctly note that the evidentiary chain is weakened by motivated witnesses, which is the standard skeptical critique.",
+      "confidence": 0.9,
+      "directTruth": 0.65,
+      "rationale": "[debunks] The 'Hunkeler confessed he faked it' narrative appears in later skeptical coverage (notably Mark Opsasnick's Strange magazine investigation). Primary documentary evidence is limited — Hunkeler himself never gave a public interview. The confession claim is partially supported.",
+      "tags": ["hunkeler", "exorcist", "faked", "skeptic"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "xC9SxxjEviE:c_0005",
+          "target": "xC9SxxjEviE:c_0004",
           "kind": "contradicts",
-          "rationale": "Provides reasons to discount the official-report-backed possession narrative."
+          "rationale": "[debunks] If Hunkeler faked his symptoms, the 'real events' foundation of The Exorcist is undermined."
+        }
+      ]
+    },
+    {
+      "id": "xC9SxxjEviE:c_0006",
+      "videoId": "xC9SxxjEviE",
+      "text": "The 2011 Latoya Ammons case in Gary, Indiana began with a black-fly infestation of their porch in December despite the cold.",
+      "kind": "historical",
+      "entities": [
+        "person:latoya ammons",
+        "person:latoya",
+        "location:indiana",
+        "date_time:2011"
+      ],
+      "relationships": ["r_0053"],
+      "evidence": [
+        {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 7240,
+          "charEnd": 7341,
+          "timeStart": 453.599,
+          "timeEnd": 463.199,
+          "quote": "2011 Latoya Ammons along with her\nthree children moved into a house on a\nquiet street in Gary Indiana"
+        },
+        {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 7408,
+          "charEnd": 7433,
+          "timeStart": 463.199,
+          "timeEnd": 469.5,
+          "quote": "infested with black\nflies"
         }
       ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The 2011 Gary, Indiana case (3860 Carolina St) was covered by Indianapolis Star reporter Marisa Kwiatkowski (Jan 2014) with contemporaneous DCS, CPS, and Gary Police records. The family's move and the black-fly detail are documented in those files.",
+      "tags": ["ammons", "gary-indiana", "2011", "possession"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "xC9SxxjEviE:c_0011",
+      "id": "xC9SxxjEviE:c_0007",
       "videoId": "xC9SxxjEviE",
-      "text": "The host's verdict is that he is roughly 90% skeptic — he cannot find proof of literal demons — but reserves 10% credence because Father Amorth, whose work and writings he has studied, is no liar; and regardless of the supernatural question, there is a real, observable battle between good and evil playing out in the world that everyone has a role in.",
-      "kind": "opinion",
+      "text": "Gary Police Captain Charles Austin photographed a silhouette of a person who wasn't there and had multiple electronic devices fail in the Ammons house — documented in an official police report.",
+      "kind": "empirical",
+      "entities": [
+        "person:captain austin",
+        "person:captain charles austin",
+        "organization:gary police department",
+        "location:house"
+      ],
+      "relationships": ["r_0082"],
+      "evidence": [
+        {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 13022,
+          "charEnd": 13120,
+          "timeStart": 798.3,
+          "timeEnd": 807.18,
+          "quote": "Captain Austin took a photo with his\nphone that showed the silhouette of a\nperson who wasn't there"
+        },
+        {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 9797,
+          "charEnd": 9819,
+          "timeStart": 599.459,
+          "timeEnd": 603.18,
+          "quote": "official police report"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.5,
+      "rationale": "Austin's account and the Gary PD report are real and contemporaneous. The 'silhouette' photograph has been analyzed; it's widely interpreted as camera artifact / JPEG compression artifact rather than paranormal. Electronic device failures are reported but no root-cause analysis was published. Factual claim about the report exists; paranormal interpretation is weak.",
+      "tags": ["ammons", "captain-austin", "gary-police", "photo"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "xC9SxxjEviE:c_0008",
+      "videoId": "xC9SxxjEviE",
+      "text": "The Pope's Exorcist (2023) movie, in which Russell Crowe plays Father Amorth, draws case material directly from Amorth's own writing.",
+      "kind": "empirical",
+      "entities": [
+        "person:father remort",
+        "person:father amort",
+        "person:father mort",
+        "work_of_media:the exorcist"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 15038,
+          "charEnd": 15071,
+          "timeStart": 909.3,
+          "timeEnd": 915.959,
+          "quote": "Russell Crowe plays father\nremort"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "rationale": "The 2023 Sony Pictures film The Pope's Exorcist does star Russell Crowe as Father Gabriele Amorth and borrows loosely from Amorth's memoirs ('An Exorcist Tells His Story'). Derivative connection is real though the film takes significant dramatic license.",
+      "tags": ["popes-exorcist", "amorth", "russell-crowe", "film"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "xC9SxxjEviE:c_0009",
+      "videoId": "xC9SxxjEviE",
+      "text": "In 2016 Father Amorth allowed filmmaker William Friedkin to film an actual Catholic exorcism.",
+      "kind": "historical",
       "entities": [
         "person:father amort",
-        "person:father remort",
+        "person:father mort",
+        "event:exorcism"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 16520,
+          "charEnd": 16577,
+          "timeStart": 1003.38,
+          "timeEnd": 1009.92,
+          "quote": "father amort allowed William freaking to\nfilm an exorcism"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "William Friedkin (director of the 1973 Exorcist film) did film a 9th exorcism of 'Cristina' performed by Father Gabriele Amorth in May 2016 in Italy. The footage became 'The Devil and Father Amorth' (2017). Well-documented historical event.",
+      "tags": ["friedkin", "amorth", "2016", "documentary"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "xC9SxxjEviE:c_0010",
+      "videoId": "xC9SxxjEviE",
+      "text": "People claiming to be possessed show symptoms of epilepsy, schizophrenia, and multiple personality disorder — medical explanations exist for what's usually attributed to demons.",
+      "kind": "empirical",
+      "entities": [
         "event:possession"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 25665,
-          "charEnd": 25802,
-          "timeStart": 1530.539,
-          "timeEnd": 1542.179,
-          "quote": "I don't think he's lying but actual\ndemons I look around and I can't find\nany proof but evidence of evil well\nproof of that is everywhere"
+          "charStart": 21352,
+          "charEnd": 21395,
+          "timeStart": 1282.14,
+          "timeEnd": 1290.0,
+          "quote": "epilepsy schizophrenia\nmultiple personality"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.65,
-      "rationale": "This is the host's explicit closing position; as a self-report it's nearly certain. As a substantive claim, the 'proof of evil is everywhere' framing is rhetorical rather than empirical, and the 90/10 stance is reasonable for someone weighing testimony from a respected long-serving cleric against the absence of any well-controlled evidence for supernatural possession. Treating it as a defensible centrist position rather than a settled truth.",
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Mainstream medical and psychiatric view. DSM-5 formally recognizes 'Dissociative Identity Disorder' (formerly MPD) and 'Dissociative Trance Disorder', both of which accommodate 'possession' presentations. Temporal-lobe epilepsy can produce ecstatic/religious auras. Standard explanation for most historical possession cases.",
+      "tags": ["epilepsy", "schizophrenia", "dissociative-disorder", "medicalization"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "xC9SxxjEviE:c_0001",
+          "kind": "supports",
+          "rationale": "Anneliese Michel's epilepsy diagnosis is the canonical example of medicalized 'possession'."
+        }
+      ]
+    },
+    {
+      "id": "xC9SxxjEviE:c_0011",
+      "videoId": "xC9SxxjEviE",
+      "text": "Exorcism is a brutal medieval torture ritual justified by ignorance and people die during exorcisms all the time.",
+      "kind": "opinion",
+      "entities": [
+        "event:exorcism",
+        "group_or_movement:skeptics"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "xC9SxxjEviE",
+          "charStart": 25284,
+          "charEnd": 25314,
+          "timeStart": 1504.559,
+          "timeEnd": 1512.84,
+          "quote": "brutal medieval torture\nritual"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Host is presenting the skeptic framing (he identifies with it at ~90%). Exorcism-related deaths do occur (e.g. 2003 Terrance Cottrell Jr, 2005 Maricica Irina Cornici). Whether exorcism as a category is 'torture' is a value judgment. directTruth omitted because the claim is evaluative rather than factual.",
+      "tags": ["exorcism", "skeptic", "medieval", "torture"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
     {
       "id": "xC9SxxjEviE:c_0012",
       "videoId": "xC9SxxjEviE",
-      "text": "Exorcism is not a Christian invention — analogous rituals exist in ancient Babylonian, Egyptian, and other premodern cultures going back to the dawn of civilization, and exorcism reached its peak during the Renaissance witch trials before declining in the Age of Enlightenment when scientific challenges to church authority gained ground.",
-      "kind": "historical",
+      "text": "Father Amorth, the Vatican's chief exorcist, claimed demonic possession is a real phenomenon distinct from mental illness.",
+      "kind": "opinion",
       "entities": [
-        "event:exorcism",
-        "organization:church"
+        "person:father amort",
+        "person:father mort",
+        "organization:vatican",
+        "role:exorcist"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
-          "charStart": 19666,
-          "charEnd": 19854,
-          "timeStart": 1184.7,
-          "timeEnd": 1198.2,
-          "quote": "the church saw it as a\nway to combat heresy and protect its\nfollowers from the devil's influence\nexorcism reached its peak during the\nRenaissance when the witch trials were\nat their height"
+          "charStart": 15423,
+          "charEnd": 15435,
+          "timeStart": 931.079,
+          "timeEnd": 935.279,
+          "quote": "father amort"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "Exorcism rituals are well-attested in Mesopotamian incantation tablets, Egyptian medical-magical papyri (e.g. the Demotic Magical Papyri), and pre-Christian Mediterranean traditions, and modern historians of religion broadly accept that the witch-trial era of the late medieval and Renaissance periods saw a peak in formal exorcism practice. The Enlightenment-decline framing is also conventional history of science.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.15,
+      "rationale": "Amorth was indeed the Vatican's chief exorcist (1986-2016) and publicly maintained possession is distinct from mental illness (see 'An Exorcist Tells His Story', 1999). Attribution is accurate. The substantive metaphysical claim (real demons) has no scientific support.",
+      "tags": ["amorth", "vatican", "possession", "demons"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "xC9SxxjEviE:c_0010",
+          "kind": "contradicts",
+          "rationale": "[alternative] Amorth's position rejects the medical-explanation consolidation."
+        }
+      ]
     }
   ]
 }

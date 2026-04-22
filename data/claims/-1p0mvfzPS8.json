@@ -1,476 +1,523 @@
 {
   "schemaVersion": 1,
   "transcriptId": "-1p0mvfzPS8",
-  "generatedAt": "2026-04-20T02:08:14.049Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "-1p0mvfzPS8:c_0001",
       "videoId": "-1p0mvfzPS8",
-      "text": "The name 'Sasquatch' originates from a Salish word meaning 'wild man', popularized in 1925 when school teacher John Burns gathered the legend from elders on the Chehalis Indian Reservation in British Columbia.",
-      "kind": "historical",
+      "text": "The 1967 Patterson-Gimlin film remains the single most important piece of evidence for Bigfoot's existence.",
+      "kind": "empirical",
       "entities": [
-        "person:john burns",
-        "person:burns",
-        "location:british columbia",
-        "date_time:1925"
+        "work_of_media:patterson film",
+        "work_of_media:the patterson gimlin film",
+        "person:roger patterson"
       ],
-      "relationships": [
-        "r_0017",
-        "r_0025"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 12,
-          "charEnd": 476,
-          "timeStart": 0.12,
-          "timeEnd": 33.84,
-          "quote": " of the Y files is brought\nto you by\nfactor in 1925 John Burns was a school\nteacher at the chalus Indian Reservation\ndeep in the coast mountains of British\nColumbia his students told him stories\nabout a strange giant lurking in the\nforest it was a tale told by the local\ntribe for Generations Burns became\ncurious were these stories true the\nIndians insisted it was just a myth but\none night an elder admitted they weren't\nexactly be truthful with him fearing the\n"
+          "charStart": 10054,
+          "charEnd": 10149,
+          "timeStart": 738.04,
+          "timeEnd": 749.08,
+          "quote": "to this day Patterson's film is the most\nimportant piece of evidence of the\ncreatures\nexistence"
         }
       ],
-      "confidence": 0.9,
+      "confidence": 0.95,
       "directTruth": 0.7,
-      "rationale": "John W. Burns, a teacher at the Chehalis Indian Reserve in BC, did popularize the term 'Sasquatch' in the 1920s-30s by collecting and publishing accounts from Salish-speaking elders; the word is generally cited as anglicized from a Halkomelem term often glossed as 'wild man'. The 1925 framing and the dramatized 'house destroyed' story is the host's narrative gloss, but the core historical claim about origin is well documented.",
+      "rationale": "Host repeatedly frames Patterson's 1967 footage as the best evidence produced in ~60 years, and no equivalent later artifact is named. Judgment is about evidentiary centrality within the Bigfoot corpus, not about Bigfoot's existence itself, so 0.7 reflects strong agreement among both believers and skeptics that this is the canonical artifact they argue over.",
+      "tags": ["bigfoot", "patterson-gimlin-film", "evidence"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "-1p0mvfzPS8:c_0002",
       "videoId": "-1p0mvfzPS8",
-      "text": "Modern Bigfoot mythology snowballed from a real 1958 footprint discovery by construction worker Jerry Crew near Bluff Creek in Northern California, which got national press coverage and turned a local incident into a celebrity cryptid.",
+      "text": "Bigfoot sightings predate the 1967 Patterson film, with the first published report from 1846 in eastern Arkansas.",
       "kind": "historical",
       "entities": [
-        "person:jerry crew",
-        "location:northern california",
-        "date_time:august of 1958"
+        "date_time:1846",
+        "location:eastern arkansas"
       ],
-      "relationships": [],
+      "relationships": ["r_0066"],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 6033,
-          "charEnd": 6586,
-          "timeStart": 449.36,
-          "timeEnd": 489.84,
-          "quote": "August of 1958 Jerry crew worked\nconstruction near buff Creek deep in the\nwoods of Northern California about A4\nmile Beyond Camp he saw animal tracks at\nthe end of the\nroad when he climbed in his tractor and\nsaw the tracks from above he realized\nthey weren't from an ordinary\nanimal these were humanlike feet and\nthey were huge 16 in long which meant an\nanimal at least 8 ft tall crew told his\nboss and eventually over 20 men from the\njob site reported seeing huge Footprints\nby The Mad River nearby crew realized\nthe prince he found needed to be saved\n"
+          "charStart": 12494,
+          "charEnd": 12586,
+          "timeStart": 930.52,
+          "timeEnd": 943.12,
+          "quote": "the first\npublished report was from\n1846 a 22in long footprint was found in\neastern Arkansas"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "The Jerry Crew Bluff Creek footprint story is well documented and is widely credited as the modern origin of 'Bigfoot' as a media phenomenon (the term 'Bigfoot' was coined by reporter Andrew Genzoli covering this story in October 1958). The footprint itself is now widely believed to have been a hoax by Ray Wallace, but the historical events of the discovery, plaster casting, and press coverage are real.",
+      "confidence": 0.9,
+      "rationale": "Host cites a researcher survey of 19th-century newspapers. Not independently verified in-episode, but the 1846 Arkansas report is a widely repeated claim in Bigfoot literature. Omitting directTruth because the host does not offer the citation and the episode does not debunk or confirm it.",
+      "tags": ["bigfoot", "historical-sightings"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "-1p0mvfzPS8:c_0003",
       "videoId": "-1p0mvfzPS8",
-      "text": "The 1967 Patterson-Gimlin film of a female Bigfoot ('Patty') near Bluff Creek remains the most important and most-debated piece of physical evidence for Bigfoot's existence.",
+      "text": "Skeptics claim all modern Bigfoot accounts are copies of the 1967 Patterson film.",
       "kind": "empirical",
       "entities": [
-        "person:roger patterson",
-        "person:patterson",
-        "person:gimlin",
-        "person:patty",
-        "work_of_media:patterson film",
-        "work_of_media:the patterson gimlin film"
+        "organization:skeptics",
+        "work_of_media:patterson film"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 7101,
-          "charEnd": 7800,
-          "timeStart": 535.2,
-          "timeEnd": 583.839,
-          "quote": "Roger Patterson was among the many\nAmericans obs obsessed with Bigfoot in\nthe 1960s but he took his passion\nfurther than most he lived in Yakama\nWashington right where these creatures\nwere most often seen and he was\ndetermined to prove they existed so he\ngot a camera he hunted for tracks he\ninterviewed Witnesses in 1966 he\nreleased the book with detailed accounts\nof footprints and actual Bigfoot\nsightings he asked his friend Bob\ngimblin to join him on a two-e trip to\ninvestigate some tracks he heard about\nand in October of 67 they got way more\nthan they bargained for a few days into\ntheir trip they were exploring a remote\nregion of Bluff Creek on Horseback both\nPatterson and gimlin were arm"
-        },
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 12504,
-          "charEnd": 12944,
-          "timeStart": 933.36,
-          "timeEnd": 966.16,
-          "quote": "published report was from\n1846 a 22in long footprint was found in\neastern Arkansas and there have been\nactual sightings every year since\nclearly Bigfoot has been running into\nhumans for a long long time but despite\nall these examples mainstream science\nrefuses to acknowledge Bigfoot exists\nthe species is called gigantopithecus\namericanus but officially that's a\nspecies that doesn't exist so in 1985\nzoologist J Wall coined a term he coin"
+          "charStart": 12130,
+          "charEnd": 12311,
+          "timeStart": 907.52,
+          "timeEnd": 921.04,
+          "quote": "now Skeptics say after the 1967 film\nbecame famous all the other accounts are\njust copies before the Patterson film\nNobody talked about Bigfoot so\nresearchers scoured old newspapers"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "It is uncontested that the 1967 Patterson-Gimlin film exists, was shot at Bluff Creek, depicts a creature later nicknamed 'Patty', and remains the single most-discussed Bigfoot artifact. Whether what it depicts is real or a costume is exactly what the rest of the video debates — so I'm withholding directTruth on the descriptive claim and letting the contradicting hoax claim carry the verdict.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.25,
+      "rationale": "Host presents this claim explicitly to rebut it by citing pre-1967 newspaper reports from as far back as 1846. The framing 'now Skeptics say...' introduces a position he is about to undermine, so directTruth low.",
+      "tags": ["bigfoot", "skeptic-argument"],
+      "inVerdictSection": false,
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "-1p0mvfzPS8:c_0002",
+          "kind": "contradicts",
+          "rationale": "[debunks] Pre-1967 newspaper sightings (1846 Arkansas footprint, etc.) directly rebut the 'all copies' framing."
+        }
+      ]
     },
     {
       "id": "-1p0mvfzPS8:c_0004",
       "videoId": "-1p0mvfzPS8",
-      "text": "The Patterson-Gimlin film is most likely a hoax: Greg Long's 2004 investigation traced a gorilla suit purchased from costumer Philip Morris and modified by American National Enterprises, with Patterson's friend Bob Heironimus wearing it; Patterson himself had a documented record of dishonesty.",
+      "text": "Mainstream science refuses to acknowledge that Bigfoot exists.",
       "kind": "empirical",
       "entities": [
-        "person:patterson",
-        "person:bob heronimus",
-        "person:bob",
-        "organization:a&e",
-        "work_of_media:bigfoot movie"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 30950,
-          "charEnd": 31600,
-          "timeStart": 2220.72,
-          "timeEnd": 2273.16,
-          "quote": "the plaster\nthen back to Camp then it it doesn't\nwork now when confronted with the\ntimeline issue Patterson and gimlin\nchanged their stories a few times oh\nit's an exciting day they got some times\nwrong who cares the Bigfoot movie is\nreal but just 10 days after the sighting\nPatterson with an investor formed\nBigfoot Enterprises and started raking\nin Dome\nlots of it for years everyone involved\nsued everybody else over the rights to\nthe film like I said it was a\nmess in 2004 writer Greg Long unraveled\neverything oh no now remember in 1966\nPatterson wrote a book about Bigfoot\nwell he had been making trips to\nHollywood to try and get a movie or\ndo"
-        },
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 31978,
-          "charEnd": 32700,
-          "timeStart": 2295.96,
-          "timeEnd": 2354.32,
-          "quote": "Bob heronimus the arms were\nlengthened which is why the Bigfoot's\nhands kind of flop when they swing he\nwore a football helmet to make his head\nlooked bigger and he stuffed footballs\nin the shoulders and the chest to add\nmore size now people call this Bigfoot\nPatty because they believe those are\nbreasts but primate breasts aren't\ncovered in fur even when the rest of the\nanimal is those aren't boobs they're\nfootballs oh no now they needed to make\nthese enhancements because Bob wasn't a\nhuge guy just over 6 ft tall Patterson\nsaid this creature was 7 ft tall but\nliar scans of the area prove that she or\nhe was actually about 6'2 or 63 at the\nmost Bob heronimus finally came forward\nbecause Patterson promised to pay hi"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "Greg Long's 2004 book 'The Making of Bigfoot' did publish the Heironimus/Philip Morris suit account, and Patterson's reputation for unpaid debts and the Yakima camera-rental theft charge are documented. However, the suit-claim has serious counter-evidence (Heironimus failing to locate the site, conflicts in the Morris account) and the 7-foot-vs-6-foot dispute remains contested. The hoax thesis is the strongest single explanation but is not airtight, hence directTruth ~0.55.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "-1p0mvfzPS8:c_0005",
-      "videoId": "-1p0mvfzPS8",
-      "text": "Witness accounts of Bigfoot show striking convergence across decades and locations: 6-8 ft tall, long arms, broad shoulders, humanlike eyes, long strides, and a distinctive scream — over 3,000 such encounters have been logged.",
-      "kind": "empirical",
-      "entities": [
-        "quantity:over 3,000",
-        "event:bigfoot encounters",
-        "person:hunter",
-        "person:witness"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 5811,
-          "charEnd": 6033,
-          "timeStart": 432.519,
-          "timeEnd": 449.36,
-          "quote": "people saw them all the time over the\nyears investigators have logged and\nfollowed up on over 3,000 Bigfoot\nencounters including over a 100 tracks\nencased in plaster and archived in fact\nit all started with a footprint in\n"
-        },
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 11400,
-          "charEnd": 11900,
-          "timeStart": 808.04,
-          "timeEnd": 845.32,
-          "quote": "ess in July 1991\nhe was walking up to a river and froze\nwhen he saw it across the bank 20 ft\naway he described it in all the familiar\nways between 6 and 8 ft tall with broad\nshoulders and long arms and like many\nwho' have been that close he added that\nthe Sasquatch had humanlike eyes yeah\nand there's the\nscream a hunter heard it on November\n16th 2014 in the woods of windlock\nWashington he described it as yelling\nmixed with a\ngrowl he watched deer run away from the\nsound and said the scream was s"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.5,
-      "rationale": "The BFRO database and similar Bigfoot witness archives do log thousands of reports with broadly consistent descriptions. The convergence claim is empirically true at the descriptive level — the reports do match. What's unsettled is whether the convergence reflects a real animal or shared cultural priors after 1958. I'm scoring directTruth at 0.5 to mark 'reports really are similar' as true while keeping the implicit 'therefore the animal exists' inference unsettled.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "-1p0mvfzPS8:c_0006",
-      "videoId": "-1p0mvfzPS8",
-      "text": "Despite thousands of sightings and dozens of attempted captures, no physical evidence of Bigfoot — no skeleton, no unique hair, no feces — has ever been recovered, and tested 'Bigfoot' hairs always trace back to known animals.",
-      "kind": "empirical",
-      "entities": [
-        "organization:scientists",
         "organization:mainstream science"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 29200,
-          "charEnd": 29672,
-          "timeStart": 2099.32,
-          "timeEnd": 2138.28,
-          "quote": "sted through fossil\nfindings bones hard evidence that's what\nwe need to prove if any of these\nCryptids are real so what do we have\nlet's start with Bigfoot real well\nthere's no hard evidence of a Bigfoot\nwhen scientists have tested hairs people\nclaim to have come from the Bigfoot they\nturned out to be from a deer or other\nfamiliar animals every time there's\nnothing Beyond Witnesses accounts and\nplaster feet and blurry images to prove\nthat Bigfoot exists the movie Dear"
-        },
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 35138,
-          "charEnd": 35373,
-          "timeStart": 2503.76,
-          "timeEnd": 2522.839,
-          "quote": "hair even feces no physical evidence of\nBigfoot exists yeah Pate Bigfoot poop\nwould be hard to miss\nit would now I've covered a lot today\nand there's more than enough information\nout there for you to make up your own\nmind and honestly "
+          "charStart": 12707,
+          "charEnd": 12794,
+          "timeStart": 945.12,
+          "timeEnd": 956.24,
+          "quote": "but despite\nall these examples mainstream science\nrefuses to acknowledge Bigfoot exists"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "This is well-supported. Genetic testing of putative Bigfoot hair samples (Bryan Sykes' 2014 Oxford-Lausanne study and others) consistently identifies them as bear, dog, deer, or other known mammals. No verified Bigfoot skeletal material exists in any natural-history collection. The 'no body, no Bigfoot' point is the standard mainstream-science position.",
+      "rationale": "Well-documented: no peer-reviewed journal or scientific society classifies Bigfoot as a recognized species. Host states it as a truism, and it aligns with the factual status of gigantopithecus americanus as not-recognized.",
+      "tags": ["bigfoot", "mainstream-science", "scientific-consensus"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "-1p0mvfzPS8:c_0005",
+      "videoId": "-1p0mvfzPS8",
+      "text": "The Patterson-Gimlin film was a hoax staged with a gorilla suit from Hollywood costume designer Philip Morris worn by Patterson's friend Bob Heronimus.",
+      "kind": "empirical",
+      "entities": [
+        "work_of_media:the patterson gimlin film",
+        "person:philip morris",
+        "person:bob heronimus",
+        "organization:a&e",
+        "person:patterson"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 31849,
+          "charEnd": 31927,
+          "timeStart": 2283.16,
+          "timeEnd": 2292.12,
+          "quote": "A&E also bought a\ngorilla suit from Philip Morris a\nHollywood Costume designer"
+        },
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 32629,
+          "charEnd": 32725,
+          "timeStart": 2334.44,
+          "timeEnd": 2345.08,
+          "quote": "Bob heronimus finally came forward\nbecause Patterson promised to pay him\n$1,000 to wear the suit"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.55,
+      "rationale": "Host lays out Greg Long's 2004 book-length debunk in detail — funding by American National Enterprises, the gorilla suit from Philip Morris, Heronimus's confession and lie-detector test. Host also notes problems with Heronimus's account (wrong location by 23 miles). Hoax story is plausible and well-evidenced but not airtight, so directTruth moderately above 0.5.",
+      "tags": ["bigfoot", "patterson-gimlin-film", "hoax-theory"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "inVerdictSection": true,
+      "dependencies": [
+        {
+          "target": "-1p0mvfzPS8:c_0001",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If the film is a staged gorilla-suit fake, its status as 'most important evidence' is severely undermined."
+        }
+      ]
+    },
+    {
+      "id": "-1p0mvfzPS8:c_0006",
+      "videoId": "-1p0mvfzPS8",
+      "text": "Roger Patterson was a dishonest man who formed Bigfoot Enterprises 10 days after the sighting to profit from the film.",
+      "kind": "historical",
+      "entities": [
+        "person:roger patterson",
+        "person:patterson",
+        "organization:bigfoot enterprises"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 30308,
+          "charEnd": 30370,
+          "timeStart": 2181.36,
+          "timeEnd": 2187.84,
+          "quote": "he lied he didn't pay his bills he was\nlazy that kind of thing"
+        },
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 31193,
+          "charEnd": 31305,
+          "timeStart": 2237.56,
+          "timeEnd": 2249.96,
+          "quote": "just 10 days after the sighting\nPatterson with an investor formed\nBigfoot Enterprises and started raking\nin Dome"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Host cites acquaintance interviews and the rapid commercial move as evidence of motive and bad character. Character judgments are partly subjective, but the Bigfoot Enterprises timeline is a matter of public record.",
+      "tags": ["bigfoot", "patterson-gimlin-film", "patterson-character"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
       "dependencies": [
         {
           "target": "-1p0mvfzPS8:c_0005",
-          "kind": "contradicts",
-          "rationale": "Witness convergence is the affirmative case for Bigfoot; the absence of physical evidence undercuts it."
+          "kind": "supports",
+          "rationale": "Financial motive and proven dishonesty strengthen the gorilla-suit hoax hypothesis."
         }
       ]
     },
     {
       "id": "-1p0mvfzPS8:c_0007",
       "videoId": "-1p0mvfzPS8",
-      "text": "The modern Loch Ness Monster legend was triggered by 1933 infrastructure changes — a new lakeside road brought tourists, lake-house residents, and visitors to Urquhart Castle, generating the first wave of organized sightings.",
-      "kind": "historical",
+      "text": "Patterson's own account of the day he shot the Bigfoot film is internally inconsistent — the travel-and-plaster timeline he gave doesn't work and he changed his story when pressed.",
+      "kind": "empirical",
       "entities": [
-        "date_time:1933",
-        "location:lochness",
-        "location:loch ness"
+        "person:patterson",
+        "person:gimlin"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 13266,
-          "charEnd": 13800,
-          "timeStart": 991.399,
-          "timeEnd": 1029.319,
-          "quote": "1933 there was a major change around\nScotland's biggest freshwater lake they\nbuilt a road for the first time ever a\nlarge number of people were passing\nthrough people built lake houses some\nwould go on Hikes and had picnics around\nthe shore tourists would visit urar\nCastle on the North End and that's when\nit started people started reporting\nsomething in the water one group of\nwitnesses was staying at a house\noverlooking the Northeast end of the\nlake a woman named Miss Gracie saw it\nfirst it was about 12200 yd away\nswimming towar"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.8,
-      "rationale": "The 1933 Inverness road improvement (the A82) is widely credited as the proximate trigger for the modern Nessie sightings explosion — the road opened up the loch's shoreline to traffic and tourists, and sightings reports immediately surged that summer. This is a standard journalistic and folkloric account.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "-1p0mvfzPS8:c_0008",
-      "videoId": "-1p0mvfzPS8",
-      "text": "Tim Dinsdale's 1960 16mm film of an unidentified moving object in Loch Ness, judged authentic by British intelligence analysis, was the catalyst that turned amateur monster-hunting into organized scientific investigation including the Loch Ness Investigation Bureau.",
-      "kind": "historical",
-      "entities": [
-        "person:dinsdale",
-        "date_time:april of 1960",
-        "location:loch ness"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 17116,
-          "charEnd": 17600,
-          "timeStart": 1257.88,
-          "timeEnd": 1296.08,
-          "quote": "April of 1960 he went to\nsee for himself day after day he scanned\nthe lake Nessie was a noow on the fifth\nday something on the lake caught his eye\nthen it started to\nmove Dinsdale grabbed his 16 mm camera\nwith telephoto lens and started filming\nand what he saw was astounding this\nthing made a wide v-shaped wake much\ndifferent than a boat and he'd seen\nplenty of those on the lake to know the\ndifference and there was no sign of a\npropeller wash you'd expect from an\nengine humps wer"
+          "charStart": 30791,
+          "charEnd": 30828,
+          "timeStart": 2210.32,
+          "timeEnd": 2218.08,
+          "quote": "either way\nthe timeline is impossible"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.4,
-      "rationale": "Dinsdale did film something at Loch Ness in April 1960 and his footage was reviewed by JARIC (Joint Air Reconnaissance Intelligence Centre), who concluded it was 'probably animate'. However, later analyses (Adrian Shine's Loch Ness Project, among others) concluded the object was most likely a boat. The host even acknowledges this in the verdict section. So the film exists, the 'authenticated by British intelligence' framing is technically correct, but the conclusion has been substantially walked back.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "-1p0mvfzPS8:c_0009",
-      "videoId": "-1p0mvfzPS8",
-      "text": "Loch Ness cannot be hiding a breeding population of plesiosaurs because plesiosaurs were air-breathers (so they would surface constantly), they went extinct ~65 million years ago, and the loch itself only formed about 10,000 years ago after the last Ice Age.",
-      "kind": "empirical",
-      "entities": [
-        "location:loch nness",
-        "date_time:65 million years ago",
-        "date_time:10,000 years ago"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 35759,
-          "charEnd": 36300,
-          "timeStart": 2554.6,
-          "timeEnd": 2601.16,
-          "quote": "s a\nrendering of what it looked\nlike and that film of Nessie as soon as\nwe had the technology to increase the\ncontrast in the black and white 16 mm\nfilm new details appeared that were\ninvisible in the original film it was a\nboat now I love the idea that Nessie is\na Plesiosaurus but they were air\nbreathers so if that that's what it or\nshe is we'd see them all the time\nbesides Loch nness was created about\n10,000 years ago when the ice sheets\nreceded Plesiosaurus went extinct 65\nmillion years ago and a lot of the\nenhanced photos we've see"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "All three subordinate facts are correct: plesiosaurs were marine reptiles that needed to surface to breathe; the K-Pg extinction ~66 Mya wiped them out alongside the non-avian dinosaurs; Loch Ness was carved by glaciation and only opened to water ~10,000 years ago at the end of the Pleistocene. Together they make the plesiosaur hypothesis essentially impossible.",
+      "directTruth": 0.65,
+      "rationale": "Host walks through the horseback/plaster/drive sequence and shows the time math fails; also notes the story changed across retellings. Undermines the film's provenance without proving forgery.",
+      "tags": ["bigfoot", "patterson-gimlin-film", "hoax-theory"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "inVerdictSection": true,
       "dependencies": [
         {
-          "target": "-1p0mvfzPS8:c_0008",
-          "kind": "contradicts",
-          "rationale": "Walks back the implication that the Dinsdale film proves a large unknown animal in the loch."
+          "target": "-1p0mvfzPS8:c_0005",
+          "kind": "supports",
+          "rationale": "An impossible same-day timeline is consistent with a staged shoot and inconsistent with a genuine spontaneous encounter."
         }
       ]
     },
     {
-      "id": "-1p0mvfzPS8:c_0010",
+      "id": "-1p0mvfzPS8:c_0008",
       "videoId": "-1p0mvfzPS8",
-      "text": "The first chupacabra outbreak in Puerto Rico in 1995 killed more than 1,000 livestock animals, all reportedly drained of blood through small puncture wounds, kicking off a global panic as identical attack patterns spread to Mexico, Brazil, Chile, and the U.S. mainland.",
-      "kind": "historical",
+      "text": "No physical evidence of Bigfoot — no skeleton, no hair, no feces — has ever been found.",
+      "kind": "empirical",
       "entities": [
-        "date_time:march 11th 1995",
-        "date_time:1995",
-        "date_time:march 1996",
-        "location:central puerto rico",
-        "location:puerto rico",
-        "location:miami florida",
-        "location:mexico",
-        "location:brazil",
-        "location:chile",
-        "nationality_or_ethnicity:puerto rican"
+        "organization:mainstream science"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 23370,
-          "charEnd": 23900,
-          "timeStart": 1703.559,
-          "timeEnd": 1746.6,
-          "quote": "March 11th 1995 a\ngroup of farmers arrived at work in\ncentral Puerto Rico and they found a\nmassacre all the Sheep on the farm were\ndead there were eight bodies clearly\nattacked by something in the night but\nit wasn't obvious what killed them there\nwere no signs of a struggle no wounds or\nbites you'd expect from a typical\npredator and there's something off about\ntheir skin it seemed translucent and\nstrangely loose and wrinkled one of the\nfarmers figured it out each corpse had a\nwound on its torso two small incisions\nlike from"
+          "charStart": 35154,
+          "charEnd": 35192,
+          "timeStart": 2509.28,
+          "timeEnd": 2516.84,
+          "quote": "no physical evidence of\nBigfoot exists"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Host states this directly in his verdict. Aligns with established zoological consensus: every hair sample tested has matched known mammals (deer, bear, etc.). Widely documented.",
+      "tags": ["bigfoot", "evidence", "scientific-consensus"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "-1p0mvfzPS8:c_0004",
+          "kind": "supports",
+          "rationale": "Absence of physical evidence is the core reason mainstream science declines to classify Bigfoot as a species."
+        }
+      ]
+    },
+    {
+      "id": "-1p0mvfzPS8:c_0009",
+      "videoId": "-1p0mvfzPS8",
+      "text": "The famous surgeon's photograph of the Loch Ness monster is a fake — it shows a toy submarine with a model dinosaur head attached.",
+      "kind": "empirical",
+      "entities": [
+        "person:famous surgeon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 35528,
+          "charEnd": 35569,
+          "timeStart": 2539.64,
+          "timeEnd": 2545.92,
+          "quote": "the famous\nsurgeon's photograph is a fake"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Host states this in his verdict section. The 1934 surgeon's photo hoax is a well-documented historical fact — Christian Spurling's 1994 deathbed confession admitted to the toy-submarine construction. Widely accepted.",
+      "tags": ["loch-ness", "hoax", "surgeons-photo"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "-1p0mvfzPS8:c_0010",
+      "videoId": "-1p0mvfzPS8",
+      "text": "Nessie cannot be a surviving Plesiosaurus because Plesiosaurs went extinct 65 million years ago and Loch Ness itself only formed about 10,000 years ago.",
+      "kind": "empirical",
+      "entities": [
+        "location:loch nness",
+        "date_time:10,000 years ago",
+        "date_time:65 million years ago"
+      ],
+      "relationships": ["r_0134", "r_0135"],
+      "evidence": [
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 36137,
+          "charEnd": 36210,
+          "timeStart": 2580.12,
+          "timeEnd": 2589.68,
+          "quote": "Loch nness was created about\n10,000 years ago when the ice sheets\nreceded"
         },
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 26173,
-          "charEnd": 26500,
-          "timeStart": 1894.36,
-          "timeEnd": 1928.679,
-          "quote": "1995 the chupacabra\ncaused more than 1,000 animal deaths all\nresulting from blood loss people around\nthe world were riveted by the story of\nthe Puerto Rican attacks but they were\nrelieved this was happening on an\nisolated island\nnation then somehow it got off the\nisland\n[Music]\nin March 1996 police in Miami Florida\nresponded "
+          "charStart": 36211,
+          "charEnd": 36257,
+          "timeStart": 2583.72,
+          "timeEnd": 2591.84,
+          "quote": "Plesiosaurus went extinct 65\nmillion years ago"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.5,
-      "rationale": "The 1995 Puerto Rico livestock killings and ensuing chupacabra panic are real historical events with substantial press coverage; mass animal deaths did occur and were attributed by panicked locals to a single predator. The 'all drained of blood through neat puncture wounds' framing is contested — necropsies of many of the carcasses found ordinary canid attacks and natural decomposition (which empties blood pools) rather than vampiric exsanguination. So the panic and the deaths are real; the supernatural-pattern interpretation is not.",
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Host raises this as a logical geological/paleontological argument. Both numbers are in standard scientific literature: Loch Ness glacial origin ~10ka, plesiosaur K-Pg extinction ~66Mya. The geological impossibility follows cleanly."
+      ,
+      "tags": ["loch-ness", "plesiosaurus", "geology"],
+      "inVerdictSection": true,
       "hostStance": "asserts"
     },
     {
       "id": "-1p0mvfzPS8:c_0011",
       "videoId": "-1p0mvfzPS8",
-      "text": "The chupacabra was a genetically engineered creature created by NASA at a secret facility in the Atacama Desert in northern Chile while attempting to design animals capable of surviving on Mars, and the project escaped containment.",
+      "text": "The Loch Ness monster is a surviving Plesiosaurus whose description matches thousands of eyewitness sightings.",
       "kind": "speculative",
       "entities": [
-        "organization:nasa",
-        "organization:chilean military",
-        "organization:chilean ufo researchers",
-        "facility:secret facility",
-        "location:northern chile",
-        "location:mars"
+        "location:loch ness"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 27954,
-          "charEnd": 28600,
-          "timeStart": 2023.159,
-          "timeEnd": 2069.28,
-          "quote": "government said the tracks were\nfrom dogs but of course dogs aren't\nknown for sucking\nblood but Chilean UFO researchers had a\ndifferent explanation they'd been\nkeeping watch on the Chilean military\nbecause the military was spending a\nsuspicious amount of time in the attch\nhamama desert in Northern Chile there\nwere rumors of a secret facility out\nthere and the military was out there\nsearching for\nsomething during one search they\nuncovered three eggs with odd coloring\nthey did not look like bird eggs\naccording to the UFO researchers the\nmilitary was forced to turn the eggs\nover to NASA cuz these eggs were from a\nchupacabra NASA again well N"
+          "charStart": 22192,
+          "charEnd": 22317,
+          "timeStart": 1619.28,
+          "timeEnd": 1634.48,
+          "quote": "this\ndescription matches the thousands of\nsightings of the lockness monster only\nthe Plesiosaurus lived 200 million years\nago"
         }
       ],
-      "confidence": 0.7,
-      "directTruth": 0.02,
-      "rationale": "There is no public evidence whatsoever of a NASA bioengineering facility in the Atacama, no leaked documents, no defectors, and the entire chain of inference rests on an unnamed UFO researcher's claim about unspecified eggs. NASA does run Mars-analog research in the Atacama (the Atacama Rover Astrobiology Drilling Studies project) but that's robotic geology, not animal genetic engineering. The host frames this with heavy sarcasm ('NASA again well') — even he's not selling it.",
-      "hostStance": "steelman"
-    },
-    {
-      "id": "-1p0mvfzPS8:c_0012",
-      "videoId": "-1p0mvfzPS8",
-      "text": "Eyewitness Madelyne Tolentino's iconic 1995 chupacabra description — webbed feet, alien eyes, dorsal spikes — was almost certainly contaminated by the recently-released sci-fi movie 'Species' which she had just watched and which features a creature with the same features.",
-      "kind": "empirical",
-      "entities": [
-        "person:meline tolentino",
-        "work_of_media:species",
-        "date_time:1996",
-        "event:cattle mutilations"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 36900,
-          "charEnd": 37500,
-          "timeStart": 2627.16,
-          "timeEnd": 2671.319,
-          "quote": "n completely rule out\nthat something big is living in lch\nness now for the Goat Sucker El\nChupacabra now meline Tolentino was the\nfirst witness to describe the animal\nwith web feet alien eyes spikes on its\nback all that but most chupacabra\nreports in later years sounded more like\ndogs coyotes or Wolves now 1996 meline\nTolentino gave an interview that throws\na lot of cold water on the story she'd\nseen the movie Species a few weeks\nearlier she thought that what she was\nseeing was an actual alien hybrid like\nin the movie she even described it with\nsimilar features also a few weeks before\nshe saw "
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The Tolentino-Species link was reported by Benjamin Radford in his book 'Tracking the Chupacabra' (2011), where he documents that 'Species' opened in Puerto Rico shortly before her sighting and that the alien creature in that film does match her description (slender, dorsal spines, large dark eyes). The cultural-contamination explanation is widely accepted among skeptical researchers.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
+      "confidence": 0.8,
+      "directTruth": 0.05,
+      "rationale": "Host floats this as the romantic hypothesis but later debunks it using geological timelines (see c_0010). The morphological match he points to is real, but the timing makes the Plesiosaurus identification untenable.",
+      "tags": ["loch-ness", "plesiosaurus", "speculation"],
+      "inVerdictSection": false,
+      "hostStance": "steelman",
       "dependencies": [
         {
           "target": "-1p0mvfzPS8:c_0010",
           "kind": "contradicts",
-          "rationale": "Undermines the original chupacabra-as-real-creature narrative by showing the canonical eyewitness was likely confabulating from a movie."
+          "rationale": "[logical] A 10,000-year-old lake cannot harbor an animal whose lineage went extinct 65 million years ago; the two claims cannot both be true."
+        }
+      ]
+    },
+    {
+      "id": "-1p0mvfzPS8:c_0012",
+      "videoId": "-1p0mvfzPS8",
+      "text": "Loch Ness sightings have been declining every year, the signature of a dying urban legend, and locals now believe the sightings are of a giant eel backed by environmental-DNA findings.",
+      "kind": "empirical",
+      "entities": [
+        "location:lake"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 36572,
+          "charEnd": 36658,
+          "timeStart": 2605.88,
+          "timeEnd": 2615.48,
+          "quote": "there are\nactually fewer and fewer every year\nthat's the sign of an urban legend dying"
         },
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 36659,
+          "charEnd": 36747,
+          "timeStart": 2613.08,
+          "timeEnd": 2622.40,
+          "quote": "now locals think it's a giant eel and\nscientists have found a lot of eel DNA\nin the lake"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The eel-DNA finding refers to Neil Gemmell's 2019 University of Otago environmental-DNA study, which is documented. Declining sightings is plausible but host provides no citation. The two evidence pieces reinforce each other — the giant-eel hypothesis explains the tapering.",
+      "tags": ["loch-ness", "eel-hypothesis", "urban-legend"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
         {
           "target": "-1p0mvfzPS8:c_0011",
           "kind": "contradicts",
-          "rationale": "Removes the need for the NASA-bioweapon explanation by sourcing the strange features to fiction."
+          "rationale": "[alternative] Giant-eel explanation competes with the Plesiosaurus hypothesis as a mundane account of the same sightings."
         }
       ]
     },
     {
       "id": "-1p0mvfzPS8:c_0013",
       "videoId": "-1p0mvfzPS8",
-      "text": "Cryptozoology is methodologically vulnerable to a 'lumping problem' — witnesses and researchers conflate independent stories (cattle mutilations, coyote attacks, sci-fi imagery) into single coherent cryptid narratives, often driven by financial and attention incentives.",
-      "kind": "definitional",
+      "text": "The chupacabra is a real cryptid responsible for over 1,000 blood-drained livestock attacks across Puerto Rico, Florida, Mexico, Brazil, and Chile starting in 1995.",
+      "kind": "empirical",
       "entities": [
-        "person:patrick hugh",
-        "person:lauren coleman",
-        "person:meline tolentino",
-        "event:cattle mutilations"
+        "location:puerto rico",
+        "location:central puerto rico",
+        "location:miami florida",
+        "location:mexico",
+        "location:brazil",
+        "location:chile"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 37959,
-          "charEnd": 38800,
-          "timeStart": 2695.359,
-          "timeEnd": 2750.679,
-          "quote": "Patrick\nHugh and Lauren Coleman are well-known\ncryptozoologists who have interviewed a\nlot of witnesses they have a term they\ncall the lumping problem people tend to\nlump a bunch of stories into one now on\nthis channel have you noticed how many\npeople are abducted as children taught\npsychic powers become super warriors on\nMars then time travel back to their\nchildhood bodies these people are\nlumping all the UFO tropes into one\nstory and they're doing it for money and\nattention mine told Valentino was\nlumping the cattle mutilations with the\npacks of coyotes in her town with the\nscience fiction movie she just saw which\nby the way she thought was real it got\nher a lot of attention but the story\nwasn't true so chupacabra no Lochness\nMonster maybe something Bigfoot probably\nno but\n[Music]\nmaybe I went into this episode\nabsolutely certa"
+          "charStart": 23352,
+          "charEnd": 23469,
+          "timeStart": 1703.56,
+          "timeEnd": 1718.52,
+          "quote": "on the morning of March 11th 1995 a\ngroup of farmers arrived at work in\ncentral Puerto Rico and they found a\nmassacre"
+        },
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 26452,
+          "charEnd": 26532,
+          "timeStart": 1921.00,
+          "timeEnd": 1930.60,
+          "quote": "in March 1996 police in Miami Florida\nresponded to reports of a violent\nincident"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The 'lumping problem' is a recognized critique in folklore studies and skeptical investigation of paranormal claims (Loren Coleman is indeed a prominent cryptozoologist who has discussed this dynamic, though the precise term may be the host's gloss). The mechanism described — eyewitnesses unconsciously merging unrelated incidents and media imagery into a single narrative — is well-documented in memory and confabulation research.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
-      "dependencies": [
-        {
-          "target": "-1p0mvfzPS8:c_0012",
-          "kind": "elaborates",
-          "rationale": "The Tolentino case is the host's worked example of the lumping problem in action."
-        }
-      ]
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Host lays out the chupacabra narrative in a compressed attack-by-attack sequence, then debunks it in the verdict: primary witness based her description on the movie Species, attacks were later attributed to coyotes, no physical evidence found. directTruth low because the host concludes 'chupacabra no'.",
+      "tags": ["chupacabra", "animal-attacks", "cryptid"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
     },
     {
       "id": "-1p0mvfzPS8:c_0014",
       "videoId": "-1p0mvfzPS8",
-      "text": "After reviewing the evidence, the host concludes the chupacabra is not real, the Loch Ness monster is unlikely though not impossible, and Bigfoot is probably not real — but the Patterson film keeps the case from being fully closed.",
-      "kind": "opinion",
+      "text": "Melanie Tolentino's foundational chupacabra description was derived from the 1995 sci-fi movie Species, which she had just seen and thought depicted a real alien hybrid.",
+      "kind": "empirical",
       "entities": [
-        "work_of_media:patterson film",
-        "group_or_movement:bigfoot believers"
+        "person:meline tolentino",
+        "work_of_media:species"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
-          "charStart": 38800,
-          "charEnd": 39200,
-          "timeStart": 2751.319,
-          "timeEnd": 2781.079,
-          "quote": "in I could debunk\nBigfoot if you follow the channel you\nknow I'm not a fan of the Bigfoot story\nI thought it was going to be a layup but\nnow I'm not so\nsure now I'm not saying I'm a Believer\nbut seeing the stabilized and enhanced\nPatterson film has made me a little more\nopen-minded but no matter how good AI or\nphoto enhancement software gets we're\nnever going to get a cleaner version of\nthe Patter"
-        },
-        {
-          "transcriptId": "-1p0mvfzPS8",
-          "charStart": 38500,
-          "charEnd": 38800,
-          "timeStart": 2730.319,
-          "timeEnd": 2750.679,
-          "quote": "the\npacks of coyotes in her town with the\nscience fiction movie she just saw which\nby the way she thought was real it got\nher a lot of attention but the story\nwasn't true so chupacabra no Lochness\nMonster maybe something Bigfoot probably\nno but\n[Music]\nmaybe I went into this episode\nabsolutely certa"
+          "charStart": 37293,
+          "charEnd": 37405,
+          "timeStart": 2653.28,
+          "timeEnd": 2664.28,
+          "quote": "she'd\nseen the movie Species a few weeks\nearlier she thought that what she was\nseeing was an actual alien hybrid"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "This is the host's explicit verdict statement, not an empirical claim — capturing it as opinion. No directTruth because the claim is about the host's own state of belief.",
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "Host cites a 1996 Tolentino interview with UFO Digest where she reportedly admitted this. This is the strongest single debunk of the chupacabra origin story. The alien-hybrid/Species parallel is widely reported in cryptozoology critical literature.",
+      "tags": ["chupacabra", "tolentino", "debunk"],
+      "inVerdictSection": true,
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "dependencies": [
+        {
+          "target": "-1p0mvfzPS8:c_0013",
+          "kind": "contradicts",
+          "rationale": "[debunks] If the iconic eyewitness description was copied from a 1995 sci-fi film, the real-cryptid narrative loses its foundational witness."
+        }
+      ]
+    },
+    {
+      "id": "-1p0mvfzPS8:c_0015",
+      "videoId": "-1p0mvfzPS8",
+      "text": "NASA created the chupacabra in a secret Atacama Desert lab while trying to genetically engineer animals that could survive on Mars.",
+      "kind": "speculative",
+      "entities": [
+        "organization:nasa",
+        "location:attch hamama desert",
+        "location:mars",
+        "facility:secret facility"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "-1p0mvfzPS8",
+          "charStart": 28697,
+          "charEnd": 28872,
+          "timeStart": 2072.76,
+          "timeEnd": 2087.64,
+          "quote": "the secret facility in atakama was\na top secret lab where NASA was trying\nto genetically modify animals that could\nsurvive on Mars was the chupacabra and\nexperiment gone wrong"
+        }
+      ],
+      "confidence": 0.65,
+      "directTruth": 0.02,
+      "rationale": "Host presents this via Heckle Fish as a conspiracy-theory flourish, not as his own serious claim. No evidence beyond the rumored egg transfer. Confidence moderate because the assertion is clearly made in-show as commentary; directTruth near zero because there is no credible basis for a NASA genetic-engineering origin of the chupacabra.",
+      "tags": ["chupacabra", "nasa", "conspiracy"],
+      "inVerdictSection": false,
+      "hostStance": "steelman",
+      "dependencies": [
+        {
+          "target": "-1p0mvfzPS8:c_0013",
+          "kind": "presupposes",
+          "rationale": "The NASA-origin hypothesis only makes sense if a real chupacabra exists in the first place."
+        }
+      ]
     }
   ]
 }

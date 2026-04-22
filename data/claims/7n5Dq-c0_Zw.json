@@ -1,17 +1,461 @@
 {
   "schemaVersion": 1,
   "transcriptId": "7n5Dq-c0_Zw",
-  "generatedAt": "2026-04-20T01:36:04.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T04:18:24.298Z",
+  "generator": "claude-opus-4-7-plan3-b2",
   "claims": [
     {
       "id": "7n5Dq-c0_Zw:c_0001",
       "videoId": "7n5Dq-c0_Zw",
-      "text": "The CIA and U.S. military have already \"visited\" Mars — not by spacecraft but by deploying psychic remote viewers — making the U.S. government the first organization to achieve a functional (if non-physical) human presence on the planet.",
+      "text": "In 1972 the CIA launched a funded program to research ESP, mind reading, and telekinesis for espionage purposes, in response to reports of Soviet psychic research.",
+      "kind": "historical",
+      "entities": [
+        "organization:cia",
+        "date_time:1972",
+        "technology:mind reading",
+        "technology:telekinesis",
+        "organization:esp"
+      ],
+      "relationships": [
+        "r_0013"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 1156,
+          "charEnd": 1359,
+          "timeStart": 72.799,
+          "timeEnd": 88.56,
+          "quote": "in 1972 a classified report was\ncirculating in the american intelligence\ncommunity the report claimed that the\nsoviet union was pouring millions into\nprograms to research esp mind reading\nand telekinesis"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The 1972 origin of CIA/DIA-funded psychic research programs (initially at SRI) is documented in the declassified Stargate Collection released by the CIA in 2017. The Soviet-threat framing is also standard in the historical record.",
+      "tags": [
+        "cia",
+        "stargate",
+        "psychic",
+        "cold-war"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0002",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "The CIA's remote-viewing programs were consolidated into Project Stargate at Fort Meade, Maryland, and ran for about 23 years before being shut down in 1995 after Nightline reported on it.",
+      "kind": "historical",
+      "entities": [
+        "facility:project stargate",
+        "organization:project stargate",
+        "location:fort meade",
+        "location:maryland",
+        "date_time:1995",
+        "work_of_media:nightline"
+      ],
+      "relationships": [
+        "r_0029"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 2538,
+          "charEnd": 2677,
+          "timeStart": 155.76,
+          "timeEnd": 166.4,
+          "quote": "this became known as project stargate\nand project stargate ran for years it\nwas finally shut down in 1995 after\nnightline reported about it"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Fort Meade hosted the program after SRI's early-1970s Stanford work; Stargate was publicly disclosed in 1995 and terminated that same year. This is well-documented.",
+      "tags": [
+        "stargate",
+        "fort-meade",
+        "cia",
+        "1995"
+      ],
+      "dependencies": [
+        {
+          "target": "7n5Dq-c0_Zw:c_0001",
+          "kind": "elaborates",
+          "rationale": "Names the successor institutional form of the 1972 program."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0003",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "In 1976 CIA psychic researcher Rosemary Smith at Patterson Air Force Base in Ohio allegedly located a downed Russian bomber in the Congo via remote viewing, and a paramilitary team found the plane at her coordinates.",
+      "kind": "historical",
+      "entities": [
+        "person:rosemary smith",
+        "location:congo",
+        "location:patterson air base",
+        "location:ohio",
+        "date_time:1976",
+        "organization:paramilitary unit"
+      ],
+      "relationships": [
+        "r_0019",
+        "r_0020"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 1963,
+          "charEnd": 2120,
+          "timeStart": 120.079,
+          "timeEnd": 134.48,
+          "quote": "in 1976 a\nrussian bomber went down in the congo\nand the details of the crash were sent\nto cia psychic researchers operating out\nof patterson air base in ohio"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The Congo-bomber anecdote (Tu-22 recovery attributed to Rosemary Smith and reportedly praised by Jimmy Carter) is widely repeated in Stargate lore but historians note the recovery is underdocumented. Omitting directTruth since it rests on a single widely-repeated story.",
+      "tags": [
+        "stargate",
+        "remote-viewing",
+        "congo",
+        "1976"
+      ],
+      "dependencies": [
+        {
+          "target": "7n5Dq-c0_Zw:c_0002",
+          "kind": "elaborates",
+          "rationale": "Concrete early success story of the CIA program."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0004",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "On May 22, 1984 Joe McMoneagle used remote viewing to describe ancient Mars from supplied coordinates, reporting tall thin beings, pyramids, and obelisk-like structures; the envelope revealed 'Mars, approximately 1 million years BC' afterward.",
+      "kind": "historical",
+      "entities": [
+        "person:joe mcmonagle",
+        "person:mcmonagle",
+        "location:mars",
+        "date_time:may 22nd 1984",
+        "facility:pyramids",
+        "location:washington monument"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 4212,
+          "charEnd": 4371,
+          "timeStart": 260.079,
+          "timeEnd": 272.08,
+          "quote": "his strangest mission took place on\nmay 22nd 1984. here's how it went\nmcmonagle was in a room with one other\nperson a researcher he was given a\nsealed envelope"
+        },
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 5724,
+          "charEnd": 5831,
+          "timeStart": 366.479,
+          "timeEnd": 379.199,
+          "quote": "the envelope is torn open and on it\nreads the planet mars time of interest\napproximately 1 million years bc"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The 1984 Mars viewing session exists as an actual declassified Stargate document. However, the content of McMoneagle's 'vision' is experiential data, not verified fact about Mars. Omitting directTruth because the host is reporting what the session produced, not endorsing its cosmological accuracy.",
+      "tags": [
+        "stargate",
+        "mars",
+        "mcmoneagle",
+        "remote-viewing",
+        "1984"
+      ],
+      "dependencies": [
+        {
+          "target": "7n5Dq-c0_Zw:c_0002",
+          "kind": "elaborates",
+          "rationale": "A specific session from within Project Stargate."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0005",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "Joe McMoneagle was involved in 450 separate CIA missions as a remote-viewing psychic spy between 1978 and 1984 and was awarded the Legion of Merit on retirement from the Army.",
+      "kind": "historical",
+      "entities": [
+        "person:joe mcmonagle",
+        "person:mcmonicle",
+        "organization:cia",
+        "organization:legion of merit",
+        "quantity:450",
+        "date_time:1978",
+        "date_time:1984"
+      ],
+      "relationships": [
+        "r_0073"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 4019,
+          "charEnd": 4092,
+          "timeStart": 246.56,
+          "timeEnd": 255.67999999999998,
+          "quote": "between 1978 and 1984 mcmonicle was\ninvolved in 450 separate cia missions"
+        },
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 6399,
+          "charEnd": 6487,
+          "timeStart": 409.52,
+          "timeEnd": 417.44,
+          "quote": "when he retired from the army\nhe was awarded the legion of merit for\noutstanding service"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "McMoneagle's military service, Stargate tenure, and Legion of Merit award are matters of public record. The 450 missions figure is his own tally and is widely cited.",
+      "tags": [
+        "mcmoneagle",
+        "stargate",
+        "cia",
+        "legion-of-merit"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0006",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "In 1989 remote viewer Angela Ford located a fugitive former customs agent to 'Lowell, Wyoming' — actually Lovell, Wyoming — where he was subsequently found.",
+      "kind": "historical",
+      "entities": [
+        "person:angela ford",
+        "location:low wyoming",
+        "location:lowell wyoming",
+        "date_time:1989",
+        "role:former customs agent"
+      ],
+      "relationships": [
+        "r_0061"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 3097,
+          "charEnd": 3271,
+          "timeStart": 187.04,
+          "timeEnd": 202.48000000000002,
+          "quote": "in 1989 a remote\nviewer named angela ford was asked to\nhelp track a former customs agent who\nwas on the run and she told researchers\nshe was able to see him in lowell\nwyoming"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "The Angela Ford / Charles Jordan case (Lovell misheard/transcribed as Lowell) is a widely repeated Stargate success story, originally surfaced in remote-viewing literature. Lovell, Wyoming is a real town; Jordan was reportedly apprehended there. Omitting directTruth because independent corroboration outside RV advocacy sources is limited.",
+      "tags": [
+        "stargate",
+        "remote-viewing",
+        "angela-ford",
+        "1989"
+      ],
+      "dependencies": [
+        {
+          "target": "7n5Dq-c0_Zw:c_0002",
+          "kind": "elaborates",
+          "rationale": "Later-stage Stargate operational example."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0007",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "According to the CIA, McMoneagle's remote viewing was successful about 20% of the time.",
+      "kind": "empirical",
+      "entities": [
+        "person:joe mcmonagle",
+        "person:mcmonicle",
+        "organization:cia"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 6784,
+          "charEnd": 6848,
+          "timeStart": 430.24,
+          "timeEnd": 437.599,
+          "quote": "but according to the cia mcmonicle was\nsuccessful 20 of the time"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "The '20% hit-rate' figure appears in Stargate-era CIA summaries but exactly what counted as a hit is contested; the official 1995 AIR review concluded RV was not useful for intelligence. Omitting directTruth because the number's meaning depends heavily on the coding protocol.",
+      "tags": [
+        "stargate",
+        "mcmoneagle",
+        "hit-rate"
+      ],
+      "dependencies": [
+        {
+          "target": "7n5Dq-c0_Zw:c_0005",
+          "kind": "elaborates",
+          "rationale": "Quantifies the success attributed to McMoneagle."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0008",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "US government research into ESP did not end with Stargate: in 2014 the Office of Naval Research launched a four-year $4 million program to study premonition and 'sixth sense' in sailors and marines.",
+      "kind": "historical",
+      "entities": [
+        "organization:office of naval research",
+        "date_time:2014",
+        "quantity:4 million",
+        "organization:esp"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 7220,
+          "charEnd": 7370,
+          "timeStart": 456.72,
+          "timeEnd": 471.75899999999996,
+          "quote": "in 2014 the\noffice of naval research launched a\nfour-year 4 million program to explore\nthe use of premonition or sixth sense\namong sailors and marines"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The ONR 'Enhanced Human Performance' premonition program (c. 2014, ~$3.85M) is well documented in press reporting (e.g., Time, Guardian) and in ONR basic-research contracts.",
+      "tags": [
+        "esp",
+        "onr",
+        "navy",
+        "2014"
+      ],
+      "dependencies": [
+        {
+          "target": "7n5Dq-c0_Zw:c_0002",
+          "kind": "contradicts",
+          "rationale": "[alternative] Undercuts the 'it was shut down in 1995 and that was the end' framing: equivalent research continued under new names."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0009",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "The CIA's Operation Acoustic Kitty — implanting microphones and transmitters in a live cat — cost roughly $20 million and failed when the cat was hit by a taxi on its first deployment.",
+      "kind": "historical",
+      "entities": [
+        "event:acoustic kitty",
+        "event:operation acoustic kitty",
+        "organization:cia",
+        "location:washington dc",
+        "technology:transmitter"
+      ],
+      "relationships": [
+        "r_0004",
+        "r_0005"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 576,
+          "charEnd": 689,
+          "timeStart": 39.04,
+          "timeEnd": 47.6,
+          "quote": "acoustic kitty involved implanting a\nmicrophone into a cat's ear canal and a\ntransmitter at the base of its skull"
+        },
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 884,
+          "charEnd": 1001,
+          "timeStart": 54.16,
+          "timeEnd": 66.799,
+          "quote": "it\nwas hit by a car as soon as it was let\nout of its cage ugh what did that little\nexperiment cost 20 million dollars"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "Acoustic Kitty is confirmed in declassified CIA documents released via Victor Marchetti; the taxi-collision failure is the widely-reported anecdote although some historians dispute the exact cause of termination. Cost figure is approximate.",
+      "tags": [
+        "cia",
+        "acoustic-kitty",
+        "cold-war"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0010",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "The CIA document dump on Project Stargate and related psychic projects runs to roughly 12 million pages.",
+      "kind": "empirical",
+      "entities": [
+        "organization:cia",
+        "event:document dump",
+        "facility:project stargate"
+      ],
+      "relationships": [
+        "r_0092"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 6023,
+          "charEnd": 6117,
+          "timeStart": 385.12,
+          "timeEnd": 396.79999999999995,
+          "quote": "these\ndocument dumps are always a little light\nhow many pages are we talking 25 50. 12\nmillion"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "The 2017 CREST release of CIA records was ~12 million pages total covering many programs, not all Stargate. Host's framing conflates the whole CREST dump with Stargate, so directTruth is moderated.",
+      "tags": [
+        "cia",
+        "foia",
+        "stargate"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0011",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "ESP remains a research subject worthy of modest study despite its fringe reputation, given the far more trivial things Congress routinely funds.",
+      "kind": "opinion",
+      "entities": [
+        "organization:esp",
+        "organization:united states congress"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7n5Dq-c0_Zw",
+          "charStart": 8208,
+          "charEnd": 8334,
+          "timeStart": 513.12,
+          "timeEnd": 523.839,
+          "quote": "if we can spend a million\ndollars studying the effect of cocaine\non the sexual habits of quail\nwe can spend a few bucks on esp"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Host explicitly takes an 'open-minded skeptic' position. This is editorial advocacy, not an empirical claim — omitting directTruth.",
+      "tags": [
+        "esp",
+        "policy",
+        "opinion"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "7n5Dq-c0_Zw:c_0012",
+      "videoId": "7n5Dq-c0_Zw",
+      "text": "The framing that the US government has 'already been to Mars' via psychics is rhetorical, not a claim the host endorses as literally true.",
       "kind": "speculative",
       "entities": [
         "organization:cia",
-        "organization:united states military",
         "location:mars",
         "technology:remote viewing"
       ],
@@ -26,390 +470,22 @@
           "quote": "what if i told you the cia\nand united states military have already\nbeen to mars but they didn't use\nspaceships to get there\nthey used psychics"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.1,
-      "rationale": "The CIA's remote-viewing programs (Star Gate / Grill Flame / Sun Streak) and the May 22, 1984 'Mars sealed-envelope' session by Joe McMoneagle are documented in declassified CIA records. But equating those psychic exercises with 'visiting Mars' is the host's editorial claim. The hallucinatory descriptions produced have no verifiable connection to the actual planet. Low directTruth: the framing is technically true that they ran the experiment, but the implication that humans have actually 'been to Mars' via ESP is unsupported.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0002",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "During the Cold War the CIA spent ~$20 million on Operation Acoustic Kitty — surgically wiring a domestic cat with a microphone in its ear and transmitter in its skull to eavesdrop on Soviet diplomats — only for the cat to be hit by a taxi the moment it was deployed.",
-      "kind": "historical",
-      "entities": [
-        "organization:cia",
-        "event:operation acoustic kitty",
-        "event:acoustic kitty",
-        "technology:transmitter",
-        "location:washington dc"
+      "confidence": 0.7,
+      "directTruth": 0.2,
+      "rationale": "Host opens with a hook framing, but treats McMoneagle's Mars session as historical Stargate artifact rather than confirmed Martian exploration. The self-labeled 'skeptical believer' stance and the refusal to assert the vision was veridical indicate low directTruth for the literal interpretation.",
+      "tags": [
+        "mars",
+        "remote-viewing",
+        "rhetorical-frame"
       ],
-      "relationships": [],
-      "evidence": [
+      "dependencies": [
         {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 472,
-          "charEnd": 506,
-          "timeStart": 31.679,
-          "timeEnd": 36.64,
-          "quote": "the cia's operation acoustic kitty"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 576,
-          "charEnd": 689,
-          "timeStart": 39.04,
-          "timeEnd": 47.6,
-          "quote": "acoustic kitty involved implanting a\nmicrophone into a cat's ear canal and a\ntransmitter at the base of its skull"
+          "target": "7n5Dq-c0_Zw:c_0004",
+          "kind": "elaborates",
+          "rationale": "Hook references the McMoneagle session."
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Operation Acoustic Kitty is real and partially declassified — Victor Marchetti and others have written about it, and the CIA's own released files confirm the program. The ~$20 million cost and 'hit by a taxi' detail come from Marchetti's account and are widely cited but not independently verified by the CIA's documents (Marchetti said the cat was killed but didn't always say by taxi). Core claim is mostly true; some specifics are contested.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0003",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "A 1972 classified intelligence report claiming the Soviets were spending heavily on ESP, mind-reading, and telekinesis spooked the CIA into funding its own psychic-spy program — a Cold War mirror-imaging dynamic where each side's research drove the other's.",
-      "kind": "historical",
-      "entities": [
-        "date_time:1972",
-        "organization:american intelligence community",
-        "organization:cia",
-        "organization:esp",
-        "technology:mind reading",
-        "technology:telekinesis"
-      ],
-      "relationships": [
-        "r_0011",
-        "r_0012"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 1156,
-          "charEnd": 1359,
-          "timeStart": 72.799,
-          "timeEnd": 88.56,
-          "quote": "in 1972 a classified report was\ncirculating in the american intelligence\ncommunity the report claimed that the\nsoviet union was pouring millions into\nprograms to research esp mind reading\nand telekinesis"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 1393,
-          "charEnd": 1508,
-          "timeStart": 86.64,
-          "timeEnd": 96.72,
-          "quote": "this\nmade the cia nervous so they immediately\nrequested funding to develop their own\nprogram to train psychic spies"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.8,
-      "rationale": "The '1972 report' is widely identified as the DIA report 'Controlled Offensive Behavior — USSR' or related Defense Intelligence assessments of Soviet parapsychology research, which directly cited concerns about Soviet ESP work and triggered the SRI contracts that became Star Gate. The Soviets did genuinely fund parapsychology under Leonid Vasiliev and successors. The mirror-imaging story is well documented in Jon Ronson's 'The Men Who Stare at Goats' and Annie Jacobsen's 'Phenomena'.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0004",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "Project Stargate consolidated the U.S. government's various remote-viewing efforts at Fort Meade, Maryland, ran for roughly 23 years, and was finally shut down in 1995 after Nightline reported on it.",
-      "kind": "historical",
-      "entities": [
-        "facility:project stargate",
-        "location:fort meade",
-        "location:maryland",
-        "date_time:1995",
-        "work_of_media:nightline"
-      ],
-      "relationships": [
-        "r_0029",
-        "r_0033"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 2397,
-          "charEnd": 2575,
-          "timeStart": 148.0,
-          "timeEnd": 160.959,
-          "quote": "the various psychic\nprojects going on around the country and\nthere were quite a few of them we're all\nconsolidated to fort meade in maryland\nthis became known as project stargate"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 2576,
-          "charEnd": 2677,
-          "timeStart": 158.08,
-          "timeEnd": 166.4,
-          "quote": "and project stargate ran for years it\nwas finally shut down in 1995 after\nnightline reported about it"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "All true and well documented. Stargate at Fort Meade absorbed Grill Flame, Center Lane, Sun Streak, etc. The official 1995 termination, Congressional review, the AIR (American Institutes for Research) evaluation, and the role of media coverage including ABC's Nightline are public record. CIA released the program's records in 2017.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0005",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "CIA remote viewers produced operational results across hostage crises (Red Brigades in Italy, Iran), Soviet-base reconnaissance, the first Gulf War's Scud-missile hunt, and even allegedly foresaw the World Trade Center attack — though the warning was ignored.",
-      "kind": "speculative",
-      "entities": [
-        "organization:cia",
-        "technology:remote viewers",
-        "facility:secret soviet bases",
-        "organization:red brigade",
-        "location:italy",
-        "event:israeli hostage crisis",
-        "event:first gulf war",
-        "location:world trade center"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 2783,
-          "charEnd": 3065,
-          "timeStart": 170.56,
-          "timeEnd": 189.84,
-          "quote": "remote viewers drew renderings\nof secret soviet bases they located\nhostages of the red brigade in italy and\nvictims of the israeli hostage crisis\nthey saw locations of scud missiles\nduring the first gulf war and a remote\nviewer even saw the eventual attack of\nthe world trade center"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.3,
-      "rationale": "Some of these are documented as Stargate session targets — the Brig. Gen. James Dozier rescue (Red Brigades), Iran hostage attempts, and Scud-hunting in Desert Storm are mentioned in declassified files. However, the AIR review concluded the operational utility of remote viewing was 'not statistically significant' for actionable intelligence. The 'foresaw the WTC attack' claim is associated with later remote-viewing personalities (e.g., Ed Dames) and is post-hoc cherry-picking — there's no contemporaneous documentary record of a specific WTC warning ignored by authorities. Mixed truth.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0006",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "On May 22, 1984, Joe McMoneagle conducted a sealed-envelope remote-viewing session that, when opened, revealed the target was the planet Mars approximately 1 million years BC — and McMoneagle described tall thin shadow-people, pyramid-like storm shelters, an obelisk, and channeled roads.",
-      "kind": "historical",
-      "entities": [
-        "person:joe mcmonagle",
-        "person:joseph mcmonagle",
-        "date_time:may 22nd 1984",
-        "location:mars",
-        "facility:pyramids",
-        "facility:storm shelters",
-        "location:washington monument",
-        "location:road beds"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 4212,
-          "charEnd": 4261,
-          "timeStart": 260.079,
-          "timeEnd": 266.4,
-          "quote": "his strangest mission took place on\nmay 22nd 1984"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 4591,
-          "charEnd": 4690,
-          "timeStart": 285.52,
-          "timeEnd": 297.84,
-          "quote": "i want to say it looks like uh i don't\nknow it's\nit sort of looks like\nlike pyramids it's very high"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 5701,
-          "charEnd": 5831,
-          "timeStart": 364.0,
-          "timeEnd": 379.199,
-          "quote": "after his visions\nfade the envelope is torn open and on it\nreads the planet mars time of interest\napproximately 1 million years bc"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "The May 22, 1984 'Mars Exploration' session is real and the document was declassified in the CIA Stargate release. McMoneagle's remote-viewing transcript is genuine and matches what the host reads. Whether the descriptions correspond to real Martian features 1MYA is a separate question (almost certainly no — Mars's surface features are well mapped and there are no pyramid structures or evidence of humanoid civilization). The historical fact of the session happening is true, hence the moderately high directTruth.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0007",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "Joe McMoneagle's credentials — a U.S. Army intelligence officer wounded in Vietnam, recipient of the Legion of Merit upon retirement, author of multiple books, and subject of decades of interviews — make it hard to dismiss him as a fringe kook even if you don't believe his abilities.",
-      "kind": "historical",
-      "entities": [
-        "person:joe mcmonagle",
-        "person:joseph mcmonagle",
-        "organization:army",
-        "organization:legion of merit",
-        "location:vietnam",
-        "event:helicopter accident"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 3761,
-          "charEnd": 4018,
-          "timeStart": 231.2,
-          "timeEnd": 250.159,
-          "quote": "joe mcmonagle was a u.s army\nintelligence officer who served in\nvietnam in 1970 he was seriously injured\nin a helicopter accident and almost died\nand when he recovered he realized he had\npsychic powers and began working for\nproject stargate as a psychic spy"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 4019,
-          "charEnd": 4092,
-          "timeStart": 246.56,
-          "timeEnd": 255.68,
-          "quote": "between 1978 and 1984 mcmonicle was\ninvolved in 450 separate cia missions"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "Joe McMoneagle's biography is well documented: U.S. Army intelligence, Vietnam service, near-death experience in 1970 in Bavaria (not technically a helicopter accident — choking incident — but the host's framing is loose), Legion of Merit awarded in 1984, several books including 'Mind Trek' and 'The Stargate Chronicles', and he was Stargate's Remote Viewer #001. The credibility framing is fair; the host correctly distinguishes credentials from claim validity.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0008",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "The CIA's Project Stargate document dump released roughly 12 million pages of records — corroborating that whether or not psychics work, the U.S. government took the program seriously enough to maintain it for decades.",
-      "kind": "historical",
-      "entities": [
-        "organization:cia",
-        "facility:project stargate",
-        "event:document dump",
-        "organization:united states government"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 5891,
-          "charEnd": 5986,
-          "timeStart": 379.199,
-          "timeEnd": 387.039,
-          "quote": "all the information we've\npresented today comes from a cia\ndocument dump about project stargate"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 6107,
-          "charEnd": 6117,
-          "timeStart": 389.199,
-          "timeEnd": 396.8,
-          "quote": "12\nmillion"
-        },
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 6125,
-          "charEnd": 6230,
-          "timeStart": 394.8,
-          "timeEnd": 402.88,
-          "quote": "you might not believe in psychics\nor esp and that's fine but the united\nstates government absolutely does"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "The CIA's January 2017 release of its CREST records made roughly 12 million pages available online (the figure refers to the broader CREST dump that contained Stargate among many other declassified collections, not 12M pages exclusively about Stargate — the host's framing slightly conflates the two). The 'government takes it seriously' framing is true insofar as Stargate ran 1972-1995 with sustained funding. directTruth moderate because the page-count is a CREST-vs-Stargate scope ambiguity.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0009",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "According to the CIA, McMoneagle achieved a 20% success rate at remote viewing — a strikingly high hit rate compared to chance, given the difficulty of guessing targets like the location of a sunken Soviet Typhoon-class submarine.",
-      "kind": "empirical",
-      "entities": [
-        "organization:cia",
-        "person:joe mcmonagle",
-        "person:joseph mcmonagle"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 6788,
-          "charEnd": 6848,
-          "timeStart": 430.24,
-          "timeEnd": 437.599,
-          "quote": "according to the cia mcmonicle was\nsuccessful 20 of the time"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.35,
-      "rationale": "The 20% figure is a specific claim about McMoneagle that appears in some Stargate documents and McMoneagle's own writing; however, the AIR (American Institutes for Research) 1995 evaluation by Jessica Utts and Ray Hyman concluded that while there was a statistically significant effect in laboratory remote-viewing experiments, operational utility was disputed. 'Hit rate' is also methodologically slippery — what counts as a hit varies. The framing of '20% successful, much better than chance' is partly a real finding and partly cherry-picked.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0010",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "Even after Stargate's 1995 shutdown, government interest in psi research has continued — most notably the 2014 Office of Naval Research's four-year, $4-million premonition study among sailors and Marines.",
-      "kind": "historical",
-      "entities": [
-        "facility:project stargate",
-        "organization:office of naval research",
-        "date_time:2014",
-        "quantity:4 million"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 7220,
-          "charEnd": 7370,
-          "timeStart": 456.72,
-          "timeEnd": 471.759,
-          "quote": "in 2014 the\noffice of naval research launched a\nfour-year 4 million program to explore\nthe use of premonition or sixth sense\namong sailors and marines"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The ONR did fund a multi-year program around 'sensemaking' and intuitive decision-making for warfighters in the early 2010s, sometimes characterized as premonition or 'spidey sense' research. Reporting in Time and elsewhere documented this. The ~$4M figure is in the right ballpark for the publicly-disclosed cost.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0011",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "Dr. Edwin May, the former scientific director of Stargate, continues to publicly argue that ESP is a legitimate intelligence tool — keeping the operational case for psi research alive within parts of the scientific and intelligence communities.",
-      "kind": "opinion",
-      "entities": [
-        "person:dr edwin may",
-        "role:former head of the stargate project",
-        "organization:scientific community",
-        "organization:military intelligence"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 7392,
-          "charEnd": 7512,
-          "timeStart": 469.36,
-          "timeEnd": 480.479,
-          "quote": "dr edwin may the former head of\nthe stargate project continues to say\nesp is a legitimate tool for military\nintelligence"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "Edwin May was indeed the senior scientist at Stargate from 1985 onward and has continued to publish on anomalous cognition through his Laboratories for Fundamental Research. He genuinely does maintain ESP is a real and useful phenomenon. Whether his position is correct is contested, but the descriptive claim about his ongoing advocacy is true.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7n5Dq-c0_Zw:c_0012",
-      "videoId": "7n5Dq-c0_Zw",
-      "text": "AJ's verdict: psi research is worth continued government study because (a) the topic is genuinely interesting, (b) the spending is small relative to other Congressional pork, and (c) intellectual honesty requires being a 'skeptical believer' rather than a flat denier.",
-      "kind": "opinion",
-      "entities": [
-        "person:aj",
-        "ideology:skeptical believer",
-        "ideology:open-minded skeptic",
-        "organization:united states congress"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7n5Dq-c0_Zw",
-          "charStart": 7689,
-          "charEnd": 7816,
-          "timeStart": 484.08,
-          "timeEnd": 495.28,
-          "quote": "personally\ni consider myself a skeptical believer\nor an open-minded skeptic but i think\nthis is still a subject worthy of study"
-        }
-      ],
-      "confidence": 0.95,
-      "rationale": "Pure host opinion; not a falsifiable empirical claim. The 'compared to other government waste' rhetorical move is the host's editorial framing. directTruth omitted because this is an opinion claim, not an empirical proposition.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
+      "hostStance": "uncertain"
     }
   ]
 }

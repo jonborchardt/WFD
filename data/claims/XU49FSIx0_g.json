@@ -1,361 +1,453 @@
 {
   "schemaVersion": 1,
   "transcriptId": "XU49FSIx0_g",
-  "generatedAt": "2026-04-20T02:30:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T04:15:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "XU49FSIx0_g:c_0001",
       "videoId": "XU49FSIx0_g",
-      "text": "Nikola Tesla's wireless power technology was real and successful in early experiments, but his research mysteriously vanished after his death and he died alone and in debt.",
+      "text": "Nikola Tesla believed he could harvest energy from inside the Earth and transmit it wirelessly around the world.",
       "kind": "historical",
       "entities": [
-        "person:tesla",
-        "technology:wireless power"
+        "person:nicola tesla",
+        "technology:wireless power",
+        "location:earth"
       ],
-      "relationships": [],
+      "relationships": ["r_0001"],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
           "charStart": 0,
-          "charEnd": 310,
-          "timeStart": 0,
-          "timeEnd": 19.0,
-          "quote": "Nicola Tesla believed that he could\nharness the energy from inside the earth\nand transmit that power wirelessly\naround the world his early experiments\nwere successful but his research\nmysteriously vanished after his death\nthere is no evidence left of Tesla's\nWireless power technology or is there\nfor years we "
+          "charEnd": 111,
+          "timeStart": 6.98,
+          "timeEnd": 16.08,
+          "quote": "Nicola Tesla believed that he could\nharness the energy from inside the earth\nand transmit that power wirelessly"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.65,
-      "rationale": "Tesla did demonstrate small-scale wireless power transfer (the Colorado Springs experiments and the famous wireless-bulb demos) and the Wardenclyffe project was real. He died indebted in 1943 in the Hotel New Yorker. The claim that his research 'vanished' is partially true: the FBI did seize his papers under the Office of Alien Property after his death, and a substantial fraction of his materials were retained by the U.S. government, with some still classified. The host's framing inflates the mystery but the historical kernel is solid.",
+      "directTruth": 0.9,
+      "rationale": "Well-documented: Tesla's 1899 Colorado Springs experiments and his 1901 Wardenclyffe tower project were explicitly aimed at global wireless power transmission via Earth-resonant currents. Attribution of the belief is uncontested historical fact.",
+      "tags": ["tesla", "wireless-power", "history"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "XU49FSIx0_g:c_0002",
       "videoId": "XU49FSIx0_g",
-      "text": "Despite mainstream Egyptology calling the Great Pyramid of Giza Khufu's tomb, no mummy has ever been found in any pyramid and the Great Pyramid lacks the artifacts, hieroglyphs, and elaborate art typical of Egyptian tombs — suggesting it was built for a different purpose.",
-      "kind": "empirical",
+      "text": "The Great Pyramid of Giza was not built as a tomb for a king but had a different purpose.",
+      "kind": "historical",
       "entities": [
         "location:great pyramid of giza",
-        "person:khufu",
-        "nationality_or_ethnicity:ancient egyptians"
+        "person:khufu"
       ],
-      "relationships": [],
+      "relationships": ["r_0002"],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 600,
-          "charEnd": 900,
-          "timeStart": 38.5,
-          "timeEnd": 56.5,
-          "quote": "yptology says that the\nGreat Pyramid of Giza is a tomb built\nfor Khufu the fourth Dynasty Egyptian\npharaoh who ruled 4 500 years ago but\nthe Great Pyramid doesn't have any\ncharacteristics of other Egyptian tombs\nthe Great Pyramid contains no artifacts\nno hieroglyphs and no elaborate wall art\nit's be"
+          "charStart": 331,
+          "charEnd": 384,
+          "timeStart": 25.199,
+          "timeEnd": 35.82,
+          "quote": "Great\nPyramid of Giza was a tomb for a king it\nwasn't"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.45,
-      "rationale": "The 'no mummy found in any pyramid' claim is approximately true — no royal mummy has been discovered inside a Giza-style pyramid in situ. However, the absence of artifacts/hieroglyphs in the Great Pyramid is partly explained by ancient looting (the pyramid was demonstrably entered in antiquity) and by the fact that decorative pyramid texts only appear from the 5th Dynasty onward, after Khufu. The 'lacks all features' framing overstates the case: there are quarry marks naming Khufu's work-gangs in the relieving chambers, which is direct evidence linking the structure to his reign. The 'different purpose' implication is contested.",
+      "directTruth": 0.25,
+      "rationale": "Mainstream Egyptology maintains the Great Pyramid was built as Khufu's tomb based on quarry marks naming Khufu's work gangs, relieving-chamber graffiti, the king's name on exterior marks, and the Merer logbook documenting limestone delivery. No mummy in the pyramid does not imply it wasn't built as a tomb — many Old Kingdom pyramids were looted. directTruth low because the consensus evidence is strong.",
+      "tags": ["great-pyramid", "khufu", "tomb", "egyptology"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "XU49FSIx0_g:c_0003",
       "videoId": "XU49FSIx0_g",
-      "text": "The Great Pyramid is built with engineering precision impossible for a 4500-year-old structure: 2.5 million stone blocks weighing 6 million tons, sides 755 feet long aligned to within 1/15 of a degree of true north and within two inches of each other, and a base leveled to within three quarters of an inch.",
-      "kind": "empirical",
+      "text": "The Great Pyramid was a structure for creating, harnessing and focusing energy, as proposed by engineer Christopher Dunn.",
+      "kind": "speculative",
       "entities": [
+        "location:great pyramid of giza",
+        "person:christopher dunn",
+        "technology:technology"
+      ],
+      "relationships": ["r_0007"],
+      "evidence": [
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 5696,
+          "charEnd": 5712,
+          "timeStart": 370.74,
+          "timeEnd": 375.6,
+          "quote": "Christopher Dunn"
+        },
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 9277,
+          "charEnd": 9317,
+          "timeStart": 587.16,
+          "timeEnd": 595.32,
+          "quote": "the pyramid's ability to focus em\nenergy"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "Dunn's 'Giza Power Plant' hypothesis is his 1998 book's central thesis. It is not accepted in mainstream Egyptology or physics — no peer-reviewed mechanism explains how microwave-frequency hydrogen production could be sustained in a rock structure, and chemical residues claimed in the shafts have not been independently replicated.",
+      "tags": ["great-pyramid", "christopher-dunn", "power-plant", "speculative"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "XU49FSIx0_g:c_0002",
+          "kind": "elaborates",
+          "rationale": "Provides an alternative purpose to replace the 'tomb' interpretation."
+        }
+      ]
+    },
+    {
+      "id": "XU49FSIx0_g:c_0004",
+      "videoId": "XU49FSIx0_g",
+      "text": "The Queen's Chamber hosted a chemical reaction between hydrochloric acid (northern shaft) and hydrated zinc chloride (southern shaft) to generate hydrogen.",
+      "kind": "speculative",
+      "entities": [
+        "location:the queen's chamber",
         "location:great pyramid of giza"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 1380,
-          "charEnd": 1900,
-          "timeStart": 92.5,
-          "timeEnd": 121.0,
-          "quote": " the compass\nwith such accuracy that only modern\nengineering can match it the Great\nPyramid is a mountain made of two and a\nhalf million blocks of stone weighing 6\nmillion tons piled 481 feet high its\nfootprint is over 13 acres to align this\nconstruction within 1 15 of a degree of\nTrue North is impossible Precision the\nbase of the Great Pyramid is leveled\nwithin three quarters of an inch the\nonly way to do this with modern\nstructures is to use lasers even though\nthe sides of the pyramid are over 755\nfeet long made "
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "Most metrics are correct: ~2.3 million blocks (the host's 2.5M is in the right range), ~6 million tons, original height ~146.5 m (481 ft). The cardinal alignment of the sides to true north is documented at roughly 3-4 arc-minutes deviation, an extraordinary feat. Base leveling and side-length parity are also remarkable. The 'impossible without lasers / modern engineering can match it' framing is overstated — Egyptologists have proposed plausible techniques (using stars for alignment, water leveling for the base) that the Egyptians plausibly possessed, though the precision remains awe-inspiring.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "XU49FSIx0_g:c_0004",
-      "videoId": "XU49FSIx0_g",
-      "text": "The pyramid's height times 43,200 yields the Earth's polar radius to 99.7% accuracy and its base perimeter times 43,200 yields Earth's equatorial circumference to 99.3% — and the equinoctial day-and-night length is also 43,200 seconds — implying the builders knew the size of the planet.",
-      "kind": "empirical",
-      "entities": [
-        "location:earth",
-        "event:equinoxes"
-      ],
-      "relationships": [],
-      "evidence": [
+          "charStart": 6064,
+          "charEnd": 6134,
+          "timeStart": 392.699,
+          "timeEnd": 398.52,
+          "quote": "Queen's chamber was used for a\nchemical reaction that created hydrogen"
+        },
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 2200,
-          "charEnd": 2600,
-          "timeStart": 142.5,
-          "timeEnd": 168.0,
-          "quote": "ring the equinoxes and yes those\nangles too are perfect whoever built the\npyramids somehow knew the size of the\nEarth if you take the height of the\npyramid and multiply it by 43 200 you\nget\n3938.685 miles which is within 11 miles\nof the Polar radius of the planet that's\n99.7 percent accurate if you take the\nperimeter of the base of the pyramid and\nmultiply that by 43 200 you get 24\n734.94 miles th"
+          "charStart": 6240,
+          "charEnd": 6336,
+          "timeStart": 400.74,
+          "timeEnd": 411.6,
+          "quote": "northern\nshaft has traces of hydrochloric acid\nthe southern has traces of hydrated zinc\nchloride"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.3,
-      "rationale": "These '43200' relationships are popularized by Graham Hancock (Magicians of the Gods) and originally by John Anthony West / Robert Bauval. The numbers are mathematically reproducible IF you pick the height in the right units and the right base perimeter. But 43,200 = 2 * 21,600, where 21,600 is the number of arc-minutes in a great circle and is a 'special number' that can be force-fit to many structures. The day = 86,400 seconds = 2 × 43,200, which is true by definition of the second. Critics argue the 43,200 derivation is post-hoc numerology rather than encoded geodetic knowledge.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "[alternative] The hydrochloric-acid / zinc-chloride chemistry claim comes from Dunn's self-published work. Independent chemical testing of the Queen's Chamber shafts has not confirmed these residues; the actual shafts were sealed and only surveyed by the Djedi and Upuaut robots, which did not find industrial chemistry residue. directTruth low because no replicated lab analysis supports it.",
+      "tags": ["great-pyramid", "queens-chamber", "hydrogen", "christopher-dunn"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "XU49FSIx0_g:c_0003",
+          "kind": "supports",
+          "rationale": "Specific mechanistic detail that Dunn's power-plant hypothesis depends on."
+        }
+      ]
     },
     {
       "id": "XU49FSIx0_g:c_0005",
       "videoId": "XU49FSIx0_g",
-      "text": "The pyramid's material choices are too specific to be coincidence: white Tura limestone casing (an electrical insulator without magnesium) covers the exterior, while interior chambers are lined with quartz-rich Rose Granite shipped hundreds of miles — quartz that generates electricity (piezoelectricity) under pressure.",
+      "text": "The Grand Gallery and King's Chamber of the Great Pyramid resonate at 440 Hz, producing an F-sharp chord.",
       "kind": "empirical",
       "entities": [
-        "location:great pyramid of giza",
-        "organization:builders of the pyramid"
+        "location:grand gallery",
+        "location:the king's chamber",
+        "quantity:440 hertz",
+        "technology:helmholtz resonator"
       ],
-      "relationships": [],
+      "relationships": ["r_0010"],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 3200,
-          "charEnd": 4150,
-          "timeStart": 207.5,
-          "timeEnd": 263.5,
-          "quote": "Pyramid is constructed\nof nomulite limestone the reddish brown\nblocks that we see today this rock is\nfound close to the site and is abundant\nbut the Builders of the pyramid also use\nunusual materials not found locally the\nexterior of the pyramid was once covered\nin casing stones made of bright white\nLimestone they were polished smooth and\nfit together so tightly that no seams\nwere visible these casing Stones were\ncut and shipped from a quarry in Tura\nalmost 500 miles away that's like\ncarrying thousands of 10 ton stone\nblocks the length of the entire State of\nFlorida they must have been special\nunlike the Limestone cut locally tour\nLimestone lacks magnesium this makes it\nan excellent insulator Limestone can\ncarry an electrical current tour\nLimestone can't interior Chambers were\nbuilt with a rare type of granite called\nRose Granite also brought from hundreds\nof miles away this Granite has a high\nconcentration of silicon dioxide also\nknown"
+          "charStart": 7235,
+          "charEnd": 7269,
+          "timeStart": 459.419,
+          "timeEnd": 467.34,
+          "quote": "The\nGallery resonates at 440 Hertz"
+        },
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 7742,
+          "charEnd": 7790,
+          "timeStart": 493.979,
+          "timeEnd": 501.479,
+          "quote": "king's chamber which also\nresonates at 440 Hertz"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.4,
-      "rationale": "The mineralogical facts are mostly correct: the casing was high-quality white Tura limestone; the interior King's and Queen's chamber linings use Aswan red granite (quartz-rich). Quartz is piezoelectric. However, the framing that these materials were chosen for their electrical properties is speculative; standard Egyptology explains the choice as aesthetic/structural — Tura's whiteness for visual brilliance, granite for compressive strength. Tura was about 8 miles across the Nile, not 500 miles (the host conflates Tura limestone shipping with Aswan granite shipping ~500 miles upriver).",
+      "confidence": 0.85,
+      "directTruth": 0.5,
+      "rationale": "Acoustic measurements do find resonance in the Grand Gallery and King's Chamber (Dunn, Alexander, and others); the specific '440 Hz F-sharp' framing is Dunn's reading. Independent replications find multiple resonant modes rather than a single 440 Hz peak, so the precise claim is only partly supported.",
+      "tags": ["great-pyramid", "acoustics", "440-hz"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "XU49FSIx0_g:c_0006",
       "videoId": "XU49FSIx0_g",
-      "text": "Christopher Dunn's pyramid power-plant theory holds that water flowing through the subterranean aquifer creates sound waves resonant with Earth's vibration; chemicals in the Queen's chamber shafts (hydrochloric acid + hydrated zinc chloride) generate hydrogen which compresses granite in the Grand Gallery to produce piezoelectric output.",
-      "kind": "speculative",
+      "text": "Tesla convinced JP Morgan to fund Wardenclyffe tower, then Morgan pulled funding when he realized wireless power would make his General Electric assets obsolete.",
+      "kind": "historical",
       "entities": [
-        "person:christopher dunn",
-        "location:the queen's chamber",
-        "location:grand gallery",
-        "location:aquifer"
+        "person:nicola tesla",
+        "organization:jp morgan",
+        "organization:general electric",
+        "technology:wireless power"
       ],
-      "relationships": [],
+      "relationships": ["r_0019", "r_0026"],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 5660,
-          "charEnd": 6400,
-          "timeStart": 360.0,
-          "timeEnd": 408.0,
-          "quote": "he most compelling cases comes from\nChristopher Dunn he believes the process\nstarts in the Subterranean chamber below\nthe pyramid are aquifers as water moves\nthrough the underground cavities sound\nwaves are created the frequency of these\nwaves resonate with the Earth's natural\nvibration as those waves move up through\nthe pyramid a process is used to magnify\nfocus and convert the sound into energy\nthe Queen's chamber was used for a\nchemical reaction that created hydrogen\nand there's substantial proof of this\nthere are two interior shafts that lead\nto the Queen's chamber the northern\nshaft has traces of hydrochloric acid\nthe southern has traces of hydrated zinc\nchloride combining these two chemicals\ncreates a volatile reaction that\n"
+          "charStart": 11814,
+          "charEnd": 11867,
+          "timeStart": 742.04,
+          "timeEnd": 750.18,
+          "quote": "Morgan pulled\nhis funding claiming breach of contract"
+        },
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 11868,
+          "charEnd": 11900,
+          "timeStart": 747.12,
+          "timeEnd": 752.76,
+          "quote": "JP Morgan owned General Electric"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.15,
-      "rationale": "Dunn's 'The Giza Power Plant' (1998) is a real fringe-engineering book proposing this exact mechanism. Trace residues of hydrochloric acid, zinc chloride, and similar salts have indeed been reported in the Queen's Chamber shafts by Rudolf Gantenbrink-era robotic explorations and by Dunn's own visits — but mainstream chemists explain these residues as mineral leaching from groundwater and as preservation byproducts, not as remnants of a deliberate hydrogen reactor. There is no peer-reviewed support for the mechanism.",
+      "confidence": 0.9,
+      "directTruth": 0.55,
+      "rationale": "The funding pull is historically documented. The motive attribution is contested: Morgan's contemporaneous letters cite Tesla's pivot from trans-Atlantic telegraphy (what Morgan paid for) to free power (what Morgan didn't sign up for); the 'Morgan killed it to protect GE' narrative is popular but not supported by primary sources. Morgan also did not actually own General Electric — he was an early backer and major shareholder but lost control in the 1890s.",
+      "tags": ["tesla", "jp-morgan", "wardenclyffe", "general-electric"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "XU49FSIx0_g:c_0007",
       "videoId": "XU49FSIx0_g",
-      "text": "The Grand Gallery and King's Chamber both resonate at 440 Hz and naturally emit an F-sharp chord — a frequency considered to resonate in harmony with Earth — and the relieving-chamber granite beams above were tuned by chiseling away material to produce this resonance.",
-      "kind": "empirical",
+      "text": "After Morgan pulled funding, Tesla was essentially blacklisted by the wealthy investor class and died destitute.",
+      "kind": "historical",
       "entities": [
-        "location:grand gallery",
-        "location:the king's chamber",
-        "quantity:440 hertz"
+        "person:nicola tesla",
+        "organization:jp morgan"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 7240,
-          "charEnd": 7720,
-          "timeStart": 460.0,
-          "timeEnd": 491.0,
-          "quote": "allery resonates at 440 Hertz and\nnaturally emits an F-sharp chord 440\nHertz and the F-sharp chord have been\nconnected to a lot of woo-woo ideas but\nthere's a reason for that it's\nconsidered a sound that resonates in\nharmony with the Earth the Builders of\nthe pyramid knew this longtime Mac users\nwill recognize this sacred chord\nat the top of the gallery is a small\nshaft leading to the king's chamber the\nopening is 8.4 by 4.8 inches this is the\nperfect size for hydrogen microw"
+          "charStart": 12876,
+          "charEnd": 12930,
+          "timeStart": 808.86,
+          "timeEnd": 817.38,
+          "quote": "Tesla should be avoided it\nwas essentially blacklisted"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.25,
-      "rationale": "The King's Chamber acoustic resonance is real and has been measured — Tom Danley's NSCA acoustic study reported strong resonances in the chamber, with peaks reported in the F-sharp / A regions. The exact '440 Hz / F-sharp' attribution is contested and depends on measurement method. The 'harmony with Earth' / Schumann-resonance framing is woo: Earth's Schumann resonance is ~7.83 Hz, not 440 Hz. The 'tuned by chiseling' interpretation of the rough top surfaces of the relieving-chamber beams is Dunn's hypothesis, not consensus archaeology.",
-      "hostStance": "asserts"
+      "directTruth": 0.6,
+      "rationale": "Tesla did die in financial distress in 1943 and had difficulty raising capital after Wardenclyffe's failure. A formal investor blacklist organized by Morgan is not documented in primary sources, but the pattern of funding aversion is historically real.",
+      "tags": ["tesla", "jp-morgan", "blacklist"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "XU49FSIx0_g:c_0006",
+          "kind": "elaborates",
+          "rationale": "Extends Morgan's funding pull into an ongoing industry-wide blacklist narrative."
+        }
+      ]
     },
     {
       "id": "XU49FSIx0_g:c_0008",
       "videoId": "XU49FSIx0_g",
-      "text": "A 2018 Russian / ITMO study showed the Great Pyramid can concentrate electromagnetic energy in its internal chambers and below its base when illuminated with radio waves of 200-600 m wavelength — providing the first scientific evidence that the structure interacts resonantly with EM fields.",
+      "text": "There is no physical or written record of electricity being used in ancient Egypt, so the conventional case against a pyramid power plant is strong.",
       "kind": "empirical",
       "entities": [
-        "date_time:2018",
-        "organization:scientists",
-        "location:great pyramid of giza"
+        "nationality_or_ethnicity:ancient egyptians",
+        "location:great pyramid of giza",
+        "technology:electricity"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 9290,
-          "charEnd": 10000,
-          "timeStart": 590.0,
-          "timeEnd": 632.0,
-          "quote": " ability to focus em\nenergy in 2018 scientists use radio\nwaves at different frequencies to see if\nthe Great Pyramid would interact with\nelectromagnetic waves of a resonant\nlength their experiments proved that in\na resonant State the pyramid can\nconcentrate electromagnetic energy in\nthe internal Chambers as well as under\nits base resonance in the pyramid can be\ninduced by radio waves with the lengths\nranging from 200 to 600 meters the\ncloser to 200 meters the more dramatic\nthe effect a year after that in 2019\nEric Wilson published a paper called a\nlarge-scale thermal acoustic generator\nthe paper describes how when granite and\nother Rock survive vibrated electrons\nwill migrate through the Rock and up to"
+          "charStart": 15588,
+          "charEnd": 15642,
+          "timeStart": 972.06,
+          "timeEnd": 978.24,
+          "quote": "no evidence of the use of\nelectricity in ancient Egypt"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "The 2018 study is real (Balezin, Yelisseyev, et al., Journal of Applied Physics 124, 034903 'Electromagnetic properties of the Great Pyramid'). It does report that the pyramid concentrates EM energy at certain resonant wavelengths in the radio range. The host's summary is essentially accurate. However, the paper carefully notes this is a routine consequence of any large dielectric structure of similar geometry — it is NOT evidence the structure was designed to be a power plant, only that it has predictable EM resonance.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "Host is describing the skeptic position, which he is about to try to counter. The statement itself — no physical or written record of ancient Egyptian electricity — is well-supported. No glass, filament, insulated wire, or electrical diagrams in any period document.",
+      "tags": ["ancient-egypt", "electricity", "skeptic"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
     },
     {
       "id": "XU49FSIx0_g:c_0009",
       "videoId": "XU49FSIx0_g",
-      "text": "JP Morgan abruptly cut Tesla's funding for the Wardenclyffe Tower because his vast holdings — General Electric, AT&T, copper mines, rubber farms, steel, timber, coal, and railroads — would all be made obsolete by free wireless power, and he then blacklisted Tesla among investors and bankrolled his rivals Edison and Marconi.",
-      "kind": "historical",
-      "entities": [
-        "organization:jp morgan",
-        "person:tesla"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "XU49FSIx0_g",
-          "charStart": 11820,
-          "charEnd": 12700,
-          "timeStart": 745.0,
-          "timeEnd": 802.0,
-          "quote": " pulled\nhis funding claiming breach of contract\nJP Morgan owned General Electric which\nwould be made obsolete he owned a t\nwhich would also become obsolete JP\nMorgan owned copper mines all over the\nworld and his factories generated miles\nof copper wire JP Morgan owned rubber\nfarms and factories that created\ninsulation for wire he owned Steel\ncompany companies and factories that\nbuilt power generators he owned Timber\nMills that created Telegraph and\nelectricity poles he owned coal mines\nthat fueled existing power plants and he\nowned two dozen railroads that\ntransported all these resources around\nthe country none of this would be\nnecessary if Tesla created free\nunlimited Wireless power for several\nyears Tesla wrote JP Morgan almost every\nmonth begging him to reconsider he\nwouldn't instead JP Morgan chose to\nfinance Tesla's competitors Edison and\nMarconi who were improvi"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "Morgan did fund Tesla's Wardenclyffe initially and did cut funding when Tesla expanded the project's ambitions from telegraphy to wireless power transmission. Morgan's holdings in copper, electric utilities (he was a major financier of Edison General Electric / GE), and infrastructure are real. Wardenclyffe was foreclosed in 1915 and demolished in 1917. However, the 'JP Morgan owned AT&T / owned all of these things outright' framing is loose: he was a major financier and director, not sole owner of all those industries. The 'blacklist' narrative is part of Tesla mythology but is harder to substantiate as a coordinated investor-class conspiracy.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "XU49FSIx0_g:c_0010",
-      "videoId": "XU49FSIx0_g",
-      "text": "Physical damage inside the Great Pyramid — scorch marks in the Grand Gallery, cracked granite beams in the King's Chamber, walls pushed out over an inch, salt deposits in the southern shaft — is consistent with an internal hydrogen-reaction explosion, not an earthquake.",
-      "kind": "empirical",
-      "entities": [
-        "location:grand gallery",
-        "location:the king's chamber",
-        "event:explosion",
-        "event:earthquake"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "XU49FSIx0_g",
-          "charStart": 13900,
-          "charEnd": 14600,
-          "timeStart": 875.0,
-          "timeEnd": 920.0,
-          "quote": "because of\nthe structure of the pyramid this\nexplosion could be controlled but\nthere's evidence that an uncontrolled\nexplosion may have occurred in 2001 in\nthe grand Gallery Scorch marks were\ndiscovered in the ceiling above where\nthe resonators would have been in the\nking's chamber cracks have been found in\nthe granite beams at first this was\nthought to be caused by an earthquake\nbut the damage was only found in areas\nof the pyramid where the flow of Highly\ncompressed heated hydrogen occurred the\nwalls in the king's chamber have been\npushed out over an inch it takes a lot\nof pressure to push tons of granite out\nthat far the great step outside the\nking's chamber also shows extensive\ndamage li"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.2,
-      "rationale": "Cracks in the King's Chamber granite beams and outward displacement of the chamber walls are real and well-documented; mainstream Egyptology attributes them to seismic events plus settling under the weight of the upper structure. The 'scorch marks' and 'salt encrustation in the southern shaft' interpretations are largely from Dunn / power-plant proponents and not corroborated by mainstream survey. The selective-damage-in-the-flow-pathway argument is post-hoc reasoning fitting a hypothesis to known damage rather than an independent test.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "XU49FSIx0_g:c_0011",
-      "videoId": "XU49FSIx0_g",
-      "text": "Robert Schoch's water-erosion analysis of the Sphinx, combined with the Orion-correlation theory, places the Giza complex at ~13,500 years old — long predating dynastic Egypt — implying an earlier advanced civilization built it and the Egyptians inherited it.",
+      "text": "The ancient Egyptians didn't build the Great Pyramid — an older, lost civilization did.",
       "kind": "speculative",
       "entities": [
-        "person:robert shock",
-        "location:giza"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "XU49FSIx0_g",
-          "charStart": 16300,
-          "charEnd": 17080,
-          "timeStart": 1023.0,
-          "timeEnd": 1071.0,
-          "quote": "y don't line\nup to where Orion is today they line up\nwith where Orion was in the sky 13 500\nyears ago we've discussed how the\nbuilders were obsessed with equinoxes\nthe Sphinx faces due east and on the\nvernal equinox the constellation that\nRose due east 13 500 years ago was Leo\nnow I'll concede the astronomical\nevidence could be a coincidence but\nthere is hard evidence that these\nstructures are old than originally\nthought you can't carbon date Limestone\nbut there are clues that the pyramid and\nthe Sphinx have been there for a long\nlong time Robert shock from Boston\nUniversity believes the Sphinx and Giza\ncomplex is about 13 500 years old Giza\nhas been an extremely dry climate since\nthe time of the Pharaohs but the Sphinx\nshow signs not only of wind and sand\nerosion but a"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.2,
-      "rationale": "Robert Schoch (Boston University geology) has indeed argued for water-erosion features on the Sphinx enclosure that he attributes to heavy rainfall predating ~5000 BC. Mainstream Egyptology rejects this as misidentification of subsurface weathering and karst dissolution. The Orion-correlation argument is from Bauval/Hancock and is rejected by archaeoastronomers (the correlation requires deliberate 'flipping' of the constellation map). 13,500 years old is far outside any orthodox dating but is a coherent fringe position.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "XU49FSIx0_g:c_0012",
-      "videoId": "XU49FSIx0_g",
-      "text": "A massive solar plasma event around 9700 BC — not an asteroid impact — ended the last ice age in essentially a single day, vitrifying rock in 120 countries, killing most of the human race and the megafauna, and incidentally damaging the Great Pyramid power-plant.",
-      "kind": "speculative",
-      "entities": [
-        "date_time:9700 bc",
-        "event:the last ice age",
-        "event:asteroid impact"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "XU49FSIx0_g",
-          "charStart": 17400,
-          "charEnd": 18260,
-          "timeStart": 1090.0,
-          "timeEnd": 1145.0,
-          "quote": "pidly\nwithin a few centuries sea levels Rose\n500 feet this is fast in geologic time\nbut as more evidence was gathered\nmelting appeared to happen in a matter\nof decades this would cause dramatic\nchanges in the earth's climate but when\nrecent ice core samples were studied\nthings got even more dramatic there's\nevidence that the last ice age didn't\nend over centuries or decades but ended\nin one single day\nsome claim that an asteroid impact\ncaused the last ice age to end a\nworldwide disaster like the chick\nshiloom impact that wiped out the\ndinosaurs that's not what happened an\nimpact causes cooling recent studies\nshow that there was a major solar event\nthat happened around 9700 BC basically\nthe mother of all CMEs a violent plasma\nstorm hit the earth and overwhelmed the\nEarth's magnetosphere which is our\ndefense against solar radiation without\nthe protec"
-        },
-        {
-          "transcriptId": "XU49FSIx0_g",
-          "charStart": 18550,
-          "charEnd": 19100,
-          "timeStart": 1162.0,
-          "timeEnd": 1196.0,
-          "quote": "120 countries of rock melted and turned\nto Glass during this event this is\ncalled vitrification there's evidence of\nvitrification in moon rocks we know for\na fact large mammals like saber-toothed\ntigers and woolly mammoths were wiped\nout at this time they didn't slowly go\nextinct they instantly went extinct\nduring the four or five days of this\nevent the Earth was also Awash in Lethal\nradiation only animals that can go\nunderground survived most of the human\nrace died during this event only humans\nliving near caves were able to find\nshelter and s"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.1,
-      "rationale": "The Younger Dryas ended ~9700 BCE — that part is correct. However, mainstream paleoclimatology dates the warming to a few decades, not a single day. The 'mother of all CMEs vitrifying rock in 120 countries / killing most humans / instant megafauna extinction' is fringe Hancock/Carlson territory; the megafauna extinctions occurred over centuries, not days. There is a Younger Dryas Impact Hypothesis (cosmic impact, not solar plasma) that has some peer-reviewed support but remains contested. Vitrification is real on certain ancient sites but the global solar-plasma explanation is unsupported.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "XU49FSIx0_g:c_0013",
-      "videoId": "XU49FSIx0_g",
-      "text": "On reflection, the host's overall thesis is that humanity once had unlimited clean wireless energy — first via the pyramid power plant in a pre-Egyptian advanced civilization, then briefly via Tesla — and that incumbent fossil-fuel and finance interests both times destroyed the technology, leaving us today fighting wars over oil and coal.",
-      "kind": "opinion",
-      "entities": [
-        "person:tesla",
+        "nationality_or_ethnicity:ancient egyptians",
+        "location:great pyramid of giza",
         "organization:civilization"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
-          "charStart": 22850,
-          "charEnd": 23360,
-          "timeStart": 1430.0,
-          "timeEnd": 1465.0,
-          "quote": " Rich oh there's no doubt about\nthat eighty percent of the products we\nuse today can be traced back to Tesla\nbut the technology that we really need\nnow more than ever is inexpensive clean\nenergy sadly that technology died with\nTesla instead the world went in the\ndirection of coal and oil and Nations\nfought and continue to fight Wars to\ncontrol these limited resources oil coal\nand War may be terrible for the planet\nand the people who live on it but\nthey're great for business and for all\nhis genius that's s"
+          "charStart": 15726,
+          "charEnd": 15759,
+          "timeStart": 980.22,
+          "timeEnd": 984.72,
+          "quote": "ancient Egyptians didn't build it"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.25,
-      "rationale": "The host's synthesis ties together two genuinely real historical phenomena (Tesla's wireless-power demonstrations; Morgan's industrial conflicts of interest) with two largely speculative claims (the pyramid as a deliberate power plant; the 9700 BC solar-cataclysm civilization). The 'wars over oil' part is broadly true. The unifying conspiracy thesis — that working unlimited free wireless power exists and is being suppressed — is not supported by physics: Tesla's resonant power-transmission scheme would not have worked at planetary scale due to inverse-square law and atmospheric losses, regardless of any commercial suppression.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
-      "dependencies": [
+      "directTruth": 0.05,
+      "rationale": "Contradicted by the Merer papyrus (c. 2560 BC) describing limestone deliveries to Giza, by quarry work-gang graffiti naming Khufu, and by carbon-14 dating of mortar consistent with the 4th Dynasty timeline. No archaeological evidence supports a pre-Egyptian civilization constructing the Great Pyramid.",
+      "tags": ["great-pyramid", "ancient-civilization", "alternative-history"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "XU49FSIx0_g:c_0010",
+      "videoId": "XU49FSIx0_g",
+      "text": "The Sphinx shows extreme water erosion inconsistent with the typical pharaonic-era dating and consistent with flooding at the end of the Younger Dryas.",
+      "kind": "empirical",
+      "entities": [
+        "event:the last ice age",
+        "location:great pyramid of giza"
+      ],
+      "relationships": [],
+      "evidence": [
         {
-          "target": "XU49FSIx0_g:c_0006",
-          "kind": "elaborates",
-          "rationale": "Synthesizes the pyramid-power-plant thesis."
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 17023,
+          "charEnd": 17105,
+          "timeStart": 1063.14,
+          "timeEnd": 1072.559,
+          "quote": "Sphinx\nshow signs not only of wind and sand\nerosion but also extreme water erosion"
         },
         {
-          "target": "XU49FSIx0_g:c_0009",
-          "kind": "elaborates",
-          "rationale": "Synthesizes the Tesla-suppression thesis."
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 17284,
+          "charEnd": 17308,
+          "timeStart": 1079.28,
+          "timeEnd": 1086.96,
+          "quote": "end of the\nyounger dryas"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.4,
+      "rationale": "The water-erosion thesis (Schoch/West) is real academic controversy, not fringe nonsense — Schoch is a Boston University geologist. However, Egyptologists counter that the Sphinx enclosure erosion is consistent with limestone weathering under Nile-era climate rather than requiring Pleistocene flooding. Community is split but mainstream remains against the early-Sphinx reading.",
+      "tags": ["sphinx", "water-erosion", "younger-dryas", "schoch"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "XU49FSIx0_g:c_0011",
+      "videoId": "XU49FSIx0_g",
+      "text": "A massive solar event around 9700 BC caused lightning strikes of unprecedented intensity across the Earth, which destroyed the pyramid power plant.",
+      "kind": "speculative",
+      "entities": [
+        "event:the last ice age",
+        "date_time:9700 bc",
+        "location:earth",
+        "event:explosion"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 18038,
+          "charEnd": 18055,
+          "timeStart": 1131.539,
+          "timeEnd": 1137.12,
+          "quote": "major solar event"
+        },
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 18286,
+          "charEnd": 18339,
+          "timeStart": 1148.4,
+          "timeEnd": 1155.36,
+          "quote": "massive lightning strikes happened all\nover the Earth"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.15,
+      "rationale": "A Younger Dryas CME/impact hypothesis exists in speculative literature (Kennett et al., Hancock) but is not peer-accepted as cause of a pyramid-power-plant failure because no such plant is mainstream-accepted in the first place. Linking solar event → lightning → pyramid damage is a chain of speculation.",
+      "tags": ["younger-dryas", "solar-event", "great-pyramid"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "XU49FSIx0_g:c_0003",
+          "kind": "supports",
+          "rationale": "Provides a destruction narrative consistent with the power-plant hypothesis."
         }
       ]
+    },
+    {
+      "id": "XU49FSIx0_g:c_0012",
+      "videoId": "XU49FSIx0_g",
+      "text": "After Tesla's death in 1943 the FBI and OSS were on-scene and seized his documents — implying government suppression of wireless power technology.",
+      "kind": "historical",
+      "entities": [
+        "person:nicola tesla",
+        "organization:fbi",
+        "organization:oss",
+        "technology:wireless power"
+      ],
+      "relationships": ["r_0111", "r_0120"],
+      "evidence": [
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 22258,
+          "charEnd": 22313,
+          "timeStart": 1383.539,
+          "timeEnd": 1392.0,
+          "quote": "FBI and agents\nof the OSS were for some reason close by"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.65,
+      "rationale": "Tesla's papers were seized by the Office of Alien Property on January 9, 1943, and later reviewed by MIT's John G. Trump for the FBI. This is documented in declassified FBI files. The 'suppression' framing is interpretive — Trump's memo concluded the papers contained 'no new sound, workable principles'. So the seizure is fact, the suppression intent is speculative.",
+      "tags": ["tesla", "fbi", "oss", "suppression"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "XU49FSIx0_g:c_0001",
+          "kind": "elaborates",
+          "rationale": "Extends Tesla's wireless-power work into a post-death government-cover-up narrative."
+        }
+      ]
+    },
+    {
+      "id": "XU49FSIx0_g:c_0013",
+      "videoId": "XU49FSIx0_g",
+      "text": "Free global electricity would eliminate political strife, economic instability and endless wars.",
+      "kind": "opinion",
+      "entities": [
+        "technology:electricity",
+        "location:world"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "XU49FSIx0_g",
+          "charStart": 21133,
+          "charEnd": 21153,
+          "timeStart": 1320.12,
+          "timeEnd": 1324.979,
+          "quote": "electricity was free"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Host's editorial position in the verdict section. Untestable as stated (counterfactual about a non-existent world), so directTruth is omitted. Historical evidence from other resource-abundance cases (oil, water) suggests abundance alone does not eliminate geopolitical conflict.",
+      "tags": ["free-energy", "geopolitics", "opinion"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
     }
   ]
 }

@@ -1,319 +1,415 @@
 {
   "schemaVersion": 1,
   "transcriptId": "TeS_Yq-7vHw",
-  "generatedAt": "2026-04-20T04:18:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-agent6",
   "claims": [
     {
       "id": "TeS_Yq-7vHw:c_0001",
       "videoId": "TeS_Yq-7vHw",
-      "text": "Time travel to the future is scientifically demonstrated by the laws of physics (relativistic time dilation), but time travel to the past remains uncertain — circumstantial evidence of past visits exists but every classic 'time traveler' story examined in this video turns out to be a hoax, urban legend, or known artifact misidentified.",
-      "kind": "definitional",
+      "text": "Physicists consider time travel to the future scientifically proven while travel to the past remains open.",
+      "kind": "empirical",
       "entities": [
-        "law_or_policy:laws of physics",
-        "person:astronaut",
+        "law_or_policy:laws of physics"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 60,
+          "charEnd": 106,
+          "timeStart": 0,
+          "timeEnd": 7.39,
+          "quote": "time travel to the future is not only possible"
+        }
+      ],
+      "confidence": 0.92,
+      "directTruth": 0.85,
+      "rationale": "Correct summary of special/general relativity — time dilation (high-velocity and gravitational) is experimentally confirmed (atomic clocks on GPS satellites, muon lifetimes, etc.). Travel to past remains theoretically contentious (requires exotic matter / closed timelike curves).",
+      "tags": ["time-travel", "physics", "relativity"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0002",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "A man named Rudolph Fentz appeared in Times Square in 1950 carrying 1870s artifacts and died after being struck by a taxi.",
+      "kind": "historical",
+      "entities": [
+        "person:rudolph fense",
+        "location:times square",
+        "date_time:1950"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 1165,
+          "charEnd": 1265,
+          "timeStart": 76.66,
+          "timeEnd": 87.25,
+          "quote": "Times Square at 11, 15 p.m.\nthat evening, and witness described him as gawking and looking around at"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "rationale": "Host explicitly debunks this in the verdict: Rudolph Fentz is a character from Jack Finney's 1951 Collier's short story 'I'm Scared,' not a real person. Near-zero directTruth.",
+      "tags": ["rudolph-fentz", "urban-legend", "fictional"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0003",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "The Rudolph Fentz story originated as an excerpt from Jack Finney's short story 'I'm Scared' published in Collier's magazine in 1951.",
+      "kind": "historical",
+      "entities": [
+        "person:rudolph fense",
+        "organization:collier's magazine"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 11312,
+          "charEnd": 11442,
+          "timeStart": 718.74,
+          "timeEnd": 725.88,
+          "quote": "excerpt from a short story called I'm Scared, which was written by Jack\nFinney, you might know, is the author of The Body Snatcher"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Well-documented literary history: Finney's 'I'm Scared' was published in Collier's September 15, 1951. Chris Aubeck's research established this as the origin of the Fentz urban legend.",
+      "tags": ["jack-finney", "colliers", "1951", "urban-legend-origin", "verdict"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "TeS_Yq-7vHw:c_0002",
+          "kind": "contradicts",
+          "rationale": "[debunks] Directly identifies Fentz as fictional, with a datable publication origin."
+        }
+      ]
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0004",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "In 2003 the FBI arrested a 44-year-old Andrew Carlson for insider trading after he turned $800 into $350 million with 126 consecutive winning trades.",
+      "kind": "historical",
+      "entities": [
+        "person:andrew carlson",
+        "organization:fbi",
+        "date_time:2003"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 3243,
+          "charEnd": 3380,
+          "timeStart": 201.88,
+          "timeEnd": 211.21,
+          "quote": "2003, the FBI arrested forty four year old Andrew Carlson for suspicion of insider\ntrading and just two weeks, Carlson had made one hundr"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.03,
+      "rationale": "Host's verdict section reveals this story originated as a Weekly World News satirical piece. Zero-sum: no FBI arrest of an Andrew Carlson matching these particulars has ever occurred on record.",
+      "tags": ["andrew-carlson", "insider-trading", "fictional"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0005",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "Andrew Carlson confessed that he time-traveled back 250 years from the future with foreknowledge of winning stock trades.",
+      "kind": "speculative",
+      "entities": [
+        "person:andrew carlson"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 3847,
+          "charEnd": 3960,
+          "timeStart": 236.92,
+          "timeEnd": 244.36,
+          "quote": "Carlson stated he traveled back in time from two hundred and fifty years in the future,\nbringing knowledge of hig"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.02,
+      "rationale": "A fictional character cannot have made a real confession. Host debunks Carlson as a Weekly World News invention in the verdict section.",
+      "tags": ["carlson", "time-travel-confession", "fictional"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0006",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "The Andrew Carlson time-traveler story originated as a fictional piece in the satirical Weekly World News and was later reported as fact by mainstream outlets.",
+      "kind": "historical",
+      "entities": [
+        "person:andrew carlson",
+        "organization:weekly world news",
+        "organization:yahoo! news"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 11778,
+          "charEnd": 11890,
+          "timeStart": 743.94,
+          "timeEnd": 751.02,
+          "quote": "originated as a fictional piece in Weekly World News, a satirical newspaper.\nLater, the story was picked up by Y"
+        }
+      ],
+      "confidence": 0.92,
+      "directTruth": 0.85,
+      "rationale": "Well-documented urban-legend trajectory: Weekly World News (a supermarket tabloid explicitly publishing satire) ran the piece, and Yahoo News/others amplified it uncritically. Host's verdict aligns with mainstream fact-checking.",
+      "tags": ["weekly-world-news", "yahoo-news", "misinformation", "verdict"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "TeS_Yq-7vHw:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] Identifying the origin as satirical tabloid fiction directly invalidates the time-travel confession narrative."
+        }
+      ]
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0007",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "A 1940 photograph from the South Fork Bridge reopening in British Columbia shows a 'hipster' man with anachronistically modern haircut, sunglasses, graphic tee and camera.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1940",
+        "facility:south fork bridge",
+        "location:british columbia"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 6664,
+          "charEnd": 6775,
+          "timeStart": 408.61,
+          "timeEnd": 425.44,
+          "quote": "1940 at the\nreopening of the South Fork Bridge in Canada.\nWhen the museum digitized the photo and put it online"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The photograph itself is real and held at the Braylon Pioneer Museum. The 'anachronistic' features are genuinely visible in the image — the dispute is whether they're actually anachronistic, not whether the photo exists.",
+      "tags": ["time-traveling-hipster", "1940", "photograph"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0008",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "The 'Time Traveling Hipster' photo is explained by the fact that t-shirts with logos, small cameras, and wraparound sunglasses were all available in 1940 — the jersey is a Montreal Maroons hockey team shirt.",
+      "kind": "empirical",
+      "entities": [
+        "organization:montreal maroons",
+        "organization:nhl",
+        "date_time:1940"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 13024,
+          "charEnd": 13140,
+          "timeStart": 813.3,
+          "timeEnd": 821.7,
+          "quote": "Montreal Maroons embroidered jersey.\nAnd the Marines were a hockey team that played in the NHL from nineteen twenty "
+        }
+      ],
+      "confidence": 0.88,
+      "directTruth": 0.8,
+      "rationale": "Host's debunking aligns with mainstream fact-checking: the Montreal Maroons existed in the NHL 1924-1938, small portable cameras (e.g. Kodak Bantam, Argus A) existed by 1940, and protective-side-shield sunglasses were available. All individual items are era-plausible.",
+      "tags": ["time-traveling-hipster", "montreal-maroons", "debunked", "verdict"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "TeS_Yq-7vHw:c_0007",
+          "kind": "contradicts",
+          "rationale": "[alternative] Provides a mundane explanation: the photo is real but none of the items are actually out-of-period."
+        }
+      ]
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0009",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "A woman in the 1928 Charlie Chaplin Circus premiere footage is seen talking into what looks like a cell phone.",
+      "kind": "historical",
+      "entities": [
+        "person:charlie chaplin",
+        "date_time:nineteen twenty eight"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 8175,
+          "charEnd": 8300,
+          "timeStart": 511.19,
+          "timeEnd": 520.34,
+          "quote": "ime agents.\nShe's saying this really sucks.\nLet's get in and out burger Inkscape.\nMaybe in a few years later.\nThis happened a"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.5,
+      "rationale": "Footage does exist in the DVD extras and the woman is visible holding something to her ear. Whether that's a cell phone, hearing aid, or nothing at all is the contested interpretation. Claim is about what the footage appears to show.",
+      "tags": ["chaplin", "1928", "cell-phone-footage"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0010",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "The woman in the Chaplin clip is most likely using an early ear trumpet or hearing aid rather than a phone.",
+      "kind": "empirical",
+      "entities": [
+        "person:charlie chaplin",
         "person:woman"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 11000,
-          "charEnd": 12200,
-          "timeStart": 692.23,
-          "timeEnd": 771.71,
-          "quote": "one was.\nOk, these stories are certainly fun, but are they real?\nCan they be explained? Maybe you'll be the judge.\nLet's go through the case of Rudolfensis, an urban legend that's been around since the\n1970s, maybe even earlier.\nI first heard it from my dad when I was a kid, but it's not true.\nIt's actually an excerpt from a short story called I'm Scared, which was written by Jack\nFinney, you might know, is the author of The Body Snatchers.\nThe story was published in Collier's magazine in 1951, about the time when Rudolfensis\nsupposedly appeared.\nNice to believe it. I know you did.\nThe Andrew Carlson story is one of my favorites.\nI love this one. It has all the makings of a great conspiracy, millions of dollars, a\nmysterious benefactor, a missing person.\nBut this one originated as a fictional piece in Weekly World News, a satirical newspaper.\nLater, the story was picked up by Yahoo!\nNews. So naturally, people believe the story.\nIt was then reported by other newspapers and magazines as fact.\nAnd this drove word of mouth, creating one of the great modern urban legends.\nSo the lesson here, we don't believe anything the media says you're learning.\nOk, so the Mike Tyson fight, although "
+          "charStart": 13507,
+          "charEnd": 13610,
+          "timeStart": 838.65,
+          "timeEnd": 850.71,
+          "quote": "thought to\nbe using an early hearing aid, though I'm not sure why she's talking to herself and\nlooking "
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.85,
-      "rationale": "Special-relativity time dilation is empirically confirmed (Hafele-Keating experiment with atomic clocks on jets, GPS satellite corrections). Past-directed time travel via closed timelike curves is mathematically permitted by GR but unproven physically. The host's framing here sets up the debunking section that follows.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "TeS_Yq-7vHw:c_0002",
-      "videoId": "TeS_Yq-7vHw",
-      "text": "The Rudolph Fentz story — a man in 1876 clothes hit by a taxi in 1950 Times Square whose 1876 missing-person record allegedly closed the case 75 years later — is a fictional excerpt from Jack Finney's 1951 short story 'I'm Scared' published in Collier's magazine, not a real police case.",
-      "kind": "definitional",
-      "entities": [
-        "person:rudolph fense",
-        "location:times square",
-        "location:new york city",
-        "location:fifth avenue",
-        "organization:collier's magazine",
-        "date_time:1876",
-        "date_time:1950",
-        "date_time:1951",
-        "date_time:1970s"
-      ],
-      "relationships": [
-        "r_0083",
-        "r_0084"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 1100,
-          "charEnd": 2900,
-          "timeStart": 73.21,
-          "timeEnd": 177.07,
-          "quote": "was brought to the morgue.\nThe man had appeared in the middle of Times Square at 11, 15 p.m.\nthat evening, and witness described him as gawking and looking around at the cars and at\nthe signs like he'd never seen them before.\nHe then tried to cross the street against the traffic lights, was hit by a speeding taxi\nand died.\nPockets of his clothing had coins and currency that had not been in circulation for\ndecades.\nYet many of them were in mint condition.\nHe also had items from businesses that no longer existed in New York City, like a bill\nfrom a livery stable, a brass slug from a saloon and a letter postmarked\n1876. He also had identification bearing the name Rudolph Fense with an address on Fifth\nAvenue.\nNow the name Rudolph Fense didn't appear in the New York City phone book, and the Fifth\nAvenue address listed on the dead man's car had been a business for many years, not a\nresidence. And no one there had ever heard of Rudolph fense.\nThe deceased fingerprints matched nothing on file, and no current police reports fit the\nman's description.\nAlso, his clothes appeared to be about seventy five years out of date.\nTags on his clothing had a name and address of a tailor that no one had ever heard of,\nand his hat, which looked new, came from a shop that had been closed for over 50 years.\nThe investigating officer finally turned up a listing in an old phone book for Rudolph\nFense Jr., a man in his 60s who had passed away five years earlier.\nNow his widow is still living and said her husband's father, Rudolph Fense Senior, had\ndisappeared sometime in the eighteen seventies.\nHe had gone out for a walk one night about 10:00 p.m., but was never seen again.\nThis is crazy.\nI know. So a search of an old missing person's report turned up a Rudolph fence dated\n1876, and the man's clo"
-        },
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 11000,
-          "charEnd": 12200,
-          "timeStart": 692.23,
-          "timeEnd": 771.71,
-          "quote": "one was.\nOk, these stories are certainly fun, but are they real?\nCan they be explained? Maybe you'll be the judge.\nLet's go through the case of Rudolfensis, an urban legend that's been around since the\n1970s, maybe even earlier.\nI first heard it from my dad when I was a kid, but it's not true.\nIt's actually an excerpt from a short story called I'm Scared, which was written by Jack\nFinney, you might know, is the author of The Body Snatchers.\nThe story was published in Collier's magazine in 1951, about the time when Rudolfensis\nsupposedly appeared.\nNice to believe it. I know you did.\nThe Andrew Carlson story is one of my favorites.\nI love this one. It has all the makings of a great conspiracy, millions of dollars, a\nmysterious benefactor, a missing person.\nBut this one originated as a fictional piece in Weekly World News, a satirical newspaper.\nLater, the story was picked up by Yahoo!\nNews. So naturally, people believe the story.\nIt was then reported by other newspapers and magazines as fact.\nAnd this drove word of mouth, creating one of the great modern urban legends.\nSo the lesson here, we don't believe anything the media says you're learning.\nOk, so the Mike Tyson fight, although "
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "Jack Finney's 'I'm Scared' (Collier's, September 1951) is well-documented as the origin of the Rudolph Fentz story. The transformation from short story into widely-believed 'true' anecdote (often attributed to Akron Beacon Journal or other outlets in retellings) is a textbook urban-legend evolution. Finney did write 'The Body Snatchers' (1955).",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "TeS_Yq-7vHw:c_0003",
-      "videoId": "TeS_Yq-7vHw",
-      "text": "The 'Andrew Carlson 250-years-from-the-future stock-trading time traveler' story — including the SEC interrogation, the cure-for-AIDS-and-bin-Laden offer, the mystery $1M bail-poster, and the lack of records before his arrest — originated as a fictional piece in the satirical paper Weekly World News and was later reported as fact by Yahoo! News.",
-      "kind": "definitional",
-      "entities": [
-        "person:andrew carlson",
-        "person:carlson",
-        "person:mystery man",
-        "organization:fbi",
-        "organization:sec",
-        "organization:yahoo! news",
-        "date_time:2003"
-      ],
-      "relationships": [
-        "r_0014",
-        "r_0024"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 3286,
-          "charEnd": 5300,
-          "timeStart": 201.88,
-          "timeEnd": 316.96,
-          "quote": "Andrew Carlson for suspicion of insider\ntrading and just two weeks, Carlson had made one hundred and twenty six\nconsecutive high risk profitable trades, turning his eight hundred dollars of seed\ncapital into a portfolio worth three hundred and fifty million dollars.\nNaturally, the SEC wanted this looked into.\nNaturally, people with money don't want anyone else making money.\nI can't deny that. Now, normally when someone is arrested for insider trading, they deny\nit.\nBut during a four hour interrogation, investigators got an explanation they didn't\nexpect.\nCarlson stated he traveled back in time from two hundred and fifty years in the future,\nbringing knowledge of high risk, high profit stock trades.\nIn his videotaped confession, Carlson said it was just too tempting to resist.\nHe'd plan to make it look natural by losing a little here and there, but got caught up in\nthe moment.\nSo the SEC said he was either a lunatic or a pathological liar because the only way he\ncould pull this off was with illegal information.\nAnd they said he's going to sit in jail until he agrees to give up his sources.\nBut Carlson did not give up his sources.\nHe stuck to his story even in the future.\nSnitches get stitches.\nYeah. So knowing he was going to prison, Carlson said in exchange for a lighter sentence,\nhe'd be willing to reveal the cure for AIDS and the location of Osama bin\nLaden. He also said he didn't care about the money.\nGive it back. He just wanted to return to his time craft and go back to his own time.\nBut he refused to reveal the location of the craft for fear that it would fall into the\nwrong hands.\nSo bail was set at one million dollars and he was put into a holding to await trial.\nAnd you would think that's the end of the story.\nCarlson had no family, no friends, and no longer had any money.\nBut after a few weeks in custody, a mysterious unidentified man posted Karlsson's bail of\na million dollars whacked.\nWho was the mystery man?\nWell, we don't know. The mystery man and Carlson were never"
-        },
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 11000,
-          "charEnd": 12200,
-          "timeStart": 692.23,
-          "timeEnd": 771.71,
-          "quote": "one was.\nOk, these stories are certainly fun, but are they real?\nCan they be explained? Maybe you'll be the judge.\nLet's go through the case of Rudolfensis, an urban legend that's been around since the\n1970s, maybe even earlier.\nI first heard it from my dad when I was a kid, but it's not true.\nIt's actually an excerpt from a short story called I'm Scared, which was written by Jack\nFinney, you might know, is the author of The Body Snatchers.\nThe story was published in Collier's magazine in 1951, about the time when Rudolfensis\nsupposedly appeared.\nNice to believe it. I know you did.\nThe Andrew Carlson story is one of my favorites.\nI love this one. It has all the makings of a great conspiracy, millions of dollars, a\nmysterious benefactor, a missing person.\nBut this one originated as a fictional piece in Weekly World News, a satirical newspaper.\nLater, the story was picked up by Yahoo!\nNews. So naturally, people believe the story.\nIt was then reported by other newspapers and magazines as fact.\nAnd this drove word of mouth, creating one of the great modern urban legends.\nSo the lesson here, we don't believe anything the media says you're learning.\nOk, so the Mike Tyson fight, although "
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.92,
-      "rationale": "The 'Andrew Carlssin' (originally) time-traveling stockbroker story was indeed a 2003 Weekly World News piece and was widely re-reported by aggregators including Yahoo News despite the source being explicitly satirical. There is no real SEC case file, no actual Carlson, and the FBI never arrested him.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "TeS_Yq-7vHw:c_0004",
-      "videoId": "TeS_Yq-7vHw",
-      "text": "The 1995 Mike Tyson vs. Peter McNeeley fight footage that appears to show a spectator holding a smartphone is most plausibly explained by a bulky 1990s handheld digital camera (e.g., the Casio QV-10 or Logitech Fotoman) — devices that did exist at the time, though the host hedges 'debunked probably maybe.'",
-      "kind": "empirical",
-      "entities": [
-        "person:astronaut",
-        "technology:smartphone",
-        "organization:casio",
-        "organization:logitech",
-        "date_time:nineteen ninety three",
-        "event:boxing match"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 5500,
-          "charEnd": 6500,
-          "timeStart": 324.82,
-          "timeEnd": 399.37,
-          "quote": "travel is possible if you're focusing\nupon time travel to the\nfuture? Ok, this one gives me chills, Tyson's boxing match with Peter McNeilly in\nnineteen\nninety three was notable for being Iron Mike's first since his release from prison.\nIt lasted only eighty nine seconds and was stopped after McNeilly was knocked down twice.\nBut the most remarkable moment occurred outside of the ring, where footage shows a\nspectator holding up a smartphone years before they were invented.\nThe white colored camera has the distinctive slimline design of a smartphone with the\nlens in the top left corner.\nAnother innovation associated with modern day recording equipment.\nAll right, enough talk. You've got to take a look at this.\nWhat is that?\nI honestly don't know, camcorders were everywhere in the 90s, but they were bigger than\nthis and this guy obviously is holding it with one hand.\nA lot of people think it looks like an iPhone or a Samsung Galaxy, but those wouldn't be\ninvented for years, so.\nTime trave"
-        },
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 12200,
-          "charEnd": 13500,
-          "timeStart": 692.23,
-          "timeEnd": 848.25,
-          "quote": "the device in the video does resemble a type of\ncamera phone not sold until years later.\nIt also could be one of a number of handheld cameras that were, in fact, widely\navailable.\nThe resolution and size of the original video make it difficult to determine the specific\nfeatures of the device.\nBut some believe it's similar to either the Casio covid 10 a the Casio Cuvee one hundred\nor the Logitech Fotomat.\nSo debunked probably maybe.\nI'm not sure if you think you know what kind of camera that is, please let us know in the\ncomments.\nThe idea that the hipster in the photograph is a time traveler hinges on three items that\nappear to be too modern for 1940 a logo, t shirt, a small portable camera and the\nwraparound sunglasses.\nBut all of those items were readily available in the 1940s.\nThe Internet says he's wearing a Montreal Maroons embroidered jersey.\nAnd the Marines were a hockey team that played in the NHL from nineteen twenty four to\nnineteen thirty eight.\nOk, while glasses with protective side shields were not widespread, you could get them in\n1940 and the camera in his hand.\nThere definitely were cameras that small back then.\nThey were unusual and they're pretty expensive.\nBut they did exist.\nSo debunked.\nNo. The woman on the cell phone, quote unquote, in the Charlie Chaplin cl"
-        }
-      ],
-      "confidence": 0.85,
+      "confidence": 0.8,
       "directTruth": 0.7,
-      "rationale": "The Tyson-McNeeley footage circulates online as a 'time traveler smartphone' clip. The Casio QV-10 (1995) was indeed an early consumer digital still camera with LCD viewfinder, and could plausibly explain a small handheld device in 1995. The host hedges with 'probably maybe' which is appropriate given the ambiguous footage.",
-      "hostStance": "uncertain",
-      "dependencies": [
-        {
-          "target": "TeS_Yq-7vHw:c_0001",
-          "kind": "elaborates",
-          "rationale": "An example of a time-traveler claim with a mundane explanation"
-        }
-      ]
-    },
-    {
-      "id": "TeS_Yq-7vHw:c_0005",
-      "videoId": "TeS_Yq-7vHw",
-      "text": "The 1940 'Time Traveling Hipster' photo from the Bralorne Pioneer Museum is authentic and unaltered (per the museum), but its three suspicious elements all have mundane 1940-era explanations: he's wearing a Montreal Maroons hockey jersey, side-shielded sunglasses were available, and small-format cameras did exist (though expensive).",
-      "kind": "empirical",
-      "entities": [
-        "organization:braylon pioneer museum",
-        "facility:south fork bridge",
-        "location:british columbia",
-        "location:canada",
-        "date_time:1940",
-        "date_time:2010"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 6500,
-          "charEnd": 7400,
-          "timeStart": 398.38,
-          "timeEnd": 469.04,
-          "quote": "l.\nThis is a famous photo known as the Time Traveling Hipster, the image comes from the\nBraylon Pioneer Museum in British Columbia, and the photograph was taken in 1940 at the\nreopening of the South Fork Bridge in Canada.\nWhen the museum digitized the photo and put it online in 2010, people noticed something\nstrange.\nAt first glance, everything looks right.\nThe men are in jackets, ties and hats, the women and bonnets and overcoats.\nBut look at this. Well, this guy appears to have a modern haircut, sunglasses, and he's\nwearing a graphic tee shirt under his cardigan.\nAnd what's that he's holding?\nDoesn't that seem too small to be a camera in 1940 Photoshop?\nNo. The museum has confirmed that the photo is authentic and unaltered.\nSo who is he?\nWhere is he from? Don't you mean when is it from?\nPaths through space time that seem to be permitted by the laws of physics, although it\nwould require"
-        },
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 12200,
-          "charEnd": 13500,
-          "timeStart": 692.23,
-          "timeEnd": 848.25,
-          "quote": "the device in the video does resemble a type of\ncamera phone not sold until years later.\nIt also could be one of a number of handheld cameras that were, in fact, widely\navailable.\nThe resolution and size of the original video make it difficult to determine the specific\nfeatures of the device.\nBut some believe it's similar to either the Casio covid 10 a the Casio Cuvee one hundred\nor the Logitech Fotomat.\nSo debunked probably maybe.\nI'm not sure if you think you know what kind of camera that is, please let us know in the\ncomments.\nThe idea that the hipster in the photograph is a time traveler hinges on three items that\nappear to be too modern for 1940 a logo, t shirt, a small portable camera and the\nwraparound sunglasses.\nBut all of those items were readily available in the 1940s.\nThe Internet says he's wearing a Montreal Maroons embroidered jersey.\nAnd the Marines were a hockey team that played in the NHL from nineteen twenty four to\nnineteen thirty eight.\nOk, while glasses with protective side shields were not widespread, you could get them in\n1940 and the camera in his hand.\nThere definitely were cameras that small back then.\nThey were unusual and they're pretty expensive.\nBut they did exist.\nSo debunked.\nNo. The woman on the cell phone, quote unquote, in the Charlie Chaplin cl"
-        }
-      ],
-      "confidence": 0.92,
-      "directTruth": 0.85,
-      "rationale": "The 'Time Traveler at South Fork Bridge' photo (1941, Gold Bridge BC) is real and the museum's authenticity claim is on record. The Montreal Maroons branded sweater (the team folded in 1938) explanation is well-known; wraparound side-shield welder/skier glasses existed; small folding cameras like the Kodak Folding Pocket had been mainstream for decades. So mundane explanation holds.",
+      "rationale": "The 1920s saw portable carbon-microphone hearing-aid devices (e.g. Western Electric's Vactuphone / Siemens auricular trumpets); fit the shape seen. Host presents this as the leading skeptic explanation.",
+      "tags": ["chaplin", "hearing-aid", "debunked", "verdict"],
+      "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "TeS_Yq-7vHw:c_0001",
-          "kind": "elaborates",
-          "rationale": "Another debunked time-traveler photo"
+          "target": "TeS_Yq-7vHw:c_0009",
+          "kind": "contradicts",
+          "rationale": "[alternative] Offers the mundane hearing-aid explanation instead of a phone."
         }
       ]
     },
     {
-      "id": "TeS_Yq-7vHw:c_0006",
+      "id": "TeS_Yq-7vHw:c_0011",
       "videoId": "TeS_Yq-7vHw",
-      "text": "Two 'cell phone in old footage' viral clips — a woman in 1928 Charlie Chaplin Circus premiere footage and another in a 1938 DuPont factory video — are best explained respectively by an early hearing aid and (less convincingly) a claimed experimental DuPont wireless telephone, though physics constraints (battery + radio size before 1936's walkie-talkie) make even the DuPont story implausible.",
-      "kind": "empirical",
+      "text": "A 1938 Dupont-factory woman's apparent cell-phone call was actually a Dupont-developed experimental wireless phone used by worker Gertrude Jones.",
+      "kind": "historical",
       "entities": [
-        "person:charlie chaplin",
-        "person:woman",
         "organization:dupont",
-        "location:grauman's chinese theater",
-        "date_time:nineteen twenty eight",
-        "date_time:nineteen thirty eight",
-        "date_time:1936",
-        "event:los angeles premiere",
-        "event:world war two",
-        "organization:huffington post",
-        "organization:daily mail"
-      ],
-      "relationships": [
-        "r_0044",
-        "r_0094",
-        "r_0096"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 7500,
-          "charEnd": 9100,
-          "timeStart": 473.33,
-          "timeEnd": 567.38,
-          "quote": "s to pop up all over the place if you look for it.\nIn 2010, a video called Chaplin's Time Traveler appeared on YouTube, and the clip\nanalyzes bonus material from a DVD of Charlie Chaplin's nineteen twenty eight film Circus.\nNow, the footage is from the film's Los Angeles premiere at Grauman's Chinese Theater.\nAnd at one point, a woman is seen walking by, holding up an object to her ear and a\ncloser examination.\nShe seems to be talking into a thin black device.\nWhat is this? There are no cell towers or satellites yet, so it's not a modern cell phone.\nWhat is it? She's definitely talking, but there's nobody else near her.\nWho is she talking to?\nShe's talking to other time agents.\nShe's saying this really sucks.\nLet's get in and out burger Inkscape.\nMaybe in a few years later.\nThis happened again.\nThis is footage from nineteen thirty eight of people coming out of a Dupont factory.\nAnd the woman in the center seems to be talking on a cell phone or some communication\ndevice and then puts it away.\nNow, this video was so convincing that it's been covered by the Huffington Post, Daily\nMail and Yahoo!\nNews now plays what Yahoo!\nNews should change its name to Yahoo!\nRandom words that she never believed.\nLet's say you don't trust the media.\nI love fish, not a sheep.\nFine. I got it.\nNo trust the media. Get a boy.\nAnyway, Haggerty's Digital Archive has full scans of every issue of the magazine from\nnineteen thirteen to nineteen ninety three, and there's no mention of a wireless\ncommunication device around the time of the film.\nSo you tell me who she talking to?\nMission Control and the m"
-        },
-        {
-          "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 13500,
-          "charEnd": 15000,
-          "timeStart": 838.65,
-          "timeEnd": 932.57,
-          "quote": "ip, is thought to\nbe using an early hearing aid, though I'm not sure why she's talking to herself and\nlooking around like people do when they're on the phone.\nBut she could be talking to herself.\nI mean, I do that when I'm alone.\nDo we really want to discuss what you do when you're alone?\nNo, I don't.\nBut the Dupont video from nineteen thirty eight is a little trickier.\nAfter the story went viral, the woman's family claimed that her name was Gertrude Jones\nand she was working for Dupont and using an experimental wireless telephone developed by\nthe company. OK, that's fine, but look at the size of it.\nThe earliest cell phones were huge and this is before World War Two.\nSo you're telling me we had the technology to make batteries that small?\nOK, fine. Let's say the battery technology did exist.\nIt wouldn't be big enough to power a wireless radio.\nThe walkie talkie was only patented in 1936, and in the war, radio operators were\nfollowed around by another guy with a backpack that carry the transceiver\nand battery, which weighed over 30 pounds, 18 kilograms.\nSo heavy. So I don't know if this one is debunked.\nThe ancient watch found in the Chinese tomb.\nThat's a straight up hoax.\nPhotoshopped debunked the astronaut on the Cathedral of Salamanca.\nWell, the sculpture is definitely real.\nBut when the cathedral was renovated and restored in 1992, the artist added their own\nmodern touches, including the astronaut debunked crap.\nThose good one. I know they were.\nBut three or four hundred"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.65,
-      "rationale": "The Chaplin clip 'time traveler' was debunked years ago — the Siemens 1924 carbon-amplified hearing aid (or similar) is the leading explanation. The DuPont 1938 footage explanation is harder: the family's 'experimental wireless phone' claim is real but the size/battery physics objection the host raises is sound (1930s portable radios were huge). The host correctly leaves DuPont as 'I don't know if this one is debunked.'",
-      "hostStance": "uncertain"
-    },
-    {
-      "id": "TeS_Yq-7vHw:c_0007",
-      "videoId": "TeS_Yq-7vHw",
-      "text": "The two 'physical artifact' time-travel claims — a Swiss-engraved watch ring found in a 400-year-old Ming Dynasty tomb in Shaanxi (2008) and an Apollo-suited astronaut carved into the 12th-century Cathedral of Salamanca — are both definitively debunked: the watch is a hoax (Photoshopped/planted) and the astronaut is a 1992 restoration addition by the artist.",
-      "kind": "definitional",
-      "entities": [
-        "facility:cathedral",
-        "location:cathedral of salamanca",
-        "location:salamanca",
-        "location:shanxi",
-        "location:northern china",
-        "location:chinese tomb",
-        "location:switzerland",
-        "person:astronaut",
-        "technology:spacesuit",
-        "event:apollo 11",
-        "date_time:2008",
-        "date_time:1992",
-        "date_time:eighteen forty eight",
-        "date_time:ten oh six"
+        "date_time:nineteen thirty eight"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 9300,
-          "charEnd": 10800,
-          "timeStart": 589.1,
-          "timeEnd": 681.05,
-          "quote": "ts had made a puzzling discovery.\nThe team included some journalist.\nThey were filming a documentary to dig site at a sealed tomb dating to the Ming Dynasty\nat Shanxi, northern China.\nAs one of the coffins were being cleared of soil before being opened, a strange metallic\nobject was found.\nIt was a small golden ring with a watch face on its front, approximately two millimeters\nthick, tiny hands on the watch show.\nThe time had frozen at ten oh six.\nThe most astonishing of all.\nThe back of the watch had the word Swiss engraved in English that the tomb had been\nsealed for four hundred years and the watch itself was already one hundred years old when\nit was placed inside.\nThat dates to the 15th or 16th century.\nSwitzerland wasn't even known by that name in English until eighteen forty eight.\nIt is like a time traveler lost and found it kind of is.\nThe Spanish city of Salamanca features a cathedral built in 11 to the carvings are pretty\ntypical for the 12th century.\nWinding vines and leaves, gargoyles, demons.\nNo, they go up. But what the heck is this?\nThat appears to be a modern astronaut wearing a spacesuit and not just a random\nspacesuit.\nThis particular suit has features specific to the Apollo 11 emu worn by Buzz Aldrin.\nYou can see the helmet, the backpack which held the primary life support system and\noxygen umbilical cords are so underrated.\nThey are. But what really got me were the boots.\nThey feature deep treads that would be used to explore dusty extraterrestrial surface"
-        },
+          "charStart": 13946,
+          "charEnd": 14060,
+          "timeStart": 861.72,
+          "timeEnd": 874.23,
+          "quote": "Gertrude Jones\nand she was working for Dupont and using an experimental wireless telephone developed by\nthe compan"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.3,
+      "rationale": "Host himself pushes back on this explanation — 1938 battery tech couldn't power a wireless device that small, and the walkie-talkie was not patented until 1936 and required a 30-pound backpack. The family's claim is itself unverified and convenient.",
+      "tags": ["dupont", "gertrude-jones", "1938", "uncertain"],
+      "inVerdictSection": true,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0012",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "The carved astronaut on the Cathedral of Salamanca is not evidence of medieval time travel — it was added by the artist during a 1992 renovation.",
+      "kind": "historical",
+      "entities": [
+        "location:cathedral of salamanca",
+        "location:salamanca",
+        "date_time:1992",
+        "technology:spacesuit"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 13500,
-          "charEnd": 15000,
-          "timeStart": 838.65,
-          "timeEnd": 932.57,
-          "quote": "ip, is thought to\nbe using an early hearing aid, though I'm not sure why she's talking to herself and\nlooking around like people do when they're on the phone.\nBut she could be talking to herself.\nI mean, I do that when I'm alone.\nDo we really want to discuss what you do when you're alone?\nNo, I don't.\nBut the Dupont video from nineteen thirty eight is a little trickier.\nAfter the story went viral, the woman's family claimed that her name was Gertrude Jones\nand she was working for Dupont and using an experimental wireless telephone developed by\nthe company. OK, that's fine, but look at the size of it.\nThe earliest cell phones were huge and this is before World War Two.\nSo you're telling me we had the technology to make batteries that small?\nOK, fine. Let's say the battery technology did exist.\nIt wouldn't be big enough to power a wireless radio.\nThe walkie talkie was only patented in 1936, and in the war, radio operators were\nfollowed around by another guy with a backpack that carry the transceiver\nand battery, which weighed over 30 pounds, 18 kilograms.\nSo heavy. So I don't know if this one is debunked.\nThe ancient watch found in the Chinese tomb.\nThat's a straight up hoax.\nPhotoshopped debunked the astronaut on the Cathedral of Salamanca.\nWell, the sculpture is definitely real.\nBut when the cathedral was renovated and restored in 1992, the artist added their own\nmodern touches, including the astronaut debunked crap.\nThose good one. I know they were.\nBut three or four hundred"
+          "charStart": 14813,
+          "charEnd": 14900,
+          "timeStart": 915.69,
+          "timeEnd": 925.66,
+          "quote": "cathedral was renovated and restored in 1992, the artist added their own\nmodern touches"
         }
       ],
       "confidence": 0.97,
       "directTruth": 0.95,
-      "rationale": "The 2008 Ming Dynasty 'Swiss watch ring' was widely covered then largely abandoned as photoshop/hoax — no peer-reviewed archaeology supports it. The Salamanca astronaut (Hieronimus Bosch-style figure) is real and was added by sculptor Miguel Romero during the 1992 restoration of the Puerta de Ramos — both are settled debunkings with documentary evidence.",
+      "rationale": "Well-documented: the astronaut (and an ice-cream-eating gargoyle and dragon) were added by stonemason Jeronimo Garcia during the 1992 restoration of the New Cathedral of Salamanca. Host's verdict is factually airtight.",
+      "tags": ["salamanca-astronaut", "1992-restoration", "debunked", "verdict"],
+      "inVerdictSection": true,
       "hostStance": "asserts"
     },
     {
-      "id": "TeS_Yq-7vHw:c_0008",
+      "id": "TeS_Yq-7vHw:c_0013",
       "videoId": "TeS_Yq-7vHw",
-      "text": "Why time-travel stories captivate us is itself the deeper truth: we are obsessed with these stories because we are obsessed with time itself — time is finite, irreplaceable, and (contra the cliché) more valuable than money since money can be made and remade but lost time cannot.",
-      "kind": "opinion",
+      "text": "An ancient Swiss watch was found inside a 400-year-old sealed Ming Dynasty tomb in Shanxi, northern China.",
+      "kind": "historical",
       "entities": [
-        "organization:the human race"
+        "location:chinese tomb",
+        "location:shanxi"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "TeS_Yq-7vHw",
-          "charStart": 15000,
-          "charEnd": 15953,
-          "timeStart": 927.84,
-          "timeEnd": 994.15,
-          "quote": " years from now, when someone looks at that church, they are\ngoing to be confused.\nThey say time is the fire in which we burn.\nSo why do we want so badly for these stories to be true, why are we so obsessed with time\ntravel?\nWell, probably because we're obsessed with time.\nTime rules our lives.\nTime creates possibilities.\nThe time also ends possibilities.\nIt's finite. The expression time is money isn't exactly true.\nTime is much more valuable than money.\nWealth can be made and lost and made again.\nBut time once we lose it, we can never get it back.\nTime is the most valuable thing you have.\nSpend it wisely. Thanks for hanging out with us today.\nMy name is A.J. That Tigerfish, this has been the Y files.\nIf you had fun or learned anything today.\nHelp us out by liking, commenting or sharing this video.\nOnly with your help can we defeat the algorithm.\nLet's crush the algorithm until this time.\nBe safe. Be kind and know that you are appreciated."
+          "charStart": 14625,
+          "charEnd": 14728,
+          "timeStart": 906.15,
+          "timeEnd": 913.28,
+          "quote": "ancient watch found in the Chinese tomb.\nThat's a straight up hoax.\nPhotoshopped debunked the astronaut"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "This is the host's closing thesis — explicitly value-laden moral commentary about time vs. money. The descriptive part (most time-travel stories don't survive scrutiny) follows from the previous claims. The 'time more valuable than money' framing is opinion. directTruth omitted because it's a values claim, not a verifiable fact.",
+      "confidence": 0.9,
+      "directTruth": 0.05,
+      "rationale": "Host debunks within the same sentence — 'that's a straight up hoax.' Photoshopped image, well-established in fact-checker circles. Near-zero directTruth.",
+      "tags": ["shanxi-watch", "hoax", "photoshop", "verdict"],
+      "inVerdictSection": true,
+      "hostStance": "denies"
+    },
+    {
+      "id": "TeS_Yq-7vHw:c_0014",
+      "videoId": "TeS_Yq-7vHw",
+      "text": "Humans are so obsessed with time travel because time itself is the most valuable thing we have and cannot be reclaimed once lost.",
+      "kind": "opinion",
+      "entities": [
+        "law_or_policy:laws of physics"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TeS_Yq-7vHw",
+          "charStart": 15555,
+          "charEnd": 15700,
+          "timeStart": 968.88,
+          "timeEnd": 979,
+          "quote": "Time is the most valuable thing you have.\nSpend it wisely. Thanks for hanging out with us today.\nMy name is A.J. That Tigerfish, this has been th"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Host's closing opinion framing. Philosophical claim; not a testable proposition. Omitting directTruth because this is a value judgment.",
+      "tags": ["verdict", "philosophy", "opinion"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

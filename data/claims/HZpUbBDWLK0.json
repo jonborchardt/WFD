@@ -1,86 +1,61 @@
 {
   "schemaVersion": 1,
   "transcriptId": "HZpUbBDWLK0",
-  "generatedAt": "2026-04-20T03:18:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T04:21:42.007Z",
+  "generator": "claude-opus-4-7-plan3-b2",
   "claims": [
     {
       "id": "HZpUbBDWLK0:c_0001",
       "videoId": "HZpUbBDWLK0",
-      "text": "Most published 'scariest places on Earth' lists are useless because the locations are either closed to the public or geographically remote — what's needed instead is a list of frightening sites in the US that anyone can actually visit.",
-      "kind": "opinion",
+      "text": "Eastern State Penitentiary in Philadelphia was the world's first true penitentiary, operating from 1829 to 1971, and is one of the most reportedly-haunted sites in America.",
+      "kind": "historical",
       "entities": [
-        "location:scariest places in the world"
+        "facility:eastern state penitentiary",
+        "location:philadelphia",
+        "date_time:eighteen twenty nine",
+        "date_time:nineteen seventy one",
+        "person:al capone",
+        "person:willie sutton"
       ],
-      "relationships": [],
+      "relationships": [
+        "r_0011"
+      ],
       "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
-          "charStart": 1746,
-          "charEnd": 1809,
-          "timeStart": 109.23,
-          "timeEnd": 112.92,
-          "quote": "But the problem I have with\nthose lists is they're inaccessible"
+          "charStart": 2669,
+          "charEnd": 2757,
+          "timeStart": 155.28,
+          "timeEnd": 164.88,
+          "quote": "Eastern State Penitentiary in\nPhiladelphia was once the most\nfamous prison in the world."
+        },
+        {
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 2814,
+          "charEnd": 2976,
+          "timeStart": 168.03,
+          "timeEnd": 177.12,
+          "quote": "It was operational from eighteen twenty nine until\nnineteen seventy one and was home to\nthousands of inmates, including big names like\nAl Capone and Willie Sutton"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "An editorial framing claim that sets up the entire video. The factual sub-claim — that many famous 'scary' sites (Mexico's Island of the Dolls, etc.) are restricted or remote — is broadly correct. The 'most lists are useless' is opinion. The thesis serves as the organizing principle for the rest of the list.",
+      "directTruth": 0.9,
+      "rationale": "Eastern State's dates and notable inmates are well-documented historical fact. 'First true penitentiary' is the site's own accepted historical characterization.",
+      "tags": [
+        "haunted-places",
+        "eastern-state",
+        "philadelphia",
+        "prison"
+      ],
       "hostStance": "asserts"
     },
     {
       "id": "HZpUbBDWLK0:c_0002",
       "videoId": "HZpUbBDWLK0",
-      "text": "Eastern State Penitentiary in Philadelphia (operational 1829-1971) was the world's first true penitentiary, designed to inspire penitence through isolation, and its documented use of brutal punishments like the Mad Chair, the Iron Gag and 'the Hole' is the historical substrate for the modern paranormal reports there.",
+      "text": "Dr. Walter Freeman performed roughly 4,000 transorbital 'icepick' lobotomies, sometimes leaving healthy patients with permanent brain damage, and worked without gloves, anesthesia, or surgical training.",
       "kind": "historical",
       "entities": [
-        "facility:eastern state penitentiary",
-        "location:philadelphia",
-        "facility:the mad chair",
-        "location:the hole",
-        "date_time:eighteen twenty nine",
-        "date_time:nineteen seventy one"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 2669,
-          "charEnd": 2756,
-          "timeStart": 155.28,
-          "timeEnd": 164.88,
-          "quote": "Eastern State Penitentiary in\nPhiladelphia was once the most\nfamous prison in the world"
-        },
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 2814,
-          "charEnd": 2885,
-          "timeStart": 168.03,
-          "timeEnd": 172.29,
-          "quote": "It was operational from eighteen twenty nine until\nnineteen seventy one"
-        },
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 3321,
-          "charEnd": 3405,
-          "timeStart": 198.39,
-          "timeEnd": 204.36,
-          "quote": "It was the world's first actual penitentiary,\na prison designed to inspire penitence"
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.85,
-      "rationale": "All historically accurate. ESP opened 1829 (designed by John Haviland), pioneered the Pennsylvania System of solitary confinement, closed 1970 (slightly off — host says 1971), and the named torture devices are documented in the museum's own historical exhibits. Holding cells of Al Capone (1929) and Willie Sutton are real. Whether the paranormal reports reflect actual phenomena is unknowable, but the historical predicate is well-supported."
-    },
-    {
-      "id": "HZpUbBDWLK0:c_0003",
-      "videoId": "HZpUbBDWLK0",
-      "text": "The Trans-Allegheny Lunatic Asylum (1864-1994) in West Virginia, designed for 250 patients but eventually housing over 2,600, became a site of documented institutional atrocity — including Walter Freeman performing over 4,000 transorbital ('icepick') lobotomies without gloves, anesthesia or surgical training.",
-      "kind": "historical",
-      "entities": [
-        "facility:trans allegheny lunatic asylum",
-        "facility:western state hospital",
-        "location:west virginia",
+        "person:walter freeman",
         "person:dr. freeman",
         "event:experimental lobotomies"
       ],
@@ -88,117 +63,131 @@
       "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
-          "charStart": 4755,
-          "charEnd": 4874,
-          "timeStart": 282.96,
-          "timeEnd": 293.91,
-          "quote": "was a\npsychiatric hospital that operated from eighteen\nsixty four through nineteen ninety four\nin western West Virginia"
-        },
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 6039,
-          "charEnd": 6119,
-          "timeStart": 366.42,
-          "timeEnd": 371.67,
-          "quote": "Famous doctor Walter Freeman set up shop\nhere to perform experimental lobotomies"
-        },
-        {
-          "transcriptId": "HZpUbBDWLK0",
           "charStart": 6385,
-          "charEnd": 6421,
+          "charEnd": 6496,
           "timeStart": 386.55,
-          "timeEnd": 393.3,
-          "quote": "Dr.\nFreeman did over 4000 lobotomies"
+          "timeEnd": 394.47,
+          "quote": "Dr.\nFreeman did over 4000 lobotomies, sometimes\nleading perfectly healthy patients with\npermanent brain damage."
         },
         {
           "transcriptId": "HZpUbBDWLK0",
           "charStart": 6538,
-          "charEnd": 6630,
+          "charEnd": 6631,
           "timeStart": 394.92,
           "timeEnd": 402.58,
-          "quote": "Dr.\nFreeman did this procedure without gloves,\nwithout anesthesia, without surgical training"
+          "quote": "Dr.\nFreeman did this procedure without gloves,\nwithout anesthesia, without surgical training."
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Mostly accurate. Dates (1864-1994) and overcrowding numbers match documented history. Walter Freeman's transorbital lobotomy procedure (~3,500-4,000 operations across multiple institutions) is well-documented; he did demonstration tours but his Trans-Allegheny presence was more limited than the host implies. The 'no gloves / no anesthesia / no surgical training' is true (he was a neuropsychiatrist not a surgeon, used electroshock as anesthetic, and operated rapidly without sterile technique) — the AMA eventually censured him."
+      "directTruth": 0.9,
+      "rationale": "Walter Freeman's ~3,500-4,000 lobotomies, lack of formal surgical training, and no-anesthesia transorbital technique are thoroughly documented in biographies (El-Hai, 'The Lobotomist') and contemporary medical records.",
+      "tags": [
+        "lobotomy",
+        "walter-freeman",
+        "medical-history"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "HZpUbBDWLK0:c_0004",
+      "id": "HZpUbBDWLK0:c_0003",
       "videoId": "HZpUbBDWLK0",
-      "text": "The Whaley House in Old Town San Diego (built 1857 on the site of an 1850 hanging) has been called the most haunted house in America for over a century, its reputation grounded in a documented chain of family tragedies — multiple deaths in the house, a daughter's suicide, and Regis Philbin's reported on-camera apparition encounter in 1964.",
-      "kind": "speculative",
+      "text": "The Whaley House in Old Town San Diego, built by Thomas Whaley in 1857 on a former execution site, has been called the most haunted house in America and been investigated by TV personalities including Regis Philbin.",
+      "kind": "historical",
       "entities": [
         "location:the whaley house",
+        "location:whaley house",
         "location:old town san diego",
         "person:thomas whaley",
-        "person:anna",
+        "person:regis philbin",
+        "person:regis",
+        "person:jim robinson",
         "date_time:eighteen fifty seven"
       ],
-      "relationships": [],
+      "relationships": [
+        "r_0057"
+      ],
       "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
-          "charStart": 7987,
-          "charEnd": 8075,
-          "timeStart": 482.61,
-          "timeEnd": 487.77,
-          "quote": "The Whaley house in old town San Diego has\nbeen called the most haunted house in America"
+          "charStart": 7969,
+          "charEnd": 7982,
+          "timeStart": 480.54,
+          "timeEnd": 482.1,
+          "quote": "The Whaley ho"
         },
         {
           "transcriptId": "HZpUbBDWLK0",
-          "charStart": 8498,
-          "charEnd": 8624,
-          "timeStart": 513.54,
-          "timeEnd": 523.68,
-          "quote": "Thomas Whaley was successful in almost every venture\nhe pursued until he built the Whaley\nhouse after that tragedy haunted him"
+          "charStart": 8370,
+          "charEnd": 8441,
+          "timeStart": 506.82,
+          "timeEnd": 510.18,
+          "quote": "He bought the property and built a\nhouse there in eighteen fifty seven."
         },
         {
           "transcriptId": "HZpUbBDWLK0",
           "charStart": 9835,
-          "charEnd": 9945,
+          "charEnd": 10011,
           "timeStart": 592.56,
-          "timeEnd": 602.01,
-          "quote": "in nineteen sixty four, famous TV personality\nRegis Philbin went to film a local\nbroadcast of the Whaley house"
+          "timeEnd": 605.13,
+          "quote": "in nineteen sixty four, famous TV personality\nRegis Philbin went to film a local\nbroadcast of the Whaley house, and he left there\nconvinced that he saw the ghost of Anna\nWaili."
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.5,
-      "rationale": "The historical claims are accurate: Yankee Jim Robinson was hanged on the property in 1852, Thomas Whaley built the house in 1857, multiple Whaley family deaths in the house are documented (Thomas Jr., Violet's suicide 1885, etc.), and Regis Philbin did publicly recount a paranormal experience there from a 1964 visit. The 'most haunted house in America' designation has been cited (Life magazine, 1960s). Whether actual hauntings exist is unfalsifiable; the historical predicate and the cultural reputation are real."
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Whaley House dates, Thomas Whaley's construction, and the Regis Philbin anecdote are part of the publicly-documented record; paranormal claims themselves are not verified but the documented history and Philbin visit are. The 'most haunted house in America' designation is a widely-cited popular claim (US Commerce Dept reportedly labeled it so).",
+      "tags": [
+        "haunted-places",
+        "whaley-house",
+        "san-diego"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "HZpUbBDWLK0:c_0005",
+      "id": "HZpUbBDWLK0:c_0004",
       "videoId": "HZpUbBDWLK0",
-      "text": "Lake Shawnee Amusement Park in Princeton, West Virginia (opened 1926, closed 1966) was built on the site of an 18th-century turf war between settlers and Native Americans, with at least six recorded child deaths during operation — and remains accessible to overnight visitors today.",
+      "text": "The Trans-Allegheny Lunatic Asylum, designed for 250 patients, grew to house over 2,600 — including the criminally insane among general patients — contributing to severe conditions through its closure in 1994.",
       "kind": "historical",
       "entities": [
-        "facility:lake seany amusement park",
-        "location:lake shawnee",
-        "location:princeton",
+        "facility:trans allegheny lunatic asylum",
+        "facility:allegheny lunatic asylum",
+        "facility:western state hospital",
         "location:west virginia",
-        "date_time:1783",
-        "date_time:nineteen twenty six",
-        "date_time:nineteen sixty six"
+        "date_time:nineteen ninety four"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
-          "charStart": 11566,
-          "charEnd": 11669,
-          "timeStart": 690.21,
-          "timeEnd": 697.689,
-          "quote": "Lake Shawnee eventually expanded into a full\namusement park and was responsible for at\nleast six deaths"
+          "charStart": 5190,
+          "charEnd": 5308,
+          "timeStart": 309.75,
+          "timeEnd": 317.85,
+          "quote": "designed to\nhouse two hundred and fifty patients.\nThe population eventually swelled to\nover twenty six hundred people."
+        },
+        {
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 6750,
+          "charEnd": 6828,
+          "timeStart": 409.35,
+          "timeEnd": 414.21000000000004,
+          "quote": "The Trans Allegheny Lunatic Asylum was forced to\nclose in nineteen ninety four"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.6,
-      "rationale": "The park's basic outline is correct: opened 1926, closed mid-1960s, built on land with documented Mitchell-Clay massacre history (1783). Documented fatalities at the park are typically cited as 'at least 6' across the literature, though primary sources confirm three (a girl on the swing, a boy in the pond, and one other). The site is now operated as a 'Dark Park' tourist attraction by the Snead family, who openly market the haunted reputation."
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Overcrowding figures (capacity 250, peak ~2,400 or 2,600) and 1994 closure are documented in the institution's official history and state archives.",
+      "tags": [
+        "haunted-places",
+        "trans-allegheny",
+        "asylum",
+        "west-virginia"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "HZpUbBDWLK0:c_0006",
+      "id": "HZpUbBDWLK0:c_0005",
       "videoId": "HZpUbBDWLK0",
-      "text": "Vulture Mine, founded after Henry Wickenburg's 1863 gold strike near present-day Wickenburg, Arizona, became Arizona's most productive gold mine and a violent boomtown of ~5,000 people where vigilante hangings on the Hanging Tree (still standing) buried bodies on-site rather than in the cemetery.",
+      "text": "Vulture City in Wickenburg, Arizona was founded around an 1860s gold strike by Henry Wickenburg that became Arizona's most productive gold mine, and vigilante justice in the town included hangings from the 'Ironwood Hanging Tree' that still stands.",
       "kind": "historical",
       "entities": [
         "location:vulture city",
@@ -207,174 +196,165 @@
         "location:arizona",
         "location:hanging tree",
         "location:ironwood tree",
-        "date_time:1860",
-        "nationality_or_ethnicity:austrian"
+        "person:henry",
+        "date_time:1860"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
           "charStart": 14791,
-          "charEnd": 14870,
+          "charEnd": 14938,
           "timeStart": 879.19,
-          "timeEnd": 884.11,
-          "quote": "In 1860, three Austrian prospector, Henry\nWickenburg, discovered a gold deposit"
+          "timeEnd": 887.29,
+          "quote": "In 1860, three Austrian prospector, Henry\nWickenburg, discovered a gold deposit that\nwould become the most productive\ngold mine in Arizona history."
+        },
+        {
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 15709,
+          "charEnd": 15773,
+          "timeStart": 930.13,
+          "timeEnd": 933.58,
+          "quote": "Dozens of vulture cities worst were\nhung from the ironwood tree."
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "Historically grounded with one quibble: Henry Wickenburg's gold discovery is dated to 1863 in most sources, not 1860 (the host's '1860' likely a stumble or misread). Wickenburg was Austrian-born (Prussian by some sources). Vulture Mine was Arizona's most productive gold mine, the 5,000 population peak is plausible, vigilante hangings from the ironwood are part of documented local history, and the 'buried where they fell' tradition is repeated in tour materials."
+      "directTruth": 0.8,
+      "rationale": "Henry Wickenburg's 1863 (not 1860) gold discovery and Vulture Mine's historical output are established Arizona history; the Hanging Tree is a real preserved landmark. Host's date of 1860 is slightly off but overall framing is correct.",
+      "tags": [
+        "haunted-places",
+        "vulture-city",
+        "arizona",
+        "gold-mining"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "HZpUbBDWLK0:c_0007",
+      "id": "HZpUbBDWLK0:c_0006",
       "videoId": "HZpUbBDWLK0",
-      "text": "The Ohio State Reformatory in Mansfield (opened 1896) began as a genuine reformatory with high inmate-rehabilitation success, but devolved by the 1960s into a maximum-security prison where over 200 people died — and is best known today as the principal filming location for The Shawshank Redemption.",
-      "kind": "historical",
+      "text": "The Ohio State Reformatory in Mansfield was the filming location for The Shawshank Redemption.",
+      "kind": "empirical",
       "entities": [
         "facility:ohio state reformatory",
-        "location:mansfield",
-        "location:ohio",
         "facility:osat",
-        "date_time:eighteen ninety six"
+        "location:mansfield",
+        "location:ohio"
       ],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 16721,
-          "charEnd": 16785,
-          "timeStart": 995.33,
-          "timeEnd": 998.72,
-          "quote": "It opened its doors in eighteen\nninety six as a true reformatory"
-        },
         {
           "transcriptId": "HZpUbBDWLK0",
           "charStart": 17713,
           "charEnd": 17750,
           "timeStart": 1048.64,
-          "timeEnd": 1052.81,
+          "timeEnd": 1052.8100000000002,
           "quote": "Shawshank Redemption was shot at OSAT"
-        },
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 17922,
-          "charEnd": 17994,
-          "timeStart": 1058.93,
-          "timeEnd": 1063.49,
-          "quote": "In the nineteen sixties, it was converted into\na maximum security prison"
-        },
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Well-established production fact — Shawshank Redemption (1994) was filmed primarily at Mansfield Reformatory, now a documented tourism draw.",
+      "tags": [
+        "haunted-places",
+        "ohio-state-reformatory",
+        "shawshank",
+        "mansfield"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "HZpUbBDWLK0:c_0007",
+      "videoId": "HZpUbBDWLK0",
+      "text": "Over 200 people died at the Ohio State Reformatory during its mid-20th-century period as a maximum-security prison, and inmates won a class-action suit in the 1980s that forced its closure.",
+      "kind": "historical",
+      "entities": [
+        "facility:ohio state reformatory",
+        "facility:osat",
+        "location:ohio",
+        "person:lester eubanks"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
           "charStart": 18091,
-          "charEnd": 18127,
+          "charEnd": 18155,
           "timeStart": 1065.59,
-          "timeEnd": 1070.93,
-          "quote": "over two hundred people died at OSAT"
+          "timeEnd": 1073.48,
+          "quote": "over two hundred people died at OSAT.\nGuards, staff and inmates."
+        },
+        {
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 18633,
+          "charEnd": 18787,
+          "timeStart": 1096.88,
+          "timeEnd": 1111.97,
+          "quote": "the inmates got together a class action\nlawsuit and sued the state of Ohio\nfor putting them through brutalizing and inhumane\nconditions. They won the suit"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.92,
-      "rationale": "All accurate. OSR opened in 1896 with the reformatory model, was reclassified as a maximum-security prison and closed by federal court order in 1990 over inhumane conditions. The 'over 200 deaths' figure is widely cited (over 200 documented from 1896 to 1990). Shawshank Redemption (1994) was indeed largely filmed at OSR — the cellblocks, warden's office, library and entrance scenes were shot there."
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The inmate class action in the 1980s (Boyd v. Denton / related federal suits) and OSR's closure order are part of Ohio court history. The 200+ deaths figure is widely cited by the facility.",
+      "tags": [
+        "haunted-places",
+        "ohio-state-reformatory",
+        "litigation"
+      ],
+      "dependencies": [
+        {
+          "target": "HZpUbBDWLK0:c_0006",
+          "kind": "elaborates",
+          "rationale": "Adds historical context to the same facility."
+        }
+      ],
+      "hostStance": "asserts"
     },
     {
       "id": "HZpUbBDWLK0:c_0008",
       "videoId": "HZpUbBDWLK0",
-      "text": "Lester Eubanks, sentenced to OSR in 1965 for child murder, escaped custody during a Christmas-shopping furlough in 1973 and remains on the US Marshals Top 15 Most Wanted list — making OSR the source of one of the longest-active fugitive cases in US history.",
-      "kind": "historical",
-      "entities": [
-        "facility:osat",
-        "date_time:nineteen sixty five",
-        "date_time:nineteen seventy three"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 18274,
-          "charEnd": 18328,
-          "timeStart": 1080.38,
-          "timeEnd": 1085.03,
-          "quote": "Lester Eubanks was sent to OSAT in nineteen\nsixty five"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Verifiable. Lester Eubanks raped and murdered 14-year-old Mary Ellen Deener in November 1965, was sentenced to death (commuted by Furman v Georgia 1972), escaped from a supervised Columbus shopping outing on Dec 7, 1973, and remains on the US Marshals' top fugitive list. Subject of a 2020 podcast 'In the Dark.'"
-    },
-    {
-      "id": "HZpUbBDWLK0:c_0009",
-      "videoId": "HZpUbBDWLK0",
-      "text": "The Mineral Springs Hotel in Alton, Illinois (opened 1914) built its early business on bottling sulfur-spring water sold as a healing tonic — a textbook example of late-nineteenth/early-twentieth-century health-tonic pseudoscience that exploited natural mineral content for commercial gain.",
-      "kind": "historical",
-      "entities": [
-        "location:mineral springs",
-        "location:mineral springs hotel",
-        "location:illinois",
-        "location:natural spring",
-        "date_time:1914"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 19682,
-          "charEnd": 19735,
-          "timeStart": 1161.71,
-          "timeEnd": 1166.42,
-          "quote": "When the Mineral Springs Hotel and Spa\nopened in 1914"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.8,
-      "rationale": "The Mineral Springs Hotel did open in 1914 in Alton, IL, and the sulfur-water health-tonic angle is part of its documented history. The host's characterization 'magical healing properties... shipping bottles all around the country' fits the broader patent-medicine era — Lydia Pinkham's, Hadacol, Coca-Cola's original tonic positioning. Bottled mineral water was indeed a major industry in the early 20th century."
-    },
-    {
-      "id": "HZpUbBDWLK0:c_0010",
-      "videoId": "HZpUbBDWLK0",
-      "text": "Fort Delaware on Pea Patch Island held ~33,000 Confederate POWs during the Civil War with ~3,000 deaths from dysentery, scurvy and smallpox — and conditions were degraded enough that prisoners caught and ate rats supplied by guards as a sport called 'Rat Call.'",
+      "text": "Fort Delaware, on Pea Patch Island, held about 33,000 Confederate prisoners during the Civil War, of whom roughly 3,000 died from disease and starvation.",
       "kind": "historical",
       "entities": [
         "location:fort delaware",
         "location:patch island",
+        "location:delaware",
         "event:civil war",
-        "group_or_movement:confederate soldiers"
+        "person:general allen suf",
+        "organization:confederate"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
           "charStart": 21937,
-          "charEnd": 22050,
+          "charEnd": 22051,
           "timeStart": 1297.49,
           "timeEnd": 1304.72,
-          "quote": "Thirty three thousand soldiers were in prison there\nand almost 3000 of them died from\ndysentery, scurvy, smallpox"
-        },
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 22512,
-          "charEnd": 22559,
-          "timeStart": 1330.01,
-          "timeEnd": 1333.09,
-          "quote": "favorite game of the\nguards was called Rat Call"
+          "quote": "Thirty three thousand soldiers were in prison there\nand almost 3000 of them died from\ndysentery, scurvy, smallpox."
         }
       ],
-      "confidence": 0.93,
+      "confidence": 0.9,
       "directTruth": 0.85,
-      "rationale": "The 33,000-prisoner aggregate count is correct (cumulative over the war; the camp held 12,000-13,000 at peak). The ~2,700 documented Confederate deaths buried at Finn's Point National Cemetery in NJ is close to the host's '~3,000.' The 'Rat Call' detail is from John Swann's diary as cited by the host and confirmed in published prisoner memoirs. Fort Delaware was indeed one of the largest and harshest Union POW camps."
+      "rationale": "Fort Delaware's Confederate-prisoner figures and death toll are documented by the National Park Service and multiple Civil War historians.",
+      "tags": [
+        "civil-war",
+        "fort-delaware",
+        "confederate"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "HZpUbBDWLK0:c_0011",
+      "id": "HZpUbBDWLK0:c_0009",
       "videoId": "HZpUbBDWLK0",
-      "text": "Waverly Hills Sanatorium in Louisville (opened 1910) became overwhelmed by the early-20th-century tuberculosis epidemic almost immediately, and an estimated 64,000 people died there — bodies removed via a 'death chute' down the hillside to discreetly avoid demoralizing patients.",
+      "text": "Waverly Hills Sanatorium in Louisville, Kentucky opened in 1910 to treat tuberculosis patients and an estimated 64,000 people died there before it closed.",
       "kind": "historical",
       "entities": [
         "facility:waverly hills sanitorium",
+        "organization:waverly hills sanatorium",
         "location:waverly hills",
-        "location:louisville",
         "location:kentucky",
-        "facility:death chute",
-        "date_time:1910",
-        "date_time:1911"
+        "location:louisville",
+        "date_time:1910"
       ],
       "relationships": [],
       "evidence": [
@@ -393,72 +373,124 @@
           "timeStart": 1428.05,
           "timeEnd": 1432.97,
           "quote": "It's been estimated that sixty four thousand people\ndied at Waverly"
-        },
-        {
-          "transcriptId": "HZpUbBDWLK0",
-          "charStart": 24549,
-          "charEnd": 24605,
-          "timeStart": 1442.06,
-          "timeEnd": 1446.25,
-          "quote": "They had to use something that they called a\ndeath chute"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.5,
-      "rationale": "Mixed. Waverly Hills did open in 1910 as a TB sanatorium and the 'death tunnel' / body chute is real (an enclosed downhill conveyance from the sanatorium to a rail line). However, the often-repeated 64,000 death figure is widely disputed — historian researchers (notably Robert Parker) place actual deaths in the 6,000-8,000 range, with the 64,000 number originating from a single tour-guide misquote that ballooned. Host repeats the inflated estimate uncritically."
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "Waverly Hills opening date (1910) is verified. The 64,000 death figure is a popular legend attached to the site but historians (including Waverly Hills Historical Society itself in cooler-headed statements) place the actual death toll at ~8,200. directTruth is low because the eye-catching figure appears to be folklore.",
+      "tags": [
+        "haunted-places",
+        "waverly-hills",
+        "tuberculosis",
+        "kentucky"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "HZpUbBDWLK0:c_0012",
+      "id": "HZpUbBDWLK0:c_0010",
       "videoId": "HZpUbBDWLK0",
-      "text": "The common pattern across all ten sites is the same: each is a place of large-scale documented historical suffering — penal abuse, mass institutional death, violent boomtown justice, epidemic-era body counts — and that very real history is what gives the modern paranormal-tourism industry its emotional traction, regardless of whether actual ghosts exist.",
+      "text": "The host is personally skeptical of ghosts and the paranormal but remains interested and would accept evidence if it emerged.",
       "kind": "opinion",
       "entities": [
-        "facility:eastern state penitentiary",
-        "facility:trans allegheny lunatic asylum",
-        "location:vulture city",
-        "location:fort delaware",
-        "facility:waverly hills sanitorium",
-        "facility:ohio state reformatory",
-        "group_or_movement:ghost hunting community"
+        "person:a.j."
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "HZpUbBDWLK0",
-          "charStart": 2978,
-          "charEnd": 3036,
-          "timeStart": 172.29,
-          "timeEnd": 179.42,
-          "quote": "considered to\nbe one of the most haunted places in America"
+          "charStart": 477,
+          "charEnd": 567,
+          "timeStart": 26.9,
+          "timeEnd": 34.230000000000004,
+          "quote": "even though\nI'm skeptical about the paranormal, I'm still\ninterested. I love spooky stuff."
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.85,
-      "rationale": "Synthesis claim. The pattern is real and well-supported by both historians of memory (Tim Edensor, Michael Mayerfeld Bell) and by the operational realities of ghost-tourism enterprises — they trade on documented cruelty / death history rather than on paranormal evidence per se. Empirically, 'the haunted reputation tracks the documented suffering' is a defensible generalization across the ten sites the video describes.",
-      "inVerdictSection": true,
-      "hostStance": "asserts",
-      "dependencies": [
+      "confidence": 0.95,
+      "rationale": "Explicit first-person epistemic stance from the host. Opinion claim, so no directTruth — it's a self-report.",
+      "tags": [
+        "host-stance",
+        "skepticism"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "HZpUbBDWLK0:c_0011",
+      "videoId": "HZpUbBDWLK0",
+      "text": "The host denies that the standard 'scariest places' lists are useful because they are inaccessible — places like Poveglia or Mexico's Island of the Dolls cannot actually be visited by typical viewers.",
+      "kind": "opinion",
+      "entities": [
+        "location:scariest places in the world",
+        "location:mexico city",
+        "location:madinah island of the dolls grass"
+      ],
+      "relationships": [],
+      "evidence": [
         {
-          "target": "HZpUbBDWLK0:c_0002",
-          "kind": "supports"
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 1750,
+          "charEnd": 1810,
+          "timeStart": 109.23,
+          "timeEnd": 112.92,
+          "quote": "the problem I have with\nthose lists is they're inaccessible."
         },
         {
-          "target": "HZpUbBDWLK0:c_0003",
-          "kind": "supports"
-        },
-        {
-          "target": "HZpUbBDWLK0:c_0007",
-          "kind": "supports"
-        },
-        {
-          "target": "HZpUbBDWLK0:c_0010",
-          "kind": "supports"
-        },
-        {
-          "target": "HZpUbBDWLK0:c_0011",
-          "kind": "supports"
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 1811,
+          "charEnd": 1878,
+          "timeStart": 113.22,
+          "timeEnd": 116.41,
+          "quote": "The places are either closed to the\npublic or a million miles away."
         }
-      ]
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Host explicitly rejects the standard list format in favor of open-to-the-public alternatives. This is a publishing-strategy judgment, so directTruth measures whether the 'inaccessibility' claim is empirically correct — most famously-haunted sites on global lists are indeed restricted or remote.",
+      "tags": [
+        "editorial",
+        "accessibility"
+      ],
+      "hostStance": "denies"
+    },
+    {
+      "id": "HZpUbBDWLK0:c_0012",
+      "videoId": "HZpUbBDWLK0",
+      "text": "The Cincinnati subway tunnels were partially built (about two miles) starting in 1920, abandoned during the Great Depression, and a section (Liberty Street station) was later converted into a Cold War community fallout shelter.",
+      "kind": "historical",
+      "entities": [
+        "location:cincinnati",
+        "location:liberty street station",
+        "facility:community fallout shelter",
+        "event:great depression"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 13405,
+          "charEnd": 13480,
+          "timeStart": 794.97,
+          "timeEnd": 798.21,
+          "quote": "Two miles of the underground tunnel\nwere completed by nineteen twenty nine."
+        },
+        {
+          "transcriptId": "HZpUbBDWLK0",
+          "charStart": 13699,
+          "charEnd": 13837,
+          "timeStart": 810.21,
+          "timeEnd": 818.37,
+          "quote": "In nineteen sixty two, at the\nheight of the Cold War, the abandoned Liberty\nStreet station was converted into\na community fallout shelter."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Cincinnati's abandoned subway is a well-documented urban-history topic (Cincinnati Subway & Street Improvements project, 1920s; Liberty-Street 1962 fallout-shelter conversion verified in municipal records).",
+      "tags": [
+        "cincinnati",
+        "abandoned-subway",
+        "cold-war",
+        "fallout-shelter"
+      ],
+      "hostStance": "asserts"
     }
   ]
 }

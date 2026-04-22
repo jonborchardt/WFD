@@ -1,40 +1,26 @@
 {
   "schemaVersion": 1,
   "transcriptId": "fWKCFahyRHw",
-  "generatedAt": "2026-04-20T01:05:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "fWKCFahyRHw:c_0001",
       "videoId": "fWKCFahyRHw",
-      "text": "Area 51 in Rachel, Nevada is a highly classified military installation whose existence the U.S. military denied for decades and only formally acknowledged in 2013, despite being constructed by Lockheed Martin in 1955 as a test site for the U-2 spy plane.",
+      "text": "Area 51 is a highly classified US Air Force facility located near Rachel, Nevada, about 80 miles northwest of Las Vegas.",
       "kind": "historical",
       "entities": [
         "location:area 51",
-        "location:area fifty one",
-        "facility:area 51",
-        "facility:area fifty one",
-        "location:rachel",
-        "location:nevada",
-        "organization:air force",
-        "organization:lockheed martin",
-        "technology:u2 spy plane",
-        "facility:nevada test and training range complex",
-        "date_time:2013",
-        "date_time:nineteen fifty five"
+        "facility:area 51"
       ],
-      "relationships": [
-        "r_0001",
-        "r_0003",
-        "r_0032"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
           "charStart": 2245,
           "charEnd": 2320,
-          "timeStart": 152.49,
-          "timeEnd": 157.86,
+          "timeStart": 155.15,
+          "timeEnd": 160.86,
           "quote": "Area 51 is located in Rachel, Nevada, about 80\nmiles northwest of Las Vegas"
         },
         {
@@ -42,491 +28,458 @@
           "charStart": 2468,
           "charEnd": 2526,
           "timeStart": 166.11,
-          "timeEnd": 172.05,
+          "timeEnd": 169.71,
           "quote": "The Air Force finally acknowledged Area\n51 is real in 2013"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 2579,
-          "charEnd": 2661,
-          "timeStart": 173.73,
-          "timeEnd": 178.5,
-          "quote": "Built in nineteen fifty five as part of\nthe Nevada Test and Training Range Complex"
         }
       ],
-      "confidence": 0.97,
+      "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "The factual core here — Area 51's location, its role as a U-2/SR-71 test site built by Lockheed in the mid-1950s, and the U.S. government's 2013 acknowledgement (via a CIA FOIA release) — is well documented in declassified records and mainstream historical accounts. None of the basic facts are seriously disputed.",
+      "rationale": "Area 51 / Homey Airport / Groom Lake is a real US Air Force facility on Nellis / NTTR range in southern Nevada. CIA declassified its existence in a 2013 FOIA release. The 'Rachel, Nevada' location is the closest public town; the facility itself is on Groom Lake — near but not in Rachel.",
+      "tags": ["area-51", "nevada", "classified"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "fWKCFahyRHw:c_0002",
       "videoId": "fWKCFahyRHw",
-      "text": "The acceleration of aerospace technology between Lindbergh's 1927 transatlantic flight and the late-1960s moon landings is best explained by the U.S. military reverse-engineering recovered alien spacecraft (per Bob Lazar's 1989 claims) and not by ordinary scientific progress.",
+      "text": "The most widely circulated conspiracy theory holds that Area 51 houses a crashed alien spacecraft from Roswell, New Mexico (1947).",
       "kind": "speculative",
       "entities": [
-        "facility:area 51",
-        "facility:area fifty one",
-        "person:bob lasar",
-        "technology:alien spacecraft",
-        "organization:american military",
-        "organization:space programs",
-        "person:charles lindbergh",
-        "location:atlantic ocean",
-        "location:moon",
-        "date_time:nineteen eighty nine",
-        "date_time:nineteen twenty seven"
+        "location:area 51",
+        "location:roswell, new mexico",
+        "date_time:nineteen forty seven"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 3734,
-          "charEnd": 3851,
-          "timeStart": 242.67,
-          "timeEnd": 250.02,
-          "quote": "the military reverse engineered alien\nspacecraft and utilized that technology in\nAmerican military and space programs"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 3216,
-          "charEnd": 3311,
-          "timeStart": 207.84,
-          "timeEnd": 216.87,
-          "quote": "Area 51 houses an alien spacecraft\nthat crashed in Roswell, New\nMexico, in nineteen forty seven"
+          "charStart": 3385,
+          "charEnd": 3429,
+          "timeStart": 222.34,
+          "timeEnd": 225.01,
+          "quote": "Air Force said\nthe UFO was a weather balloon"
         }
       ],
-      "confidence": 0.7,
-      "directTruth": 0.05,
-      "rationale": "Bob Lazar's claims about working at S-4 reverse-engineering alien craft are widely regarded as unsubstantiated; his credentials (claimed MIT and Caltech degrees) have never been verified. The technological-leap argument is a non-sequitur — comparable accelerations occurred in many other unrelated fields (computing, medicine) without an alien-tech hypothesis. The host even hedges (\"we have no evidence\"), but advances the claim as a serious possibility.",
-      "hostStance": "steelman"
+      "confidence": 0.85,
+      "directTruth": 0.15,
+      "rationale": "The Roswell / Area 51 conspiracy is a staple of UFO mythology. The 1994 Air Force report identified the Roswell debris as Project Mogul balloon materials — a high-altitude acoustic surveillance program. No credible evidence of alien craft at Area 51 has ever been produced.",
+      "tags": ["area-51", "roswell", "ufo", "conspiracy"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "fWKCFahyRHw:c_0003",
       "videoId": "fWKCFahyRHw",
-      "text": "Project Echelon — operated by the Five Eyes intelligence alliance (US, UK, Canada, Australia, New Zealand) — is a global mass-surveillance system that intercepts essentially all international telephone, fax, and electronic communications and stores them on individuals, companies, and entire countries.",
-      "kind": "empirical",
+      "text": "Bob Lazar claimed in a 1989 public interview that he worked at Area 51 and that the military was reverse-engineering alien spacecraft.",
+      "kind": "historical",
       "entities": [
-        "organization:echelon",
-        "technology:echelon",
-        "organization:project echelon",
-        "organization:five eyes",
-        "facility:electronic spy stations",
-        "location:united states",
-        "location:uk",
-        "location:canada",
-        "location:australia",
-        "location:new zealand",
-        "organization:nsa",
-        "organization:national security agency"
-      ],
-      "relationships": [
-        "r_0093",
-        "r_0100",
-        "r_0104"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 5436,
-          "charEnd": 5568,
-          "timeStart": 344.52,
-          "timeEnd": 352.92,
-          "quote": "Project Echelon is a surveillance program operated\nby the US, Australia, Canada, New\nZealand and the UK, also\nknown as the Five Eyes"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 5952,
-          "charEnd": 6113,
-          "timeStart": 380.57,
-          "timeEnd": 389.81,
-          "quote": "Echelon is now a global network of\nelectronic spy stations that can eavesdrop on\nlandlines, cell phones, fax machines, computers,\nit can even track bank accounts"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 6485,
-          "charEnd": 6576,
-          "timeStart": 411.08,
-          "timeEnd": 420.35,
-          "quote": "There are reports that every text message and\nphone call in the world flows through\nEchelon"
-        }
-      ],
-      "confidence": 0.92,
-      "directTruth": 0.7,
-      "rationale": "ECHELON is a real signals-intelligence program; its existence and Five Eyes structure were confirmed by the European Parliament's 2001 STOA report and corroborated by the 2013 Snowden disclosures. The 'every text message in the world' framing is an exaggeration of capability — even post-Snowden, NSA collection is broad but not literally universal — but the core surveillance system is substantially as described.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "fWKCFahyRHw:c_0004",
-      "videoId": "fWKCFahyRHw",
-      "text": "Echelon's interception of U.S. persons' communications is conducted from Menwith Hill in the UK specifically to exploit a jurisdictional loophole — the program would require warrants if hosted on U.S. soil but is sited overseas to evade that constraint.",
-      "kind": "opinion",
-      "entities": [
-        "organization:echelon",
-        "location:menwith hill",
-        "location:united states",
-        "organization:royal air force",
-        "organization:nsa",
-        "organization:national security agency",
-        "organization:r.a.f.",
-        "law_or_policy:secret legal authorities"
+        "person:bob lasar",
+        "location:area 51"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 6723,
-          "charEnd": 6846,
-          "timeStart": 427.01,
-          "timeEnd": 434.95,
-          "quote": "It's not legal in the United States without a\nwarrant, but this facility is not in the\nUnited States. That's a big loophole"
+          "charStart": 3651,
+          "charEnd": 3714,
+          "timeStart": 238.61,
+          "timeEnd": 242.21,
+          "quote": "Bob Lasar, who claimed he worked\nthere, gave a public interview"
         },
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 5154,
-          "charEnd": 5289,
-          "timeStart": 326.82,
-          "timeEnd": 335.64,
-          "quote": "this is a Royal Air\nForce station, in the 60s, operational control was\ntransferred to the National Security\nAgency of the United States"
+          "charStart": 3734,
+          "charEnd": 3782,
+          "timeStart": 243.36,
+          "timeEnd": 246.1,
+          "quote": "the military reverse engineered alien\nspacecraft"
         }
       ],
-      "confidence": 0.8,
-      "directTruth": 0.55,
-      "rationale": "The 'reciprocal collection' allegation — Five Eyes partners spy on each other's citizens to launder around domestic warrant requirements — is a long-standing concern raised by intelligence-oversight scholars and partially borne out by Snowden documents. The host's framing is sharper than the public record warrants; the actual legal authority for NSA collection at Menwith Hill is more nuanced than 'just sited overseas to escape the 4th Amendment.'",
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "Lazar's 1989 interviews with KLAS-TV (George Knapp) are a historical fact. His claims of employment at S-4 / Area 51 have never been corroborated — his educational credentials (MIT, Caltech) are disputed, and neither institution has records. The historical event of the interviews happened; the substantive reverse-engineering claim is uncorroborated.",
+      "tags": ["bob-lazar", "area-51", "ufo-whistleblower"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        {
-          "target": "fWKCFahyRHw:c_0003",
-          "kind": "elaborates",
-          "rationale": "Provides a motive/legal-architecture explanation for Echelon's structure described in the previous claim."
-        }
+        { "target": "fWKCFahyRHw:c_0002", "kind": "supports", "rationale": "Lazar's testimony is cited as evidence for the alien-craft theory." }
       ]
+    },
+    {
+      "id": "fWKCFahyRHw:c_0004",
+      "videoId": "fWKCFahyRHw",
+      "text": "Menwith Hill is an RAF station in North Yorkshire whose operational control was transferred to the NSA in the 1960s, hosting the world's largest electronic monitoring facility.",
+      "kind": "historical",
+      "entities": [
+        "location:menwith hill",
+        "organization:nsa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 4968,
+          "charEnd": 5028,
+          "timeStart": 315.21,
+          "timeEnd": 319.02,
+          "quote": "Menwith Hill is a\nRoyal Air Force station in North Yorkshire"
+        },
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 5201,
+          "charEnd": 5289,
+          "timeStart": 329.99,
+          "timeEnd": 335.58,
+          "quote": "operational control was\ntransferred to the National Security\nAgency of the United States"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "RAF Menwith Hill, operated primarily by the NSA since the 1960s, is well-documented in open sources (Bamford, Campbell, and subsequent parliamentary reports). Largest SIGINT site claim is commonly stated in journalism but is superlative and hard to verify precisely.",
+      "tags": ["menwith-hill", "nsa", "sigint"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "fWKCFahyRHw:c_0005",
       "videoId": "fWKCFahyRHw",
-      "text": "Mount Weather is a real, fully self-contained underground city in Virginia built in 1958 as the U.S. continuity-of-government relocation site for top federal officials, and it has been activated in real emergencies (notably 9/11, when congressional leadership was evacuated there).",
-      "kind": "historical",
+      "text": "Project Echelon is a Five-Eyes (US/UK/Canada/Australia/New Zealand) global surveillance program capable of intercepting private communications at mass scale.",
+      "kind": "empirical",
       "entities": [
-        "facility:mount weather",
-        "facility:emergency operation center",
-        "facility:underground bunker",
-        "facility:high security federal government facility",
-        "organization:fema",
-        "organization:federal emergency management agency",
-        "ideology:continuity of government plan",
-        "location:virginia",
-        "location:clark county",
-        "event:9/11 attacks",
-        "organization:congressional leadership",
-        "date_time:nineteen fifty eight",
-        "date_time:april 7th twenty fifteen"
+        "organization:project echelon",
+        "organization:echelon"
       ],
-      "relationships": [
-        "r_0115",
-        "r_0122",
-        "r_0129"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 7575,
-          "charEnd": 7733,
-          "timeStart": 482.36,
-          "timeEnd": 492.38,
-          "quote": "whether the emergency operation center built\nin nineteen fifty eight meant whether\nserves as the operations center for\nthe Federal Emergency Management Agency"
+          "charStart": 5436,
+          "charEnd": 5477,
+          "timeStart": 344.88,
+          "timeEnd": 347.49,
+          "quote": "Project Echelon is a surveillance program"
         },
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 8211,
-          "charEnd": 8339,
-          "timeStart": 517.19,
-          "timeEnd": 523.51,
-          "quote": "Reportedly, it's a fully self-contained city with\nits own leaders, its own police and\nfire departments, even its own set of laws"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 9254,
-          "charEnd": 9371,
-          "timeStart": 574.97,
-          "timeEnd": 580.97,
-          "quote": "It was also used during the 9/11\nattacks with the entire congressional leadership was\ntransported there by helicopter"
+          "charStart": 5559,
+          "charEnd": 5568,
+          "timeStart": 382.7,
+          "timeEnd": 383.54,
+          "quote": "Five Eyes"
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.9,
       "directTruth": 0.85,
-      "rationale": "Mount Weather (officially the Mount Weather Emergency Operations Center) is well documented since the 1974 TWA Flight 514 crash near the site exposed it. FEMA operations and continuity-of-government use are public knowledge. The 'self-contained city with its own laws' is more of a journalistic flourish (e.g., Time magazine's 1991 piece) than a literally documented governance system; the underlying continuity-of-government infrastructure is real.",
-      "hostStance": "asserts"
+      "rationale": "Echelon's existence was acknowledged by the European Parliament (Schmid report, 2001) and by later Snowden disclosures; Five-Eyes is officially confirmed. Whether it still operates under that specific name or has been folded into newer programs is less clear.",
+      "tags": ["echelon", "five-eyes", "surveillance"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "fWKCFahyRHw:c_0004", "kind": "elaborates", "rationale": "Menwith Hill is a key Echelon node." }
+      ]
     },
     {
       "id": "fWKCFahyRHw:c_0006",
       "videoId": "fWKCFahyRHw",
-      "text": "Mezhgorye (Mezo) and the Yamantau / Kosvinsky Mountain complexes in Russia are secret nuclear facilities housing tens of thousands of people in closed cities sealed off from outside contact for over 20 years, with Russia repeatedly giving Western governments contradictory cover stories about their purpose.",
-      "kind": "historical",
+      "text": "Echelon reportedly intercepts every text message and phone call worldwide, storing them for later analysis.",
+      "kind": "speculative",
       "entities": [
-        "location:mezo",
-        "location:yamen",
-        "location:kavinsky mountain",
-        "location:closed town of gori",
-        "location:close town",
-        "facility:secret nuclear facilities",
-        "facility:underground bunkers",
-        "location:russia",
-        "location:west",
-        "quantity:thirty thousand",
-        "quantity:20 years"
+        "organization:echelon"
       ],
-      "relationships": [
-        "r_0171",
-        "r_0177"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 9849,
-          "charEnd": 9970,
-          "timeStart": 613.77,
-          "timeEnd": 625.5,
-          "quote": "The Yamen, along with Kavinsky Mountain are claimed\nby the US as being secret nuclear\nfacilities with underground bunkers"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 10401,
-          "charEnd": 10478,
-          "timeStart": 645.57,
-          "timeEnd": 651.84,
-          "quote": "people haven't been\nable to enter or leave for over 20\nyears and nobody knows"
+          "charStart": 6508,
+          "charEnd": 6576,
+          "timeStart": 413.67,
+          "timeEnd": 417.9,
+          "quote": "every text message and\nphone call in the world flows through\nEchelon"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.7,
-      "rationale": "Mezhgorye, Mount Yamantau, and Kosvinsky Kamen are real closed Russian military sites that have been the subject of U.S. and Western intelligence concern since the 1990s (e.g., the Defense Department's annual proliferation reports). The exact mission — nuclear command bunker, missile-related, or other — has never been publicly confirmed. Russia's evasive responses are a matter of public diplomatic record. The host's specific population figures are uncertain.",
-      "hostStance": "asserts"
+      "directTruth": 0.25,
+      "rationale": "The 'every text and call' claim is hyperbolic. NSA bulk-collection programs (as disclosed in Snowden 2013) target specific transits, metadata records, and targets via XKeyscore / PRISM / Stellar Wind — not literally every communication globally. Capacity and legal framework limits preclude truly-universal interception.",
+      "tags": ["echelon", "mass-surveillance", "overstatement"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "fWKCFahyRHw:c_0005", "kind": "elaborates", "rationale": "Strongest-form extension of the Echelon capability claim." }
+      ]
     },
     {
       "id": "fWKCFahyRHw:c_0007",
       "videoId": "fWKCFahyRHw",
-      "text": "The Svalbard Global Seed Vault on Spitzbergen, Norway is the world's primary insurance policy against the loss of crop genetic diversity, storing millions of seeds from over 900,000 food-crop varieties; it has already been drawn upon to restore destroyed national seed banks (e.g., after the loss of the seed banks of Afghanistan, Syria, and Iraq).",
-      "kind": "empirical",
+      "text": "Mount Weather is a 564-acre FEMA continuity-of-government complex in Virginia with a 600,000-square-foot underground bunker.",
+      "kind": "historical",
       "entities": [
-        "facility:global seed vault",
-        "organization:global seed vault",
-        "location:spitzbergen",
-        "location:norway",
-        "location:svalbard archipelago",
-        "location:arctic circle",
-        "organization:nordic genetic resource center",
-        "organization:national seed bank of the philippines",
-        "location:afghanistan",
-        "location:syria",
-        "location:iraq",
-        "quantity:millions of seeds",
-        "quantity:more than 900000 varieties"
+        "facility:mount weather",
+        "organization:fema",
+        "date_time:nineteen fifty eight"
       ],
-      "relationships": [
-        "r_0183",
-        "r_0200",
-        "r_0202"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 11116,
-          "charEnd": 11230,
-          "timeStart": 693.72,
-          "timeEnd": 704.91,
-          "quote": "Millions of seeds from more than 900000 varieties\nof food crops are stored in the global\nseed vault on Spitzbergen"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 12639,
-          "charEnd": 12739,
-          "timeStart": 790.26,
-          "timeEnd": 795.6,
-          "quote": "the National Seed Bank of the\nPhilippines was damaged by flooding and then\nlater destroyed by a fire"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 12745,
-          "charEnd": 12820,
-          "timeStart": 795.6,
-          "timeEnd": 800.43,
-          "quote": "the seed banks of Afghanistan, Syria and\nIraq have all been lost completely"
+          "charStart": 7623,
+          "charEnd": 7657,
+          "timeStart": 487.37,
+          "timeEnd": 489.77,
+          "quote": "nineteen fifty eight meant whether"
         }
       ],
-      "confidence": 0.96,
-      "directTruth": 0.95,
-      "rationale": "Svalbard Global Seed Vault is well documented; the ~1 million sample / ~900k+ variety figure matches Crop Trust public reports. The Syrian seed bank (ICARDA, Aleppo) was indeed evacuated and partly recovered via Svalbard withdrawals starting in 2015 — the most prominent real-world test of the system. The Philippines/Afghanistan/Iraq losses are also documented incidents.",
+      "confidence": 0.85,
+      "directTruth": 0.85,
+      "rationale": "Mount Weather Emergency Operations Center (Berryville, VA) is a real COG / FEMA facility, publicly acknowledged, with a large underground bunker. Exact acreage and bunker size are widely reported figures from journalism (notably Washington Post and Time).",
+      "tags": ["mount-weather", "fema", "continuity-of-government"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "fWKCFahyRHw:c_0008",
       "videoId": "fWKCFahyRHw",
-      "text": "The Vatican Apostolic Archive is a real, vast (53 miles of shelving, ~12 centuries of records) but tightly restricted institution: documents are embargoed for 75 years and only credentialed scholars can access the indexes, fueling persistent conspiracy theories that the archive hides explosive secrets (e.g., proof Jesus didn't exist, evidence of extraterrestrials, a time-viewing 'Chronovisor' machine).",
-      "kind": "definitional",
+      "text": "The general public first learned about Mount Weather in 1974 when TWA Flight 514 crashed nearby.",
+      "kind": "historical",
       "entities": [
-        "facility:vatican secret archives",
-        "facility:archives",
-        "location:vatican",
-        "organization:vatican",
-        "organization:catholic church",
-        "person:pope",
-        "technology:crono visor",
-        "person:jesus",
-        "quantity:seventy five years",
-        "quantity:fifty three miles of shelving",
-        "quantity:twelve hundred years",
-        "group_or_movement:conspiracy theorists",
-        "work_of_media:dan brown books"
+        "facility:mount weather"
       ],
-      "relationships": [
-        "r_0212",
-        "r_0214"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 13155,
-          "charEnd": 13271,
-          "timeStart": 823.14,
-          "timeEnd": 830.4,
-          "quote": "The Vatican's apostolic archives are the stuff\nof historical legend and Dan Brown books,\nbut they're absolutely real"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 13313,
-          "charEnd": 13357,
-          "timeStart": 830.43,
-          "timeEnd": 834.84,
-          "quote": "they're only accessible to very few scholars"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 14321,
-          "charEnd": 14424,
-          "timeStart": 889.47,
-          "timeEnd": 895.92,
-          "quote": "Many conspiracy theorists\nbelieve the archives show the Vatican is\nhiding proof that Jesus didn't exist"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 14828,
-          "charEnd": 14912,
-          "timeStart": 919.95,
-          "timeEnd": 929.52,
-          "quote": "the Crono Visor is a machine that\nallows the operator to view past and future\nevents"
+          "charStart": 8937,
+          "charEnd": 9019,
+          "timeStart": 542.48,
+          "timeEnd": 547.45,
+          "quote": "first learned about it in\nnineteen seventy four when TWA\nFlight 514 crashed nearby"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.6,
-      "rationale": "The Vatican Apostolic Archive (renamed from 'Secret Archive' in 2019) is real; the 53-mile and 75-year-embargo figures are commonly cited. The conspiracy-theory inventory is accurately reported as a survey of beliefs (host explicitly says 'we are merely reporting we are not endorsing'), so the directTruth here is for the meta-claim about what the archive is and what theories surround it, not for the truth of any particular conspiracy. The Chronovisor itself was a fringe-Catholic media story (Father Pellegrino Ernetti, debunked since the 1990s).",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "TWA 514 did crash into Mount Weather's ridge (December 1, 1974), and press coverage of that crash did significantly raise public awareness of the previously obscure facility. NTSB and contemporary press reporting confirm.",
+      "tags": ["mount-weather", "twa-514", "disclosure"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "fWKCFahyRHw:c_0009",
       "videoId": "fWKCFahyRHw",
-      "text": "The 2001 discovery of the Chinon Parchment in the Vatican archives, made public in 2007, vindicated the long-standing claim that the Knights Templar were never actually condemned for heresy by the Church — Pope Clement V had absolved them in 1308.",
+      "text": "The entire congressional leadership was transported to Mount Weather by helicopter during the September 11, 2001 attacks.",
       "kind": "historical",
       "entities": [
-        "organization:knights templar",
-        "person:pope clement, the fifth",
-        "person:shannon france",
-        "facility:archives",
-        "location:vatican",
-        "organization:vatican",
-        "date_time:2001",
-        "date_time:2007"
+        "facility:mount weather"
       ],
-      "relationships": [
-        "r_0220",
-        "r_0223"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 15455,
-          "charEnd": 15516,
-          "timeStart": 954.72,
-          "timeEnd": 959.82,
-          "quote": "In 2001, the Shannon Parchment was discovered in\nthe archives"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 15648,
-          "charEnd": 15825,
-          "timeStart": 965.4,
-          "timeEnd": 977.14,
-          "quote": "When the Shannon Parchment was\nmade public in 2007, it confirmed the\nlegacy of the Knights Templar by proving\nthat Pope Clement, the Fifth, actually absolved\nthe group of heresy"
+          "charStart": 9304,
+          "charEnd": 9371,
+          "timeStart": 577.69,
+          "timeEnd": 582.76,
+          "quote": "entire congressional leadership was\ntransported there by helicopter"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The Chinon Parchment (mistranscribed by ASR as 'Shannon Parchment'; misread location 'Chinon, France' became 'Shannon France') is real. Discovered by Vatican historian Barbara Frale in 2001 and reproduced in a 2007 facsimile edition, it documents Pope Clement V's 1308 absolution of Jacques de Molay and other Templars. This is established Templar scholarship; the host's framing is essentially correct.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "fWKCFahyRHw:c_0008",
-          "kind": "supports",
-          "rationale": "An actual disclosed archive document with revelatory content supports the broader claim that the Vatican archives genuinely hold historically significant material."
-        }
-      ]
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Congressional leaders were evacuated to an undisclosed location on 9/11, widely reported to include Mount Weather. 'Entire congressional leadership' is a simplification — it was top House/Senate leaders plus continuity-list officials, not all of Congress.",
+      "tags": ["mount-weather", "9-11", "continuity-of-government"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "fWKCFahyRHw:c_0010",
       "videoId": "fWKCFahyRHw",
-      "text": "North Korea's Office (Room) 39 is a regime-controlled criminal-finance bureau established in the 1970s by Kim Il-sung that generates an estimated $1+ billion per year for the ruling family through counterfeiting, narcotics production, insurance fraud, and sanctions-evading commodity smuggling (notably ginseng, gold, and gemstones routed through China).",
-      "kind": "historical",
+      "text": "The Svalbard Global Seed Vault on Spitzbergen stores samples from more than 900,000 varieties of food crops as a safeguard against global agricultural disasters.",
+      "kind": "empirical",
       "entities": [
-        "facility:room thirty nine",
-        "location:office thirty nine",
-        "location:thirty nine",
-        "organization:workers party of korea",
-        "organization:north korean party",
-        "person:kim il sung",
-        "location:north korea",
-        "location:pyongyang",
-        "organization:design group",
-        "organization:umbrella corporation",
-        "location:china",
-        "organization:united nations",
-        "law_or_policy:sanctions",
-        "quantity:one billion dollars",
-        "person:defector",
-        "organization:abc"
+        "facility:global seed vault",
+        "location:svalbard archipelago"
       ],
-      "relationships": [
-        "r_0227",
-        "r_0229"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 16826,
-          "charEnd": 16952,
-          "timeStart": 1032.51,
-          "timeEnd": 1039.68,
-          "quote": "Office thirty nine was set up in the 1970s\nby the founding father of North Korea, Kim Il\nSung, as a kind of a royal slush fund"
+          "charStart": 11139,
+          "charEnd": 11165,
+          "timeStart": 693.54,
+          "timeEnd": 695.5,
+          "quote": "more than 900000 varieties"
         },
         {
           "transcriptId": "fWKCFahyRHw",
-          "charStart": 16473,
-          "charEnd": 16696,
-          "timeStart": 1011.54,
-          "timeEnd": 1024.53,
-          "quote": "The organization is estimated to bring in one billion\ndollars a year or more and may be\ninvolved in activities such as counterfeiting\nhundred dollar bills, producing meth,\nheroin and committing international insurance\nfraud"
-        },
-        {
-          "transcriptId": "fWKCFahyRHw",
-          "charStart": 17295,
-          "charEnd": 17371,
-          "timeStart": 1050.96,
-          "timeEnd": 1060.32,
-          "quote": "an\numbrella corporation that smuggled ginseng, gemstones and\ngold into China"
+          "charStart": 11249,
+          "charEnd": 11269,
+          "timeStart": 701.82,
+          "timeEnd": 703.32,
+          "quote": "Svalbard archipelago"
         }
       ],
-      "confidence": 0.93,
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Svalbard Global Seed Vault holds over 1.2 million seed samples from ~6,000 plant species as of 2024 (Crop Trust). The '900,000 varieties' figure fits mid-2010s counts. Facility runs are widely publicized.",
+      "tags": ["seed-vault", "svalbard", "agriculture"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "fWKCFahyRHw:c_0011",
+      "videoId": "fWKCFahyRHw",
+      "text": "Spitzbergen was chosen for the Seed Vault because it lacks tectonic activity, has permafrost, and is 130m above sea level.",
+      "kind": "empirical",
+      "entities": [
+        "facility:global seed vault",
+        "location:svalbard archipelago"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 11999,
+          "charEnd": 12066,
+          "timeStart": 728.34,
+          "timeEnd": 732.41,
+          "quote": "Spitzbergen was considered ideal because it\nlacks tectonic activity"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Site selection rationale as described by the Global Crop Diversity Trust matches: Svalbard is on a stable continental shelf with permafrost and elevation safety margin. 'Lacks tectonic activity' is approximate — Svalbard has low but non-zero seismicity.",
+      "tags": ["seed-vault", "geology", "site-selection"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "fWKCFahyRHw:c_0010", "kind": "elaborates", "rationale": "Why the vault is located where it is." }
+      ]
+    },
+    {
+      "id": "fWKCFahyRHw:c_0012",
+      "videoId": "fWKCFahyRHw",
+      "text": "The Vatican's Apostolic Archives hold 53 miles of shelving and 35,000 volumes dating back 1,200 years, accessible only to select scholars after documents are 75 years old.",
+      "kind": "historical",
+      "entities": [
+        "facility:vatican secret archives",
+        "location:vatican",
+        "facility:archives"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 13159,
+          "charEnd": 13187,
+          "timeStart": 798.75,
+          "timeEnd": 800.45,
+          "quote": "Vatican's apostolic archives"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "Archivio Apostolico Vaticano (renamed from 'Archivio Segreto' in 2019) contains approximately 85 km (53 mi) of shelving. The 75-year waiting period and scholar-access rules are documented in Vatican archival policy.",
+      "tags": ["vatican", "apostolic-archives"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "fWKCFahyRHw:c_0013",
+      "videoId": "fWKCFahyRHw",
+      "text": "The Vatican archives hide proof that Jesus did not exist.",
+      "kind": "speculative",
+      "entities": [
+        "facility:archives",
+        "location:vatican"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 14528,
+          "charEnd": 14589,
+          "timeStart": 901.93,
+          "timeEnd": 905.94,
+          "quote": "extraterrestrials and that the pope is\nconspiring with aliens"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "rationale": "Host surfaces this theory explicitly to note it as conspiracy. No evidence that the Vatican archives contain proof of Jesus's nonexistence; the historicity of Jesus is separately established to scholarly satisfaction by non-Christian sources (Josephus, Tacitus).",
+      "tags": ["vatican", "conspiracy", "jesus-myth"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
+    },
+    {
+      "id": "fWKCFahyRHw:c_0014",
+      "videoId": "fWKCFahyRHw",
+      "text": "The Chinon Parchment (dated 1308) was rediscovered in the Vatican archives in 2001 and confirmed that Pope Clement V absolved the Knights Templar of heresy.",
+      "kind": "historical",
+      "entities": [
+        "facility:archives",
+        "organization:knights templar",
+        "person:pope clement, the fifth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 15468,
+          "charEnd": 15485,
+          "timeStart": 953.33,
+          "timeEnd": 954.49,
+          "quote": "Shannon Parchment"
+        },
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 15797,
+          "charEnd": 15841,
+          "timeStart": 975.73,
+          "timeEnd": 978.72,
+          "quote": "absolved\nthe group of heresy in thirty eight"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The Chinon Parchment (host transcript renders 'Shannon') was rediscovered by Barbara Frale in 2001 and published 2007 by the Vatican Secret Archives. It documents a 1308 private absolution by Clement V at Chinon, France. Real, well-documented archival discovery.",
+      "tags": ["knights-templar", "chinon-parchment", "vatican"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "fWKCFahyRHw:c_0012", "kind": "elaborates", "rationale": "Historical artifact actually found inside the archives." }
+      ]
+    },
+    {
+      "id": "fWKCFahyRHw:c_0015",
+      "videoId": "fWKCFahyRHw",
+      "text": "North Korea's Office 39 is a party organization set up in the 1970s by Kim Il Sung to raise foreign currency through illicit activities including counterfeiting and narcotics production.",
+      "kind": "historical",
+      "entities": [
+        "person:kim il sung",
+        "organization:workers party of korea",
+        "location:north korea"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 16849,
+          "charEnd": 16919,
+          "timeStart": 1033.61,
+          "timeEnd": 1036.94,
+          "quote": "set up in the 1970s\nby the founding father of North Korea, Kim Il\nSung"
+        },
+        {
+          "transcriptId": "fWKCFahyRHw",
+          "charStart": 16592,
+          "charEnd": 16643,
+          "timeStart": 1007.13,
+          "timeEnd": 1010.23,
+          "quote": "counterfeiting\nhundred dollar bills, producing meth"
+        }
+      ],
+      "confidence": 0.9,
       "directTruth": 0.85,
-      "rationale": "Office 39 (or Bureau 39 / Room 39) is well documented in U.S. Treasury OFAC sanctions filings, in academic work (Sheena Greitens, John Park), and in defector testimony. The $1B/year figure is a commonly cited estimate; counterfeiting (Supernotes), methamphetamine production, insurance fraud, and use of front companies routing gold/ginseng through China are all corroborated by independent sources. The host's overall account is substantially correct.",
+      "rationale": "Bureau / Office 39 is widely reported in defector testimony, US Treasury sanctions, and Ken Gause's analyses of the DPRK party apparatus. 'Supernote' counterfeiting and narcotics revenue are documented in US indictments and UN panel of experts reports.",
+      "tags": ["office-39", "north-korea", "kim-il-sung"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     }
   ]

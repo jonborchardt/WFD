@@ -1,34 +1,125 @@
 {
   "schemaVersion": 1,
   "transcriptId": "zP3pOszdr5U",
-  "generatedAt": "2026-04-20T03:55:06.450Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T12:30:00.000Z",
+  "generator": "claude-opus-4-7-1m",
   "claims": [
     {
       "id": "zP3pOszdr5U:c_0001",
       "videoId": "zP3pOszdr5U",
-      "text": "In 1979 the US Army launched 'First Earth Battalion' / Project Jedi — a real, declassified program that tried to build psychic soldiers and rewire warfare around meditation, intuition, and non-lethal techniques.",
+      "text": "In 1979 the US Army launched Project Jedi, a program to build an army of psychic soldiers that became known as the First Earth Battalion.",
       "kind": "historical",
       "entities": [
-        "date_time:1979",
         "organization:us army",
-        "organization:army",
-        "organization:first earth battalion",
-        "organization:earth battalion",
-        "event:project jedi",
         "technology:project jedi",
-        "role:psychic soldier"
+        "event:project jedi",
+        "organization:first earth battalion",
+        "date_time:1979"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zP3pOszdr5U",
           "charStart": 237,
-          "charEnd": 372,
+          "charEnd": 328,
           "timeStart": 15.28,
-          "timeEnd": 29.598999999999997,
-          "quote": "In 1979, the US\nArmy launched Project Jedi, a program to\nbuild an army of psychic soldiers. They\nwere called the First Earth Battalion."
+          "timeEnd": 26.72,
+          "quote": "In 1979, the US\nArmy launched Project Jedi, a program to\nbuild an army of psychic soldiers."
         },
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 329,
+          "charEnd": 372,
+          "timeStart": 22.0,
+          "timeEnd": 29.6,
+          "quote": "They\nwere called the First Earth Battalion."
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.8,
+      "rationale": "The First Earth Battalion Operations Manual (Jim Channon, 1979) is a real declassified document. 'Project Jedi' as an umbrella label is informal journalism; the Army's official psychic programs cycle through names (SCANATE, GONDOLA WISH, GRILL FLAME, CENTER LANE, SUN STREAK, STAR GATE).",
+      "hostStance": "asserts",
+      "tags": ["first-earth-battalion", "project-jedi", "psychic-warfare"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0002",
+      "videoId": "zP3pOszdr5U",
+      "text": "At Fort Bragg, Army researchers tried to kill goats using only their minds at a classified facility called the Goat Lab.",
+      "kind": "historical",
+      "entities": [
+        "location:fort bragg",
+        "facility:goat lab",
+        "event:goat experiments"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 3321,
+          "charEnd": 3367,
+          "timeStart": 228.96,
+          "timeEnd": 236.24,
+          "quote": "They're trying to kill goats with\ntheir minds."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.65,
+      "rationale": "The Goat Lab at Fort Bragg existed (Special Forces medical training used live goats), and Jon Ronson's 'The Men Who Stare at Goats' documents Guy Savelli's claim to have stopped a goat's heart. Whether the experiment actually worked is another question (see c_0013).",
+      "dependencies": [
+        { "target": "zP3pOszdr5U:c_0001", "kind": "elaborates" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["goat-lab", "fort-bragg", "psychic"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0003",
+      "videoId": "zP3pOszdr5U",
+      "text": "Lt. Col. Jim Channon spent 319 days in combat in Vietnam and his platoon suffered zero casualties after the first day and never killed an innocent civilian.",
+      "kind": "historical",
+      "entities": [
+        "person:jim shannon",
+        "person:shannon",
+        "location:vietnam",
+        "date_time:1965"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 4128,
+          "charEnd": 4161,
+          "timeStart": 278.88,
+          "timeEnd": 283.68,
+          "quote": "Shannon spent 319 days in combat."
+        },
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 4635,
+          "charEnd": 4722,
+          "timeStart": 314.16,
+          "timeEnd": 323.2,
+          "quote": "his platoon suffered zero casualties,\nand they never killed a single innocent\ncivilian."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.4,
+      "rationale": "Jim Channon's Vietnam service and 173rd Airborne record are established; the specific 'zero casualties for 317 days' and 'never killed a civilian' figures come from Channon's own recollections and his First Earth Battalion lore, which historians regard as self-mythologized.",
+      "hostStance": "asserts",
+      "tags": ["channon", "vietnam", "combat-record"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0004",
+      "videoId": "zP3pOszdr5U",
+      "text": "Channon wrote the First Earth Battalion manual at Fort Leavenworth in 1979; it is a real declassified document available online.",
+      "kind": "historical",
+      "entities": [
+        "person:shannon",
+        "person:jim shannon",
+        "organization:first earth battalion",
+        "date_time:1979"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "zP3pOszdr5U",
           "charStart": 6006,
@@ -36,383 +127,390 @@
           "timeStart": 403.6,
           "timeEnd": 410.16,
           "quote": "Shannon wrote it at Fort Levvenworth in\n1979."
-        }
-      ],
-      "confidence": 0.99,
-      "rationale": "The First Earth Battalion concept and the Army's exploration of related psychic-warfare programs (Stargate / Grill Flame / Center Lane / Sun Streak) are real and well documented in declassified CIA/Army records. Some of the labels and chronology the host gives are simplified, but the broad historical claim is accurate.",
-      "directTruth": 0.85,
-      "hostStance": "asserts"
-    },
-    {
-      "id": "zP3pOszdr5U:c_0002",
-      "videoId": "zP3pOszdr5U",
-      "text": "Lieutenant Colonel Jim Channon — the FEB's creator — earned credibility because his Vietnam combat record was extraordinary: 319 days in combat in the Iron Triangle, only one soldier lost (to a sniper on day one), and zero civilian casualties under his command.",
-      "kind": "historical",
-      "entities": [
-        "person:jim shannon",
-        "person:shannon",
-        "person:lieutenant colonel jim shannon",
-        "location:vietnam",
-        "location:iron triangle",
-        "organization:173rd airborne brigade",
-        "event:operation junction city",
-        "date_time:1965",
-        "date_time:1967",
-        "quantity:zero casualties",
-        "quantity:one soldier"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 4128,
-          "charEnd": 4392,
-          "timeStart": 278.88,
-          "timeEnd": 301.44,
-          "quote": "Shannon spent 319 days in combat. He led\nsearch and destroy operations in\nVietnam. His unit was part of the 173rd\nAirborne Brigade, one of the first major\narmy units deployed to Vietnam in 1965.\nThey operated in the Iron Triangle, one\nof the war's deadliest zones."
         },
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 4529,
-          "charEnd": 4722,
-          "timeStart": 305.6,
-          "timeEnd": 323.199,
-          "quote": "but Shannon lost only one\nsoldier, and he was killed by a sniper\non his first day. For the next 317 days,\nhis platoon suffered zero casualties,\nand they never killed a single innocent\ncivilian."
+          "charStart": 5962,
+          "charEnd": 6005,
+          "timeStart": 400.0,
+          "timeEnd": 405.36,
+          "quote": "It's been\ndeclassified and archived online."
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Jim Channon (note the spelling — host says 'Shannon') was a real Army officer, served two tours in Vietnam with the 173rd Airborne, and authored the First Earth Battalion concept. The specific casualty figures (one death, zero civilians) come from Channon's own retelling and Jim Schnabel/Jon Ronson reporting; they are plausible but not independently verified to the precision claimed.",
-      "directTruth": 0.6,
-      "hostStance": "asserts"
-    },
-    {
-      "id": "zP3pOszdr5U:c_0003",
-      "videoId": "zP3pOszdr5U",
-      "text": "Channon's First Earth Battalion field manual — written at Fort Leavenworth in 1979 and now publicly archived — outlined a 'warrior monk' soldier equipped with herbal supplements, dowsing rods, hand-to-hand pressure-point techniques from Tai Chi, mandatory daily hugs, biodegradable smart-fabric uniforms, and command centers built around isolation tanks and breathing exercises.",
-      "kind": "historical",
-      "entities": [
-        "person:jim shannon",
-        "person:shannon",
-        "work_of_media:manual",
-        "work_of_media:self-help book",
-        "location:fort levvenworth",
-        "facility:isolation tanks",
-        "facility:cerebral environment",
-        "role:warrior monk",
-        "organization:warrior monks",
-        "technology:smart fabrics",
-        "technology:wearable health monitors",
-        "technology:adaptive camouflage",
-        "technology:embedded health sensors",
-        "technology:built-in solar panels",
-        "technology:biodegradable materials"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 5233,
-          "charEnd": 5372,
-          "timeStart": 349.199,
-          "timeEnd": 361.28,
-          "quote": "It contained things like\nherbal supplements, mindfulness, music\nused in combat. Soldiers were supposed\nto hug every day to exchange energy."
-        },
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 6915,
-          "charEnd": 7211,
-          "timeStart": 456.8,
-          "timeEnd": 479.28000000000003,
-          "quote": "Even the uniform was\nunique. Biodegradable materials that\nwouldn't harm the environment. built-in\nsolar panels for charging equipment and\ncolorchanging fabric that adapts to\nsurroundings. There are embedded health\nsensors to monitor vital signs in real\ntime. And Shana described all this in\n1979."
-        }
-      ],
-      "confidence": 0.97,
-      "rationale": "The First Earth Battalion field manual (officially 'Evolutionary Tactics') really does cover all of these elements — warrior monk ethos, smart uniforms, hugging, biodegradable equipment, etc. The document is freely available online. Some details (the $7,600/gallon hand soap) may be embellishments but the core inventory is faithful.",
-      "directTruth": 0.85,
+      "confidence": 0.98,
+      "directTruth": 0.95,
+      "rationale": "The First Earth Battalion Operations Manual is indeed available online (archive.org, and Channon's own website). Leavenworth authorship is verified via Army bio.",
       "dependencies": [
-        {
-          "target": "zP3pOszdr5U:c_0001",
-          "kind": "elaborates"
-        }
+        { "target": "zP3pOszdr5U:c_0001", "kind": "supports" }
       ],
-      "hostStance": "asserts"
-    },
-    {
-      "id": "zP3pOszdr5U:c_0004",
-      "videoId": "zP3pOszdr5U",
-      "text": "Major General Albert Stubblebine III — commander of US Army Intelligence (INSCOM) with 16,000 troops under him — was a true believer who repeatedly tried to walk through the wall of his Pentagon office and held mandatory spoon-bending parties for senior officers.",
-      "kind": "historical",
-      "entities": [
-        "person:major general albert stubble iii",
-        "person:major general stubble",
-        "person:stubble",
-        "person:stubbleine",
-        "person:stubeline",
-        "person:stumblebine",
-        "person:general stubbleine",
-        "person:general subivine",
-        "organization:inscom",
-        "organization:us army intelligence and security command",
-        "organization:army intelligence",
-        "person:yuri geller",
-        "event:spoon bending parties",
-        "quantity:16,000 soldiers",
-        "quantity:32 years",
-        "location:pentagon"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 10572,
-          "charEnd": 10911,
-          "timeStart": 686.32,
-          "timeEnd": 716.24,
-          "quote": "The\nprogram's biggest champion was Major\nGeneral Albert Stubble III, West Point\ngraduate, master degree in chemical\nengineering, 32 years of military\nservice. Stubble was commander of the US\nArmy Intelligence and Security Command,\nINSCOM, responsible for all Army\nIntelligence Operations around the\nworld. 16,000 soldiers under his\ncommand"
-        },
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 10957,
-          "charEnd": 11202,
-          "timeStart": 713.519,
-          "timeEnd": 735.519,
-          "quote": "He stood in his office in\nthe Pentagon. He stared at the wall\nacross from his desk. He took a breath,\nfocused his mind, and ran straight into\nthe wall. He hit his head hard again and\nagain and again. Stubble believed he\ncould walk through walls."
-        },
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 11943,
-          "charEnd": 12102,
-          "timeStart": 775.36,
-          "timeEnd": 787.44,
-          "quote": "hosted spoon bending parties.\nHigh-ranking officers were required to\nattend. They gathered in a room with\nsilverware. They stared at the metal\nuntil it melted."
-        }
-      ],
-      "confidence": 0.97,
-      "rationale": "Major General Albert Stubblebine III was real, did command INSCOM in the early 1980s, and was a documented true believer in psychic phenomena. The wall-walking attempts and spoon-bending parties are reported by him and by colleagues (including in Jon Ronson's 'The Men Who Stare at Goats'). Reasonable confidence the host's description is accurate.",
-      "directTruth": 0.85,
-      "hostStance": "asserts"
+      "hostStance": "asserts",
+      "tags": ["channon", "manual", "declassified"]
     },
     {
       "id": "zP3pOszdr5U:c_0005",
       "videoId": "zP3pOszdr5U",
-      "text": "The CIA's Project Stargate remote-viewing program produced documented hits — Pat Price (subject 372) sketched a Soviet shipyard 4,000 miles away that satellite imagery later confirmed; Ingo Swann claimed to have seen Jupiter's rings before NASA discovered them; Joe McMoneagle earned a Legion of Merit for his remote-viewing intelligence work.",
+      "text": "Major General Albert Stubblebine III, commander of Army Intelligence and Security Command, repeatedly tried to walk through walls in the Pentagon and hit his head.",
       "kind": "historical",
       "entities": [
-        "facility:project stargate",
-        "facility:stargate",
-        "technology:remote viewing",
-        "person:pat price",
-        "person:subject 372",
-        "person:ingo swan",
-        "person:ingos swan",
-        "person:joe mcmonicle",
-        "person:joe mcmagle",
-        "facility:soviet shipyard",
-        "organization:cia",
-        "organization:nasa"
+        "person:stubble",
+        "person:major general albert stubble iii"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 13815,
-          "charEnd": 14155,
-          "timeStart": 894.085,
-          "timeEnd": 918.48,
-          "quote": "One remote viewer code\nnamed subject 372 was given coordinates,\nnothing else. He described a large\nbuilding with a [music] distinctive\ncurved roof. He said it was near water.\nHe drew a sketch that showed unusual\narchitectural features. The target was a\nSoviet shipyard 4,000 mi away. His\ndrawing matched satellite photos taken 3\ndays later."
+          "charStart": 11157,
+          "charEnd": 11202,
+          "timeStart": 728.0,
+          "timeEnd": 735.52,
+          "quote": "Stubble believed he\ncould walk through walls."
         },
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 14273,
-          "charEnd": 14417,
-          "timeStart": 922.16,
-          "timeEnd": 930,
-          "quote": "Subject 372 [music] was Pat Price, a\nformer police commissioner from\nCalifornia who became one of the most\ngifted remote viewers in the program."
+          "charStart": 11109,
+          "charEnd": 11156,
+          "timeStart": 724.0,
+          "timeEnd": 732.88,
+          "quote": "He hit his head hard again and\nagain and again."
         },
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 14554,
-          "charEnd": 14805,
-          "timeStart": 936.16,
-          "timeEnd": 952.88,
-          "quote": "Ingo Swan, another\nlegendary viewer, claimed he could see\nJupiter's rings before NASA discovered\nthem. Joe McMonicle spent years remote\nviewing Soviet facilities. His accuracy\nwas so consistent, he received a legion\nof merit for his intelligence work."
+          "charStart": 11614,
+          "charEnd": 11685,
+          "timeStart": 756.4,
+          "timeEnd": 763.76,
+          "quote": "This man commanded Army\nintelligence during the height of the\nCold War."
         }
       ],
-      "confidence": 0.97,
-      "rationale": "Pat Price, Ingo Swann, and Joe McMoneagle are all real, all worked in the SRI/Stargate program, and the famous-hit anecdotes are widely retold. McMoneagle did receive the Legion of Merit. However, declassified evaluations (the 1995 American Institutes for Research review) judged that the cited successes do not exceed reasonable hit rates after accounting for sensory leakage and post-hoc matching. The events are real; their evidentiary value for psi is the contested part.",
-      "directTruth": 0.5,
+      "confidence": 0.95,
+      "directTruth": 0.75,
+      "rationale": "Stubblebine's wall-walking anecdote is repeatedly confirmed in his own interviews (Jon Ronson, History Channel). It is one of the few psychic-warfare stories with direct on-record corroboration from the participant.",
       "dependencies": [
-        {
-          "target": "zP3pOszdr5U:c_0001",
-          "kind": "elaborates"
-        }
+        { "target": "zP3pOszdr5U:c_0001", "kind": "elaborates" }
       ],
-      "hostStance": "asserts"
+      "hostStance": "asserts",
+      "tags": ["stubblebine", "walk-through-walls"]
     },
     {
       "id": "zP3pOszdr5U:c_0006",
       "videoId": "zP3pOszdr5U",
-      "text": "The CIA closed the remote-viewing program in 1995 after concluding it had not been proven to work by any psychic mechanism — but the personnel and the broader First Earth Battalion philosophy were absorbed into mainstream special-operations training.",
+      "text": "Under Stubblebine, the Army brought in celebrity psychic Uri Geller to test whether he could telepathically erase computer discs or trigger nuclear launch codes.",
       "kind": "historical",
       "entities": [
-        "organization:cia",
-        "date_time:1995",
-        "technology:remote viewing",
-        "facility:project stargate",
-        "organization:scitec",
-        "organization:special forces",
-        "organization:special forces operators"
+        "person:yuri geller",
+        "person:stubble"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 14864,
-          "charEnd": 15035,
-          "timeStart": 952.88,
-          "timeEnd": 967.6800000000001,
-          "quote": "But in 1995, the CIA\nreviewed the entire program. [music]\nThey said that remote viewing had not\nbeen proven to work by a psychic\nmechanism, so they shut it down\nallegedly."
-        },
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 15036,
-          "charEnd": 15160,
-          "timeStart": 965.12,
-          "timeEnd": 974.88,
-          "quote": "But the people didn't disappear. Major\nGeneral Stubble retired and founded\n[music] Scitec, a private remote viewing\ncompany."
-        },
-        {
-          "transcriptId": "zP3pOszdr5U",
-          "charStart": 15245,
-          "charEnd": 15375,
-          "timeStart": 974.88,
-          "timeEnd": 984.9590000000001,
-          "quote": "But the techniques from\nShannon's manual grounded in physics and\npsychology were quietly absorbed into\nstandard military training."
+          "charStart": 12133,
+          "charEnd": 12169,
+          "timeStart": 785.44,
+          "timeEnd": 791.25,
+          "quote": "They brought in psychic Yuri\nGeller."
         }
       ],
-      "confidence": 0.97,
-      "rationale": "The 1995 closure of the Stargate program after the AIR review and the founding of PEAR-adjacent / private remote-viewing companies (Stubblebine's PSI Tech, etc.) is documented. The wider absorption of mindfulness, breathing, and stress-control techniques into special-operations training is also true (e.g., Mind Fitness Training pilot programs, USSOCOM Cognitive Performance initiatives).",
-      "directTruth": 0.85,
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Uri Geller was engaged by SRI and the CIA/Army in the 1970s — confirmed in declassified STARGATE files. Geller himself has long described Stubblebine-era testing.",
+      "dependencies": [
+        { "target": "zP3pOszdr5U:c_0005", "kind": "supports" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["geller", "remote-influence"]
     },
     {
       "id": "zP3pOszdr5U:c_0007",
       "videoId": "zP3pOszdr5U",
-      "text": "The Army's psychotronic-sound weapon work culminated in the December 1989 siege of Manuel Noriega in Panama, where instead of opening fire US forces blasted Van Halen and The Clash at deafening volumes for three days until he surrendered.",
+      "text": "CIA remote viewers produced drawings matching Soviet facilities they had never seen, including a shipyard sketch that matched satellite photos three days later.",
       "kind": "historical",
       "entities": [
-        "date_time:1989",
-        "event:operation just cause",
-        "person:manuel noriega",
-        "location:panama",
-        "technology:psychotronic sound weapons",
-        "organization:army"
+        "organization:cia",
+        "technology:remote viewing",
+        "person:subject 372"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 16731,
-          "charEnd": 17019,
-          "timeStart": 1068.88,
-          "timeEnd": 1088.4,
-          "quote": "In 1989, the army\ntested Shannon's psychotronic sound\nweapons during Operation Just Cause.\nThey surrounded Manuel Noriega's\ncompound in Panama. They didn't shoot.\nThey set up massive speakers and played\nVan Halen and the Clash at deafening\nvolumes for three days straight. He\nsurrendered."
+          "charStart": 13556,
+          "charEnd": 13626,
+          "timeStart": 879.84,
+          "timeEnd": 888.72,
+          "quote": "Remote viewers\ndescribed a massive Soviet submarine\nunder construction"
+        },
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 14099,
+          "charEnd": 14155,
+          "timeStart": 909.04,
+          "timeEnd": 918.48,
+          "quote": "His\ndrawing matched satellite photos taken 3\ndays later."
         }
       ],
-      "confidence": 0.97,
-      "rationale": "Operation Nifty Package (Dec 1989-Jan 1990) really did surround Noriega in the Vatican Embassy in Panama City and blast loud rock music to pressure him out. The 'three days straight' figure is reasonable. Calling it 'Shannon's psychotronic sound weapon' is a stretch — the sound siege wasn't a direct First Earth Battalion deliverable, but the lineage of non-lethal/PSYOPS thinking is genuine.",
-      "directTruth": 0.7,
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.3,
+      "rationale": "Some STARGATE sessions did produce suggestive sketches (notably Pat Price's Semipalatinsk session), but the 'three days later satellite confirmation' is a best-case cherry-pick; overall program accuracy when blindly graded was at chance.",
+      "hostStance": "asserts",
+      "tags": ["remote-viewing", "cia", "stargate"]
     },
     {
       "id": "zP3pOszdr5U:c_0008",
       "videoId": "zP3pOszdr5U",
-      "text": "Several genuinely funded but bizarre Air Force non-lethal weapons proposals — the 1994 Wright Lab 'halitosis bomb' for severe bad breath and the so-called 'gay bomb' to spray aphrodisiacs that would make enemy troops sexually attracted to each other — show how seriously the military pursued the FEB's non-lethal vision.",
+      "text": "Ingo Swann claimed to remotely view Jupiter's rings before NASA discovered them.",
       "kind": "historical",
       "entities": [
-        "date_time:1994",
-        "organization:air force right laboratory",
-        "technology:halattosis bomb",
+        "person:ingo swan",
+        "technology:remote viewing"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 14554,
+          "charEnd": 14656,
+          "timeStart": 936.16,
+          "timeEnd": 947.36,
+          "quote": "Ingo Swan, another\nlegendary viewer, claimed he could see\nJupiter's rings before NASA discovered\nthem."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.2,
+      "rationale": "The Swann-Jupiter session (1973) did include a ring-like feature, but his description also contained many misses, and skeptics note Jupiter rings were anticipated in astronomy before Pioneer 10 confirmed them.",
+      "hostStance": "asserts",
+      "tags": ["ingo-swann", "jupiter", "remote-viewing"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0009",
+      "videoId": "zP3pOszdr5U",
+      "text": "The CIA officially shut down its psychic spy programs in 1995.",
+      "kind": "historical",
+      "entities": [
+        "organization:cia",
+        "date_time:1995"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 15443,
+          "charEnd": 15504,
+          "timeStart": 997.44,
+          "timeEnd": 1004.8,
+          "quote": "The CIA officially shut down its psychic\nspy programs in 1995"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.95,
+      "rationale": "The CIA STARGATE program was officially terminated in 1995 following the AIR report. This is fully declassified public record.",
+      "hostStance": "asserts",
+      "tags": ["stargate", "1995", "cia-termination"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0010",
+      "videoId": "zP3pOszdr5U",
+      "text": "The 1989 Panama invasion used Channon's psychotronic sound-weapon concept — surrounding Noriega's compound with speakers blasting Van Halen and The Clash for three days until he surrendered.",
+      "kind": "historical",
+      "entities": [
+        "location:panama",
+        "person:manuel noriega",
+        "date_time:1989",
+        "technology:psychotronics"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 16875,
+          "charEnd": 17003,
+          "timeStart": 1078.24,
+          "timeEnd": 1087.04,
+          "quote": "They didn't shoot.\nThey set up massive speakers and played\nVan Halen and the Clash at deafening\nvolumes for three days straight."
+        },
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 17004,
+          "charEnd": 17019,
+          "timeStart": 1084.32,
+          "timeEnd": 1088.4,
+          "quote": "He\nsurrendered."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "Rock-music siege of the Vatican embassy in Panama City (Dec 1989) is well-documented, but Noriega surrendered primarily for diplomatic reasons (papal nuncio pressure). The music's causal role is disputed.",
+      "hostStance": "asserts",
+      "tags": ["panama", "noriega", "sound-weapon"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0011",
+      "videoId": "zP3pOszdr5U",
+      "text": "The Air Force Wright Laboratory proposed a 'gay bomb' — an aphrodisiac chemical weapon to make enemy troops sexually attracted to each other — as a real funded proposal in 1994.",
+      "kind": "historical",
+      "entities": [
         "technology:gay bomb",
-        "technology:non-lethal weapons",
-        "technology:chemical weapon"
+        "date_time:1994"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zP3pOszdr5U",
           "charStart": 17213,
-          "charEnd": 17333,
+          "charEnd": 17279,
           "timeStart": 1108.08,
-          "timeEnd": 1118.08,
-          "quote": "In 1994, the Air Force Right Laboratory\nproposed a halattosis bomb, a chemical\nweapon to give enemies severe bad\nbreath."
+          "timeEnd": 1115.36,
+          "quote": "In 1994, the Air Force Right Laboratory\nproposed a halattosis bomb"
         },
         {
           "transcriptId": "zP3pOszdr5U",
           "charStart": 17392,
-          "charEnd": 17545,
+          "charEnd": 17415,
           "timeStart": 1118.08,
-          "timeEnd": 1129.5200000000002,
-          "quote": "Then came the gay\nbomb. They wanted to spray aphrodesiacs\nover enemy troops to make them sexually\nattracted to each other. It was a real\nfunded proposal."
+          "timeEnd": 1124.88,
+          "quote": "Then came the gay\nbomb."
+        },
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 17515,
+          "charEnd": 17545,
+          "timeStart": 1124.88,
+          "timeEnd": 1129.52,
+          "quote": "It was a real\nfunded proposal."
         }
       ],
-      "confidence": 0.97,
-      "rationale": "The 1994 Wright Laboratory non-lethal chemical-weapon proposal really did include a halitosis option and what came to be called the 'gay bomb' aphrodisiac. The proposal is in declassified records and won a satirical Ig Nobel in 2007. The host's claim is essentially correct; whether to credit the FEB lineage is more interpretive.",
-      "directTruth": 0.85,
-      "hostStance": "asserts"
+      "confidence": 0.98,
+      "directTruth": 0.9,
+      "rationale": "The Wright Lab 'Harassing, Annoying and Bad Guy Identifying Chemicals' proposal (1994, FOIA-released 2005) is a matter of documented record. It was never developed into a deployed weapon.",
+      "hostStance": "asserts",
+      "tags": ["gay-bomb", "wright-lab", "non-lethal"]
     },
     {
-      "id": "zP3pOszdr5U:c_0009",
+      "id": "zP3pOszdr5U:c_0012",
       "videoId": "zP3pOszdr5U",
-      "text": "The host's verdict: the literal psychic-soldier promises of the First Earth Battalion failed (no walls walked, goats killed by accident not psi, remote viewing inconclusive), but the underlying program was vindicated — meditation, mindfulness, situational awareness, non-lethal weapons, and 'hearts and minds' counterinsurgency are now mainstream Army practice.",
-      "kind": "opinion",
+      "text": "Guy Savelli successfully stopped goat number 17's heart with his mind during a Goat Lab experiment.",
+      "kind": "empirical",
       "entities": [
-        "organization:first earth battalion",
-        "organization:special forces",
-        "organization:special forces operators",
-        "organization:navy seals",
-        "organization:another unit",
-        "ideology:modern combat psychology",
-        "ideology:modern counterinsurgency",
-        "ideology:winning hearts and minds",
-        "technology:non-lethal weapons",
-        "technology:calming techniques",
-        "person:jim shannon"
+        "facility:goat lab",
+        "event:goat experiments"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 20023,
-          "charEnd": 20298,
-          "timeStart": 1276.4,
-          "timeEnd": 1295.1200000000001,
-          "quote": "But the failure of\npsychic programs doesn't mean the first\nEarth battalion was worthless. In high\nstress situations, the human mind is\ncapable of far more than we realize.\nShannon's Vietnam platoon proved that\nhis soldiers weren't psychic. They were\njust really well trained."
+          "charStart": 19129,
+          "charEnd": 19171,
+          "timeStart": 1226.24,
+          "timeEnd": 1232.32,
+          "quote": "he stopped\nthe goat's heart with his mind."
         },
         {
           "transcriptId": "zP3pOszdr5U",
-          "charStart": 20766,
-          "charEnd": 21081,
-          "timeStart": 1322.32,
-          "timeEnd": 1341.9189999999999,
-          "quote": "But here's what Jim\nShannon got right. War doesn't have to\nbe about maximum violence. Soldiers can\nbe trained to operate with precision,\nawareness, and minimal collateral\ndamage. They can use technology to\nachieve objectives [music] without\nmassive body counts. Today, that's not a\nconspiracy theory. That's a fact."
+          "charStart": 19194,
+          "charEnd": 19260,
+          "timeStart": 1230.16,
+          "timeEnd": 1236.24,
+          "quote": "he was aiming for goat\n16, but accidentally killed goat number\n17."
         }
       ],
-      "confidence": 0.98,
-      "rationale": "This split verdict matches the historical assessment of the FEB legacy. Modern USSOCOM training really does include mindfulness, breath control, and emotional-regulation modules; non-lethal options like sticky foam are standard; counterinsurgency doctrine genuinely centers hearts and minds. The host's calibration here is well taken.",
-      "directTruth": 0.85,
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "The story is self-reported by Savelli, uncontrolled and unreplicated. The 'wrong goat' admission strongly suggests coincidence, not psychic kinetics. The host explicitly flags this as a tell.",
       "dependencies": [
+        { "target": "zP3pOszdr5U:c_0002", "kind": "elaborates" }
+      ],
+      "hostStance": "denies",
+      "tags": ["goat-lab", "savelli", "psychokinesis"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0013",
+      "videoId": "zP3pOszdr5U",
+      "text": "The CIA's own review concluded that remote viewing never produced reliable results and was indistinguishable from good guessing.",
+      "kind": "empirical",
+      "entities": [
+        "organization:cia",
+        "technology:remote viewing"
+      ],
+      "relationships": [],
+      "evidence": [
         {
-          "target": "zP3pOszdr5U:c_0005",
-          "kind": "elaborates"
-        },
-        {
-          "target": "zP3pOszdr5U:c_0006",
-          "kind": "supports"
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 19675,
+          "charEnd": 19723,
+          "timeStart": 1255.84,
+          "timeEnd": 1262.4,
+          "quote": "the CIA said it\nnever produced reliable results."
         }
       ],
-      "inVerdictSection": true,
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The 1995 American Institutes for Research (AIR) evaluation commissioned by the CIA concluded remote viewing had no operational utility. This is the standard skeptical endpoint for STARGATE.",
+      "dependencies": [
+        { "target": "zP3pOszdr5U:c_0007", "kind": "contradicts", "rationale": "[debunks] AIR review undercut the cherry-picked hits" },
+        { "target": "zP3pOszdr5U:c_0008", "kind": "contradicts", "rationale": "[debunks] same review applies to Swann's sessions" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["air-report", "debunk", "stargate"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0014",
+      "videoId": "zP3pOszdr5U",
+      "text": "Channon's Vietnam platoon outcomes are explained by high situational awareness and training, not psychic ability.",
+      "kind": "opinion",
+      "entities": [
+        "person:shannon",
+        "person:jim shannon",
+        "location:vietnam"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 20233,
+          "charEnd": 20298,
+          "timeStart": 1289.44,
+          "timeEnd": 1295.12,
+          "quote": "his soldiers weren't psychic. They were\njust really well trained."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The host explicitly adopts this steelman: Channon's results are real but attributable to mindfulness and training, not ESP. Neuroscience supports the claim that meditation improves threat detection.",
+      "dependencies": [
+        { "target": "zP3pOszdr5U:c_0003", "kind": "elaborates" }
+      ],
+      "hostStance": "steelman",
+      "tags": ["situational-awareness", "debunk"]
+    },
+    {
+      "id": "zP3pOszdr5U:c_0015",
+      "videoId": "zP3pOszdr5U",
+      "text": "Col. John Alexander, a former First Earth Battalion member, became known as 'the father of non-lethal weaponry' — showing Channon's work quietly survived inside mainstream Army doctrine.",
+      "kind": "historical",
+      "entities": [
+        "person:colonel john alexander",
+        "organization:first earth battalion"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "zP3pOszdr5U",
+          "charStart": 17820,
+          "charEnd": 17940,
+          "timeStart": 1143.28,
+          "timeEnd": 1153.12,
+          "quote": "Colonel John Alexander, a former member\nof the first earth battalion, became\nknown as the father of non-lethal\nweaponry."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Col. John Alexander is a real figure — author of 'The Warrior's Edge' and 'Future War'; his role developing Army non-lethal weapons programs at Los Alamos is well documented.",
+      "dependencies": [
+        { "target": "zP3pOszdr5U:c_0001", "kind": "elaborates" },
+        { "target": "zP3pOszdr5U:c_0014", "kind": "supports" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["john-alexander", "non-lethal", "legacy"]
     }
   ]
 }

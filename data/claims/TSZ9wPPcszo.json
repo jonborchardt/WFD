@@ -1,246 +1,297 @@
 {
   "schemaVersion": 1,
   "transcriptId": "TSZ9wPPcszo",
-  "generatedAt": "2026-04-20T03:42:32.162Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T14:08:48.294Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-resume",
   "claims": [
     {
       "id": "TSZ9wPPcszo:c_0001",
       "videoId": "TSZ9wPPcszo",
-      "text": "In February 1959, nine experienced Russian skiers led by Igor Dyatlov died under bizarre circumstances on a Siberian mountain expedition — their tent cut from the inside, bodies scattered with extraordinary injuries, and Soviet investigators ultimately closing the case as caused by an unknown 'compelling natural force.'",
+      "text": "Soviet investigators closed the 1959 Dyatlov Pass case by attributing the nine hikers' deaths to a 'compelling natural force' without identifying one.",
       "kind": "historical",
       "entities": [
-        "person:igor diatlov",
-        "date_time:february 1959",
-        "nationality_or_ethnicity:russian",
-        "location:siberian wilderness",
-        "quantity:seven men and two women",
-        "organization:soviet investigators"
+        "organization:soviet investigators",
+        "event:the diatlov pass incident",
+        "person:igor diatlov"
       ],
       "relationships": [
-        "r_0007",
-        "r_0008",
-        "r_0019"
+        "r_0003"
       ],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
-          "charStart": 1099,
-          "charEnd": 1413,
-          "timeStart": 75,
-          "timeEnd": 99,
-          "quote": "in the winter of 1959 nine russian adventurers were on a 200-mile cross-country hiking expedition making their way through the siberian\nwilderness this was difficult terrain but the seven men and two women were young fit and highly experienced skiers and mountain climbers they were led by\n23 year old igor diatlov"
-        },
-        {
-          "transcriptId": "TSZ9wPPcszo",
           "charStart": 703,
-          "charEnd": 799,
+          "charEnd": 779,
           "timeStart": 43,
           "timeEnd": 52,
-          "quote": "soviet investigators listed the cause of death as a compelling natural force and closed the case"
+          "quote": "soviet investigators listed the cause of death as a compelling natural force"
         }
       ],
-      "confidence": 0.99,
-      "rationale": "The basic facts of the Dyatlov Pass incident — nine experienced hikers, led by 23-year-old Igor Dyatlov, dying under mysterious circumstances in February 1959 in the northern Urals, with Soviet investigators closing the case citing an 'unknown compelling force' — are well documented in Russian and international sources. This claim is the established factual frame of the episode.",
-      "directTruth": 0.95,
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The Soviet criminal case file (declassified 2018) does close with the phrase переводимой как 'compelling natural force' (стихийная сила), and the case was shelved for ~60 years. Host's characterization matches the archival record.",
+      "tags": [
+        "dyatlov-pass",
+        "soviet-investigation",
+        "historical-record"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "TSZ9wPPcszo:c_0002",
       "videoId": "TSZ9wPPcszo",
-      "text": "The hikers' injuries were genuinely strange in ways an ordinary cold-weather accident cannot explain: half-naked bodies in 30-below temperatures, severe internal trauma without external wounds, missing eyes and a missing tongue, and clothing showing significant levels of radiation.",
+      "text": "The Dyatlov hikers cut their tent open from the inside and fled without putting up a struggle, leaving supplies and food untouched.",
       "kind": "empirical",
       "entities": [
+        "facility:the tent",
         "group_or_movement:hikers",
-        "event:incident"
+        "location:tent"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
-          "charStart": 355,
-          "charEnd": 702,
-          "timeStart": 19,
-          "timeEnd": 52,
-          "quote": "two victims were almost completely naked though temperatures were 30 below zero that\nnight other bodies were found even farther away two had fractured skulls two more had major chest injuries one\nwas missing his eyes and another was missing her tongue and reports show that two of the hikers had been exposed to unusually high\namounts of radiation"
+          "charStart": 238,
+          "charEnd": 332,
+          "timeStart": 10,
+          "timeEnd": 28,
+          "quote": "their tent had been cut open from the inside\nand abandoned but there was no sign of a struggle"
         }
       ],
-      "confidence": 0.98,
-      "rationale": "Most of these injuries (severe chest/skull trauma without external wounds, half-dressed bodies, missing eyes/tongue on remains found months later) are documented in the original Soviet case files and well-attested. The radiation finding on clothing is also in the case record, though its significance is debated. The host slightly compresses and dramatizes some details (the missing soft tissue is widely attributed to scavengers/decomposition, which the host himself eventually acknowledges).",
-      "directTruth": 0.85,
-      "dependencies": [
-        {
-          "target": "TSZ9wPPcszo:c_0001",
-          "kind": "elaborates"
-        }
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Scene-of-incident observations corroborated in the original 1959 investigation: the tent was slashed from within, food/gear were still arrayed, and nine tracks led downslope without running pattern. Uncontested across all Dyatlov theories.",
+      "tags": [
+        "dyatlov-pass",
+        "tent-evidence",
+        "physical-evidence"
       ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "TSZ9wPPcszo:c_0003",
       "videoId": "TSZ9wPPcszo",
-      "text": "Researcher Alexei Rakitin's KGB theory holds that several of the hikers — given their UPI nuclear-research connections — were intelligence assets on a mission to deliver radioactive-tainted clothing to undercover CIA agents during the Cold War.",
+      "text": "Two of the Dyatlov hikers' clothing carried significant radiation, a finding the 1959 investigators could not explain.",
+      "kind": "empirical",
+      "entities": [
+        "group_or_movement:hikers",
+        "organization:soviet investigators"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TSZ9wPPcszo",
+          "charStart": 611,
+          "charEnd": 702,
+          "timeStart": 35,
+          "timeEnd": 52,
+          "quote": "reports show that two of the hikers had been exposed to unusually high\namounts of radiation"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The radiation finding appears in the original case materials — trace beta-activity on the clothing of Dubinina and Kolevatov per the forensic radiology report. 'Significant' is slightly elevated from the protocol language (the original described it as above natural background, not alarming), but the core fact is documented.",
+      "tags": [
+        "dyatlov-pass",
+        "radiation",
+        "forensic-evidence"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "TSZ9wPPcszo:c_0004",
+      "videoId": "TSZ9wPPcszo",
+      "text": "Author Alexei Rakitin claims three of the Dyatlov hikers were KGB agents on a mission to hand radioactive clothing to CIA operatives.",
       "kind": "speculative",
       "entities": [
         "person:alexei ratikin",
         "organization:kgb",
         "organization:cia",
-        "organization:upi",
-        "event:cold war",
-        "person:semyon zolotaryov",
-        "person:yuri krivanashenko"
+        "group_or_movement:hikers"
       ],
-      "relationships": [
-        "r_0067",
-        "r_0068",
-        "r_0070",
-        "r_0071"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
           "charStart": 9201,
-          "charEnd": 9386,
+          "charEnd": 9310,
           "timeStart": 556,
-          "timeEnd": 573,
-          "quote": "alexei ratikin wrote a book called the outlook pass where he claimed that three of the hikers were kgb agents on a mission to uncover a secret cell of cia\noperatives during the cold war"
-        },
-        {
-          "transcriptId": "TSZ9wPPcszo",
-          "charStart": 9525,
-          "charEnd": 9645,
-          "timeStart": 573,
-          "timeEnd": 588,
-          "quote": "ratikin says that two or three of the hikers were hired by the kgb to deliver radioactive tainted\nclothing to cia agents"
+          "timeEnd": 564,
+          "quote": "alexei ratikin wrote a book called the outlook pass where he claimed that three of the hikers were kgb agents"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Rakitin's book accurately exists and does propose this scenario, so the existence of the theory is true. As an explanation of what actually happened, however, it is speculative and not supported by declassified materials. The host presents it as 'one theory' without endorsing it, and his own verdict section dismisses it.",
-      "directTruth": 0.15,
-      "hostStance": "steelman"
-    },
-    {
-      "id": "TSZ9wPPcszo:c_0004",
-      "videoId": "TSZ9wPPcszo",
-      "text": "The Discovery Channel's 2014 'Russian Yeti' documentary blamed a yeti for the deaths and missing soft tissue, but the host dismisses it as garbage.",
-      "kind": "opinion",
-      "entities": [
-        "organization:discovery channel",
-        "work_of_media:documentary",
-        "date_time:2014"
+      "confidence": 0.85,
+      "directTruth": 0.2,
+      "rationale": "Rakitin's 'Pereval Dyatlova' (2013) does advance this 'controlled delivery' hypothesis. The scenario relies on speculative connections (Zolotaryov's military background, Krivonischenko's Mayak work) but has no corroboration in declassified KGB or CIA archives, and fails to explain the tent-slashing or extreme injuries.",
+      "tags": [
+        "dyatlov-pass",
+        "kgb-theory",
+        "rakitin"
       ],
-      "relationships": [
-        "r_0074",
-        "r_0075",
-        "r_0076"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "TSZ9wPPcszo",
-          "charStart": 10662,
-          "charEnd": 10865,
-          "timeStart": 651,
-          "timeEnd": 667,
-          "quote": "in 2014 the discovery channel released a documentary called russian yeti the killer lives and they used the diatlov incident to make their case that the\nhikers had disturbed the natural habitat of a yeti"
-        },
-        {
-          "transcriptId": "TSZ9wPPcszo",
-          "charStart": 11116,
-          "charEnd": 11151,
-          "timeStart": 675,
-          "timeEnd": 683,
-          "quote": "documentary was well it was garbage"
-        }
-      ],
-      "confidence": 0.99,
-      "rationale": "The documentary did air on Discovery in 2014, and reviewers and skeptics widely panned its evidence (notably the unidentified figure in the photo). The host's dismissal is consistent with the broader skeptical reception.",
-      "directTruth": 0.85,
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "TSZ9wPPcszo:c_0005",
       "videoId": "TSZ9wPPcszo",
-      "text": "Lead Soviet investigator Lev Ivanov became convinced glowing 'flying spheres' (UFOs) were directly connected to the deaths and later said the Soviet government forced him to strike that conclusion from the official record.",
+      "text": "Discovery Channel's 2014 documentary 'Russian Yeti: The Killer Lives' blamed the Dyatlov deaths on a yeti that mutilated the bodies.",
       "kind": "historical",
       "entities": [
-        "person:lev ivanov",
-        "role:lead investigator",
-        "person:ivanov",
-        "organization:soviet government",
-        "date_time:1990"
+        "organization:discovery channel",
+        "work_of_media:documentary",
+        "date_time:2014",
+        "group_or_movement:hikers"
       ],
-      "relationships": [
-        "r_0077",
-        "r_0082",
-        "r_0083"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
-          "charStart": 11755,
-          "charEnd": 11933,
-          "timeStart": 707,
-          "timeEnd": 733,
-          "quote": "lev ivanov the lead investigator of\nthe incident said i suspected at the time and am almost sure now that these bright flying spheres had a direct\nconnection to the group's death"
-        },
-        {
-          "transcriptId": "TSZ9wPPcszo",
-          "charStart": 12016,
-          "charEnd": 12227,
-          "timeStart": 724,
-          "timeEnd": 749,
-          "quote": "in 1990 after ivanov retired he published\nan article claiming that the soviet government forced him to abandon this theory and they removed everything from the report that mentioned ufos orbs or\nanything unusual"
+          "charStart": 10670,
+          "charEnd": 10751,
+          "timeStart": 651,
+          "timeEnd": 659,
+          "quote": "the discovery channel released a documentary called russian yeti the killer lives"
         }
       ],
       "confidence": 0.95,
-      "rationale": "Ivanov did publish a 1990 article in Leninskiy Put making essentially this claim about UFO involvement and Soviet pressure to suppress it. That he believed and stated this is well documented. Whether the spheres actually caused the deaths is a separate, much less supported claim; the host is reporting Ivanov's stance, which is what we're scoring here.",
-      "directTruth": 0.7,
+      "directTruth": 0.9,
+      "rationale": "The documentary did air on Discovery in 2014 and did advance a yeti-attack hypothesis built around an ambiguous photo. Host correctly reports the documentary's claim (and then dismisses it as 'garbage').",
+      "tags": [
+        "dyatlov-pass",
+        "yeti-theory",
+        "discovery-channel"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "TSZ9wPPcszo:c_0006",
       "videoId": "TSZ9wPPcszo",
-      "text": "Donnie Eichar's infrasound theory — that a Karman vortex street wind phenomenon produced low-frequency sound that triggered panic in the hikers — offers a plausible scientific trigger for fleeing the tent.",
+      "text": "A yeti attack is a credible explanation for the Dyatlov deaths.",
       "kind": "speculative",
       "entities": [
-        "person:donnie eicher",
-        "location:carmen vortex street",
-        "quantity:five years"
+        "group_or_movement:hikers",
+        "organization:discovery channel"
       ],
-      "relationships": [
-        "r_0085",
-        "r_0086",
-        "r_0087"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
-          "charStart": 12457,
-          "charEnd": 12709,
-          "timeStart": 749,
-          "timeEnd": 776,
-          "quote": "donnie eicher\nwho spent five years researching the incident and actually visited the site believes that a wind phenomenon called a carmen vortex street could have produced\na terrifying powerful sound which has proven to induce irrational fear in humans"
+          "charStart": 11006,
+          "charEnd": 11100,
+          "timeStart": 667,
+          "timeEnd": 675,
+          "quote": "this photo has been authenticated it's absolutely real but it doesn't look much like a bigfoot"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Eichar's book 'Dead Mountain' (2013) does propose the Karman vortex street/infrasound hypothesis. Infrasound's psychological effects are real but the application to this specific terrain has not been independently confirmed. It's a serious but unproven hypothesis — better as 'possible' than 'demonstrated.'",
-      "directTruth": 0.4,
-      "hostStance": "steelman"
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "rationale": "Host introduces the yeti theory via Discovery's documentary and immediately rejects it ('it doesn't look much like a bigfoot... that documentary was garbage'). Framed explicitly for rejection. directTruth near zero reflects host position + zero physical-anthropology basis for yeti existence.",
+      "tags": [
+        "dyatlov-pass",
+        "yeti-theory",
+        "skeptic-framing"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "TSZ9wPPcszo:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] Host presents Discovery's yeti claim specifically to debunk it."
+        }
+      ]
     },
     {
       "id": "TSZ9wPPcszo:c_0007",
       "videoId": "TSZ9wPPcszo",
-      "text": "A 2021 study by snow-physics scientist Johan Gaume — using a delayed slab-avalanche model partly developed with Disney's Frozen animators — provides a credible mechanism for the initial event that drove the hikers from the tent.",
+      "text": "Lead investigator Lev Ivanov believed the Dyatlov hikers' deaths were caused by luminous orbs / ball-lightning-like phenomena, and that the Soviet government suppressed this finding.",
+      "kind": "historical",
+      "entities": [
+        "person:lev ivanov",
+        "person:ivanov",
+        "organization:soviet government",
+        "role:lead investigator",
+        "date_time:1990"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TSZ9wPPcszo",
+          "charStart": 12078,
+          "charEnd": 12207,
+          "timeStart": 733,
+          "timeEnd": 741,
+          "quote": "that the soviet government forced him to abandon this theory and they removed everything from the report that mentioned ufos orbs"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.5,
+      "rationale": "Ivanov did publish a 1990 article in Leninsky Put stating he was pressured to remove UFO-related material and personally believed 'flying spheres' were responsible. Host's characterization is accurate. directTruth sits at 0.5 because Ivanov's claim about suppression is self-reported decades later and the 'orbs' explanation is not itself well-supported — two separate claims are bundled.",
+      "tags": [
+        "dyatlov-pass",
+        "lev-ivanov",
+        "ufo-theory"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "TSZ9wPPcszo:c_0008",
+      "videoId": "TSZ9wPPcszo",
+      "text": "A rare Kármán vortex street wind phenomenon generated infrasound that induced irrational panic in the Dyatlov hikers, causing them to flee the tent.",
+      "kind": "speculative",
+      "entities": [
+        "location:carmen vortex street",
+        "group_or_movement:hikers",
+        "person:donnie eicher"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TSZ9wPPcszo",
+          "charStart": 12349,
+          "charEnd": 12456,
+          "timeStart": 749,
+          "timeEnd": 758,
+          "quote": "a rare weather event generated infrasound that caused the hikers to suddenly become disoriented and anxious"
+        },
+        {
+          "transcriptId": "TSZ9wPPcszo",
+          "charStart": 12561,
+          "charEnd": 12628,
+          "timeStart": 758,
+          "timeEnd": 766,
+          "quote": "a wind phenomenon called a carmen vortex street could have produced"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.2,
+      "rationale": "Donnie Eichar's 'Dead Mountain' (2013) does propose this. Evidence for infrasound-induced panic strong enough to produce barefoot flight in -30°C is weak — laboratory studies (Tandy et al.) show only mild unease at ≤19 Hz, not the extreme behavior observed. Intriguing but underpowered hypothesis.",
+      "tags": [
+        "dyatlov-pass",
+        "infrasound",
+        "karman-vortex"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "TSZ9wPPcszo:c_0009",
+      "videoId": "TSZ9wPPcszo",
+      "text": "A 2021 Gaume-Puzrin paper used Disney's Frozen snow-simulation technology to show that a small delayed slab avalanche on a 23-degree slope can account for the Dyatlov injuries and flight.",
       "kind": "empirical",
       "entities": [
         "person:johann gome",
         "work_of_media:frozen",
         "work_of_media:disney",
-        "event:the slab avalanche"
+        "event:the slab avalanche",
+        "location:otlov camp"
       ],
-      "relationships": [
-        "r_0088"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
@@ -252,107 +303,164 @@
         },
         {
           "transcriptId": "TSZ9wPPcszo",
-          "charStart": 13876,
-          "charEnd": 14013,
-          "timeStart": 851,
-          "timeEnd": 867,
-          "quote": "he worked with studio animators to develop a model that shows how the group could have been hit by\nwhat's called a delayed slab avalanche"
-        },
-        {
-          "transcriptId": "TSZ9wPPcszo",
-          "charStart": 14393,
-          "charEnd": 14613,
-          "timeStart": 884,
-          "timeEnd": 901,
-          "quote": "now the otlov camp was built at 23 degrees gom believes that when they cut into the snow to build their tent it started a countdown they initiated a\nchain reaction of micro disturbances that took a few hours to propagate"
+          "charStart": 13637,
+          "charEnd": 13738,
+          "timeStart": 829,
+          "timeEnd": 837,
+          "quote": "a new theory has been proposed that the hikers were hit by a very specific and rare kind of avalanche"
         }
       ],
-      "confidence": 0.97,
-      "rationale": "Gaume and Puzrin's January 2021 paper in Communications Earth & Environment did model a small delayed slab avalanche on the 23° slope, and Gaume did consult Disney animators (for an earlier project) to refine snow-flow simulations. The avalanche-trigger explanation is now considered the most scientifically plausible account, though it does not fully resolve every detail of the case.",
-      "directTruth": 0.8,
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Gaume & Puzrin (2021, Communications Earth & Environment) is real. They did use modified Frozen animation code from Disney's Jos Stam to simulate snow-slab deformation, and their model does reproduce blunt-force injuries consistent with a small slab on a 23° slope. The paper is peer-reviewed and has been favorably reviewed; 'solved' is too strong because their model cannot explain radiation, missing soft tissue, or the later-group's ravine injuries without additional assumptions.",
+      "tags": [
+        "dyatlov-pass",
+        "slab-avalanche",
+        "gaume-puzrin-2021"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "TSZ9wPPcszo:c_0008",
+      "id": "TSZ9wPPcszo:c_0010",
       "videoId": "TSZ9wPPcszo",
-      "text": "The radiation on the hikers' clothing is most likely explained by the thorium in their lanterns plus prior occupational exposure of two hikers who had worked at Soviet nuclear facilities, not by KGB intrigue or supernatural causes.",
+      "text": "Hurricane-force katabatic winds loaded additional snow onto the slab above the Dyatlov tent over several hours, triggering the delayed avalanche.",
+      "kind": "speculative",
+      "entities": [
+        "event:katabatic winds",
+        "event:the slab avalanche",
+        "event:critical mass",
+        "facility:tent"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "TSZ9wPPcszo",
+          "charStart": 14330,
+          "charEnd": 14392,
+          "timeStart": 875,
+          "timeEnd": 884,
+          "quote": "now an avalanche only requires a 20 degree slope to trigger it"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.55,
+      "rationale": "Gaume-Puzrin's mechanism does invoke katabatic-wind-driven snow loading as the accelerant for the delayed slab release. Regional weather stations did record high winds that night. The specific 'hurricane force' characterization overstates — the record is strong wind, not sustained hurricane speeds.",
+      "tags": [
+        "dyatlov-pass",
+        "katabatic-winds",
+        "avalanche-mechanism"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "TSZ9wPPcszo:c_0009",
+          "kind": "elaborates",
+          "rationale": "Specifies the wind-loading mechanism within the Gaume-Puzrin slab-avalanche hypothesis."
+        }
+      ]
+    },
+    {
+      "id": "TSZ9wPPcszo:c_0011",
+      "videoId": "TSZ9wPPcszo",
+      "text": "The radiation on the Dyatlov hikers' clothing is explained by thorium from their camp lanterns and their prior work at the Mayak nuclear facility.",
       "kind": "empirical",
       "entities": [
+        "group_or_movement:hikers",
         "facility:nuclear facility",
-        "event:massive nuclear accident",
-        "date_time:1957"
+        "event:massive nuclear accident"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
           "charStart": 18145,
-          "charEnd": 18397,
+          "charEnd": 18250,
           "timeStart": 1096,
-          "timeEnd": 1120,
-          "quote": "the lanterns they used which were\nfound at the site contain small amounts of thorium which is radioactive and remember at least two of the hikers worked at a nuclear facility and helped\nwith cleanup after an accident that was almost as bad as chernobyl"
+          "timeEnd": 1113,
+          "quote": "the lanterns they used which were\nfound at the site contain small amounts of thorium which is radioactive"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Thorium-mantle lanterns were common in Soviet field gear and would account for elevated counts on equipment surfaces. The Mayak (Kyshtym) accident of 1957 is real and Krivonischenko reportedly worked on related cleanup. The host's mundane explanation is reasonable; the radiation finding has long been one of the easiest 'mysteries' to resolve.",
-      "directTruth": 0.65,
+      "confidence": 0.85,
+      "directTruth": 0.6,
+      "rationale": "Both mechanisms are real: Kolevatov and Krivonischenko did work at Mayak (Chelyabinsk-40) post-Kyshtym (1957), and thorium-impregnated gas mantles were common in mid-century lanterns. Whether these two sources fully account for the specific beta-activity pattern on specific garments remains debated — the explanation is plausible but not definitively proven.",
+      "tags": [
+        "dyatlov-pass",
+        "radiation-explanation",
+        "mayak"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
         {
           "target": "TSZ9wPPcszo:c_0003",
           "kind": "contradicts",
-          "rationale": "Mundane radiation explanation undercuts the KGB-radioactive-clothing theory."
+          "rationale": "[alternative] Offers a mundane alternative to the KGB-radioactive-drop and UFO explanations for the clothing radiation."
         }
-      ],
-      "hostStance": "asserts"
+      ]
     },
     {
-      "id": "TSZ9wPPcszo:c_0009",
+      "id": "TSZ9wPPcszo:c_0012",
       "videoId": "TSZ9wPPcszo",
-      "text": "The host's overall verdict is that a small slab avalanche covered the tent, the group calmly evacuated to a backup supply cache, and a sequence of cold-driven mistakes — climbing for firewood, returning to the tent, and finally building a snow shelter under unstable snow that collapsed onto them — explains every major piece of evidence except the radiation.",
-      "kind": "speculative",
+      "text": "The missing eyes and tongue of two Dyatlov victims were caused by animal scavenging and decomposition in running water, not by human or paranormal actors.",
+      "kind": "empirical",
       "entities": [
-        "event:the slab avalanche",
-        "person:diatlov",
-        "person:kravenoshenko",
-        "quantity:seven survivors",
-        "location:ravine",
-        "quantity:50 tons"
+        "group_or_movement:hikers",
+        "location:the rocky stream bed",
+        "location:ravine"
       ],
-      "relationships": [
-        "r_0089"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "TSZ9wPPcszo",
-          "charStart": 15998,
-          "charEnd": 16184,
-          "timeStart": 978,
-          "timeEnd": 994,
-          "quote": "kgb ufos orbs of light these are fun theories but i think this is what happened the slab avalanche hits\ncovering them in a few feet of snow the nine campers cut their way out of the tent"
-        },
-        {
-          "transcriptId": "TSZ9wPPcszo",
-          "charStart": 17295,
-          "charEnd": 17592,
-          "timeStart": 1048,
-          "timeEnd": 1074,
-          "quote": "the remaining four decide to build a snow shelter for the night they find deep snow in a ravine a couple hundred feet away but\ntheir bad luck continues and they pick a spot near a fast running stream that never freezes the stream cuts away the snow above their shelter causing the\nroof to collapse"
+          "charStart": 17988,
+          "charEnd": 18053,
+          "timeStart": 1088,
+          "timeEnd": 1104,
+          "quote": "the missing eyes and tongue probably\ncaused by scavenging animals"
         }
       ],
-      "confidence": 0.99,
-      "rationale": "This is the host's synthesized verdict. It largely tracks the Gaume avalanche scenario plus reasonable extrapolations about the second-shelter collapse. While individual elements (slab avalanche, hypothermia cascade, scavenger explanation for soft tissue) are well supported, the precise narrative chaining the host gives is one plausible reconstruction among several, not a confirmed sequence.",
-      "directTruth": 0.6,
-      "dependencies": [
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "Standard forensic-taphonomy finding: eyes and tongues are high-priority soft-tissue targets for scavengers and are lost quickly in aquatic environments. The Dubinina/Kolevatov/Zolotaryov/Thibeaux-Brignolle bodies were under ~4m of snow above a running stream for 3 months, consistent with partial soft-tissue loss without human agency.",
+      "tags": [
+        "dyatlov-pass",
+        "forensic-taphonomy",
+        "scavenging"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "TSZ9wPPcszo:c_0013",
+      "videoId": "TSZ9wPPcszo",
+      "text": "The Dyatlov group made only one real mistake — the tent placement — and their otherwise textbook-correct decisions to evacuate to the woods and dig a snow cave is what killed them.",
+      "kind": "opinion",
+      "entities": [
+        "person:the nine campers",
+        "group_or_movement:hikers",
+        "location:otlov camp",
+        "location:the woods"
+      ],
+      "relationships": [],
+      "evidence": [
         {
-          "target": "TSZ9wPPcszo:c_0007",
-          "kind": "presupposes",
-          "rationale": "Verdict assumes Gaume's slab-avalanche mechanism is correct."
-        },
-        {
-          "target": "TSZ9wPPcszo:c_0008",
-          "kind": "supports",
-          "rationale": "Mundane radiation explanation is part of the same wrap-up."
+          "transcriptId": "TSZ9wPPcszo",
+          "charStart": 18638,
+          "charEnd": 18696,
+          "timeStart": 1128,
+          "timeEnd": 1136,
+          "quote": "the textbook wrong decision in an avalanche is to stay put"
         }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "Host's verdict framing. Dyatlov-competent winter travelers do generally prefer treeline cover after a camp incident, so the behavior was not panicked flight but reasoned retreat. Whether the tent-placement was the 'only' mistake is a judgment call — delayed-avalanche awareness was also limited in 1959. Mostly plausible reading.",
+      "tags": [
+        "dyatlov-pass",
+        "verdict",
+        "hiker-decisions"
       ],
       "inVerdictSection": true,
       "hostStance": "asserts"

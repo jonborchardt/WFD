@@ -1,517 +1,459 @@
 {
   "schemaVersion": 1,
   "transcriptId": "0DRbjg_0zu8",
-  "generatedAt": "2026-04-20T01:12:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "0DRbjg_0zu8:c_0001",
       "videoId": "0DRbjg_0zu8",
-      "text": "When a Russian team drilling at Lake Vostok finally broke through 2 miles of Antarctic ice in 2012, communications went dark for 5 days and two scientists died — officially of hypothermia, but in reality killed by something the team encountered in the lake.",
-      "kind": "speculative",
+      "text": "The 2012 Russian drilling team at Lake Vostok broke through the ice and two scientists died under suspicious circumstances.",
+      "kind": "historical",
       "entities": [
-        "organization:russian team",
         "location:lake vto",
         "location:lake vosto",
-        "location:lake bostock",
-        "location:antarctica",
         "date_time:2012",
-        "event:hypothermia",
-        "quantity:2 miles"
+        "location:antarctica"
       ],
-      "relationships": [
-        "r_0001",
-        "r_0003"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "0DRbjg_0zu8",
           "charStart": 56,
-          "charEnd": 216,
+          "charEnd": 129,
           "timeStart": 4.6,
-          "timeEnd": 20.56,
-          "quote": "the Russian team at Lake VTO in\nAntarctica drilled through 2 miles of\nice they were inches away from hitting\nwater that hadn't seen sunlight in 20\nmillion years"
+          "timeEnd": 11.559,
+          "quote": "the Russian team at Lake VTO in\nAntarctica drilled through 2 miles of\nice"
         },
         {
           "transcriptId": "0DRbjg_0zu8",
-          "charStart": 217,
+          "charStart": 260,
           "charEnd": 321,
-          "timeStart": 14.12,
-          "timeEnd": 27.599,
-          "quote": "then Communications went\ndark 5 days later two scientists were\ndead the official report said\nhypothermia"
+          "timeStart": 17.72,
+          "timeEnd": 25.32,
+          "quote": "two scientists were\ndead the official report said\nhypothermia"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.2,
-      "rationale": "Russian Lake Vostok drilling did break through to subglacial water in February 2012, this is documented. There is no published evidence of a 5-day comms blackout or two scientific deaths from the drilling — Vostok station does have notoriously thin comms windows and unfortunate cold-related deaths have happened at other Antarctic stations, but no incident matches this description in publicly reported records. The 'something killed them' framing is the host setting up the legend.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "Russian Lake Vostok drilling did break through the subglacial lake in February 2012 — that part is real. The 'two scientists dead' framing comes from the organism 46b tabloid story, which the host later labels 'pure fiction'. The hook fuses real event with fake deaths.",
+      "tags": ["lake-vostok", "russia", "drilling"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
     },
     {
       "id": "0DRbjg_0zu8:c_0002",
       "videoId": "0DRbjg_0zu8",
-      "text": "Antarctica is officially restricted to protect the environment, but the real reason is to keep the public from discovering monsters that classified bioweapons programs created and lost control of.",
-      "kind": "speculative",
+      "text": "No country owns Antarctica but restricted no-go zones exist, and some areas are blurred on Google Earth.",
+      "kind": "empirical",
       "entities": [
         "location:antarctica",
-        "law_or_policy:rules",
-        "law_or_policy:antarctic treaty",
-        "law_or_policy:international treaties",
-        "facility:secret research facilities"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 699,
-          "charEnd": 737,
-          "timeStart": 46.12,
-          "timeEnd": 60.8,
-          "quote": "there are\nmonsters and we created them"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "This is the host's overarching thesis for the video. The Antarctic Treaty System's stated environmental and demilitarization purposes are well documented and there is no public evidence supporting the 'we created monsters' claim. The host walks back this thesis substantially in the verdict section, treating it as a story rather than fact.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0003",
-      "videoId": "0DRbjg_0zu8",
-      "text": "Joe — a Navy lieutenant doctor stationed at McMurdo in the 1990s — discovered a classified no-go zone east of the base where Special Forces operations produced soldiers with bizarre, surgically precise injuries that the base commander always recorded as hypothermia regardless of actual cause.",
-      "kind": "speculative",
-      "entities": [
-        "person:joe",
-        "role:lieutenant",
-        "role:doctor",
-        "organization:navy",
-        "facility:mcmurdo station",
-        "location:mcmurdo",
         "location:nogo zone",
-        "location:east of the base",
-        "role:base commander",
-        "event:hypothermia",
-        "organization:special forces"
-      ],
-      "relationships": [
-        "r_0012",
-        "r_0020"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 3656,
-          "charEnd": 3747,
-          "timeStart": 277.759,
-          "timeEnd": 287.72,
-          "quote": "his father Joe\nwas a Navy lieutenant and a doctor he\nserved at McMurdo Station in the 1990s"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 4113,
-          "charEnd": 4198,
-          "timeStart": 308.639,
-          "timeEnd": 319.759,
-          "quote": "there is one\nzone about 30 Mi east of the base that\neven military Expeditions avoided"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 4280,
-          "charEnd": 4348,
-          "timeStart": 322.8,
-          "timeEnd": 332.44,
-          "quote": "when you check them on Google Earth\ntoday the entire area is\nblurred"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.1,
-      "rationale": "The host's whole story originates from a single anonymous 4chan post by 'Anton' attributed to a deceased father — the host explicitly notes in the verdict section that he had to clean up the 4chan posts and that the documents 'are easy to fake'. McMurdo does have legitimate restricted areas and DoD personnel, but the specific Joe-the-doctor narrative has no independent corroboration and no surviving documentary trail.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0004",
-      "videoId": "0DRbjg_0zu8",
-      "text": "A massive humanoid sea creature called the Ningen — 60 feet long with smooth white skin, hands, fingers and large round black eyes — has been observed by Japanese vessels in Antarctic waters since the early 2000s, and may be the result of secret splice experiments mixing whale and human DNA.",
-      "kind": "speculative",
-      "entities": [
-        "nationality_or_ethnicity:japanese",
-        "location:antarctic waters",
-        "facility:secret research facilities",
-        "organization:genetic researchers"
-      ],
-      "relationships": [
-        "r_0025"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 5181,
-          "charEnd": 5252,
-          "timeStart": 397.68,
-          "timeEnd": 407.28,
-          "quote": "a Japanese vessel\npatrolling Antarctic Waters spotted\nsomething unusual"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 5927,
-          "charEnd": 5982,
-          "timeStart": 452.639,
-          "timeEnd": 459.759,
-          "quote": "they have a name for it Nan the\nJapanese word for human"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 7029,
-          "charEnd": 7178,
-          "timeStart": 525.6,
-          "timeEnd": 542.44,
-          "quote": "its humanoid\nfeatures are proof of genetic\nexperimentation secret research\nfacilities in Antarctica spliced whale\nDNA with humans and created the Nya"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.05,
-      "rationale": "Ningen (人間, 'human') is a real Japanese internet cryptid that emerged on 2chan around 2007. The 'evidence' is photos that, as the host correctly notes in his own verdict section, are blurry shapes consistent with icebergs, beluga whales, or vertically floating sperm whales. There is no scientific evidence for a 60-foot humanoid in Antarctic waters and no remotely plausible biotech explanation for whale-human DNA splicing producing such a creature.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0005",
-      "videoId": "0DRbjg_0zu8",
-      "text": "The injuries Joe was treating were caused by giant predatory creatures called Striders — bone-white, spindly, exoskeletal monsters capable of 50–60 foot leaps across Antarctic terrain and powerful enough to crush a truck — that escaped from a classified breeding facility in the no-go zone.",
-      "kind": "speculative",
-      "entities": [
-        "person:joe",
-        "organization:striders",
-        "technology:strider",
-        "location:nogo zone",
-        "location:east of the base",
-        "facility:secret research facilities"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 8825,
-          "charEnd": 8917,
-          "timeStart": 698.399,
-          "timeEnd": 709.36,
-          "quote": "the leg under the truck was bone white\nand spindly not quite flesh but not\nquite\nexoskeleton"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 9249,
-          "charEnd": 9389,
-          "timeStart": 725.68,
-          "timeEnd": 741.279,
-          "quote": "descriptions of large white\npredators that could cross Antarctica's\nTerrain in massive 50 to 60ft leaps the\nresearchers called them\nStriders"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.02,
-      "rationale": "Striders are a creature of the host's source material (the 4chan / creepypasta corpus). No biological evidence, no fossil precursor, and no published military documentation supports their existence. The host himself does not affirm their reality in the verdict section — he treats them as part of a story that 'mirrors The Thing'.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "0DRbjg_0zu8:c_0003",
-          "kind": "elaborates",
-          "rationale": "Provides the alleged source of the Joe storyline's injuries."
-        }
-      ]
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0006",
-      "videoId": "0DRbjg_0zu8",
-      "text": "Beneath Lake Vostok the Russians found Organism 46-B: a 30-foot, 14-tentacled cephalopod-like creature that had evolved in 20 million years of isolation to be telepathic, paralytically venomous, and capable of shape-shifting into a perfect copy of a human diver.",
-      "kind": "speculative",
-      "entities": [
-        "organization:organism 46b",
-        "location:lake vto",
-        "location:lake vosto",
-        "person:dr anton padalka",
-        "person:dr anton padula",
-        "person:dr pedal",
-        "quantity:millions of years"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 11013,
-          "charEnd": 11205,
-          "timeStart": 859.16,
-          "timeEnd": 876.24,
-          "quote": "the team found something in Lake\nVTO that evolved in complete isolation\nfor millions of years they called it\norganism\n46b the creature stretched over 30 ft\nlong and looked like a giant octopus"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 11425,
-          "charEnd": 11492,
-          "timeStart": 890.24,
-          "timeEnd": 897.48,
-          "quote": "its most terrifying feature wasn't its\nsize it was its intelligence"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 11841,
-          "charEnd": 11912,
-          "timeStart": 921.639,
-          "timeEnd": 934.8,
-          "quote": "the creature could shape\nshift it shape itself into form of human\ndiver"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.02,
-      "rationale": "Organism 46-B is a confirmed hoax originating in a 2013 article on the tabloid satirical site Allnewspipeline / Waterford Whispers and amplified through Snopes-debunked aggregators. 'Dr Anton Padalka' is not a real scientist. The host directly admits this in the verdict: 'that one is pure fiction'. directTruth set very low because the host self-rates this as fiction.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "0DRbjg_0zu8:c_0001",
-          "kind": "elaborates",
-          "rationale": "Provides the supposed identity of the thing the Russians encountered."
-        }
-      ]
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0007",
-      "videoId": "0DRbjg_0zu8",
-      "text": "A joint America–Chile–China bioweapons program in the no-go zone was breeding and gene-splicing Striders for use as targeted assassins, with a maglev bullet-train tunnel network connecting Antarctic facilities to Hong Kong, New York, Melbourne and London for what amounts to the world's largest human trafficking operation, the children being shipped in as feed and training prey.",
-      "kind": "speculative",
-      "entities": [
-        "location:america",
-        "location:china",
-        "location:hong kong",
-        "location:new york",
-        "location:melbourne",
-        "location:london",
-        "location:major cities",
-        "organization:striders",
-        "technology:magnetic levitation technology",
-        "person:children"
-      ],
-      "relationships": [
-        "r_0115"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 15382,
-          "charEnd": 15491,
-          "timeStart": 1222.919,
-          "timeEnd": 1235.6,
-          "quote": "this was a\njoint operation between America Chile\nand China\nthey were breeding Striders trying to\ncontrol them"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 15775,
-          "charEnd": 15929,
-          "timeStart": 1249.36,
-          "timeEnd": 1263.88,
-          "quote": "behind the testing Labs a bullet\ntrain terminal tunnels stretched beneath\nthe ocean floor to cities all over the\nworld Hong Kong New York Melbourne\nLondon"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 16181,
-          "charEnd": 16242,
-          "timeStart": 1277.159,
-          "timeEnd": 1284.44,
-          "quote": "this was the largest human\ntrafficking operation in the world"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.01,
-      "rationale": "The host explicitly debunks this himself in the verdict: intercontinental subsea maglev tunnels are physically impossible at the relevant depths/pressures. The America-Chile-China joint bioweapons collaboration has no documentary basis. The 'breeding monsters to hunt children trafficked through underwater bullet trains' is a textbook conspiracy meme that has accreted across the QAnon-adjacent online ecosystem.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "0DRbjg_0zu8:c_0005",
-          "kind": "elaborates",
-          "rationale": "Provides the institutional backstory and motive for the Strider program."
-        }
-      ]
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0008",
-      "videoId": "0DRbjg_0zu8",
-      "text": "The 1959 Antarctic Treaty's lockdown of the continent was a deliberate response to discoveries the U.S. and Nazi Germany made beneath the ice — caverns, ancient ruins, and evidence of something that predates humanity — surfaced by Operation Highjump (1947) and Operation New Schwabenland.",
-      "kind": "speculative",
-      "entities": [
-        "person:admiral richard e bird",
-        "event:operation high jump",
-        "event:operation new schwabenland",
-        "event:world war ii",
-        "ideology:nazis",
-        "date_time:1947",
-        "date_time:1959",
-        "law_or_policy:antarctic treaty",
-        "location:south america",
-        "location:argentina"
-      ],
-      "relationships": [
-        "r_0119",
-        "r_0122"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 17010,
-          "charEnd": 17064,
-          "timeStart": 1346.159,
-          "timeEnd": 1354.559,
-          "quote": "in 1947 Admiral Richard E bird LED\noperation high jump"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 17257,
-          "charEnd": 17322,
-          "timeStart": 1361.76,
-          "timeEnd": 1371.44,
-          "quote": "during World War II the\nNazis launched Operation new\nschwabenland"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 17323,
-          "charEnd": 17449,
-          "timeStart": 1367.279,
-          "timeEnd": 1378.2,
-          "quote": "rumors spread about\ndiscoveries beneath the ice underground\nCaverns ancient ruins evidence of\nsomething that predates Humanity"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 17729,
-          "charEnd": 17857,
-          "timeStart": 1395.96,
-          "timeEnd": 1408.72,
-          "quote": "1959 they locked down the entire\ncontinent the Antarctic treaty banned\nmilitary presence private exploration\nunauthorized\naccess"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.25,
-      "rationale": "The historical bones are correct: Operation Highjump (Byrd, 1946-47) was a real and very large U.S. Navy Antarctic expedition, and Operation New Schwabenland (Germany, 1938-39) was real. The Antarctic Treaty was signed in 1959. However, Highjump did not 'end early' for any documented unusual reason — its planned 6-8 month duration was cut short by weather conditions and equipment problems documented in the Navy's own reports. The 'underground caverns and ancient ruins' framing is from postwar fringe books (Christof Friedrich, Ernst Zündel et al.), not from official records. The host's framing chains real history with fabricated implications.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0009",
-      "videoId": "0DRbjg_0zu8",
-      "text": "On reflection, all three Antarctica monster stories — Strider/no-go zone, Ningen, and Organism 46-B — fail under scrutiny: Anton's evidence is fakeable, intercontinental maglev tunnels are physically impossible, the Ningen photos are icebergs/whales, and Organism 46-B traces to a 2013 tabloid hoax with a fictional scientist.",
-      "kind": "opinion",
-      "entities": [
-        "person:anton",
-        "organization:organism 46b",
-        "person:dr anton padalka",
-        "date_time:2013",
-        "technology:magnetic levitation technology"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 18161,
-          "charEnd": 18242,
-          "timeStart": 1424.0,
-          "timeEnd": 1434.52,
-          "quote": "Anton's military patches\nand documents seem compelling but those\nare easy to fake"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 18247,
-          "charEnd": 18399,
-          "timeStart": 1429.52,
-          "timeEnd": 1444.12,
-          "quote": "the underground\nbullet train Network stretching across\ncontinents that's impossible Subs can't\ngo that deep no Hollow tunnel could\nsurvive that pressure"
-        },
-        {
-          "transcriptId": "0DRbjg_0zu8",
-          "charStart": 19521,
-          "charEnd": 19686,
-          "timeStart": 1516.24,
-          "timeEnd": 1538.0,
-          "quote": "organism 46b the\npsychic shape-shifting seapod\ntetrus that one is pure fiction the\nstory comes from a post on a tabloid\nside s in 2013 Dr Anton padalka doesn't\nexist"
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.85,
-      "rationale": "The host's own verdict survey is mostly correct: Organism 46-B is indeed a 2013 tabloid fabrication; intercontinental seafloor maglev tunnels are not physically realistic; ningen photos are consistent with sperm whales / belugas / icebergs. directTruth high because the meta-claim about the falsity of these stories is a careful skeptical synthesis the host arrives at after walking through each.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
-      "dependencies": [
-        {
-          "target": "0DRbjg_0zu8:c_0004",
-          "kind": "contradicts"
-        },
-        {
-          "target": "0DRbjg_0zu8:c_0005",
-          "kind": "contradicts"
-        },
-        {
-          "target": "0DRbjg_0zu8:c_0006",
-          "kind": "contradicts"
-        },
-        {
-          "target": "0DRbjg_0zu8:c_0007",
-          "kind": "contradicts"
-        }
-      ]
-    },
-    {
-      "id": "0DRbjg_0zu8:c_0010",
-      "videoId": "0DRbjg_0zu8",
-      "text": "Even though the specific creature stories are fake, Antarctica is genuinely the most restricted continent on Earth, with most of it requiring special permits even for citizens of treaty signatories — a level of access control that the host suggests is suspicious.",
-      "kind": "opinion",
-      "entities": [
-        "location:antarctica",
-        "location:europe",
-        "location:australia",
-        "location:united states",
         "law_or_policy:antarctic treaty"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "0DRbjg_0zu8",
-          "charStart": 18651,
-          "charEnd": 18766,
-          "timeStart": 1457.279,
-          "timeEnd": 1468.919,
-          "quote": "McMurdo Station has restricted areas\nmilitary personnel conduct classified\noperations there the nogo zones are real"
+          "charStart": 366,
+          "charEnd": 392,
+          "timeStart": 25.32,
+          "timeEnd": 29.48,
+          "quote": "no country owns\nAntarctica"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The Antarctic Treaty System (1959) holds Antarctica in trust — no national ownership. The permit system and specially protected areas are real. Blurred satellite imagery in some spots is documented although data-gap is a common mundane explanation.",
+      "tags": ["antarctica", "treaty", "permits"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0003",
+      "videoId": "0DRbjg_0zu8",
+      "text": "Genetically engineered apex-predator 'Striders' are bred in a secret Antarctic facility as part of a global human-trafficking operation.",
+      "kind": "speculative",
+      "entities": [
+        "organization:striders",
+        "technology:strider",
+        "location:antarctica",
+        "location:nogo zone"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 15393,
+          "charEnd": 15468,
+          "timeStart": 1225.679,
+          "timeEnd": 1231.08,
+          "quote": "joint operation between America Chile\nand China\nthey were breeding Striders"
         },
         {
           "transcriptId": "0DRbjg_0zu8",
-          "charStart": 20655,
-          "charEnd": 20732,
-          "timeStart": 1595.24,
-          "timeEnd": 1605.2,
-          "quote": "Antarctica is one of Earth's\nmost restricted places maybe that's for\na reason"
+          "charStart": 16194,
+          "charEnd": 16219,
+          "timeStart": 1277.159,
+          "timeEnd": 1282.2,
+          "quote": "largest human\ntrafficking"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.02,
+      "rationale": "The Strider narrative originates with an anonymous February 2021 4chan /x/ post attributed to 'Anton'. Host explicitly concludes Anton was 'probably riffing on [The Thing]'. Physical impossibility of transoceanic maglev tunnels alone falsifies the narrative.",
+      "tags": ["striders", "trafficking", "4chan"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0004",
+      "videoId": "0DRbjg_0zu8",
+      "text": "Anton's Strider story is probably fake and was borrowed from the 1982 film The Thing.",
+      "kind": "empirical",
+      "entities": [
+        "person:anton",
+        "organization:striders",
+        "work_of_media:movie"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 18556,
+          "charEnd": 18618,
+          "timeStart": 1450.24,
+          "timeEnd": 1457.279,
+          "quote": "Anton's story is\nfake but he was probably riffing on the\nthing"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Mostly true: the Antarctic Treaty System and the Protocol on Environmental Protection do impose strict permit requirements, the continent is sparsely accessible, and McMurdo and other stations do conduct classified DoD-funded science (e.g., neutrino telescopes, weather/comms research with military funding). The 'maybe that's for a reason' implication is the host's editorial spin; the access controls have well-documented environmental and geopolitical justifications.",
+      "directTruth": 0.85,
+      "rationale": "Host's own verdict. Narrative beats (Antarctic base, bodies with precise wounds, shapeshifting creature, classified military response) match The Thing closely. The specific physical impossibilities in Anton's story (transoceanic maglev tunnels) reinforce the debunk.",
+      "tags": ["debunk", "the-thing", "4chan"],
+      "inVerdictSection": true,
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "dependencies": [
+        {
+          "target": "0DRbjg_0zu8:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] Host directly attributes the Strider narrative to Carpenter's film rather than a real leak."
+        }
+      ]
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0005",
+      "videoId": "0DRbjg_0zu8",
+      "text": "The Ningen is a 60-foot humanoid cryptid with smooth white skin observed by Japanese crews in Antarctic waters.",
+      "kind": "speculative",
+      "entities": [
+        "location:antarctic waters",
+        "nationality_or_ethnicity:japanese",
+        "organization:organism 46b"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 6009,
+          "charEnd": 6040,
+          "timeStart": 458.08,
+          "timeEnd": 461.84,
+          "quote": "the ninon Never Felt\nthreatened"
+        },
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 6820,
+          "charEnd": 6894,
+          "timeStart": 512.8,
+          "timeEnd": 520.36,
+          "quote": "cryptozoologists believe the\nninon represents evidence of intelligent\nlife"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "rationale": "Ningen first appeared on Japanese imageboards in the mid-2000s with no credible first-person witness. Host labels the story 'probably fake' and attributes photos to belugas, photoshop, icebergs, or sperm whales.",
+      "tags": ["ningen", "cryptid", "japan"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0006",
+      "videoId": "0DRbjg_0zu8",
+      "text": "The Ningen photographs are better explained by beluga whales, icebergs, photoshopped images, or vertically-hunting sperm whales.",
+      "kind": "empirical",
+      "entities": [
+        "location:antarctic waters",
+        "nationality_or_ethnicity:japanese"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 18916,
+          "charEnd": 18944,
+          "timeStart": 1474.12,
+          "timeEnd": 1478.2,
+          "quote": "the\nevidence doesn't hold up"
+        },
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 19187,
+          "charEnd": 19237,
+          "timeStart": 1494.48,
+          "timeEnd": 1501.2,
+          "quote": "beluga whales aren't that big but sperm\nwhales are"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Belugas have smooth white skin and somewhat humanoid head shapes. Sperm whales sometimes rest vertically. These are well-established natural explanations for the photo evidence.",
+      "tags": ["ningen", "debunk", "beluga", "sperm-whale"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "0DRbjg_0zu8:c_0005",
+          "kind": "contradicts",
+          "rationale": "[alternative] Natural-phenomenon explanations undercut the cryptid interpretation."
+        }
+      ]
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0007",
+      "videoId": "0DRbjg_0zu8",
+      "text": "There is no mention of the Ningen before the early 2000s, but Japanese folklore has earlier creatures called Ningyo meaning 'human fish'.",
+      "kind": "historical",
+      "entities": [
+        "nationality_or_ethnicity:japanese",
+        "date_time:early 2000s"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 19327,
+          "charEnd": 19381,
+          "timeStart": 1503.919,
+          "timeEnd": 1508.559,
+          "quote": "there's no mention\nof the ninon before the early 2000s"
+        },
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 19395,
+          "charEnd": 19440,
+          "timeStart": 1508.559,
+          "timeEnd": 1513.24,
+          "quote": "Japanese folklore about\ncreatures called Nino"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "The Ningyo is a real feature of medieval Japanese folklore — the name literally means 'human fish'. The absence of pre-2000s Ningen references is consistent with an internet-cryptid origin.",
+      "tags": ["ningyo", "folklore", "etymology"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0008",
+      "videoId": "0DRbjg_0zu8",
+      "text": "Organism 46b is a 30-foot telepathic shape-shifting cephalopod discovered in Lake Vostok.",
+      "kind": "speculative",
+      "entities": [
+        "organization:organism 46b",
+        "person:dr anton padalka",
+        "location:lake vto",
+        "location:lake vosto"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 19521,
+          "charEnd": 19567,
+          "timeStart": 1516.24,
+          "timeEnd": 1523.32,
+          "quote": "organism 46b the\npsychic shape-shifting seapod"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.01,
+      "rationale": "The organism 46b story was published by a tabloid in 2013 and the alleged source Dr. Anton Padalka does not exist. Host explicitly states 'that one is pure fiction'.",
+      "tags": ["organism-46b", "lake-vostok", "tabloid"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0009",
+      "videoId": "0DRbjg_0zu8",
+      "text": "The Organism 46b story originated on a 2013 tabloid site and Dr. Anton Padalka does not exist.",
+      "kind": "empirical",
+      "entities": [
+        "organization:organism 46b",
+        "person:dr anton padalka",
+        "date_time:2013"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 19631,
+          "charEnd": 19686,
+          "timeStart": 1526.279,
+          "timeEnd": 1535.52,
+          "quote": "a tabloid\nside s in 2013 Dr Anton padalka doesn't\nexist"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.92,
+      "rationale": "Host's own verdict, confirmed by skeptic sites — the organism 46b article originated at a tabloid website in 2013 and no academic record of 'Anton Padalka' exists.",
+      "tags": ["organism-46b", "debunk", "fabrication"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "0DRbjg_0zu8:c_0008",
+          "kind": "contradicts",
+          "rationale": "[debunks] Identifies the fictional origin of the organism 46b narrative."
+        }
+      ]
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0010",
+      "videoId": "0DRbjg_0zu8",
+      "text": "Admiral Richard E. Byrd led Operation Highjump, one of the largest Antarctic expeditions in history, in 1947.",
+      "kind": "historical",
+      "entities": [
+        "person:admiral richard e bird",
+        "event:operation high jump",
+        "date_time:1947",
+        "location:antarctica"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 17010,
+          "charEnd": 17064,
+          "timeStart": 1346.159,
+          "timeEnd": 1352.279,
+          "quote": "in 1947 Admiral Richard E bird LED\noperation high jump"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Operation Highjump (1946-1947) under Admiral Richard E. Byrd is standard US Navy history: 4,700 men, 13 ships, 33 aircraft. Checkable institutional record.",
+      "tags": ["byrd", "operation-highjump", "1947"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "0DRbjg_0zu8:c_0011",
       "videoId": "0DRbjg_0zu8",
-      "text": "Despite his stated skepticism about the cryptids, AJ confesses he now intuitively believes 'something is under the ice at the bottom of the world' that we should leave alone — letting the legend land emotionally even after debunking it intellectually.",
+      "text": "The Nazis launched Operation New Schwabenland, which seeded rumors of a hidden Antarctic base.",
+      "kind": "historical",
+      "entities": [
+        "ideology:nazis",
+        "event:operation new schwabenland",
+        "location:antarctica"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 17281,
+          "charEnd": 17345,
+          "timeStart": 1365.48,
+          "timeEnd": 1371.44,
+          "quote": "Nazis launched Operation new\nschwabenland rumors spread about\ndi"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "rationale": "The 1938-39 German Antarctic Expedition did occur and claimed territory called Neuschwabenland. The 'hidden base beneath the ice' narrative is a postwar conspiracy embellishment without documentary support. Partial truth.",
+      "tags": ["nazis", "new-schwabenland", "conspiracy"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0012",
+      "videoId": "0DRbjg_0zu8",
+      "text": "The 1959 Antarctic Treaty locked down the continent by banning military presence, private exploration, and unauthorized access.",
+      "kind": "historical",
+      "entities": [
+        "law_or_policy:antarctic treaty",
+        "location:antarctica"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 17729,
+          "charEnd": 17810,
+          "timeStart": 1395.96,
+          "timeEnd": 1402.799,
+          "quote": "1959 they locked down the entire\ncontinent the Antarctic treaty banned\nmilitary p"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The Antarctic Treaty was signed December 1, 1959 and entered force in 1961. It prohibits military activity and requires permits. 'Locked down' overstates — scientific exploration is encouraged — but the core restrictions are real.",
+      "tags": ["antarctic-treaty", "1959"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0013",
+      "videoId": "0DRbjg_0zu8",
+      "text": "Most of Antarctica is specially protected or managed and accessible only by permit that most visitors can't obtain.",
+      "kind": "empirical",
+      "entities": [
+        "location:antarctica",
+        "law_or_policy:antarctic treaty"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "0DRbjg_0zu8",
+          "charStart": 20531,
+          "charEnd": 20575,
+          "timeStart": 1588.279,
+          "timeEnd": 1592.96,
+          "quote": "most of the continent is specially\nprotected"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Antarctic Specially Protected Areas and Specially Managed Areas under the Madrid Protocol cover substantial portions of the continent. The permit system is real and restrictive; tourist access is channeled through IAATO operators.",
+      "tags": ["antarctica", "aspa", "permits"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "0DRbjg_0zu8:c_0014",
+      "videoId": "0DRbjg_0zu8",
+      "text": "The host has a strong feeling there is something under the Antarctic ice that humanity should leave alone.",
       "kind": "opinion",
       "entities": [
-        "person:aj",
         "location:antarctica",
-        "location:planet"
+        "location:earth"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "0DRbjg_0zu8",
           "charStart": 21013,
-          "charEnd": 21169,
+          "charEnd": 21071,
           "timeStart": 1618.919,
-          "timeEnd": 1637.44,
-          "quote": "there's something under the ice at\nthe bottom of the world I don't know why\nbut I have a very strong feeling that\nwhatever it is we should probably leave\nit"
+          "timeEnd": 1623.36,
+          "quote": "there's something under the ice at\nthe bottom of the world"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Pure expression of host intuition / belief, not a falsifiable claim. directTruth omitted because the underlying proposition ('something is under the ice') is unfalsifiably vague and a feeling, not an empirical claim.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
+      "confidence": 0.8,
+      "rationale": "Closing host opinion — explicit intuition claim rather than empirical. Omitting directTruth as appropriate for a subjective feeling.",
+      "tags": ["opinion", "antarctica", "closing"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
     }
   ]
 }
