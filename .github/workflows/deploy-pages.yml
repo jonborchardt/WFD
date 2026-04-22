@@ -10,6 +10,7 @@ on:
       - "data/entities/**"
       - "data/relations/**"
       - "data/graph/**"
+      - "data/claims/**"
       - ".github/workflows/deploy-pages.yml"
 
 permissions:
@@ -48,7 +49,7 @@ jobs:
       - name: Layer data into dist/
         run: |
           mkdir -p web/dist/data
-          for d in catalog entities relations graph; do
+          for d in catalog entities relations graph claims; do
             if [ -d "data/$d" ]; then
               cp -r "data/$d" "web/dist/data/$d"
             fi
