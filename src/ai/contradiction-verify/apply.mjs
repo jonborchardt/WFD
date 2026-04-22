@@ -7,8 +7,50 @@
 // agreements (side-benefit — pairs where two different videos assert
 // the same thesis).
 
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+
+// Small sha1 over claim text — used to invalidate a cached verdict if
+// the underlying claim's text changed since the verdict was captured.
+function sha1Hex(s) {
+  return createHash("sha1").update(String(s)).digest("hex");
+}
+
+// Load claim text hashes keyed by claim id for every per-video claim
+// file. Stamped into each verdict so the claim-indexes stage can
+// invalidate stale verdicts automatically.
+function buildClaimTextHashes(dataDir) {
+  const dir = join(dataDir, "claims");
+  if (!existsSync(dir)) return new Map();
+  const reserved = new Set([
+    "claims-index.json",
+    "dependency-graph.json",
+    "contradictions.json",
+    "edge-truth.json",
+    "embeddings.json",
+    "contradiction-verdicts.json",
+    "consonance.json",
+  ]);
+  const files = readdirSync(dir).filter(
+    (f) => f.endsWith(".json") && !reserved.has(f),
+  );
+  const out = new Map();
+  for (const f of files) {
+    try {
+      const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
+      if (!j || !Array.isArray(j.claims)) continue;
+      for (const c of j.claims) {
+        if (c?.id && typeof c.text === "string") {
+          out.set(c.id, sha1Hex(c.text));
+        }
+      }
+    } catch {
+      /* skip bad file */
+    }
+  }
+  return out;
+}
 
 const dataDir = "data";
 const claimsDir = join(dataDir, "claims");
@@ -36,6 +78,8 @@ if (existsSync(verdictsPath)) {
   }
 }
 
+const claimTextHash = buildClaimTextHashes(dataDir);
+
 for (const f of shardFiles) {
   let payload;
   try {
@@ -55,6 +99,8 @@ for (const f of shardFiles) {
       reasoning: v.reasoning ?? null,
       by: v.by ?? "ai",
       at: v.at ?? new Date().toISOString(),
+      leftTextHash: claimTextHash.get(lo) ?? null,
+      rightTextHash: claimTextHash.get(hi) ?? null,
     });
   }
 }

@@ -70,7 +70,39 @@ export interface ContradictionsFile {
   generatedAt: string;
   total: number;
   byKind: Record<string, number>;
+  verifiedDropped?: { total: number; byVerdict: Record<string, number> };
   contradictions: ClaimContradiction[];
+}
+
+// Plan 04 §D4 — cross-video SAME-CLAIM pairs promoted to agreements.
+export interface ConsonanceFile {
+  schemaVersion: 1;
+  generatedAt: string;
+  count: number;
+  agreements: ClaimContradiction[];
+}
+
+// Plan 04 §D3 — verdict cache row. Keyed by sorted (left, right).
+export interface VerdictCacheEntry {
+  left: ClaimId;
+  right: ClaimId;
+  verdict:
+    | "LOGICAL-CONTRADICTION"
+    | "DEBUNKS"
+    | "UNDERCUTS"
+    | "ALTERNATIVE"
+    | "COMPLEMENTARY"
+    | "IRRELEVANT"
+    | "SAME-CLAIM";
+  reasoning?: string | null;
+  by?: "ai" | "operator";
+  at?: string;
+  // Optional text-hash signatures of the two claims at verdict time.
+  // When non-empty, apply.mjs invalidates the verdict if either hash
+  // differs from the current claim's text hash — guards against stale
+  // verdicts after claim re-extraction.
+  leftTextHash?: string;
+  rightTextHash?: string;
 }
 
 export interface ClaimOverrideEntry {
@@ -113,12 +145,35 @@ export interface BuildClaimIndexesInput {
   dismissedContradictions?: ContradictionDismissal[];
   /** Admin-authored contradictions to surface as `kind: "manual"`. */
   customContradictions?: CustomContradictionInput[];
+  /**
+   * Plan 04 — optional sentence embeddings (keyed by claim id). When
+   * supplied, the cross-video candidate generator uses cosine
+   * similarity; otherwise it falls back to Jaccard.
+   */
+  embeddings?: Map<ClaimId, Float32Array | number[]>;
+  /**
+   * Plan 04 — optional AI verification verdict cache (keyed by sorted
+   * "left|right" pair). When present, contradictions.json surfaces
+   * only LOGICAL-CONTRADICTION and DEBUNKS; UNDERCUTS / ALTERNATIVE
+   * stay in the DAG but aren't flagged; COMPLEMENTARY / IRRELEVANT
+   * are dropped; SAME-CLAIM moves to the consonance file.
+   */
+  verdicts?: Map<string, VerdictCacheEntry>;
+  /**
+   * Plan 04 — hash helper so stale verdicts (claim text changed since
+   * verdict was captured) are invalidated. Supplier passes `{id → hash}`
+   * for every claim; if a verdict's leftTextHash/rightTextHash diverges
+   * from the current hash, the verdict is treated as missing.
+   */
+  claimTextHash?: Map<ClaimId, string>;
 }
 
 export interface BuildClaimIndexesResult {
   index: ClaimsIndexFile;
   dependencyGraph: DependencyGraphFile;
   contradictions: ContradictionsFile;
+  /** Plan 04 §D4 — SAME-CLAIM pairs promoted to agreements. */
+  consonance: ConsonanceFile;
 }
 
 export function buildClaimIndexes(
@@ -242,16 +297,73 @@ export function buildClaimIndexes(
     if (!override) return c;
     return { ...c, directTruth: override.directTruth };
   });
-  const detected = detectClaimContradictions(claimsForContradiction);
+  const detected = detectClaimContradictions(claimsForContradiction, {
+    embeddings: input.embeddings,
+  });
 
   // Drop dismissed contradictions.
   const dismissed = new Set<string>();
   for (const d of input.dismissedContradictions ?? []) {
     dismissed.add(pairKey(d.a, d.b));
   }
-  const surviving = detected.filter(
-    (c) => !dismissed.has(pairKey(c.left, c.right)),
-  );
+
+  // Plan 04 §D — apply verdicts + invalidate stale ones by claim-text hash.
+  const verdictMap = input.verdicts ?? new Map<string, VerdictCacheEntry>();
+  const hashMap = input.claimTextHash ?? new Map<ClaimId, string>();
+  function currentVerdict(a: ClaimId, b: ClaimId): VerdictCacheEntry | undefined {
+    const key = pairKey(a, b);
+    const v = verdictMap.get(key);
+    if (!v) return undefined;
+    // Invalidate if hash drifted since the verdict was captured.
+    if (v.leftTextHash || v.rightTextHash) {
+      const [lo, hi] = a < b ? [a, b] : [b, a];
+      const curLeft = hashMap.get(lo);
+      const curRight = hashMap.get(hi);
+      if (v.leftTextHash && curLeft && v.leftTextHash !== curLeft) return undefined;
+      if (v.rightTextHash && curRight && v.rightTextHash !== curRight) return undefined;
+    }
+    return v;
+  }
+
+  const surviving: ClaimContradiction[] = [];
+  const consonanceRows: ClaimContradiction[] = [];
+  const droppedByVerdict: Record<string, number> = {};
+  let droppedTotal = 0;
+
+  for (const c of detected) {
+    if (dismissed.has(pairKey(c.left, c.right))) continue;
+
+    // broken-presupposition is mechanically derived — always pass through.
+    if (c.kind === "broken-presupposition") {
+      surviving.push(c);
+      continue;
+    }
+
+    const v = currentVerdict(c.left, c.right);
+    if (!v) {
+      // Pending verification: preserve with verified: null so the admin UI
+      // can surface it. Public UI filters verified: null out. Plan 04 §E2.
+      surviving.push({ ...c, verified: null });
+      continue;
+    }
+    const enriched: ClaimContradiction = {
+      ...c,
+      verified: { verdict: v.verdict, reasoning: v.reasoning ?? undefined, by: v.by ?? "ai" },
+    };
+    if (v.verdict === "LOGICAL-CONTRADICTION" || v.verdict === "DEBUNKS") {
+      surviving.push(enriched);
+    } else if (v.verdict === "SAME-CLAIM") {
+      consonanceRows.push(enriched);
+      droppedTotal++;
+      droppedByVerdict[v.verdict] = (droppedByVerdict[v.verdict] ?? 0) + 1;
+    } else {
+      // UNDERCUTS / ALTERNATIVE / COMPLEMENTARY / IRRELEVANT — drop from
+      // the public view; propagation still honors UNDERCUTS / ALTERNATIVE
+      // via the dependency edges themselves.
+      droppedTotal++;
+      droppedByVerdict[v.verdict] = (droppedByVerdict[v.verdict] ?? 0) + 1;
+    }
+  }
 
   // Append custom (admin-authored) contradictions.
   const claimIds = new Set(claims.map((c) => c.id));
@@ -275,10 +387,19 @@ export function buildClaimIndexes(
     generatedAt,
     total: all.length,
     byKind,
+    verifiedDropped:
+      droppedTotal > 0 ? { total: droppedTotal, byVerdict: droppedByVerdict } : undefined,
     contradictions: all,
   };
 
-  return { index, dependencyGraph, contradictions };
+  const consonance: ConsonanceFile = {
+    schemaVersion: 1,
+    generatedAt,
+    count: consonanceRows.length,
+    agreements: consonanceRows,
+  };
+
+  return { index, dependencyGraph, contradictions, consonance };
 }
 
 function pairKey(a: string, b: string): string {

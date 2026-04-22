@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-22T21:02:59.580Z",
+  "generatedAt": "2026-04-22T21:34:50.414Z",
   "count": 57,
   "agreements": [
     {
@@ -200,19 +200,35 @@
     },
     {
       "kind": "cross-video",
-      "left": "AZXvhIpYwak:c_0014",
-      "right": "CZNEQFp9FYw:c_0012",
+      "left": "a9hwXoCrEUs:c_0005",
+      "right": "FpxLpEzJpAs:c_0004",
       "sharedEntities": [
-        "organization:illuminati"
+        "organization:cia"
       ],
-      "similarity": 0.6810757520880877,
+      "similarity": 0.812548635030117,
       "matchReason": "cosine",
       "verified": {
         "verdict": "SAME-CLAIM",
-        "reasoning": "Both hosts deny the existence of a literal Illuminati organization.",
+        "reasoning": "Both identify Project Stargate as the CIA-backed remote-viewing program, with only minor detail differences.",
         "by": "ai"
       },
-      "summary": "AZXvhIpYwak asserts vs CZNEQFp9FYw denies — cos=0.68 — shared: organization:illuminati (pending verify)"
+      "summary": "a9hwXoCrEUs asserts vs FpxLpEzJpAs asserts — cos=0.81 — shared: organization:cia (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "a9hwXoCrEUs:c_0005",
+      "right": "U-dFlC97VtE:c_0006",
+      "sharedEntities": [
+        "organization:cia"
+      ],
+      "similarity": 0.80544355469717,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both describe Project Stargate as a CIA-funded remote-viewing psychic research program — the same thesis expressed in two videos.",
+        "by": "ai"
+      },
+      "summary": "a9hwXoCrEUs asserts vs U-dFlC97VtE asserts — cos=0.81 — shared: organization:cia (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -229,6 +245,22 @@
         "by": "ai"
       },
       "summary": "AazxDk1ODVo asserts vs WMETBHvo-U4 asserts — cos=0.71 — shared: location:area 51 (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "AZXvhIpYwak:c_0014",
+      "right": "CZNEQFp9FYw:c_0012",
+      "sharedEntities": [
+        "organization:illuminati"
+      ],
+      "similarity": 0.6810757520880877,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both hosts deny the existence of a literal Illuminati organization.",
+        "by": "ai"
+      },
+      "summary": "AZXvhIpYwak asserts vs CZNEQFp9FYw denies — cos=0.68 — shared: organization:illuminati (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -346,19 +378,36 @@
     },
     {
       "kind": "cross-video",
-      "left": "FpxLpEzJpAs:c_0004",
-      "right": "a9hwXoCrEUs:c_0005",
+      "left": "ftrbdFGTQO4:c_0008",
+      "right": "PDQ4bFoUWGA:c_0001",
       "sharedEntities": [
-        "organization:cia"
+        "date_time:1989",
+        "event:solar storm"
       ],
-      "similarity": 0.812548635030117,
+      "similarity": 0.7767094158133504,
       "matchReason": "cosine",
       "verified": {
         "verdict": "SAME-CLAIM",
-        "reasoning": "Both identify Project Stargate as the CIA-backed remote-viewing program, with only minor detail differences.",
+        "reasoning": "Both describe the March 1989 geomagnetic storm knocking out Quebec power, with the second adding corroborating satellite/shuttle/radio details.",
         "by": "ai"
       },
-      "summary": "FpxLpEzJpAs asserts vs a9hwXoCrEUs asserts — cos=0.81 — shared: organization:cia (pending verify)"
+      "summary": "ftrbdFGTQO4 asserts vs PDQ4bFoUWGA asserts — cos=0.78 — shared: date_time:1989, event:solar storm (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "fWKCFahyRHw:c_0003",
+      "right": "m6F4lHSbmWQ:c_0012",
+      "sharedEntities": [
+        "location:area 51"
+      ],
+      "similarity": 0.7370147296671804,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both claims summarize Bob Lazar's 1989 public claim of reverse-engineering alien spacecraft at Area 51/S4.",
+        "by": "ai"
+      },
+      "summary": "fWKCFahyRHw asserts vs m6F4lHSbmWQ uncertain — cos=0.74 — shared: location:area 51 (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -412,6 +461,137 @@
     },
     {
       "kind": "cross-video",
+      "left": "kaS8fP12CGM:c_0001",
+      "right": "YaaGvq2mcR0:c_0002",
+      "sharedEntities": [
+        "person:serge manast"
+      ],
+      "similarity": 0.8996764386143584,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both videos give the same biographical sketch of Serge Monast as a Quebec journalist who believed in a secret controlling cabal.",
+        "by": "ai"
+      },
+      "summary": "kaS8fP12CGM ? vs YaaGvq2mcR0 ? — cos=0.90 — shared: person:serge manast (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "kaS8fP12CGM:c_0002",
+      "right": "YaaGvq2mcR0:c_0003",
+      "sharedEntities": [
+        "person:serge manast",
+        "date_time:1994"
+      ],
+      "similarity": 0.8056257820775738,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both assert Monast published Project Blue Beam in 1994 describing a one-world-government plan.",
+        "by": "ai"
+      },
+      "summary": "kaS8fP12CGM ? vs YaaGvq2mcR0 ? — cos=0.81 — shared: person:serge manast, date_time:1994 (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "kaS8fP12CGM:c_0003",
+      "right": "YaaGvq2mcR0:c_0001",
+      "sharedEntities": [
+        "ideology:new world order"
+      ],
+      "similarity": 0.7028872694552806,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both define Project Blue Beam's goals as dismantling religion/nations/family — essentially the same definitional summary of the conspiracy theory.",
+        "by": "ai"
+      },
+      "summary": "kaS8fP12CGM ? vs YaaGvq2mcR0 asserts — cos=0.70 — shared: ideology:new world order (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "kaS8fP12CGM:c_0005",
+      "right": "YaaGvq2mcR0:c_0010",
+      "sharedEntities": [
+        "person:serge manast"
+      ],
+      "similarity": 0.8262844379351025,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both state the same biographical fact: Monast died of a heart attack at age 51 the day after his arrest.",
+        "by": "ai"
+      },
+      "summary": "kaS8fP12CGM ? vs YaaGvq2mcR0 ? — cos=0.83 — shared: person:serge manast (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "kaS8fP12CGM:c_0007",
+      "right": "YaaGvq2mcR0:c_0008",
+      "sharedEntities": [
+        "technology:holograms"
+      ],
+      "similarity": 0.7353705825361564,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both describe Blue Beam step-two satellite-projected holographic deities in the sky — the same conspiracy claim denied by both hosts.",
+        "by": "ai"
+      },
+      "summary": "kaS8fP12CGM denies vs YaaGvq2mcR0 denies — cos=0.74 — shared: technology:holograms (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "kaS8fP12CGM:c_0013",
+      "right": "YaaGvq2mcR0:c_0014",
+      "sharedEntities": [
+        "event:operation northwoods",
+        "date_time:1962",
+        "location:cuba"
+      ],
+      "similarity": 0.85738818696072,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both describe the 1962 DoD Operation Northwoods proposal for false-flag attacks on US civilians to justify invading Cuba.",
+        "by": "ai"
+      },
+      "summary": "kaS8fP12CGM ? vs YaaGvq2mcR0 ? — cos=0.86 — shared: event:operation northwoods, date_time:1962, location:cuba (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "kaS8fP12CGM:c_0015",
+      "right": "YaaGvq2mcR0:c_0016",
+      "sharedEntities": [
+        "work_of_media:star trek"
+      ],
+      "similarity": 0.743363064498408,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both videos make the identical assertion that Project Blue Beam drew from Roddenberry's 'God Thing' script and the TNG 'Devil's Due' episode.",
+        "by": "ai"
+      },
+      "summary": "kaS8fP12CGM asserts vs YaaGvq2mcR0 asserts — cos=0.74 — shared: work_of_media:star trek (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "kJQ_FsmU19g:c_0008",
+      "right": "s9VoC8MoeUs:c_0011",
+      "sharedEntities": [
+        "person:bill moore"
+      ],
+      "similarity": 0.7775607914582047,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both describe Bill Moore's 1989 MUFON Las Vegas confession about spreading government disinformation in the UFO community.",
+        "by": "ai"
+      },
+      "summary": "kJQ_FsmU19g asserts vs s9VoC8MoeUs asserts — cos=0.78 — shared: person:bill moore (pending verify)"
+    },
+    {
+      "kind": "cross-video",
       "left": "Knl85VitcIg:c_0009",
       "right": "VJme28KSb6I:c_0009",
       "sharedEntities": [
@@ -441,6 +621,55 @@
         "by": "ai"
       },
       "summary": "Knl85VitcIg asserts vs VJme28KSb6I asserts — cos=0.86 — shared: location:piedmont (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "laXhTcko-lg:c_0009",
+      "right": "r8p44wQMtNE:c_0007",
+      "sharedEntities": [
+        "date_time:1970"
+      ],
+      "similarity": 0.8703154714166672,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both describe the 1970 Vasin/Shcherbakov 'Spaceship Moon' hypothesis that the Moon is a hollow artificial craft — identical historical attribution.",
+        "by": "ai"
+      },
+      "summary": "laXhTcko-lg asserts vs r8p44wQMtNE asserts — cos=0.87 — shared: date_time:1970 (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "laXhTcko-lg:c_0013",
+      "right": "YpZKwbdbsJ4:c_0008",
+      "sharedEntities": [
+        "organization:nasa"
+      ],
+      "similarity": 0.8052985904690593,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both retell Carl/Karl Wolfe's Disclosure Project testimony about seeing photos of artificial structures on the far side of the Moon at NASA Langley — the same sourced account.",
+        "by": "ai"
+      },
+      "summary": "laXhTcko-lg asserts vs YpZKwbdbsJ4 asserts — cos=0.81 — shared: organization:nasa (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "lb0ib5B_bK4:c_0014",
+      "right": "sfRcl5rmydI:c_0001",
+      "sharedEntities": [
+        "person:gary mckinnon",
+        "organization:nasa"
+      ],
+      "similarity": 0.7607759218959441,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both describe Gary McKinnon's 2001-2002 intrusion into US military/NASA systems searching for UFO evidence — cross-video agreement.",
+        "by": "ai"
+      },
+      "summary": "lb0ib5B_bK4 asserts vs sfRcl5rmydI asserts — cos=0.76 — shared: person:gary mckinnon, organization:nasa (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -479,6 +708,22 @@
     },
     {
       "kind": "cross-video",
+      "left": "o5ZaamPJd5U:c_0006",
+      "right": "q9Nuy7mFIsE:c_0008",
+      "sharedEntities": [
+        "location:mars"
+      ],
+      "similarity": 0.7700273842746027,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both videos advance the same Brandenburg-derived thesis that elevated Martian xenon-129 is evidence of ancient nuclear detonations.",
+        "by": "ai"
+      },
+      "summary": "o5ZaamPJd5U asserts vs q9Nuy7mFIsE asserts — cos=0.77 — shared: location:mars (pending verify)"
+    },
+    {
+      "kind": "cross-video",
       "left": "OvcCK-F6aKY:c_0012",
       "right": "zo68B3UG9VU:c_0006",
       "sharedEntities": [
@@ -492,23 +737,6 @@
         "by": "ai"
       },
       "summary": "OvcCK-F6aKY asserts vs zo68B3UG9VU asserts — cos=0.75 — shared: organization:darpa (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "PDQ4bFoUWGA:c_0001",
-      "right": "ftrbdFGTQO4:c_0008",
-      "sharedEntities": [
-        "date_time:1989",
-        "event:solar storm"
-      ],
-      "similarity": 0.7767094158133504,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both describe the March 1989 geomagnetic storm knocking out Quebec power, with the second adding corroborating satellite/shuttle/radio details.",
-        "by": "ai"
-      },
-      "summary": "PDQ4bFoUWGA asserts vs ftrbdFGTQO4 asserts — cos=0.78 — shared: date_time:1989, event:solar storm (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -542,6 +770,38 @@
         "by": "ai"
       },
       "summary": "PQuLc-kEin0 asserts vs zjhMCFNl_YU asserts — cos=0.72 — shared: date_time:1941 (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "r8p44wQMtNE:c_0002",
+      "right": "u2MrTgBoqiI:c_0003",
+      "sharedEntities": [
+        "location:nibiru"
+      ],
+      "similarity": 0.7485343987536565,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both present Sitchin's Anunnaki-from-Nibiru ancient-astronaut thesis; hostStance differs but the substantive claim being conveyed is the same and both hosts agree it's poorly supported.",
+        "by": "ai"
+      },
+      "summary": "r8p44wQMtNE asserts vs u2MrTgBoqiI denies — cos=0.75 — shared: location:nibiru (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "r8p44wQMtNE:c_0002",
+      "right": "vZBRMcUkqNA:c_0003",
+      "sharedEntities": [
+        "location:nibiru"
+      ],
+      "similarity": 0.7622108261652198,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both assert the Sitchin thesis that Anunnaki were Nibiru aliens needing Earth's gold for atmospheric repair — cross-video agreement.",
+        "by": "ai"
+      },
+      "summary": "r8p44wQMtNE asserts vs vZBRMcUkqNA asserts — cos=0.76 — shared: location:nibiru (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -594,24 +854,8 @@
     },
     {
       "kind": "cross-video",
-      "left": "U-dFlC97VtE:c_0006",
-      "right": "a9hwXoCrEUs:c_0005",
-      "sharedEntities": [
-        "organization:cia"
-      ],
-      "similarity": 0.80544355469717,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both describe Project Stargate as a CIA-funded remote-viewing psychic research program — the same thesis expressed in two videos.",
-        "by": "ai"
-      },
-      "summary": "U-dFlC97VtE asserts vs a9hwXoCrEUs asserts — cos=0.81 — shared: organization:cia (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "WNavHksmXnA:c_0011",
-      "right": "tgqAt6YN1jE:c_0006",
+      "left": "tgqAt6YN1jE:c_0006",
+      "right": "WNavHksmXnA:c_0011",
       "sharedEntities": [
         "person:edgar casey",
         "location:bahamas"
@@ -623,284 +867,7 @@
         "reasoning": "Both describe Cayce's late-1930s prediction that Atlantis would be found at Bimini in the Bahamas.",
         "by": "ai"
       },
-      "summary": "WNavHksmXnA uncertain vs tgqAt6YN1jE asserts — cos=0.80 — shared: person:edgar casey, location:bahamas (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "WqHimq-PT_s:c_0010",
-      "right": "YpZKwbdbsJ4:c_0001",
-      "sharedEntities": [
-        "event:apollo 17"
-      ],
-      "similarity": 0.7229116647691758,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both state Apollo 17 (December 1972) was the last crewed lunar mission and that subsequent missions were cancelled — same historical facts from two videos.",
-        "by": "ai"
-      },
-      "summary": "WqHimq-PT_s asserts vs YpZKwbdbsJ4 asserts — cos=0.72 — shared: event:apollo 17 (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YaaGvq2mcR0:c_0001",
-      "right": "kaS8fP12CGM:c_0003",
-      "sharedEntities": [
-        "ideology:new world order"
-      ],
-      "similarity": 0.7028872694552806,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both define Project Blue Beam's goals as dismantling religion/nations/family — essentially the same definitional summary of the conspiracy theory.",
-        "by": "ai"
-      },
-      "summary": "YaaGvq2mcR0 asserts vs kaS8fP12CGM ? — cos=0.70 — shared: ideology:new world order (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YaaGvq2mcR0:c_0002",
-      "right": "kaS8fP12CGM:c_0001",
-      "sharedEntities": [
-        "person:serge manast"
-      ],
-      "similarity": 0.8996764386143584,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both videos give the same biographical sketch of Serge Monast as a Quebec journalist who believed in a secret controlling cabal.",
-        "by": "ai"
-      },
-      "summary": "YaaGvq2mcR0 ? vs kaS8fP12CGM ? — cos=0.90 — shared: person:serge manast (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YaaGvq2mcR0:c_0003",
-      "right": "kaS8fP12CGM:c_0002",
-      "sharedEntities": [
-        "person:serge manast",
-        "date_time:1994"
-      ],
-      "similarity": 0.8056257820775738,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both assert Monast published Project Blue Beam in 1994 describing a one-world-government plan.",
-        "by": "ai"
-      },
-      "summary": "YaaGvq2mcR0 ? vs kaS8fP12CGM ? — cos=0.81 — shared: person:serge manast, date_time:1994 (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YaaGvq2mcR0:c_0008",
-      "right": "kaS8fP12CGM:c_0007",
-      "sharedEntities": [
-        "technology:holograms"
-      ],
-      "similarity": 0.7353705825361564,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both describe Blue Beam step-two satellite-projected holographic deities in the sky — the same conspiracy claim denied by both hosts.",
-        "by": "ai"
-      },
-      "summary": "YaaGvq2mcR0 denies vs kaS8fP12CGM denies — cos=0.74 — shared: technology:holograms (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YaaGvq2mcR0:c_0010",
-      "right": "kaS8fP12CGM:c_0005",
-      "sharedEntities": [
-        "person:serge manast"
-      ],
-      "similarity": 0.8262844379351025,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both state the same biographical fact: Monast died of a heart attack at age 51 the day after his arrest.",
-        "by": "ai"
-      },
-      "summary": "YaaGvq2mcR0 ? vs kaS8fP12CGM ? — cos=0.83 — shared: person:serge manast (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YaaGvq2mcR0:c_0014",
-      "right": "kaS8fP12CGM:c_0013",
-      "sharedEntities": [
-        "date_time:1962",
-        "event:operation northwoods",
-        "location:cuba"
-      ],
-      "similarity": 0.85738818696072,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both describe the 1962 DoD Operation Northwoods proposal for false-flag attacks on US civilians to justify invading Cuba.",
-        "by": "ai"
-      },
-      "summary": "YaaGvq2mcR0 ? vs kaS8fP12CGM ? — cos=0.86 — shared: date_time:1962, event:operation northwoods, location:cuba (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YaaGvq2mcR0:c_0016",
-      "right": "kaS8fP12CGM:c_0015",
-      "sharedEntities": [
-        "work_of_media:star trek"
-      ],
-      "similarity": 0.743363064498408,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both videos make the identical assertion that Project Blue Beam drew from Roddenberry's 'God Thing' script and the TNG 'Devil's Due' episode.",
-        "by": "ai"
-      },
-      "summary": "YaaGvq2mcR0 asserts vs kaS8fP12CGM asserts — cos=0.74 — shared: work_of_media:star trek (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YpZKwbdbsJ4:c_0008",
-      "right": "laXhTcko-lg:c_0013",
-      "sharedEntities": [
-        "organization:nasa"
-      ],
-      "similarity": 0.8052985904690593,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both retell Carl/Karl Wolfe's Disclosure Project testimony about seeing photos of artificial structures on the far side of the Moon at NASA Langley — the same sourced account.",
-        "by": "ai"
-      },
-      "summary": "YpZKwbdbsJ4 asserts vs laXhTcko-lg asserts — cos=0.81 — shared: organization:nasa (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "YpZKwbdbsJ4:c_0008",
-      "right": "yDyJe1nmSOM:c_0012",
-      "sharedEntities": [
-        "person:carl wolf",
-        "organization:nasa"
-      ],
-      "similarity": 0.7298121597186848,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both relay Carl Wolfe's testimony about mushroom-shaped lunar-base photographs from the 1965 Lunar Orbiter — cross-video agreement.",
-        "by": "ai"
-      },
-      "summary": "YpZKwbdbsJ4 asserts vs yDyJe1nmSOM asserts — cos=0.73 — shared: person:carl wolf, organization:nasa (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "fWKCFahyRHw:c_0003",
-      "right": "m6F4lHSbmWQ:c_0012",
-      "sharedEntities": [
-        "location:area 51"
-      ],
-      "similarity": 0.7370147296671804,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both claims summarize Bob Lazar's 1989 public claim of reverse-engineering alien spacecraft at Area 51/S4.",
-        "by": "ai"
-      },
-      "summary": "fWKCFahyRHw asserts vs m6F4lHSbmWQ uncertain — cos=0.74 — shared: location:area 51 (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "kJQ_FsmU19g:c_0008",
-      "right": "s9VoC8MoeUs:c_0011",
-      "sharedEntities": [
-        "person:bill moore"
-      ],
-      "similarity": 0.7775607914582047,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both describe Bill Moore's 1989 MUFON Las Vegas confession about spreading government disinformation in the UFO community.",
-        "by": "ai"
-      },
-      "summary": "kJQ_FsmU19g asserts vs s9VoC8MoeUs asserts — cos=0.78 — shared: person:bill moore (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "laXhTcko-lg:c_0009",
-      "right": "r8p44wQMtNE:c_0007",
-      "sharedEntities": [
-        "date_time:1970"
-      ],
-      "similarity": 0.8703154714166672,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both describe the 1970 Vasin/Shcherbakov 'Spaceship Moon' hypothesis that the Moon is a hollow artificial craft — identical historical attribution.",
-        "by": "ai"
-      },
-      "summary": "laXhTcko-lg asserts vs r8p44wQMtNE asserts — cos=0.87 — shared: date_time:1970 (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "lb0ib5B_bK4:c_0014",
-      "right": "sfRcl5rmydI:c_0001",
-      "sharedEntities": [
-        "person:gary mckinnon",
-        "organization:nasa"
-      ],
-      "similarity": 0.7607759218959441,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both describe Gary McKinnon's 2001-2002 intrusion into US military/NASA systems searching for UFO evidence — cross-video agreement.",
-        "by": "ai"
-      },
-      "summary": "lb0ib5B_bK4 asserts vs sfRcl5rmydI asserts — cos=0.76 — shared: person:gary mckinnon, organization:nasa (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "o5ZaamPJd5U:c_0006",
-      "right": "q9Nuy7mFIsE:c_0008",
-      "sharedEntities": [
-        "location:mars"
-      ],
-      "similarity": 0.7700273842746027,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both videos advance the same Brandenburg-derived thesis that elevated Martian xenon-129 is evidence of ancient nuclear detonations.",
-        "by": "ai"
-      },
-      "summary": "o5ZaamPJd5U asserts vs q9Nuy7mFIsE asserts — cos=0.77 — shared: location:mars (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "r8p44wQMtNE:c_0002",
-      "right": "u2MrTgBoqiI:c_0003",
-      "sharedEntities": [
-        "location:nibiru"
-      ],
-      "similarity": 0.7485343987536565,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both present Sitchin's Anunnaki-from-Nibiru ancient-astronaut thesis; hostStance differs but the substantive claim being conveyed is the same and both hosts agree it's poorly supported.",
-        "by": "ai"
-      },
-      "summary": "r8p44wQMtNE asserts vs u2MrTgBoqiI denies — cos=0.75 — shared: location:nibiru (pending verify)"
-    },
-    {
-      "kind": "cross-video",
-      "left": "r8p44wQMtNE:c_0002",
-      "right": "vZBRMcUkqNA:c_0003",
-      "sharedEntities": [
-        "location:nibiru"
-      ],
-      "similarity": 0.7622108261652198,
-      "matchReason": "cosine",
-      "verified": {
-        "verdict": "SAME-CLAIM",
-        "reasoning": "Both assert the Sitchin thesis that Anunnaki were Nibiru aliens needing Earth's gold for atmospheric repair — cross-video agreement.",
-        "by": "ai"
-      },
-      "summary": "r8p44wQMtNE asserts vs vZBRMcUkqNA asserts — cos=0.76 — shared: location:nibiru (pending verify)"
+      "summary": "tgqAt6YN1jE asserts vs WNavHksmXnA uncertain — cos=0.80 — shared: person:edgar casey, location:bahamas (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -935,6 +902,39 @@
         "by": "ai"
       },
       "summary": "u2MrTgBoqiI denies vs vZBRMcUkqNA asserts — cos=0.80 — shared: organization:anunnaki, location:nibiru (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "WqHimq-PT_s:c_0010",
+      "right": "YpZKwbdbsJ4:c_0001",
+      "sharedEntities": [
+        "event:apollo 17"
+      ],
+      "similarity": 0.7229116647691758,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both state Apollo 17 (December 1972) was the last crewed lunar mission and that subsequent missions were cancelled — same historical facts from two videos.",
+        "by": "ai"
+      },
+      "summary": "WqHimq-PT_s asserts vs YpZKwbdbsJ4 asserts — cos=0.72 — shared: event:apollo 17 (pending verify)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "yDyJe1nmSOM:c_0012",
+      "right": "YpZKwbdbsJ4:c_0008",
+      "sharedEntities": [
+        "organization:nasa",
+        "person:carl wolf"
+      ],
+      "similarity": 0.7298121597186848,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "SAME-CLAIM",
+        "reasoning": "Both relay Carl Wolfe's testimony about mushroom-shaped lunar-base photographs from the 1965 Lunar Orbiter — cross-video agreement.",
+        "by": "ai"
+      },
+      "summary": "yDyJe1nmSOM asserts vs YpZKwbdbsJ4 asserts — cos=0.73 — shared: organization:nasa, person:carl wolf (pending verify)"
     }
   ]
 }

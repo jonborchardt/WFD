@@ -9,6 +9,7 @@ import { VideosPage } from "./pages/VideosPage";
 import { ClaimsPage } from "./pages/ClaimsPage";
 import { ClaimDetailPage } from "./pages/ClaimDetailPage";
 import { ContradictionsPage } from "./pages/ContradictionsPage";
+import { ConsonancePage } from "./pages/ConsonancePage";
 import { IS_ADMIN } from "./lib/admin";
 
 // Lazy-load heavy pages
@@ -40,6 +41,7 @@ export function App() {
         <Route path="claims" element={<ClaimsPage />} />
         <Route path="claim/:claimId" element={<ClaimDetailPage />} />
         <Route path="contradictions" element={<ContradictionsPage />} />
+        <Route path="cross-video-agreements" element={<ConsonancePage />} />
         {/* Kept as aliases so existing bookmarks and any stashed
             "graph these" links with a querystring still resolve. */}
         <Route path="relationships" element={<Suspense fallback={<Loading />}><RelationshipsPage /></Suspense>} />

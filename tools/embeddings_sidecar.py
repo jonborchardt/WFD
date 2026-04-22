@@ -95,6 +95,16 @@ def main() -> None:
         # and replace empty / whitespace-only entries with a single
         # space so the tokenizer still returns a valid (if meaningless)
         # vector.
+        # Grab the tokenizer off the first module so we can do a proper
+        # 400-token truncation rather than the previous char-cap heuristic
+        # (Plan 04 edge-case). Falls back to the char cap if the module
+        # doesn't expose one (rare on this family of models).
+        tokenizer = None
+        try:
+            tokenizer = model.tokenizer  # type: ignore[attr-defined]
+        except Exception:
+            tokenizer = None
+
         def clean(t):
             if not isinstance(t, str):
                 t = str(t)
@@ -105,9 +115,20 @@ def main() -> None:
             t = t.strip()
             if not t:
                 t = " "
-            # ST default max is ~512 tokens; 4000 chars is comfortably
-            # under even after tokenization blow-up, and saves cycles
-            # on accidental giant inputs.
+            # Token-aware cap: truncate to the model's useful window
+            # (400 tokens is comfortably under all-MiniLM's 512 max,
+            # leaving room for special tokens). Tokenize + decode back
+            # to a string so the downstream encode call doesn't re-
+            # tokenize with a padding that would overflow.
+            if tokenizer is not None:
+                try:
+                    enc = tokenizer.encode(t, add_special_tokens=False)
+                    if len(enc) > 400:
+                        enc = enc[:400]
+                        t = tokenizer.decode(enc, skip_special_tokens=True)
+                except Exception:
+                    # fall through to char cap on any tokenizer oddity
+                    pass
             if len(t) > 4000:
                 t = t[:4000]
             return t

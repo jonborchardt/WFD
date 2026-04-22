@@ -64,7 +64,15 @@ export function loadClaimsBundle(): Promise<ClaimsBundle> {
       }
     }
 
-    const contradictions = cx?.contradictions ?? [];
+    // Plan 04 §E2 — public UI filters out `verified: null` pending
+    // candidates; admin mode keeps them so unverified pairs can be
+    // triaged in the admin panel. The pipeline always writes the full
+    // list; filtering is a display-time decision.
+    const isAdmin = Boolean(import.meta.env.VITE_ADMIN);
+    const raw = cx?.contradictions ?? [];
+    const contradictions = isAdmin
+      ? raw
+      : raw.filter((x) => x.verified !== null);
     const contradictionCount = new Map<string, number>();
     for (const c of contradictions) {
       contradictionCount.set(c.left, (contradictionCount.get(c.left) ?? 0) + 1);
