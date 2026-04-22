@@ -43,7 +43,17 @@ import {
   readAliases,
   resolveKey,
 } from "../graph/canonicalize.js";
-import { readAliasesFile } from "../graph/aliases-schema.js";
+import {
+  addDeletedEntity,
+  addMerge,
+  readAliasesFile,
+  writeAliasesFile,
+} from "../graph/aliases-schema.js";
+import {
+  ALWAYS_PROMOTE,
+  DELETE_ALWAYS,
+  DELETE_LABELS,
+} from "../ai/curate/delete-always.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
@@ -415,6 +425,118 @@ export const contradictionsStage: GraphStage = {
 // entity-videos.json, and relationships-graph.json. Runs at graph
 // level so one pass covers the whole catalog after any
 // entities-or-relations-producing stage has touched dirtyAt.
+// Ensure the committed DELETE_ALWAYS + ALWAYS_PROMOTE lists are reflected
+// in aliases.json before the indexes rebuild runs. Idempotent:
+//   - A DELETE_ALWAYS entry is skipped if the key is already deleted or
+//     already merged (the operator may have chosen a different fate).
+//   - An ALWAYS_PROMOTE entry is skipped unless BOTH endpoints exist in
+//     the corpus, and also skipped if `from` is already deleted / merged
+//     to something else / the target of the promote.
+// Plan 2-1 §A2 (plans2/01-entity-hygiene.md).
+function applyCommittedLists(
+  dataDir: string,
+  corpusKeys: Set<string>,
+): {
+  deletedApplied: number;
+  promotedApplied: number;
+  deletedSkipped: number;
+  promotedSkipped: number;
+  labelDeletedApplied: number;
+  labelDeletedSkipped: number;
+} {
+  const current = readAliasesFile(dataDir);
+  const alreadyDeleted = new Set(current.deletedEntities.map((e) => e.key));
+  const alreadyMergedFrom = new Set(current.merges.map((e) => e.from));
+  const notSamePairs = new Set(
+    current.notSame.map((e) => [e.a, e.b].sort().join("~~")),
+  );
+
+  // Batch all additions into a single read-modify-write. The per-key
+  // `addDeletedEntity` / `addMerge` helpers each do a full rewrite which
+  // is both slow and prone to filesystem contention on Windows when
+  // called in a tight loop over thousands of keys.
+  const file = current;
+
+  // Whole-label deletion
+  let labelDeletedApplied = 0;
+  let labelDeletedSkipped = 0;
+  const labelReason = new Map(DELETE_LABELS.map((e) => [e.label, e.reason]));
+  for (const key of corpusKeys) {
+    const colon = key.indexOf(":");
+    if (colon < 0) continue;
+    const label = key.slice(0, colon);
+    const reason = labelReason.get(label);
+    if (!reason) continue;
+    if (alreadyDeleted.has(key) || alreadyMergedFrom.has(key)) {
+      labelDeletedSkipped++;
+      continue;
+    }
+    file.deletedEntities.push({ key, reason: `label:${label} ${reason}` });
+    alreadyDeleted.add(key);
+    labelDeletedApplied++;
+  }
+
+  // DELETE_ALWAYS list
+  let deletedApplied = 0;
+  let deletedSkipped = 0;
+  for (const { key, reason } of DELETE_ALWAYS) {
+    if (alreadyDeleted.has(key) || alreadyMergedFrom.has(key)) {
+      deletedSkipped++;
+      continue;
+    }
+    file.deletedEntities.push({ key, reason });
+    alreadyDeleted.add(key);
+    deletedApplied++;
+  }
+
+  let promotedApplied = 0;
+  let promotedSkipped = 0;
+  for (const { from, to, rationale } of ALWAYS_PROMOTE) {
+    if (!corpusKeys.has(from) || !corpusKeys.has(to)) {
+      promotedSkipped++;
+      continue;
+    }
+    if (alreadyDeleted.has(from) || alreadyDeleted.has(to)) {
+      promotedSkipped++;
+      continue;
+    }
+    if (alreadyMergedFrom.has(from)) {
+      promotedSkipped++;
+      continue;
+    }
+    const pair = [from, to].sort().join("~~");
+    if (notSamePairs.has(pair)) {
+      promotedSkipped++;
+      continue;
+    }
+    const entry: { from: string; to: string; rationale?: string } = { from, to };
+    if (rationale && rationale.trim()) entry.rationale = rationale.trim();
+    // Drop any existing merge for the same `from` (keep last-writer-wins semantics).
+    file.merges = file.merges.filter((e) => e.from !== from);
+    file.merges.push(entry);
+    alreadyMergedFrom.add(from);
+    promotedApplied++;
+  }
+
+  // Single write at the end. Any key that appears in both deletedEntities
+  // and merges (rare; shouldn't happen given the guards) — purge merges
+  // for deleted keys so the sentinel wins.
+  if (labelDeletedApplied > 0 || deletedApplied > 0 || promotedApplied > 0) {
+    const deletedKeys = new Set(file.deletedEntities.map((e) => e.key));
+    file.merges = file.merges.filter((e) => !deletedKeys.has(e.from));
+    writeAliasesFile(dataDir, file);
+  }
+
+  return {
+    deletedApplied,
+    promotedApplied,
+    deletedSkipped,
+    promotedSkipped,
+    labelDeletedApplied,
+    labelDeletedSkipped,
+  };
+}
+
 export const indexesStage: GraphStage = {
   name: "indexes",
   async run(ctx): Promise<StageOutcome> {
@@ -425,6 +547,14 @@ export const indexesStage: GraphStage = {
     // node.
     // Read the operator-curated alias map. buildMergeClusters respects
     // "not same" pairs so it won't re-propose rejected merges.
+    // Apply committed DELETE_ALWAYS + ALWAYS_PROMOTE lists BEFORE reading
+    // aliases, so the flat map below reflects them.
+    const initialCorpus = buildCorpusEntities(ctx.dataDir);
+    const corpusKeys = new Set(initialCorpus.keys());
+    const listsReport = applyCommittedLists(ctx.dataDir, corpusKeys);
+    if (listsReport.deletedApplied > 0 || listsReport.promotedApplied > 0) {
+      logger.info("pipeline.indexes.committed-lists", listsReport);
+    }
     const aliases = readAliases(ctx.dataDir);
     const corpus = buildCorpusEntities(ctx.dataDir);
     buildMergeClusters(corpus, aliases); // side effect: writes nothing, just clusters

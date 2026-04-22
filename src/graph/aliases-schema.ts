@@ -19,10 +19,19 @@ export type EntityKey = string;  // "<label>:<normalized_canonical>"
 export interface MergeEntry {
   from: EntityKey;
   to: EntityKey;
+  // Optional human-readable reason for the merge. Written by AI audit or
+  // operator; preserved through sort-on-write. Back-compat: older entries
+  // have no rationale and continue to work.
+  rationale?: string;
 }
 
 export interface DeletedEntityEntry {
   key: EntityKey;
+  // Optional human-readable reason for the deletion. Written by
+  // DELETE_ALWAYS auto-apply ("[music] cue tag", "role noun, not a
+  // person") or by AI audit / operator. Back-compat: older entries
+  // have no reason and continue to work.
+  reason?: string;
 }
 
 export interface DisplayEntry {
@@ -369,10 +378,17 @@ function mutate(dataDir: string, fn: (f: AliasesFile) => void): AliasesFile {
   return f;
 }
 
-export function addMerge(dataDir: string, from: EntityKey, to: EntityKey): void {
+export function addMerge(
+  dataDir: string,
+  from: EntityKey,
+  to: EntityKey,
+  rationale?: string,
+): void {
   mutate(dataDir, (f) => {
     f.merges = f.merges.filter((e) => e.from !== from);
-    f.merges.push({ from, to });
+    const entry: MergeEntry = { from, to };
+    if (rationale && rationale.trim()) entry.rationale = rationale.trim();
+    f.merges.push(entry);
   });
 }
 
@@ -382,14 +398,25 @@ export function removeMerge(dataDir: string, from: EntityKey): void {
   });
 }
 
-export function addDeletedEntity(dataDir: string, key: EntityKey): void {
+export function addDeletedEntity(
+  dataDir: string,
+  key: EntityKey,
+  reason?: string,
+): void {
   mutate(dataDir, (f) => {
     // If the entity was merged anywhere, drop that merge before marking
     // it deleted so the sentinel wins.
     f.merges = f.merges.filter((e) => e.from !== key);
-    if (!f.deletedEntities.some((e) => e.key === key)) {
-      f.deletedEntities.push({ key });
+    const existing = f.deletedEntities.find((e) => e.key === key);
+    if (existing) {
+      if (reason && reason.trim() && !existing.reason) {
+        existing.reason = reason.trim();
+      }
+      return;
     }
+    const entry: DeletedEntityEntry = { key };
+    if (reason && reason.trim()) entry.reason = reason.trim();
+    f.deletedEntities.push(entry);
   });
 }
 
