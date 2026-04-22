@@ -1,9 +1,19 @@
-# src/ai/curate — AI alias curation helpers
+# src/ai/curate — heuristic alias curation
 
-Pure-Node ESM scripts that implement Plan 1 (`plans/01-ai-alias-curation.md`).
-They read `data/entities/<id>.json`, `data/transcripts/<id>.json`, and the
-current `data/aliases.json`; they write new entries to `data/aliases.json`
-via the typed mutators in [src/graph/aliases-schema.ts](../../graph/aliases-schema.ts).
+Pure-Node ESM scripts that propose bulk alias actions over the whole
+corpus. They read `data/entities/<id>.json`, `data/transcripts/<id>.json`,
+and the current `data/aliases.json`; they write new entries to
+`data/aliases.json` via the typed mutators in
+[src/graph/aliases-schema.ts](../../graph/aliases-schema.ts). Driven by
+the [ai-alias-curation](../../../.claude/skills/ai-alias-curation/SKILL.md)
+skill; see [CLAUDE.md § AI alias curation](../../../CLAUDE.md) for the
+full operator playbook.
+
+This folder also contains [delete-always.ts](delete-always.ts) —
+committed `DELETE_ALWAYS` / `ALWAYS_PROMOTE` / `DELETE_LABELS` lists
+that the indexes pipeline stage auto-applies on every rebuild (role
+nouns, transcript artifacts, tautologies, famous-name short forms,
+whole label classes that are never graph-worthy).
 
 Each script is a single `node` invocation — no build step, no sidecars.
 
@@ -42,11 +52,13 @@ by `apply.mjs` so you can revert with one `cp`.
 
 ## Context for Claude Code sessions
 
-This is a scripted, heuristic-driven implementation of Plan 1. It does NOT
-replace human judgment — the tradeoff is coverage (runs on 217+ videos in
-seconds) vs. precision (some calls will be wrong). Every write is reversible
-via the ⋯ action menu on `/admin/aliases` or by restoring the `.before.json`
-backup.
+This is a scripted, heuristic-driven curator. It does NOT replace human
+judgment — the tradeoff is coverage (runs on 200+ videos in seconds) vs.
+precision (some calls will be wrong). Every write is reversible via the
+⋯ action menu on `/admin/aliases` or by restoring the `.before.json`
+backup. Deeper, context-aware resolution happens in the sibling
+[`../entity-audit/`](../entity-audit/) and
+[`../entity-resolution/`](../entity-resolution/) passes.
 
 When adding new videos to the corpus, re-run the pipeline to pick up merges
 on the new transcripts. The scripts are idempotent — already-applied entries

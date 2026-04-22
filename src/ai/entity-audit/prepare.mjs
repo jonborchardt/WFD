@@ -5,7 +5,7 @@
 // (entities in the same label whose canonical is a token-level subset
 // or superset), and the current aliases-state for the entity.
 //
-// Plan 2-1 §B1 (plans2/01-entity-hygiene.md). Writes bundles to
+// Writes bundles to
 // _entity_audit_tmp/<label>.bundle.json. Skips DELETE_ALWAYS-matched
 // entities (they get handled automatically by the indexes hook).
 //

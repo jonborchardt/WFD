@@ -1,8 +1,5 @@
 // Claim-level contradiction detection.
 //
-// Plan 3 baseline + Plan 04 upgrades
-// (plans2/04-contradictions-v2.md).
-//
 // Three patterns — each surfaced as a ClaimContradiction record.
 //
 //   1. pair

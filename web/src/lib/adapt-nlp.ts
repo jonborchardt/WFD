@@ -8,18 +8,24 @@ import type {
   DisplayRelationship,
 } from "../types";
 
+// Mirror of src/graph/canonicalize.ts normalizeCanonical. Must stay in sync
+// so client-built entity ids match server-built index keys.
+function normalizeCanonical(s: string): string {
+  return s.toLowerCase().trim().replace(/\s+/g, " ");
+}
+
 export function adaptNlp(ents: PersistedEntities, rels: PersistedRelations | null): VideoNlp {
   const entityMap = new Map<string, DisplayEntity>();
   const mentionToEntity = new Map<string, string>();
 
   for (const m of ents.mentions) {
-    const key = `${m.label}:${m.canonical.toLowerCase()}`;
+    const key = `${m.label}:${normalizeCanonical(m.canonical)}`;
     let e = entityMap.get(key);
     if (!e) {
       e = {
-        id: `${m.label}:${m.canonical.toLowerCase()}`,
+        id: key,
         type: m.label,
-        canonical: m.canonical,
+        canonical: m.canonical.replace(/\s+/g, " ").trim(),
         mentions: [],
       };
       entityMap.set(key, e);

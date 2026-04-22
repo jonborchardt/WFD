@@ -431,7 +431,7 @@ export const contradictionsStage: GraphStage = {
 //   - An ALWAYS_PROMOTE entry is skipped unless BOTH endpoints exist in
 //     the corpus, and also skipped if `from` is already deleted / merged
 //     to something else / the target of the promote.
-// Plan 2-1 §A2 (plans2/01-entity-hygiene.md).
+// DELETE_ALWAYS / ALWAYS_PROMOTE / DELETE_LABELS auto-apply hook.
 function applyCommittedLists(
   dataDir: string,
   corpusKeys: Set<string>,

@@ -1,11 +1,11 @@
 ---
 name: ai-contradiction-verify
-description: Run the Plan 04 §D contradiction verification pass — embed claims, run reasoning with cosine similarity, shard candidates across parallel agents, verdict each pair, apply verdicts. Use when the user asks to "verify contradictions", "run plan 04 verify", "clean up the contradictions", "re-run contradiction verification", or after new claim files land (Plan 03 re-extraction, new video ingest).
+description: Run the contradiction verification pass — embed claims, run reasoning with cosine similarity, shard candidates across parallel agents, verdict each pair, apply verdicts. Use when the user asks to "verify contradictions", "clean up the contradictions", "re-run contradiction verification", or after new claim files land (re-extraction, new video ingest).
 ---
 
 # AI contradiction verify
 
-Plan 04 §D (plans2/04-contradictions-v2.md). Filters out false-positive
+Filters out false-positive
 contradiction candidates by asking an AI verdict per pair: real
 contradictions (LOGICAL-CONTRADICTION, DEBUNKS) stay in the public
 view; UNDERCUTS / ALTERNATIVE stay in the DAG for propagation;
@@ -17,7 +17,7 @@ scripts live in [src/ai/contradiction-verify/](../../../src/ai/contradiction-ver
 
 ## When to run
 
-- After any Plan 03 v2 claim re-extraction batch (claim text changes
+- After any v2 claim re-extraction batch (claim text changes
   → verdict cache invalidated for affected pairs).
 - After new videos are added and reasoning runs.
 - When the operator wants to manually trigger a fresh pass — dismissed
@@ -103,7 +103,7 @@ candidate.
 
 ```
 You are agent <i> of <N> verifying contradiction candidates from
-Plan 04 §D.
+the verification pass.
 
 ## Input
 `e:\github2\captions\_contradiction_verify_tmp\slice-<i>.json`
@@ -197,7 +197,7 @@ The verifier is the quality gate. The generator casts a wide net
 - **Operator verdicts outrank AI verdicts.** An entry in
   `contradiction-verdicts.json` with `by: "operator"` must survive
   AI re-runs; apply.mjs preserves them.
-- **Broken-presupposition stays mechanical.** Plan 3's detector
+- **Broken-presupposition stays mechanical.** The detector
   generates these from the typed `presupposes` edges; they don't go
   through the verifier because there's no subjective call to make.
 

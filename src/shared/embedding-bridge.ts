@@ -1,6 +1,6 @@
 // Node-side wrapper for tools/embeddings_sidecar.py.
 //
-// Plan 04 §B (plans2/04-contradictions-v2.md). Embeds a batch of text
+// Embeds a batch of text
 // strings through the sentence-transformers sidecar. Caches results to
 // data/claims/embeddings.json keyed by a SHA-1 hash of the text so
 // re-runs over unchanged claims are free.

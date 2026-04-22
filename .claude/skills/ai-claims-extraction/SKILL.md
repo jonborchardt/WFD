@@ -1,14 +1,13 @@
 ---
 name: ai-claims-extraction
-description: Run an AI claim-extraction session (Plan 2 Part 2). Use when the user asks to "extract claims", "run the claims session", "write claim files", "do claims for N videos", or any time a video needs data/claims/<id>.json populated from its transcript + entities + relations.
+description: Run an AI claim-extraction session. Use when the user asks to "extract claims", "run the claims session", "write claim files", "do claims for N videos", or any time a video needs data/claims/<id>.json populated from its transcript + entities + relations.
 ---
 
 # AI claims extraction
 
-Per-video claim authoring per
-[plans/02-claims-module.md](../../../plans/02-claims-module.md). You (Claude)
-read the transcript + existing NER output for each video and write
-`data/claims/<videoId>.json` directly. The validators in
+Per-video claim authoring. You (Claude) read the transcript + existing
+NER output for each video and write `data/claims/<videoId>.json`
+directly. The validators in
 [src/claims/validate.ts](../../../src/claims/validate.ts) gate every
 write — a bad payload is rejected loudly, not silently dropped.
 

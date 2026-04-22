@@ -1,7 +1,7 @@
 // Parse the typed-contradicts prefix from a dependency rationale.
 //
-// Plan 04 §A (plans2/04-contradictions-v2.md). Schema v1 stays put —
-// the subkind travels inside the `rationale` string as a leading
+// Schema v1 stays put — the subkind travels inside the `rationale`
+// string as a leading
 // `[logical]` / `[debunks]` / `[alternative]` / `[undercuts]` prefix
 // produced by the Plan 03 v2 claim-extraction prompt.
 //

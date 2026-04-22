@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Sentence-embedding sidecar for the captions pipeline.
 
-Plan 04 §B (plans2/04-contradictions-v2.md). Takes a batch of text
-strings and returns one embedding per text. Used by the cross-video
+Takes a batch of text strings and returns one embedding per text.
+Used by the cross-video
 contradiction detector to replace token-Jaccard with semantic cosine
 similarity.
 

@@ -1,9 +1,9 @@
 ---
 name: metrics
-description: Compute + check + baseline the Plan 05 corpus-quality metrics. Use when the user asks to "run metrics", "check metrics", "capture baseline", "show the dashboard numbers", "gate on metrics", "did we regress", or any time the operator wants to see the entity-hygiene / claims / contradictions / corrections signals in one place.
+description: Compute + check + baseline the corpus-quality metrics. Use when the user asks to "run metrics", "check metrics", "capture baseline", "show the dashboard numbers", "gate on metrics", "did we regress", or any time the operator wants to see the entity-hygiene / claims / contradictions / corrections signals in one place.
 ---
 
-# Metrics (Plan 05)
+# Metrics
 
 Runs the metrics module at [src/metrics/](../../../src/metrics/) — 47
 quality signals across 5 sections: entity-hygiene, entity-resolution,
@@ -25,7 +25,7 @@ Targets live at `config/metrics-targets.json`. Baseline at
   the numbers"
 - Before a commit or PR that touched the quality pipeline — run
   `npm run metrics:check` to guard against accidental regression
-- After a new batch of video ingest, Plan 03 re-extraction, or Plan
+- After a new batch of video ingest, v2 claim re-extraction, or Plan
   04 verification — capture a new baseline so the gate is calibrated
   to the new reality
 - When investigating a `npm run test:ci` failure (the CI target
@@ -76,7 +76,7 @@ what moved.
 
 `config/metrics-targets.json` encodes aspirational bounds. Edit when:
 
-- Plans ship a new quality floor (Plan 03 `claims.deniesPct ≥ 5%`)
+- Plans ship a new quality floor (v2 claim `claims.deniesPct ≥ 5%`)
 - Operator decides a previously-soft regression is acceptable
   (corpus growth made a metric drift naturally)
 - A metric was mis-calibrated at initial land (too permissive or too
