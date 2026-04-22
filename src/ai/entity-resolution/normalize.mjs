@@ -117,7 +117,7 @@ for (const [key, ent] of corpus) {
 // Build proposals: for each group with >1 member, propose merges into the highest-mention member
 const proposals = [];
 let groupCount = 0;
-for (const [groupKey, members] of groups) {
+for (const [, members] of groups) {
   if (members.length < 2) continue;
   groupCount++;
   members.sort((a, b) => b.total - a.total);

@@ -47,7 +47,6 @@ const aliases = readAliasesFile(dataDir);
 const deleted = new Set(aliases.deletedEntities.map((e) => e.key));
 const mergedFrom = new Set(aliases.merges.map((e) => e.from));
 const deleteAlwaysSet = new Set(DELETE_ALWAYS.map((e) => e.key));
-const alwaysPromoteFrom = new Set(ALWAYS_PROMOTE.map((e) => e.from));
 
 // Per-label stats
 const perLabel = new Map();

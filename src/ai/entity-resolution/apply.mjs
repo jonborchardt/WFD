@@ -1,7 +1,7 @@
 // Apply _entity_resolution_tmp/*.proposals.json per-video resolutions.
 // Plan 2-2 §B4 (plans2/02-entity-resolution.md).
 
-import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { readAliasesFile, writeAliasesFile } from "../../../dist/graph/aliases-schema.js";
 

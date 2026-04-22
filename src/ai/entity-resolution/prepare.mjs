@@ -42,7 +42,6 @@ const aliases = readAliasesFile(dataDir);
 const deletedKeys = new Set(aliases.deletedEntities.map((e) => e.key));
 const mergedFrom = new Map(aliases.merges.map((e) => [e.from, e.to]));
 const videoMergedFrom = new Set(aliases.videoMerges.map((e) => `${e.videoId}::${e.from}`));
-const notSamePairs = new Set(aliases.notSame.map((e) => [e.a, e.b].sort().join("~~")));
 const deleteLabelsSet = new Set(DELETE_LABELS.map((e) => e.label));
 
 function resolveKey(key) {

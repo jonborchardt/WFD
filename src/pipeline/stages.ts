@@ -44,8 +44,6 @@ import {
   resolveKey,
 } from "../graph/canonicalize.js";
 import {
-  addDeletedEntity,
-  addMerge,
   readAliasesFile,
   writeAliasesFile,
 } from "../graph/aliases-schema.js";
