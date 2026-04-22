@@ -2,13 +2,58 @@
   "schemaVersion": 2,
   "merges": [
     {
+      "from": "date_time:2 a.m.",
+      "to": "date_time:2 am",
+      "rationale": "normalize-canonical collapse (2 a.m. → 2 am)"
+    },
+    {
+      "from": "date_time:3 15 a.m",
+      "to": "date_time:3 15 am",
+      "rationale": "normalize-canonical collapse (3 15 a.m → 3 15 am)"
+    },
+    {
+      "from": "date_time:5000 bc",
+      "to": "date_time:5,000 bc",
+      "rationale": "normalize-canonical collapse (5000 BC → 5,000 BC)"
+    },
+    {
+      "from": "date_time:9:00 p.m.",
+      "to": "date_time:900 p.m.",
+      "rationale": "normalize-canonical collapse (9:00 p.m. → 900 p.m.)"
+    },
+    {
+      "from": "date_time:first century a.d.",
+      "to": "date_time:first century a.d",
+      "rationale": "normalize-canonical collapse (first century A.D. → first century a.d)"
+    },
+    {
+      "from": "date_time:november 22nd, 1963",
+      "to": "date_time:november 22nd 1963",
+      "rationale": "normalize-canonical collapse (November 22nd, 1963 → November 22nd 1963)"
+    },
+    {
       "from": "event:2008 financial crisis",
       "to": "event:global financial crisis"
+    },
+    {
+      "from": "event:911",
+      "to": "event:9/11",
+      "rationale": "normalize-canonical collapse (911 → 9/11)"
+    },
+    {
+      "from": "event:a new ice age",
+      "to": "event:new ice age",
+      "rationale": "normalize-canonical collapse (a new Ice Age → new ice age)"
     },
     {
       "from": "event:abductions",
       "to": "event:alien abductions",
       "rationale": "bare plural variant; all contexts are alien abduction discussions"
+    },
+    {
+      "from": "event:an asteroid impact",
+      "to": "event:asteroid impact",
+      "rationale": "normalize-canonical collapse (an asteroid impact → asteroid impact)"
     },
     {
       "from": "event:counterterrorism exercise",
@@ -21,6 +66,11 @@
     {
       "from": "event:exercise chameleon",
       "to": "event:operation chameleon"
+    },
+    {
+      "from": "event:first world war",
+      "to": "event:world war i",
+      "rationale": "synonym"
     },
     {
       "from": "event:fiscal crisis",
@@ -69,8 +119,18 @@
       "rationale": "spelling variant (one word vs two) of same named program"
     },
     {
+      "from": "event:roswell",
+      "to": "event:roswell incident",
+      "rationale": "short-form"
+    },
+    {
       "from": "event:roswell crash",
       "to": "event:roswell ufo crash"
+    },
+    {
+      "from": "event:second world war",
+      "to": "event:world war ii",
+      "rationale": "synonym"
     },
     {
       "from": "event:shared death experience",
@@ -473,6 +533,11 @@
       "to": "location:abandoned shopping mall"
     },
     {
+      "from": "location:albuquerque new mexico",
+      "to": "location:albuquerque, new mexico",
+      "rationale": "normalize-canonical collapse (Albuquerque New\nMexico → Albuquerque, New\nMexico)"
+    },
+    {
       "from": "location:america",
       "to": "location:united states",
       "rationale": "synonym in US-host corpus; contexts refer to the country"
@@ -494,6 +559,11 @@
       "to": "location:boulder, colorado"
     },
     {
+      "from": "location:britain",
+      "to": "location:united kingdom",
+      "rationale": "synonym"
+    },
+    {
       "from": "location:britany and france",
       "to": "location:britain and france"
     },
@@ -510,12 +580,22 @@
       "to": "location:denali national park"
     },
     {
+      "from": "location:dulce, new mexico",
+      "to": "location:dulce new mexico",
+      "rationale": "normalize-canonical collapse (Dulce, New\nMexico → Dulce New Mexico)"
+    },
+    {
       "from": "location:edge of the solar system",
       "to": "location:the outermost reaches of our solar system"
     },
     {
       "from": "location:elkhorn",
       "to": "location:elkhorn wisconsin"
+    },
+    {
+      "from": "location:england",
+      "to": "location:united kingdom",
+      "rationale": "commonly conflated in host corpus; keep if you want separate"
     },
     {
       "from": "location:far side of the moon",
@@ -546,6 +626,11 @@
       "to": "location:gockley teepe banuk tarla"
     },
     {
+      "from": "location:great britain",
+      "to": "location:united kingdom",
+      "rationale": "synonym"
+    },
+    {
       "from": "location:great pyramid",
       "to": "location:great pyramid of giza"
     },
@@ -570,6 +655,11 @@
       "to": "location:jacksonville florida"
     },
     {
+      "from": "location:kansas city missouri",
+      "to": "location:kansas city, missouri",
+      "rationale": "normalize-canonical collapse (Kansas City Missouri → Kansas City, Missouri)"
+    },
+    {
       "from": "location:las vegas",
       "to": "location:las vegas nevada"
     },
@@ -584,6 +674,16 @@
     {
       "from": "location:medicine river",
       "to": "location:yellow medicine river"
+    },
+    {
+      "from": "location:military base",
+      "to": "location:a military base",
+      "rationale": "normalize-canonical collapse (military base → a\nmilitary base)"
+    },
+    {
+      "from": "location:nearby field",
+      "to": "location:a nearby field",
+      "rationale": "normalize-canonical collapse (nearby field → a nearby field)"
     },
     {
       "from": "location:northern california",
@@ -626,6 +726,11 @@
       "to": "location:statler hotel room 1018a"
     },
     {
+      "from": "location:roswell, new mexico",
+      "to": "location:roswell new mexico",
+      "rationale": "normalize-canonical collapse (Roswell, New\nMexico → Roswell New Mexico)"
+    },
+    {
       "from": "location:san diego",
       "to": "location:old town san diego"
     },
@@ -636,6 +741,11 @@
     {
       "from": "location:southern england",
       "to": "location:southwest of england"
+    },
+    {
+      "from": "location:st. louis",
+      "to": "location:st louis",
+      "rationale": "normalize-canonical collapse (St. Louis → St Louis)"
     },
     {
       "from": "location:surface",
@@ -978,6 +1088,11 @@
       "to": "location:universe"
     },
     {
+      "from": "location:the us",
+      "to": "location:u.s",
+      "rationale": "normalize-canonical collapse (The US → U.S)"
+    },
+    {
       "from": "location:the village",
       "to": "location:village"
     },
@@ -998,12 +1113,37 @@
       "to": "location:yard"
     },
     {
+      "from": "location:u.k.",
+      "to": "location:uk",
+      "rationale": "normalize-canonical collapse (U.K. → the UK)"
+    },
+    {
+      "from": "location:uk",
+      "to": "location:united kingdom",
+      "rationale": "acronym expansion"
+    },
+    {
+      "from": "location:usa",
+      "to": "location:united states",
+      "rationale": "acronym expansion"
+    },
+    {
       "from": "location:vegas",
       "to": "location:las vegas nevada"
     },
     {
       "from": "location:versai",
       "to": "location:versailles"
+    },
+    {
+      "from": "location:washington d.c",
+      "to": "location:washington dc",
+      "rationale": "normalize-canonical collapse (Washington D.C → washington dc)"
+    },
+    {
+      "from": "location:washington, d.c.",
+      "to": "location:washington dc",
+      "rationale": "normalize-canonical collapse (Washington, D.C. → washington dc)"
     },
     {
       "from": "nationality_or_ethnicity:aboriginal people",
@@ -1138,12 +1278,22 @@
       "to": "organization:cicada 3301"
     },
     {
+      "from": "organization:a group of scientists",
+      "to": "organization:group of scientists",
+      "rationale": "normalize-canonical collapse (a group of scientists → group of scientists)"
+    },
+    {
       "from": "organization:air force office of special investigation or osi",
       "to": "organization:united states air force office of special investigation"
     },
     {
       "from": "organization:air force office of special investigations",
       "to": "organization:united states air force office of special investigation"
+    },
+    {
+      "from": "organization:an intelligence agency",
+      "to": "organization:intelligence agency",
+      "rationale": "normalize-canonical collapse (an intelligence agency → intelligence agency)"
     },
     {
       "from": "organization:apollo",
@@ -1164,6 +1314,11 @@
     {
       "from": "organization:arpa",
       "to": "organization:darpa"
+    },
+    {
+      "from": "organization:at&t",
+      "to": "organization:att",
+      "rationale": "normalize-canonical collapse (AT&T → att)"
     },
     {
       "from": "organization:betts family",
@@ -1192,6 +1347,11 @@
     {
       "from": "organization:cartels",
       "to": "organization:gangs and cartels"
+    },
+    {
+      "from": "organization:central intelligence agency",
+      "to": "organization:cia",
+      "rationale": "full-form → acronym (cia has more mentions)"
     },
     {
       "from": "organization:cicada",
@@ -1271,6 +1431,11 @@
       "to": "organization:montauk project"
     },
     {
+      "from": "organization:national security agency",
+      "to": "organization:nsa",
+      "rationale": "full-form → acronym"
+    },
+    {
       "from": "organization:nazi",
       "to": "organization:nazi party"
     },
@@ -1305,6 +1470,16 @@
     {
       "from": "organization:picards",
       "to": "organization:the picards"
+    },
+    {
+      "from": "organization:r.a.f.",
+      "to": "organization:raf",
+      "rationale": "normalize-canonical collapse (R.A.F. → RAF)"
+    },
+    {
+      "from": "organization:ralph m. parsons company",
+      "to": "organization:ralph m. parson's company",
+      "rationale": "normalize-canonical collapse (Ralph M.\nParsons Company → Ralph M. Parson's\nCompany)"
     },
     {
       "from": "organization:reddit",
@@ -1588,6 +1763,11 @@
       "to": "organization:united nations"
     },
     {
+      "from": "organization:the us",
+      "to": "organization:u.s.",
+      "rationale": "normalize-canonical collapse (the US → U.S.)"
+    },
+    {
       "from": "organization:the us air force",
       "to": "organization:us air force"
     },
@@ -1628,6 +1808,36 @@
       "to": "organization:trilateral committee commission"
     },
     {
+      "from": "organization:u.s air force",
+      "to": "organization:us air force",
+      "rationale": "normalize-canonical collapse (U.S\nAir Force → the US Air Force)"
+    },
+    {
+      "from": "organization:u.s army",
+      "to": "organization:us army",
+      "rationale": "normalize-canonical collapse (u.s army → US Army)"
+    },
+    {
+      "from": "organization:u.s intelligence",
+      "to": "organization:us intelligence",
+      "rationale": "normalize-canonical collapse (U.S intelligence → us intelligence)"
+    },
+    {
+      "from": "organization:u.s military",
+      "to": "organization:us military",
+      "rationale": "normalize-canonical collapse (U.S military → US military)"
+    },
+    {
+      "from": "organization:u.s navy",
+      "to": "organization:us navy",
+      "rationale": "normalize-canonical collapse (U.S Navy → US Navy)"
+    },
+    {
+      "from": "organization:u.s. navy",
+      "to": "organization:us navy",
+      "rationale": "normalize-canonical collapse (U.S.\nNavy → US Navy)"
+    },
+    {
       "from": "organization:un",
       "to": "organization:united nations",
       "rationale": "acronym for United Nations; unambiguous expansion"
@@ -1640,6 +1850,11 @@
     {
       "from": "organization:us department of defense",
       "to": "organization:u.s department of defense"
+    },
+    {
+      "from": "organization:us space force",
+      "to": "organization:u.s space force",
+      "rationale": "normalize-canonical collapse (US space force → U.S space\nforce)"
     },
     {
       "from": "organization:us stratcom",
@@ -1658,6 +1873,21 @@
       "to": "organization:wi files operation"
     },
     {
+      "from": "organization:world economic forum",
+      "to": "organization:wef",
+      "rationale": "acronym"
+    },
+    {
+      "from": "person:a deputy",
+      "to": "person:deputy",
+      "rationale": "normalize-canonical collapse (a\ndeputy → Deputy)"
+    },
+    {
+      "from": "person:a lady",
+      "to": "person:lady",
+      "rationale": "normalize-canonical collapse (a lady → the lady)"
+    },
+    {
       "from": "person:admiral bird",
       "to": "person:admiral richard e byrd"
     },
@@ -1668,6 +1898,31 @@
     {
       "from": "person:agnu",
       "to": "person:dr. harold agnu"
+    },
+    {
+      "from": "person:an alien",
+      "to": "person:alien",
+      "rationale": "normalize-canonical collapse (an alien → alien)"
+    },
+    {
+      "from": "person:an archaeologist",
+      "to": "person:archaeologist",
+      "rationale": "normalize-canonical collapse (an archaeologist → archaeologist)"
+    },
+    {
+      "from": "person:an astronomer",
+      "to": "person:astronomer",
+      "rationale": "normalize-canonical collapse (an\nastronomer → astronomer)"
+    },
+    {
+      "from": "person:an investigator",
+      "to": "person:investigator",
+      "rationale": "normalize-canonical collapse (an investigator → investigator)"
+    },
+    {
+      "from": "person:an observer",
+      "to": "person:observer",
+      "rationale": "normalize-canonical collapse (an observer → Observer)"
     },
     {
       "from": "person:anunaki",
@@ -1682,6 +1937,11 @@
       "to": "person:apollo astronauts"
     },
     {
+      "from": "person:aristotle",
+      "to": "person:aristotle",
+      "rationale": "canonical single-name"
+    },
+    {
       "from": "person:art",
       "to": "person:art bell",
       "rationale": "all 4 videos reference Art Bell (Mel's Hole / Mike's time machine etc.); appears in the same videos as person:art bell"
@@ -1689,6 +1949,16 @@
     {
       "from": "person:axel rod",
       "to": "person:mr axel rod"
+    },
+    {
+      "from": "person:barnes",
+      "to": "person:dr. barnes",
+      "rationale": "normalize-canonical collapse (Barnes → Dr. Barnes)"
+    },
+    {
+      "from": "person:bell",
+      "to": "person:art bell",
+      "rationale": "Coast to Coast AM host (context-dependent)"
     },
     {
       "from": "person:ben fland",
@@ -1701,6 +1971,11 @@
     {
       "from": "person:blavatsky",
       "to": "person:john helena blavatsky"
+    },
+    {
+      "from": "person:bowie",
+      "to": "person:david bowie",
+      "rationale": "Context lists celebrities 'Sinatra did it. Bowie did it' - unambiguously David Bowie"
     },
     {
       "from": "person:briggs",
@@ -1735,6 +2010,16 @@
       "to": "person:oxford professor carl robin evans"
     },
     {
+      "from": "person:carrington",
+      "to": "person:richard carrington",
+      "rationale": "Context is the 1859 Carrington Event describing Carrington witnessing a solar eruption; only candidate 'richard carrington' matches unambiguously."
+    },
+    {
+      "from": "person:carter",
+      "to": "person:jimmy carter",
+      "rationale": "US president"
+    },
+    {
       "from": "person:casey",
       "to": "person:edgar casey"
     },
@@ -1743,8 +2028,18 @@
       "to": "person:captain sheridan cavett"
     },
     {
+      "from": "person:chan thomas",
+      "to": "person:dr chan thomas",
+      "rationale": "normalize-canonical collapse (Chan\nThomas → Dr Chan Thomas)"
+    },
+    {
       "from": "person:charles chumley",
       "to": "person:montague charles chumley"
+    },
+    {
+      "from": "person:cheney",
+      "to": "person:dick cheney",
+      "rationale": "Name in political figures list; Dick Cheney is only candidate and dominant (2 videos)"
     },
     {
       "from": "person:chris garritano",
@@ -1822,6 +2117,11 @@
       "rationale": "famous naturalist"
     },
     {
+      "from": "person:dodie",
+      "to": "person:richard dodie",
+      "rationale": "Context describes Air Force UFO disinformation; Richard Doty ('dodie') is corpus-prevalent (14 mentions across 7 videos)"
+    },
+    {
       "from": "person:dorial",
       "to": "person:dr maurice dorial"
     },
@@ -1840,6 +2140,21 @@
     {
       "from": "person:dr bird",
       "to": "person:dr elden bird"
+    },
+    {
+      "from": "person:dr brandon",
+      "to": "person:brandon",
+      "rationale": "normalize-canonical collapse (Dr Brandon → Brandon)"
+    },
+    {
+      "from": "person:dr carvalo",
+      "to": "person:carvalo",
+      "rationale": "normalize-canonical collapse (Dr carvalo → carvalo)"
+    },
+    {
+      "from": "person:dr chant thomas",
+      "to": "person:chant thomas",
+      "rationale": "normalize-canonical collapse (Dr\nchant Thomas → chant Thomas)"
     },
     {
       "from": "person:dr dorial",
@@ -1862,8 +2177,38 @@
       "to": "person:dr j allen heineck"
     },
     {
+      "from": "person:dr james gates",
+      "to": "person:james gates",
+      "rationale": "normalize-canonical collapse (Dr James Gates → james gates)"
+    },
+    {
+      "from": "person:dr john d",
+      "to": "person:john d",
+      "rationale": "normalize-canonical collapse (dr john d → john d)"
+    },
+    {
       "from": "person:dr johnston",
       "to": "person:dr ken johnston"
+    },
+    {
+      "from": "person:dr kirsten",
+      "to": "person:kirsten",
+      "rationale": "normalize-canonical collapse (Dr Kirsten → Kirsten)"
+    },
+    {
+      "from": "person:dr mckay",
+      "to": "person:mckay",
+      "rationale": "normalize-canonical collapse (Dr\nMcKay → McKay)"
+    },
+    {
+      "from": "person:dr morgan",
+      "to": "person:morgan",
+      "rationale": "normalize-canonical collapse (Dr Morgan → Morgan)"
+    },
+    {
+      "from": "person:dr ning lee",
+      "to": "person:ning lee",
+      "rationale": "normalize-canonical collapse (Dr ning Lee → ning Lee)"
     },
     {
       "from": "person:dr rip",
@@ -1874,32 +2219,77 @@
       "to": "person:professor rips"
     },
     {
+      "from": "person:dr royal raymond",
+      "to": "person:royal raymond",
+      "rationale": "normalize-canonical collapse (Dr Royal\nRaymond → Royal Raymond)"
+    },
+    {
       "from": "person:dr silver",
       "to": "person:dr ellis silver"
+    },
+    {
+      "from": "person:dr thomas",
+      "to": "person:thomas",
+      "rationale": "normalize-canonical collapse (Dr Thomas → Thomas)"
     },
     {
       "from": "person:dr van neumann",
       "to": "person:dr john van neumann"
     },
     {
+      "from": "person:dr.",
+      "to": "person:dr",
+      "rationale": "normalize-canonical collapse (Dr. → Dr)"
+    },
+    {
       "from": "person:dr. agnu",
       "to": "person:dr. harold agnu"
+    },
+    {
+      "from": "person:dr. anderson",
+      "to": "person:anderson",
+      "rationale": "normalize-canonical collapse (Dr. Anderson → Anderson)"
     },
     {
       "from": "person:dr. jameson",
       "to": "person:dr. jameson nuda"
     },
     {
+      "from": "person:dr. jonathan reed",
+      "to": "person:jonathan reed",
+      "rationale": "normalize-canonical collapse (Dr. Jonathan Reed → Jonathan Reed)"
+    },
+    {
       "from": "person:dr. king",
       "to": "person:martin luther king jr."
+    },
+    {
+      "from": "person:dr. lou",
+      "to": "person:lou",
+      "rationale": "normalize-canonical collapse (Dr. Lou → Lou)"
     },
     {
       "from": "person:dr. martin luther king",
       "to": "person:martin luther king jr."
     },
     {
+      "from": "person:dr. may",
+      "to": "person:may",
+      "rationale": "normalize-canonical collapse (Dr. May → May)"
+    },
+    {
       "from": "person:dr. menzel",
       "to": "person:dr. donald menzel"
+    },
+    {
+      "from": "person:dr. naruda",
+      "to": "person:naruda",
+      "rationale": "normalize-canonical collapse (Dr. Naruda → Naruda)"
+    },
+    {
+      "from": "person:dr. ning lee",
+      "to": "person:ning lee",
+      "rationale": "normalize-canonical collapse (Dr.\nNing Lee → ning Lee)"
     },
     {
       "from": "person:dr. nuda",
@@ -1908,6 +2298,11 @@
     {
       "from": "person:dr. park",
       "to": "person:dr. mi park"
+    },
+    {
+      "from": "person:drexler",
+      "to": "person:kay eric drexler",
+      "rationale": "Context is nanotechnology ('Drexler predicted decades ago... nano robotics'); only candidate 'Kay Eric Drexler' (K. Eric Drexler, nanotech pioneer) matches."
     },
     {
       "from": "person:ed and duncan",
@@ -1955,6 +2350,21 @@
       "to": "person:leonard euler"
     },
     {
+      "from": "person:father brune",
+      "to": "person:brune",
+      "rationale": "normalize-canonical collapse (father brune → brune)"
+    },
+    {
+      "from": "person:father francois bruin",
+      "to": "person:francois bruin",
+      "rationale": "normalize-canonical collapse (father francois\nbruin → francois bruin)"
+    },
+    {
+      "from": "person:father francois brune",
+      "to": "person:francois brune",
+      "rationale": "normalize-canonical collapse (father\nfrancois brune → francois brune)"
+    },
+    {
       "from": "person:father pellegrino",
       "to": "person:father pellegrino or neddy"
     },
@@ -1987,6 +2397,16 @@
       "to": "person:christopher garritano"
     },
     {
+      "from": "person:gates",
+      "to": "person:dr gates",
+      "rationale": "normalize-canonical collapse (Gates → dr gates)"
+    },
+    {
+      "from": "person:genghis khan",
+      "to": "person:genghis khan",
+      "rationale": "canonical"
+    },
+    {
       "from": "person:george wilcox",
       "to": "person:sheriff george wilcox"
     },
@@ -1995,12 +2415,27 @@
       "to": "person:wing commander victor goddard"
     },
     {
+      "from": "person:gross",
+      "to": "person:dr gross",
+      "rationale": "normalize-canonical collapse (gross → Dr Gross)"
+    },
+    {
       "from": "person:hapgood",
       "to": "person:charles hapgood"
     },
     {
+      "from": "person:heckle",
+      "to": "person:mr heckle fish morotti",
+      "rationale": "Recurring show character Hecklefish (corpus-prevalent: 19 mentions across 15 videos); 'Heckle' is truncation"
+    },
+    {
       "from": "person:heckle fish",
       "to": "person:mr heckle fish morotti"
+    },
+    {
+      "from": "person:heckle fish morotti",
+      "to": "person:mr heckle fish morotti",
+      "rationale": "normalize-canonical collapse (Heckle fish\nmorotti → Mr Heckle\nfish morotti)"
     },
     {
       "from": "person:hecklefish",
@@ -2011,12 +2446,22 @@
       "to": "person:john helena blavatsky"
     },
     {
+      "from": "person:hellfish",
+      "to": "person:hellfish space pande",
+      "rationale": "Y-Files sign-off ('My name is A.J. That's Hellfish'); only candidate 'Hellfish Space Pande' is available."
+    },
+    {
       "from": "person:hermes trezmagistus",
       "to": "person:hermes tres magistas"
     },
     {
       "from": "person:hernetti",
       "to": "person:pellegrino ernetti"
+    },
+    {
+      "from": "person:hillary",
+      "to": "person:hillary clinton",
+      "rationale": "Context 'Hillary's servant' (transcribed 'server') with follow-up 'don't joke about the Clintons' - unambiguously Hillary Clinton"
     },
     {
       "from": "person:hitler",
@@ -2037,6 +2482,11 @@
     {
       "from": "person:hoover",
       "to": "person:j. edgar hoover"
+    },
+    {
+      "from": "person:housekeeper",
+      "to": "person:a housekeeper",
+      "rationale": "normalize-canonical collapse (housekeeper → a housekeeper)"
     },
     {
       "from": "person:hugh everett",
@@ -2061,6 +2511,16 @@
     {
       "from": "person:inos swan",
       "to": "person:ingos swan"
+    },
+    {
+      "from": "person:isaac",
+      "to": "person:isaac newton",
+      "rationale": "Context 'Isaac Newton used concave mirrors to concentrate light in his telescopes'; corpus-dominant candidate (18 mentions, 8 videos)"
+    },
+    {
+      "from": "person:j edgar hoover",
+      "to": "person:j. edgar hoover",
+      "rationale": "normalize-canonical collapse (J Edgar Hoover → J. Edgar\nHoover)"
     },
     {
       "from": "person:jacques st. germaine",
@@ -2104,6 +2564,11 @@
       "rationale": "US president"
     },
     {
+      "from": "person:jerome huner",
+      "to": "person:dr. jerome huner",
+      "rationale": "normalize-canonical collapse (Jerome Huner → Dr. Jerome Huner)"
+    },
+    {
       "from": "person:jessop",
       "to": "person:maurice jessopp"
     },
@@ -2140,12 +2605,27 @@
       "to": "person:joseph mcmonagle"
     },
     {
+      "from": "person:john brandenberg",
+      "to": "person:dr john brandenberg",
+      "rationale": "normalize-canonical collapse (John Brandenberg → Dr John brandenberg)"
+    },
+    {
       "from": "person:john crisp",
       "to": "person:major john crisp"
     },
     {
+      "from": "person:john f. kennedy",
+      "to": "person:john f kennedy",
+      "rationale": "normalize-canonical collapse (John F. Kennedy → John F Kennedy)"
+    },
+    {
       "from": "person:john lear",
       "to": "person:schneider john lear"
+    },
+    {
+      "from": "person:keel",
+      "to": "person:john keel",
+      "rationale": "Mothman author"
     },
     {
       "from": "person:ken johnston",
@@ -2165,12 +2645,22 @@
       "to": "person:stanley kubrick"
     },
     {
+      "from": "person:lady catherine",
+      "to": "person:catherine",
+      "rationale": "normalize-canonical collapse (Lady Catherine → catherine)"
+    },
+    {
       "from": "person:lady diana",
       "to": "person:princess diana"
     },
     {
       "from": "person:laura buckton",
       "to": "person:laura buckston"
+    },
+    {
+      "from": "person:lazar",
+      "to": "person:bob lazar",
+      "rationale": "Area 51 claimant"
     },
     {
       "from": "person:letter writer",
@@ -2184,6 +2674,11 @@
     {
       "from": "person:lord heckle fish",
       "to": "person:mr heckle fish morotti"
+    },
+    {
+      "from": "person:lovecraft",
+      "to": "person:h.p lovecraft",
+      "rationale": "common H.P. Lovecraft reference; unambiguous corpus-wide"
     },
     {
       "from": "person:luchano",
@@ -2234,8 +2729,18 @@
       "to": "person:joseph mcmonagle"
     },
     {
+      "from": "person:mcmonicle",
+      "to": "person:joe mcmonicle",
+      "rationale": "Joe McMoneagle is historical CIA Project Stargate psychic (1978-1984); matches context exactly; sole candidate appears corpus-wide"
+    },
+    {
       "from": "person:menzel",
       "to": "person:dr. donald menzel"
+    },
+    {
+      "from": "person:mitchell",
+      "to": "person:edgar mitchell",
+      "rationale": "Context references discussions about moon landing tapes, consciousness, physics - Edgar Mitchell was the Apollo 14 astronaut known for these topics"
     },
     {
       "from": "person:mitchell hedge",
@@ -2262,12 +2767,47 @@
       "to": "person:raymond moody"
     },
     {
+      "from": "person:moore",
+      "to": "person:bill moore",
+      "rationale": "Context describes Moore as Roswell researcher who received documents and investigated MJ-12 with Jamie Shandera and Stanton Friedman — this is Bill Moore (UFO researcher). Strong corpus candidate (26 mentions, 5 videos)."
+    },
+    {
       "from": "person:morris fishbine",
       "to": "person:dr morris fishbine"
     },
     {
       "from": "person:mr axelrod",
       "to": "person:mr axel rod"
+    },
+    {
+      "from": "person:mr cold",
+      "to": "person:cold",
+      "rationale": "normalize-canonical collapse (Mr cold → cold)"
+    },
+    {
+      "from": "person:mr malay",
+      "to": "person:malay",
+      "rationale": "normalize-canonical collapse (Mr Malay → Malay)"
+    },
+    {
+      "from": "person:mr. hogan",
+      "to": "person:hogan",
+      "rationale": "normalize-canonical collapse (Mr. Hogan → Hogan)"
+    },
+    {
+      "from": "person:mrs. harper",
+      "to": "person:harper",
+      "rationale": "normalize-canonical collapse (Mrs. Harper → Harper)"
+    },
+    {
+      "from": "person:muhammad",
+      "to": "person:muhammad",
+      "rationale": "canonical single-name"
+    },
+    {
+      "from": "person:nan",
+      "to": "person:dr nan",
+      "rationale": "normalize-canonical collapse (Nan → Dr Nan)"
     },
     {
       "from": "person:newton",
@@ -2296,6 +2836,11 @@
       "to": "person:dr. jeff o'driscoll"
     },
     {
+      "from": "person:obama",
+      "to": "person:barack obama",
+      "rationale": "Context '44th president of the united states would be black, what number was obama 44' — unambiguously Barack Obama"
+    },
+    {
       "from": "person:original caller",
       "to": "person:the original caller"
     },
@@ -2317,12 +2862,27 @@
       "to": "person:two-year-old pauline picard"
     },
     {
+      "from": "person:pecoraro",
+      "to": "person:father pecoraro",
+      "rationale": "normalize-canonical collapse (pecoraro → father pecoraro)"
+    },
+    {
       "from": "person:peniston",
       "to": "person:staff sergeant jim peniston"
     },
     {
       "from": "person:pennison",
       "to": "person:staff sergeant jim peniston"
+    },
+    {
+      "from": "person:philip k. dick",
+      "to": "person:philip k dick",
+      "rationale": "normalize-canonical collapse (Philip K. Dick → philip k dick)"
+    },
+    {
+      "from": "person:plato",
+      "to": "person:plato",
+      "rationale": "canonical single-name"
     },
     {
       "from": "person:pliny the",
@@ -2353,6 +2913,11 @@
       "to": "person:prince matic of gwyneth"
     },
     {
+      "from": "person:professor dave",
+      "to": "person:dave",
+      "rationale": "normalize-canonical collapse (Professor\nDave → Dave)"
+    },
+    {
       "from": "person:professor ellison",
       "to": "person:professor arthur ellison"
     },
@@ -2363,6 +2928,11 @@
     {
       "from": "person:professor jordan",
       "to": "person:professor s.a jordan"
+    },
+    {
+      "from": "person:putin",
+      "to": "person:vladimir putin",
+      "rationale": "Context: 'Putin or the Russian army' — unambiguously Vladimir Putin. Corpus candidate (3 mentions, 3 videos)."
     },
     {
       "from": "person:queen elizabeth",
@@ -2379,6 +2949,11 @@
     {
       "from": "person:rabine",
       "to": "person:yitzak rabin"
+    },
+    {
+      "from": "person:ratikin",
+      "to": "person:alexei ratikin",
+      "rationale": "Surname-only mention immediately preceded by KGB/soviet context; the only candidate matches exactly and is unambiguous corpus-wide."
     },
     {
       "from": "person:rc christian",
@@ -2414,6 +2989,16 @@
       "to": "person:the count of saintâ germain"
     },
     {
+      "from": "person:saint martin",
+      "to": "person:martin",
+      "rationale": "normalize-canonical collapse (saint martin → Martin)"
+    },
+    {
+      "from": "person:saint michael",
+      "to": "person:michael",
+      "rationale": "normalize-canonical collapse (Saint Michael → Michael)"
+    },
+    {
       "from": "person:saintâ germain",
       "to": "person:the count of saintâ germain"
     },
@@ -2446,12 +3031,52 @@
       "to": "person:sigman freud"
     },
     {
+      "from": "person:sir richard",
+      "to": "person:richard",
+      "rationale": "normalize-canonical collapse (sir richard → Richard)"
+    },
+    {
       "from": "person:sir tami",
       "to": "person:sir tami zamit"
     },
     {
+      "from": "person:sir william",
+      "to": "person:william",
+      "rationale": "normalize-canonical collapse (Sir William → william)"
+    },
+    {
+      "from": "person:sir william sinclair",
+      "to": "person:william sinclair",
+      "rationale": "normalize-canonical collapse (Sir William\nSinclair → William Sinclair)"
+    },
+    {
+      "from": "person:sitchin",
+      "to": "person:zechariah sitchin",
+      "rationale": "Context: 'sitchin was wrong about the planet nebu' — Zechariah Sitchin (Anunnaki theorist). Corpus candidate (2 mentions, 2 videos)."
+    },
+    {
+      "from": "person:socrates",
+      "to": "person:socrates",
+      "rationale": "canonical single-name"
+    },
+    {
       "from": "person:soldier",
       "to": "person:soldiers"
+    },
+    {
+      "from": "person:spark",
+      "to": "person:former marine sergeant jim spark",
+      "rationale": "Context 'Spark says his unit trained to contain biological entities' matches the only candidate - Former Marine Sergeant Jim Spark."
+    },
+    {
+      "from": "person:st brendan",
+      "to": "person:saint brendan",
+      "rationale": "normalize-canonical collapse (st brendan → saint brendan)"
+    },
+    {
+      "from": "person:st peter",
+      "to": "person:peter",
+      "rationale": "normalize-canonical collapse (St Peter → peter)"
     },
     {
       "from": "person:st. germaain",
@@ -2462,8 +3087,23 @@
       "to": "person:the count of saintâ germain"
     },
     {
+      "from": "person:st. helen",
+      "to": "person:helen",
+      "rationale": "normalize-canonical collapse (St. Helen → Helen)"
+    },
+    {
+      "from": "person:st. michael",
+      "to": "person:michael",
+      "rationale": "normalize-canonical collapse (St. Michael → Michael)"
+    },
+    {
       "from": "person:staff sergeant martinez",
       "to": "person:staff sergeant ryan martinez"
+    },
+    {
+      "from": "person:stanley",
+      "to": "person:stanley kubrick",
+      "rationale": "Context says 'Stanley Cub Bri fake the moon landing' — clear Kubrick reference in the show's recurring outro song"
     },
     {
       "from": "person:stanley curi",
@@ -2648,9 +3288,24 @@
       "to": "person:dr. tom van flander"
     },
     {
+      "from": "person:travamov",
+      "to": "person:dr travamov",
+      "rationale": "normalize-canonical collapse (travamov → Dr travamov)"
+    },
+    {
+      "from": "person:trevumov",
+      "to": "person:dr trevumov",
+      "rationale": "normalize-canonical collapse (trevumov → Dr trevumov)"
+    },
+    {
       "from": "person:truman",
       "to": "person:harry s. truman",
       "rationale": "US president"
+    },
+    {
+      "from": "person:trump",
+      "to": "person:donald trump",
+      "rationale": "Trump in political context (Twitter censorship alongside Biden) is unambiguously Donald Trump corpus-wide"
     },
     {
       "from": "person:uler",
@@ -2682,6 +3337,11 @@
       "rationale": "US president"
     },
     {
+      "from": "person:watkins",
+      "to": "person:alfred watkins",
+      "rationale": "context introduces 'Alfred Watkins' immediately before second-mention 'Watkins'; Alfred Watkins is historical figure who coined 'ley lines'; unambiguous corpus-wide"
+    },
+    {
       "from": "person:william martin",
       "to": "person:major william martin"
     },
@@ -2710,6 +3370,11 @@
       "to": "person:yitzak rabin"
     },
     {
+      "from": "person:yudkowski",
+      "to": "person:eliza yudkowski",
+      "rationale": "Context references the famous all-caps Basilisk/Elon Musk post; single candidate 'Eliza Yudkowski' matches uniquely."
+    },
+    {
       "from": "person:zach bagans",
       "to": "person:zach baggins"
     },
@@ -2718,12 +3383,27 @@
       "to": "person:sir tami zamit"
     },
     {
+      "from": "person:ziz",
+      "to": "person:ziz loda",
+      "rationale": "Context describes the Zizian cult leader targeting trans women - matches the single candidate Ziz Loda uniquely."
+    },
+    {
+      "from": "person:zuckerberg",
+      "to": "person:mark zuckerberg",
+      "rationale": "Facebook founder"
+    },
+    {
       "from": "role:aerospace designer",
       "to": "role:aerospace designers and illustrators"
     },
     {
       "from": "role:co-host",
       "to": "role:wacky co-host"
+    },
+    {
+      "from": "technology:a time machine",
+      "to": "technology:time machine",
+      "rationale": "normalize-canonical collapse (a time machine → time machine)"
     },
     {
       "from": "technology:acoustic levitation",
@@ -2800,6 +3480,11 @@
       "to": "technology:full spectrum cameras"
     },
     {
+      "from": "technology:gps",
+      "to": "technology:gps",
+      "rationale": "canonical"
+    },
+    {
       "from": "technology:gpt",
       "to": "technology:ai chat bot"
     },
@@ -2824,6 +3509,11 @@
       "to": "technology:current encryption"
     },
     {
+      "from": "technology:nuclear weapon",
+      "to": "technology:nuclear weapons",
+      "rationale": "plural form dominant"
+    },
+    {
       "from": "technology:pink ufo",
       "to": "technology:flying saucer ufos"
     },
@@ -2835,6 +3525,11 @@
       "from": "technology:quantum computers",
       "to": "technology:quantum computer",
       "rationale": "plural vs singular; merge to singular canonical form"
+    },
+    {
+      "from": "technology:rov",
+      "to": "technology:an rov",
+      "rationale": "normalize-canonical collapse (ROV → an ROV)"
     },
     {
       "from": "technology:rsa encryption",
@@ -2899,6 +3594,11 @@
     {
       "from": "technology:the wheel",
       "to": "technology:wheel"
+    },
+    {
+      "from": "technology:triangle-shaped craft",
+      "to": "technology:a triangle-shaped craft",
+      "rationale": "normalize-canonical collapse (triangle-shaped craft → a triangle-shaped\ncraft)"
     },
     {
       "from": "technology:ufo",
@@ -3067,6 +3767,11 @@
       "to": "work_of_media:movie"
     },
     {
+      "from": "work_of_media:the mysterious book",
+      "to": "work_of_media:a mysterious book",
+      "rationale": "normalize-canonical collapse (The mysterious book → a mysterious book)"
+    },
+    {
       "from": "work_of_media:the philadelphia experiment",
       "to": "work_of_media:philadelphia experiment"
     },
@@ -3101,6 +3806,11 @@
     {
       "from": "work_of_media:the w files operation podcast",
       "to": "work_of_media:w files operation podcast"
+    },
+    {
+      "from": "work_of_media:the world's in collision",
+      "to": "work_of_media:worlds in collision",
+      "rationale": "normalize-canonical collapse (The World's in\nCollision → worlds in Collision)"
     },
     {
       "from": "work_of_media:the yfiles",
@@ -25410,6 +26120,11 @@
   "videoMerges": [
     {
       "videoId": "__CI6-fjbsU",
+      "from": "person:gibbs",
+      "to": "person:nicholas gibbs"
+    },
+    {
+      "videoId": "__CI6-fjbsU",
       "from": "work_of_media:manuscript",
       "to": "work_of_media:voynich manuscript"
     },
@@ -25422,6 +26137,11 @@
       "videoId": "_nGePkIW3Ac",
       "from": "event:cataclysm",
       "to": "event:global cataclysm"
+    },
+    {
+      "videoId": "_nGePkIW3Ac",
+      "from": "person:betty",
+      "to": "person:betty and barney hill"
     },
     {
       "videoId": "_nGePkIW3Ac",
@@ -25464,6 +26184,11 @@
       "to": "person:kevin martin"
     },
     {
+      "videoId": "-jtqMGKaw6c",
+      "from": "person:nelson",
+      "to": "person:john nelson"
+    },
+    {
       "videoId": "-l_GdVh1LYE",
       "from": "person:lois",
       "to": "person:lois jessup"
@@ -25475,8 +26200,23 @@
     },
     {
       "videoId": "-ZRwlYtAMps",
+      "from": "person:lamb",
+      "to": "person:willis lamb"
+    },
+    {
+      "videoId": "-ZRwlYtAMps",
+      "from": "person:morray",
+      "to": "person:thomas morray"
+    },
+    {
+      "videoId": "-ZRwlYtAMps",
       "from": "person:ogle",
       "to": "person:tom ogle"
+    },
+    {
+      "videoId": "-ZRwlYtAMps",
+      "from": "person:stan",
+      "to": "person:stan meyer"
     },
     {
       "videoId": "-ZRwlYtAMps",
@@ -25494,6 +26234,11 @@
       "to": "technology:anti-gravity technology"
     },
     {
+      "videoId": "0DRbjg_0zu8",
+      "from": "person:jones",
+      "to": "person:captain jones"
+    },
+    {
       "videoId": "1g-wANyGiR0",
       "from": "organization:researchers",
       "to": "organization:ufo researchers"
@@ -25507,6 +26252,16 @@
       "videoId": "1g-wANyGiR0",
       "from": "person:carl",
       "to": "person:carl ardo"
+    },
+    {
+      "videoId": "1g-wANyGiR0",
+      "from": "person:cole",
+      "to": "person:ingrid cole"
+    },
+    {
+      "videoId": "1g-wANyGiR0",
+      "from": "person:hassan",
+      "to": "person:demo hassan"
     },
     {
       "videoId": "1g-wANyGiR0",
@@ -25530,6 +26285,11 @@
     },
     {
       "videoId": "1g-wANyGiR0",
+      "from": "person:tanya",
+      "to": "person:tanya derenberger"
+    },
+    {
+      "videoId": "1g-wANyGiR0",
       "from": "person:woody",
       "to": "person:woody derenberger"
     },
@@ -25537,6 +26297,16 @@
       "videoId": "1hCz21GCFdw",
       "from": "person:david",
       "to": "person:david longberry"
+    },
+    {
+      "videoId": "1hCz21GCFdw",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "1hCz21GCFdw",
+      "from": "person:karen",
+      "to": "person:karen freshhour"
     },
     {
       "videoId": "1hCz21GCFdw",
@@ -25590,6 +26360,11 @@
     },
     {
       "videoId": "1HwC9L4BDpE",
+      "from": "person:walbert",
+      "to": "person:officer walbert"
+    },
+    {
+      "videoId": "1HwC9L4BDpE",
       "from": "person:william",
       "to": "person:william lang"
     },
@@ -25607,6 +26382,46 @@
       "videoId": "2k7YTFrmt84",
       "from": "organization:military intelligence",
       "to": "organization:italian military intelligence"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:anslinger",
+      "to": "person:harry anslinger"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:bri",
+      "to": "person:stanley cub bri"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:cassone",
+      "to": "person:judge feliche cassone"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:eisenhower",
+      "to": "person:president eisenhower"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:gellen",
+      "to": "person:general reinhardt gellen"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:ike",
+      "to": "person:president eisenhower"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:morrow",
+      "to": "person:aldo morrow"
+    },
+    {
+      "videoId": "2k7YTFrmt84",
+      "from": "person:rfk",
+      "to": "person:rfk senior"
     },
     {
       "videoId": "2NMBjRd8PXw",
@@ -25629,9 +26444,44 @@
       "to": "person:baby anne"
     },
     {
+      "videoId": "4TrT9tVjNJg",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "4wMhXxZ1zNM",
+      "from": "person:bostrom",
+      "to": "person:nick bostrom"
+    },
+    {
+      "videoId": "4wMhXxZ1zNM",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "4wMhXxZ1zNM",
+      "from": "person:mandela",
+      "to": "person:nelson mandela"
+    },
+    {
+      "videoId": "4wMhXxZ1zNM",
+      "from": "person:planck",
+      "to": "person:max planck"
+    },
+    {
+      "videoId": "50Y5r9HeR2w",
+      "from": "person:betty",
+      "to": "person:betty and barney hill"
+    },
+    {
       "videoId": "50Y5r9HeR2w",
       "from": "person:dodie",
       "to": "person:richard dodie"
+    },
+    {
+      "videoId": "50Y5r9HeR2w",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
     },
     {
       "videoId": "50Y5r9HeR2w",
@@ -25645,6 +26495,16 @@
     },
     {
       "videoId": "56OmlPWDRjs",
+      "from": "person:jeremiah",
+      "to": "person:the prophet jeremiah"
+    },
+    {
+      "videoId": "56OmlPWDRjs",
+      "from": "person:professor",
+      "to": "person:professor ulendorff"
+    },
+    {
+      "videoId": "56OmlPWDRjs",
       "from": "person:solomon",
       "to": "person:king solomon"
     },
@@ -25654,14 +26514,69 @@
       "to": "person:dr kirsten"
     },
     {
+      "videoId": "59IiApDiWjA",
+      "from": "person:martin",
+      "to": "person:wyatt martin"
+    },
+    {
+      "videoId": "59IiApDiWjA",
+      "from": "person:shockley",
+      "to": "person:william shockley"
+    },
+    {
+      "videoId": "59IiApDiWjA",
+      "from": "person:william",
+      "to": "person:william shockley"
+    },
+    {
+      "videoId": "7eZXBVgBDio",
+      "from": "person:bri",
+      "to": "person:stanley cub bri"
+    },
+    {
       "videoId": "7eZXBVgBDio",
       "from": "person:carl",
       "to": "person:carl bishop"
     },
     {
+      "videoId": "7eZXBVgBDio",
+      "from": "person:zodiac",
+      "to": "person:zodiac killer"
+    },
+    {
+      "videoId": "7n5Dq-c0_Zw",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
       "videoId": "86bAheOFJT8",
       "from": "person:jones",
       "to": "person:morgan jones"
+    },
+    {
+      "videoId": "8HgLQGb907s",
+      "from": "person:dinock",
+      "to": "person:paul dinock"
+    },
+    {
+      "videoId": "8HgLQGb907s",
+      "from": "person:lovecraft",
+      "to": "person:h.p lovecraft"
+    },
+    {
+      "videoId": "8HgLQGb907s",
+      "from": "person:papahatsis",
+      "to": "person:georgios papahatsis"
+    },
+    {
+      "videoId": "8HgLQGb907s",
+      "from": "person:paul",
+      "to": "person:paul dinock"
+    },
+    {
+      "videoId": "8HgLQGb907s",
+      "from": "person:stefan",
+      "to": "person:stefan marinov"
     },
     {
       "videoId": "8Kl2LcO9nBQ",
@@ -25672,6 +26587,21 @@
       "videoId": "9kUromZCP9M",
       "from": "person:burroughs",
       "to": "person:john burroughs"
+    },
+    {
+      "videoId": "9kUromZCP9M",
+      "from": "person:cabansag",
+      "to": "person:airmen edward cabansag"
+    },
+    {
+      "videoId": "9kUromZCP9M",
+      "from": "person:chandler",
+      "to": "person:kabansag chandler"
+    },
+    {
+      "videoId": "9kUromZCP9M",
+      "from": "person:jim",
+      "to": "person:staff sergeant jim peniston"
     },
     {
       "videoId": "a5KXsiBZjOM",
@@ -25700,6 +26630,16 @@
     },
     {
       "videoId": "a5KXsiBZjOM",
+      "from": "person:davidson",
+      "to": "person:captain william davidson"
+    },
+    {
+      "videoId": "a5KXsiBZjOM",
+      "from": "person:doll",
+      "to": "person:harold doll"
+    },
+    {
+      "videoId": "a5KXsiBZjOM",
       "from": "person:fred",
       "to": "person:fred chrisman"
     },
@@ -25719,6 +26659,16 @@
       "to": "person:john f. kennedy"
     },
     {
+      "videoId": "a5KXsiBZjOM",
+      "from": "person:lance",
+      "to": "person:paul lance"
+    },
+    {
+      "videoId": "a5KXsiBZjOM",
+      "from": "person:paul",
+      "to": "person:paul lance"
+    },
+    {
       "videoId": "A89ozmI2zOo",
       "from": "person:harry",
       "to": "person:harry nadian"
@@ -25727,6 +26677,11 @@
       "videoId": "A89ozmI2zOo",
       "from": "person:helen",
       "to": "person:helen latrell"
+    },
+    {
+      "videoId": "A89ozmI2zOo",
+      "from": "person:laya",
+      "to": "person:laya ross"
     },
     {
       "videoId": "A89ozmI2zOo",
@@ -25740,8 +26695,33 @@
     },
     {
       "videoId": "a9hwXoCrEUs",
+      "from": "person:doctors",
+      "to": "person:doctors kaznachive and travamov"
+    },
+    {
+      "videoId": "a9hwXoCrEUs",
       "from": "person:kazarev",
       "to": "person:nikolai kazarev"
+    },
+    {
+      "videoId": "a9hwXoCrEUs",
+      "from": "person:kosarev",
+      "to": "person:nikolai kosarev"
+    },
+    {
+      "videoId": "a9hwXoCrEUs",
+      "from": "person:newton",
+      "to": "person:isaac newton"
+    },
+    {
+      "videoId": "a9hwXoCrEUs",
+      "from": "person:travamov",
+      "to": "person:dr travamov"
+    },
+    {
+      "videoId": "a9hwXoCrEUs",
+      "from": "person:trevumov",
+      "to": "person:dr trevumov"
     },
     {
       "videoId": "AazxDk1ODVo",
@@ -25764,9 +26744,29 @@
       "to": "organization:navy task force"
     },
     {
+      "videoId": "Aga-fA6iUm4",
+      "from": "person:bernard",
+      "to": "person:raymond bernard"
+    },
+    {
+      "videoId": "Aga-fA6iUm4",
+      "from": "person:kamler",
+      "to": "person:hans kamler"
+    },
+    {
+      "videoId": "AOO5a_jUOzg",
+      "from": "person:beatrice",
+      "to": "person:beatrice ozke"
+    },
+    {
       "videoId": "AOO5a_jUOzg",
       "from": "person:faraday",
       "to": "person:michael faraday"
+    },
+    {
+      "videoId": "AOO5a_jUOzg",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
     },
     {
       "videoId": "AOO5a_jUOzg",
@@ -25787,6 +26787,16 @@
       "videoId": "aTuonpTAIOw",
       "from": "organization:wgn",
       "to": "organization:wgn tv"
+    },
+    {
+      "videoId": "aTuonpTAIOw",
+      "from": "person:carter",
+      "to": "person:edison carter"
+    },
+    {
+      "videoId": "aTuonpTAIOw",
+      "from": "person:mcdougall",
+      "to": "person:john mcdougall"
     },
     {
       "videoId": "aXG5R4HRlgs",
@@ -25824,9 +26834,29 @@
       "to": "work_of_media:their story"
     },
     {
+      "videoId": "AZXvhIpYwak",
+      "from": "person:gtie",
+      "to": "person:dan gtie"
+    },
+    {
+      "videoId": "AZXvhIpYwak",
+      "from": "person:obama",
+      "to": "person:barack obama"
+    },
+    {
       "videoId": "B70KYVTJ1is",
       "from": "person:tom",
       "to": "person:alexander tom"
+    },
+    {
+      "videoId": "bAUN1GJD5BQ",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "bAUN1GJD5BQ",
+      "from": "person:lloyd",
+      "to": "person:lloyd olson"
     },
     {
       "videoId": "brQLpTnDwyg",
@@ -25870,6 +26900,21 @@
     },
     {
       "videoId": "CFNvij1f0Nk",
+      "from": "person:adam",
+      "to": "person:adam and eve"
+    },
+    {
+      "videoId": "CFNvij1f0Nk",
+      "from": "person:eve",
+      "to": "person:adam and eve"
+    },
+    {
+      "videoId": "CFNvij1f0Nk",
+      "from": "person:sims",
+      "to": "person:john sims"
+    },
+    {
+      "videoId": "CFNvij1f0Nk",
       "from": "person:solomon",
       "to": "person:king solomon"
     },
@@ -25887,6 +26932,21 @@
       "videoId": "cfv6nm4ykLY",
       "from": "technology:shortwave",
       "to": "technology:shortwave radio"
+    },
+    {
+      "videoId": "CLATUuVcPBs",
+      "from": "person:henry",
+      "to": "person:king henry"
+    },
+    {
+      "videoId": "CLATUuVcPBs",
+      "from": "person:michelle",
+      "to": "person:michelle dostraamus"
+    },
+    {
+      "videoId": "DJuxIDyHZCw",
+      "from": "person:schlowsky",
+      "to": "person:yoseph schlowsky"
     },
     {
       "videoId": "DJuxIDyHZCw",
@@ -25914,6 +26974,26 @@
       "to": "person:frank olson"
     },
     {
+      "videoId": "DQ9M1J9-77Y",
+      "from": "person:pastore",
+      "to": "person:armin pastore"
+    },
+    {
+      "videoId": "DQ9M1J9-77Y",
+      "from": "person:starr",
+      "to": "person:james starr"
+    },
+    {
+      "videoId": "dSZvXgu7Q2Q",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "E76kpPjxMcw",
+      "from": "person:orolina",
+      "to": "person:orolina de freitas"
+    },
+    {
       "videoId": "EieUJvKrjo4",
       "from": "person:charles",
       "to": "person:charles hall"
@@ -25929,14 +27009,59 @@
       "to": "person:john zimmerman"
     },
     {
+      "videoId": "eIgbsZ05O2A",
+      "from": "person:bell",
+      "to": "person:john bell"
+    },
+    {
+      "videoId": "eIgbsZ05O2A",
+      "from": "person:belovsky",
+      "to": "person:belovsky thornhill"
+    },
+    {
+      "videoId": "eIgbsZ05O2A",
+      "from": "person:thornhill",
+      "to": "person:wall thornhill"
+    },
+    {
+      "videoId": "eIgbsZ05O2A",
+      "from": "person:velikovsky",
+      "to": "person:emanuel velikovsky"
+    },
+    {
+      "videoId": "Emt5Sez9jhc",
+      "from": "person:becker",
+      "to": "person:tom becker"
+    },
+    {
+      "videoId": "Emt5Sez9jhc",
+      "from": "person:griffin",
+      "to": "person:captain griffin"
+    },
+    {
+      "videoId": "Emt5Sez9jhc",
+      "from": "person:julio",
+      "to": "person:julio garcia"
+    },
+    {
       "videoId": "Emt5Sez9jhc",
       "from": "person:mate",
       "to": "person:first mate"
     },
     {
+      "videoId": "Emt5Sez9jhc",
+      "from": "person:morrison",
+      "to": "person:captain morrison"
+    },
+    {
       "videoId": "Eu_pTOlORk4",
       "from": "event:experiment",
       "to": "event:philadelphia experiment"
+    },
+    {
+      "videoId": "Eu_pTOlORk4",
+      "from": "person:cameron",
+      "to": "person:duncan cameron"
     },
     {
       "videoId": "Eu_pTOlORk4",
@@ -25965,6 +27090,21 @@
     },
     {
       "videoId": "eWANHcSyL5s",
+      "from": "person:coun",
+      "to": "person:dean coun"
+    },
+    {
+      "videoId": "eWANHcSyL5s",
+      "from": "person:mel",
+      "to": "person:ted mel"
+    },
+    {
+      "videoId": "eWANHcSyL5s",
+      "from": "person:stanley",
+      "to": "person:stanley kubrick"
+    },
+    {
+      "videoId": "eWANHcSyL5s",
       "from": "person:sunny",
       "to": "person:sunny graham"
     },
@@ -25972,6 +27112,11 @@
       "videoId": "eWANHcSyL5s",
       "from": "person:terry",
       "to": "person:terry codddle"
+    },
+    {
+      "videoId": "EZsihZg1EGs",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
     },
     {
       "videoId": "EZsihZg1EGs",
@@ -25990,6 +27135,21 @@
     },
     {
       "videoId": "f5cPzD2a_Ao",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "f5cPzD2a_Ao",
+      "from": "person:marconi",
+      "to": "person:guillermo marconi"
+    },
+    {
+      "videoId": "f5cPzD2a_Ao",
+      "from": "person:valet",
+      "to": "person:jacques valet"
+    },
+    {
+      "videoId": "f5cPzD2a_Ao",
       "from": "technology:satellites",
       "to": "technology:artificial satellites"
     },
@@ -25997,6 +27157,11 @@
       "videoId": "FJBdjGG4T3o",
       "from": "person:cass",
       "to": "person:cass clark"
+    },
+    {
+      "videoId": "FpxLpEzJpAs",
+      "from": "person:mcmongle",
+      "to": "person:joe mcmongle"
     },
     {
       "videoId": "FpxLpEzJpAs",
@@ -26030,8 +27195,18 @@
     },
     {
       "videoId": "GDL70lKAz0A",
+      "from": "person:bri",
+      "to": "person:stanley cub bri"
+    },
+    {
+      "videoId": "GDL70lKAz0A",
       "from": "person:don",
       "to": "person:don piper"
+    },
+    {
+      "videoId": "GDL70lKAz0A",
+      "from": "person:mcdougall",
+      "to": "person:john mcdougall"
     },
     {
       "videoId": "GDL70lKAz0A",
@@ -26044,14 +27219,49 @@
       "to": "person:harley andrew byrd"
     },
     {
+      "videoId": "glehaMc-w98",
+      "from": "person:ike",
+      "to": "person:dwight eisenhower"
+    },
+    {
       "videoId": "GLP5UupAvSY",
       "from": "person:barker",
       "to": "person:john barker"
     },
     {
+      "videoId": "GLP5UupAvSY",
+      "from": "person:freud",
+      "to": "person:sigmund freud"
+    },
+    {
+      "videoId": "GLP5UupAvSY",
+      "from": "person:rfk",
+      "to": "person:rfk senior"
+    },
+    {
       "videoId": "hckQ0TZ1h4w",
       "from": "person:borglum",
       "to": "person:gutson borglum"
+    },
+    {
+      "videoId": "hckQ0TZ1h4w",
+      "from": "person:roosevelt",
+      "to": "person:teddy roosevelt"
+    },
+    {
+      "videoId": "HZpUbBDWLK0",
+      "from": "person:anna",
+      "to": "person:anna waili"
+    },
+    {
+      "videoId": "HZpUbBDWLK0",
+      "from": "person:henry",
+      "to": "person:henry wilkinson"
+    },
+    {
+      "videoId": "HZpUbBDWLK0",
+      "from": "person:regis",
+      "to": "person:regis philbin"
     },
     {
       "videoId": "HZpUbBDWLK0",
@@ -26074,14 +27284,54 @@
       "to": "person:calvin and charles"
     },
     {
+      "videoId": "IAEsS4IOrBk",
+      "from": "person:streber",
+      "to": "person:whitley streber"
+    },
+    {
+      "videoId": "ifWU7TmehCg",
+      "from": "person:bob",
+      "to": "person:bob ross"
+    },
+    {
+      "videoId": "IQz7innxnms",
+      "from": "person:good",
+      "to": "person:hap good"
+    },
+    {
+      "videoId": "IQz7innxnms",
+      "from": "person:reese",
+      "to": "person:perry reese"
+    },
+    {
+      "videoId": "j_TTKx9ILi8",
+      "from": "person:bri",
+      "to": "person:stanley cub bri"
+    },
+    {
+      "videoId": "j_TTKx9ILi8",
+      "from": "person:coar",
+      "to": "person:steven coar"
+    },
+    {
       "videoId": "j_TTKx9ILi8",
       "from": "person:jerry",
       "to": "person:jerry aan"
     },
     {
+      "videoId": "j_TTKx9ILi8",
+      "from": "person:stanley",
+      "to": "person:stanley cub bri"
+    },
+    {
       "videoId": "J-4vVOiWwDo",
       "from": "person:matilda",
       "to": "person:matilda mroy"
+    },
+    {
+      "videoId": "J-4vVOiWwDo",
+      "from": "person:ryan",
+      "to": "person:bill ryan"
     },
     {
       "videoId": "J-4vVOiWwDo",
@@ -26097,6 +27347,11 @@
       "videoId": "j-tGHCHVM_o",
       "from": "person:bell",
       "to": "person:art bell"
+    },
+    {
+      "videoId": "j-tGHCHVM_o",
+      "from": "person:madman",
+      "to": "person:mike madman markham"
     },
     {
       "videoId": "j-tGHCHVM_o",
@@ -26120,8 +27375,23 @@
     },
     {
       "videoId": "jCUfqwy7bSs",
+      "from": "person:arbuckle",
+      "to": "person:captain matthew arbuckle"
+    },
+    {
+      "videoId": "jCUfqwy7bSs",
+      "from": "person:cornstalk",
+      "to": "person:chief cornstalk"
+    },
+    {
+      "videoId": "jCUfqwy7bSs",
       "from": "person:linda",
       "to": "person:linda scarberry"
+    },
+    {
+      "videoId": "jCUfqwy7bSs",
+      "from": "person:marcella",
+      "to": "person:marcella bennett"
     },
     {
       "videoId": "Je3Qu-xMuxM",
@@ -26140,8 +27410,28 @@
     },
     {
       "videoId": "Je3Qu-xMuxM",
+      "from": "person:dodie",
+      "to": "person:richard dodie"
+    },
+    {
+      "videoId": "Je3Qu-xMuxM",
       "from": "person:gabe",
       "to": "person:gabe valdez"
+    },
+    {
+      "videoId": "Je3Qu-xMuxM",
+      "from": "person:lear",
+      "to": "person:schneider john lear"
+    },
+    {
+      "videoId": "Je3Qu-xMuxM",
+      "from": "person:levesque",
+      "to": "person:tao levesque"
+    },
+    {
+      "videoId": "Je3Qu-xMuxM",
+      "from": "person:moriarty",
+      "to": "person:hecklefish moriarty"
     },
     {
       "videoId": "Je3Qu-xMuxM",
@@ -26156,6 +27446,11 @@
     {
       "videoId": "Je3Qu-xMuxM",
       "from": "person:phil",
+      "to": "person:phil schneider"
+    },
+    {
+      "videoId": "Je3Qu-xMuxM",
+      "from": "person:schneider",
       "to": "person:phil schneider"
     },
     {
@@ -26175,13 +27470,68 @@
     },
     {
       "videoId": "ji4qvi-4MZo",
+      "from": "person:gaddafi",
+      "to": "person:m mar gaddafi"
+    },
+    {
+      "videoId": "ji4qvi-4MZo",
+      "from": "person:gans",
+      "to": "person:harold gans"
+    },
+    {
+      "videoId": "ji4qvi-4MZo",
+      "from": "person:jen",
+      "to": "person:michael jen"
+    },
+    {
+      "videoId": "ji4qvi-4MZo",
+      "from": "person:mckay",
+      "to": "person:dr mckay"
+    },
+    {
+      "videoId": "ji4qvi-4MZo",
       "from": "person:michael",
       "to": "person:michael dnan"
+    },
+    {
+      "videoId": "ji4qvi-4MZo",
+      "from": "person:netanyahu",
+      "to": "person:benjamin netanyahu"
+    },
+    {
+      "videoId": "ji4qvi-4MZo",
+      "from": "person:tim",
+      "to": "person:tim alberino"
+    },
+    {
+      "videoId": "JLi5LOtzWBs",
+      "from": "person:gernon",
+      "to": "person:bruce gernon"
+    },
+    {
+      "videoId": "JLi5LOtzWBs",
+      "from": "person:randles",
+      "to": "person:jenny randles"
+    },
+    {
+      "videoId": "JLi5LOtzWBs",
+      "from": "person:victoria",
+      "to": "person:victoria daniel"
     },
     {
       "videoId": "JRnFkpLZrsA",
       "from": "organization:skeptics",
       "to": "organization:professional skeptics"
+    },
+    {
+      "videoId": "JSwT3vWazFo",
+      "from": "person:clark",
+      "to": "person:arthur c. clark"
+    },
+    {
+      "videoId": "JSwT3vWazFo",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
     },
     {
       "videoId": "juyvnVL6V7g",
@@ -26190,8 +27540,18 @@
     },
     {
       "videoId": "juyvnVL6V7g",
+      "from": "person:danny",
+      "to": "person:danny vini"
+    },
+    {
+      "videoId": "juyvnVL6V7g",
       "from": "person:erectus",
       "to": "person:homo erectus"
+    },
+    {
+      "videoId": "kaS8fP12CGM",
+      "from": "person:alzando",
+      "to": "person:luis alzando"
     },
     {
       "videoId": "kaS8fP12CGM",
@@ -26225,6 +27585,11 @@
     },
     {
       "videoId": "kJQ_FsmU19g",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "kJQ_FsmU19g",
       "from": "person:moore",
       "to": "person:bill moore"
     },
@@ -26234,14 +27599,69 @@
       "to": "person:paul benowitz"
     },
     {
+      "videoId": "kJQ_FsmU19g",
+      "from": "person:richard",
+      "to": "person:richard doty"
+    },
+    {
+      "videoId": "Knl85VitcIg",
+      "from": "person:kasanova",
+      "to": "person:jakamo kasanova"
+    },
+    {
       "videoId": "KOajRmbroY0",
       "from": "person:andrew",
       "to": "person:andrew dawson"
     },
     {
+      "videoId": "laXhTcko-lg",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "lb0ib5B_bK4",
+      "from": "person:bri",
+      "to": "person:stanley cub bri"
+    },
+    {
       "videoId": "LeF3n-1sPJY",
       "from": "organization:establishment",
       "to": "organization:scientific establishment"
+    },
+    {
+      "videoId": "LeF3n-1sPJY",
+      "from": "person:fischer",
+      "to": "person:rowan fischer"
+    },
+    {
+      "videoId": "LeF3n-1sPJY",
+      "from": "person:fiser",
+      "to": "person:roland fiser"
+    },
+    {
+      "videoId": "LeF3n-1sPJY",
+      "from": "person:mckenna",
+      "to": "person:terrence mckenna"
+    },
+    {
+      "videoId": "LeF3n-1sPJY",
+      "from": "person:valentina",
+      "to": "person:valentina terova"
+    },
+    {
+      "videoId": "LeF3n-1sPJY",
+      "from": "person:wassan",
+      "to": "person:r. gordon wassan"
+    },
+    {
+      "videoId": "LeF3n-1sPJY",
+      "from": "person:wasson",
+      "to": "person:r. gordon wasson"
+    },
+    {
+      "videoId": "lPpFFU9EMr8",
+      "from": "person:agrusa",
+      "to": "person:mike agrusa"
     },
     {
       "videoId": "lPpFFU9EMr8",
@@ -26254,9 +27674,39 @@
       "to": "person:rudy eugene"
     },
     {
+      "videoId": "lPpFFU9EMr8",
+      "from": "person:gonzalez",
+      "to": "person:petrus gonzalez"
+    },
+    {
+      "videoId": "lPpFFU9EMr8",
+      "from": "person:resnick",
+      "to": "person:philip resnick"
+    },
+    {
       "videoId": "LQJs8BHtTXg",
       "from": "person:brown",
       "to": "person:jc brown"
+    },
+    {
+      "videoId": "m6F4lHSbmWQ",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "m6F4lHSbmWQ",
+      "from": "person:lazar",
+      "to": "person:bob lazar"
+    },
+    {
+      "videoId": "m6F4lHSbmWQ",
+      "from": "person:mel",
+      "to": "person:ted mel"
+    },
+    {
+      "videoId": "m6F4lHSbmWQ",
+      "from": "person:tom",
+      "to": "person:dr. thomas webb"
     },
     {
       "videoId": "m6F4lHSbmWQ",
@@ -26265,8 +27715,23 @@
     },
     {
       "videoId": "mlR9fCXfWyM",
+      "from": "person:michaela",
+      "to": "person:michaela souza"
+    },
+    {
+      "videoId": "mlR9fCXfWyM",
       "from": "person:zuckerberg",
       "to": "person:mark zuckerberg"
+    },
+    {
+      "videoId": "MNnvoPKcBSM",
+      "from": "person:bruno",
+      "to": "person:giordano bruno"
+    },
+    {
+      "videoId": "MNnvoPKcBSM",
+      "from": "person:schrodinger",
+      "to": "person:irwin schrodinger"
     },
     {
       "videoId": "n84o7Ggw2Fw",
@@ -26285,13 +27750,38 @@
     },
     {
       "videoId": "NdXF3kmKCPY",
+      "from": "person:bruin",
+      "to": "person:francois bruin"
+    },
+    {
+      "videoId": "NdXF3kmKCPY",
       "from": "person:brune",
       "to": "person:francois brune"
     },
     {
       "videoId": "NdXF3kmKCPY",
+      "from": "person:ernetti",
+      "to": "person:father pelino ernetti"
+    },
+    {
+      "videoId": "NdXF3kmKCPY",
       "from": "person:fermi",
       "to": "person:enrico fermi"
+    },
+    {
+      "videoId": "NdXF3kmKCPY",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "NdXF3kmKCPY",
+      "from": "person:jameli",
+      "to": "person:father agostino jameli"
+    },
+    {
+      "videoId": "NtUSYNHmPyU",
+      "from": "person:chumley",
+      "to": "person:chumley montague"
     },
     {
       "videoId": "NtUSYNHmPyU",
@@ -26300,13 +27790,78 @@
     },
     {
       "videoId": "NtUSYNHmPyU",
+      "from": "person:glendor",
+      "to": "person:glendor michael"
+    },
+    {
+      "videoId": "NtUSYNHmPyU",
+      "from": "person:klaus",
+      "to": "person:adolf klaus adolf"
+    },
+    {
+      "videoId": "NtUSYNHmPyU",
+      "from": "person:martin",
+      "to": "person:major william martin"
+    },
+    {
+      "videoId": "NtUSYNHmPyU",
       "from": "person:michael",
       "to": "person:glinder michael"
+    },
+    {
+      "videoId": "NtUSYNHmPyU",
+      "from": "person:phillips",
+      "to": "person:phillips glader"
+    },
+    {
+      "videoId": "NtUSYNHmPyU",
+      "from": "person:william",
+      "to": "person:major william martin"
     },
     {
       "videoId": "NVLrQ0twtDA",
       "from": "organization:priests",
       "to": "organization:egyptian priests"
+    },
+    {
+      "videoId": "NVLrQ0twtDA",
+      "from": "person:acres",
+      "to": "person:tim acres"
+    },
+    {
+      "videoId": "NVLrQ0twtDA",
+      "from": "person:collins",
+      "to": "person:andrew collins"
+    },
+    {
+      "videoId": "NVLrQ0twtDA",
+      "from": "person:heroditus",
+      "to": "person:heroditus ply the elder"
+    },
+    {
+      "videoId": "NVLrQ0twtDA",
+      "from": "person:mel",
+      "to": "person:ted mel"
+    },
+    {
+      "videoId": "NVLrQ0twtDA",
+      "from": "person:plenny",
+      "to": "person:plenny the elder"
+    },
+    {
+      "videoId": "o5ZaamPJd5U",
+      "from": "person:brandenberg",
+      "to": "person:john brandenberg"
+    },
+    {
+      "videoId": "o5ZaamPJd5U",
+      "from": "person:brandenburgg",
+      "to": "person:dr. john brandenburgg"
+    },
+    {
+      "videoId": "o5ZaamPJd5U",
+      "from": "person:flander",
+      "to": "person:dr. tom van flander"
     },
     {
       "videoId": "o5ZaamPJd5U",
@@ -26319,9 +27874,29 @@
       "to": "person:joe mcmonagle"
     },
     {
+      "videoId": "o5ZaamPJd5U",
+      "from": "person:joe mcmonagle",
+      "to": "person:joe mcmonicle"
+    },
+    {
+      "videoId": "o5ZaamPJd5U",
+      "from": "person:kirby",
+      "to": "person:jack kirby"
+    },
+    {
+      "videoId": "OhBVWX0IkIk",
+      "from": "person:jones",
+      "to": "person:james durling jones"
+    },
+    {
       "videoId": "OhBVWX0IkIk",
       "from": "person:terry",
       "to": "person:terry betts"
+    },
+    {
+      "videoId": "otYgKPoHGMU",
+      "from": "person:roosevelt",
+      "to": "person:president roosevelt"
     },
     {
       "videoId": "OvcCK-F6aKY",
@@ -26330,8 +27905,28 @@
     },
     {
       "videoId": "OvcCK-F6aKY",
+      "from": "person:bri",
+      "to": "person:stanley cub bri"
+    },
+    {
+      "videoId": "OvcCK-F6aKY",
       "from": "person:contact",
       "to": "person:your contact"
+    },
+    {
+      "videoId": "OvcCK-F6aKY",
+      "from": "person:grace",
+      "to": "person:mark and grace"
+    },
+    {
+      "videoId": "OvcCK-F6aKY",
+      "from": "person:mark",
+      "to": "person:mark and grace"
+    },
+    {
+      "videoId": "OvcCK-F6aKY",
+      "from": "person:victoria",
+      "to": "person:victoria gray"
     },
     {
       "videoId": "ovLWwHqjlaM",
@@ -26345,8 +27940,18 @@
     },
     {
       "videoId": "ovLWwHqjlaM",
+      "from": "person:dr.",
+      "to": "person:dr. jameson nuda"
+    },
+    {
+      "videoId": "ovLWwHqjlaM",
       "from": "person:james",
       "to": "person:james mahu"
+    },
+    {
+      "videoId": "ovLWwHqjlaM",
+      "from": "person:naruda",
+      "to": "person:dr. naruda"
     },
     {
       "videoId": "ox69c8tXe64",
@@ -26365,8 +27970,23 @@
     },
     {
       "videoId": "ox69c8tXe64",
+      "from": "person:cherylyn",
+      "to": "person:cherylyn jameson"
+    },
+    {
+      "videoId": "ox69c8tXe64",
       "from": "person:clint",
       "to": "person:clint florence"
+    },
+    {
+      "videoId": "ox69c8tXe64",
+      "from": "person:derek",
+      "to": "person:derek schaefer"
+    },
+    {
+      "videoId": "ox69c8tXe64",
+      "from": "person:madison",
+      "to": "person:madison jameson"
     },
     {
       "videoId": "ox69c8tXe64",
@@ -26379,6 +27999,11 @@
       "to": "person:randy schaefer"
     },
     {
+      "videoId": "ox69c8tXe64",
+      "from": "person:swanson",
+      "to": "person:brandon swanson"
+    },
+    {
       "videoId": "P1GGsUJQdk4",
       "from": "person:anna",
       "to": "person:anna mitchell hedges"
@@ -26389,9 +28014,29 @@
       "to": "person:frank doran"
     },
     {
+      "videoId": "P1GGsUJQdk4",
+      "from": "person:napoleon",
+      "to": "person:emperor napoleon iii"
+    },
+    {
+      "videoId": "P1GGsUJQdk4",
+      "from": "person:stanley",
+      "to": "person:stanley kubrick"
+    },
+    {
+      "videoId": "P3GtA7n7sMs",
+      "from": "person:kelly",
+      "to": "person:kelly bbe"
+    },
+    {
       "videoId": "P8cP1ChW3io",
       "from": "organization:civilization",
       "to": "organization:type 3 civilization"
+    },
+    {
+      "videoId": "P8cP1ChW3io",
+      "from": "person:fermi",
+      "to": "person:enrico fermi"
     },
     {
       "videoId": "P8cP1ChW3io",
@@ -26402,6 +28047,16 @@
       "videoId": "P8cP1ChW3io",
       "from": "technology:dyson",
       "to": "technology:dyson swarm"
+    },
+    {
+      "videoId": "PDQ4bFoUWGA",
+      "from": "person:operators",
+      "to": "person:telegraph operators"
+    },
+    {
+      "videoId": "pl7DE8RFfUc",
+      "from": "person:annabelle",
+      "to": "person:annabelle higgins"
     },
     {
       "videoId": "pl7DE8RFfUc",
@@ -26430,8 +28085,18 @@
     },
     {
       "videoId": "pl7DE8RFfUc",
+      "from": "person:lorraine",
+      "to": "person:lorraine warren"
+    },
+    {
+      "videoId": "pl7DE8RFfUc",
       "from": "person:lorraine warren",
       "to": "person:ed and lorraine warren"
+    },
+    {
+      "videoId": "pl7DE8RFfUc",
+      "from": "person:norma",
+      "to": "person:norma sutcliffe"
     },
     {
       "videoId": "pl7DE8RFfUc",
@@ -26442,6 +28107,11 @@
       "videoId": "pl7DE8RFfUc",
       "from": "person:weber",
       "to": "person:william weber"
+    },
+    {
+      "videoId": "PUd4lXM0pwk",
+      "from": "person:ike",
+      "to": "person:david ike"
     },
     {
       "videoId": "purPO8UE-9g",
@@ -26465,8 +28135,63 @@
     },
     {
       "videoId": "PxY3KZ3pQ3o",
+      "from": "person:angleton",
+      "to": "person:james jesus angleton"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
+      "from": "person:bernstein",
+      "to": "person:carl bernstein"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
+      "from": "person:gotley",
+      "to": "person:sydney gotley"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
+      "from": "person:hersh",
+      "to": "person:seymour hersh"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
+      "from": "person:hoover",
+      "to": "person:j edgar hoover"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
+      "from": "person:nixon",
+      "to": "person:president nixon"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
+      "from": "person:obama",
+      "to": "person:barack obama"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
       "from": "person:olsen",
       "to": "person:frank olsen"
+    },
+    {
+      "videoId": "PxY3KZ3pQ3o",
+      "from": "person:trump",
+      "to": "person:donald trump"
+    },
+    {
+      "videoId": "q9Nuy7mFIsE",
+      "from": "person:hoagland",
+      "to": "person:richard c hoagland"
+    },
+    {
+      "videoId": "qppcCh5vuA0",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "r8p44wQMtNE",
+      "from": "person:richard",
+      "to": "person:richard hoagland"
     },
     {
       "videoId": "reXi0C1JoHo",
@@ -26480,13 +28205,48 @@
     },
     {
       "videoId": "reXi0C1JoHo",
+      "from": "person:gates",
+      "to": "person:bill gates"
+    },
+    {
+      "videoId": "reXi0C1JoHo",
+      "from": "person:kissinger",
+      "to": "person:henry kissinger"
+    },
+    {
+      "videoId": "reXi0C1JoHo",
+      "from": "person:merkel",
+      "to": "person:angela merkel"
+    },
+    {
+      "videoId": "reXi0C1JoHo",
       "from": "person:michael",
       "to": "person:michael jansen"
+    },
+    {
+      "videoId": "reXi0C1JoHo",
+      "from": "person:zuckerberg",
+      "to": "person:mark zuckerberg"
     },
     {
       "videoId": "Rg-Ocr5hNLI",
       "from": "organization:schools",
       "to": "organization:medical schools"
+    },
+    {
+      "videoId": "Rg-Ocr5hNLI",
+      "from": "person:crane",
+      "to": "person:john crane"
+    },
+    {
+      "videoId": "Rg-Ocr5hNLI",
+      "from": "person:simmons",
+      "to": "person:george doc simmons"
+    },
+    {
+      "videoId": "Rg-Ocr5hNLI",
+      "from": "person:templeton",
+      "to": "person:al templeton"
     },
     {
       "videoId": "rih9-80p0Ec",
@@ -26500,13 +28260,33 @@
     },
     {
       "videoId": "rih9-80p0Ec",
+      "from": "person:cavett",
+      "to": "person:marcel and cavett"
+    },
+    {
+      "videoId": "rih9-80p0Ec",
       "from": "person:friedman",
       "to": "person:stanton friedman"
     },
     {
       "videoId": "rih9-80p0Ec",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "rih9-80p0Ec",
+      "from": "person:hot",
+      "to": "person:walter hot"
+    },
+    {
+      "videoId": "rih9-80p0Ec",
       "from": "person:marcel",
       "to": "person:jesse marcel"
+    },
+    {
+      "videoId": "rih9-80p0Ec",
+      "from": "person:raymie",
+      "to": "person:general raymie"
     },
     {
       "videoId": "rih9-80p0Ec",
@@ -26520,8 +28300,23 @@
     },
     {
       "videoId": "RKwXczzJAB4",
+      "from": "person:adam",
+      "to": "person:adam and eve"
+    },
+    {
+      "videoId": "RKwXczzJAB4",
+      "from": "person:chazar",
+      "to": "person:chazar brad"
+    },
+    {
+      "videoId": "RKwXczzJAB4",
       "from": "person:chesar",
       "to": "person:chesar brad"
+    },
+    {
+      "videoId": "RKwXczzJAB4",
+      "from": "person:msini",
+      "to": "person:senor msini"
     },
     {
       "videoId": "s6JjHAnCWqU",
@@ -26532,6 +28327,11 @@
       "videoId": "s6JjHAnCWqU",
       "from": "organization:society",
       "to": "organization:latitude society"
+    },
+    {
+      "videoId": "s6JjHAnCWqU",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
     },
     {
       "videoId": "s6JjHAnCWqU",
@@ -26570,6 +28370,11 @@
     },
     {
       "videoId": "s9VoC8MoeUs",
+      "from": "person:roosevelt",
+      "to": "person:president roosevelt"
+    },
+    {
+      "videoId": "s9VoC8MoeUs",
       "from": "person:truman",
       "to": "person:president truman"
     },
@@ -26584,9 +28389,39 @@
       "to": "technology:full spectrum cameras"
     },
     {
+      "videoId": "Sd8jhbF9_pc",
+      "from": "person:sanju",
+      "to": "person:sanju bhagat"
+    },
+    {
       "videoId": "sfRcl5rmydI",
       "from": "person:donna",
       "to": "person:donna hare"
+    },
+    {
+      "videoId": "sfRcl5rmydI",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "sfRcl5rmydI",
+      "from": "person:lindsay",
+      "to": "person:craig lindsay"
+    },
+    {
+      "videoId": "sfRcl5rmydI",
+      "from": "person:wilson",
+      "to": "person:professor thomas wilson"
+    },
+    {
+      "videoId": "SJek6PsN2xg",
+      "from": "person:bri",
+      "to": "person:stanley cub bri"
+    },
+    {
+      "videoId": "SJek6PsN2xg",
+      "from": "person:stanley",
+      "to": "person:stanley cub bri"
     },
     {
       "videoId": "SJek6PsN2xg",
@@ -26614,14 +28449,44 @@
       "to": "person:jonathan reed"
     },
     {
+      "videoId": "svUGFt3AF4w",
+      "from": "person:pauline",
+      "to": "person:two-year-old pauline picard"
+    },
+    {
+      "videoId": "svUGFt3AF4w",
+      "from": "person:ralph",
+      "to": "person:ralph of kogechow"
+    },
+    {
+      "videoId": "t1eGM-dTZu0",
+      "from": "person:canb",
+      "to": "person:colonel canb"
+    },
+    {
+      "videoId": "t1eGM-dTZu0",
+      "from": "person:canev",
+      "to": "person:colonel peter canev"
+    },
+    {
       "videoId": "t1eGM-dTZu0",
       "from": "person:canv",
       "to": "person:colonel canv"
     },
     {
       "videoId": "t1eGM-dTZu0",
+      "from": "person:ellie",
+      "to": "person:ellie lanova"
+    },
+    {
+      "videoId": "t1eGM-dTZu0",
       "from": "person:marina",
       "to": "person:marina papovich"
+    },
+    {
+      "videoId": "t1eGM-dTZu0",
+      "from": "person:victoria",
+      "to": "person:victoria daniel"
     },
     {
       "videoId": "TeS_Yq-7vHw",
@@ -26632,6 +28497,11 @@
       "videoId": "TeS_Yq-7vHw",
       "from": "person:chaplin",
       "to": "person:charlie chaplin"
+    },
+    {
+      "videoId": "TeS_Yq-7vHw",
+      "from": "person:tyson",
+      "to": "person:mike tyson"
     },
     {
       "videoId": "tgqAt6YN1jE",
@@ -26650,8 +28520,23 @@
     },
     {
       "videoId": "tgqAt6YN1jE",
+      "from": "person:stanley",
+      "to": "person:stanley cubrick"
+    },
+    {
+      "videoId": "tgqAt6YN1jE",
+      "from": "person:walters",
+      "to": "person:ed walters"
+    },
+    {
+      "videoId": "tgqAt6YN1jE",
       "from": "technology:rov",
       "to": "technology:an rov"
+    },
+    {
+      "videoId": "tgXZ6bVuuN8",
+      "from": "person:duke",
+      "to": "person:duke adakar ii"
     },
     {
       "videoId": "tgXZ6bVuuN8",
@@ -26659,9 +28544,19 @@
       "to": "person:herman the recluse"
     },
     {
+      "videoId": "tgXZ6bVuuN8",
+      "from": "person:mendele",
+      "to": "person:dimmitri mendele"
+    },
+    {
       "videoId": "TJDT8vn-nVU",
       "from": "person:alberino",
       "to": "person:tim alberino"
+    },
+    {
+      "videoId": "TJDT8vn-nVU",
+      "from": "person:tia",
+      "to": "person:15-year-old tia"
     },
     {
       "videoId": "TNKZz-C0EOc",
@@ -26672,6 +28567,26 @@
       "videoId": "TNKZz-C0EOc",
       "from": "person:allen",
       "to": "person:carl allen"
+    },
+    {
+      "videoId": "TNKZz-C0EOc",
+      "from": "person:jessup",
+      "to": "person:maurice jessup"
+    },
+    {
+      "videoId": "totDkXxKOXg",
+      "from": "person:gladstone",
+      "to": "person:william gladstone"
+    },
+    {
+      "videoId": "totDkXxKOXg",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "TqM-rhKniLE",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
     },
     {
       "videoId": "TqM-rhKniLE",
@@ -26714,6 +28629,21 @@
       "to": "person:walter breen"
     },
     {
+      "videoId": "U-dFlC97VtE",
+      "from": "person:dodie",
+      "to": "person:richard dodie"
+    },
+    {
+      "videoId": "u2MrTgBoqiI",
+      "from": "person:adam",
+      "to": "person:adam and eve"
+    },
+    {
+      "videoId": "u2MrTgBoqiI",
+      "from": "person:childress",
+      "to": "person:david childress"
+    },
+    {
       "videoId": "u2MrTgBoqiI",
       "from": "person:powell",
       "to": "person:john wesley powell"
@@ -26732,6 +28662,21 @@
       "videoId": "UPxOHRySFRM",
       "from": "person:eisenhower",
       "to": "person:president eisenhower"
+    },
+    {
+      "videoId": "UPxOHRySFRM",
+      "from": "person:light",
+      "to": "person:gerald light"
+    },
+    {
+      "videoId": "UPxOHRySFRM",
+      "from": "person:schneider",
+      "to": "person:phil schneider"
+    },
+    {
+      "videoId": "UPxOHRySFRM",
+      "from": "person:truman",
+      "to": "person:president truman"
     },
     {
       "videoId": "UPxOHRySFRM",
@@ -26760,6 +28705,11 @@
     },
     {
       "videoId": "V7b2X8rqpsM",
+      "from": "person:pamela",
+      "to": "person:pamela moore"
+    },
+    {
+      "videoId": "V7b2X8rqpsM",
       "from": "person:teeter",
       "to": "person:john teeter"
     },
@@ -26767,6 +28717,11 @@
       "videoId": "V8kT6J_uoic",
       "from": "event:experiment",
       "to": "event:moon experiment"
+    },
+    {
+      "videoId": "V8kT6J_uoic",
+      "from": "person:neil",
+      "to": "person:neil armstrong"
     },
     {
       "videoId": "V8kT6J_uoic",
@@ -26795,6 +28750,11 @@
     },
     {
       "videoId": "vCjo9KBpK9I",
+      "from": "person:barry",
+      "to": "person:barry storo"
+    },
+    {
+      "videoId": "vCjo9KBpK9I",
       "from": "person:bashago",
       "to": "person:andrew bashago"
     },
@@ -26810,6 +28770,21 @@
     },
     {
       "videoId": "vCjo9KBpK9I",
+      "from": "person:colgate",
+      "to": "person:dr. sterling colgate"
+    },
+    {
+      "videoId": "vCjo9KBpK9I",
+      "from": "person:farley",
+      "to": "person:lieutenant farley"
+    },
+    {
+      "videoId": "vCjo9KBpK9I",
+      "from": "person:hutchkins",
+      "to": "person:lieutenant hutchkins"
+    },
+    {
+      "videoId": "vCjo9KBpK9I",
       "from": "person:lincoln",
       "to": "person:abraham lincoln"
     },
@@ -26817,6 +28792,11 @@
       "videoId": "vCjo9KBpK9I",
       "from": "person:obama",
       "to": "person:barack obama"
+    },
+    {
+      "videoId": "vCjo9KBpK9I",
+      "from": "person:rumsfeld",
+      "to": "person:donald rumsfeld"
     },
     {
       "videoId": "Ve-XooFp9-A",
@@ -26839,9 +28819,39 @@
       "to": "person:terry loveace"
     },
     {
+      "videoId": "Ve-XooFp9-A",
+      "from": "person:terry loveace",
+      "to": "person:terry love lace"
+    },
+    {
+      "videoId": "veVqh9XoXUs",
+      "from": "person:borman",
+      "to": "person:martin borman"
+    },
+    {
+      "videoId": "veVqh9XoXUs",
+      "from": "person:patton",
+      "to": "person:general patton"
+    },
+    {
+      "videoId": "VJme28KSb6I",
+      "from": "person:blavatsky",
+      "to": "person:madame blavatsky"
+    },
+    {
+      "videoId": "VJme28KSb6I",
+      "from": "person:princess",
+      "to": "person:italian princess"
+    },
+    {
       "videoId": "vLfV9PowEbw",
       "from": "organization:mother care",
       "to": "organization:mother care store"
+    },
+    {
+      "videoId": "vLfV9PowEbw",
+      "from": "person:dick",
+      "to": "person:philip k dick"
     },
     {
       "videoId": "vLfV9PowEbw",
@@ -26865,13 +28875,33 @@
     },
     {
       "videoId": "VVMpple3CJc",
+      "from": "person:bernay",
+      "to": "person:edward bernay"
+    },
+    {
+      "videoId": "VVMpple3CJc",
       "from": "person:bernes",
       "to": "person:edward bernes"
     },
     {
       "videoId": "VVMpple3CJc",
+      "from": "person:freud",
+      "to": "person:sigmund freud"
+    },
+    {
+      "videoId": "VVMpple3CJc",
+      "from": "person:frey",
+      "to": "person:alan frey"
+    },
+    {
+      "videoId": "VVMpple3CJc",
       "from": "person:hussein",
       "to": "person:saddam hussein"
+    },
+    {
+      "videoId": "vZBRMcUkqNA",
+      "from": "person:adam",
+      "to": "person:adam and eve"
     },
     {
       "videoId": "vZBRMcUkqNA",
@@ -26895,6 +28925,11 @@
     },
     {
       "videoId": "Wlc8b2j9-yM",
+      "from": "person:david",
+      "to": "person:david e. george"
+    },
+    {
+      "videoId": "Wlc8b2j9-yM",
       "from": "person:helen",
       "to": "person:john st. helen"
     },
@@ -26902,6 +28937,11 @@
       "videoId": "Wlc8b2j9-yM",
       "from": "person:herald",
       "to": "person:david herald"
+    },
+    {
+      "videoId": "Wlc8b2j9-yM",
+      "from": "person:john",
+      "to": "person:john wils booth"
     },
     {
       "videoId": "Wlc8b2j9-yM",
@@ -26925,8 +28965,18 @@
     },
     {
       "videoId": "WNavHksmXnA",
+      "from": "person:blavatsky",
+      "to": "person:madame blavatsky"
+    },
+    {
+      "videoId": "WNavHksmXnA",
       "from": "person:brown",
       "to": "person:jc brown"
+    },
+    {
+      "videoId": "WNavHksmXnA",
+      "from": "person:slater",
+      "to": "person:philip slater"
     },
     {
       "videoId": "Wnx-uM5Rn60",
@@ -26940,8 +28990,18 @@
     },
     {
       "videoId": "wP656kgwTgQ",
+      "from": "person:cheney",
+      "to": "person:dick cheney"
+    },
+    {
+      "videoId": "wP656kgwTgQ",
       "from": "person:david",
       "to": "person:david oates"
+    },
+    {
+      "videoId": "wP656kgwTgQ",
+      "from": "person:dick",
+      "to": "person:dick cheney"
     },
     {
       "videoId": "wP656kgwTgQ",
@@ -26959,9 +29019,24 @@
       "to": "person:paul mccartney"
     },
     {
+      "videoId": "WqHimq-PT_s",
+      "from": "person:carl",
+      "to": "person:carl wolf"
+    },
+    {
+      "videoId": "x-Veqz6JpQY",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
       "videoId": "x2BQyZorSQc",
       "from": "event:blackbird",
       "to": "event:operation blackbird"
+    },
+    {
+      "videoId": "x2BQyZorSQc",
+      "from": "person:colin",
+      "to": "person:colin andrews"
     },
     {
       "videoId": "x2BQyZorSQc",
@@ -26975,6 +29050,11 @@
     },
     {
       "videoId": "x2BQyZorSQc",
+      "from": "person:irving",
+      "to": "person:my uncle irving"
+    },
+    {
+      "videoId": "x2BQyZorSQc",
       "from": "person:john",
       "to": "person:john lunberg"
     },
@@ -26985,8 +29065,23 @@
     },
     {
       "videoId": "x2BQyZorSQc",
+      "from": "person:maxwell",
+      "to": "person:charles maxwell"
+    },
+    {
+      "videoId": "x2BQyZorSQc",
+      "from": "person:nicola",
+      "to": "person:nicola romanski"
+    },
+    {
+      "videoId": "x2BQyZorSQc",
       "from": "work_of_media:documentary",
       "to": "work_of_media:a documentary"
+    },
+    {
+      "videoId": "x36boO6hWjM",
+      "from": "person:kane",
+      "to": "person:kane parsons"
     },
     {
       "videoId": "X46H1dEADJU",
@@ -26999,9 +29094,29 @@
       "to": "person:jake barber"
     },
     {
+      "videoId": "X46H1dEADJU",
+      "from": "person:hill",
+      "to": "person:john w. hill"
+    },
+    {
+      "videoId": "X46H1dEADJU",
+      "from": "person:sean",
+      "to": "person:shawn ryan"
+    },
+    {
+      "videoId": "X46H1dEADJU",
+      "from": "person:shawn",
+      "to": "person:shawn ryan"
+    },
+    {
       "videoId": "xauvaJ1kTBo",
       "from": "person:jeff",
       "to": "person:jeff olsen"
+    },
+    {
+      "videoId": "xauvaJ1kTBo",
+      "from": "person:julie",
+      "to": "person:julie mcfaden"
     },
     {
       "videoId": "xauvaJ1kTBo",
@@ -27020,8 +29135,23 @@
     },
     {
       "videoId": "XLhMi6YEhsQ",
+      "from": "person:corey",
+      "to": "person:corey goode"
+    },
+    {
+      "videoId": "XLhMi6YEhsQ",
       "from": "person:cory",
       "to": "person:cory good"
+    },
+    {
+      "videoId": "XLhMi6YEhsQ",
+      "from": "person:edgeworth",
+      "to": "person:kenneth edgeworth"
+    },
+    {
+      "videoId": "XLhMi6YEhsQ",
+      "from": "person:kyper",
+      "to": "person:gerard kyper"
     },
     {
       "videoId": "xluya-2ov40",
@@ -27044,6 +29174,26 @@
       "to": "event:impact winter"
     },
     {
+      "videoId": "XU49FSIx0_g",
+      "from": "person:edison",
+      "to": "person:edison carter"
+    },
+    {
+      "videoId": "XU49FSIx0_g",
+      "from": "person:marconi",
+      "to": "person:guillermo marconi"
+    },
+    {
+      "videoId": "xxZLBncNRXs",
+      "from": "person:arenus",
+      "to": "person:sante arenus"
+    },
+    {
+      "videoId": "xxZLBncNRXs",
+      "from": "person:hoy",
+      "to": "person:fred hoy"
+    },
+    {
       "videoId": "Y5szkAecabU",
       "from": "technology:death whistle",
       "to": "technology:aztec death whistle"
@@ -27054,9 +29204,24 @@
       "to": "event:artificial earthquakes"
     },
     {
+      "videoId": "YaaGvq2mcR0",
+      "from": "person:manast",
+      "to": "person:h manast"
+    },
+    {
+      "videoId": "YaaGvq2mcR0",
+      "from": "person:roddenberry",
+      "to": "person:jee roddenberry"
+    },
+    {
       "videoId": "yDyJe1nmSOM",
       "from": "person:neil",
       "to": "person:neil armstrong"
+    },
+    {
+      "videoId": "yDyJe1nmSOM",
+      "from": "person:nixon",
+      "to": "person:president nixon"
     },
     {
       "videoId": "yDyJe1nmSOM",
@@ -27072,6 +29237,31 @@
       "videoId": "YGub8195Zus",
       "from": "event:attacks",
       "to": "event:cyber attacks"
+    },
+    {
+      "videoId": "YpZKwbdbsJ4",
+      "from": "person:leona",
+      "to": "person:leona snyder"
+    },
+    {
+      "videoId": "YpZKwbdbsJ4",
+      "from": "person:leonov",
+      "to": "person:alexei leonov"
+    },
+    {
+      "videoId": "YpZKwbdbsJ4",
+      "from": "person:rutledge",
+      "to": "person:rutledge snyder"
+    },
+    {
+      "videoId": "YpZKwbdbsJ4",
+      "from": "person:snyder",
+      "to": "person:leona snyder"
+    },
+    {
+      "videoId": "YpZKwbdbsJ4",
+      "from": "person:speth",
+      "to": "person:thierry speth"
     },
     {
       "videoId": "yUFYnVXbLoY",
@@ -27092,6 +29282,11 @@
       "videoId": "yUFYnVXbLoY",
       "from": "person:mark",
       "to": "person:mark mccandlish"
+    },
+    {
+      "videoId": "yUFYnVXbLoY",
+      "from": "person:warfield",
+      "to": "person:zachary warfield"
     },
     {
       "videoId": "z_YeaMO2X0s",
@@ -27115,6 +29310,16 @@
     },
     {
       "videoId": "z_YeaMO2X0s",
+      "from": "person:rogan",
+      "to": "person:joe rogan"
+    },
+    {
+      "videoId": "z_YeaMO2X0s",
+      "from": "person:solomon",
+      "to": "person:king solomon"
+    },
+    {
+      "videoId": "z_YeaMO2X0s",
       "from": "person:tim",
       "to": "person:tim hogan"
     },
@@ -27124,9 +29329,49 @@
       "to": "person:art bell"
     },
     {
+      "videoId": "za3rlP9pJEU",
+      "from": "person:hecklefish",
+      "to": "person:lord hecklefish"
+    },
+    {
+      "videoId": "ZCYMAs4cqRU",
+      "from": "person:jerry",
+      "to": "person:jerry wills"
+    },
+    {
       "videoId": "ZCYMAs4cqRU",
       "from": "person:kincaid",
       "to": "person:ge kincaid"
+    },
+    {
+      "videoId": "zjhMCFNl_YU",
+      "from": "person:echart",
+      "to": "person:dietrich echart"
+    },
+    {
+      "videoId": "zjhMCFNl_YU",
+      "from": "person:esther",
+      "to": "person:queen esther"
+    },
+    {
+      "videoId": "zjhMCFNl_YU",
+      "from": "person:xerxes",
+      "to": "person:king xerxes"
+    },
+    {
+      "videoId": "zo68B3UG9VU",
+      "from": "person:eisenhower",
+      "to": "person:president eisenhower"
+    },
+    {
+      "videoId": "zo68B3UG9VU",
+      "from": "person:kennedy",
+      "to": "person:john f kennedy"
+    },
+    {
+      "videoId": "zo68B3UG9VU",
+      "from": "person:schwarz",
+      "to": "person:peter schwarz"
     },
     {
       "videoId": "zP3pOszdr5U",
@@ -27140,8 +29385,23 @@
     },
     {
       "videoId": "zP3pOszdr5U",
+      "from": "person:mel",
+      "to": "person:ted mel"
+    },
+    {
+      "videoId": "zP3pOszdr5U",
+      "from": "person:seveli",
+      "to": "person:guy seveli"
+    },
+    {
+      "videoId": "zP3pOszdr5U",
       "from": "person:shannon",
       "to": "person:jim shannon"
+    },
+    {
+      "videoId": "zP3pOszdr5U",
+      "from": "person:stubble",
+      "to": "person:major general albert stubble iii"
     }
   ],
   "deletedRelations": [
