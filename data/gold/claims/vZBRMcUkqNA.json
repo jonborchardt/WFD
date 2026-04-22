@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "vZBRMcUkqNA",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "claims": [
+    {
+      "id": "vZBRMcUkqNA:c_0001",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Humans did not evolve naturally but were genetically engineered by the Anunnaki as slaves to mine gold.",
+      "kind": "speculative",
+      "entities": [
+        "organization:anunnaki",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 998,
+          "charEnd": 1088,
+          "timeStart": 69.04,
+          "timeEnd": 78.24,
+          "quote": "mankind didn't evolve at all\nmankind was engineered purpose-built to\nbe the perfect slaves"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 6290,
+          "charEnd": 6370,
+          "timeStart": 489.4,
+          "timeEnd": 496.759,
+          "quote": "they wanted\nevery ounce of it so they bred us as a\nslave race to work the mindes"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.1,
+      "rationale": "Central thesis of the video. Host later explicitly concedes Sitchin 'was wrong about just about everything' and that his ancient-astronaut theory is considered pseudoscience. Low directTruth reflects the video's own closing judgment even though the host presents the narrative sympathetically.",
+      "tags": ["anunnaki", "ancient-astronaut", "human-origins"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0002",
+      "videoId": "vZBRMcUkqNA",
+      "text": "The Anunnaki arrived on Earth approximately 450,000 years ago to extract gold.",
+      "kind": "historical",
+      "entities": [
+        "organization:anunnaki",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 6149,
+          "charEnd": 6202,
+          "timeStart": 480.919,
+          "timeEnd": 486.28,
+          "quote": "about 450,000 years ago the Anunnaki\narrived on Earth"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.05,
+      "rationale": "No archaeological evidence supports an alien arrival at this date; the 450,000-year figure comes from Sitchin's idiosyncratic reading of Sumerian texts which the host later describes as mistranslations. Presupposes alien civilizations existed and visited Earth.",
+      "tags": ["anunnaki", "ancient-astronaut", "chronology"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vZBRMcUkqNA:c_0001",
+          "kind": "presupposes",
+          "rationale": "The slave-engineering story requires the Anunnaki to have reached Earth in the first place."
+        }
+      ]
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0003",
+      "videoId": "vZBRMcUkqNA",
+      "text": "The Anunnaki were aliens from the planet Nibiru who needed Earth's gold to repair their dying atmosphere.",
+      "kind": "speculative",
+      "entities": [
+        "organization:anunnaki",
+        "location:nibiru"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 5962,
+          "charEnd": 6092,
+          "timeStart": 469.12,
+          "timeEnd": 478.28,
+          "quote": "the Anunnaki weren't gods they were\naliens from another planet they needed\ngold to save their world from an\nenvironmental disaster"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.05,
+      "rationale": "The 'gold to heal the atmosphere' mechanism is Sitchin's invention; host later admits 'there's nothing in the text about mining gold to heal the atmosphere on Nibiru'. The mechanism has no basis in the Sumerian sources.",
+      "tags": ["anunnaki", "nibiru", "gold", "ancient-astronaut"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0004",
+      "videoId": "vZBRMcUkqNA",
+      "text": "The Anunnaki created the first human Adamu by splicing their DNA with that of a female hominid.",
+      "kind": "speculative",
+      "entities": [
+        "organization:anunnaki",
+        "person:adamu",
+        "person:adam"
+      ],
+      "relationships": ["r_0083", "r_0096"],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 17308,
+          "charEnd": 17375,
+          "timeStart": 1284.76,
+          "timeEnd": 1292.2,
+          "quote": "they genetically\nspliced their DNA with with that of a\nhomed female"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 17654,
+          "charEnd": 17685,
+          "timeStart": 1313.279,
+          "timeEnd": 1316.36,
+          "quote": "adamu means first man in Hebrew"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "Retelling of Sitchin's narrative; no archaeological, genetic, or textual evidence supports direct Anunnaki hybridization. The name echo between 'Adamu' and biblical Adam is philologically superficial.",
+      "tags": ["anunnaki", "genetic-engineering", "adam"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0005",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Multiple ancient creation stories from Sumerian, Akkadian, Babylonian, and Egyptian cultures describe man being made by mixing divine essence with earthly clay.",
+      "kind": "historical",
+      "entities": [
+        "nationality_or_ethnicity:sumerians",
+        "work_of_media:sumerian texts"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 17801,
+          "charEnd": 17895,
+          "timeStart": 1321.32,
+          "timeEnd": 1330.96,
+          "quote": "in ancient\nSamarian Acadian and Babylonian texts\nthe creation of man is described the\nsame way"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "The general motif of humans being fashioned from clay by gods is attested in Enuma Elish, Atrahasis, and Egyptian sources (Khnum on a potter's wheel). Standard comparative-mythology finding, independent of the ancient-astronaut interpretation.",
+      "tags": ["mythology", "creation-myth", "comparative-religion"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vZBRMcUkqNA:c_0004",
+          "kind": "supports",
+          "rationale": "Host uses the parallel across creation myths as indirect evidence for a shared genetic-engineering substrate."
+        }
+      ]
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0006",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Dr. Ellis Silver argues humans were brought to Earth by aliens because they are poorly adapted to Earth's environment.",
+      "kind": "opinion",
+      "entities": [
+        "person:dr ellis silver",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 18614,
+          "charEnd": 18629,
+          "timeStart": 1379.84,
+          "timeEnd": 1381.799,
+          "quote": "Dr Ellis silver"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 18710,
+          "charEnd": 18765,
+          "timeStart": 1384.279,
+          "timeEnd": 1389.08,
+          "quote": "his theory says that\nhumans were brought here by aliens"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 18896,
+          "charEnd": 18945,
+          "timeStart": 1397.039,
+          "timeEnd": 1401.039,
+          "quote": "humans are not well suited\nto Earth's environment"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.1,
+      "rationale": "Silver's book is self-published trade, not peer-reviewed science; its examples (sunburn, back pain, bad diet preferences) are explained by evolutionary trade-offs rather than alien origin. Host treats it as compelling but it is not scientific consensus.",
+      "tags": ["ellis-silver", "aliens", "pop-science"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0007",
+      "videoId": "vZBRMcUkqNA",
+      "text": "The global flood destroyed almost all humanity when Nibiru passed close to Earth about 13,000 years ago.",
+      "kind": "historical",
+      "entities": [
+        "event:flood",
+        "location:nibiru",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 37384,
+          "charEnd": 37460,
+          "timeStart": 2691.52,
+          "timeEnd": 2699.28,
+          "quote": "13,000 years ago the end of the\nyounger dras was the time of the great\nflood"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.15,
+      "rationale": "A Younger Dryas climate perturbation ~12,900 years ago is real, but linking it specifically to a close passage of a hypothetical planet is speculative. Host himself acknowledges meteor-impact and solar-event alternatives.",
+      "tags": ["flood", "younger-dryas", "nibiru"],
+      "inVerdictSection": false,
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0008",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Every culture on Earth has a flood myth and the similarities indicate a shared historical event rather than literary copying.",
+      "kind": "empirical",
+      "entities": [
+        "event:flood",
+        "work_of_media:bible",
+        "work_of_media:epic of gilgamesh"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 35682,
+          "charEnd": 35761,
+          "timeStart": 2579.76,
+          "timeEnd": 2587.04,
+          "quote": "every culture and religion on Earth\nhas a flood myth which are all very\nsimilar"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 44165,
+          "charEnd": 44266,
+          "timeStart": 3148.44,
+          "timeEnd": 3154.839,
+          "quote": "samarians wrote about the flood\neven to them this was an event that\nhappened in their ancient history"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.45,
+      "rationale": "Flood myths are genuinely widespread, but mainstream folklorists attribute similarities partly to diffusion and partly to universal human experience with riverine/coastal flooding — not a single global event. The 'therefore single event' inference is contested.",
+      "tags": ["flood-myth", "comparative-religion"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0009",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Zechariah Sitchin was wrong about nearly everything in his Anunnaki translations.",
+      "kind": "empirical",
+      "entities": [
+        "person:zechariah siten",
+        "person:sitchin",
+        "person:zechariah sitchin"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 41168,
+          "charEnd": 41208,
+          "timeStart": 2949.28,
+          "timeEnd": 2951.559,
+          "quote": "he was wrong about just about everything"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 41215,
+          "charEnd": 41300,
+          "timeStart": 2951.559,
+          "timeEnd": 2958.96,
+          "quote": "his translations of Samaran\nwriting are more interpretations than\nactual translations"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "Host's own verdict, delivered as a Sitchin fan. Matches scholarly consensus: professional Assyriologists (notably Michael Heiser) have extensively documented Sitchin's errors.",
+      "tags": ["sitchin", "debunk", "translation"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vZBRMcUkqNA:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] If Sitchin mistranslated the source material the entire slave-race narrative derived from those translations collapses."
+        },
+        {
+          "target": "vZBRMcUkqNA:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] Undermines the Nibiru-gold-atmosphere mechanism which is Sitchin's invention."
+        }
+      ]
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0010",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Anunnaki means 'royal blood' or 'royal seed' — descendants of Anu and Ki — not 'those who from the heavens came'.",
+      "kind": "definitional",
+      "entities": [
+        "organization:anunnaki",
+        "person:anu"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 41542,
+          "charEnd": 41591,
+          "timeStart": 2979.119,
+          "timeEnd": 2984.799,
+          "quote": "Anunnaki actually means royal blood or\nRoyal seed"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Assyriological consensus renders Anunnaki as 'offspring of Anu' or 'princely seed'. Sitchin's 'those who from heaven came' is the disputed gloss. Host correctly names the scholarly translation.",
+      "tags": ["anunnaki", "etymology", "debunk"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vZBRMcUkqNA:c_0009",
+          "kind": "supports",
+          "rationale": "Concrete example of Sitchin getting a basic word wrong."
+        }
+      ]
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0011",
+      "videoId": "vZBRMcUkqNA",
+      "text": "The Sumerians did not know about planets beyond Saturn and had no telescopes, contradicting Sitchin's claim that they catalogued the outer solar system.",
+      "kind": "empirical",
+      "entities": [
+        "nationality_or_ethnicity:sumerians",
+        "person:zechariah siten"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 42342,
+          "charEnd": 42420,
+          "timeStart": 3035.24,
+          "timeEnd": 3040.88,
+          "quote": "the samarians did know about\nplanets but they didn't know of any\nBeyond Saturn"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 42586,
+          "charEnd": 42637,
+          "timeStart": 3050.04,
+          "timeEnd": 3057.559,
+          "quote": "not a\nsingle Samaran text mentions a flying\nvehicle"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.9,
+      "rationale": "Naked-eye astronomy limit is Saturn — checkable fact. The absence of 'sky vehicle' references in Sumerian textual corpus is the standard Assyriological counter to Sitchin.",
+      "tags": ["sumerians", "astronomy", "debunk"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vZBRMcUkqNA:c_0009",
+          "kind": "supports",
+          "rationale": "Specific evidence that Sitchin's factual claims about Sumerian knowledge do not hold up."
+        }
+      ]
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0012",
+      "videoId": "vZBRMcUkqNA",
+      "text": "The 2015 Caltech Planet Nine discovery provides evidence that Nibiru is real.",
+      "kind": "empirical",
+      "entities": [
+        "date_time:2015",
+        "organization:caltech",
+        "location:nibiru"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 46983,
+          "charEnd": 47163,
+          "timeStart": 3351.4,
+          "timeEnd": 3365.2,
+          "quote": "in 2015 Caltech researchers found\nevidence of a huge object deep in the\nsolar system it's a planet about the\nsize of Neptune with an orbit so\nelliptical it reaches far beyond Pluto"
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.25,
+      "rationale": "Batygin and Brown's Planet Nine hypothesis is real and inferred from Kuiper-belt orbital clustering, but Planet Nine has no ~3600-year period and Planet Nine has not been directly observed. Equating it with Sitchin's Nibiru requires a substantial leap the evidence does not support.",
+      "tags": ["planet-nine", "caltech", "nibiru"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0013",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Queen Pabi's elongated skull, discovered in 1927 by Leonard Woolley, suggests she was a human-Anunnaki hybrid.",
+      "kind": "speculative",
+      "entities": [
+        "person:queen pabi",
+        "person:leonard woolly",
+        "date_time:1927",
+        "organization:anunnaki"
+      ],
+      "relationships": ["r_0174"],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 45473,
+          "charEnd": 45554,
+          "timeStart": 3246.2,
+          "timeEnd": 3253.799,
+          "quote": "in 1927 British archaeologist Leonard\nwoolly discovered the remains of Queen\nPabi"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 45738,
+          "charEnd": 45776,
+          "timeStart": 3260.72,
+          "timeEnd": 3266.96,
+          "quote": "Queen\nPabi was a human Anunnaki hybrid"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.1,
+      "rationale": "The Puabi burial and 1927 Woolley dig are real, but her skull is within the human range. Artificial cranial deformation — a well-documented ancient cultural practice — explains elongated skulls without invoking hybridization.",
+      "tags": ["queen-puabi", "elongated-skulls", "ur"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0014",
+      "videoId": "vZBRMcUkqNA",
+      "text": "The TKTL1 gene mutation in Homo sapiens differs by a single amino acid from other hominids, implying deliberate genetic engineering.",
+      "kind": "speculative",
+      "entities": [
+        "organization:anunnaki"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 48368,
+          "charEnd": 48457,
+          "timeStart": 3458.079,
+          "timeEnd": 3465.24,
+          "quote": "a genetic mutation that\ntriggered the faster creation of neurons\nin the homo sapien brain"
+        },
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 48678,
+          "charEnd": 48800,
+          "timeStart": 3480.599,
+          "timeEnd": 3492.559,
+          "quote": "the only time we see a single\nGene altered this specifically is when\nthat Gene is targeted and manipulated\nwith technology"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.15,
+      "rationale": "The 2022 Pinson et al. study on TKTL1 is real — a single amino-acid change distinguishes modern humans from Neanderthals and boosts basal progenitor proliferation. But single amino-acid substitutions are the most common class of natural point mutations; the jump to 'evidence of genetic engineering' is not supported by mainstream genetics.",
+      "tags": ["tktl1", "genetic-engineering", "neuroscience"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vZBRMcUkqNA:c_0015",
+      "videoId": "vZBRMcUkqNA",
+      "text": "Nibiru is due to return to Earth's vicinity around the year 2900.",
+      "kind": "speculative",
+      "entities": [
+        "location:nibiru",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vZBRMcUkqNA",
+          "charStart": 38553,
+          "charEnd": 38597,
+          "timeStart": 2767.44,
+          "timeEnd": 2773.28,
+          "quote": "nabiru is\ndue to return around the year 2900"
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.05,
+      "rationale": "Prediction derived entirely from Sitchin's 3600-year orbital assumption which has no basis in Sumerian source material. Planet Nine, even if real, does not have a ~3600 year period. Near-zero directTruth.",
+      "tags": ["nibiru", "prediction", "2900"],
+      "inVerdictSection": true,
+      "hostStance": "uncertain",
+      "dependencies": [
+        {
+          "target": "vZBRMcUkqNA:c_0011",
+          "kind": "contradicts",
+          "rationale": "[logical] Depends on Sitchin's 3600-year orbit which the Sumerian-astronomy evidence rules out."
+        }
+      ]
+    }
+  ]
+}

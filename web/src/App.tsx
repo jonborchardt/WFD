@@ -22,6 +22,9 @@ const ClaimGraphPage = lazy(() =>
 const AdminPage = IS_ADMIN
   ? lazy(() => import("./pages/AdminPage").then((m) => ({ default: m.AdminPage })))
   : null;
+const MetricsPage = IS_ADMIN
+  ? lazy(() => import("./pages/MetricsPage").then((m) => ({ default: m.MetricsPage })))
+  : null;
 
 function Loading() {
   return <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}><CircularProgress /></Box>;
@@ -48,6 +51,9 @@ export function App() {
         <Route path="claim-graph" element={<Suspense fallback={<Loading />}><ClaimGraphPage /></Suspense>} />
         {AdminPage && (
           <Route path="admin" element={<Suspense fallback={<Loading />}><AdminPage /></Suspense>} />
+        )}
+        {MetricsPage && (
+          <Route path="admin/metrics" element={<Suspense fallback={<Loading />}><MetricsPage /></Suspense>} />
         )}
       </Route>
     </Routes>

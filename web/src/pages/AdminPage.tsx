@@ -14,6 +14,7 @@ export function AdminPage() {
       <Typography variant="h4" gutterBottom>Admin</Typography>
       <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
         <Link href="/admin/aliases">aliases</Link>
+        <Link href="/admin/metrics">metrics</Link>
       </Stack>
       <UpstreamCheck />
       <AdminCatalogTable onRowClick={handleRowClick} />

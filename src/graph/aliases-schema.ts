@@ -110,6 +110,43 @@ export interface CustomContradictionEntry {
   sharedEntities?: string[];
 }
 
+// Plan 05 §M4 — append-only audit log for every aliases mutation.
+// Every mutator (addMerge, addDeletedEntity, …) writes one entry when
+// invoked with an optional { batchId, by } context. Admin UI displays
+// the most-recent ~50 in a "Recently applied" view on /admin/aliases.
+export type AuditAction =
+  | "merge"
+  | "unmerge"
+  | "delete-entity"
+  | "undelete-entity"
+  | "display"
+  | "undisplay"
+  | "not-same"
+  | "dismissed"
+  | "video-merge"
+  | "video-unmerge"
+  | "delete-relation"
+  | "undelete-relation"
+  | "claim-truth-override"
+  | "claim-delete"
+  | "claim-field-override"
+  | "contradiction-dismissal"
+  | "custom-contradiction";
+
+export interface AuditLogEntry {
+  at: string;                 // ISO timestamp
+  action: AuditAction;
+  // Free-form record; shape varies by action. The audit log is for
+  // display/diagnosis, not for replay — operators who need to replay
+  // should use the typed mutators against the specific state they
+  // want.
+  entry: Record<string, unknown>;
+  /** Who initiated the write — "operator", "ai:<skill>", "pipeline:<stage>", … */
+  by?: string;
+  /** Optional batch id grouping related writes from one session. */
+  batchId?: string;
+}
+
 export interface AliasesFile {
   schemaVersion: 2;
   merges: MergeEntry[];
@@ -124,6 +161,8 @@ export interface AliasesFile {
   claimFieldOverrides: ClaimFieldOverrideEntry[];
   contradictionDismissals: ContradictionDismissalEntry[];
   customContradictions: CustomContradictionEntry[];
+  /** Plan 05 §M4 — append-only audit log. Newest last. */
+  auditLog?: AuditLogEntry[];
 }
 
 // Sentinels used internally in the flat AliasMap runtime rep. They
@@ -152,6 +191,7 @@ export function emptyAliasesFile(): AliasesFile {
     claimFieldOverrides: [],
     contradictionDismissals: [],
     customContradictions: [],
+    auditLog: [],
   };
 }
 
@@ -204,7 +244,31 @@ function normalizeFile(raw: Partial<AliasesFile>): AliasesFile {
     claimFieldOverrides: raw.claimFieldOverrides ?? empty.claimFieldOverrides,
     contradictionDismissals: raw.contradictionDismissals ?? empty.contradictionDismissals,
     customContradictions: raw.customContradictions ?? empty.customContradictions,
+    auditLog: raw.auditLog ?? [],
   };
+}
+
+// Plan 05 §M4 — append one entry to the audit log. Cheap on a tight
+// rotation: we cap at MAX_AUDIT_ENTRIES so the aliases.json stays
+// manageable and git diffs don't get swamped.
+const MAX_AUDIT_ENTRIES = 500;
+export function appendAuditLog(
+  file: AliasesFile,
+  action: AuditAction,
+  entry: Record<string, unknown>,
+  ctx?: { by?: string; batchId?: string },
+): void {
+  if (!file.auditLog) file.auditLog = [];
+  file.auditLog.push({
+    at: new Date().toISOString(),
+    action,
+    entry,
+    by: ctx?.by,
+    batchId: ctx?.batchId,
+  });
+  if (file.auditLog.length > MAX_AUDIT_ENTRIES) {
+    file.auditLog = file.auditLog.slice(-MAX_AUDIT_ENTRIES);
+  }
 }
 
 // Stable sort every section so diffs stay clean across edits.
@@ -254,6 +318,8 @@ function sortFile(file: AliasesFile): AliasesFile {
     customContradictions: [...(file.customContradictions ?? [])]
       .map((e) => (e.a < e.b ? e : { ...e, a: e.b, b: e.a }))
       .sort((x, y) => x.a.localeCompare(y.a) || x.b.localeCompare(y.b)),
+    // Audit log is append-only chronological — don't re-sort.
+    auditLog: file.auditLog ? [...file.auditLog] : [],
   };
 }
 

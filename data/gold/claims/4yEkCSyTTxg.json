@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "4yEkCSyTTxg",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "claims": [
+    {
+      "id": "4yEkCSyTTxg:c_0001",
+      "videoId": "4yEkCSyTTxg",
+      "text": "On September 4, 1964, Donald Schrum, an aerojet welder who worked on Polaris and Titan nuclear missiles, went bow hunting with two friends in Cisco Grove (Tahoe National Forest) and got separated from them at nightfall.",
+      "kind": "historical",
+      "entities": [
+        "person:donald",
+        "person:don",
+        "person:vincent alvarez",
+        "date_time:september 4th 1964",
+        "location:cisco grove",
+        "location:tahoe national forest",
+        "organization:aerojet corporation",
+        "technology:polaris and titan nuclear missiles",
+        "role:welder"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 3615,
+          "charEnd": 3720,
+          "timeStart": 313.80,
+          "timeEnd": 324.64,
+          "quote": "Friday morning September 4th\n1964 When Donald shum set out for the\nwoods Don and his two friends Vincent\n"
+        },
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 3887,
+          "charEnd": 4030,
+          "timeStart": 331.80,
+          "timeEnd": 345.76,
+          "quote": "aerojet Corporation a\nmilitary subcontractor in Sacramento Dom\nwas a welder and specifically worked on\nPolaris and Titan nuclear missiles a\nstr"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The biographical / setup facts (Schrum's employment at Aerojet, bow-hunting trip, Cisco Grove location, September 1964 date) are well-documented in the NICAP file and corroborated by co-workers. The backstory itself is verifiable.",
+      "tags": ["cisco-grove", "don-schrum", "1964", "setup"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0002",
+      "videoId": "4yEkCSyTTxg",
+      "text": "An enormous black cylindrical craft about 150 feet long — 14 stories tall lying on its side — appeared in the canyon and dispatched a smaller disc-shaped ship toward Don's tree.",
+      "kind": "historical",
+      "entities": [
+        "technology:the craft",
+        "location:the canyon",
+        "quantity:150 ft",
+        "quantity:the size of a 14-story building"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 6480,
+          "charEnd": 6640,
+          "timeStart": 488.12,
+          "timeEnd": 503.76,
+          "quote": "shape of the craft\nit wasn't small the ship was an enormous\nblack cylinder 150 ft long the size of a\n14-story building lying on its side the\nbeam of light was s"
+        },
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 7200,
+          "charEnd": 7340,
+          "timeStart": 536.20,
+          "timeEnd": 549.40,
+          "quote": " it it was shaped like a\nflying sauc that he'd seen in pictures\nDon was doing everything he could to\nremain still but he was trembling the\ns"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.15,
+      "rationale": "This is the core visual-craft portion of Schrum's testimony. It remains uncorroborated beyond Vincent Alvarez's affidavit (which describes a craft descending toward Don's area, not these specific features). No physical or photographic evidence.",
+      "tags": ["ufo", "cisco-grove", "cylinder-craft"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0003",
+      "videoId": "4yEkCSyTTxg",
+      "text": "Two silver-suited humanoid beings 4-5 feet tall with welding-goggle eyewear emerged from the brush and approached Don's tree, making owl-like hoots.",
+      "kind": "historical",
+      "entities": [
+        "person:don",
+        "technology:humanoids",
+        "technology:entities"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 8271,
+          "charEnd": 8445,
+          "timeStart": 604.32,
+          "timeEnd": 617.68,
+          "quote": "pair of beings\nhumanoid but definitely not human they\nwere between four and 5 ft tall wearing\nsilver suits Don couldn't make out their\nfaces but he could see they were wearin"
+        },
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 8490,
+          "charEnd": 8620,
+          "timeStart": 617.68,
+          "timeEnd": 629.72,
+          "quote": "led welding goggles the beings\nseemed interested in the surroundings\nthey were carefully picking leaves and\nplacing bits of soil i"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.1,
+      "rationale": "Visual description of silver-suited small humanoids is a common trope in 1950s-60s UFO literature. Single-witness testimony under extreme stress; host later notes the description resembles period sci-fi, which he finds suspicious.",
+      "tags": ["humanoids", "cisco-grove", "close-encounter"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0002",
+          "kind": "presupposes",
+          "rationale": "The beings only make sense in the narrative if the craft had deposited them."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0004",
+      "videoId": "4yEkCSyTTxg",
+      "text": "A 6-foot-tall robot with a boxy torso, square head, and reddish-orange eyes — resembling a robot from pulp magazines — joined the beings and attacked Don by opening its mouth and emitting a paralyzing white vapor.",
+      "kind": "historical",
+      "entities": [
+        "technology:robot",
+        "person:don"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 10050,
+          "charEnd": 10210,
+          "timeStart": 708.60,
+          "timeEnd": 723.28,
+          "quote": "een the two smaller\nbeings it looked like a robot from Pulp\nmagazines it was about 6 ft tall and\nmetallic it had a boxy torso and a\nsquare head it had no neck a"
+        },
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 10640,
+          "charEnd": 10850,
+          "timeStart": 746.28,
+          "timeEnd": 768.32,
+          "quote": "hiss\nthere was a jet of white smoke like\nSteam from a kettle then Don felt the\nvapor hitting his facea Ora well Don's\nbrain told him to react but his muscles\ndidn't respond he was paralyzed Inda his\nvision got "
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.08,
+      "rationale": "Descriptions resemble 1940s-60s pulp-comic robots — a point the host himself raises as suspicious. Paralyzing-vapor-emitting robot is extraordinary and unattested anywhere else. Low directTruth.",
+      "tags": ["robot", "cisco-grove", "vapor-attack"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0003",
+          "kind": "elaborates",
+          "rationale": "Further escalation of the encounter narrative."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0005",
+      "videoId": "4yEkCSyTTxg",
+      "text": "Don spent the night in the tree being repeatedly gassed unconscious and fighting back by shooting arrows at the robot (which Sparked on impact) and lighting his clothes on fire to drop onto the creatures.",
+      "kind": "historical",
+      "entities": [
+        "person:don",
+        "technology:robot"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 12215,
+          "charEnd": 12360,
+          "timeStart": 850.32,
+          "timeEnd": 864.20,
+          "quote": "again it stumbled\nbackward the humanoids also retreated\nbefore the robot could get its balance\nDon hit it Square in the chest again\nthis time it "
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.1,
+      "rationale": "The most dramatic portion of Schrum's testimony. Single-witness, extreme-stress recall. Hours-long siege with arrows vs. vapor-robot strains credulity; host later flags that the beings allegedly had anti-gravity tech but 'couldn't figure out how to climb a tree.'",
+      "tags": ["cisco-grove", "siege", "arrows"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0004",
+          "kind": "elaborates",
+          "rationale": "The extended siege narrative follows directly from the vapor-robot encounter."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0006",
+      "videoId": "4yEkCSyTTxg",
+      "text": "Don's account was relayed to Mather AFB via an astronomy professor known to his mother-in-law, and within days Captain McCloud and Sergeant Barnes were sent from Wright-Patterson AFB in Ohio to investigate.",
+      "kind": "historical",
+      "entities": [
+        "person:don",
+        "person:captain mcloyd",
+        "person:captain mcloy",
+        "person:sergeant barnes",
+        "location:mlen air force base",
+        "location:wright patterson afb",
+        "facility:wright patterson air force base",
+        "location:ohio",
+        "person:professor"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 15145,
+          "charEnd": 15320,
+          "timeStart": 1043.00,
+          "timeEnd": 1056.88,
+          "quote": " astronomy\nprofessor at a local community college\nshe thought his science background could\nhelp him explain the lights the object\nand what happened a couple of weeks\nlater Don"
+        },
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 15461,
+          "charEnd": 15695,
+          "timeStart": 1060.28,
+          "timeEnd": 1078.84,
+          "quote": "mlen Air Force Base everyone's\ngot a big mouth in this story the\nprofessor gave the Air Force a summary\nof Don's story and the location of the\nincident within days two investigators\nwere sent from Wright Patterson AFB in\nOhio captain "
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The Project Blue Book / Wright-Patterson investigator visit is documented in the declassified Blue Book file on the case (case #8857). This part of the timeline is verifiable.",
+      "tags": ["blue-book", "wright-patterson", "investigation"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0007",
+      "videoId": "4yEkCSyTTxg",
+      "text": "The Air Force investigators took Don's metal-coated arrowhead as evidence and never returned it.",
+      "kind": "historical",
+      "entities": [
+        "person:don",
+        "organization:air force",
+        "organization:the air force"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 17580,
+          "charEnd": 17770,
+          "timeStart": 1186.56,
+          "timeEnd": 1201.48,
+          "quote": " the\nrobot the Air Force took the arrow as\nevidence and he never saw it again and\nhe never saw it again the investigators\nleft and did not follow up during rifle\nseason Don went back to the "
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.55,
+      "rationale": "Schrum consistently claimed this in interviews; the NICAP FOIA'd Blue Book file does not record the arrowhead being retained, which is consistent with either a coverup or with the arrowhead simply not being mentioned. Moderately supported by testimony but not documented.",
+      "tags": ["evidence", "air-force", "arrowhead"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0008",
+      "videoId": "4yEkCSyTTxg",
+      "text": "When Don returned to the site later he found an orange circle around the tree and rake marks in the dirt for ~50 feet around — evidence that the Air Force had returned and cleaned up the site.",
+      "kind": "historical",
+      "entities": [
+        "person:don",
+        "organization:air force",
+        "organization:the air force"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 17900,
+          "charEnd": 18080,
+          "timeStart": 1206.20,
+          "timeEnd": 1218.80,
+          "quote": " around the tree there were still\nrake marks in the dirt and a few\ncigarette butts around the perimeter it\nwas obvious the Air Force was there and\ncleaned everything up soon after "
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.35,
+      "rationale": "Schrum's subjective interpretation. Rake marks could be forest-service fire-line work, hunters, or other visitors. The 'orange circle' isn't independently corroborated. Moderately low.",
+      "tags": ["cisco-grove", "cleanup", "physical-traces"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0007",
+          "kind": "supports",
+          "rationale": "A government cleanup visit would fit a pattern of Air Force interest that also explains the unreturned arrowhead."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0009",
+      "videoId": "4yEkCSyTTxg",
+      "text": "After the encounter Don developed severe PTSD — walking nightmares, panic attacks triggered by owl sounds — lost his welding job, nearly went bankrupt, and had to move his family to Arizona.",
+      "kind": "historical",
+      "entities": [
+        "person:don",
+        "organization:his family",
+        "location:arizona"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 18115,
+          "charEnd": 18320,
+          "timeStart": 1216.04,
+          "timeEnd": 1234.32,
+          "quote": "red severe\nPTSD including walking nightmares for\nabout a year hearing owl sounds would\ntrigger a panic attack his welding\nskills declined he was fired from his\njob and his family almost went bankrupt\nhe co"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.65,
+      "rationale": "Schrum's subsequent psychological struggles and financial hardship are corroborated by family and friends in multiple later interviews. The symptoms are consistent with genuine traumatic stress regardless of the actual cause.",
+      "tags": ["don-schrum", "ptsd", "aftermath"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0010",
+      "videoId": "4yEkCSyTTxg",
+      "text": "After a FOIA request by NICAP investigator Paul Cerny, the Air Force file on the incident surfaced — it called the event psychological, a hoax or delusion, but also contained a signed affidavit from Vincent Alvarez reporting a craft descending toward Don's area.",
+      "kind": "historical",
+      "entities": [
+        "organization:naikap",
+        "person:paul cery",
+        "person:vincent alvarez",
+        "organization:air force"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 18960,
+          "charEnd": 19100,
+          "timeStart": 1273.60,
+          "timeEnd": 1287.72,
+          "quote": "n an NBC special called\nproject UFO Paul cery an investigator\nfor naikap filed a freedom of\ninformation request and it took a couple\nof year"
+        },
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 19260,
+          "charEnd": 19440,
+          "timeStart": 1291.72,
+          "timeEnd": 1305.92,
+          "quote": "as a hoax or a delusion but\nthe file also contained a signed\naffidavit from Vincent Alvarez who said\nhe saw a craft descending toward Don's\narea at the time of the event in the mid"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The Cisco Grove case is in the declassified Project Blue Book file; NICAP investigator Paul Cerny did work the case; the Alvarez affidavit is part of the public record. The Air Force's 'psychological' dismissal is also documented in the file.",
+      "tags": ["foia", "blue-book", "alvarez-affidavit"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0011",
+      "videoId": "4yEkCSyTTxg",
+      "text": "Don's story has stayed consistent for 50 years, and he never tried to capitalize on it — the opposite, the encounter broke him financially and psychologically.",
+      "kind": "historical",
+      "entities": [
+        "person:don"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 19830,
+          "charEnd": 19980,
+          "timeStart": 1324.88,
+          "timeEnd": 1340.08,
+          "quote": "Don\nstory has been consistent for 50 years\nhe's never tried to capitalize on it the\nopposite happened this encounter broke\nhim financially and psychol"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "Schrum's reluctance to speak publicly until the mid-2000s and his account's stability across limited re-tellings is well-established among UFO researchers. 'Never capitalized' is also supported — he was reluctantly interviewed for the 2011 book.",
+      "tags": ["don-schrum", "credibility"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0001",
+          "kind": "supports",
+          "rationale": "Credibility assessment bolsters the baseline scenario of Don's trip and the encounter that followed."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0012",
+      "videoId": "4yEkCSyTTxg",
+      "text": "There is no actual physical evidence for the encounter — the Air Force never returned the arrow, didn't document the site cleanup, and didn't test the soil for radiation.",
+      "kind": "empirical",
+      "entities": [
+        "organization:air force",
+        "organization:the air force"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 20230,
+          "charEnd": 20400,
+          "timeStart": 1352.08,
+          "timeEnd": 1365.56,
+          "quote": "de there's no actual physical\nevidence the Air Force never return the\narrow Don said they cleaned up the site\nand if they did they didn't document\nthis or test the soil f"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Accurate summary. The Blue Book case file contains no physical trace evidence, no soil samples, no metallurgical analysis. Host states this explicitly as a point against the story.",
+      "tags": ["physical-evidence", "verdict"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0004",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Absence of physical evidence for a vapor-emitting metallic robot weakens a highly extraordinary claim."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0013",
+      "videoId": "4yEkCSyTTxg",
+      "text": "The beings allegedly had anti-gravity technology, yet couldn't figure out how to climb a tree — an internal inconsistency that raises skepticism.",
+      "kind": "opinion",
+      "entities": [
+        "technology:anti-gravity technology",
+        "technology:humanoids",
+        "technology:robot"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 20520,
+          "charEnd": 20720,
+          "timeStart": 1367.92,
+          "timeEnd": 1384.48,
+          "quote": "es had\nanti-gravity technology yet they\ncouldn't figure out how to climb a tree\nwhy not fly the smaller ship over and I\ndon't like that the beings and the robot\nare described exactly like 1960 sci-fi\n"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Solid internal-logic critique: a species crossing interstellar space via anti-gravity wouldn't struggle with arboreal tactical problems. Host frames this as a reason to doubt the story. Argument is sound.",
+      "tags": ["skeptic-argument", "logical-inconsistency"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0004",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If technologically advanced beings can't overcome a tree, either their technology or the narrative is suspect."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0014",
+      "videoId": "4yEkCSyTTxg",
+      "text": "Don said moonlight helped him see the ship, but there was no moon that night — a factual error in his account.",
+      "kind": "empirical",
+      "entities": [
+        "person:don",
+        "technology:the craft"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 20660,
+          "charEnd": 20860,
+          "timeStart": 1376.92,
+          "timeEnd": 1392.52,
+          "quote": "beings and the robot\nare described exactly like 1960 sci-fi\nthat makes me skeptical also Don said\nMoonlight helped him see the ship but\nthere was no moon that night Don said he\nfound another one of hi"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "The new-moon / lunar-phase argument has been raised by skeptics of Cisco Grove — September 4, 1964 was close to a new moon (actual new moon was September 6), so moonlight would have been minimal at that date/time. A detail-check that goes against Schrum.",
+      "tags": ["skeptic-argument", "lunar-phase", "inconsistency"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "4yEkCSyTTxg:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] A moonlight-visibility detail that can't be true weakens the craft-sighting testimony."
+        }
+      ]
+    },
+    {
+      "id": "4yEkCSyTTxg:c_0015",
+      "videoId": "4yEkCSyTTxg",
+      "text": "Captain McCloud was sent from Wright-Patterson Air Force Base to investigate UFO sightings because only the most unusual 1% of reports were forwarded from Project Blue Book.",
+      "kind": "historical",
+      "entities": [
+        "person:captain mcloy",
+        "person:captain mcloyd",
+        "facility:wright patterson air force base",
+        "organization:project blue book",
+        "quantity:99%"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4yEkCSyTTxg",
+          "charStart": 104,
+          "charEnd": 240,
+          "timeStart": 7.84,
+          "timeEnd": 22.04,
+          "quote": "September\n1964 Captain McLoy and Sergeant Barnes\nwere dispatched from Wright Patterson\nAir Force Base in Ohio they were sent to\ninvestig"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.5,
+      "rationale": "Project Blue Book was housed at Wright-Patterson and did triage UFO reports, with the bulk classified as explainable. The specific 'only 1% forwarded' figure is the host's dramatization; Blue Book investigated thousands of cases and left ~700 unexplained (about 6%, not 1%). Partial accuracy.",
+      "tags": ["project-blue-book", "air-force", "ufo-investigation"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    }
+  ]
+}
