@@ -3,8 +3,6 @@
 // in data/aliases.json (added if missing, never removed — operator
 // overrides via ⋯ menu still win).
 //
-// Plan 2-1 §A1 (plans2/01-entity-hygiene.md).
-//
 // Guidance for adding entries:
 //   - DELETE_ALWAYS: entities that are never graph-worthy on this corpus.
 //     Role nouns ("person:scientists"), generic nouns

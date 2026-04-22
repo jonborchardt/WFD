@@ -1,11 +1,11 @@
 ---
 name: ai-entity-audit
-description: Audit top-mention entities in the corpus and propose KEEP / DELETE-GLOBAL / MERGE-INTO / PER-VIDEO-MERGE / DEFER actions. Use when the user asks to "audit entities", "clean up top entities", "run entity hygiene", "run plan 2-1 part B", or after a batch of new videos lands.
+description: Audit top-mention entities in the corpus and propose KEEP / DELETE-GLOBAL / MERGE-INTO / PER-VIDEO-MERGE / DEFER actions. Use when the user asks to "audit entities", "clean up top entities", "run entity hygiene", or after a batch of new videos lands.
 ---
 
 # AI entity audit
 
-Plan 2-1 Part B (plans2/01-entity-hygiene.md). A per-label AI audit of
+A per-label AI audit of
 the top-mention entities in the corpus. You read a committed bundle of
 entities with context samples and write per-label proposals. A single
 `apply.mjs` run merges every proposal file into `aliases.json` with
@@ -89,7 +89,7 @@ For each label bundle, one agent:
      resolution is clear, each with `videoId` + `from` + `to` +
      `rationale`. Use `sampleContexts` (video-tagged) to decide.
    - `DEFER` — ambiguous, not enough context, or the right call
-     requires cross-video analysis (defer to Plan 2-2 resolution).
+     requires cross-video analysis (defer to cross-video resolution resolution).
      Populate `key` + `reason`.
 4. Write `_entity_audit_tmp/tier-1-<label>.proposals.json`:
 
@@ -112,7 +112,7 @@ For each label bundle, one agent:
     { "verdict": "MERGE-INTO",     "from": "person:roger", "to": "person:roger patterson", "rationale": "every sampleContext quotes 'Roger Patterson' earlier in same transcript" },
     { "verdict": "PER-VIDEO-MERGE", "videoId": "<vid>", "from": "person:paul", "to": "person:paul mccartney", "rationale": "beatles-focused video; ambient context is Beatles" },
     { "verdict": "KEEP", "key": "person:roger patterson", "rationale": "unambiguous famous figure" },
-    { "verdict": "DEFER", "key": "person:dan", "reason": "multiple dans across videos; needs Plan 2-2" }
+    { "verdict": "DEFER", "key": "person:dan", "reason": "multiple dans across videos; needs cross-video resolution" }
   ]
 }
 ```
@@ -136,7 +136,7 @@ npx captions pipeline --stage indexes
 ```
 
 The indexes stage also auto-applies `DELETE_ALWAYS` +
-`ALWAYS_PROMOTE` as a side effect (plan 2-1 §A2).
+`ALWAYS_PROMOTE` as a side effect.
 
 ### 6. Report
 

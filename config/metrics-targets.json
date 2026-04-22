@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "targets": [
+    { "name": "entities.roleNounPersons", "max": 0, "note": "role-noun person: entries should be fully deleted/merged" },
+    { "name": "entities.tautologies", "max": 0, "note": "technology:technology etc. should not be active" },
+    { "name": "entities.deleted", "min": 400, "note": "Plan 01 baseline — static list + AI audit" },
+    { "name": "entities.merged", "min": 700, "note": "Plan 02 merge output" },
+    { "name": "resolution.gazetteerSize", "min": 100, "note": "ALWAYS_PROMOTE list should stay populated" },
+    { "name": "resolution.firstNamePersonsMultiVideo", "max": 150, "note": "after Plan 2-2 Part C; DEFERs account for the remainder. Tighten toward 25 as operator hand-resolves the deferred pool." },
+    { "name": "claims.total", "min": 2000, "unit": "count" },
+    { "name": "claims.directTruthPct", "max": 95, "unit": "pct", "note": "Plan 03 v2 calibrated: target ≤80 ideally, 95 is the soft ceiling from the batch-average. Tighten as operator samples and re-extracts weakest videos." },
+    { "name": "claims.deniesPct", "min": 5, "unit": "pct", "note": "Plan 03 v2 aggressive denies target" },
+    { "name": "claims.dependencyCoveragePct", "min": 35, "unit": "pct", "note": "Plan 03 target ≥55%; 35 is the regression floor below which something is clearly wrong" },
+    { "name": "claims.evidenceP50Chars", "max": 200, "note": "Plan 03 target 60-150; 200 is the soft ceiling" },
+    { "name": "claims.evidenceP90Chars", "max": 600, "note": "Plan 03 target ≤450; 600 is the soft ceiling" },
+    { "name": "claims.evidenceMaxChars", "max": 1500, "note": "Plan 03 hard avoid >800; 1500 is the absolute ceiling" },
+    { "name": "claims.contradictsSubkindPct", "min": 90, "unit": "pct", "note": "Plan 04 §A — typed prefix required" },
+    { "name": "contradictions.pendingVerify", "max": 0, "note": "every cross-video candidate should have a verdict on production" }
+  ]
+}

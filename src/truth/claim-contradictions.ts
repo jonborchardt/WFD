@@ -1,37 +1,76 @@
-// Claim-level contradiction detection (Plan 3).
+// Claim-level contradiction detection.
 //
 // Three patterns — each surfaced as a ClaimContradiction record.
 //
 //   1. pair
 //      A contradicts B (declared via A.dependencies), both claims have
 //      directTruth ≥ 0.5. The author is asserting both as true despite the
-//      explicit contradicts edge.
+//      explicit contradicts edge. Post-Plan-04 the pair detector also
+//      honors the typed `contradicts` subkind encoded as a `[logical]` /
+//      `[debunks]` / `[alternative]` / `[undercuts]` prefix in the
+//      dep's rationale (see contradicts-subkind.ts): only `logical` and
+//      `debunks` surface as pair contradictions; `alternative` and
+//      `undercuts` live in the DAG for propagation + display but are
+//      not contradictions in the reported sense.
 //
 //   2. broken-presupposition
 //      A presupposes B, B.directTruth < 0.3. A's stated foundation is
 //      considered false by the same author — A is built on sand.
 //
 //   3. cross-video
-//      Two claims from different videos that share ≥1 entity key (post-alias
-//      resolution, resolved by the caller) AND have opposite hostStance on
-//      semantically similar text. Version-1 similarity is token Jaccard;
-//      embedding cosine is deferred (plan §Risks).
+//      Two claims from different videos. Post-Plan-04 the candidate
+//      generator consumes an optional `embeddings` map:
+//        - if provided: cosine similarity drives the match; pass when
+//          (cosine ≥ crossVideoCosineMin AND stance opposed) OR
+//          (cosine ≥ crossVideoCosineStrict regardless of stance).
+//        - if missing: falls back to the Plan 3 v1 signal — token
+//          Jaccard ≥ crossVideoJaccard OR shared-entity ≥ strongEntityOverlap,
+//          gated on explicit asserts↔denies stance opposition.
+//      Entity overlap ≥ 1 is required in both paths — shared entities
+//      is the minimum signal that two claims are about the same thing.
 
 import type { Claim, ClaimId, HostStance } from "../claims/types.js";
+import {
+  parseContradictsSubkind,
+  type ContradictsSubkind,
+} from "./contradicts-subkind.js";
 
 export interface ClaimContradiction {
   kind: "pair" | "broken-presupposition" | "cross-video" | "manual";
+  // For pair contradictions: the typed subkind parsed from the dep's
+  // rationale prefix. Missing means the dep lacked a subkind prefix
+  // (pre-Plan-03-v2 claim files) and was treated as "logical" by
+  // default.
+  subkind?: ContradictsSubkind;
   left: ClaimId;
   right: ClaimId;
   sharedEntities?: string[];
   similarity?: number;
-  // For cross-video only: which path triggered the match. "jaccard" means
-  // the text-similarity threshold was cleared directly; "strong-overlap"
-  // means Jaccard was weak but ≥ strongEntityOverlap entities were shared,
-  // so the entity co-occurrence path fired. Useful for UI triage because
-  // strong-overlap matches tend to be noisier.
-  matchReason?: "jaccard" | "strong-overlap";
+  // For cross-video only: which path triggered the match.
+  //   "jaccard"        — text-similarity threshold cleared directly
+  //   "strong-overlap" — Jaccard was weak but ≥ strongEntityOverlap
+  //                      entities were shared, so the entity
+  //                      co-occurrence path fired. Useful for UI triage
+  //                      because strong-overlap matches tend to be
+  //                      noisier than jaccard matches.
+  //   "cosine"         — Plan 04 embedding cosine path
+  matchReason?: "jaccard" | "strong-overlap" | "cosine";
   summary: string;
+  // Plan 04 verification cache slot — apply after the verifier AI pass
+  // writes to data/claims/contradiction-verdicts.json. null = pending,
+  // {verdict:…} = verified. UI filters on this.
+  verified?: null | {
+    verdict:
+      | "LOGICAL-CONTRADICTION"
+      | "DEBUNKS"
+      | "UNDERCUTS"
+      | "ALTERNATIVE"
+      | "COMPLEMENTARY"
+      | "IRRELEVANT"
+      | "SAME-CLAIM";
+    reasoning?: string;
+    by?: "ai" | "operator";
+  };
 }
 
 export interface ClaimContradictionOptions {
@@ -43,11 +82,26 @@ export interface ClaimContradictionOptions {
   // co-occurrence stands in as a topicality signal when wording
   // diverges.
   strongEntityOverlap?: number;
-  // True truth anchor for the pair test. Two claims whose directTruth are
+  // Plan 04: minimum embedding cosine to flag a cross-video pair when
+  // stance is also opposed. Below this but above the strict threshold,
+  // we still fire — the semantic similarity is high enough that
+  // verification is warranted even without explicit denies.
+  crossVideoCosineMin?: number;
+  // Plan 04: minimum embedding cosine to flag regardless of stance.
+  // Very-similar claims from different videos are worth verifying even
+  // without asserts↔denies opposition, because they might be the same
+  // thesis phrased differently (SAME-CLAIM verdict) or a cross-video
+  // logical contradiction we'd otherwise miss.
+  crossVideoCosineStrict?: number;
+  // Truth anchor for the pair test. Two claims whose directTruth are
   // both ≥ this are considered "both asserted true". Default 0.5.
   pairTruthFloor?: number;
   // Max B.directTruth for broken-presupposition test. Default 0.3.
   brokenPresupFloor?: number;
+  // Plan 04: if provided, the cross-video generator uses embedding
+  // cosine as the primary similarity signal. Missing entries fall
+  // back to Jaccard. Map is keyed by ClaimId.
+  embeddings?: Map<ClaimId, Float32Array | number[]>;
 }
 
 export function detectClaimContradictions(
@@ -56,33 +110,60 @@ export function detectClaimContradictions(
 ): ClaimContradiction[] {
   const crossVideoJaccard = opts.crossVideoJaccard ?? 0.10;
   const strongEntityOverlap = opts.strongEntityOverlap ?? 2;
+  const crossVideoCosineMin = opts.crossVideoCosineMin ?? 0.55;
+  const crossVideoCosineStrict = opts.crossVideoCosineStrict ?? 0.70;
   const pairFloor = opts.pairTruthFloor ?? 0.5;
   const presupFloor = opts.brokenPresupFloor ?? 0.3;
+  const embeddings = opts.embeddings;
 
   const byId = new Map<ClaimId, Claim>();
   for (const c of claims) byId.set(c.id, c);
 
   const out: ClaimContradiction[] = [];
 
-  // (1) pair contradictions
+  // (1) pair contradictions — v2 typed-subkind aware.
   for (const a of claims) {
     if (!a.dependencies) continue;
     for (const dep of a.dependencies) {
       if (dep.kind !== "contradicts") continue;
       const b = byId.get(dep.target);
       if (!b) continue;
-      if ((a.directTruth ?? 0) < pairFloor) continue;
-      if ((b.directTruth ?? 0) < pairFloor) continue;
+
+      // Parse the subkind prefix. Missing prefix = pre-v2 claim file;
+      // default to "logical" so back-compat matches prior behavior.
+      const subkind: ContradictsSubkind =
+        parseContradictsSubkind(dep.rationale) ?? "logical";
+
+      // Plan 04: only `logical` and `debunks` surface as contradictions.
+      // `alternative` and `undercuts` remain in the DAG (propagation
+      // honors them) but don't get reported as contradictions in the
+      // public `/contradictions` view — they're weaker signals.
+      if (subkind !== "logical" && subkind !== "debunks") continue;
+
+      // For `debunks`: A shows B is false. Normal state is A-high /
+      // B-low and that's not a contradiction — flag only when both
+      // are asserted simultaneously high, meaning the author
+      // contradicted themselves.
+      if (subkind === "debunks") {
+        if ((a.directTruth ?? 0) < 0.7) continue;
+        if ((b.directTruth ?? 0) < 0.7) continue;
+      } else {
+        // `logical`: any both-high assertion is a contradiction.
+        if ((a.directTruth ?? 0) < pairFloor) continue;
+        if ((b.directTruth ?? 0) < pairFloor) continue;
+      }
+
       out.push({
         kind: "pair",
+        subkind,
         left: a.id,
         right: b.id,
-        summary: `"${truncate(a.text, 80)}" contradicts "${truncate(b.text, 80)}" but both asserted true (${a.directTruth?.toFixed(2)} vs ${b.directTruth?.toFixed(2)})`,
+        summary: `"${truncate(a.text, 80)}" contradicts "${truncate(b.text, 80)}" but both asserted true (${(a.directTruth ?? 0).toFixed(2)} vs ${(b.directTruth ?? 0).toFixed(2)}) [${subkind}]`,
       });
     }
   }
 
-  // (2) broken presupposition
+  // (2) broken presupposition — unchanged.
   for (const a of claims) {
     if (!a.dependencies) continue;
     for (const dep of a.dependencies) {
@@ -100,10 +181,7 @@ export function detectClaimContradictions(
     }
   }
 
-  // (3) cross-video topical conflict
-  // Group claims by video for an O(V*avg^2 * videos) walk instead of O(N^2)
-  // across the whole corpus. At 2 videos × ~10 claims each this is trivial;
-  // at 200 videos × 10 claims each it's ~2M pair comparisons, still OK.
+  // (3) cross-video — v2 with optional embedding cosine.
   const byVideo = new Map<string, Claim[]>();
   for (const c of claims) {
     const list = byVideo.get(c.videoId) ?? [];
@@ -112,7 +190,7 @@ export function detectClaimContradictions(
   }
   const videoIds = [...byVideo.keys()];
 
-  // Pre-tokenize texts once.
+  // Pre-tokenize text (used by the Jaccard fallback path).
   const tokens = new Map<ClaimId, Set<string>>();
   for (const c of claims) tokens.set(c.id, tokenize(c.text));
 
@@ -123,34 +201,55 @@ export function detectClaimContradictions(
       for (const a of aList) {
         const aEnts = new Set(a.entities);
         if (aEnts.size === 0) continue;
+        const aEmb = embeddings?.get(a.id);
         for (const b of bList) {
           const shared = [...aEnts].filter((k) => b.entities.includes(k));
           if (shared.length === 0) continue;
-          const sim = jaccard(tokens.get(a.id)!, tokens.get(b.id)!);
-          const jaccardOk = sim >= crossVideoJaccard;
-          const strongOk = shared.length >= strongEntityOverlap;
-          if (!jaccardOk && !strongOk) continue;
 
-          // Cross-video contradictions require explicit `asserts` vs
-          // `denies` host-stance opposition. Truth-gap-only signals
-          // (stance ambiguous or stance-same with different directTruth)
-          // are dominated by AI scoring jitter on near-duplicate claims
-          // and produce noise like two videos listing the same set of
-          // historical figures with different scores. For a real
-          // disagreement one source has to affirm what the other denies.
-          if (!explicitStanceOpposed(a.hostStance, b.hostStance)) continue;
+          const stanceOpposed = explicitStanceOpposed(a.hostStance, b.hostStance);
 
-          const matchReason: "jaccard" | "strong-overlap" = jaccardOk
-            ? "jaccard"
-            : "strong-overlap";
+          let pass = false;
+          let matchReason: "jaccard" | "strong-overlap" | "cosine" = "jaccard";
+          let similarity = 0;
+
+          const bEmb = embeddings?.get(b.id);
+          if (aEmb && bEmb) {
+            // Plan 04 cosine path.
+            similarity = cosine(aEmb, bEmb);
+            matchReason = "cosine";
+            pass =
+              (similarity >= crossVideoCosineMin && stanceOpposed) ||
+              similarity >= crossVideoCosineStrict;
+          } else {
+            // Plan 3 v1 Jaccard / strong-overlap fallback. Requires
+            // stance opposition in both paths — truth-gap-only is
+            // dominated by AI scoring jitter on near-duplicate claims.
+            if (!stanceOpposed) continue;
+            similarity = jaccard(tokens.get(a.id)!, tokens.get(b.id)!);
+            const jaccardOk = similarity >= crossVideoJaccard;
+            const strongOk = shared.length >= strongEntityOverlap;
+            if (jaccardOk) {
+              matchReason = "jaccard";
+              pass = true;
+            } else if (strongOk) {
+              matchReason = "strong-overlap";
+              pass = true;
+            }
+          }
+          if (!pass) continue;
+
           out.push({
             kind: "cross-video",
             left: a.id,
             right: b.id,
             sharedEntities: shared,
-            similarity: sim,
+            similarity,
             matchReason,
-            summary: `${a.videoId} ${a.hostStance ?? "?"} vs ${b.videoId} ${b.hostStance ?? "?"} — shared: ${shared.slice(0, 3).join(", ")} — jaccard=${sim.toFixed(2)} (${matchReason})`,
+            verified: null,
+            summary:
+              matchReason === "cosine"
+                ? `${a.videoId} ${a.hostStance ?? "?"} vs ${b.videoId} ${b.hostStance ?? "?"} — cos=${similarity.toFixed(2)} — shared: ${shared.slice(0, 3).join(", ")} (pending verify)`
+                : `${a.videoId} ${a.hostStance ?? "?"} vs ${b.videoId} ${b.hostStance ?? "?"} — shared: ${shared.slice(0, 3).join(", ")} — jaccard=${similarity.toFixed(2)} (${matchReason})`,
           });
         }
       }
@@ -160,15 +259,7 @@ export function detectClaimContradictions(
   return out;
 }
 
-// Two claims are "stance opposed" when either:
-//   - one hostStance is "asserts" and the other is "denies", OR
-//   - one directTruth is ≥ 0.6 and the other is ≤ 0.4 (truth gap)
-// We require at least one of these signals — shared entities alone doesn't
-// mean the claims disagree.
-// Cross-video contradictions fire only when one source asserts what
-// the other denies. Truth-gap-only signals (same stance, different
-// directTruth) produced too much noise on this corpus — mostly AI
-// scoring jitter on near-duplicate claims listing the same entities.
+// Two claims are "stance opposed" when one asserts what the other denies.
 function explicitStanceOpposed(
   a: HostStance | undefined,
   b: HostStance | undefined,
@@ -177,9 +268,6 @@ function explicitStanceOpposed(
 }
 
 function tokenize(s: string): Set<string> {
-  // Lowercase, strip punctuation, drop stopwords and 1-2 char tokens. The
-  // stopword list is tiny on purpose — cross-video topicality cares about
-  // content words, not function words.
   const stop = new Set([
     "the", "and", "but", "for", "with", "that", "this", "from", "into",
     "than", "then", "has", "have", "had", "not", "was", "were", "are",
@@ -201,6 +289,26 @@ function jaccard(a: Set<string>, b: Set<string>): number {
   for (const x of a) if (b.has(x)) inter++;
   const union = a.size + b.size - inter;
   return inter / union;
+}
+
+// Cosine similarity over two equal-length vectors. Embeddings are
+// normalized at write time, so this could be a pure dot product — we
+// still divide to be safe against non-normalized inputs (e.g. operator
+// hand-edited cache file).
+function cosine(a: Float32Array | number[], b: Float32Array | number[]): number {
+  if (a.length !== b.length || a.length === 0) return 0;
+  let dot = 0;
+  let na = 0;
+  let nb = 0;
+  for (let i = 0; i < a.length; i++) {
+    const x = a[i];
+    const y = b[i];
+    dot += x * y;
+    na += x * x;
+    nb += y * y;
+  }
+  if (na === 0 || nb === 0) return 0;
+  return dot / (Math.sqrt(na) * Math.sqrt(nb));
 }
 
 function truncate(s: string, n: number): string {

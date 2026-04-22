@@ -1,15 +1,15 @@
 ---
 name: ai-reasoning-layer
-description: Run the reasoning-layer test harness (Plan 3). Use when the user asks to "run reasoning", "test plan 3", "try the reasoning layer", "compute derived truth", "find contradictions", or any time the Plan 3 modules (claim-propagation / claim-contradictions / claim-counterfactual) need to be exercised against a slice of the corpus.
+description: Run the reasoning-layer test harness. Use when the user asks to "run reasoning", "try the reasoning layer", "compute derived truth", "find contradictions", or any time the reasoning modules (claim-propagation / claim-contradictions / claim-counterfactual) need to be exercised against a slice of the corpus.
 ---
 
 # AI reasoning layer
 
-Drives the Plan 3 modules under [src/truth/](../../../src/truth/) —
+Drives the the reasoning layer modules under [src/truth/](../../../src/truth/) —
 `claim-propagation`, `claim-contradictions`, (and `claim-counterfactual`
 for on-demand queries) — against a slice of videos that already have
 claim files. Unlike `ai-claims-extraction`, there is **no AI session**
-here: Plan 3 is pure code. Your job is to sequence the scripts, report
+here: the reasoning layer is pure code. Your job is to sequence the scripts, report
 timings, and surface anything surprising in the output so the user can
 decide whether to roll the reasoning layer out to the full corpus.
 
@@ -75,7 +75,7 @@ so the sample output doesn't pollute committed state):
 node src/ai/reasoning/run.mjs
 ```
 
-**Full-corpus mode** — reports land in `data/claims/` per Plan 3, so the
+**Full-corpus mode** — reports land in `data/claims/` per the reasoning layer, so the
 derived files sit next to the per-video claim files and become part of
 the committed corpus:
 
@@ -98,7 +98,7 @@ Three output files (in `--out <dir>`):
 - `contradictions.json` — report (includes `total` + `byKind` counts)
 
 Per-phase timings print to stdout from `run.mjs`. Counterfactual queries
-are on-demand (Plan 3 §API additions), not a batch artifact — the module
+are on-demand (the reasoning layer §API additions), not a batch artifact — the module
 [claim-counterfactual.ts](../../../src/truth/claim-counterfactual.ts) is
 imported directly by whatever caller needs it.
 

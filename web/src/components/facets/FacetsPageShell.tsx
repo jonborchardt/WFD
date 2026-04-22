@@ -25,10 +25,12 @@ interface HeaderProps {
   /** Override the default "items"/"in corpus" phrasing if needed. */
   nounPlural?: string;
   suffix?: ReactNode;
+  /** Optional one-paragraph blurb explaining what this page surfaces. */
+  description?: ReactNode;
 }
 
 export function FacetsPageHeader({
-  title, matchCount, totalCount, nounPlural, suffix,
+  title, matchCount, totalCount, nounPlural, suffix, description,
 }: HeaderProps) {
   const totalLabel =
     `${totalCount.toLocaleString()} ${nounPlural ?? "in corpus"}`;
@@ -38,22 +40,32 @@ export function FacetsPageHeader({
       : `${matchCount.toLocaleString()} match`;
   // Left-aligned row: title, total, filtered-match (when different
   // from total), then the caller's suffix (e.g. "graph these"). No
-  // flex-grow spacer — everything sits snug on the left.
+  // flex-grow spacer — everything sits snug on the left. Optional
+  // description renders below as a muted sentence.
   return (
-    <Box sx={{
-      display: "flex", alignItems: "baseline",
-      gap: 1.5, mb: 1, flexWrap: "wrap",
-    }}>
-      <Typography variant="h5" sx={{ m: 0 }}>{title}</Typography>
-      <Typography variant="caption" color="text.secondary">
-        {totalLabel}
-      </Typography>
-      {matchLabel && (
+    <Box sx={{ mb: description ? 1.5 : 1 }}>
+      <Box sx={{
+        display: "flex", alignItems: "baseline",
+        gap: 1.5, mb: description ? 0.5 : 0, flexWrap: "wrap",
+      }}>
+        <Typography variant="h5" sx={{ m: 0 }}>{title}</Typography>
         <Typography variant="caption" color="text.secondary">
-          {matchLabel}
+          {totalLabel}
+        </Typography>
+        {matchLabel && (
+          <Typography variant="caption" color="text.secondary">
+            {matchLabel}
+          </Typography>
+        )}
+        {suffix}
+      </Box>
+      {description && (
+        <Typography variant="body2" sx={{
+          color: "text.secondary", maxWidth: 760,
+        }}>
+          {description}
         </Typography>
       )}
-      {suffix}
     </Box>
   );
 }

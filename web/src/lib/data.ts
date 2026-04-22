@@ -14,6 +14,7 @@ import type {
   ClaimsIndexFile,
   DependencyGraphFile,
   ContradictionsFile,
+  ConsonanceFile,
   EdgeTruthFile,
 } from "../types";
 import { adaptNlp } from "./adapt-nlp";
@@ -144,6 +145,15 @@ export function fetchEdgeTruth(): Promise<EdgeTruthFile | null> {
   return edgeTruthPromise;
 }
 
+let consonancePromise: Promise<ConsonanceFile | null> | null = null;
+
+export function fetchConsonance(): Promise<ConsonanceFile | null> {
+  if (!consonancePromise) {
+    consonancePromise = fetchJson<ConsonanceFile>("claims/consonance.json");
+  }
+  return consonancePromise;
+}
+
 // Bust every cached corpus-level promise that reflects claim/contradiction
 // state. Callers mutate via /api/aliases/* then call this + re-fetch the
 // specific data they render, instead of doing window.location.reload().
@@ -152,4 +162,5 @@ export function invalidateClaimsCaches(): void {
   dependencyGraphPromise = null;
   contradictionsPromise = null;
   edgeTruthPromise = null;
+  consonancePromise = null;
 }

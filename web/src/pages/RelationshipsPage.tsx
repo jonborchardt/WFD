@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import type {
   ReactFlowInstance, Node as RfNode, Edge as RfEdge, NodeMouseHandler, EdgeMouseHandler,
 } from "reactflow";
@@ -39,6 +39,7 @@ type FlowState = { flow: ReactFlowLib; elk: ELKInstance };
 
 export function RelationshipsPage() {
   const nav = useNavigate();
+  const [searchParams] = useSearchParams();
   const [graphIndex, setGraphIndex] = useState<GraphIndex | null>(null);
   const [flowLib, setFlowLib] = useState<FlowState | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -229,15 +230,25 @@ export function RelationshipsPage() {
     if (flowLib && nodeMap.current.size > 0) relayout();
   }, [flowLib, relayout]);
 
+  // Seed from the URL `?seed=<nodeId>` if present. Supports multiple
+  // `?seed=` params. When the URL carries nothing, land on an empty
+  // canvas — the user searches from there. The HomePage "Start here"
+  // card supplies its own seed on click-through.
   const didAutoSeed = useRef(false);
   useEffect(() => {
     if (didAutoSeed.current) return;
     if (!graphIndex || !flowLib) return;
-    const def = graphIndex.nodes.get("facility:goat lab");
-    if (!def) return;
+    const urlSeeds = searchParams.getAll("seed").filter((s) => s.length > 0);
+    if (urlSeeds.length === 0) {
+      didAutoSeed.current = true;
+      return;
+    }
     didAutoSeed.current = true;
-    addSeed(def);
-  }, [graphIndex, flowLib, addSeed]);
+    for (const id of urlSeeds) {
+      const node = graphIndex.nodes.get(id);
+      if (node) addSeed(node);
+    }
+  }, [graphIndex, flowLib, addSeed, searchParams]);
 
   const { rfNodes, rfEdges, gradients } = useMemo(
     () =>

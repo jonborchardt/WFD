@@ -18,6 +18,7 @@
 // Graph stages read the `graph.dirtyAt` watermark. A stage is stale when its
 // last-run timestamp is older than dirtyAt (or absent).
 
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { CatalogRow } from "../catalog/catalog.js";
@@ -430,7 +431,7 @@ export const contradictionsStage: GraphStage = {
 //   - An ALWAYS_PROMOTE entry is skipped unless BOTH endpoints exist in
 //     the corpus, and also skipped if `from` is already deleted / merged
 //     to something else / the target of the promote.
-// Plan 2-1 §A2 (plans2/01-entity-hygiene.md).
+// DELETE_ALWAYS / ALWAYS_PROMOTE / DELETE_LABELS auto-apply hook.
 function applyCommittedLists(
   dataDir: string,
   corpusKeys: Set<string>,
@@ -686,6 +687,9 @@ export const claimIndexesStage: GraphStage = {
       "dependency-graph.json",
       "contradictions.json",
       "edge-truth.json",
+      "embeddings.json",
+      "contradiction-verdicts.json",
+      "consonance.json",
     ]);
     const files = readdirSync(claimsDir).filter(
       (f) => f.endsWith(".json") && !CORPUS_REPORT_NAMES.has(f),
@@ -739,6 +743,21 @@ export const claimIndexesStage: GraphStage = {
       }),
     );
 
+    // Plan 04 — load the embeddings cache (if present) so the cross-video
+    // candidate generator can use cosine similarity. Missing/stale cache
+    // falls through to Jaccard silently.
+    const embeddings = loadEmbeddingsCache(ctx.dataDir, allClaims);
+    // Plan 04 — load the AI verification verdict cache (if present) so
+    // contradictions.json surfaces only LOGICAL-CONTRADICTION / DEBUNKS
+    // verdicts, with SAME-CLAIM verdicts promoted to consonance.json.
+    const verdicts = loadVerdictsCache(ctx.dataDir);
+    // Hash every claim's current text so stale verdicts (claim text
+    // changed since the verdict was captured) get invalidated.
+    const claimTextHash = new Map<string, string>();
+    for (const c of allClaims) {
+      claimTextHash.set(c.id, sha1Hex(c.text));
+    }
+
     const result = buildClaimIndexes({
       claims: allClaims,
       videoCount,
@@ -747,6 +766,9 @@ export const claimIndexesStage: GraphStage = {
       fieldOverrides,
       dismissedContradictions,
       customContradictions,
+      embeddings,
+      verdicts,
+      claimTextHash,
     });
 
     // Build per-video "persisted edge id → aggregated graph edge id" map
@@ -799,16 +821,88 @@ export const claimIndexesStage: GraphStage = {
       JSON.stringify(edgeTruth, null, 2),
       "utf8",
     );
+    writeFileSync(
+      join(claimsDir, "consonance.json"),
+      JSON.stringify(result.consonance, null, 2),
+      "utf8",
+    );
 
     return {
       kind: "ok",
       notes:
         `videos=${videoCount} claims=${allClaims.length} ` +
         `contradictions=${result.contradictions.total} ` +
+        `consonance=${result.consonance.count} ` +
         `edges-with-truth=${edgeTruth.edgeCount}`,
     };
   },
 };
+
+// Plan 04 helpers — embeddings + verdict cache loaders for the
+// claim-indexes stage. Both are graceful: missing / stale / unreadable
+// cache returns an empty map, and the detector falls back to Jaccard
+// or treats every candidate as pending-verified.
+function loadEmbeddingsCache(
+  dataDir: string,
+  claims: Claim[],
+): Map<string, Float32Array | number[]> | undefined {
+  const p = join(dataDir, "claims", "embeddings.json");
+  if (!existsSync(p)) return undefined;
+  try {
+    const parsed = JSON.parse(readFileSync(p, "utf8")) as {
+      schemaVersion?: number;
+      modelId?: string;
+      dimensions?: number;
+      entries?: Record<string, number[]>;
+    };
+    if (parsed.schemaVersion !== 1 || !parsed.modelId || !parsed.entries) {
+      return undefined;
+    }
+    const out = new Map<string, number[]>();
+    for (const c of claims) {
+      const hash = sha1Hex(`${parsed.modelId}\u0000${c.text}`);
+      const vec = parsed.entries[hash];
+      if (vec && vec.length > 0) out.set(c.id, vec);
+    }
+    return out.size > 0 ? out : undefined;
+  } catch (err) {
+    logger.warn("pipeline.claim-indexes.embeddings-read-failed", {
+      message: (err as Error).message,
+    });
+    return undefined;
+  }
+}
+
+function loadVerdictsCache(
+  dataDir: string,
+): Map<string, import("../truth/claim-indexes.js").VerdictCacheEntry> | undefined {
+  const p = join(dataDir, "claims", "contradiction-verdicts.json");
+  if (!existsSync(p)) return undefined;
+  try {
+    const parsed = JSON.parse(readFileSync(p, "utf8")) as {
+      verdicts?: import("../truth/claim-indexes.js").VerdictCacheEntry[];
+    };
+    if (!Array.isArray(parsed.verdicts)) return undefined;
+    const out = new Map<string, import("../truth/claim-indexes.js").VerdictCacheEntry>();
+    for (const v of parsed.verdicts) {
+      if (!v.left || !v.right || !v.verdict) continue;
+      const [lo, hi] = v.left < v.right ? [v.left, v.right] : [v.right, v.left];
+      out.set(`${lo}~~${hi}`, v);
+    }
+    return out;
+  } catch (err) {
+    logger.warn("pipeline.claim-indexes.verdicts-read-failed", {
+      message: (err as Error).message,
+    });
+    return undefined;
+  }
+}
+
+// Small SHA-1 hex digest — used both for embedding cache lookup (model+text)
+// and for claim-text invalidation in the verdict cache.
+function sha1Hex(s: string): string {
+  return createHash("sha1").update(s).digest("hex");
+}
 
 
 export const novelStage: GraphStage = {

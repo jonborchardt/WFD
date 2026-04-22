@@ -1131,6 +1131,23 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       );
       return;
     }
+    // Plan 05 — live metrics snapshot + gate report. Admin dashboard
+    // hits this on load; cheap (< 500ms on the current corpus).
+    if (url === "/api/metrics" || url.startsWith("/api/metrics?")) {
+      void (async () => {
+        try {
+          const mod = await import("../metrics/index.js");
+          const snapshot = await mod.computeAll(opts.dataDir ?? "data");
+          const targets = mod.readTargetsFile("config/metrics-targets.json");
+          const baseline = mod.readBaselineFile("config/metrics-baseline.json");
+          const gate = mod.runGate(snapshot, targets, baseline);
+          sendJson(res, 200, { snapshot, gate });
+        } catch (err) {
+          sendJson(res, 500, { error: err instanceof Error ? err.message : String(err) });
+        }
+      })();
+      return;
+    }
     const apiNlp = url.match(/^\/api\/video\/([A-Za-z0-9_-]+)\/nlp/);
     if (apiNlp) {
       const row = opts.catalog.get(apiNlp[1]);

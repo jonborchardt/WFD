@@ -1,5 +1,3 @@
-// Plan 2-2 §B1 (plans2/02-entity-resolution.md).
-//
 // Build a per-video resolution bundle: ambiguous single-token persons
 // (and optionally orgs) that need per-video coref resolution to a full
 // canonical name. Writes

@@ -1,5 +1,5 @@
 // Apply _entity_resolution_tmp/*.proposals.json per-video resolutions.
-// Plan 2-2 §B4 (plans2/02-entity-resolution.md).
+// Entry point: the ai-entity-resolution skill.
 
 import { copyFileSync, existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";

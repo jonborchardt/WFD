@@ -220,21 +220,48 @@ export interface DependencyGraphFile {
   edgeCount: number;
 }
 
+export type ContradictsSubkind = "logical" | "debunks" | "alternative" | "undercuts";
+
+export type ContradictionVerifyVerdict =
+  | "LOGICAL-CONTRADICTION"
+  | "DEBUNKS"
+  | "UNDERCUTS"
+  | "ALTERNATIVE"
+  | "COMPLEMENTARY"
+  | "IRRELEVANT"
+  | "SAME-CLAIM";
+
 export interface ClaimContradiction {
   kind: "pair" | "broken-presupposition" | "cross-video" | "manual";
+  subkind?: ContradictsSubkind;
   left: string;
   right: string;
   sharedEntities?: string[];
   similarity?: number;
-  matchReason?: "jaccard" | "strong-overlap";
+  matchReason?: "jaccard" | "strong-overlap" | "cosine";
   summary: string;
+  verified?: null | {
+    verdict: ContradictionVerifyVerdict;
+    reasoning?: string;
+    by?: "ai" | "operator";
+  };
 }
 
 export interface ContradictionsFile {
   generatedAt: string;
   total: number;
   byKind: Record<string, number>;
+  verifiedDropped?: { total: number; byVerdict: Record<string, number> };
   contradictions: ClaimContradiction[];
+}
+
+// Plan 04 §D4 — SAME-CLAIM pairs promoted to cross-video agreements.
+export interface ConsonanceFile {
+  schemaVersion: 1;
+  generatedAt: string;
+  count: number;
+  // Shape matches ClaimContradiction for reuse of existing row components.
+  agreements: ClaimContradiction[];
 }
 
 export interface EdgeTruthEntry {

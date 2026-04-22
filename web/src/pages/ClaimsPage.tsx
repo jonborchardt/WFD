@@ -55,6 +55,46 @@ const SORT_OPTIONS: SortOption[] = [
   { value: "conf-low", label: "lowest confidence" },
 ];
 
+// Per-value tooltip definitions. Each row in a BarListFacet has an
+// optional `title` that surfaces as the native hover tooltip; these
+// maps are the source of truth for what each categorical value means.
+const KIND_TITLES: Record<string, string> = {
+  empirical: "Testable against observation or measurement — facts about the world that could in principle be verified.",
+  historical: "A claim about a past event: what happened, when, to whom.",
+  speculative: "Goes beyond available evidence — predictions, conjectures, \"what if\" reasoning.",
+  opinion: "A subjective value judgment about what is good, right, or worthwhile.",
+  definitional: "A claim about what a term means or how categories should be drawn.",
+};
+const STANCE_TITLES: Record<string, string> = {
+  asserts: "The host endorses the claim as true.",
+  denies: "The host presents the claim in order to reject it (\"some people say X, but…\").",
+  uncertain: "The host is agnostic or non-committal about the claim.",
+  steelman: "The host presents the strongest version of a view they do not necessarily hold, to engage with it honestly.",
+  __none__: "No stance was annotated on this claim.",
+};
+const SOURCE_TITLES: Record<string, string> = {
+  direct: "directTruth was set explicitly on the claim during extraction (usually because it sits in a verdict section).",
+  derived: "Truth was computed by propagation through supporting and contradicting dependencies in the claim graph.",
+  override: "An operator manually pinned this claim's truth value, overriding the derived value.",
+  uncalibrated: "No signal either way — neutral default; the reasoning layer has no basis to move this claim off 0.5.",
+};
+const VERDICT_TITLES: Record<string, string> = {
+  yes: "The claim appears in a verdict-labeled segment of the transcript — a strong signal for directTruth.",
+  no: "The claim is not in a verdict segment; directTruth (if any) came from evidence, not a host rating.",
+};
+const CONTRADICTED_TITLES: Record<string, string> = {
+  yes: "At least one other claim in the corpus contradicts this one.",
+  no: "No detected contradictions against this claim.",
+};
+const HASIN_TITLES: Record<string, string> = {
+  yes: "At least one other claim depends on this claim (supports / contradicts / presupposes / elaborates).",
+  no: "Nothing else in the corpus cites this claim.",
+};
+const HASOUT_TITLES: Record<string, string> = {
+  yes: "This claim has dependencies on other claims — it supports, contradicts, presupposes, or elaborates them.",
+  no: "This claim stands alone; it has no outgoing dependencies.",
+};
+
 const KIND_ORDER = [
   "empirical", "historical", "speculative", "opinion", "definitional",
 ];
@@ -339,40 +379,52 @@ export function ClaimsPage() {
 
   // ── per-facet counts (each scoped to "all other filters") ──────
   const kindRows = makeCountRows(
-    KIND_ORDER.map((k) => [k, k] as const),
+    KIND_ORDER.map((k) => [k, k, KIND_TITLES[k]] as const),
     filterExcept(bundle.claims, filter, bundle, "kinds"),
     (c) => c.kind,
   );
   const stanceRows = makeCountRows(
     [
-      ...STANCE_ORDER.map((s) => [s, s] as const),
-      ["__none__", "(none)"] as const,
+      ...STANCE_ORDER.map((s) => [s, s, STANCE_TITLES[s]] as const),
+      ["__none__", "(none)", STANCE_TITLES.__none__] as const,
     ],
     filterExcept(bundle.claims, filter, bundle, "stances"),
     (c) => c.hostStance ?? "__none__",
   );
   const sourceRows = makeCountRows(
-    SOURCE_ORDER.map((s) => [s, s] as const),
+    SOURCE_ORDER.map((s) => [s, s, SOURCE_TITLES[s]] as const),
     filterExcept(bundle.claims, filter, bundle, "sources"),
     (c) => c.truthSource,
   );
   const verdictRows = makeCountRows(
-    [["yes", "verdict section"], ["no", "not in verdict"]],
+    [
+      ["yes", "verdict section", VERDICT_TITLES.yes],
+      ["no", "not in verdict", VERDICT_TITLES.no],
+    ],
     filterExcept(bundle.claims, filter, bundle, "verdict"),
     (c) => c.inVerdictSection ? "yes" : "no",
   );
   const contradictedRows = makeCountRows(
-    [["yes", "contradicted"], ["no", "none"]],
+    [
+      ["yes", "contradicted", CONTRADICTED_TITLES.yes],
+      ["no", "none", CONTRADICTED_TITLES.no],
+    ],
     filterExcept(bundle.claims, filter, bundle, "contradicted"),
     (c) => (bundle.contradictionCount.get(c.id) ?? 0) > 0 ? "yes" : "no",
   );
   const hasInRows = makeCountRows(
-    [["yes", "cited by others"], ["no", "none"]],
+    [
+      ["yes", "cited by others", HASIN_TITLES.yes],
+      ["no", "none", HASIN_TITLES.no],
+    ],
     filterExcept(bundle.claims, filter, bundle, "hasIn"),
     (c) => (bundle.depCounts.get(c.id)?.in ?? 0) > 0 ? "yes" : "no",
   );
   const hasOutRows = makeCountRows(
-    [["yes", "cites others"], ["no", "none"]],
+    [
+      ["yes", "cites others", HASOUT_TITLES.yes],
+      ["no", "none", HASOUT_TITLES.no],
+    ],
     filterExcept(bundle.claims, filter, bundle, "hasOut"),
     (c) => (bundle.depCounts.get(c.id)?.out ?? 0) > 0 ? "yes" : "no",
   );
@@ -745,6 +797,7 @@ export function ClaimsPage() {
         matchCount={filtered.length}
         totalCount={bundle.claims.length}
         suffix={<GraphSeedsButton claimIds={sorted.map((c) => c.id)} />}
+        description="Thesis-level claims extracted from each video — the debatable points the host makes, with derived truth from the dependency graph and links back to the transcript evidence."
       />
       <RailResultsLayout rail={rail} results={results} />
     </FacetsPageOuter>
@@ -773,12 +826,16 @@ const BOOL_CHIP_LABEL: Record<BoolSetKey, Record<YesNo, string>> = {
 };
 
 // Build pre-sorted BarRows with per-bucket counts from a projection.
+// A third tuple element, when present, becomes the BarRow `title` — the
+// native hover tooltip BarListFacet renders on each row.
 function makeCountRows<T>(
-  entries: ReadonlyArray<readonly [string, string]>,
+  entries: ReadonlyArray<readonly [string, string, string?]>,
   items: T[],
   project: (item: T) => string,
 ): BarRow[] {
-  const rows: BarRow[] = entries.map(([id, label]) => ({ id, label, count: 0 }));
+  const rows: BarRow[] = entries.map(([id, label, title]) => ({
+    id, label, count: 0, title,
+  }));
   const byId = new Map(rows.map((r) => [r.id, r] as const));
   for (const it of items) {
     const row = byId.get(project(it));

@@ -1,12 +1,12 @@
 ---
 name: ai-alias-curation
-description: Run the AI alias-curation playbook (Plan 1). Use when the user asks to "curate aliases", "clean up entities", "run alias curation", "rebuild the graph with better merges", or any time new videos are added to the corpus and per-video short-name → full-name mappings need to be proposed again.
+description: Run the heuristic AI alias-curation playbook. Use when the user asks to "curate aliases", "clean up entities", "run alias curation", "rebuild the graph with better merges", or any time new videos are added to the corpus and per-video short-name → full-name mappings need to be proposed again.
 ---
 
 # AI alias curation
 
 Scripted, heuristic-driven implementation of
-[plans/01-ai-alias-curation.md](../../../plans/01-ai-alias-curation.md).
+the heuristic alias proposer.
 Runs over the whole corpus in seconds, proposes alias actions, applies them,
 and rebuilds the graph indexes.
 
@@ -83,4 +83,4 @@ are skipped.
   All corrections flow through `data/aliases.json`.
 - Respects `notSame` pairs. Never emits `notSame` or `dismissed` entries
   — those are operator cognition.
-- `deletedRelations` belongs in Plan 3, not this skill.
+- `deletedRelations` belongs in the reasoning / admin flow, not this skill.

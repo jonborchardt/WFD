@@ -32,3 +32,9 @@ src/ui/client/facets/*.js
 src/ui/client/facets/*.js.map
 src/ui/client/shared/*.js
 src/ui/client/shared/*.js.map
+_contradiction_verify_tmp/
+
+# Plan 04 embeddings cache — 24 MB, regenerable in ~70s from the
+# sentence-transformers sidecar. Not needed at runtime by the web/
+# static site. Regenerate with: node src/ai/reasoning/embed-claims.mjs
+data/claims/embeddings.json

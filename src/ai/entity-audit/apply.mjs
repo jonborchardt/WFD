@@ -16,7 +16,7 @@
 // This apply script is idempotent: any entry already represented in
 // aliases.json is skipped; any entry that conflicts with `notSame` is
 // skipped; any target that doesn't exist in the corpus is skipped.
-// Plan 2-1 §B4 (plans2/01-entity-hygiene.md).
+// Entry point: the ai-entity-audit skill.
 
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";

@@ -1,10 +1,11 @@
-# ai/claims — Plan-2 Part-2 helper scripts
+# ai/claims — per-video AI claim-extraction helpers
 
-Scripted scaffolding for the AI claim-extraction session described in
-[plans/02-claims-module.md](../../../plans/02-claims-module.md). Mirrors the
-shape of [`src/ai/curate/`](../curate/): tiny `.mjs` scripts driven by Claude
-Code through the [ai-claims-extraction](../../../.claude/skills/ai-claims-extraction/SKILL.md)
-skill.
+Scripted scaffolding for the per-video AI claim-extraction session.
+Mirrors the shape of [`src/ai/curate/`](../curate/): tiny `.mjs` scripts
+driven by Claude Code through the
+[ai-claims-extraction](../../../.claude/skills/ai-claims-extraction/SKILL.md)
+skill. See [CLAUDE.md § AI claim extraction](../../../CLAUDE.md) for the
+full quality bar the skill enforces.
 
 The AI does the *thinking* (reading transcripts, deciding what counts as a
 claim, attaching evidence). These scripts handle the *plumbing* — picking
@@ -41,5 +42,5 @@ node src/ai/claims/summary.mjs           # final report + timing
 ```
 
 No `apply.mjs` step — claim files are written in place during the session,
-not staged. The downstream `claim-indexes` graph stage (deferred to a
-follow-up commit) will pick them up via `graph.dirtyAt`.
+not staged. The downstream `claim-indexes` graph stage picks them up via
+`graph.dirtyAt` and folds them into the corpus-wide claim reports.

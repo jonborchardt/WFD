@@ -177,15 +177,13 @@ export function ClaimGraphPage() {
   const [flowLib, setFlowLib] = useState<FlowState | null>(null);
   const [data, setData] = useState<ClaimGraphData | null>(null);
   const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
-  // Default seed: the "Marfa Lights basketball-sized hovering orbs"
-  // claim — it has rich dependencies (competing explanations, debunks
-  // of the origin myth) so the graph lands non-empty on a fresh visit.
-  // Any `?kind=…&q=…` in the URL wins over this default.
-  const DEFAULT_SEED_KIND = "claim" as const;
-  const DEFAULT_SEED_QUERY = "-HxKHUEwnug:c_0003";
-  const [query, setQuery] = useState(params.get("q") ?? DEFAULT_SEED_QUERY);
+  // No hardcoded default seed — land on an empty canvas when the URL
+  // carries nothing, so direct visits don't imply a demo pick. The
+  // HomePage "Start here" card supplies its own `?kind=…&q=…` to
+  // seed the Marfa-Lights demo on click-through.
+  const [query, setQuery] = useState(params.get("q") ?? "");
   const [seedKind, setSeedKind] = useState<"video" | "entity" | "claim">(
-    (params.get("kind") as "video" | "entity" | "claim") ?? DEFAULT_SEED_KIND,
+    (params.get("kind") as "video" | "entity" | "claim") ?? "claim",
   );
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeSeeds, setActiveSeeds] = useState<ActiveSeed[]>([]);

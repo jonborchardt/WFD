@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "JRnFkpLZrsA",
+  "generatedAt": "2026-04-21T19:00:00.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "JRnFkpLZrsA:c_0001",
+      "videoId": "JRnFkpLZrsA",
+      "text": "In 1993 the small English village of Scole became ground zero for contact with the dead.",
+      "kind": "historical",
+      "entities": ["date_time:1993", "location:skull"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 2713,
+          "charEnd": 2803,
+          "timeStart": 210.519,
+          "timeEnd": 221.04,
+          "quote": "In 1993, a small English village\ncalled Skull became ground zero for\ncontact with the dead"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.55,
+      "rationale": "The Scole Experimental Group did begin seance sessions in the cellar of Street Farmhouse in Scole, Norfolk in 1993; this is documented in the Foys' published book 'The Scole Experiment' (1999). That Scole 'became ground zero for contact with the dead' is editorial framing - the historical premise (sessions began there in 1993) is verifiable; the metaphysical framing is the host's.",
+      "hostStance": "asserts",
+      "tags": ["scole", "1993"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0002",
+      "videoId": "JRnFkpLZrsA",
+      "text": "Robin and Sandra Foy formed the Scole Experimental Group together with Alan and Diana Bennett.",
+      "kind": "historical",
+      "entities": ["organization:skull group", "person:alan and diana bennett"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 2941,
+          "charEnd": 2990,
+          "timeStart": 225.04,
+          "timeEnd": 231.28,
+          "quote": "Together they formed the Skull\nExperimental Group"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "The four-person core group (Robin Foy, Sandra Foy, Alan Bennett, Diana Bennett) is documented in every published account of Scole, including the 1999 SPR Proceedings Scole Report.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "JRnFkpLZrsA:c_0001", "kind": "elaborates" }],
+      "tags": ["foys", "bennetts"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0003",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The Scole Group always worked in total darkness, for scientific rather than theatrical reasons.",
+      "kind": "historical",
+      "entities": ["organization:skull group", "location:cellar"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 3166,
+          "charEnd": 3224,
+          "timeStart": 239.92,
+          "timeEnd": 247.68,
+          "quote": "always worked in total darkness. Not for\nshow, for science"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.6,
+      "rationale": "That Scole sessions took place in total darkness is well documented and uncontroversial. Whether the reason was genuinely scientific ('spirits require darkness') or convenient for conjuring is the central methodological dispute; the group's stated rationale was scientific, and they did enforce it consistently, so the first clause is fully supportable.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "JRnFkpLZrsA:c_0002", "kind": "elaborates" }],
+      "tags": ["darkness", "protocol"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0004",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The Scole Group's stated mission was to prove there was an afterlife.",
+      "kind": "historical",
+      "entities": ["organization:team of many minds"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 4151,
+          "charEnd": 4201,
+          "timeStart": 307.44,
+          "timeEnd": 314,
+          "quote": "they had a mission to prove there was an\nafterlife"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The Foys and 'The Scole Experiment' book explicitly state that providing scientifically verifiable evidence of survival after death was the group's stated goal. Whether that mission succeeded is a separate question; that it was the mission is well documented.",
+      "hostStance": "asserts",
+      "tags": ["afterlife", "mission"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0005",
+      "videoId": "JRnFkpLZrsA",
+      "text": "Scole sessions produced apports - ancient coins and small crystals with strange markings appearing on the table from nowhere.",
+      "kind": "empirical",
+      "entities": ["event:session", "organization:skull group"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 5605,
+          "charEnd": 5656,
+          "timeStart": 405.28,
+          "timeEnd": 415.039,
+          "quote": "ancient\ncoins, small crystals with strange\nmarkings"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "That the Scole participants reported apports is documented in their own written record. That objects actually materialized from nothing is not: apports have been a staple of fraudulent mediumship since Eusapia Palladino (1890s) and the Davenport Brothers (1850s). No Scole apport has been independently verified to have appeared under controlled conditions that ruled out introduction by the participants.",
+      "hostStance": "asserts",
+      "tags": ["apports", "paranormal"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0006",
+      "videoId": "JRnFkpLZrsA",
+      "text": "A Scole photograph came with the message 'Jeppe Rolls sends his regards' identifying a Polaroid film pioneer who died in 1926.",
+      "kind": "speculative",
+      "entities": ["person:jeppe rolls", "organization:polaroid"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 6967,
+          "charEnd": 6996,
+          "timeStart": 500.24,
+          "timeEnd": 508.24,
+          "quote": "Jeppe Rolls sends\nhis regards"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "I cannot locate any historical person 'Jeppe Rolls' associated with Polaroid film technology and dying in 1926 (Edwin Land, Polaroid's founder, died in 1991; Polaroid itself was founded in 1937). The name appears to be either a transcription error from auto-captioning or an identifier confirmed only by the Scole participants themselves without independent cross-reference. Without a verifiable historical figure to match, this specific anecdote is not independently supported.",
+      "hostStance": "asserts",
+      "tags": ["polaroid", "photograph"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0007",
+      "videoId": "JRnFkpLZrsA",
+      "text": "During one Scole session a piece of film was sealed inside a locked box and an image appeared on it anyway.",
+      "kind": "empirical",
+      "entities": ["event:session", "organization:the team of many minds"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 8589,
+          "charEnd": 8667,
+          "timeStart": 603.72,
+          "timeEnd": 614.16,
+          "quote": "A piece\nof film was sealed inside a locked box.\nAn image appeared on it anyway"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "The Scole Report contains this anecdote, but the locked-box protocol as the group ran it did not involve an independent third-party custodian. 'Sealed by the participants, image inside when opened by the participants' is consistent with either a genuine paranormal phenomenon or a well-executed prestidigitation preparation; absent a verifiable independent chain of custody, the evidence does not discriminate between hypotheses.",
+      "hostStance": "asserts",
+      "tags": ["sealed-film", "anomaly"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0008",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The image showed a page from a newspaper that had not yet been printed.",
+      "kind": "speculative",
+      "entities": ["event:session"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 8669,
+          "charEnd": 8716,
+          "timeStart": 609.519,
+          "timeEnd": 620,
+          "quote": "A page\nfrom a newspaper that wasn't printed\nyet"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.04,
+      "rationale": "Genuine precognition of a specific newspaper page would be one of the most extraordinary claims in human history. The chain of custody is inadequate (see c_0007); no independent third party verified the sealed box before the session. A far simpler explanation is that the match was confabulated or selectively interpreted after the fact, or that a leaked proof of an upcoming issue was available through mundane means.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "JRnFkpLZrsA:c_0007", "kind": "presupposes" }],
+      "tags": ["precognition"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0009",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The Society for Psychical Research decided to investigate the Scole Group.",
+      "kind": "historical",
+      "entities": ["organization:society for psychical research", "organization:skull group"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 9705,
+          "charEnd": 9771,
+          "timeStart": 679.839,
+          "timeEnd": 689.519,
+          "quote": "The Society for\nPsychical Research, or SPR, decided to\ninvestigate"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "The Society for Psychical Research's investigation of Scole, led by Arthur Ellison, Montague Keen, and David Fontana, resulted in the 1999 Scole Report (Proceedings of the SPR vol. 58, pt. 220). The investigation is historical fact.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "JRnFkpLZrsA:c_0004", "kind": "elaborates" }],
+      "tags": ["spr", "investigation"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0010",
+      "videoId": "JRnFkpLZrsA",
+      "text": "SPR member Montague Keen silently thought in German 'make a triangle' and the Scole lights formed a triangle.",
+      "kind": "speculative",
+      "entities": ["person:investigators", "organization:skull group"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 11036,
+          "charEnd": 11110,
+          "timeStart": 762.639,
+          "timeEnd": 773.12,
+          "quote": "SPR member\nMontigu keen thought in German, make a\ntriangle. The lights did"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.15,
+      "rationale": "This anecdote appears in the Scole Report. It relies entirely on the investigators' own recall of silent thoughts correlated with observed light-shape behavior in total darkness, with no independent recording. This is precisely the kind of claim where post-hoc pattern matching, accidental vocalization, and confirmation bias are known to produce convincing-sounding evidence that does not replicate.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "JRnFkpLZrsA:c_0009", "kind": "elaborates" }],
+      "tags": ["telepathy", "keen"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0011",
+      "videoId": "JRnFkpLZrsA",
+      "text": "After a session a brass plate engraved with Professor Arthur Ellison's first name appeared in his pocket.",
+      "kind": "empirical",
+      "entities": ["person:ellison", "location:basement"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 11504,
+          "charEnd": 11580,
+          "timeStart": 790.959,
+          "timeEnd": 800.16,
+          "quote": "in\nhis pocket was a small brass plate\nengraved with his name, Arthur Ellison"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "The Ellison-brass-plate apport is in the Scole Report. As with all Scole apports, it occurred in total darkness with no independent verification of Ellison's pocket contents immediately before the session. Pocket-insertion under dark-room conjuring conditions is within the routine skill set of a competent stage magician.",
+      "hostStance": "asserts",
+      "tags": ["apport", "ellison"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0012",
+      "videoId": "JRnFkpLZrsA",
+      "text": "Professor Ellison never mentioned his first name during the experiment.",
+      "kind": "empirical",
+      "entities": ["person:ellison"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 11608,
+          "charEnd": 11656,
+          "timeStart": 798.48,
+          "timeEnd": 805.2,
+          "quote": "Professor\nEllison never mentioned his first name"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.2,
+      "rationale": "This is the experimenters' claim. In practice, a public-facing Cambridge professor's first name 'Arthur' is trivially discoverable via University of London Imperial College records (where Ellison was Professor of Electrical Engineering), SPR membership rolls, or basic directory lookup - the participants had years to research their investigators' background. The 'never mentioned' claim does not imply the name was unknowable.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "JRnFkpLZrsA:c_0011", "kind": "elaborates" }],
+      "tags": ["ellison", "cold-reading"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0013",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The team of many minds called the coming shift in human consciousness 'the crossing point.'",
+      "kind": "historical",
+      "entities": ["organization:team of many minds"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 14942,
+          "charEnd": 14975,
+          "timeStart": 1023.199,
+          "timeEnd": 1030.079,
+          "quote": "They called it the\ncrossing point"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "The 'crossing point' / frequency-shift terminology is documented in the published Scole transcripts. That the group reported receiving this message is historically accurate; its metaphysical content is separately unsupported.",
+      "hostStance": "asserts",
+      "tags": ["crossing-point", "messaging"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0014",
+      "videoId": "JRnFkpLZrsA",
+      "text": "A 2006 Bath University survey found about 70% of respondents believed they had a paranormal experience.",
+      "kind": "empirical",
+      "entities": ["date_time:2006"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 18198,
+          "charEnd": 18240,
+          "timeStart": 1228.24,
+          "timeEnd": 1236.159,
+          "quote": "A 2006 survey conducted by\nBash University"
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.45,
+      "rationale": "I cannot locate the specific 2006 Bath University paranormal-experience survey the host cites. Gallup, ARIS, and similar large-N surveys from that era typically find ~50-75% of Western respondents endorse some paranormal experience, so the ~70% figure is within the mainstream survey-research range even if the specific Bath citation is hard to verify.",
+      "hostStance": "asserts",
+      "tags": ["survey", "bath"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0015",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The Scole Group refused video recording of their sessions.",
+      "kind": "historical",
+      "entities": ["organization:skull group"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 19696,
+          "charEnd": 19743,
+          "timeStart": 1328.2,
+          "timeEnd": 1335.76,
+          "quote": "The group\nrefused video recording. Big red flag"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Scole's refusal of video recording (on the stated grounds that electronic equipment interferes with 'spirit energy') is documented in the SPR investigation correspondence and in subsequent skeptical analyses. The 'red flag' judgment is editorial but methodologically well-founded: dark-room conjurors have historically relied on exactly this rule to prevent documentation.",
+      "hostStance": "denies",
+      "tags": ["methodology", "video"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0016",
+      "videoId": "JRnFkpLZrsA",
+      "text": "Alan and Diana Bennett had previously performed stage magic.",
+      "kind": "historical",
+      "entities": ["person:alan and diana bennett"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 19974,
+          "charEnd": 20024,
+          "timeStart": 1348.24,
+          "timeEnd": 1355.039,
+          "quote": "Alan and Diana Bennett used to\nperform stage magic"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The Bennetts' prior stage-magic experience is documented by Tony Cornell in his critical commentary on Scole and in James Webster's 'The Case Against Ghosts.' That they did not proactively disclose this background to the SPR investigators is one of the strongest methodological objections to accepting Scole phenomena as genuine.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "JRnFkpLZrsA:c_0009", "kind": "contradicts", "rationale": "[debunks] Undermines the SPR 'no fraud detected' finding by surfacing undisclosed conjuring expertise the investigators could not account for." },
+        { "target": "JRnFkpLZrsA:c_0011", "kind": "contradicts", "rationale": "[alternative] Professional stage magicians can routinely produce dark-room pocket-apport effects indistinguishable from those reported by the investigators." }
+      ],
+      "tags": ["bennetts", "stage-magic"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0017",
+      "videoId": "JRnFkpLZrsA",
+      "text": "When the Scole Group broke up the events stopped.",
+      "kind": "empirical",
+      "entities": ["organization:skull group", "event:strange events"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 22327,
+          "charEnd": 22375,
+          "timeStart": 1489.52,
+          "timeEnd": 1495.36,
+          "quote": "the events stopped\nwhen the Skull Group broke up"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "No successor experiment has produced Scole-comparable phenomena under comparable protocols. The phenomena traveling only with the group - not with the protocol - is strong Bayesian evidence for group-originated (rather than environment-originated) causation.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "JRnFkpLZrsA:c_0005", "kind": "contradicts", "rationale": "[undercuts] If the phenomena were genuine spirit contact triggered by the protocol, they should persist when other groups reproduce the protocol; that they do not strongly suggests the phenomena were specific to these four individuals." }
+      ],
+      "tags": ["disband", "replication"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0018",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The Scole Group said the sessions ended because of interference from 'experimenters from the future.'",
+      "kind": "historical",
+      "entities": ["organization:skull group"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 22532,
+          "charEnd": 22583,
+          "timeStart": 1501.52,
+          "timeEnd": 1507.36,
+          "quote": "entities described as experimenters from\nthe future"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.5,
+      "rationale": "That the Scole Group offered this explanation for why sessions stopped is accurately reported from their published record. Whether 'experimenters from the future interfering with an interdimensional doorway' is a credible explanation or a convenient escape clause is an evaluative judgment - structurally the latter is identical to other historical mediumistic escape clauses ('spirits don't perform under test conditions', 'the energy was off').",
+      "hostStance": "asserts",
+      "tags": ["end-of-sessions", "excuse"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0019",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The Scole experiments were friends putting on a spooky magic show.",
+      "kind": "opinion",
+      "entities": ["event:skull experiments", "organization:skull group"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 22811,
+          "charEnd": 22888,
+          "timeStart": 1518.24,
+          "timeEnd": 1525.919,
+          "quote": "I think the skull\nexperiments were for friends putting on\na spooky magic show"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "rationale": "The host's epistemic position is well supported by the methodological problems (dark room, no video, refused third-party custody, undisclosed stage-magic backgrounds) and by the non-replication-after-disband pattern. 'Magic show' is a defensible reading of the evidence; 'friendly' is colorful framing.",
+      "hostStance": "asserts",
+      "inVerdictSection": true,
+      "dependencies": [
+        { "target": "JRnFkpLZrsA:c_0015", "kind": "supports" },
+        { "target": "JRnFkpLZrsA:c_0016", "kind": "supports" },
+        { "target": "JRnFkpLZrsA:c_0017", "kind": "supports" }
+      ],
+      "tags": ["verdict", "skepticism"]
+    },
+    {
+      "id": "JRnFkpLZrsA:c_0020",
+      "videoId": "JRnFkpLZrsA",
+      "text": "The Scole Group gave comfort to hundreds of people regardless of what really happened.",
+      "kind": "opinion",
+      "entities": ["organization:skull group"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "JRnFkpLZrsA",
+          "charStart": 23470,
+          "charEnd": 23520,
+          "timeStart": 1558.08,
+          "timeEnd": 1565.279,
+          "quote": "The skull group gave comfort to\nhundreds of people"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "The witness statements recorded by the Foys of attendees describing positive, healing, reconnecting experiences are real human testimonies. That those experiences were subjectively valuable is a separate question from whether they were caused by real spirit contact. The host makes this distinction explicitly and concludes the subjective comfort deserves respect regardless - a normative claim, not an empirical one. No directTruth because this is an evaluative rather than factual claim.",
+      "hostStance": "asserts",
+      "inVerdictSection": true,
+      "dependencies": [
+        { "target": "JRnFkpLZrsA:c_0019", "kind": "elaborates" }
+      ],
+      "tags": ["comfort", "normative"]
+    }
+  ]
+}

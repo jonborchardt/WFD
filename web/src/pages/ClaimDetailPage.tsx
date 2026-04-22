@@ -25,6 +25,7 @@ import {
   fetchCatalog,
   fetchClaims,
   fetchClaimsIndex,
+  fetchConsonance,
   fetchContradictions,
   fetchDependencyGraph,
   invalidateClaimsCaches,
@@ -54,6 +55,7 @@ export function ClaimDetailPage() {
   const [perVideo, setPerVideo] = useState<PersistedClaims | null>(null);
   const [corpusIndex, setCorpusIndex] = useState<ClaimsIndexEntry[] | null>(null);
   const [allContradictions, setAllContradictions] = useState<ClaimContradiction[] | null>(null);
+  const [allAgreements, setAllAgreements] = useState<ClaimContradiction[] | null>(null);
   const [deps, setDeps] = useState<DependencyGraphFile | null>(null);
   const [bundle, setBundle] = useState<ClaimsBundle | null>(null);
   const [reloadTick, setReloadTick] = useState(0);
@@ -76,6 +78,7 @@ export function ClaimDetailPage() {
       fetchClaims(videoId).then(setPerVideo),
       fetchClaimsIndex().then((idx) => setCorpusIndex(idx?.claims ?? [])),
       fetchContradictions().then((cx) => setAllContradictions(cx?.contradictions ?? [])),
+      fetchConsonance().then((c) => setAllAgreements(c?.agreements ?? [])),
       fetchDependencyGraph().then(setDeps),
       loadClaimsBundle().then(setBundle),
     ]).finally(endLoad);
@@ -95,6 +98,11 @@ export function ClaimDetailPage() {
   const contradictionsForClaim = useMemo(
     () => (allContradictions ?? []).filter((c) => c.left === claimId || c.right === claimId),
     [allContradictions, claimId],
+  );
+
+  const agreementsForClaim = useMemo(
+    () => (allAgreements ?? []).filter((c) => c.left === claimId || c.right === claimId),
+    [allAgreements, claimId],
   );
 
   // Exclude "contradicts" — those already appear in the
@@ -164,6 +172,7 @@ export function ClaimDetailPage() {
             rationale: e.rationale,
           }))}
           contradictions={contradictionsForClaim}
+          agreements={agreementsForClaim}
           corpusIndex={corpusIndex}
           onMutated={refresh}
         />
@@ -238,6 +247,77 @@ export function ClaimDetailPage() {
                     isCustom={cx.kind === "manual"}
                     onMutated={refresh}
                   />
+                </Stack>
+              </Box>
+            );
+          })}
+        </Paper>
+      )}
+
+      {/* Cross-video agreements (consonance). Same shape as
+          contradictions but read-only and tinted as corroboration. */}
+      {agreementsForClaim.length > 0 && (
+        <Paper sx={{ mt: 3, p: 2 }}>
+          <Typography variant="h6" sx={{ mb: 1 }}>
+            Cross-video agreements{" "}
+            <Typography component="span" variant="caption" color="text.secondary">
+              {agreementsForClaim.length} corroborating this claim
+            </Typography>
+          </Typography>
+          {agreementsForClaim.map((cx, i) => {
+            const otherId = cx.left === claimId ? cx.right : cx.left;
+            const otherClaim = bundle?.claimsById.get(otherId);
+            const sharedCount = cx.sharedEntities?.length ?? 0;
+            return (
+              <Box
+                key={i}
+                sx={{
+                  border: "1px solid", borderColor: "success.light",
+                  borderRadius: 1, p: 1.5, mb: 1.5,
+                }}
+              >
+                {bundle && (
+                  <StancePanel
+                    claim={otherClaim}
+                    id={otherId}
+                    bundle={bundle}
+                    nav={nav}
+                  />
+                )}
+                <Stack direction="row" spacing={1} sx={{
+                  mt: 1, opacity: 0.8, flexWrap: "wrap", alignItems: "center",
+                  color: "text.secondary",
+                }}>
+                  <Typography variant="caption" sx={{
+                    fontSize: 10, textTransform: "uppercase", letterSpacing: 0.5,
+                    color: "success.main",
+                  }}>
+                    same claim
+                  </Typography>
+                  {cx.matchReason && (
+                    <Typography variant="caption">· via {cx.matchReason}</Typography>
+                  )}
+                  {sharedCount > 0 && (
+                    <Typography variant="caption">· {sharedCount} shared</Typography>
+                  )}
+                  {cx.similarity !== undefined && (
+                    <Typography variant="caption">
+                      · similarity {cx.similarity.toFixed(2)}
+                    </Typography>
+                  )}
+                  {(cx.sharedEntities ?? []).slice(0, 4).map((e) => (
+                    <Chip
+                      key={e} size="small" variant="outlined" clickable
+                      label={e}
+                      onClick={() => nav(`/entity/${encodeURIComponent(e)}`)}
+                      sx={{ fontSize: 10, height: 20 }}
+                    />
+                  ))}
+                  {sharedCount > 4 && (
+                    <Typography variant="caption">
+                      +{sharedCount - 4} more
+                    </Typography>
+                  )}
                 </Stack>
               </Box>
             );
