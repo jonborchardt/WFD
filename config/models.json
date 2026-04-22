@@ -14,5 +14,14 @@
     "pythonBin": "python",
     "scriptPath": "tools/coref.py",
     "timeoutMs": 600000
+  },
+  "embeddings": {
+    "modelId": "all-MiniLM-L6-v2",
+    "dimensions": 384,
+    "scriptPath": "tools/embeddings_sidecar.py",
+    "batchSize": 64,
+    "timeoutMs": 900000,
+    "crossVideoCosineMin": 0.55,
+    "crossVideoCosineStrict": 0.70
   }
 }

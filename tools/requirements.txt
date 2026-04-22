@@ -23,3 +23,9 @@ gliner>=0.2.13
 
 # Zero-shot relation extraction (tools/glirel.py)
 glirel>=1.0.0
+
+# Sentence embeddings (tools/embeddings_sidecar.py) — Plan 04 semantic
+# similarity for cross-video contradiction candidate generation. Optional:
+# the bridge falls back to token-Jaccard if sentence-transformers is not
+# installed. Default model is all-MiniLM-L6-v2 (~80 MB, 384-dim).
+sentence-transformers>=2.2

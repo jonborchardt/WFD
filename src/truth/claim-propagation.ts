@@ -12,6 +12,16 @@
 //   - A presupposes B: A is min-capped at B  (A cannot be truer than B)
 //   - A elaborates B : no coupling
 //
+// Plan 04 (plans2/04-contradictions-v2.md) layers subkind semantics on top
+// of `contradicts` — the subkind is parsed from the dep's rationale
+// prefix (`[logical]` / `[debunks]` / `[alternative]` / `[undercuts]`).
+//   - "logical" / "debunks"      : full contradicts coupling (contribution = 1-v)
+//   - "alternative"              : halved negative coupling (competing explanations
+//                                   pull less hard than strict contradictions)
+//   - "undercuts"                : no negative pull; instead caps B's derived
+//                                   truth at (1 - 0.2 * A.derivedTruth * A.confidence),
+//                                   reducing the ceiling without flipping the sign
+//
 // Invariants:
 //   - directTruth is an anchor, never overwritten.
 //   - Claims with no anchor in their connected component end up without a
@@ -20,6 +30,10 @@
 //     relationship propagator in propagation.ts.
 
 import type { Claim, ClaimId, DependencyKind } from "../claims/types.js";
+import {
+  parseContradictsSubkind,
+  type ContradictsSubkind,
+} from "./contradicts-subkind.js";
 
 export interface ClaimPropagationOptions {
   epsilon?: number;
@@ -40,6 +54,10 @@ export interface ClaimPropagationResult {
 interface InEdge {
   from: ClaimId;
   kind: DependencyKind;
+  // For kind === "contradicts", the parsed typed subkind (Plan 04).
+  // Missing → treated as "logical" for back-compat with pre-v2 claim
+  // files (matches the detector's default).
+  contradictsSubkind?: ContradictsSubkind;
 }
 
 function buildInEdges(claims: Claim[]): Map<ClaimId, InEdge[]> {
@@ -48,7 +66,12 @@ function buildInEdges(claims: Claim[]): Map<ClaimId, InEdge[]> {
     if (!c.dependencies) continue;
     for (const dep of c.dependencies) {
       const list = inEdges.get(dep.target) ?? [];
-      list.push({ from: c.id, kind: dep.kind });
+      const edge: InEdge = { from: c.id, kind: dep.kind };
+      if (dep.kind === "contradicts") {
+        edge.contradictsSubkind =
+          parseContradictsSubkind(dep.rationale) ?? "logical";
+      }
+      list.push(edge);
       inEdges.set(dep.target, list);
     }
   }
@@ -95,6 +118,20 @@ export function propagateClaims(
   const inEdges = buildInEdges(claims);
   const presupposes = buildPresupposes(claims);
 
+  // Plan 04: `undercuts` edges of claim B (i.e. incoming `contradicts`
+  // edges with subkind "undercuts") cap B's derived truth at
+  //   min_A ( 1 - 0.2 * A.derivedTruth * A.confidence )
+  // applied as a post-cap after the anchor+neighbor blend, same shape
+  // as the presupposes min-cap. Precomputed here to avoid re-scanning
+  // edges each iteration.
+  const undercuts = new Map<ClaimId, InEdge[]>();
+  for (const [target, ins] of inEdges) {
+    const u = ins.filter(
+      (e) => e.kind === "contradicts" && e.contradictsSubkind === "undercuts",
+    );
+    if (u.length > 0) undercuts.set(target, u);
+  }
+
   let maxDelta = Infinity;
   let iterations = 0;
   while (iterations < maxIter && maxDelta > epsilon) {
@@ -109,12 +146,27 @@ export function propagateClaims(
         const from = byId.get(edge.from);
         const v = value.get(edge.from);
         if (!from || v === undefined) continue;
-        const w = from.confidence;
+        const baseW = from.confidence;
         let contribution: number;
+        let w = baseW;
         if (edge.kind === "supports") {
           contribution = v;
         } else if (edge.kind === "contradicts") {
+          // Plan 04: subkind governs the coupling strength.
+          const sk = edge.contradictsSubkind ?? "logical";
+          if (sk === "undercuts") {
+            // Handled as a post-cap below; no iterative pull here.
+            continue;
+          }
           contribution = 1 - v;
+          if (sk === "alternative") {
+            // Competing-explanation pairs pull half as hard as strict
+            // logical contradictions. Both can be partially true (each
+            // explains some of the phenomenon) — don't hammer them to
+            // opposite values.
+            w = baseW * 0.5;
+          }
+          // "logical" / "debunks" / untyped fall through at full weight.
         } else {
           // presupposes: the target (this claim) doesn't get pulled by a
           // presupposition — presupposition is handled as a post-cap below
@@ -148,6 +200,22 @@ export function propagateClaims(
         for (const targetId of preps) {
           const targetVal = value.get(targetId);
           if (targetVal !== undefined && targetVal < next) next = targetVal;
+        }
+      }
+
+      // Plan 04 undercuts post-cap: every incoming `contradicts` edge
+      // with subkind `undercuts` reduces this claim's ceiling by
+      // 0.2 × source.derivedTruth × source.confidence. Multiple
+      // undercutters stack by taking the tightest cap (per min-cap
+      // semantics), same shape as the presupposes cap above.
+      const undercutEdges = undercuts.get(c.id);
+      if (undercutEdges && next !== undefined) {
+        for (const edge of undercutEdges) {
+          const from = byId.get(edge.from);
+          const v = value.get(edge.from);
+          if (!from || v === undefined) continue;
+          const ceiling = 1 - 0.2 * v * from.confidence;
+          if (ceiling < next) next = ceiling;
         }
       }
 

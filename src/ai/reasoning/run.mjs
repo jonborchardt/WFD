@@ -21,6 +21,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { propagateClaims } from "../../../dist/truth/claim-propagation.js";
 import { detectClaimContradictions } from "../../../dist/truth/claim-contradictions.js";
+import { readEmbeddingCache, hashTextKey } from "../../../dist/shared/embedding-bridge.js";
 
 // Picks always live in the scratch dir; only the reports are redirectable.
 const picksPath = "_reasoning_tmp/picks.json";
@@ -115,9 +116,31 @@ writeFileSync(
 phases.dependencyGraphMs = Date.now() - tDep;
 
 // --- Phase 4: contradictions ------------------------------------------
+// Plan 04: if data/claims/embeddings.json exists, feed embeddings into
+// the detector so the cross-video candidate generator uses cosine
+// similarity. Cache miss is fine — detector falls back to Jaccard.
 const tCon = Date.now();
-const contradictions = detectClaimContradictions(allClaims);
+const embCache = readEmbeddingCache(join(dataDir, "claims", "embeddings.json"));
+let embeddings;
+let embeddingsHits = 0;
+if (embCache && embCache.entries) {
+  embeddings = new Map();
+  for (const c of allClaims) {
+    const hash = hashTextKey(embCache.modelId, c.text);
+    const vec = embCache.entries[hash];
+    if (vec) {
+      embeddings.set(c.id, vec);
+      embeddingsHits++;
+    }
+  }
+}
+const contradictions = detectClaimContradictions(allClaims, { embeddings });
 phases.contradictionsMs = Date.now() - tCon;
+if (embCache) {
+  phases.embeddingsCacheHits = embeddingsHits;
+  phases.embeddingsCacheMisses = allClaims.length - embeddingsHits;
+  phases.embeddingsModel = embCache.modelId;
+}
 const byKind = contradictions.reduce((acc, c) => {
   acc[c.kind] = (acc[c.kind] ?? 0) + 1;
   return acc;
