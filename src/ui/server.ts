@@ -38,6 +38,18 @@ import {
   SENTINEL_DELETED,
 } from "../graph/canonicalize.js";
 import {
+  addClaimTruthOverride,
+  removeClaimTruthOverride,
+  addClaimDeletion,
+  removeClaimDeletion,
+  setClaimFieldOverride,
+  removeClaimFieldOverride,
+  addContradictionDismissal,
+  removeContradictionDismissal,
+  addCustomContradiction,
+  removeCustomContradiction,
+} from "../graph/aliases-schema.js";
+import {
   readPersistedEntities,
   type PersistedEntities,
 } from "../entities/index.js";
@@ -1712,6 +1724,109 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           if (!videoId || !key)
             return sendJson(res, 400, { error: "missing videoId/key" });
           delete aliases[`del:${videoId}:${key}`];
+        } else if (
+          action === "claim-field-override" ||
+          action === "claim-field-unoverride"
+        ) {
+          const claimId = params.get("claimId") ?? "";
+          if (!claimId) return sendJson(res, 400, { error: "missing claimId" });
+          try {
+            if (action === "claim-field-unoverride") {
+              removeClaimFieldOverride(dataRoot, claimId);
+            } else {
+              const patch: Record<string, unknown> = {};
+              const text = params.get("text");
+              if (text !== null) patch.text = text;
+              const kind = params.get("kind");
+              if (kind !== null) patch.kind = kind;
+              const hostStance = params.get("hostStance");
+              if (hostStance !== null) patch.hostStance = hostStance;
+              const rationale = params.get("rationale");
+              if (rationale !== null) patch.rationale = rationale;
+              const tagsRaw = params.get("tags");
+              if (tagsRaw !== null) {
+                patch.tags = tagsRaw
+                  .split(",")
+                  .map((s) => s.trim().toLowerCase())
+                  .filter(Boolean);
+              }
+              setClaimFieldOverride(dataRoot, claimId, patch);
+            }
+          } catch (err) {
+            return sendJson(res, 400, { error: (err as Error).message });
+          }
+          nlpCache.clear();
+          entityIndexCache = null;
+          entityVideosCache = null;
+          relationshipsGraphCache = null;
+          opts.catalog.markGraphDirty();
+          return sendJson(res, 200, { ok: true });
+        } else if (
+          action === "dismiss-contradiction" ||
+          action === "undismiss-contradiction" ||
+          action === "custom-contradiction" ||
+          action === "uncustom-contradiction"
+        ) {
+          const a = params.get("a") ?? "";
+          const b = params.get("b") ?? "";
+          if (!a || !b) return sendJson(res, 400, { error: "missing a/b" });
+          try {
+            if (action === "dismiss-contradiction") {
+              addContradictionDismissal(dataRoot, a, b, params.get("reason") ?? undefined);
+            } else if (action === "undismiss-contradiction") {
+              removeContradictionDismissal(dataRoot, a, b);
+            } else if (action === "custom-contradiction") {
+              const summary = params.get("summary") ?? "";
+              if (!summary) return sendJson(res, 400, { error: "missing summary" });
+              const shared = (params.get("sharedEntities") ?? "")
+                .split(",")
+                .map((s) => s.trim())
+                .filter(Boolean);
+              addCustomContradiction(dataRoot, a, b, summary, shared.length ? shared : undefined);
+            } else {
+              removeCustomContradiction(dataRoot, a, b);
+            }
+          } catch (err) {
+            return sendJson(res, 400, { error: (err as Error).message });
+          }
+          opts.catalog.markGraphDirty();
+          return sendJson(res, 200, { ok: true });
+        } else if (
+          action === "claim-truth-override" ||
+          action === "claim-untruth-override" ||
+          action === "delete-claim" ||
+          action === "undelete-claim"
+        ) {
+          // Claim-level sections (claimTruthOverrides / claimDeletions) live
+          // only in the v2 structured file, not in the flat runtime map.
+          // Use the typed mutators directly; do NOT write the flat map
+          // afterwards or we'd clobber the structured sections.
+          const claimId = params.get("claimId") ?? "";
+          if (!claimId) return sendJson(res, 400, { error: "missing claimId" });
+          try {
+            if (action === "claim-truth-override") {
+              const dt = Number(params.get("directTruth"));
+              if (!Number.isFinite(dt) || dt < 0 || dt > 1) {
+                return sendJson(res, 400, { error: "directTruth not in [0,1]" });
+              }
+              const rationale = params.get("rationale") ?? undefined;
+              addClaimTruthOverride(dataRoot, claimId, dt, rationale);
+            } else if (action === "claim-untruth-override") {
+              removeClaimTruthOverride(dataRoot, claimId);
+            } else if (action === "delete-claim") {
+              addClaimDeletion(dataRoot, claimId);
+            } else {
+              removeClaimDeletion(dataRoot, claimId);
+            }
+          } catch (err) {
+            return sendJson(res, 400, { error: (err as Error).message });
+          }
+          nlpCache.clear();
+          entityIndexCache = null;
+          entityVideosCache = null;
+          relationshipsGraphCache = null;
+          opts.catalog.markGraphDirty();
+          return sendJson(res, 200, { ok: true });
         } else if (action === "create-phantom") {
           // Create a phantom entity: a key with a display override,
           // targeted by one or more merges. `name` is the display

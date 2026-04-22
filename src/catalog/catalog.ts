@@ -45,7 +45,8 @@ export type GraphStageName =
   | "per-claim"
   | "novel"
   | "contradictions"
-  | "indexes";
+  | "indexes"
+  | "claim-indexes";
 
 export interface GraphWatermark {
   // Any per-video write that touches the graph bumps this. Graph-level stages

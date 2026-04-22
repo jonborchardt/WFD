@@ -18,7 +18,7 @@
 // Graph stages read the `graph.dirtyAt` watermark. A stage is stale when its
 // last-run timestamp is older than dirtyAt (or absent).
 
-import { existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { CatalogRow } from "../catalog/catalog.js";
 import { VideoStage, GraphStage, StageOutcome } from "./types.js";
@@ -38,8 +38,12 @@ import { neuralToGraph } from "../graph/adapt.js";
 import {
   buildCorpusEntities,
   buildMergeClusters,
+  entityKeyOf,
+  isDeleted,
   readAliases,
+  resolveKey,
 } from "../graph/canonicalize.js";
+import { readAliasesFile } from "../graph/aliases-schema.js";
 import {
   EntityIndexEntry,
   EntityVideosIndex,
@@ -55,6 +59,9 @@ import { extractClaims, attachTruthiness } from "../truth/per-claim.js";
 import { propagate } from "../truth/propagation.js";
 import { buildConflictReport } from "../truth/contradictions.js";
 import { detectNovel } from "../truth/novel.js";
+import { buildClaimIndexes } from "../truth/claim-indexes.js";
+import { computeEdgeTruth } from "../truth/edge-truth.js";
+import type { Claim } from "../claims/types.js";
 import { logger } from "../shared/logger.js";
 
 // Helper: load a parsed transcript from disk or return null.
@@ -132,6 +139,7 @@ export const entitiesStage: VideoStage = {
     // AI bundle may reference stale entity ids; nuke it and mark any
     // existing response stale.
     invalidateAiArtifacts(row.videoId, ctx.dataDir);
+    markClaimsStale(row.videoId, ctx.dataDir, "entities regenerated");
 
     const { entities } = neuralToGraph(persisted, null);
     const store = ctx.getStore();
@@ -210,6 +218,7 @@ export const relationsStage: VideoStage = {
     }
 
     invalidateAiArtifacts(row.videoId, ctx.dataDir);
+    markClaimsStale(row.videoId, ctx.dataDir, "relations regenerated");
 
     const { relationships } = neuralToGraph(persistedEntities, persistedRelations);
     const store = ctx.getStore();
@@ -248,6 +257,25 @@ function responseDir(dataDir: string): string {
 // but preserve the response — it is operator labor. Instead, stamp a
 // top-level `_stale` marker into the response JSON so the admin UI
 // and CLI can flag it for review.
+// Stamp a top-level `_stale` marker into data/claims/<videoId>.json when
+// an upstream stage (entities, relations) regenerates. The file is never
+// deleted — it represents AI session labor. The UI and CLI read the
+// marker to flag the claims for re-extraction.
+function markClaimsStale(videoId: string, dataDir: string, reason: string): void {
+  const p = join(dataDir, "claims", `${videoId}.json`);
+  if (!existsSync(p)) return;
+  try {
+    const raw = JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>;
+    raw._stale = { since: new Date().toISOString(), reason };
+    writeFileSync(p, JSON.stringify(raw, null, 2), "utf8");
+  } catch (err) {
+    logger.warn("pipeline.claims.stale-mark-failed", {
+      videoId,
+      message: (err as Error).message,
+    });
+  }
+}
+
 function invalidateAiArtifacts(videoId: string, dataDir: string): void {
   const bundlePath = join(bundleDir(dataDir), `${videoId}.bundle.json`);
   if (existsSync(bundlePath)) {
@@ -503,6 +531,158 @@ export const indexesStage: GraphStage = {
   },
 };
 
+// Reads every data/claims/<id>.json, runs claim propagation +
+// contradiction detection, writes three corpus-wide reports alongside the
+// per-video claim files:
+//   data/claims/claims-index.json      flat list with derivedTruth + source tag
+//   data/claims/dependency-graph.json  DAG edges
+//   data/claims/contradictions.json    pair / broken-presupposition / cross-video
+//
+// Operator-set truth overrides and deletions (aliases sections
+// claimTruthOverrides / claimDeletions) are applied before propagation so
+// derived truth respects them. See src/truth/claim-indexes.ts.
+export const claimIndexesStage: GraphStage = {
+  name: "claim-indexes",
+  async run(ctx): Promise<StageOutcome> {
+    const claimsDir = join(ctx.dataDir, "claims");
+    if (!existsSync(claimsDir)) {
+      return { kind: "skip", reason: "data/claims/ missing" };
+    }
+
+    // Exclude the corpus-level reports that live alongside per-video
+    // claim files — they would fail the `claims: Claim[]` shape check
+    // anyway, but skipping them up front avoids noisy logger warnings
+    // on a routine stage run.
+    const CORPUS_REPORT_NAMES = new Set([
+      "claims-index.json",
+      "dependency-graph.json",
+      "contradictions.json",
+      "edge-truth.json",
+    ]);
+    const files = readdirSync(claimsDir).filter(
+      (f) => f.endsWith(".json") && !CORPUS_REPORT_NAMES.has(f),
+    );
+
+    const allClaims: Claim[] = [];
+    let videoCount = 0;
+    for (const f of files) {
+      try {
+        const raw = JSON.parse(
+          readFileSync(join(claimsDir, f), "utf8"),
+        ) as { claims?: Claim[] };
+        if (!Array.isArray(raw.claims)) continue;
+        videoCount += 1;
+        for (const c of raw.claims) allClaims.push(c);
+      } catch (err) {
+        logger.warn("pipeline.claim-indexes.read-failed", {
+          file: f,
+          message: (err as Error).message,
+        });
+      }
+    }
+
+    const aliases = readAliasesFile(ctx.dataDir);
+    const aliasMap = readAliases(ctx.dataDir);
+    const deletedClaimIds = new Set(
+      (aliases.claimDeletions ?? []).map((e) => e.claimId),
+    );
+    const truthOverrides = (aliases.claimTruthOverrides ?? []).map((e) => ({
+      claimId: e.claimId,
+      directTruth: e.directTruth,
+      rationale: e.rationale,
+    }));
+    const fieldOverrides = (aliases.claimFieldOverrides ?? []).map((e) => ({
+      claimId: e.claimId,
+      text: e.text,
+      kind: e.kind as Claim["kind"] | undefined,
+      hostStance: e.hostStance as Claim["hostStance"] | undefined,
+      rationale: e.rationale,
+      tags: e.tags,
+    }));
+    const dismissedContradictions = (aliases.contradictionDismissals ?? []).map(
+      (e) => ({ a: e.a, b: e.b }),
+    );
+    const customContradictions = (aliases.customContradictions ?? []).map(
+      (e) => ({
+        a: e.a,
+        b: e.b,
+        summary: e.summary,
+        sharedEntities: e.sharedEntities,
+      }),
+    );
+
+    const result = buildClaimIndexes({
+      claims: allClaims,
+      videoCount,
+      truthOverrides,
+      deletedClaimIds,
+      fieldOverrides,
+      dismissedContradictions,
+      customContradictions,
+    });
+
+    // Build per-video "persisted edge id → aggregated graph edge id" map
+    // so edge truth can join against relationships-graph.json. Alias
+    // resolution here mirrors the adapter used in the `indexes` stage, so
+    // both outputs agree on the final key.
+    const videoIds = new Set(result.index.claims.map((c) => c.videoId));
+    const perVideoEdgeToGraphEdge = new Map<string, Map<string, string>>();
+    for (const vid of videoIds) {
+      const persistedEntities = readPersistedEntities(vid, ctx.dataDir);
+      const persistedRelations = readPersistedRelations(vid, ctx.dataDir);
+      if (!persistedEntities || !persistedRelations) continue;
+      const mentionToEntityKey = new Map<string, string>();
+      for (const m of persistedEntities.mentions) {
+        mentionToEntityKey.set(m.id, entityKeyOf(m.label, m.canonical));
+      }
+      const rel = new Map<string, string>();
+      for (const pe of persistedRelations.edges) {
+        const subjRaw = mentionToEntityKey.get(pe.subjectMentionId);
+        const objRaw = mentionToEntityKey.get(pe.objectMentionId);
+        if (!subjRaw || !objRaw) continue;
+        if (isDeleted(subjRaw, aliasMap) || isDeleted(objRaw, aliasMap)) continue;
+        const subj = resolveKey(subjRaw, aliasMap);
+        const obj = resolveKey(objRaw, aliasMap);
+        if (subj === obj) continue;
+        rel.set(pe.id, `${subj}|${pe.predicate}|${obj}`);
+      }
+      perVideoEdgeToGraphEdge.set(vid, rel);
+    }
+
+    const edgeTruth = computeEdgeTruth(result.index.claims, perVideoEdgeToGraphEdge);
+
+    writeFileSync(
+      join(claimsDir, "claims-index.json"),
+      JSON.stringify(result.index, null, 2),
+      "utf8",
+    );
+    writeFileSync(
+      join(claimsDir, "dependency-graph.json"),
+      JSON.stringify(result.dependencyGraph, null, 2),
+      "utf8",
+    );
+    writeFileSync(
+      join(claimsDir, "contradictions.json"),
+      JSON.stringify(result.contradictions, null, 2),
+      "utf8",
+    );
+    writeFileSync(
+      join(claimsDir, "edge-truth.json"),
+      JSON.stringify(edgeTruth, null, 2),
+      "utf8",
+    );
+
+    return {
+      kind: "ok",
+      notes:
+        `videos=${videoCount} claims=${allClaims.length} ` +
+        `contradictions=${result.contradictions.total} ` +
+        `edges-with-truth=${edgeTruth.edgeCount}`,
+    };
+  },
+};
+
+
 export const novelStage: GraphStage = {
   name: "novel",
   async run(ctx): Promise<StageOutcome> {
@@ -542,4 +722,5 @@ export const DEFAULT_GRAPH_STAGES: GraphStage[] = [
   contradictionsStage,
   novelStage,
   indexesStage,
+  claimIndexesStage,
 ];

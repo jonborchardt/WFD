@@ -10,7 +10,7 @@
 //     link baked into the body.
 //
 // Triggers:
-//   - Visible ⋯/✎ icon button (always present)
+//   - Visible ✎ pencil icon button (always present)
 //   - shift+click anywhere on the entity chip or relationship row
 //
 // The popover renders through a React portal into document.body with
@@ -21,12 +21,15 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { IS_ADMIN } from "../lib/admin";
+import { colors } from "../theme";
 import {
   deleteEntityIssueUrl,
   renameEntityIssueUrl,
   mergeEntityIssueUrl,
   deleteRelationIssueUrl,
 } from "../lib/issues";
+
+const SURFACE = colors.surface;
 
 export interface EntityRef {
   key: string;        // "person:dan"
@@ -117,9 +120,9 @@ function Popover({ anchor, onClose, children }: PopoverProps) {
     top: rect ? rect.bottom + 4 : 100,
     left: rect ? Math.min(rect.left, window.innerWidth - 320) : 100,
     zIndex: 10000,
-    background: "#2a2a2a",
-    color: "#eee",
-    border: "1px solid #555",
+    background: SURFACE.raised,
+    color: SURFACE.text,
+    border: `1px solid ${SURFACE.border}`,
     borderRadius: 4,
     padding: 6,
     minWidth: 280,
@@ -145,7 +148,7 @@ interface StatusState {
 
 function StatusBanner({ status }: { status: StatusState }) {
   if (!status.kind) return null;
-  const bg = status.kind === "ok" ? "#1b5e20" : "#b71c1c";
+  const bg = status.kind === "ok" ? SURFACE.successBanner : SURFACE.errorBanner;
   return (
     <div style={{ background: bg, color: "white", padding: "4px 6px", borderRadius: 3, marginTop: 4, fontSize: 12 }}>
       {status.kind === "ok" ? "✓ " : "✗ "}{status.message}
@@ -170,12 +173,20 @@ export function EntityMenuButton(props: EntityMenuProps) {
       <button
         ref={btnRef}
         onClick={(e) => { e.stopPropagation(); setOpen(true); }}
-        title="entity actions"
+        title="edit entity"
+        aria-label="edit entity"
         style={{
           border: "none", background: "none", cursor: "pointer",
-          padding: "0 4px", fontSize: 14, color: "#888",
+          padding: "0 4px", color: SURFACE.fallback,
+          display: "inline-flex", alignItems: "center",
         }}
-      >⋯</button>
+      >
+        {/* pencil icon — inline SVG keeps the button free of MUI
+            IconButton styling so it fits tightly inside entity chips */}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+        </svg>
+      </button>
       {open && btnRef.current && (
         <Popover anchor={btnRef.current} onClose={() => setOpen(false)}>
           {IS_ADMIN ? (
@@ -220,9 +231,9 @@ function AdminEntityMenu({
   }
 
   const header = (
-    <div style={{ padding: "4px 6px", borderBottom: "1px solid #555", marginBottom: 4 }}>
+    <div style={{ padding: "4px 6px", borderBottom: `1px solid ${SURFACE.border}`, marginBottom: 4 }}>
       <strong>{entity.canonical}</strong>
-      <div style={{ fontSize: 11, color: "#aaa" }}>
+      <div style={{ fontSize: 11, color: SURFACE.textMuted }}>
         [{entity.label}] · <code>{entity.key}</code>
       </div>
     </div>
@@ -284,9 +295,9 @@ function PublicEntityMenu({
   const [action, setAction] = useState<"" | "rename" | "merge">("");
   const [renameText, setRenameText] = useState(entity.canonical);
   const header = (
-    <div style={{ padding: "4px 6px", borderBottom: "1px solid #555", marginBottom: 4 }}>
+    <div style={{ padding: "4px 6px", borderBottom: `1px solid ${SURFACE.border}`, marginBottom: 4 }}>
       <strong>{entity.canonical}</strong>
-      <div style={{ fontSize: 11, color: "#aaa" }}>[{entity.label}]</div>
+      <div style={{ fontSize: 11, color: SURFACE.textMuted }}>[{entity.label}]</div>
     </div>
   );
 
@@ -309,7 +320,7 @@ function PublicEntityMenu({
       <div>
         {header}
         <div style={{ padding: "4px 6px" }}>
-          <div style={{ fontSize: 11, color: "#aaa", marginBottom: 2 }}>Suggested display:</div>
+          <div style={{ fontSize: 11, color: SURFACE.textMuted, marginBottom: 2 }}>Suggested display:</div>
           <input
             autoFocus
             type="text"
@@ -423,11 +434,11 @@ function MergePicker({
             key={r.key}
             onClick={() => doMerge(r.key, r.canonical)}
             style={rowStyle}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#3a3a3a")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = SURFACE.hover)}
             onMouseLeave={(e) => (e.currentTarget.style.background = "")}
           >
             <strong>{r.canonical}</strong>{" "}
-            <span style={{ fontSize: 11, color: "#aaa" }}>
+            <span style={{ fontSize: 11, color: SURFACE.textMuted }}>
               ({r.mentions} mentions, {r.videos} videos)
             </span>
           </div>
@@ -435,15 +446,15 @@ function MergePicker({
         {q.trim() && !hasExact && (
           <div
             onClick={() => doCreatePhantom(q.trim())}
-            style={{ ...rowStyle, borderTop: "1px dashed #555", marginTop: 4, color: "#4fc3f7" }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#3a3a3a")}
+            style={{ ...rowStyle, borderTop: `1px dashed ${SURFACE.border}`, marginTop: 4, color: SURFACE.accentLink }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = SURFACE.hover)}
             onMouseLeave={(e) => (e.currentTarget.style.background = "")}
           >
             + create new: <strong>"{q.trim()}"</strong>
           </div>
         )}
         {!q && results.length === 0 && (
-          <div style={{ padding: 6, fontSize: 11, color: "#aaa" }}>type to search</div>
+          <div style={{ padding: 6, fontSize: 11, color: SURFACE.textMuted }}>type to search</div>
         )}
       </div>
       <div style={{ marginTop: 4 }}>
@@ -494,11 +505,11 @@ function MergePickerPublic({
               onCancel();
             }}
             style={rowStyle}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#3a3a3a")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = SURFACE.hover)}
             onMouseLeave={(e) => (e.currentTarget.style.background = "")}
           >
             <strong>{r.canonical}</strong>{" "}
-            <span style={{ fontSize: 11, color: "#aaa" }}>
+            <span style={{ fontSize: 11, color: SURFACE.textMuted }}>
               ({r.mentions} mentions)
             </span>
           </div>
@@ -523,7 +534,7 @@ function RenameInput({
   const [v, setV] = useState(entity.canonical);
   return (
     <div style={{ padding: "4px 6px" }}>
-      <div style={{ fontSize: 11, color: "#aaa", marginBottom: 2 }}>
+      <div style={{ fontSize: 11, color: SURFACE.textMuted, marginBottom: 2 }}>
         Display text (key unchanged):
       </div>
       <input
@@ -547,7 +558,7 @@ function MenuItem({ children, onClick }: { children: React.ReactNode; onClick: (
     <div
       onClick={onClick}
       style={{ padding: "6px 8px", cursor: "pointer", borderRadius: 3 }}
-      onMouseEnter={(e) => (e.currentTarget.style.background = "#3a3a3a")}
+      onMouseEnter={(e) => (e.currentTarget.style.background = SURFACE.hover)}
       onMouseLeave={(e) => (e.currentTarget.style.background = "")}
     >
       {children}
@@ -558,11 +569,11 @@ function MenuItem({ children, onClick }: { children: React.ReactNode; onClick: (
 const inputStyle: React.CSSProperties = {
   width: "100%",
   padding: 4,
-  border: "1px solid #555",
+  border: `1px solid ${SURFACE.border}`,
   borderRadius: 3,
   fontSize: 13,
-  background: "#1a1a1a",
-  color: "#eee",
+  background: SURFACE.base,
+  color: SURFACE.text,
   boxSizing: "border-box",
 };
 
@@ -598,7 +609,7 @@ export function RelationMenuButton(props: RelationMenuProps) {
         title="relationship actions"
         style={{
           border: "none", background: "none", cursor: "pointer",
-          padding: "0 4px", fontSize: 13, color: "#888",
+          padding: "0 4px", fontSize: 13, color: SURFACE.fallback,
         }}
       >✎</button>
       {open && btnRef.current && (
@@ -637,9 +648,9 @@ function RelationMenuBody({
 
   return (
     <div>
-      <div style={{ padding: "4px 6px", borderBottom: "1px solid #555", marginBottom: 4 }}>
+      <div style={{ padding: "4px 6px", borderBottom: `1px solid ${SURFACE.border}`, marginBottom: 4 }}>
         <strong>{relation.subject.canonical}</strong>{" "}
-        <span style={{ color: "#aaa" }}>{relation.predicate}</span>{" "}
+        <span style={{ color: SURFACE.textMuted }}>{relation.predicate}</span>{" "}
         <strong>{relation.object.canonical}</strong>
       </div>
       {IS_ADMIN ? (

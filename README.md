@@ -17,14 +17,31 @@ and contradictions **traceable**.
   how they connect to everything else in the corpus.
 - **Click any edge** to jump straight to the transcript span — and the video
   timestamp — where the claim was made.
+- **Read thesis-level claims per video** with truth + confidence bars,
+  expandable evidence quotes, dependency chips
+  (`supports` / `contradicts` / `presupposes` / `elaborates`), and cross-claim
+  contradictions flagged inline.
 - **See contradictions.** When two sources disagree, both claims are kept and
-  surfaced side-by-side instead of one silently winning.
+  surfaced side-by-side instead of one silently winning. Tabbed browser for
+  pair / broken-presupposition / cross-video / manual kinds.
+- **Color the relationships graph by truth.** Edges can be shaded red→green
+  based on the derived truth of the claims that cite them.
+- **Walk the claim graph.** A dedicated view renders claims as nodes with
+  dependency, contradiction, and shared-evidence links — seed by entity,
+  video, or single claim.
+- **Run counterfactuals.** "What if this claim were false?" replays truth
+  propagation with that claim pinned and shows which others move and by how
+  much.
+- **Search by tag.** Every claim and contradiction is filterable by free-form
+  tag (e.g. `ufo`, `project-blue-book`, `cold-war`).
 - **See novel links.** Connections that emerge from combining multiple sources,
   which no single video states directly, are flagged for review.
 - **Speaker credibility over time.** Skeptic scoring tracks how a given speaker's
   claims have held up across the corpus.
-- **Suggest an edit** on any entity or relationship from the public site —
-  opens a prefilled GitHub issue so the corpus can be corrected over time.
+- **Suggest an edit** on any entity, relationship, claim, or contradiction
+  from the public site — opens a prefilled GitHub issue so the corpus can be
+  corrected over time. Admin can apply the suggestion with a one-click
+  localhost link included in the issue body.
 
 ## How it works
 
@@ -47,9 +64,21 @@ The pipeline runs roughly in this order:
    override system — see below) before writing the graph.
 8. **Truth** — per-claim truthiness is scored and propagated across the graph.
    Contradictions and circular reasoning are detected.
-9. **Skeptic** — per-speaker credibility is derived from how their claims fare.
-10. **Web UI** — a public, read-only site lets anyone navigate the map and
-    trace claims back to source.
+9. **Claims** — an AI pass reads each transcript alongside the extracted
+   entities/relations and writes thesis-level claims to
+   `data/claims/<videoId>.json`: text, kind, evidence quotes, truth score,
+   dependencies on other claims, optional tags.
+10. **Claim indexes** — a graph-level stage aggregates every per-video claim
+    file into corpus-wide reports (`claims-index.json`, `dependency-graph.json`,
+    `contradictions.json`, `edge-truth.json`). Runs claim propagation +
+    contradiction detection (pair / broken-presupposition / cross-video /
+    admin-authored manual). Applies operator overrides from `aliases.json`
+    before reasoning.
+11. **Skeptic** — per-speaker credibility is derived from how their claims fare.
+12. **Web UI** — a public, read-only site lets anyone navigate the map and
+    trace claims back to source. A separate admin build adds write endpoints
+    to edit claim truth, text, tags, and contradictions — all through
+    `data/aliases.json` so per-video files stay immutable.
 
 ## Ground rules
 
@@ -150,6 +179,92 @@ lets you curate the corpus without touching per-video extraction output:
 
 All overrides live in `data/aliases.json` as a flat append-only file. See
 [CLAUDE.md](CLAUDE.md) for the full schema.
+
+#### Bulk curation (AI-driven)
+
+When new videos are added, per-video short-name → full-name coreference
+(e.g. `person:paul` → `person:paul mccartney` in a Beatles video) needs
+to be re-proposed across the corpus. Rather than curating every entity by
+hand, invoke the **[ai-alias-curation](.claude/skills/ai-alias-curation/SKILL.md)**
+skill from Claude Code:
+
+```
+# In a Claude Code session:
+"run alias curation"
+```
+
+It runs [src/ai/curate/](src/ai/curate/) over the whole corpus — propose,
+inspect, apply, rebuild — in ~25 seconds. The heuristic respects existing
+`notSame` pairs and operator decisions. Every write is reversible via the
+⋯ menu on `/admin/aliases` or by restoring `_curate_tmp/aliases.before.json`.
+
+#### Claim extraction (AI-driven, per-video)
+
+Each video also gets 3–15 thesis-level claims with evidence quotes,
+direct-truth scores, and cross-claim dependencies — written to
+`data/claims/<id>.json` by an AI session. Invoke the
+**[ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)**
+skill from Claude Code:
+
+```
+# In a Claude Code session, after a few new videos were ingested:
+"extract claims for 5 videos"
+# Or for full-corpus parallel runs:
+"extract claims for 50 videos using 5 parallel agents"
+```
+
+It runs [src/ai/claims/](src/ai/claims/) — picks N videos that have
+entities + relations but no claim file yet, packages each input
+bundle, validates each write, and prints a per-video timing summary.
+Resumable across sessions: `pick-videos.mjs` filters out done videos
+automatically, so a killed session re-picks only the gaps.
+
+For corpus health gaps that block claim extraction (videos with
+unavailable transcripts or empty NER output), see
+[plans/04-claims-coverage-gaps.md](plans/04-claims-coverage-gaps.md).
+
+### When a new video is added — full workflow
+
+End-to-end runbook for one or more new videos. Each step is idempotent
+and only stale work runs, so re-running the whole sequence is always
+safe.
+
+```bash
+# 1. Add the video(s).
+npm run add -- "https://www.youtube.com/watch?v=VIDEOID"
+#    Or batch via data/seeds/videos.txt + npm run ingest.
+
+# 2. Fetch transcripts.
+npm run ingest
+
+# 3. Run all per-video pipeline stages (entities → date-normalize →
+#    relations → ai → per-claim) and graph-level stages (propagation,
+#    contradictions, novel, indexes).
+npm run pipeline
+```
+
+Then in a Claude Code session, run the two AI skills:
+
+```
+# 4. Re-curate aliases against the expanded corpus
+#    (per-video coreference, deletes [music] artifacts, etc.).
+"run alias curation"
+
+# 5. Write claim files for the new videos.
+#    For 1–10 new videos, sequential is fine:
+"extract claims for 10 videos"
+#    For larger batches, parallelize across agents:
+"extract claims for 50 videos using 5 parallel agents"
+```
+
+After all five steps, the new videos are queryable on
+`http://localhost:4173/admin/video/:id` (admin) and on the public
+site after a `web && npm run build` + deploy.
+
+If any video shows up with empty entities/relations after step 3 or
+gets skipped by the claim extraction in step 5, follow
+[plans/04-claims-coverage-gaps.md](plans/04-claims-coverage-gaps.md)
+to diagnose the upstream NER failure.
 
 ### Source tree
 

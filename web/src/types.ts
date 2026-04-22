@@ -126,6 +126,130 @@ export interface VideoNlp {
   relationships: DisplayRelationship[];
 }
 
+// ---- Claims (Plan 2 / 3 / 5) -----------------------------------------
+
+export type ClaimKind =
+  | "empirical"
+  | "historical"
+  | "speculative"
+  | "opinion"
+  | "definitional";
+
+export type DependencyKind =
+  | "supports"
+  | "contradicts"
+  | "presupposes"
+  | "elaborates";
+
+export type HostStance = "asserts" | "denies" | "uncertain" | "steelman";
+
+export type TruthSource = "direct" | "derived" | "override" | "uncalibrated";
+
+export interface ClaimEvidence {
+  transcriptId: string;
+  charStart: number;
+  charEnd: number;
+  timeStart: number;
+  timeEnd: number;
+  quote: string;
+}
+
+export interface ClaimDependency {
+  target: string;
+  kind: DependencyKind;
+  rationale?: string | null;
+}
+
+export interface Claim {
+  id: string;
+  videoId: string;
+  text: string;
+  kind: ClaimKind;
+  entities: string[];
+  relationships: string[];
+  evidence: ClaimEvidence[];
+  confidence: number;
+  directTruth?: number | null;
+  rationale: string;
+  dependencies?: ClaimDependency[];
+  inVerdictSection?: boolean;
+  hostStance?: HostStance | null;
+  tags?: string[];
+}
+
+export interface PersistedClaims {
+  schemaVersion: 1;
+  transcriptId: string;
+  generatedAt: string;
+  generator: string;
+  claims: Claim[];
+  _stale?: { since: string; reason: string };
+}
+
+export interface ClaimsIndexEntry extends Omit<Claim,
+  "evidence" | "rationale" | "dependencies" | "tags"
+> {
+  derivedTruth: number | null;
+  truthSource: TruthSource;
+  overrideRationale?: string;
+  dependencies: ClaimDependency[];
+  tags: string[];
+  fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale" | "tags">;
+}
+
+export interface ClaimsIndexFile {
+  generatedAt: string;
+  videoCount: number;
+  claimCount: number;
+  propagation: {
+    iterations: number;
+    maxDelta: number;
+    claimsWithDerived: number;
+  };
+  claims: ClaimsIndexEntry[];
+}
+
+export interface DependencyGraphFile {
+  generatedAt: string;
+  edges: Array<{
+    from: string;
+    to: string;
+    kind: DependencyKind;
+    rationale: string | null;
+  }>;
+  edgeCount: number;
+}
+
+export interface ClaimContradiction {
+  kind: "pair" | "broken-presupposition" | "cross-video" | "manual";
+  left: string;
+  right: string;
+  sharedEntities?: string[];
+  similarity?: number;
+  matchReason?: "jaccard" | "strong-overlap";
+  summary: string;
+}
+
+export interface ContradictionsFile {
+  generatedAt: string;
+  total: number;
+  byKind: Record<string, number>;
+  contradictions: ClaimContradiction[];
+}
+
+export interface EdgeTruthEntry {
+  edgeId: string;
+  truth: number;
+  claimCount: number;
+  supportingClaimIds: string[];
+}
+
+export interface EdgeTruthFile {
+  generatedAt: string;
+  edgeCount: number;
+  edges: Record<string, EdgeTruthEntry>;
+}
+
 export interface CatalogColumn {
   key: string;
   label: string;

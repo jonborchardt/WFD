@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "B70KYVTJ1is",
+  "generatedAt": "2026-04-20T02:45:00.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "B70KYVTJ1is:c_0001",
+      "videoId": "B70KYVTJ1is",
+      "text": "Scottish engineer and Oxford professor Alexander Thom surveyed hundreds of European megalithic sites and identified a single recurring unit of measurement — exactly 2.72 ft (0.829 m) — that he called the 'megalithic yard'.",
+      "kind": "historical",
+      "entities": [
+        "person:alexander tom",
+        "person:tom",
+        "nationality_or_ethnicity:scottish",
+        "role:engineer",
+        "role:professor",
+        "organization:oxford university",
+        "location:megalithic yard",
+        "quantity:0.829 m"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 270,
+          "charEnd": 357,
+          "timeStart": 17.52,
+          "timeEnd": 31.279,
+          "quote": "Then\ncame Alexander Tom, a Scottish engineer,\nan Oxford professor obsessed with\nnumbers"
+        },
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 476,
+          "charEnd": 521,
+          "timeStart": 33.719,
+          "timeEnd": 43.079,
+          "quote": "A single unit of\nmeasurement, exactly 2.72 ft"
+        },
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 655,
+          "charEnd": 688,
+          "timeStart": 48,
+          "timeEnd": 55.44,
+          "quote": "Tom called it the\nmegalithic yard"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.85,
+      "rationale": "Alexander Thom (1894-1985) was a real engineer and Oxford professor who surveyed several hundred British megalithic sites between roughly 1934 and 1980 and proposed the megalithic yard (~0.829 m / 2.72 ft) in his books 'Megalithic Sites in Britain' (1967) and 'Megalithic Lunar Observatories' (1971). All these biographical and definitional facts are accurate.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0002",
+      "videoId": "B70KYVTJ1is",
+      "text": "The Ring of Brodgar in Scotland was originally laid out as 60 stones in a perfect circle 340 ft in diameter — accurate to within half an inch and matching ancient Mesopotamian sexagesimal (base-60) numerology.",
+      "kind": "empirical",
+      "entities": [
+        "location:broadgar",
+        "location:scotland",
+        "quantity:60",
+        "quantity:27 stones",
+        "quantity:340 ft",
+        "location:ancient mesopotamia"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 5194,
+          "charEnd": 5297,
+          "timeStart": 358.919,
+          "timeEnd": 370.12,
+          "quote": "The ring of Broadgar in\nScotland has 27 stones set in a perfect\ncircle, but it was originally 60 stones"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.55,
+      "rationale": "Brodgar (c. 2500 BCE) is generally believed to have originally had ~60 stones, of which 27 still stand; its diameter is roughly 104 m (~341 ft). The half-inch precision claim is contested among archaeologists — Thom's measurements suggested high precision, but later surveys (Ruggles, Burl) report more variability. Linking it to Mesopotamian base-60 is post-hoc numerology rather than evidenced cultural transmission; the link is suggestive but not historically established.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0003",
+      "videoId": "B70KYVTJ1is",
+      "text": "Stonehenge's sarsen circle has a perimeter of exactly 120 megalithic yards and per-stone width of 2.5 megalithic yards, embedding Pythagorean-triangle geometry into its layout thousands of years before Pythagoras.",
+      "kind": "empirical",
+      "entities": [
+        "location:stonehenge",
+        "location:sarsson circle",
+        "quantity:megalithic yards",
+        "person:pythagoras"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 5577,
+          "charEnd": 5664,
+          "timeStart": 387.319,
+          "timeEnd": 399.039,
+          "quote": "The perimeter of the\nSarsson circle at Stonehenge measures\nexactly 120 megalithic yards"
+        },
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 5836,
+          "charEnd": 5915,
+          "timeStart": 407,
+          "timeEnd": 417.44,
+          "quote": "Evidence of Pythagorean triangles\nthousands of years before Pythagoras was\nborn"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "rationale": "The 120-MY sarsen-circle perimeter is one of Thom's most-cited claimed coincidences. Its precision is debated: the sarsen circle has ~30 uprights with center-to-center spacing roughly consistent with the claim, but stones are not perfectly regular. The 'Pythagorean triangles before Pythagoras' framing trades on Pythagoras-the-person vs Pythagoras-the-theorem — the theorem was known empirically in Babylonian and Egyptian engineering well before its Greek formalization, so 'thousands of years before' is technically true but rhetorically loaded.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "B70KYVTJ1is:c_0001",
+          "kind": "supports",
+          "rationale": "Specific instance of the megalithic yard claim"
+        }
+      ]
+    },
+    {
+      "id": "B70KYVTJ1is:c_0004",
+      "videoId": "B70KYVTJ1is",
+      "text": "Some researchers believe the megalithic yard derives from a base-360-degree-equivalent system in which each degree × 60 arc-min × 6 arcsec × 3606 megalithic yards yields the Earth's circumference — implying Stone Age people measured the planet's size.",
+      "kind": "speculative",
+      "entities": [
+        "location:earth",
+        "quantity:3606 megalithic yards",
+        "quantity:each degree",
+        "quantity:60 minutes"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 7360,
+          "charEnd": 7398,
+          "timeStart": 510.879,
+          "timeEnd": 517.839,
+          "quote": "you get the\ncircumference of the earth"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "rationale": "This is essentially Christopher Knight & Alan Butler's 'Civilization One' (2004) theory. The arithmetic is contrived: any sufficiently flexible combination of constants can be made to approximate Earth's circumference. There is no archaeological evidence Neolithic people knew Earth was round, let alone its circumference; that knowledge is firmly attributed to Eratosthenes (~240 BCE). Numerological fitting is being mistaken for genuine cosmological insight.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0005",
+      "videoId": "B70KYVTJ1is",
+      "text": "Major megalithic sites form geometric triangles across the British landscape — Stonehenge/Avebury/Glastonbury Tor make an isosceles triangle whose long sides are exactly 19,000 megalithic yards and whose vertex angle is 23.5°, matching Earth's axial tilt.",
+      "kind": "speculative",
+      "entities": [
+        "location:stonehenge",
+        "location:avery",
+        "location:glassenbury",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 11565,
+          "charEnd": 11630,
+          "timeStart": 816.88,
+          "timeEnd": 826.16,
+          "quote": "Stonehenge, Avery, Glassenbury to they\nformed an isosles triangle"
+        },
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 11700,
+          "charEnd": 11782,
+          "timeStart": 826.16,
+          "timeEnd": 837.44,
+          "quote": "the angles between\nthem are\n23.5°. That's the same angle of the\nEarth's axial tilt"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "Sacred-geometry / 'ley line' triangulations across British monuments are a popular speculative literature (Tom Brooks, John Michell) but archaeologically dismissed. With ~hundreds of megalithic sites, any chosen three can produce numerically suggestive triangles; selection bias dominates. Earth's axial tilt has also varied between ~22.1° and ~24.5° over Milankovitch cycles, so 'matching 23.5°' is loose. This is the McKay/Vanilla-Ice problem applied to geography.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0006",
+      "videoId": "B70KYVTJ1is",
+      "text": "Stonehenge, Silbury Hill, and Old Sarum form a perfect 3-4-5 Pythagorean triangle in whole megalithic yards — geometry visible only from aerial perspective, raising the question of how Neolithic people achieved it without flight or modern surveying.",
+      "kind": "speculative",
+      "entities": [
+        "location:stonehenge",
+        "location:silbury hill",
+        "location:old sar"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 12505,
+          "charEnd": 12585,
+          "timeStart": 885.6,
+          "timeEnd": 897.199,
+          "quote": "Stonehenge, Silbury Hill, and Old\nSar. The sides form a 345 Pythagorean\ntriangle"
+        },
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 12904,
+          "charEnd": 12991,
+          "timeStart": 911.36,
+          "timeEnd": 921.44,
+          "quote": "These alignments\nweren't visible from the ground. They\ncan only be seen from high above"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.15,
+      "rationale": "Stonehenge–Silbury Hill–Old Sarum is a small-area triangle (the three are within ~30 km), and it does approximate a 3-4-5 ratio if you're flexible with measurement. But sites of comparable cultural status are scattered across Wessex; cherry-picking three out of dozens guarantees that some triangulation will look 'perfect'. The 'visible only from above' framing is rhetorical — Neolithic surveyors didn't need aerial views to lay out triangles using rope-and-stake geometry, which the Egyptians and other cultures provably did.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "B70KYVTJ1is:c_0005",
+          "kind": "elaborates",
+          "rationale": "Same broad geometric-alignment argument with a different triple of sites"
+        }
+      ]
+    },
+    {
+      "id": "B70KYVTJ1is:c_0007",
+      "videoId": "B70KYVTJ1is",
+      "text": "Stone-circle locations correlate with underground water sources, geological fault lines, and Earth's magnetic-field anomalies — Edinburgh University researchers have measured these effects, hinting that the megalithic yard might have been calibrated to Earth's natural electromagnetic 'energy grid'.",
+      "kind": "speculative",
+      "entities": [
+        "location:stone circles",
+        "location:underground streams",
+        "location:underground water sources",
+        "location:geological fault lines",
+        "organization:edinburgh university"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 15606,
+          "charEnd": 15701,
+          "timeStart": 1103.6,
+          "timeEnd": 1113.2,
+          "quote": "Scientists at Edinburgh University found\nthat stone circles often sit above\nunderground streams"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Some 1980s-90s 'Dragon Project' fieldwork (Paul Devereux et al.) reported magnetic anomalies near British stone circles. Replication and sample sizes have been weak; mainstream geophysics regards the 'energy grid' framing as fringe. The Edinburgh attribution is loose. Underground water beneath ancient sites is unsurprising in a wet country with high water tables. Confirmation bias dominates this literature.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0008",
+      "videoId": "B70KYVTJ1is",
+      "text": "The megalithic yard (0.829 m) corresponds to a wavelength of ~413.6 Hz — close to G♯ above middle C — suggesting the unit was acoustically calibrated, and researchers at Huddersfield report Stonehenge's geometry produces resonant standing waves consistent with this.",
+      "kind": "speculative",
+      "entities": [
+        "quantity:0.829 m",
+        "quantity:413.6 hertz",
+        "location:stonehenge",
+        "organization:university of huddersfield"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 17230,
+          "charEnd": 17322,
+          "timeStart": 1222.64,
+          "timeEnd": 1235.84,
+          "quote": "0.829\nm wavelength is\n413.6 hertz. That's very close to the G\nsharp note just above middle C"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.4,
+      "rationale": "Math: speed of sound (343 m/s) ÷ 0.829 m ≈ 413.7 Hz, which is indeed near G♯4 (~415.3 Hz at standard A=440 tuning). However, deriving cosmic significance from this requires assuming the megalithic yard was a standardized cosmic unit — which is the contested claim itself. The Huddersfield acoustic study (Bruno Fazenda) is real and did find acoustic effects at Stonehenge, but the link to a 'tuned to 413.6 Hz' design intent is well past what the data shows. Suggestive coincidence, not evidence.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0009",
+      "videoId": "B70KYVTJ1is",
+      "text": "The megalithic yard (2.72 ft) numerically matches Euler's number e (2.718…), one of the most fundamental constants in mathematics — implying Neolithic builders embedded deep mathematical knowledge that supposedly shouldn't have existed in the Stone Age.",
+      "kind": "speculative",
+      "entities": [
+        "quantity:2.718",
+        "quantity:2.72",
+        "person:euler",
+        "person:uler"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 18818,
+          "charEnd": 18882,
+          "timeStart": 1330,
+          "timeEnd": 1338.96,
+          "quote": "more precisely\n2.718 is the mathematical constant\neuler's number"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.05,
+      "rationale": "Pure numerological coincidence: 2.72 ft is approximately equal to e (2.71828…). But Thom himself reported the megalithic yard as ~2.72 ft because he back-fitted it to ~0.829 m measurements; the unit isn't fundamentally 'e' in any meaningful sense, since the ft-meter conversion is arbitrary. e is dimensionless; a length unit cannot 'be' e. The match is a unit-juggling artifact, not a profound discovery.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0010",
+      "videoId": "B70KYVTJ1is",
+      "text": "Archaeologist Clive Ruggles showed Thom's analysis suffered from selection bias — Thom focused on sites and measurements that fit his hypothesis while overlooking many that don't, and no Neolithic measuring rod marked in megalithic yards has ever been found.",
+      "kind": "empirical",
+      "entities": [
+        "person:archaeologist clive rugles",
+        "person:tom",
+        "technology:metal tools"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 20842,
+          "charEnd": 20885,
+          "timeStart": 1480.08,
+          "timeEnd": 1486.88,
+          "quote": "Tom's\nanalysis suffered from selection bias"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Clive Ruggles is a real and well-respected archaeoastronomer who, with Aubrey Burl and others, systematically reanalyzed Thom's data and concluded the megalithic-yard claim was statistically weak — likely artifact of selection bias and pacing/stride averaging rather than a true universal constant. The 'no physical megalithic-yard rod has been found' point is also factually correct. This is one of the strongest counter-arguments to the entire framework.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "B70KYVTJ1is:c_0001",
+          "kind": "contradicts",
+          "rationale": "Directly challenges the validity of Thom's foundational claim"
+        }
+      ]
+    },
+    {
+      "id": "B70KYVTJ1is:c_0011",
+      "videoId": "B70KYVTJ1is",
+      "text": "The megalithic yard's 2.72 ft is roughly the length of a comfortable adult walking stride — measurements clustering around an average human stride could explain the apparent uniformity without invoking a standardized cosmic ruler.",
+      "kind": "empirical",
+      "entities": [
+        "quantity:average",
+        "person:human",
+        "nationality_or_ethnicity:human"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 22006,
+          "charEnd": 22096,
+          "timeStart": 1552.96,
+          "timeEnd": 1564.4,
+          "quote": "The\nlength of 2.72 ft is very close to a\ncomfortable step, especially for\nmeasuring ground"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "This 'pacing hypothesis' is the standard archaeological response to the megalithic-yard claim. Average adult stride length is ~75-90 cm (0.83 m sits comfortably in this range), and many ancient measurement systems (Roman pace, Egyptian double-cubit, etc.) were derived from human-body anatomy. Pacing produces measurements clustering around an average — explaining Thom's data without needing cosmic origins. Strong, parsimonious counter-explanation.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "B70KYVTJ1is:c_0010",
+          "kind": "supports",
+          "rationale": "Specific mechanism for why the apparent uniformity isn't evidence of a precise universal unit"
+        }
+      ]
+    },
+    {
+      "id": "B70KYVTJ1is:c_0012",
+      "videoId": "B70KYVTJ1is",
+      "text": "Some Stonehenge-era sites genuinely do encode complex astronomical cycles — Stonehenge's Aubrey-circle 56-hole pattern aligns with a 56-year eclipse-prediction cycle that ancient Greeks and Babylonians could not yet calculate.",
+      "kind": "empirical",
+      "entities": [
+        "location:stone circles",
+        "location:arbory circle",
+        "location:stonehenge",
+        "person:ancient greeks",
+        "event:eclipses"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 23067,
+          "charEnd": 23191,
+          "timeStart": 1617.76,
+          "timeEnd": 1629.84,
+          "quote": "Some stone circles predict\neclipses. The Arbory Circle at\nStonehenge aligned with a complex\n56-year eclipse prediction cycle"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "The Aubrey holes (56 of them) are real, and astronomer Gerald Hawkins (1965) and Fred Hoyle (1966) proposed they could be used as eclipse-prediction counters via a 56-year cycle (≈3 × Saros). Whether the Neolithic builders intended them for that purpose is heavily debated — many archaeologists view it as post-hoc pattern matching. The 'Babylonians couldn't predict eclipses' claim is wrong; Babylonian astronomers tracked the Saros cycle by ~700 BCE. The host overstates the case.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "B70KYVTJ1is:c_0013",
+      "videoId": "B70KYVTJ1is",
+      "text": "AJ's verdict: Alexander Thom is a hero whose surveys forced archaeology to take Neolithic sites seriously, but a single, millimeter-precise universal megalithic yard probably doesn't exist — the real, more interesting mystery is why these advanced builders abruptly stopped building.",
+      "kind": "opinion",
+      "entities": [
+        "person:alexander tom",
+        "person:tom"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 23579,
+          "charEnd": 23610,
+          "timeStart": 1651.44,
+          "timeEnd": 1656.08,
+          "quote": "I think Alexander Tom is a hero"
+        },
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 24843,
+          "charEnd": 24935,
+          "timeStart": 1738.039,
+          "timeEnd": 1747.679,
+          "quote": "The real mystery to me is not\nhow our ancestors built these monuments.\nIt's why they stopped"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "The host's editorial wrap-up. He gives credit where due (Thom's careful surveying genuinely advanced the field) while declining to endorse the strong universalist version of the megalithic-yard hypothesis. The pivot to 'why did they stop?' is opinion-laden setup for the host's separate skepticism about Göbekli Tepe excavation policies. directTruth omitted because this is a values/opinion summary.",
+      "hostStance": "uncertain",
+      "inVerdictSection": true,
+      "dependencies": [
+        {
+          "target": "B70KYVTJ1is:c_0010",
+          "kind": "supports",
+          "rationale": "The host explicitly accepts the Ruggles selection-bias critique"
+        }
+      ]
+    },
+    {
+      "id": "B70KYVTJ1is:c_0014",
+      "videoId": "B70KYVTJ1is",
+      "text": "Modern experimental archaeology has shown the construction logistics — Julian Richards demonstrated in the 1990s that 140 people using only Neolithic tools can move a 40-ton stone, undermining the idea that the engineering required impossibly advanced technology.",
+      "kind": "empirical",
+      "entities": [
+        "person:julian richards",
+        "organization:archaeologists",
+        "quantity:140 people",
+        "technology:neolithic tools"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "B70KYVTJ1is",
+          "charStart": 24331,
+          "charEnd": 24449,
+          "timeStart": 1700.88,
+          "timeEnd": 1715.12,
+          "quote": "in the '90s,\narchaeologist Julian Richards\ndemonstrated how 140 people could move a\n40 ton stone using Neolithic tools"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Julian Richards is a real BBC-archaeologist (Time Team era) who staged a famous Stonehenge-stone-moving experiment in 1996 for the documentary 'Secrets of Lost Empires'. The team did move a ~40-ton sarsen replica using ropes, sledges, and rollers. Logistics-wise, the demonstration is solid evidence that 'impossible' is overstated. This is the standard mainstream-archaeology counter to fringe-technology claims.",
+      "hostStance": "asserts"
+    }
+  ]
+}

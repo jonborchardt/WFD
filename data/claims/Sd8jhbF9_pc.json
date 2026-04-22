@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "Sd8jhbF9_pc",
+  "generatedAt": "2026-04-20T04:01:10.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "Sd8jhbF9_pc:c_0001",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "Sanju Bhagat, a poor farmer from Nagpur, India, lived from his early 20s onward with a steadily growing abdominal bulge that his villagers mocked as making him look pregnant — and were unwittingly close to the truth.",
+      "kind": "historical",
+      "entities": [
+        "person:sanju bhagat",
+        "person:sanju",
+        "location:nagpur",
+        "role:farmer",
+        "quantity:20s"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 0,
+          "charEnd": 460,
+          "timeStart": 3.679,
+          "timeEnd": 38,
+          "quote": "sanju bhagat is a farmer from nagpur\nindia and his life was pretty normal\nuntil his 20s when he started to develop\na small bulge in his stomach\nas the years went on the bulge grew\nlarger and people from his village would\ntease him that he looked like he was\npregnant\nthey didn't know how close to the truth\nthey were\n[Music]\nsanju's childhood was normal he had no\nmedical issues at least none that he was\naware of he never showed signs of a\ntumor or any pain n"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.92,
+      "rationale": "Sanju Bhagat is a real, well-documented case widely covered by the BBC, NBC News, and multiple medical journals. Born in Nagpur, India; lived as a farmer with a growing abdominal mass. Biographical sketch is consistent with reporting.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0002",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "In 1999 at age 36 Sanju collapsed from breathing difficulty and was rushed to a Mumbai hospital, where Dr. Ajay Mehta diagnosed what he believed was a tumor large enough to be compressing Sanju's diaphragm.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1999",
+        "quantity:age of 36",
+        "person:sanju",
+        "location:mumbai",
+        "facility:hospital",
+        "person:dr ajay meadow"
+      ],
+      "relationships": ["r_0003", "r_0006"],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 920,
+          "charEnd": 1460,
+          "timeStart": 59.199,
+          "timeEnd": 93.439,
+          "quote": "trouble breathing so in 1999 at\nthe age of 36 sanju collapsed when he\ncouldn't catch his breath he was rushed\nby an ambulance to a hospital in mumbai\ndr ajay meadow was on duty that day and\nimmediately thought this was a tumor and\nhe said the tumor was so large that it\nwas pressing on sanju's diaphragm\ndisrupting his ability to breathe now\nthe doctors knew they had to remove the\ntumor as quickly as possible to save\nsanju's life now as they prepared for\nsurgery the medical staff noticed\nsomething strange the tumor was actually\nfeeding "
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Dr. Ajay Mehta at Tata Memorial Hospital in Mumbai (transcribed as 'meadow') performed the 1999 surgery. The transcript misspells the surgeon's name across mentions but the underlying historical event is well-attested in media interviews with Mehta himself.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {"target": "Sd8jhbF9_pc:c_0001", "kind": "elaborates"}
+      ]
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0003",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "When Dr. Mehta opened Sanju's abdomen during emergency surgery, he discovered the mass was not a tumor but a deformed living fetus — Sanju's twin brother — with arms, legs, bones, hair, jaw, and teeth that had grown inside him for 36 years.",
+      "kind": "historical",
+      "entities": [
+        "person:sanju",
+        "person:dr metta",
+        "person:dr mehta",
+        "person:dr meta",
+        "person:fetus",
+        "quantity:gallons"
+      ],
+      "relationships": ["r_0009"],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 1452,
+          "charEnd": 1920,
+          "timeStart": 89.52,
+          "timeEnd": 123.28,
+          "quote": "feeding on the contents of sanji's\nstomach and when dr meta made the\nincision gallons of fluid came out\nhe was then horrified to find this\nwasn't a tumor at all\nwhen dr metta tried to extract a large\ntumor from sanji's stomach he said to my\nsurprise and horror i could shake hands\nwith somebody inside dr mehta realized\nthis wasn't a tumor at all it was\nactually the mutated body of sanju's\ntwin brother the deformed fetus had arms\nand legs bones hair a jaw teeth and\n"
+        },
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 1920,
+          "charEnd": 2400,
+          "timeStart": 121.119,
+          "timeEnd": 153.68,
+          "quote": "somehow sanju had carried the fetus\ninside his body since birth and for 36\nyears it continued to live and grow now\nthis medical condition is very rare it's\ncalled fetus infidu and it's defined as\nthe presence of one twin inside the body\nof another which survives like a\nparasite the fetus forms a cord like an\numbilical cord that leeches blood and\nnutrients from its host now only 200\ncases of fetus infetu have ever been\nreported the earliest case occurred in\nthe early 19th cent"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The fetus-in-fetu finding and Mehta's now-famous 'I could shake hands with somebody inside' quote are accurate to the published surgical account. One small caution: framings like 'continued to live and grow for 36 years' are dramatic — fetus in fetu specimens have rudimentary growth driven by host blood supply but lack independent life in any meaningful sense; they are non-viable parasitic teratoma-adjacent twins.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {"target": "Sd8jhbF9_pc:c_0002", "kind": "elaborates"}
+      ]
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0004",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "Fetus in fetu is an extremely rare congenital condition — only about 200 cases reported since the early 19th century, when German anatomist Johann Meckel first described it — in which a blastocyst divides unevenly during embryo development and one twin becomes encapsulated inside the other.",
+      "kind": "definitional",
+      "entities": [
+        "person:johann meckel",
+        "nationality_or_ethnicity:german",
+        "date_time:the early 19th century",
+        "quantity:200 cases",
+        "person:woman",
+        "person:fetus",
+        "event:miscarriage"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 2300,
+          "charEnd": 2700,
+          "timeStart": 142.239,
+          "timeEnd": 171.68,
+          "quote": " 200\ncases of fetus infetu have ever been\nreported the earliest case occurred in\nthe early 19th century it was discovered\nby johann meckel a german anatomist now\nin that case a woman who insisted she\nwasn't pregnant gave birth to a deformed\nfetus and doctors soon learned that\nshe'd actually carried her twin her\nentire life now fetus infeto happens\nearly in embryo development when it's\njust a ball "
+        },
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 2700,
+          "charEnd": 3200,
+          "timeStart": 166.56,
+          "timeEnd": 200.319,
+          "quote": "of cells called a blastocyst\nnow it's rare but sometimes a blastocyst\ndivides and grows twin fetuses but in\nthis rare case they divide unevenly and\none fetus gets stuck inside the other\nnow most of the time the condition is\nfatal to both twins which causes a\nmiscarriage but on some very rare\noccasions one or both survive delivery\nthe condition usually goes unnoticed\nuntil the parasitic twin grows so large\nit actually causes discomfort in the\nhost as was the case with sanju bhagat\nmedical reports"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The 200-cases figure is consistent with medical literature (range typically reported 100-200 worldwide). Johann Friedrich Meckel the Younger did describe early cases in the 19th century. The blastocyst-uneven-division mechanism is the standard etiological hypothesis, though some pathologists treat fetus in fetu as a highly differentiated teratoma rather than a true monozygotic twinning event — the boundary is debated.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0005",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "After the surgery Sanju lost more than half his body weight — dropping from 200 to 88 pounds — and although doctors called the case a medical miracle, Sanju described his condition as a source of misery and shame rather than wonder.",
+      "kind": "historical",
+      "entities": [
+        "person:sanju",
+        "person:sanji",
+        "quantity:200 pounds",
+        "quantity:88 pounds",
+        "event:medical miracle",
+        "organization:doctors"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 3300,
+          "charEnd": 3700,
+          "timeStart": 202.159,
+          "timeEnd": 226.799,
+          "quote": " after sanji was born and after\nsanji recovered from the surgery he went\nfrom 200 pounds to 88 pounds\neven though the case was considered by\ndoctors to be a medical miracle sanju\nsaid his condition was a source of\nmisery and shame sanju didn't make a\nfull recovery he's in good health and\nnow leads a normal life all his life\npeople had teased him about being\npregnant they didn't realize how right\nt"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The dramatic weight drop is plausible given the size of the mass (gallons of fluid plus the parasitic fetus body) and is consistent with reporting; precise pound figures should be treated as approximate as media coverage has used varying numbers. Sanju's expressions of distress about his condition were captured in the BBC documentary 'Body Shock: The Man Who Was Pregnant' and are accurate.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {"target": "Sd8jhbF9_pc:c_0003", "kind": "elaborates"}
+      ]
+    }
+  ]
+}

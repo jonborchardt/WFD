@@ -5,7 +5,8 @@ coverage/
 tmp/
 .nvmrc
 .nx/
-.claude
+.claude/*
+!.claude/skills/
 *.local
 test-results
 playwright-report
@@ -14,6 +15,9 @@ playwright-report
 .planning/
 plans/
 temp/
+_curate_tmp/
+_claims_tmp/
+_reasoning_tmp/
 data/logs/
 data/ai/bundles/
 generated/

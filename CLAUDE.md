@@ -114,19 +114,35 @@ Pipeline shape, roughly in order:
 5. [src/ai/](src/ai/) — Claude-Code-driven enrichment that runs *after*
    relations, refining and adding relationships. This is **not** a runtime
    API call to Claude — it's a batch pass invoked via Claude Code.
-6. [src/graph/](src/graph/) — storage and query layer for entities /
+   [src/ai/curate/](src/ai/curate/) is a sibling: scripted bulk alias
+   curation (Plan 1). [src/ai/claims/](src/ai/claims/) is the scripting
+   for the per-video claim-extraction session (Plan 2 Part 2). See the
+   "AI alias curation" and "AI claim extraction" sections below.
+6. [src/claims/](src/claims/) — schema, persist helpers, and strict
+   validators for `data/claims/<videoId>.json`. Written by an AI session
+   (not by an automated pipeline stage) — see Plan 2. Validators
+   enforce: every evidence quote must equal `flattenedText.slice(charStart,
+   charEnd)` exactly; every entity key must exist in this video's
+   entities or in a display-overridden alias; no pronouns; relationship
+   ids must reference real edges; confidence/directTruth ∈ [0,1].
+7. [src/graph/](src/graph/) — storage and query layer for entities /
    edges / evidence. Adapter at [src/graph/adapt.ts](src/graph/adapt.ts)
    converts the per-video neural output (mention ids) into graph-shaped
    `Entity` and `Relationship` records (entity ids `${type}:${canonical}`).
-7. [src/truth/](src/truth/) — per-relationship truthiness, propagation
-   rules, contradiction and loop detection, novel-link surfacing.
-8. [src/skeptic/](src/skeptic/) — speaker credibility scoring from
+8. [src/truth/](src/truth/) — per-relationship truthiness, propagation
+   rules, contradiction and loop detection, novel-link surfacing. Also
+   per-claim reasoning (Plan 3): `claim-propagation.ts` (derived truth
+   over the claim DAG), `claim-contradictions.ts` (pair /
+   broken-presupposition / cross-video conflicts), and
+   `claim-counterfactual.ts` (on-demand "if X were false, what moves?"
+   queries).
+9. [src/skeptic/](src/skeptic/) — speaker credibility scoring from
    transcript signals.
-9. [src/ui/](src/ui/) + [src/web/](src/web/) — local dev server with
+10. [src/ui/](src/ui/) + [src/web/](src/web/) — local dev server with
    admin UI. The React SPA at `/admin/` and the HTML-rendered
    `/admin/video/:id` unified page surface entities, relations, stage
    status, and a tuning troubleshooting table.
-10. [web/](web/) — **public static site** (React + TypeScript + Vite).
+11. [web/](web/) — **public static site** (React + TypeScript + Vite).
    Standalone project, deployed to GitHub Pages. Reads prebuilt JSON
    from `data/` via Vite middleware in dev; for production, data files
    are copied into `dist/data/` at deploy time. No server APIs — all
@@ -184,13 +200,33 @@ fetched → entities → relations → ai
                    →  per-claim
 
 graph-level (run once after all per-video stages):
-  propagation → contradictions → novel → indexes
+  propagation → contradictions → novel → indexes → claim-indexes
 ```
 
 `aiStage.dependsOn: ["relations"]`. `perClaimStage.dependsOn: ["relations"]`.
-Graph-level stages (`propagation`, `contradictions`, `novel`, `indexes`)
-read the `graph.dirtyAt` watermark which gets bumped whenever `entities`
-or `relations` upserts into the graph store.
+Graph-level stages (`propagation`, `contradictions`, `novel`, `indexes`,
+`claim-indexes`) read the `graph.dirtyAt` watermark which gets bumped
+whenever `entities` or `relations` upserts into the graph store.
+
+Additionally, **claim-file staleness**: when `entities` or `relations`
+regenerates a per-video output, a top-level `_stale` marker is stamped
+into `data/claims/<videoId>.json` (the file is never deleted — it
+represents AI labor). The admin video page surfaces the marker as a
+banner so operators know to re-run `/ai-claims-extraction` for that id.
+
+The `claim-indexes` stage reads every `data/claims/<id>.json`, applies
+the claim-level aliases sections (`claimTruthOverrides`, `claimDeletions`,
+`claimFieldOverrides`, `contradictionDismissals`, `customContradictions`)
+and writes four corpus files under `data/claims/`:
+
+- `claims-index.json` — flat list with `derivedTruth` + `truthSource`
+  (`direct` / `derived` / `override` / `uncalibrated`) per claim.
+- `dependency-graph.json` — claim DAG edges with kinds.
+- `contradictions.json` — pair / broken-presupposition / cross-video /
+  manual, respecting dismissals.
+- `edge-truth.json` — `${subjectId}|${predicate}|${objectId}` →
+  averaged derived truth of citing claims, for the relationships-graph
+  truth overlay.
 
 ## Cross-transcript canonicalization
 
@@ -276,6 +312,21 @@ The schema lives in [src/graph/aliases-schema.ts](src/graph/aliases-schema.ts).
       "object": "event:kickstarter campaign",
       "timeStart": 1243
     }
+  ],
+  "claimTruthOverrides": [
+    { "claimId": "abc123:c_0002", "directTruth": 0.15, "rationale": "cited source retracted" }
+  ],
+  "claimDeletions": [
+    { "claimId": "abc123:c_0007" }
+  ],
+  "claimFieldOverrides": [
+    { "claimId": "abc123:c_0003", "text": "cleaner rephrased claim", "tags": ["ufo", "area-51"] }
+  ],
+  "contradictionDismissals": [
+    { "a": "abc123:c_0001", "b": "xyz456:c_0004", "reason": "different contexts" }
+  ],
+  "customContradictions": [
+    { "a": "abc123:c_0001", "b": "xyz456:c_0004", "summary": "operator-authored conflict the detector missed" }
   ]
 }
 ```
@@ -288,6 +339,11 @@ The schema lives in [src/graph/aliases-schema.ts](src/graph/aliases-schema.ts).
 - `dismissed` — operator already reviewed this cluster; don't reappear.
 - `videoMerges` — per-video alias. Applies only when aggregating that specific video.
 - `deletedRelations` — suppress one specific relationship in one video. `(videoId, subject, predicate, object, timeStart)` is the natural key.
+- `claimTruthOverrides` — pin a claim's `directTruth` (and optional rationale). Applied as an anchor during the `claim-indexes` propagation, so dependents recompute accordingly. Rendered in the UI as "truth 0.15 (override)".
+- `claimDeletions` — drop a claim entirely from the corpus-wide index. Per-video claim file is never mutated.
+- `claimFieldOverrides` — replace any subset of `text` / `kind` / `hostStance` / `rationale` / `tags` for a single claim. Omitted fields fall through to the on-disk value. Applied before propagation so overrides are consistent across reasoning + UI.
+- `contradictionDismissals` — mark a detected contradiction pair (keyed by sorted claim ids) as not-a-conflict. Filtered out of `contradictions.json` at aggregation time.
+- `customContradictions` — operator-authored contradictions the detector missed. Surface in `contradictions.json` with `kind: "manual"`.
 
 **Stable sort**: every write sorts each section by natural key, so diffs stay minimal across edits.
 
@@ -389,6 +445,235 @@ promotion).
 All writes bust `nlpCache`, `entityIndexCache`, `entityVideosCache`,
 and `relationshipsGraphCache`, and bump `graph.dirtyAt`.
 
+## AI alias curation (bulk, scripted)
+
+Hand-curating every alias in `/admin/aliases` doesn't scale once the
+corpus passes ~200 videos. [src/ai/curate/](src/ai/curate/) runs a
+heuristic pass over the whole corpus in seconds, proposing:
+
+- **videoMerges** — short canonical → long canonical within the same
+  video when the short is a token-level subsequence of the long, both
+  have ≥3-char tokens, the short isn't a common-noun (see
+  `COMMON_NOUN_BLOCKLIST` in [src/ai/curate/propose.mjs](src/ai/curate/propose.mjs)),
+  and exactly one such long form exists in that video. Handles
+  in-video coreference like `person:paul` → `person:paul mccartney`
+  in a Beatles video.
+- **corpus merges** — `L:the X` → `L:X` when both exist (determiner
+  dedup).
+- **deletedEntities** — canonicals containing `[music]` (transcript
+  marker pollution).
+
+Respects `notSame` pairs and never touches `data/entities/<id>.json`
+or `data/relations/<id>.json`. Every write is reversible via the ⋯
+menu on `/admin/aliases` or by restoring the backup at
+`_curate_tmp/aliases.before.json`.
+
+**Invocation** — from a Claude Code session, ask for the
+[ai-alias-curation](.claude/skills/ai-alias-curation/SKILL.md) skill
+("run alias curation"). Or directly:
+
+```
+npm run build   # ensure dist/graph/aliases-schema.js is fresh
+node src/ai/curate/build-corpus.mjs
+node src/ai/curate/propose.mjs
+node src/ai/curate/apply.mjs
+npx captions pipeline --stage indexes
+```
+
+`apply.mjs` bumps `catalog.graph.dirtyAt` so graph-level stages
+re-run on the next `pipeline` invocation. Re-run whenever new videos
+are added; apply is idempotent — already-handled entries are skipped.
+
+Tune by editing the blocklist / label allowlist in `propose.mjs`.
+The scripts are intentionally heuristic, not neural — the tradeoff is
+coverage (seconds to scan 200+ videos) vs. precision (some calls will
+be wrong, which is why everything is reversible).
+
+## When new videos are added — full runbook
+
+Idempotent end-to-end workflow. Every step is safe to re-run; only
+stale work executes (timestamp-driven staleness). Run from the repo
+root.
+
+### 1. Add the video(s) to the catalog
+
+```
+npm run add -- "https://www.youtube.com/watch?v=VIDEOID"
+```
+
+Or batch: edit `data/seeds/videos.txt` (one URL or id per line), then
+`npm run ingest` will pick them up before fetching.
+
+### 2. Fetch transcripts
+
+```
+npm run ingest
+```
+
+Self-rate-limited YouTube fetch. Writes to `data/transcripts/<id>.json`.
+Transcripts are gold (see Invariants) — once written, never refetched
+unless the file is manually deleted.
+
+### 3. Run the staged pipeline
+
+```
+npm run pipeline
+```
+
+Walks per-video stages in order (`entities` → `date-normalize` →
+`relations` → `ai` → `per-claim`) followed by graph-level stages
+(`propagation`, `contradictions`, `novel`, `indexes`). Only stale
+stages run.
+
+If any new video produces empty `data/entities/<id>.json` (zero
+mentions despite a real transcript), the GLiNER sidecar silently
+failed. Diagnose with:
+
+```
+CAPTIONS_PY_DEBUG=1 npx captions delete --stage entities --video <id>
+CAPTIONS_PY_DEBUG=1 npx captions pipeline --video <id> --stage entities
+```
+
+See [plans/04-claims-coverage-gaps.md](plans/04-claims-coverage-gaps.md)
+for the full diagnosis tree.
+
+### 4. Re-curate aliases (Claude Code session)
+
+In a Claude Code session, ask:
+
+```
+run alias curation
+```
+
+This invokes the [ai-alias-curation](.claude/skills/ai-alias-curation/SKILL.md)
+skill — proposes per-video short→long merges (e.g.
+`person:paul` → `person:paul mccartney` in a Beatles video),
+corpus-wide `the X` → `X` dedup, `[music]` artifact deletions —
+applies them, rebuilds indexes. ~25 seconds.
+
+### 5. Extract claims (Claude Code session)
+
+In the same or a fresh Claude Code session:
+
+```
+extract claims for N videos
+# or for parallel runs across many new videos:
+extract claims for N videos using K parallel agents
+```
+
+This invokes the [ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)
+skill. `pick-videos.mjs` automatically filters to videos that have
+entities + relations but no claim file yet — so calling with
+`--count N` (or letting the skill default to N) picks only the gaps.
+
+Per-video wall time: ~4–6 min (ranges 2–8 min for short vs long
+transcripts). Token cost: ~30–45k input + 6–8k output per video.
+Parallel agents trade tokens for wall time — use 4–10 agents for
+batches >20 videos.
+
+### 6. (No step 6.) Verify
+
+The new videos are queryable on `/admin/video/:id` (start the dev
+server with `npm run dev`). For the public static site:
+
+```
+cd web && npm run build
+cp -r ../data/catalog ../data/entities ../data/relations ../data/graph dist/data/
+# optionally: cp -r ../data/transcripts dist/data/
+# then push dist/ to gh-pages
+```
+
+The corpus-wide claim aggregator (`claim-indexes` graph stage) is
+deferred — until it lands, claims are loaded per-video in the UI.
+The Plan 3 reasoning-layer derivatives (`claims-index.json`,
+`dependency-graph.json`, `contradictions.json` — written by
+`src/ai/reasoning/run.mjs --out data/claims`) do land in
+`data/claims/` alongside the per-video files; they're the staging
+target for that future graph stage.
+
+## AI claim extraction (per-video, AI session)
+
+Plan 2 Part 2: Claude reads `data/transcripts/<id>.json` plus the
+existing `data/entities/<id>.json` and `data/relations/<id>.json`,
+extracts 3–15 thesis-level claims per video, and writes
+`data/claims/<id>.json`. Schema and validators in
+[src/claims/](src/claims/); session scaffolding in
+[src/ai/claims/](src/ai/claims/); the playbook lives in the
+[ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)
+skill.
+
+A claim is a thesis (Wikipedia-section-title-worthy, debatable), not a
+fact atom. Fact atoms belong in `data/relations/<id>.json`. Claims may
+cite relationship ids as evidence and may declare cross-claim
+dependencies (`supports` / `contradicts` / `presupposes` /
+`elaborates`) — the dependency graph is what Plan 3's reasoning code
+will consume.
+
+**Invocation** — from a Claude Code session, ask for the
+[ai-claims-extraction](.claude/skills/ai-claims-extraction/SKILL.md)
+skill ("extract claims for N videos"). Or directly:
+
+```
+node src/ai/claims/pick-videos.mjs --count 20    # picks N videos that have entities + relations but no claim file yet
+node src/ai/claims/prepare.mjs <videoId>         # writes _claims_tmp/<id>.input.json
+# Claude reads the bundle, writes data/claims/<id>.json directly
+node src/ai/claims/validate.mjs <videoId>        # gates each write — exits non-zero on bad payload
+node src/ai/claims/summary.mjs                   # batch summary + per-video timings
+```
+
+**Resumability is automatic.** `pick-videos.mjs` filters out videos
+that already have a claim file, so re-running after a killed session
+picks up only the gaps. Atomic writes via temp+rename mean a partial
+write can never produce a corrupt file.
+
+**Parallelization.** Each video is independent — multiple agents can
+work on disjoint slices in parallel by passing pinned ids
+(`--video <id>`) instead of `--count`. Per-video state is on disk;
+the only shared mutable file is `_claims_tmp/timings.json`, which
+agents re-read before each write.
+
+**Skip cases.** If `prepare.mjs` reports `flattenedTextLength` < 200
+or `entities.count == 0`, skip the video — there's no source text or
+no entity allowlist to construct valid claims against. Two upstream
+failure modes produce these:
+1. Transcripts marked `kind: "unavailable"` (single dummy cue) — fix
+   by re-running `captions ingest` for that id, or accept it as
+   permanently captionless.
+2. Transcripts present but `data/entities/<id>.json` and
+   `data/relations/<id>.json` are empty stubs — GLiNER/GLiREL ran but
+   produced nothing. Likely silent sidecar failure; re-run
+   `captions pipeline --video <id> --stage entities` with
+   `CAPTIONS_PY_DEBUG=1` to inspect.
+
+**Reasoning layer (Plan 3).** Once claim files exist, the modules in
+[src/truth/](src/truth/) (`claim-propagation`, `claim-contradictions`,
+`claim-counterfactual`) compute derived truth over the claim DAG,
+surface contradictions, and answer counterfactual queries. Pure code,
+no AI session. Driver scripts in
+[src/ai/reasoning/](src/ai/reasoning/); playbook in
+[ai-reasoning-layer](.claude/skills/ai-reasoning-layer/SKILL.md).
+
+Two modes:
+
+- **Sample** (default): `pick-videos.mjs --count 2` + `run.mjs` →
+  reports land in `_reasoning_tmp/` (gitignored).
+- **Full-corpus** (autonomous, no approval gate):
+  `pick-videos.mjs --all` + `run.mjs --out data/claims` → reports
+  land in `data/claims/` alongside the per-video files.
+
+End-to-end full-corpus runtime on ~2300 claims across 210 videos:
+~1 s (load 100 ms, propagation 20 ms, contradictions 900 ms — the
+O(V² × claims²) cross-video pair walk dominates). `run.mjs` is also
+the reference implementation for the future `claim-indexes` pipeline
+stage.
+
+**Quality bar enforcement.** The validator does not police thesis
+quality, only structural correctness. Quality is enforced in the
+skill prompt (real `rationale` strings, no tautologies, `directTruth`
+omitted when uncertain rather than defaulting to 0.5). Spot-check by
+sampling claim files; full re-run is cheap because writes are
+idempotent (delete the file and re-pick).
+
 ## Web (public site)
 
 The [web/](web/) directory is a standalone React + TypeScript + Vite project
@@ -408,10 +693,35 @@ that produces a static site deployable to GitHub Pages.
 
 ```bash
 cd web && npm run build
-cp -r ../data/catalog ../data/entities ../data/relations ../data/graph dist/data/
+cp -r ../data/catalog ../data/entities ../data/relations ../data/graph ../data/claims dist/data/
 # optionally: cp -r ../data/transcripts dist/data/  (large; video detail degrades gracefully)
 # then push dist/ to gh-pages
 ```
+
+### Routes
+
+Public routes:
+- `/` — catalog
+- `/video/:id` — video detail with entities, relations, and a Claims panel
+  (truth bars, expandable evidence, inbound+outbound dep chips, contradiction
+  badges, counterfactual toggle)
+- `/entity/:key` — per-entity rollup
+- `/relationships` — ReactFlow+ELK graph with "color by truth" toggle,
+  edge-detail panel listing citing claims
+- `/claims` — corpus-wide claim browser, sortable (most certain / most
+  uncertain / most contradicted), filterable by kind + text + tag
+- `/contradictions` — tabbed browser for pair / broken-presupposition /
+  cross-video / manual contradictions, filterable by text + tag
+- `/claim-graph` — ReactFlow view of a claim neighborhood seeded by entity,
+  video, or claim id; edges show `supports`/`contradicts`/`presupposes`/
+  `elaborates`/`shared-evidence`/`contradiction`; nodes colored by derived
+  truth
+- `/facets`, `/about`
+
+Admin-only adds `/admin` and the ⋯ menu on claim rows (override truth,
+edit text/kind/stance/rationale/tags, delete), the ✎ menu on
+contradictions (dismiss, un-dismiss, add custom, remove custom), and the
+⋯ menu on edges/entities.
 
 ### Architecture
 
@@ -454,6 +764,21 @@ serves only `/api/*` routes and server-rendered admin pages
   [tests/helpers/setup.ts](tests/helpers/setup.ts) neutralize all three
   sidecars at startup.
 - CLI entrypoint: `captions` (see `package.json` `bin`).
+- **Web styling goes through the theme.** Every color, plus anything
+  MUI doesn't already model, lives in [web/src/theme.ts](web/src/theme.ts).
+  No raw hex literals in components — reach for `colors.entity.person`
+  (or `t.palette.entity.person` inside an sx callback) instead. The
+  theme has two layers: a `ramps` namespace (raw hex, grouped by hue,
+  slot # = perceived luminance × 1000 snapped to 50-multiples) and a
+  `colors` namespace (semantic tokens like `truth`, `entity`,
+  `claimKind`, `stance`, `facet`, `surface` — every value is a ramp
+  reference). Add a new color by adding the swatch to the appropriate
+  ramp first, then point a semantic token at it. For spacing,
+  typography variants, and breakpoints — use MUI's defaults
+  (`sx={{ p: 1.5 }}`, `<Typography variant="caption">`, `{ xs, sm }`),
+  not custom tokens. Only exception: HomePage's mini-illustration SVGs
+  use raw hex (decorative, non-reused) — every other surface reads
+  through the theme.
 
 ## Troubleshooting & tuning
 

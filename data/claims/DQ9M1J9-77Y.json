@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "DQ9M1J9-77Y",
+  "generatedAt": "2026-04-20T00:42:00.000Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "DQ9M1J9-77Y:c_0001",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "On 28 November 1953, CIA bioweapons scientist Frank Olson was murdered by the CIA via defenestration from the Statler Hotel in New York and the death was covered up as a suicide or accidental fall.",
+      "kind": "historical",
+      "entities": [
+        "person:frank olson",
+        "organization:cia",
+        "location:statler hotel",
+        "location:new york city",
+        "location:room 1018a",
+        "person:robert lashbrook"
+      ],
+      "relationships": [
+        "r_0012",
+        "r_0038"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 819,
+          "charEnd": 888,
+          "timeStart": 51.36,
+          "timeEnd": 69.04,
+          "quote": "the\ncia\nroom 1018a was registered to robert\nlashbrook and frank olson"
+        },
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 10424,
+          "charEnd": 10552,
+          "timeStart": 666.0,
+          "timeEnd": 678.24,
+          "quote": "starr said of his findings i think frank\nolson was intentionally deliberately\nwith malice a forethought thrown out of\nthe window"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.75,
+      "rationale": "The host asserts this as the central thesis of the video. Independently, the historical record (Olson family lawsuit, Eric Olson's exhumation/second autopsy, the 1975 Rockefeller settlement, and circumstantial evidence from declassified MK-Ultra documents) makes the murder hypothesis substantially more plausible than the official suicide story, but no court verdict or CIA admission exists.",
+      "hostStance": "asserts",
+      "inVerdictSection": false
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0002",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "Frank Olson was a career CIA / Army bioweapons scientist who developed aerosolized biological agents and weaponized delivery devices at Fort Detrick and Plum Island for programs including Operation Harness and Operation Sea Spray.",
+      "kind": "historical",
+      "entities": [
+        "person:frank olson",
+        "person:frank",
+        "organization:cia",
+        "organization:army",
+        "facility:biological warfare lab",
+        "location:fort detrick maryland",
+        "location:plum island",
+        "event:operation harness",
+        "event:operation sea spray",
+        "technology:biological weapons of mass destruction"
+      ],
+      "relationships": [
+        "r_0049",
+        "r_0058",
+        "r_0079",
+        "r_0091",
+        "r_0095"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 4414,
+          "charEnd": 4552,
+          "timeStart": 284.0,
+          "timeEnd": 298.72,
+          "quote": "frank's specialty\nwas aerosolizing living biological\nagents and munitions in other words he\ncreated biological weapons of mass\ndestruction"
+        },
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 5244,
+          "charEnd": 5339,
+          "timeStart": 337.199,
+          "timeEnd": 346.16,
+          "quote": "olson developed delivery\ndevices for these bioweapons canisters\ndisguised as shaving cream cans"
+        }
+      ],
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "Frank Olson's role at Fort Detrick's Special Operations Division as a biological-warfare scientist is well established in declassified Army records and journalistic sources (Albarelli's 'A Terrible Mistake', Kinzer's 'Poisoner in Chief'). The specific weaponized-cigarette/lipstick claims are more contested but the general bioweapons program at Detrick is undisputed.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0003",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "At the November 1953 Deep Creek Lake retreat, Sidney Gottlieb's deputy Robert Lashbrook covertly dosed Frank Olson and other staff with LSD, in what the host frames as a 'loyalty test' to see whether scientists would betray classified information under disinhibition.",
+      "kind": "historical",
+      "entities": [
+        "person:frank olson",
+        "person:sydney gottlieb",
+        "person:robert lashbrook",
+        "person:gottlieb",
+        "location:deep creek lake",
+        "event:loyalty test",
+        "organization:cia"
+      ],
+      "relationships": [
+        "r_0104",
+        "r_0124"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 8246,
+          "charEnd": 8295,
+          "timeStart": 529.519,
+          "timeEnd": 534.88,
+          "quote": "their drinks were spiked with a heavy\ndose of lsd"
+        },
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 12658,
+          "charEnd": 12729,
+          "timeStart": 807.12,
+          "timeEnd": 816.079,
+          "quote": "when he was dosed with\nlsd that night in november it was a\nloyalty test"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.6,
+      "rationale": "The covert LSD dosing at Deep Creek Lake is documented in CIA inspector-general reports declassified in the 1970s and corroborated by multiple historians; the 'loyalty test' framing is the host's interpretive overlay and is more speculative than the dosing fact itself.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0001",
+          "kind": "supports",
+          "rationale": "If the LSD dose was a loyalty test rather than reckless experimentation, that supplies the motive for the subsequent killing."
+        }
+      ]
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0004",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "A second autopsy by forensic pathologist James Starr after Frank Olson's 1994 exhumation found a blunt-force skull injury and chest wound inconsistent with a 13-story fall through glass, leading Starr to conclude Olson was deliberately thrown from the window.",
+      "kind": "empirical",
+      "entities": [
+        "person:james starr",
+        "person:starr",
+        "person:frank olson",
+        "location:window"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 10424,
+          "charEnd": 10552,
+          "timeStart": 666.0,
+          "timeEnd": 678.24,
+          "quote": "starr said of his findings i think frank\nolson was intentionally deliberately\nwith malice a forethought thrown out of\nthe window"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Starr's 1994 second-autopsy findings are publicly reported and were the basis of the Olson family's later civil suit. The blunt-force trauma to the skull is independently documented; Starr's interpretation that it indicates pre-defenestration injury is a forensic judgment, not a courtroom finding, but is widely cited.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0001",
+          "kind": "supports",
+          "rationale": "Forensic findings of pre-fall injury directly support the murder thesis over the suicide cover story."
+        }
+      ]
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0005",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "A 1953 CIA assassination manual describes dropping a target from at least 75 feet onto a hard surface as a near-perfect method that 'causes little excitement and is only casually investigated' — matching the manner of Frank Olson's death the same year.",
+      "kind": "historical",
+      "entities": [
+        "organization:cia",
+        "person:frank olson",
+        "event:murder",
+        "date_time:1953"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 11339,
+          "charEnd": 11369,
+          "timeStart": 726.16,
+          "timeEnd": 733.519,
+          "quote": "the cia study of\nassassination"
+        },
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 11428,
+          "charEnd": 11522,
+          "timeStart": 731.2,
+          "timeEnd": 743.36,
+          "quote": "the best\nway to assassinate a target is to drop\nthem from at least 75 feet onto a hard\nsurface"
+        }
+      ],
+      "confidence": 0.92,
+      "directTruth": 0.8,
+      "rationale": "'A Study of Assassination' is a real declassified CIA document (Guatemala, 1953) and contains language closely matching the host's paraphrase. The temporal coincidence with Olson's death is suggestive but circumstantial — the document was written for paramilitary use abroad, not domestic operations.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0001",
+          "kind": "supports",
+          "rationale": "Existence of a contemporaneous CIA manual prescribing the exact method strengthens the murder hypothesis."
+        }
+      ]
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0006",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "The CIA murdered Frank Olson because he was one of very few scientists who could publicly confirm U.S. use of chemical weapons in the Korean War and who had inside knowledge of MK-Ultra atrocities, and his growing moral crisis made him a leak risk.",
+      "kind": "speculative",
+      "entities": [
+        "person:frank olson",
+        "organization:cia",
+        "event:korean war",
+        "technology:mk-ultra",
+        "organization:mkultra"
+      ],
+      "relationships": [
+        "r_0178"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 11899,
+          "charEnd": 12024,
+          "timeStart": 761.12,
+          "timeEnd": 771.76,
+          "quote": "frank olson was one of\nonly a few scientists who could confirm\nthat the united states used chemical\nweapons in the korean war"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.45,
+      "rationale": "The motive narrative is the host's synthesis. The premise that Olson was uniquely positioned to expose Korean-War chemical weapons use is contested by historians — chemical/biological weapons in Korea remain disputed allegations, and Olson's specific knowledge there is not well documented. Plausible motive for the killing if the killing happened, but several inferential steps deep.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0001",
+          "kind": "elaborates",
+          "rationale": "Provides the motive layer for the murder claim."
+        }
+      ]
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0007",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "MK-Ultra was not effectively shut down by the 1975 Olson revelations; it continued in some form until 1973 (per the host's framing of when records were destroyed) and no senior MK-Ultra principals — Gottlieb, Lashbrook, or others — were ever criminally prosecuted.",
+      "kind": "historical",
+      "entities": [
+        "technology:mk-ultra",
+        "organization:mkultra",
+        "organization:mk ultra",
+        "person:sydney gottlieb",
+        "person:robert lashbrook",
+        "date_time:1973"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 12955,
+          "charEnd": 13062,
+          "timeStart": 826.079,
+          "timeEnd": 838.399,
+          "quote": "mk ultra was almost\ndestroyed\nalmost it continued for another 20 years\nbefore finally shutting down in 1973"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "The 1973 destruction of MK-Ultra records by Richard Helms / Sidney Gottlieb is well-documented (Senate Church Committee, 1975). No prosecutions of senior MK-Ultra officials is also factually accurate. The host's chronology around 'continued for another 20 years' is loose: the program is generally dated 1953-1973, so the '20 more years after Olson' framing fits.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0008",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "In 1954, just months after Frank Olson's death, the CIA secured a formal agreement with the Department of Justice granting CIA employees immunity from prosecution for any crime — effectively a license to kill.",
+      "kind": "historical",
+      "entities": [
+        "organization:cia",
+        "organization:department of justice",
+        "law_or_policy:immunity",
+        "law_or_policy:license to kill",
+        "date_time:1954"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 11089,
+          "charEnd": 11239,
+          "timeStart": 708.72,
+          "timeEnd": 723.2,
+          "quote": "the cia executed a document with\nthe department of justice that gave the\ncia authority to grant cia employees\nimmunity from any crime including murder"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "A 1954 CIA-DOJ memorandum of understanding does exist and addresses prosecutorial deferral for CIA employees in cases involving classified information; the 'immunity for any crime including murder' framing is the host's strong gloss on a narrower legal arrangement. Real document, contested interpretation.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "DQ9M1J9-77Y:c_0009",
+      "videoId": "DQ9M1J9-77Y",
+      "text": "AJ argues the CIA's official assurance that MK-Ultra was the last time non-consenting drug experiments were conducted on Americans is not credible, sarcastically asking 'why would they lie' to imply ongoing covert programs.",
+      "kind": "opinion",
+      "entities": [
+        "organization:cia",
+        "technology:mk-ultra",
+        "event:drug experiments"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "DQ9M1J9-77Y",
+          "charStart": 12955,
+          "charEnd": 13062,
+          "timeStart": 826.079,
+          "timeEnd": 838.399,
+          "quote": "mk ultra was almost\ndestroyed\nalmost it continued for another 20 years\nbefore finally shutting down in 1973"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Pure host opinion / rhetorical flourish at the close of the video. No truth value assigned because this is a stance, not a falsifiable claim.",
+      "hostStance": "asserts",
+      "inVerdictSection": true
+    }
+  ]
+}

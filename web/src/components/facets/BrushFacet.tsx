@@ -7,6 +7,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { Box, Typography, IconButton, Tooltip } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import type { FacetBundle, Selection } from "./duck";
 import { activeVideoIds, topEntitiesForType } from "./duck";
 
@@ -27,7 +28,7 @@ interface Props {
 
 // Parse the canonical form into a UTC timestamp (ms). Returns null if
 // the canonical does not look like this type's expected shape.
-function timeValue(type: string, canonical: string): number | null {
+export function timeValue(type: string, canonical: string): number | null {
   if (type === "year") {
     if (!/^\d{4}$/.test(canonical)) return null;
     return Date.UTC(parseInt(canonical, 10), 0, 1);
@@ -50,7 +51,7 @@ function timeValue(type: string, canonical: string): number | null {
   return null;
 }
 
-function axisLabel(type: string, t: number): string {
+export function axisLabel(type: string, t: number): string {
   const d = new Date(t);
   const y = d.getUTCFullYear();
   if (type === "year") return `${y}`;
@@ -245,7 +246,7 @@ export function BrushFacet({ type, selection, bundle, selected, onSetGroup }: Pr
                 bottom: 0,
                 width: 2,
                 height: h,
-                bgcolor: inBrush ? "primary.main" : "#90caf9",
+                bgcolor: (t) => inBrush ? t.palette.primary.main : t.palette.facet.accent,
                 opacity: inBrush ? 1 : 0.85,
               }}
             />
@@ -259,8 +260,8 @@ export function BrushFacet({ type, selection, bundle, selected, onSetGroup }: Pr
               top: 0,
               width: dragX1 - dragX0,
               height: HEIGHT,
-              bgcolor: "rgba(33,150,243,0.2)",
-              border: "1px solid rgba(33,150,243,0.8)",
+              bgcolor: (t) => alpha(t.palette.facet.brushHue, 0.2),
+              border: (t) => `1px solid ${alpha(t.palette.facet.brushHue, 0.8)}`,
               pointerEvents: "none",
             }}
           />
@@ -273,8 +274,8 @@ export function BrushFacet({ type, selection, bundle, selected, onSetGroup }: Pr
               top: 0,
               width: Math.max(2, selX1 - selX0),
               height: HEIGHT,
-              bgcolor: "rgba(33,150,243,0.15)",
-              border: "1px dashed rgba(33,150,243,0.6)",
+              bgcolor: (t) => alpha(t.palette.facet.brushHue, 0.15),
+              border: (t) => `1px dashed ${alpha(t.palette.facet.brushHue, 0.6)}`,
               pointerEvents: "none",
             }}
           />
