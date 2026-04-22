@@ -1,46 +1,39 @@
 {
   "schemaVersion": 1,
   "transcriptId": "r8p44wQMtNE",
-  "generatedAt": "2026-04-20T01:43:00.000Z",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "r8p44wQMtNE:c_0001",
       "videoId": "r8p44wQMtNE",
-      "text": "Reality as we experience it is a virtual-reality cage built more than 250,000 years ago by alien creators, and we are kept inside it specifically so that our emotions — especially negative ones like sadness, malice, and anger — can be harvested as food.",
+      "text": "Earth is a virtual-reality prison created by aliens more than 250,000 years ago for the sole purpose of farming human emotions — especially negative ones — as food.",
       "kind": "speculative",
       "entities": [
-        "technology:virtual reality",
-        "role:creators"
+        "role:creators",
+        "technology:virtual reality"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
-          "charStart": 89,
-          "charEnd": 228,
-          "timeStart": 6.839,
-          "timeEnd": 19.38,
-          "quote": "your world is an illusion your choices\nare irrelevant your friends your family\nand everyone around you are just\nmanifestations of your mind"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
           "charStart": 259,
-          "charEnd": 406,
-          "timeStart": 17.039,
-          "timeEnd": 33.36,
-          "quote": "a virtual reality\ncreated more than 250 000 years ago for\na single purpose to use you as food your\nemotions are food for those who created\nthe cage"
+          "charEnd": 352,
+          "timeStart": 16.0,
+          "timeEnd": 24.0,
+          "quote": "a virtual reality\ncreated more than 250 000 years ago for\na single purpose to use you as food"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.03,
-      "rationale": "This is the cold-open thesis of the entire video. There is no scientific evidence for an emotion-harvesting alien VR — emotions are biochemical and electrical patterns in nervous tissue, not transmittable substances. The host himself walks the framing back substantially in the verdict (treating it as 'depends on what you choose to believe') while still selling it as a real possibility.",
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "rationale": "The episode's central framing thesis — synthesized from David Icke, John Lear, Zechariah Sitchin, and Ellis Silver. Unfalsifiable by design, no evidentiary basis outside the named conspiracy sources. Omitting directTruth because the proposition is not scientifically tractable rather than defaulting to a meaningless 0.5.",
+      "hostStance": "asserts",
+      "inVerdictSection": true,
+      "tags": ["prison-planet", "aliens", "simulation"]
     },
     {
       "id": "r8p44wQMtNE:c_0002",
       "videoId": "r8p44wQMtNE",
-      "text": "Per Zecharia Sitchin's 'The 12th Planet', the Anunnaki are aliens from the planet Nibiru who visited Earth thousands of years ago, where the deity Enki added alien DNA to ancient hominids — creating us as a slave species to mine gold to repair Nibiru's poisoned atmosphere.",
+      "text": "According to Zechariah Sitchin's book The 12th Planet, the Anunnaki are not deities but aliens from the planet Nibiru who added alien DNA to ancient man to create a slave species to mine gold for atmospheric terraforming of their home planet.",
       "kind": "speculative",
       "entities": [
         "person:zechariah sitchin",
@@ -53,344 +46,236 @@
         {
           "transcriptId": "r8p44wQMtNE",
           "charStart": 5275,
-          "charEnd": 5431,
-          "timeStart": 366.12,
-          "timeEnd": 377.639,
-          "quote": "Zechariah sitchin in his book the 12th\nPlanet claims the Anunnaki are actually\naliens who visited Earth thousands of\nyears ago from their home planet Nibiru"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 5450,
           "charEnd": 5598,
-          "timeStart": 375,
-          "timeEnd": 390,
-          "quote": "the deity called enki\nadded alien DNA to Ancient Man and the\nresult was us\nthe intention was to create a slave\nspecies to mine gold for the Anunnaki"
+          "timeStart": 340.4,
+          "timeEnd": 360.0,
+          "quote": "Zechariah sitchin in his book the 12th\nPlanet claims the Anunnaki are actually\naliens who visited Earth thousands of\nyears ago from their home planet Nibiru\nwhen they arrived the deity called enki\nadded alien DNA to Ancient Man and the\nresult was us\nthe intention was to create a slave\nspecies to mine gold for the Anunnaki"
         }
       ],
-      "confidence": 0.98,
-      "directTruth": 0.05,
-      "rationale": "The summary of Sitchin's claims is accurate as a description of his book. The underlying claims, however, are rejected by mainstream archaeology, biology, and Sumerology — Sitchin's translations of Sumerian have been refuted by professional Assyriologists, and there is no genetic, archaeological, or astronomical evidence for the Nibiru/gold-mining narrative. Host self-flags Sitchin's translations as 'discredited' in the verdict section.",
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.1,
+      "rationale": "Sitchin's The 12th Planet (1976) does make exactly these claims. The underlying translations have been systematically rejected by academic Sumerologists — the host himself concedes later that 'interpretations of Sumerian texts have been largely discredited'. directTruth scored low because the factual content (aliens, Nibiru, slave species) has no scientific basis.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "r8p44wQMtNE:c_0001", "kind": "supports" }
+      ],
+      "tags": ["anunnaki", "sitchin", "ancient-aliens"]
     },
     {
       "id": "r8p44wQMtNE:c_0003",
       "videoId": "r8p44wQMtNE",
-      "text": "The Moon was not formed naturally — multiple ancient cultures (the Zulus, the Greeks via Aristotle and Plutarch, the people of Tiwanaku in Bolivia) describe a pre-lunar age when the Moon did not yet exist, and according to the Zulu legend the Moon was constructed in another part of the galaxy by a reptilian alien race and rolled to Earth as a monitoring station.",
-      "kind": "speculative",
+      "text": "Sitchin's translations of Sumerian tablets have been largely discredited by mainstream academic scholars, who accuse him of manipulating translations to fit his extraterrestrial theory.",
+      "kind": "empirical",
       "entities": [
-        "location:moon",
-        "person:aristotle",
-        "person:plutarch",
-        "nationality_or_ethnicity:arcadians",
-        "location:ancient site of tiwanaku",
-        "location:bolivia",
-        "facility:monitoring station"
+        "work_of_media:sumerian texts",
+        "work_of_media:sumerian tablets",
+        "group_or_movement:skeptics"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
-          "charStart": 7351,
-          "charEnd": 7458,
-          "timeStart": 502.86,
-          "timeEnd": 513.719,
-          "quote": "according to the Zulu and other\nancient cultures the moon didn't form\nthe moon was built and not built here"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 7459,
-          "charEnd": 7544,
-          "timeStart": 510.96,
-          "timeEnd": 520.62,
-          "quote": "the Zulus say that the moon was built in\nanother part of the Galaxy by the alien\nrace"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 7749,
-          "charEnd": 7807,
-          "timeStart": 533.939,
-          "timeEnd": 539.52,
-          "quote": "the aliens\nthat built the moon are reptilian\nlizard people"
+          "charStart": 28171,
+          "charEnd": 28234,
+          "timeStart": 1822.84,
+          "timeEnd": 1829.0,
+          "quote": "interpretations of Sumerian texts have\nbeen largely discredited"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "The 'pre-lunar people' citations are real — Aristotle, Apollonius of Rhodes, Plutarch, and Ovid do reference legendary 'Proselenes' (Arcadians) said to predate the Moon — but these are mythopoetic accounts of cultural antiquity, not astronomical claims. The Zulu Wanani/Mpanku story is a misreading of Credo Mutwa's syncretic narratives popularized by David Icke, not mainstream Zulu mythology. Modern lunar dating (Apollo samples ~4.5 Gya) and the Giant Impact hypothesis place the Moon's origin at solar-system formation; humans never witnessed a moonless Earth.",
-      "hostStance": "asserts"
+      "directTruth": 0.9,
+      "rationale": "Uncontroversially true. Assyriologists (Michael Heiser, Ronald Wallenfels) have published detailed rebuttals: 'Nibiru' does not mean 'planet of the crossing' in cuneiform; 'Anunnaki' means 'offspring of Anu', not alien pilots. The host's own concession here aligns with academic consensus.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "r8p44wQMtNE:c_0002", "kind": "contradicts" }
+      ],
+      "tags": ["sitchin", "sumerology", "academic-consensus"]
     },
     {
       "id": "r8p44wQMtNE:c_0004",
       "videoId": "r8p44wQMtNE",
-      "text": "Per David Icke, humans share Earth with a race of shape-shifting reptilian humanoids called the archons — including Sumerian Enki and Enlil — who live mostly underground but operate among us as politicians, bankers, monarchs, and media owners (the Illuminati).",
+      "text": "David Icke claims humans share the Earth with a race of shape-shifting reptilian humanoids called the archons who control governments, banks, and major media.",
       "kind": "speculative",
       "entities": [
         "person:david ike",
         "group_or_movement:lizard people",
-        "location:underground",
         "organization:illuminati",
-        "person:enki",
-        "ideology:the reptilian conspiracy"
+        "organization:major media companies"
       ],
-      "relationships": [],
+      "relationships": ["r_0030"],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
           "charStart": 8260,
           "charEnd": 8367,
-          "timeStart": 571.88,
-          "timeEnd": 581.279,
+          "timeStart": 533.84,
+          "timeEnd": 540.0,
           "quote": "Ike claims that humans share the Earth\nwith a race of shape-shifting reptilian\nhumanoids called the archons"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.02,
-      "rationale": "Accurate description of David Icke's stated belief, which is documented in his books from 'The Biggest Secret' (1999) onward. The underlying claim itself has zero biological evidence: there is no fossil, genetic, or anatomical evidence of a reptilian humanoid lineage, and 'shape-shifting' as Icke describes it is physically untenable. The host even notes Icke has been making increasingly extreme claims since 1991 (declaring himself the Son of God on TV in a turquoise tracksuit).",
-      "hostStance": "asserts"
+      "confidence": 0.95,
+      "directTruth": 0.05,
+      "rationale": "Icke does make this claim across his 20+ books ('The Biggest Secret', 1999). The factual content — reptilian humanoid overlords — has zero evidentiary basis and is a textbook example of modern conspiracy theorizing. directTruth near-zero for the substantive reptilian claim.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "r8p44wQMtNE:c_0001", "kind": "supports" }
+      ],
+      "tags": ["reptilians", "icke", "conspiracy"]
     },
     {
       "id": "r8p44wQMtNE:c_0005",
       "videoId": "r8p44wQMtNE",
-      "text": "According to David Icke, the Moon is a spacecraft AND a holographic projection device, broadcasting a 'frequency embargo' that distorts our perception of reality and locks humans into a three-dimensional existence we wouldn't otherwise experience.",
-      "kind": "speculative",
+      "text": "David Icke publicly claimed on British television in 1991 that he was the Son of God and that the world was going to end, wearing a turquoise tracksuit — a fact the host uses to undermine Icke's credibility.",
+      "kind": "historical",
       "entities": [
         "person:david ike",
-        "location:moon",
-        "technology:spacecraft",
-        "technology:holographic projection device",
-        "law_or_policy:frequency embargo"
+        "date_time:1991",
+        "person:god"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
-          "charStart": 9600,
-          "charEnd": 9697,
-          "timeStart": 655.5,
-          "timeEnd": 667.44,
-          "quote": "according to\nDavid Ike the Moon is not only a\nspacecraft but also a holographic\nprojection device"
+          "charStart": 30112,
+          "charEnd": 30182,
+          "timeStart": 1953.28,
+          "timeEnd": 1960.0,
+          "quote": "in 1991 he claimed to be\nthe Son of God and the world was going\nto end"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.02,
-      "rationale": "An accurate paraphrase of Icke's claims in his book 'Human Race Get Off Your Knees: The Lion Sleeps No More' (2010). The underlying claim is unsupported: the Moon's surface, mass, density profile, and reflectance spectra all match a natural rocky body of the inferred age and composition, and have been independently verified by Apollo, Soviet Luna, Chinese Chang'e, and Indian Chandrayaan missions. There is no detected 'broadcast' from the Moon at any anomalous frequency.",
+      "directTruth": 0.95,
+      "rationale": "Documented — Icke's March 1991 Wogan interview on BBC where (in turquoise) he announced he was a 'son of the Godhead' and predicted specific date-bound disasters. The interview is archived and widely replayed.",
       "hostStance": "asserts",
       "dependencies": [
-        {
-          "target": "r8p44wQMtNE:c_0004",
-          "kind": "elaborates",
-          "rationale": "Provides the technological substrate for Icke's archon-control theory."
-        }
-      ]
+        { "target": "r8p44wQMtNE:c_0004", "kind": "contradicts" }
+      ],
+      "tags": ["icke", "1991", "wogan"]
     },
     {
       "id": "r8p44wQMtNE:c_0006",
       "videoId": "r8p44wQMtNE",
-      "text": "Human souls are caught in a forced reincarnation loop: when we die, our energy is captured by a 'Soul Cube' or 'Soul Recycler' device installed on the Moon, which transmits us back to Earth to live again — feeding our alien jailers' addiction to negative human emotion.",
-      "kind": "speculative",
-      "entities": [
-        "technology:soul cube",
-        "technology:soul recycler",
-        "location:moon",
-        "role:creators"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 11892,
-          "charEnd": 12231,
-          "timeStart": 801.899,
-          "timeEnd": 828.54,
-          "quote": "the alien creators addicted\nto our emotions keep us here we're born\nwe live to feed the creators then we die\nthen we come back and do it all over\nagain it's forced reincarnation this\nprocess is handled by a piece of\nequipment that's been called a soul\nrecycler or a Soul Cube which is a large\nbox-shaped device that's installed on\nthe moon"
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.02,
-      "rationale": "The Soul Cube / soul-trap-on-the-Moon idea originates with John Lear and was popularized through David Icke. There is no scientific evidence that human consciousness survives bodily death in a transmittable form, no detected device on the Moon resembling the description, and no mechanism by which 'energy' as commonly meant in the Lear/Icke framework could be intercepted or recycled. The host preserves the claim as plausible while noting his own ambivalence.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "r8p44wQMtNE:c_0001",
-          "kind": "elaborates",
-          "rationale": "Specifies the recycling mechanism by which the alien jailers maintain their emotion supply."
-        }
-      ]
-    },
-    {
-      "id": "r8p44wQMtNE:c_0007",
-      "videoId": "r8p44wQMtNE",
-      "text": "On December 6 2021 the Chinese-made lunar rover Yutu-2 photographed a clearly cube-shaped object 80 meters from the Von Kármán crater on the Moon's far side, which the China National Space Administration cryptically labeled 'mystery hut' — likely the Soul Cube itself.",
+      "text": "A photograph taken December 6, 2021 by the Chinese Yutu-2 lunar rover shows a cube-shaped object 80 meters from Von Karman crater on the Moon's far side, which CNSA labeled 'mystery hut'.",
       "kind": "empirical",
       "entities": [
         "date_time:december 6 2021",
         "technology:chinese-made lunar rover u22",
         "location:von carmen crater",
         "organization:china national space administration",
-        "technology:soul cube"
+        "work_of_media:the far side of the moon"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
           "charStart": 14762,
-          "charEnd": 14949,
-          "timeStart": 1022.759,
-          "timeEnd": 1038.6,
-          "quote": "this photo was taken December 6 2021 by\nthe chinese-made lunar rover u22 while\nexploring The Far Side of the Moon a\ncube-shaped object is clearly seen 80\nmeters from the Von Carmen crater"
+          "charEnd": 15041,
+          "timeStart": 950.76,
+          "timeEnd": 972.0,
+          "quote": "this photo was taken December 6 2021 by\nthe chinese-made lunar rover u22 while\nexploring The Far Side of the Moon a\ncube-shaped object is clearly seen 80\nmeters from the Von Carmen crater and\nfor some reason the China National Space\nAdministration labeled this object\nmystery Hut"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.15,
-      "rationale": "The photograph is real — Yutu-2 (the host says 'u22') did capture an unusual cuboid silhouette and CNSA's media team did call it 'mystery hut' (神秘小屋). However, follow-up imagery taken days later as the rover approached confirmed it was a small rock — about the size of a rabbit — informally nicknamed the 'jade rabbit'. The cube interpretation collapsed under closer inspection. The host omits this resolution.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The 'mystery hut' / 神秘小屋 episode is real — Yutu-2 did image a feature near Von Karman crater in Dec 2021 and CNSA/Our Space informally called it 神秘小屋. Follow-up imaging (Jan 2022) revealed a small rabbit-shaped rock. The rover's proper designation is Yutu-2 (玉兔二号), not U22; otherwise the documented event is accurate.",
+      "hostStance": "asserts",
+      "tags": ["moon", "yutu-2", "mystery-hut"]
     },
     {
-      "id": "r8p44wQMtNE:c_0008",
+      "id": "r8p44wQMtNE:c_0007",
       "videoId": "r8p44wQMtNE",
-      "text": "Dr. Ellis Silver argues in 'Humans Are Not From Earth' that mankind did not evolve from native Earth organisms but evolved elsewhere and was transported to Earth between 60,000 and 200,000 years ago — citing sunburn susceptibility, helpless newborns, back pain from gravity, and chronic illness as evidence.",
-      "kind": "speculative",
-      "entities": [
-        "person:dr ellis silver",
-        "person:dr silver",
-        "location:earth",
-        "date_time:between 60 000 and 200 000 years ago"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 15242,
-          "charEnd": 15413,
-          "timeStart": 1052.58,
-          "timeEnd": 1068,
-          "quote": "humans are not from Earth Dr\nEllis silver contends that humans are\nactually from another planet they were\nbrought here thousands of years ago and\nmade it with neanderthals"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 15463,
-          "charEnd": 15601,
-          "timeStart": 1068,
-          "timeEnd": 1081.86,
-          "quote": "mankind did not evolve from native Earth\norganisms but evolved elsewhere and was\ntransported to Earth between 60 000 and\n200 000 years ago"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 15963,
-          "charEnd": 16029,
-          "timeStart": 1101.96,
-          "timeEnd": 1110.12,
-          "quote": "humans are\nreally the only animals that are\nsusceptible to sunburn"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "Accurate description of Silver's 2017 self-published book. Each individual piece of 'evidence' has well-established mainstream evolutionary explanations: hairlessness as thermoregulation for endurance running, helpless infants as a tradeoff for large brains and earlier birth (the obstetrical dilemma), back pain as a documented cost of bipedalism. Sunburn susceptibility is also not unique to humans — pigs, hippos, whales, and elephants are likewise susceptible. The book is not peer-reviewed and the author's credentials are commercial.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "r8p44wQMtNE:c_0009",
-      "videoId": "r8p44wQMtNE",
-      "text": "After the Apollo 12 astronauts in November 1969 deliberately crashed their ascent module into the Moon, seismic data showed the Moon ringing 'like a bell' for over an hour — strongly suggesting it is hollow or contains vast hollow chambers.",
-      "kind": "empirical",
-      "entities": [
-        "date_time:november 1969",
-        "person:astronauts",
-        "location:moon",
-        "organization:nasa"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 23949,
-          "charEnd": 24025,
-          "timeStart": 1607.52,
-          "timeEnd": 1615.08,
-          "quote": "in November 1969 Apollo 12 launched as\nNASA's second man Mission To The Moon"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 24365,
-          "charEnd": 24455,
-          "timeStart": 1633.2,
-          "timeEnd": 1642.08,
-          "quote": "the moon vibrating for over an hour the\nmoon was famously described as ringing\nlike a bell"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.3,
-      "rationale": "Mixed. The factual details are correct — Apollo 12 (Nov 1969) deployed a passive seismometer, the LM ascent stage was deliberately impacted into the Moon, and the resulting seismograph showed surprisingly long-duration reverberations (roughly an hour). However, NASA seismologists explained this as a feature of the Moon's loose, dry, fractured regolith and lack of a water-filled interior to dampen waves — not as evidence of hollowness. Subsequent gravity-field mapping (GRAIL mission, 2012) confirmed the Moon has a small dense iron core and a roughly homogeneous silicate mantle, ruling out a hollow interior.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "r8p44wQMtNE:c_0010",
-      "videoId": "r8p44wQMtNE",
-      "text": "The Moon is anomalously close to and disproportionately large for the Earth, perfectly tidally locked, and produces near-perfect total solar eclipses through a coincidence of diameters and distances that has no analog elsewhere in the solar system — by rights, it ought not to be there.",
-      "kind": "empirical",
-      "entities": [
-        "location:moon",
-        "location:earth",
-        "event:total solar eclipses"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 22023,
-          "charEnd": 22159,
-          "timeStart": 1483.02,
-          "timeEnd": 1493.94,
-          "quote": "the moon's orbit is extremely close to\nthe Earth in fact it's the largest moon\nin relation to its host planet in our\nentire solar system"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 22235,
-          "charEnd": 22288,
-          "timeStart": 1493.94,
-          "timeEnd": 1501.02,
-          "quote": "this proximity has made\ntotal solar eclipses possible"
-        }
-      ],
-      "confidence": 0.92,
-      "directTruth": 0.55,
-      "rationale": "Several individually true facts being assembled into a misleading whole. The Moon IS unusually large relative to Earth (~1/4 the diameter — only Pluto/Charon is more lopsided, and that's a dwarf system). Total eclipses ARE coincidentally near-perfect because the Sun is ~400× more distant and ~400× larger. Tidal locking IS real. But none of these are anomalies requiring an artificial origin — the Giant Impact hypothesis (a Mars-sized body colliding with proto-Earth ~4.5 Gya) explains the Moon's size, composition, and orbit, and tidal locking is the natural endpoint of any close moon's gravitational evolution. The eclipse coincidence is not even durable on geological timescales (the Moon is receding ~3.8 cm/year and won't produce total eclipses in the far future).",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "r8p44wQMtNE:c_0011",
-      "videoId": "r8p44wQMtNE",
-      "text": "In 1970 two Soviet scientists proposed that the Moon is not just hollow but is an artificial spacecraft brought to Earth long ago — the 'Spaceship Moon' theory — which neatly explains its low density, sound reverberation, and shallow craters (the impacts can't penetrate its rigid outer shell).",
-      "kind": "speculative",
+      "text": "In 1970, two Soviet scientists proposed that the Moon is not only hollow but is an artificial spacecraft brought to Earth long ago — the 'Spaceship Moon' hypothesis.",
+      "kind": "historical",
       "entities": [
         "date_time:1970",
         "person:soviet scientists",
-        "location:moon",
-        "technology:spaceship",
-        "location:earth"
+        "technology:spaceship"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
           "charStart": 24769,
-          "charEnd": 24910,
-          "timeStart": 1657.799,
-          "timeEnd": 1669.86,
-          "quote": "in 1970 two Soviet scientists proposed\nthat not only is the moon hollow the\nMoon is an artificial spacecraft brought\nto Earth a long time ago"
+          "charEnd": 24877,
+          "timeStart": 1605.12,
+          "timeEnd": 1615.0,
+          "quote": "in 1970 two Soviet scientists proposed\nthat not only is the moon hollow the\nMoon is an artificial spacecraft"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "The 1970 proposal is real — Mikhail Vasin and Alexander Shcherbakov published 'Is the Moon the Creation of Alien Intelligence?' in Sputnik magazine, which started the Spaceship Moon meme. However, neither author was a planetary scientist, the article was speculation rather than research, and the GRAIL mission (2012) directly measured the Moon's gravitational field at high resolution and ruled out a hollow interior. The 'shallow crater' claim ignores that crater depth is governed by impactor energy and target rheology, not vessel-shell physics.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "rationale": "Mikhail Vasin and Alexander Shcherbakov published 'Is the Moon the Creation of Alien Intelligence?' in Sputnik magazine (July 1970), proposing exactly this. The historical attribution is correct. Omitting directTruth because the claim conflates a real historical proposal (well-documented) with an unsupported substantive hypothesis (no evidentiary basis) — no coherent single number.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "r8p44wQMtNE:c_0008", "kind": "supports" }
+      ],
+      "tags": ["spaceship-moon", "vasin-shcherbakov", "1970"]
     },
     {
-      "id": "r8p44wQMtNE:c_0012",
+      "id": "r8p44wQMtNE:c_0008",
       "videoId": "r8p44wQMtNE",
-      "text": "In the early 20th century Dr. Duncan McDougall placed six dying patients on sensitive scales and found they lost an average of 21 grams at the moment of death, which he concluded was the measurable mass of the soul.",
+      "text": "Apollo 12 astronauts intentionally crashed their ascent stage into the Moon, and seismometers recorded the Moon vibrating for over an hour — 'ringing like a bell' — taken by proponents as evidence of hollow interior.",
+      "kind": "empirical",
+      "entities": [
+        "person:astronauts",
+        "organization:nasa",
+        "date_time:november 1969"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "r8p44wQMtNE",
+          "charStart": 24365,
+          "charEnd": 24455,
+          "timeStart": 1578.0,
+          "timeEnd": 1586.0,
+          "quote": "the moon vibrating for over an hour the\nmoon was famously described as ringing\nlike a bell"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Apollo 12 (Nov 1969) did impact its LM ascent stage into the Moon and the seismic signal lasted about an hour. The 'ringing like a bell' quote is authentic. The hollow-Moon inference is rejected by mainstream lunar seismology — long durations are attributed to the dry, fractured lunar crust's low seismic damping, not to a hollow interior.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "r8p44wQMtNE:c_0007", "kind": "supports" }
+      ],
+      "tags": ["apollo-12", "hollow-moon", "seismology"]
+    },
+    {
+      "id": "r8p44wQMtNE:c_0009",
+      "videoId": "r8p44wQMtNE",
+      "text": "The Moon is anomalously large relative to its host planet — by comparative reasoning it should be about 40 miles in diameter but is over 2,000 miles wide, with no analogous case elsewhere in our solar system.",
+      "kind": "empirical",
+      "entities": [
+        "location:moon",
+        "location:the moon",
+        "location:pluto",
+        "person:sharon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "r8p44wQMtNE",
+          "charStart": 22718,
+          "charEnd": 22808,
+          "timeStart": 1472.6,
+          "timeEnd": 1481.0,
+          "quote": "size of the Moon should be about 40\nmiles in diameter that's it it's over 2\n000 miles wide"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "The Moon's actual diameter (~2,159 miles) and its large Earth-ratio (~1/4) are factual. The '40 miles' figure is a rhetorical extrapolation from typical moon-to-planet ratios in outer-planet systems — not a rigorous physical prediction. The genuine puzzle (Earth's moon is unusually large for a terrestrial planet) is real; current mainstream explanation is the giant-impact / Theia hypothesis.",
+      "hostStance": "asserts",
+      "tags": ["moon", "diameter", "anomaly"]
+    },
+    {
+      "id": "r8p44wQMtNE:c_0010",
+      "videoId": "r8p44wQMtNE",
+      "text": "In 1907, physician Duncan MacDougall weighed six dying patients and found an average weight loss of 21 grams at the moment of death, which he concluded was the soul's mass — though small sample and methodological errors invalidate the finding.",
       "kind": "historical",
       "entities": [
         "person:duncan mcdougall",
+        "person:mcdougall",
         "quantity:21 grams",
         "event:moment of death"
       ],
@@ -398,97 +283,145 @@
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
-          "charStart": 18961,
-          "charEnd": 19038,
-          "timeStart": 1290.84,
-          "timeEnd": 1299.9,
-          "quote": "physician Duncan McDougall tried to\ndetermine if the soul had measurable\nMass"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 19246,
-          "charEnd": 19342,
-          "timeStart": 1306.559,
-          "timeEnd": 1318.38,
-          "quote": "lost an average\nof 21 Grams at the moment of death he\nconcluded this represented the Soul's\nMass"
+          "charStart": 18971,
+          "charEnd": 19422,
+          "timeStart": 1227.0,
+          "timeEnd": 1254.0,
+          "quote": "Duncan McDougall tried to\ndetermine if the soul had measurable\nMass he thought that if a soul existed\nit would have weight so upon death the\nsoul would escape and the weight loss\ncould be detected McDougall had six\ndying patients placed on sensitive\nscales finding that they lost an average\nof 21 Grams at the moment of death he\nconcluded this represented the Soul's\nMass but this small sample size and\nerrors in methodology cast out on the\nexperiment"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.7,
-      "rationale": "Historically accurate: Duncan MacDougall (proper spelling) of Haverhill, Massachusetts published the experiment in American Medicine (April 1907). The host correctly notes the small sample size and methodological errors (only one of the six patients showed the 21g drop cleanly; the others had inconsistent or post-fluctuation results). Modern researchers consider the experiment unreproduced and methodologically unsound, but the historical event happened as described.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "MacDougall's study was published in American Medicine (April 1907) with six patients; the '21 grams' figure entered popular culture. Host's structural framing is correct — the methodological problems (scale resolution, non-simultaneous endpoints, tiny n) are well-known, and no replication has succeeded.",
+      "hostStance": "asserts",
+      "tags": ["macdougall", "21-grams", "soul"]
     },
     {
-      "id": "r8p44wQMtNE:c_0013",
+      "id": "r8p44wQMtNE:c_0011",
       "videoId": "r8p44wQMtNE",
-      "text": "In 2020 researchers discovered that about 50,000 years ago ancient humans procreated with a previously unknown species — 'ghost DNA' — and the timing lines up perfectly with Dr. Silver's intervention theory of human origins.",
+      "text": "Conclusive scientific evidence of the human soul has not been discovered despite repeated attempts including the 21-gram experiment, near-death experience studies, and quantum-physics speculation.",
+      "kind": "empirical",
+      "entities": [
+        "event:near-death experiences",
+        "event:near-death episodes"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "r8p44wQMtNE",
+          "charStart": 20846,
+          "charEnd": 20919,
+          "timeStart": 1349.0,
+          "timeEnd": 1354.0,
+          "quote": "conclusive scientific evidence of the\nhuman soul has yet to be discovered"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Factually accurate as of 2026. NDEs have documented neurological correlates (stimulation of the temporoparietal junction reproduces out-of-body sensation). No reproducible evidence of a separable 'soul' exists in peer-reviewed science.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "r8p44wQMtNE:c_0010", "kind": "elaborates" }
+      ],
+      "tags": ["soul", "neuroscience", "ndes"]
+    },
+    {
+      "id": "r8p44wQMtNE:c_0012",
+      "videoId": "r8p44wQMtNE",
+      "text": "In 2020, researchers discovered 'ghost DNA' indicating ancient humans interbred 50,000 years ago with a species science had not previously identified — which the host claims aligns with Ellis Silver's off-Earth human origin hypothesis.",
       "kind": "empirical",
       "entities": [
         "date_time:2020",
         "organization:researchers",
         "quantity:50 000 years ago",
+        "person:dr ellis silver",
+        "person:silver",
         "person:dr silver"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
-          "charStart": 29408,
+          "charStart": 29450,
           "charEnd": 29568,
-          "timeStart": 1961.82,
-          "timeEnd": 1977.899,
-          "quote": "in 2020\nresearchers discovered that about 50 000\nyears ago ancient humans procreated with\na species that scientists didn't know\nexisted they call this ghost DNA"
+          "timeStart": 1908.0,
+          "timeEnd": 1920.0,
+          "quote": "50 000\nyears ago ancient humans procreated with\na species that scientists didn't know\nexisted they call this ghost DNA"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "The 'ghost DNA' finding is real — Durvasula & Sankararaman (Science Advances 2020) detected an archaic, unknown hominin lineage's contribution to West African genomes, and earlier work by Hammer et al. found similar signatures. However, 'ghost DNA' refers to introgressed alleles from an as-yet-unidentified extinct hominin (likely a sister group to Neanderthals or Denisovans, or an early-diverged African lineage), NOT alien DNA. The host's leap from 'unknown hominin' to 'this supports humans-from-elsewhere' is unwarranted; the ghost lineage is still firmly within Homo.",
+      "confidence": 0.8,
+      "directTruth": 0.6,
+      "rationale": "Refers to Durvasula & Sankararaman (2020, Science Advances) identifying introgression from an archaic 'ghost' population into West African genomes. Real finding; interpretation in paleogenetics is another archaic hominin, not extraterrestrial origin. The leap to 'aliens dropped us off' is unsupported — the ghost-DNA paper assumes terrestrial common ancestry throughout.",
       "hostStance": "asserts",
       "dependencies": [
-        {
-          "target": "r8p44wQMtNE:c_0008",
-          "kind": "supports",
-          "rationale": "Cited as a piece of new evidence supporting Silver's intervention claim."
-        }
-      ]
+        { "target": "r8p44wQMtNE:c_0001", "kind": "supports" }
+      ],
+      "tags": ["ghost-dna", "2020", "paleogenetics"]
     },
     {
-      "id": "r8p44wQMtNE:c_0014",
+      "id": "r8p44wQMtNE:c_0013",
       "videoId": "r8p44wQMtNE",
-      "text": "Sitchin's translations of the Sumerian tablets have been largely discredited and disregarded by mainstream scholars, who say he manipulated the translations to support his ancient-astronaut theory — though the underlying 'gods coming from the sky to create or help man' motif is almost universal across human cultures.",
-      "kind": "opinion",
+      "text": "There is no Hopi legend of lizard people escaping through tunnels under Los Angeles — the lizard-people mythology traces to a fabricated 1934 LA Times story, and no tunnels have ever been found.",
+      "kind": "empirical",
       "entities": [
-        "person:zechariah sitchin",
-        "work_of_media:sumerian tablets"
+        "nationality_or_ethnicity:hopi indian",
+        "location:los angeles",
+        "date_time:1934",
+        "person:mining engineer",
+        "location:the tunnels"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
-          "charStart": 28171,
-          "charEnd": 28299,
-          "timeStart": 1877.779,
-          "timeEnd": 1889.88,
-          "quote": "interpretations of Sumerian texts have\nbeen largely discredited and disregarded\nhe's been criticized for inaccurate\ntranslations"
+          "charStart": 30696,
+          "charEnd": 30766,
+          "timeStart": 1988.0,
+          "timeEnd": 1995.0,
+          "quote": "there are no\ntunnels and there is no Hopey legend of\nthe lizard people"
         }
       ],
-      "confidence": 0.97,
+      "confidence": 0.9,
       "directTruth": 0.85,
-      "rationale": "Mainstream consensus: Sitchin's Sumerian translations have been refuted in detail by professional Assyriologists like Michael Heiser (whose 'sitchiniswrong.com' is a thorough rebuttal). The host's assessment is accurate. The cross-cultural sky-god motif is also well-attested in comparative mythology, though most scholars attribute it to shared cognitive structures and cultural diffusion rather than a literal underlying event.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
+      "rationale": "[debunks] The host is correct. Jean Bosquet's 1934 LA Times article relayed mining engineer G. Warren Shufelt's claims, but no tunnels were ever found despite Shufelt's excavations beneath Fort Moore Hill, and ethnographers confirm no Hopi oral tradition of lizard-people. Rare debunk inside the episode.",
+      "hostStance": "denies",
       "dependencies": [
+        { "target": "r8p44wQMtNE:c_0004", "kind": "contradicts" }
+      ],
+      "tags": ["debunk", "1934", "la-times"]
+    },
+    {
+      "id": "r8p44wQMtNE:c_0014",
+      "videoId": "r8p44wQMtNE",
+      "text": "Human DNA is unremarkably close to other Earth life — 99% shared with chimps, 80% with dogs and cows, 65% with birds, and over 50% with bananas — undercutting the claim that humans carry detectable alien genetic material.",
+      "kind": "empirical",
+      "entities": [
+        "person:ancient man"
+      ],
+      "relationships": [],
+      "evidence": [
         {
-          "target": "r8p44wQMtNE:c_0002",
-          "kind": "contradicts",
-          "rationale": "Undermines the Sitchin Anunnaki framework laid out earlier in the video."
+          "transcriptId": "r8p44wQMtNE",
+          "charStart": 28775,
+          "charEnd": 28967,
+          "timeStart": 1862.5,
+          "timeEnd": 1875.0,
+          "quote": "chimps share almost 99 of their\nDNA with humans dogs and cows share\naround 80 percent birds and humans share\n65 percent of their DNA humans even\nshare over 50 percent of their DNA with\nbananas"
         }
-      ]
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "[undercuts] The percentages are approximate but correct: chimp-human ≈ 98.8% coding DNA; banana-human ≈ 40-60% depending on methodology. Every human gene has clear evolutionary continuity with Earth life — a strong structural argument against the Anunnaki-DNA hypothesis even though the host does not explicitly frame it as contradiction.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "r8p44wQMtNE:c_0002", "kind": "contradicts" }
+      ],
+      "tags": ["genetics", "dna", "debunk"]
     },
     {
       "id": "r8p44wQMtNE:c_0015",
       "videoId": "r8p44wQMtNE",
-      "text": "Whatever the truth of the alien-prison theory, you have a real choice: positive emotions can break the reincarnation cycle, so choose kindness over anger, acceptance over judgment, gratitude over desire, joy over sadness, mercy over revenge, and love over hate.",
+      "text": "The host's moral prescription: positive emotions break the reincarnation trap while negative emotions fuel it, so one should choose kindness, acceptance, gratitude, and love over their negative counterparts.",
       "kind": "opinion",
       "entities": [],
       "relationships": [],
@@ -496,24 +429,17 @@
         {
           "transcriptId": "r8p44wQMtNE",
           "charStart": 32003,
-          "charEnd": 32066,
-          "timeStart": 2124.48,
-          "timeEnd": 2133,
-          "quote": "negative emotions fuel the\ncycle positive emotions can break it"
-        },
-        {
-          "transcriptId": "r8p44wQMtNE",
-          "charStart": 32070,
           "charEnd": 32146,
-          "timeStart": 2130.839,
-          "timeEnd": 2138.099,
-          "quote": "you have a choice you can choose to be\nthe change choose kindness over anger"
+          "timeStart": 2072.0,
+          "timeEnd": 2085.0,
+          "quote": "negative emotions fuel the\ncycle positive emotions can break it so\nyou have a choice you can choose to be\nthe change choose kindness over anger"
         }
       ],
-      "confidence": 0.97,
-      "rationale": "The host's closing exhortation. directTruth omitted because this is normative life advice rather than a factual claim — its 'truth' depends on a value framework rather than empirical verification. The advice itself is reasonable regardless of whether the alien-prison framework is real.",
+      "confidence": 0.95,
+      "rationale": "Normative prescription, not a factual claim. Uses the prison-planet cosmology as motivational frame for standard virtue-ethics advice. Omitting directTruth because moral prescriptions aren't truth-apt in the same sense as empirical propositions.",
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "inVerdictSection": true,
+      "tags": ["verdict", "moral"]
     }
   ]
 }

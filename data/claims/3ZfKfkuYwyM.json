@@ -1,263 +1,332 @@
 {
   "schemaVersion": 1,
   "transcriptId": "3ZfKfkuYwyM",
-  "generatedAt": "2026-04-20T04:13:00.000Z",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "3ZfKfkuYwyM:c_0001",
       "videoId": "3ZfKfkuYwyM",
-      "text": "On January 4, 2012 a group calling itself 3301 anonymously posted a single image to 4chan inviting 'highly intelligent individuals' to find a hidden message and follow it through a multi-stage scavenger hunt — kicking off three years of escalating, world-spanning cryptography puzzles.",
+      "text": "On January 4, 2012 an anonymous internet post signed '3301' advertised a puzzle seeking 'highly intelligent individuals' — launching what became known as the Cicada 3301 puzzle.",
       "kind": "historical",
-      "entities": [
-        "organization:cicada",
-        "organization:cicada 3301",
-        "person:3301",
-        "date_time:january 4th 2012",
-        "work_of_media:puzzle"
-      ],
+      "entities": ["date_time:january 4th 2012", "organization:cicada 3301", "person:3301"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 79,
-          "charEnd": 1100,
-          "timeStart": 3.359,
-          "timeEnd": 76.92,
-          "quote": "January 4th\n2012 a strange message appeared on the\ninternet just a few lines of text on a\nblack background posted anonymously\nhelloo we are looking for highly\nintelligent individuals to find them we\nhave devised a testest there is a\nmessage hidden in this imaged a test\nfind it and it will lead you on the road\nto finding us hello we look forward to\nmeeting the few that will make it all\nthe way through\ngood luck\n3301 many speculated that it was a\nrecruiting tool for the NSA the CIA MI6\nor even the Masons but who was really\nbehind this and what was its purpose and\ndid it even have a purpose whether it\ndid or not it didn't matter because when\nyou post a puzzle on the internet\nlooking for highly intelligent people\nthat's a challenge that's simply\nimpossible to resist so the hunt for\ncicada 3301 was on\n[Music]\nyeah he's got about 6 months left on his\ncontract and I wanted to see if there's\na way that I can get him out\nsooner yeah I'm getting a lot of\ncomplaints about\nhim let me call you back Presto human I\nhave "
+          "charStart": 55,
+          "charEnd": 138,
+          "timeStart": 3.36,
+          "timeEnd": 14.4,
+          "quote": "early in the morning of January 4th\n2012 a strange message appeared on the\ninternet"
         }
       ],
       "confidence": 0.97,
-      "directTruth": 0.97,
-      "rationale": "Verifiable history. The original Cicada 3301 image (a white-on-black message signed '3301') was posted to 4chan's /x/ board on January 4, 2012. This is one of the most documented internet phenomena of the 2010s, archived extensively on uncovering-cicada.fandom and elsewhere."
+      "directTruth": 0.95,
+      "rationale": "The January 4, 2012 4chan post by 'cicada 3301' is extensively documented. Screenshots of the original post and the image-based first puzzle have been preserved and widely reported in outlets including WIRED, The Washington Post, and The Telegraph. This is a matter of public internet record.",
+      "hostStance": "asserts"
     },
     {
       "id": "3ZfKfkuYwyM:c_0002",
       "videoId": "3ZfKfkuYwyM",
-      "text": "The puzzle chain progressed through escalating cryptographic techniques — Caesar cipher, steganography via the OutGuess tool, book ciphers keyed against Mayan numerals and Thomas Bulfinch's Mythology, vigenère ciphers, PGP-signed messages — each layer designed both to filter for skill and to teach participants the toolkit of practical cryptography.",
-      "kind": "historical",
-      "entities": [
-        "technology:caesar cipher",
-        "technology:cipher",
-        "technology:cryptography",
-        "technology:book code",
-        "nationality_or_ethnicity:mayan",
-        "person:king arthur"
-      ],
+      "text": "Cicada 3301 was widely speculated to be a recruiting front for intelligence agencies such as the NSA, CIA, MI6, or Freemasons.",
+      "kind": "speculative",
+      "entities": ["organization:nsa", "organization:cia", "organization:mi6", "organization:cicada 3301"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 5108,
-          "charEnd": 5800,
-          "timeStart": 339.319,
-          "timeEnd": 384.339,
-          "quote": "Caesar Cipher\na Caesar Cipher works by Shifting the\nletters of the alphabet a fixed number\nof places down or up you choose a shift\nvalue for example three and for each\nletter in the original text replace it\nwith the letter that's located three\npositions down if you reach the end of\nthe alphabet you wrap around to the\nbeginning for example using a shift\nvalue Val of three a becomes D B becomes\ne c becomes F and so on the Caesar\nCipher is easy to crack with modern\nmethods and isn't considered secure but\nit's historically significant and often\nused as a basic introduction to\ncryptography such was the case with the\nfirst puzzle when the message was\ndecoded with a shift of four places the"
+          "charStart": 498,
+          "charEnd": 586,
+          "timeStart": 33.44,
+          "timeEnd": 43.88,
+          "quote": "many speculated that it was a\nrecruiting tool for the NSA the CIA MI6\nor even the Masons"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "All accurately described. The first 2012 Cicada chain progressed through exactly these techniques in roughly this order. The pedagogical sequencing (start with Caesar, end with RSA-encrypted unique messages) is one of the most often-cited features of the puzzle by people who solved it."
+      "confidence": 0.9,
+      "directTruth": 0.25,
+      "rationale": "These theories circulated widely in press coverage (2012–2014), but the episode itself reports that a solver who reached the inner chatroom said cicada was none of these. Intelligence-agency recruitment is a speculative theory that ultimately did not hold up, so its directTruth is low.",
+      "hostStance": "asserts"
     },
     {
       "id": "3ZfKfkuYwyM:c_0003",
       "videoId": "3ZfKfkuYwyM",
-      "text": "After the first round of digital puzzles, Cicada 3301 escalated by posting physical posters with QR codes at 14 specific geographic coordinates spread across five countries — proving that whoever was behind it had real-world operational capacity, money for travel, and a coordinated presence across multiple continents.",
+      "text": "The first Cicada 3301 puzzle was posted on 4chan and consisted of an image whose appended text concealed a Caesar-cipher-encoded URL — the opening puzzle of the scavenger hunt.",
       "kind": "historical",
-      "entities": [
-        "organization:cicada",
-        "organization:cicada 3301"
-      ],
+      "entities": ["location:forchan", "organization:3301", "technology:caesar cipher", "work_of_media:image"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 14093,
-          "charEnd": 14750,
-          "timeStart": 925.0,
-          "timeEnd": 970.0,
-          "quote": "coordinates 14 locations in five\ncountries all over the world with an\ninvitation to find the location nearest\nyou up until now the puzzles existed\nexclusively on the internet but now\ncicada 3301 was going out into the real\nworld the list of 14 locations around\nthe world indicated that cicada 3301 was\na global organization or a handful of\npeople with the time and money to create\ncomplex puzzles and travel the globe but\nby taking the next round of puzzles into\nthe real world cicada created another\nfilter in order to move forward not only\ndid you have to be excellent\ncryptography you had to have the means\nto travel to one of the locations\nprovided and "
+          "charStart": 3999,
+          "charEnd": 4076,
+          "timeStart": 270.12,
+          "timeEnd": 281.16,
+          "quote": "the first puzzle was\nposted on forchan by a self-identified\ngroup called 3301"
+        },
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 5081,
+          "charEnd": 5121,
+          "timeStart": 339.32,
+          "timeEnd": 343.68,
+          "quote": "message was encoded with a Caesar Cipher"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Documented. Posters were photographed and verified at locations including Warsaw, Paris, Seoul, Sydney, Miami, New Orleans, Seattle, Portland (OR), Annapolis (MD), Flagstaff (AZ), Columbus (GA), Granada (Spain), Moscow, and Okinawa. The geographic distribution is the strongest single piece of evidence that 3301 was either a substantial organization or a tightly-coordinated distributed group."
+      "confidence": 0.97,
+      "directTruth": 0.95,
+      "rationale": "Both the 4chan posting venue and the Caesar cipher as the first-puzzle decoder are extensively documented in the Cicada write-ups at Uncovering Cicada Wiki, Joel Eriksson's writeups, and period journalistic coverage. Consistent with every reputable reconstruction of the puzzle.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "3ZfKfkuYwyM:c_0001", "kind": "elaborates" }]
     },
     {
       "id": "3ZfKfkuYwyM:c_0004",
       "videoId": "3ZfKfkuYwyM",
-      "text": "The puzzle eventually pushed solvers onto the Tor network's hidden services (the .onion 'dark web') — exposing many participants for the first time to anonymous routing, and using that infrastructure to issue uniquely-encrypted RSA messages to each individual finisher so that any sharing or collaboration could be detected and used to disqualify the offender.",
+      "text": "The Beale ciphers are three 19th-century cipher texts purported to reveal the location of $43 million in treasure in Bedford County, Virginia — cited here as the book-cipher exemplar that inspired Cicada-style challenges.",
       "kind": "historical",
-      "entities": [
-        "technology:dark web",
-        "technology:web",
-        "technology:cryptography"
-      ],
+      "entities": ["technology:cipher"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 15300,
-          "charEnd": 16450,
-          "timeStart": 1014.5,
-          "timeEnd": 1075.24,
-          "quote": "difficulty of the\npuzzles and the Mystery surrounding them\nit was only natural that people were\ntalking and sharing information and\ncollaborating if you didn't live near\none of the cicada locations you almost\nhad no choice but to ask for help but\ncicada 3301 was clearly watching and if\nyou got caught teaming up you'd be out\nand it didn't take long to identify the\ntext referred to by the last clue it was\nthe poem Agrippa by cyberpunk novelist\nWilliam Gibson Agrippa is a very cicada\ntype of poem it was originally\ndistributed on floppy disc and after you\nread the poem it encrypted itself meant\nto be read only once in F solving the\nbook code resulted in another URL but\nthis one was different a DOT onion\nextension onion routing makes the data's\nsource and destination untraceable by\nencrypting the data multiple times like\nthe layers of an onion onion Pages\naren't accessible with a regular web\nbrowser you need a specialized browser\ndesigned specifically to access Pages\nhosted on the onion router Network or\ntour Network in other words the dark\n[Music]\nweb when most people think of the dark\nweb they imagine a Place full of illegal\nactivities"
+          "charStart": 7662,
+          "charEnd": 7813,
+          "timeStart": 501.28,
+          "timeEnd": 515.92,
+          "quote": "the be ciphers are set of three\nCipher texts that supposedly reveal the\nlocation of $43 million of hidden\ntreasure somewhere in Bedford County\nVirginia"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Accurate. The progression onto Tor and the per-solver unique RSA challenge are well-documented features of the 2012 puzzle, and the William Gibson Agrippa-poem reference is verified."
+      "confidence": 0.9,
+      "directTruth": 0.55,
+      "rationale": "The Beale ciphers are a real 1885 pamphlet; the second cipher was decoded using the Declaration of Independence as key. Whether the buried treasure actually exists is widely disputed — many cryptanalysts (e.g., Robert Ward, James Gillogly) argue the remaining ciphers may be a hoax. The historical existence of the texts is true; the treasure itself is unverified.",
+      "hostStance": "asserts"
     },
     {
       "id": "3ZfKfkuYwyM:c_0005",
       "videoId": "3ZfKfkuYwyM",
-      "text": "After running successful puzzles in 2012, 2013, and 2014, Cicada 3301 fell silent following its 2014 release of the unfinished 'Liber Primis' rune-text — and aside from one possible 2016 message and a 2017 forgery warning, has not been heard from since.",
+      "text": "Cicada 3301 signed all authentic messages with a PGP key published to the MIT key servers, enabling participants to distinguish real clues from impostors.",
       "kind": "historical",
-      "entities": [
-        "organization:cicada",
-        "organization:cicada 3301"
-      ],
+      "entities": ["organization:cicada 3301", "organization:mit"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 27236,
-          "charEnd": 27800,
-          "timeStart": 1834.0,
-          "timeEnd": 1870.0,
-          "quote": "beware false\npaths always verify pgp signature\n3301 and that was the last anyone heard\nfrom cicada 3301 it's been a few years\nwith no solution to Libra primis and no\nfurther contact from cicada this was\ndisappointing to a lot of people after\nall this over several years we were\nstill no closer to finding out who\ncicada 3301 was or what they did but\nLiber primis was the thir Quest the\nfirst two were solved and the people who\nsolved them they started\n[Music]\ntalking when that first image appeared\non 4chan looking for highly intelligent\nindividuals the chase was"
+          "charStart": 8829,
+          "charEnd": 8860,
+          "timeStart": 571.76,
+          "timeEnd": 581,
+          "quote": "3301 implemented\npgp encryption"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Liber Primis (a runic text rendered in 59 pages, only a handful of which have ever been decrypted) is real and the public record of Cicada 3301 communications does end essentially in 2014 with the 2016 message and the 2017 'beware false paths' warning. The continued mystery of Liber Primis is one of internet history's most enduring open puzzles."
+      "directTruth": 0.95,
+      "rationale": "PGP signing was a central authentication feature of the puzzle and the signing key is publicly archived on MIT's key servers. This is a well-documented technical fact from the puzzle.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "3ZfKfkuYwyM:c_0003", "kind": "elaborates" }]
     },
     {
       "id": "3ZfKfkuYwyM:c_0006",
       "videoId": "3ZfKfkuYwyM",
-      "text": "According to a self-identified 2013 winner who reached the final dark-web message board, Cicada 3301 self-described as a 'think tank' advocating liberty, privacy, and security — and not as the recruiting front for NSA, CIA, or MI6 that had been widely speculated.",
-      "kind": "speculative",
-      "entities": [
-        "organization:cicada",
-        "organization:cicada 3301",
-        "organization:cia",
-        "organization:nsa"
-      ],
+      "text": "The original Cicada image was 509 by 503 pixels — both prime numbers — and multiplying 509 * 503 * 3301 yields the URL for the next puzzle step.",
+      "kind": "empirical",
+      "entities": ["work_of_media:image", "organization:cicada 3301"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 24350,
-          "charEnd": 24900,
-          "timeStart": 1626.0,
-          "timeEnd": 1660.0,
-          "quote": "ne\nhowever if you lie to us we will find\nout but the big question was why what\ndoes cicada 3301 even do we are much\nlike a think tank in that our primary\nfocus is on researching and developing\ntechniques to Aid the ideas we Advocate\nLiberty privacy\nsecurity and if you choose to accept\nmembership we are happy to have you on\nboard to help with future projects\nsecurity so that was it cicada 3301\nfound a few more recruits and went dark\nbut the following January people eagerly\nwaited to see if cicada would return and\nthey did not\n[Music]\ndisappoint "
+          "charStart": 13725,
+          "charEnd": 13808,
+          "timeStart": 886.68,
+          "timeEnd": 901.76,
+          "quote": "image was\nactually 509 pixels wide by 503 pixels\ntall 509 and 503 are prime numbers"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.55,
-      "rationale": "The self-description quoted is real and was published by 2013 finishers. Whether to take the self-description at face value is a separate question. The truthiness is genuinely uncertain — the 'liberty/privacy/security' framing is consistent with both a genuine cypherpunk-aligned group and an intelligence-service cover story; both possibilities remain live in the published commentary."
+      "confidence": 0.97,
+      "directTruth": 0.95,
+      "rationale": "The image dimensions 509x503 (both prime) and the product 509*503*3301 = 845145127 leading to the next-level URL (845145127.com) are verifiable technical details from the puzzle that anyone can check.",
+      "hostStance": "asserts"
     },
     {
       "id": "3ZfKfkuYwyM:c_0007",
       "videoId": "3ZfKfkuYwyM",
-      "text": "There is direct historical precedent for state intelligence agencies using public puzzle contests to recruit cryptanalysts — most famously the Daily Telegraph crossword puzzles that helped Britain identify candidates for Bletchley Park during WWII, where Alan Turing's team broke the Enigma cipher.",
+      "text": "Cicada 3301 escalated the puzzle from the internet to the physical world by posting printed QR-code flyers at 14 coordinates across five countries.",
       "kind": "historical",
-      "entities": [
-        "person:alan",
-        "organization:nsa",
-        "organization:cia"
-      ],
+      "entities": ["organization:cicada 3301", "event:scavenger hunt"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 28905,
-          "charEnd": 29400,
-          "timeStart": 1937.159,
-          "timeEnd": 1972.0,
-          "quote": "Bletchley Park those recruits along\nwith Alan touring went on to solve the\nEnigma machine which helped the Allies\nwin the war NSA and CIA ran similar\ncontests over the years companies like\nGoogle and Microsoft have also used\ncryptography and puzzles to recruit but\none of the early winners said cicada was\nnone of these after solving the final\nround of puzzles in 2013 he received an\nemail with a username and password along\nwith a site address on the dark web the\nsite had two parts a message b"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The Daily Telegraph crossword recruitment (the famous January 1942 puzzle published as a 'recruitment test' in disguise) is real and historically well-documented. NSA, GCHQ, and CIA have all run public puzzle contests in the modern era (e.g., GCHQ's Christmas card challenges). Companies like Google really did use puzzles for recruitment (most famously in 2004 with the {first 10-digit prime found in consecutive digits of e}.com billboard)."
-    },
-    {
-      "id": "3ZfKfkuYwyM:c_0008",
-      "videoId": "3ZfKfkuYwyM",
-      "text": "Per the same 2013 winner, Cicada 3301's actual short-term goal was to recruit volunteers to write open-source cryptography software — and the project's strategic mistake was assuming that puzzle-solvers would naturally convert into ideologically-driven free-software contributors.",
-      "kind": "opinion",
-      "entities": [
-        "organization:cicada",
-        "organization:cicada 3301",
-        "technology:cryptography",
-        "ideology:ideology",
-        "ideology:politics"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 29200,
-          "charEnd": 30100,
-          "timeStart": 1953.24,
-          "timeEnd": 2009.0,
-          "quote": "cicada was\nnone of these after solving the final\nround of puzzles in 2013 he received an\nemail with a username and password along\nwith a site address on the dark web the\nsite had two parts a message board and a\nchat room The Message Board had various\ntopics including a welcome section and\nan area for cicada's goals and current\nprojects the chat room had about 20\nmembers according to a couple of the\nwinners cicada wanted to further the use\nof cryptography so more people would\nhave access to Internet privacy cicada\nhad some big goals but in the short term\nthey wanted to recruit highly technical\npeople to develop open- Source\ncryptography software oh that to find\npeople to write free software yep and I\nthink this was cicada's big mistake the\nrecruits didn't want to write software\nthey wanted to solve puzzles and when\nthe puzzle stopped the membership\ndwindled there were spikes in membership"
-        }
-      ],
-      "confidence": 0.93,
-      "directTruth": 0.7,
-      "rationale": "This is the most cited 'inside view' of the project (most prominently from Joel Eriksson, but with corroboration from a small number of others). The host's analysis — that the puzzle-solver-to-volunteer-developer conversion rate was always going to be low — is a reasonable strategic critique. It's an opinion not a fact, but a well-grounded one."
-    },
-    {
-      "id": "3ZfKfkuYwyM:c_0009",
-      "videoId": "3ZfKfkuYwyM",
-      "text": "The host theorizes that puzzle-solving generates more dopaminergic reward than ideological or political engagement does, which both explains why thousands chased Cicada 3301 over years and why few converted into long-term cypherpunk contributors — and why intelligence-agency puzzle recruitments often don't translate into actual government employment.",
-      "kind": "opinion",
-      "entities": [
-        "ideology:politics",
-        "ideology:ideology"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 30500,
-          "charEnd": 31300,
-          "timeStart": 2027.0,
-          "timeEnd": 2079.0,
-          "quote": " don't want to work in\ngovernment yeah they're too smart to\nwork in government well that might be\npart of it but really they just want to\nsolve puzzles whenever you achieve a\ntask your bra rewards you with a hit of\ndopamin this could mean finishing a\nworkout completing a school project or\nfiguring out an escape room achieve a\ngoal get some dopamin our brains love\ndopamin it turns out that solving\nproblems is one of the biggest if not\nthe biggest source of dopamin for the\nbrain solving puzzles like those\npresented by cicada reward us with\ndopamine while we're working on them and\nwhen we actually solve one well cicada\nsolvers describe that feeling as nothing\nless than exhilarating now plenty of\npeople are interested in politics and\nideology but not too many of them would\ndescribe their inter"
-        }
-      ],
-      "confidence": 0.92,
-      "directTruth": 0.55,
-      "rationale": "The dopamine-reward-of-puzzle-solving framing has some grounding in neuroscience (insight problems do produce reward-system activation; e.g., Tik et al. 2018), but the host massively oversimplifies. 'Solving problems is the biggest source of dopamine' is not an established scientific claim. The broader sociological observation — that puzzle culture and political engagement select for different motivations — is a defensible folk-psychological observation but not rigorous."
-    },
-    {
-      "id": "3ZfKfkuYwyM:c_0010",
-      "videoId": "3ZfKfkuYwyM",
-      "text": "Despite years of investigation by thousands of skilled solvers, the actual identity, membership, geographic origin, and funding source of Cicada 3301 remain genuinely unknown — a rare modern example of a coordinated multi-year online project that has resisted full deanonymization.",
-      "kind": "empirical",
-      "entities": [
-        "organization:cicada",
-        "organization:cicada 3301",
-        "person:3301"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "3ZfKfkuYwyM",
-          "charStart": 27586,
-          "charEnd": 28200,
-          "timeStart": 1856.36,
-          "timeEnd": 1898.0,
-          "quote": "Liber primis was the thir Quest the\nfirst two were solved and the people who\nsolved them they started\n[Music]\ntalking when that first image appeared\non 4chan looking for highly intelligent\nindividuals the chase was on the\nmysterious group known as 3301 presented\nClues and challenges that thousands of\ntechies and puzzle solvers found\nimpossible to resist each Mystery became\nmore complex the clues that connected\nJulius Caesar and King Arthur to\ncryptography were genius and easy enough\nto solve that people became hooked the\nsolutions that led to phone numbers and\nGeographic coordinates made the search\neven mor"
+          "charStart": 14083,
+          "charEnd": 14154,
+          "timeStart": 915.6,
+          "timeEnd": 925.16,
+          "quote": "a list\nof coordinates 14 locations in five\ncountries all over the world"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "Accurate. As of 2026 the identity of Cicada 3301 remains unconfirmed despite extensive investigation. Several individuals have publicly claimed inside knowledge (most notably Joel Eriksson and Marcus Wanner), but no claim has been independently corroborated to the level of full identification. This is genuinely impressive operational security for a project of this scale and duration.",
+      "rationale": "Photos of the physical posters at coordinates in Warsaw, Seoul, Paris, Miami, and other cities have been archived; this is one of the most widely reported features of Cicada 3301 and was extensively documented by solvers.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "3ZfKfkuYwyM:c_0008",
+      "videoId": "3ZfKfkuYwyM",
+      "text": "Cicada 3301's puzzles routed solvers onto the Tor / onion-routed dark web, exploiting anonymity infrastructure originally developed by the U.S. Navy for secure communications.",
+      "kind": "historical",
+      "entities": ["technology:dark web", "location:dark web", "technology:deep web"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 15999,
+          "charEnd": 16032,
+          "timeStart": 1042.24,
+          "timeEnd": 1048.88,
+          "quote": "DOT onion\nextension onion routing"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Tor was indeed developed by the U.S. Naval Research Laboratory (Paul Syverson, David Goldschlag, Michael Reed) in the mid-1990s before being released as open source. Cicada 3301's use of .onion links as puzzle waypoints is documented in multiple write-ups.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "3ZfKfkuYwyM:c_0009",
+      "videoId": "3ZfKfkuYwyM",
+      "text": "Cicada 3301 self-described as an international group with no name devoted to ending tyranny, censorship, and privacy violations — positioning itself as a privacy-focused think tank rather than an intelligence front.",
+      "kind": "definitional",
+      "entities": ["organization:cicada 3301", "ideology:ideology"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 23791,
+          "charEnd": 23844,
+          "timeStart": 1583.16,
+          "timeEnd": 1589.92,
+          "quote": "we are an international\ngroupal group we have no name"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The full welcome message quoted in the episode matches the archived Cicada welcome letter published by solvers. Whether Cicada's self-description as a privacy think tank is fully accurate is unknown — it is at minimum their own framing of themselves.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "3ZfKfkuYwyM:c_0010",
+      "videoId": "3ZfKfkuYwyM",
+      "text": "Liber Primus — the 59-page encrypted book that became Cicada 3301's third and apparently unfinished quest — remains largely unsolved to this day.",
+      "kind": "empirical",
+      "entities": ["organization:cicada 3301"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 26289,
+          "charEnd": 26349,
+          "timeStart": 1768.52,
+          "timeEnd": 1778.48,
+          "quote": "Libra primis is 59\npages and only a handful have been\nsolved"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Liber Primus is 58 pages (close to the stated 59); only a few pages have been decoded by the community, with most remaining unsolved years later. This is a verifiable empirical claim about current state of the puzzle.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "3ZfKfkuYwyM:c_0011",
+      "videoId": "3ZfKfkuYwyM",
+      "text": "A 2013 winner reported that Cicada 3301 was not an intelligence agency, contradicting the popular NSA/CIA/MI6 recruitment theories.",
+      "kind": "empirical",
+      "entities": ["organization:cicada 3301", "organization:nsa", "organization:cia"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 29170,
+          "charEnd": 29224,
+          "timeStart": 1953.24,
+          "timeEnd": 1960.8,
+          "quote": "one of the early winners said cicada was\nnone of these"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.65,
+      "rationale": "Marcus Wanner and a handful of other solvers have spoken publicly about what they saw after winning — a small chat room focused on privacy/cryptography open-source work, not an intelligence agency. One solver's report is not exhaustive evidence but is the best on-record account.",
+      "hostStance": "denies",
+      "dependencies": [
+        { "target": "3ZfKfkuYwyM:c_0002", "kind": "contradicts", "rationale": "[debunks] Direct winner testimony that cicada was 'none of these' refutes the intelligence-agency-recruitment speculation." },
+        { "target": "3ZfKfkuYwyM:c_0009", "kind": "supports" }
+      ]
+    },
+    {
+      "id": "3ZfKfkuYwyM:c_0012",
+      "videoId": "3ZfKfkuYwyM",
+      "text": "Cicada 3301's internal goal was to recruit technically skilled volunteers to write open-source cryptography software furthering internet privacy.",
+      "kind": "historical",
+      "entities": ["organization:cicada 3301", "technology:cryptography"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 29610,
+          "charEnd": 29658,
+          "timeStart": 1979.24,
+          "timeEnd": 1986.4,
+          "quote": "cicada wanted to further the use\nof cryptography"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Multiple winner accounts reported Cicada's internal focus was cryptographic tool development (with the Liber Primus message stressing 'You are being deceived'). Some ex-members have described contributing to minor open-source crypto projects. The claim is consistent with winner testimony though not independently verified beyond those accounts.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "3ZfKfkuYwyM:c_0011", "kind": "elaborates" }]
+    },
+    {
+      "id": "3ZfKfkuYwyM:c_0013",
+      "videoId": "3ZfKfkuYwyM",
+      "text": "Cicada 3301 follows historical precedent for puzzle-based recruiting: British code-breakers for Bletchley Park were recruited via Daily Telegraph crossword puzzles during World War II.",
+      "kind": "historical",
+      "entities": ["organization:cicada 3301", "technology:cryptography"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 28853,
+          "charEnd": 28919,
+          "timeStart": 1933.32,
+          "timeEnd": 1941.88,
+          "quote": "the Daily\nTelegraph to identify good candidates\nfor Bletchley Park"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.92,
+      "rationale": "Bletchley Park recruiters did use the Daily Telegraph crossword (notably a 1942 crossword competition at the Telegraph's offices) as a shortlist mechanism for candidate cryptanalysts. This is historically documented, though the comparison framing is the host's analogy.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "3ZfKfkuYwyM:c_0014",
+      "videoId": "3ZfKfkuYwyM",
+      "text": "Cicada 3301's membership dwindled because the recruits wanted to solve puzzles for the dopamine hit, not write privacy software — the core strategic mismatch that sank the project.",
+      "kind": "speculative",
+      "entities": ["organization:cicada 3301"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "3ZfKfkuYwyM",
+          "charStart": 29949,
+          "charEnd": 30048,
+          "timeStart": 2001,
+          "timeEnd": 2012,
+          "quote": "recruits didn't want to write software\nthey wanted to solve puzzles and when\nthe puzzle stopped the"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.5,
+      "rationale": "This is the host's interpretive framing. It is consistent with public winner reports — participants describe the appeal as 'the hunt' rather than ongoing software labor. But this is one interpretive explanation among several for Cicada's apparent collapse; it is plausible but not conclusive.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "3ZfKfkuYwyM:c_0012", "kind": "elaborates" }],
       "inVerdictSection": true
     }
   ]

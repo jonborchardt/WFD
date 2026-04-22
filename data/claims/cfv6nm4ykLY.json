@@ -1,302 +1,351 @@
 {
   "schemaVersion": 1,
   "transcriptId": "cfv6nm4ykLY",
-  "generatedAt": "2026-04-20T03:50:20.000Z",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "cfv6nm4ykLY:c_0001",
       "videoId": "cfv6nm4ykLY",
-      "text": "Numbers stations — shortwave radio broadcasts of coded messages to spies — have been transmitting continuously since World War One and are still on the air today.",
+      "text": "Numbers stations — shortwave radio broadcasts of coded messages — have transmitted continuously since World War I and are still active today.",
       "kind": "historical",
-      "entities": [
-        "organization:no stations",
-        "organization:stations",
-        "technology:shortwave radio",
-        "event:world war one",
-        "organization:spies"
-      ],
+      "entities": ["organization:no stations", "technology:shortwave radio"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
           "charStart": 0,
-          "charEnd": 160,
+          "charEnd": 118,
           "timeStart": 1.02,
-          "timeEnd": 10.709999999999999,
-          "quote": "Since World War One, no stations have been transmitting coded messages to spies around the\nworld using shortwave radio, and they're still transmitting right now"
+          "timeEnd": 10.71,
+          "quote": "Since World War One, no stations have been transmitting coded messages to spies around the\nworld using shortwave radio"
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.9,
       "directTruth": 0.85,
-      "rationale": "Numbers stations as a phenomenon are well documented. They were definitely active by WWI/WWII (the earliest confirmed traffic dates to roughly that period) and a smaller but nontrivial population is still on the air today, monitored by hobbyists like the ENIGMA 2000 group. The 'continuously since WWI' framing slightly overstates continuity but the substantive claim is correct.",
+      "rationale": "Numbers stations are extensively documented; the first known examples date to World War I, and active monitoring projects (ENIGMA 2000, Priyom.org) continue to catalog them. The 'since WWI' framing is accurate; specific stations still broadcast today.",
       "hostStance": "asserts"
     },
     {
       "id": "cfv6nm4ykLY:c_0002",
       "videoId": "cfv6nm4ykLY",
-      "text": "Numbers stations are simply shortwave radio transmitters in the 3,000–30,000 kHz band that broadcast computer-generated voices reading numbers, Morse code, or data bursts on schedule, with no government openly acknowledging operating them.",
-      "kind": "definitional",
-      "entities": [
-        "organization:no stations",
-        "organization:stations",
-        "technology:shortwave radio",
-        "technology:numbers",
-        "organization:government",
-        "organization:governments"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "cfv6nm4ykLY",
-          "charStart": 3749,
-          "charEnd": 3873,
-          "timeStart": 256.81,
-          "timeEnd": 271.93,
-          "quote": "no stations or simply shortwave radio transmitters\ngenerally operating between three thousand and thirty thousand\nkilohertz."
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Accurate technical definition. The 3-30 MHz HF band is exactly where shortwave operates and where numbers stations are heard, and the official-silence pattern is well-documented across multiple national governments.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "cfv6nm4ykLY:c_0003",
-      "videoId": "cfv6nm4ykLY",
-      "text": "The Lincolnshire Poacher numbers station was operated by British MI6 from a Royal Air Force base in Cyprus from the mid-1970s through 2008, identified after radio hobbyists triangulated the transmission.",
-      "kind": "empirical",
-      "entities": [
-        "work_of_media:the lincolnshire poacher",
-        "organization:mi6",
-        "facility:royal air force base",
-        "location:cyprus",
-        "date_time:2008"
-      ],
+      "text": "The 'Lincolnshire Poacher' numbers station, triangulated to a Royal Air Force base in Cyprus, is believed to have been operated by MI6 from the mid-1970s until it went silent in 2008.",
+      "kind": "historical",
+      "entities": ["organization:mi6", "date_time:2008"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
           "charStart": 1498,
-          "charEnd": 1619,
+          "charEnd": 1560,
           "timeStart": 99.5,
           "timeEnd": 106.16,
-          "quote": "One of the best known no stations was the Lincolnshire poacher named after the folk song\nplayed as an identifying signal."
+          "quote": "One of the best known no stations was the Lincolnshire poacher"
         },
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 1842,
-          "charEnd": 1939,
+          "charStart": 1846,
+          "charEnd": 1938,
           "timeStart": 127.03,
           "timeEnd": 132.9,
-          "quote": "And this station is believed to have been operated by MI6 from the mid 1970s all the way\nto 2008."
+          "quote": "this station is believed to have been operated by MI6 from the mid 1970s all the way\nto 2008"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
-      "rationale": "The Lincolnshire Poacher's transmission from RAF Akrotiri in Cyprus was triangulated by radio enthusiasts and is widely accepted to have been a UK SIS / GCHQ operation. The end-of-broadcast date in 2008 is documented. Britain has not officially confirmed operation, but the attribution is the standard one in the literature.",
+      "rationale": "The Lincolnshire Poacher's attribution to MI6 via the RAF Akrotiri base in Cyprus is the consensus view among enthusiast researchers, based on direction-finding triangulation. The shutdown in 2008 is documented. Official attribution has never been confirmed by the UK government, so 'believed' is the correct hedge.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "cfv6nm4ykLY:c_0003",
+      "videoId": "cfv6nm4ykLY",
+      "text": "The 'Swedish Rhapsody' numbers station, which used a child's voice reading German numbers over a music-box melody, was operated by the Polish secret police for nearly 50 years.",
+      "kind": "historical",
+      "entities": ["work_of_media:swedish rhapsody", "organization:polish secret police"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "cfv6nm4ykLY",
+          "charStart": 2004,
+          "charEnd": 2167,
+          "timeStart": 137.35,
+          "timeEnd": 154.35,
+          "quote": "It used a child's music box and a child's voice to read numbers in German.\nOh, and this number station was operated for almost 50 years by the Polish secret police"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Swedish Rhapsody (G2) has long been attributed to the Polish intelligence service based on triangulation to sites in Poland. The '50 years' and explicit Polish secret police attribution are standard in the numbers-station community's working consensus but have not been officially confirmed.",
       "hostStance": "asserts"
     },
     {
       "id": "cfv6nm4ykLY:c_0004",
       "videoId": "cfv6nm4ykLY",
-      "text": "The Yosemite Sam numbers station broadcasting from a Lockheed Martin contractor site near Lagoona, New Mexico went silent within three hours of being publicly identified by amateur radio operators in February 2005.",
+      "text": "The 'Yosemite Sam' numbers station — which broadcast a Looney Tunes voice clip before a data burst — was traced in February 2005 by amateur radio operators to the Mobility Assessment Test and Integration Center (MATIC), part of a LAGOONA Industries facility near Lagoona, New Mexico.",
       "kind": "historical",
-      "entities": [
-        "person:yosemite sam",
-        "organization:lockheed martin",
-        "organization:lagoona industries",
-        "location:lagoona",
-        "location:new mexico",
-        "date_time:february 2005",
-        "event:the broadcast stopped"
-      ],
+      "entities": ["person:yosemite sam", "location:lagoona", "location:new mexico", "date_time:february 2005", "organization:lagoona industries"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 3459,
-          "charEnd": 3535,
-          "timeStart": 240.1,
-          "timeEnd": 243.97,
-          "quote": "Just three hours later, the broadcast stopped and have not been heard since."
+          "charStart": 2955,
+          "charEnd": 3058,
+          "timeStart": 208.36,
+          "timeEnd": 217.64,
+          "quote": "two amateur radio operators slash heroes tracked down the source of the\nand broadcasts in February 2005"
+        },
+        {
+          "transcriptId": "cfv6nm4ykLY",
+          "charStart": 3060,
+          "charEnd": 3136,
+          "timeStart": 218.02,
+          "timeEnd": 224.23,
+          "quote": "The tower was located at the Mobility Assessment Test and Integration Center"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.6,
-      "rationale": "The Yosemite Sam station was a real numbers-station phenomenon that ran in 2004-05 and was tracked by hobbyists to a site near Albuquerque, NM. Whether it was 'Lockheed Martin / Lagoona Industries' specifically (the host says 'Laguna') and whether it really went silent within three hours of being doxxed is the more dramatic version of the story; primary corroboration is thin. The general arc (transmissions ceased after enthusiasts publicized the location) is reported in numbers-station communities.",
+      "directTruth": 0.85,
+      "rationale": "The Yosemite Sam station and its February 2005 triangulation by amateur direction-finders to a site in Albuquerque-area New Mexico is documented. The episode says 'Lagoona, New Mexico' — the actual facility was near Albuquerque/Belen/Sandia area associated with Sandia Labs / Kirtland contractors; the episode's specific 'LAGOONA Industries' / Lagoona detail matches hobbyist reports but the exact facility name is sometimes transliterated variably.",
       "hostStance": "asserts"
     },
     {
       "id": "cfv6nm4ykLY:c_0005",
       "videoId": "cfv6nm4ykLY",
-      "text": "An anonymous British intelligence agent told an interviewer 'numbers stations are exactly what you think they are, and that's all I'll say about it' — the closest thing to an on-the-record official confirmation that they are espionage tools.",
-      "kind": "empirical",
-      "entities": [
-        "person:anonymous intelligence agent",
-        "organization:no stations",
-        "organization:stations"
-      ],
+      "text": "Within three hours of the amateur operators photographing the Yosemite Sam facility, the broadcasts stopped and have not been heard since — suggesting the operators had effective monitoring of their own site's exposure.",
+      "kind": "historical",
+      "entities": ["person:yosemite sam"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 4700,
-          "charEnd": 4782,
-          "timeStart": 325.39,
-          "timeEnd": 330.16999999999996,
-          "quote": "no stations are exactly what you think they are, and that's all I'll say about it."
+          "charStart": 3459,
+          "charEnd": 3534,
+          "timeStart": 240.1,
+          "timeEnd": 243.97,
+          "quote": "Just three hours later, the broadcast stopped and have not been heard since"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "This quote (or a close variant) is widely attributed in numbers-station literature to an anonymous UK intelligence source contacted by The Daily Telegraph. It's an authentic-sounding but ultimately unverified single-source confirmation.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "This timeline is the widely repeated account from the two radio hobbyists who tracked the station. The causal inference that the operators responded to the visit is plausible. Confirmation from official sources has not occurred; factual status rests on the hobbyists' own reporting.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "cfv6nm4ykLY:c_0004", "kind": "elaborates" }]
     },
     {
       "id": "cfv6nm4ykLY:c_0006",
       "videoId": "cfv6nm4ykLY",
-      "text": "Numbers stations remain in active use because they are paired with one-time pad ciphers, which when used correctly are mathematically unbreakable — unlike modern computer-based crypto which is vulnerable to interception, hacking, and traffic analysis.",
-      "kind": "definitional",
-      "entities": [
-        "organization:no stations",
-        "organization:stations",
-        "technology:numbers",
-        "technology:key",
-        "technology:cipher chart"
-      ],
+      "text": "The core claim that numbers stations are effectively run by governments — pirate in form but untouched by regulators — is the consensus interpretation among researchers.",
+      "kind": "speculative",
+      "entities": ["organization:no stations", "organization:government"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 8749,
-          "charEnd": 8884,
-          "timeStart": 567.23,
-          "timeEnd": 574.79,
-          "quote": "even though they're very low tech numbers, stations are still in use because unlike\ncomputer code, these transmissions are unbreakable."
+          "charStart": 5024,
+          "charEnd": 5054,
+          "timeStart": 343.66,
+          "timeEnd": 346.81,
+          "quote": "no stations are the government"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "One-time pad cryptography is provably unbreakable when the pad is truly random, used only once, and kept secret — Shannon proved this in 1949. The further benefit of shortwave (one-way broadcast leaves no fingerprint of who received the message) is also real and widely cited as the operational rationale.",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "No regulator shuts down these unlicensed broadcasts in the countries where they originate despite their persistence and power, which strongly implies state sponsorship. This is the standard interpretation in the numbers-stations research community.",
       "hostStance": "asserts"
     },
     {
       "id": "cfv6nm4ykLY:c_0007",
       "videoId": "cfv6nm4ykLY",
-      "text": "The 1983 KGB exposure of a CIA officer posing as a Soviet diplomat who was receiving orders from American numbers broadcasts is one of several public cases that prove numbers stations are used for live espionage.",
-      "kind": "historical",
-      "entities": [
-        "date_time:nineteen eighty three",
-        "organization:kgb",
-        "organization:cia",
-        "technology:numbers"
-      ],
+      "text": "Shortwave radio remains useful for espionage because skywave propagation lets signals bounce off the ionosphere to cover entire continents, and the receiver is entirely passive and untraceable.",
+      "kind": "empirical",
+      "entities": ["technology:shortwave radio", "date_time:late nineteen twenties"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 11629,
-          "charEnd": 11770,
-          "timeStart": 748.82,
-          "timeEnd": 756.9200000000001,
-          "quote": "In nineteen eighty three, the KGB uncovered a CIA agent posing as a Soviet diplomat who\nis receiving orders from American numbers broadcasts."
+          "charStart": 5547,
+          "charEnd": 5633,
+          "timeStart": 381.67,
+          "timeEnd": 390.82,
+          "quote": "In the late nineteen twenties, it was a popular way to communicate over long distances"
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.6,
-      "rationale": "Several Cold-War-era espionage cases (CIA officers in Moscow such as Adolf Tolkachev's handlers, the Cuban Five trial, the Walker spy ring) involved numbers-station traffic as evidence. The specific 'KGB-uncovers-CIA-agent-via-numbers-broadcasts in 1983' framing is a generic compression that I can't pin to one famous case. The category claim (these stations are used for live spy work) is well supported.",
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Shortwave skywave propagation off the ionosphere and the untraceability of passive reception are well-established physics and operational facts. Shortwave's long-distance potential was recognized in the 1920s as radio hams discovered it.",
       "hostStance": "asserts"
     },
     {
       "id": "cfv6nm4ykLY:c_0008",
       "videoId": "cfv6nm4ykLY",
-      "text": "Ana Belén Montes, a Defense Intelligence Agency analyst arrested in 2001, was running for Cuban intelligence using numbers-station broadcasts and a one-time-pad code sheet — exposure of her tradecraft directly resulted in at least one US soldier's death; CNN later called her 'the most dangerous spy you've never heard of.'",
-      "kind": "historical",
-      "entities": [
-        "person:montas",
-        "organization:us defense intelligence agency",
-        "location:cuba",
-        "date_time:2001",
-        "date_time:twenty sixteen",
-        "organization:cnn"
-      ],
+      "text": "Properly-executed one-time-pad encryption used in numbers-station broadcasts is mathematically unbreakable.",
+      "kind": "empirical",
+      "entities": ["technology:key", "organization:no stations"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 11925,
-          "charEnd": 12048,
-          "timeStart": 766.04,
-          "timeEnd": 774.0899999999999,
-          "quote": "Also in 2001 on a Montas, who worked for the US Defense Intelligence Agency, was arrested\nand convicted of spying for Cuba."
+          "charStart": 8848,
+          "charEnd": 8883,
+          "timeStart": 567.23,
+          "timeEnd": 574.79,
+          "quote": "these transmissions are unbreakable"
+        },
+        {
+          "transcriptId": "cfv6nm4ykLY",
+          "charStart": 9134,
+          "charEnd": 9162,
+          "timeStart": 592.28,
+          "timeEnd": 593.89,
+          "quote": "That's your one time pad key"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Ana Montes was a real DIA Cuba analyst arrested September 21, 2001, who used a Toshiba shortwave receiver to copy numbers-station traffic from Atención (Cuban) and decode it via one-time pad. CNN ran the 'most dangerous spy you've never heard of' line in 2013. The death-of-an-American-soldier connection is the case of Gregorio 'Goyo' Salgado / the Salvadoran civil war ambush; the attribution is debated by intelligence historians but is the line her DOJ press release supports. The host's account is essentially correct.",
+      "confidence": 0.97,
+      "directTruth": 0.95,
+      "rationale": "Claude Shannon's 1949 proof established that a one-time pad with a truly random key, used only once, provides perfect secrecy. Real-world implementations have been broken when pads were reused (Venona) or keys were not truly random, but properly-executed OTP is mathematically unbreakable.",
       "hostStance": "asserts"
     },
     {
       "id": "cfv6nm4ykLY:c_0009",
       "videoId": "cfv6nm4ykLY",
-      "text": "Despite mountains of evidence from court cases and triangulated transmitter sites, no government or intelligence agency has ever officially admitted to operating numbers stations.",
-      "kind": "empirical",
-      "entities": [
-        "organization:no stations",
-        "organization:government",
-        "organization:governments"
-      ],
+      "text": "In 1983, the KGB uncovered a CIA agent posing as a Soviet diplomat who was receiving his orders via American numbers-station broadcasts — establishing numbers stations as operational espionage infrastructure, not a theoretical curiosity.",
+      "kind": "historical",
+      "entities": ["date_time:nineteen eighty three", "organization:cia", "organization:kgb"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 12518,
-          "charEnd": 12605,
-          "timeStart": 797.39,
-          "timeEnd": 805.76,
-          "quote": "no government or intelligence\nagency has ever officially admitted to using no stations."
+          "charStart": 11629,
+          "charEnd": 11712,
+          "timeStart": 748.82,
+          "timeEnd": 756.92,
+          "quote": "In nineteen eighty three, the KGB uncovered a CIA agent posing as a Soviet diplomat"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "True as a categorical statement — even the Cuban government, despite having Atención openly attributed in US federal court, has never confirmed operation. There are minor exceptions like UVB-76 / The Buzzer's official Russian context being acknowledged in passing, but no government has issued a 'yes, we run these stations for spy traffic' statement.",
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Various Cold-War-era espionage cases involving numbers-station decryption have been reported in declassified materials. The specific 1983 case is consistent with multiple incidents but details are rarely precisely sourced in popular accounts. Historical direction is accurate; specific narrative detail is plausibly a composite.",
       "hostStance": "asserts"
     },
     {
       "id": "cfv6nm4ykLY:c_0010",
       "videoId": "cfv6nm4ykLY",
-      "text": "Numbers stations may persist not just for active espionage but as a strategic backup: a shortwave transmitter needs only an antenna and a diesel generator, so it would still function if the internet or power grid collapsed during a crisis.",
-      "kind": "speculative",
-      "entities": [
-        "organization:government",
-        "organization:governments",
-        "organization:no stations",
-        "organization:stations",
-        "technology:shortwave radio",
-        "facility:diesel generator",
-        "facility:power grid",
-        "facility:shortwave transmitter"
-      ],
+      "text": "The 'Cuban Five' espionage case in U.S. federal court used intercepted shortwave numbers-station broadcasts as prosecution evidence, establishing legal precedent for numbers-station espionage.",
+      "kind": "historical",
+      "entities": ["location:cuba"],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "cfv6nm4ykLY",
-          "charStart": 14152,
-          "charEnd": 14271,
-          "timeStart": 911.71,
-          "timeEnd": 920.2900000000001,
-          "quote": "It could also be that governments maintain the stations for readiness purposes if the\npower grid or Internet goes down,"
+          "charStart": 11835,
+          "charEnd": 11923,
+          "timeStart": 757.13,
+          "timeEnd": 766,
+          "quote": "Cuban spies record and\nshortwave broadcasts for use in the case against them as evidence"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.6,
-      "rationale": "The host frames this as one explanation among several. The HF resilience argument is technically sound — shortwave is the genuine fallback medium for emergency communications precisely because it doesn't require infrastructure beyond a transmitter, antenna, and power. Whether intelligence services actually maintain numbers stations *primarily* for this reason is speculation, but it's a reasonable speculation.",
-      "hostStance": "uncertain",
-      "inVerdictSection": true,
+      "confidence": 0.92,
+      "directTruth": 0.9,
+      "rationale": "The 1998 Cuban Five case in Miami (Gerardo Hernández et al., La Red Avispa) did include intercepted numbers-station broadcasts from 'Atención' as prosecution evidence. This is a matter of court record.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "cfv6nm4ykLY:c_0011",
+      "videoId": "cfv6nm4ykLY",
+      "text": "Ana Montes of the U.S. Defense Intelligence Agency was arrested in 2001 and convicted of spying for Cuba; a shortwave radio and code sheet found in her home confirmed she received orders via numbers stations, and CNN in 2016 called her 'the most dangerous spy you've never heard of.'",
+      "kind": "historical",
+      "entities": ["date_time:2001", "person:montas", "location:cuba", "date_time:twenty sixteen"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "cfv6nm4ykLY",
+          "charStart": 11938,
+          "charEnd": 12014,
+          "timeStart": 766.04,
+          "timeEnd": 774.09,
+          "quote": "on a Montas, who worked for the US Defense Intelligence Agency, was arrested"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Ana Belén Montes was arrested September 21, 2001 and pleaded guilty in 2002 to spying for Cuba's DGI for 16 years. Her use of shortwave radio broadcasts for tasking is confirmed in public FBI reporting. CNN ran the 'most dangerous spy you've never heard of' headline in 2016. All details accurate.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "cfv6nm4ykLY:c_0012",
+      "videoId": "cfv6nm4ykLY",
+      "text": "Ana Montes's intelligence directly led to the death of at least one American soldier by exposing U.S. covert operators in Cuba.",
+      "kind": "empirical",
+      "entities": ["person:montas", "location:cuba"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "cfv6nm4ykLY",
+          "charStart": 12180,
+          "charEnd": 12314,
+          "timeStart": 779.94,
+          "timeEnd": 791.39,
+          "quote": "Now she exposed the identities of covert operators in Cuba, and her information was\ndirectly responsible for the death of at least one"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.65,
+      "rationale": "Reporting on Montes credits her disclosures with the death of U.S. Green Beret Gregory Fronius in El Salvador in 1987 during combat influenced by leaked intelligence. Causation has been debated but the direction is supported by multiple U.S. counterintelligence accounts and a Senate Intelligence Committee report.",
+      "hostStance": "asserts",
+      "dependencies": [{ "target": "cfv6nm4ykLY:c_0011", "kind": "elaborates" }]
+    },
+    {
+      "id": "cfv6nm4ykLY:c_0013",
+      "videoId": "cfv6nm4ykLY",
+      "text": "Despite the Montes conviction and the Cuban Five case, no government or intelligence agency has ever officially acknowledged operating numbers stations.",
+      "kind": "empirical",
+      "entities": ["organization:government", "organization:no stations", "organization:intelligence agency"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "cfv6nm4ykLY",
+          "charStart": 12518,
+          "charEnd": 12604,
+          "timeStart": 797.39,
+          "timeEnd": 805.76,
+          "quote": "no government or intelligence\nagency has ever officially admitted to using no stations"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Despite decades of evidence in court cases and counterintelligence reports, no state has officially owned a numbers station. Germany's 'Yankee' station (DGT) was an implicit but never formal acknowledgment. The claim holds.",
+      "hostStance": "asserts",
       "dependencies": [
-        { "target": "cfv6nm4ykLY:c_0001", "kind": "elaborates", "rationale": "Offers an explanation for the 'why are they still on the air' question implied by the opener." }
+        { "target": "cfv6nm4ykLY:c_0010", "kind": "supports" },
+        { "target": "cfv6nm4ykLY:c_0011", "kind": "supports" }
       ]
+    },
+    {
+      "id": "cfv6nm4ykLY:c_0014",
+      "videoId": "cfv6nm4ykLY",
+      "text": "Numbers stations persist because unlike digital encrypted communications, shortwave broadcasts leave no receiver trail — making them ideal for spies operating in hostile territory where any digital activity could be tracked.",
+      "kind": "speculative",
+      "entities": ["technology:shortwave radio", "organization:spies"],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "cfv6nm4ykLY",
+          "charStart": 6316,
+          "charEnd": 6434,
+          "timeStart": 444.24,
+          "timeEnd": 453.39,
+          "quote": "computerized messages can be hacked, tracked and traced, but no one can trace who's\nreceiving a shortwave radio signal"
+        }
+      ],
+      "confidence": 0.92,
+      "directTruth": 0.9,
+      "rationale": "Passive shortwave reception is fundamentally untraceable without physical access to the receiving equipment. Given this physical property and the existence of active stations, the operational-security advantage for spies in hostile territory is the leading explanation for continued use.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "cfv6nm4ykLY:c_0007", "kind": "elaborates" },
+        { "target": "cfv6nm4ykLY:c_0008", "kind": "supports" }
+      ],
+      "inVerdictSection": true
     }
   ]
 }

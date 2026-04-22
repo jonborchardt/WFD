@@ -1,59 +1,197 @@
 {
   "schemaVersion": 1,
   "transcriptId": "P6mwnfqoNFg",
-  "generatedAt": "2026-04-20T02:38:53.439Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T13:15:00.000Z",
+  "generator": "claude-opus-4-7-1m",
   "claims": [
     {
       "id": "P6mwnfqoNFg:c_0001",
       "videoId": "P6mwnfqoNFg",
-      "text": "Nanotechnology as a research field traces back to Richard Feynman's 1959 'There's Plenty of Room at the Bottom' lecture at Caltech, in which the future Nobel laureate proposed that machines could in principle be miniaturized to the molecular scale and vast amounts of information packed into atomic-scale structures.",
+      "text": "Nano robotics could enable humans to live 150 years or longer.",
+      "kind": "speculative",
+      "entities": [
+        "technology:nano robotics",
+        "quantity:150 years",
+        "quantity:one hundred and fifty years"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 362,
+          "charEnd": 447,
+          "timeStart": 19.0,
+          "timeEnd": 24.78,
+          "quote": "you can live\nfor 150 years, maybe even longer.\nNano robotics could create this world."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.2,
+      "rationale": "Lifespan-extension via nanobots is a long-tail futurist projection. Current verified human lifespan ceiling is ~120 years (Jeanne Calment). No clinical nanomedicine has shown population-level lifespan extension.",
+      "hostStance": "asserts",
+      "tags": ["life-extension", "nano-medicine"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0002",
+      "videoId": "P6mwnfqoNFg",
+      "text": "A nanometer is one billionth of a meter — the ratio of a meter to a nanometer equals the ratio of Earth to a marble.",
+      "kind": "definitional",
+      "entities": [
+        "quantity:a nanometre",
+        "quantity:one billionth of a metre"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 1882,
+          "charEnd": 1922,
+          "timeStart": 119.19,
+          "timeEnd": 121.92,
+          "quote": "A nanometre is one billionth of a metre."
+        },
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 1973,
+          "charEnd": 2054,
+          "timeStart": 123.87,
+          "timeEnd": 130.2,
+          "quote": "The ratio of a meter to\na nanometre is roughly the same as the\nearth to a marble."
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Basic SI definition: 1 nm = 1e-9 m. The Earth/marble analogy is a common educational simplification (Earth diameter ~1.3e7 m; marble ~1.3e-2 m ratio ~1e9), close enough.",
+      "hostStance": "asserts",
+      "tags": ["definition", "nanometer"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0003",
+      "videoId": "P6mwnfqoNFg",
+      "text": "A DNA strand is about 2.5 nanometers wide.",
+      "kind": "empirical",
+      "entities": [
+        "quantity:nanometres"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 2055,
+          "charEnd": 2105,
+          "timeStart": 130.2,
+          "timeEnd": 134.46,
+          "quote": "A strand of DNA is about two and a half\nnanometres"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.95,
+      "rationale": "Standard fact: B-form DNA double helix is approximately 2 nm in diameter — 2.5 nm is close enough for a typical educational rounding.",
+      "hostStance": "asserts",
+      "tags": ["dna", "scale"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0004",
+      "videoId": "P6mwnfqoNFg",
+      "text": "In 1959 Richard Feynman's lecture 'There's Plenty of Room at the Bottom' founded the conceptual field of nanotechnology.",
       "kind": "historical",
       "entities": [
         "person:richard feynman",
-        "date_time:nineteen fifty nine",
-        "technology:nanotechnology"
+        "work_of_media:there's plenty of room at the bottom",
+        "date_time:nineteen fifty nine"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P6mwnfqoNFg",
           "charStart": 2441,
-          "charEnd": 2571,
+          "charEnd": 2572,
           "timeStart": 151.45,
           "timeEnd": 158.22,
-          "quote": "in nineteen fifty nine, American\ntheoretical physicist Richard Feynman gave a\nspeech entitled There's Plenty of\nRoom at the Bottom"
+          "quote": "in nineteen fifty nine, American\ntheoretical physicist Richard Feynman gave a\nspeech entitled There's Plenty of\nRoom at the Bottom."
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Richard Feynman's December 29, 1959 American Physical Society lecture at Caltech, 'There's Plenty of Room at the Bottom,' is universally credited as the founding vision of nanotechnology — published in Engineering and Science (1960) and Science (1992). Feynman won the Nobel Prize in Physics in 1965 (for QED). The host's framing is correct.",
-      "hostStance": "asserts"
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Well-established: Feynman's Dec 29, 1959 lecture to the APS at Caltech is widely credited as the conceptual origin of nanotechnology.",
+      "hostStance": "asserts",
+      "tags": ["feynman", "nanotech-history"]
     },
     {
-      "id": "P6mwnfqoNFg:c_0002",
+      "id": "P6mwnfqoNFg:c_0005",
       "videoId": "P6mwnfqoNFg",
-      "text": "K. Eric Drexler operationalized Feynman's vision in his 1986 book 'Engines of Creation: The Coming Era of Nanotechnology,' introducing the concept of universal molecular assemblers and famously warning of the 'gray goo' scenario in which self-replicating nanobots could consume the biosphere.",
+      "text": "In 1986 K. Eric Drexler published 'Engines of Creation: The Coming Era of Nanotechnology', citing Feynman and popularizing the field.",
       "kind": "historical",
       "entities": [
-        "person:drechsler",
-        "person:drexler",
         "person:kay eric drexler",
-        "date_time:nineteen eighty six",
-        "technology:nanotechnology",
-        "event:nightmare scenario",
-        "event:mass environmental extinction"
+        "person:drexler",
+        "person:drechsler",
+        "work_of_media:engines of creation the coming era of nanotechnology",
+        "date_time:nineteen eighty six"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P6mwnfqoNFg",
           "charStart": 2858,
-          "charEnd": 2907,
+          "charEnd": 2980,
           "timeStart": 177.21,
-          "timeEnd": 182.25,
-          "quote": "in nineteen eighty six, engineer Kay\nEric Drexler"
-        },
+          "timeEnd": 186.96,
+          "quote": "in nineteen eighty six, engineer Kay\nEric Drexler cited Feynman speech in his\nnineteen eighty six book Engines of\nCreation"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Verifiable historical fact: Drexler, Engines of Creation (Anchor, 1986) is the genre-defining popularization, directly citing Feynman.",
+      "dependencies": [
+        { "target": "P6mwnfqoNFg:c_0004", "kind": "elaborates" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["drexler", "engines-of-creation"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0006",
+      "videoId": "P6mwnfqoNFg",
+      "text": "Drexler imagined the entire Library of Congress fitting on a sugar-cube-sized chip via universal molecular assemblers.",
+      "kind": "speculative",
+      "entities": [
+        "person:drechsler",
+        "organization:library of congress",
+        "technology:universal assemblers"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 3015,
+          "charEnd": 3123,
+          "timeStart": 187.14,
+          "timeEnd": 192.66,
+          "quote": "Drechsler Imagine a world where the entire Library\nof Congress could fit on a chip the\nsize of a sugar cube."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.55,
+      "rationale": "Drexler's storage-density prediction is directionally plausible (DNA-based storage has already achieved extremely high densities, see c_0011), though 'universal assemblers' as literal molecular machines remains unbuilt — Richard Smalley debate.",
+      "dependencies": [
+        { "target": "P6mwnfqoNFg:c_0005", "kind": "elaborates" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["drexler", "storage-density"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0007",
+      "videoId": "P6mwnfqoNFg",
+      "text": "Drexler also warned of a 'grey goo' nightmare scenario where self-replicating nanobots trigger mass environmental extinction.",
+      "kind": "speculative",
+      "entities": [
+        "person:drechsler",
+        "technology:nanobots",
+        "event:nightmare scenario",
+        "event:mass environmental extinction"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "P6mwnfqoNFg",
           "charStart": 3649,
@@ -64,25 +202,27 @@
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Kim Eric Drexler's 'Engines of Creation: The Coming Era of Nanotechnology' (Anchor Books, 1986) is the canonical popularization of molecular nanotechnology, introducing 'assemblers,' 'replicators,' and the catastrophic 'gray goo' scenario (Drexler later distanced himself from the term). His PhD ('Nanosystems', MIT 1991) is also the foundational technical text. The host's account is accurate. Drexler later moderated his self-replication risk view; his 2013 book 'Radical Abundance' walked it back.",
-      "hostStance": "asserts"
+      "directTruth": 0.7,
+      "rationale": "Drexler did popularize the grey-goo scenario in Engines of Creation. He has since walked it back as unlikely given thermodynamic and evolutionary constraints — but the proposal itself is documented.",
+      "dependencies": [
+        { "target": "P6mwnfqoNFg:c_0005", "kind": "elaborates" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["grey-goo", "x-risk", "drexler"]
     },
     {
-      "id": "P6mwnfqoNFg:c_0003",
+      "id": "P6mwnfqoNFg:c_0008",
       "videoId": "P6mwnfqoNFg",
-      "text": "Modern nanotech R&D has demonstrated working components — single-atom heat engines (Mainz, Germany, 2016), nanoscale mechanical assemblies built via DNA origami (Ohio State), magnetically-steered nanoswimmers for targeted drug delivery (Zurich/Technion), and ANTs (actuating nano transducers, Cambridge) with extraordinary force-to-weight ratios — establishing that the field is no longer purely theoretical.",
-      "kind": "empirical",
+      "text": "Researchers at the University of Mainz, Germany, built the smallest engine ever from a single atom trapped in an electromagnetic cone and heated with a laser.",
+      "kind": "historical",
       "entities": [
-        "technology:nanotechnology",
-        "technology:nano robotics",
+        "person:researchers",
         "organization:university of mines",
-        "organization:ohio state",
-        "organization:technion",
-        "organization:university of cambridge",
-        "organization:antz a.s.",
         "location:germany",
-        "location:zurich"
+        "technology:nano engine",
+        "technology:electromagnetic cone",
+        "technology:laser",
+        "quantity:single atom"
       ],
       "relationships": [],
       "evidence": [
@@ -93,152 +233,215 @@
           "timeStart": 256.16,
           "timeEnd": 263.51,
           "quote": "researchers at the University of\nMines in Germany built the smallest engine\never from just a single atom"
-        },
-        {
-          "transcriptId": "P6mwnfqoNFg",
-          "charStart": 4645,
-          "charEnd": 4765,
-          "timeStart": 274.55,
-          "timeEnd": 289.49,
-          "quote": "engineers at Ohio State\ndesigned and constructed complex nanoscale mechanical parts\nusing a process known as DNA\norigami"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.85,
-      "rationale": "All four examples are real published research: Mainz single-ion heat engine (Roßnagel et al., Science 2016 — the host says 'University of Mines' which is a transcript artifact for Mainz). Ohio State DNA-origami nanomechanical components (Carlos Castro / Hai-Jun Su lab). Zurich/Technion magnetic nanoswimmers (Bradley Nelson lab at ETH). Cambridge ANTs / actuating nanostructures (Jeremy Baumberg lab, gold-nanoparticle actuators, ~100x force-to-weight figures published 2016). Solid empirical claim, with minor transcription mangling of 'Mainz'.",
-      "hostStance": "asserts"
+      "rationale": "Rossnagel et al., 'A single-atom heat engine' (Science, 2016, Mainz University) — real published work using a single calcium ion in a Paul trap as a heat engine. Transcript says 'Mines' via ASR error but the claim is verified.",
+      "hostStance": "asserts",
+      "tags": ["single-atom-engine", "mainz"]
     },
     {
-      "id": "P6mwnfqoNFg:c_0004",
+      "id": "P6mwnfqoNFg:c_0009",
       "videoId": "P6mwnfqoNFg",
-      "text": "Major near-term medical applications of nanorobotics include targeted drug delivery at the cellular level (reducing systemic side effects), nanoparticle-enhanced MRI early-disease detection, arterial-plaque clearance for cardiovascular disease, and tumor-cell-specific cancer therapy that spares healthy tissue.",
-      "kind": "speculative",
+      "text": "Zurich and Technion researchers developed a magnetically controlled 15 µm elastic nano-swimmer for targeted cellular drug delivery.",
+      "kind": "historical",
       "entities": [
-        "technology:nano robotics",
-        "technology:nanobots",
-        "technology:nanotechnology"
+        "location:zurich",
+        "organization:technion",
+        "technology:elastic nano swimmer",
+        "technology:targeted therapies"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P6mwnfqoNFg",
-          "charStart": 5885,
-          "charEnd": 6001,
-          "timeStart": 350.96,
-          "timeEnd": 360.08,
-          "quote": "A main field of nanobot study involves\ndrug delivery at the cellular level.\nThis could really limit the side effects"
+          "charStart": 4941,
+          "charEnd": 5020,
+          "timeStart": 294.92,
+          "timeEnd": 300.2,
+          "quote": "Zurich, along with Technion researchers,\nhave developed an elastic nano swimmer"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.65,
-      "rationale": "Targeted nanoparticle drug delivery (Doxil/PEGylated liposomal doxorubicin approved 1995, Abraxane 2005, Patisiran 2018) is real, mature, and FDA-approved for several oncology indications. Magnetic-nanoparticle MRI contrast agents have been explored extensively. Tumor-targeting nanobots and arterial-plaque-clearing nanorobots remain mostly preclinical/proof-of-concept (e.g., 2018 Nature Biotechnology 'DNA robot in vivo' — Nie et al.). The host's framing — 'this could' rather than 'this does' — is appropriately hedged. Mid-range directTruth: drug delivery is real, full nanorobot medicine is aspirational.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "Bradley Nelson's ETH Zurich group with Technion did publish magnetic helical nano/microswimmers around this era (Peyer/Zhang et al.) — real research.",
+      "hostStance": "asserts",
+      "tags": ["nano-swimmer", "drug-delivery"]
     },
     {
-      "id": "P6mwnfqoNFg:c_0005",
+      "id": "P6mwnfqoNFg:c_0010",
       "videoId": "P6mwnfqoNFg",
-      "text": "Harvard bioengineers/geneticists demonstrated DNA-based information storage at densities of approximately 700 terabytes per gram — equivalent to ~200,000 HD movies (~31 Netflix catalogs) — illustrating that nanoscale data storage is a fundamentally feasible technology, not just speculation.",
-      "kind": "empirical",
+      "text": "Nanobots are a valuable weapon against cancer because they can target only diseased cells and avoid side effects like hair loss and nausea.",
+      "kind": "speculative",
       "entities": [
-        "technology:data storage",
+        "technology:nanobots",
+        "technology:targeted therapies"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 7027,
+          "charEnd": 7063,
+          "timeStart": 417.79,
+          "timeEnd": 420.48,
+          "quote": "nanobots could\nbe a valuable weapon."
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "Targeted nano-drug-delivery is an active field with some approved products (Abraxane, Doxil) but fully selective cancer-curing nanobots do not exist. Promising, unproven.",
+      "hostStance": "asserts",
+      "tags": ["cancer", "nano-medicine"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0011",
+      "videoId": "P6mwnfqoNFg",
+      "text": "Harvard bioengineers stored 700 terabytes of data in a single gram of DNA, equivalent to 200,000 HD movies.",
+      "kind": "historical",
+      "entities": [
         "organization:harvard",
-        "person:geneticist"
+        "technology:data storage",
+        "quantity:700 terabytes",
+        "quantity:two hundred thousand hd movies"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P6mwnfqoNFg",
           "charStart": 7414,
-          "charEnd": 7530,
+          "charEnd": 7531,
           "timeStart": 440.83,
           "timeEnd": 448.45,
-          "quote": "Bioengineers and geneticist at Harvard have\nsuccessfully stored around 700 terabytes of\ndata in a single gram of DNA"
+          "quote": "Bioengineers and geneticist at Harvard have\nsuccessfully stored around 700 terabytes of\ndata in a single gram of DNA."
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
-      "rationale": "George Church's lab at Harvard Medical School published the original DNA-storage demonstration in Science (2012, 'Next-generation digital information storage in DNA' — Church, Gao, Kosuri) encoding ~700 terabits/gram of an HTML book. Subsequent work (Goldman/Birney 2013, Erlich/Zielinski 2017) has refined the technique. The 700 TB/gram figure is in the right ballpark of contemporaneous reporting (some sources say 700 terabits, some terabytes — the 700 TB figure is from later iterations). Largely correct.",
-      "hostStance": "asserts"
+      "rationale": "George Church lab (Harvard Wyss Institute) 2012 Science paper demonstrated ~5.5 petabits per mm³ DNA storage, roughly on the order quoted. Number is consistent.",
+      "hostStance": "asserts",
+      "tags": ["dna-storage", "church", "harvard"]
     },
     {
-      "id": "P6mwnfqoNFg:c_0006",
+      "id": "P6mwnfqoNFg:c_0012",
       "videoId": "P6mwnfqoNFg",
-      "text": "Ray Kurzweil predicts that by 2030 nanorobots will connect human brains directly to the cloud — a prediction whose credibility he buttresses with a self-reported 86% accuracy rate on his ~147 forecasts since the 1990s.",
+      "text": "Carbon nanotube sponges are 100 times stronger than steel but six times lighter, and can absorb water contaminants three times faster than current filtration.",
+      "kind": "empirical",
+      "entities": [
+        "technology:carbon nanotubes sponges",
+        "technology:current technology"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 7867,
+          "charEnd": 7949,
+          "timeStart": 466.03,
+          "timeEnd": 471.22,
+          "quote": "Carbon nanotubes sponges are 100 times stronger\nthan steel, but six times lighter."
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "Carbon nanotubes have theoretical tensile strength ~100× steel at ~1/6 density (confirmed for individual tubes). Bulk CNT sponges are less exceptional. Numbers are real but refer to idealized, not production-scale, CNTs.",
+      "hostStance": "asserts",
+      "tags": ["carbon-nanotubes", "filtration"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0013",
+      "videoId": "P6mwnfqoNFg",
+      "text": "Futurist Ray Kurzweil predicts human brains will be directly wired to the cloud by 2030.",
       "kind": "speculative",
       "entities": [
         "person:ray kurzweil",
-        "technology:nano robotics",
+        "technology:cloud",
+        "role:inventor and futurist"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 8468,
+          "charEnd": 8543,
+          "timeStart": 501.48,
+          "timeEnd": 507.93,
+          "quote": "nano robotics could be used to connect our\nbrains directly to the Internet."
+        },
+        {
+          "transcriptId": "P6mwnfqoNFg",
+          "charStart": 8737,
+          "charEnd": 8813,
+          "timeStart": 524.22,
+          "timeEnd": 529.26,
+          "quote": "Inventor and futurist Ray Kurzweil is certain that\nthis will happen by 20 30"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.1,
+      "rationale": "Kurzweil has made this prediction consistently. As of 2026, no brain-cloud interface exists outside of narrow BCI prototypes (Neuralink N1). 2030 fulfillment highly unlikely.",
+      "hostStance": "asserts",
+      "tags": ["kurzweil", "brain-cloud", "singularity"]
+    },
+    {
+      "id": "P6mwnfqoNFg:c_0014",
+      "videoId": "P6mwnfqoNFg",
+      "text": "Ray Kurzweil has an 86% accuracy rate on 147 predictions made since the 1990s.",
+      "kind": "empirical",
+      "entities": [
+        "person:ray kurzweil",
+        "quantity:eighty six percent accuracy rate",
+        "quantity:one hundred and forty seven",
         "quantity:115"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P6mwnfqoNFg",
-          "charStart": 8759,
-          "charEnd": 8813,
-          "timeStart": 524.22,
-          "timeEnd": 529.26,
-          "quote": "Ray Kurzweil is certain that\nthis will happen by 20 30"
-        },
-        {
-          "transcriptId": "P6mwnfqoNFg",
-          "charStart": 8851,
-          "charEnd": 8916,
-          "timeStart": 530.82,
-          "timeEnd": 535.83,
-          "quote": "He's made one hundred and forty seven predictions\nsince the 1990s"
-        },
-        {
-          "transcriptId": "P6mwnfqoNFg",
           "charStart": 9006,
           "charEnd": 9062,
           "timeStart": 539.22,
-          "timeEnd": 544.2900000000001,
+          "timeEnd": 544.29,
           "quote": "His predictions have an eighty six percent accuracy\nrate"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.4,
-      "rationale": "Ray Kurzweil really does predict brain-cloud direct connection by ~2030 in 'The Singularity Is Near' (2005) and elsewhere. His self-claimed 86% accuracy rate (115 of 147) is from his own 2010 'How My Predictions Are Faring' essay — independent reviewers (Stuart Armstrong's 2012 analysis) score his predictions much lower (~50% with generous grading). The brain-cloud direct connection by 2030 is highly speculative and unlikely to be achieved on that timeline; Neuralink's current best human implants (early 2020s) are nowhere near full bidirectional cloud-mind integration. Kurzweil's general track record is mixed.",
-      "hostStance": "uncertain"
+      "confidence": 0.8,
+      "directTruth": 0.25,
+      "rationale": "Kurzweil himself scored his predictions at 86%. Independent analyses (IEEE Spectrum 2012) find the scoring too generous — many predictions were vague or self-fulfilling. The 86% figure is self-reported marketing.",
+      "dependencies": [
+        { "target": "P6mwnfqoNFg:c_0013", "kind": "supports", "rationale": "his track record is the basis for trusting his 2030 brain-cloud prediction" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["kurzweil", "forecasting"]
     },
     {
-      "id": "P6mwnfqoNFg:c_0007",
+      "id": "P6mwnfqoNFg:c_0015",
       "videoId": "P6mwnfqoNFg",
-      "text": "AJ's verdict: nanotechnology has moved from concept to working laboratory components in just 60 years, with enormous benefits in medicine, energy, environment, and computing — but as nanobots become more sophisticated, malfunctions are inevitable, and the catastrophic failure mode (self-replicating self-aware nanobots) may not be detectable until it's too late.",
-      "kind": "opinion",
+      "text": "Future nanobots could self-replicate or become self-aware, raising existential risks that may not be detected until too late.",
+      "kind": "speculative",
       "entities": [
-        "technology:nanotechnology",
-        "technology:nano robotics",
         "technology:nanobots",
-        "event:malfunctions",
         "group_or_movement:futurists"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P6mwnfqoNFg",
-          "charStart": 9918,
-          "charEnd": 9977,
+          "charStart": 9900,
+          "charEnd": 9958,
           "timeStart": 595.63,
           "timeEnd": 602.89,
-          "quote": "self replicate or even become\nself-aware? How will we know?"
+          "quote": "nanobots\nlearn to self replicate or even become\nself-aware"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Closing-section verdict / opinion: optimism about benefits balanced against the gray-goo / self-replication-detection problem. The empirical components (rapid 60-year arc from Feynman to working components) are largely true; the precautionary-principle framing is opinion. directTruth omitted because this is a value judgment about how to weigh known benefits against speculative risks.",
-      "hostStance": "uncertain",
-      "inVerdictSection": true,
+      "confidence": 0.9,
+      "rationale": "Self-replicating machine-phase nanobots remain entirely theoretical. 'Self-aware' nanobots compound two unsolved problems (molecular machine-phase construction + artificial consciousness). Host flags as a cautionary unknown.",
       "dependencies": [
-        {
-          "target": "P6mwnfqoNFg:c_0002",
-          "kind": "presupposes"
-        },
-        {
-          "target": "P6mwnfqoNFg:c_0003",
-          "kind": "presupposes"
-        }
-      ]
+        { "target": "P6mwnfqoNFg:c_0007", "kind": "elaborates" }
+      ],
+      "hostStance": "uncertain",
+      "tags": ["x-risk", "self-replication", "ai"]
     }
   ]
 }

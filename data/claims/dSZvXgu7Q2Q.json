@@ -1,59 +1,105 @@
 {
   "schemaVersion": 1,
   "transcriptId": "dSZvXgu7Q2Q",
-  "generatedAt": "2026-04-20T04:17:07.000Z",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "dSZvXgu7Q2Q:c_0001",
       "videoId": "dSZvXgu7Q2Q",
-      "text": "33 Thomas Street in Lower Manhattan is a 500-foot 29-story windowless brutalist skyscraper that publicly serves as an AT&T telecommunications building but, per leaked NSA documents, is in fact the NSA mass-surveillance hub codenamed Titan Point.",
+      "text": "In Manhattan there is a 500-foot tall, 29-story building with no windows, no lights, and no markings — because it is a top-secret NSA spy station built to withstand nuclear war.",
       "kind": "historical",
       "entities": [
-        "location:33 thomas street",
-        "facility:long lines building",
-        "location:lower manhattan",
-        "organization:at t",
+        "location:new york city",
         "organization:nsa",
-        "facility:titan point",
-        "location:titan point",
-        "person:edward snowden"
+        "event:nuclear war",
+        "quantity:500 foot"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "dSZvXgu7Q2Q",
           "charStart": 0,
-          "charEnd": 500,
-          "timeStart": 0.49,
-          "timeEnd": 53.6,
-          "quote": "[Music]\nnew york city has skyscrapers of all\nshapes and sizes\nbut why does this 500 foot tall 29 story\nbuilding have no windows\nno lights and no markings at all well\nbecause it's a top secret nsa spy\nstation\nbuilt to withstand nuclear war let's\nfind out why\n[Applause]\n[Music]\nnew york city architecture covers\neverything art deco gothic art nouveau\nrenaissance revival in the 1950s\na style emerged called brutalism and\nbrutalist architecture is known for\nfocusing on function over form and\nminimalis"
-        },
-        {
-          "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 2100,
-          "charEnd": 2700,
-          "timeStart": 153.76,
-          "timeEnd": 202.959,
-          "quote": "n began in 1969\nand was completed in 1974.\nthe gray granite tower is located at 33\nthomas street in lower manhattan\nand locals know the building as the long\nlines building and it's been a source of\nmystery for years\nwhat jumps out is that the building has\nno windows and no exterior lighting\nso during the day it kind of fades into\nthe background of the new york city\nskyline\nat night it becomes an invisible shadow\nnow thanks to nsa documents leaked by\nedward snowden\nwe now know that creating an invisible\nbuilding wasn't an accident\nit was absolutely by design\nit's not unusual to keep locations\nc"
+          "charEnd": 140,
+          "timeStart": 0,
+          "timeEnd": 9.31,
+          "quote": "[Music]\nnew york city has skyscrapers of all\nshapes and sizes\nbut why does this 500 foot tall 29 story\nbuilding have no windows\nno lights an"
         }
       ],
-      "confidence": 0.98,
-      "directTruth": 0.85,
-      "rationale": "33 Thomas Street is real, the dimensions and AT&T ownership are documented public record, and the NSA-Titan Point identification was confirmed in The Intercept's 2016 investigation drawing on Snowden documents (with corroboration in subsequent reporting). The 'designed to withstand nuclear war' framing is consistent with the building's Cold War design brief.",
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "33 Thomas Street really is a 550-foot windowless Manhattan building (the host says 500, which is off by one floor). Its construction as a hardened AT&T long-lines switching center was driven by Cold War survivability requirements. The 'NSA spy station' framing comes from Snowden-era disclosures about TITANPOINTE, confirmed by The Intercept's 2016 reporting.",
       "hostStance": "asserts"
     },
     {
       "id": "dSZvXgu7Q2Q:c_0002",
       "videoId": "dSZvXgu7Q2Q",
-      "text": "33 Thomas Street was built between 1969 and 1974 under a Cold War initiative called Project X — designed to be a 29-floor windowless fortress with three basement levels and 1,500-person, two-week food supply, with the primary purpose of protecting AT&T's telecommunications equipment rather than humans through a nuclear blast.",
+      "text": "The building is 33 Thomas Street, officially the home of a mysterious AT&T facility.",
+      "kind": "definitional",
+      "entities": [
+        "location:33 thomas street",
+        "organization:at t"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 600,
+          "charEnd": 760,
+          "timeStart": 39.9,
+          "timeEnd": 50.53,
+          "quote": "mysterious\nbuilding in new york it's 33 thomas\nstreet\nand it's a 500 foot tall skyscraper with\nno exterior lighting\nand has no windows what 33 thomas street\ndoe"
+        }
+      ],
+      "confidence": 0.99,
+      "directTruth": 0.97,
+      "rationale": "33 Thomas Street's owner-of-record is AT&T Long Lines; the building was designed by John Carl Warnecke (the host mispronounces as 'warnicky') and opened in 1974 as a toll-switching office. Both address and AT&T ownership are matter of public record.",
+      "dependencies": [
+        {
+          "target": "dSZvXgu7Q2Q:c_0001",
+          "kind": "elaborates"
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0003",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "The goal of the original secret program 'Project X' was to build a skyscraper in the middle of New York City capable of withstanding a nuclear war.",
       "kind": "historical",
       "entities": [
         "facility:project x",
-        "facility:skyscraper",
-        "event:cold war",
-        "event:nuclear war",
-        "organization:at t",
+        "location:new york city",
+        "event:nuclear war"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 1194,
+          "charEnd": 1330,
+          "timeStart": 79.39,
+          "timeEnd": 88.44,
+          "quote": "project x project x you're kidding right\nno that's what it was called\nthey're usually more creative the goal\nof project x\nwas to build a"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "'Project X' was AT&T's internal name for the 33 Thomas Street hardened switching facility; the civil-defense survivability spec (blast-resistant, atomic-fallout filtered, 2-week self-sufficient) is well documented in the trade press. 'Project X' is also used for AT&T's other civil-defense underground sites, so the name is slightly less unique than the video implies.",
+      "dependencies": [
+        {
+          "target": "dSZvXgu7Q2Q:c_0002",
+          "kind": "elaborates"
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0004",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "The building was designed by architect John Carl Warnecke; construction began in 1969 and was completed in 1974.",
+      "kind": "historical",
+      "entities": [
         "date_time:1969",
         "date_time:1974"
       ],
@@ -61,267 +107,298 @@
       "evidence": [
         {
           "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 1060,
-          "charEnd": 1616,
-          "timeStart": 87.92,
-          "timeEnd": 131.84,
-          "quote": "cold war\neveryone thought nuclear war was\nimminent so the us\ndesperate to protect its infrastructure\nlaunched a secret project called\nproject x project x you're kidding right\nno that's what it was called\nthey're usually more creative the goal\nof project x\nwas to build a skyscraper in the middle\nof new york city capable of withstanding\na nuclear blast\nthe building would be 29 floors have no\nwindows\nthree basement levels and enough food to\nlast\n1500 people two weeks but its primary\npurpose was not to protect humans\nthis would be a fortress designed to\n"
+          "charStart": 1960,
+          "charEnd": 2110,
+          "timeStart": 130.33,
+          "timeEnd": 140.3,
+          "quote": "nications giant a t\ndemonstrated a quote extreme willingness\nto help the nsa\nthe building was designed by john karl\nwarnicky and construction began in"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "John Carl Warnecke was the architect; construction dates are correct; the windowless / equipment-protection design brief is on record. The 'Project X' codename is sometimes attached to the building in popular accounts though the more commonly cited origin name is for AT&T Long Lines. The 1500-people / two-week supply figure is widely repeated but not from a single canonical primary source.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "dSZvXgu7Q2Q:c_0001", "kind": "elaborates"}
-      ]
+      "confidence": 0.97,
+      "directTruth": 0.95,
+      "rationale": "Verifiable architectural history: John Carl Warnecke & Associates designed 33 Thomas Street; AT&T records confirm 1969 groundbreaking and 1974 completion. All three dates and the architect attribution check out.",
+      "hostStance": "asserts"
     },
     {
-      "id": "dSZvXgu7Q2Q:c_0003",
+      "id": "dSZvXgu7Q2Q:c_0005",
       "videoId": "dSZvXgu7Q2Q",
-      "text": "Under the Titan Point program, the NSA — through AT&T (codenamed 'Lithium' in NSA documents) — surveils communications across at least 38 countries including U.S. allies France, Germany, and Japan, and targets organizations including the United Nations, World Bank, and IMF.",
+      "text": "33 Thomas Street operates under the NSA code name Titan Point — a core monitoring hub used to tap into phone calls, faxes, and internet data.",
       "kind": "empirical",
       "entities": [
-        "organization:nsa",
+        "location:33 thomas street",
         "facility:titan point",
-        "organization:at t",
-        "person:lithium",
-        "organization:un",
-        "organization:the united nations",
-        "organization:world bank",
-        "organization:imf"
+        "organization:nsa"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 2900,
-          "charEnd": 3500,
-          "timeStart": 210.879,
-          "timeEnd": 252.879,
-          "quote": "ars to be one of the most\nimportant national security agency\nsurveillance sites\non u.s soil a secret monitoring hub that\nis used to tap into phone calls\nfaxes and internet data 33 thomas street\noperates under nsa code name titan point\nand titan point is a core location used\nfor controversial\nand possibly illegal nsa sponsored mass\nsurveillance\naccording to leaked documents this\nprogram has targeted the communications\nof the un\nthe world bank the imf it's been used to\nspy on at least 38 countries\nincluding u.s allies like france germany\nand japan\nnow it's common knowledge that att is\nvery coope"
+          "charStart": 3000,
+          "charEnd": 3140,
+          "timeStart": 199.48,
+          "timeEnd": 208.79,
+          "quote": " monitoring hub that\nis used to tap into phone calls\nfaxes and internet data 33 thomas street\noperates under nsa code name titan point\nand t"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The Intercept's 16 Nov 2016 piece 'Titanpointe: The NSA's Spy Hub in New York' (Gallagher & Moltke) published the code-name-to-building identification, drawing on Snowden documents. The description as a core monitoring hub matches the leaked documents.",
+      "dependencies": [
+        {
+          "target": "dSZvXgu7Q2Q:c_0002",
+          "kind": "elaborates"
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0006",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "Legally the NSA can only target the communications of foreign nationals — but the surveillance apparatus intercepts far more.",
+      "kind": "definitional",
+      "entities": [
+        "organization:nsa",
+        "nationality_or_ethnicity:foreign nationals"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 4070,
+          "charEnd": 4210,
+          "timeStart": 270.62,
+          "timeEnd": 279.93,
+          "quote": "government knows who you're calling and\nwhen\nthey know how long you talk and what\nkeywords you say now\nlegally the nsa can only target the\nc"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
-      "rationale": "These specific target lists (UN, World Bank, IMF, 38 countries including allies) are documented in published Snowden materials reported by The Intercept, Der Spiegel, and others. The codename 'Lithium' for AT&T cooperation is also from the leaked travel guides.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "dSZvXgu7Q2Q:c_0001", "kind": "elaborates"}
-      ]
+      "rationale": "FISA §702 and Executive Order 12333 limit NSA targeting to non-US-persons reasonably believed to be abroad. In practice (as documented in the 2014 Privacy and Civil Liberties Oversight Board report), upstream collection at facilities like TITANPOINTE incidentally sweeps in US-person traffic in large volumes.",
+      "hostStance": "asserts"
     },
     {
-      "id": "dSZvXgu7Q2Q:c_0004",
+      "id": "dSZvXgu7Q2Q:c_0007",
       "videoId": "dSZvXgu7Q2Q",
-      "text": "A 1975 congressional inquiry exposed that the NSA was illegally surveilling anti-Vietnam war activists, civil rights leaders including Dr. King, Muhammad Ali, and journalists at the Washington Post and New York Times — a Fourth Amendment violation done without judicial warrants.",
-      "kind": "historical",
+      "text": "'Lithium' is the NSA's code name for AT&T, and Lithium supervises the site — i.e., AT&T runs operations at the NSA's behest at 33 Thomas Street.",
+      "kind": "empirical",
       "entities": [
-        "organization:nsa",
-        "date_time:1975",
-        "event:congressional inquiry",
-        "group_or_movement:anti-vietnam war activists",
-        "group_or_movement:civil rights movement",
-        "law_or_policy:fourth amendment",
+        "person:lithium",
+        "organization:at t",
+        "organization:nsa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 5200,
+          "charEnd": 5340,
+          "timeStart": 345.76,
+          "timeEnd": 355.07,
+          "quote": "an nsa corporate\npartner code name\nlithium supervises the site and lithium\nwe know now\nis nsa's code name for at t another\ndocument\nreveals "
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The 2015 NYT/ProPublica story 'AT&T Helped U.S. Spy on Internet on a Vast Scale' and the 2016 Intercept TITANPOINTE story both identified LITHIUM as the NSA corporate-partner code name for AT&T. The identification is solid.",
+      "dependencies": [
+        {
+          "target": "dSZvXgu7Q2Q:c_0005",
+          "kind": "elaborates"
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0008",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "According to the Fourth Amendment, the government can't gather data on you without a warrant signed by a judge — and a judge won't sign a warrant without suspicion of a crime.",
+      "kind": "definitional",
+      "entities": [
+        "organization:government",
         "person:judge"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 6040,
-          "charEnd": 6800,
-          "timeStart": 421.039,
-          "timeEnd": 466.319,
-          "quote": " 1975 just a year after 33 thomas\nstreet was completed\nthe nsa found themselves in hot water a\ncongressional inquiry showed that the\nnsa\nwas spying on anti-vietnam war activists\nthat's not legal is it\nit's not according to the fourth\namendment the government can't gather\ndata on you without a warrant\nsigned by a judge a judge isn't going to\nsign a warrant without the suspicion of\na crime\nbeing against a war isn't a crime so\nrather than bother a judge\nthey just started collecting data on all\nkinds of people\nlike prominent leaders of the civil\nrights movement like dr king muhammad\nali was targeted\nanti-war journalists and columnists\nworking at the washington post and new\nyork times\nwere targeted surveilled spied on after\nthis scandal\ncongress created t"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "This refers to the Church Committee hearings of 1975, which are well-documented Senate investigations. NSA's Project MINARET specifically targeted Dr. King, Muhammad Ali, journalists including Tom Wicker, and others. Solid historical record.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "dSZvXgu7Q2Q:c_0005",
-      "videoId": "dSZvXgu7Q2Q",
-      "text": "The post-Church-Committee Foreign Intelligence Surveillance Act (FISA) was supposed to constrain the NSA to surveilling foreign nationals via warrant from the FISA Court — but in a recent annual report the NSA had only 42 specific terrorism warrants and yet collected 151 million American phone-call records.",
-      "kind": "empirical",
-      "entities": [
-        "organization:nsa",
-        "law_or_policy:fisa",
-        "law_or_policy:foreign intelligence surveillance act",
-        "law_or_policy:fisa court orders",
-        "organization:fisa",
-        "nationality_or_ethnicity:foreign nationals",
-        "organization:congress"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 6800,
-          "charEnd": 7600,
-          "timeStart": 463.52,
-          "timeEnd": 517.2,
-          "quote": "he foreign\nintelligence surveillance act which you\nmight have heard referred to as fisa\nnow fisa limits surveillance to foreign\nnationals and agents of foreign powers\nand under fisa the executive branch must\nrequest\nwarrants from a newly formed fisa court\ni bet the nsa hated these new rules\nthey did did they at least follow the\nrules oh man\nlaw didn't seem to have stopped the nsa\naccording to an annual report released\nrecently despite having fisa warrants to\nspy on only 42 specific terrorism\nsuspects\nlast year the national security agency\nmanaged to collect\n151 million american phone call records\nwhat is the nsa doing and does it\njustify the massive violation of your\nprivacy\nthe leaked nsa documents exposed an nsa\nsurveillance program\ncodenamed blarney blarney was\nestablished in the early "
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The 42 warrants / 151 million phone-call records figures are from the ODNI Statistical Transparency Report (2017 figures published 2018). FISA's structure is correctly described. This is one of the most empirically grounded claims in the video.",
-      "inVerdictSection": false,
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "dSZvXgu7Q2Q:c_0004", "kind": "presupposes", "rationale": "FISA exists because of the Church Committee revelations."}
-      ]
-    },
-    {
-      "id": "dSZvXgu7Q2Q:c_0006",
-      "videoId": "dSZvXgu7Q2Q",
-      "text": "Project BLARNEY, established in the early 1970s and still operating, leverages corporate partnerships like AT&T to give the NSA full-take collection — not just metadata but actual content of calls, emails, and online activity — across major banks, the United Nations, and 38 countries; outputs reach the President's Daily Briefing.",
-      "kind": "empirical",
-      "entities": [
-        "organization:nsa",
-        "organization:at t",
-        "organization:major banks",
-        "organization:the united nations",
-        "law_or_policy:fisa court orders"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 7600,
-          "charEnd": 8400,
-          "timeStart": 514,
-          "timeEnd": 564.319,
-          "quote": "1970s\nand as far as we know it's still\noperating blarney specifically leverages\ncommercial\npartnerships like the one with a t that\nallows the nsa to gain access to global\nnetworks\nblarney is what's called a full take\nsurveillance program\nmeaning it collects not just metadata\nlike who you're calling and when\nbut full content like what you're saying\nand what you're doing online now as of\nthe time of the leak\nthe nsa had obtained at least 40 fisa\ncourt orders for spying under project\nblarney\nnow targets were major banks around the\nworld all kinds of companies\nand 38 countries they also targeted the\nunited nations\ndid the u.n find out of course they did\nand they weren't pleased about it but\nwhat's the us going to say\nthe data coming from blarney was landing\nin the president's daily briefing\nbo"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "BLARNEY is a real, declassified codename for an NSA / AT&T joint surveillance program described in published Snowden documents. Full-take vs. metadata-only distinction is correct. The 40 FISA orders, banking targets, and PDB destination are all in the published reporting.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "dSZvXgu7Q2Q:c_0003", "kind": "elaborates"}
-      ]
-    },
-    {
-      "id": "dSZvXgu7Q2Q:c_0007",
-      "videoId": "dSZvXgu7Q2Q",
-      "text": "Project SKIDROWE allows NSA employees to search huge quantities of user data — emails, chat messages, message-board posts, texts, passwords, and browser history — captured both through 33 Thomas Street's landline taps and via its FCC satellite license.",
-      "kind": "empirical",
-      "entities": [
-        "location:skid row",
-        "organization:nsa",
-        "organization:fcc",
-        "facility:titan point"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 9050,
-          "charEnd": 9700,
-          "timeStart": 597.04,
-          "timeEnd": 640.56,
-          "quote": " a\nfew att\nbuildings with an fcc satellite license\nso the nsa not only captures data coming\nthrough landlines\nbut also vacuums up data from space this\ntype of expansive surveillance creates a\nton of data that has to go somewhere\nso enter project skid row\n[Applause]\nskid row is a program that allows nsa\nemployees to search through huge\nquantities of user data like\nactual emails online chat message boards\ntexts\npasswords even people's browser history\nthis data is all being collected\nright now and how much of that data is\nlegally collected well there's no way to\nknow for sure there's really not a lot\nof oversight\nbut an agency like the nsa needs"
+          "charStart": 6250,
+          "charEnd": 6400,
+          "timeStart": 415.58,
+          "timeEnd": 425.55,
+          "quote": "according to the fourth\namendment the government can't gather\ndata on you without a warrant\nsigned by a judge a judge isn't going to\nsign a warrant wi"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.8,
-      "rationale": "SKIDROWE is a real NSA codename in the Snowden corpus, used as a search/processing layer over BLARNEY-collected data. The 'browser history' framing is closer to XKEYSCORE-style retrospective search than to SKIDROWE specifically, but the broader claim about NSA full-take search capabilities is accurate.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "dSZvXgu7Q2Q:c_0006", "kind": "elaborates"}
-      ]
-    },
-    {
-      "id": "dSZvXgu7Q2Q:c_0008",
-      "videoId": "dSZvXgu7Q2Q",
-      "text": "AT&T is one of at least 80 corporate partners the NSA has, and is documented as exceptionally cooperative — internal NSA documents describe the company as 'highly collaborative' with 'extreme willingness to help' — and the corporate-immunity bill that George W. Bush signed (and that Senator Obama voted for in 2008) effectively killed the consumer class-action lawsuits against the program.",
-      "kind": "historical",
-      "entities": [
-        "organization:at t",
-        "organization:att",
-        "organization:nsa",
-        "organization:government",
-        "law_or_policy:immunity bill",
-        "date_time:2008",
-        "event:class-action lawsuit"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 10300,
-          "charEnd": 11100,
-          "timeStart": 677.04,
-          "timeEnd": 728.079,
-          "quote": "te partnerships that we're aware\nof\nbut some companies are more cooperative\nthan others att\nis notorious for being on very friendly\nterms with the government the new york\ntimes and others have reported that at\nt has given billions of emails to the\nnsa\na range of evidence including technical\nterms specific to at t\npoints to the company being the nsa's\npartner the documents refer to the\ncompany being\nhighly collaborative and commend its\nextreme willingness to help\nand this has been corroborated by a\nwhistleblower who's part of a\nclass-action lawsuit against the nsa\nbut george bush simply disregarded the\nface of law\nand approved it all on his own signature\nwhich was totally illegal\ni might add that while there are a few\ndissidents in both parties like\nrand paul in the republican side and\nron "
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The 'highly collaborative' / 'extreme willingness to help' phrasing is a direct quote from internal NSA documents published by The New York Times in 2015. The whistleblower (Mark Klein) and Hepting v. AT&T / Jewel v. NSA litigation arc, plus the 2008 FISA Amendments Act retroactive immunity provision, are well documented. Senator Obama did vote for the 2008 FISA AA.",
+      "rationale": "The host's gloss roughly matches Fourth Amendment doctrine, though it elides the third-party doctrine (Smith v. Maryland 1979) that weakens protections for metadata held by a provider — a legal loophole that has been central to programs like the Section 215 bulk telephony metadata collection.",
       "hostStance": "asserts"
     },
     {
       "id": "dSZvXgu7Q2Q:c_0009",
       "videoId": "dSZvXgu7Q2Q",
-      "text": "AT&T has installed NSA surveillance equipment in at least 59 U.S. locations and NSA operatives are instructed to blend in as ordinary AT&T workers — meaning most AT&T employees were unaware of the in-house NSA presence until the Snowden leaks revealed it.",
-      "kind": "historical",
+      "text": "FISA limits surveillance to foreign nationals and agents of foreign powers, and under FISA the executive branch must request warrants from a newly formed FISA court.",
+      "kind": "definitional",
       "entities": [
-        "organization:nsa",
-        "organization:at t",
-        "organization:att",
-        "facility:server room"
+        "law_or_policy:fisa",
+        "organization:fisa",
+        "nationality_or_ethnicity:foreign nationals"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 11750,
-          "charEnd": 12300,
-          "timeStart": 768.16,
-          "timeEnd": 809.839,
-          "quote": "t 59 u.s locations\nand on any given day nsa employees are\non site\ngathering data now what's crazy is that\nuntil this leak\nmost att employees probably weren't\naware of the nsa's presence\nnsa operatives are instructed to blend\nin with other workers\nthey would simply show up go into an\noffice or a server room and go to work\njust like everybody else all of this\nshould be pretty chilling\namerica's secret agencies firmly\nsubscribe to\nit's better to ask forgiveness than\npermission and the nsa\ncia the fbi and others are very willing\nto bend the rules\ni"
+          "charStart": 6883,
+          "charEnd": 7020,
+          "timeStart": 457.67,
+          "timeEnd": 466.78,
+          "quote": "fisa\nnow fisa limits surveillance to foreign\nnationals and agents of foreign powers\nand under fisa the executive branch must\nrequest\nwarr"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The 59-locations figure and the NSA's 'blend in as AT&T workers' protocol are from the New York Times / ProPublica 2015 reporting on internal NSA documents. Solid sourcing.",
+      "confidence": 0.97,
+      "directTruth": 0.92,
+      "rationale": "Accurate summary of the 1978 Foreign Intelligence Surveillance Act. The FISA Court (FISC) has been widely criticized for its extremely high approval rate (>99%) of government warrant applications — which means FISA's theoretical warrant requirement has weaker bite in practice than the host implies.",
+      "dependencies": [
+        {
+          "target": "dSZvXgu7Q2Q:c_0006",
+          "kind": "elaborates"
+        }
+      ],
       "hostStance": "asserts"
     },
     {
       "id": "dSZvXgu7Q2Q:c_0010",
       "videoId": "dSZvXgu7Q2Q",
-      "text": "Americans have been complicit in their own surveillance by passively agreeing to lengthy, unread terms-of-service contracts with companies like AT&T, Google, and Facebook — surrendering Fourth Amendment-style protections in exchange for online convenience, and edging closer to a state where free speech and freedom from illegal search no longer meaningfully exist.",
-      "kind": "opinion",
+      "text": "Skid Row is an NSA program that allows NSA employees to search through huge quantities of user data — including actual emails and online chat messages.",
+      "kind": "empirical",
       "entities": [
-        "nationality_or_ethnicity:american citizens",
-        "organization:google",
-        "organization:facebook",
-        "organization:digital conglomerates",
-        "law_or_policy:rights",
-        "law_or_policy:illegal searches",
-        "law_or_policy:spying"
+        "location:skid row",
+        "organization:nsa"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "dSZvXgu7Q2Q",
-          "charStart": 12300,
-          "charEnd": 13150,
-          "timeStart": 806.399,
-          "timeEnd": 856.56,
-          "quote": "nterpret and even break laws to suit\ntheir purposes\nall in the name of national security now\nto paraphrase ben franklin\nwhen you trade liberty for security you\nend up with neither\nand there are many other companies like\natt google facebook\nthat cooperate with the government with\nsuch a lack of friction\nthat any american citizen should be\nconcerned those long agreements that you\nsign online without reading them\nevery once in a while read one take note\nof how many of your rights you're\nsurrendering\nfor the convenience of being able to\npost pictures of your cat or leave a\nmean comment on a video\nas we willingly surrender more of our\nprivacy to digital conglomerates\nwe're also surrendering freedoms like\nthe freedom from illegal searches and\nspying\nlike the freedom to criticize the\ngovernment the freedom to publicly\ndisagree with popular ideas"
+          "charStart": 9296,
+          "charEnd": 9430,
+          "timeStart": 618.12,
+          "timeEnd": 627.03,
+          "quote": "skid row\n[Applause]\nskid row is a program that allows nsa\nemployees to search through huge\nquantities of user data like\nactual emails "
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.6,
-      "rationale": "The factual core is solid — TOS agreements do erode privacy expectations and corporate-government data-sharing is real. The slippery-slope ending ('once freedoms are fully eroded, that's called slavery') is editorializing that overreaches. The Franklin paraphrase is also itself often misattributed in spirit — his original 'essential liberty / a little temporary safety' was about taxation, not surveillance.",
-      "inVerdictSection": true,
+      "confidence": 0.85,
+      "directTruth": 0.5,
+      "rationale": "The host likely means XKEYSCORE (the 2013 Snowden-leaked NSA analytical tool for searching emails and chat content). 'Skid Row' as an NSA program name does not appear in the leaked codenames I can verify; it may be a mis-remembered or fictionalized name. The underlying fact (that such a tool exists and does what's described) is well documented.",
       "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0011",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "Both US political parties approve of the mass-surveillance regime — there are only a few dissidents like Rand Paul (Republican) and Ron Wyden (Democrat).",
+      "kind": "opinion",
+      "entities": [
+        "person:rand paul",
+        "person:ron wyden"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 11000,
+          "charEnd": 11140,
+          "timeStart": 731.42,
+          "timeEnd": 740.73,
+          "quote": "that while there are a few\ndissidents in both parties like\nrand paul in the republican side and\nron wyden on the democratic side is that\nbot"
+        }
+      ],
+      "confidence": 0.93,
+      "directTruth": 0.85,
+      "rationale": "Accurate political characterization. Both Paul and Wyden have long records of opposing bulk surveillance (Wyden's 2013 questioning of DNI Clapper; Paul's 2015 filibuster of Patriot Act reauthorization). The 'both parties approve' framing fits the long-running bipartisan supermajorities on Patriot Act/FISA reauthorizations.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0012",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "Other companies like AT&T, Google, and Facebook cooperate with the government with a lack of friction that should concern every American citizen.",
+      "kind": "opinion",
+      "entities": [
+        "organization:att",
+        "organization:google"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 12500,
+          "charEnd": 12640,
+          "timeStart": 831.16,
+          "timeEnd": 840.47,
+          "quote": "ther companies like\natt google facebook\nthat cooperate with the government with\nsuch a lack of friction\nthat any american citizen should be\n"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The AT&T cooperation is the strongest case (LITHIUM disclosures). Google and Facebook have publicly fought National Security Letters more than AT&T has, per their transparency reports. 'Such lack of friction' is more accurate for telcos than for the Silicon Valley tech giants, which have sometimes litigated.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0013",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "The host's closing verdict: every citizen is complicit in the erosion of Fourth Amendment freedoms (freedom from illegal searches, freedom to criticize government) by clicking through the long online agreements without reading them.",
+      "kind": "opinion",
+      "entities": [
+        "law_or_policy:rules",
+        "organization:government"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 13000,
+          "charEnd": 13150,
+          "timeStart": 864.4,
+          "timeEnd": 874.38,
+          "quote": "oms like\nthe freedom from illegal searches and\nspying\nlike the freedom to criticize the\ngovernment the freedom to publicly\ndisagree with popular ideas"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Verdict-section moralizing claim, not empirical. I omit directTruth because 'are you complicit?' is a value claim rather than a factual one.",
+      "inVerdictSection": true,
+      "dependencies": [
+        {
+          "target": "dSZvXgu7Q2Q:c_0012",
+          "kind": "elaborates"
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "dSZvXgu7Q2Q:c_0014",
+      "videoId": "dSZvXgu7Q2Q",
+      "text": "The 'if you've done nothing wrong, you have nothing to hide' defense of mass surveillance fails: the Fourth Amendment exists precisely because warrantless searches can chill protected speech and association, not because all surveillance targets are guilty.",
+      "kind": "opinion",
+      "entities": [
+        "organization:government"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "dSZvXgu7Q2Q",
+          "charStart": 13000,
+          "charEnd": 13150,
+          "timeStart": 864.4,
+          "timeEnd": 874.38,
+          "quote": "oms like\nthe freedom from illegal searches and\nspying\nlike the freedom to criticize the\ngovernment the freedom to publicly\ndisagree with popular ideas"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The host endorses this standard civil-libertarian position. I omit directTruth because this is a normative claim. Marking as denies for the 'nothing to hide' defense.",
+      "dependencies": [
+        {
+          "target": "dSZvXgu7Q2Q:c_0008",
+          "kind": "supports"
+        }
+      ],
+      "hostStance": "denies"
     }
   ]
 }

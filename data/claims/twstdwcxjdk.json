@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "transcriptId": "twstdwcxjdk",
-  "generatedAt": "2026-04-20T01:39:00.000Z",
+  "generatedAt": "2026-04-22T07:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "twstdwcxjdk:c_0001",
       "videoId": "twstdwcxjdk",
-      "text": "Paleontologists have just uncovered remains of a gigantic dinosaur in Argentina that could be one of the largest creatures ever to walk the Earth.",
+      "text": "Scientists have unearthed remains of a gigantic dinosaur in Argentina.",
       "kind": "empirical",
       "entities": [
         "location:argentina"
@@ -17,21 +17,50 @@
         {
           "transcriptId": "twstdwcxjdk",
           "charStart": 19,
-          "charEnd": 177,
+          "charEnd": 94,
           "timeStart": 3.679,
-          "timeEnd": 14.88,
-          "quote": "experts have just uncovered the remains\nof a gigantic dinosaur in argentina and\nbelieve it could be one of the largest\ncreatures to have\never walked the earth"
+          "timeEnd": 9.84,
+          "quote": "experts have just uncovered the remains\nof a gigantic dinosaur in argentina"
         }
       ],
-      "confidence": 0.99,
-      "directTruth": 0.85,
-      "rationale": "This is a real news story. The find being referenced is almost certainly the early-2021 announcement (later formally described as Patagotitan-class titanosaur material from the Candeleros Formation, published in Cretaceous Research 2021) of a Patagonian titanosaur that researchers said could rival or exceed the largest known specimens. The host's framing tracks the press coverage accurately.",
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "The news event is real: in early 2021 a Patagonian titanosaur from the Candeleros Formation in Neuquén Province, Argentina was announced by Otero et al. (2021, Cretaceous Research). The host's core factual claim — Argentine locale of a giant dinosaur find — is directly verifiable from peer-reviewed reporting.",
       "hostStance": "asserts"
     },
     {
       "id": "twstdwcxjdk:c_0002",
       "videoId": "twstdwcxjdk",
-      "text": "The Mesozoic era — roughly 252 to 66 million years ago — was the age of the truly giant dinosaurs, and the very largest of them belonged to a group of long-necked, long-tailed, four-legged sauropods called titanosaurs.",
+      "text": "The new specimen could be one of the largest creatures ever to have walked the Earth.",
+      "kind": "speculative",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "twstdwcxjdk",
+          "charStart": 110,
+          "charEnd": 177,
+          "timeStart": 8.4,
+          "timeEnd": 14.88,
+          "quote": "could be one of the largest\ncreatures to have\never walked the earth"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "rationale": "This is the video's speculative headline thesis, hedged with 'could be'. Subsequent published analyses have not definitively confirmed the specimen exceeds Patagotitan — titanosaur body-mass estimates carry error bars of ±30-50% depending on which bones are recovered. The framing is not settled science, though it is a defensible preliminary statement.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "twstdwcxjdk:c_0001",
+          "kind": "elaborates",
+          "rationale": "Extends the find announcement with the size-record claim."
+        }
+      ]
+    },
+    {
+      "id": "twstdwcxjdk:c_0003",
+      "videoId": "twstdwcxjdk",
+      "text": "The Mesozoic era ran from about 252 to 66 million years ago.",
       "kind": "definitional",
       "entities": [],
       "relationships": [],
@@ -39,11 +68,25 @@
         {
           "transcriptId": "twstdwcxjdk",
           "charStart": 178,
-          "charEnd": 281,
+          "charEnd": 232,
           "timeStart": 10.8,
-          "timeEnd": 23.119,
-          "quote": "the mesozoic era\nwas about 252\nto 66 million years ago and this was the\ntime of the really\nbig dinosaur"
-        },
+          "timeEnd": 18.72,
+          "quote": "the mesozoic era\nwas about 252\nto 66 million years ago"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.98,
+      "rationale": "Standard textbook geologic time: the Mesozoic spans the Triassic (~252 Ma), Jurassic, and Cretaceous (ending ~66 Ma at the K-Pg extinction). Uncontested in stratigraphy.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "twstdwcxjdk:c_0004",
+      "videoId": "twstdwcxjdk",
+      "text": "Titanosaurs are a group of sauropod dinosaurs defined by long neck, long tail, and four legs.",
+      "kind": "definitional",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "twstdwcxjdk",
           "charStart": 336,
@@ -53,15 +96,15 @@
           "quote": "titanosaurus\nbelonged to a group of sauropod\ndinosaurs which are defined by their\nlong neck and tail\nand four legs"
         }
       ],
-      "confidence": 0.98,
-      "directTruth": 0.95,
-      "rationale": "Standard textbook paleontology. The Mesozoic spans the Triassic (~252 Ma) through the Cretaceous (~66 Ma), titanosaurs are an established clade within Sauropoda, and the long-neck/long-tail/quadrupedal body plan is the diagnostic sauropod morphology.",
+      "confidence": 0.97,
+      "directTruth": 0.92,
+      "rationale": "Titanosauria is an established clade within Sauropoda; the long-neck/long-tail/quadrupedal body plan is the diagnostic sauropod morphology. The host slightly underspecifies — titanosaurs are characterized by additional features (wide-gauge stance, procoelous caudals) — but the stated definition is a correct subset, not wrong.",
       "hostStance": "asserts"
     },
     {
-      "id": "twstdwcxjdk:c_0003",
+      "id": "twstdwcxjdk:c_0005",
       "videoId": "twstdwcxjdk",
-      "text": "Sauropods were not always huge — early in their evolution they were dog-sized omnivores, but they eventually evolved into the enormous herbivores we know today.",
+      "text": "Early in their evolution, sauropods were about the size of dogs and omnivorous.",
       "kind": "historical",
       "entities": [],
       "relationships": [],
@@ -69,27 +112,55 @@
         {
           "transcriptId": "twstdwcxjdk",
           "charStart": 455,
-          "charEnd": 592,
+          "charEnd": 532,
           "timeStart": 27.519,
-          "timeEnd": 39.92,
-          "quote": "early in their\nevolution sauropods were about the size\nof dogs and\nomnivorous but eventually they became\nherbivores and\nunbelievably huge"
+          "timeEnd": 35.28,
+          "quote": "early in their\nevolution sauropods were about the size\nof dogs and\nomnivorous"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.65,
-      "rationale": "Partially correct. The earliest sauropodomorphs (Late Triassic forms like Eoraptor, Saturnalia) were small and likely omnivorous, and gigantism developed within the lineage over the Jurassic. However, 'about the size of dogs' is on the small end — early sauropodomorphs ranged from roughly cat-sized to several meters long. The trajectory is right but the size claim is a simplification.",
+      "confidence": 0.9,
+      "directTruth": 0.4,
+      "rationale": "Partially correct but sloppy. The earliest sauropodomorphs (Late Triassic Eoraptor, Saturnalia, Panphagia) were small — some cat- or dog-sized, others larger (several meters) — and diet evidence suggests some were omnivorous, though dedicated sauropods (true Sauropoda) were already much larger (multi-ton). 'About the size of dogs' conflates broad sauropodomorphs with Sauropoda proper.",
       "hostStance": "asserts"
     },
     {
-      "id": "twstdwcxjdk:c_0004",
+      "id": "twstdwcxjdk:c_0006",
       "videoId": "twstdwcxjdk",
-      "text": "A team of South American paleontologists unearthed the fossilized remains of a 98-million-year-old titanosaur in northwest Patagonia, Argentina, in a dense sedimentary deposit known as the Candeleros Formation — and the bones recovered are believed to be larger than those of all previously discovered titanosaurs including Patagotitan.",
+      "text": "Sauropods eventually evolved into herbivores and grew unbelievably huge.",
+      "kind": "historical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "twstdwcxjdk",
+          "charStart": 537,
+          "charEnd": 592,
+          "timeStart": 31.84,
+          "timeEnd": 39.92,
+          "quote": "eventually they became\nherbivores and\nunbelievably huge"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Well-established: Sauropoda adopted strict herbivory by the Early Jurassic and gigantism repeatedly evolved within the clade (e.g., Diplodocoidea, Titanosauria). Body masses of 40-70+ tonnes are well-attested.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "twstdwcxjdk:c_0005",
+          "kind": "contradicts",
+          "rationale": "[logical] The 'dog-sized omnivores' starting state and the 'unbelievably huge herbivores' ending state are offered as a sequence, but in the strict cladistic sense these describe different taxa (basal sauropodomorphs vs. derived sauropods), so treating them as a single evolutionary before/after oversimplifies."
+        }
+      ]
+    },
+    {
+      "id": "twstdwcxjdk:c_0007",
+      "videoId": "twstdwcxjdk",
+      "text": "A team of South American paleontologists unearthed a 98-million-year-old titanosaur in northwest Patagonia, Argentina.",
       "kind": "empirical",
       "entities": [
         "organization:team of south american paleontologists",
         "location:northwest patagonia",
-        "location:argentina",
-        "location:candelaris formation"
+        "location:argentina"
       ],
       "relationships": [
         "r_0001",
@@ -98,12 +169,26 @@
       "evidence": [
         {
           "transcriptId": "twstdwcxjdk",
-          "charStart": 597,
+          "charStart": 689,
           "charEnd": 755,
-          "timeStart": 35.28,
+          "timeStart": 43.2,
           "timeEnd": 49.44,
-          "quote": "a team of south\namerican paleontologists\nhave unearthed the fossilized remains of\na massive\n98 million year old titanosaur in\nnorthwest patagonia in argentina"
-        },
+          "quote": "98 million year old titanosaur in\nnorthwest patagonia in argentina"
+        }
+      ],
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "Matches Otero et al. 2021: specimen from the Candeleros Formation in Neuquén Province, Patagonia, dated Cenomanian (~98 Ma). Discovery and excavation team confirmed in the published abstract.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "twstdwcxjdk:c_0008",
+      "videoId": "twstdwcxjdk",
+      "text": "The new find might be the largest dinosaur specimen ever found.",
+      "kind": "speculative",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "twstdwcxjdk",
           "charStart": 760,
@@ -113,44 +198,104 @@
           "quote": "this might be the largest dinosaur\nspecimen\never found"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.85,
-      "rationale": "Matches the published account: the specimen described in Otero et al. (2021, Cretaceous Research) was excavated from the Candeleros Formation in Neuquén Province, dated to the Cenomanian stage of the Late Cretaceous (~98 Ma). The team announced the bones are larger in key dimensions than Patagotitan's, though final body-mass comparisons require more recovered material.",
-      "hostStance": "asserts"
+      "confidence": 0.92,
+      "directTruth": 0.5,
+      "rationale": "The 'might be' hedge is appropriate. As of the video, only partial material had been recovered (vertebrae, pelvis), and direct dimensional comparison with Patagotitan requires homologous bones. Published measurements have not settled the record.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "twstdwcxjdk:c_0007",
+          "kind": "elaborates",
+          "rationale": "Interprets the excavated specimen from c_0007 as a potential size record."
+        }
+      ]
     },
     {
-      "id": "twstdwcxjdk:c_0005",
+      "id": "twstdwcxjdk:c_0009",
       "videoId": "twstdwcxjdk",
-      "text": "Patagotitan, the previous size-record holder, was discovered near La Flecha in the Patagonian desert in 2008, lived about 100 million years ago, and measured up to 37 meters (122 feet) long.",
+      "text": "Patagotitan was found in the desert near La Flecha in 2008.",
       "kind": "historical",
       "entities": [
         "location:la fletche",
-        "date_time:2008",
-        "quantity:37 meters"
+        "date_time:2008"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "twstdwcxjdk",
           "charStart": 1037,
-          "charEnd": 1184,
+          "charEnd": 1101,
           "timeStart": 62.879,
-          "timeEnd": 74.56,
-          "quote": "the patago titan was found in the desert\nnear la fletche in 2008\nit lived about 100 million years ago and\nmeasured up to 37\nmeters or 122 feet long"
+          "timeEnd": 68.479,
+          "quote": "the patago titan was found in the desert\nnear la fletche in 2008"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
-      "rationale": "Patagotitan mayorum was discovered on the La Flecha ranch near Trelew, Argentina; the initial discovery was in 2008-2010 and Carballido et al. formally described it in Proceedings of the Royal Society B in 2017. Estimated length is around 37 m and it's dated to the Cenomanian (~100 Ma). The host's facts are accurate.",
+      "rationale": "Patagotitan mayorum was discovered on the La Flecha ranch near Trelew, Argentina. The initial femur was reported in 2008-2010; formal description in Carballido et al., Proceedings B, 2017. '2008' is a reasonable anchor date for the first bone.",
       "hostStance": "asserts"
     },
     {
-      "id": "twstdwcxjdk:c_0006",
+      "id": "twstdwcxjdk:c_0010",
       "videoId": "twstdwcxjdk",
-      "text": "Argentinosaurus — discovered in southwestern Argentina in 1987 — grew to over 40 meters (131 feet) long and weighed more than 110 tons, comparable to an adult blue whale and bigger than a 10-story building.",
+      "text": "Patagotitan lived about 100 million years ago and measured up to 37 meters (122 feet) long.",
       "kind": "historical",
       "entities": [
-        "date_time:1987",
+        "quantity:37 meters"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "twstdwcxjdk",
+          "charStart": 1102,
+          "charEnd": 1184,
+          "timeStart": 66.479,
+          "timeEnd": 74.56,
+          "quote": "it lived about 100 million years ago and\nmeasured up to 37\nmeters or 122 feet long"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "Age (Cenomanian ~100 Ma) is well-supported by Candeleros Formation dating. Length estimates vary: Carballido et al. originally estimated ~37 m (based on incomplete elements), but more conservative reconstructions (Paul 2019) put it closer to 31-32 m. 37 m is the published upper bound, not a consensus figure.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "twstdwcxjdk:c_0009",
+          "kind": "elaborates",
+          "rationale": "Adds size/age detail to the Patagotitan discovery claim."
+        }
+      ]
+    },
+    {
+      "id": "twstdwcxjdk:c_0011",
+      "videoId": "twstdwcxjdk",
+      "text": "Argentinosaurus was found in southwestern Argentina in 1987.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1987"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "twstdwcxjdk",
+          "charStart": 1185,
+          "charEnd": 1281,
+          "timeStart": 70,
+          "timeEnd": 80.08,
+          "quote": "another\ntitanosaur found in southwestern\nargentina in 1987\nwas officially titled argentinosaurus"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The type specimen was found by rancher Guillermo Heredia in Neuquén Province (west-central, not strictly 'southwestern' but close) in 1987; Bonaparte & Coria formally named and described it in 1993. Date is accurate.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "twstdwcxjdk:c_0012",
+      "videoId": "twstdwcxjdk",
+      "text": "Argentinosaurus grew to over 40 meters (131 feet) long and weighed more than 110 tons.",
+      "kind": "empirical",
+      "entities": [
         "quantity:40 meters",
         "quantity:131 feet",
         "quantity:110 tons"
@@ -159,22 +304,28 @@
       "evidence": [
         {
           "transcriptId": "twstdwcxjdk",
-          "charStart": 1185,
+          "charStart": 1295,
           "charEnd": 1368,
-          "timeStart": 70,
+          "timeStart": 80.08,
           "timeEnd": 87.28,
-          "quote": "another\ntitanosaur found in southwestern\nargentina in 1987\nwas officially titled argentinosaurus\nand that one\ngrew up to over 40 meters or 131 feet\nlong and weighed more than 110 tons"
+          "quote": "grew up to over 40 meters or 131 feet\nlong and weighed more than 110 tons"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.6,
-      "rationale": "The 1987 discovery date and Argentine origin are correct (the type specimen was found by rancher Guillermo Heredia in Neuquén Province in 1987 and Bonaparte & Coria formally named it in 1993). The length range (~30-40 m) is on the upper end of estimates. The 110-ton weight estimate is at the high end of published mass reconstructions, which range roughly 65-100+ tons; comparison to a blue whale (which can exceed 150 tons) is closer to apt than the host implies.",
-      "hostStance": "asserts"
+      "directTruth": 0.4,
+      "rationale": "Cited numbers are at the extreme upper end of published estimates. Length reconstructions range ~30-40 m. Mass estimates have ranged enormously: early Mazzetta et al. (2004) proposed ~73 t; more recent Benson et al. (2014) reduced to ~60-80 t; Paul (2019) ~65-75 t. The '110 tons' figure is not supported by modern biomechanical modeling and exceeds the consensus by 30-60%.",
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "twstdwcxjdk:c_0011",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
-      "id": "twstdwcxjdk:c_0007",
+      "id": "twstdwcxjdk:c_0013",
       "videoId": "twstdwcxjdk",
-      "text": "Although South America has produced a remarkable number of titanosaur discoveries lately, titanosaur bones have actually been found on every continent except Antarctica.",
+      "text": "Titanosaur bones have been found on every continent except Antarctica.",
       "kind": "empirical",
       "entities": [
         "location:antarctica"
@@ -183,55 +334,49 @@
       "evidence": [
         {
           "transcriptId": "twstdwcxjdk",
-          "charStart": 1571,
+          "charStart": 1484,
           "charEnd": 1629,
-          "timeStart": 98.799,
+          "timeStart": 95.28,
           "timeEnd": 105.439,
-          "quote": "bones have been found on every\ncontinent except\nantarctica"
+          "quote": "titanosaur remains are not unique to\nsouth america although they are killing\nit lately bones have been found on every\ncontinent except\nantarctica"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "Mostly correct as of when the video was likely produced. Titanosaurs have been recovered from South America, North America, Europe, Africa, Asia, and Australia. The Antarctic exception is now actually outdated — Antarctosauridae fragments have been reported from Antarctica (Cerda et al. 2012 Naturwissenschaften described titanosaur material from the James Ross Basin), so the strict 'except Antarctica' is no longer accurate.",
+      "directTruth": 0.35,
+      "rationale": "Outdated. While South America, North America, Europe, Africa, Asia, and Australia all have titanosaur records, titanosaur material from Antarctica has been reported (Cerda et al. 2012, Naturwissenschaften, described a titanosaur caudal vertebra from the James Ross Basin). The 'except Antarctica' claim is no longer correct; this video appears to predate or ignore that discovery.",
       "hostStance": "asserts"
     },
     {
-      "id": "twstdwcxjdk:c_0008",
+      "id": "twstdwcxjdk:c_0014",
       "videoId": "twstdwcxjdk",
-      "text": "Preliminary data on the new Patagonian titanosaur indicates it is most likely larger than Patagotitan mayorum and will probably break the record as the biggest animal ever to walk the Earth — though scientists still need to dig into its evolutionary history to give a precise size.",
+      "text": "Preliminary data shows the new specimen is most likely larger than Patagotitan mayorum.",
       "kind": "speculative",
-      "entities": [
-        "organization:scientists"
-      ],
+      "entities": [],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "twstdwcxjdk",
-          "charStart": 1763,
-          "charEnd": 1821,
-          "timeStart": 108.72,
-          "timeEnd": 114.24,
-          "quote": "scientists still have to dig into its\nevolutionary history"
-        },
-        {
-          "transcriptId": "twstdwcxjdk",
           "charStart": 1826,
-          "charEnd": 1981,
+          "charEnd": 1901,
           "timeStart": 110.399,
-          "timeEnd": 121.68,
-          "quote": "preliminary\ndata shows that it's most likely larger\nthan patagotite majoram and probably\nwill break the record as the biggest\nanimal\never to walk the earth"
+          "timeEnd": 117.83999999999999,
+          "quote": "preliminary\ndata shows that it's most likely larger\nthan patagotite majoram"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.55,
-      "rationale": "The cautious framing — 'preliminary' and 'most likely' — is appropriate. Subsequent peer-reviewed analyses since this video have not definitively confirmed that the Candeleros specimen exceeds Patagotitan; mass estimates for titanosaurs have wide error bars (often ±30-50%) because so much depends on what bones are recovered. Calling it 'the biggest animal ever to walk the Earth' is plausible but premature, and the claim ignores blue whales (which never walked) and the question of total mass vs. linear dimensions.",
+      "confidence": 0.9,
+      "rationale": "Verdict-section speculative forecast. No directTruth assigned because peer-reviewed comparative analyses have not established this — 'preliminary' is the honest framing but the claim is marketed as near-confirmed by the video's rhetoric. Dependent on c_0007 (the new find) and directly re-states c_0002.",
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
         {
-          "target": "twstdwcxjdk:c_0004",
-          "kind": "elaborates",
-          "rationale": "Specifies what 'might be the largest specimen ever found' would mean if confirmed."
+          "target": "twstdwcxjdk:c_0002",
+          "kind": "supports",
+          "rationale": "Reiterates the 'largest ever' thesis with the preliminary-data qualifier."
+        },
+        {
+          "target": "twstdwcxjdk:c_0010",
+          "kind": "contradicts",
+          "rationale": "[alternative] The prior record (Patagotitan at 37 m) is presented as the benchmark to be exceeded; if the new specimen is larger, the Patagotitan record claim is superseded."
         }
       ]
     }

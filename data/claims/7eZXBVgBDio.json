@@ -1,244 +1,514 @@
 {
   "schemaVersion": 1,
   "transcriptId": "7eZXBVgBDio",
-  "generatedAt": "2026-04-20T04:13:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T14:14:54.765Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-resume-v2",
   "claims": [
     {
       "id": "7eZXBVgBDio:c_0001",
       "videoId": "7eZXBVgBDio",
-      "text": "Cryptography is essentially a 4,000-year-old arms race in which every supposedly unbreakable cipher - from Egyptian tomb hieroglyph substitutions, to Spartan scytales, to Caesar shifts, to Linear A, to the Beale book ciphers, to Zodiac's homophonic substitution - has eventually been cracked or remains stubbornly unread for an idiosyncratic reason rather than because the underlying math was truly secure.",
-      "kind": "historical",
+      "text": "The Voynich manuscript is a book filled with drawings and symbols that nobody can read.",
+      "kind": "empirical",
       "entities": [
-        "technology:codes",
-        "technology:encryption",
-        "organization:scribes",
-        "organization:spartans"
+        "work_of_media:the voage manuscript"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "7eZXBVgBDio",
-          "charStart": 4115,
-          "charEnd": 5500,
-          "timeStart": 303.68,
-          "timeEnd": 390.639,
-          "quote": "the oldest code we know of isn't written\nin complex mathematics it's carved in\nstone in an Egyptian tomb from 4,000\nyears ago the scribes simply replaced\nregular hieroglyphs with ones they made\nup they weren't trying to keep secrets\nthey were showing off these were prayers\ncarved into tomb walls the scribes\nwanted to prove they knew something\nothers didn't oh those were ancient\nemojis not exactly ah let's test that\ntheory H can humans crack this\nthe simple Act of substituting one\nsymbol for another Unleashed something\nthe human desire to keep secrets and for\nthousands of years that's how codes\nworked you replace letters with other\nletters or symbols linear a is a secret\nwriting system created by the manans in\nancient cre 3600 years ago we can read\nits descendant Linear B but linear a is\nstill secret every attempt to crack it\nhas failed the Spartans made practical\nuse of codes this is cryptography please\ndon't too late I already ordered the\ntunic and the cape now I just need the\nABS can I get back to this look ahead I\nneed to catch up on my sit-ups\nanyway the Spartans created the Skitty\nhere's how it works picture a wooden rod\nabout as thick as your wrist Rod stop it\nnow wrap a strip of leather or parchment\naround it like a spiral write your\nmessage across the strip following the\nspiral when you unwrap it the letters\nscramble the message is nonsense but\nwrap it ar"
+          "charStart": 218,
+          "charEnd": 293,
+          "timeStart": 13.96,
+          "timeEnd": 22.720000000000002,
+          "quote": "voage manuscript is a book\nfilled with drawings and symbols nobody\ncan read"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "All five examples are historically real: the Egyptian tomb-prayer 'cryptic hieroglyphs' from c.1900 BCE; Linear A (Minoan) genuinely undeciphered while Linear B (Mycenaean Greek) was decoded by Ventris in 1952; the Spartan scytale; the Caesar shift cipher; the Beale ciphers (1885 publication, only one of three solved). The framing of cryptography as a 4,000-year arms race is mainstream history.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "rationale": "The Voynich manuscript (c. 1400-1430, Yale Beinecke MS 408) is genuinely undeciphered despite a century of cryptographic attention. Host's pronunciation is 'voage' but the referent is unambiguous.",
+      "tags": [
+        "voynich",
+        "cryptography",
+        "undeciphered"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.9
     },
     {
       "id": "7eZXBVgBDio:c_0002",
       "videoId": "7eZXBVgBDio",
-      "text": "The Zodiac Killer's 340-character cipher resisted professional code-breakers for 51 years until three amateur cryptographers solved it in 2020, demonstrating that even codes resistant to frequency analysis ultimately fall to dedicated human ingenuity.",
+      "text": "Julius Caesar encoded his military correspondence using a simple letter-shift cipher that shifted each letter three places.",
       "kind": "historical",
       "entities": [
-        "date_time:2020",
-        "technology:codes"
+        "person:julius caesar"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "7eZXBVgBDio",
-          "charStart": 7319,
-          "charEnd": 7900,
-          "timeStart": 494.479,
-          "timeEnd": 532.56,
-          "quote": "for 51 years the Zodiac's\nmessage stumped the world's best\ncryptographers then in 2020 three\namateur code Breakers finally solved it\nwhat it say Well it said a bunch of\nstuff but it started with I like killing\npeople because it's so much fun yeah for\na serial killer\nhe wasn't much of a poet he wasn't and\nthe Zodiac Killer was never found but\nquantum computers are about to change\neverything all these ancient methods\nsubstitutions patterns and tricks share\none weakness math this is a weakness\nQuantum computerist can exploit soon\nthese machines might reveal every secret\nmessage"
+          "charStart": 5671,
+          "charEnd": 5748,
+          "timeStart": 394.639,
+          "timeEnd": 403.08,
+          "quote": "Julius\nCaesar encoded all his military\ncorrespondence by shifting each letter"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "The Z340 cipher was indeed solved in December 2020 by David Oranchak, Sam Blake, and Jarl Van Eycke - three amateur cryptanalysts. The opening line of the deciphered text really is 'I hope you are having lots of fun in trying to catch me' / 'I am not afraid of the gas chamber...' (the host's paraphrase isn't verbatim but captures the swagger). The 51-year gap (1969 → 2020) is correct.",
+      "confidence": 0.95,
+      "rationale": "The Caesar cipher is documented in Suetonius' 'Life of Julius Caesar'. Whether Caesar used it for *all* correspondence is a minor overstatement — he used it for sensitive military messages.",
+      "tags": [
+        "caesar-cipher",
+        "cryptography",
+        "history"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "7eZXBVgBDio:c_0001",
-          "kind": "elaborates"
-        }
-      ]
+      "directTruth": 0.85
     },
     {
       "id": "7eZXBVgBDio:c_0003",
       "videoId": "7eZXBVgBDio",
-      "text": "Modern public-key encryption (RSA) rests entirely on the computational difficulty of factoring the product of two large primes - a problem classical supercomputers would need billions of years to solve, but which a sufficiently large quantum computer running Shor's algorithm can solve in minutes via superposition.",
-      "kind": "empirical",
+      "text": "In 2020 three amateur code breakers solved a Zodiac Killer cipher that had stumped the world's best cryptographers for 51 years.",
+      "kind": "historical",
       "entities": [
-        "technology:encryption",
-        "technology:quantum computers",
-        "technology:quantum computer",
-        "quantity:cubits",
-        "quantity:billions of years",
-        "quantity:combinations"
+        "person:zodiac killer",
+        "date_time:2020"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "7eZXBVgBDio",
-          "charStart": 9535,
-          "charEnd": 10500,
-          "timeStart": 664.2,
-          "timeEnd": 728.16,
-          "quote": "quantum apocalypse had\n[Music]\nbegun you're entire digital life depends\non two prime numbers that's it two\nnumbers and they protect everything your\npassword your messages your bank\naccounts all of it modern encryption is\nbased on the simple\ntrick take two huge prime numbers and\nmultip app them together that creates\nyour public key a number anyone can use\nto send you secret messages but only\nsomeone who knows those original prime\nnumbers can read those messages working\nbackward trying to find those original\nnumbers would take a computer billions\nof years or so we thought in December\n2024 Google unveiled project Willow\ntheir quantum computer solved the\nproblem in 5 minutes that would take our\nfastest supercomputers longer than the\nage of the universe quantum computers do\nthis using superposition hang on hang on\nhang on you want to pump the brakes and\nthe nerd chat and fil me in well think\nabout flipping a coin it lands on either\nheads or tails normal co"
+          "charStart": 7336,
+          "charEnd": 7433,
+          "timeStart": 494.479,
+          "timeEnd": 505.479,
+          "quote": "Zodiac's\nmessage stumped the world's best\ncryptographers then in 2020 three\namateur code Breakers"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "RSA security really does rest on integer factorization difficulty. Shor's algorithm (1994) can in principle factor large integers in polynomial time on a sufficiently large fault-tolerant quantum computer. The host overstates Willow's capabilities: Willow is real (Dec 2024 announcement) and did demonstrate a benchmark (random circuit sampling) faster than classical supercomputers, but it has 105 physical qubits and CANNOT yet factor RSA-2048. Shor's algorithm at RSA-2048 scale needs ~thousands to millions of logical qubits.",
-      "hostStance": "asserts"
+      "rationale": "The Z-340 cipher was solved in December 2020 by Sam Blake, David Oranchak, and Jarl Van Eycke. Widely reported and confirmed by the FBI. The 'stumped best cryptographers for 51 years' framing is accurate — multiple NSA and FBI attempts had failed.",
+      "tags": [
+        "zodiac-killer",
+        "z340",
+        "cryptography"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.9
     },
     {
       "id": "7eZXBVgBDio:c_0004",
       "videoId": "7eZXBVgBDio",
-      "text": "The NSA has been warning about 'Y2Q' - the year quantum computers become powerful enough to break public-key encryption - since the 2010s, originally projecting the danger date around 2030-2040, but Google's Willow breakthrough has accelerated that timeline so the cryptographic community now expects current encryption to fall by roughly 2029.",
-      "kind": "speculative",
-      "entities": [
-        "organization:nsa",
-        "organization:google",
-        "technology:encryption",
-        "technology:quantum computers"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7eZXBVgBDio",
-          "charStart": 11062,
-          "charEnd": 12200,
-          "timeStart": 758.24,
-          "timeEnd": 828,
-          "quote": "the NSA has\nbeen warning about this moment for years\nthey call it y2q the year quantum\ncomputers become powerful enough to\nbreak our current encryption they\nthought it would happen between 2030 and\n2040 but Willow changed everything for\n30 years quantum computers suffered one\nmajor problem errors reading Quantum\ndata is like trying to read a book\nduring an earthquake it's too unstable\nto work properly but Google fixed that\nwith project Willow how did it fix it by\ngrouping cubits together there are\ngroups of cubits handling processing and\ngroups of cubits that do nothing but\ntrack and fix errors the more cubits you\nadd the fewer errors you have it may\nsound counterintuitive but it's like\nbuilding a sand castle that gets\nstronger the bigger it gets now with\nai's help quantum computers are on track\nto break current encryption by the year\n2029 way ahead of schedule yeah this is\nbad in 2024 the Department of Defense\naccelerated its Quantum modernization\nprogram their latest directive warns the\ncritical systems must be Quantum\nresistant by 2025 but one detail stands\nout they're not just protecting future\nmessages they're racin"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.55,
-      "rationale": "'Y2Q' or 'Q-Day' is real terminology used by NIST and DoD planners. Willow's December 2024 demonstration of below-threshold quantum error correction is genuinely a milestone (Nature paper). But the '2029' projection is on the aggressive end of expert estimates; mainstream cryptographers' median estimate is more like 2030-2040 still, with substantial uncertainty. The host's framing collapses 'demonstrate error correction' with 'crack RSA at scale' - very different problems.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7eZXBVgBDio:c_0005",
-      "videoId": "7eZXBVgBDio",
-      "text": "Quantum computers don't just threaten future communications - intelligence agencies have been collecting and warehousing encrypted data since the Cold War, so any encrypted record from any era (emails, financial transactions, Bitcoin wallets) becomes retroactively breakable the moment quantum capability arrives ('harvest now, decrypt later').",
-      "kind": "speculative",
-      "entities": [
-        "organization:the intelligence agencies",
-        "technology:quantum computers",
-        "technology:encryption",
-        "organization:jp morgan",
-        "date_time:2023",
-        "event:world war ii"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7eZXBVgBDio",
-          "charStart": 14899,
-          "charEnd": 15700,
-          "timeStart": 1017.12,
-          "timeEnd": 1067.44,
-          "quote": "there's Bitcoin its entire\nsecurity system depends on the same math\nquantum computers are about to break\nShadow groups have already collected\nhundreds of thousands of encrypted\nBitcoin wallets they're just waiting for\nquantum computers powerful enough to\ncrack them all that money could vanish\nin seconds at current prices that's\nbillions of dollars total till zero Baby\nBanks know this is coming JP Morgan\nstarted building Quantum resistant\nvaults in 2023 not for gold or cash for\ncomputers these facilities will never\nconnect to the internet they'll use\npaper records and human couriers the\nmilitary is training for Quantum dark\noperations missions conducted without\ndigital communication teams practice\nusing pre-arranged signals dead drops\nand one-time codebooks the same methods\nthat kept secrets"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "'Harvest Now, Decrypt Later' (HNDL) is a documented and named concern in NIST and NSA literature - intelligence agencies clearly do collect ciphertext today against future decryption capability. Bitcoin's vulnerability to Shor's algorithm (specifically against ECDSA on used addresses) is a real concern actively discussed in cryptocurrency security research. The 'JP Morgan air-gapped quantum vault' detail is loosely based on real bank investments in post-quantum readiness but the specific framing ('paper records and human couriers') is dramatized.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7eZXBVgBDio:c_0006",
-      "videoId": "7eZXBVgBDio",
-      "text": "The defensive response is 'post-quantum cryptography' (PQC) - new mathematical problems (lattice, hash-based, code-based, multivariate) believed to be hard for both classical and quantum computers - but every previously 'unbreakable' code (Enigma, Purple, RSA's billion-year claim) was eventually broken, suggesting PQC may share the same fate.",
+      "text": "Modern encryption is based on multiplying two huge prime numbers together, where only someone who knows the original primes can decode the message.",
       "kind": "empirical",
       "entities": [
-        "organization:nsa",
-        "technology:encryption",
-        "event:world war ii"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7eZXBVgBDio",
-          "charStart": 18273,
-          "charEnd": 19200,
-          "timeStart": 1246.72,
-          "timeEnd": 1302.559,
-          "quote": "postquantum cryptography the strategy\nfive mathematical problems so complex\nthat not even quantum computers can\nsolve them efficiently but there's a\nproblem whenever we think we found an\nunbreakable code someone finds a way way\nto break it the Germans thought Enigma\nwas mathematically impossible to crack\nthe Japanese believed purple would keep\ntheir World War II Communications secret\nforever the NSA once claimed RSA\nencryption would take billions of years\nto defeat they were all wrong some banks\nare returning to physical security\nsystems offline computers paper records\nand in-person verification government\nagencies are Reviving Cold War ER\nmethods onetime paths dead drops and\nbicycle couriers sometimes things don't\nhappen the way you planned sometimes you\ncan end up low what then you started\nwhat\nQuicksilver somebody out there gets it\nquantum dark operations like air gap\nfacilities analog communication and\npaper m"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Post-quantum cryptography is real - NIST finalized its first PQC standards (Kyber, Dilithium, etc.) in August 2024. The historical examples (Enigma broken at Bletchley Park, Purple broken by SIS) are accurate. The implicit pessimistic conclusion - that PQC will also fall - is a defensible analogy but not certain; lattice problems have a much longer track record of resisting attack than RSA did before Shor's algorithm.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "7eZXBVgBDio:c_0007",
-      "videoId": "7eZXBVgBDio",
-      "text": "The fictional 'Carl Bishop' framing story posits that the NSA's true plan is not to prevent the quantum apocalypse but to USE it: by leaking everyone's secrets simultaneously, intelligence agencies can act on the information they've already harvested without revealing how they obtained it - parallel construction at civilizational scale.",
-      "kind": "speculative",
-      "entities": [
-        "person:carl bishop",
-        "person:carl",
-        "organization:nsa",
-        "organization:the intelligence agencies",
-        "technology:encryption",
-        "event:quantum apocalypse",
-        "organization:ctec"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "7eZXBVgBDio",
-          "charStart": 20235,
-          "charEnd": 21500,
-          "timeStart": 1375.4,
-          "timeEnd": 1455.24,
-          "quote": "for years the network had quietly broken\nevery encryption it touched banking\nrecords medical files private messages\nand government\nsecrets the intelligence agencies had\naccess to everything but there was a\nproblem they couldn't act on any of it\nwithout revealing their capability\nimagine knowing about every terrorist\nplot every corporate crime every\ngovernment corruption Scandal but being\nunable to stop any of it without\nexposing how you got the\ninformation the agencies were drowning\nin intelligence they couldn't use the\nsolution was El an create a world where\nprivacy no longer existed where every\nsecret was public if nothing were\nprivate there'd be no need to explain\nhow they obtain their intelligence no\nsearch warrants were necessary\neverything was already exposed the\nsocial chaos was part of the plan\nCommunities going analog wasn't a\nproblem it was the goal Drive the\ndangerous elements offline where they\ncould be more easily monitored through\ntraditional surveillance let the general\npublic choose between convenience and\nprivacy they would choose convenience\nthey always did but the intelligence\nagencies had their own solution for\nsecure communication a return to Cold\nWar\ntradecraft dead drops onetime pads face\nto-face meetings in soundproof roo"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.1,
-      "rationale": "This is an explicitly fictional framing story embedded in the episode (Carl Bishop, Stanford Quantum Lab, CTEC, the bunker interrogation). The host signposts it as a hypothetical 'what if' rather than reporting. The underlying conceptual point - that intelligence agencies have a 'parallel construction' problem with covertly-obtained intelligence - is a real and well-documented constraint (cf. Snowden disclosures, FISA debates). But the conspiracy that NSA actively engineered a quantum apocalypse to launder its surveillance haul is fiction.",
-      "hostStance": "steelman"
-    },
-    {
-      "id": "7eZXBVgBDio:c_0008",
-      "videoId": "7eZXBVgBDio",
-      "text": "The host's verdict suggests that in a post-quantum world the most powerful actors will not be those who can break encryption, but those who can keep secrets without using encryption at all - via dead drops, one-time pads, air-gapped facilities, and human-memory-only operational practices revived from Cold War tradecraft.",
-      "kind": "opinion",
-      "entities": [
-        "person:carl",
-        "organization:nsa",
         "technology:encryption"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "7eZXBVgBDio",
-          "charStart": 22321,
-          "charEnd": 23200,
-          "timeStart": 1505.159,
-          "timeEnd": 1571.88,
-          "quote": "almost a year ago Carl was set up the\nquantum apocalypse was pinned on him but\nwhat could he do about it martial law\nwas still in effect the NSA wanted him\nto keep working and keep quiet he could\neither agree to cooperate or go to\nprison violation of the Espionage Act\nwillful communication of National\nDefense information unauthorized access\nof classified documents the list went on\nand on on he didn't have much of a\n[Music]\nchoice as Carl left the concrete room he\nrealized that in a world with no secrets\nthe most powerful people weren't those\nwho could break encryption the most\npowerful people were those who could\nkeep secrets without it and right now\nthe only people who could do that worked\nfor the NSA\nthank you so much for hanging out today\nmy name is AJ there's Heckle fish my\nvoice is my passport verify me this has\nbeen the wi files if you have fun to\nlearn anythin"
+          "charStart": 9735,
+          "charEnd": 9809,
+          "timeStart": 682.079,
+          "timeEnd": 690.88,
+          "quote": "modern encryption is\nbased on the simple\ntrick take two huge prime numbers"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Accurate description of RSA, the dominant public-key crypto system since 1977. The explanation is simplified ('modern encryption' encompasses RSA, ECC, AES, and others with different primitives) but the prime-factorization foundation of RSA is correct.",
+      "tags": [
+        "rsa",
+        "encryption",
+        "cryptography"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.8
+    },
+    {
+      "id": "7eZXBVgBDio:c_0005",
+      "videoId": "7eZXBVgBDio",
+      "text": "In December 2024 Google unveiled Project Willow, a quantum computer that solved in 5 minutes a problem that would take classical supercomputers longer than the age of the universe.",
+      "kind": "historical",
+      "entities": [
+        "organization:google",
+        "date_time:2024"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 10145,
+          "charEnd": 10214,
+          "timeStart": 705.839,
+          "timeEnd": 713.88,
+          "quote": "project Willow\ntheir quantum computer solved the\nproblem in 5 minutes"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "An accurate summary of the host's closing thesis. The substantive observation - that post-quantum security may favor analog/physical/operational tradecraft over mathematical encryption - is at least partially defensible: governments and high-value targets are demonstrably investing in air-gapped systems and physical OPSEC as quantum risk grows. The dramatic 'NSA destroyed society' framing is fiction but the underlying point about analog tradecraft regaining value is sound.",
+      "rationale": "Google's Willow chip was announced in December 2024 and did benchmark a random-circuit sampling problem in ~5 minutes vs an estimated 10^25 years on classical hardware. Important caveat: that benchmark does not translate to cracking RSA or any useful encryption; host conflates benchmark speedup with general computational supremacy.",
+      "tags": [
+        "google",
+        "willow",
+        "quantum-computer"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "inVerdictSection": true,
+      "directTruth": 0.7
+    },
+    {
+      "id": "7eZXBVgBDio:c_0006",
+      "videoId": "7eZXBVgBDio",
+      "text": "Quantum bits (qubits) can be one and zero at the same time via superposition, letting a quantum computer try all combinations simultaneously.",
+      "kind": "empirical",
+      "entities": [
+        "technology:quantum computer"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 10604,
+          "charEnd": 10647,
+          "timeStart": 730.519,
+          "timeEnd": 739.36,
+          "quote": "cubits can be one and zero at\nthe same time"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Superposition is real but 'tries all combinations simultaneously' is the popular simplification that misleads. A qubit's measurement still collapses to one value; quantum speedup depends on interference patterns, not parallel trial enumeration. True in spirit, wrong in mechanism.",
+      "tags": [
+        "qubits",
+        "superposition",
+        "quantum-computing"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.6
+    },
+    {
+      "id": "7eZXBVgBDio:c_0007",
+      "videoId": "7eZXBVgBDio",
+      "text": "The NSA's Y2Q threshold — when quantum computers can break current encryption — was originally estimated for 2030-2040 but is now on track for 2029.",
+      "kind": "empirical",
+      "entities": [
+        "organization:nsa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 11128,
+          "charEnd": 11213,
+          "timeStart": 763.8,
+          "timeEnd": 771.399,
+          "quote": "y2q the year quantum\ncomputers become powerful enough to\nbreak our current encryption"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Y2Q is a real NIST/NSA preparedness framework. NIST's formal migration-deadline guidance targets 2030-2035; the '2029' acceleration is the host's extrapolation from Willow. Mainstream cryptographers still estimate 2030s-2040s for cryptographically-relevant quantum computers (CRQC) — 2029 is aggressive.",
+      "tags": [
+        "y2q",
+        "nsa",
+        "post-quantum"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.35
+    },
+    {
+      "id": "7eZXBVgBDio:c_0008",
+      "videoId": "7eZXBVgBDio",
+      "text": "Quantum computers will break current encryption by 2029.",
+      "kind": "speculative",
+      "entities": [
+        "technology:quantum computer",
+        "technology:encryption"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 11872,
+          "charEnd": 11913,
+          "timeStart": 805.44,
+          "timeEnd": 812.9590000000001,
+          "quote": "break current encryption by the year\n2029"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Strong claim with a specific date. Requires ~4000+ logical qubits with sufficient error correction — Willow demonstrated 105 physical qubits with a breakthrough in error correction, nowhere near RSA-breaking scale. Expert consensus (Mosca, IBM, NIST) still places CRQC in 2030s-2040s with wide error bars.",
+      "tags": [
+        "quantum-apocalypse",
+        "timeline",
+        "2029"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.15,
       "dependencies": [
         {
-          "target": "7eZXBVgBDio:c_0006",
-          "kind": "supports"
-        },
-        {
           "target": "7eZXBVgBDio:c_0007",
-          "kind": "elaborates"
+          "kind": "elaborates",
+          "rationale": "Concrete prediction derived from the accelerated Y2Q timeline."
         }
       ]
+    },
+    {
+      "id": "7eZXBVgBDio:c_0009",
+      "videoId": "7eZXBVgBDio",
+      "text": "In 2024 the US Department of Defense accelerated its Quantum Modernization Program and directed that critical systems be quantum-resistant by 2025.",
+      "kind": "empirical",
+      "entities": [
+        "organization:department of defense"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 12066,
+          "charEnd": 12116,
+          "timeStart": 817.32,
+          "timeEnd": 823.8389999999999,
+          "quote": "critical systems must be Quantum\nresistant by 2025"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "DoD has a real Quantum Strategy and issued CNSA 2.0 guidance in 2022 with migration deadlines. A 'critical systems quantum-resistant by 2025' directive is not the public mandate — CNSA 2.0 timelines run to 2030-2035. Host may be conflating general urgency with a specific directive.",
+      "tags": [
+        "department-of-defense",
+        "quantum-resistance",
+        "pqc"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.45
+    },
+    {
+      "id": "7eZXBVgBDio:c_0010",
+      "videoId": "7eZXBVgBDio",
+      "text": "Shadow groups have already collected hundreds of thousands of encrypted Bitcoin wallets, waiting for quantum computers powerful enough to crack them.",
+      "kind": "speculative",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 15004,
+          "charEnd": 15091,
+          "timeStart": 1024.439,
+          "timeEnd": 1030.64,
+          "quote": "Shadow groups have already collected\nhundreds of thousands of encrypted\nBitcoin wallets"
+        }
+      ],
+      "confidence": 0.75,
+      "rationale": "Bitcoin wallet public keys are already on the public blockchain — no 'collection' is needed. The 'harvest now, decrypt later' threat model is real for other encrypted traffic, but the specific 'hundreds of thousands of Bitcoin wallets' figure and 'Shadow groups' are uncited and unverified.",
+      "tags": [
+        "bitcoin",
+        "quantum-threat",
+        "speculation"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.1
+    },
+    {
+      "id": "7eZXBVgBDio:c_0011",
+      "videoId": "7eZXBVgBDio",
+      "text": "JP Morgan started building offline quantum-resistant vaults for computers in 2023, using paper records and human couriers that never connect to the internet.",
+      "kind": "empirical",
+      "entities": [
+        "organization:jp morgan"
+      ],
+      "relationships": [
+        "r_0020"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 15296,
+          "charEnd": 15347,
+          "timeStart": 1038.16,
+          "timeEnd": 1048.12,
+          "quote": "JP Morgan\nstarted building Quantum resistant\nvaults"
+        }
+      ],
+      "confidence": 0.75,
+      "rationale": "JP Morgan does have a quantum-research program and has piloted quantum-key-distribution networks, but 'offline vaults with paper records and human couriers' is the host's dramatization, not corroborated by public JPM disclosures. The direction of travel is real; the specifics are fictionalized.",
+      "tags": [
+        "jp-morgan",
+        "quantum-resistant",
+        "banking"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.25
+    },
+    {
+      "id": "7eZXBVgBDio:c_0012",
+      "videoId": "7eZXBVgBDio",
+      "text": "Intelligence agencies have been collecting encrypted data since the Cold War, waiting to decrypt it once quantum computers arrive.",
+      "kind": "empirical",
+      "entities": [
+        "event:quantum apocalypse"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 14708,
+          "charEnd": 14784,
+          "timeStart": 1005.8,
+          "timeEnd": 1014.68,
+          "quote": "intelligence agencies\nhave been collecting encrypted data\nsince the Cold War"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The 'harvest now, decrypt later' (HNDL) threat is a real and widely-discussed intelligence-community concern. NSA bulk collection of encrypted traffic has been documented since the Snowden disclosures (2013). Waiting-for-quantum motive is explicit in NIST's PQC migration rationale.",
+      "tags": [
+        "harvest-now-decrypt-later",
+        "cold-war",
+        "nsa"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.7
+    },
+    {
+      "id": "7eZXBVgBDio:c_0013",
+      "videoId": "7eZXBVgBDio",
+      "text": "The quantum apocalypse — the collapse of current encryption — is already here, not coming.",
+      "kind": "speculative",
+      "entities": [
+        "event:quantum apocalypse"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 15813,
+          "charEnd": 15854,
+          "timeStart": 1068.76,
+          "timeEnd": 1075.4399999999998,
+          "quote": "apocalypse isn't coming\nit's already here"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Host's dramatic framing. No public demonstration of RSA-2048 or ECC-256 being broken by a quantum computer exists as of this video's airing. Willow is impressive but cannot factor cryptographically relevant numbers. Framing as 'already here' is narrative, not technical.",
+      "tags": [
+        "quantum-apocalypse",
+        "framing",
+        "narrative"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.15,
+      "dependencies": [
+        {
+          "target": "7eZXBVgBDio:c_0008",
+          "kind": "contradicts",
+          "rationale": "[logical] An apocalypse can't both be 'already here' and predicted to arrive in 2029 — host is being loose with timeline claims."
+        }
+      ]
+    },
+    {
+      "id": "7eZXBVgBDio:c_0014",
+      "videoId": "7eZXBVgBDio",
+      "text": "CTEC is not a tech company but a joint NSA/DARPA program running a network of quantum computers since 2019 that has quietly broken every encryption it touched.",
+      "kind": "speculative",
+      "entities": [
+        "organization:ctec",
+        "organization:nsa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 20033,
+          "charEnd": 20091,
+          "timeStart": 1360.2,
+          "timeEnd": 1370.799,
+          "quote": "ctec\nwasn't a tech company it was a joint NSA\nDara program"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "This is the climactic twist of the host's dramatized Carl Bishop storyline. No public record of a CTEC NSA-DARPA quantum program exists. Narrative fiction the host presents inside the story frame, not a factual claim, but treated as a claim by the format.",
+      "tags": [
+        "ctec",
+        "nsa",
+        "narrative",
+        "speculation"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "steelman",
+      "directTruth": 0.02
+    },
+    {
+      "id": "7eZXBVgBDio:c_0015",
+      "videoId": "7eZXBVgBDio",
+      "text": "The NSA destroyed society's privacy to hide that they had already broken encryption, making every secret public so they wouldn't have to explain how they got their intelligence.",
+      "kind": "speculative",
+      "entities": [
+        "organization:nsa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 22266,
+          "charEnd": 22301,
+          "timeStart": 1500.679,
+          "timeEnd": 1508.039,
+          "quote": "destroyed Society\nto hide that they"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "Host's conspiracy-theory capstone, framed as the 'real' explanation behind the dramatized events. No evidence supports a deliberate NSA project to destroy digital privacy; actual NSA practice has been opposite — aggressive classification of capabilities and parallel construction to hide sources.",
+      "tags": [
+        "nsa",
+        "conspiracy",
+        "narrative"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "steelman",
+      "directTruth": 0.03,
+      "dependencies": [
+        {
+          "target": "7eZXBVgBDio:c_0013",
+          "kind": "elaborates",
+          "rationale": "Builds on the CTEC-NSA-DARPA network premise to claim a motive for social chaos."
+        }
+      ]
+    },
+    {
+      "id": "7eZXBVgBDio:c_0016",
+      "videoId": "7eZXBVgBDio",
+      "text": "When an unbreakable code is claimed, history shows someone always finds a way to break it — from Enigma to Purple to RSA.",
+      "kind": "historical",
+      "entities": [
+        "technology:encryption"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "7eZXBVgBDio",
+          "charStart": 18517,
+          "charEnd": 18578,
+          "timeStart": 1258.679,
+          "timeEnd": 1264.7600000000002,
+          "quote": "Germans thought Enigma\nwas mathematically impossible to crack"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Broadly true as a historical pattern. Enigma was broken by Rejewski/Turing/Bletchley; Purple was broken by Friedman's team. RSA is not yet broken at cryptographically-relevant key sizes but the pattern-matching is reasonable.",
+      "tags": [
+        "enigma",
+        "purple",
+        "cryptography-history"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "directTruth": 0.8
     }
   ]
 }

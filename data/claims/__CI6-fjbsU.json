@@ -1,150 +1,191 @@
 {
   "schemaVersion": 1,
   "transcriptId": "__CI6-fjbsU",
-  "generatedAt": "2026-04-20T02:37:00.000Z",
+  "generatedAt": "2026-04-21T12:10:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "__CI6-fjbsU:c_0001",
       "videoId": "__CI6-fjbsU",
-      "text": "The Voynich Manuscript is a roughly 240-page 15th-century vellum codex written in an indecipherable script and illustrated with strange plants, astrological charts, and many naked women in interconnected bathtubs — and it has resisted decipherment by everyone who has tried it for six hundred years.",
-      "kind": "definitional",
+      "text": "The Voynich manuscript is a 240-page 15th-century codex written in an indecipherable script that has resisted scholars, cryptographers, physicists, and computer scientists for approximately 600 years.",
+      "kind": "empirical",
       "entities": [
         "work_of_media:voynich manuscript",
         "work_of_media:medieval codex",
-        "facility:bathtubs",
-        "quantity:two hundred and forty page",
         "quantity:six hundred years",
-        "person:scholars"
+        "quantity:two hundred and forty page",
+        "date_time:15th century",
+        "organization:computer scientists"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
-          "charStart": 8,
-          "charEnd": 228,
-          "timeStart": 0.16,
-          "timeEnd": 18.16,
-          "quote": "hundred years, the Voynich\nmanuscript has stumped scholars, cryptographers,\nphysicists, computer scientists,\npretty much everybody.\nNow, a researcher in Germany has claimed to\nhave finally decoded the most mysterious boo"
+          "charStart": 0,
+          "charEnd": 115,
+          "timeStart": 1.44,
+          "timeEnd": 8.53,
+          "quote": "For six hundred years, the Voynich\nmanuscript has stumped scholars, cryptographers,\nphysicists, computer scientists"
         },
         {
           "transcriptId": "__CI6-fjbsU",
-          "charStart": 1329,
-          "charEnd": 1549,
-          "timeStart": 81,
-          "timeEnd": 95,
-          "quote": "filled with whimsical illustrations of nude\nwomen in bathtubs, bathtubs with windows,\nbathtubs shaped like ovaries, bathtubs oozing\ngreen liquid bathtubs,\nbathtubs, bathtubs everywhere.\nThese, along with drawings of star"
+          "charStart": 514,
+          "charEnd": 618,
+          "timeStart": 34.4,
+          "timeEnd": 44.21,
+          "quote": "Voynich manuscript is a two hundred and\nforty page medieval codex, written in an\nindecipherable language"
         }
       ],
       "confidence": 0.98,
-      "directTruth": 0.95,
-      "rationale": "All these basic facts are correct: ~240 surviving pages, vellum, carbon-dated to roughly 1404-1438, illustrated with botanical/astrological/balneological/pharmacological sections, undeciphered for centuries. Standard Voynich introduction.",
-      "hostStance": "asserts"
+      "directTruth": 0.97,
+      "rationale": "The Voynich manuscript's basic description — 240 surviving pages, unknown script, 15th-century dating — is confirmed by Yale's Beinecke Library and decades of published research. The 600-year figure is approximate (the carbon date is ~1404-1438).",
+      "hostStance": "asserts",
+      "tags": ["voynich", "manuscript"]
     },
     {
       "id": "__CI6-fjbsU:c_0002",
       "videoId": "__CI6-fjbsU",
-      "text": "Even Alan Turing took a crack at decoding the Voynich Manuscript and came up short — alongside cryptologists, FBI operatives, mathematicians, and skilled linguists who have all hit dead ends.",
+      "text": "Even Alan Turing attempted to decode the Voynich manuscript and failed.",
       "kind": "historical",
       "entities": [
         "person:alan turing",
-        "organization:fbi",
-        "organization:medievalists",
         "work_of_media:voynich manuscript"
       ],
-      "relationships": [
-        "r_0006"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
           "charStart": 1016,
-          "charEnd": 1236,
-          "timeStart": 64,
-          "timeEnd": 78,
-          "quote": "Even Alan Turing took a crack\nat it and came up short.\nSo sorry. A book written in an unknown language\nno one has been able to decode with\ncrumbling pages made of Bauen Calfskin dating\nback to the 15th century, you proba"
+          "charEnd": 1070,
+          "timeStart": 64.43,
+          "timeEnd": 67.19,
+          "quote": "Even Alan Turing took a crack\nat it and came up short."
         }
       ],
-      "confidence": 0.85,
+      "confidence": 0.7,
       "directTruth": 0.4,
-      "rationale": "FBI cryptanalysts and the NSA's William and Elizabeth Friedman did work on the Voynich manuscript; Friedman's quote about utter frustration is real and widely cited. Turing's involvement is more dubious — there is no documented record of Alan Turing actually working on the Voynich manuscript. This is a popular claim but not well-sourced; the host overstates Turing's documented involvement.",
-      "hostStance": "asserts"
+      "rationale": "Turing studied cryptograms and medieval ciphers informally but there is no well-documented sustained Turing effort on Voynich specifically. The more famously-attested WWII cryptographers who worked on it were William and Elizebeth Friedman. The Turing attribution is common folklore but weakly sourced.",
+      "hostStance": "asserts",
+      "tags": ["turing", "cryptography"]
     },
     {
       "id": "__CI6-fjbsU:c_0003",
       "videoId": "__CI6-fjbsU",
-      "text": "The Voynich script has roughly 20-25 distinct letterforms and clear structural regularities, but no scholar has been able to reverse-engineer how the letters combine into words — Elizabeth Friedman declared in 1960 that any attempt to translate it was 'doomed to utter frustration.'",
+      "text": "The Voynich script has a definite internal structure with 20-25 distinct letter forms even though no one has deciphered how they combine.",
       "kind": "empirical",
       "entities": [
-        "quantity:twenty to twenty five distinct letters",
-        "person:elizabeth friedman",
-        "date_time:1960",
-        "work_of_media:voynich manuscript"
+        "work_of_media:voynich cheese",
+        "quantity:twenty to twenty five distinct letters"
       ],
-      "relationships": [
-        "r_0008",
-        "r_0010"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
-          "charStart": 3949,
-          "charEnd": 4169,
-          "timeStart": 244,
-          "timeEnd": 263,
-          "quote": "twenty to twenty five distinct letters,\nbut nobody's been able to figure out how\nthe letters fit together, according to Creped\nanalyst Elizabeth Friedman in 1960.\nTo anyone who attempts to translate,\nit is doomed to utte"
+          "charStart": 3932,
+          "charEnd": 3987,
+          "timeStart": 231.36,
+          "timeEnd": 235.26,
+          "quote": "the language has\ntwenty to twenty five distinct letters"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The 20-25 unique character estimate matches modern computational analyses of the Voynich script. Elizabeth Friedman did say variations of the 'doomed to utter frustration' line in 1962 (a Washington Post article). Both statements are accurate.",
-      "hostStance": "asserts"
+      "directTruth": 0.9,
+      "rationale": "Consensus character-set analysis (EVA, Currier alphabets) identifies ~20-30 distinct graphemes, with statistical regularities that pattern like a natural language's letter frequencies (Zipf's law conformance documented).",
+      "hostStance": "asserts",
+      "tags": ["voynich", "cryptography", "linguistics"]
     },
     {
       "id": "__CI6-fjbsU:c_0004",
       "videoId": "__CI6-fjbsU",
-      "text": "In June 2020 German Egyptologist Rainer Hannig claimed the Voynich text is a Semitic language — most likely Hebrew — and produced translations of the first few words and full sentences, though the result reads as 'mostly gibberish' even by his own translation.",
+      "text": "Cryptanalyst Elizabeth Friedman concluded in 1960 that anyone attempting to translate the Voynich manuscript is doomed to utter frustration.",
       "kind": "historical",
       "entities": [
-        "person:rainer hartig",
-        "person:hanak",
-        "person:hanting",
-        "person:egyptologist",
-        "nationality_or_ethnicity:german",
-        "location:germany",
-        "date_time:june",
-        "work_of_media:voynich cheese"
+        "person:elizabeth friedman",
+        "date_time:1960"
       ],
-      "relationships": [
-        "r_0011"
-      ],
+      "relationships": ["r_0008"],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
-          "charStart": 5158,
-          "charEnd": 5378,
-          "timeStart": 318,
-          "timeEnd": 336,
-          "quote": "this June, one man claimed to\nhave cracked the code once and for all.\nAccording to German Egyptologist Rainer Hartig,\nVoynich Cheese is actually based in\nHebrew. He concluded that the text must be\na Semitic language, and"
-        },
-        {
-          "transcriptId": "__CI6-fjbsU",
-          "charStart": 5803,
-          "charEnd": 6023,
-          "timeStart": 358,
-          "timeEnd": 374,
-          "quote": "Mostly gibberish.\nExperts in ancient Hebrew are not\nconvinced that HanTing cracked anything.\nThey've poked more than a few holes in his\ntranslation and said he's taken quite a few\nliberties with the language to try to\nde"
+          "charStart": 4084,
+          "charEnd": 4182,
+          "timeStart": 238.8,
+          "timeEnd": 244.83,
+          "quote": "Elizabeth Friedman in 1960.\nTo anyone who attempts to translate,\nit is doomed to utter frustration"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.6,
-      "rationale": "Rainer Hannig (the host's transliteration 'Hartig'/'Hanting' garbles the name) is a real German Egyptologist who in 2020 published a paper arguing the Voynich text is Hebrew-based. The claim was widely covered and quickly disputed by Hebrew experts. The episode's basic factual reporting on this is correct.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "Elizebeth Friedman's 1962 Washington Post article famously warned that any Voynich 'solution' attempting word-for-word translation was doomed; the quote is a paraphrase of her actual published position.",
+      "dependencies": [
+        { "target": "__CI6-fjbsU:c_0007", "kind": "supports", "rationale": "Friedman's null-result framing predicts the pattern of failed solutions." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["friedman", "cryptography"]
     },
     {
       "id": "__CI6-fjbsU:c_0005",
       "videoId": "__CI6-fjbsU",
-      "text": "Over the past few decades at least 60 published 'solutions' to the Voynich Manuscript have been proposed, and every single one of them has been debunked.",
+      "text": "German Egyptologist Rainer Hannig claimed in June to have cracked the manuscript by identifying it as a Semitic language — specifically Hebrew — and producing a partial translation.",
+      "kind": "speculative",
+      "entities": [
+        "person:rainer hartig",
+        "person:hanak",
+        "nationality_or_ethnicity:german",
+        "person:egyptologist",
+        "work_of_media:voynich cheese",
+        "date_time:june"
+      ],
+      "relationships": ["r_0011"],
+      "evidence": [
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 5261,
+          "charEnd": 5318,
+          "timeStart": 297.72,
+          "timeEnd": 306.3,
+          "quote": "Rainer Hartig,\nVoynich Cheese is actually based in\nHebrew"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Hannig (Egyptologist at University of Marburg) did publish a Hebrew-based Voynich proposal; it has not been accepted by Hebrew linguists. Declining truth: the host's own follow-up statement says Hebrew experts reject it.",
+      "dependencies": [
+        { "target": "__CI6-fjbsU:c_0006", "kind": "contradicts", "rationale": "[debunks] Hebrew experts rejected the Hannig translation." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["hannig", "hebrew", "voynich"]
+    },
+    {
+      "id": "__CI6-fjbsU:c_0006",
+      "videoId": "__CI6-fjbsU",
+      "text": "Experts in ancient Hebrew poked holes in Hannig's translation and concluded he took liberties with the language to force meaning where none exists.",
+      "kind": "empirical",
+      "entities": [
+        "organization:experts in ancient hebrew",
+        "person:hanting"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 5821,
+          "charEnd": 5894,
+          "timeStart": 328.56,
+          "timeEnd": 332.13,
+          "quote": "Experts in ancient Hebrew are not\nconvinced that HanTing cracked anything"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Peer response to Hannig's 2020 proposal was generally negative; specialists criticized selective letter substitutions and output strings that read as word salad even where Hebrew 'matches' were claimed.",
+      "hostStance": "asserts",
+      "tags": ["hannig", "hebrew", "debunking"]
+    },
+    {
+      "id": "__CI6-fjbsU:c_0007",
+      "videoId": "__CI6-fjbsU",
+      "text": "At least 60 Voynich 'solutions' have been published over recent decades and all of them have been debunked.",
       "kind": "empirical",
       "entities": [
         "work_of_media:voynich manuscript"
@@ -153,150 +194,271 @@
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
-          "charStart": 6114,
-          "charEnd": 6334,
-          "timeStart": 376,
-          "timeEnd": 392,
-          "quote": "Voynich Solutions have been published so\nfar. All of them have been debunked.\nIn twenty nineteen, David Cheshire, a research\nassociate at the University of Bristol in\nEngland, thought the book was written\nin a language l"
+          "charStart": 6102,
+          "charEnd": 6190,
+          "timeStart": 341.24,
+          "timeEnd": 348.21,
+          "quote": "at\nleast 60 Voynich Solutions have been published so\nfar. All of them have been debunked"
         }
       ],
-      "confidence": 0.92,
+      "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "The Voynich literature does include dozens of published proposed solutions (proto-Romance, Manchu, Cipher Latin, Nahuatl, Hebrew, etc.) and none has achieved scholarly consensus or successfully translated more than a few cherry-picked passages. The 'all debunked' framing is essentially correct.",
-      "hostStance": "asserts"
+      "rationale": "The '60+ proposed solutions, none accepted' characterization is accurate to the state of the field; Voynich.nu and Nick Pelling's Cipher Mysteries blog track the long list of unreproducible solutions.",
+      "hostStance": "asserts",
+      "tags": ["voynich", "debunking", "solutions"]
     },
     {
-      "id": "__CI6-fjbsU:c_0006",
+      "id": "__CI6-fjbsU:c_0008",
       "videoId": "__CI6-fjbsU",
-      "text": "In 2019 University of Bristol research associate Gerard Cheshire claimed the manuscript was written in a lost predecessor of modern English and Spanish — a translation that hit the media as a 'eureka moment' but was rapidly debunked as botched research and a rush to publication.",
+      "text": "In 2019, University of Bristol research associate Gerard Cheshire claimed in Romance Studies to have identified the manuscript as a lost Romance proto-language predecessor to modern English and Spanish.",
       "kind": "historical",
       "entities": [
         "person:david cheshire",
         "role:research associate",
         "organization:university of bristol",
         "location:england",
-        "date_time:twenty nineteen",
-        "event:eureka moment",
         "organization:roman studies",
-        "organization:ars technica"
+        "date_time:twenty nineteen"
       ],
-      "relationships": [
-        "r_0012",
-        "r_0017",
-        "r_0018"
-      ],
+      "relationships": ["r_0012"],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
           "charStart": 6212,
-          "charEnd": 6432,
-          "timeStart": 384,
-          "timeEnd": 401,
-          "quote": "David Cheshire, a research\nassociate at the University of Bristol in\nEngland, thought the book was written\nin a language lost the time.\nA predecessor to modern English and\nSpanish, he told Roman studies.\nWhen I realised "
+          "charEnd": 6277,
+          "timeStart": 348.36,
+          "timeEnd": 352.77,
+          "quote": "David Cheshire, a research\nassociate at the University of Bristol"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.85,
-      "rationale": "Gerard Cheshire's 2019 'proto-Romance' paper was published in Romance Studies, drew worldwide press, and was rapidly disowned by the University of Bristol after experts pointed out severe methodological problems. ArsTechnica and others ran the 'another day, another debunk' coverage the host quotes. The host's transliteration is 'David' instead of 'Gerard,' but otherwise accurate.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "rationale": "The actual name is Gerard Cheshire (the host's 'David' appears to be a misread transcript). The 2019 Bristol proposal was rapidly debunked; Bristol distanced itself from the press release. The Romance Studies paper remains available but is widely rejected.",
+      "dependencies": [
+        { "target": "__CI6-fjbsU:c_0007", "kind": "elaborates", "rationale": "Specific example of the debunked-solutions pattern." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["cheshire", "bristol", "voynich"]
     },
     {
-      "id": "__CI6-fjbsU:c_0007",
+      "id": "__CI6-fjbsU:c_0009",
       "videoId": "__CI6-fjbsU",
-      "text": "In 2017 television writer Nicholas Gibbs claimed the Voynich Manuscript was a women's-health manual written in Latin abbreviations — a theory whose Latin-decoding side was rejected outright by Latin experts as nonsense, in part because Gibbs lacked formal training in historical text decoding.",
+      "text": "In 2017 television writer Nicholas Gibbs claimed the Voynich manuscript is a women's health manual written in a cipher of Latin abbreviations, but Latin experts found his translations to be nonsense.",
       "kind": "historical",
       "entities": [
         "person:nicholas gibbs",
         "person:gibbs",
-        "date_time:2017",
         "organization:latin experts",
-        "organization:producers",
-        "work_of_media:book"
-      ],
-      "relationships": [
-        "r_0019"
-      ],
-      "evidence": [
-        {
-          "transcriptId": "__CI6-fjbsU",
-          "charStart": 6835,
-          "charEnd": 7055,
-          "timeStart": 422,
-          "timeEnd": 439,
-          "quote": "Nicholas Gibbs made\ninternational news when he claimed to have\nsolved the mystery, Gibbs believed that the book\nis a women's health manual and the\nlanguage is actually made\nup of Latin abbreviations.\nAnd the woman's heal"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Nicholas Gibbs published the Latin-abbreviation, women's-health-manual theory in the Times Literary Supplement in September 2017. It was rejected within days by medieval Latin and Voynich specialists. Accurately reported.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "__CI6-fjbsU:c_0008",
-      "videoId": "__CI6-fjbsU",
-      "text": "Carbon dating at the University of Arizona places the Voynich Manuscript's vellum to 1404-1438, with stylistic clues (illustrations, pigments, calfskin) pointing to northern Italian origin; it then disappears from the historical record until purchased by Holy Roman Emperor Rudolf II in the late 16th century.",
-      "kind": "historical",
-      "entities": [
-        "organization:university of arizona",
-        "date_time:15th century",
-        "date_time:14 four and fourteen thirty eight",
-        "date_time:late 16th century",
-        "location:northern italy",
-        "person:holy roman emperor rudolf the second",
-        "person:emperor rudolf",
-        "person:imperial physician",
-        "work_of_media:voynich manuscript"
+        "date_time:2017"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
-          "charStart": 8351,
-          "charEnd": 8571,
-          "timeStart": 514,
-          "timeEnd": 532,
-          "quote": "carbon\ndated the book to the 15th century\nbetween 14 four and fourteen thirty eight, and\nclues such as the style of the\nillustrations, the type of pigments and paints used\nand the calfskin that the text was\nwritten on al"
+          "charStart": 6835,
+          "charEnd": 6916,
+          "timeStart": 381.63,
+          "timeEnd": 390.57,
+          "quote": "Nicholas Gibbs made\ninternational news when he claimed to have\nsolved the mystery"
+        },
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 6918,
+          "charEnd": 7033,
+          "timeStart": 387.03,
+          "timeEnd": 393.27,
+          "quote": "Gibbs believed that the book\nis a women's health manual and the\nlanguage is actually made\nup of Latin abbreviations"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "All accurate: U. Arizona AMS C14 dating placed the vellum at 1404-1438; provenance research points to northern Italy or central Europe; Rudolf II's purchase in the early 17th century (around 1600) is documented through the Marci letter. Solid historical claim.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Gibbs's 2017 TLS piece generated wide coverage and equally wide rebuttal; his proposed decoding method was rejected by Latinists (Lisa Fagin Davis, Medieval Academy of America, among others).",
+      "dependencies": [
+        { "target": "__CI6-fjbsU:c_0007", "kind": "elaborates", "rationale": "Another specific debunked-solution example." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["gibbs", "latin", "voynich"]
     },
     {
-      "id": "__CI6-fjbsU:c_0009",
+      "id": "__CI6-fjbsU:c_0010",
       "videoId": "__CI6-fjbsU",
-      "text": "The host's preferred theory is that the Voynich Manuscript was a hoax perpetrated on Emperor Rudolf II by Edward Kelley — the medieval con-man who claimed to channel angels — making the text a transcription of nonsense angel-language and therefore inherently undecodable.",
+      "text": "A 2016 Hebrew-translation proposal by two computer scientists tested its theory by typing recognized Hebrew letters into Google Translate, producing nonsense output that Hebrew experts did not find credible.",
+      "kind": "historical",
+      "entities": [
+        "organization:computer scientists",
+        "technology:google translate",
+        "date_time:twenty sixteen"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 7811,
+          "charEnd": 7879,
+          "timeStart": 435.78,
+          "timeEnd": 439.11,
+          "quote": "they typed every Hebrew letter\nthey recognized into Google Translate"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "This refers to the 2016 Hauer & Kondrak University of Alberta paper, which used Google-Translate-assisted Hebrew anagram decoding. Hebrew scholars and the Voynich research community rejected their output as incoherent even where individual letter mappings seemed plausible.",
+      "dependencies": [
+        { "target": "__CI6-fjbsU:c_0007", "kind": "elaborates", "rationale": "Further example of the Hebrew-angle failures." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["hebrew", "google-translate", "voynich"]
+    },
+    {
+      "id": "__CI6-fjbsU:c_0011",
+      "videoId": "__CI6-fjbsU",
+      "text": "University of Arizona historians carbon-dated the manuscript's vellum to 1404-1438 and converging physical evidence suggests a northern Italian origin.",
+      "kind": "empirical",
+      "entities": [
+        "organization:university of arizona",
+        "date_time:14 four and fourteen thirty eight",
+        "location:northern italy"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 8306,
+          "charEnd": 8434,
+          "timeStart": 461.04,
+          "timeEnd": 469.56,
+          "quote": "Historians at the University of Arizona have carbon\ndated the book to the 15th century\nbetween 14 four and fourteen thirty eight"
+        },
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 8583,
+          "charEnd": 8620,
+          "timeStart": 473.52,
+          "timeEnd": 476.99,
+          "quote": "probably\noriginated in northern Italy"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "The 2009 Arizona AMS carbon-date result (1404-1438, 95% confidence) is well-established. Northern Italian origin is inferred from pigment analysis, castle illustration styles (Swallow-tailed Ghibelline merlons), and paleography.",
+      "hostStance": "asserts",
+      "tags": ["carbon-dating", "arizona", "italy", "voynich"]
+    },
+    {
+      "id": "__CI6-fjbsU:c_0012",
+      "videoId": "__CI6-fjbsU",
+      "text": "Holy Roman Emperor Rudolf II purchased the manuscript in the late 16th century, and it later passed to Prague alchemist Georg Baresch before being sent to an Egyptian-hieroglyphics expert in Rome who declared it uncrackable.",
+      "kind": "historical",
+      "entities": [
+        "person:holy roman emperor rudolf the second",
+        "person:emperor rudolf",
+        "person:george bresch",
+        "person:barrack",
+        "location:prague",
+        "person:egyptian hieroglyphics expert",
+        "location:rome",
+        "date_time:late 16th century"
+      ],
+      "relationships": ["r_0020"],
+      "evidence": [
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 8703,
+          "charEnd": 8758,
+          "timeStart": 477.03,
+          "timeEnd": 485.52,
+          "quote": "Holy\nRoman Emperor Rudolf the second purchased the\nbook"
+        },
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 9086,
+          "charEnd": 9164,
+          "timeStart": 497.55,
+          "timeEnd": 505.04,
+          "quote": "sent it to an Egyptian hieroglyphics\nexpert in Rome for help decoding\nthe text"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Rudolf II's purchase (allegedly for 600 ducats, via John Dee), Baresch's ownership, and the dispatch to Athanasius Kircher (the Jesuit Egyptologist in Rome) are all documented in the surviving letter correspondence preserved at Yale.",
+      "hostStance": "asserts",
+      "tags": ["rudolf-ii", "baresch", "kircher", "provenance"]
+    },
+    {
+      "id": "__CI6-fjbsU:c_0013",
+      "videoId": "__CI6-fjbsU",
+      "text": "After the Kircher consultation the manuscript disappeared from the record for roughly 250 years before being purchased by Polish book dealer Wilfrid Voynich in 1912.",
+      "kind": "historical",
+      "entities": [
+        "person:wilfred voynich",
+        "nationality_or_ethnicity:polish",
+        "role:book dealer",
+        "date_time:1912",
+        "quantity:two hundred and forty page"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 9270,
+          "charEnd": 9313,
+          "timeStart": 512.43,
+          "timeEnd": 516.3,
+          "quote": "disappeared for two hundred and fifty years"
+        },
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 9340,
+          "charEnd": 9402,
+          "timeStart": 512.43,
+          "timeEnd": 519,
+          "quote": "it was purchased by\nPolish book dealer Wilfred Voynich in 1912"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Documented provenance: the manuscript was held at the Collegio Romano through the 18th-19th centuries before Wilfrid Voynich purchased it in 1912 from the Villa Mondragone near Rome; it is now at the Beinecke.",
+      "hostStance": "asserts",
+      "tags": ["voynich", "provenance", "1912"]
+    },
+    {
+      "id": "__CI6-fjbsU:c_0014",
+      "videoId": "__CI6-fjbsU",
+      "text": "The host's preferred theory is that the manuscript is a hoax perpetrated on Emperor Rudolf II by Edward Kelly, a medieval scam artist who claimed to receive 'angel language' transcriptions during trances.",
       "kind": "speculative",
       "entities": [
         "person:edward kelly",
-        "person:kelly",
         "person:emperor rudolf",
-        "work_of_media:voynich manuscript"
+        "event:angel sessions"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
           "charStart": 10052,
-          "charEnd": 10272,
-          "timeStart": 612,
-          "timeEnd": 625.99,
-          "quote": "Edward\nKelly, a medieval scam artist.\nKelly would go into these trances, reclaim to be\nable to speak to angels and other people\nwould then write down what the\nangels said in their angel language.\nA lot of people spoke th"
+          "charEnd": 10088,
+          "timeStart": 551.07,
+          "timeEnd": 555.39,
+          "quote": "Edward\nKelly, a medieval scam artist"
+        },
+        {
+          "transcriptId": "__CI6-fjbsU",
+          "charStart": 10090,
+          "charEnd": 10123,
+          "timeStart": 555.39,
+          "timeEnd": 560.14,
+          "quote": "Kelly would go into these trances"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.3,
-      "rationale": "Edward Kelley was a real Elizabethan-era con man, scryer, and 'angel-language' (Enochian) channeler attached to John Dee. Some Voynich researchers have indeed proposed Kelley as the author. However, Kelley was active in the late 1500s while the manuscript's vellum dates to the early 1400s — this is a chronological problem the Kelley-hoax theory doesn't explain. The host's preferred theory is creative but doesn't fit the carbon dates from c_0008.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
+      "confidence": 0.9,
+      "directTruth": 0.2,
+      "rationale": "The Kelley-hoax hypothesis has been proposed (Rugg 2004 especially), but it predicts cipher-generation statistical properties that the Voynich text only partially matches. Kelley did work with John Dee on angelic/Enochian texts in the 1580s, but Voynich predates Kelley's activity by 150+ years per carbon dating, which makes the direct-authorship hoax implausible.",
       "dependencies": [
-        {
-          "target": "__CI6-fjbsU:c_0008",
-          "kind": "contradicts",
-          "rationale": "Kelley lived in the late 1500s but the vellum dates to 1404-1438"
-        }
-      ]
+        { "target": "__CI6-fjbsU:c_0011", "kind": "contradicts", "rationale": "[logical] Carbon-dating to 1404-1438 predates Kelley (1555-1597), so Kelley cannot have physically authored the manuscript even if he later sold it." }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "tags": ["kelley", "hoax", "speculation"]
     }
   ]
 }

@@ -1,178 +1,492 @@
 {
   "schemaVersion": 1,
   "transcriptId": "Sd8jhbF9_pc",
-  "generatedAt": "2026-04-20T04:01:10.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T14:23:51.521Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-resume-v2",
   "claims": [
     {
       "id": "Sd8jhbF9_pc:c_0001",
       "videoId": "Sd8jhbF9_pc",
-      "text": "Sanju Bhagat, a poor farmer from Nagpur, India, lived from his early 20s onward with a steadily growing abdominal bulge that his villagers mocked as making him look pregnant — and were unwittingly close to the truth.",
+      "text": "Sanju Bhagat is a farmer from Nagpur, India who lived with a growing abdominal bulge from his 20s into his 30s.",
       "kind": "historical",
       "entities": [
-        "person:sanju bhagat",
         "person:sanju",
-        "location:nagpur",
-        "role:farmer",
-        "quantity:20s"
+        "person:sanju bhagat",
+        "location:nagpur"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "Sd8jhbF9_pc",
           "charStart": 0,
-          "charEnd": 460,
+          "charEnd": 42,
           "timeStart": 3.679,
-          "timeEnd": 38,
-          "quote": "sanju bhagat is a farmer from nagpur\nindia and his life was pretty normal\nuntil his 20s when he started to develop\na small bulge in his stomach\nas the years went on the bulge grew\nlarger and people from his village would\ntease him that he looked like he was\npregnant\nthey didn't know how close to the truth\nthey were\n[Music]\nsanju's childhood was normal he had no\nmedical issues at least none that he was\naware of he never showed signs of a\ntumor or any pain n"
+          "timeEnd": 10.16,
+          "quote": "sanju bhagat is a farmer from nagpur\nindia"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.92,
-      "rationale": "Sanju Bhagat is a real, well-documented case widely covered by the BBC, NBC News, and multiple medical journals. Born in Nagpur, India; lived as a farmer with a growing abdominal mass. Biographical sketch is consistent with reporting.",
-      "hostStance": "asserts"
+      "rationale": "Sanju Bhagat is a real, widely documented case (BBC, Discovery Channel, medical journals). Biographical details — Nagpur origin, farming, abdominal growth — are confirmed across multiple independent sources.",
+      "tags": [
+        "sanju-bhagat",
+        "nagpur",
+        "medical-case"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.9
     },
     {
       "id": "Sd8jhbF9_pc:c_0002",
       "videoId": "Sd8jhbF9_pc",
-      "text": "In 1999 at age 36 Sanju collapsed from breathing difficulty and was rushed to a Mumbai hospital, where Dr. Ajay Mehta diagnosed what he believed was a tumor large enough to be compressing Sanju's diaphragm.",
+      "text": "In 1999 at age 36, Sanju collapsed from inability to breathe and was rushed to a Mumbai hospital where he was diagnosed with what appeared to be a massive tumor.",
       "kind": "historical",
       "entities": [
-        "date_time:1999",
-        "quantity:age of 36",
         "person:sanju",
+        "date_time:1999",
         "location:mumbai",
-        "facility:hospital",
-        "person:dr ajay meadow"
+        "facility:hospital"
       ],
-      "relationships": ["r_0003", "r_0006"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "Sd8jhbF9_pc",
-          "charStart": 920,
-          "charEnd": 1460,
+          "charStart": 941,
+          "charEnd": 981,
           "timeStart": 59.199,
-          "timeEnd": 93.439,
-          "quote": "trouble breathing so in 1999 at\nthe age of 36 sanju collapsed when he\ncouldn't catch his breath he was rushed\nby an ambulance to a hospital in mumbai\ndr ajay meadow was on duty that day and\nimmediately thought this was a tumor and\nhe said the tumor was so large that it\nwas pressing on sanju's diaphragm\ndisrupting his ability to breathe now\nthe doctors knew they had to remove the\ntumor as quickly as possible to save\nsanju's life now as they prepared for\nsurgery the medical staff noticed\nsomething strange the tumor was actually\nfeeding "
+          "timeEnd": 66.72,
+          "quote": "in 1999 at\nthe age of 36 sanju collapsed"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Dr. Ajay Mehta at Tata Memorial Hospital in Mumbai (transcribed as 'meadow') performed the 1999 surgery. The transcript misspells the surgeon's name across mentions but the underlying historical event is well-attested in media interviews with Mehta himself.",
+      "rationale": "The 1999 date, age 36, and Mumbai hospital are all consistent with the published medical case report and contemporary BBC/Discovery coverage of Dr. Ajay Mehta's patient.",
+      "tags": [
+        "1999",
+        "mumbai",
+        "collapse"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "dependencies": [
-        {"target": "Sd8jhbF9_pc:c_0001", "kind": "elaborates"}
-      ]
+      "directTruth": 0.9
     },
     {
       "id": "Sd8jhbF9_pc:c_0003",
       "videoId": "Sd8jhbF9_pc",
-      "text": "When Dr. Mehta opened Sanju's abdomen during emergency surgery, he discovered the mass was not a tumor but a deformed living fetus — Sanju's twin brother — with arms, legs, bones, hair, jaw, and teeth that had grown inside him for 36 years.",
-      "kind": "historical",
+      "text": "During surgery Dr. Mehta reported he could 'shake hands with somebody inside' — the apparent tumor was actually Sanju's twin brother's deformed body.",
+      "kind": "empirical",
       "entities": [
-        "person:sanju",
-        "person:dr metta",
         "person:dr mehta",
-        "person:dr meta",
-        "person:fetus",
-        "quantity:gallons"
+        "person:sanju"
       ],
-      "relationships": ["r_0009"],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "Sd8jhbF9_pc",
-          "charStart": 1452,
-          "charEnd": 1920,
-          "timeStart": 89.52,
-          "timeEnd": 123.28,
-          "quote": "feeding on the contents of sanji's\nstomach and when dr meta made the\nincision gallons of fluid came out\nhe was then horrified to find this\nwasn't a tumor at all\nwhen dr metta tried to extract a large\ntumor from sanji's stomach he said to my\nsurprise and horror i could shake hands\nwith somebody inside dr mehta realized\nthis wasn't a tumor at all it was\nactually the mutated body of sanju's\ntwin brother the deformed fetus had arms\nand legs bones hair a jaw teeth and\n"
-        },
-        {
-          "transcriptId": "Sd8jhbF9_pc",
-          "charStart": 1920,
-          "charEnd": 2400,
-          "timeStart": 121.119,
-          "timeEnd": 153.68,
-          "quote": "somehow sanju had carried the fetus\ninside his body since birth and for 36\nyears it continued to live and grow now\nthis medical condition is very rare it's\ncalled fetus infidu and it's defined as\nthe presence of one twin inside the body\nof another which survives like a\nparasite the fetus forms a cord like an\numbilical cord that leeches blood and\nnutrients from its host now only 200\ncases of fetus infetu have ever been\nreported the earliest case occurred in\nthe early 19th cent"
+          "charStart": 1713,
+          "charEnd": 1753,
+          "timeStart": 106.32,
+          "timeEnd": 113.03999999999999,
+          "quote": "i could shake hands\nwith somebody inside"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The fetus-in-fetu finding and Mehta's now-famous 'I could shake hands with somebody inside' quote are accurate to the published surgical account. One small caution: framings like 'continued to live and grow for 36 years' are dramatic — fetus in fetu specimens have rudimentary growth driven by host blood supply but lack independent life in any meaningful sense; they are non-viable parasitic teratoma-adjacent twins.",
+      "rationale": "The 'shake hands' quote is reproduced in multiple Dr. Mehta interviews and the medical literature. The fetal mass contained identifiable hands, feet, and bone structure, consistent with fetus-in-fetu diagnosis.",
+      "tags": [
+        "dr-mehta",
+        "surgery",
+        "twin"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "dependencies": [
-        {"target": "Sd8jhbF9_pc:c_0002", "kind": "elaborates"}
-      ]
+      "directTruth": 0.85
     },
     {
       "id": "Sd8jhbF9_pc:c_0004",
       "videoId": "Sd8jhbF9_pc",
-      "text": "Fetus in fetu is an extremely rare congenital condition — only about 200 cases reported since the early 19th century, when German anatomist Johann Meckel first described it — in which a blastocyst divides unevenly during embryo development and one twin becomes encapsulated inside the other.",
+      "text": "The deformed fetus had arms, legs, bones, hair, a jaw, and teeth, which Sanju had carried inside his body since birth, for 36 years.",
+      "kind": "empirical",
+      "entities": [
+        "person:sanju",
+        "person:fetus"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 1920,
+          "charEnd": 1983,
+          "timeStart": 121.119,
+          "timeEnd": 128.8,
+          "quote": "somehow sanju had carried the fetus\ninside his body since birth"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Consistent with the published case photographs and the operative report. Partial ossification, hair, and teeth are classic fetus-in-fetu features documented in peer-reviewed case literature.",
+      "tags": [
+        "fetus-in-fetu",
+        "morphology"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.85
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0005",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "Fetus in fetu is a medical condition where one twin grows inside the body of another, surviving like a parasite via an umbilical-like cord that leeches blood and nutrients.",
       "kind": "definitional",
       "entities": [
+        "person:fetus"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 2199,
+          "charEnd": 2291,
+          "timeStart": 137.52,
+          "timeEnd": 146.72,
+          "quote": "the fetus forms a cord like an\numbilical cord that leeches blood and\nnutrients from its host"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition is broadly accurate. Precise medical classification of fetus-in-fetu as a distinct entity (vs. a highly differentiated teratoma) remains debated in the pathology literature. The parasitic-twin framing is the mainstream clinical description.",
+      "tags": [
+        "fetus-in-fetu",
+        "definition"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.75
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0006",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "Only 200 cases of fetus in fetu have ever been reported worldwide.",
+      "kind": "empirical",
+      "entities": [
+        "quantity:200 cases"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 2296,
+          "charEnd": 2350,
+          "timeStart": 142.239,
+          "timeEnd": 151.04,
+          "quote": "only 200\ncases of fetus infetu have ever been\nreported"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The often-cited figure is ~200 cases in the medical literature, though the actual count has grown as more cases are reported — modern reviews (Chua et al., 2021) cite ~200+ cases. The figure is accurate as of the video's production; slightly outdated now.",
+      "tags": [
+        "fetus-in-fetu",
+        "rarity",
+        "statistics"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.75
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0007",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "The earliest fetus in fetu case was discovered in the early 19th century by Johann Meckel, a German anatomist.",
+      "kind": "historical",
+      "entities": [
         "person:johann meckel",
-        "nationality_or_ethnicity:german",
-        "date_time:the early 19th century",
-        "quantity:200 cases",
-        "person:woman",
-        "person:fetus",
+        "date_time:the early 19th century"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 2411,
+          "charEnd": 2457,
+          "timeStart": 148.879,
+          "timeEnd": 155.76,
+          "quote": "discovered\nby johann meckel a german anatomist"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Johann Friedrich Meckel the Younger (1781-1833) is widely credited in medical-history sources with the first formal description of fetus in fetu. 'Early 19th century' is approximately correct — his work dates to the 1800s-1820s.",
+      "tags": [
+        "meckel",
+        "medical-history",
+        "origin"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.7
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0008",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "Fetus in fetu occurs when a blastocyst divides unevenly during early embryo development and one fetus ends up stuck inside the other.",
+      "kind": "empirical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 2759,
+          "charEnd": 2800,
+          "timeStart": 169.04,
+          "timeEnd": 176.72,
+          "quote": "blastocyst\ndivides and grows twin fetuses"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "This is one of two competing embryological theories. The 'twin inclusion' model (host describes) is standard textbook, but a minority view classifies fetus in fetu as a well-differentiated mature teratoma arising from pluripotent cells. Not settled in embryology.",
+      "tags": [
+        "embryology",
+        "blastocyst",
+        "mechanism"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.55
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0009",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "Most of the time fetus in fetu is fatal to both twins and causes a miscarriage.",
+      "kind": "empirical",
+      "entities": [
         "event:miscarriage"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "Sd8jhbF9_pc",
-          "charStart": 2300,
-          "charEnd": 2700,
-          "timeStart": 142.239,
-          "timeEnd": 171.68,
-          "quote": " 200\ncases of fetus infetu have ever been\nreported the earliest case occurred in\nthe early 19th century it was discovered\nby johann meckel a german anatomist now\nin that case a woman who insisted she\nwasn't pregnant gave birth to a deformed\nfetus and doctors soon learned that\nshe'd actually carried her twin her\nentire life now fetus infeto happens\nearly in embryo development when it's\njust a ball "
-        },
-        {
-          "transcriptId": "Sd8jhbF9_pc",
-          "charStart": 2700,
-          "charEnd": 3200,
-          "timeStart": 166.56,
-          "timeEnd": 200.319,
-          "quote": "of cells called a blastocyst\nnow it's rare but sometimes a blastocyst\ndivides and grows twin fetuses but in\nthis rare case they divide unevenly and\none fetus gets stuck inside the other\nnow most of the time the condition is\nfatal to both twins which causes a\nmiscarriage but on some very rare\noccasions one or both survive delivery\nthe condition usually goes unnoticed\nuntil the parasitic twin grows so large\nit actually causes discomfort in the\nhost as was the case with sanju bhagat\nmedical reports"
+          "charStart": 2890,
+          "charEnd": 2943,
+          "timeStart": 179.12,
+          "timeEnd": 184.64,
+          "quote": "most of the time the condition is\nfatal to both twins"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The 200-cases figure is consistent with medical literature (range typically reported 100-200 worldwide). Johann Friedrich Meckel the Younger did describe early cases in the 19th century. The blastocyst-uneven-division mechanism is the standard etiological hypothesis, though some pathologists treat fetus in fetu as a highly differentiated teratoma rather than a true monozygotic twinning event — the boundary is debated.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "rationale": "Early-pregnancy loss rates are not well-characterized for fetus in fetu specifically because the condition is typically only identified retrospectively in surviving hosts. The 'most of the time fatal' claim is plausible but poorly quantified; it is clinical speculation.",
+      "tags": [
+        "fetus-in-fetu",
+        "outcomes",
+        "mortality"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.5
     },
     {
-      "id": "Sd8jhbF9_pc:c_0005",
+      "id": "Sd8jhbF9_pc:c_0010",
       "videoId": "Sd8jhbF9_pc",
-      "text": "After the surgery Sanju lost more than half his body weight — dropping from 200 to 88 pounds — and although doctors called the case a medical miracle, Sanju described his condition as a source of misery and shame rather than wonder.",
-      "kind": "historical",
+      "text": "The condition usually goes unnoticed until the parasitic twin grows large enough to cause discomfort in the host, as it did with Sanju.",
+      "kind": "empirical",
       "entities": [
-        "person:sanju",
-        "person:sanji",
-        "quantity:200 pounds",
-        "quantity:88 pounds",
-        "event:medical miracle",
-        "organization:doctors"
+        "person:sanju"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "Sd8jhbF9_pc",
-          "charStart": 3300,
-          "charEnd": 3700,
-          "timeStart": 202.159,
-          "timeEnd": 226.799,
-          "quote": " after sanji was born and after\nsanji recovered from the surgery he went\nfrom 200 pounds to 88 pounds\neven though the case was considered by\ndoctors to be a medical miracle sanju\nsaid his condition was a source of\nmisery and shame sanju didn't make a\nfull recovery he's in good health and\nnow leads a normal life all his life\npeople had teased him about being\npregnant they didn't realize how right\nt"
+          "charStart": 3032,
+          "charEnd": 3108,
+          "timeStart": 187.519,
+          "timeEnd": 193.68,
+          "quote": "the condition usually goes unnoticed\nuntil the parasitic twin grows so large"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "The dramatic weight drop is plausible given the size of the mass (gallons of fluid plus the parasitic fetus body) and is consistent with reporting; precise pound figures should be treated as approximate as media coverage has used varying numbers. Sanju's expressions of distress about his condition were captured in the BBC documentary 'Body Shock: The Man Who Was Pregnant' and are accurate.",
+      "rationale": "Consistent with published case reports — most diagnoses occur in infancy (when imaging picks up the abnormality) or much later when the mass becomes symptomatic. Sanju's decades-long asymptomatic presentation is unusual but fits the broad pattern.",
+      "tags": [
+        "fetus-in-fetu",
+        "presentation"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "dependencies": [
-        {"target": "Sd8jhbF9_pc:c_0003", "kind": "elaborates"}
-      ]
+      "directTruth": 0.8
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0011",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "The fetus's fingernails were quite long, indicating it had been alive for a long time after Sanju was born.",
+      "kind": "empirical",
+      "entities": [
+        "person:fetus"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 3211,
+          "charEnd": 3255,
+          "timeStart": 196.4,
+          "timeEnd": 202.159,
+          "quote": "the\nfingernails of the fetus were quite long"
+        }
+      ],
+      "confidence": 0.75,
+      "rationale": "The 'long fingernails' claim appears in popular coverage but whether they indicate ongoing life is medically dubious — keratin growth can occur post-removal of viable cell clusters, and host-independent fetal 'life' is not how fetus in fetu is understood. Popular framing, not medical consensus.",
+      "tags": [
+        "fingernails",
+        "life-signs"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.35
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0012",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "After surgery Sanju's weight dropped from 200 pounds to 88 pounds.",
+      "kind": "historical",
+      "entities": [
+        "person:sanju",
+        "quantity:200 pounds",
+        "quantity:88 pounds"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 3332,
+          "charEnd": 3401,
+          "timeStart": 204.319,
+          "timeEnd": 211.04,
+          "quote": "sanji recovered from the surgery he went\nfrom 200 pounds to 88 pounds"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The weight-loss figure is reported in popular sources but the extreme pre-surgery weight (200 lbs on a thin-framed farmer) and sharp drop suggest the parasitic mass accounted for much of the pre-op weight. Order of magnitude is plausible; specific numbers are media-sourced, not from a medical record.",
+      "tags": [
+        "weight",
+        "recovery"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.6
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0013",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "The Sanju Bhagat case was considered by doctors to be a medical miracle.",
+      "kind": "opinion",
+      "entities": [
+        "person:sanju",
+        "organization:doctors",
+        "event:medical miracle"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 3418,
+          "charEnd": 3472,
+          "timeStart": 209.519,
+          "timeEnd": 214.879,
+          "quote": "case was considered by\ndoctors to be a medical miracle"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Medical-miracle is a journalistic framing, not a clinical diagnosis. The case is extreme (36-year host survival) but within the range of documented adult fetus-in-fetu diagnoses. Host is reporting the media framing accurately, though 'miracle' is evaluative.",
+      "tags": [
+        "medical-miracle",
+        "framing"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.5
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0014",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "Despite survival, Sanju said his condition was a source of misery and shame.",
+      "kind": "opinion",
+      "entities": [
+        "person:sanju"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 3504,
+          "charEnd": 3530,
+          "timeStart": 213.36,
+          "timeEnd": 218.79899999999998,
+          "quote": "source of\nmisery and shame"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Sanju's own stated experience, reported in his interviews. Village teasing about appearing pregnant would create real social stigma in his cultural context. First-person testimony about subjective experience.",
+      "tags": [
+        "stigma",
+        "mental-health",
+        "sanju"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.75
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0015",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "The apparent tumor was feeding on the contents of Sanju's stomach, and when Dr. Mehta made the incision gallons of fluid came out.",
+      "kind": "empirical",
+      "entities": [
+        "person:dr mehta",
+        "person:sanju",
+        "quantity:gallons"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 1429,
+          "charEnd": 1494,
+          "timeStart": 86.96,
+          "timeEnd": 96.479,
+          "quote": "the tumor was actually\nfeeding on the contents of sanji's\nstomach"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "The mass was indeed drawing nutrition from Sanju's bloodstream, but 'feeding on the contents of his stomach' is physiologically imprecise — fetus in fetu is typically encased in a fluid-filled cyst connected vascularly, not alimentarily. The 'gallons of fluid' is the cyst contents, consistent with imaging.",
+      "tags": [
+        "surgery",
+        "physiology",
+        "fluid"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.4
+    },
+    {
+      "id": "Sd8jhbF9_pc:c_0016",
+      "videoId": "Sd8jhbF9_pc",
+      "text": "This medical condition is very rare — it is called fetus in fetu.",
+      "kind": "definitional",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "Sd8jhbF9_pc",
+          "charStart": 2035,
+          "charEnd": 2070,
+          "timeStart": 128.8,
+          "timeEnd": 133.59900000000002,
+          "quote": "this medical condition is very rare"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Both the rarity and the name are accurate. Estimated incidence is roughly 1 per 500,000 births. Textbook definitional claim.",
+      "tags": [
+        "fetus-in-fetu",
+        "definition",
+        "rarity"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "directTruth": 0.95
     }
   ]
 }

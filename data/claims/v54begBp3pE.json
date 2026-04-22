@@ -1,43 +1,49 @@
 {
   "schemaVersion": 1,
   "transcriptId": "v54begBp3pE",
-  "generatedAt": "2026-04-20T02:22:25.786Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T12:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b2-agent0",
   "claims": [
     {
       "id": "v54begBp3pE:c_0001",
       "videoId": "v54begBp3pE",
-      "text": "Humans uniquely seek out fear on purpose - via horror movies, scary games, haunted houses, roller coasters and Halloween - turning a survival emotion into a multi-billion-dollar entertainment industry, in apparent contradiction of fear's evolutionary purpose.",
-      "kind": "definitional",
+      "text": "Horror media is a multibillion-dollar industry with Halloween alone accounting for roughly eight billion dollars a year in US spending.",
+      "kind": "empirical",
       "entities": [
         "work_of_media:horror movies",
-        "work_of_media:horror tv",
-        "work_of_media:horror gaming",
         "event:halloween",
-        "facility:scary ride",
-        "location:haunted house",
         "quantity:eight billion"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "v54begBp3pE",
-          "charStart": 670,
-          "charEnd": 990,
-          "timeStart": 41.21,
-          "timeEnd": 62.3,
-          "quote": " one bit.\nYou want me to stop? No, see and join.\nFear seems like a contradiction, but horror movies are a billion dollar business and throw\nin horror TV and horror gaming.\nThat's billions more.\nHalloween spending is about eight billion a year.\nAnd roller coasters, the scarier the ride, the longer the line.\nSo we're def"
+          "charStart": 756,
+          "charEnd": 799,
+          "timeStart": 46.25,
+          "timeEnd": 52.31,
+          "quote": "horror movies are a billion dollar business"
+        },
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 864,
+          "charEnd": 912,
+          "timeStart": 54.02,
+          "timeEnd": 56.27,
+          "quote": "Halloween spending is about eight billion a year"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "The market-size figures are correct in order of magnitude: the global horror film industry generates billions annually, US Halloween consumer spending is around $10-12B (8B is in the right ballpark for the period when this video was made), and the haunted-attraction industry is similarly billions. The framing of paradox (fear-as-entertainment) is a well-established observation in the academic literature on recreational fear.",
+      "rationale": "NRF surveys consistently report US Halloween spending in the $8-12B range during the 2020s. Global horror box office plus streaming and gaming easily exceeds $10B/year. Widely-documented figures.",
+      "tags": ["horror", "halloween", "economics"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "v54begBp3pE:c_0002",
       "videoId": "v54begBp3pE",
-      "text": "The Oxford English Dictionary defines fear as the emotion of pain or uneasiness caused by a sense of impending danger or by the prospect of some possible evil - so fear is fundamentally an emotion responding to a perceived threat, not the physical reactions (heart rate, sweating, dilated pupils) that accompany it.",
+      "text": "Fear is defined by the Oxford English Dictionary as the emotion of pain or uneasiness caused by a sense of impending danger.",
       "kind": "definitional",
       "entities": [
         "organization:oxford english dictionary"
@@ -46,80 +52,276 @@
       "evidence": [
         {
           "transcriptId": "v54begBp3pE",
-          "charStart": 1298,
-          "charEnd": 1565,
-          "timeStart": 76.73,
-          "timeEnd": 95.96,
-          "quote": "the Oxford English Dictionary, fear is defined as the emotion of pain or\nuneasiness caused by a sense of impending danger or by the prospect of some possible evil.\nSo fear is an emotion that you feel when you sense danger.\nFine. And if you take a look at the things y"
+          "charStart": 1284,
+          "charEnd": 1430,
+          "timeStart": 74.21,
+          "timeEnd": 86.54,
+          "quote": "\nAccording to the Oxford English Dictionary, fear is defined as the emotion of pain or\nuneasiness caused by a sense of impending danger or by the "
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The OED definition cited is substantially correct (the OED's actual definition is similar in substance though slightly different in wording). The emotion-vs-physiological-reaction distinction tracks the standard psychological account: fear is the affective state and the autonomic responses are downstream consequences.",
+      "directTruth": 0.9,
+      "rationale": "This quotation matches the OED's definition of 'fear' as an emotion aroused by sense of threat. Definitional claim with direct dictionary backing.",
+      "tags": ["fear", "definition", "oed"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "v54begBp3pE:c_0003",
       "videoId": "v54begBp3pE",
-      "text": "The first reason humans enjoy controlled fear is the 'safety net' principle: when our brain registers a threat in a context it knows is safe (haunted house, scary movie), the fight-or-flight chemicals get released but the cognitive override of 'I am actually safe' lets us experience the rush as pleasure rather than terror; without that override, the same situation triggers genuine survival panic.",
+      "text": "Humans enjoy scary experiences when they perceive an underlying safety net because the brain recognizes the absence of actual threat.",
       "kind": "empirical",
       "entities": [
         "facility:safety net",
         "location:haunted house",
-        "work_of_media:scary movie",
-        "event:survival situation"
+        "work_of_media:scary movie"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "v54begBp3pE",
-          "charStart": 2235,
-          "charEnd": 3148,
-          "timeStart": 128.78,
-          "timeEnd": 199.04,
-          "quote": "safety net.\nThe safety net is when we intentionally put ourselves into potentially frightening\nsituations while simultaneously understanding there's no real danger, such as a haunted\nhouse or watching a scary movie.\nDid you say or maybe standing on top of a tall building or walking over a bridge of\nglass?\nOh, no, no, don't go.\nWould you like to watch those all day?\nMe too. Oh, well, I despite being terrified, our brains do realise that we're actually\nsafe.\nAnd because we're not in any real danger, we're able to enjoy these experiences.\nWell, some of us are. On the other hand, if we were to have similar experiences without\nknowing there was a safety net, our reactions would be very different.\nWe are not going to enjoy those situations at all.\nAnd we would immediately go into fight or flight mode.\nWe would literally be in a survival situation and do anything possible to ensure our\nsafety.\nAnd as you wo"
+          "charStart": 5164,
+          "charEnd": 5211,
+          "timeStart": 313.65,
+          "timeEnd": 315.84,
+          "quote": "It's sort of a way to hack your brain chemistry"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "This is the standard 'benign masochism' / 'recreational fear' account in academic psychology (Andrade & Cohen, Clasen, Kerr et al.). The cognitive-appraisal contextual safety override is well documented; it explains why the same drop on a roller coaster is fun on the ride and traumatic in a real plane crash. The mechanism is correct.",
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "The safety-net or protective-frame theory of recreational fear is well-established in psychology (Apter's reversal theory; Kerr & Apter 1991; Andrade & Cohen 2007 'the coexistence of pleasure and fear'). It aligns with mainstream affective-neuroscience accounts of vicarious-threat enjoyment.",
+      "tags": ["fear", "safety-net", "psychology"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "v54begBp3pE:c_0004",
       "videoId": "v54begBp3pE",
-      "text": "Dr Margee Kerr (cited as 'Dr Marjie Kyra'), who spent 10 years studying fear, found that the controlled fight-or-flight response releases adrenaline, endorphins and dopamine producing a biochemical rush of euphoria and heightened awareness; once safety is reaffirmed, the rapid drop produces a gratifying relief and well-being - the ebb and flow that fear-lovers crave.",
+      "text": "During recreational fear, the brain releases adrenaline, endorphins, and dopamine producing a euphoric biochemical rush.",
       "kind": "empirical",
       "entities": [
-        "person:dr. marjie",
-        "person:kyra",
-        "quantity:10 years",
         "event:the biochemical rush"
       ],
-      "relationships": [
-        "r_0001",
-        "r_0002",
-        "r_0006"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "v54begBp3pE",
-          "charStart": 3354,
-          "charEnd": 4520,
-          "timeStart": 209.43,
-          "timeEnd": 277.95,
-          "quote": "Dr.\nMarjie, Kyra, spent 10 years investigating fear, her research showed that when people\nexperience fear and momentarily experience the fight or flight response, there's a\ncascade of chemicals released into our brain.\nAnd these chemicals are associated with the threat response as a movie ever made you jump\nor scream and that immediately after you started laughing, that's the flood in action.\nWe experience a rush of adrenaline and a release of endorphins and dopamine.\nThe biochemical rush can result in a sense of euphoria and heightened awareness.\nThen when we remember that we're safe, the experience of fear quickly subsides, and we're\nleft with a gratifying sense of relief and subsequent wellbeing.\nAnd that ebb and flow of neurotransmitters feels really good to some people.\nAnd when our metabolism increases so quickly, we put all our energy and focus on the\nmoment where we can just take a break and enjoy being fully present and primal.\nWhen you're terrified, there's no time for anxious rumination about the future or why\nyou're soon to be ex hasn't texted you back or how many subscribers you have.\nThere's no thinking about past events, regrets or h"
+          "charStart": 3750,
+          "charEnd": 3825,
+          "timeStart": 232.74,
+          "timeEnd": 236.76000000000002,
+          "quote": "We experience a rush of adrenaline and a release of endorphins and dopamine"
+        },
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 3827,
+          "charEnd": 3906,
+          "timeStart": 237.09,
+          "timeEnd": 241.17000000000002,
+          "quote": "The biochemical rush can result in a sense of euphoria and heightened awareness"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
-      "rationale": "Margee Kerr is a real University of Pittsburgh sociologist who has done long-term research at and on haunted-attraction sites (e.g. her book 'Scream'). The neurochemical cascade described - sympathetic arousal releasing catecholamines, then opioidergic and dopaminergic reward - is consistent with the textbook account. The 'name slightly mangled' appears to be transcription artifact ('Dr Marjie Kyra' for Margee Kerr).",
+      "rationale": "Acute sympathetic activation during fear does release epinephrine/norepinephrine along with endorphins and increased dopaminergic activity in mesolimbic pathways. The combined 'arousal + reward' profile is standard affective neuroscience.",
+      "tags": ["adrenaline", "dopamine", "endorphins", "neuroscience"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "v54begBp3pE:c_0005",
       "videoId": "v54begBp3pE",
-      "text": "An evolutionary just-so story: 'chill cave people' who weren't afraid of anything got eaten by sabertooth tigers and didn't reproduce; the cave people who fled to safety did - so we are descended from ancestors with finely tuned, easily triggered fear responses, which is why fear feels so primal and total.",
+      "text": "Dr. Margee Kerr spent 10 years researching why people enjoy fear.",
+      "kind": "historical",
+      "entities": [
+        "person:dr. marjie",
+        "person:kyra",
+        "quantity:10 years"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 3358,
+          "charEnd": 3405,
+          "timeStart": 210.99,
+          "timeEnd": 220.62,
+          "quote": "Marjie, Kyra, spent 10 years investigating fear"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.85,
+      "rationale": "Margee Kerr (sociologist, University of Pittsburgh, author of 'Scream: Chilling Adventures in the Science of Fear') has genuinely spent over a decade researching recreational fear, including work with the ScareHouse attraction. The video mispronounces her name.",
+      "tags": ["margee-kerr", "fear-research", "sociology"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "v54begBp3pE:c_0004",
+          "kind": "supports",
+          "rationale": "Kerr's research underpins the chemical-release claim."
+        }
+      ]
+    },
+    {
+      "id": "v54begBp3pE:c_0006",
+      "videoId": "v54begBp3pE",
+      "text": "Shared scary experiences with friends or family elevate oxytocin levels and strengthen social bonds.",
+      "kind": "empirical",
+      "entities": [
+        "quantity:oxytocin levels"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 6193,
+          "charEnd": 6269,
+          "timeStart": 383.52,
+          "timeEnd": 388.38,
+          "quote": "doing frightening things is much more fun when you're with\nfriends or family"
+        },
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 6613,
+          "charEnd": 6670,
+          "timeStart": 405.93,
+          "timeEnd": 409.11,
+          "quote": "this burst of emotion is due to raise the oxytocin levels"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Oxytocin release during coordinated high-arousal group experiences is supported in social-neuroscience literature (e.g., Dunbar, Uvnas-Moberg), though the mechanism is better established for positive than fear-based bonding. Medium-high directTruth for the general claim, slightly overstated for recreational fear specifically.",
+      "tags": ["oxytocin", "bonding", "social"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "v54begBp3pE:c_0007",
+      "videoId": "v54begBp3pE",
+      "text": "The amygdala, located behind the prefrontal cortex, governs fear processing and expression.",
+      "kind": "empirical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 8998,
+          "charEnd": 9124,
+          "timeStart": 533.46,
+          "timeEnd": 540.9200000000001,
+          "quote": "Your amygdala, the part of your brain connected to and just behind the prefrontal cortex\nis in charge of what makes you afraid"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The amygdala's central role in fear conditioning, threat detection, and fear-response initiation is canonical neuroscience (LeDoux et al.). Spatial description is slightly imprecise - the amygdala sits deeper in the temporal lobe, not strictly behind the PFC - but the functional claim is correct.",
+      "tags": ["amygdala", "neuroscience", "prefrontal-cortex"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "v54begBp3pE:c_0008",
+      "videoId": "v54begBp3pE",
+      "text": "Panic disorders and PTSD are associated with underactive prefrontal cortex, while OCD and generalized anxiety feature overactive PFC.",
+      "kind": "empirical",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 9363,
+          "charEnd": 9437,
+          "timeStart": 550.29,
+          "timeEnd": 555.75,
+          "quote": "people with panic disorders and PTSD have an underactive prefrontal cortex"
+        },
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 9439,
+          "charEnd": 9556,
+          "timeStart": 555.87,
+          "timeEnd": 563.46,
+          "quote": "Those with worry based anxiety like OCD and generalized anxiety disorder usually have an\noveractive prefrontal cortex"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "PTSD literature generally shows reduced ventromedial PFC activity consistent with diminished amygdala regulation. OCD's orbitofrontal-cortex hyperactivity is well established. But the clean 'underactive vs overactive' dichotomy oversimplifies a heterogeneous fMRI literature with mixed findings. Medium directTruth.",
+      "tags": ["ptsd", "ocd", "prefrontal-cortex", "anxiety"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "v54begBp3pE:c_0009",
+      "videoId": "v54begBp3pE",
+      "text": "Fewer dopamine autoreceptors makes adrenaline junkies crave thrilling situations because they get more dopamine release per scare.",
+      "kind": "speculative",
+      "entities": [],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 9558,
+          "charEnd": 9637,
+          "timeStart": 563.67,
+          "timeEnd": 567.81,
+          "quote": "People who enjoy fear may have a different number of auto receptors than others"
+        },
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 9774,
+          "charEnd": 9845,
+          "timeStart": 574.11,
+          "timeEnd": 578.12,
+          "quote": "People with fewer dopamine receptors may get more dopamine from a scare"
+        },
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 10295,
+          "charEnd": 10312,
+          "timeStart": 601.08,
+          "timeEnd": 605.4300000000001,
+          "quote": "It's the dopamine"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.5,
+      "rationale": "The autoreceptor-and-sensation-seeking connection draws on David Zald's 2008 dopamine-autoreceptor PET work showing low-autoreceptor individuals score higher on novelty-seeking. However, the cleaner 'adrenaline junkies = dopamine seekers' framing is a popularization that oversimplifies multi-factorial personality neuroscience. Medium directTruth.",
+      "tags": ["dopamine", "autoreceptors", "adrenaline-junkie", "sensation-seeking"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "v54begBp3pE:c_0010",
+      "videoId": "v54begBp3pE",
+      "text": "Not everyone enjoys recreational fear because life experiences and personality differences shape whether being scared registers as fun or aversive.",
+      "kind": "opinion",
+      "entities": [
+        "work_of_media:rom coms"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "v54begBp3pE",
+          "charStart": 10379,
+          "charEnd": 10427,
+          "timeStart": 605.58,
+          "timeEnd": 613.2900000000001,
+          "quote": "People who prefer rom coms or comedy over horror"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The claim that individual differences (temperament, prior exposure, bad childhood experiences) modulate recreational-fear enjoyment is a common opinion-style summary. Not a strongly testable empirical claim; omitted directTruth because it's framed as a generalization about personality rather than a specific fact.",
+      "tags": ["personality", "individual-differences", "horror"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "v54begBp3pE:c_0011",
+      "videoId": "v54begBp3pE",
+      "text": "Humans evolved a useful fear response through natural selection: those without it became sabertooth tiger food.",
       "kind": "speculative",
       "entities": [
         "group_or_movement:cave people",
@@ -129,197 +331,26 @@
       "evidence": [
         {
           "transcriptId": "v54begBp3pE",
-          "charStart": 4682,
-          "charEnd": 5230,
-          "timeStart": 283.89,
-          "timeEnd": 320.34000000000003,
-          "quote": "Kaif people who are really chill and like\nnot afraid of anything.\nEvolution was not kind to them.\nThey're not here because they were sabertooth tiger food.\nBut the cave people who had the good sense to run away from danger and cower back in\ntheir caves, well, that's us.\nNo, never apologize for an effective kill circle.\nSo if we're in a situation where we know we're safe, like a haunted house or scary movie\nor a scary ride, we can hijack the fear response and actually enjoy it.\nIt's sort of a way to hack your brain chemistry.\nThe chemical sign"
+          "charStart": 3358,
+          "charEnd": 3405,
+          "timeStart": 210.99,
+          "timeEnd": 220.62,
+          "quote": "Marjie, Kyra, spent 10 years investigating fear"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "The general evolutionary logic is sound (selection pressure favors functional threat-detection systems, evidenced across mammals), but the specific cartoonish dichotomy is more a teaching device than a tested hypothesis. Fear-related individual differences in modern humans don't actually show clean 'sabertooth-tiger-bait' selection signatures, and the actual evolutionary history is far more complex (gene-culture coevolution, balancing selection on temperamental traits, etc).",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "v54begBp3pE:c_0006",
-      "videoId": "v54begBp3pE",
-      "text": "The second reason: surviving frightening experiences gives a sense of self-mastery, accomplishment and power - the same dopamine reward you get after killing a video-game boss or a first skydive - which teaches us we can push past our limits.",
-      "kind": "empirical",
-      "entities": [
-        "event:dangerous situation",
-        "person:people"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "v54begBp3pE",
-          "charStart": 5337,
-          "charEnd": 5870,
-          "timeStart": 336.45,
-          "timeEnd": 366.48,
-          "quote": "Satisfaction, another reason why we love being afraid is self-satisfaction and a sense of\nachievement, and I'm sure you've experienced this, how did you feel after doing something\nthat you were really afraid of or after pushing yourself to do something difficult?\nDidn't it feel good and give you a sense of power and a feeling of accomplishment?\nIt's a similar sense of accomplishment.\nYou experience after killing a boss in a video game or skydiving for the first time,\nenduring a stressful activity and then purposely putting ours"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Self-efficacy gains from successfully completing fear-inducing challenges are a well-replicated finding in the exposure-therapy literature (Bandura's self-efficacy work). The reward-prediction-error account from neuroscience also predicts dopaminergic activation after successful navigation of high-arousal challenges. Mechanism is solid.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "v54begBp3pE:c_0007",
-      "videoId": "v54begBp3pE",
-      "text": "The third reason: shared frightening experiences trigger oxytocin release, creating powerful social bonds - groups that endure haunted houses, scary rides or skydiving together emerge with stronger memories, closeness and 'lots of hugs and high-fives,' explaining why fear-seeking is fundamentally a social activity.",
-      "kind": "empirical",
-      "entities": [
-        "quantity:oxytocin levels",
-        "person:people"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "v54begBp3pE",
-          "charStart": 6063,
-          "charEnd": 7150,
-          "timeStart": 377.37,
-          "timeEnd": 435.99,
-          "quote": "By being close, bonding develops with the people that are present with us, sharing a scary\nexperience.\nAnd if you think about it, doing frightening things is much more fun when you're with\nfriends or family.\nI mean, when we go as a group into a haunted house, we're taking on challenges together.\nAnd in doing so, we create stronger bonds, stronger memories and feelings of closeness.\nIf you watch people coming out of a scary ride or getting beers after a day of skydiving,\nyou'll see a lot of hugs and high fives and everyone's in a good mood.\nAnd this burst of emotion is due to raise the oxytocin levels.\nAnd during the time we're doing these activities, our bodies and minds are in a\nheightened state of emotion, energy, focus and consciousness.\nAnd everyone present is experiencing the same feelings.\nSo we scream, laugh, hold each other's hands, run sometimes even cry.\nWhen we experience these things while having a great time, it helps us bond with each\nother.\nAnd these intense emotional experiences help us create unforgettable memories that you\nremember the times you were re"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Shared high-arousal experiences are documented to enhance group bonding (the 'misattribution of arousal' / Dutton-Aron bridge studies; military/team-bonding literature). Oxytocin's role specifically is somewhat overstated in pop science: it is involved in social bonding but is not as cleanly the 'cuddle hormone' as portrayed; cortisol, opioids, and shared narrative play big roles too. The general claim is supported even if the specific oxytocin attribution is a simplification.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "v54begBp3pE:c_0008",
-      "videoId": "v54begBp3pE",
-      "text": "The fourth reason: humans are deeply curious about the dark side of humanity - true crime, ghosts, zombies, alien invasion - because fear of the unknown is one of our most instinctive fears, so engaging it through controlled media lets us 'know' the unknown safely.",
-      "kind": "opinion",
-      "entities": [
-        "event:true crime",
-        "event:alien invasion",
-        "person:people"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "v54begBp3pE",
-          "charStart": 7309,
-          "charEnd": 7600,
-          "timeStart": 442.23,
-          "timeEnd": 457.61999999999995,
-          "quote": "Do yes, people are curious about the dark side of humanity, especially people who watch\nthis channel.\nI mean, whether it's true crime or ghosts or zombies or an alien invasion, the fear of\nthe unknown is one of the most instinctive fears we have.\nFor the most part, we like our worlds to mak"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "The 'fear of the unknown is the oldest fear' framing is famously associated with Lovecraft and is a recurring theme in horror studies. Empirical work on morbid curiosity (Coltan Scrivner et al) confirms people are systematically drawn to information about dangerous and aversive content as a way to learn coping strategies. Mechanism is well-supported.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "v54begBp3pE:c_0009",
-      "videoId": "v54begBp3pE",
-      "text": "The fifth reason: modern daily life is so routinized (Groundhog-Day predictability) that horror media provides genuine novelty - every twist and scare is genuinely surprising, breaking through habituation and giving us something rarely encountered in normal routines.",
-      "kind": "opinion",
-      "entities": [
-        "event:groundhog day",
-        "event:novel experiences",
-        "location:home",
-        "location:work",
-        "location:school"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "v54begBp3pE",
-          "charStart": 8090,
-          "charEnd": 8810,
-          "timeStart": 481.89,
-          "timeEnd": 526.26,
-          "quote": "g unexpected.\nEven if we do something that's not part of our routine, we're still familiar with the\nconsequences.\nWe know how everyday things work and we know what happens as a result of everyday\nactions, even if they vary a little bit.\nSo when we put ourselves through frightening experiences like watching a horror movie or\nplaying a scary game, there's an element of surprise.\nEvery twist, turn and scare that comes our way surprises us.\nAnd before we fully grasp the situation, there's anticipation for more.\nThe thrill and excitement that we feel is unlike anything we experience.\nOn a typical day, our routine is disrupted and we can't help but seek out novel\nexperiences that depart from our everyday routines.\nTh"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "The novelty-seeking / boredom-counteracting account of horror consumption is supported in the recreational-fear literature. People do report that the disruption of expectation is a key part of the appeal. Less rigorously established than the safety-net mechanism but a reasonable contributing factor.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "v54begBp3pE:c_0010",
-      "videoId": "v54begBp3pE",
-      "text": "Individual differences in enjoyment of fear are biological: the amygdala drives fear processing, the prefrontal cortex regulates it (and is structurally different in people with anxiety disorders - underactive in panic/PTSD, overactive in OCD and GAD), and the count of dopamine auto-receptors determines how much dopamine gets released per scare, with fewer auto-receptors making people 'adrenaline junkies' chasing the rush.",
-      "kind": "empirical",
-      "entities": [
-        "person:people"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "v54begBp3pE",
-          "charStart": 9003,
-          "charEnd": 10380,
-          "timeStart": 533.46,
-          "timeEnd": 613.2900000000001,
-          "quote": "amygdala, the part of your brain connected to and just behind the prefrontal cortex\nis in charge of what makes you afraid and how you choose to express it.\nThe people who suffer from anxiety already have prefrontal cortex that look a little\ndifferent than other folks, and different types of anxiety disorders will restructure\nbrains differently.\nFor example, people with panic disorders and PTSD have an underactive prefrontal cortex.\nThose with worry based anxiety like OCD and generalized anxiety disorder usually have an\noveractive prefrontal cortex.\nPeople who enjoy fear may have a different number of auto receptors than others.\nThe auto receptors are pre synaptic nerve cells that control how much dopamine and other\nneurotransmitters are released in your brain.\nPeople with fewer dopamine receptors may get more dopamine from a scare.\nAnimals love dopamine and humans are no different.\nSo those with few dopamine receptors need more of the chemical in order to feel that\nsense of satisfaction and accomplishment.\nAnd because they have fewer dopamine receptors, they lack the ability to put on the\nbrakes in a dangerous situation.\nAnd that's what leads to an addiction to thrilling situations.\nThese are your typical adrenaline junkies, but it's not really the adrenaline they crave.\nIt's the dopamine. We also perceive fear differently based on our life experiences.\nP"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.6,
-      "rationale": "Some pieces are right (amygdala-PFC interactions in fear regulation, individual differences in dopaminergic function predicting sensation seeking - Zuckerman's work). Other pieces are oversimplified or partly wrong: PTSD patients can show hyperactive amygdala and variable PFC responses depending on task; the exact PFC under/over-activity dichotomy by disorder is not as clean as stated; auto-receptor density modulates dopamine signaling but the causal chain to thrill-seeking is more nuanced than the script's 'fewer receptors = more dopamine = junkies' shorthand.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "v54begBp3pE:c_0011",
-      "videoId": "v54begBp3pE",
-      "text": "Whether someone enjoys controlled fear is also shaped by life experience and family exposure: bad early experiences with horror or absence of any childhood exposure can make people unable to find scary-fun enjoyable as adults - it's a learned and culturally transmitted preference, not purely innate.",
-      "kind": "opinion",
-      "entities": [
-        "work_of_media:horror movie",
-        "work_of_media:scary movie",
-        "location:haunted house"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "v54begBp3pE",
-          "charStart": 10520,
-          "charEnd": 11065,
-          "timeStart": 605.58,
-          "timeEnd": 644.07,
-          "quote": "ople who do like it.\nNow, if you've had bad experiences with a haunted house or a horror movie, you're more\nlikely to associate all things fun, scary with feeling bad, or if you were never\nexposed to fun, scary as a child, maybe your parents weren't into horror movies or\nwhatever.\nYou don't really have a frame of reference for why or how something scary can be fun.\nPeople like this don't even really understand how being frightened can possibly be\nenjoyable.\nI'm one of those people that regardless of which personality type you are, there's "
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "The role of conditioning and cultural transmission in shaping individual preferences for horror is well attested in personality and developmental psychology. People with horror-loving parents do consume more horror as adults; trauma survivors often avoid intense media. The claim is plausible and consistent with the literature, though presented as common sense rather than with citations.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "v54begBp3pE:c_0012",
-      "videoId": "v54begBp3pE",
-      "text": "The host's verdict: fear is as natural as breathing and inescapable; the practical takeaway is to learn what triggers your fear so you can face it rather than be controlled by it - and to occasionally step out of your comfort zone and 'have the scared out of you.'",
-      "kind": "opinion",
-      "entities": [
-        "person:people",
-        "person:aj"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "v54begBp3pE",
-          "charStart": 11065,
-          "charEnd": 11620,
-          "timeStart": 638.34,
-          "timeEnd": 672.6,
-          "quote": "no\nescaping fear.\nIt's as natural as breathing.\nBut learning more about why you feel fear and what triggers you have can help you figure\nout how better to face your fears and not let them control you.\nAnd that's a pretty good reason to every once in a while, get out of your comfort zone,\npush yourself and just have the scared out of you.\nThanks for hanging out with us today.\nMy name is AJ. That's Hagfish.\nThis has been the why files.\nDo you enjoy being afraid?\nWhat scary things do you find fun?\nLet us know in the comments.\nThey will do video about i"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The final stance is calibrated and consistent with mainstream cognitive-behavioral therapy guidance: fear is universal and adaptive; understanding triggers reduces avoidance and enables exposure-based growth. This is sound advice rather than a contested empirical claim.",
+      "confidence": 0.8,
+      "directTruth": 0.75,
+      "rationale": "Evolutionary-psychology account of fear as an adaptive threat-response is widely accepted. Sabertooth cats and other predators were real selection pressures during Pleistocene. Classic just-so story framing, but the underlying evolutionary logic (fear reduces predation mortality) is sound.",
+      "tags": ["evolution", "fear", "adaptation"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "dependencies": [
+        {
+          "target": "v54begBp3pE:c_0007",
+          "kind": "supports",
+          "rationale": "Evolved amygdala-driven fear response is the mechanism behind the adaptive account."
+        }
+      ]
     }
   ]
 }

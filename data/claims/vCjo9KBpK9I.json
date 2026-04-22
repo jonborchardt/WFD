@@ -1,475 +1,505 @@
 {
   "schemaVersion": 1,
   "transcriptId": "vCjo9KBpK9I",
-  "generatedAt": "2026-04-20T03:08:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "vCjo9KBpK9I:c_0001",
       "videoId": "vCjo9KBpK9I",
-      "text": "Andrew Bashiago claims that, beginning in 1968 at age six, he was sent through a working teleportation/time-travel device built from Nicola Tesla's stolen papers and successfully traveled back to Lincoln's Gettysburg Address as a chronaut for a secret DARPA program called Project Pegasus.",
+      "text": "Andrew Bashiago claims that as a six-year-old he was sent back in time to Gettysburg on November 19, 1863 as part of DARPA's Project Pegasus time-travel program.",
       "kind": "speculative",
       "entities": [
         "person:andrew bashiago",
-        "person:andrew bashago",
-        "person:abraham lincoln",
-        "person:nicola tesla",
-        "location:gettysburg",
+        "person:bashiago",
         "organization:project pegasus",
         "organization:darpa",
-        "date_time:1968"
+        "location:gettysburg"
       ],
-      "relationships": [
-        "r_0015"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 62,
-          "charEnd": 280,
-          "timeStart": 4.88,
-          "timeEnd": 22.68,
-          "quote": "1968, a six-year-old boy stepped\nthrough a shimmering curtain of light\nand vanished.\nWhen Andrew Bashiago's vision cleared,\nhe was no longer in an empty airplane\nhanger in New Jersey. He was standing in\na muddy field.\n"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 4247,
-          "charEnd": 4444,
+          "charStart": 4254,
+          "charEnd": 4283,
           "timeStart": 314.16,
-          "timeEnd": 328.24,
-          "quote": "Andrew Bashago traveled back to 1863 and\nreturned with memories that were sharp,\nvivid, and historically accurate. For\nthe scientists at Project Pegasus, this\nwas the breakthrough that they needed."
+          "timeEnd": 319.6,
+          "quote": "Bashago traveled back to 1863"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.05,
-      "rationale": "Bashiago's chronaut narrative is a real public claim he has made for over a decade in books, podcasts, and on Coast to Coast AM, but the underlying physics (no working time-travel device exists), the absence of any documentary record of 'Project Pegasus,' and Bashiago's own shifting timeline make the literal claim almost certainly false. The host himself debunks it later in the video. Confidence is high that he asserts it; directTruth is very low.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.03,
+      "rationale": "Host explicitly debunks this as impossible in the verdict section: the science doesn't work, and teleporting a person would require more energy than an exploding star. Bashiago's story has changed repeatedly and follows the standard 'secret-space-program' influencer pattern.",
+      "tags": [
+        "bashiago",
+        "project-pegasus",
+        "time-travel",
+        "conspiracy"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "denies"
     },
     {
       "id": "vCjo9KBpK9I:c_0002",
       "videoId": "vCjo9KBpK9I",
-      "text": "On January 7, 1943 Nicola Tesla died alone at the New Yorker Hotel and US government agents seized roughly 80 boxes of his papers within hours, with about 20 boxes never returned to his family — a portion of which the FBI still keeps classified to this day.",
+      "text": "Nicola Tesla died alone in room 3327 of the New Yorker Hotel on January 7, 1943, and within hours government agents confiscated 80 boxes of his research.",
       "kind": "historical",
       "entities": [
         "person:nicola tesla",
-        "location:new yorker hotel",
-        "organization:fbi",
-        "date_time:january 7th, 1943"
+        "person:tesla"
       ],
-      "relationships": [
-        "r_0018",
-        "r_0035"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
           "charStart": 4624,
-          "charEnd": 4941,
+          "charEnd": 4660,
           "timeStart": 338.88,
-          "timeEnd": 366.4,
-          "quote": "Nicola Tesla died\nalone in room 3327 of the New Yorker\nHotel. Within hours, government agents\nsealed the room. They confiscated\neverything. 80 boxes of ideas,\ninventions, and decades of research.\nWhen Tesla's belongings were returned to\nhis family, 20 boxes were missing. The\nFBI still has classified Tesla documents\n"
+          "timeEnd": 348.32,
+          "quote": "Nicola Tesla died\nalone in room 3327"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Tesla's death on Jan 7, 1943 in room 3327 of the New Yorker Hotel is well-documented. The Office of Alien Property (not the FBI directly, though the FBI was involved) seized his papers; the volume figures and number of missing boxes vary in different sources but the basic pattern of seizure-and-incomplete-return is corroborated. The host endorses this in his own debunk section as 'documented.'",
+      "directTruth": 0.9,
+      "rationale": "Tesla's January 7, 1943 death at the Hotel New Yorker is well-documented. The Office of Alien Property seizure of Tesla's papers is a matter of FBI/OAP record — approximately 80 boxes were held, reviewed by John G. Trump for MIT, and eventually mostly returned to Tesla's nephew.",
+      "tags": [
+        "tesla",
+        "1943",
+        "government-seizure"
+      ],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "vCjo9KBpK9I:c_0003",
       "videoId": "vCjo9KBpK9I",
-      "text": "The 1957 Soviet launch of Sputnik shocked the United States into believing it was technologically behind, prompting President Eisenhower to create ARPA (later DARPA) with a standing mandate to ensure America was never again caught off-guard by foreign technology.",
+      "text": "The US government confiscated Tesla's files after his 1943 death, and the FBI still has classified Tesla documents it will not release.",
       "kind": "historical",
       "entities": [
-        "organization:soviets",
-        "location:united states",
-        "organization:darpa",
-        "date_time:1957"
+        "person:tesla",
+        "organization:darpa"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 5775,
-          "charEnd": 6068,
-          "timeStart": 425.28,
-          "timeEnd": 447.919,
-          "quote": "pace? The course of\nUnited States policies in the\ncompetition with Russia has been\nseverely shaken. Why and how did the\nRussians beat us to the draw? We had\nbetter get on our tour. We must see to\nit that whatever advantages they have\nare temporary only. The Soviets had\nlaunched Sputnik, the f"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 6427,
-          "charEnd": 6628,
-          "timeStart": 467.199,
-          "timeEnd": 484.72,
-          "quote": "ARPA, the Advanced Research\nProjects Agency. Later, they'd add\ndefense and become DARPA. Their mandate\nwas simple. Make sure America was never\nsurprised by technology again.\nDARPA had unlimited funding"
+          "charStart": 29983,
+          "charEnd": 30038,
+          "timeStart": 2177.359,
+          "timeEnd": 2184,
+          "quote": "government did confiscate Tesla's\nfiles after his death"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.92,
-      "rationale": "Sputnik launched October 4, 1957 and ARPA was established in February 1958 in direct response, with the explicit mission of preventing technological surprise. This is canonical Cold War / DOD history. 'Unlimited funding' is hyperbole — ARPA's budget was real but bounded — but the founding rationale is accurately stated.",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Host acknowledges this in the debunking section as documented. FBI Vault does contain partially-redacted Tesla files; the Office of Alien Property seizure is established historical fact.",
+      "tags": [
+        "tesla",
+        "fbi",
+        "classified-files",
+        "verdict"
+      ],
+      "inVerdictSection": true,
       "hostStance": "asserts"
     },
     {
       "id": "vCjo9KBpK9I:c_0004",
       "videoId": "vCjo9KBpK9I",
-      "text": "DARPA secretly built a working teleportation device in the basement of the Curtis Wright building in Wood-Ridge, New Jersey from Tesla's confiscated designs — a two-pillar machine that drew on zero-point energy and could move people through space and time.",
-      "kind": "speculative",
+      "text": "Tesla's radiant energy research was about wireless power transmission, not teleportation — the two concepts have nothing to do with each other.",
+      "kind": "empirical",
       "entities": [
-        "organization:darpa",
-        "person:tesla",
-        "facility:curtis wright building",
-        "location:new jersey"
+        "person:tesla"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 7903,
-          "charEnd": 8090,
-          "timeStart": 579.839,
-          "timeEnd": 596,
-          "quote": "most secret program in\nAmerica. They were building Tesla's\nteleportation device.\nTeleportation was more powerful than any\nnuclear weapon. With this technology,\nAmerica could put a million"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 9035,
-          "charEnd": 9300,
-          "timeStart": 655.44,
-          "timeEnd": 676.079,
-          "quote": "Tesla had figured out how to tap\ninto it. Dr. Harold Agnu assembled the\nmachine exactly to Tesla's\nspecifications. Every measurement, every\nangle, everything matched the stolen\ndesigns. And looking at it, he was sure\nsomething was missing. This couldn't\npossibly wo"
+          "charStart": 30756,
+          "charEnd": 30835,
+          "timeStart": 2224.56,
+          "timeEnd": 2234.8,
+          "quote": "Tesla's radiant energy was\nabout wireless power transmission, not\nteleportation"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.03,
-      "rationale": "There is no credible evidence that any such teleportation lab existed at Curtis Wright or anywhere else; Tesla's wireless-power papers do not contain teleportation designs; zero-point energy cannot be tapped at the scales needed (the host says so in his own debunk). The narrative is part of Bashiago/conspiracy lore, not documented history. The host frames it as the Bashiago story, then dismantles the science.",
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Standard history-of-science fact. Tesla's Wardenclyffe and Colorado Springs work focused on wireless power and radio, never matter teleportation. Host's verdict claim directly contradicts the Bashiago framing.",
+      "tags": [
+        "tesla",
+        "wireless-power",
+        "verdict",
+        "debunk"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
         {
           "target": "vCjo9KBpK9I:c_0001",
-          "kind": "presupposes",
-          "rationale": "If the device never existed, Bashiago's chronaut trips couldn't have occurred."
+          "kind": "contradicts",
+          "rationale": "[debunks] The Bashiago narrative depends on Tesla having developed a teleportation device; Tesla's actual research has no such component."
         }
-      ],
-      "hostStance": "asserts"
+      ]
     },
     {
       "id": "vCjo9KBpK9I:c_0005",
       "videoId": "vCjo9KBpK9I",
-      "text": "Adult test subjects sent through the device were killed or driven insane — Lt. Morrison vanished, Lt. Farley aged 30 years in 30 seconds, Lt. Hutchkins materialized in disjointed body parts — leading scientists to conclude that only children's pliable minds could survive teleportation, justifying the recruitment of six-year-olds into the program.",
-      "kind": "speculative",
-      "entities": [
-        "person:lieutenant farley",
-        "person:lieutenant hutchkins",
-        "person:children"
-      ],
+      "text": "Teleporting a human being would require more energy than an exploding star, making human teleportation physically impossible under current physics.",
+      "kind": "empirical",
+      "entities": [],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 10993,
-          "charEnd": 11280,
-          "timeStart": 796.72,
-          "timeEnd": 822.16,
-          "quote": "Lieutenant Morrison\nwent first. 26 years old, road scholar,\nperfect physical condition. He stepped\nthrough the shimmer and vanished. The\nreceiving team in New Mexico waited 5\nminutes, 10 minutes, an hour. Morrison\nnever arrived. Not in New Mexico, not\nanywhere. The best physicist in the"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 11862,
-          "charEnd": 12130,
-          "timeStart": 862.079,
-          "timeEnd": 889.199,
-          "quote": "Hutchkins arrived in\npieces. Not torn apart, separated in\ntime. His legs materialized first, his\ntorso 30 seconds later, arms 2 minutes\nafter that. The medical team stood by\nhelplessly. His heart had arrived before\nhis lungs. His brain was sending signals\nto limbs tha"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 13660,
-          "charEnd": 13900,
-          "timeStart": 990.16,
-          "timeEnd": 1021.759,
-          "quote": "very\ninstinct told him this was wrong. But\nthe data was clear and they were out of\noptions and out of adult volunteers. The\nchildren were their only chance.\n[Music]\n[Music]\nThe lab at Curtis Wright looked like any\ngovernment facility. Gray "}
-      ],
-      "confidence": 0.92,
-      "directTruth": 0.02,
-      "rationale": "These vivid casualty anecdotes are part of the Bashiago/Pegasus folklore (often retold by Andrew Bashiago and Stewart Swerdlow) but no military records, casualty reports, or contemporaneous documentation back any of them. Names like Morrison/Farley/Hutchkins do not appear in any verifiable DOD roster for such tests. As narrative the host plainly relays it; as fact it is essentially fabricated.",
-      "dependencies": [
-        {
-          "target": "vCjo9KBpK9I:c_0004",
-          "kind": "elaborates"
+          "charStart": 31158,
+          "charEnd": 31233,
+          "timeStart": 2256.64,
+          "timeEnd": 2265.76,
+          "quote": "teleporting a\nperson, that would require more energy\nthan an exploding star"
         }
       ],
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Quantum teleportation at the particle-state level has been demonstrated, but scaling to macroscopic objects runs into combinatorial energy/information problems. The 'more than an exploding star' framing is dramatic but points at the correct order-of-magnitude gap between demonstrated and fiction-scale teleportation.",
+      "tags": [
+        "physics",
+        "teleportation",
+        "verdict",
+        "debunk"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vCjo9KBpK9I:c_0001",
+          "kind": "contradicts",
+          "rationale": "[logical] Bashiago's narrative requires human teleportation at 1968 technology levels, which physics rules out under known principles."
+        }
+      ]
     },
     {
       "id": "vCjo9KBpK9I:c_0006",
       "videoId": "vCjo9KBpK9I",
-      "text": "By 1980 Project Pegasus had reportedly graduated from time travel to space travel via 'jump rooms' housed in an unmarked El Segundo office building, sending teen chronauts — including (per Bashiago) a young Barack Obama under the alias 'Barry Soetoro' — to a Mars populated by plesiosaur-like and tall-grey-alien civilizations.",
-      "kind": "speculative",
+      "text": "Bashiago says Donald Rumsfeld ran Project Pegasus from 1969 to 1972 — but Rumsfeld was working on domestic policy in those years, nowhere near DARPA.",
+      "kind": "empirical",
       "entities": [
+        "person:donald rumsfeld",
+        "person:rumsfeld",
         "organization:project pegasus",
-        "facility:jump room",
-        "location:mars",
-        "person:barack obama",
-        "person:barry storo",
-        "date_time:1980"
+        "organization:darpa"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 22316,
-          "charEnd": 22500,
-          "timeStart": 1616.64,
-          "timeEnd": 1639.08,
-          "quote": "Mars isn't the\nbarren, lifeless world NASA shows us. In\ncertain places, it had breathable air,\nand in those places, there was life on\nMars.\nWonder if you'll never know. He's in the\nbes"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 23149,
-          "charEnd": 23415,
-          "timeStart": 1684.96,
-          "timeEnd": 1705.76,
-          "quote": "tall, thin beings\nwith large heads and black eyes. The\nmission was to beat the Soviets to Mars\nand establish contact with this advanced\ncivilization. And Andrew wasn't going\nalone. The Mars program recruited young\npeople who'd proven themselves in the\ntime travel ex"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 23476,
-          "charEnd": 23770,
-          "timeStart": 1705.76,
-          "timeEnd": 1728.799,
-          "quote": "Barry Storo. Barry was a\nlanky college student from Columbia\nUniversity. Friendly guy, articulate,\neasy smile. Years later, the world would\nknow him by a different name. Barack\nObama. Wait, wait, wait. What? What?\nBarack Obama was a Martian cryonaut.\nYep. Wasn't Obama also invited to the\nBilde"
+          "charStart": 32932,
+          "charEnd": 33064,
+          "timeStart": 2367.52,
+          "timeEnd": 2381.119,
+          "quote": "Bashago says Donald Rumsfeld\nran the project from 1969 to 1972, but\nRumsfeld was working on domestic policy\nthen, nowhere near DARPA"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.01,
-      "rationale": "The 'Obama went to Mars' claim was actually pushed by Bashiago and Andrew D. Basiago around 2012 and was officially denied by the White House (Press Secretary Tommy Vietor: 'only if you count Mars Bars'). Mars rovers have found no civilizations or breathable air. The 'jump room' building at 999 N. Sepulveda is a real address but contains no such facility. The literal claim is essentially zero-credibility.",
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "rationale": "Rumsfeld's 1969-1972 role is well-documented: Director of the Office of Economic Opportunity and Counselor to Nixon. He did not join the Pentagon until 1973 as Secretary of Defense. The host's specific factual rebuttal is correct and damning to Bashiago's account.",
+      "tags": [
+        "rumsfeld",
+        "bashiago",
+        "debunk",
+        "verdict"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
         {
           "target": "vCjo9KBpK9I:c_0001",
-          "kind": "elaborates"
+          "kind": "contradicts",
+          "rationale": "[debunks] Bashiago's organizational chart for Project Pegasus places Rumsfeld in a role he verifiably didn't occupy in those years — a documentable error in the core narrative."
         }
-      ],
-      "hostStance": "asserts"
+      ]
     },
     {
       "id": "vCjo9KBpK9I:c_0007",
       "videoId": "vCjo9KBpK9I",
-      "text": "On a live Coast-to-Coast-style broadcast, host Art Bell appeared to spontaneously confirm a key obscure detail from Bashiago's story when, after Bashiago mentioned ITT Defense Communications in Nutley, New Jersey, Bell admitted he had personally worked there as a technician on a secret government project — a moment fans cite as the most stunning corroboration Bashiago has ever received.",
-      "kind": "historical",
+      "text": "The famously-confirmatory moment on Art Bell's radio show — when Bell corroborated Bashiago's 'ITT Nutley NJ' detail — is undermined because Bell had already mentioned his ITT Nutley job in his 1998 autobiography.",
+      "kind": "empirical",
       "entities": [
-        "person:art bell",
-        "person:andrew bashiago",
-        "location:nutley, new jersey"
+        "person:art bell"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 26152,
-          "charEnd": 26352,
-          "timeStart": 1902.08,
-          "timeEnd": 1924.48,
-          "quote": "m ITT\nDefense Communications in Nutley, New\nJersey. The broadcast went silent. Not\ndead air, stun silence. When Art spoke\nagain, his voice had changed. The\nconfident host was gone. I encountered\nyou w"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 26750,
-          "charEnd": 27050,
-          "timeStart": 1950.72,
-          "timeEnd": 1975.679,
-          "quote": "spontaneous unprompted confirmation of\na key obscure detail in Bashiago's\nstory. Art was floored. You can hear him\ntrying to reconcile the impossibility of\nwhat he was hearing.\nI indeed work for ITT in Nutley, New\nJersey. So,\nOh my god. I I just I Okay, that's a\nbomb. That's a bombshell. Okay. Okay."
+          "charStart": 33148,
+          "charEnd": 33209,
+          "timeStart": 2381.119,
+          "timeEnd": 2391.52,
+          "quote": "Art\nmentioned working at ITT Nutley in his\n1998 autobiography"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.4,
-      "rationale": "The on-air exchange between Bell and Bashiago is real and audible in archived broadcasts. However the host's later debunk section notes that Art Bell had publicly disclosed his ITT Nutley employment in his 1998 autobiography 'The Art of Talk,' so Bashiago could simply have read it. The exchange happened; whether it constitutes independent confirmation is what's contested.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "Art Bell's memoir 'The Art of Talk' (1998) is public record and does reference his ITT Federal work. If true, Bashiago had access to published information, which means the 'Art Bell confirmation' is not independent.",
+      "tags": [
+        "art-bell",
+        "bashiago",
+        "debunk",
+        "verdict"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vCjo9KBpK9I:c_0001",
+          "kind": "contradicts",
+          "rationale": "[undercuts] One of Bashiago's strongest 'I could not have known this' pieces of evidence dissolves once the information is shown to be publicly available pre-broadcast."
+        }
+      ]
     },
     {
       "id": "vCjo9KBpK9I:c_0008",
       "videoId": "vCjo9KBpK9I",
-      "text": "Believers point to Josephine Cobb's 1952-discovered photograph — long the only confirmed image of Lincoln at Gettysburg — and the small, oddly-modern-haircut boy in oversized adult shoes visible in the foreground, identifying him as the time-traveling six-year-old Bashiago.",
+      "text": "Bashiago claims that Barack Obama (then known as Barry Soetoro, a Columbia University student) was a fellow chrononaut on the Mars jump program.",
       "kind": "speculative",
       "entities": [
-        "person:josephine cobb",
-        "person:abraham lincoln",
-        "location:gettysburg",
-        "person:andrew bashiago",
-        "work_of_media:photograph"
+        "person:barack obama",
+        "person:obama",
+        "location:mars"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 27554,
-          "charEnd": 27800,
-          "timeStart": 2014.64,
-          "timeEnd": 2034.159,
-          "quote": "photograph of Abraham Lincoln at\nGettysburg. They knew photographers were\nthere. They knew the equipment existed,\nbut no confirmed image of Lincoln giving\nhis most famous speech had ever been\nfound.\nIn 1952, archivist Josephine Cobb was\nexamining"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 29670,
-          "charEnd": 29950,
-          "timeStart": 2148.64,
-          "timeEnd": 2177.359,
-          "quote": "and soldiers,\ncould be seen in the background, but in\nthe foreground, wearing an itchy blue\nuniform and oversized shoes, is\nsix-year-old Andrew Bashiago.\nThe story of Andrew Bashiago is\ncompelling. He's intelligent,\narticulate, he knows how to tell a\nstory. But is it true? No. No"
+          "charStart": 23690,
+          "charEnd": 23725,
+          "timeStart": 1719.279,
+          "timeEnd": 1724.559,
+          "quote": "Barack Obama was a Martian cryonaut"
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.1,
-      "rationale": "The Cobb photograph (NARA, 1863 Mathew Brady plate) is real and was the only widely-known Lincoln-at-Gettysburg image for many decades. The 'mystery boy' figure does appear in the photograph, but Bashiago-as-the-boy is an unfalsifiable identification with no chain of custody. The supposedly anachronistic haircut and shoes are also visible on many other 1860s children in period photos.",
-      "dependencies": [
-        {
-          "target": "vCjo9KBpK9I:c_0001",
-          "kind": "supports",
-          "rationale": "The photograph is the keystone alleged physical evidence for Bashiago's chronaut claim."
-        }
+      "confidence": 0.9,
+      "directTruth": 0.02,
+      "rationale": "Host presents this as an extraordinary claim, then implicitly rejects it in the verdict by classifying Bashiago's entire Mars-jump narrative as follow-the-money fiction. Obama attended Columbia 1981-1983 — timeline overlap is the only element that's true. directTruth near zero.",
+      "tags": [
+        "obama",
+        "mars",
+        "bashiago",
+        "conspiracy"
       ],
-      "hostStance": "asserts"
+      "inVerdictSection": false,
+      "hostStance": "denies"
     },
     {
       "id": "vCjo9KBpK9I:c_0009",
       "videoId": "vCjo9KBpK9I",
-      "text": "The host's own scientific debunk: Tesla's radiant-energy work was about wireless power transmission, not teleportation; even quantum-state teleportation of a person would require more energy than an exploding star; and any literal time-jump ignores that the moving Earth, solar system, and galaxy mean a 5-second jump would leave you in empty space.",
-      "kind": "empirical",
+      "text": "In 2008 Bashiago published 'The Discovery of Life on Mars' analyzing blurry NASA photos, and only years later added the 'I actually walked on Mars via the jump room' story — a narrative escalation typical of commercial disclosure figures.",
+      "kind": "historical",
       "entities": [
-        "person:tesla",
-        "location:earth"
+        "person:bashiago",
+        "person:andrew bashiago",
+        "location:mars"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 30789,
-          "charEnd": 31050,
-          "timeStart": 2227.119,
-          "timeEnd": 2251.72,
-          "quote": "wireless power transmission, not\nteleportation. Yeah. But but but but he\nteleported Wolverine a bunch of times uh\nduring that magic show. You're talking\nabout the movie The Prestige, right? And\nwho played Tesla in that movie? David\nBowie, right? And who played "
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 31098,
-          "charEnd": 31330,
-          "timeStart": 2254.4,
-          "timeEnd": 2271.52,
-          "quote": "scientists have teleported quantum\nstates of particles, but teleporting a\nperson, that would require more energy\nthan an exploding star, even if they\ncould figure out how to do it. Bashiago\nsays they just plug the machine into the\nw"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 31608,
-          "charEnd": 31900,
-          "timeStart": 2287.44,
-          "timeEnd": 2308,
-          "quote": "Earth, the solar system, the galaxy,\nthey're all constantly moving. If you\ntime travel 5 seconds, you'll be in the\nmiddle of space. Nobody ever accounts\nfor this. Nobody except nobody except\nMike Madman Markham. He factored this\ninto his calculations. That's why his\ntime travel story is prob"
+          "charStart": 33637,
+          "charEnd": 33716,
+          "timeStart": 2419.76,
+          "timeEnd": 2429.52,
+          "quote": "he published a paper\nclaiming to discover life on Mars by\nanalyzing NASA photos"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "All three points are mainstream physics. Tesla's Colorado Springs experiments were RF wireless power, not matter teleportation. Quantum teleportation has only been done with single particles' quantum states, never with macroscopic objects, and the energy/information bandwidth scales catastrophically. The reference frame problem is also a real, frequently-overlooked flaw in pop time-travel stories. The host's debunk here is solid.",
-      "dependencies": [
-        {
-          "target": "vCjo9KBpK9I:c_0004",
-          "kind": "contradicts",
-          "rationale": "Real Tesla physics doesn't permit a wall-socket teleporter."
-        },
-        {
-          "target": "vCjo9KBpK9I:c_0005",
-          "kind": "contradicts"
-        }
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "Bashiago's 2008 paper 'The Discovery of Life on Mars' is a real publication. The sequencing argument (why analyze blurry photos if you've been there?) is host's valid inference about narrative accretion in UFO-disclosure communities. Matches the 'lifecycle of a disclosure grifter' pattern documented across many similar figures.",
+      "tags": [
+        "bashiago",
+        "mars",
+        "narrative-escalation",
+        "debunk"
       ],
       "inVerdictSection": true,
-      "hostStance": "asserts"
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "vCjo9KBpK9I:c_0001",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If the most dramatic elements were added later for commercial reasons, the originating time-travel claim inherits the same credibility problem."
+        }
+      ]
     },
     {
       "id": "vCjo9KBpK9I:c_0010",
       "videoId": "vCjo9KBpK9I",
-      "text": "Bashiago's specific factual claims fail under scrutiny: he names Donald Rumsfeld as Pegasus's director from 1969–1972, but Rumsfeld is documented to have been running domestic policy then with no DARPA connection; Art Bell's ITT Nutley employment was already public in his 1998 autobiography; and Bashiago's recruitment date, trip count, and Mars-jump dates have shifted across his retellings.",
-      "kind": "empirical",
+      "text": "Josephine Cobb's 1952 identification of the first confirmed photograph of Lincoln at Gettysburg (November 19, 1863) is an established archival fact.",
+      "kind": "historical",
       "entities": [
-        "person:donald rumsfeld",
-        "person:art bell",
-        "organization:darpa",
-        "person:andrew bashiago"
+        "person:abraham lincoln",
+        "location:gettysburg",
+        "location:gettysburg, pennsylvania",
+        "date_time:1952"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 32945,
-          "charEnd": 33180,
-          "timeStart": 2367.52,
-          "timeEnd": 2389.119,
-          "quote": "Donald Rumsfeld\nran the project from 1969 to 1972, but\nRumsfeld was working on domestic policy\nthen, nowhere near DARPA, and that's\ndocumented. The Art Bell confirmation\nseems stunning until you realize Art\nmentioned working at ITT Nut"
-        },
-        {
-          "transcriptId": "vCjo9KBpK9I",
-          "charStart": 33580,
-          "charEnd": 33950,
-          "timeStart": 2414.64,
-          "timeEnd": 2443.44,
-          "quote": "gh Bowie for one show. Never\nenough Bowie.\nSure. Anyway, he published a paper\nclaiming to discover life on Mars by\nanalyzing NASA photos. He said he saw\nhumanoids, animals, and structures, but\nhe never mentioned he'd been there\nhimself. Why analyze blurry photos if\nyou've walked on Mars? He only added the\njump room story years later. Oh, so he\nprobably didn't blow up "
+          "charStart": 27753,
+          "charEnd": 27901,
+          "timeStart": 2026.72,
+          "timeEnd": 2038.0800000000002,
+          "quote": "In 1952, archivist Josephine Cobb was\nexamining Civil War glass plate\nnegatives at the National Archives. She\nstudied each plate under magnification"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.88,
-      "rationale": "Rumsfeld was Director of the Office of Economic Opportunity 1969–1970 and Counsellor to the President 1969–1973 — domestic policy, exactly as the host says. Art Bell's autobiography 'The Art of Talk' (1998) does mention his ITT employment, undermining the 'unprompted confirmation' framing. Bashiago's 2008 paper 'The Discovery of Life on Mars' analyzed NASA photos with no mention of a personal visit; the jump-room narrative was added later. All three internal inconsistencies are well-documented in skeptic literature.",
-      "dependencies": [
-        {
-          "target": "vCjo9KBpK9I:c_0007",
-          "kind": "contradicts",
-          "rationale": "Public prior disclosure undermines the supposedly spontaneous on-air confirmation."
-        }
+      "directTruth": 0.95,
+      "rationale": "Josephine Cobb's 1952 identification of Lincoln in Mathew Brady's Gettysburg photograph at the National Archives is a documented archival discovery. The photo is real and publicly viewable.",
+      "tags": [
+        "lincoln",
+        "gettysburg",
+        "josephine-cobb",
+        "photography"
       ],
-      "inVerdictSection": true,
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "vCjo9KBpK9I:c_0011",
       "videoId": "vCjo9KBpK9I",
-      "text": "Bashiago fits a recognizable pattern of self-proclaimed 'secret space program' veterans — they all claim multiple programs, alien encounters, and suppressed memories, and they all monetize the story through paid talks, seminars, and books — which the host treats as a structural reason for skepticism even before the physics objections.",
-      "kind": "opinion",
+      "text": "The boy visible in the foreground of the Lincoln-at-Gettysburg photograph is the time-traveling six-year-old Andrew Bashiago himself, proving the Project Pegasus story.",
+      "kind": "speculative",
       "entities": [
         "person:andrew bashiago",
-        "person:andrew bashago"
+        "location:gettysburg"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 34270,
-          "charEnd": 34600,
-          "timeStart": 2456.96,
-          "timeEnd": 2483.599,
-          "quote": "ails, there's always the same\nanswer. Their memories were suppressed,\nbut now they're slowly coming back. And\nthese storytellers share something else.\nThey turn their stories into income. Why\ncouldn't someone else talk about their\nexperience in a secret space program? As\nlong as they don't talk about the stuff\nthat I created ba "}
+          "charStart": 29794,
+          "charEnd": 29822,
+          "timeStart": 2157.28,
+          "timeEnd": 2161.8,
+          "quote": "six-year-old Andrew Bashiago"
+        }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.8,
-      "rationale": "The 'secret space program' subculture (Corey Goode, Randy Cramer, Michael Relfe, Bashiago, Stewart Swerdlow, etc.) really does share these structural features — multi-program claims, recovered/suppressed memories, paid speaking circuits, and self-published books. The host's 'follow the money' heuristic is a valid epistemic flag, though not by itself decisive proof of fabrication.",
-      "inVerdictSection": true,
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.02,
+      "rationale": "The photograph exists and shows a small figure. The claim that this figure is Bashiago depends on the entire Project Pegasus narrative being true, which host rejects. Countless photographs contain ambiguous figures that conspiracy theorists identify as time travelers.",
+      "tags": [
+        "bashiago",
+        "gettysburg",
+        "photograph",
+        "conspiracy"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "vCjo9KBpK9I:c_0001",
+          "kind": "presupposes",
+          "rationale": "The 'it's me in the photo' claim only makes sense if time travel to Gettysburg actually happened."
+        }
+      ]
     },
     {
       "id": "vCjo9KBpK9I:c_0012",
       "videoId": "vCjo9KBpK9I",
-      "text": "The host closes with an explicit moral thesis: time-travel stories appeal to the universal human craving for a 'second chance' to undo regrets, but no such loophole exists outside the present — accept the past, learn from it, and the only real time machine is today.",
-      "kind": "opinion",
+      "text": "Secret-space-program storytellers like Bashiago share a predictable pattern: multiple program memberships, memories 'suppressed then slowly returning,' and monetization through paid speaking events, seminars, and books.",
+      "kind": "empirical",
       "entities": [
+        "person:bashiago",
         "person:andrew bashiago"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "vCjo9KBpK9I",
-          "charStart": 35865,
-          "charEnd": 36120,
-          "timeStart": 2573.76,
-          "timeEnd": 2593.359,
-          "quote": "Your second chance isn't in some secret\ngovernment program. It's not hidden in a\nclassified file or a stolen Tesla\nblueprint. Your second chance starts the\nsecond you stop looking backward and\nstart looking forward. The time machine\nyou're looking for, yo"}
+          "charStart": 33984,
+          "charEnd": 34091,
+          "timeStart": 2440.88,
+          "timeEnd": 2451.3590000000004,
+          "quote": "Like almost\neveryone who claims they were part of a\nsecret space program, Bashago's story\nfollows a pattern"
+        }
       ],
-      "confidence": 0.95,
-      "rationale": "This is the host's closing personal/philosophical thesis, not an empirical claim, so it can't be 'true' or 'false' in the usual sense. It is well-asserted (the verdict-section sign-off), so confidence is high but I omit directTruth.",
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Observable genre pattern across Corey Goode, Michael Salla, Randy Cramer, Michael Relfe, and others — all share the same commercial structure and narrative arc. Host's sociological claim is well-supported by the UFO-disclosure community's public record.",
+      "tags": [
+        "disclosure-grifters",
+        "bashiago",
+        "pattern-recognition"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
+    },
+    {
+      "id": "vCjo9KBpK9I:c_0013",
+      "videoId": "vCjo9KBpK9I",
+      "text": "The US military has experimented on children without consent through programs like MK Ultra, which is documented public record.",
+      "kind": "historical",
+      "entities": [
+        "organization:darpa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vCjo9KBpK9I",
+          "charStart": 30410,
+          "charEnd": 30555,
+          "timeStart": 2201.68,
+          "timeEnd": 2216,
+          "quote": "US military and CIA have\nexperimented on children. NK Ultra did\nit. Multiple programs tested drugs,\npsychology, and worse on kids without\nconsent"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Host includes this as part of the 'provable facts' section. MK Ultra's involvement of minors at Montreal's Allan Memorial and via sub-project contractors is documented in the 1977 Senate hearings.",
+      "tags": [
+        "mk-ultra",
+        "children",
+        "experimentation",
+        "verdict"
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "vCjo9KBpK9I:c_0014",
+      "videoId": "vCjo9KBpK9I",
+      "text": "Project Pegasus claims Tesla-based teleportation machines killed 12 of 15 adult volunteers in 1968 trials, forcing the program to recruit children whose minds were more flexible.",
+      "kind": "speculative",
+      "entities": [
+        "organization:project pegasus"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "vCjo9KBpK9I",
+          "charStart": 12578,
+          "charEnd": 12708,
+          "timeStart": 914.959,
+          "timeEnd": 933.36,
+          "quote": "Dr. Ragnu studied\nthe data from 15 failed tests, 15\nvolunteers, only three survivors, and\nall went insane. But there was a\npattern"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.02,
+      "rationale": "Core element of the Bashiago narrative. No documentary, medical, or financial record of any such casualties exists. Host rejects the physics and timeline of the entire teleportation story in the verdict. directTruth near zero.",
+      "tags": [
+        "project-pegasus",
+        "teleportation",
+        "casualties",
+        "conspiracy"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "vCjo9KBpK9I:c_0001",
+          "kind": "elaborates",
+          "rationale": "This is the plot-mechanics justification Bashiago gives for why children like him were allegedly recruited."
+        }
+      ]
     }
   ]
 }

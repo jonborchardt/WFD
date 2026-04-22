@@ -1,362 +1,451 @@
 {
   "schemaVersion": 1,
   "transcriptId": "g5NG6mo1zGY",
-  "generatedAt": "2026-04-20T02:29:07.683Z",
+  "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "g5NG6mo1zGY:c_0001",
       "videoId": "g5NG6mo1zGY",
-      "text": "In 1991 German historian Heribert Illig and colleagues proposed the Phantom Time Hypothesis: the years 614 through 911 AD never happened — they were inserted into the calendar around 1000 AD by a conspiracy between Holy Roman Emperor Otto III, Pope Sylvester II, and the Byzantine emperor to relocate themselves into the new millennium.",
+      "text": "German historian Heribert Illig's Phantom Time Hypothesis claims that a 297-year stretch of the Middle Ages (AD 614-911) never actually happened and was fabricated via calendar manipulation.",
       "kind": "speculative",
       "entities": [
         "person:german historian",
-        "date_time:1991",
-        "date_time:1000 ad",
-        "date_time:614 to 911",
-        "date_time:7th century",
-        "date_time:10th century",
-        "person:otto iii",
-        "person:otto theii",
-        "person:pope sylvester thei",
-        "person:byzantine emperor constantine iith",
-        "organization:church",
-        "person:holy roman emperor",
-        "event:conspiracy",
-        "quantity:300 years"
+        "work_of_media:phantom time hypothesis",
+        "date_time:614 to 911"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 409,
-          "charEnd": 1100,
-          "timeStart": 33.68,
-          "timeEnd": 78.439,
-          "quote": "in 1991 German historian arert ilig and\na few colleagues proposed a radical idea\nwe aren't living in the 21st century\nwe're actually living in the 18th\ncentury this is called the Phantom time\nhypothesis which says that back in 1000\nad there was a conspiracy between the\nchurch and the Holy Roman Emperor to\nchange the calendar the years 614\nthrough 911 were completely made up\nthose 300 years just didn't happen so\nthat history you learned about\nCharlemagne in the Middle Ages\ncompletely fabricated in fact ilig says\nthat Charlemagne was specifically\ndesigned as propaganda to support the\ncalendar change to give the emperor and\nthe pope more power an elite group of\npeople manipulating the "
+          "charStart": 202,
+          "charEnd": 259,
+          "timeStart": 11.16,
+          "timeEnd": 23.48,
+          "quote": "according to\na German historian the year is actually\n1724"
         },
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 3700,
-          "charEnd": 4500,
-          "timeStart": 241.079,
-          "timeEnd": 298.96,
-          "quote": "rk Ages and noticed\nthere was one specific period of time\nthat had a noticeable lack of records\nand artifacts 614 to 911 this was the\ntime before Charlemagne's Rule and right\nup until the start of the aonian dynasty\nthat led him to suspect number one Holy\nRoman Emperor Otto III IG believed that\nOtto theii Pope Sylvester thei and\npossibly Byzantine emperor Constantine\niith had a secret plan to move\nthemselves from the 7th Century to the\n10th Century so Otto can rule in the New\nMillennium it look noted that the Roman\nEmpire kept detailed records right up\nuntil the year 610 when the Dark Ages\nsupposedly began but then written\nhistory basically vanishes for 300 years\nalso the architecture of the Year 476\nwas almost identical to that of the Year\n1000 with virtually no progress now for\nperspecti"
+          "charStart": 569,
+          "charEnd": 611,
+          "timeStart": 43.8,
+          "timeEnd": 50.879000000000005,
+          "quote": "this is called the Phantom time\nhypothesis"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "The Phantom Time Hypothesis is a real proposal by Heribert Illig published in 1991 in 'Das erfundene Mittelalter'. The host accurately reports its core claim. The hypothesis itself is universally rejected by professional historians; directTruth here scores the description-of-the-hypothesis as accurate (~0.4 hedged because the host conflates it with the related Hans-Ulrich Niemitz / Otto III conspiracy details).",
-      "hostStance": "asserts"
+      "confidence": 0.98,
+      "directTruth": 0.03,
+      "rationale": "Mainstream historians across multiple independent traditions (European, Islamic, Byzantine, Chinese) reject the hypothesis; dendrochronology, astronomical records, and Islamic/Chinese dating independently corroborate the disputed centuries. Illig's argument is regarded as fringe.",
+      "hostStance": "asserts",
+      "tags": ["phantom-time", "calendar", "middle-ages", "conspiracy"]
     },
     {
       "id": "g5NG6mo1zGY:c_0002",
       "videoId": "g5NG6mo1zGY",
-      "text": "Pope Gregory's 1582 calendar reform removed only 10 days when accumulated Julian-calendar drift since 45 BC should have required 13 — and that 3-day discrepancy is suspicious circumstantial evidence that ~300 years had been illegitimately inserted into the historical record after Gregory's reference point.",
-      "kind": "empirical",
+      "text": "The supposed fabrication was a coordinated conspiracy between Otto III, Pope Sylvester II, and Byzantine emperor Constantine VII to backdate themselves from the 7th century into the 10th century so Otto could rule at the millennium.",
+      "kind": "speculative",
       "entities": [
-        "date_time:1582",
-        "date_time:45 bc",
+        "person:otto iii",
+        "person:pope sylvester thei",
+        "person:byzantine emperor constantine iith",
+        "date_time:7th century",
+        "date_time:10th century"
+      ],
+      "relationships": ["r_0014", "r_0015", "r_0017"],
+      "evidence": [
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 3996,
+          "charEnd": 4152,
+          "timeStart": 261.68,
+          "timeEnd": 275.84,
+          "quote": "Otto theii Pope Sylvester thei and\npossibly Byzantine emperor Constantine\niith had a secret plan to move\nthemselves from the 7th Century to the\n10th Century"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.02,
+      "rationale": "Constantine VII reigned 913-959, which makes a backdating scheme with Otto III (980-1002) chronologically incoherent even within the hypothesis. No primary-source evidence of any such plan exists.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "elaborates", "rationale": "Names the specific alleged conspirators underpinning the broader hypothesis." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["phantom-time", "otto-iii", "conspiracy"]
+    },
+    {
+      "id": "g5NG6mo1zGY:c_0003",
+      "videoId": "g5NG6mo1zGY",
+      "text": "Charlemagne was a propaganda fiction invented by Otto III to give the Ottonian dynasty a legitimizing backstory, not a real historical figure.",
+      "kind": "speculative",
+      "entities": [
+        "person:charlemagne",
+        "person:otto iii",
+        "organization:aonian dynasty",
+        "work_of_media:propaganda"
+      ],
+      "relationships": ["r_0021", "r_0028"],
+      "evidence": [
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 5843,
+          "charEnd": 5876,
+          "timeStart": 379.8,
+          "timeEnd": 388.4,
+          "quote": "Emperor Charlemagne\nnever\nexisted"
+        },
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 931,
+          "charEnd": 1057,
+          "timeStart": 65.88,
+          "timeEnd": 76.32,
+          "quote": "Charlemagne was specifically\ndesigned as propaganda to support the\ncalendar change to give the emperor and\nthe pope more power"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.03,
+      "rationale": "Charlemagne's existence is corroborated by Byzantine, Papal, Abbasid, and Carolingian administrative records, surviving coinage, charters, the Aachen palace, and cross-referenced Arabic sources (e.g. the embassy of Harun al-Rashid). The fiction claim has no evidentiary support.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "presupposes", "rationale": "If the 7th-9th centuries were fabricated, a Charlemagne living in that window must also be fabricated." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["charlemagne", "phantom-time"]
+    },
+    {
+      "id": "g5NG6mo1zGY:c_0004",
+      "videoId": "g5NG6mo1zGY",
+      "text": "Charlemagne's biography is implausibly overloaded — he was at war 44 of his 46 years of rule yet still reformed education, created a jury system, and enacted over 100 new laws, an accomplishment set that would take several lifetimes.",
+      "kind": "historical",
+      "entities": [
+        "person:charlemagne",
+        "law_or_policy:jury system"
+      ],
+      "relationships": ["r_0041"],
+      "evidence": [
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 6331,
+          "charEnd": 6455,
+          "timeStart": 409.08,
+          "timeEnd": 422.12,
+          "quote": "he was at War all over\nthe world for 44 of those years yet he\nstill found time to create a jury system\nand over 100 new laws"
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.35,
+      "rationale": "The war count is inflated (Charlemagne was on campaign most years but not literally at war continuously), and most reforms were enacted by his court (Alcuin, Einhard) rather than personally. The host later concedes this point, attributing accomplishments to his talented advisors.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0003", "kind": "supports", "rationale": "Host frames the overloaded biography as suspicious, arguing it points toward fabrication." },
+        { "target": "g5NG6mo1zGY:c_0013", "kind": "contradicts", "rationale": "[alternative] Host's own rebuttal — advisors did the work — explains the biography without invoking fabrication." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["charlemagne", "biography"]
+    },
+    {
+      "id": "g5NG6mo1zGY:c_0005",
+      "videoId": "g5NG6mo1zGY",
+      "text": "Pope Gregory XIII's 1582 calendar reform removed only 10 days when a full-cycle correction from 45 BC would have required ~13, and this discrepancy proves he knowingly covered up a prior 3-day fabrication in the Middle Ages.",
+      "kind": "speculative",
+      "entities": [
         "person:pope gregory",
-        "person:pope",
-        "technology:gregorian calendar",
         "quantity:10 days",
-        "quantity:solar year",
-        "person:julius caesar",
-        "event:easter",
-        "date_time:march 21st",
-        "date_time:march 11th",
-        "date_time:october 4th",
-        "date_time:october 15th",
-        "quantity:365 days"
+        "quantity:3 days",
+        "technology:gregorian calendar",
+        "date_time:1582"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 1500,
-          "charEnd": 2200,
-          "timeStart": 98.72,
-          "timeEnd": 150.519,
-          "quote": "e on the moon some\nwere just arbitrary now as the Romans\ngobbled up more territory these\ndifferent calendars made Commerce\ncomplicated so in 45 BC Julius Caesar\nproposed a standard calendar to be used\nby the Empire he proposed commanded\nthere you go the Julian calendar was\nbased on a tropical year also known as a\nsolar year or one Earth orbit around the\nsun and a year was\n365.25 days with leap years but a solar\nyear is actually a little shorter than\nthey thought it's really\n365.24 219 days that's a difference of\n11 minutes now 11 minutes isn't much but\nthe Julian calendar was losing a full\nday every 128 years and after 1,500\nyears the slippage was noticeable the\nchurch really liked Easter to"
+          "charStart": 3175,
+          "charEnd": 3274,
+          "timeStart": 208.4,
+          "timeEnd": 217.92,
+          "quote": "Pope Gregory aware that he\nmade a mathematical error or was there\nsomething more Sinister happening"
         },
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 2200,
-          "charEnd": 3000,
-          "timeStart": 146.44,
-          "timeEnd": 201.599,
-          "quote": " land on\nMarch 21st the spring equino\nbut in the 1500s Easter was landing\naround March 11th this irritated Pope\nGregory yeah an irritated Pope isn't\ngood for anybody that's true the church\nannounced the change a year would be 365\ndays with an extra day added to every\nyear divisible by four and a few other\nrules to keep things in sync but that's\nthe gist so in 1582 the Gregorian\ncalendar was adopted and 10 of the Lost\ndays were added back to the calendar you\nwent to bed on October 4th and woke up\non o October 15th and that's where we've\nbeen ever since but wait a minute losing\na day every 128 years means the old\ncalendar was off by almost 13 days but\nthe pope only removed 10 days 10 days\nonly accounts for about 1,200 of the\n1500 years that had passed since the old\ncalendar but 10 days did i"
-        },
-        {
-          "transcriptId": "g5NG6mo1zGY",
-          "charStart": 3000,
-          "charEnd": 3700,
-          "timeStart": 197.599,
-          "timeEnd": 245.599,
-          "quote": "ndeed bring\nthe new calendar into sync with the\nEquinox that shouldn't have worked that\nmeans the new calendar was adjusted 300\nyears earlier and this is the big\nquestion was Pope Gregory aware that he\nmade a mathematical error or was there\nsomething more Sinister happening Erbert\nIG believes Pope Gregory didn't make a\nmistake he believes the pope\nintentionally covered up a conspiracy\nthat happened centuries earlier so IG\nstarted looking for clues in the Middle\nAges and eventually he found\nthem Erbert IG was convinced this\nthree-day discrepancy wasn't a mistake\nhe suspected Pope Gregory was\ncompensating for something that happened\nin the Catholic Church centuries earlier\nIG focused on the Da"
+          "charStart": 3294,
+          "charEnd": 3419,
+          "timeStart": 215.799,
+          "timeEnd": 226.76,
+          "quote": "Pope Gregory didn't make a\nmistake he believes the pope\nintentionally covered up a conspiracy\nthat happened centuries earlier"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.2,
-      "rationale": "The math is correctly described: Julian drift was about a day per 128 years and 1582-(-45) = 1627 years implies ~12.7 days. But the host's later debunking is correct — Gregory was correcting the calendar back to the Council of Nicaea reference (325 AD), not to Caesar's 45 BC adoption, so 1582-325 = 1257 years × 1 day/128 = ~9.8 days, which rounds to 10. The '3-day discrepancy means a conspiracy' inference is the Illig argument that the host's verdict section dismantles.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.05,
+      "rationale": "This is the hypothesis's single strongest falsifiable anchor — and it's directly rebutted later in the same video: the 10-day correction was calibrated to the 325 AD Council of Nicaea anchor point (not 45 BC), so 10 days is exactly right.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "The 10-vs-13-day gap is the quantitative basis Illig cites for the whole hypothesis." },
+        { "target": "g5NG6mo1zGY:c_0011", "kind": "contradicts", "rationale": "[debunks] The Nicaea-anchor explanation shows the math works without any fabrication." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["pope-gregory", "calendar", "phantom-time"]
     },
     {
-      "id": "g5NG6mo1zGY:c_0003",
+      "id": "g5NG6mo1zGY:c_0006",
       "videoId": "g5NG6mo1zGY",
-      "text": "Illig argues that there is essentially no surviving European architecture, technical advancement, or written record from 614 to 911 — castles built before 600 and after 1000 are abundant, but nothing from the gap; year-476 architecture is virtually identical to year-1000 architecture, with three centuries of zero progress in between.",
+      "text": "Architecture and technology stagnated for almost exactly the disputed 300-year window — the year 476 and the year 1000 show near-identical building styles — with no aqueducts, indoor plumbing, or comparable advancements appearing in between.",
       "kind": "empirical",
       "entities": [
-        "facility:aqueducts",
-        "facility:indoor plumbing",
-        "organization:roman empire",
         "date_time:year 476",
+        "date_time:year 1000",
+        "facility:aqueducts",
+        "facility:indoor plumbing"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 4377,
+          "charEnd": 4482,
+          "timeStart": 285.479,
+          "timeEnd": 296,
+          "quote": "the architecture of the Year 476\nwas almost identical to that of the Year\n1000 with virtually no progress"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.25,
+      "rationale": "The general observation that post-Roman Western Europe saw material and technological regression is broadly supported by archaeology. However, the claim of ZERO progress is overstated — medieval innovations in the disputed window (heavy plough, three-field rotation, lateen sail, water-powered mills) are well-documented.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "Technology stagnation cited as circumstantial evidence for the disputed centuries being fake." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["dark-ages", "archaeology", "phantom-time"]
+    },
+    {
+      "id": "g5NG6mo1zGY:c_0007",
+      "videoId": "g5NG6mo1zGY",
+      "text": "No European castles survive that were built between the year 600 and the year 1000, and a document allegedly listing ~1,700 structures from the missing years turned out to have 97% fabricated entries.",
+      "kind": "empirical",
+      "entities": [
         "date_time:year 600",
         "date_time:year 1000",
-        "date_time:year 610",
-        "event:dark ages",
-        "quantity:300 years",
-        "event:the missing years",
         "quantity:almost 1,700 structures"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 4500,
-          "charEnd": 5300,
-          "timeStart": 294,
-          "timeEnd": 350,
-          "quote": "ve this would be like us living\nin thatched roof dirt floor houses today\nnow techn iCal advancements also seem to\nstop for these 300 years the Roman\nEmpire had aqueducts and indoor plumbing\nthe Renaissance gave us the Vinci cernus\nand the discovery of the new world but\nfor the missing 300 years there was\nvirtually no scientific advancement H\nEuropean castles were also a problem\nilig found plenty of castles built right\nup until the year 600 and plenty built\nafter the year 1000 but there's no trace\nof anything built in between now ilig\nhad found a document that CLA CL that\nalmost 1,700 structures were built\nduring The Missing Years but when he\ntraced those structures he noticed 97%\nof them were gone no evidence they ever\nexisted the list was a forgery a fake\nthat intended to rewrite\nhistory "
+          "charStart": 4844,
+          "charEnd": 5030,
+          "timeStart": 316.039,
+          "timeEnd": 330.08,
+          "quote": "European castles were also a problem\nilig found plenty of castles built right\nup until the year 600 and plenty built\nafter the year 1000 but there's no trace\nof anything built in between"
+        },
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 5174,
+          "charEnd": 5259,
+          "timeStart": 334.08,
+          "timeEnd": 345.52,
+          "quote": "he noticed 97%\nof them were gone no evidence they ever\nexisted the list was a forgery"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.1,
-      "rationale": "This is Illig's empirical claim, but it is wildly wrong on the facts. The Anglo-Saxon, Frankish, Lombard, and Byzantine kingdoms all left abundant 7th-9th-century architecture (Hagia Sophia in its current form is 6th c.; the Great Mosque of Córdoba began 784; the Aachen Palatine Chapel 792; Sutton Hoo finds c.625; etc.). The 'no castles' point also misframes — the European stone-castle form proper postdates 1000 even on mainstream chronology, replacing earlier wooden motte-and-bailey structures.",
-      "hostStance": "asserts"
+      "confidence": 0.75,
+      "directTruth": 0.2,
+      "rationale": "Many fortifications and proto-castle motte-and-bailey structures from this period exist (e.g. Aachen palace complex, Carolingian fortifications, surviving churches at Lorsch and Aachen). The framing relies on narrow definitions of 'castle' that exclude pre-Romanesque architecture.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "Absent architecture is cited as physical evidence for the missing centuries." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["castles", "archaeology", "phantom-time"]
     },
     {
-      "id": "g5NG6mo1zGY:c_0004",
+      "id": "g5NG6mo1zGY:c_0008",
       "videoId": "g5NG6mo1zGY",
-      "text": "A 1986 archaeological survey in Germany found essentially zero medieval-town discoveries attributable to the period 650-910 AD — supporting the Phantom Time claim that nothing was actually happening in those centuries because they didn't exist.",
+      "text": "A 1986 archaeological survey found no German medieval settlement discoveries attributable to the window 650-910, constituting a specifically German archaeological gap.",
       "kind": "empirical",
       "entities": [
         "date_time:1986",
         "location:germany",
         "organization:ar archeologists"
       ],
+      "relationships": ["r_0019"],
+      "evidence": [
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 5557,
+          "charEnd": 5675,
+          "timeStart": 364.36,
+          "timeEnd": 374.319,
+          "quote": "there was a gap that lasted from 650 to\n910 specifically in Germany not a single\nDiscovery was attributed to this time"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "The claim as stated ('not a single Discovery') is not independently verifiable from the transcript alone and contradicts standard German medieval archaeology (Carolingian-era finds are well-catalogued). Declining directTruth — would need to see the cited 1986 source.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "German archaeological gap cited as regional corroboration of the hypothesis." }
+      ],
+      "hostStance": "asserts",
+      "tags": ["germany", "archaeology"]
+    },
+    {
+      "id": "g5NG6mo1zGY:c_0009",
+      "videoId": "g5NG6mo1zGY",
+      "text": "Halley's Comet returns every 75-76 years and is recorded as far back as 475 BC, with continuous Chinese records spanning the allegedly missing centuries — an independent astronomical chronology that the Phantom Time Hypothesis would have to explain away.",
+      "kind": "empirical",
+      "entities": [
+        "location:earth",
+        "date_time:475 bc"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 5300,
-          "charEnd": 6300,
-          "timeStart": 345.52,
-          "timeEnd": 412.039,
-          "quote": "now but certainly there would be\narchaeology that would prove these years\nhappened right evidence of human\nsettlements actual human remains yeah no\nno in 1986 AR archeologists noticed\nthere was very little evidence of\nmedieval towns during a certain period\nthere was a gap that lasted from 650 to\n910 specifically in Germany not a single\nDiscovery was attributed to this time\nnot a single one the only luminous\nfigure to come out of this time was\nCharles the great more widely known as\nCharlamagne but according to the Phantom\ntime hypothesis Emperor Charlemagne\nnever\nexisted supporters of the Phantom time\nhypothesis note that nothing has been\npreserved from the missing 300 years no\nstreets homes no artifacts and maybe no\nCharlamagne illig and others believe\nthat Otto theii created Charlamagne in\nhis own image and there are plenty of\nproblems with the history of Charlemagne\nfor instance he seemed to have\naccomplished too much for one guy\nCharlemagne was an astronomer\nagriculturalist an archi"
+          "charStart": 8010,
+          "charEnd": 8064,
+          "timeStart": 512.88,
+          "timeEnd": 522.44,
+          "quote": "Haley's comet is visible on Earth\nevery 75 or 76 years"
+        },
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 8249,
+          "charEnd": 8298,
+          "timeStart": 527,
+          "timeEnd": 533.279,
+          "quote": "there are records of the\ncomet in Chinese history"
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.05,
-      "rationale": "There is no such 1986 archaeological survey supporting Illig's gap. German medieval archaeology of the 7th-10th centuries is well populated — Carolingian palaces, monasteries (Reichenau, Lorsch, Fulda), Birka and Hedeby trade-emporia, and abundant grave goods. Illig's selective evidence-of-absence claim does not survive contact with the actual archaeological record.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.95,
+      "rationale": "Chinese astronomical records of Halley's Comet across the disputed period are real and precisely dated, as are parallel records from Arabic and Byzantine astronomers. This is one of the most cited independent falsifications of Phantom Time.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "contradicts", "rationale": "[debunks] Independent dated astronomical records spanning the disputed window refute the claim that those years didn't happen." }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "tags": ["halleys-comet", "astronomy", "debunking"]
     },
     {
-      "id": "g5NG6mo1zGY:c_0005",
+      "id": "g5NG6mo1zGY:c_0010",
       "videoId": "g5NG6mo1zGY",
-      "text": "Charlemagne's biography is biographically impossible — 46-year reign with 44 years at war while simultaneously creating a jury system, 100+ laws, education reform, and updating scripture would take 4-5 lifetimes — supporting Illig's claim that Charlemagne was an Ottonian fabrication built to legitimize the Ottonian dynasty's grip on the Holy Roman Empire.",
-      "kind": "speculative",
+      "text": "The apparent scarcity of Dark Ages records has an ordinary explanation: after Rome's fall, infrastructure collapsed, 95% of the population lived in poverty, and under 5% were literate — conditions that naturally suppress artistic and scientific output.",
+      "kind": "historical",
       "entities": [
-        "person:charlemagne",
-        "person:charlamagne",
-        "person:charles the great",
-        "person:charlam man",
-        "person:otto",
-        "organization:aonian dynasty",
-        "nationality_or_ethnicity:aonian",
-        "nationality_or_ethnicity:ionians",
-        "organization:holy roman empire",
-        "law_or_policy:jury system",
-        "work_of_media:scripture",
+        "organization:roman empire",
+        "quantity:almost 95%",
         "event:war"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 5300,
-          "charEnd": 6300,
-          "timeStart": 345.52,
-          "timeEnd": 412.039,
-          "quote": "now but certainly there would be\narchaeology that would prove these years\nhappened right evidence of human\nsettlements actual human remains yeah no\nno in 1986 AR archeologists noticed\nthere was very little evidence of\nmedieval towns during a certain period\nthere was a gap that lasted from 650 to\n910 specifically in Germany not a single\nDiscovery was attributed to this time\nnot a single one the only luminous\nfigure to come out of this time was\nCharles the great more widely known as\nCharlamagne but according to the Phantom\ntime hypothesis Emperor Charlemagne\nnever\nexisted supporters of the Phantom time\nhypothesis note that nothing has been\npreserved from the missing 300 years no\nstreets homes no artifacts and maybe no\nCharlamagne illig and others believe\nthat Otto theii created Charlamagne in\nhis own image and there are plenty of\nproblems with the history of Charlemagne\nfor instance he seemed to have\naccomplished too much for one guy\nCharlemagne was an astronomer\nagriculturalist an archi"
+          "charStart": 8404,
+          "charEnd": 8478,
+          "timeStart": 536.279,
+          "timeEnd": 545.279,
+          "quote": "after the Roman Empire fell\nthe entire world was thrown into chaos\nand War"
         },
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 6300,
-          "charEnd": 7100,
-          "timeStart": 406.56,
-          "timeEnd": 457.639,
-          "quote": "tect but of his\n46y year reign he was at War all over\nthe world for 44 of those years yet he\nstill found time to create a jury system\nand over 100 new laws he reformed the\neduc ation system he updated scripture\nsome say it would take four or five\nlifetimes to accomplish all of this yet\nCharlemagne was somehow able to do it\nilig and others conclude that the only\nlogical reason for this is that\nCharlemagne was made up and Otto had\nplenty of motive to give Charlemagne\nsuch a juicy resume since the ionians\nmanipulated their way into the Holy\nRoman Empire they needed to give\nthemselves a back story because of their\nassociation with Charlemagne the aonian\nwould be seen as Heroes and their rule\nwould be leg legitimized but if\nCharlemagne and those 300 years were a\nlie Otto III needed the rest of "
+          "charStart": 8530,
+          "charEnd": 8607,
+          "timeStart": 543,
+          "timeEnd": 552.44,
+          "quote": "in the Middle Ages\nalmost 95% of the world's population was\nliving in poverty"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.1,
-      "rationale": "Charlemagne is one of the best-documented figures of his era, with extensive contemporary biographies (Einhard, Notker the Stammerer), letters, capitularies, coinage, and physical remains in Aachen. His 'too many accomplishments for one man' framing is debunked in the host's verdict section: most achievements were collective (Alcuin and the Carolingian Renaissance scholars). The Ottonian-fabrication thesis has no documentary support.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "g5NG6mo1zGY:c_0001",
-          "kind": "supports",
-          "rationale": "Charlemagne-as-fabrication is the central piece of the Phantom Time conspiracy."
-        }
-      ]
-    },
-    {
-      "id": "g5NG6mo1zGY:c_0006",
-      "videoId": "g5NG6mo1zGY",
-      "text": "Records of Halley's Comet (which returns every 75-76 years) survive in Chinese chronicles continuously through the alleged 614-911 phantom centuries, providing an independent astronomical chronology that disproves the missing-three-centuries hypothesis.",
-      "kind": "empirical",
-      "entities": [
-        "date_time:475 bc",
-        "location:earth"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "g5NG6mo1zGY",
-          "charStart": 7700,
-          "charEnd": 8400,
-          "timeStart": 494,
-          "timeEnd": 540.64,
-          "quote": "rs and\nfathering children he was a supporter of\nscience the Arts the rule of law and\ncertainly the church but all of his\nnon-military accomplishments could be\nattributed to the talented people he\nkept around him still that's not a\nscientific rebuttal of the pH time\nhypothesis but how about this Haley's\nComet Haley's comet is visible on Earth\nevery 75 or 76 years and Records exist\nof it being seen as far back as 475 BC\nand all the way through the missing\ncenturies now there aren't a lot of\nrecords of it in European history during\nthis time but there are records of the\ncomet in Chinese history as to why there\naren't a lot of records from the Dark\nAges the answer is more obvious than IL\nconside"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "This is one of the strongest empirical refutations of Illig's hypothesis. Chinese astronomical records of Halley's Comet (and other comets, eclipses, and sunspots) form an unbroken sequence from 240 BC onward, and the recorded apparitions during 614-911 AD (e.g., 684, 760, 837, 912 AD) match modern orbital computations precisely. Phantom Time would require these dated Chinese observations to have been impossibly rebackdated.",
-      "hostStance": "asserts",
+      "directTruth": 0.75,
+      "rationale": "The broad strokes are correct: literacy was extremely limited, most production was subsistence agriculture, and record-keeping collapsed with urban administration. The specific 95%/5% figures are rough but within standard estimates for early medieval Europe.",
       "inVerdictSection": true,
-      "dependencies": [
-        {
-          "target": "g5NG6mo1zGY:c_0001",
-          "kind": "contradicts",
-          "rationale": "Independent astronomical chronology refutes the missing-centuries claim."
-        }
-      ]
-    },
-    {
-      "id": "g5NG6mo1zGY:c_0007",
-      "videoId": "g5NG6mo1zGY",
-      "text": "The apparent paucity of European Dark-Age records is not evidence of fabrication but the predictable consequence of Roman infrastructure collapse — almost 95% of the world's population was in poverty, less than 5% were literate, so written records and architectural achievement naturally thinned out.",
-      "kind": "empirical",
-      "entities": [
-        "organization:roman empire",
-        "event:dark ages",
-        "event:war",
-        "quantity:almost 95%",
-        "location:world",
-        "organization:art and science"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "g5NG6mo1zGY",
-          "charStart": 8400,
-          "charEnd": 9100,
-          "timeStart": 536.279,
-          "timeEnd": 580.24,
-          "quote": "red after the Roman Empire fell\nthe entire world was thrown into chaos\nand War society's infrastructure pretty\nmuch collapsed and in the Middle Ages\nalmost 95% of the world's population was\nliving in poverty and less than 5% of\npeople even knew how to read there isn't\na lot of opportunity for Art and Science\nto advance if the entire world is\nstruggling to not die of starvation but\nwhat about Pope Gregory he really did\nmove the calendar by 10 days not 13 so\nhow do we account for the Pope's\nmathematical error turns out that IL\ndidn't have all the information when\nhistorians looked into the date change\nthey learned that the 10-day adjustment\nwasn't based on the start of the Julian\ncalendar in 4"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The mainstream historical explanation: post-Roman collapse, mass illiteracy, and infrastructure decay account for the relative thinness of Western European 7th-9th-century documentary record without any need to invoke a conspiracy. The 95% poverty / 5% literacy figures are loose but in the right ballpark for the early medieval period.",
       "hostStance": "asserts",
-      "inVerdictSection": true,
-      "dependencies": [
-        {
-          "target": "g5NG6mo1zGY:c_0003",
-          "kind": "contradicts",
-          "rationale": "Provides a mundane explanation for the documentary gap that Illig treats as evidence of fabrication."
-        }
-      ]
+      "tags": ["dark-ages", "debunking", "alternative-explanation"]
     },
     {
-      "id": "g5NG6mo1zGY:c_0008",
+      "id": "g5NG6mo1zGY:c_0011",
       "videoId": "g5NG6mo1zGY",
-      "text": "Pope Gregory's 10-day calendar correction was mathematically correct because it was anchored to the 325 AD Council of Nicaea (not to 45 BC) — Nicaea had already shifted Easter calculations by 3 days, so 1257 years of Julian drift since Nicaea required exactly the 10-day jump that Gregory implemented; no missing centuries are needed to explain the math.",
-      "kind": "empirical",
+      "text": "Gregory XIII's 10-day correction is arithmetically correct because the calibration baseline was the 325 AD Council of Nicaea (not 45 BC Julian adoption) — 3 days had already been lost between 45 BC and 325, leaving exactly 10 days to remove in 1582.",
+      "kind": "historical",
       "entities": [
         "person:pope gregory",
-        "person:pope",
-        "person:gregory",
-        "event:council of naa",
+        "quantity:10 days",
+        "quantity:3 days",
         "organization:naa",
         "date_time:325",
         "date_time:45 bc",
-        "quantity:10 days",
-        "quantity:3 days",
         "event:easter"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 9100,
-          "charEnd": 9700,
-          "timeStart": 575.64,
-          "timeEnd": 617.68,
-          "quote": "5 BC actually the pope\nbrought Easter back into sync after it\nhad already been moved 3 Days by the\nCouncil of NAA in 325 so 10 days was all\nthat was needed 3 days from NAA 10 days\nfrom Gregory that's your 13 days now the\nvast majority of historians consider\nthis conspiracy to be debunked but illig\nand others are sticking to their story\nyeah got to respect I do and I'll keep\nan eye on this and if anything changes\nwe'll do another video but in the\nmeanwhile I'm going to consider the\nPhantom time hypothesis while a\nfantastic story\ndebunked thanks so much for hanging out\nwith me today my name is A"
+          "charStart": 9025,
+          "charEnd": 9220,
+          "timeStart": 571.88,
+          "timeEnd": 589.68,
+          "quote": "the 10-day adjustment\nwasn't based on the start of the Julian\ncalendar in 45 BC actually the pope\nbrought Easter back into sync after it\nhad already been moved 3 Days by the\nCouncil of NAA in 325"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Correct on the math and the chronology. Gregory's bull Inter gravissimas (1582) explicitly anchors the correction to Nicaea (325) rather than to the original Julian adoption. 325 → 1582 = 1257 years; with one-day drift per 128 years that's 9.82 days, which Gregory rounded to 10. The arithmetic-conspiracy argument that drives Illig's hypothesis dissolves once the correct anchor date is used.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
+      "directTruth": 0.97,
+      "rationale": "Historically accurate. The Gregorian reform explicitly referenced the Nicaean spring equinox date (March 21) as the anchor. The arithmetic works exactly, which fully dissolves Illig's central 'mathematical evidence'.",
       "dependencies": [
-        {
-          "target": "g5NG6mo1zGY:c_0002",
-          "kind": "contradicts",
-          "rationale": "Resolves the apparent 3-day discrepancy without needing missing centuries."
-        }
-      ]
+        { "target": "g5NG6mo1zGY:c_0005", "kind": "contradicts", "rationale": "[debunks] Dismantles the alleged 3-day discrepancy that Illig treats as proof of fabrication." }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "tags": ["pope-gregory", "council-of-nicaea", "debunking"]
     },
     {
-      "id": "g5NG6mo1zGY:c_0009",
+      "id": "g5NG6mo1zGY:c_0012",
       "videoId": "g5NG6mo1zGY",
-      "text": "The vast majority of professional historians consider the Phantom Time Hypothesis debunked, and the host concurs — while Illig and a small group continue to defend it, the cumulative weight of astronomical chronology, archaeology, and recalculated calendar arithmetic falsifies the conspiracy.",
-      "kind": "opinion",
+      "text": "The vast majority of historians consider the Phantom Time Hypothesis debunked.",
+      "kind": "empirical",
       "entities": [
         "organization:historians",
-        "person:ilig",
-        "person:ig",
         "work_of_media:phantom time hypothesis"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
-          "charStart": 9100,
-          "charEnd": 9700,
-          "timeStart": 575.64,
-          "timeEnd": 617.68,
-          "quote": "5 BC actually the pope\nbrought Easter back into sync after it\nhad already been moved 3 Days by the\nCouncil of NAA in 325 so 10 days was all\nthat was needed 3 days from NAA 10 days\nfrom Gregory that's your 13 days now the\nvast majority of historians consider\nthis conspiracy to be debunked but illig\nand others are sticking to their story\nyeah got to respect I do and I'll keep\nan eye on this and if anything changes\nwe'll do another video but in the\nmeanwhile I'm going to consider the\nPhantom time hypothesis while a\nfantastic story\ndebunked thanks so much for hanging out\nwith me today my name is A"
+          "charStart": 9321,
+          "charEnd": 9388,
+          "timeStart": 592.399,
+          "timeEnd": 598.519,
+          "quote": "vast majority of historians consider\nthis conspiracy to be debunked"
+        }
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.97,
+      "rationale": "Accurate characterization of the academic consensus. Phantom Time is a fringe hypothesis rejected by mainstream medievalists, astronomers, dendrochronologists, and Islamic/Chinese historians.",
+      "dependencies": [
+        { "target": "g5NG6mo1zGY:c_0001", "kind": "contradicts", "rationale": "[logical] Consensus rejection of the hypothesis undercuts the hypothesis itself." }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "denies",
+      "tags": ["consensus", "debunking", "verdict"]
+    },
+    {
+      "id": "g5NG6mo1zGY:c_0013",
+      "videoId": "g5NG6mo1zGY",
+      "text": "Charlemagne almost certainly existed but his biographical resume was exaggerated, with non-military accomplishments plausibly attributable to the talented advisors he kept around him.",
+      "kind": "historical",
+      "entities": [
+        "person:charlemagne"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "g5NG6mo1zGY",
+          "charStart": 7570,
+          "charEnd": 7653,
+          "timeStart": 486.039,
+          "timeEnd": 496.199,
+          "quote": "he almost certainly did\nbut was his resume exaggerated well it\nalmost certainly was"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "This is the host's verdict and it matches academic consensus. The hypothesis is treated by working medievalists as pseudohistory. The host's framing accurately summarizes the situation.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
+      "directTruth": 0.85,
+      "rationale": "Matches mainstream scholarship: Charlemagne's existence is unambiguous in primary sources, while hagiographic embellishments (notably by Einhard) are well-known. Many educational/legal reforms did come from his court scholars (Alcuin of York especially).",
       "dependencies": [
-        {
-          "target": "g5NG6mo1zGY:c_0001",
-          "kind": "contradicts",
-          "rationale": "Final verdict against the hypothesis."
-        }
-      ]
+        { "target": "g5NG6mo1zGY:c_0003", "kind": "contradicts", "rationale": "[debunks] Directly denies the claim that Charlemagne is pure fiction." }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "denies",
+      "tags": ["charlemagne", "verdict"]
     }
   ]
 }

@@ -1,338 +1,526 @@
 {
   "schemaVersion": 1,
   "transcriptId": "tgqAt6YN1jE",
-  "generatedAt": "2026-04-20T04:09:59.000Z",
+  "generatedAt": "2026-04-22T05:55:55.368Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "tgqAt6YN1jE:c_0001",
       "videoId": "tgqAt6YN1jE",
-      "text": "In June 2011, Swedish treasure hunters Peter Lindberg and Dennis Asberg of Ocean X discovered a 200-foot-wide circular sonar anomaly on the floor of the Gulf of Bothnia in the Baltic Sea, lying at the end of a long sliding-channel as if it had crashed and skidded into place.",
+      "text": "The Baltic Sea Anomaly is a 200-foot-wide circular object at the end of a channel on the seafloor, discovered by treasure hunters Peter Lindberg and Dennis Åsberg in June 2011.",
       "kind": "historical",
       "entities": [
-        "person:peter",
-        "person:peter and dennis",
-        "organization:oceanex team",
         "location:baltic sea",
-        "date_time:june 2011",
-        "technology:sonar"
+        "person:peter lindberg",
+        "person:dennis orberg",
+        "organization:ocean x",
+        "date_time:june 2011"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "tgqAt6YN1jE",
-          "charStart": 4241,
-          "charEnd": 4353,
-          "timeStart": 304.52,
-          "timeEnd": 314.28,
-          "quote": "in June 2011 divers Peter Lindberg and\nDennis orberg were treasure hunting in\nthe Gulf of bnia in the Baltic Sea"
+          "charStart": 5430,
+          "charEnd": 5560,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "m\nFalcon what' I\nsay it was 200 ft wide and was lying at\nthe end of a channel whatever the object\nwas it looked like it had hit th"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The basic event is real and dated correctly. Lindberg and Asberg's June 2011 sonar hit went viral as the 'Baltic Sea Anomaly.' The 60m / ~200ft scale is consistently reported. The 'skid track' interpretation is the team's framing, contested by sonar experts who attribute the apparent track to imaging artifacts (see later claim).",
-      "hostStance": "asserts"
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "The sonar-image discovery by Ocean X divers Lindberg and Åsberg in the Gulf of Bothnia on 19 June 2011 is a documented event. The ~60-meter disc-shaped sonar return with a ~300m drag-channel behind it is well-established.",
+      "hostStance": "asserts",
+      "tags": [
+        "baltic-sea-anomaly",
+        "discovery"
+      ]
     },
     {
       "id": "tgqAt6YN1jE:c_0002",
       "videoId": "tgqAt6YN1jE",
-      "text": "Edgar Cayce in a 1938 trance-reading predicted that physical evidence of Atlantis would be found near Bimini in the Bahamas — a prediction that came true 30 years later when divers in 1968 discovered the Bimini Road, a half-mile line of rectangular limestone monoliths.",
+      "text": "The Baltic Sea Anomaly is an artificial or man-made object — possibly a crashed spaceship — rather than a natural formation.",
+      "kind": "speculative",
+      "entities": [
+        "location:baltic sea anomaly",
+        "technology:ufo"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 5285,
+          "charEnd": 5410,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "ular object that didn't look natural\nit looked man-made well maybe not\nmanmade it looks like a UFO it looks\nlike the uh alumi"
+        }
+      ],
+      "confidence": 0.92,
+      "directTruth": 0.1,
+      "rationale": "Rock samples sent to a laboratory contained no metals and were determined to be common volcanic rock / glacial erratic. Sonar expert Hanumant Singh identified multiple sonar-equipment problems in the original image. Consensus among marine geologists is that the object is a natural glacial deposit.",
+      "dependencies": [
+        {
+          "target": "tgqAt6YN1jE:c_0001",
+          "kind": "presupposes",
+          "rationale": "The UFO reading requires the sonar discovery to be real in the first place."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "baltic-sea-anomaly",
+        "ufo",
+        "debunked"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0003",
+      "videoId": "tgqAt6YN1jE",
+      "text": "Laboratory analysis of the Baltic Sea Anomaly samples found only rock with no metals, ruling out an alien spaceship.",
+      "kind": "empirical",
+      "entities": [
+        "organization:ocean x",
+        "location:baltic sea anomaly"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 23770,
+          "charEnd": 23885,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "and sent them to a lab it was just rock\nno Metals detected at all so that rules\nout an alien ship The Rock was foun"
+        }
+      ],
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "Samples sent to Volodya Kurtev (Stockholm University) and other labs returned igneous/volcanic rock identifications. 'No metals, therefore not a spaceship' is a valid falsification of the man-made-spacecraft reading.",
+      "dependencies": [
+        {
+          "target": "tgqAt6YN1jE:c_0002",
+          "kind": "contradicts",
+          "rationale": "[debunks] Lab result directly falsifies the man-made/UFO interpretation of the sonar target."
+        }
+      ],
+      "hostStance": "denies",
+      "tags": [
+        "baltic-sea-anomaly",
+        "lab-analysis",
+        "debunking"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0004",
+      "videoId": "tgqAt6YN1jE",
+      "text": "As of 2020, experts believe the Baltic Sea Anomaly is a piece of volcanic rock pushed into place by a glacier, explaining the channel behind it.",
+      "kind": "empirical",
+      "entities": [
+        "location:baltic sea anomaly"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 26670,
+          "charEnd": 26790,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": " is a\npiece of volcanic rock that was pushed\nin place by a gler that's why there's a\nchannel behind it now everyone admi"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The mainstream geological consensus (Volker Brüchert and others) is that the feature is a glacial dropstone or moraine remnant. Ice-age glaciers scoured the Baltic floor ~10,000 years ago; the drag channel is consistent with glacial bulldozing or post-glacial rebound motion, not with a crashed craft.",
+      "dependencies": [
+        {
+          "target": "tgqAt6YN1jE:c_0002",
+          "kind": "contradicts",
+          "rationale": "[alternative] Glacial-erratic mechanism provides a mundane explanation that obviates any UFO reading."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "baltic-sea-anomaly",
+        "glacial-geology",
+        "consensus"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0005",
+      "videoId": "tgqAt6YN1jE",
+      "text": "Sonar expert Hanumant Singh analyzed the original image and identified three problems — electrical crosstalk, signal dropouts, and uncalibrated edges — undermining its reliability.",
+      "kind": "empirical",
+      "entities": [
+        "person:hanumat singh",
+        "location:baltic sea anomaly"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 24755,
+          "charEnd": 24890,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": " reflections are caused\nby electrical cross talk this means the\nsonar wasn't wired properly sing calls\nthis strike one and he has more "
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "Hanumant Singh (WHOI senior scientist in underwater acoustics) publicly critiqued the sonar image's quality on exactly these grounds. The critique is technically sound — side-scan sonar artifacts (reflection, dropout, gray-zones-at-edges) are well-understood failure modes.",
+      "dependencies": [
+        {
+          "target": "tgqAt6YN1jE:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If the source image is unreliable, the inference that the target is geometric/artificial collapses."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "sonar",
+        "critique",
+        "technical"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0006",
+      "videoId": "tgqAt6YN1jE",
+      "text": "In 1938 Edgar Cayce predicted that evidence of the lost city of Atlantis would be found in Bimini in the Bahamas.",
       "kind": "historical",
       "entities": [
         "person:edgar casey",
-        "person:casey",
         "location:atlantis",
         "location:bahamas",
-        "location:bimy",
+        "date_time:1938"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 8550,
+          "charEnd": 8680,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "nd\nnation in the Bahamas he predicted that\nevidence of Atlantis would be found\nthere specifically Al he said evidence\nof Atlantis "
+        }
+      ],
+      "confidence": 0.94,
+      "directTruth": 0.75,
+      "rationale": "Cayce's Reading 364 and related readings from the 1930s-40s do reference Bimini as a site of Atlantean remnants. The 'prediction' is genuine as a historical-document claim — Cayce's followers did publish these texts. Whether the prediction 'came true' via Bimini Road is a separate, contested claim (see claim 7).",
+      "hostStance": "asserts",
+      "tags": [
+        "atlantis",
+        "cayce",
+        "prediction"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0007",
+      "videoId": "tgqAt6YN1jE",
+      "text": "Bimini Road — a half-mile line of rectangular limestone blocks discovered off Bimini in 1968 — is a remnant of Atlantis and proves Atlanteans had advanced construction technology.",
+      "kind": "speculative",
+      "entities": [
         "location:bimin road",
-        "location:bimy road",
+        "location:atlantis",
+        "organization:atlanteans",
         "date_time:1968"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "tgqAt6YN1jE",
-          "charStart": 8442,
-          "charEnd": 8574,
-          "timeStart": 585,
-          "timeEnd": 598.1600000000001,
-          "quote": "during Edgar Casey's psychic\nreading he confirmed that Atlantis was a\nreal place he said it was a large island\nnation in the Bahamas"
-        },
-        {
-          "transcriptId": "tgqAt6YN1jE",
-          "charStart": 8753,
-          "charEnd": 8918,
-          "timeStart": 606.519,
-          "timeEnd": 622.36,
-          "quote": "in 1968 divers were exploring the\narea of bimin when they saw something on\nthe ocean floor that stood out from the\nsurrounding landscape it was a series of\nmonoliths"
+          "charStart": 9130,
+          "charEnd": 9260,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "a road bimin\nroad extends for half a mile during the\nlast ice age the Earth's sea level was\n300 ft lower the islands of the Bahama"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.5,
-      "rationale": "Cayce did predict in 1938-40 readings that 'a portion of the temples may yet be discovered, under the slime of ages and sea water, near Bimini' and gave a 1968-69 timeframe. The Bimini Road was discovered by Manson Valentine in September 1968. So the 'prediction-came-true' framing is real — but mainstream geology since 1980 (Eugene Shinn, Mahlon Ball) has identified the Bimini Road as natural beachrock that fractures into rectangular blocks at right angles via tafoni weathering. So the prediction matched a real find, but the find isn't an Atlantean ruin.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "tgqAt6YN1jE:c_0003",
-      "videoId": "tgqAt6YN1jE",
-      "text": "Christopher Columbus's ship's log records that on October 11, 1492 — the night before first landfall in the New World — he and Pedro Gutiérrez observed mysterious lights moving up and down in the water for four hours, the earliest recorded USO sighting in what is now called the Bermuda Triangle.",
-      "kind": "historical",
-      "entities": [
-        "person:columbus",
-        "location:bermuda triangle",
-        "date_time:1492"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "tgqAt6YN1jE",
-          "charStart": 14892,
-          "charEnd": 15010,
-          "timeStart": 1029.24,
-          "timeEnd": 1042.52,
-          "quote": "Columbus made his first\nlandfall the next day which means he had\nhis UFO sighting while he was in the\nBermuda Triangle"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.55,
-      "rationale": "Columbus's journal entry for October 11, 1492 (paraphrased by Las Casas) really does mention a candle-like light spotted from the Santa Maria. The historical consensus reads it as a torch on a Lucayan canoe or shoreline; Columbus himself awarded a reward for the first sighting of land based partly on it. The 'UFO/USO' framing is dramatic license. Calling it the Bermuda Triangle is anachronistic — that label is mid-20th-century and the boundaries shift to fit any incident.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "tgqAt6YN1jE:c_0004",
-      "videoId": "tgqAt6YN1jE",
-      "text": "Former employees of the Navy's secret AUTEC base in the Bahamas (often called 'the Navy's Area 51') report mile-wide craft silently emerging from the ocean producing no sound, waves, or splash — a propulsion characteristic that defies known physics.",
-      "kind": "speculative",
-      "entities": [
-        "facility:ach",
-        "facility:base",
-        "facility:the base",
-        "organization:navy",
-        "location:bahamas",
-        "location:bermuda triangle",
-        "organization:usos"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "tgqAt6YN1jE",
-          "charStart": 16322,
-          "charEnd": 16461,
-          "timeStart": 1143.72,
-          "timeEnd": 1156.7199999999998,
-          "quote": "former employees of ACH base have\nreported mile wide craft silently\nemerging from the sea they create no\nsound they make no waves or Splash"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.15,
-      "rationale": "AUTEC (Atlantic Undersea Test and Evaluation Center) is a real Navy facility on Andros Island in the Bahamas, opened 1966, and there are second-hand and anonymous USO claims associated with it. The 'mile-wide silent craft' detail is from a small number of self-identified former-employee witnesses with no corroborating sensor data publicly released. As stated, this is single-source-class testimony amplified through the UFO community.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "tgqAt6YN1jE:c_0005",
-      "videoId": "tgqAt6YN1jE",
-      "text": "Cuban ufologist Maximillien de Lafayette claims a worldwide undersea network of alien tunnels connects 12 large bases — including AUTEC, Mount Hayes in Alaska, the Baltic Sea, and the Bermuda Triangle — through which UAPs travel.",
-      "kind": "speculative",
-      "entities": [
-        "person:maximilan de lafette",
-        "organization:usos",
-        "location:bermuda triangle",
-        "location:baltic sea",
-        "location:mount hayes"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "tgqAt6YN1jE",
-          "charStart": 19210,
-          "charEnd": 19306,
-          "timeStart": 1350.96,
-          "timeEnd": 1359.72,
-          "quote": "Cuban ufologist maximilan de lafette is\na leading proponent of the undersea\nalien tunnels theory"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.05,
-      "rationale": "Maximillien de Lafayette is a real and prolific French-American author who claims to have ex-military and ex-NASA sources for his elaborate undersea-base maps. His sources are uncheckable, his books are self-published, and he overlaps with the Anunnaki/contactee literature. There is no independent corroboration for the 12-base, tunnel-network claim.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "tgqAt6YN1jE:c_0006",
-      "videoId": "tgqAt6YN1jE",
-      "text": "An anonymous 4chan post by a self-identified former DoD contractor claims a Bermuda Triangle alien base, possibly 4,000-plus years old, is a UFO construction facility run by AI that recycles raw materials into mission-specific craft, and that the US military deliberately steers around it.",
-      "kind": "speculative",
-      "entities": [
-        "location:bermuda triangle",
-        "facility:base",
-        "facility:alien base",
-        "technology:ufos"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "tgqAt6YN1jE",
-          "charStart": 22856,
-          "charEnd": 22941,
-          "timeStart": 1589.88,
-          "timeEnd": 1598.919,
-          "quote": "this whistleblower claims\nthat the aliens are the Grays and\nthey're not fully sension"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.02,
-      "rationale": "4chan posts have essentially zero evidentiary weight no matter how internally consistent. The claim is unfalsifiable (movable base, military silence used as confirmation), and the framing checks the boxes of every modern UFO trope (greys, AI drones, nuclear-weapon overseers). The host himself flags it as not-evidence in his verdict.",
-      "hostStance": "uncertain"
-    },
-    {
-      "id": "tgqAt6YN1jE:c_0007",
-      "videoId": "tgqAt6YN1jE",
-      "text": "Lab analysis of the rock samples Ocean X chipped from the Baltic Sea Anomaly returned only volcanic stone with no metals, ruling out the alien-spacecraft hypothesis; sonar expert Hanumant Singh further showed the original 2011 image had three serious imaging defects (electrical crosstalk, signal dropouts, miscalibrated edges).",
-      "kind": "empirical",
-      "entities": [
-        "organization:oceanex team",
-        "person:peter",
-        "person:peter and dennis",
-        "location:baltic sea",
-        "technology:sonar"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "tgqAt6YN1jE",
-          "charStart": 23692,
-          "charEnd": 23867,
-          "timeStart": 1643.919,
-          "timeEnd": 1658.6789999999999,
-          "quote": "Peter and Dennis from Ocean X brought\nup samples of of the Baltic Sea anomaly\nand sent them to a lab it was just rock\nno Metals detected at all so that rules\nout an alien ship"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "True. Geologists analyzing the recovered samples (notably Volker Brüchert at Stockholm University in 2012) identified the rock as glacial moraine material — limonite, gabbro, granite — consistent with debris dropped at the end of the last ice age. The sonar critique attributed to Singh is also valid: the 'spaceship' shape closely matches known sonar-artifact patterns. The explanation is mundane.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
+      "confidence": 0.92,
+      "directTruth": 0.1,
+      "rationale": "The mainstream geological view is that Bimini Road is natural beach rock (tufa-like carbonate cemented sediment) that fractures into rectangular jointed blocks — documented by Calvert & Dana (1980) and Shinn et al. The 'remnant of Atlantis' reading has no corroborating archaeological evidence (no artifacts, no pottery, no tools).",
       "dependencies": [
-        { "target": "tgqAt6YN1jE:c_0001", "kind": "contradicts", "rationale": "Replaces the alien-craft framing with a mundane glacial-rock explanation." }
+        {
+          "target": "tgqAt6YN1jE:c_0006",
+          "kind": "supports",
+          "rationale": "Bimini Road discovery is cited as the fulfilled Cayce prophecy."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "atlantis",
+        "bimini-road",
+        "contested"
       ]
     },
     {
       "id": "tgqAt6YN1jE:c_0008",
       "videoId": "tgqAt6YN1jE",
-      "text": "The mainstream geological consensus is that Bimini Road is natural beachrock that fractured into rectangular blocks via ordinary weathering — there is no way to date the rock and no associated artifacts, so its connection to Atlantis remains unprovable.",
+      "text": "The mainstream view is that Bimini Road is just beach rock that happened to arrange itself in a perfect half-mile line, not an artificial structure.",
       "kind": "empirical",
       "entities": [
-        "location:bimin road",
-        "location:bimy road",
-        "location:bimy",
-        "location:atlantis"
+        "location:bimin road"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "tgqAt6YN1jE",
-          "charStart": 27730,
-          "charEnd": 27894,
-          "timeStart": 1883.279,
-          "timeEnd": 1896.36,
-          "quote": "as for bimy Road the mainstream view\nis it's a natural formation it's just\nbeach rock that happened to arrange\nitself in that way in a perfect line\nhalf a mile long"
+          "charStart": 27773,
+          "charEnd": 27900,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "s a natural formation it's just\nbeach rock that happened to arrange\nitself in that way in a perfect line\nhalf a mile long well "
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The Shinn / Ball / Gifford 1980 study is the still-standard geological reading. Calcium-carbonate beachrock characteristically fractures along orthogonal joints, producing the appearance of cyclopean masonry. No mortar, no quarry marks, no associated artifacts have been found. The host correctly summarizes the mainstream view, even while expressing personal skepticism of it.",
-      "hostStance": "uncertain",
-      "inVerdictSection": true,
+      "confidence": 0.96,
+      "directTruth": 0.8,
+      "rationale": "Petrographic analysis (Shinn et al. 1978, Gifford & Ball 2016) confirmed the blocks are beachrock — carbonate-cemented sand — that fractured along natural orthogonal joints during Holocene sea-level rise. The host himself reports but rhetorically dismisses this view.",
       "dependencies": [
-        { "target": "tgqAt6YN1jE:c_0002", "kind": "contradicts", "rationale": "Undermines the 'evidence-of-Atlantis' framing of the Cayce-prediction setup." }
+        {
+          "target": "tgqAt6YN1jE:c_0007",
+          "kind": "contradicts",
+          "rationale": "[alternative] Beachrock-and-jointing provides a natural mechanism that makes the Atlantis reading unnecessary."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "bimini-road",
+        "geology",
+        "mainstream"
       ]
     },
     {
       "id": "tgqAt6YN1jE:c_0009",
       "videoId": "tgqAt6YN1jE",
-      "text": "Former Navy oceanographer Admiral Tim Gallaudet has publicly endorsed an underwater scan near Catalina Island as a possible UAP base entrance worth investigating, lending unusually senior official weight to USO disclosure claims.",
+      "text": "Christopher Columbus saw an unidentified submerged object (USO) — a light glimmering at a distance, vanishing and reappearing — on 11 October 1492 while in the Bermuda Triangle.",
       "kind": "historical",
       "entities": [
-        "person:tim gallet",
-        "person:admiral",
-        "person:admiral galludet",
-        "location:catalina island",
-        "organization:navy",
-        "organization:usos"
+        "person:christopher columbus",
+        "location:bermuda triangle",
+        "date_time:october 11th 10 p.m."
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "tgqAt6YN1jE",
-          "charStart": 29197,
-          "charEnd": 29312,
-          "timeStart": 1971.24,
-          "timeEnd": 1983.3990000000001,
-          "quote": "Tim gallet a former Admiral\nwho is one of the Navy's top\noceanography experts says this scan is\nworth investigating"
+          "charStart": 14515,
+          "charEnd": 14640,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "ntry\nthat stands\nout 1492 October 11th 10 p.m. I and\nPedro Gutierrez while on the deck of the\nSanta Maria observed a light gl"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Tim Gallaudet is a real retired Rear Admiral and former NOAA acting administrator who has publicly called for serious USO investigation, co-authored papers in Sol Foundation publications on UAP transmedium phenomena, and discussed the Catalina-area sonar imagery on podcasts. Whether what he saw really is a base is unresolved, but his endorsement and credentials are accurately described.",
+      "confidence": 0.93,
+      "rationale": "Columbus's log entry for 11 Oct 1492 mentions a light 'like a small wax candle rising and falling' seen before landfall — a real diary entry. Historians attribute it variously to natives' fires, bioluminescent plankton, or swamp gas; the 'USO' reinterpretation is modern ufology. No directTruth because the document is real but its ufological reading is unverifiable.",
+      "dependencies": [
+        {
+          "target": "tgqAt6YN1jE:c_0010",
+          "kind": "supports",
+          "rationale": "Columbus anecdote establishes historical precedent for underwater-light sightings near the Bermuda Triangle region."
+        }
+      ],
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "tags": [
+        "columbus",
+        "uso",
+        "historical-document"
+      ]
     },
     {
       "id": "tgqAt6YN1jE:c_0010",
       "videoId": "tgqAt6YN1jE",
-      "text": "Congress passed a 2024 defense bill containing a UAP disclosure amendment authored by Republican Tim Burchett, but the Pentagon successfully stripped the substantive disclosure language out before passage — with both parties signing off — so meaningful disclosure remains blocked.",
-      "kind": "historical",
+      "text": "Former employees of the Navy's AUTEC facility in the Bahamas have reported mile-wide craft silently emerging from the sea, creating no sound, waves, or splash.",
+      "kind": "speculative",
       "entities": [
-        "facility:pentagon",
-        "person:tim burett",
-        "role:congressman",
-        "law_or_policy:uap disclosure bill",
-        "organization:congress"
+        "facility:ach",
+        "organization:navy",
+        "location:bahamas"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "tgqAt6YN1jE",
-          "charStart": 30166,
-          "charEnd": 30239,
-          "timeStart": 2033.08,
-          "timeEnd": 2041.559,
-          "quote": "the Pentagon stripped all the\nlanguage regarding disclosure from the\nbill"
+          "charStart": 16335,
+          "charEnd": 16455,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "ees of ACH base have\nreported mile wide craft silently\nemerging from the sea they create no\nsound they make no waves or "
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "True in substance. The 2023 NDAA originally included Senator Schumer's UAP Disclosure Act language modeled on the JFK Records Act, with eminent-domain authority for the federal government to recover non-human-intelligence-related materials. The conference committee gutted those provisions before final passage in December 2023. Burchett did call out the result as the host quotes. The 'uniparty' framing is editorial but the legislative timeline is accurate.",
+      "confidence": 0.92,
+      "rationale": "AUTEC is a real Navy underwater-weapons-testing facility in the Bahamas. 'Former employee testimony' of mile-wide silent craft is anecdotal and uncorroborated — no photographs, instruments, or on-record insiders. Cannot verify, no basis for directTruth.",
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "tags": [
+        "autec",
+        "uso",
+        "anecdotal"
+      ]
     },
     {
       "id": "tgqAt6YN1jE:c_0011",
       "videoId": "tgqAt6YN1jE",
-      "text": "The host's bottom-line position: the Pentagon is not even pretending to be curious about UAPs because it already knows what they are; the lack of follow-up investigation is more telling than any single sighting.",
-      "kind": "opinion",
+      "text": "Cuban ufologist Maximillien de Lafayette claims there are exactly 12 alien bases worldwide connected by a vast network of undersea tunnels.",
+      "kind": "speculative",
       "entities": [
-        "facility:pentagon",
-        "technology:ufos",
-        "organization:usos"
+        "person:maximilan de lafette"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "tgqAt6YN1jE",
-          "charStart": 31342,
-          "charEnd": 31439,
-          "timeStart": 2106.359,
-          "timeEnd": 2117.0989999999997,
-          "quote": "I think the\nreason for this lack of curiosity is\nclear why be curious about something you\nalready"
+          "charStart": 19385,
+          "charEnd": 19515,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "s a vast\nnetwork of tunnels beneath the seabed\nuaps use these to move quickly from one\npart of the earth to the other within\nthis "
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "This is the host's interpretation, not a fact. The Pentagon's defensible alternative readings are: (1) the agency really doesn't think there's much there; (2) classification protects sensitive *terrestrial* programs (adversary aircraft, our own counter-drone tech) that get conflated with UAP; (3) bureaucratic inertia. 'They already know' is a strong inference unsupported by what's currently public.",
+      "confidence": 0.9,
+      "rationale": "De Lafayette is a self-published author of ufology books, not a verifiable intelligence source. His 'military and NASA sources' are unnamed. The undersea-tunnel-network claim has no supporting geological, acoustic, or satellite evidence. No basis for directTruth.",
       "hostStance": "asserts",
-      "inVerdictSection": true,
+      "tags": [
+        "uso",
+        "underwater-bases",
+        "speculation"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0012",
+      "videoId": "tgqAt6YN1jE",
+      "text": "An anonymous 4chan poster claiming to be a former DoD contractor alleges the US military believes an alien base in the Bermuda Triangle dates back to at least 4,000 BC.",
+      "kind": "speculative",
+      "entities": [
+        "location:bermuda triangle"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 21340,
+          "charEnd": 21460,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "base goes back to at least\n4,000 BC it might even be older though\nhe says there's an internal debate on\nthis so what the"
+        }
+      ],
+      "confidence": 0.92,
+      "directTruth": 0.05,
+      "rationale": "Anonymous 4chan posts are among the lowest-credibility source types available. No verifiable credentials, no physical evidence, and the claim mixes multiple conspiracy tropes (Greys, clones, anti-gravity). The host concedes 'it could all be a hoax'. Near-zero directTruth.",
       "dependencies": [
-        { "target": "tgqAt6YN1jE:c_0010", "kind": "elaborates", "rationale": "Reads the disclosure-bill gutting as evidence of cover-up rather than process." }
+        {
+          "target": "tgqAt6YN1jE:c_0011",
+          "kind": "elaborates",
+          "rationale": "4chan claim provides specific age and location details for the underwater-bases thesis de Lafayette also promotes."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "4chan",
+        "conspiracy",
+        "low-credibility"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0013",
+      "videoId": "tgqAt6YN1jE",
+      "text": "The Pentagon stripped all language regarding disclosure from the UAP Disclosure Act defense bill before passage.",
+      "kind": "historical",
+      "entities": [
+        "facility:pentagon",
+        "law_or_policy:uap disclosure bill"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 30145,
+          "charEnd": 30275,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "ut did you know\nthat the Pentagon stripped all the\nlanguage regarding disclosure from the\nbill now as always they can remove\nanyth"
+        }
+      ],
+      "confidence": 0.94,
+      "directTruth": 0.75,
+      "rationale": "The UAP Disclosure Act amendment (Schumer-Rounds, 2023 NDAA) was significantly weakened in conference committee — the eminent-domain provisions and review-board teeth were removed. Attributing this to 'the Pentagon' specifically is partly correct (DoD lobbied against) but Congressional leadership (Mike Turner, Mike Rogers) also opposed the full text. Broadly accurate.",
+      "hostStance": "asserts",
+      "tags": [
+        "disclosure",
+        "pentagon",
+        "legislation"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0014",
+      "videoId": "tgqAt6YN1jE",
+      "text": "Former Admiral Tim Gallaudet, a top Navy oceanography expert, says a sonar scan off Catalina Island has no natural explanation and could be an entrance to an underwater base.",
+      "kind": "opinion",
+      "entities": [
+        "person:tim gallet",
+        "location:catalina island"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 29175,
+          "charEnd": 29305,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "e coast of\nCalifornia Tim gallet a former Admiral\nwho is one of the Navy's top\noceanography experts says this scan is\nworth invest"
+        }
+      ],
+      "confidence": 0.93,
+      "rationale": "Tim Gallaudet (retired Rear Admiral, former NOAA acting administrator) has publicly called for USO/UAP investigation and commented on the Catalina scan. His credentials are real. Whether the specific image 'has no natural explanation' is his subjective take, not an established finding — no directTruth on the underlying opinion.",
+      "dependencies": [
+        {
+          "target": "tgqAt6YN1jE:c_0010",
+          "kind": "supports",
+          "rationale": "Admiral-level testimony reinforces the broader pattern of credentialed-source USO claims alongside AUTEC."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "gallaudet",
+        "catalina",
+        "testimony"
+      ]
+    },
+    {
+      "id": "tgqAt6YN1jE:c_0015",
+      "videoId": "tgqAt6YN1jE",
+      "text": "Ocean X was accused of hoaxing the Baltic Sea Anomaly after their follow-up expedition had convenient equipment failures.",
+      "kind": "historical",
+      "entities": [
+        "organization:oceanex team",
+        "location:baltic sea anomaly"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "tgqAt6YN1jE",
+          "charStart": 25470,
+          "charEnd": 25600,
+          "timeStart": 0,
+          "timeEnd": 0,
+          "quote": "ked\nand accused of hoaxing the whole thing\nit was suspicious that when they went\nback the following year they had\nequipment failur"
+        }
+      ],
+      "confidence": 0.94,
+      "directTruth": 0.6,
+      "rationale": "Ocean X was publicly accused of hoaxing by skeptic bloggers and some media outlets after the 2012 follow-up dive yielded inconclusive 3D imaging plus unexplained sonar failures. The accusation is documented; whether the team actually hoaxed vs. genuinely had bad luck is not settled.",
+      "dependencies": [
+        {
+          "target": "tgqAt6YN1jE:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If the follow-up dive was (or appeared) hoaxed, the original discovery's credibility is further weakened."
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "oceanex",
+        "hoax-accusation"
       ]
     }
   ]

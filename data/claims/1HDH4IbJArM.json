@@ -1,21 +1,20 @@
 {
   "schemaVersion": 1,
   "transcriptId": "1HDH4IbJArM",
-  "generatedAt": "2026-04-20T02:45:37.512Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-agent6",
   "claims": [
     {
       "id": "1HDH4IbJArM:c_0001",
       "videoId": "1HDH4IbJArM",
-      "text": "On November 23, 1944, a B-17 'Flying Fortress' bomber crash-landed in a field near a Royal Air Force base at Kortenberg, Belgium with no crew on board, three engines still running, parachutes intact, and partially-eaten chocolate bars in the fuselage — leading to its enduring 'Phantom Fortress' / 'Ghost Ship' legend in the WWII press.",
+      "text": "On November 23, 1944, a B-17 landed itself at a Royal Air Force base in Kortenberg, Belgium, with no crew on board.",
       "kind": "historical",
       "entities": [
         "date_time:november 23rd 1944",
-        "location:kortenberg belgium",
         "facility:the royal air force base",
-        "person:major crisp"
+        "location:kortenberg belgium"
       ],
-      "relationships": [],
+      "relationships": ["r_0001", "r_0003"],
       "evidence": [
         {
           "transcriptId": "1HDH4IbJArM",
@@ -24,197 +23,317 @@
           "timeStart": 56,
           "timeEnd": 65.36,
           "quote": "november 23rd 1944 the ground crew at\nthe royal air force base in kortenberg\nbelgium looked to the sky"
-        },
-        {
-          "transcriptId": "1HDH4IbJArM",
-          "charStart": 3366,
-          "charEnd": 3417,
-          "timeStart": 218.4,
-          "timeEnd": 223.76,
-          "quote": "the major shrugged and said\nthe plane landed itself"
-        },
-        {
-          "transcriptId": "1HDH4IbJArM",
-          "charStart": 3558,
-          "charEnd": 3624,
-          "timeStart": 233.28,
-          "timeEnd": 242.07999999999998,
-          "quote": "the press called\nthe plane the phantom fortress and the\nghost ship"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The Phantom Fortress incident really did happen and was reported in 'Stars and Stripes' shortly after Nov 23, 1944. Major John Crisp's incident report at the RAF airfield near Brussels (Kortenberg) is in U.S. and U.K. military archives. The B-17 (probably aircraft #44-83387 from the 91st Bomb Group, though identification varies in different accounts) did land essentially intact with no crew aboard. The half-eaten chocolate bars are the contested embellishment — early Crisp reports do mention partly-consumed food, though the host correctly notes (c_0006) that some details may be later legendary additions.",
+      "directTruth": 0.8,
+      "rationale": "The core crewless-landing incident is the documentary anchor of the episode and is corroborated at video end by detailed records; date and place are specific and match published accounts of the 91st Bomber Group B-17 in Belgium.",
+      "tags": ["wwii", "phantom-fortress", "b-17"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
       "id": "1HDH4IbJArM:c_0002",
       "videoId": "1HDH4IbJArM",
-      "text": "All 10 crew members were located alive within days at a nearby Allied air base in Belgium, having parachuted out behind Allied lines after pilot Lt. Harold R. DeBolt's B-17 lost two engines to flak over Merseburg, Germany — establishing definitively that the 'no crew' mystery had a mundane sequence-of-events solution.",
+      "text": "Major John Crisp entered the aircraft and found it completely empty of crew.",
       "kind": "historical",
       "entities": [
-        "person:de bolt",
-        "person:the bolt",
-        "location:mursburg",
-        "location:mersburg",
-        "facility:oil refineries"
+        "person:major john crisp",
+        "person:john crisp"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "1HDH4IbJArM",
-          "charStart": 4065,
-          "charEnd": 4146,
-          "timeStart": 263.44,
-          "timeEnd": 272,
-          "quote": "all 10 men were found in\nperfect health they were at a nearby air\nbase in belgium"
-        },
-        {
-          "transcriptId": "1HDH4IbJArM",
-          "charStart": 4147,
-          "charEnd": 4188,
-          "timeStart": 267.759,
-          "timeEnd": 274.88000000000005,
-          "quote": "lieutenant harold r de\nbolt was the pilot"
-        },
-        {
-          "transcriptId": "1HDH4IbJArM",
-          "charStart": 4217,
-          "charEnd": 4291,
-          "timeStart": 272,
-          "timeEnd": 282.56,
-          "quote": "his b-17 was flying a mission\nover mursburg germany bombing oil\nrefineries"
+          "charStart": 2202,
+          "charEnd": 2307,
+          "timeStart": 146.239,
+          "timeEnd": 158.959,
+          "quote": "major john crisp slowly\napproached the plane major crisp drew\nhis sidearm opened the hatch and climbed\nin"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Lt. Harold R. DeBolt's B-17 (specific tail number per various sources) of the 91st Bomb Group did fly an Eighth Air Force bombing run on the Leuna-Merseburg synthetic oil refineries (a top-priority strategic target) on Nov 21, 1944, suffering battle damage. The crew successfully bailed out behind Allied lines in Belgium and were collected within days. The Merseburg refineries were among the most heavily defended targets in Germany — postwar analyses confirm. Standard 8th Air Force operational history.",
-      "hostStance": "asserts"
+      "confidence": 0.92,
+      "directTruth": 0.8,
+      "rationale": "Crisp is named as the officer of record; host restates this corroborated at end of episode. No reason to doubt the name or action — standard WWII report.",
+      "tags": ["wwii", "john-crisp", "eyewitness"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "1HDH4IbJArM:c_0001",
+          "kind": "supports",
+          "rationale": "Crisp's empty-plane discovery is the primary evidence for the crewless-landing claim."
+        }
+      ]
     },
     {
       "id": "1HDH4IbJArM:c_0003",
       "videoId": "1HDH4IbJArM",
-      "text": "Merseburg ('dreaded Merseburg') was one of the most defended targets of the European air war — having more than twice the anti-aircraft batteries of Berlin, with roughly 160 B-17s shot down attempting to bomb its synthetic oil refineries — making it a high-loss-rate destination that helps explain DeBolt's plane's badly damaged condition.",
-      "kind": "historical",
+      "text": "The parachutes were still on board and food had been left half-eaten, as if the crew had simply vanished mid-flight.",
+      "kind": "empirical",
       "entities": [
-        "location:mursburg",
-        "location:berlin",
-        "location:mersburg",
-        "facility:oil refineries",
-        "event:german anti-aircraft fire"
+        "location:the fuselage",
+        "person:major john crisp"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "1HDH4IbJArM",
-          "charStart": 4392,
-          "charEnd": 4437,
-          "timeStart": 282.56,
-          "timeEnd": 290.71999999999997,
-          "quote": "almost 160\nb-17s were shot down over the city"
+          "charStart": 2927,
+          "charEnd": 3047,
+          "timeStart": 188.8,
+          "timeEnd": 198.64,
+          "quote": "parachutes were still there\nso the crew couldn't have bailed out\nfood was left half-eaten it was like\nthey just vanished"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.8,
-      "rationale": "The Merseburg-Leuna complex (IG Farben synthetic oil works) really was one of the most heavily defended targets of the European air war by mid-1944, with the highest concentration of 88mm Flak in Germany — sources cite 200-400+ guns at peak. The figure 'twice as many as Berlin' is plausible. The 160 B-17s shot down figure fits the published 8th Air Force loss rates for Merseburg-area missions during late 1944 (which were horrific — single-mission losses sometimes exceeded 10% of attacking force). The historical claim is solid.",
-      "hostStance": "asserts"
+      "confidence": 0.7,
+      "directTruth": 0.3,
+      "rationale": "Host himself explicitly disavows these creepy-factor details near the end ('the other aspects of the story like the half-eaten chocolate bars and the parachutes being intact were added to the story later'). Detail is part of the legend, not the documented event.",
+      "tags": ["phantom-fortress", "legend-embellishment"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
     },
     {
       "id": "1HDH4IbJArM:c_0004",
       "videoId": "1HDH4IbJArM",
-      "text": "The proximate explanation for the 'pilotless landing' is that DeBolt engaged the B-17's Sperry C-1 autopilot before bailing out (standard ditching protocol), and the lightly-loaded plane (after the crew bailed and equipment was jettisoned) glided down on a slow descent that happened by chance to end in an Allied field rather than a forest, sea, or village.",
+      "text": "All ten crew members were found alive and in perfect health at an Allied air base in Belgium a few days after the landing.",
+      "kind": "historical",
+      "entities": [
+        "quantity:all 10 men",
+        "location:belgium"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "1HDH4IbJArM",
+          "charStart": 4048,
+          "charEnd": 4146,
+          "timeStart": 261.04,
+          "timeEnd": 272,
+          "quote": "after\na few days all 10 men were found in\nperfect health they were at a nearby air\nbase in belgium"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Host presents this as the documentary resolution to the mystery; matches 91st BG records. No contested framing.",
+      "tags": ["wwii", "crew", "91st-bomber-group"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "1HDH4IbJArM:c_0005",
+      "videoId": "1HDH4IbJArM",
+      "text": "Mersburg, Germany had twice as many anti-aircraft guns as Berlin and downed almost 160 B-17s over the city.",
+      "kind": "historical",
+      "entities": [
+        "location:mursburg",
+        "location:berlin",
+        "quantity:almost 160 b-17s"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "1HDH4IbJArM",
+          "charStart": 4313,
+          "charEnd": 4437,
+          "timeStart": 276.96,
+          "timeEnd": 290.72,
+          "quote": "mursburg\nas it came to be known had twice as many\nanti-aircraft guns as berlin almost 160\nb-17s were shot down over the city"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Merseburg (the correct spelling) is well known in WWII historiography as a heavily defended oil-refinery target; host's ratio matches common accounts. Exact 160 figure is a round estimate.",
+      "tags": ["wwii", "merseburg", "anti-aircraft"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "1HDH4IbJArM:c_0006",
+      "videoId": "1HDH4IbJArM",
+      "text": "Before bailing out, pilot Harold De Bolt engaged the autopilot — standard protocol when ditching — which kept the plane level as it descended.",
       "kind": "empirical",
       "entities": [
+        "person:harold r de bolt",
         "technology:autopilot",
-        "person:de bolt",
-        "person:the bolt",
-        "law_or_policy:protocol",
-        "event:ditching"
+        "law_or_policy:protocol"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "1HDH4IbJArM",
           "charStart": 8602,
-          "charEnd": 8654,
+          "charEnd": 8714,
           "timeStart": 542.16,
-          "timeEnd": 548.5600000000001,
-          "quote": "before jumping out de bolt had engaged\nthe autopilot"
+          "timeEnd": 550.64,
+          "quote": "before jumping out de bolt had engaged\nthe autopilot which is protocol when\nditching the plane was moving slowly"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "B-17 Flying Fortresses were equipped with the Sperry C-1 autopilot from late 1943 onward, and engaging it before bailing was standard ditching protocol — both to keep the aircraft from spinning into a populated area and to give it the best chance of a flat-attitude crash. A trimmed B-17 with reduced load can glide for many miles on autopilot in calm air. The 'lucky touchdown in an open field' explanation is physically plausible and is what the official investigation concluded. Solid empirical/aviation reasoning.",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "This is the mundane mechanical explanation the host endorses. Engaging autopilot before bailout was a documented WWII ditching protocol on the B-17.",
+      "tags": ["b-17", "autopilot", "ditching-protocol"],
+      "inVerdictSection": true,
       "hostStance": "asserts"
     },
     {
-      "id": "1HDH4IbJArM:c_0005",
+      "id": "1HDH4IbJArM:c_0007",
       "videoId": "1HDH4IbJArM",
-      "text": "Eyewitness reports of the Phantom Fortress conflict with DeBolt's own account in detail (3 vs 2 engines running; pristine vs heavily damaged; parachute count) — illustrating how even short-time-frame WWII incident reports diverge significantly between observers, a baseline reliability issue for any 'mystery' built on eyewitness testimony.",
-      "kind": "empirical",
+      "text": "The landing of the empty bomber had a supernatural cause.",
+      "kind": "speculative",
       "entities": [
-        "person:de bolt",
-        "person:major crisp",
+        "person:eyewitnesses"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "1HDH4IbJArM",
+          "charStart": 6628,
+          "charEnd": 6715,
+          "timeStart": 417.52,
+          "timeEnd": 424.72,
+          "quote": "eyewitnesses didn't buy it either they\nfelt that something supernatural had\ntaken place"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.1,
+      "rationale": "Host surfaces the eyewitness supernatural interpretation specifically to reject it via mundane autopilot/conflation explanations in the verdict section. directTruth low because the claim is the thing being debunked.",
+      "tags": ["supernatural", "eyewitness", "phantom-fortress"],
+      "inVerdictSection": false,
+      "hostStance": "denies"
+    },
+    {
+      "id": "1HDH4IbJArM:c_0008",
+      "videoId": "1HDH4IbJArM",
+      "text": "Official investigators closed the case by attributing the crewless landing to luck.",
+      "kind": "historical",
+      "entities": [
         "organization:investigators"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "1HDH4IbJArM",
-          "charStart": 6240,
-          "charEnd": 6302,
-          "timeStart": 393.28,
-          "timeEnd": 400.639,
-          "quote": "investigators said they probably had\nextra parachutes on board"
+          "charStart": 6432,
+          "charEnd": 6518,
+          "timeStart": 405.12,
+          "timeEnd": 413.199,
+          "quote": "good luck\nthis explanation was enough to satisfy\ninvestigators and the case was closed"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.8,
-      "rationale": "The host's analytical point — that DeBolt and Crisp's reports differ on engine count and damage state, and that the official investigation handled this with the parsimonious 'extra parachutes / engine restarted / lucky landing' explanation — is well-supported by the discrepancies between the contemporaneous reports and DeBolt's debrief. This is a sound observation about eyewitness variability under stress, an established psychology-of-testimony finding (Loftus, Wells).",
+      "directTruth": 0.7,
+      "rationale": "Host describes the paper-trail outcome matter-of-factly; no contradicting evidence. That the investigators closed on 'good luck' is an easily-checked bureaucratic fact.",
+      "tags": ["wwii", "investigators", "case-closed"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "1HDH4IbJArM:c_0006",
+      "id": "1HDH4IbJArM:c_0009",
       "videoId": "1HDH4IbJArM",
-      "text": "The 'Phantom Fortress' legend is a composite of two real but separate B-17 incidents — the Nov 1944 DeBolt landing in Belgium AND a 1943 B-17 (the 'Cat o' Nine Tails') crash near a young John Gell's village in England — whose details (formation flight, partial sightings, after-the-fact memory) merged in retellings, with embellishments like Mary Celeste-style 'half-eaten food' added later.",
+      "text": "The phantom-fortress legend is actually two separate B-17 incidents conflated into one story.",
       "kind": "historical",
       "entities": [
-        "date_time:1943",
-        "person:john gell",
-        "person:john gill",
-        "location:roanoke island",
-        "location:village"
+        "event:world war ii"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "1HDH4IbJArM",
-          "charStart": 7131,
+          "charStart": 7095,
           "charEnd": 7198,
-          "timeStart": 450.4,
+          "timeStart": 448.319,
           "timeEnd": 460,
-          "quote": "in 1943 a b-17 crashed\nnear the home of a young boy named john\ngell"
+          "quote": "two stories that got\nmixed together in 1943 a b-17 crashed\nnear the home of a young boy named john\ngell"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "The host's two-incidents-merged thesis is consistent with the standard explanation in popular WWII air history sources (e.g., Steve Snyder's writings, Roger Freeman's 8th Air Force histories). The 'Cat o' Nine Tails' B-17 was a real plane in the 91st BG with documented crew bailout. The Mary Celeste-style food/parachute embellishments do tend to attach to abandoned-vessel legends (Marie Celeste 1872, Roanoke 1587 'Croatoan' carving with pots-on-fire). The cognitive 'memory reinforcement through retelling' argument is sound (Schacter, Roediger).",
+      "confidence": 0.85,
+      "directTruth": 0.7,
+      "rationale": "Host's verdict-section explanation; he provides specific dates/names for both incidents and draws a clean timeline separation. Plausible documentary claim; cannot verify independently from transcript alone.",
+      "tags": ["legend-origins", "phantom-fortress", "conflation"],
+      "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "1HDH4IbJArM:c_0001",
-          "kind": "elaborates"
+          "target": "1HDH4IbJArM:c_0007",
+          "kind": "contradicts",
+          "rationale": "[alternative] If the legend is just two real incidents conflated, no supernatural explanation is needed."
         }
       ]
     },
     {
-      "id": "1HDH4IbJArM:c_0007",
+      "id": "1HDH4IbJArM:c_0010",
       "videoId": "1HDH4IbJArM",
-      "text": "AJ's verdict: the supernatural Phantom Fortress legend is false, but what really happened — that a damaged unmanned B-17 set on autopilot glided down to a clean landing at an Allied airfield by chance — is itself remarkable enough that the documented mundane truth is more interesting than the ghost story.",
+      "text": "Repeated retelling of a story can cause a person's brain to form memories reinforcing details that were never experienced.",
+      "kind": "empirical",
+      "entities": [
+        "person:john gell"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "1HDH4IbJArM",
+          "charStart": 7973,
+          "charEnd": 8062,
+          "timeStart": 500.72,
+          "timeEnd": 510.4,
+          "quote": "tell the story\nenough times your brain can actually\nform memories to reinforce that story"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "Well-established finding in memory psychology (Loftus work on memory reconstruction and confabulation). Host's framing is informal but aligned with the science.",
+      "tags": ["memory", "confabulation", "psychology"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "1HDH4IbJArM:c_0009",
+          "kind": "supports",
+          "rationale": "Memory-reinforcement mechanism explains how John Gell's account absorbed details from the Phantom Fortress story."
+        }
+      ]
+    },
+    {
+      "id": "1HDH4IbJArM:c_0011",
+      "videoId": "1HDH4IbJArM",
+      "text": "Half-eaten food and intact parachutes are tropes borrowed from Mary Celeste / Roanoke-style legends and were added to the Phantom Fortress story later.",
+      "kind": "historical",
+      "entities": [
+        "location:roanoke island"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "1HDH4IbJArM",
+          "charStart": 9168,
+          "charEnd": 9298,
+          "timeStart": 572.8,
+          "timeEnd": 586,
+          "quote": "in legends like\nroanoke island or the mary celeste\ntables are set for dinner and food is\nleft half-eaten this really ups the\ncreep"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "Host argues the parachute/food details are embellishments rather than contemporaneous report entries; this is a reasonable folklore-accretion argument matching scholarly treatments of Mary Celeste.",
+      "tags": ["folklore", "legend-accretion", "mary-celeste"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "1HDH4IbJArM:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] Host directly debunks the parachute/half-eaten framing as post-hoc legend accretion."
+        }
+      ]
+    },
+    {
+      "id": "1HDH4IbJArM:c_0012",
+      "videoId": "1HDH4IbJArM",
+      "text": "Even stripped of the supernatural, a massive B-17 landing itself in an open field remains a genuinely impressive event.",
       "kind": "opinion",
       "entities": [
-        "technology:autopilot",
-        "person:de bolt"
+        "event:the landing"
       ],
       "relationships": [],
       "evidence": [
@@ -227,18 +346,16 @@
           "quote": "even without the supernatural aspect\nwhat actually happened that a massive\nb-17 landed gently on its own is still\namazing"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Verdict-section opinion. The 'true story is better than the legend' framing is the recurring AJ epistemic move. Not a falsifiable empirical claim; directTruth omitted because it's a value judgment. Supported by the empirical claims c_0001-c_0006.",
-      "hostStance": "asserts",
+      "confidence": 0.9,
+      "rationale": "Host's closing opinion — explicitly framed as his own take. Omitting directTruth because this is a value judgment ('amazing') rather than a testable proposition.",
+      "tags": ["verdict", "opinion", "b-17"],
       "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "1HDH4IbJArM:c_0004",
-          "kind": "supports"
-        },
-        {
           "target": "1HDH4IbJArM:c_0006",
-          "kind": "supports"
+          "kind": "elaborates",
+          "rationale": "Builds on the autopilot-protocol explanation to arrive at the final appraisal."
         }
       ]
     }

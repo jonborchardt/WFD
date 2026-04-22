@@ -1,152 +1,260 @@
 {
   "schemaVersion": 1,
   "transcriptId": "YGub8195Zus",
-  "generatedAt": "2026-04-20T03:35:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "YGub8195Zus:c_0001",
       "videoId": "YGub8195Zus",
-      "text": "Stuxnet, discovered in 2010, was the first publicly known computer worm designed to cause physical damage to industrial systems — orders of magnitude more sophisticated than any prior malware, with a 500 KB code base, four chained zero-day exploits and stolen valid digital certificates from JMicron and Realtek.",
-      "kind": "empirical",
+      "text": "Stuxnet was a computer virus discovered in 2010 that targeted control systems in factories, power plants, and nuclear reactors â€” 20 times more sophisticated than any malware previously recorded.",
+      "kind": "historical",
       "entities": [
         "technology:stuxnet",
         "organization:stuxnet",
         "date_time:2010",
-        "quantity:500 kilobytes",
-        "quantity:1.2 megabytes",
-        "technology:zero day exploit",
-        "technology:certificate",
-        "organization:j micron",
-        "organization:real tech"
+        "facility:power plants",
+        "facility:nuclear reactors"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
           "charStart": 0,
-          "charEnd": 98,
+          "charEnd": 180,
           "timeStart": 1.36,
-          "timeEnd": 10.879,
-          "quote": "in 2010 a computer virus was discovered\nin thousands of the control systems that\noperate factories"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 1523,
-          "charEnd": 1548,
-          "timeStart": 100.88,
-          "timeEnd": 104.56,
-          "quote": "stuxnet was 500 kilobytes"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 2701,
-          "charEnd": 2781,
-          "timeStart": 167.2,
-          "timeEnd": 176.64,
-          "quote": "it had valid\ncertificates\nstolen from two trusted sources j micron\nand real tech"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 4701,
-          "charEnd": 4745,
-          "timeStart": 292.72,
-          "timeEnd": 298.88,
-          "quote": "but stuxnet contained four zero day\nexploits"
+          "timeEnd": 17.84,
+          "quote": "in 2010 a computer virus was discovered\nin thousands of the control systems that\noperate factories\npower plants and nuclear reactors around\nthe world\nthis virus was 20 times more\ns"
         }
       ],
-      "confidence": 0.99,
-      "directTruth": 0.97,
-      "rationale": "All technically accurate. Stuxnet was discovered publicly by VirusBlokAda in June 2010 (the host's date). Symantec's W32.Stuxnet Dossier confirms ~500 KB compiled, four zero-days (LNK / .lnk file MS10-046, Print Spooler MS10-061, two privilege escalations), and stolen Realtek and JMicron code-signing certs. It is widely cited as the first weaponized cyber-physical malware."
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Stuxnet's 2010 discovery (by Belarusian firm VirusBlokAda) is documented fact, corroborated by Symantec's dossier and Kim Zetter's 'Countdown to Zero Day.' The '20 times more sophisticated' is rhetorical but the extreme sophistication is genuine â€” expert consensus places it as a step-change in malware.",
+      "tags": [
+        "stuxnet",
+        "2010",
+        "discovery"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
       "id": "YGub8195Zus:c_0002",
       "videoId": "YGub8195Zus",
-      "text": "Stuxnet specifically targeted Siemens programmable logic controllers (PLCs) running uranium-enrichment centrifuges at the Natanz facility in Iran — destroying over 1,000 IR-1 centrifuges and setting Iran's nuclear-enrichment program back by months to years.",
+      "text": "In January 2010, IAEA inspectors noticed that centrifuges at the Natanz uranium enrichment plant were tearing themselves apart hundreds at a time, and nobody could figure out why.",
+      "kind": "historical",
+      "entities": [
+        "facility:natanz uranium enrichment plant",
+        "location:natanz",
+        "facility:natanz",
+        "organization:international atomic energy agency",
+        "date_time:january 2010",
+        "technology:centrifuges",
+        "facility:centrifuges"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YGub8195Zus",
+          "charStart": 486,
+          "charEnd": 720,
+          "timeStart": 38.64,
+          "timeEnd": 55.04,
+          "quote": "natanz uranium\nenrichment plant in iraq\nthey noticed that the centrifuges which\nare used to enrich uranium gas\nwere tearing themselves apart one after\nanother hundreds of them\nnobody could figure out why not the\ninspectors not the ira"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Natanz centrifuge failures were reported by IAEA in late 2009-early 2010 and are documented in the IAEA director's reports of the period (though the host says 'iraq' â€” a transcript error; Natanz is in Iran). Centrifuge replacement rates spiked anomalously.",
+      "tags": [
+        "natanz",
+        "iaea",
+        "centrifuge-failures"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "YGub8195Zus:c_0003",
+      "videoId": "YGub8195Zus",
+      "text": "Stuxnet's code base was 500 KB uncompressed (1.2 MB decompressed) â€” far larger than typical malware of 10-20 KB.",
+      "kind": "empirical",
+      "entities": [
+        "technology:stuxnet",
+        "quantity:500 kilobytes",
+        "quantity:1.2 megabytes"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YGub8195Zus",
+          "charStart": 1530,
+          "charEnd": 1680,
+          "timeStart": 100.88,
+          "timeEnd": 114.32,
+          "quote": " was 500 kilobytes and\nuncompressed\nit was 1.2 megabytes that's a pretty\nlarge piece of code to go undetected\nthen analysts transferred stuxnet to a\nn"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Stuxnet's reported binary sizes track roughly with Symantec's analysis. Sizes of ~500KB-1.5MB are documented depending on modules. The order-of-magnitude contrast with typical contemporary malware is accurate.",
+      "tags": [
+        "stuxnet",
+        "code-size",
+        "technical"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "YGub8195Zus:c_0004",
+      "videoId": "YGub8195Zus",
+      "text": "Stuxnet was signed with valid digital certificates stolen from JMicron and Realtek â€” legitimate hardware driver companies whose signatures let the virus install silently.",
+      "kind": "empirical",
+      "entities": [
+        "technology:stuxnet",
+        "organization:j micron",
+        "organization:real tech",
+        "technology:certificate"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YGub8195Zus",
+          "charStart": 2750,
+          "charEnd": 2880,
+          "timeStart": 170.56,
+          "timeEnd": 183.36,
+          "quote": " sources j micron\nand real tech\nnow these companies make all kinds of\ndrivers for hard drives usb sticks\nsound cards tons of stuff"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Documented in Symantec's W32.Stuxnet dossier and widely confirmed. Stuxnet used stolen code-signing certificates from both Realtek Semiconductor (first variant) and JMicron (later variant), both based in Taiwan's Hsinchu science park. Both certificates were subsequently revoked.",
+      "tags": [
+        "stuxnet",
+        "certificate-theft",
+        "technical"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "YGub8195Zus:c_0005",
+      "videoId": "YGub8195Zus",
+      "text": "Stuxnet contained four zero-day exploits â€” unheard of before or since, given that cybersecurity firms typically find only 10-12 zero-days per year across 12 million viruses analyzed.",
+      "kind": "empirical",
+      "entities": [
+        "technology:stuxnet",
+        "technology:zero day exploit",
+        "quantity:zero days",
+        "quantity:12 million viruses"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YGub8195Zus",
+          "charStart": 4050,
+          "charEnd": 4210,
+          "timeStart": 253.2,
+          "timeEnd": 266.72,
+          "quote": "scovered\nis called a zero day exploit it's called\nthis because when a vulnerability is\nunknown to the software developer\nand microsoft and the anti-virus\ncommun"
+        },
+        {
+          "transcriptId": "YGub8195Zus",
+          "charStart": 4720,
+          "charEnd": 4900,
+          "timeStart": 292.72,
+          "timeEnd": 307.68,
+          "quote": "ed four zero day\nexploits\nthis is unheard of it never happened\nbefore and it hasn't happened since\neventually it was discovered that\nstuxnet wasn't trying to steal passwords\nor dat"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Stuxnet's four Windows zero-days (LNK vulnerability, print-spooler, two privilege escalations) are documented. Four zero-days in one malware sample was unprecedented in 2010 and remains exceptional. The 10-12/year figure is roughly accurate for that period (modern figures are higher due to more dedicated vuln research).",
+      "tags": [
+        "stuxnet",
+        "zero-days",
+        "unprecedented"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "YGub8195Zus:c_0006",
+      "videoId": "YGub8195Zus",
+      "text": "Stuxnet specifically targeted Siemens programmable logic controllers (PLCs) â€” small computers that control assembly lines, water pumps, power plants, and nuclear refining equipment.",
       "kind": "empirical",
       "entities": [
         "technology:stuxnet",
         "facility:siemens plcs",
         "technology:plc's",
         "technology:programmable logic controllers",
-        "facility:natanz uranium enrichment plant",
-        "location:natanz",
-        "facility:iranian nuclear facility",
-        "location:iran",
-        "technology:nuclear program"
+        "facility:assembly lines",
+        "facility:water treatment plants",
+        "facility:nuclear refining"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 4902,
-          "charEnd": 4995,
-          "timeStart": 304.96,
-          "timeEnd": 313.199,
-          "quote": "it was actually targeting the\nsoftware on\nsiemens programmable logic controllers\ncalled plc's"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 5708,
-          "charEnd": 5751,
-          "timeStart": 354.88,
-          "timeEnd": 360.56,
-          "quote": "it was primarily targeting one country\niran"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 8729,
-          "charEnd": 8845,
-          "timeStart": 545.04,
-          "timeEnd": 556.399,
-          "quote": "over a thousand uranium centrifuges were\ndestroyed\nby stuxnet this set iran's nuclear\nenrichment program back months"
+          "charStart": 4940,
+          "charEnd": 5100,
+          "timeStart": 306.72,
+          "timeEnd": 319.44,
+          "quote": " on\nsiemens programmable logic controllers\ncalled plc's\nnow plc's are small computers used in\nfactories and industry that control\npretty much everything assembl"
         }
       ],
-      "confidence": 0.99,
+      "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "Confirmed. Stuxnet's PLC payload specifically targeted Siemens S7-300 controllers and frequency converters from Vacon and Fararo Paya at the operating frequencies used by IR-1 centrifuges. ISIS (Institute for Science and International Security, Albright et al. 2010) estimated ~1,000-2,000 IR-1 centrifuges destroyed at Natanz between 2009 and 2010. The setback was estimated at 1-2 years. Mainstream consensus."
+      "rationale": "Stuxnet's payload specifically targeted Siemens S7-315 and S7-417 PLCs running STEP 7 software with specific motor-controller profiles (Vacon and Fararo Paya frequency converters used in uranium enrichment). Fully documented by Symantec and Langner.",
+      "tags": [
+        "stuxnet",
+        "siemens-plc",
+        "icd"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
-      "id": "YGub8195Zus:c_0003",
+      "id": "YGub8195Zus:c_0007",
       "videoId": "YGub8195Zus",
-      "text": "Stuxnet bridged the supposedly secure air gap at Natanz by riding on infected USB drives carried in by outside contractors — exploiting the long-known fact that human supply-chain access is the universal weak point of any air-gapped network.",
-      "kind": "empirical",
+      "text": "Natanz's network was air-gapped, so Stuxnet reached the centrifuges when outside contractors brought infected USB drives into the facility.",
+      "kind": "historical",
       "entities": [
+        "facility:natanz",
+        "location:natanz",
         "technology:gapped network",
         "technology:usb sticks",
-        "facility:natanz uranium enrichment plant",
-        "facility:iranian nuclear facility",
-        "location:natanz",
         "organization:outside contractors"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 7024,
-          "charEnd": 7127,
-          "timeStart": 442.4,
-          "timeEnd": 451.759,
-          "quote": "the nuclear\ncentrifuges at natanz were air-gapped\nmeaning they weren't connected to any\noutside network"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 7260,
-          "charEnd": 7405,
-          "timeStart": 458.08,
-          "timeEnd": 468.72,
-          "quote": "outside contractors who were brought in\nto work on the iranian nuclear facility\nin natanz\nhad also brought stuxnet in through\ninfected usb drives"
+          "charStart": 7060,
+          "charEnd": 7220,
+          "timeStart": 444.16,
+          "timeEnd": 454.8,
+          "quote": "re air-gapped\nmeaning they weren't connected to any\noutside network and this is usually a\ngood way to keep a network secure\nthe only way to infect a clean air g"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.9,
-      "rationale": "Standard account, well-supported by Symantec's reverse-engineering and Kim Zetter's book 'Countdown to Zero Day.' Stuxnet propagated via USB removable media using LNK and AutoRun exploits, bridging Natanz's air-gapped operational technology network. Whether the carriers were specifically 'outside contractors' or unwitting Iranian engineers is debated, but human-vector USB infection is confirmed."
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "USB-based infection vector for Natanz is the consensus account (LNK exploit made USB autorun unnecessary). Whether specifically introduced by 'outside contractors' vs. unwitting insiders vs. intelligence-inserted compromised equipment is less settled, but the air-gap-crossing via USB is well-established.",
+      "tags": [
+        "air-gap",
+        "usb-infection",
+        "natanz"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
-      "id": "YGub8195Zus:c_0004",
+      "id": "YGub8195Zus:c_0008",
       "videoId": "YGub8195Zus",
-      "text": "Stuxnet's payload was clever enough to record normal centrifuge operating data for 13 days, then alter rotor speeds while replaying the recorded normal data to operators — a man-in-the-middle deception that prevented technicians from spotting the sabotage.",
-      "kind": "empirical",
+      "text": "Once in, Stuxnet observed centrifuge behavior for 13 days, then began changing rotation speeds every 15 minutes while replaying the earlier recordings to operator displays â€” causing centrifuges to tear themselves apart while all monitoring appeared normal.",
+      "kind": "historical",
       "entities": [
         "technology:stuxnet",
         "technology:centrifuges",
@@ -156,283 +264,298 @@
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 7817,
-          "charEnd": 7884,
-          "timeStart": 491.039,
-          "timeEnd": 498,
-          "quote": "after 13 days stuxnet started\nchanging the speed of the centrifuges"
+          "charStart": 7820,
+          "charEnd": 8000,
+          "timeStart": 491.04,
+          "timeEnd": 506.24,
+          "quote": "er 13 days stuxnet started\nchanging the speed of the centrifuges\nevery 15 minutes\nsometimes faster sometimes slower\nnormally this is something a technician\nwould spot immediately b"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.9,
-      "rationale": "Confirmed by Ralph Langner's seminal 2011 analysis. Stuxnet recorded normal-state centrifuge process data, then modulated rotor frequencies (briefly to ~1410 Hz, then to ~2 Hz) while feeding the pre-recorded normal data to SCADA monitors. The 'replay attack on instrumentation' is what makes Stuxnet a textbook cyber-physical weapon."
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "Core Stuxnet attack sequence is well-documented. Observation/recording phase before payload activation, followed by sabotage cycles while replaying normal data to operators â€” all described in Ralph Langner's detailed analysis and in Countdown to Zero Day. Exact timings may vary across variants but the pattern is accurate.",
+      "tags": [
+        "stuxnet",
+        "attack-sequence",
+        "sabotage"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
-      "id": "YGub8195Zus:c_0005",
+      "id": "YGub8195Zus:c_0009",
       "videoId": "YGub8195Zus",
-      "text": "Stuxnet was a state-sponsored cyber weapon almost certainly developed jointly by the United States and Israel (with possible UK and allied involvement) under the codename Operation Olympic Games, requiring resources only a national-intelligence apparatus could marshal.",
-      "kind": "speculative",
+      "text": "Over a thousand uranium centrifuges were destroyed by Stuxnet, setting Iran's nuclear enrichment program back months or even years.",
+      "kind": "historical",
       "entities": [
         "technology:stuxnet",
+        "location:iran",
+        "technology:centrifuges",
+        "technology:nuclear program"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YGub8195Zus",
+          "charStart": 8720,
+          "charEnd": 8860,
+          "timeStart": 543.6,
+          "timeEnd": 560.88,
+          "quote": "us virus\nover a thousand uranium centrifuges were\ndestroyed\nby stuxnet this set iran's nuclear\nenrichment program back months\nmaybe years wh"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "Estimates of ~1,000 destroyed centrifuges at Natanz over 2009-2010 match IAEA replacement-rate data and ISIS (Institute for Science and International Security) analysis. Setback magnitude is debated â€” some estimate weeks to months, others 1-2 years. 'Months to years' is a defensible range.",
+      "tags": [
+        "stuxnet",
+        "damage",
+        "iran-nuclear"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "YGub8195Zus:c_0010",
+      "videoId": "YGub8195Zus",
+      "text": "Stuxnet was part of Operation Olympic Games â€” a US/Israeli/UK-allied campaign of cyber intrusion and sabotage against Iran's nuclear program, though no country has officially acknowledged developing it.",
+      "kind": "historical",
+      "entities": [
         "event:olympic games",
         "organization:united states",
-        "location:united states",
         "location:israel",
         "location:uk",
         "organization:nsa cia",
         "organization:cia",
         "organization:nsa",
-        "organization:intelligence community"
+        "technology:stuxnet"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 6192,
-          "charEnd": 6225,
-          "timeStart": 386.4,
-          "timeEnd": 390.638,
-          "quote": "this was a state-sponsored attack"
+          "charStart": 10780,
+          "charEnd": 10940,
+          "timeStart": 679.44,
+          "timeEnd": 694.4,
+          "quote": "got to work on what they called\noperation olympic games olympic games\nwas a campaign of cyber intrusion\ndisruption and sabotage of irani\nwait the u.s government"
         },
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 10812,
-          "charEnd": 10835,
-          "timeStart": 680.8,
-          "timeEnd": 685.359,
-          "quote": "operation olympic games"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 11179,
-          "charEnd": 11296,
+          "charStart": 11200,
+          "charEnd": 11400,
           "timeStart": 707.12,
-          "timeEnd": 714.88,
-          "quote": "it's generally believed that stuxnet was\ndeveloped by the united states with help\nfrom\nisrael the uk and their allies"
+          "timeEnd": 723.84,
+          "quote": "ed that stuxnet was\ndeveloped by the united states with help\nfrom\nisrael the uk and their allies dumb\nquestion\ngo ahead when you destroy something with\na bomb or with a virus\nisn't it the same thing w"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.9,
-      "rationale": "Strongly supported. David Sanger's 2012 New York Times reporting (sourced to multiple US intelligence officials) revealed Operation Olympic Games as the Bush-era / Obama-continued joint US-Israel program that produced Stuxnet, with NSA, CIA and Israeli Unit 8200 collaboration. Officially neither government has confirmed, but the attribution is mainstream consensus among cyber-security researchers and former officials.",
-      "dependencies": [
-        {
-          "target": "YGub8195Zus:c_0001",
-          "kind": "elaborates"
-        }
-      ]
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Operation Olympic Games as the covert name for the Stuxnet program is reported by David Sanger in 'Confront and Conceal' and the New York Times (2012), sourced to multiple current/former officials. Never officially confirmed, but attribution to US+Israel is consensus among analysts. UK-allied involvement is weaker sourcing.",
+      "tags": [
+        "olympic-games",
+        "attribution",
+        "us-israel"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
-      "id": "YGub8195Zus:c_0006",
+      "id": "YGub8195Zus:c_0011",
       "videoId": "YGub8195Zus",
-      "text": "Iran retaliated for Stuxnet by building one of the world's largest state-sponsored hacker groups and attacking Saudi Aramco (wiping ~30,000 machines in 2012) and major US banks (Wells Fargo, PNC, Bank of America), demonstrating that cyber-physical attacks invite proportional cyber retaliation.",
+      "text": "Iran responded to Stuxnet by building one of the largest state-sponsored hacker groups in the world and attacking Saudi Aramco (destroying 30,000 machines) as well as US banks Wells Fargo, PNC, and Bank of America.",
       "kind": "historical",
       "entities": [
         "location:iran",
         "organization:saudi aramco",
-        "quantity:thirty thousand machines",
         "organization:wells fargo pnc",
         "organization:bank of america",
-        "person:hackers"
+        "quantity:thirty thousand machines"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 12408,
-          "charEnd": 12534,
-          "timeStart": 786.32,
-          "timeEnd": 796.72,
-          "quote": "they attacked saudi\naramco the largest oil company in the\nworld\nand destroyed every computer they had\nthirty thousand machines"
+          "charStart": 12340,
+          "charEnd": 12580,
+          "timeStart": 782.16,
+          "timeEnd": 800.16,
+          "quote": "largest\nstate sponsored hacker groups in the\nworld\nthey got to work they attacked saudi\naramco the largest oil company in the\nworld\nand destroyed every computer they had\nthirty thousand machines hard drives\nwere white\nclean phone lines were"
         },
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 12625,
-          "charEnd": 12741,
-          "timeStart": 800.16,
-          "timeEnd": 811.12,
-          "quote": "then they went\nfor america's financial infrastructure\nand levied attacks against wells fargo\npnc\nand bank of america"
+          "charStart": 12700,
+          "charEnd": 12880,
+          "timeStart": 805.04,
+          "timeEnd": 819.28,
+          "quote": "ainst wells fargo\npnc\nand bank of america taking down banking\nsystems all over the world\nand there were other attacks now iran\ndidn't officially take credit for these\nattacks but\nt"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.92,
-      "rationale": "All verifiable. The Shamoon malware attack on Saudi Aramco (Aug 15, 2012) wiped ~35,000 workstations and is publicly attributed by US intelligence to the Iran-linked group 'Cutting Sword of Justice.' Operation Ababil DDoS attacks on US banks (Sep 2012-2013) by 'Izz ad-Din al-Qassam Cyber Fighters' (DOJ-indicted 2016, attributed to IRGC-linked actors) targeted Bank of America, NYSE, PNC, Wells Fargo and others."
-    },
-    {
-      "id": "YGub8195Zus:c_0007",
-      "videoId": "YGub8195Zus",
-      "text": "By releasing Stuxnet onto the internet rather than containing it, the United States effectively gave the world's most advanced cyber weapon away for free — and derivative malware (Duqu in 2011, Flame in 2012, Industroyer/Crash Override against Ukraine in 2016) confirmed the proliferation risk in real time.",
-      "kind": "empirical",
-      "entities": [
-        "technology:stuxnet",
-        "organization:united states",
-        "location:ukraine",
-        "date_time:2011",
-        "date_time:2012",
-        "date_time:2016"
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "2012 Shamoon attack on Saudi Aramco wiped ~30,000 workstations and is widely attributed to Iran (via 'Cutting Sword of Justice'). Operation Ababil DDoS attacks on US banks including Wells Fargo, PNC, BofA (2011-2013) were attributed to Iran's Izz ad-Din al-Qassam Cyber Fighters by US intelligence.",
+      "tags": [
+        "iran-retaliation",
+        "shamoon",
+        "operation-ababil"
       ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 14978,
-          "charEnd": 15032,
-          "timeStart": 935.279,
-          "timeEnd": 942.72,
-          "quote": "the dooku\nvirus attacked industrial facilities in\n2011"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 15033,
-          "charEnd": 15079,
-          "timeStart": 940.24,
-          "timeEnd": 946.079,
-          "quote": "flame in 2012 also attacked facilities\nin iran"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 15175,
-          "charEnd": 15229,
-          "timeStart": 950.16,
-          "timeEnd": 957.04,
-          "quote": "destroyer\nattacked power facilities in ukraine in\n2016"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 15258,
-          "charEnd": 15364,
-          "timeStart": 954.56,
-          "timeEnd": 966.56,
-          "quote": "stuxnet is\nthe best cyber weapon the united states\nhas ever developed and it gave it to the\nworld\nfor free"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Mostly accurate. Duqu (Sep 2011, Kaspersky/CrySyS) shared significant code with Stuxnet — same authors believed. Flame (May 2012, Kaspersky) was a related modular cyberespionage suite targeting Iranian Oil Ministry. Industroyer/CrashOverride (June 2016, ESET) attacked Ukrainian power grid (attributed to Sandworm/GRU, separate authorship from Stuxnet but inspired by its cyber-physical model). The 'gave it to the world for free' framing — Stuxnet escaped its target environment due to a propagation bug — is the documented operational failure that revealed it.",
+      "inVerdictSection": false,
+      "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "YGub8195Zus:c_0001",
-          "kind": "elaborates"
+          "target": "YGub8195Zus:c_0010",
+          "kind": "supports",
+          "rationale": "Iran's response-in-kind corroborates the US/Israel attribution of Stuxnet â€” you retaliate against whoever you believe attacked you."
         }
       ]
     },
     {
-      "id": "YGub8195Zus:c_0008",
+      "id": "YGub8195Zus:c_0012",
       "videoId": "YGub8195Zus",
-      "text": "Stuxnet's release was a 'Hiroshima moment' for cyber warfare — once a state demonstrated weaponized code that physically destroys infrastructure, the genie cannot be put back, and the world entered a permanent state of low-grade ongoing cyber conflict.",
-      "kind": "opinion",
+      "text": "Stuxnet-inspired follow-on viruses have already appeared: Duqu (2011), Flame (2012, which could record Skype calls, take screenshots, log keystrokes), and Industroyer-style attacks on Ukraine's power grid (2016).",
+      "kind": "historical",
       "entities": [
-        "technology:stuxnet",
-        "location:hiroshima",
-        "event:cyber war",
-        "technology:cyber weapon",
+        "date_time:2011",
+        "date_time:2012",
+        "date_time:2016",
+        "location:ukraine",
+        "facility:power plants",
         "technology:cyber weapons"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 17243,
-          "charEnd": 17269,
-          "timeStart": 1079.52,
-          "timeEnd": 1083.2,
-          "quote": "it was an hiroshima moment"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 19078,
-          "charEnd": 19141,
-          "timeStart": 1201.2,
-          "timeEnd": 1207.039,
-          "quote": "they're not preparing for cyber war\nthey're already fighting it"
+          "charStart": 14980,
+          "charEnd": 15160,
+          "timeStart": 935.28,
+          "timeEnd": 950.96,
+          "quote": "e dooku\nvirus attacked industrial facilities in\n2011\nflame in 2012 also attacked facilities\nin iran\nand flame could record audio skype calls\ntake screenshots\nlog keystrokes all kin"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.8,
-      "rationale": "The 'Hiroshima moment' framing is from Michael Hayden (former CIA/NSA director) and has been widely echoed; it captures the qualitative shift Stuxnet represented. The empirical claim that low-grade interstate cyber conflict is now constant is well-supported (Mandiant APT1 report, MITRE ATT&CK threat-actor catalog, ongoing Russia/China/Iran/N. Korea operations). Editorial framing aside, the underlying observation tracks what cyber-policy practitioners describe.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "YGub8195Zus:c_0007",
-          "kind": "supports"
-        }
-      ]
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Duqu (2011) and Flame (2012) are both documented, share code lineage with Stuxnet, and were extensively analyzed by Kaspersky and others. Flame's capabilities (Skype recording, screenshot, keylogging) are confirmed. Industroyer attack on Ukraine's grid was December 2016.",
+      "tags": [
+        "duqu",
+        "flame",
+        "industroyer",
+        "follow-on"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
-      "id": "YGub8195Zus:c_0009",
+      "id": "YGub8195Zus:c_0013",
       "videoId": "YGub8195Zus",
-      "text": "The successor weapon Nitro Zeus, allegedly developed at hundreds of millions of dollars by thousands of US personnel, was pre-positioned inside Iranian infrastructure to disable air defenses, command and control, power, banking, transportation and communications in case the JCPOA negotiations collapsed.",
-      "kind": "speculative",
+      "text": "Stuxnet was a 'Hiroshima moment' for cyber warfare â€” only the beginning, a test case for more advanced cyber weapons that have already been deployed, including Nitro Zeus.",
+      "kind": "opinion",
+      "entities": [
+        "technology:stuxnet",
+        "technology:nitro zeus",
+        "location:iran",
+        "location:hiroshima",
+        "technology:cyber weapons"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "YGub8195Zus",
+          "charStart": 17240,
+          "charEnd": 17480,
+          "timeStart": 1078.64,
+          "timeEnd": 1098.48,
+          "quote": "an\nit was an hiroshima moment and like\nhiroshima\nstuxnet was only the beginning a test\ncase for\nmore advanced more devastating cyber\nweapons\nand one of those weapons has already\nbeen deployed that weapon is nitro zeus\nyeah that sounds like "
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.75,
+      "rationale": "The 'Hiroshima moment' framing â€” Stuxnet as the first weaponized cyber attack on physical infrastructure â€” is shared by many cyber-security analysts including Michael Hayden and Kim Zetter. The analogy captures the precedent-setting aspect even if not the scale of casualties.",
+      "tags": [
+        "hiroshima",
+        "stuxnet",
+        "precedent"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "YGub8195Zus:c_0014",
+      "videoId": "YGub8195Zus",
+      "text": "Nitro Zeus is a US cyber weapon far more complex than Stuxnet, developed by thousands of people at a cost of hundreds of millions, designed to disable Iran's air defenses, military command, power grid, communications, transportation, and banks â€” and is reportedly already living dormant in Iranian infrastructure.",
+      "kind": "historical",
       "entities": [
         "technology:nitro zeus",
         "facility:iranian infrastructure",
         "location:iran",
-        "facility:power grid",
-        "person:former intelligence operatives",
-        "quantity:hundreds of thousands of dollars"
+        "organization:united states",
+        "facility:power grid"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 17432,
-          "charEnd": 17457,
-          "timeStart": 1091.679,
-          "timeEnd": 1096.64,
-          "quote": "that weapon is nitro zeus"
-        },
-        {
-          "transcriptId": "YGub8195Zus",
-          "charStart": 17692,
-          "charEnd": 17761,
+          "charStart": 17700,
+          "charEnd": 17900,
           "timeStart": 1108.24,
-          "timeEnd": 1114.879,
-          "quote": "iran along\nwith several world powers\nsigned a nuclear peace agreement"
+          "timeEnd": 1124.72,
+          "quote": "ng\nwith several world powers\nsigned a nuclear peace agreement that\nwas the ideal outcome\nbut that outcome wasn't always certain\nso in case diplomacy failed and war\nbroke out the united states had\nand "
         },
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 18086,
-          "charEnd": 18180,
+          "charStart": 18100,
+          "charEnd": 18280,
           "timeStart": 1134.08,
-          "timeEnd": 1144.24,
-          "quote": "nitro zeus or nz was designed to infect\niranian\ninfrastructure and await orders in case\nof war"
+          "timeEnd": 1150.64,
+          "quote": "nz was designed to infect\niranian\ninfrastructure and await orders in case\nof war\nnz would disable iran's air defenses\ndisrupt\nmilitary command and control take down\nparts of the po"
         }
       ],
-      "confidence": 0.92,
+      "confidence": 0.85,
       "directTruth": 0.65,
-      "rationale": "The Nitro Zeus disclosures originate with the 2016 Alex Gibney documentary 'Zero Days' and David Sanger's NYT reporting, both citing former US intelligence operatives. Cost (~hundreds of millions, thousands of personnel) and target list (air defense, C2, grid, banks, telecom) are reported. Pre-positioning in Iranian networks is asserted by sources but unconfirmed by US government. The 2015 JCPOA deal is well-documented. Truthiness is moderate-high because the reporting is solid but the operational details rely on anonymous-source leaks."
+      "rationale": "Nitro Zeus was reported by the New York Times and the 2016 documentary 'Zero Days' (Alex Gibney), sourced to former US intelligence officials. Reporting includes scale (thousands of personnel, hundreds of millions of dollars) and target set. Whether currently deployed and dormant is asserted by Gibney's sources but not independently confirmed.",
+      "tags": [
+        "nitro-zeus",
+        "us-cyberwar",
+        "iran"
+      ],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
-      "id": "YGub8195Zus:c_0010",
+      "id": "YGub8195Zus:c_0015",
       "videoId": "YGub8195Zus",
-      "text": "Cyber warfare flattens the traditional power gradient between rich and poor nations: a dozen skilled programmers can now project political will at scales that previously required a trillion-dollar military, undermining the equilibrium logic that kept Cold War nuclear powers in check.",
-      "kind": "opinion",
+      "text": "Critical infrastructure in the US, UK, and worldwide often runs on 30-40-year-old software, some of it connected to the internet with default passwords â€” far less hardened than the Natanz network Stuxnet penetrated.",
+      "kind": "empirical",
       "entities": [
-        "event:cyber war",
-        "ideology:mutually assured destruction",
-        "quantity:trillion dollar defense budget",
-        "organization:global powers",
-        "event:cold war"
+        "facility:critical infrastructure",
+        "location:united states",
+        "location:uk"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "YGub8195Zus",
-          "charStart": 19932,
-          "charEnd": 20012,
-          "timeStart": 1251.679,
-          "timeEnd": 1260.72,
-          "quote": "the cyber war\nis here\nand now i find myself longing for the\ndays of the cold war"
+          "charStart": 15700,
+          "charEnd": 15900,
+          "timeStart": 979.52,
+          "timeEnd": 994.8,
+          "quote": " a country's\ninfrastructure\nare running software that's 30 even 40\nyears old not just at iran\nhere in the us in the uk everywhere\nhow vulnerable are those systems to\nattack iran has already said that "
         }
       ],
-      "confidence": 0.92,
-      "directTruth": 0.7,
-      "rationale": "The asymmetry argument is well-established in cyber-policy literature (Joseph Nye, Lucas Kello). North Korea (Lazarus / Bureau 121) and Iran have demonstrated outsized cyber impact relative to GDP. The MAD analogy is more contested — cyber lacks attribution clarity and proportional-response credibility that nuclear MAD relied on. So the structural observation is supported, the editorial 'world was safer in the Cold War' is debatable nostalgia.",
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "Well-documented by cybersecurity researchers (ICS-CERT, Dragos, Shodan surveys). Much US/UK utility and water-system SCADA/ICS equipment runs legacy firmware, some exposed to the internet with weak credentials. The comparison to Natanz is apt: Natanz had better OT security than most civilian utilities, yet it was breached.",
+      "tags": [
+        "legacy-infrastructure",
+        "ics-vulnerability"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "YGub8195Zus:c_0008",
-          "kind": "elaborates"
+          "target": "YGub8195Zus:c_0013",
+          "kind": "supports",
+          "rationale": "Vulnerable legacy infrastructure is the concrete reason the 'Hiroshima moment' framing matters â€” the attack surface is vast and soft."
         }
       ]
     }

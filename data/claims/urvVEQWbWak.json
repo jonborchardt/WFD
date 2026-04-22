@@ -1,118 +1,185 @@
 {
   "schemaVersion": 1,
   "transcriptId": "urvVEQWbWak",
-  "generatedAt": "2026-04-20T03:45:56.490Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T13:00:00.000Z",
+  "generator": "claude-opus-4-7-1m",
   "claims": [
     {
       "id": "urvVEQWbWak:c_0001",
       "videoId": "urvVEQWbWak",
-      "text": "The Moon really does smell like spent gunpowder, as Apollo 17 astronaut Jack Schmitt and others reported, despite lunar dust being chemically nothing like actual gunpowder.",
+      "text": "Different objects in space — comets, planets, moons, gas clouds — each have their own distinctive aroma.",
       "kind": "empirical",
       "entities": [
-        "location:moon",
-        "person:jack schmidt",
-        "event:apollo 17"
+        "location:moon"
       ],
-      "relationships": [
-        "r_0001",
-        "r_0002"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "urvVEQWbWak",
-          "charStart": 952,
-          "charEnd": 1080,
-          "timeStart": 71.6,
-          "timeEnd": 78.62,
-          "quote": "When recalling the smell of the moon Apollo\n17 Jack Schmidt said everyone's impression of\nthe smell was that of spent gunpowder."
-        },
-        {
-          "transcriptId": "urvVEQWbWak",
-          "charStart": 1081,
-          "charEnd": 1269,
-          "timeStart": 78.73,
-          "timeEnd": 90.92,
-          "quote": "And this is strange because the makeup\nof lunar dust is completely different than\ngunpowder Moon Regolith is made up of silicon\ndioxide glass created by billions of years\nof media impacts."
+          "charStart": 222,
+          "charEnd": 315,
+          "timeStart": 31.74,
+          "timeEnd": 38.21,
+          "quote": "Objects in space like\ncomets planets moons gas clouds.\nEach have their own distinctive aroma."
         }
       ],
-      "confidence": 0.97,
-      "rationale": "Apollo astronauts including Schmitt repeatedly described the smell as 'spent gunpowder' once moondust contacted the cabin air. This is well documented in NASA debriefs and oral histories. The chemical-mismatch observation is also accurate — lunar regolith contains no nitrate compounds.",
-      "directTruth": 0.9,
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.65,
+      "rationale": "Strictly, 'aroma' requires a medium and a nose — vacuum has neither. But the episode means chemical signatures that could be smelled in a pressurized atmosphere on-site, which is a reasonable generalization.",
+      "hostStance": "asserts",
+      "tags": ["space-smell", "framing"]
     },
     {
       "id": "urvVEQWbWak:c_0002",
       "videoId": "urvVEQWbWak",
-      "text": "The leading explanations for the moon's gunpowder smell are either a desert-rain ('petrichor') effect — moondust molecules releasing odorants on contact with humid cabin air — or solar-wind ions trapped in the dust outgassing when warmed.",
-      "kind": "speculative",
+      "text": "Apollo 17 astronaut Jack Schmitt said moon dust smelled to everyone like spent gunpowder.",
+      "kind": "historical",
+      "entities": [
+        "event:apollo 17",
+        "person:jack schmidt",
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 989,
+          "charEnd": 1080,
+          "timeStart": 71.6,
+          "timeEnd": 78.62,
+          "quote": "Apollo\n17 Jack Schmidt said everyone's impression of\nthe smell was that of spent gunpowder."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Schmitt (Apollo 17 LM pilot) is on record describing lunar dust as smelling like spent gunpowder after his EVAs — corroborated by other Apollo astronauts including Cernan, Aldrin.",
+      "hostStance": "asserts",
+      "tags": ["apollo-17", "schmitt", "moon-dust"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0003",
+      "videoId": "urvVEQWbWak",
+      "text": "Lunar regolith is chemically unlike modern gunpowder despite smelling similar: regolith is silicon-dioxide glass from billions of years of meteorite impacts, while gunpowder is nitrocellulose and nitroglycerin.",
+      "kind": "empirical",
+      "entities": [
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 1173,
+          "charEnd": 1269,
+          "timeStart": 82.22,
+          "timeEnd": 90.92,
+          "quote": "Moon Regolith is made up of silicon\ndioxide glass created by billions of years\nof media impacts."
+        },
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 1319,
+          "charEnd": 1390,
+          "timeStart": 91.04,
+          "timeEnd": 95.24,
+          "quote": "modern gunpowder is a combination\nof nitro cellulose and nitroglycerin."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Lunar regolith is dominantly impact-shocked silicates (agglutinate glass). Modern smokeless powders are indeed nitrocellulose/nitroglycerin. The composition mismatch is correct, which is precisely why the gunpowder-smell analogy is scientifically interesting.",
+      "dependencies": [
+        { "target": "urvVEQWbWak:c_0002", "kind": "elaborates" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["regolith", "chemistry"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0004",
+      "videoId": "urvVEQWbWak",
+      "text": "No one actually knows why moon dust smells like gunpowder.",
+      "kind": "empirical",
+      "entities": [
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 1414,
+          "charEnd": 1438,
+          "timeStart": 96.77,
+          "timeEnd": 100.94,
+          "quote": "Well nobody really knows"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Consensus science: the gunpowder smell of lunar regolith has no definitive mechanism. Leading hypotheses are solar-wind-implanted volatiles and reactive dust surfaces oxidizing on contact with cabin humidity.",
+      "dependencies": [
+        { "target": "urvVEQWbWak:c_0002", "kind": "elaborates" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["moon-dust", "mystery"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0005",
+      "videoId": "urvVEQWbWak",
+      "text": "Once lunar dust samples returned to Earth they were completely odorless.",
+      "kind": "empirical",
       "entities": [
         "location:moon",
-        "facility:lunar module",
-        "technology:lunar module",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 2802,
+          "charEnd": 2877,
+          "timeStart": 168.08,
+          "timeEnd": 171.23,
+          "quote": "By the time the moon dust made it\nback to Earth it was completely odorless."
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "rationale": "True — lunar samples brought back to Earth do not smell. The transient smell in the cabin is the key evidence for the 'activated on exposure' hypothesis.",
+      "dependencies": [
+        { "target": "urvVEQWbWak:c_0004", "kind": "supports" }
+      ],
+      "hostStance": "asserts",
+      "tags": ["samples", "odorless"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0006",
+      "videoId": "urvVEQWbWak",
+      "text": "Astronauts returning from spacewalks have reported smelling burnt metal or burnt meat on their spacesuits.",
+      "kind": "historical",
+      "entities": [
+        "event:spacewalks",
         "person:astronaut"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "urvVEQWbWak",
-          "charStart": 2236,
-          "charEnd": 2402,
-          "timeStart": 137.99,
-          "timeEnd": 146,
-          "quote": "The molecules trapped in the dry moon dust\nmay have been activated by contact with the\nmoist air in the lunar module just like\nPatrick wore in the desert rain effect."
-        },
-        {
-          "transcriptId": "urvVEQWbWak",
-          "charStart": 2403,
-          "charEnd": 2687,
-          "timeStart": 146.33,
-          "timeEnd": 162.77,
-          "quote": "Another theory is solar winds hot Solar Winds\nof hydrogen helium and other ions Buffett\nthe moon's surface and may become trapped in the\ndust when the ions are dislodged such as\nby an astronaut's footsteps then come in contact\nwith the warm air inside the lunar\nmodule they evaporate."
+          "charStart": 2959,
+          "charEnd": 3044,
+          "timeStart": 177.89,
+          "timeEnd": 183.41,
+          "quote": "Astronauts returning from spacewalks have reported smelling\nburnt metal or burnt meat"
         }
       ],
       "confidence": 0.95,
-      "rationale": "Both hypotheses are real candidates discussed by NASA scientists for the moondust scent. Neither is fully proven; the smell is partly explained by reactive surfaces freshly exposed to the LM atmosphere, but the precise mechanism remains an open question.",
-      "directTruth": 0.6,
-      "dependencies": [
-        {
-          "target": "urvVEQWbWak:c_0001",
-          "kind": "elaborates"
-        }
-      ],
-      "hostStance": "steelman"
+      "directTruth": 0.9,
+      "rationale": "ISS astronauts (Don Pettit, Scott Kelly, Thomas Jones, others) have repeatedly described the 'smell of space' after EVAs as seared steak, welding fumes, or hot metal.",
+      "hostStance": "asserts",
+      "tags": ["space-smell", "eva"]
     },
     {
-      "id": "urvVEQWbWak:c_0003",
+      "id": "urvVEQWbWak:c_0007",
       "videoId": "urvVEQWbWak",
-      "text": "Astronauts returning from spacewalks consistently report that 'space itself' smells like burnt metal or burnt meat, possibly from oxidation of metal molecules deposited on suits when they re-encounter humidified cabin air.",
-      "kind": "empirical",
-      "entities": [
-        "person:astronaut",
-        "event:spacewalks",
-        "location:surface"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "urvVEQWbWak",
-          "charStart": 2959,
-          "charEnd": 3224,
-          "timeStart": 177.89,
-          "timeEnd": 193.03,
-          "quote": "Astronauts returning from spacewalks have reported smelling\nburnt metal or burnt meat and\nno one really knows for sure what this is\nbut it could be molecules of metal leeching off\nonto spacesuits then oxidizing when it comes\ninto contact with actual humidifier air."
-        }
-      ],
-      "confidence": 0.96,
-      "rationale": "ISS astronauts have repeatedly described the post-EVA scent as seared steak / hot metal / welding fumes. The oxidation/dying-stars theories are real candidate explanations. The astronaut testimony itself is well attested.",
-      "directTruth": 0.85,
-      "hostStance": "asserts"
-    },
-    {
-      "id": "urvVEQWbWak:c_0004",
-      "videoId": "urvVEQWbWak",
-      "text": "Venus's atmosphere — dense carbon dioxide laced with sulfuric-acid clouds — would smell like burnt matches and rotten eggs.",
-      "kind": "empirical",
+      "text": "Venus's thick CO2 atmosphere and sulfuric-acid clouds make it smell like a burnt match and rotten eggs.",
+      "kind": "speculative",
       "entities": [
         "location:venus"
       ],
@@ -120,28 +187,27 @@
       "evidence": [
         {
           "transcriptId": "urvVEQWbWak",
-          "charStart": 3994,
+          "charStart": 4092,
           "charEnd": 4162,
-          "timeStart": 236.06,
+          "timeStart": 241.43,
           "timeEnd": 246.72,
-          "quote": "Venus has a thick\natmosphere mostly carbon dioxide.\nThere's also a heavy clouds of sulfuric acid.\nThat combination makes Venus smell like\na burnt match and rotten eggs."
+          "quote": "That combination makes Venus smell like\na burnt match and rotten eggs."
         }
       ],
-      "confidence": 0.96,
-      "rationale": "Venus's atmosphere is ~96.5% CO2 with H2SO4 cloud decks; the chemistry maps reasonably to a sulfur-dioxide / sulfuric-acid scent profile (burnt matches, rotten eggs). Direct nose-experience is impossible but the chemical inference is sound.",
-      "directTruth": 0.85,
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.65,
+      "rationale": "Venus's atmosphere is ~96% CO2 with sulfuric acid clouds and some SO2. 'Burnt match' (SO2) and 'rotten eggs' (H2S) are chemically plausible descriptors. But the surface pressure (~90 atm) means any human nose would be destroyed before smelling anything.",
+      "hostStance": "asserts",
+      "tags": ["venus", "planet-smell"]
     },
     {
-      "id": "urvVEQWbWak:c_0005",
+      "id": "urvVEQWbWak:c_0008",
       "videoId": "urvVEQWbWak",
-      "text": "Mars's surface and thin atmosphere together would smell like rusty metal mixed with the exhaust of a poorly tuned car — iron-oxide dust combined with methane, formaldehyde, carbon monoxide, and sulfur dioxide in the air.",
-      "kind": "empirical",
+      "text": "Mars lost its magnetosphere billions of years ago, letting solar winds strip away its atmosphere and leaving a thin iron-oxide-rich environment.",
+      "kind": "historical",
       "entities": [
         "location:mars",
-        "location:surface",
-        "role:roman god of war",
-        "person:matt damon"
+        "quantity:billions of years"
       ],
       "relationships": [],
       "evidence": [
@@ -155,73 +221,148 @@
         },
         {
           "transcriptId": "urvVEQWbWak",
-          "charStart": 4614,
-          "charEnd": 4945,
-          "timeStart": 269.21,
-          "timeEnd": 287.87,
-          "quote": "But what atmosphere there is contains\nmethane formaldehyde carbon monoxide and sulfur\ndioxide. The Martian sand smells like rusty\nmetal because that's when iron oxide is\ncombining the owners of the surface with the orders\nof the air and Mars is probably going\nto smell like the exhaust of an\nold car with a bad catalytic converter."
+          "charStart": 4491,
+          "charEnd": 4543,
+          "timeStart": 262.76,
+          "timeEnd": 265.49,
+          "quote": "Mars lost its magnetic sphere\nbillions of years ago."
         }
       ],
       "confidence": 0.95,
-      "rationale": "Mars dust is rich in iron oxides; the atmosphere's trace constituents include methane (debated source) and sulfur and CO compounds. The 'old-car exhaust' framing is a casual but reasonable smell extrapolation. Some specific compound ratios (formaldehyde) are less established than the host implies.",
-      "directTruth": 0.7,
-      "hostStance": "asserts"
+      "directTruth": 0.9,
+      "rationale": "Established planetary science: Mars's core dynamo stopped ~4 Gyr ago, and MAVEN confirmed solar wind stripping as the mechanism for atmospheric loss. Iron-oxide (hematite) surface is confirmed by Pathfinder, Spirit, Opportunity spectra.",
+      "hostStance": "asserts",
+      "tags": ["mars", "magnetosphere", "iron-oxide"]
     },
     {
-      "id": "urvVEQWbWak:c_0006",
+      "id": "urvVEQWbWak:c_0009",
       "videoId": "urvVEQWbWak",
-      "text": "Jupiter's atmosphere is layered, with each depth producing a different stench — ammonia (horse-urine) at the outer layer, sulfur compounds (skunk) in the middle, and hydrogen cyanide (toasted-almonds) deeper in.",
-      "kind": "empirical",
+      "text": "Jupiter's outer atmospheric layers are ammonia-rich, giving them a horse-urine smell.",
+      "kind": "speculative",
       "entities": [
-        "location:jupiter",
-        "person:roman gods",
-        "quantity:five thousand kilometres"
+        "location:jupiter"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "urvVEQWbWak",
-          "charStart": 5193,
-          "charEnd": 5635,
-          "timeStart": 300.66,
-          "timeEnd": 329.65999999999997,
-          "quote": "Jupiter's atmosphere is five thousand kilometres\nthick and actually has multiple layers\neach with slightly different smells.\nThe outer layers have a lot of\nammonia which smells like horse urine.\nAs you move closer to the surface\nthe atmosphere becomes more sulfuric smelling like\nskunk And horse urine.\nThe inner layers have a high concentration\nof hydrogen cyanide which smells like toasted\nalmonds and skunk and horse\nurine and rotten eggs."
+          "charStart": 5318,
+          "charEnd": 5387,
+          "timeStart": 306.65,
+          "timeEnd": 310.52,
+          "quote": "The outer layers have a lot of\nammonia which smells like horse urine."
         }
       ],
-      "confidence": 0.96,
-      "rationale": "Jupiter's atmospheric layering with ammonia ice crystals at the top and progressively heavier hydrocarbons / sulfur / HCN deeper down is well established. The colorful odor mappings are accurate olfactory descriptors of those compounds.",
-      "directTruth": 0.8,
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.65,
+      "rationale": "Jupiter's upper atmosphere does contain ammonia clouds (Juno confirmed NH3 banding). Ammonia indeed has the horse-urine smell. Fair chemistry-to-scent mapping.",
+      "hostStance": "asserts",
+      "tags": ["jupiter", "ammonia"]
     },
     {
-      "id": "urvVEQWbWak:c_0007",
+      "id": "urvVEQWbWak:c_0010",
       "videoId": "urvVEQWbWak",
-      "text": "Uranus is plausibly the smelliest planet in the solar system because its cloud tops are made of hydrogen sulfide, the same gas responsible for the smell of rotten eggs and human flatulence.",
+      "text": "Saturn's atmosphere is 96% hydrogen and 4% helium with traces of methane, ammonia, phosphine and acetylene.",
       "kind": "empirical",
       "entities": [
-        "location:uranus",
-        "person:greek god"
+        "location:saturn"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "urvVEQWbWak",
-          "charStart": 7075,
-          "charEnd": 7212,
-          "timeStart": 430.58,
-          "timeEnd": 440.48,
-          "quote": "Well the cloud tops of Uranus are made\nof hydrogen sulfide that gas responsible for the\nfoul smell of rotten eggs and.\nHuman flatulence e"
+          "charStart": 5807,
+          "charEnd": 5870,
+          "timeStart": 339.89,
+          "timeEnd": 345.05,
+          "quote": "Saturn's atmosphere is 96 percent hydrogen and 4\npercent helium"
         }
       ],
-      "confidence": 0.97,
-      "rationale": "A 2018 Nature Astronomy study (Irwin et al.) confirmed H2S as a major component of Uranus's upper cloud deck — this finding made headlines specifically for the 'Uranus smells like rotten eggs' angle. The host's claim is correct.",
+      "confidence": 0.95,
       "directTruth": 0.95,
-      "hostStance": "asserts"
+      "rationale": "Cassini and modern remote-sensing measurements confirm Saturn's atmosphere at approximately 96% H2, 3% He, with traces of the listed hydrocarbons and phosphine.",
+      "hostStance": "asserts",
+      "tags": ["saturn", "composition"]
     },
     {
-      "id": "urvVEQWbWak:c_0008",
+      "id": "urvVEQWbWak:c_0011",
       "videoId": "urvVEQWbWak",
-      "text": "Sagittarius B2, the dust cloud at the center of our galaxy, contains ethyl formate — the chemical responsible for the flavor of raspberries and the smell of rum — meaning the galactic core would smell pleasant.",
+      "text": "Uranus's upper cloud tops are made of hydrogen sulfide, the compound that causes the rotten-egg smell.",
+      "kind": "empirical",
+      "entities": [
+        "location:uranus"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 7080,
+          "charEnd": 7133,
+          "timeStart": 430.58,
+          "timeEnd": 435.17,
+          "quote": "the cloud tops of Uranus are made\nof hydrogen sulfide"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Gemini North near-infrared spectroscopy in 2018 (Irwin et al., Nature Astronomy) directly detected H2S in Uranus's cloud tops — the stinkbomb result. Broadly accepted.",
+      "hostStance": "asserts",
+      "tags": ["uranus", "hydrogen-sulfide"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0012",
+      "videoId": "urvVEQWbWak",
+      "text": "Neptune has essentially no smell because its chemistry is mostly frozen out of the gas phase.",
+      "kind": "empirical",
+      "entities": [
+        "location:neptune"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 7648,
+          "charEnd": 7692,
+          "timeStart": 468.88,
+          "timeEnd": 471.63,
+          "quote": "Neptune doesn't have\nmuch of a smell at all."
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.5,
+      "rationale": "Neptune does have H2S, methane, ammonia like Uranus. Framing it as scentless is a rhetorical choice — it would smell, just less because of lower atmospheric temperature condensing smelly molecules out.",
+      "hostStance": "asserts",
+      "tags": ["neptune", "planet-smell"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0013",
+      "videoId": "urvVEQWbWak",
+      "text": "Saturn's moon Enceladus vents methanol plumes from its subsurface ocean, so it could smell like a martini.",
+      "kind": "speculative",
+      "entities": [
+        "location:saturn"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 8026,
+          "charEnd": 8107,
+          "timeStart": 491.52,
+          "timeEnd": 497.32,
+          "quote": "plumes of methanol\nare ejected from the surface so it\ncould smell like a martini."
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.45,
+      "rationale": "Enceladus plumes were recently detected to contain methanol (Herschel 2011, Cassini mass-spec analyses). 'Martini' is cheeky — methanol is not the main aroma of a martini (that's vermouth/gin botanicals, + ethanol).",
+      "hostStance": "asserts",
+      "tags": ["enceladus", "methanol", "humor"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0014",
+      "videoId": "urvVEQWbWak",
+      "text": "Scientists discovered ethyl formate in the galactic-center dust cloud Sagittarius B2 — the compound responsible for raspberry flavor and rum scent.",
       "kind": "empirical",
       "entities": [
         "location:sagittarius b2",
@@ -231,17 +372,43 @@
       "evidence": [
         {
           "transcriptId": "urvVEQWbWak",
-          "charStart": 8570,
+          "charStart": 8646,
           "charEnd": 8790,
-          "timeStart": 521.83,
-          "timeEnd": 535.1800000000001,
-          "quote": "the center of our galaxy is the\ndust cloud Sagittarius B2 and in that cloud\nscientists have discovered a substance called ethyl\nfor me which is the chemical\nresponsible for the flavor of raspberries\nand the smell of rum."
+          "timeStart": 527.71,
+          "timeEnd": 535.18,
+          "quote": "scientists have discovered a substance called ethyl\nfor me which is the chemical\nresponsible for the flavor of raspberries\nand the smell of rum."
         }
       ],
-      "confidence": 0.97,
-      "rationale": "Ethyl formate was indeed detected in the Sagittarius B2 molecular cloud by Belloche et al. (2009); it is associated with raspberry flavor and rum aroma. Whether the cloud as a whole would 'smell pleasant' is more whimsical extrapolation, but the underlying detection and aroma mapping are real.",
-      "directTruth": 0.85,
-      "hostStance": "asserts"
+      "confidence": 0.98,
+      "directTruth": 0.92,
+      "rationale": "2009 radio-astronomy detection of ethyl formate in Sgr B2 by Belloche et al. is the real basis for this frequently-cited fun fact.",
+      "hostStance": "asserts",
+      "tags": ["sagittarius-b2", "ethyl-formate"]
+    },
+    {
+      "id": "urvVEQWbWak:c_0015",
+      "videoId": "urvVEQWbWak",
+      "text": "Despite the premise, the moon landings were real and were not faked.",
+      "kind": "empirical",
+      "entities": [
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "urvVEQWbWak",
+          "charStart": 877,
+          "charEnd": 926,
+          "timeStart": 65.63,
+          "timeEnd": 67.94,
+          "quote": "We are going to assume\nthe moon landing was real."
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.98,
+      "rationale": "Host explicitly rejects moon-landing-hoax framing as a prerequisite for the episode. Apollo landings are corroborated by retroreflectors still pinged by Earth-based lasers, Soviet confirmation, and hundreds of kg of samples.",
+      "hostStance": "denies",
+      "tags": ["moon-landing", "hoax-rejection"]
     }
   ]
 }

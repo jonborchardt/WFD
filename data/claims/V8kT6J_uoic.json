@@ -1,306 +1,469 @@
 {
   "schemaVersion": 1,
   "transcriptId": "V8kT6J_uoic",
-  "generatedAt": "2026-04-20T03:59:26.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T07:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-agent4",
   "claims": [
     {
       "id": "V8kT6J_uoic:c_0001",
       "videoId": "V8kT6J_uoic",
-      "text": "Ingo Swann's 1998 book 'Penetration' claimed he had been hired by the CIA to remote-view the far side of the Moon and discovered an alien presence building infrastructure there.",
+      "text": "In his 1998 book Penetration, Ingo Swan claimed the CIA employed him to remote view the dark side of the Moon to look for alien presence.",
       "kind": "historical",
       "entities": [
         "person:ingo swan",
-        "person:swan",
-        "organization:cia",
-        "location:moon",
-        "location:the moon",
         "date_time:1998",
-        "technology:remote viewing"
+        "organization:cia",
+        "location:the dark side of the moon"
       ],
-      "relationships": [],
+      "relationships": ["r_0002", "r_0003"],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
           "charStart": 0,
-          "charEnd": 155,
+          "charEnd": 120,
           "timeStart": 0.96,
-          "timeEnd": 12.759,
-          "quote": "when Ingo Swan released his book titled\npenetration in 1998 he claimed to be a\npsychic who was employed by the CIA to\nremote view the Dark Side of the Moon"
+          "timeEnd": 5.72,
+          "quote": "when Ingo Swan released his book titled\npenetration in 1998 he claimed to be a\npsychic who was employed by the CIA to\nre"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The book Penetration: The Question of Extraterrestrial and Human Telepathy by Ingo Swann was indeed published in 1998 and does make these claims (CIA-adjacent contractor, lunar remote-viewing, alien observation). The framing 'employed by the CIA' is slightly loose — Swann's contract was with SRI under government funding — but the substance is right.",
+      "directTruth": 0.7,
+      "rationale": "The existence of Swan's 1998 book 'Penetration' and its lunar-alien claims are matters of published record, verifiable from the book itself. The book making this claim is true; whether the CIA actually tasked him with lunar remote viewing is a separate question addressed by later claims.",
+      "tags": ["ingo-swan", "penetration-book", "remote-viewing", "cia"],
       "hostStance": "asserts"
     },
     {
       "id": "V8kT6J_uoic:c_0002",
       "videoId": "V8kT6J_uoic",
-      "text": "When the CIA declassified Stargate Project files in 2006, those documents independently confirmed that Ingo Swann really had been a participant in US government-funded remote-viewing experiments, lending the book's exotic claims a layer of institutional credibility.",
+      "text": "Declassified CIA documents released starting in 2006 confirm Ingo Swan's participation in the Stargate project remote-viewing program.",
       "kind": "historical",
       "entities": [
+        "person:ingo swan",
         "organization:cia",
         "facility:stargate project",
-        "person:swan",
-        "person:ingo swan",
-        "date_time:2006",
-        "technology:remote viewing"
+        "date_time:2006"
       ],
-      "relationships": [],
+      "relationships": ["r_0006", "r_0007"],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 232,
-          "charEnd": 354,
-          "timeStart": 12.759,
-          "timeEnd": 26.880000000000003,
-          "quote": "in\n2006 when the CIA started releasing\ndocuments on the Stargate project Swan's\nparticipation in the program was\nconfirmed"
+          "charStart": 200,
+          "charEnd": 360,
+          "timeStart": 12.0,
+          "timeEnd": 20.0,
+          "quote": "ounded like science fiction but in\n2006 when the CIA started releasing\ndocuments on the Stargate project Swan's\nparticipation in the program was\nconfirmed when "
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "True. The CIA STAR GATE / SUN STREAK / GRILL FLAME files were declassified and a large tranche made public over the late 1990s through 2017 (the bulk of CIA's CREST release). Swann is named throughout; he co-developed Coordinate Remote Viewing with Hal Puthoff and Russell Targ at SRI. The participation is uncontested historical fact. What it implies about the validity of his findings is a separate question.",
-      "hostStance": "asserts",
-      "dependencies": [
-        { "target": "V8kT6J_uoic:c_0001", "kind": "supports", "rationale": "Provides documentary backing for the framing of the opener." }
-      ]
+      "directTruth": 0.9,
+      "rationale": "The CIA's Stargate Project declassification and the documents naming Swan are publicly archived at the CIA FOIA reading room and widely verified. Host confirms this late in the video ('if you search the CIA website there are hundreds of documents').",
+      "tags": ["stargate-project", "cia-foia", "declassification", "ingo-swan"],
+      "hostStance": "asserts"
     },
     {
       "id": "V8kT6J_uoic:c_0003",
       "videoId": "V8kT6J_uoic",
-      "text": "In a 1973 SRI experiment, Swann remote-viewed the planet Jupiter ahead of the Pioneer probes and predicted a thin ring of dust and small asteroids around it — a prediction that was not confirmed by Pioneer but was vindicated in 1979 when Voyager 1 photographed Jupiter's actual ring system.",
-      "kind": "empirical",
+      "text": "Unfriendly extraterrestrials are already on Earth and are building something on the far side of the Moon.",
+      "kind": "speculative",
       "entities": [
-        "person:swan",
-        "person:ingo swan",
-        "location:jupiter",
-        "date_time:1973",
-        "date_time:1979",
-        "technology:pioneer probes",
-        "organization:sri",
-        "organization:nasa"
+        "location:the far side of the moon",
+        "person:ingo swan"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 3152,
-          "charEnd": 3250,
-          "timeStart": 187.239,
-          "timeEnd": 197.599,
-          "quote": "Swan saw something\nelse something new he said he saw a ring\naround Jupiter just like Saturn's ring"
-        },
-        {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 3583,
-          "charEnd": 3662,
-          "timeStart": 212.76,
-          "timeEnd": 223.92000000000002,
-          "quote": "Voyager One passed\nby Jupiter in 1979 tell me there was a\nring there was a ring"
+          "charStart": 430,
+          "charEnd": 560,
+          "timeStart": 25.0,
+          "timeEnd": 32.0,
+          "quote": "ly were they already here but they\nare building something on The Far Side\nof the Moon and according to Swan these\naliens aren't fr"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.5,
-      "rationale": "The Jupiter remote-viewing session (April 27, 1973) and Swann's mention of a ring is documented in SRI papers — and Voyager 1 did discover Jupiter's main ring in March 1979. This is the often-cited 'hit' that even sympathetic skeptics admit is striking. Skeptical reviewers (e.g., James Randi, Brian Dunning) note that Swann's ring description doesn't perfectly match what Voyager found, that he made many other claims that didn't pan out, and that the session protocol was loose enough to allow generous post-hoc matching. So the kernel is real but probably overstated.",
-      "hostStance": "asserts"
+      "confidence": 0.9,
+      "directTruth": 0.08,
+      "rationale": "Swan's central thesis. No independent corroboration exists: no space-agency imagery, no recovered artifact, no remote-sensing anomaly. The claim rests entirely on Swan's alleged remote-viewing, which is not accepted by mainstream physics. Host presents Swan as sincere but does not endorse the conclusion.",
+      "tags": ["lunar-aliens", "ingo-swan", "speculative"],
+      "hostStance": "steelman"
     },
     {
       "id": "V8kT6J_uoic:c_0004",
       "videoId": "V8kT6J_uoic",
-      "text": "In March 1975 a clandestine government contact who used the cover name 'Mr. Axelrod' recruited Swann via dead-drop notes, helicopter blindfolded transport, and $1,000-a-day cash payment to remote-view the Moon under conditions of total secrecy.",
-      "kind": "speculative",
+      "text": "In a 1973 Stanford Research Institute experiment, Ingo Swan was asked to remote view Jupiter before NASA's Pioneer probes arrived.",
+      "kind": "historical",
       "entities": [
-        "person:swan",
+        "date_time:1973",
         "person:ingo swan",
-        "person:axel rod",
-        "person:mr axel rod",
-        "person:mr axelrod",
-        "person:twins",
-        "person:one of the twins",
-        "date_time:march 1975",
-        "location:washington dc",
-        "location:grand central"
+        "organization:sri",
+        "location:jupter"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 5261,
-          "charEnd": 5363,
-          "timeStart": 329.72,
-          "timeEnd": 339.639,
-          "quote": "Mr Axel Rod ingos Swan is obviously\nnervous and Mr Axel Rod sees this he\nsmiles tells him not to worry"
+          "charStart": 2100,
+          "charEnd": 2260,
+          "timeStart": 127.0,
+          "timeEnd": 136.0,
+          "quote": " system\nthere was an experiment in 1973 where\nIngo Swan was asked to project his\nConsciousness to the planet Jupiter at\nfirst Swan rejected the idea Ino Swan\nne"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.25,
-      "rationale": "This entire 'Mr. Axelrod' subplot exists only in Swann's own book. There is no corroborating documentation of these meetings in the declassified Stargate files (which do mention Swann extensively but for other work), no contemporaneous diary or witness, no Axelrod identified despite decades of investigation. It reads like a thriller framing device. Could it have happened? Possibly. But it's one-source.",
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "rationale": "The 1973 Swan/Harold Puthoff Jupiter remote-viewing session at SRI is documented in multiple parapsychology papers and Swan's own writings. That the experiment was conducted and yielded specific written observations is well-attested; the accuracy of those observations is addressed in later claims.",
+      "tags": ["sri", "jupiter-experiment", "1973", "remote-viewing"],
       "hostStance": "asserts"
     },
     {
       "id": "V8kT6J_uoic:c_0005",
       "videoId": "V8kT6J_uoic",
-      "text": "While remote-viewing the Moon for Axelrod, Swann saw vehicle tracks, machinery, hangars, towers, perfectly round excavated holes, and humanoid figures inside dome-like structures emitting light — and at one point those figures looked back at him through the windows.",
-      "kind": "speculative",
+      "text": "Swan predicted Jupiter has a ring made of dust and tiny asteroids, which Voyager 1 confirmed in 1979.",
+      "kind": "empirical",
       "entities": [
-        "person:swan",
         "person:ingo swan",
-        "person:axel rod",
-        "location:moon",
-        "location:the moon",
-        "event:moon experiment"
+        "location:jupter",
+        "date_time:1979"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 7429,
-          "charEnd": 7540,
-          "timeStart": 465.199,
-          "timeEnd": 475.8,
-          "quote": "describes\nseeing tracks on the surface tracks that\nseem to have been made by tractors or\nsome kind of Machinery"
-        },
-        {
-          "transcriptId": "V8kT6J_uoic",
-          "charStart": 8854,
-          "charEnd": 8977,
-          "timeStart": 551.6,
-          "timeEnd": 564.88,
-          "quote": "two of the\nbeings then three then a dozen then more\nthey just stop they turn to the window\nwhere swan has projected himself"
+          "charStart": 3580,
+          "charEnd": 3745,
+          "timeStart": 219.0,
+          "timeEnd": 230.0,
+          "quote": "en Voyager One passed\nby Jupiter in 1979 tell me there was a\nring there was a ring\n[Music]\nYY I am not this body in terms of\nConsciousness and Consciousness can go\np"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "Lunar surface imaging from orbiters (Apollo metric cameras, Lunar Reconnaissance Orbiter) shows no machinery, structures, hangars, excavated holes, or humanoid activity anywhere on the Moon at the resolution where these would be visible. The 'they saw me' moment is dramatic narrative; there's no plausible mechanism by which lunar bystanders would detect a remote viewer. This is the most extraordinary part of the story and has zero independent support.",
+      "confidence": 0.9,
+      "directTruth": 0.4,
+      "rationale": "Voyager 1 did discover Jupiter's rings in 1979 — that part is established fact. The claim that Swan predicted this in 1973 rests on his own written notes; skeptics note such notes were not independently sealed/witnessed in a verifiable protocol, so the 'prediction' claim is weaker than the 'Voyager found rings' fact.",
+      "tags": ["jupiter-rings", "voyager-1", "swan-prediction"],
       "hostStance": "asserts"
     },
     {
       "id": "V8kT6J_uoic:c_0006",
       "videoId": "V8kT6J_uoic",
-      "text": "Months later Axelrod summoned Swann to a remote Alaskan lake at night to witness a 90-foot triangle UFO emerge from the water emitting beams of light that destroyed pine trees and animals before pulling lake water into itself like a reverse waterfall.",
-      "kind": "speculative",
+      "text": "Skeptics argue Swan's Jupiter observations are trivially deducible from astronomical knowledge already available in 1973.",
+      "kind": "empirical",
       "entities": [
-        "person:swan",
-        "person:ingo swan",
-        "person:axel rod",
-        "person:mr axelrod",
-        "person:twins",
-        "location:alaska",
-        "location:lake",
-        "event:ufo encounter",
-        "technology:ufo"
+        "person:skeptics",
+        "location:jupter",
+        "person:ingo swan"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 14588,
-          "charEnd": 14719,
-          "timeStart": 908.839,
-          "timeEnd": 919.1990000000001,
-          "quote": "and then up from the lake a\ntriangle-shaped craft emerged it was\nabout 90 ft wide and emitted a pulsing\nhum suddenly beams of light"
+          "charStart": 2899,
+          "charEnd": 3063,
+          "timeStart": 175.0,
+          "timeEnd": 185.0,
+          "quote": "Skeptics will say all these observations\ncould be deduced like of course Jupiter\nhas violent storms we can see them same\nwith the color of clouds infrared and\nAtmos"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.05,
-      "rationale": "Same source-credibility problem as the Axelrod plot — Swann's account only. The added detail of trees and animals being destroyed by the beams is, as the host correctly points out in the verdict section, the kind of physical evidence that should leave forensic traces if real, and yet there is no follow-up investigation in 50 years.",
-      "hostStance": "asserts"
+      "directTruth": 0.6,
+      "rationale": "The skeptical rebuttal that most of Swan's observations (storms, hydrogen, cloud color) were either already known or trivially inferrable is widely made by mainstream scientists. Host raises this specifically to address it before pivoting to the ring as the 'new' item.",
+      "tags": ["skeptic-argument", "jupiter", "deducibility"],
+      "hostStance": "steelman",
+      "dependencies": [
+        {
+          "target": "V8kT6J_uoic:c_0005",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If observations were deducible from priors, the 'prediction' has less probative weight — but the ring claim partially escapes this critique."
+        }
+      ]
     },
     {
       "id": "V8kT6J_uoic:c_0007",
       "videoId": "V8kT6J_uoic",
-      "text": "The 'beautiful alien woman in a supermarket' and her sequel — Axelrod's frantic phone call warning Swann to stay away from her — was almost certainly a case of mistaken identification: the woman was probably a Soviet intelligence operative, not an extraterrestrial.",
-      "kind": "opinion",
+      "text": "In March 1975 Ingo Swan was covertly recruited in Washington DC by a man calling himself Mr Axelrod for a classified remote-viewing project.",
+      "kind": "historical",
       "entities": [
-        "person:swan",
+        "date_time:march 1975",
         "person:ingo swan",
-        "person:axel rod",
-        "person:twins",
-        "role:soviet spy",
-        "organization:soviet spies",
-        "organization:soviet union",
-        "date_time:1970s"
+        "location:washington",
+        "person:mr axelrod"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 17072,
-          "charEnd": 17198,
-          "timeStart": 1067.039,
-          "timeEnd": 1078.1200000000001,
-          "quote": "the United States and Soviet Union were\nin the middle of what you might call a\npsychic arms race we know this from CIA\nrecords"
+          "charStart": 3899,
+          "charEnd": 4034,
+          "timeStart": 241.36,
+          "timeEnd": 248.76,
+          "quote": "in March 1975 ingos\nSwan received a call at 3:00 in the\nmorning he was told to go to Washington\nand visit the Museum of Natural History"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "The host's reframing here is sound. The 1970s US-Soviet 'psychic arms race' is well-documented (the USSR ran parallel parapsychology research at Novosibirsk; CIA briefings about Soviet ESP work are in the declassified record). If Swann was working on a sensitive project, foreign intelligence services would absolutely have surveilled and tried to honey-trap him. 'Soviet spy, not extraterrestrial' is by far the more parsimonious read.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
+      "confidence": 0.85,
+      "directTruth": 0.35,
+      "rationale": "The story's sole source is Swan's own 1998 book. The specifics (museum rendezvous, hooded car, twins, cigar-smoking Axelrod) are theatrical and uncorroborated. No declassified document names Axelrod, and the CIA's declassified Stargate materials do not include this side mission. Plausible as embellished memoir, low as literal history.",
+      "tags": ["axelrod", "1975-recruitment", "swan-memoir"],
+      "hostStance": "asserts"
     },
     {
       "id": "V8kT6J_uoic:c_0008",
       "videoId": "V8kT6J_uoic",
-      "text": "The host accepts that Swann was a sincere participant in real government remote-viewing experiments and was not a deliberate hoaxer — but treats the sensational Axelrod / Moon / UFO chapters of Penetration as the weakest, single-source parts of his story.",
-      "kind": "opinion",
+      "text": "Axelrod offered Swan $11,000 per day (over $60,000 in 2020s dollars) to participate in a secret remote-viewing project with strict non-disclosure terms.",
+      "kind": "historical",
       "entities": [
+        "person:mr axelrod",
         "person:ingo swan",
-        "person:swan",
-        "person:axel rod",
-        "organization:cia",
-        "technology:remote viewing"
+        "quantity:$11,000"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 19161,
-          "charEnd": 19258,
-          "timeStart": 1177.6,
-          "timeEnd": 1185.039,
-          "quote": "everyone who worked with Ingo Swan\n100% believed he was telling the truth\nabout everything he saw"
+          "charStart": 5580,
+          "charEnd": 5740,
+          "timeStart": 349.28,
+          "timeEnd": 360.0,
+          "quote": "an to participate in a remote\nviewing project for his effort he would\nbe paid $11,000 a day in cash which in\ntoday's money is over $6,000 a day inl\nhuh y are we"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "Swann's program participation is uncontested. His subjective sincerity is corroborated by SRI colleagues who, even when skeptical of his claims, did not accuse him of fabrication. The host's bracketing of 'sincere reporter' from 'his perceptions are accurate' is the right epistemic move. The Axelrod chapters being the weakest is a fair reading.",
+      "confidence": 0.8,
+      "directTruth": 0.3,
+      "rationale": "Rests on same single-source (Swan's book) as c_0007. $11,000/day cash payments in the mid-1970s would leave financial traces; none produced. Host notes the 'today's money $6,000' figure mid-sentence which is actually an error (should be much larger — inflation from 1975 is ~6x), suggesting uncritical rendering of Swan's text.",
+      "tags": ["axelrod", "payment", "1975"],
       "hostStance": "asserts",
-      "inVerdictSection": true,
       "dependencies": [
-        { "target": "V8kT6J_uoic:c_0004", "kind": "contradicts", "rationale": "Casts the Axelrod recruitment as the part most likely to be inaccurate." },
-        { "target": "V8kT6J_uoic:c_0005", "kind": "contradicts", "rationale": "Casts the lunar-civilization observations as among the weakest." }
+        {
+          "target": "V8kT6J_uoic:c_0007",
+          "kind": "presupposes",
+          "rationale": "The offer only exists if the Axelrod recruitment story is true."
+        }
       ]
     },
     {
       "id": "V8kT6J_uoic:c_0009",
       "videoId": "V8kT6J_uoic",
-      "text": "Whether Swann's lunar observations are real depends entirely on whether one accepts that remote viewing works at all — a question that the US government's two-decade investment of millions of dollars in the Stargate program treats as at least open.",
-      "kind": "opinion",
+      "text": "Remote viewing the Moon, Swan saw tractor tracks, wind-patterned dunes, and diffused green light in a crater — all impossible on the airless lunar surface.",
+      "kind": "speculative",
       "entities": [
-        "person:swan",
-        "person:ingo swan",
-        "organization:us government",
-        "organization:cia",
-        "facility:stargate project",
-        "technology:remote viewing"
+        "location:moon",
+        "person:swan"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "V8kT6J_uoic",
-          "charStart": 19515,
-          "charEnd": 19680,
-          "timeStart": 1196.76,
-          "timeEnd": 1208.3600000000001,
-          "quote": "if you don't believe in\nremote viewing then the answer is easy\nno none of this could be real these are\njust stories created by someone with an\nincredible imagination"
+          "charStart": 7430,
+          "charEnd": 7595,
+          "timeStart": 464.0,
+          "timeEnd": 475.0,
+          "quote": "escribes\nseeing tracks on the surface tracks that\nseem to have been made by tractors or\nsome kind of Machinery he sees patterns\nthat look like they were made by wind"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "The 1995 American Institutes for Research review of the Stargate program — the official end-of-program assessment — concluded that the operational effects were not robust enough to justify continued use, even though some statistical anomalies could not be readily explained. So 'the US government treats remote viewing as open' is true historically but not the full picture; the official verdict was 'not useful', not 'still open'.",
+      "confidence": 0.9,
+      "directTruth": 0.1,
+      "rationale": "Physical implausibility: the Moon's vacuum makes wind-patterned dunes impossible and diffused light requires an atmosphere. Swan's 'impossible' observation is internally consistent with either a genuine alien atmosphere dome OR a confabulation; extraordinary-claim standards put directTruth very low without independent evidence.",
+      "tags": ["moon-remote-view", "lunar-impossibility", "ingo-swan"],
+      "hostStance": "steelman"
+    },
+    {
+      "id": "V8kT6J_uoic:c_0010",
+      "videoId": "V8kT6J_uoic",
+      "text": "Swan observed humanoid figures inside domed structures on the Moon, who noticed his projected consciousness and pointed at him.",
+      "kind": "speculative",
+      "entities": [
+        "location:moon",
+        "person:swan"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V8kT6J_uoic",
+          "charStart": 8620,
+          "charEnd": 8790,
+          "timeStart": 540.0,
+          "timeEnd": 550.0,
+          "quote": "s inside he describes\nhumanoid figures that look almost like\nus he describes this as an area of high\nactivity whoever or whatever these\nbeings are they're very busy and S"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.05,
+      "rationale": "Climactic story beat with zero corroborating evidence. The 'they see me' moment is dramatically convenient and requires accepting both the metaphysical reality of remote-viewing and the existence of psychically-sensitive lunar humanoids. No physical artifacts, imagery, or testimony from other viewers confirm this specific scene.",
+      "tags": ["lunar-humanoids", "moon-base", "extraordinary-claim"],
+      "hostStance": "steelman",
+      "dependencies": [
+        {
+          "target": "V8kT6J_uoic:c_0009",
+          "kind": "elaborates",
+          "rationale": "Extends the Moon-with-atmosphere scene with the climactic humanoid encounter."
+        },
+        {
+          "target": "V8kT6J_uoic:c_0003",
+          "kind": "supports",
+          "rationale": "Provides the specific episode that underwrites Swan's thesis that aliens are building on the Moon."
+        }
+      ]
+    },
+    {
+      "id": "V8kT6J_uoic:c_0011",
+      "videoId": "V8kT6J_uoic",
+      "text": "Neil Armstrong and Buzz Aldrin reportedly told NASA's chief medical officer from the lunar surface that aliens were parked on the crater watching them.",
+      "kind": "historical",
+      "entities": [
+        "person:neil",
+        "person:buzz",
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V8kT6J_uoic",
+          "charStart": 9450,
+          "charEnd": 9620,
+          "timeStart": 594.48,
+          "timeEnd": 605.0,
+          "quote": "uzz were on the lunar\nsurface Neil switched to the the medical\nChannel and spoke directly with the\nchief medical officer saying they're\nhere they're parked on the side of"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.1,
+      "rationale": "This is a long-debunked hoax transcript often attributed to a Soviet ham-radio intercept; no authentic NASA audio or Armstrong/Aldrin statement corroborates it. Both astronauts denied such exchanges. Host inserts it as evocative filler without sourcing.",
+      "tags": ["apollo-11", "alien-hoax", "armstrong", "debunked"],
       "hostStance": "asserts",
-      "inVerdictSection": true
+      "dependencies": [
+        {
+          "target": "V8kT6J_uoic:c_0010",
+          "kind": "supports",
+          "rationale": "Narratively paired with the Swan lunar-humanoid claim as independent corroboration."
+        }
+      ]
+    },
+    {
+      "id": "V8kT6J_uoic:c_0012",
+      "videoId": "V8kT6J_uoic",
+      "text": "The beautiful supermarket woman Swan believed was an alien was more plausibly a Soviet spy surveilling him during the Cold War psychic arms race.",
+      "kind": "empirical",
+      "entities": [
+        "role:soviet spy",
+        "organization:soviet union",
+        "ideology:psychic arms race",
+        "person:stunning woman"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V8kT6J_uoic",
+          "charStart": 16980,
+          "charEnd": 17140,
+          "timeStart": 1056.0,
+          "timeEnd": 1065.0,
+          "quote": "s that she was\na Soviet spy honey yeah I I think so\nthis was the 1970s and during this time\nthe United States and Soviet Union were\nin the middle of what you mi"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "rationale": "Host's preferred naturalistic alternative. The Cold War US-Soviet psychic-research rivalry is historically documented (KGB's 21st Laboratory, etc.), making a Soviet tail plausible but entirely speculative in this specific case — no evidence identifies the woman. Host presents it as 'the most logical explanation' but with no investigative followup.",
+      "tags": ["cold-war", "psychic-arms-race", "soviet-spy", "alternative-explanation"],
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "V8kT6J_uoic:c_0007",
+          "kind": "presupposes",
+          "rationale": "Only coherent if the Axelrod recruitment and subsequent surveillance context are accepted."
+        }
+      ]
+    },
+    {
+      "id": "V8kT6J_uoic:c_0013",
+      "videoId": "V8kT6J_uoic",
+      "text": "The Alaska UFO encounter Swan witnessed was an alien resupply mission mining water from the lake for a lunar base.",
+      "kind": "speculative",
+      "entities": [
+        "location:alaska",
+        "event:resupply mission",
+        "location:moon",
+        "technology:triangle-shaped craft"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V8kT6J_uoic",
+          "charStart": 15580,
+          "charEnd": 15740,
+          "timeStart": 966.0,
+          "timeEnd": 975.0,
+          "quote": "ked Swan to continue Swan\nsaid it's a resupply mission they're\nmining the moon and they need our water\nAxel Rod smiled at this he didn't agree\nbut he didn't dis"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Swan's own interpretation of the Alaska event. Rests on accepting the encounter itself (single source), accepting the triangle craft was alien rather than classified US tech, and accepting the lunar-mining narrative. Host flags narrative convenience ('very tidy story... he knew exactly where it would appear').",
+      "tags": ["alaska-ufo", "lunar-mining", "water"],
+      "hostStance": "steelman",
+      "dependencies": [
+        {
+          "target": "V8kT6J_uoic:c_0003",
+          "kind": "supports",
+          "rationale": "Supplies the supply-chain mechanism for the alien-lunar-base thesis."
+        }
+      ]
+    },
+    {
+      "id": "V8kT6J_uoic:c_0014",
+      "videoId": "V8kT6J_uoic",
+      "text": "The Alaska UFO story is suspiciously tidy, and the reported tree-destroying and animal-killing light rays were never independently confirmed.",
+      "kind": "empirical",
+      "entities": [
+        "event:ufo encounter",
+        "location:alaska"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V8kT6J_uoic",
+          "charStart": 17277,
+          "charEnd": 17436,
+          "timeStart": 1078.0,
+          "timeEnd": 1090.0,
+          "quote": "was another tough one for\nme it was just a very tidy story Mr Axel\nRod knew exactly where it would appear\nhow it operated what it would be doing I\nmean if he w"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Host explicitly voices skepticism of the Alaska story's narrative convenience and notes the absence of followup on physically-verifiable claims (dead trees, killed animals). This is a rare moment of the host himself debunking part of the source material.",
+      "tags": ["host-skepticism", "ufo-encounter", "narrative-convenience"],
+      "hostStance": "denies",
+      "dependencies": [
+        {
+          "target": "V8kT6J_uoic:c_0013",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If the UFO story itself is too-neat and unchecked, the resupply-mission interpretation loses its observational anchor."
+        }
+      ]
+    },
+    {
+      "id": "V8kT6J_uoic:c_0015",
+      "videoId": "V8kT6J_uoic",
+      "text": "The US government won't allow independent confirmation of lunar anomalies, withholding far-side Moon photography from the public.",
+      "kind": "speculative",
+      "entities": [
+        "organization:us government",
+        "organization:nasa",
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "V8kT6J_uoic",
+          "charStart": 18420,
+          "charEnd": 18581,
+          "timeStart": 1138.0,
+          "timeEnd": 1148.0,
+          "quote": "US\nGovernment simply will not allow us to\nconfirm the details there are reports of\nastronauts hearing signals coming from\nthe moon but those signals are dismisse"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.15,
+      "rationale": "Cover-up framing. In fact NASA's LRO has released gigabytes of high-resolution far-side imagery publicly; the 'won't let us confirm' claim is factually wrong. 'Astronauts hearing signals' refers to the well-documented Apollo 10 whistling audio, which has a mundane explanation (VHF interference between LM and CM).",
+      "tags": ["nasa-coverup", "far-side", "apollo-signals"],
+      "hostStance": "asserts"
     }
   ]
 }

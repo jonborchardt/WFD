@@ -1,376 +1,469 @@
 {
   "schemaVersion": 1,
   "transcriptId": "a5KXsiBZjOM",
-  "generatedAt": "2026-04-20T03:50:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b2",
   "claims": [
     {
       "id": "a5KXsiBZjOM:c_0001",
       "videoId": "a5KXsiBZjOM",
-      "text": "On June 21, 1947, harbor patrolman Harold Dahl claimed to have witnessed six donut-shaped UFOs over Maury Island in Puget Sound — one of which dropped molten metal that wrecked his boat, burned his son, and killed his dog Sparky.",
+      "text": "On June 21, 1947, harbor patrolman Harold Dahl reported seeing six donut-shaped craft drop molten metal over Maury Island in Puget Sound.",
       "kind": "historical",
       "entities": [
         "person:harold dah",
-        "person:harold",
-        "location:puet sound",
+        "date_time:june 21st, 1947",
         "location:mory island",
-        "date_time:1947",
-        "person:charles",
-        "person:sparky",
-        "event:mory island incident"
+        "location:puget sound"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "a5KXsiBZjOM",
-          "charStart": 61,
-          "charEnd": 157,
-          "timeStart": 19.199,
-          "timeEnd": 30.08,
-          "quote": "June 1947, boat captain Harold Dah\nwatched a formation of UFOs drop molten\nmetal over Puet Sound"
+          "charStart": 3123,
+          "charEnd": 3286,
+          "timeStart": 218.239,
+          "timeEnd": 231.76,
+          "quote": "June 21st, 1947, Harold Dah was\npatrolling around Mory Island with his\n15-year-old son, Charles, a crewman, and\nhis dog, Sparky. They were looking for\nstray timber"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.2,
-      "rationale": "The Maury Island incident is well-documented as one of the earliest 'modern' UFO claims, predating Roswell by weeks. Dahl and his partner Fred Crisman did make these claims to journalists and investigators in 1947. Whether the actual events occurred — vs. being a hoax for magazine money or something more complicated — is genuinely contested. Most modern UFO researchers (including Kenneth Arnold, who initially believed Dahl) eventually concluded it was likely a hoax with industrial-slag debris. But the host correctly notes Dahl never publicly recanted to investigators in private.",
+      "directTruth": 0.55,
+      "rationale": "Dahl's Maury Island report is a documented 1947 event central to UFO historiography. Whether actual craft were seen is contested — Dahl himself later recanted and some researchers regard the whole episode as a hoax. Moderate directTruth for the report existing, lower for its literal content.",
+      "tags": ["maury-island", "1947", "harold-dahl", "ufo"],
       "hostStance": "asserts"
     },
     {
       "id": "a5KXsiBZjOM:c_0002",
       "videoId": "a5KXsiBZjOM",
-      "text": "Within hours of Dahl reporting the sighting, a stranger in a black suit, hat, and unmarked Buick visited him at a Tacoma diner — knowing every personal detail about him and his family — and threatened consequences if he talked, making this perhaps the historical origin of the 'Men in Black' UFO trope.",
+      "text": "One of the craft wobbled and dumped hot metal and thin metallic strips onto Dahl's boat, burning his son and killing his dog Sparky.",
       "kind": "historical",
       "entities": [
         "person:harold dah",
-        "person:harold",
+        "person:sparky"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 4000,
+          "charEnd": 4200,
+          "timeStart": 271.12,
+          "timeEnd": 288.72,
+          "quote": "m. Harold could see into it\nthrough the windows.\n>> Did he see my ex-wife in there? No. Do\nyou want to hear about the UFOs or not?\n>> Sorry. Sorry. I'm so har resentment.\nHey, go ahead.\n>> The wobble "
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.35,
+      "rationale": "This follows Dahl's own account. Skeptics (FBI files, later researcher Kenneth Arnold) attributed the 'debris' to industrial slag from a nearby smelter; Dahl partially retracted the story. Moderate-low directTruth.",
+      "tags": ["maury-island", "debris", "slag", "contested"],
+      "dependencies": [
+        {
+          "target": "a5KXsiBZjOM:c_0001",
+          "kind": "elaborates",
+          "rationale": "Provides the concrete damages that define the Maury Island encounter story."
+        }
+      ]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0003",
+      "videoId": "a5KXsiBZjOM",
+      "text": "The day after the Maury Island incident, a dark-suited stranger in Tacoma who already knew every detail of the event warned Dahl to keep quiet.",
+      "kind": "historical",
+      "entities": [
+        "person:harold dah",
         "location:tacoma"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "a5KXsiBZjOM",
-          "charStart": 5769,
-          "charEnd": 5821,
-          "timeStart": 376.72,
-          "timeEnd": 384.68,
-          "quote": "Harold Dah had\njust met history's first man in black"
+          "charStart": 5785,
+          "charEnd": 5970,
+          "timeStart": 379.52,
+          "timeEnd": 400.88,
+          "quote": "ust met history's first man in black.\nThe stranger in black sat across from\nHarold at a diner in Tacoma. He ordered\nbreakfast, but he never touched it.\n>> That's a power move. Men in bl"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.4,
-      "rationale": "The Maury Island 'man in black' is widely cited as the origin of the MIB trope (Gray Barker's 1956 'They Knew Too Much About Flying Saucers' canonized it). Whether the visit happened as Dahl described or whether he embellished is contested. The story does have first-mover status in the MIB literature, even if the underlying facts are murky.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "a5KXsiBZjOM:c_0003",
-      "videoId": "a5KXsiBZjOM",
-      "text": "Two Air Force intelligence officers (Capt. William Davidson and Lt. Frank Brown) collected ~30 pieces of the alleged Maury Island UFO debris in a cornflakes box and died hours later when their B-25 crashed near Kelso, Washington, with the debris missing — fueling decades of conspiracy speculation.",
-      "kind": "historical",
-      "entities": [
-        "organization:military intelligence"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 9782,
-          "charEnd": 9858,
-          "timeStart": 643.839,
-          "timeEnd": 652.32,
-          "quote": "The bomber crashed near Kelso,\nWashington. Davidson and Brown died on\nimpact"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "The B-25 crash is documented historical fact: August 1, 1947, near Kelso, killing both officers. They had visited Tacoma to investigate the Maury Island claims. Whether the crash was sabotage (Tacoma Times reporter Paul Lance suggested 20mm cannon fire) or mechanical failure (the official conclusion) is unproven. The disappearance of any 'UFO debris' on board is consistent with either innocent loss in the crash or removal — both interpretations remain in contention among researchers.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "a5KXsiBZjOM:c_0004",
-      "videoId": "a5KXsiBZjOM",
-      "text": "FBI Special Agent Jack Wilcox's contemporary memo to J. Edgar Hoover explicitly stated Dahl never admitted the UFO sighting was a hoax — only that he would publicly call it a hoax to avoid trouble — meaning the canonical 'Maury Island was a hoax' narrative is contradicted by the FBI's own records.",
-      "kind": "historical",
-      "entities": [
-        "organization:fbi",
-        "person:j. edgar hoover",
-        "person:harold dah"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 11444,
-          "charEnd": 11553,
-          "timeStart": 742.959,
-          "timeEnd": 754.72,
-          "quote": "special agent\nJack Wilcox corrected Hoover. We have\nthe memo. Will Cox wrote that Doll\ndidn't admit to a hoax"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Declassified FBI files do contain memos suggesting Dahl's 'admission' was conditional ('to make the press leave him alone'). This is the kind of internal-document detail that complicates the simple hoax narrative. However, even if Dahl 'privately maintained' the story, that doesn't make it true — many hoaxers maintain their lies to friends. Useful nuance but doesn't validate the UFO claim.",
+      "confidence": 0.85,
+      "directTruth": 0.25,
+      "rationale": "This is the founding 'men in black' story in UFO folklore. The event is attested only by Dahl's own testimony. Given the later hoax admissions and the subject's established unreliability, the MIB encounter's literal truth is doubtful.",
+      "tags": ["men-in-black", "intimidation", "folklore"],
       "hostStance": "asserts",
       "dependencies": [
         {
           "target": "a5KXsiBZjOM:c_0001",
-          "kind": "supports",
-          "rationale": "Strengthens the case that Dahl's recantation may have been situational"
+          "kind": "elaborates",
+          "rationale": "Introduces the intimidation-aftermath narrative that frames the rest of the story."
         }
       ]
     },
     {
-      "id": "a5KXsiBZjOM:c_0005",
+      "id": "a5KXsiBZjOM:c_0004",
       "videoId": "a5KXsiBZjOM",
-      "text": "Fred Crisman, Dahl's business partner who corroborated the Maury Island sighting, was actually a decorated WWII pilot recruited by the OSS in 1942, transferred to the CIA after the war, and worked as a 'career disruption agent' running domestic disinformation operations — not a random harbor patrolman.",
+      "text": "Pilot Kenneth Arnold, who had his own famous UFO sighting near Mount Rainier three days later, was brought in by Amazing Stories editor Ray Palmer to investigate the Maury Island case.",
       "kind": "historical",
       "entities": [
+        "person:kenneth arnold",
+        "person:ray palmer",
+        "event:mory island incident",
+        "work_of_media:amazing stories"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 6940,
+          "charEnd": 7150,
+          "timeStart": 461.36,
+          "timeEnd": 477.36,
+          "quote": "iction. Palmer asked Kenneth Arnold to\ninvestigate. Arnold was a pilot and\ndeputy field marshal. He became famous\nfor his own UFO sighting near Mount\nRineer just 3 days after the Mory Island\nincident. Arnold de"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "Ray Palmer (Amazing Stories editor) did hire Kenneth Arnold to investigate Maury Island in late July 1947; Arnold's own June 24 Mount Rainier sighting is well-documented. Historical fact about the investigation setup.",
+      "tags": ["kenneth-arnold", "ray-palmer", "investigation"]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0005",
+      "videoId": "a5KXsiBZjOM",
+      "text": "On August 1, 1947, Air Force intelligence officers Captain William Davidson and Lieutenant Frank Brown flew out of McChord with samples of the Maury Island debris on a B-25.",
+      "kind": "historical",
+      "entities": [
+        "person:captain william davidson",
+        "person:lieutenant frank brown",
+        "location:mccord air base",
+        "location:b25"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 9470,
+          "charEnd": 9700,
+          "timeStart": 613.44,
+          "timeEnd": 641.36,
+          "quote": "s. Their B25 flew out of\nMcCord Air Base at 1:30 a.m. 2 hours\nlater, the plane went down.\n[Music]\nTwo hours into the flight, the B-25's\nleft engine caught fire. Davidson tried\nto stabilize the aircraft and Brown\nordered the two cr"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The August 1, 1947 crash of a B-25 (44-29127) carrying Davidson and Brown near Kelso, Washington is on the historical record; the two investigators did die, the two enlisted crew did bail out successfully. Mainstream history, independent of UFO interpretation.",
+      "tags": ["b-25", "davidson", "brown", "crash", "1947"]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0006",
+      "videoId": "a5KXsiBZjOM",
+      "text": "The B-25 crashed near Kelso, Washington, killing Davidson and Brown; some accounts claim the UFO debris they were carrying went missing from the wreckage.",
+      "kind": "historical",
+      "entities": [
+        "location:kelso, washington",
+        "person:davidson",
+        "person:brown",
+        "organization:fbi"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 9786,
+          "charEnd": 10000,
+          "timeStart": 643.839,
+          "timeEnd": 659.12,
+          "quote": "bomber crashed near Kelso,\nWashington. Davidson and Brown died on\nimpact. Their bodies were recovered, but\nthe UFO debris was gone. And nobody\nknows what happened to the evidence, but\nsome think it was taken by the"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.45,
+      "rationale": "The crash and deaths are fact. 'UFO debris was gone' depends on what was ever on board — most researchers (including Kenneth Arnold and the FBI) concluded the 'debris' was slag from a local smelter that was on the plane for routine disposal. Moderate directTruth for the missing-debris framing.",
+      "tags": ["kelso", "b-25", "missing-debris", "contested"],
+      "dependencies": [
+        {
+          "target": "a5KXsiBZjOM:c_0005",
+          "kind": "elaborates",
+          "rationale": "Completes the B-25 flight's fatal outcome."
+        }
+      ]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0007",
+      "videoId": "a5KXsiBZjOM",
+      "text": "Tacoma Times reporter Paul Lance reported the officers' names before the military released them and claimed an anonymous source said the plane was shot down with a 20mm cannon.",
+      "kind": "historical",
+      "entities": [
+        "person:paul lance",
+        "organization:tacoma times"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 10745,
+          "charEnd": 10975,
+          "timeStart": 702.8,
+          "timeEnd": 719.36,
+          "quote": "porting for the Tacoma Times,\nPaul Lance released the names of the\nofficers killed before the military\nannounced them. He also reported that an\nanonymous source told him the plane was\nshot down with a 20 mm cannon.\n>> Who shot it "
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.35,
+      "rationale": "The early name-release is attested in contemporaneous Tacoma Times copy. The 20mm-cannon shoot-down claim is an anonymous-source allegation; the official accident report ruled engine fire/mechanical failure. Low-moderate directTruth for the sabotage framing.",
+      "tags": ["paul-lance", "tacoma-times", "sabotage-claim"]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0008",
+      "videoId": "a5KXsiBZjOM",
+      "text": "Reporter Paul Lance died suddenly of meningitis at age 29 shortly after his Tacoma Times reporting, and the paper folded a year later.",
+      "kind": "historical",
+      "entities": [
+        "person:paul lance",
+        "organization:tacoma times"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 11780,
+          "charEnd": 11950,
+          "timeStart": 764.639,
+          "timeEnd": 778.72,
+          "quote": " reporter, died of sudden\nmenitis at age 29. Doctors never found\nthe cause. The Tacoma Times folded a\nyear later. Fred Chrisman was recalled\nto military service and sent "
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.6,
+      "rationale": "Lance did die young; meningitis is cited in the Tacoma Times' own archive records. The implied 'tying up loose ends' causation is speculative. Mixed factual/interpretive content.",
+      "tags": ["paul-lance", "death", "meningitis"]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0009",
+      "videoId": "a5KXsiBZjOM",
+      "text": "FBI agent Jack Wilcox's memo to J. Edgar Hoover stated that Harold Dahl never actually admitted to a hoax — only that he would call it one to avoid trouble.",
+      "kind": "historical",
+      "entities": [
+        "organization:fbi",
+        "person:harold dah",
+        "person:dal"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 11450,
+          "charEnd": 11700,
+          "timeStart": 742.959,
+          "timeEnd": 762.72,
+          "quote": "l agent\nJack Wilcox corrected Hoover. We have\nthe memo. Will Cox wrote that Doll\ndidn't admit to a hoax. He only said he\nwould call it a hoax to avoid trouble.\nHe'd rather be known as a liar than\nsomeone who saw a UFO. Privately, he\nstill said the st"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The FBI memo (SMX/Security Matter X files, declassified) is quoted accurately. This is a primary-source document.",
+      "tags": ["fbi-memo", "wilcox", "hoax", "declassified"],
+      "dependencies": [
+        {
+          "target": "a5KXsiBZjOM:c_0001",
+          "kind": "supports",
+          "rationale": "Counters the popular 'Dahl admitted hoax' narrative, lending weight to the original sighting report."
+        }
+      ]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0010",
+      "videoId": "a5KXsiBZjOM",
+      "text": "Fred Chrisman, Dahl's business partner at Maury Island, was a career disruption agent for the OSS/CIA who ran disinformation operations inside the US, per the Easy Papers.",
+      "kind": "empirical",
+      "entities": [
         "person:fred chrisman",
-        "person:chrisman",
         "organization:oss",
+        "organization:cia",
+        "work_of_media:easy papers"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 12960,
+          "charEnd": 13180,
+          "timeStart": 858.079,
+          "timeEnd": 880.88,
+          "quote": "them. The\nEasy Papers exposed his real job, career\ndisruption agent. He monitored targets\nand fed them disinformation.\nChrisman has served many years as an\nactive agent for the old OSS and later\nthe CIA. He is rated an e"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "Chrisman's OSS/CIA ties are referenced in researcher Peter Levenda's compilation, but the Torbitt/'Easy' document is itself an unauthenticated intelligence memo of disputed provenance. Moderate directTruth.",
+      "tags": ["fred-chrisman", "cia", "oss", "easy-papers"]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0011",
+      "videoId": "a5KXsiBZjOM",
+      "text": "Guy Banister's New Orleans detective office at 531 Lafayette Street shared the 544 Camp Street address with Lee Harvey Oswald.",
+      "kind": "historical",
+      "entities": [
+        "person:guy bannister",
+        "location:531 lafayette street",
+        "location:544 camp street",
+        "person:lee harvey oswald"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 16790,
+          "charEnd": 17100,
+          "timeStart": 1135.52,
+          "timeEnd": 1171.679,
+          "quote": "Banister's detective\nagency was located at 531 Lafayette\nStreet in New Orleans. But the building\nsat on a corner. It had another\nentrance, another address, 544 Camp\nStreet. Now, this address is important\nbecause it was the home base of the most\nfamous conspirator of all, Lee Harvey\nOswalt.\n[Music]\nThis web of"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "rationale": "The 544 Camp Street / 531 Lafayette corner building connection is the most famous physical link in the JFK investigation literature. The Warren Commission and House Select Committee both addressed it. Documented fact.",
+      "tags": ["544-camp-street", "banister", "oswald", "new-orleans"]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0012",
+      "videoId": "a5KXsiBZjOM",
+      "text": "On November 12, 1963, Kennedy issued National Security Action Memorandum 271 ordering declassification of UFO intelligence files and sharing with NASA.",
+      "kind": "historical",
+      "entities": [
+        "date_time:november 12th, 1963",
+        "person:kennedy",
+        "organization:nasa"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 17990,
+          "charEnd": 18260,
+          "timeStart": 1226.08,
+          "timeEnd": 1248,
+          "quote": ">> On November 12th, 1963, just 10 days\nbefore his death, Kennedy issued two\nmemos. The first was National Security\nAction Memorandum 271.\n>> I have initiated a program for the\norderly declassification of all UFO\nintelligence files affecting national\nsecurity. I have in"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.25,
+      "rationale": "NSAM 271 is a real document but its actual text concerns US-Soviet space cooperation generally, not 'UFO intelligence files'. The 'UFO disclosure memo' version widely quoted in conspiracy circles is from the disputed Majestic-12 document set, not NSAM 271 itself. The UFO-file framing is a conspiracy-lore embellishment.",
+      "tags": ["nsam-271", "kennedy", "ufo-disclosure", "contested"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0013",
+      "videoId": "a5KXsiBZjOM",
+      "text": "Fired CIA director Allen Dulles had overseen the UFO cover-up since 1947 and viewed Kennedy's disclosure push as treasonous.",
+      "kind": "empirical",
+      "entities": [
+        "person:alan dulles",
+        "person:kennedy",
+        "event:mory island incident",
         "organization:cia"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "a5KXsiBZjOM",
-          "charStart": 12196,
-          "charEnd": 12240,
-          "timeStart": 801.839,
-          "timeEnd": 807.68,
-          "quote": "Fred Chrisman wasn't just a harbor\npatrolman"
-        },
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 12742,
-          "charEnd": 12824,
-          "timeStart": 844.48,
-          "timeEnd": 854.88,
-          "quote": "Chrisen was a decorated fighter\npilot who flew 211 combat missions in\nWorld War II"
+          "charStart": 18870,
+          "charEnd": 19120,
+          "timeStart": 1288.559,
+          "timeEnd": 1307.2,
+          "quote": "To former CIA director Alan Dulles, who\nKennedy had fired after the Bay of Pigs\ndisaster, this wasn't diplomacy. It was\ntreason. Dulles had overseen the UFO\ncoverup since 1947. He'd investigated\nthe Mory Island incident. He knew what\ntechnology the g"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.5,
-      "rationale": "Crisman was a real person and was an OSS-era veteran. The 'CIA career disruption agent' framing comes from the so-called 'Easy Papers' / Torbitt documents — a body of conspiracy literature whose provenance is shaky. Some of Crisman's intelligence-adjacent activities are documented; the wholesale 'CIA agent of disinformation' identity is partly speculative. The host treats the more dramatic version of his bio as established when it's actually contested.",
+      "directTruth": 0.15,
+      "rationale": "Dulles was fired after the Bay of Pigs, that is fact. The claim that he personally oversaw a UFO cover-up from 1947 or investigated Maury Island is not supported by declassified records; the former is speculative framing common to MJ-12 lore. Low directTruth.",
+      "tags": ["dulles", "ufo-coverup", "speculation"],
       "hostStance": "asserts"
     },
     {
-      "id": "a5KXsiBZjOM:c_0006",
+      "id": "a5KXsiBZjOM:c_0014",
       "videoId": "a5KXsiBZjOM",
-      "text": "Crisman became part of a network of far-right anti-communist, anti-Castro CIA-linked operatives by 1963 — operatives motivated to remove Kennedy because JFK wanted to dismantle the CIA and pursue détente with the Soviet Union.",
-      "kind": "speculative",
-      "entities": [
-        "person:chrisman",
-        "person:kennedy",
-        "ideology:anti-communist",
-        "organization:cia",
-        "location:soviet union"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 14003,
-          "charEnd": 14098,
-          "timeStart": 936.16,
-          "timeEnd": 947.04,
-          "quote": "By 1963, Chrisman was part of a network\nof far-right anti-communist, anti-Castro\nCIA operatives"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.3,
-      "rationale": "JFK's tensions with the CIA after the Bay of Pigs and his (alleged) intention to 'splinter the CIA into a thousand pieces' are real. But the leap from 'JFK wanted détente' to 'a CIA-linked Crisman-network killed JFK' is the contested core of Garrison-school conspiracy literature. The House Select Committee on Assassinations (1979) concluded a probable conspiracy but did NOT identify the participants. Crisman's role specifically is fringe-conspiracy speculation, not established history.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "a5KXsiBZjOM:c_0007",
-      "videoId": "a5KXsiBZjOM",
-      "text": "Guy Banister — the FBI special agent who handled UFO crash cases including a 1947 Twin Falls Idaho recovery — later set up a private detective firm in New Orleans whose 544 Camp Street back entrance was the same address Lee Harvey Oswald used for his pro-Castro pamphleteering, linking the UFO investigations and the JFK assassination through one address.",
+      "text": "Kennedy awarded the TFX (F-111) fighter contract to General Dynamics instead of Boeing, costing the military-industrial complex a major deal.",
       "kind": "historical",
       "entities": [
-        "person:guy banister",
-        "person:bannister",
-        "organization:fbi",
-        "location:544 camp street",
-        "person:lee harvey oswald",
-        "location:new orleans"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 15911,
-          "charEnd": 16049,
-          "timeStart": 1083.84,
-          "timeEnd": 1095.2,
-          "quote": "Bannister coordinated\nwith military intelligence during the\nMory Island investigation. Fred Chrisman\nis thought to be the anonymous source"
-        },
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 16623,
-          "charEnd": 16688,
-          "timeStart": 1126.4,
-          "timeEnd": 1133.2,
-          "quote": "Banners's office was the primary hub for\nplotting against Kennedy"
-        },
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 16870,
-          "charEnd": 16961,
-          "timeStart": 1140.72,
-          "timeEnd": 1153.6,
-          "quote": "But the building\nsat on a corner. It had another\nentrance, another address, 544 Camp\nStreet"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.65,
-      "rationale": "The 544 Camp Street / 531 Lafayette address with two entrances is a documented fact and one of the strongest pieces of evidence in the Garrison investigation. Banister did operate his PI agency there, and Oswald did stamp 'Fair Play for Cuba' literature with that address. The connection is real and significant. Whether Banister 'coordinated military intelligence on Maury Island' is more speculative — he was an FBI agent in 1947, and may have handled UFO-related cases, but the direct Maury Island role is fringe-conspiracy framing.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "a5KXsiBZjOM:c_0008",
-      "videoId": "a5KXsiBZjOM",
-      "text": "On November 12, 1963 — ten days before his assassination — Kennedy issued National Security Action Memorandum 271 ordering declassification of all UFO intelligence files, plus a top-secret companion memo demanding CIA cooperation with the Soviet Union on space exploration including UFO data sharing.",
-      "kind": "historical",
-      "entities": [
-        "person:kennedy",
-        "date_time:november 12th, 1963",
-        "organization:cia",
-        "location:soviet union"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 29040,
-          "charEnd": 29084,
-          "timeStart": 1934.559,
-          "timeEnd": 1942.159,
-          "quote": "Kennedy's November 12th,\n1963 memos are real"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.4,
-      "rationale": "NSAM 271 is real and is from November 12, 1963 — but it concerns US-Soviet cooperation in SPACE exploration, not specifically UFO disclosure. The 'top secret UFO declassification memo to CIA director' is more contested: a document with that text has circulated in UFO-conspiracy circles for decades but its authenticity has never been established by the National Archives or any other independent body. Many researchers consider it a fabrication. The host conflates a real space-cooperation memo with a contested UFO memo.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "a5KXsiBZjOM:c_0009",
-      "videoId": "a5KXsiBZjOM",
-      "text": "Kennedy awarded the largest defense contract in US history (the TFX program) to General Dynamics instead of Boeing — costing the military-industrial complex billions and giving figures associated with Boeing (including alleged Boeing 'chaos agent' Fred Crisman) a financial motive against the president.",
-      "kind": "historical",
-      "entities": [
-        "person:kennedy",
+        "organization:general dynamics",
         "organization:boeing",
-        "organization:military-industrial complex",
-        "person:chrisman"
+        "person:jfk"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "a5KXsiBZjOM",
-          "charStart": 19420,
-          "charEnd": 19486,
-          "timeStart": 1320.24,
-          "timeEnd": 1326.799,
-          "quote": "He awarded the largest defense\ndeal in history to General Dynamics"
+          "charStart": 19460,
+          "charEnd": 19700,
+          "timeStart": 1322.48,
+          "timeEnd": 1338.88,
+          "quote": "istory to General Dynamics.\nEveryone expected it to go to Boeing,\nthe cornerstone of the\nmilitary-industrial complex. But because\nof JFK, Boeing and its network of\npowerful allies had just lost a fortune.\n>> Especially all the people in Con"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.65,
-      "rationale": "The TFX (later F-111) contract did go to General Dynamics in November 1962, despite Boeing's bid being preferred by the Air Force selection board, and was politically controversial. McNamara's decision was challenged in Senate hearings. The 'Crisman as Boeing chaos agent' framing is fringe-conspiracy; while Crisman did have some Boeing connection, calling him their 'chaos agent' is a Garrison-era framing without solid documentation. The basic fact (TFX-Boeing controversy) is real; the Crisman-Boeing-JFK conspiracy chain is highly speculative.",
-      "hostStance": "asserts"
+      "directTruth": 0.85,
+      "rationale": "The November 1962 TFX contract award to General Dynamics over Boeing is documented and was a major industrial-political event; Senator McClellan's hearings looked into the decision. 'Largest defense deal in history' is a slight overstatement but the award itself is fact.",
+      "tags": ["tfx", "general-dynamics", "boeing", "defense-contract"]
     },
     {
-      "id": "a5KXsiBZjOM:c_0010",
+      "id": "a5KXsiBZjOM:c_0015",
       "videoId": "a5KXsiBZjOM",
-      "text": "Lee Harvey Oswald's improbably easy return from Soviet defection in 1961 — with US State Department loan money and a visa for his Russian wife — combined with his prior Atsugi Air Base work on the U-2 program suggests he was a US intelligence asset, not a lone-nut leftist.",
-      "kind": "speculative",
-      "entities": [
-        "person:lee harvey oswald",
-        "location:soviet union",
-        "location:japan",
-        "location:area 51"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 17062,
-          "charEnd": 17079,
-          "timeStart": 1153.6,
-          "timeEnd": 1159.08,
-          "quote": "Lee Harvey\nOswalt"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.55,
-      "rationale": "Oswald did serve at Atsugi Naval Air Facility (1957-58) where U-2s were stationed, and he did defect to the USSR in 1959 and return with State Dept assistance in 1962. These facts are well-documented. The interpretation that this proves intelligence-asset status is the long-standing Garrison/Mark Lane school view; the Warren Commission and most mainstream historians consider Oswald a lone defector with mental issues. The HSCA (1979) found probable conspiracy but did not endorse the asset-Oswald view. Plausible but unproven.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "a5KXsiBZjOM:c_0011",
-      "videoId": "a5KXsiBZjOM",
-      "text": "Allen Dulles — the CIA director Kennedy fired after the Bay of Pigs — was inexplicably appointed to the Warren Commission investigating Kennedy's death, an obvious conflict of interest that no official explanation has ever resolved.",
-      "kind": "historical",
-      "entities": [
-        "person:alan dulles",
-        "person:kennedy",
-        "organization:cia",
-        "organization:warren commission"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 29221,
-          "charEnd": 29314,
-          "timeStart": 1946.799,
-          "timeEnd": 1955.44,
-          "quote": "Alan Dulles, who Kennedy\nfired, was appointed to the Warren\nCommission investigating his desk"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Documented historical fact. Dulles was fired by JFK in November 1961 after the Bay of Pigs. He was nonetheless appointed to the seven-member Warren Commission by Lyndon Johnson in November 1963. The conflict of interest is glaring and has been a longstanding objection to the Warren Commission's credibility. Even most non-conspiracy historians acknowledge this was a remarkable choice.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "a5KXsiBZjOM:c_0012",
-      "videoId": "a5KXsiBZjOM",
-      "text": "AJ's verdict: the Maury Island UFO sighting may well have been a hoax, but the broader pattern is real — the same agencies, addresses, and personnel show up across UFO investigations and the JFK assassination, and 'America's most dangerous enemy is the CIA'.",
+      "text": "DA Jim Garrison believed Fred Chrisman was one of the Dealey Plaza shooters but could not prove it.",
       "kind": "opinion",
       "entities": [
-        "organization:cia",
-        "location:america"
+        "person:jim garrison",
+        "person:fred chrisman"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "a5KXsiBZjOM",
-          "charStart": 25232,
-          "charEnd": 25364,
-          "timeStart": 1698,
-          "timeEnd": 1710.08,
-          "quote": "The claim is that the\nassassination of JFK wasn't just\npolitical. It was an operation to\nprotect the biggest secret in human\nhistory"
-        },
-        {
-          "transcriptId": "a5KXsiBZjOM",
-          "charStart": 32238,
-          "charEnd": 32312,
-          "timeStart": 2153.44,
-          "timeEnd": 2161.8,
-          "quote": "America's most dangerous\nenemy isn't Russia or China or Iran.\nIt's the CIA"
+          "charStart": 24220,
+          "charEnd": 24410,
+          "timeStart": 1628,
+          "timeEnd": 1641.12,
+          "quote": "nd he believed\nFred Chrisman pulled the trigger, but he\ncouldn't prove it.\n>> Couldn't prove it? The guy's connected\nto CIA, UFOs, and the guy who got the\nfirst phone call. Uh, what do you n"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "Pure host editorial / opinion. The 'CIA is America's most dangerous enemy' framing is a strong rhetorical claim that's not falsifiable as stated. directTruth omitted because it's a values judgment, not an empirical claim. The host's broader thesis — that pattern recognition across UFO and JFK files reveals a domestic-intelligence overreach worth scrutinizing — is defensible as opinion even if the specific Maury-Island-causes-JFK-assassination connection is highly speculative.",
+      "confidence": 0.85,
+      "rationale": "Garrison's suspicion of Chrisman is documented in his case files and Oliver Stone's JFK. The subpoena and grand-jury dismissal are facts; the shooter allegation is Garrison's unproven theory. Omitting directTruth because the underlying shooter claim is unsubstantiated.",
+      "tags": ["garrison", "chrisman", "dealey-plaza", "unproven"],
       "hostStance": "asserts",
-      "inVerdictSection": true,
       "dependencies": [
         {
-          "target": "a5KXsiBZjOM:c_0006",
+          "target": "a5KXsiBZjOM:c_0010",
           "kind": "elaborates",
-          "rationale": "States the host's central anti-CIA thesis the rest of the video builds toward"
+          "rationale": "Builds on Chrisman's established intelligence background to argue for his JFK-assassination role."
+        }
+      ]
+    },
+    {
+      "id": "a5KXsiBZjOM:c_0016",
+      "videoId": "a5KXsiBZjOM",
+      "text": "RFK Jr. says his father privately called the Warren Commission report a shoddy piece of craftsmanship despite publicly accepting it.",
+      "kind": "historical",
+      "entities": [
+        "organization:warren commission",
+        "person:alan dulles"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "a5KXsiBZjOM",
+          "charStart": 29470,
+          "charEnd": 29700,
+          "timeStart": 1959.36,
+          "timeEnd": 1987.36,
+          "quote": "\nWarren Commission report. But according\nto his son RFK Jr., he privately called\nit a shoddy piece of craftsmanship.\n>> Shoddy? Uh, that's an insult to shoddy\ncraftsman everywhere.\n[Music]\n>> There's a 60-year cover up. They, you\n"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "RFK Jr. has publicly repeated this attribution in interviews and his book. RFK Sr.'s private skepticism about the Warren Commission is corroborated by associates including Arthur Schlesinger Jr. and Frank Mankiewicz.",
+      "tags": ["rfk", "warren-commission", "skepticism"],
+      "dependencies": [
+        {
+          "target": "a5KXsiBZjOM:c_0015",
+          "kind": "supports",
+          "rationale": "A Kennedy insider's private doubt of the Warren Commission conclusion is consistent with the broader conspiracy thesis."
         }
       ]
     }

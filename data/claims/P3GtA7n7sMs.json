@@ -1,443 +1,231 @@
 {
   "schemaVersion": 1,
   "transcriptId": "P3GtA7n7sMs",
-  "generatedAt": "2026-04-20T02:35:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T03:23:08.587Z",
+  "generator": "agent0-plan03-reextract",
   "claims": [
     {
       "id": "P3GtA7n7sMs:c_0001",
       "videoId": "P3GtA7n7sMs",
-      "text": "A 2015 USGS study allegedly discovered identical cave networks, electrical anomalies, and a shared mathematical-grid tunnel layout at four widely separated cryptid hotspots — New Jersey's Pine Barrens, West Virginia's hills, the Congo Basin, and Eastern Oklahoma — suggesting the four cryptids are connected by an expanding underground infrastructure.",
-      "kind": "speculative",
+      "text": "In 2015 a USGS study discovered unexplained electrical patterns and cave networks beneath New Jersey's Pine Barrens.",
+      "kind": "empirical",
       "entities": [
-        "organization:usgs",
-        "date_time:2015",
-        "date_time:2018",
         "location:new jersey",
-        "location:pine barons",
-        "location:hills of west virginia",
-        "location:congo basin",
-        "location:eastern oklahoma"
+        "organization:usgs"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P3GtA7n7sMs",
           "charStart": 57,
-          "charEnd": 1067,
+          "charEnd": 267,
           "timeStart": 5.799,
-          "timeEnd": 77.799,
-          "quote": "in 2015 a routine study by the\nUnited States Geological Survey or\nUSGS discovered strange electrical\npatterns and vast cave networks beneath\nNew Jersey's Pine Barons formations that\nshouldn't exist in that\narea when researchers compared their\ndata with other surveys they found\nidentical formations and energy\nsignatures in three other places the\nhills of West Virginia the Congo Basin\nand Eastern Oklahoma each site had vast\nunderground cave systems and each site\nshowed unusual electrical activity\nrepeating patterns of energy too precise\nto be natural the more the data was\nanalyzed the more connections were found\nand there was one connection the\ngovernment did not want to talk about\nall four locations were connected to\ncrypted sightings in 2018 the USGS\nquietly issued a final report despite\nbeing thousands of miles apart the\ntunnels are laid out in the same\nmathematical grid a grid that's slowly\nexpanding toward a central point it\nlooks like that not only are the\ncreatures living in the underground"
+          "timeEnd": 26.56,
+          "quote": "in 2015 a routine study by the\nUnited States Geological Survey or\nUSGS discovered strange electrical\npatterns and vast cave networks beneath\nNew Jersey's Pine Barons formations that\nshouldn't exist in that\narea"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.05,
-      "rationale": "There is no USGS study making these claims. USGS does survey aquifers and cave systems in the named regions, but the 2015 'strange electrical patterns' finding, 2018 'final report' linking four cryptid sites in a mathematical grid, and 'expanding toward a central point' are fictional framing by the channel. This is the host setting up the speculative premise of the entire episode; there is no underlying declassified or peer-reviewed document. Low directTruth because the specific scientific claims are fabricated framing.",
+      "confidence": 0.9,
+      "rationale": "Framing claim opening the episode; presented as a factual USGS finding though no specific study is cited.",
+      "tags": [
+        "cryptid",
+        "usgs",
+        "pine-barrens"
+      ],
       "hostStance": "asserts"
     },
     {
       "id": "P3GtA7n7sMs:c_0002",
       "videoId": "P3GtA7n7sMs",
-      "text": "The earliest written reference to the New Jersey Devil traces to 1735, when (per legend) Deborah Leeds cursed her 13th child — though historical records for a 'Deborah Leeds' with thirteen children don't exist.",
+      "text": "Identical cave formations and energy signatures were found at four sites: New Jersey's Pine Barrens, West Virginia, the Congo Basin, and Eastern Oklahoma.",
+      "kind": "empirical",
+      "entities": [
+        "location:new jersey",
+        "location:eastern oklahoma",
+        "location:hills of west virginia",
+        "location:congo basin"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 324,
+          "charEnd": 463,
+          "timeStart": 23.8,
+          "timeEnd": 40,
+          "quote": "they found\nidentical formations and energy\nsignatures in three other places the\nhills of West Virginia the Congo Basin\nand Eastern Oklahoma"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Claim that four geographically distant sites share identical underground geometry — central premise of the 'connected cryptid' theory.",
+      "dependencies": [
+        {
+          "target": "P3GtA7n7sMs:c_0001",
+          "kind": "elaborates",
+          "rationale": "Extends the New Jersey finding to three other sites."
+        }
+      ],
+      "tags": [
+        "cryptid",
+        "usgs",
+        "four-sites"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "P3GtA7n7sMs:c_0003",
+      "videoId": "P3GtA7n7sMs",
+      "text": "A 2018 USGS report concluded the tunnels at all four sites form a single mathematical grid that is expanding toward a central point.",
+      "kind": "empirical",
+      "entities": [
+        "organization:usgs",
+        "date_time:2018"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 801,
+          "charEnd": 995,
+          "timeStart": 55.879,
+          "timeEnd": 73.52,
+          "quote": "in 2018 the USGS\nquietly issued a final report despite\nbeing thousands of miles apart the\ntunnels are laid out in the same\nmathematical grid a grid that's slowly\nexpanding toward a central point"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The core 'something underground is coordinating' claim. No corroborating citation exists outside the video.",
+      "dependencies": [
+        {
+          "target": "P3GtA7n7sMs:c_0002",
+          "kind": "elaborates",
+          "rationale": "Develops the four-sites finding into a coordinated-pattern claim."
+        }
+      ],
+      "tags": [
+        "cryptid",
+        "usgs",
+        "conspiracy"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "P3GtA7n7sMs:c_0004",
+      "videoId": "P3GtA7n7sMs",
+      "text": "According to legend, Deborah Leeds gave birth to her 13th child in 1735 and cursed it to become the Jersey Devil.",
       "kind": "historical",
       "entities": [
-        "person:deborah leeds",
-        "date_time:1735",
-        "location:new jersey"
+        "person:deborah leeds"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P3GtA7n7sMs",
           "charStart": 3256,
-          "charEnd": 3459,
+          "charEnd": 3425,
           "timeStart": 237.599,
           "timeEnd": 253.92,
-          "quote": "the earliest mention of the New\nJersey Devil is\n1735 Deborah Leeds gave birth to her\n13th child according to the legend she\ncursed the child saying it would be the\ndevil then the child transformed into a"
+          "quote": "the earliest mention of the New\nJersey Devil is\n1735 Deborah Leeds gave birth to her\n13th child according to the legend she\ncursed the child saying it would be the\ndevil"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Host presents this as folklore/legend, not as historical fact. Later in the verdict section the host rejects it.",
+      "tags": [
+        "jersey-devil",
+        "legend"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "P3GtA7n7sMs:c_0005",
+      "videoId": "P3GtA7n7sMs",
+      "text": "There is no historical record of Deborah Leeds or her 13 children; the 'Jersey Devil' originated as a political slur against Daniel Leeds.",
+      "kind": "historical",
+      "entities": [
+        "person:deborah leeds",
+        "person:daniel leeds"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 16242,
+          "charEnd": 16305,
+          "timeStart": 1190.4,
+          "timeEnd": 1197.88,
+          "quote": "first there's no record of the\nDeborah Leeds or her 13 children"
+        },
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 16342,
+          "charEnd": 16525,
+          "timeStart": 1195.6,
+          "timeEnd": 1212.84,
+          "quote": "Daniel\nLeeds was a local politician in the\nearly 18th century he was so unpopular\nthat locals called him the devil in fact\nthe Jersey Devil creature was first\nknown as the leads devil"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.5,
-      "rationale": "The 1735 / Mother Leeds origin story is the standard folk etymology of the Jersey Devil. The specific 'Deborah Leeds' name appears in some retellings but not in primary records. Brian Regal's academic work (2013, 'The Secret History of the Jersey Devil') traces the legend to political libel against Daniel Leeds rather than any Mother Leeds figure. So the 'earliest mention is 1735 Deborah Leeds' framing is the popular legend, not verifiable history. The host returns to this skeptically in the verdict section.",
-      "hostStance": "asserts",
+      "directTruth": 0.75,
+      "rationale": "Host's own debunk in the verdict section; well-documented historical explanation (Daniel Leeds was indeed a controversial colonial publisher).",
       "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0017", "kind": "contradicts"}
-      ]
+        {
+          "target": "P3GtA7n7sMs:c_0004",
+          "kind": "contradicts",
+          "rationale": "[debunks] No record of Deborah Leeds — the legend has no historical subject; story is political name-calling that stuck."
+        }
+      ],
+      "inVerdictSection": true,
+      "tags": [
+        "jersey-devil",
+        "debunk",
+        "verdict"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "P3GtA7n7sMs:c_0003",
+      "id": "P3GtA7n7sMs:c_0006",
       "videoId": "P3GtA7n7sMs",
-      "text": "In January 1909, hundreds of residents across multiple New Jersey counties reported seeing a bat-winged, goat-headed creature over the course of a few days — a wave of sightings so widespread it closed schools, halted factory work, and produced police and newspaper records.",
+      "text": "In January 1909 hundreds of residents across multiple New Jersey counties reported seeing the Jersey Devil, with consistent physical descriptions.",
       "kind": "historical",
       "entities": [
         "date_time:january 1909",
-        "date_time:1909",
         "location:new jersey",
-        "person:witnesses",
-        "location:burlington"
+        "location:burlington",
+        "location:gloucester"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P3GtA7n7sMs",
           "charStart": 4136,
-          "charEnd": 4984,
+          "charEnd": 4273,
           "timeStart": 290.36,
-          "timeEnd": 353.8,
-          "quote": "the most documented appearance of\nthe New Jersey Devil was January 1909\nhundreds of residents across multiple\ncounties reported seeing it\nthe wave of sightings transformed the\nlocal Legend into national news the\ncreature was described the same way by\nmany\nwitnesses it had wings like a bat a head\nlike a horse or a goat and walked on two\nlegs from the side its face was like a\nkangaroo a long neck and eyes that were\ndescribed as glowing red orbs several\npeople said they smelled sulfur it was\nawkward looking but fast and agile it\ncould launch itself straight up into the\nair and take flight there were even\nhoofprints in the snow the prince would\nsuddenly disappear as if it jumped into\nthe air it was a big deal in the area\nschools were closed Factory workers\nrefused to work nights police officers\npoliticians businessmen they all filed\nreports"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.75,
-      "rationale": "The 'Phenomenal Week' of January 16-23, 1909 is well-documented in Philadelphia Inquirer, New York Times, and Trenton Evening Times archives. Thousands of sightings were reported, schools and factories did close in some counties, and the Philadelphia Zoo did offer a reward. So the wave of sightings happened as reported. The uniformity of descriptions the host cites is actually contested — period newspapers show wildly varying descriptions. The sightings being real and the creature being real are two different claims; this claim is about the former, which is true.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0004",
-      "videoId": "P3GtA7n7sMs",
-      "text": "The Pine Barrens sit above one of the country's largest aquifer systems (17 trillion gallons) and newly-discovered cave networks — and 1909 telegraph anomalies, when reanalyzed, allegedly match electrical wavelength signatures the USGS is now recording.",
-      "kind": "speculative",
-      "entities": [
-        "location:pine barons",
-        "organization:usgs",
-        "date_time:1909",
-        "date_time:2018",
-        "quantity:more than 17 trillion gallons"
-      ],
-      "relationships": [],
-      "evidence": [
+          "timeEnd": 302.039,
+          "quote": "the most documented appearance of\nthe New Jersey Devil was January 1909\nhundreds of residents across multiple\ncounties reported seeing it"
+        },
         {
           "transcriptId": "P3GtA7n7sMs",
-          "charStart": 5432,
-          "charEnd": 6112,
-          "timeStart": 380.08,
-          "timeEnd": 434.72,
-          "quote": "modern analysis gives a clue why\nthis area might be home to the devil the\nNew Jersey Pine Barons sit on top of one\nof the largest aquafer systems in the\ncountry more than 17 trillion gallons of\nwater recent studies revealed extensive\ncave networks threading through the\naquifer system geologists say these\ncaves shouldn't exist in this type of\nsedimentary rock during the 1909\nsightings there were also electrical\nanomalies reported Telegraph equipment\nbehaved erratically messages were\ngarbled with strange sequences of\nnumbers when modern cryptographers\nanalyzed these sequences in 2018 they\nfound a pattern one that matched\nelectrical wavelengths now being\nrecorded by the\nUSGS"
+          "charStart": 5201,
+          "charEnd": 5273,
+          "timeStart": 364.199,
+          "timeEnd": 370.68,
+          "quote": "witness reports flooded in from\nBurlington Gloucester and Salem counties"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.15,
-      "rationale": "The Kirkwood-Cohansey aquifer in the Pine Barrens is real and does hold roughly 17 trillion gallons. But the Pine Barrens is mostly sandy sediment and does not contain 'extensive cave networks' — the geology is unconsolidated sand, not the karst-type rock caves form in. The 1909 telegraph-anomaly cryptographic-pattern claim is unsourced and not in any contemporaneous record. Aquifer real; cave networks and electrical-telegraph conspiracy unsupported.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0001", "kind": "supports"}
-      ]
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0005",
-      "videoId": "P3GtA7n7sMs",
-      "text": "Plaster casts of Jersey Devil footprints from 1909, recently released by Philadelphia PD in 2021, allegedly contain 'rare minerals' only found in deep cave systems thousands of feet underground — supposedly locating the creature's lair.",
-      "kind": "speculative",
-      "entities": [
-        "location:new jersey",
-        "date_time:1909",
-        "date_time:2021"
+      "directTruth": 0.85,
+      "rationale": "The January 1909 Jersey Devil flap is extensively documented in period newspapers — a real event, though what witnesses actually saw is contested.",
+      "tags": [
+        "jersey-devil",
+        "1909-sightings"
       ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 6113,
-          "charEnd": 6672,
-          "timeStart": 428.16,
-          "timeEnd": 471.36,
-          "quote": "in 1909 police reports documented\nfootprints in the snow cloven hooves\nthat started and stopped impossibly as\nif the creature just vanished they even\ntook plaster molds of the tracks the\nJersey Devil moved with an unusual gate\nunlike any other animal on record in\n2021 the Philadelphia Police Department\nfinally released their complete files\nfrom\n1909 among them was a sealed report\nabout the plaster casts modern analysis\nrevealed Rare Minerals in the prince\nthat don't exist in surface soil they\nonly exist in deep cave systems\nthousands of feet underground"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.05,
-      "rationale": "No 2021 Philadelphia PD release of 1909 Jersey Devil files exists in public records. No peer-reviewed mineralogical analysis of 1909 plaster casts has been published. This is channel-generated fictional framing. The host himself walks this back in the verdict section, pointing out the 1909 'footprints' were tiny (1-2 inches) and consistent with local birds.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0016", "kind": "contradicts"}
-      ]
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0006",
-      "videoId": "P3GtA7n7sMs",
-      "text": "On September 12, 1952, seven witnesses in Flatwoods WV — including Kathleen May and National Guardsman Eugene Lemon — reported a 10-ft tall hovering entity with glowing orange eyes, an ace-of-spades head, and a metallic odor, producing genuine physical illness and an official Project Blue Book investigation.",
-      "kind": "historical",
-      "entities": [
-        "date_time:september 12th 1952",
-        "location:flatwoods west virginia",
-        "location:flatwoods",
-        "person:kathleen may",
-        "person:eugene lemon",
-        "organization:national guard",
-        "organization:project bluebook",
-        "organization:air force"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 6730,
-          "charEnd": 7574,
-          "timeStart": 482.159,
-          "timeEnd": 545.16,
-          "quote": "on September 12th 1952 seven people in\nFlatwoods West Virginia saw something\nthat changed their lives and the town\nforever Witnesses included Kathleen May\nand Eugene lemon serving in the National\nGuard their encounter would become part\nof project Bluebook the Air Force's\nofficial UFO investigation\n[Music]\nprogram The Entity they described was at\nleast 10 ft tall it hovered above the\nground in a column of mist with glowing\norange eyes its body appeared both\nmechanical and organic a metallic dark\npleated skirt-like structure tapered to\na point most distinctive was its head\npeople said it was shaped like an Ace of\nSpades and it had small claws on its\nsides it emitted a nauseating metallic\nodor that made Witnesses violently\nill there was physical evidence as well\nseven Witnesses suffered nausea and\nthroat irritation lasting several days"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.65,
-      "rationale": "The Flatwoods Monster / Braxton County Monster incident of Sept 12, 1952 is well-documented. Kathleen May, Eugene 'Gene' Lemon, and several boys did report the encounter; Project Blue Book did investigate (case #33). Witnesses did report nausea and throat irritation, since confirmed in accounts. The ace-of-spades head and 10-foot height come from Kathleen May's drawings. Skeptics including Joe Nickell explain it as a barn owl plus hysteria — but the encounter and witness illness are historical facts. directTruth moderate-high for the descriptive account, lower for the 'entity was real' implication.",
       "hostStance": "asserts"
     },
     {
       "id": "P3GtA7n7sMs:c_0007",
       "videoId": "P3GtA7n7sMs",
-      "text": "The Air Force's official explanation of the Flatwoods incident — that witnesses saw an owl on a branch — ignored documented physical evidence: oily residue, elevated radiation (~2x normal), and multi-day illness in seven witnesses.",
+      "text": "The 1909 Jersey Devil sightings were proven to be a hoax using a live kangaroo with attached wings.",
       "kind": "historical",
       "entities": [
-        "organization:air force",
-        "location:flatwoods",
-        "person:witnesses"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 7731,
-          "charEnd": 7898,
-          "timeStart": 552.959,
-          "timeEnd": 569.48,
-          "quote": "had an official explanation it was an\nowl perched on a branch an owl uh what\nabout the physical evidence oh they\nignored it no they didn't they just\ndidn't tell anyone"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.45,
-      "rationale": "Project Blue Book did classify the Flatwoods case as likely a meteor plus a barn owl; this explanation is found in the declassified file. The 'radiation 2x normal' claim appears in Gray Barker's early accounts but no official Blue Book radiation measurement is in the records. The oily-residue finding is mentioned in Barker's writeup. Witnesses did experience illness consistent with anxiety and ammonia/sulfur exposure. So the Air Force did offer an owl explanation, and they did downplay physical reports; whether the evidence justifies something extraordinary is contested.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0006", "kind": "elaborates"}
-      ]
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0008",
-      "videoId": "P3GtA7n7sMs",
-      "text": "Military radar during the Flatwoods event tracked an unknown object moving at 13,000 mph that stopped over Flatwoods — a detail cited to argue the entity originated from a UFO rather than a natural phenomenon.",
-      "kind": "historical",
-      "entities": [
-        "technology:military radar",
-        "location:flatwoods",
-        "organization:project blue book"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 8085,
-          "charEnd": 8200,
-          "timeStart": 579.32,
-          "timeEnd": 592.48,
-          "quote": "military radar tracked an unknown object\nmoving in over 13,000 mph before\nstopping over Flatwoods Project Blue\nBook"
-        }
-      ],
-      "confidence": 0.8,
-      "directTruth": 0.2,
-      "rationale": "Reports of radar tracking a fast-moving object near Flatwoods circulated in contemporary press coverage (Braxton Democrat, early accounts) but were not substantiated in the official Blue Book file. The 13,000 mph figure appears only in later retellings by Gray Barker and derivatives. No declassified military radar record confirms it. Descriptive claim about what was reported is accurate; the truth of the radar track itself is unsupported.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0009",
-      "videoId": "P3GtA7n7sMs",
-      "text": "The Mokele-mbembe legend — a long-necked, small-headed, powerful-tailed creature leaving three-foot footprints in the Congo swamp — predates the 19th-century discovery of dinosaurs and sounds striking like a sauropod description.",
-      "kind": "historical",
-      "entities": [
-        "location:congo",
-        "person:melly bbe",
-        "person:kelly bbe"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 9157,
-          "charEnd": 9388,
-          "timeStart": 661.959,
-          "timeEnd": 678.519,
-          "quote": "for Generations the tribes living deep\nin the Congo have told stories about a\nmonster living in the swamp according to\nLegend it's a massive creature with a\nlong neck tiny head and Powerful tail\nand it leaves behind huge Footprints"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.35,
-      "rationale": "Mokele-mbembe legends are real indigenous folklore from the Likouala region. Whether they 'predate' dinosaur discovery is the disputed part. Willy Ley traced the earliest Western account to 1776 (Abbe Lievain Bonaventure). The first paleontological dinosaurs (Iguanodon, Megalosaurus) were named in the 1820s. So an earlier Western account exists, but the interpretation that natives were describing sauropods before Western science 'knew' about them is a rhetorical leap — the legends could have evolved with any large aquatic animal (hippopotamus, elephant swimming).",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0010",
-      "videoId": "P3GtA7n7sMs",
-      "text": "In the 1980s, Dr. Roy Mackal's Congo expedition team documented fresh three-foot footprints near Lake Tele that, per Mackal, could only have been made by a large bipedal reptile.",
-      "kind": "historical",
-      "entities": [
-        "date_time:1980s",
-        "person:dr roy mackle",
-        "location:lake te"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 10587,
-          "charEnd": 10799,
-          "timeStart": 766.44,
-          "timeEnd": 784.12,
-          "quote": "the scientific Community remained\nskeptical until the 1980s Dr Roy\nmackle's team uncovered a fresh set of\n3T long Footprints near Lake te they\ncould only have been left by an\nextremely large heavy bipedal reptile"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.3,
-      "rationale": "Roy Mackal (University of Chicago biochemist) did lead 1980 and 1981 Mokele-mbembe expeditions documented in his 1987 book 'A Living Dinosaur?'. The team did report footprint casts and indigenous testimony but mainstream zoologists dismissed the physical evidence as inconclusive — footprints near a swamp can be made by many animals, and no specimens or photographs of the creature were produced. So expeditions happened; the 'only bipedal reptile could make them' interpretation is Mackal's disputed reading.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0011",
-      "videoId": "P3GtA7n7sMs",
-      "text": "In 2016, National Geographic researchers allegedly found 20,000-year-old cave illustrations depicting a small-headed, long-bodied creature matching Mokele-mbembe — suggesting ancient cave-dwellers witnessed the same animal.",
-      "kind": "speculative",
-      "entities": [
-        "date_time:2016",
-        "organization:national geographic",
-        "person:melly bbe"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 11600,
-          "charEnd": 11985,
-          "timeStart": 849.079,
-          "timeEnd": 889.48,
-          "quote": "in 2016 researchers from\nNational Geographic were exploring those\ncaves carved into the walls were a\nseries of ancient illustrations they\ndepicted Melly benbe small head large\nbody and the artwork dated back over\n20,000 years when first discovered\nresearchers assume that drawings for\nfiction now it seemed like whoever lived\nin those caves all those years ago was\nwriting down\nhistory"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.05,
-      "rationale": "There is no documented 2016 National Geographic expedition reporting 20,000-year-old cave paintings of Mokele-mbembe in the Congo. Nat Geo has covered Congo expeditions but nothing matching this description. This is fabricated framing in service of the episode's 'ancient underground knowledge' thesis. Low directTruth for the specific finding.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0012",
-      "videoId": "P3GtA7n7sMs",
-      "text": "In Eastern Oklahoma — particularly around Adair County and Sallisaw Springs — witnesses since the 1970s have consistently reported the 'Adair Beast,' an 8+-ft tall, hair-covered bipedal creature locals also call the Oklahoma Bigfoot.",
-      "kind": "historical",
-      "entities": [
-        "location:eastern oklahoma",
-        "location:adair county",
-        "location:syum springs",
-        "person:ader county sheriff"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 11986,
-          "charEnd": 12233,
-          "timeStart": 884.519,
-          "timeEnd": 907.519,
-          "quote": "in Eastern Oklahoma for years\nsomething has been stalking the dense\nforests locals call it the ad a beast or\nthe Oklahoma Bigfoot it's a massive\ncreature covered in hair it walks\nupright like a man but its footprint\nprints are definitely not\nhuman"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "Eastern Oklahoma (Adair, Cherokee, Sequoyah counties) is a well-documented Bigfoot hotspot with hundreds of reports catalogued by the BFRO. Honobia, OK hosts an annual Bigfoot Festival (the host confirms in verdict). The 1971 Harris sighting and ongoing reports are real in the sense that many people made them; whether a creature actually exists is separate. Descriptive claim about the pattern of reports is true.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0013",
-      "videoId": "P3GtA7n7sMs",
-      "text": "When Adair County's underground water/cave network was discovered in 1982, mapped Adair Beast sighting locations allegedly formed a perfect pentagon aligned with deep cave-tunnel terminals — the same geometric pattern the other three cryptid sites supposedly showed.",
-      "kind": "speculative",
-      "entities": [
-        "location:adair county",
-        "date_time:1971",
-        "date_time:1982",
-        "location:cave networks"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 14717,
-          "charEnd": 15071,
-          "timeStart": 1079.84,
-          "timeEnd": 1109.12,
-          "quote": "in 1971 no one knew about the\nunderground water system or the cave\nnetworks beneath Adair County when they\nwere finally discovered in 1982 the\nreadings were identical to the other\nthree\nlocations and researchers ma sightings\nagainst the electrical anomalies they\nformed a perfect pentagon with each\npoint corresponding to a deep tunnel in\nthe cave\nsystem"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.05,
-      "rationale": "No published research connects Adair County sightings to a geometric pentagon correlated with cave-tunnel outlets. This is ad hoc pattern-matching framing. The host himself concedes in the verdict section he doesn't see the pattern the theory claims. Very low directTruth.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0001", "kind": "elaborates"}
-      ]
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0014",
-      "videoId": "P3GtA7n7sMs",
-      "text": "The local sheriff's final report allegedly documented fresh claw marks in 300-million-year-old Granite deep in Adair County's caves — a 'chilling detail' suggesting the creature is real and currently scratching solid Paleozoic rock.",
-      "kind": "speculative",
-      "entities": [
-        "person:local sheriff",
-        "location:adair county"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 15072,
-          "charEnd": 15298,
-          "timeStart": 1103.679,
-          "timeEnd": 1131.559,
-          "quote": "the local sheriff's final report\nincluded one chilling detail deep in\nthose caves they found claw marks in\nsolid Granite chemical analysis\nconfirmed The Rock was 300 million years\nold but the claw marks they were\n[Music]\nfresh"
-        }
-      ],
-      "confidence": 0.85,
-      "directTruth": 0.05,
-      "rationale": "No such sheriff's report exists in any public Adair County record. 'Fresh claw marks in granite' is also biologically impossible — no known animal's claws can make fresh marks in solid granite (Mohs hardness 6-7); even grizzly bear claws cannot. This is pure narrative flourish by the channel. The host does not corroborate this in the verdict. Near-zero directTruth.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0015",
-      "videoId": "P3GtA7n7sMs",
-      "text": "AJ's opening thesis: the Jersey Devil, Flatwoods Monster, Mokele-mbembe, and Adair Beast aren't isolated folklore — they are connected by shared underground tunnel geometry and electrical anomalies, making the four cryptids a single phenomenon rather than four unrelated legends.",
-      "kind": "speculative",
-      "entities": [
-        "person:melly bbe",
-        "location:flatwoods",
-        "location:new jersey",
-        "location:eastern oklahoma",
-        "quantity:four creatures"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "P3GtA7n7sMs",
-          "charStart": 15299,
-          "charEnd": 15737,
-          "timeStart": 1126.72,
-          "timeEnd": 1161.52,
-          "quote": "four locations four creatures for\nover a hundred years there've been\nsightings of the Jersey Devil Flatwoods\nMonster Melly BBE and the adir Beast\ntoday we covered a theory that the site\nweren't isolated events they were\nconnected tied to locations that hide\nvast underground tunnel systems and\nunusual electric phenomena but is it\ntrue well hard evidence is tricky there\nis hard evidence of all four of these\nbut is it definitely evidence"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.1,
-      "rationale": "This is the episode's central speculative thesis. The host himself, in the verdict section, says he does not see the pattern. The theory rests on the fabricated USGS findings and other unsupported specifics. It is a fun hypothesis that cannot be falsified without real data the video doesn't provide.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0001", "kind": "supports"}
-      ]
-    },
-    {
-      "id": "P3GtA7n7sMs:c_0016",
-      "videoId": "P3GtA7n7sMs",
-      "text": "The 1909 Jersey Devil panic was proven to be a hoax — the 'creature' was a live kangaroo with wings strapped to it via harness, and the famous hoofprints in the snow were only 1-2 inches wide and consistent with ordinary local birds.",
-      "kind": "historical",
-      "entities": [
-        "date_time:1909",
-        "location:new jersey",
-        "location:south jersey"
+        "date_time:1909"
       ],
       "relationships": [],
       "evidence": [
@@ -446,136 +234,339 @@
           "charStart": 16722,
           "charEnd": 16884,
           "timeStart": 1222.96,
-          "timeEnd": 1237.6,
+          "timeEnd": 1237.6000000000001,
           "quote": "in 1909 thousands of people did\nsee the Jersey Devil but what they saw\nwas proven to be a hoax it was a live\nkangaroo that had wings attached to it\nwith a harness"
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.9,
       "directTruth": 0.7,
-      "rationale": "The 'winged kangaroo hoax' was indeed a widely-reported promotional stunt: Philadelphia entrepreneur Norman Jefferies displayed a painted kangaroo with fake wings at Arch Street Museum in January 1909 to boost ticket sales, a scheme he later confessed to (per Loren Coleman and McCloy & Miller's 'The Jersey Devil'). The confession explains part but not all of the 1909 wave. The footprint analysis (tiny, consistent with birds) also matches skeptical reanalyses. Mostly true.",
-      "hostStance": "asserts",
+      "rationale": "The Norman Jefferies hoax is historically documented; he later confessed. Host presents it in the verdict section as the factual explanation.",
       "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0003", "kind": "contradicts"},
-        {"target": "P3GtA7n7sMs:c_0005", "kind": "contradicts"}
+        {
+          "target": "P3GtA7n7sMs:c_0006",
+          "kind": "elaborates",
+          "rationale": "Reinterprets the mass sighting as a promotional hoax rather than a cryptid encounter."
+        }
       ],
-      "inVerdictSection": true
+      "inVerdictSection": true,
+      "tags": [
+        "jersey-devil",
+        "hoax",
+        "verdict"
+      ],
+      "hostStance": "asserts"
     },
     {
-      "id": "P3GtA7n7sMs:c_0017",
+      "id": "P3GtA7n7sMs:c_0008",
       "videoId": "P3GtA7n7sMs",
-      "text": "The Jersey Devil legend actually originated as early-18th-century political name-calling against Daniel Leeds, a politician so unpopular locals called him 'the Devil' — meaning the 'leeds devil' myth predates any Mother-Leeds-cursed-child story by nearly two centuries and is rooted in smear campaigning.",
+      "text": "2021 analysis of 1909 Jersey Devil plaster footprint casts revealed rare minerals found only in deep cave systems thousands of feet underground.",
+      "kind": "empirical",
+      "entities": [
+        "date_time:2021",
+        "organization:philadelphia police department"
+      ],
+      "relationships": [
+        "r_0005"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 6377,
+          "charEnd": 6642,
+          "timeStart": 447.84,
+          "timeEnd": 469.19899999999996,
+          "quote": "2021 the Philadelphia Police Department\nfinally released their complete files\nfrom\n1909 among them was a sealed report\nabout the plaster casts modern analysis\nrevealed Rare Minerals in the prince\nthat don't exist in surface soil they\nonly exist in deep cave systems"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "No real record of the Philadelphia PD releasing such a 2021 report; this appears to be narrative embellishment supporting the cave-network theory.",
+      "dependencies": [
+        {
+          "target": "P3GtA7n7sMs:c_0003",
+          "kind": "supports",
+          "rationale": "Offered as physical evidence that the Jersey Devil comes from the underground cave network."
+        }
+      ],
+      "tags": [
+        "jersey-devil",
+        "plaster-cast",
+        "cave-system"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "P3GtA7n7sMs:c_0009",
+      "videoId": "P3GtA7n7sMs",
+      "text": "On September 12 1952 seven people in Flatwoods West Virginia, including Kathleen May and Eugene Lemon, reported encountering a tall humanoid creature.",
       "kind": "historical",
       "entities": [
-        "person:daniel leeds",
-        "person:trump",
-        "date_time:early 18th century"
+        "date_time:september 12th 1952",
+        "location:flatwoods west virginia",
+        "person:kathleen may",
+        "person:eugene lemon"
+      ],
+      "relationships": [
+        "r_0009",
+        "r_0008"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 6730,
+          "charEnd": 6901,
+          "timeStart": 482.159,
+          "timeEnd": 497.72,
+          "quote": "on September 12th 1952 seven people in\nFlatwoods West Virginia saw something\nthat changed their lives and the town\nforever Witnesses included Kathleen May\nand Eugene lemon"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Well-documented historical event; the Flatwoods incident and these specific witnesses are real and became part of Project Blue Book.",
+      "tags": [
+        "flatwoods-monster",
+        "1952",
+        "ufo"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "P3GtA7n7sMs:c_0010",
+      "videoId": "P3GtA7n7sMs",
+      "text": "The Air Force's official explanation for the Flatwoods Monster was that it was an owl perched on a branch.",
+      "kind": "historical",
+      "entities": [
+        "organization:air force"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P3GtA7n7sMs",
-          "charStart": 16338,
-          "charEnd": 16662,
-          "timeStart": 1195.6,
-          "timeEnd": 1219.679,
-          "quote": "but Daniel\nLeeds was a local politician in the\nearly 18th century he was so unpopular\nthat locals called him the devil in fact\nthe Jersey Devil creature was first\nknown as the leads devil the 13th child\nLegend emerged from around that but the\ntruth is this was political name calling\nthat stuck 300 years before Trump did it"
+          "charStart": 7717,
+          "charEnd": 7792,
+          "timeStart": 550.04,
+          "timeEnd": 560.519,
+          "quote": "the air force\nhad an official explanation it was an\nowl perched on a branch"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.8,
-      "rationale": "Brian Regal's 'The Secret History of the Jersey Devil' (2018, Johns Hopkins UP) is the definitive academic treatment. Daniel Leeds was a Quaker almanac-maker and politician whose theological/political rivals (Benjamin Franklin among them) branded him 'Satan's Harbinger.' The 'Leeds Devil' later mutated into the Jersey Devil legend. Regal does argue Leeds left the colonies due to the abuse, though more recent family members stayed. Largely accurate; 'left the country' is slightly loose.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
+      "confidence": 0.85,
+      "directTruth": 0.6,
+      "rationale": "The barn-owl explanation for Flatwoods is a known skeptical hypothesis; the host presents the official line here (and then implies it was dismissive).",
+      "dependencies": [
+        {
+          "target": "P3GtA7n7sMs:c_0009",
+          "kind": "contradicts",
+          "rationale": "[alternative] A mundane owl sighting competes with the entity account."
+        }
+      ],
+      "hostStance": "denies",
+      "tags": [
+        "flatwoods-monster",
+        "air-force",
+        "owl-theory"
+      ]
     },
     {
-      "id": "P3GtA7n7sMs:c_0018",
+      "id": "P3GtA7n7sMs:c_0011",
       "videoId": "P3GtA7n7sMs",
-      "text": "The 1992 Japanese footage supposedly showing Mokele-mbembe is better explained as a canoe; even if a living sauropod existed, it wouldn't be aquatic because sauropods breathed air and didn't stay submerged.",
-      "kind": "opinion",
+      "text": "Congo tribal folklore describes Mokele-mbembe as a massive long-necked reptilian creature living in the swamps, matching descriptions of a sauropod dinosaur.",
+      "kind": "historical",
       "entities": [
-        "date_time:1992",
+        "location:congo",
         "person:melly bbe"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P3GtA7n7sMs",
-          "charStart": 17558,
-          "charEnd": 17962,
-          "timeStart": 1289.36,
-          "timeEnd": 1316.44,
-          "quote": "that footage from 1992 is real but it's\nup for interpretation with that being\nprompted most people don't see a\ndinosaur I didn't they see a canoe just\nlike the Loch Ness monster there's that\nfootage of it that looks pretty\ncompelling Until you realize you're\nlooking at a boat even if M Kelly bmbe\nis real it's not going to be a\nwater-based sour pod they didn't stay\nsubmerged that long they breathed air"
+          "charStart": 9157,
+          "charEnd": 9351,
+          "timeStart": 661.959,
+          "timeEnd": 675.4399999999999,
+          "quote": "for Generations the tribes living deep\nin the Congo have told stories about a\nmonster living in the swamp according to\nLegend it's a massive creature with a\nlong neck tiny head and Powerful tail"
+        },
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 9678,
+          "charEnd": 9780,
+          "timeStart": 700.88,
+          "timeEnd": 712.5999999999999,
+          "quote": "the locals were\ndescribing a sour pot a dinosaur but\nthis was before the first dinosaur was\ndiscovered"
         }
       ],
-      "confidence": 0.9,
+      "confidence": 0.85,
       "directTruth": 0.7,
-      "rationale": "The 1992 Japanese 'Mokele footage' does look like a small boat or dugout canoe to most viewers, consistent with Joe Nickell's frame-by-frame analysis. The sauropod paleobiology point is correct: old 'swamp-dwelling sauropod' ideas were rejected in the 1970s (Bakker, Dodson), and modern consensus is sauropods were terrestrial air-breathers. So the host's debunking is on solid ground.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0009", "kind": "contradicts"}
+      "rationale": "Mokele-mbembe folklore is real and has been documented by multiple expeditions; the sauropod interpretation is the central cryptozoological claim.",
+      "tags": [
+        "mokele-mbembe",
+        "congo",
+        "dinosaur"
       ],
-      "inVerdictSection": true
+      "hostStance": "asserts"
     },
     {
-      "id": "P3GtA7n7sMs:c_0019",
+      "id": "P3GtA7n7sMs:c_0012",
       "videoId": "P3GtA7n7sMs",
-      "text": "The Flatwoods Monster is best understood as a genuine UFO sighting (not a cryptid), because the encounter began with a light streaking across the sky and ended with witnesses in a sulfur-smelling mist — and even skeptical explanations (truck over oil, local sulfur springs) don't fully account for the event.",
-      "kind": "opinion",
+      "text": "The Mokele-mbembe legend became prominent only after actual dinosaur bones were discovered in the area in 1907, suggesting the modern legend tracks those discoveries rather than ancient folklore.",
+      "kind": "historical",
       "entities": [
-        "location:flatwoods",
-        "event:ufo sighting",
-        "location:sulfur springs"
+        "date_time:1907",
+        "person:melly bbe"
+      ],
+      "relationships": [
+        "r_0088"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 18193,
+          "charEnd": 18275,
+          "timeStart": 1327.799,
+          "timeEnd": 1338.48,
+          "quote": "Melly BBE took off in 1907 when actual\ngiant dinosaur bones were found in the\narea"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.55,
+      "rationale": "Host's verdict-section debunk; the 1907 fossil finds in the Tendaguru formation (Tanzania, not Congo) did spike Western interest, though the folklore itself may predate that.",
+      "dependencies": [
+        {
+          "target": "P3GtA7n7sMs:c_0011",
+          "kind": "contradicts",
+          "rationale": "[undercuts] The claim of ancient indigenous folklore is undercut by the story's 20th-century Western popularization timeline."
+        }
+      ],
+      "inVerdictSection": true,
+      "tags": [
+        "mokele-mbembe",
+        "verdict",
+        "debunk"
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "P3GtA7n7sMs:c_0013",
+      "videoId": "P3GtA7n7sMs",
+      "text": "Since the 1970s multiple witnesses including police officers in Adair County Oklahoma have reported an 8-foot-tall hairy creature known as the Adair Beast or Oklahoma Bigfoot.",
+      "kind": "historical",
+      "entities": [
+        "location:oklahoma",
+        "location:adair county",
+        "location:eastern oklahoma"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "P3GtA7n7sMs",
-          "charStart": 18276,
-          "charEnd": 19204,
-          "timeStart": 1332.919,
-          "timeEnd": 1388.679,
-          "quote": "finally the Flatwoods Monster to me\nthis is the weirdest one it's classified\nas a crypted but technically it started\nout as a UFO sighting just after 700\np.m. a light Streed across the sky a few\nboys were playing football outside they\ncalled for help and chased it eight or\nnine people followed it over a hill and\nthey were trapped in a Mist that smelled\nlike sulfur then they saw the creature\nhovering near a tree now the group was\nterrified they ran to the sheriff who\nwas already out investigating a plane\ncrash oh I said I thing was a plane\nprobably not there was no wreckage the\ncreature was gone all that was left was\nthe smell and something oily in the\ngrass now later we learned that one of\nthe witnesses drove his truck over the\narea which would explain the oil and the\ntracks and there are Sulfur Springs in\nthe area which could explain the smell\nbut there still isn't a full and\nreasonable explanation for any of this"
+          "charStart": 11986,
+          "charEnd": 12115,
+          "timeStart": 884.519,
+          "timeEnd": 897.0790000000001,
+          "quote": "in Eastern Oklahoma for years\nsomething has been stalking the dense\nforests locals call it the ad a beast or\nthe Oklahoma Bigfoot"
+        },
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 13049,
+          "charEnd": 13161,
+          "timeStart": 962.199,
+          "timeEnd": 970.92,
+          "quote": "multiple police officers encountered the\nAdar Beast that summer they said it\nmoved much too quickly for its size"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "The Flatwoods case did begin with witnesses chasing a light they thought was a meteor/aircraft — making it taxonomically closer to a UFO report than a cryptid encounter. Sulfur Springs does exist near Braxton County and the truck-drove-over-it explanation for oil/tracks is on record. The host's 'no full explanation' hedge is reasonable; skeptical explanations cover most but not all aspects of the witness illness and described entity. Fair analysis.",
-      "hostStance": "asserts",
-      "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0006", "kind": "elaborates"}
+      "confidence": 0.8,
+      "rationale": "Eastern Oklahoma is a documented Bigfoot-sighting hotspot; specific Adair County incidents are real reports, though physical evidence is contested.",
+      "tags": [
+        "bigfoot",
+        "oklahoma",
+        "adair-beast"
       ],
-      "inVerdictSection": true
+      "hostStance": "asserts"
     },
     {
-      "id": "P3GtA7n7sMs:c_0020",
+      "id": "P3GtA7n7sMs:c_0014",
       "videoId": "P3GtA7n7sMs",
-      "text": "AJ's final verdict: the specific electrical-grid cryptid-connection theory is a stretch he can't verify, but an open-minded possibility remains that if cryptids are real they may be extradimensional beings slipping through spacetime rifts created by geological electromagnetic anomalies — a hypothesis he finds scientifically interesting because general relativity permits energy-induced spacetime curvature.",
-      "kind": "opinion",
+      "text": "The host proposes that the four cryptid sites share aquifers and electrical anomalies that generate the conditions for the creatures' appearances.",
+      "kind": "speculative",
       "entities": [
-        "person:aj",
-        "technology:electromagnetism",
-        "technology:general relativity",
-        "location:back rooms",
-        "location:limal spaces"
+        "organization:usgs"
       ],
       "relationships": [],
       "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 19297,
+          "charEnd": 19385,
+          "timeStart": 1391.12,
+          "timeEnd": 1399.88,
+          "quote": "the theory about\naquafers and electrical energy is\ninteresting aquafers do create energy"
+        },
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 19685,
+          "charEnd": 19879,
+          "timeStart": 1416.2,
+          "timeEnd": 1432.2,
+          "quote": "according to Believers the\nelectrical readings at these sites\nproduced numeric sequences that\nshouldn't be possible in nature the\nimplication being they're being\ngenerated by advanced\ntechnology"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "This is the episode's central speculative thesis. Host presents it as interesting but ultimately a stretch.",
+      "dependencies": [
+        {
+          "target": "P3GtA7n7sMs:c_0003",
+          "kind": "supports",
+          "rationale": "The grid/central-point report is the empirical scaffolding for this speculation."
+        }
+      ],
+      "tags": [
+        "theory",
+        "electromagnetism",
+        "aquifer"
+      ],
+      "hostStance": "uncertain"
+    },
+    {
+      "id": "P3GtA7n7sMs:c_0015",
+      "videoId": "P3GtA7n7sMs",
+      "text": "Connecting the four cryptids into one underground phenomenon is a stretch; the host cannot see the alleged pattern.",
+      "kind": "opinion",
+      "entities": [
+        "work_of_media:cryptids"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "P3GtA7n7sMs",
+          "charStart": 19531,
+          "charEnd": 19684,
+          "timeStart": 1406.24,
+          "timeEnd": 1420.159,
+          "quote": "connecting the four Crypton\ntogether is a stretch the cave systems\nare there the aquafers are mostly there\nthere might be a pattern though I don't\nsee it"
+        },
         {
           "transcriptId": "P3GtA7n7sMs",
           "charStart": 19880,
-          "charEnd": 20699,
+          "charEnd": 19932,
           "timeStart": 1427.2,
-          "timeEnd": 1476.72,
-          "quote": "okay I I love the theory but\nI don't see the pattern another theory\nis that these beings are extra\ndimensional they slip into our world\nthrough cracks in reality created by the\nelectric iCal anomalies this would\nexplain their prehistoric Origins and\nhow they appear and disappear without a\ntrace it kind of reminds me of the limal\nspaces and the back rooms that's still\none of my favorite episodes back room\nlink down in your munchbox oh that's\nthat's a thing now huh yeah just giving\nthe people what they\nwant so we can rationalize Footprints as\nhoaxes or paradia we know most of the\nvideos and photos are fake this is true\nwith just about every crypted story\nthat's why I don't like them but when I\nstumbled upon the electrical connection\nTheory I became interested that's the\nkind of theory that keeps me coming back"
+          "timeEnd": 1433.8799999999999,
+          "quote": "okay I I love the theory but\nI don't see the pattern"
         }
       ],
       "confidence": 0.95,
-      "rationale": "Host's personal verdict synthesizing the episode. Not a falsifiable empirical claim — it's AJ's stance on which framing he finds most interesting. The appeal to general relativity / extra dimensions is scientifically loose but sincere. directTruth omitted because this is pure opinion / framing preference.",
-      "hostStance": "uncertain",
-      "inVerdictSection": true,
+      "directTruth": 0.7,
+      "rationale": "Host's explicit verdict: skeptical of the unifying theory despite finding it interesting.",
       "dependencies": [
-        {"target": "P3GtA7n7sMs:c_0015", "kind": "contradicts"}
-      ]
+        {
+          "target": "P3GtA7n7sMs:c_0014",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Host finds the theory scientifically-flavored but unsupported by a visible pattern."
+        }
+      ],
+      "inVerdictSection": true,
+      "tags": [
+        "verdict",
+        "opinion"
+      ],
+      "hostStance": "asserts"
     }
   ]
 }

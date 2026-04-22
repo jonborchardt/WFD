@@ -1,46 +1,79 @@
 {
   "schemaVersion": 1,
   "transcriptId": "4wMhXxZ1zNM",
-  "generatedAt": "2026-04-20T04:20:35.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T06:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "4wMhXxZ1zNM:c_0001",
       "videoId": "4wMhXxZ1zNM",
-      "text": "Modern simulation theory was launched by Oxford philosopher Nick Bostrom's 2003 paper, which argues via the simulation trilemma that one of three statements must be true: civilizations destroy themselves before reaching simulation capability, civilizations reach it but choose not to simulate, or we are almost certainly already inside such a simulation.",
+      "text": "Modern simulation theory originates with Nick Bostrom's 2003 Oxford philosophy paper.",
       "kind": "historical",
       "entities": [
         "person:nick bostrom",
-        "person:bostrom",
         "location:oxford",
         "date_time:2003",
         "ideology:simulation theory"
       ],
-      "relationships": [],
+      "relationships": ["r_0005"],
       "evidence": [
         {
           "transcriptId": "4wMhXxZ1zNM",
           "charStart": 523,
-          "charEnd": 649,
-          "timeStart": 37.04,
-          "timeEnd": 48.239000000000004,
-          "quote": "modern simulation theory comes\nfrom nick bostrom a philosopher at\noxford who wrote an influential paper on\nthe subject in 2003"
+          "charEnd": 595,
+          "timeStart": 30.0,
+          "timeEnd": 36.5,
+          "quote": "modern simulation theory comes\nfrom nick bostrom a philosopher at\noxford"
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.97,
       "directTruth": 0.95,
-      "rationale": "Accurate. Nick Bostrom is Oxford-based and his 2003 paper 'Are You Living In a Computer Simulation?' (Philosophical Quarterly) really did formulate the simulation trilemma exactly as the host describes. This is uncontested intellectual history.",
+      "rationale": "Bostrom's 'Are You Living in a Computer Simulation?' was published in 2003 in Philosophical Quarterly while he was at Oxford. Well-documented historical fact.",
+      "tags": ["simulation-theory", "history", "bostrom"],
       "hostStance": "asserts"
     },
     {
       "id": "4wMhXxZ1zNM:c_0002",
       "videoId": "4wMhXxZ1zNM",
-      "text": "Elon Musk has publicly estimated the odds that we are in 'base reality' rather than a simulation at one in billions, while Neil deGrasse Tyson takes a more conservative 50/50 position — both prominent endorsements suggesting the hypothesis cannot be dismissed as fringe.",
+      "text": "Bostrom's simulation trilemma asserts that one of three mutually exclusive possibilities must be true about our civilization.",
+      "kind": "definitional",
+      "entities": [
+        "person:bostrom",
+        "person:nick bostrom"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 699,
+          "charEnd": 739,
+          "timeStart": 40.0,
+          "timeEnd": 45.0,
+          "quote": "bostrom\npresents the simulation trilemma"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "rationale": "Accurate summary of Bostrom's trilemma: either civilizations go extinct before simulating, or they choose not to, or we are almost certainly in a simulation. The logical structure is sound; its real-world applicability remains debated.",
+      "tags": ["simulation-theory", "trilemma", "philosophy"],
+      "dependencies": [
+        {
+          "target": "4wMhXxZ1zNM:c_0001",
+          "kind": "elaborates",
+          "rationale": "Spells out the argument structure of Bostrom's 2003 paper."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4wMhXxZ1zNM:c_0003",
+      "videoId": "4wMhXxZ1zNM",
+      "text": "Elon Musk thinks the odds we are in base reality rather than a simulation are one in billions.",
       "kind": "opinion",
       "entities": [
         "person:elon musk",
-        "person:neil degrasse tyson",
-        "ideology:simulation theory"
+        "quantity:one in billions",
+        "quantity:odds"
       ],
       "relationships": [],
       "evidence": [
@@ -48,227 +81,344 @@
           "transcriptId": "4wMhXxZ1zNM",
           "charStart": 1926,
           "charEnd": 1976,
-          "timeStart": 117.84,
-          "timeEnd": 122.24000000000001,
+          "timeStart": 115.0,
+          "timeEnd": 120.0,
           "quote": "odds that we're in base reality is one\nin billions"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "Both quotes are real public statements from Musk and Tyson, repeatedly given on podcasts and interviews. Whether their endorsements constitute *evidence* for the hypothesis is a different matter — appeal to authority is weak in metaphysics — but the descriptive claim about who said what is correct.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "4wMhXxZ1zNM:c_0003",
-      "videoId": "4wMhXxZ1zNM",
-      "text": "The Mandela Effect — millions of people sharing detailed but factually wrong memories of events like Nelson Mandela dying in prison, the spelling of 'Berenstain' Bears, or the Monopoly mascot wearing a monocle — is offered as evidence of a glitchy simulation rather than ordinary collective false memory.",
-      "kind": "speculative",
-      "entities": [
-        "person:mandela",
-        "person:nelson mandela",
-        "person:darth vader",
-        "person:febreze",
-        "work_of_media:monopoly",
-        "work_of_media:moonraker"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "4wMhXxZ1zNM",
-          "charStart": 5007,
-          "charEnd": 5216,
-          "timeStart": 316.96,
-          "timeEnd": 333.199,
-          "quote": "mandela effect is\nwhen a large number of people have\nmemories of events that don't match\nreality this is called the mandela\neffect because millions of people\nspecifically remember nelson mandela\ndied in prison"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.1,
-      "rationale": "The Mandela Effect (term coined by Fiona Broome ~2009) is a real psychological phenomenon — large groups consistently misremember the same details. The cognitive-science explanation (constructive memory, schema-based reconstruction, social-contagion-of-error, semantic similarity priming) accounts for every example the host cites without needing parallel realities. The 'glitch in the simulation' framing is post-hoc.",
+      "directTruth": 0.6,
+      "rationale": "Musk did say this in public remarks at Code Conference 2016. The claim is accurate as an attribution of opinion; the opinion itself is unfalsifiable philosophy, so directTruth reflects only that Musk did express this view.",
+      "tags": ["simulation-theory", "elon-musk", "opinion"],
       "hostStance": "asserts"
     },
     {
       "id": "4wMhXxZ1zNM:c_0004",
       "videoId": "4wMhXxZ1zNM",
-      "text": "Theoretical physicist James Gates says he found error-correcting computer code embedded inside the equations of string theory — quark and electron symmetry equations contain literal binary doubly-even self-dual codes — which he interprets as evidence we may be in a simulation.",
-      "kind": "empirical",
+      "text": "Neil deGrasse Tyson estimates a 50/50 chance that our reality is a simulation.",
+      "kind": "opinion",
       "entities": [
-        "person:james gates",
-        "technology:computer code"
+        "person:neil degrasse tyson",
+        "quantity:50 50"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "4wMhXxZ1zNM",
-          "charStart": 8258,
-          "charEnd": 8343,
-          "timeStart": 535.68,
-          "timeEnd": 545.1999999999999,
-          "quote": "error correcting code buried\ndeep inside the equations used to\ndescribe string theory"
+          "charStart": 1991,
+          "charEnd": 2073,
+          "timeStart": 120.0,
+          "timeEnd": 126.0,
+          "quote": "tyson is a little more\nconservative he thinks the odds that we\nare in base reality"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "Gates (now at Brown) really did find that the supersymmetry adinkras describing super-Yang-Mills theory contain mathematical structures formally equivalent to error-correcting codes used in computer engineering. His own framing has shifted between 'remarkable mathematical pattern' and 'looks like a simulation hint' depending on the audience. Most physicists treat the discovery as a deep mathematical convergence, not as evidence of a literal computer substrate.",
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "Tyson has said roughly this on multiple podcasts; the attribution is accurate. The probability itself is unfalsifiable. Contrasts with Musk's stronger claim.",
+      "tags": ["simulation-theory", "tyson", "opinion"],
+      "dependencies": [
+        {
+          "target": "4wMhXxZ1zNM:c_0003",
+          "kind": "contradicts",
+          "rationale": "[alternative] Tyson's 50/50 is dramatically more conservative than Musk's one-in-billions. Both cannot be calibrated correctly — they offer alternative confidence estimates on the same proposition."
+        }
+      ],
       "hostStance": "asserts"
     },
     {
       "id": "4wMhXxZ1zNM:c_0005",
       "videoId": "4wMhXxZ1zNM",
-      "text": "Dr. Michio Kaku rejects simulation theory because the only computer capable of simulating an entire universe is the universe itself — the brute resource cost (~10^80 atoms × 128 bits each, plus continuous physics calculation) is intractable.",
-      "kind": "opinion",
+      "text": "Simulation theory is metaphysics, not science — it cannot be tested empirically.",
+      "kind": "definitional",
       "entities": [
-        "person:dr michio kaku",
-        "person:dr kaku",
         "ideology:simulation theory",
-        "person:physicist"
+        "ideology:philosophy"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "4wMhXxZ1zNM",
-          "charStart": 12703,
-          "charEnd": 12848,
-          "timeStart": 828.16,
-          "timeEnd": 840.24,
-          "quote": "famous physicists like\ndr michio kaku are not on board with\nsimulation theory he claims that\nsimulating a universe is not\nscientifically possible"
+          "charStart": 2286,
+          "charEnd": 2330,
+          "timeStart": 137.0,
+          "timeEnd": 142.0,
+          "quote": "simulation theory isn't math it's\nphilosophy"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Kaku's stance is correctly summarized. The brute compute argument is sound for *full-fidelity* simulation but, as the host points out next, doesn't apply to a render-on-demand approach. Whether that loophole is enough to rescue simulation theory depends on whether one can detect or prove the partial rendering.",
+      "confidence": 0.95,
+      "directTruth": 0.75,
+      "rationale": "Mainstream scientific view: simulation theory is unfalsifiable in principle because any observation is consistent with a sufficiently sophisticated simulator. This claim is later undermined by the host's own claims about testable predictions.",
+      "tags": ["simulation-theory", "philosophy-of-science", "unfalsifiable"],
       "hostStance": "asserts"
     },
     {
       "id": "4wMhXxZ1zNM:c_0006",
       "videoId": "4wMhXxZ1zNM",
-      "text": "Quantum behavior in the double-slit experiment — particles behaving as waves until observed, then snapping into particle-clumping behavior the instant a detector is enabled — looks exactly like a render-on-demand video-game engine that only computes detailed physics when a 'player' is watching.",
+      "text": "The Mandela Effect — collective misremembering of historical events — is evidence of glitches in the simulation.",
+      "kind": "empirical",
+      "entities": [
+        "person:nelson mandela",
+        "person:mandela",
+        "quantity:millions of people",
+        "location:prison"
+      ],
+      "relationships": ["r_0018", "r_0019"],
+      "evidence": [
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 5007,
+          "charEnd": 5103,
+          "timeStart": 298.0,
+          "timeEnd": 309.0,
+          "quote": "mandela effect is\nwhen a large number of people have\nmemories of events that don't match\nreality"
+        },
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 5146,
+          "charEnd": 5226,
+          "timeStart": 309.0,
+          "timeEnd": 315.0,
+          "quote": "millions of people\nspecifically remember nelson mandela\ndied in prison he didn't"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "The Mandela Effect is a real phenomenon of collective false memory, but the consensus scientific explanation is confabulation, schema-driven reconstruction, and social-media reinforcement — not glitches in a simulation. directTruth is low because the simulation-gloss is rejected by cognitive scientists.",
+      "tags": ["mandela-effect", "simulation-theory", "false-memory"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4wMhXxZ1zNM:c_0007",
+      "videoId": "4wMhXxZ1zNM",
+      "text": "Déjà vu is the simulation correcting itself after a variable change creates a branched timeline.",
       "kind": "speculative",
       "entities": [
-        "facility:the slits",
+        "person:philip k dick",
+        "technology:computer-programmed reality"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 6771,
+          "charEnd": 6822,
+          "timeStart": 400.0,
+          "timeEnd": 406.0,
+          "quote": "philip k dick also felt when we\nexperienced deja vu"
+        },
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 7147,
+          "charEnd": 7190,
+          "timeStart": 420.0,
+          "timeEnd": 425.0,
+          "quote": "deja vu is the\nsimulation correcting itself"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "rationale": "Déjà vu has well-studied neurological explanations (medial temporal lobe dual-processing, rhinal cortex misfires). Attributing it to simulation glitches is speculation unsupported by any evidence.",
+      "tags": ["deja-vu", "simulation-theory", "philip-k-dick"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4wMhXxZ1zNM:c_0008",
+      "videoId": "4wMhXxZ1zNM",
+      "text": "Physicist James Gates found error-correcting computer code in the equations of string theory.",
+      "kind": "empirical",
+      "entities": [
+        "person:james gates",
+        "person:dr gates",
+        "technology:error correcting code",
+        "organization:mit"
+      ],
+      "relationships": ["r_0024"],
+      "evidence": [
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 8258,
+          "charEnd": 8343,
+          "timeStart": 490.0,
+          "timeEnd": 500.0,
+          "quote": "error correcting code buried\ndeep inside the equations used to\ndescribe string theory"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.35,
+      "rationale": "Gates did publish work on 'adinkras' in supersymmetry where certain mathematical structures resemble Hamming doubly-even self-dual error-correcting codes. But the 'code in the cosmos = we're in a simulation' gloss is Gates's interpretation, and many physicists consider the analogy interesting but far from evidence of a simulator.",
+      "tags": ["string-theory", "james-gates", "error-correcting-code"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4wMhXxZ1zNM:c_0009",
+      "videoId": "4wMhXxZ1zNM",
+      "text": "Michio Kaku denies that simulating an entire universe is scientifically possible because only the universe itself has sufficient computing power.",
+      "kind": "opinion",
+      "entities": [
+        "person:dr michio kaku",
+        "person:dr kaku",
+        "technology:simulation"
+      ],
+      "relationships": ["r_0029", "r_0031"],
+      "evidence": [
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 12781,
+          "charEnd": 12848,
+          "timeStart": 748.0,
+          "timeEnd": 755.0,
+          "quote": "he claims that\nsimulating a universe is not\nscientifically possible"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "rationale": "Kaku has made this argument publicly. The computational-resources objection is serious but the video rebuts it via 'only render what's observed' — which is a coherent counter. So Kaku's position is accurately attributed and partially defensible.",
+      "tags": ["simulation-theory", "michio-kaku", "computational-limits"],
+      "hostStance": "denies"
+    },
+    {
+      "id": "4wMhXxZ1zNM:c_0010",
+      "videoId": "4wMhXxZ1zNM",
+      "text": "A simulated universe would only render what observers look at, exactly as 3D video-game engines do.",
+      "kind": "speculative",
+      "entities": [
+        "technology:engine",
+        "technology:video game engines",
+        "work_of_media:video games"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 13796,
+          "charEnd": 13837,
+          "timeStart": 810.0,
+          "timeEnd": 815.0,
+          "quote": "game engine only renders\nthe bare minimum"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "rationale": "Analogy-driven speculation. Video games do use view-frustum culling and LOD, but extending the analogy to an entire universe is not itself evidence. The real-time rendering trick is real; its applicability to quantum measurement is a stretch.",
+      "tags": ["simulation-theory", "rendering", "video-games"],
+      "dependencies": [
+        {
+          "target": "4wMhXxZ1zNM:c_0009",
+          "kind": "contradicts",
+          "rationale": "[logical] If only observed regions need be rendered, Kaku's 'requires computing the whole universe' objection no longer applies — the two claims cannot both be fully correct about the resource constraint."
+        }
+      ],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "4wMhXxZ1zNM:c_0011",
+      "videoId": "4wMhXxZ1zNM",
+      "text": "The double-slit experiment's observer effect proves that reality is rendered on demand, like a simulation.",
+      "kind": "empirical",
+      "entities": [
+        "technology:double slit",
         "technology:detector",
-        "ideology:simulation theory"
+        "facility:the slits"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "4wMhXxZ1zNM",
           "charStart": 15912,
-          "charEnd": 16020,
-          "timeStart": 1016.16,
-          "timeEnd": 1026.24,
-          "quote": "as soon as the\ndetectors were installed the\ninterference pattern went away and the\nclumping pattern returned"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "The double-slit observer effect is real and reproducibly demonstrated. The 'looks like a video game' analogy is one popular interpretation, but the standard QM reading (observation = entanglement with the measurement apparatus, decoherence collapses the superposition) doesn't require any computational substrate — it's a feature of how QM works, not necessarily of a simulator's optimization. The simulation framing is suggestive, not probative.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "4wMhXxZ1zNM:c_0007",
-      "videoId": "4wMhXxZ1zNM",
-      "text": "John Wheeler's delayed-choice experiment shows that retroactively choosing to observe photons from a galaxy 100 million light years away can collapse their wavefunction backward through time and space — 'retrocausality' that is best explained by a simulator that ignores temporal ordering when no one is looking.",
-      "kind": "speculative",
-      "entities": [
-        "person:john wheeler",
-        "facility:the slits",
-        "ideology:simulation theory"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "4wMhXxZ1zNM",
-          "charStart": 18001,
-          "charEnd": 18182,
-          "timeStart": 1158.96,
-          "timeEnd": 1174.4,
-          "quote": "this is called retrocausality simply by\nchoosing to observe the photons this way\nthey reach back through time 100 million\nyears and alter their state on the other\nside of the galaxy"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.45,
-      "rationale": "The delayed-choice quantum eraser is a real experimental setup (Marlan Scully, Yoon-Ho Kim et al. 1999) that has been extended to cosmological-baseline tests using quasar light. The 'retrocausality' interpretation is one (controversial) reading; most physicists prefer the consistent-histories or many-worlds interpretation in which no actual backward-in-time signaling occurs. Either way, jumping to 'therefore simulator' is a leap.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "4wMhXxZ1zNM:c_0008",
-      "videoId": "4wMhXxZ1zNM",
-      "text": "Fermi's paradox — that with billions of trillions of stars there should be many detectable civilizations, yet we see none — is consistent with a simulation that focuses computational resources only on us, leaving the rest of the apparent cosmos as empty 'props'.",
-      "kind": "speculative",
-      "entities": [
-        "ideology:simulation theory",
-        "location:our galaxy",
-        "law_or_policy:laws of physics"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "4wMhXxZ1zNM",
-          "charStart": 7363,
-          "charEnd": 7624,
-          "timeStart": 484.24,
-          "timeEnd": 503.12,
-          "quote": "we live in a huge universe 200 billion\ntrillion stars and even if life is rare\nyou'd think there'd be some evidence of\nit somewhere this is fermi's paradox but\naccording to the drake equation there\nshould be over a million technologically\nadvanced civilizations"
+          "charEnd": 15986,
+          "timeStart": 935.0,
+          "timeEnd": 945.0,
+          "quote": "as soon as the\ndetectors were installed the\ninterference pattern went away"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.2,
-      "rationale": "Fermi's paradox is real; the Drake-equation-says-millions claim depends entirely on the (huge) uncertainty in factor f_i and L. The 'simulation focuses only on us' explanation is one of dozens (Great Filter, zoo hypothesis, dark forest, rare-Earth, civilizations-stay-quiet, distance-just-too-vast-yet). Picking 'simulation' as the inference is unjustified preferentially against the alternatives.",
+      "directTruth": 0.15,
+      "rationale": "The wave-function collapse on measurement is a real quantum-mechanical phenomenon, but the 'proves we're in a simulation' framing conflates observation with conscious-observer rendering. Measurement-induced decoherence is explained by standard QM interpretations that don't require a simulator.",
+      "tags": ["double-slit", "quantum-mechanics", "observer-effect"],
+      "dependencies": [
+        {
+          "target": "4wMhXxZ1zNM:c_0010",
+          "kind": "supports",
+          "rationale": "Host uses this experimental result as the empirical anchor for the render-on-observation claim."
+        }
+      ],
       "hostStance": "asserts"
     },
     {
-      "id": "4wMhXxZ1zNM:c_0009",
+      "id": "4wMhXxZ1zNM:c_0012",
       "videoId": "4wMhXxZ1zNM",
-      "text": "Simulation theory's chief weakness is that it's unfalsifiable — every observation, from the Big Bang to UFOs violating physics to the absence of contact with aliens, can be retrofit as 'just part of the simulation' — which makes it more like a religion than a scientific theory.",
-      "kind": "opinion",
+      "text": "Wheeler's delayed-choice experiment shows retrocausality — photons change their past state based on whether we observe them.",
+      "kind": "empirical",
       "entities": [
-        "ideology:simulation theory",
-        "event:big bang",
-        "law_or_policy:laws of physics"
+        "person:john wheeler",
+        "person:wheeler"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "4wMhXxZ1zNM",
-          "charStart": 19359,
-          "charEnd": 19519,
-          "timeStart": 1243.44,
-          "timeEnd": 1256.48,
-          "quote": "the simulation creator as\nan omniscient intelligence who exists\noutside of our understanding of space\nand time it sounds an awful lot like\nyou're describing god"
+          "charStart": 16637,
+          "charEnd": 16662,
+          "timeStart": 975.0,
+          "timeEnd": 980.0,
+          "quote": "delayed choice experiment"
+        },
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 16900,
+          "charEnd": 16990,
+          "timeStart": 990.0,
+          "timeEnd": 1000.0,
+          "quote": "when the waves were observed before\nhitting the screen they suddenly behave\nlike particles"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The host's own observation, and a sound one. Simulation theory's structural similarity to theistic accounts of reality (omniscient external creator, unfalsifiable claim about ultimate substrate, 'we can't disprove it') is precisely what makes it metaphysics rather than physics. This isn't a fatal objection — it just means we should be careful about presenting it as if science could resolve it.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
+      "confidence": 0.9,
+      "directTruth": 0.45,
+      "rationale": "The delayed-choice experiment is real and the outcomes are as described. The 'retrocausality' language is interpretive — mainstream physics views the result as about information/measurement context, not backward-in-time causation. The simulation inference is an additional speculative leap.",
+      "tags": ["wheeler", "delayed-choice", "retrocausality"],
+      "hostStance": "asserts"
     },
     {
-      "id": "4wMhXxZ1zNM:c_0010",
+      "id": "4wMhXxZ1zNM:c_0013",
       "videoId": "4wMhXxZ1zNM",
-      "text": "Whether or not we're in a simulation is largely irrelevant to how we should live: even if our world isn't 'base reality' it's still our reality, and our actions still have consequences within it.",
+      "text": "Simulation theory and belief in God are structurally equivalent — both posit an unprovable omniscient intelligence outside our reality.",
       "kind": "opinion",
       "entities": [
         "ideology:simulation theory",
+        "person:god",
         "ideology:faith"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "4wMhXxZ1zNM",
-          "charStart": 20250,
-          "charEnd": 20369,
-          "timeStart": 1296.32,
-          "timeEnd": 1306.1589999999999,
-          "quote": "i disagree even if we don't live in base\nreality we still live in our reality and\nour actions here do have consequences"
+          "charStart": 19473,
+          "charEnd": 19501,
+          "timeStart": 1135.0,
+          "timeEnd": 1140.0,
+          "quote": "sounds an awful lot like\nyou"
+        },
+        {
+          "transcriptId": "4wMhXxZ1zNM",
+          "charStart": 19806,
+          "charEnd": 19861,
+          "timeStart": 1155.0,
+          "timeEnd": 1160.0,
+          "quote": "many believers of simulation\ntheory are fierce atheists"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "This is sound practical philosophy and matches David Chalmers's argument in 'Reality+': simulated experiences are real experiences, simulated suffering is real suffering, and the metaphysical question doesn't license ethical nihilism. The host's framing is concise and correct.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "The structural parallel between simulator-creator and deity is widely noted in philosophy of religion (e.g. Chalmers, Bostrom himself). The observation that many simulation-theory advocates are atheists is also empirically plausible. Both structural claims hold.",
+      "tags": ["simulation-theory", "religion", "philosophy"],
+      "dependencies": [
+        {
+          "target": "4wMhXxZ1zNM:c_0001",
+          "kind": "elaborates",
+          "rationale": "Final philosophical reframing of the whole Bostrom framework: simulator-creator is indistinguishable from god in content."
+        }
+      ],
+      "hostStance": "asserts"
     }
   ]
 }

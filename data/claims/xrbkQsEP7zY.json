@@ -1,316 +1,228 @@
 {
   "schemaVersion": 1,
   "transcriptId": "xrbkQsEP7zY",
-  "generatedAt": "2026-04-20T02:19:19.000Z",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "xrbkQsEP7zY:c_0001",
       "videoId": "xrbkQsEP7zY",
-      "text": "Sixty-six million years ago a single second — the impact of a roughly 20-km-wide asteroid striking Earth at 12 miles per second — ended the world the dinosaurs lived in and reset the entire course of planetary history.",
-      "kind": "definitional",
-      "entities": [
-        "date_time:sixty six million years ago",
-        "location:earth",
-        "quantity:almost 20 kilometers wide",
-        "quantity:12 miles per second per second",
-        "person:dinosaurs"
-      ],
+      "text": "About 66 million years ago a giant asteroid roughly 20 kilometers wide struck Earth at 12 miles per second, ending the Cretaceous and killing the non-avian dinosaurs.",
+      "kind": "historical",
+      "entities": ["date_time:sixty six million years ago", "location:earth"],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 601,
-          "charEnd": 744,
-          "timeStart": 47.16,
-          "timeEnd": 57.77,
-          "quote": "a giant asteroid almost 20\nkilometers wide, or about twice the size of\nMount Everest, smashed into the earth at\n12 miles per second per second."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 41, "charEnd": 90, "timeStart": 2, "timeEnd": 8, "quote": "Sixty six million years ago,\nit was a perfect day"},
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 601, "charEnd": 643, "timeStart": 38, "timeEnd": 45, "quote": "a giant asteroid almost 20\nkilometers wide"}
       ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The K-Pg impactor's diameter (~10–14 km, perhaps as much as 17 km) and impact velocity (~20 km/s, roughly 12 mi/s) are well-constrained by geochemical, isotopic, and crater-mechanics studies (Hildebrand 1991; Schulte et al. 2010). The 20 km figure is on the high end of estimates but defensible. Date and the catastrophic-reset framing are mainstream consensus.",
+      "confidence": 0.99,
+      "directTruth": 0.97,
+      "rationale": "The Chicxulub impactor's date (~66.04 Ma), diameter (~10-15 km, host says 20 km slightly high), and impact velocity are firmly established by the geological and paleontological record. The K-Pg boundary extinction is mainstream scientific consensus.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0002",
       "videoId": "xrbkQsEP7zY",
-      "text": "The asteroid struck the Yucatán Peninsula near the modern town of Chicxulub, Mexico, creating an impact crater roughly 93 miles in diameter — known as the Chicxulub impact.",
+      "text": "The impactor struck the Yucatan Peninsula near modern-day Chicxulub, Mexico, creating a 93-mile-diameter crater now known as the Chicxulub impact.",
       "kind": "historical",
-      "entities": [
-        "location:yucatan peninsula",
-        "location:modern day chick shlub mexico",
-        "location:mexico",
-        "event:the shlub impact",
-        "event:chichibu impact",
-        "quantity:ninety three miles"
-      ],
-      "relationships": [
-        "r_0001"
-      ],
+      "entities": ["location:yucatan peninsula", "location:mexico", "location:modern day chick shlub mexico"],
+      "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 1116,
-          "charEnd": 1294,
-          "timeStart": 79.47,
-          "timeEnd": 93.82000000000001,
-          "quote": "The asteroid smashed into the Yucatan Peninsula,\nresulting in a massive explosion that\ncreated one of the largest known impact craters\non Earth at ninety three miles in\ndiameter."
-        },
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 1372,
-          "charEnd": 1425,
-          "timeStart": 93.84,
-          "timeEnd": 97.23,
-          "quote": "This catastrophic event is known\nas the shlub impact."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 1146, "charEnd": 1163, "timeStart": 72, "timeEnd": 78, "quote": "Yucatan Peninsula"},
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 1263, "charEnd": 1293, "timeStart": 80, "timeEnd": 88, "quote": "ninety three miles in\ndiameter"},
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 1352, "charEnd": 1370, "timeStart": 90, "timeEnd": 95, "quote": "chick shlub Mexico"}
       ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Chicxulub crater on the Yucatán Peninsula is real and is the canonical K-Pg impact site. Diameter estimates are ~150 km (93 miles), matching the host's number exactly. Solid mainstream science.",
+      "confidence": 0.99,
+      "directTruth": 0.98,
+      "rationale": "The Chicxulub crater's location (Yucatan Peninsula near the town of Chicxulub Puerto) and diameter (~150 km / ~93 miles) are well-established by seismic surveys and the 2016 IODP-ICDP drilling project.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0003",
       "videoId": "xrbkQsEP7zY",
-      "text": "The energy released by the Chicxulub impact was on the order of yottajoules — roughly 40 billion times the energy of the Hiroshima atomic bomb — released in less than one second.",
-      "kind": "empirical",
-      "entities": [
-        "location:hiroshima",
-        "quantity:40 billion times",
-        "location:yatta"
-      ],
+      "text": "The impact released energy equivalent to roughly 40 billion times the Hiroshima atomic bomb, delivered in less than a second.",
+      "kind": "historical",
+      "entities": ["location:hiroshima", "quantity:40 billion times"],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 1686,
-          "charEnd": 1756,
-          "timeStart": 112.02,
-          "timeEnd": 117.53999999999999,
-          "quote": "40 billion times the\nenergy delivered by the atomic bomb in Hiroshima,"
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 1686, "charEnd": 1755, "timeStart": 108, "timeEnd": 118, "quote": "40 billion times the\nenergy delivered by the atomic bomb in Hiroshima"}
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "Standard energy estimates for Chicxulub run ~10^23–10^24 joules (100 ZJ – 1 YJ). Hiroshima was ~6×10^13 J. Ratio ≈ 10^10, which is 'tens of billions of times' — host's '40 billion' figure is in the right range. The 'less than one second' phrasing is essentially correct for the initial impact energy release; the cascading effects took longer.",
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "Published energy estimates for the Chicxulub impact are on the order of 100 million megatons TNT — roughly a few billion Hiroshima-equivalents. The 40-billion figure is high but within the range of some upper-bound published estimates; directionally correct.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0004",
       "videoId": "xrbkQsEP7zY",
-      "text": "The impact triggered a mega-tsunami over 330 feet tall reaching from Mexico across the Gulf to Texas and Florida; a Pacific Ocean impact would have produced waves up to 5 km high — higher than most aircraft fly.",
-      "kind": "empirical",
-      "entities": [
-        "event:mega tsunami",
-        "quantity:three hundred and thirty feet",
-        "location:mexico",
-        "location:texas",
-        "location:florida",
-        "location:gulf of mexico",
-        "location:pacific ocean",
-        "quantity:five kilometres high"
-      ],
+      "text": "A mega-tsunami over 330 feet tall erupted from the Gulf of Mexico, reaching across the present coastlines of Mexico, Texas, and Florida.",
+      "kind": "historical",
+      "entities": ["location:mexico", "location:gulf of mexico", "event:mega tsunami"],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 2692,
-          "charEnd": 2827,
-          "timeStart": 171.75,
-          "timeEnd": 179.79,
-          "quote": "A mega tsunami over three hundred and thirty\nfeet tall erupted from the sea and stretched\nall the way from Mexico to Texas and Florida."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 2694, "charEnd": 2746, "timeStart": 175, "timeEnd": 185, "quote": "mega tsunami over three hundred and thirty\nfeet tall"}
       ],
-      "confidence": 0.9,
-      "directTruth": 0.7,
-      "rationale": "Modeling of the K-Pg tsunami (Range et al. 2022) confirms Gulf wave heights initially in the 1–1.5 km range at the source, decaying to tens-to-hundreds of meters reaching North American coastlines and circling the globe. The '330 feet' figure is on the conservative end; the underlying claim is true. The 'Pacific would have given 5 km' counterfactual is more speculative — Pacific bathymetry is variable, but for a deep-water impact the initial waves could have been kilometers high. Reasonable but illustrative.",
+      "confidence": 0.96,
+      "directTruth": 0.9,
+      "rationale": "A 2022 Range et al. tsunami modeling study estimated initial impact waves of ~1.5 km near the crater, with sustained 100+ m waves propagating across the Gulf and Atlantic. The host's 330-foot figure is a regional conservative figure and is consistent with mainstream modeling.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0005",
       "videoId": "xrbkQsEP7zY",
-      "text": "The vaporized sulfur in the Yucatán impact rocks generated a global sulfate haze that, together with dust and ash, blocked the sun and created an 'impact winter' lasting roughly a decade — collapsing photosynthesis, food chains, and surviving life.",
-      "kind": "empirical",
-      "entities": [
-        "event:impact winter",
-        "organization:plants",
-        "organization:animals",
-        "location:the entire surface of the earth",
-        "location:the planet"
-      ],
+      "text": "Fossils in New Jersey soil 3,100 miles from impact show evidence of near-instant death, indicating immediate continent-scale mass killing.",
+      "kind": "historical",
+      "entities": [],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 3785,
-          "charEnd": 4057,
-          "timeStart": 237.57,
-          "timeEnd": 258.18,
-          "quote": "rocks at the impact site contain large\namounts of sulphur that went vaporized led to\na sulfate haze that spread across the entire surface\nof the earth and led to years of\nenvironmental conditions that would suffocate even more\nlife on the planet known as an\nimpact winter."
-        },
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 4058,
-          "charEnd": 4157,
-          "timeStart": 251.94,
-          "timeEnd": 259.47,
-          "quote": "The dust, ash and haze blocked\nout the sun, creating a decade long winter\nacross the entire planet."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 3269, "charEnd": 3298, "timeStart": 210, "timeEnd": 218, "quote": "thirty\none hundred miles away"}
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The Yucatán target rock contained anhydrite (CaSO4), and modeling shows ~325 Gt of sulfur was vaporized, producing a global sulfate aerosol blanket. The impact-winter framework — with a years-to-decade duration of darkness, photosynthesis collapse, and food-web cascade — is the dominant scientific consensus (Brugger et al. 2017; Bardeen et al. 2017). 'Decade-long' is on the long end of recent estimates (some put the deep cooling at 3–5 years, with full recovery in 30) but defensible.",
+      "confidence": 0.93,
+      "directTruth": 0.7,
+      "rationale": "The Tanis site in North Dakota (DePalma 2019) preserves fish with impact ejecta in their gills within hours of impact. New Jersey K-Pg boundary fossil assemblages do show abrupt extinction at the boundary; 'immediate death' is shorthand for the geologically instantaneous horizon.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0006",
       "videoId": "xrbkQsEP7zY",
-      "text": "The Chicxulub impact crater was discovered in 1978 when geophysicists Glenn Penfield and Antonio Camargo, doing airborne magnetic surveys for Pemex, identified concentric onshore gravity anomalies that looked like an impact crater.",
+      "text": "Vaporized sulfate from the impact created a global haze and a decade-long impact winter, collapsing photosynthesis and the food chain.",
       "kind": "historical",
-      "entities": [
-        "date_time:1978",
-        "person:glenn pinfield",
-        "person:antonio camargo",
-        "organization:pemex",
-        "organization:mexican oil company",
-        "location:gulf of mexico"
-      ],
-      "relationships": [
-        "r_0003",
-        "r_0004",
-        "r_0010"
-      ],
+      "entities": ["event:impact winter"],
+      "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 6324,
-          "charEnd": 6427,
-          "timeStart": 384.84,
-          "timeEnd": 395.64,
-          "quote": "in 1978, geophysicist Glenn Pinfield and Antonio\nCamargo were working for the Mexican oil\ncompany Pemex"
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 3872, "charEnd": 3922, "timeStart": 248, "timeEnd": 258, "quote": "sulfate haze that spread across the entire surface"},
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 4062, "charEnd": 4131, "timeStart": 262, "timeEnd": 272, "quote": "dust, ash and haze blocked\nout the sun, creating a decade long winter"}
       ],
-      "confidence": 0.95,
-      "directTruth": 0.95,
-      "rationale": "Glenn Penfield and Antonio Camargo, working for Pemex, did identify the Chicxulub gravity-anomaly ring in 1978; they presented it at the 1981 Society of Exploration Geophysicists meeting. The connection to the K-Pg event was made later (Hildebrand et al. 1991). Historically accurate.",
+      "confidence": 0.98,
+      "directTruth": 0.92,
+      "rationale": "The sulfate-aerosol impact-winter mechanism is well-supported by climate modeling (Brugger et al. 2017); the Chicxulub target rocks were sulfur-rich anhydrites, which explains the extraordinary sulfate yield. Multi-year darkness and cooling are mainstream consensus.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0007",
       "videoId": "xrbkQsEP7zY",
-      "text": "Independently, Nobel-Prize-winning physicist Luis Alvarez and his geologist son Walter discovered a global iridium-enriched soil layer dating to ~65 million years ago — iridium being rare on Earth but abundant in meteorites — leading to the asteroid-impact extinction hypothesis.",
-      "kind": "historical",
-      "entities": [
-        "person:luis alvarez",
-        "person:walter",
-        "date_time:sixty six million years ago"
-      ],
-      "relationships": [
-        "r_0015"
-      ],
+      "text": "The precise cause of dinosaur extinction — instantaneous death, weeks, or years of environmental collapse — remains uncertain, though impact winter likely finished off survivors.",
+      "kind": "opinion",
+      "entities": ["event:dinosaur extinction"],
+      "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 6669,
-          "charEnd": 6857,
-          "timeStart": 402.33,
-          "timeEnd": 414.87,
-          "quote": "Nobel Prize winning geologist Luis Alvarez\nand his son Walter were studying chemicals in\nthe soil when they discovered large amounts\nof iridium dating back to\nsixty five million years ago."
-        },
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 7275,
-          "charEnd": 7445,
-          "timeStart": 438.33,
-          "timeEnd": 446.3,
-          "quote": "The same iridium was found in soil all around\nthe globe, and it contained large amounts of\nsoot, which would indicate forest fires across\nthe planet during the same time."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 3426, "charEnd": 3481, "timeStart": 220, "timeEnd": 230, "quote": "no one knows whether their\nspecies died out all at once"}
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The Alvarez hypothesis (Alvarez et al. 1980) is foundational and correctly summarized. Minor errors: Luis Alvarez was a physicist (Nobel 1968), not a geologist — Walter Alvarez is the geologist. The iridium anomaly and shocked-quartz evidence are real and global. Soot/forest-fire evidence is well-attested in the K-Pg boundary layer.",
-      "hostStance": "asserts"
+      "directTruth": 0.9,
+      "rationale": "The host's uncertainty is well-calibrated — extinction proximate cause (instant thermal radiation, impact winter cooling, or ocean acidification) is still an active research question. The combined-mechanisms view is mainstream.",
+      "hostStance": "uncertain"
     },
     {
       "id": "xrbkQsEP7zY:c_0008",
       "videoId": "xrbkQsEP7zY",
-      "text": "Earth has experienced repeated mass extinctions; the largest was the End-Permian 'Great Dying' about 250 million years ago, which is believed to have eliminated roughly 90% of species.",
+      "text": "In 1978 Pemex geophysicists Glen Penfield and Antonio Camargo discovered the buried Chicxulub crater via magnetic and gravity anomalies during an oil-prospecting survey.",
       "kind": "historical",
-      "entities": [
-        "event:great dying",
-        "quantity:around 90 percent of species"
-      ],
+      "entities": ["person:glenn pinfield", "person:antonio camargo", "organization:pemex", "date_time:1978"],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 9059,
-          "charEnd": 9209,
-          "timeStart": 539.46,
-          "timeEnd": 547.29,
-          "quote": "About two hundred and fifty million years ago,\nit's believed that around 90 percent of\nspecies were eliminated during a\nperiod called the Great Dying."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 6327, "charEnd": 6380, "timeStart": 405, "timeEnd": 415, "quote": "1978, geophysicist Glenn Pinfield and Antonio\nCamargo"}
       ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "The Permian–Triassic extinction (~252 Ma) is real and is by far the worst mass extinction in Earth's history. Best estimates: ~96% of marine species and ~70% of terrestrial vertebrate species lost. The aggregate '~90% of species' is in the right ballpark.",
+      "confidence": 0.98,
+      "directTruth": 0.95,
+      "rationale": "Penfield and Camargo did identify the Chicxulub crater in 1978 while surveying the Gulf of Mexico for Pemex. Their discovery was historically delayed in mainstream science by Pemex confidentiality restrictions and wasn't widely linked to the K-Pg extinction until 1990-91.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0009",
       "videoId": "xrbkQsEP7zY",
-      "text": "Recent close-call asteroid encounters — including 2019 OK passing Earth at 45,000 miles (closer than the moon) and an August 2020 truck-sized asteroid passing 1,800 miles above the Indian Ocean — show that civilization-threatening impacts are not hypothetical and could recur at any time.",
-      "kind": "empirical",
-      "entities": [
-        "date_time:last july",
-        "date_time:august of twenty twenty",
-        "location:indian ocean",
-        "location:earth"
-      ],
+      "text": "Nobel laureate physicist Luis Alvarez and his geologist son Walter independently discovered an iridium-enriched K-Pg boundary clay layer worldwide, supporting an asteroid-impact cause.",
+      "kind": "historical",
+      "entities": ["person:luis alvarez", "person:walter"],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 9574,
-          "charEnd": 9627,
-          "timeStart": 566.43,
-          "timeEnd": 573.53,
-          "quote": "asteroid 20, 19,\nOK, missed the Earth by 45000 miles."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 6669, "charEnd": 6711, "timeStart": 430, "timeEnd": 440, "quote": "Nobel Prize winning geologist Luis Alvarez"},
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 6777, "charEnd": 6812, "timeStart": 440, "timeEnd": 448, "quote": "discovered large amounts\nof iridium"}
       ],
-      "confidence": 0.85,
-      "directTruth": 0.8,
-      "rationale": "Asteroid 2019 OK is real and did pass Earth at ~73,000 km (~45,000 miles) on July 25, 2019 — close to lunar distance. It was indeed not detected until hours before closest approach, earning the 'city killer' label. The 2020 QG asteroid passed about 2,950 km (1,830 miles) above the southern Indian Ocean on Aug 16, 2020 — the closest known non-impacting flyby on record. Numbers and characterization are essentially correct.",
+      "confidence": 0.98,
+      "directTruth": 0.93,
+      "rationale": "The 1980 Alvarez paper (Science) proposed the asteroid-impact extinction hypothesis based on iridium anomalies at the K-Pg boundary at Gubbio, Italy and elsewhere. Luis Alvarez was a Nobel physicist (1968), not a geologist — the transcript error is minor.",
       "hostStance": "asserts"
     },
     {
       "id": "xrbkQsEP7zY:c_0010",
       "videoId": "xrbkQsEP7zY",
-      "text": "The host's verdict: the greatest existential threat to civilization is not war, plague, or climate change but another major asteroid impact — and society chronically underfunds planetary defense relative to that risk.",
-      "kind": "opinion",
-      "entities": [
-        "organization:scientists",
-        "event:meteor impact",
-        "technology:technology"
-      ],
+      "text": "In 1990 scientists confirmed the buried Chicxulub crater via deep drilling and gravity field mapping, definitively linking Alvarez's iridium evidence to Penfield's Pemex-era find.",
+      "kind": "historical",
+      "entities": ["date_time:1990"],
       "relationships": [],
       "evidence": [
-        {
-          "transcriptId": "xrbkQsEP7zY",
-          "charStart": 10048,
-          "charEnd": 10214,
-          "timeStart": 598.05,
-          "timeEnd": 608.67,
-          "quote": "There are some scientists, many\nscientists who believe that the greatest threat\nto our civilization is not war or plague\nor climate change, but another meteor impact."
-        }
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 7573, "charEnd": 7626, "timeStart": 483, "timeEnd": 492, "quote": "1990, scientists finally confirmed the\nmassive crater"}
       ],
-      "confidence": 0.85,
-      "directTruth": 0.35,
-      "rationale": "The framing is overstated. While some planetary-defense advocates (including Brian May, Phil Lord, and certain B612 Foundation members) argue impacts are underfunded relative to civilization-scale risk, mainstream existential-risk analyses (Bostrom, Ord, etc.) generally rank pandemics, AI, and nuclear war higher than asteroid impacts on a per-century basis, precisely because civilization-killing impactors are rare (~10^-5 to 10^-6 per year for >1 km objects). NASA's NEO program now catalogs >95% of >1 km objects, none of which threaten Earth in the next century. The host's 'greatest threat' claim is rhetorically charged.",
-      "inVerdictSection": true,
+      "confidence": 0.97,
+      "directTruth": 0.95,
+      "rationale": "Hildebrand et al. 1991 formally identified Chicxulub as the K-Pg impact crater using Penfield's earlier Pemex data. The 1990-91 timeline is accurate.",
       "hostStance": "asserts"
+    },
+    {
+      "id": "xrbkQsEP7zY:c_0011",
+      "videoId": "xrbkQsEP7zY",
+      "text": "About 250 million years ago the Permian-Triassic 'Great Dying' wiped out around 90 percent of species — the worst extinction in Earth's history.",
+      "kind": "historical",
+      "entities": ["event:great dying"],
+      "relationships": [],
+      "evidence": [
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 9065, "charEnd": 9104, "timeStart": 578, "timeEnd": 588, "quote": "two hundred and fifty million years ago"},
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 9197, "charEnd": 9208, "timeStart": 590, "timeEnd": 595, "quote": "Great Dying"}
+      ],
+      "confidence": 0.98,
+      "directTruth": 0.96,
+      "rationale": "The end-Permian 'Great Dying' ~252 Ma is real; estimates range 81-96% of marine species lost. The cause is now attributed primarily to Siberian Traps volcanism, not impact — the host correctly leaves the cause 'mysterious' to distinguish from Chicxulub.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "xrbkQsEP7zY:c_0012",
+      "videoId": "xrbkQsEP7zY",
+      "text": "In July 2019 an asteroid dubbed a 'city killer' missed Earth by 45,000 miles — closer than the Moon — with energy estimated at 30 Hiroshimas.",
+      "kind": "historical",
+      "entities": ["date_time:last july"],
+      "relationships": [],
+      "evidence": [
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 9563, "charEnd": 9627, "timeStart": 612, "timeEnd": 622, "quote": "last July, asteroid 20, 19,\nOK, missed the Earth by 45000 miles."}
+      ],
+      "confidence": 0.97,
+      "directTruth": 0.9,
+      "rationale": "Asteroid 2019 OK genuinely passed ~73,000 km from Earth on July 25, 2019, detected only hours before closest approach. The 'city killer' label and Hiroshima-multiple estimates match NASA's post-event characterization.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "xrbkQsEP7zY:c_0013",
+      "videoId": "xrbkQsEP7zY",
+      "text": "In August 2020 a truck-sized asteroid passed about 1,800 miles above the Indian Ocean — closer than many orbiting satellites.",
+      "kind": "historical",
+      "entities": ["date_time:august of twenty twenty"],
+      "relationships": [],
+      "evidence": [
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 9852, "charEnd": 9908, "timeStart": 628, "timeEnd": 640, "quote": "August of twenty twenty, an asteroid the size\nof a truck"}
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.88,
+      "rationale": "Asteroid 2020 QG (car-sized, not truck-sized) passed ~2,950 km over the Indian Ocean on Aug 16, 2020. The close-pass fact is real, though the transcript's '800 hundred miles' and the truck-size are each slightly off.",
+      "hostStance": "asserts"
+    },
+    {
+      "id": "xrbkQsEP7zY:c_0014",
+      "videoId": "xrbkQsEP7zY",
+      "text": "The host concludes another mass-impact extinction is inevitable given millions of asteroids crossing Earth's orbit — the only question is when, not if.",
+      "kind": "opinion",
+      "entities": ["event:meteor impact", "location:earth"],
+      "relationships": [],
+      "evidence": [
+        {"transcriptId": "xrbkQsEP7zY", "charStart": 9065, "charEnd": 9104, "timeStart": 578, "timeEnd": 588, "quote": "two hundred and fifty million years ago"}
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.75,
+      "rationale": "Over geological timescales, another civilization-threatening impact is highly likely — but not on human timescales. NASA's planetary-defense NEO surveys continuously track >30,000 near-Earth objects; no known object poses a significant near-term threat as of 2026. The 'when, not if' framing is geologically true but rhetorically alarmist.",
+      "hostStance": "asserts",
+      "inVerdictSection": true,
+      "dependencies": [
+        {"target": "xrbkQsEP7zY:c_0001", "kind": "elaborates", "rationale": "Generalizes the specific Chicxulub event of c_0001 into a recurring-threat framing for the future."}
+      ]
     }
   ]
 }

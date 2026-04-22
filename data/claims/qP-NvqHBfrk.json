@@ -1,20 +1,15 @@
 {
   "schemaVersion": 1,
   "transcriptId": "qP-NvqHBfrk",
-  "generatedAt": "2026-04-20T04:35:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-22T07:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-b4-agent4",
   "claims": [
     {
       "id": "qP-NvqHBfrk:c_0001",
       "videoId": "qP-NvqHBfrk",
-      "text": "Mainstream science has a long pattern of dismissing as 'pseudoscience' ideas that later turn out to be correct — Kepler, Copernicus, Pasteur, Mendel, and Tesla all faced peer ridicule for proposals that became canonical science.",
-      "kind": "historical",
+      "text": "Any challenge to established scientific dogma is labeled pseudoscience, which is arrogant because today's pseudoscience sometimes becomes tomorrow's science.",
+      "kind": "opinion",
       "entities": [
-        "person:kepler",
-        "person:copernicus",
-        "person:louis pasteur",
-        "person:gregor mendel",
-        "person:nikola tesla",
         "organization:medical establishment"
       ],
       "relationships": [],
@@ -22,62 +17,324 @@
         {
           "transcriptId": "qP-NvqHBfrk",
           "charStart": 0,
-          "charEnd": 471,
-          "timeStart": 4.16,
-          "timeEnd": 37.44,
-          "quote": "any challenge of established scientific\ndogma\nis labeled pseudoscience isn't that a\nbit arrogant\ni mean isn't pseudoscience only\npseudoscience until it's\nactual science kepler and copernicus\nwere ridiculed by their peers\nlouis pasteur's research was rejected by\nthe medical establishment\ngregor mendel nikola tesla initially\nthey were rejected\nimagine the hate they'd get if twitter\nexisted but\nthat's a long time ago surely we've\nmatured since then\nthink about this in 1"
+          "charEnd": 150,
+          "timeStart": 0.0,
+          "timeEnd": 10.0,
+          "quote": "any challenge of established scientific\ndogma\nis labeled pseudoscience isn't that a\nbit arrogant\ni mean isn't pseudoscience only\npseudoscience until i"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "It is true that each of these figures faced significant scientific or institutional resistance during their lifetimes (Galileo / Copernicus the most strikingly; Mendel ignored for decades). The host slightly oversimplifies — most of these figures eventually persuaded the scientific community via evidence, which is exactly how science is supposed to work. The 'pseudoscience until it's science' framing is rhetorical sleight-of-hand: most labeled-as-pseudoscience stays that way.",
+      "directTruth": 0.25,
+      "rationale": "Rhetorical framing conflates legitimate scientific provisionalism with the 'pseudoscience becomes science' trope. In practice, mainstream science does reclassify findings when evidence supports them (plate tectonics, heliobacter, etc.), but the reclassification happens through the very methods the host frames as dogma. The claim's directTruth is low as stated — it's closer to a strawman of how scientific skepticism works.",
+      "tags": ["pseudoscience", "philosophy-of-science", "scientific-method"],
       "hostStance": "asserts"
     },
     {
       "id": "qP-NvqHBfrk:c_0002",
       "videoId": "qP-NvqHBfrk",
-      "text": "The New York Times has a documented history of confidently wrong technology predictions: in 1903 saying manned flight was 1-10 million years away (just before the Wright brothers flew), in 1985 saying nobody would want a laptop, predicting Apple would never ship the iPhone, and dismissing Twitter as unsuited for literate communication or sustainable business.",
+      "text": "Kepler and Copernicus were ridiculed by their peers for their ideas.",
       "kind": "historical",
       "entities": [
-        "organization:new york times",
-        "organization:the new york times",
-        "date_time:1903",
-        "date_time:1985",
-        "person:wright brothers",
-        "organization:apple",
-        "technology:iphone",
-        "technology:laptop computer",
-        "technology:twitter",
-        "work_of_media:iliad"
+        "person:kepler",
+        "person:copernicus"
       ],
-      "relationships": [
-        "r_0004"
-      ],
+      "relationships": [],
       "evidence": [
         {
           "transcriptId": "qP-NvqHBfrk",
-          "charStart": 471,
-          "charEnd": 1426,
-          "timeStart": 32.96,
-          "timeEnd": 102.32,
-          "quote": "903 when the wright\nbrothers and others were building\nairplanes\nthe new york times said manned flight\nwould not be possible for 1 to 10\nmillion years oops and in 1985\nthe new york times said no matter how\ninexpensive or powerful a laptop\ncomputer would become\nnobody would want one no boy and when\napple announced the iphone\nthe time said they'd probably never\nbuild it and even if they did\nnobody would buy it and speaking of\ntwitter\nhere's what the new york times said when\nit launched using\ntwitter for literate communication is\nabout as likely as\nfiring up a cb radio and hearing some\nguy recite the iliad\nwhether the service could be made into a\nsustainable business\nquite unknown i'm skeptical\nhaven't i always told you don't trust\nthe media you have\nif you suggest that levitating heavy\nobjects with sound\nor creating free energy is even possible\nyou're viciously attacked\nnot just by facebook and twitter but by\nthe new york freaking times\naren't "
+          "charStart": 160,
+          "charEnd": 320,
+          "timeStart": 10.0,
+          "timeEnd": 20.0,
+          "quote": " science kepler and copernicus\nwere ridiculed by their peers\nlouis pasteur's research was rejected by\nthe medical establishment\ngregor mendel nikola tesla initi"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.5,
-      "rationale": "Some of these are real, partly: the NYT did publish the famous 1903 'flying machines a million years off' editorial just two months before Kitty Hawk. The Erik Sandberg-Diment 1985 NYT laptop column does say roughly what the host claims. The Apple iPhone and Twitter quotes are partial and somewhat distorted — the NYT did publish skeptical analysis of both products but the host telescopes nuanced columns into single dismissive sentences. Net: directionally true, often overstated.",
+      "directTruth": 0.4,
+      "rationale": "Kepler and Copernicus faced opposition primarily from Church authorities and Aristotelian philosophers, not from a unified peer-review system (which did not exist). Copernicus's De Revolutionibus was in fact initially received by many astronomers as a useful computational tool. The 'ridiculed by peers' framing oversimplifies the reception.",
+      "tags": ["kepler", "copernicus", "history-of-science"],
       "hostStance": "asserts"
     },
     {
       "id": "qP-NvqHBfrk:c_0003",
       "videoId": "qP-NvqHBfrk",
-      "text": "The host's editorial thesis: corporate and social media monetize getting users to attack each other, which makes them institutionally hostile to genuinely new ideas — and the right response is to ignore the attacks and keep building, the way Steve Jobs and Elon Musk did.",
+      "text": "Louis Pasteur's research was rejected by the medical establishment before being accepted.",
+      "kind": "historical",
+      "entities": [
+        "person:louis pasteur",
+        "organization:medical establishment"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 214,
+          "charEnd": 331,
+          "timeStart": 15.0,
+          "timeEnd": 22.0,
+          "quote": " peers\nlouis pasteur's research was rejected by\nthe medical establishment\ngregor mendel nikola tesla initially\nthey w"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.6,
+      "rationale": "Pasteur's germ theory of disease did face significant resistance from physicians in the 1860s-70s committed to miasma and spontaneous generation. He ultimately won over the establishment through decisive experiments (anthrax, rabies). The host's framing is broadly correct but obscures that he was accepted within his own lifetime.",
+      "tags": ["pasteur", "germ-theory", "history-of-medicine"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0004",
+      "videoId": "qP-NvqHBfrk",
+      "text": "In 1903 the New York Times said manned flight would not be possible for 1 to 10 million years.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1903",
+        "organization:new york times",
+        "person:wright brothers"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 430,
+          "charEnd": 600,
+          "timeStart": 28.0,
+          "timeEnd": 38.0,
+          "quote": "\nmatured since then\nthink about this in 1903 when the wright\nbrothers and others were building\nairplanes\nthe new york times said manned flight\nwould not be possible for 1"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.65,
+      "rationale": "A 1903 New York Times editorial (published October 9, 1903) did dismiss manned flight as requiring 'from one to ten million years' — this is a real and verifiable quote, cited frequently as an example of press techno-pessimism. Published just nine weeks before the Wright Brothers' successful flight at Kitty Hawk on December 17, 1903.",
+      "tags": ["new-york-times", "1903", "wright-brothers", "press-quote"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0005",
+      "videoId": "qP-NvqHBfrk",
+      "text": "In 1985 the New York Times said no matter how inexpensive or powerful a laptop computer would become, nobody would want one.",
+      "kind": "historical",
+      "entities": [
+        "date_time:1985",
+        "organization:new york times",
+        "technology:laptop computer"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 600,
+          "charEnd": 770,
+          "timeStart": 38.0,
+          "timeEnd": 48.0,
+          "quote": " to 10\nmillion years oops and in 1985\nthe new york times said no matter how\ninexpensive or powerful a laptop\ncomputer would become\nnobody would want one no boy and when\na"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "Erik Sandberg-Diment's December 8, 1985 NYT column 'The Executive Computer' did make this claim, pronouncing laptops unnecessary. Widely cited and verifiable. The quote is slightly paraphrased but substantively accurate.",
+      "tags": ["new-york-times", "1985", "laptop", "press-quote"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0006",
+      "videoId": "qP-NvqHBfrk",
+      "text": "When Apple announced the iPhone, the New York Times said Apple would probably never build it and if they did, nobody would buy it.",
+      "kind": "historical",
+      "entities": [
+        "organization:apple",
+        "technology:iphone",
+        "quantity:times"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 760,
+          "charEnd": 920,
+          "timeStart": 48.0,
+          "timeEnd": 58.0,
+          "quote": "and when\napple announced the iphone\nthe time said they'd probably never\nbuild it and even if they did\nnobody would buy it and speaking of\ntwitter\nhere's what th"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.3,
+      "rationale": "This claim does not match any well-documented NYT piece. There were skeptical pieces from various columnists at the time, but the specific quote 'probably never build it... nobody would buy it' attributed to 'The Times' in this formulation is not verifiable. Host rhetorically lumps multiple critiques together.",
+      "tags": ["iphone", "apple", "press-quote", "possibly-misattributed"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0007",
+      "videoId": "qP-NvqHBfrk",
+      "text": "When Twitter launched, the New York Times compared using it for literate communication to 'firing up a CB radio and hearing some guy recite the Iliad'.",
+      "kind": "historical",
+      "entities": [
+        "technology:twitter",
+        "organization:new york times",
+        "work_of_media:iliad"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 900,
+          "charEnd": 1080,
+          "timeStart": 58.0,
+          "timeEnd": 68.0,
+          "quote": "itter\nhere's what the new york times said when\nit launched using\ntwitter for literate communication is\nabout as likely as\nfiring up a cb radio and hearing some\nguy recite the iliad"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The 'CB radio / Iliad' line is real — from a NYT piece by Alex Beam (published Times and other outlets 2007 era). The specific phrasing is verifiable. The framing that NYT 'said when it launched' is loose — early Twitter coverage was mixed rather than uniformly dismissive.",
+      "tags": ["twitter", "nyt", "press-quote"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0008",
+      "videoId": "qP-NvqHBfrk",
+      "text": "Suggesting that levitating heavy objects with sound or creating free energy is possible results in vicious attacks from both social media and the New York Times.",
+      "kind": "opinion",
+      "entities": [
+        "organization:facebook",
+        "organization:social media",
+        "technology:twitter",
+        "organization:new york times"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 1200,
+          "charEnd": 1360,
+          "timeStart": 76.0,
+          "timeEnd": 85.0,
+          "quote": "'t trust\nthe media you have\nif you suggest that levitating heavy\nobjects with sound\nor creating free energy is even possible\nyou're viciously attacked\nnot just "
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.3,
+      "rationale": "Host conflates two claims: (1) acoustic levitation of small objects is a real, demonstrated phenomenon with peer-reviewed physics (not attacked). (2) 'Free energy' / perpetual motion violates thermodynamics and is legitimately criticized as pseudoscience. Bundling them as equivalently-persecuted ideas misrepresents both. The 'vicious attack' framing is self-serving.",
+      "tags": ["acoustic-levitation", "free-energy", "thermodynamics", "rhetoric"],
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "qP-NvqHBfrk:c_0001",
+          "kind": "elaborates",
+          "rationale": "Extends the 'pseudoscience-today, science-tomorrow' thesis with specific examples."
+        }
+      ]
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0009",
+      "videoId": "qP-NvqHBfrk",
+      "text": "Corporate media and social media make money by getting users to attack each other, which is their business model.",
       "kind": "opinion",
       "entities": [
         "organization:corporate media",
-        "organization:social media",
-        "organization:facebook",
-        "technology:twitter",
+        "organization:social media"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 1613,
+          "charEnd": 1775,
+          "timeStart": 98.0,
+          "timeEnd": 107.0,
+          "quote": "ia or social media\nthey make money by getting all of us to\nattack each other that's their business\nmodel\nit's shameful and that's why nobody\ntrusts them who cares"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.55,
+      "rationale": "The engagement-drives-outrage hypothesis has empirical support (Haidt, Rozado, internal Facebook docs). 'Business model' is overstated — platforms optimize for engagement of which outrage is one vector. Corporate media economics are more varied than 'get users to attack each other'. Partially true, overbroad.",
+      "tags": ["media-criticism", "business-model", "engagement"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0010",
+      "videoId": "qP-NvqHBfrk",
+      "text": "George Bernard Shaw said all great truths begin as blasphemies.",
+      "kind": "historical",
+      "entities": [
+        "person:george bernard shaw"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 1760,
+          "charEnd": 1920,
+          "timeStart": 110.0,
+          "timeEnd": 119.0,
+          "quote": " them who cares\ngeorge bernard shaw said all great\ntruths begin as blasphemies\nthis message is to those blasphemers to\nthe recluse out there building castles\nwi"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The quote is genuine — from Shaw's 1919 play 'Annajanska, the Bolshevik Empress'. Accurately attributed. Verifiable.",
+      "tags": ["bernard-shaw", "quote", "verified"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0011",
+      "videoId": "qP-NvqHBfrk",
+      "text": "The world needs misfits, dreamers, and visionaries — the next Kepler, Jobs, or Elon Musk — much more than it needs the New York Times.",
+      "kind": "opinion",
+      "entities": [
+        "person:kepler",
+        "person:steve jobs",
+        "person:elon musk",
+        "organization:new york times"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 2088,
+          "charEnd": 2254,
+          "timeStart": 127.0,
+          "timeEnd": 137.0,
+          "quote": "ext kepler\njobs elon musk to the misfits and\ndreamers and visionaries my message is\nto you\nthey are going to attack you they are\ngoing to hate you\nignore them keep dr"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Pure value judgment / rallying rhetoric. No empirical content to calibrate directTruth against — comparing societal contributions of inventors vs a newspaper is not a well-formed factual question. Omitting directTruth.",
+      "tags": ["verdict", "rhetoric", "host-position"],
+      "hostStance": "asserts",
+      "inVerdictSection": true
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0012",
+      "videoId": "qP-NvqHBfrk",
+      "text": "Gregor Mendel and Nikola Tesla were initially rejected before their work was vindicated.",
+      "kind": "historical",
+      "entities": [
+        "person:gregor mendel",
+        "person:nikola tesla"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "qP-NvqHBfrk",
+          "charStart": 262,
+          "charEnd": 423,
+          "timeStart": 18.0,
+          "timeEnd": 28.0,
+          "quote": "the medical establishment\ngregor mendel nikola tesla initially\nthey were rejected\nimagine the hate they'd get if twitter\nexisted but\nthat's a long time ago surel"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "rationale": "Mendel's genetics was essentially ignored until its 1900 rediscovery — 'rejected' is too strong; 'overlooked' is more accurate. Tesla was widely celebrated during his peak (1890s-1900s) but died in near-obscurity after his later eccentricities; 'initially rejected' mischaracterizes his career arc. Partial truth with narrative compression.",
+      "tags": ["mendel", "tesla", "history-of-science"],
+      "hostStance": "asserts"
+    },
+    {
+      "id": "qP-NvqHBfrk:c_0013",
+      "videoId": "qP-NvqHBfrk",
+      "text": "Steve Jobs and Elon Musk do not care what people think about them; they just went out and changed the world.",
+      "kind": "opinion",
+      "entities": [
         "person:steve jobs",
         "person:elon musk"
       ],
@@ -85,42 +342,17 @@
       "evidence": [
         {
           "transcriptId": "qP-NvqHBfrk",
-          "charStart": 1426,
-          "charEnd": 1768,
-          "timeStart": 97.759,
-          "timeEnd": 120.24,
-          "quote": "new ideas worth exploring did\nsteve jobs care what people thought\nabout him\ndoes elon musk care no they just went\nout and changed the world\nso my message today is not to the\ncorporate media or social media\nthey make money by getting all of us to\nattack each other that's their business\nmodel\nit's shameful and that's why nobody\ntrusts them wh"
+          "charStart": 1398,
+          "charEnd": 1561,
+          "timeStart": 88.0,
+          "timeEnd": 97.0,
+          "quote": " york freaking times\naren't new ideas worth exploring did\nsteve jobs care what people thought\nabout him\ndoes elon musk care no they just went\nout and changed the w"
         }
       ],
-      "confidence": 0.95,
-      "rationale": "This is the host's polemical thesis. The 'engagement-driven media business model creates conflict' part has empirical support in social-media research (e.g., MIT Brady et al. on moral-emotional content amplification). The 'Jobs and Musk just ignored hate and changed the world' framing is hagiography — both took criticism extremely personally and used legal and PR tools aggressively against critics. I don't have a confident truth value to assign; this is a values claim not a factual one.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "qP-NvqHBfrk:c_0004",
-      "videoId": "qP-NvqHBfrk",
-      "text": "Citing George Bernard Shaw's line 'all great truths begin as blasphemies', the host frames his closing message as encouragement to lone tinkerers, garage nerds, and visionaries to keep working on radical ideas (sonic levitation, free energy, etc.) despite institutional ridicule.",
-      "kind": "opinion",
-      "entities": [
-        "person:george bernard shaw",
-        "person:elon musk",
-        "person:kepler"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "qP-NvqHBfrk",
-          "charStart": 1768,
-          "charEnd": 2310,
-          "timeStart": 116.719,
-          "timeEnd": 153.84,
-          "quote": "o cares\ngeorge bernard shaw said all great\ntruths begin as blasphemies\nthis message is to those blasphemers to\nthe recluse out there building castles\nwith sound\nand magnets and his own hands to the\nnerd in the garage tinkering with\nelectronics because he knows in his\nheart\nthere is a better way this message is to\nthe next kepler\njobs elon musk to the misfits and\ndreamers and visionaries my message is\nto you\nthey are going to attack you they are\ngoing to hate you\nignore them keep dreaming keep building\nkeep blaspheming because i can tell"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.5,
-      "rationale": "The Shaw quote is real (from 'Annajanska, the Bolshevik Empress', 1918). The encouragement-to-misfits thesis is a values claim with mixed empirical support: most lone garage tinkerers do not in fact discover paradigm-shifting science, but a small minority do, and the institutional cost of crushing them all is real. Hard to assign a single directTruth; this is exhortation, not proposition.",
-      "inVerdictSection": true,
+      "confidence": 0.9,
+      "directTruth": 0.25,
+      "rationale": "Both Jobs and Musk are extensively documented as caring intensely about public perception — Jobs famously micromanaged product launches and media narratives, and Musk is one of the most online-reactive CEOs in history. The 'didn't care' framing is the opposite of the empirical record, even if the charitable reading is 'wasn't deterred by critics'.",
+      "tags": ["jobs", "musk", "rhetoric", "false"],
       "hostStance": "asserts"
     }
   ]

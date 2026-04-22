@@ -1,13 +1,139 @@
 {
   "schemaVersion": 1,
   "transcriptId": "laXhTcko-lg",
-  "generatedAt": "2026-04-20T01:46:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "laXhTcko-lg:c_0001",
       "videoId": "laXhTcko-lg",
-      "text": "AJ's central thesis: the only theory that simultaneously accounts for every anomaly of the Moon — its formation, density, orbit, distance, composition, and surface chemistry — is that the Moon is a hollow, artificially-constructed object brought into Earth orbit from elsewhere.",
+      "text": "The Moon is a hollow, artificial structure brought to Earth orbit by intelligent beings.",
+      "kind": "speculative",
+      "entities": [
+        "location:moon",
+        "location:the moon",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 534,
+          "charEnd": 700,
+          "timeStart": 30.96,
+          "timeEnd": 50.64,
+          "quote": "moon is a hollow\nartificial structure brought here by\nsomeone else\nlet's find out why\nlet's start at the beginning we're\ntaught that the moon has been here\nforever bu"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.02,
+      "rationale": "The hollow-moon hypothesis is rejected by modern selenology: Apollo-era seismology, lunar laser ranging, and gravity mapping (GRAIL) are all consistent with a solid moon with small iron core, silicate mantle, and crust. Host himself concedes at the end that 'explanations aren't perfect but they're enough to satisfy skeptics.'",
+      "tags": ["hollow-moon", "thesis"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "laXhTcko-lg:c_0002",
+      "videoId": "laXhTcko-lg",
+      "text": "The giant-impact theory — that a Mars-sized object smashed into proto-Earth and the debris coalesced into the Moon — is the most popular scientific explanation for the Moon's formation.",
+      "kind": "historical",
+      "entities": [
+        "event:giant impact",
+        "location:the moon",
+        "location:proto-earth",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 1655,
+          "charEnd": 1830,
+          "timeStart": 97.44,
+          "timeEnd": 113.20,
+          "quote": "giant impact theory\nthis says that a large object about the\nsize of mars smashed into the\nproto-earth the debris field from the\ncollision coalesced to create the earth\nmoon sy"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Accurately reports the mainstream giant-impact (Theia) hypothesis. It is indeed the dominant scientific account, supported by isotopic similarity between Earth and Moon samples and by physical simulations.",
+      "tags": ["giant-impact", "theia", "mainstream-science"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "laXhTcko-lg:c_0003",
+      "videoId": "laXhTcko-lg",
+      "text": "Lunar surface rocks are older than the rocks beneath them — the reverse of Earth's stratigraphy — suggesting older material was somehow brought to the surface.",
+      "kind": "empirical",
+      "entities": [
+        "location:moon",
+        "location:the moon",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 3780,
+          "charEnd": 3960,
+          "timeStart": 241.76,
+          "timeEnd": 256.80,
+          "quote": " out older rock would be\non top but the list of anomalies goes on\ntypical planetary structures have denser\nmaterials toward the core and lighter\nmaterials toward the surface on the"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.2,
+      "rationale": "The claim is a misreading. Lunar regolith is older on average than the underlying bedrock in the sampled areas because the surface has been churned by impact gardening for billions of years with low erosion — not because older material was brought up. Standard selenology explains this without mystery.",
+      "tags": ["moon-rocks", "stratigraphy", "anomaly"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "laXhTcko-lg:c_0001",
+          "kind": "supports",
+          "rationale": "Reverse stratigraphy is one of the anomalies offered as circumstantial evidence for an artificial hollow moon."
+        }
+      ]
+    },
+    {
+      "id": "laXhTcko-lg:c_0004",
+      "videoId": "laXhTcko-lg",
+      "text": "Uranium-236 and Neptunium-237 — radioactive isotopes that don't occur naturally — are found on the Moon.",
+      "kind": "empirical",
+      "entities": [
+        "location:the moon",
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 4748,
+          "charEnd": 4920,
+          "timeStart": 301.52,
+          "timeEnd": 317.92,
+          "quote": "uranium-236\nand\nneptunium-237 are found on the moon\nthis is notable because those\nradioactive elements don't occur\nnaturally the only way we see those\nisotopes on earth is "
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.25,
+      "rationale": "Both isotopes are produced in trace amounts naturally by neutron capture on uranium ores (notably at Oklo) and by cosmic-ray interactions. Their detection in lunar samples is fully explained by galactic-cosmic-ray spallation on exposed regolith — no artificial production needed. Claim overstates their absence from nature.",
+      "tags": ["moon-rocks", "isotopes", "anomaly"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "laXhTcko-lg:c_0001",
+          "kind": "supports",
+          "rationale": "Presented as evidence that the Moon is an artificial construct."
+        }
+      ]
+    },
+    {
+      "id": "laXhTcko-lg:c_0005",
+      "videoId": "laXhTcko-lg",
+      "text": "Titanium, chromium, and zirconium — rare and strong corrosion-resistant metals on Earth — are abundant on the Moon, suggesting a structural-reinforcement purpose.",
       "kind": "speculative",
       "entities": [
         "location:the moon",
@@ -18,127 +144,103 @@
       "evidence": [
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 530,
-          "charEnd": 600,
-          "timeStart": 30.96,
-          "timeEnd": 40.239,
-          "quote": "the moon is a hollow\nartificial structure brought here by\nsomeone else"
+          "charStart": 4938,
+          "charEnd": 5120,
+          "timeStart": 314.88,
+          "timeEnd": 328.80,
+          "quote": "titanium chromium and zirconium are rare\non earth but these are found in\nabundance on the moon if the earth and\nmoon were formed together why such a big\ndiscrepancy and those metals "
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.03,
-      "rationale": "The hollow-Moon-spaceship idea (popularized by Vasin & Shcherbakov 1970) is rejected by mainstream lunar science. Apollo seismometer data, lunar laser ranging, and gravitational moment measurements all decisively rule out a hollow shell of any plausible materials — the moments of inertia and average density are inconsistent with hollowness, and the seismometer ringing the host cites is fully explained by the Moon's dry, fractured crust and absence of attenuating fluid. The 'only theory that explains everything' framing is the textbook God-of-the-gaps move.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "laXhTcko-lg:c_0002",
-      "videoId": "laXhTcko-lg",
-      "text": "Mainstream lunar formation theories (capture, accretion, fission, giant impact, and the more recent synestia model) each have known issues, and the host correctly identifies that none have unanimous consensus support — though the giant impact / synestia framework is the dominant working model in modern planetary science.",
-      "kind": "empirical",
-      "entities": [
-        "location:moon",
-        "location:earth",
-        "event:giant impact",
-        "location:proto-earth"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 1651,
-          "charEnd": 1756,
-          "timeStart": 97.439,
-          "timeEnd": 108.64,
-          "quote": "the giant impact theory\nthis says that a large object about the\nsize of mars smashed into the\nproto-earth"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.75,
-      "rationale": "The host's enumeration of capture, accretion, fission, and giant-impact models is historically accurate. The giant impact (Theia hypothesis) is in fact the consensus working model since the mid-1980s, and the synestia variant (Lock & Stewart 2017) is a real refinement. The framing 'science can't decide' overstates the disagreement — the field largely converges on giant impact / synestia and the open questions are about timing and details, not the basic mechanism.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "laXhTcko-lg:c_0003",
-      "videoId": "laXhTcko-lg",
-      "text": "The host claims the Moon's surface chemistry is 'reversed' — older soil overlying younger rock, lighter elements overlying denser ones, exotic isotopes like neptunium-237 and uranium-236 found where they shouldn't be — and frames these as anomalies pointing to artificial origin.",
-      "kind": "empirical",
-      "entities": [
-        "location:moon",
-        "location:the moon",
-        "location:surface"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 3458,
-          "charEnd": 3528,
-          "timeStart": 221.28,
-          "timeEnd": 230.159,
-          "quote": "on the moon the\nsoil on the surface is older than the\nrocks underneath"
-        },
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 4748,
-          "charEnd": 4799,
-          "timeStart": 301.52,
-          "timeEnd": 308.32,
-          "quote": "uranium-236\nand\nneptunium-237 are found on the moon"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.2,
-      "rationale": "The 'older soil over younger rock' claim is a misreading: regolith on the Moon is older than some buried mare basalts because the regolith is the cumulative product of billions of years of micrometeorite gardening, while the mare basalts are subsequent volcanic flows that buried older crust. This is a feature, not an anomaly. Neptunium-237 and Uranium-236 do occur in trace amounts on the Moon, but they have natural production pathways via cosmic-ray spallation and uranium decay — they don't require artificial origin. The 'reverse density' claim is also wrong: the Moon does have a small iron core under a less-dense mantle, just like Earth, only proportionally smaller.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "laXhTcko-lg:c_0004",
-      "videoId": "laXhTcko-lg",
-      "text": "After the Apollo 12 lunar lander was deliberately crashed into the Moon, seismometers recorded the Moon 'ringing like a bell' for over an hour, and an even larger Apollo 13 impact made it ring for over three hours — observations the host treats as evidence the Moon is hollow.",
-      "kind": "empirical",
-      "entities": [
-        "location:the moon",
-        "location:moon",
-        "event:seismic activity"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 5934,
-          "charEnd": 5992,
-          "timeStart": 383.28,
-          "timeEnd": 389.759,
-          "quote": "the apollo 12 crew intentionally\nreleased the lunar lander"
-        },
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 6102,
-          "charEnd": 6166,
-          "timeStart": 392.0,
-          "timeEnd": 400.639,
-          "quote": "the moon rang\nlike a bell and reverberated for more\nthan an hour"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "The Moon-ringing observation is real — Apollo 12's LM ascent stage and Apollo 13's S-IVB upper stage were intentionally impacted in 1969-1970 and the seismometer signals did persist for ~50 minutes and ~3+ hours respectively. The 'ringing like a bell' description appeared in NASA reports themselves. But the standard explanation (a fractured, dry, rigid crust with no attenuating water or magma to dampen vibration) is well-tested and does not require hollowness. The observation is real; the hollow-Moon inference is not warranted.",
+      "confidence": 0.7,
+      "directTruth": 0.25,
+      "rationale": "Partly true (lunar mare basalts are titanium-rich compared to terrestrial basalts, a known feature explained by early lunar differentiation) but titanium and zirconium are actually common in Earth's crust, not rare. The 'structural reinforcement' inference is not supported.",
+      "tags": ["lunar-composition", "titanium", "speculation"],
+      "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
         {
           "target": "laXhTcko-lg:c_0001",
           "kind": "supports",
-          "rationale": "The bell-ringing observation is the strongest single piece of evidence the host cites for the central hollow-Moon thesis."
+          "rationale": "Strong-metal abundance is offered as the material case for a hull-like lunar shell."
         }
       ]
     },
     {
-      "id": "laXhTcko-lg:c_0005",
+      "id": "laXhTcko-lg:c_0006",
       "videoId": "laXhTcko-lg",
-      "text": "AJ argues that the apparent perfection of solar eclipses — the Sun being 400 times larger than the Moon and exactly 400 times farther from Earth, producing a near-perfect angular match — is too coincidental to be natural and points to engineered placement.",
-      "kind": "speculative",
+      "text": "When Apollo 12 and Apollo 13 crews intentionally crashed the lunar lander and a spent Saturn stage into the Moon's surface, the Moon 'rang like a bell' — reverberating for over an hour (Apollo 12) and over three hours (Apollo 13) to a depth of 20 miles.",
+      "kind": "empirical",
       "entities": [
-        "location:moon",
+        "location:the moon",
+        "location:moon"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 5938,
+          "charEnd": 6100,
+          "timeStart": 383.28,
+          "timeEnd": 396.32,
+          "quote": "apollo 12 crew intentionally\nreleased the lunar lander crashing it\ninto the moon's surface then something\nvery unexpected happened seismic\nmeasurements showed tha"
+        },
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 6106,
+          "charEnd": 6320,
+          "timeStart": 392.00,
+          "timeEnd": 411.60,
+          "quote": "moon rang\nlike a bell and reverberated for more\nthan an hour this was with a very small\nobject compared to the size of the moon\nso during apollo 13 an even heavier\nobject was crashed into the surface this\ntime the "
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "rationale": "The reverberation phenomenon is real and documented by ALSEP seismometers. Mainstream selenology explains it by the Moon's extremely low volatile content (especially water) and highly fractured upper crust, which lets seismic waves scatter for long times. The 'ringing' is genuine; the 'therefore hollow' inference is not.",
+      "tags": ["moon-rings-like-bell", "apollo-seismology"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "laXhTcko-lg:c_0007",
+      "videoId": "laXhTcko-lg",
+      "text": "The Moon is about 25% the size of Earth but only about 1% of Earth's density — consistent with a hollow shell.",
+      "kind": "empirical",
+      "entities": [
+        "location:the moon",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 6850,
+          "charEnd": 7000,
+          "timeStart": 438.32,
+          "timeEnd": 452.08,
+          "quote": " 25 the size of\nthe earth but it's only about one\npercent of the earth's density if the\nmoon were a hollow shell this would\nexplain that besides the d"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.15,
+      "rationale": "Factually wrong. Moon diameter is ~27% of Earth's — correct. Density: Moon is 3.34 g/cc vs. Earth's 5.51 g/cc, so Moon is ~61% of Earth's density, NOT 1%. The 1% figure is a gross error that breaks the hollow-shell inference.",
+      "tags": ["density", "size", "error"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "laXhTcko-lg:c_0001",
+          "kind": "supports",
+          "rationale": "Low density is the numerically most dramatic argument offered for a hollow moon."
+        }
+      ]
+    },
+    {
+      "id": "laXhTcko-lg:c_0008",
+      "videoId": "laXhTcko-lg",
+      "text": "The Sun is 400 times as far from Earth as the Moon is, and also 400 times the size — a coincidence that makes near-perfect total solar eclipses possible.",
+      "kind": "empirical",
+      "entities": [
+        "location:the moon",
         "location:earth",
         "event:eclipses"
       ],
@@ -146,60 +248,61 @@
       "evidence": [
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 7721,
-          "charEnd": 7782,
-          "timeStart": 492.4,
-          "timeEnd": 500.319,
-          "quote": "our distance to the sun is 400 times our\ndistance to the moon"
-        },
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 15675,
-          "charEnd": 15700,
-          "timeStart": 1016.079,
-          "timeEnd": 1023.439,
-          "quote": "the eclipses\naren't exact"
+          "charStart": 7712,
+          "charEnd": 7900,
+          "timeStart": 491.28,
+          "timeEnd": 507.68,
+          "quote": "eclipses\nour distance to the sun is 400 times our\ndistance to the moon and the size of the\nsun is 400 times the size of the moon\ncould this be a coincidence yeah\nwell when enough coinciden"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.15,
-      "rationale": "The Sun's diameter is ~400x the Moon's diameter, and the average Sun-Earth distance is ~390-400x the average Earth-Moon distance — but the host correctly walks this back later, noting eclipses are not exact (they vary between annular and total) and the Moon is receding from Earth at ~3.8 cm/yr (lunar laser ranging). This means the 'perfect match' is a temporary coincidence in a ~10-billion-year window, not a designed setup. Many other moons elsewhere happen to produce decent eclipses too.",
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Accurate within measurement tolerance: Sun/Moon diameter ratio ~400:1, Earth-Sun/Earth-Moon distance ratio ~390:1. The coincidence is real, though the host later accurately notes eclipses are 'close but not perfect.'",
+      "tags": ["eclipse", "solar-system", "coincidence"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "laXhTcko-lg:c_0006",
+      "id": "laXhTcko-lg:c_0009",
       "videoId": "laXhTcko-lg",
-      "text": "In 1970 two Soviet scientists (Vasin and Shcherbakov) published the original 'Moon is a hollow spaceship' hypothesis, which the host treats as a serious scientific proposal vindicating the central thesis — though it has remained outside mainstream science ever since.",
+      "text": "In 1970, two Soviet scientists concluded from the anomalies that the Moon is not only hollow but also a spacecraft that traveled here from elsewhere.",
       "kind": "historical",
       "entities": [
         "date_time:1970",
         "person:two soviet scientists",
-        "location:moon"
+        "location:the moon"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 8005,
-          "charEnd": 8061,
-          "timeStart": 509.759,
-          "timeEnd": 517.12,
-          "quote": "in 1970 two soviet scientists\nlooked at all the evidence"
+          "charStart": 8000,
+          "charEnd": 8290,
+          "timeStart": 509.76,
+          "timeEnd": 530.72,
+          "quote": "ened in 1970 two soviet scientists\nlooked at all the evidence and all these\ncoincidences and came to what they felt\nwas the only logical conclusion and they\nagreed that their theory sounded crazy\nbut said not only is the moon hollow but\nit's also a spacecraft that traveled\nhere in the dist"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.45,
-      "rationale": "Mikhail Vasin and Alexander Shcherbakov's 1970 essay 'Is the Moon the Creation of Alien Intelligence?' published in Sputnik magazine is real. They were credentialed Soviet engineers/scientists but the article was speculative/popular-science writing, not a peer-reviewed paper. It has remained a fringe touchstone for hollow-Moon theorists for 50+ years and is the citation foundation for the host's whole argument. Marked historical with directTruth ~0.45 because the existence of the proposal is real but its scientific standing is misrepresented.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.35,
+      "rationale": "The 'Spaceship Moon' paper by Mikhail Vasin and Alexander Shcherbakov was indeed published in Sputnik magazine in July 1970. The hypothesis was published; the hypothesis itself is fringe speculation, not mainstream science. Claim accurately reports that the paper exists.",
+      "tags": ["vasin-shcherbakov", "soviet-science", "hollow-moon"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        {
+          "target": "laXhTcko-lg:c_0001",
+          "kind": "supports",
+          "rationale": "The Vasin-Shcherbakov paper is the main scientific-sounding source the host cites for the thesis."
+        }
+      ]
     },
     {
-      "id": "laXhTcko-lg:c_0007",
+      "id": "laXhTcko-lg:c_0010",
       "videoId": "laXhTcko-lg",
-      "text": "Multiple ancient cultures — the Greek/Roman 'Proselenes' of Arcadia, the Tiwanaku of Bolivia, and the Zulu of southern Africa — preserve myths of a pre-Moon era and a Moon that arrived ~11,500-13,000 years ago, which the host treats as cross-cultural corroboration of an intelligently-placed Moon.",
+      "text": "The Tiwanaku of Bolivia claim the Moon arrived between 11,500 and 13,000 years ago — coinciding exactly with the Younger Dryas period.",
       "kind": "historical",
       "entities": [
-        "person:zulu",
-        "location:arcadia",
         "location:bolivia",
         "event:younger dryas"
       ],
@@ -207,140 +310,182 @@
       "evidence": [
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 8895,
-          "charEnd": 8965,
-          "timeStart": 574.48,
-          "timeEnd": 585.44,
-          "quote": "the tuanaka claim the moon\narrived between 11 500 and 13 000 years\nago"
-        },
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 9264,
-          "charEnd": 9317,
-          "timeStart": 596.0,
-          "timeEnd": 604.72,
-          "quote": "zulu\nlegends that specifically say the moon\nis hollow"
+          "charStart": 8830,
+          "charEnd": 9100,
+          "timeStart": 569.44,
+          "timeEnd": 592.16,
+          "quote": "tiwanaka in\nbolivia also refers to a time when there\nwas no moon the tuanaka claim the moon\narrived between 11 500 and 13 000 years\nago if you're into ancient theories as\nmuch as i am you'll recognize that this\ntime coincides perfectly with a period\ncalled the younger d"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.2,
-      "rationale": "The 'Proselenes of Arcadia' do appear in Greek sources (Aristotle and others mention 'pre-Selenites'), but the interpretation is contested — many scholars read it as a poetic idiom for great antiquity rather than a literal pre-Moon claim. The Tiwanaku 'Moon arrived 11,500 years ago' attribution is not well-documented in archaeological or ethnographic literature; this appears to come from Credo Mutwa-style modern syncretist sources, not academic reconstructions of indigenous beliefs. The Zulu 'hollow Moon with reptilian inhabitants' claim traces specifically to Mutwa, a controversial sangoma whose narratives mixed traditional and modern conspiracist content. Cross-cultural 'sky before the Moon' myths exist but their interpretation as literal cosmology is not supported by mainstream anthropology.",
+      "confidence": 0.7,
+      "directTruth": 0.1,
+      "rationale": "The 'proselene' (pre-lunar) Arcadians claim traces to Apollonius Rhodius (Argonautica), not 5th-century BC. The Tiwanaku 'moon arrived 11,500-13,000 years ago' attribution is not in documented Tiwanaku ethnography — it comes from 20th-century ancient-astronaut literature. Low directTruth.",
+      "tags": ["tiwanaku", "pre-lunar", "ancient-myth"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "laXhTcko-lg:c_0008",
+      "id": "laXhTcko-lg:c_0011",
       "videoId": "laXhTcko-lg",
-      "text": "The host catalogs documented atmospheric anomalies on the supposedly airless Moon — a 100-square-mile water-vapor cloud lasting 14 hours on March 7, 1971, recurring glowing mist in the Plato crater, the 'blue gem' light in Aristarchus crater photographed in 1992 — collectively called Transient Lunar Phenomena (TLPs).",
-      "kind": "empirical",
+      "text": "Zulu legends say the Moon is hollow and contains an intelligent reptilian extraterrestrial race, placed into orbit by two brothers who were gods — similar to Sumerian Enki and Enlil (Anunnaki).",
+      "kind": "historical",
       "entities": [
-        "date_time:7th 1971",
-        "location:plato",
-        "location:aristarchus crater",
-        "date_time:1992",
-        "event:transient lunar phenomena"
+        "person:zulu",
+        "person:enki",
+        "person:lille",
+        "location:the moon"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 11762,
-          "charEnd": 11823,
-          "timeStart": 760.48,
-          "timeEnd": 770.16,
-          "quote": "on march\n7th 1971 a cloud of water vapor appeared\non the moon"
+          "charStart": 9260,
+          "charEnd": 9450,
+          "timeStart": 596.00,
+          "timeEnd": 614.80,
+          "quote": "are zulu\nlegends that specifically say the moon\nis hollow and living inside is an\nintelligent race of reptilian\nextraterrestrials is it people yep\nlizard people built the moon\nthat's what th"
         },
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 12626,
-          "charEnd": 12673,
-          "timeStart": 816.72,
-          "timeEnd": 824.0,
-          "quote": "the aristarchus crater was\nphotographed in 1992"
-        },
-        {
-          "transcriptId": "laXhTcko-lg",
-          "charStart": 12959,
-          "charEnd": 12992,
-          "timeStart": 837.199,
-          "timeEnd": 842.8,
-          "quote": "transient lunar phenomena or tlps"
+          "charStart": 9620,
+          "charEnd": 9900,
+          "timeStart": 619.12,
+          "timeEnd": 640.72,
+          "quote": "t the sumerians\nbelieved the sumerians also had a legend\nof two brothers enki and and lille who\nwere called annunaki yup anunnaki the\nextraterrestrial gods who created\nmankind everything is falling into place\nwith this one oh you ain't seen nothing\nyet how about this the zulu als"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.55,
-      "rationale": "TLPs are a real observational category — the NASA Technical Report R-277 (1968) catalogued 579 TLP events from 1540 onward. The Apollo 14-16 missions did register transient outgassing events. Aristarchus crater is genuinely the most TLP-active region. However, modern explanations (radon outgassing from radioactive decay in lunar regolith, plus observer-bias and atmospheric-seeing artifacts) are well-developed and don't require hollowness or alien activity. The observations are real; the inferential frame is the speculative leap.",
+      "confidence": 0.65,
+      "directTruth": 0.15,
+      "rationale": "The 'Zulu reptilians inside the hollow moon' story traces to Credo Mutwa (late 1990s), not to traditional Zulu mythology; it's late-20th-century syncretism with David Icke's reptilian mythology. Enki and Enlil are real Sumerian deities, and 'Anunnaki' is a real Sumerian divine category, but neither were 'extraterrestrial gods who created mankind' — that's Zecharia Sitchin's gloss.",
+      "tags": ["zulu", "anunnaki", "reptilians", "myth-syncretism"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "laXhTcko-lg:c_0009",
+      "id": "laXhTcko-lg:c_0012",
       "videoId": "laXhTcko-lg",
-      "text": "Sergeant Karl Wolf, an Air Force technician, claimed that lunar reconnaissance photos he serviced in the 1960s showed artificial 'base'-like structures on the Moon, and that these images were subsequently suppressed — a claim presented as direct insider testimony of a NASA cover-up.",
-      "kind": "speculative",
+      "text": "On March 7, 1971 a cloud of water vapor covering 100 square miles appeared on the Moon for 14 hours before dissipating — anomalous for a supposedly airless body.",
+      "kind": "empirical",
+      "entities": [
+        "date_time:7th 1971",
+        "location:the moon",
+        "quantity:a hundred square miles"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 11760,
+          "charEnd": 11930,
+          "timeStart": 760.48,
+          "timeEnd": 776.56,
+          "quote": "e on march\n7th 1971 a cloud of water vapor appeared\non the moon that covered a hundred\nsquare miles and it was there for 14\nhours before it dissipated there's not\nsuppose"
+        }
+      ],
+      "confidence": 0.6,
+      "directTruth": 0.2,
+      "rationale": "Transient Lunar Phenomena (TLP) are real observational reports, but the specific 'March 7, 1971 water vapor cloud' is poorly documented in scientific literature. The Moon does have a very tenuous exosphere, and outgassing events from radon decay have been detected, so TLP are not unexplained — many fit prosaic geophysical explanations.",
+      "tags": ["transient-lunar-phenomena", "outgassing"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "laXhTcko-lg:c_0013",
+      "videoId": "laXhTcko-lg",
+      "text": "Air Force Sergeant Karl Wolfe said he saw photographs of artificial 'base' structures on the Moon while repairing imaging equipment, and those photos never appeared in NASA's public release.",
+      "kind": "historical",
       "entities": [
         "person:sergeant carl wolf",
         "person:sergeant wolf",
         "organization:air force",
         "organization:nasa",
-        "facility:base"
+        "facility:base",
+        "location:the moon"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 13342,
-          "charEnd": 13360,
-          "timeStart": 862.24,
-          "timeEnd": 866.24,
-          "quote": "sergeant carl wolf"
+          "charStart": 13340,
+          "charEnd": 13560,
+          "timeStart": 859.84,
+          "timeEnd": 877.92,
+          "quote": "n\nsergeant carl wolf was working as a\ntechnician for the air force and he was\nrepairing equipment that transferred\nimages from a lunar satellite those\nphotos according to sergeant wolf showed\nartificial structures on the"
         },
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 13532,
-          "charEnd": 13565,
-          "timeStart": 872.959,
-          "timeEnd": 877.92,
-          "quote": "artificial structures on the moon"
+          "charStart": 13700,
+          "charEnd": 13900,
+          "timeStart": 882.48,
+          "timeEnd": 899.04,
+          "quote": " he was just a tech\nhe said he was excited to see the\npictures on the news and have nasa\nexplain what they were he was surprised\nwhen the photos never turned up the\nphotos were found in a very early\nr"
         }
       ],
-      "confidence": 0.85,
-      "directTruth": 0.15,
-      "rationale": "Karl Wolfe (correct spelling) really did testify at the Disclosure Project event in 2001 that he saw photographs of base-like structures on the Moon while servicing equipment at Langley AFB in 1965. Wolfe's testimony is the source for the claim; he was a real airman. However, no corroborating photographs or independent witnesses have ever surfaced, and modern lunar reconnaissance (LRO etc.) has imaged the surface at sub-meter resolution without revealing any such structures. The testimony is real; the underlying 'lunar base' it describes has not survived empirical scrutiny.",
+      "confidence": 0.8,
+      "directTruth": 0.3,
+      "rationale": "Karl Wolfe's testimony is part of the Disclosure Project (2001) and his account has been publicly given. Whether the 'artificial structures' were really artificial vs. image artifacts / craters / compression defects in Lunar Orbiter photos is not established. Single-witness late-testimony with no surviving artifact.",
+      "tags": ["karl-wolfe", "lunar-structures", "disclosure-project"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "laXhTcko-lg:c_0010",
+      "id": "laXhTcko-lg:c_0014",
       "videoId": "laXhTcko-lg",
-      "text": "AJ's verdict softens the speculative thesis substantially — conceding the hollow-Moon-spaceship theory is 'wild' and that most anomalies have plausible scientific explanations — but ends with a Russell-style demand that space agencies 'prove it' rather than assert their explanations, framing the whole question as one of institutional credibility rather than physics.",
+      "text": "The Apollo 11 crew appear sad, frightened, and uncomfortable at their post-mission press conference — as if they saw something on the Moon that shook them.",
       "kind": "opinion",
       "entities": [
-        "person:aj",
-        "organization:nasa",
-        "organization:european space agency",
-        "person:elon musk",
-        "person:richard branson",
-        "person:jeff bezos"
+        "location:the moon"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "laXhTcko-lg",
-          "charStart": 17342,
-          "charEnd": 17415,
-          "timeStart": 1117.76,
-          "timeEnd": 1125.84,
-          "quote": "if you want us to believe your\nexplanations\nyou're gonna have to prove it"
+          "charStart": 14120,
+          "charEnd": 14360,
+          "timeStart": 906.64,
+          "timeEnd": 937.84,
+          "quote": "\nthe moon the apollo 11 crew said they\nsaw something that shook them up watch\nthe press conference they gave when they\nreturned these men aren't acting like\nthey made history or had a life-changing\nexperience\nit's\na beginning of\na new age\nt"
+        }
+      ],
+      "confidence": 0.6,
+      "directTruth": 0.15,
+      "rationale": "Subjective reading of body language. Armstrong was famously introverted and media-averse; Aldrin was notably reserved and later struggled with depression independent of any lunar revelation; Collins was measured. Their post-flight affect is routinely cited by UFO enthusiasts but has equally parsimonious explanations.",
+      "tags": ["apollo-11", "press-conference", "body-language"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "laXhTcko-lg:c_0015",
+      "videoId": "laXhTcko-lg",
+      "text": "Eclipses aren't actually exact — they're close but not perfect — and because the Moon is drifting farther from Earth every year, eclipses are becoming less perfect over time.",
+      "kind": "empirical",
+      "entities": [
+        "event:eclipses",
+        "location:the moon",
+        "location:earth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "laXhTcko-lg",
+          "charStart": 15679,
+          "charEnd": 15830,
+          "timeStart": 1016.08,
+          "timeEnd": 1029.52,
+          "quote": "eclipses\naren't exact they're close but not\nperfect besides the moon is drifting\nfarther away from the earth every year\nso eclipses are becoming less a"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.4,
-      "rationale": "The verdict's epistemic move — 'I'm a skeptic, but I want proof' — sounds reasonable but inverts the burden of proof: NASA has provided extensive evidence (seismic data, lunar samples, gravity measurements, decades of orbiter imagery) and the hollow-Moon hypothesis is the extraordinary claim that should bear the burden. The 'put up or shut up' framing aimed at agencies and billionaires is rhetorically effective but logically backwards. directTruth ~0.4 because the spirit (institutional skepticism is healthy) is fine but the application (treating extraordinary speculation as the default) is not.",
-      "hostStance": "uncertain",
+      "directTruth": 0.95,
+      "rationale": "Accurate. Lunar recession is ~3.8 cm/year (measured by Apollo retroreflectors). Total eclipses are currently common but in ~600 million years the Moon will appear too small for totality. Host's verdict-section concession.",
+      "tags": ["lunar-recession", "eclipse", "verdict"],
       "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
         {
-          "target": "laXhTcko-lg:c_0001",
+          "target": "laXhTcko-lg:c_0008",
           "kind": "contradicts",
-          "rationale": "The verdict explicitly retreats from the central speculative thesis."
+          "rationale": "[undercuts] Host explicitly weakens his own eclipse-coincidence claim by noting eclipses aren't perfect and are transient."
         }
       ]
     }

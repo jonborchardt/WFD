@@ -1,14 +1,385 @@
 {
   "schemaVersion": 1,
   "transcriptId": "_0n1Q0CV-3A",
-  "generatedAt": "2026-04-20T01:53:00.000Z",
-  "generator": "claude-opus-4-7",
+  "generatedAt": "2026-04-21T00:00:00.000Z",
+  "generator": "claude-opus-4.7-claims-plan03-calibration",
   "claims": [
     {
       "id": "_0n1Q0CV-3A:c_0001",
       "videoId": "_0n1Q0CV-3A",
-      "text": "The Philosopher's Stone of medieval alchemy was reputed to grant two powers — the transmutation of base metals into gold and the conferral of eternal life — and the Book of Aquarius, derived from much older texts including the Emerald Tablet, claims to contain its complete recipe.",
+      "text": "The Philosopher's Stone is a legendary alchemical substance said to transmute base metals into gold and grant eternal life.",
       "kind": "definitional",
+      "entities": [
+        "ideology:alchemy",
+        "role:philosopher"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 101,
+          "charEnd": 195,
+          "timeStart": 6.25,
+          "timeEnd": 12.06,
+          "quote": "Philosopher's Stone a substance that can\nturn base Metals into gold and Grant you\neternal life"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.98,
+      "rationale": "Standard definition within the alchemical tradition — lapis philosophorum. The definitional claim is uncontroversial; whether the object exists or grants those powers is separate.",
+      "tags": ["philosophers-stone", "alchemy", "definition"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0002",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "Isaac Newton spent the last 30 years of his life deeply engaged with alchemy and the Philosopher's Stone, including making his own translations of the Emerald Tablet.",
+      "kind": "historical",
+      "entities": [
+        "person:isaac newton"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 1827,
+          "charEnd": 1907,
+          "timeStart": 113.02,
+          "timeEnd": 117.97,
+          "quote": "Newton spent the last 30\nyears of his life obsessed with the\nPhilosopher's Stone"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "Newton's voluminous alchemical papers (Keynes collection, Cambridge; and Chymistry of Isaac Newton Project) document decades of alchemical research, including his translations of the Tabula Smaragdina. Dobbs's 'Foundations of Newton's Alchemy' (1975) is the canonical source.",
+      "tags": ["isaac-newton", "alchemy", "emerald-tablet"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0003",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "The Emerald Tablet is a real historical text at least 1,200 years old (earliest Arabic attestation) and is considered foundational to Western alchemy.",
+      "kind": "historical",
+      "entities": [
+        "work_of_media:emerald tablets"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 19181,
+          "charEnd": 19247,
+          "timeStart": 1163.75,
+          "timeEnd": 1167.85,
+          "quote": "the Emerald Tablet is indeed a text\nthat's at least 1200 years old"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "The Tabula Smaragdina's earliest attestation is in the Arabic 'Kitab Sirr al-Khaliqa' (~8th-9th century CE); later translated into Latin by the 12th century. Alchemical canonicity confirmed by Principe, Newman, and Holmyard.",
+      "tags": ["emerald-tablet", "hermetic", "alchemy"],
+      "inVerdictSection": true,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0004",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "Thoth was a major Egyptian god of magic, wisdom, and the moon, credited with inventing writing and hieroglyphics.",
+      "kind": "historical",
+      "entities": [
+        "person:toth",
+        "person:thoth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 3658,
+          "charEnd": 3714,
+          "timeStart": 226.23,
+          "timeEnd": 229.9,
+          "quote": "Toth was one of the most important gods\nof ancient Egypt"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 3781,
+          "charEnd": 3826,
+          "timeStart": 233.9,
+          "timeEnd": 236.68,
+          "quote": "Toth was the god of magic wisdom and\nthe moon"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "Standard Egyptological description of Djehuty / Thoth, lunar deity of scribes, moon, wisdom, magic (Wilkinson 'Complete Gods and Goddesses of Ancient Egypt', 2003). Widely attested in the Pyramid Texts and Book of the Dead.",
+      "tags": ["thoth", "egyptian-mythology"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0005",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "Thoth was not actually Egyptian but arrived in Egypt 36,000 years ago from the Atlantean city of Keora in the island-kingdom of Undal, bringing alchemical wisdom.",
+      "kind": "speculative",
+      "entities": [
+        "person:toth",
+        "location:atlantis"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 4667,
+          "charEnd": 4698,
+          "timeStart": 290.81,
+          "timeEnd": 293.13,
+          "quote": "those was born 36 000 years ago"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 4440,
+          "charEnd": 4499,
+          "timeStart": 273.83,
+          "timeEnd": 278.24,
+          "quote": "Plato described Atlantis as being\ndivided into ten kingdoms"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.02,
+      "rationale": "Atlantis as described by Plato (Timaeus, Critias) is widely understood by historians to be a literary construct, not a real place; the 36,000-year-ago-Atlantean-origin-of-Thoth framing comes from Dr Maurice Doreal's 'Emerald Tablets of Thoth the Atlantean' (1939), not from mainstream Egyptology. Host later debunks this source.",
+      "tags": ["atlantis", "thoth", "speculation", "pseudo-history"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0006",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "The Atlantis flood-destruction narrative aligns with the Younger Dryas climate event approximately 13,000 years ago.",
+      "kind": "speculative",
+      "entities": [
+        "location:atlantis"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 6372,
+          "charEnd": 6401,
+          "timeStart": 394.18,
+          "timeEnd": 395.98,
+          "quote": "great flood destroys Atlantis"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 6424,
+          "charEnd": 6451,
+          "timeStart": 397.4,
+          "timeEnd": 399.07,
+          "quote": "thirteen thousand years ago"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 6509,
+          "charEnd": 6594,
+          "timeStart": 402.66,
+          "timeEnd": 407.92,
+          "quote": "yet another flood myth takes place\nduring a period of time known as the\nyounger dryas"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.15,
+      "rationale": "Younger Dryas (c. 12,900-11,700 years ago) is a real climatic event with evidence of rapid cooling and possible megafauna extinction. The causal link to an 'Atlantis destruction' narrative is popularized by Graham Hancock and is rejected by mainstream archaeology.",
+      "tags": ["atlantis", "younger-dryas", "speculation"],
+      "inVerdictSection": false,
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "_0n1Q0CV-3A:c_0005", "kind": "supports", "rationale": "Shared Atlantis / ancient-civilization framing." }
+      ]
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0007",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "Hermes Trismegistus, credited as author of the Emerald Tablet, is described as a fusion of the Greek god Hermes and the Egyptian Thoth.",
+      "kind": "historical",
+      "entities": [
+        "person:hermes",
+        "person:toth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 7808,
+          "charEnd": 7828,
+          "timeStart": 483.86,
+          "timeEnd": 485.13,
+          "quote": "Hermes Tres Magistas"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 7845,
+          "charEnd": 7908,
+          "timeStart": 486.2,
+          "timeEnd": 490.18,
+          "quote": "a combination of the Greek God Hermes\nand the Egyptian god Toth"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "rationale": "The Hellenistic syncretism of Hermes (messenger-god) with Thoth is standard — 'Hermes Trismegistus' appears in Greco-Roman Egyptian sources (Fowden 'The Egyptian Hermes', 1986). Attribution of the Tabula Smaragdina to him is pseudepigraphic.",
+      "tags": ["hermes-trismegistus", "syncretism", "hermetica"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0008",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "The philosopher Apollonius of Tiana (1st century AD) allegedly discovered the Emerald Tablet in a cave beneath a statue of Hermes, clutched by a corpse.",
+      "kind": "historical",
+      "entities": [
+        "person:apollonius",
+        "person:hermes"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 9407,
+          "charEnd": 9476,
+          "timeStart": 581.93,
+          "timeEnd": 586.2,
+          "quote": "Apollonia studied the book and realized\nthat it was a book of alchemy"
+        }
+      ],
+      "confidence": 0.75,
+      "directTruth": 0.2,
+      "rationale": "The Apollonius-finding-the-tablet story originates in medieval Arabic pseudepigraphy (Balinus / pseudo-Apollonius in 'Sirr al-Khaliqa'). Apollonius himself was a real first-century Neopythagorean figure, but the corpse-and-cave discovery is legendary.",
+      "tags": ["apollonius", "emerald-tablet", "legend"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0009",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "In 1925 Dr Maurice Doreal claimed to have discovered ten Emerald Tablets in Egypt and published translations in 1939, founding the Brotherhood of the White Temple religion.",
+      "kind": "historical",
+      "entities": [
+        "person:dr maurice dorial",
+        "person:dorial",
+        "work_of_media:the emerald tablets of toth"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 10868,
+          "charEnd": 10902,
+          "timeStart": 665.88,
+          "timeEnd": 667.98,
+          "quote": "1925 a man named\nDr Maurice Dorial"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 11391,
+          "charEnd": 11444,
+          "timeStart": 698.88,
+          "timeEnd": 702.55,
+          "quote": "in 1939 Dr Dorial\npublished his translation as a book"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "rationale": "Claude Doggins (aka 'Maurice Doreal') did publish 'The Emerald Tablets of Thoth-The-Atlantean' in 1939 and founded the Brotherhood of the White Temple (Colorado). Whether he 'discovered' genuine ancient tablets is a separate claim (host later debunks).",
+      "tags": ["doreal", "brotherhood-white-temple", "emerald-tablets"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0010",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "Dr Maurice Doreal's real name was Claude Doggins; he was not a doctor, never graduated high school, and passages in his Emerald Tablets match almost word-for-word passages from H.P. Lovecraft's Necronomicon.",
+      "kind": "empirical",
+      "entities": [
+        "person:dorial",
+        "person:dr maurice dorial",
+        "person:h.p lovecraft",
+        "person:lovecraft"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 20282,
+          "charEnd": 20297,
+          "timeStart": 1226.88,
+          "timeEnd": 1227.83,
+          "quote": "Claude dawggins"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 20336,
+          "charEnd": 20363,
+          "timeStart": 1230.3,
+          "timeEnd": 1232.01,
+          "quote": "never graduated high school"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 21382,
+          "charEnd": 21487,
+          "timeStart": 1291.08,
+          "timeEnd": 1297.65,
+          "quote": "dorial's Emerald Tablets book\nhas passages that match almost word for\nword passages from the Necronomicon"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.8,
+      "rationale": "Claude Doggins biography is documented in skeptical literature on UFO/occult authors (Kelly 'Pulp Mythologies', 2016). Necronomicon plagiarism claim is standard critique — specifically noted as Doreal's 'Maskim Xul' passages echoing Lovecraft's 'Nameless City'. The Necronomicon itself is Lovecraft's own fiction, which is why this is debunking.",
+      "tags": ["debunk", "doreal", "doggins", "lovecraft"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "_0n1Q0CV-3A:c_0009", "kind": "contradicts", "rationale": "[debunks] Undermines Doreal's credentials and the origin of his text." },
+        { "target": "_0n1Q0CV-3A:c_0005", "kind": "contradicts", "rationale": "[debunks] Collapses the Atlantean-origin narrative which sourced from Doreal." }
+      ]
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0011",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "Doreal claimed to have traveled to Egypt but his passport shows he never did; when confronted he said the travels were 'astral'.",
+      "kind": "empirical",
+      "entities": [
+        "person:dorial",
+        "person:dr maurice dorial"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 20573,
+          "charEnd": 20652,
+          "timeStart": 1272.68,
+          "timeEnd": 1277.57,
+          "quote": "no record of him receiving a doctorate\nbut there is record of him driving a cab"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "The cab-driving / no-passport / 'astral travel' evasion is reported in skeptical profiles of Doreal. Host's framing that 'the passport verifies this' is slightly mangled — what verifies is absence of entry stamps.",
+      "tags": ["debunk", "doreal", "astral-travel"],
+      "inVerdictSection": true,
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "_0n1Q0CV-3A:c_0010", "kind": "supports", "rationale": "Additional evidence Doreal was a fabulist." }
+      ]
+    },
+    {
+      "id": "_0n1Q0CV-3A:c_0012",
+      "videoId": "_0n1Q0CV-3A",
+      "text": "The Book of Aquarius, anonymously posted online March 11 2011, claims to give plain-language instructions for making the Philosopher's Stone, using urine as the sole ingredient.",
+      "kind": "historical",
       "entities": [
         "work_of_media:book of aquarius",
         "work_of_media:the book of aquarius"
@@ -17,338 +388,127 @@
       "evidence": [
         {
           "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 8,
-          "charEnd": 195,
-          "timeStart": 1.079,
-          "timeEnd": 16.139,
-          "quote": "which would you prefer\neternal life or unlimited wealth how\nabout both for that you need the\nPhilosopher's Stone a substance that can\nturn base Metals into gold and Grant you\neternal life"
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "This is a definitional claim about what the Philosopher's Stone *purports* to do, not whether it actually does. The transmutation-and-immortality definition is the historically accurate description of what alchemists (Paracelsus, Newton, Boyle, etc.) believed they were pursuing. The claim is a textbook definition, not an empirical assertion about the stone's reality.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "_0n1Q0CV-3A:c_0002",
-      "videoId": "_0n1Q0CV-3A",
-      "text": "Alchemy was a serious intellectual pursuit for centuries — Isaac Newton himself spent the last 30 years of his life obsessed with the Philosopher's Stone and produced his own translations of the Emerald Tablet that scholars still study, and Holy Roman Emperor Rudolf II funded a court-sponsored alchemical lab for John Dee and Edward Kelley.",
-      "kind": "historical",
-      "entities": [
-        "person:isaac newton",
-        "person:john d",
-        "person:edward kelly"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 1703,
-          "charEnd": 1907,
-          "timeStart": 104.46,
-          "timeEnd": 119.399,
-          "quote": "Isaac Newton is remembered for his\ncontributions to mathematics astronomy\nand physics but he was also interested\nin alchemy Newton spent the last 30\nyears of his life obsessed with the\nPhilosopher's Stone"
+          "charStart": 13094,
+          "charEnd": 13153,
+          "timeStart": 810.02,
+          "timeEnd": 813.67,
+          "quote": "on March 11 2011 a mysterious book\nsuddenly appeared online"
         },
         {
           "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 1994,
-          "charEnd": 2188,
-          "timeStart": 119.399,
-          "timeEnd": 135.239,
-          "quote": "Holy Roman\nEmperor Rudolph II brought the best\nAlchemists in Europe to court men like\nJohn D and Edward Kelly were given a\nprivate lab and an unlimited budget at\nthe beginning of the Renaissance"
-        }
-      ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "Newton's voluminous alchemical manuscripts (now mostly at the Chemical Heritage Foundation, Cambridge, and Israel National Library) are well-documented; the Keynes/Sotheby's 1936 sale exposed how much of Newton's work was alchemy rather than physics. His translation of the Emerald Tablet survives in his own hand. Rudolf II's patronage of John Dee and Edward Kelley at Prague is mainstream Habsburg history. The host's account is essentially correct.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "_0n1Q0CV-3A:c_0003",
-      "videoId": "_0n1Q0CV-3A",
-      "text": "The Egyptian god Thoth, traditionally depicted as an ibis-headed deity and credited with inventing writing, hieroglyphics, the Book of the Dead, science, and alchemy, was — according to the Doreal/Brotherhood narrative — not actually a god but a mortal Atlantean priest who arrived in Egypt 36,000 years ago bearing knowledge from the lost civilization.",
-      "kind": "speculative",
-      "entities": [
-        "person:toth",
-        "person:hermes",
-        "location:atlantis",
-        "location:egypt",
-        "group_or_movement:children of light",
-        "organization:children of light",
-        "date_time:36 000 years ago"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 3658,
-          "charEnd": 3714,
-          "timeStart": 224.099,
-          "timeEnd": 231.06,
-          "quote": "Toth was one of the most important gods\nof ancient Egypt"
-        },
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 4235,
-          "charEnd": 4431,
-          "timeStart": 257.28,
-          "timeEnd": 275.319,
-          "quote": "Toth\nwasn't actually a God he wasn't even\nEgyptian he arrived in Egypt many\nthousands of years ago and he brought\nwith them knowledge and wisdom from his\nown country which is Toth is from\nAtlantis"
-        }
-      ],
-      "confidence": 0.93,
-      "directTruth": 0.05,
-      "rationale": "Thoth's mainstream Egyptological role (god of writing, ibis iconography, association with Book of the Dead, scribe deity) is accurate. The 'mortal Atlantean priest who arrived 36,000 years ago' framing is pure New Age / Theosophy / Doreal mythology with zero archaeological support. Atlantis itself is a Platonic literary construction, not a documented civilization. The host signals this with 'though some have said' hedging but presents it relatively credulously.",
-      "hostStance": "steelman"
-    },
-    {
-      "id": "_0n1Q0CV-3A:c_0004",
-      "videoId": "_0n1Q0CV-3A",
-      "text": "The Emerald Tablet — a 24-stanza Latin/Arabic alchemical text known as Tabula Smaragdina, attributed to Hermes Trismegistus — is genuinely an authentic ancient document at least 1,200 years old that provided the philosophical foundation for both Islamic and European alchemy and gave us the famous 'as above, so below' aphorism.",
-      "kind": "historical",
-      "entities": [
-        "person:hermes",
-        "person:apollonius",
-        "ideology:hermeticism"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 7612,
-          "charEnd": 7672,
-          "timeStart": 470.819,
-          "timeEnd": 478.56,
-          "quote": "the Emerald Tablet also known as\ntabulous margadina in Latin"
-        },
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 19181,
-          "charEnd": 19420,
-          "timeStart": 1163.28,
-          "timeEnd": 1180.44,
-          "quote": "the Emerald Tablet is indeed a text\nthat's at least 1200 years old it is\nconsidered one of the most important\ndocuments in alchemy Isaac Newton and\nmany others were fascinated with it and\nspent large parts of their life trying\nto decode it"
+          "charStart": 196,
+          "charEnd": 216,
+          "timeStart": 12.12,
+          "timeEnd": 13.36,
+          "quote": "The Book of Aquarius"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.92,
-      "rationale": "The Emerald Tablet (Tabula Smaragdina Hermetis) is well-attested in Arabic sources from at least the 8th century (the Kitab Sirr al-Khaliqa attributed to Balinas / Apollonius of Tyana), reaching Europe through Latin translations from the 12th century onward. It is exactly 24 short stanzas, includes the famous 'quod est inferius est sicut quod est superius' formula, and was indeed studied by Newton (his English translation survives). The host's facts about the genuine Emerald Tablet are accurate.",
-      "hostStance": "asserts",
-      "inVerdictSection": true
-    },
-    {
-      "id": "_0n1Q0CV-3A:c_0005",
-      "videoId": "_0n1Q0CV-3A",
-      "text": "In 1925, self-styled 'Dr. Maurice Doreal' claimed to have traveled to Egypt and discovered ten Atlantean Emerald Tablets in the possession of a 'Great White Brotherhood'; he published his alleged translation in 1939 and founded the Brotherhood of the White Temple, a religion still active today with a Colorado lodge.",
-      "kind": "historical",
-      "entities": [
-        "person:dr maurice dorial",
-        "person:dr dorial",
-        "person:dorial",
-        "location:egypt",
-        "organization:brotherhood",
-        "organization:brotherhood of the white temple",
-        "date_time:1925",
-        "date_time:1939"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 10861,
-          "charEnd": 10914,
-          "timeStart": 661.8,
-          "timeEnd": 670.62,
-          "quote": "but in 1925 a man named\nDr Maurice Dorial had an idea"
-        },
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 11373,
-          "charEnd": 11643,
-          "timeStart": 696.18,
-          "timeEnd": 715.5,
-          "quote": "a few years later in 1939 Dr Dorial\npublished his translation as a book The\nEmerald Tablets of tothi atlantian his\ntranslation confirmed that the tablets\nwere indeed written by Toth Dorial went\non to found the Brotherhood of the white\ntemple a religion that still exists"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.55,
-      "rationale": "The historical biography is largely accurate: a man calling himself Dr. Maurice Doreal did publish 'The Emerald Tablets of Thoth the Atlantean' in 1939, did found the Brotherhood of the White Temple, and the organization still operates a lodge in Sedalia, Colorado. The 'discovery in Egypt' part of the story is what is in dispute (see next claim). So the claim about *what he claimed* is true; the claim about *what actually happened* would not be.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "_0n1Q0CV-3A:c_0006",
-      "videoId": "_0n1Q0CV-3A",
-      "text": "Dr. Maurice Doreal was actually Claude Doggins, a high-school dropout cab driver with no doctorate and no record of ever traveling to Egypt — and his 'Emerald Tablets' contain passages lifted nearly word-for-word from H.P. Lovecraft's fictional Necronomicon and the Shaver Mystery science-fiction stories from Amazing Stories pulp magazine.",
-      "kind": "historical",
-      "entities": [
-        "person:dorial",
-        "person:dr dorial",
-        "person:dr maurice dorial",
-        "person:claude dawggins",
-        "person:lovecraft",
-        "location:egypt"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 20256,
-          "charEnd": 20363,
-          "timeStart": 1222.559,
-          "timeEnd": 1232.64,
-          "quote": "Dr\ndorial's real name was Claude dawggins\nand he wasn't a doctor of anything he\nnever graduated high school"
-        },
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 21382,
-          "charEnd": 21504,
-          "timeStart": 1290.179,
-          "timeEnd": 1301.82,
-          "quote": "dorial's Emerald Tablets book\nhas passages that match almost word for\nword passages from the Necronomicon by\nH.P Lovecraft"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "Doreal's real name was Claude Doggins (1898–1963), and the lack of any verified doctorate is a matter of public record (his 'doctorate' was self-conferred). The Lovecraft Necronomicon plagiarism is well-documented by occult historians (e.g., Daniel Caldwell's work; comparisons available on multiple alchemy/skeptic forums) — Lovecraft's fictional Necronomicon (composed 1922–1927) predates Doreal's 1939 publication. The Shaver Mystery influence is also documented. The host's exposé is accurate.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
-      "dependencies": [
-        { "target": "_0n1Q0CV-3A:c_0005", "kind": "contradicts", "rationale": "The historical-discovery framing of c_0005 is contradicted by the biographical evidence here." },
-        { "target": "_0n1Q0CV-3A:c_0003", "kind": "contradicts", "rationale": "The Atlantean-Thoth narrative collapses if its sole modern source is a plagiarized fabrication." }
-      ]
-    },
-    {
-      "id": "_0n1Q0CV-3A:c_0007",
-      "videoId": "_0n1Q0CV-3A",
-      "text": "On March 11, 2011, an anonymously authored 165-page document titled 'The Book of Aquarius' appeared online with a free-distribution license, claiming to give plain step-by-step instructions for producing the Philosopher's Stone — instructions whose single ingredient is human urine.",
-      "kind": "historical",
-      "entities": [
-        "work_of_media:book of aquarius",
-        "work_of_media:the book of aquarius",
-        "date_time:march 11 2011",
-        "date_time:2011",
-        "person:anonymous author",
-        "person:author",
-        "quantity:165 pages"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 13090,
-          "charEnd": 13188,
-          "timeStart": 790.44,
-          "timeEnd": 803.16,
-          "quote": "but\non March 11 2011 a mysterious book\nsuddenly appeared online it was called\nThe Book of Aquarius"
-        },
-        {
-          "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 13981,
-          "charEnd": 14016,
-          "timeStart": 846.24,
-          "timeEnd": 853.399,
-          "quote": "the one ingredient is um what urine"
-        }
-      ],
-      "confidence": 0.97,
       "directTruth": 0.9,
-      "rationale": "The Book of Aquarius is a real 165-page anonymous PDF released in March 2011 (mirrors are still available via Internet Archive); it does claim to give a plain-language Philosopher's Stone recipe based on urine and 'urine wisdom' from the Western alchemical corpus. It does cite roughly 49 alchemical works. The factual existence and content of the document are uncontroversial.",
+      "rationale": "'The Book of Aquarius' was indeed posted online around 2011 by an anonymous author, claiming to decode historical alchemical recipes in plain language; it circulated on occult forums. Whether its claimed method works is a separate claim — see c_0013.",
+      "tags": ["book-of-aquarius", "alchemy", "online"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "_0n1Q0CV-3A:c_0008",
+      "id": "_0n1Q0CV-3A:c_0013",
       "videoId": "_0n1Q0CV-3A",
-      "text": "There is genuine historical precedent for the urine-as-Philosopher's-Stone-ingredient hypothesis: in 1669, German alchemist Hennig Brand boiled and distilled roughly 1,500 gallons of urine attempting to make the Stone and instead accidentally discovered the element phosphorus — a real glow-in-the-dark substance that to a 17th-century mind would have looked like captured 'life force'.",
+      "text": "In 1669 German alchemist Hennig Brand, while trying to create the Philosopher's Stone by boiling down 1,500 gallons of urine, accidentally discovered the element phosphorus.",
       "kind": "historical",
       "entities": [
-        "person:hennig brand",
-        "date_time:1669",
-        "quantity:1500 gallons"
+        "person:hennig brand"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 24304,
-          "charEnd": 24435,
-          "timeStart": 1459.08,
-          "timeEnd": 1470.24,
-          "quote": "in 1669 German\nAlchemist Hennig brand dedicated years\nof his life to creating the stone he was\nconvinced urine was the way to do it"
+          "charStart": 24307,
+          "charEnd": 24341,
+          "timeStart": 1461.17,
+          "timeEnd": 1463.44,
+          "quote": "1669 German\nAlchemist Hennig brand"
         },
         {
           "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 24495,
+          "charStart": 24524,
+          "charEnd": 24551,
+          "timeStart": 1475.68,
+          "timeEnd": 1477.49,
+          "quote": "1500 gallons of his Essence"
+        },
+        {
+          "transcriptId": "_0n1Q0CV-3A",
+          "charStart": 24646,
           "charEnd": 24683,
-          "timeStart": 1470.24,
-          "timeEnd": 1488.539,
-          "quote": "after boiling and\nDistilling 1500 gallons of his Essence\nhe ended up with a white waxy substance\nthat actually glowed in the dark he made\nthe stone no he accidentally discovered\nphosphorus"
+          "timeStart": 1483.84,
+          "timeEnd": 1486.31,
+          "quote": "he accidentally discovered\nphosphorus"
         }
       ],
-      "confidence": 0.97,
+      "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "Hennig Brand (c. 1630–c. 1710) of Hamburg did discover phosphorus in 1669 by boiling down vast quantities of urine in pursuit of the Philosopher's Stone — this is one of the most famous accidents in chemical history (depicted in Joseph Wright of Derby's 1771 painting 'The Alchemist Discovering Phosphorus'). The 1,500-gallon figure aligns with contemporary accounts of his multi-year process. Phosphorus does glow chemiluminescently. All factual.",
-      "hostStance": "asserts",
-      "inVerdictSection": true,
-      "dependencies": [
-        { "target": "_0n1Q0CV-3A:c_0007", "kind": "supports", "rationale": "Brand's 1669 work is the historical precedent that makes the Book of Aquarius's urine recipe less fantastical." }
-      ]
+      "rationale": "Hennig Brand's 1669 discovery of phosphorus via urine reduction is well-documented in the history of chemistry (Emsley 'The 13th Element', 2000). Brand is the first person credited with discovering an element since antiquity.",
+      "tags": ["hennig-brand", "phosphorus", "chemistry-history"],
+      "inVerdictSection": false,
+      "hostStance": "asserts"
     },
     {
-      "id": "_0n1Q0CV-3A:c_0009",
+      "id": "_0n1Q0CV-3A:c_0014",
       "videoId": "_0n1Q0CV-3A",
-      "text": "The host argues the late-19th-century Hermetic Order of the Golden Dawn — whose famous members included W.B. Yeats, Aleister Crowley, and Arthur Conan Doyle — took its name as an oblique reference to the urine-based Philosopher's Stone recipe, with 'Golden' meaning the color and 'Dawn' meaning the optimal time of day for collection.",
-      "kind": "speculative",
+      "text": "According to legend, 14th-century French scribe Nicholas Flamel discovered the Philosopher's Stone and did not die in 1418 but remains alive with his wife Perenelle.",
+      "kind": "historical",
       "entities": [
-        "organization:hermetic order of the golden dawn",
-        "ideology:hermeticism"
+        "person:nicholas flamel",
+        "person:nicholas famel"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 15676,
-          "charEnd": 15851,
-          "timeStart": 947.639,
-          "timeEnd": 963.0,
-          "quote": "their name Golden Dawn\nis a reference to the only ingredient\nused to make the Philosopher's Stone\ngolden as in the color and Dawn because\nthat's the best time of day to get it"
+          "charStart": 2752,
+          "charEnd": 2785,
+          "timeStart": 167.07,
+          "timeEnd": 169.1,
+          "quote": "Nicholas famel didn't die\nin 1418"
         }
       ],
       "confidence": 0.85,
-      "directTruth": 0.1,
-      "rationale": "The Hermetic Order of the Golden Dawn (founded 1887/1888 by Westcott, Mathers, Woodman) is real, and Yeats/Crowley/Doyle's involvement is documented. But the etymology of 'Golden Dawn' is much more straightforwardly hermetic-alchemical: gold is the perfected metal symbolizing spiritual illumination, and dawn signals the new aeon/illumination. The 'morning urine' reading appears to be an idiosyncratic interpretation by the Book of Aquarius community, not a mainstream historical etymology. The host signals this is speculative.",
+      "directTruth": 0.05,
+      "rationale": "Nicholas Flamel was a real 14th-century Parisian scribe who became posthumously associated with alchemy in 17th-century pseudepigraphic works. Claims of his immortality are legend — contemporary burial records and the Flamel house in Paris are preserved.",
+      "tags": ["nicholas-flamel", "alchemy", "legend"],
+      "inVerdictSection": false,
       "hostStance": "asserts"
     },
     {
-      "id": "_0n1Q0CV-3A:c_0010",
+      "id": "_0n1Q0CV-3A:c_0015",
       "videoId": "_0n1Q0CV-3A",
-      "text": "The host's verdict: the genuine Emerald Tablet is real and historically important; Doreal's 'Atlantean Tablets' are a Lovecraft-plagiarizing cult fabrication; but the Book of Aquarius itself is most likely sincere — the work of a passionate anonymous author rather than a hoax — given its 165 pages of meticulous detail, citations of 49 obscure alchemical texts, and lack of anyone ever stepping forward to claim authorship.",
+      "text": "The host concludes the original Emerald Tablet is a real ancient text but Doreal's 'Emerald Tablets of Thoth' is science-fiction plagiarism, while the Book of Aquarius itself is a real (if ineffective) 2011 document.",
       "kind": "opinion",
       "entities": [
-        "work_of_media:book of aquarius",
-        "work_of_media:the book of aquarius",
-        "person:dr maurice dorial",
-        "person:author"
+        "person:dorial",
+        "work_of_media:emerald tablets",
+        "work_of_media:book of aquarius"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "_0n1Q0CV-3A",
-          "charStart": 24005,
-          "charEnd": 24177,
-          "timeStart": 1442.34,
-          "timeEnd": 1457.22,
-          "quote": "the Book\nof Aquarius is probably not a hoax but a\nbook written by a passionate individual\nwho honestly believes they're sharing\nthe secret to creating a philosopher's\nstone"
+          "charStart": 21382,
+          "charEnd": 21487,
+          "timeStart": 1291.08,
+          "timeEnd": 1297.65,
+          "quote": "dorial's Emerald Tablets book\nhas passages that match almost word for\nword passages from the Necronomicon"
         }
       ],
-      "confidence": 0.93,
-      "directTruth": 0.7,
-      "rationale": "The host's three-part verdict is well-calibrated. (1) The Emerald Tablet's authenticity as an ancient hermetic text is well-supported (see c_0004). (2) The Doreal exposure is documented (see c_0006). (3) The 'sincere passionate amateur' read of the Book of Aquarius is consistent with the document's tone, structure, and the author's continued active participation on the bookofaquarius.com forum until its disappearance — features atypical of a deliberate hoax for profit. The verdict is sound.",
-      "hostStance": "asserts",
+      "confidence": 0.9,
+      "rationale": "Explicit host verdict. Separates the three artifacts: ancient Tabula Smaragdina (real, legendary origin); Doreal's book (plagiarism); Book of Aquarius (real document, unproven efficacy). Opinion claim about the overall evaluation — omit directTruth because it aggregates more specific empirical claims judged above.",
+      "tags": ["verdict", "doreal", "emerald-tablet"],
       "inVerdictSection": true,
+      "hostStance": "asserts",
       "dependencies": [
-        { "target": "_0n1Q0CV-3A:c_0004", "kind": "supports", "rationale": "Emerald Tablet authenticity claim is part of the verdict." },
-        { "target": "_0n1Q0CV-3A:c_0006", "kind": "supports", "rationale": "Doreal exposure is part of the verdict." },
-        { "target": "_0n1Q0CV-3A:c_0007", "kind": "elaborates", "rationale": "The verdict's reading of the Book of Aquarius elaborates on its mere existence." }
+        { "target": "_0n1Q0CV-3A:c_0003", "kind": "supports", "rationale": "Ancient tablet is real." },
+        { "target": "_0n1Q0CV-3A:c_0010", "kind": "supports", "rationale": "Doreal plagiarism." },
+        { "target": "_0n1Q0CV-3A:c_0012", "kind": "supports", "rationale": "Book of Aquarius existence." }
       ]
     }
   ]

@@ -1,518 +1,344 @@
 {
   "schemaVersion": 1,
   "transcriptId": "mlR9fCXfWyM",
-  "generatedAt": "2026-04-20T01:47:14.000Z",
+  "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7",
   "claims": [
     {
       "id": "mlR9fCXfWyM:c_0001",
       "videoId": "mlR9fCXfWyM",
-      "text": "The 'Dead Internet Theory' holds that most online content and the audience that consumes it are AI-generated, not human — that the web is largely a synthetic Matrix optimized to keep users clicking and buying.",
-      "kind": "definitional",
+      "text": "Only about 50% of web traffic is human, and that share is shrinking every year.",
+      "kind": "empirical",
       "entities": [
-        "technology:dead internet",
-        "technology:ai bots",
-        "technology:bots",
-        "technology:artificial intelligence"
+        "quantity:traffic",
+        "quantity:web traffic",
+        "technology:bots"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 0,
-          "charEnd": 72,
-          "timeStart": 1.36,
-          "timeEnd": 8.08,
-          "quote": "what if i told you that most if not all\nof your online existence is fake"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 351,
-          "charEnd": 469,
-          "timeStart": 20.64,
-          "timeEnd": 32.719,
-          "quote": "we're living in a real\nlife matrix designed to distract you\nfrom the truth that we're just drones in\na digital anthill"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 559,
-          "charEnd": 598,
-          "timeStart": 32.719,
-          "timeEnd": 38.559,
-          "quote": "this is\ncalled the dead internet theory"
+          "charStart": 880,
+          "charEnd": 1060,
+          "timeStart": 56.16,
+          "timeEnd": 71.2,
+          "quote": " actually it's more than\nyou think studies say that only about 50\npercent of web traffic is human and that\nnumber is going down every year in 2013\nthe times reported that half of y"
         }
       ],
-      "confidence": 0.97,
-      "directTruth": 0.95,
-      "rationale": "Accurate definitional summary of the Dead Internet Theory as it circulates online (originating in the 'Dead Internet Theory: Most of the Internet Is Fake' Agora Road thread, January 2021, by user IlluminatiPirateMember). Whether the theory is *correct* is a separate matter — but the host is correctly stating what the theory claims.",
-      "hostStance": "asserts"
+      "confidence": 0.75,
+      "directTruth": 0.75,
+      "rationale": "Imperva / Distil / Cloudflare bad-bot reports routinely show humans around 50-60% of total web traffic, with the balance split among good bots and bad bots. The specific claim is defensible but varies by measurement.",
+      "hostStance": "asserts",
+      "tags": ["bot-traffic", "statistics"]
     },
     {
       "id": "mlR9fCXfWyM:c_0002",
       "videoId": "mlR9fCXfWyM",
-      "text": "Roughly half of all web traffic comes from bots rather than humans, and the share of bot traffic is growing every year — a foundational empirical premise that lends Dead Internet Theory more plausibility than people initially assume.",
-      "kind": "empirical",
-      "entities": [
-        "quantity:web traffic",
-        "technology:bots",
-        "organization:humans",
-        "quantity:traffic"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 915,
-          "charEnd": 977,
-          "timeStart": 58.64,
-          "timeEnd": 66.4,
-          "quote": "studies say that only about 50\npercent of web traffic is human"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "Imperva's annual Bad Bot Reports have consistently shown automated traffic at roughly 40–50% of all web requests for several years (49.6% in 2023, ~50% in 2024). 'Going down every year' is a stretch — the share fluctuates around the half-mark — but the claim that ~half of web traffic is non-human is well-supported.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "mlR9fCXfWyM:c_0003",
-      "videoId": "mlR9fCXfWyM",
-      "text": "In 2013 The Times reported half of YouTube traffic was bots impersonating humans, and YouTube engineers worried about an 'inversion' tipping point past which their algorithms would start treating real human traffic as fake.",
+      "text": "In 2013 the New York Times reported that half of YouTube traffic was bots masquerading as people, prompting internal fears of an 'inversion' event.",
       "kind": "historical",
       "entities": [
         "date_time:2013",
-        "organization:youtube",
         "organization:times",
-        "technology:bots",
-        "event:inflection point"
+        "organization:youtube",
+        "technology:bots"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
           "charStart": 1019,
-          "charEnd": 1106,
+          "charEnd": 1170,
           "timeStart": 63.6,
-          "timeEnd": 73.119,
-          "quote": "in 2013\nthe times reported that half of youtube\ntraffic was bots masquerading as people"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 1134,
-          "charEnd": 1290,
-          "timeStart": 71.2,
-          "timeEnd": 82.88,
-          "quote": "youtube\nemployees were worried about an\ninflection point where their algorithms\nwould be so overwhelmed by bot traffic\nthat they couldn't tell what was real"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 1338,
-          "charEnd": 1374,
-          "timeStart": 82.88,
-          "timeEnd": 89.04,
-          "quote": "they called this event the\ninversion"
+          "timeEnd": 76.64,
+          "quote": "in 2013\nthe times reported that half of youtube\ntraffic was bots masquerading as people\nand this was so scary that youtube\nemployees were worried about"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The 'Inversion' anecdote comes from Max Read's December 2018 New York Magazine piece 'How Much of the Internet Is Fake? Turns Out, a Lot of It, Actually'. Read cited a 2013 internal YouTube concern that bot traffic might overtake human traffic and trip the fraud-detection systems. The host attributes it to 'The Times' (probably a generic reference). Core claim about the 2013 YouTube concern is accurate.",
-      "hostStance": "asserts"
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "The source is the 2018 NY Mag 'The Inversion' essay by Max Read, which cited the earlier reporting; YouTube internal concern about bot traffic overtaking real traffic is documented.",
+      "hostStance": "asserts",
+      "tags": ["youtube", "bots", "inversion"]
+    },
+    {
+      "id": "mlR9fCXfWyM:c_0003",
+      "videoId": "mlR9fCXfWyM",
+      "text": "In a class-action suit, Facebook advertisers claim Facebook overestimates its traffic by between 150% and 900%.",
+      "kind": "historical",
+      "entities": [
+        "organization:facebook",
+        "organization:advertisers",
+        "event:class action suit",
+        "law_or_policy:lawsuit"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "mlR9fCXfWyM",
+          "charStart": 2420,
+          "charEnd": 2600,
+          "timeStart": 152.56,
+          "timeEnd": 169.84,
+          "quote": "uit filed by facebook\nadvertisers they claim that facebook\noverestimates its traffic by between 150\nand 900 percent now facebook claims they\nonly overstate their traffic by\n60 to 8"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.8,
+      "rationale": "Class-action suits against Facebook over inflated potential-reach metrics are on the public record; the 150-900% figure comes from plaintiff pleadings. Facebook's own admission of 60-80% overstatement is also documented.",
+      "hostStance": "asserts",
+      "tags": ["facebook", "ad-fraud", "class-action"]
     },
     {
       "id": "mlR9fCXfWyM:c_0004",
       "videoId": "mlR9fCXfWyM",
-      "text": "A 2018 Facebook product-manager email warning that 'metrics are a lawsuit waiting to happen' became evidence in a class-action by advertisers alleging Facebook overstated reach by 150–900%, with Facebook itself conceding only a 60–80% overstatement.",
-      "kind": "historical",
+      "text": "Last year Facebook reportedly earned $84 billion in advertising revenue.",
+      "kind": "empirical",
       "entities": [
-        "date_time:2018",
         "organization:facebook",
-        "role:product manager",
-        "law_or_policy:lawsuit",
-        "event:class action suit",
-        "organization:advertisers",
-        "quantity:traffic"
+        "quantity:84 billion dollars"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 2231,
-          "charEnd": 2349,
-          "timeStart": 138.48,
-          "timeEnd": 150.64,
-          "quote": "in\n2018 a facebook product manager emailed\ncolleagues that their metrics are quote\nunquote a lawsuit waiting to happen"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 2399,
-          "charEnd": 2535,
-          "timeStart": 150.64,
-          "timeEnd": 165.28,
-          "quote": "it's a class\naction suit filed by facebook\nadvertisers they claim that facebook\noverestimates its traffic by between 150\nand 900 percent"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 2540,
-          "charEnd": 2609,
-          "timeStart": 159.68,
-          "timeEnd": 169.84,
-          "quote": "facebook claims they\nonly overstate their traffic by\n60 to 80 percent"
+          "charStart": 3420,
+          "charEnd": 3560,
+          "timeStart": 212.959,
+          "timeEnd": 225.2,
+          "quote": "ers is that a lot\nwell last year facebook took in 84\nbillion dollars in ad revenue that's\nactually grotesque\ni agree facebook is not going t"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "The Singer v. Facebook lawsuit (2018, N.D. Cal.) and the unsealed Facebook discovery materials including the 'lawsuit waiting to happen' email from a product manager are well documented in tech press. The 150-900% range is from advertiser claims; Facebook's own internal estimate of inflated 'Potential Reach' was substantial though smaller. Core facts are accurate.",
-      "hostStance": "asserts"
+      "directTruth": 0.95,
+      "rationale": "Meta's annual report for 2020 showed approximately $84 billion in advertising revenue — a figure consistent with the published 10-K. Video was recorded ~2021, so 'last year' aligns.",
+      "hostStance": "asserts",
+      "tags": ["facebook-revenue", "2020"]
     },
     {
       "id": "mlR9fCXfWyM:c_0005",
       "videoId": "mlR9fCXfWyM",
-      "text": "Bot-driven engagement is industrialized in click farms — physical warehouses with rows of smartphones running automation to view ads, post comments, and inflate metrics — and the platforms tolerate this because $84B in annual Facebook ad revenue depends on the inflated numbers.",
-      "kind": "empirical",
+      "text": "The 'dead internet theory' — the idea that most online content is AI-generated — originated on 4chan, Wizardchan, and Agora Road, with a user named 'illuminati pirate' first naming it.",
+      "kind": "historical",
       "entities": [
-        "organization:click farm",
-        "technology:bots",
-        "organization:facebook",
-        "organization:platforms",
-        "quantity:84 billion dollars",
-        "organization:advertisers"
+        "location:agora road",
+        "organization:illuminati",
+        "technology:dead internet"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 2875,
-          "charEnd": 3003,
-          "timeStart": 181.12,
-          "timeEnd": 195.12,
-          "quote": "this is\na chinese click farm hundreds or\nthousands of bots are currently clicking\non videos leaving comments creating\nengagement"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 3198,
-          "charEnd": 3311,
-          "timeStart": 200.959,
-          "timeEnd": 210.64,
-          "quote": "facebook knows that there\nare millions of duplicate accounts on\nthe platform but it leaves them active\non purpose"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 3443,
-          "charEnd": 3502,
-          "timeStart": 214.879,
-          "timeEnd": 222.0,
-          "quote": "last year facebook took in 84\nbillion dollars in ad revenue"
+          "charStart": 4176,
+          "charEnd": 4331,
+          "timeStart": 266.24,
+          "timeEnd": 277.44,
+          "quote": "some of the darker corners of the web\nplaces like 4chan wizardchan and agora\nroad the first person to put a name to\nit goes by the online handle illuminati"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.75,
-      "rationale": "Chinese click farms are real and well documented (BBC, Vice, NYT investigations have shown rooms full of phones doing exactly this). Facebook's 2021 ad revenue was approximately $114B globally with FY2020 at ~$84B — so the figure is in the right vintage. The 'leaves duplicate accounts on purpose' claim comes from Frances Haugen's whistleblower disclosure documents (which mention concerns about Single User Multiple Accounts). The chain of reasoning is sound; the strict 'on purpose' framing edits out genuine moderation difficulty.",
+      "directTruth": 0.85,
+      "rationale": "The 'Dead Internet Theory' was popularized by an Agora Road post by a user named IlluminatiPirate in January 2021 — confirmed by multiple reports including The Atlantic's coverage.",
       "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "mlR9fCXfWyM:c_0004",
-          "kind": "elaborates"
-        }
-      ]
+      "tags": ["dead-internet-theory", "origin", "4chan"]
     },
     {
       "id": "mlR9fCXfWyM:c_0006",
       "videoId": "mlR9fCXfWyM",
-      "text": "Hours after the advertiser lawsuit went public, Facebook quietly changed its 'Potential Reach' description from a guarantee to an estimate — a tacit admission that its previous reach numbers were misleading enough to require legal cover.",
+      "text": "Comedian Jordan Peele created a viral deepfake of President Obama as a demonstration of how convincing AI-generated political video can be.",
       "kind": "historical",
       "entities": [
-        "law_or_policy:lawsuit",
-        "organization:facebook",
-        "quantity:potential customer reach"
+        "person:jordan peele",
+        "technology:deep fake"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 3779,
-          "charEnd": 3939,
-          "timeStart": 238.0,
-          "timeEnd": 250.64,
-          "quote": "mere hours after the lawsuit was made\npublic\nfacebook changed its policy to say\npotential customer reach is an estimate\nnot a guarantee of actual customer reach"
+          "charStart": 8325,
+          "charEnd": 8480,
+          "timeStart": 531.44,
+          "timeEnd": 544.24,
+          "quote": "ess but\nsomeone else would now that video was a\njoke and created by jordan peele but\nwhat if in today's climate someone\nreleased a video of a politician sa"
         }
       ],
-      "confidence": 0.9,
-      "directTruth": 0.85,
-      "rationale": "Facebook (now Meta) did update Ads Manager language in 2018 to clarify that Potential Reach is an estimate — covered in Wired and Recode at the time. The 'hours after' timing closely tracks the lawsuit's public docket. The interpretation that this is an admission is the host's, but the bare facts are accurate.",
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "rationale": "The April 2018 BuzzFeed/Monkeypaw 'You Won't Believe What Obama Says' deepfake by Jordan Peele is well documented and widely cited as an early viral deepfake demonstration.",
       "hostStance": "asserts",
-      "dependencies": [
-        {
-          "target": "mlR9fCXfWyM:c_0004",
-          "kind": "supports"
-        }
-      ]
+      "tags": ["jordan-peele", "deepfake", "obama"]
     },
     {
       "id": "mlR9fCXfWyM:c_0007",
       "videoId": "mlR9fCXfWyM",
-      "text": "Dead Internet Theory was first explicitly named in 2021 by an Agora Road / 4chan user 'IlluminatiPirate', who alleged that since around 2016 the internet has been deliberately sterilized and homogenized by AI bots replacing human-generated content.",
+      "text": "Instagram influencer 'Lil Miquela' (Miquela Sousa) with 3 million followers is a fully computer-generated fake persona.",
       "kind": "historical",
       "entities": [
-        "technology:dead internet",
-        "location:agora road",
-        "person:pirate name",
-        "date_time:2016",
-        "technology:ai bots"
+        "person:michaela souza",
+        "person:michaela",
+        "organization:instagram",
+        "quantity:3 million followers",
+        "role:influencer"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 4136,
-          "charEnd": 4338,
-          "timeStart": 264.56,
-          "timeEnd": 280.479,
-          "quote": "the dead internet theory started out in\nsome of the darker corners of the web\nplaces like 4chan wizardchan and agora\nroad the first person to put a name to\nit goes by the online handle illuminati\npirate"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 4381,
-          "charEnd": 4537,
-          "timeStart": 277.44,
-          "timeEnd": 291.12,
-          "quote": "sometime around 2016 the\ninternet started becoming sterilized and\nhomogenized content that was always\ngenerated by humans was now being\ngenerated by ai bots"
+          "charStart": 8820,
+          "charEnd": 8980,
+          "timeStart": 559.36,
+          "timeEnd": 577.36,
+          "quote": " is going\nmichaela souza is an instagram\ninfluencer with over 3 million followers\nlil michaela as she's known is a\nbrazilian-born model who posts about her\nglam"
         }
       ],
       "confidence": 0.95,
-      "directTruth": 0.85,
-      "rationale": "The IlluminatiPirate Agora Road post 'Dead Internet Theory: Most of the Internet Is Fake' (January 2021) is the canonical origin and the host correctly identifies it. The '2016 inflection' is the post's claimed onset, not an empirically confirmed date. Accurate as a description of the theory's provenance.",
-      "hostStance": "asserts"
+      "directTruth": 0.95,
+      "rationale": "Lil Miquela is a confirmed CGI avatar operated by the LA-based agency Brud (founded 2016). The 3M-follower figure is in line with Instagram analytics from 2021.",
+      "hostStance": "asserts",
+      "tags": ["lil-miquela", "cgi-influencer"]
     },
     {
       "id": "mlR9fCXfWyM:c_0008",
       "videoId": "mlR9fCXfWyM",
-      "text": "Social-media platforms profit by deliberately curating both confirmation-bias content (to keep dopamine flowing) and outrage content (to keep cortisol/adrenaline flowing) — engineering an addictive engagement loop using a user's own click and dwell-time data.",
-      "kind": "empirical",
-      "entities": [
-        "organization:facebook",
-        "ideology:worldview",
-        "person:mark zuckerberg",
-        "person:zuckerberg"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 6092,
-          "charEnd": 6261,
-          "timeStart": 387.84,
-          "timeEnd": 399.759,
-          "quote": "on facebook you're shown posts that\nyou're likely to engage with so politics\nwise you're going to be shown an\noverwhelming amount of content that\nsupports your worldview"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 6696,
-          "charEnd": 6821,
-          "timeStart": 421.44,
-          "timeEnd": 431.84,
-          "quote": "facebook profits by having you produce\ndopamine which keeps you clicking and\ncortisol and adrenaline which keeps you\nclicking"
-        }
-      ],
-      "confidence": 0.9,
-      "directTruth": 0.8,
-      "rationale": "The Frances Haugen Facebook Files / SEC disclosures, the Wall Street Journal's series, and academic work by Tristan Harris, Sean Parker (early FB), Justin Rosenstein, and Jaron Lanier broadly confirm engagement-maximizing ranking and the dopamine/outrage feedback loop. The detailed neurochemistry framing (dopamine for confirmation, cortisol for outrage) is a popular gloss; the underlying mechanism is well attested.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "mlR9fCXfWyM:c_0009",
-      "videoId": "mlR9fCXfWyM",
-      "text": "Deepfake technology — AI-driven face/voice synthesis using thousands of source images — has reached the point that millions of viewers were fooled by fake Tom Cruise TikToks and Jordan Peele's faked Obama public-service-style video, demonstrating that synthetic personas of real people can pass as authentic at scale.",
-      "kind": "empirical",
-      "entities": [
-        "technology:deep fake",
-        "work_of_media:deep fake",
-        "person:tom cruise",
-        "person:jordan peele",
-        "technology:artificial intelligence",
-        "quantity:millions"
-      ],
-      "relationships": [],
-      "evidence": [
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 7495,
-          "charEnd": 7610,
-          "timeStart": 468.16,
-          "timeEnd": 478.8,
-          "quote": "well that wasn't mark\nzuckerberg that was a deep fake which is\na computer-generated video made to look\nlike a human"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 7798,
-          "charEnd": 7956,
-          "timeStart": 496.24,
-          "timeEnd": 509.68,
-          "quote": "deep fake\nthe technology uses artificial\nintelligence to sort through hundreds or\nthousands of images to find frames that\nmatch the actual person in the video"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 7961,
-          "charEnd": 8026,
-          "timeStart": 507.199,
-          "timeEnd": 512.32,
-          "quote": "millions i mean millions of people\nthought those videos were real"
-        }
-      ],
-      "confidence": 0.95,
-      "directTruth": 0.9,
-      "rationale": "Chris Ume's @deeptomcruise TikTok account (early 2021) is real and was widely believed to be authentic, sparking discussion at Pentagon and academic levels. Jordan Peele's BuzzFeed Obama deepfake (2018) used Peele's voice and a face-swap model. The technical description (image-bank-driven model trained on thousands of frames) is broadly accurate, though modern diffusion-based models have moved beyond the older autoencoder approach.",
-      "hostStance": "asserts"
-    },
-    {
-      "id": "mlR9fCXfWyM:c_0010",
-      "videoId": "mlR9fCXfWyM",
-      "text": "Lil Miquela, a fully computer-generated Instagram model with over 3 million followers, was outed as fake in 2018 yet has continued to grow her audience — demonstrating that purely synthetic personas can build and sustain real influencer careers.",
-      "kind": "empirical",
+      "text": "In 2018 it was revealed that Lil Miquela was not real, confessed by the media/marketing company Brud.",
+      "kind": "historical",
       "entities": [
         "person:michaela",
-        "person:michaela souza",
-        "organization:instagram",
-        "quantity:3 million followers",
         "organization:brud",
-        "role:model",
-        "role:influencer",
         "date_time:2018"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 8830,
-          "charEnd": 8901,
-          "timeStart": 564.399,
-          "timeEnd": 570.32,
-          "quote": "michaela souza is an instagram\ninfluencer with over 3 million followers"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 9172,
-          "charEnd": 9277,
-          "timeStart": 583.2,
-          "timeEnd": 593.12,
-          "quote": "in 2018 michaela's account was\nhacked and it was revealed that she was\ncompletely fake computer generated"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 9324,
-          "charEnd": 9398,
-          "timeStart": 593.12,
+          "charStart": 9225,
+          "charEnd": 9400,
+          "timeStart": 586.0,
           "timeEnd": 600.08,
-          "quote": "a media slash marketing company called\nbrud confessed that she wasn't real"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 9429,
-          "charEnd": 9486,
-          "timeStart": 597.6,
-          "timeEnd": 606.56,
-          "quote": "since then\nshe's amassed about two million more\nfollowers"
+          "quote": "aled that she was\ncompletely fake computer generated no no\nher fans couldn't believe it eventually\na media slash marketing company called\nbrud confessed that she wasn't real d"
         }
       ],
-      "confidence": 0.95,
+      "confidence": 0.9,
       "directTruth": 0.9,
-      "rationale": "Lil Miquela (Miquela Sousa) is a real CGI character created by Brud (later acquired by Dapper Labs); the April 2018 'hack' that revealed the character was a marketing stunt that confirmed her synthetic nature. She still has ~2.5M+ Instagram followers and has had brand deals with Calvin Klein, Prada, Samsung, etc. Numbers and chronology accurate.",
-      "hostStance": "asserts"
+      "rationale": "Brud publicly confirmed in 2018 via a leaked pitch deck and followup statements that Miquela is a CGI character; widely reported.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "mlR9fCXfWyM:c_0007", "kind": "elaborates" }
+      ],
+      "tags": ["brud", "miquela", "reveal"]
     },
     {
-      "id": "mlR9fCXfWyM:c_0011",
+      "id": "mlR9fCXfWyM:c_0009",
       "videoId": "mlR9fCXfWyM",
-      "text": "Turkey's STM has fielded the Kargu-2 (host pronounces 'cargo 2') autonomous quadcopter drone — using onboard machine learning to identify and attack human targets without operator authorization — and per a 2021 UN report it has been used in real combat in Libya since 2018, with Turkish military deployments since.",
+      "text": "The Kargu-2 (cargo-2) drone quadcopter by Turkish defense contractor STM uses machine learning to classify targets and operates in autonomous swarms.",
       "kind": "historical",
       "entities": [
         "organization:stm",
         "location:turkey",
-        "organization:un",
-        "organization:turkish military",
-        "location:ukraine",
-        "date_time:2018",
-        "technology:machine learning",
-        "organization:defense contractor"
+        "organization:defense contractor",
+        "technology:machine learning"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 9862,
-          "charEnd": 10023,
+          "charStart": 9865,
+          "charEnd": 10010,
           "timeStart": 628.32,
-          "timeEnd": 643.2,
-          "quote": "there's a drone quadcopter called cargo\n2 produced by a defense contractor stm\ndeveloped in turkey cargo 2 uses machine\nlearning to classify and identify\nthreats"
-        },
+          "timeEnd": 641.04,
+          "quote": "re's a drone quadcopter called cargo\n2 produced by a defense contractor stm\ndeveloped in turkey cargo 2 uses machine\nlearning to classify and ide"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.92,
+      "rationale": "STM's Kargu-2 loitering munition is a real weapons system; UN Panel of Experts report S/2021/229 on Libya specifically mentions Kargu-2 hunting targets in autonomous mode.",
+      "hostStance": "asserts",
+      "tags": ["kargu-2", "stm", "autonomous-weapon", "turkey"]
+    },
+    {
+      "id": "mlR9fCXfWyM:c_0010",
+      "videoId": "mlR9fCXfWyM",
+      "text": "According to the UN, the Kargu-2 drones are programmed to attack targets without requiring an operator — a true fire-forget-and-find capability.",
+      "kind": "historical",
+      "entities": [
+        "organization:un"
+      ],
+      "relationships": [],
+      "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 10112,
-          "charEnd": 10205,
+          "charStart": 10120,
+          "charEnd": 10290,
           "timeStart": 643.2,
-          "timeEnd": 652.959,
-          "quote": "according to the un\nthe drones are programmed to attack\ntargets without requiring an operator"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 10406,
-          "charEnd": 10533,
-          "timeStart": 662.8,
-          "timeEnd": 672.16,
-          "quote": "since 2018 they've been deployed by the\nturkish military both foreign and\ndomestically it's currently killing\npeople in ukraine"
+          "timeEnd": 659.04,
+          "quote": "g to the un\nthe drones are programmed to attack\ntargets without requiring an operator in\neffect a true fire forget and find\ncapability they just analyze a bunch of\ndata a"
         }
       ],
       "confidence": 0.9,
-      "directTruth": 0.65,
-      "rationale": "The STM Kargu-2 is real; the UN Panel of Experts on Libya report (S/2021/229, March 2021) is the source for the autonomous-attack claim, which described a Kargu-2 hunting and engaging a Haftar-affiliated logistics convoy as 'fire-forget-and-find'. Whether the strike actually killed anyone autonomously is debated — Bulletin of the Atomic Scientists and other analyses noted the UN report did not actually confirm casualties from autonomous mode. The 'killing people in Ukraine' claim was speculation at video time and remains poorly substantiated for Kargu-2 specifically. Mid-range directTruth.",
-      "hostStance": "asserts"
+      "directTruth": 0.85,
+      "rationale": "The UN report S/2021/229 ¶63 describes Kargu-2 as programmed to attack targets 'without requiring data connectivity between the operator and the munition: in effect, a true fire, forget and find capability.' The video quotes this almost verbatim.",
+      "hostStance": "asserts",
+      "dependencies": [
+        { "target": "mlR9fCXfWyM:c_0009", "kind": "elaborates" }
+      ],
+      "tags": ["un-report", "autonomous", "kargu-2"]
+    },
+    {
+      "id": "mlR9fCXfWyM:c_0011",
+      "videoId": "mlR9fCXfWyM",
+      "text": "A Google whistleblower has alleged Google possesses algorithms that write other algorithms, pointing to Google's AutoML as an existing example.",
+      "kind": "speculative",
+      "entities": [
+        "organization:google",
+        "technology:algorithms",
+        "person:whistleblower"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "mlR9fCXfWyM",
+          "charStart": 10858,
+          "charEnd": 11020,
+          "timeStart": 684.56,
+          "timeEnd": 700.399,
+          "quote": "s a google\nwhistleblower has said that google has\nalgorithms that can write other\nalgorithms google's auto ml0 does\nexactly this what does google say well\ngoogle "
+        }
+      ],
+      "confidence": 0.7,
+      "directTruth": 0.8,
+      "rationale": "Google AutoML and Neural Architecture Search are real, documented systems in which neural networks search for neural network architectures — so the technical claim about 'algorithms writing algorithms' is true. The whistleblower framing is more speculative.",
+      "hostStance": "asserts",
+      "tags": ["google", "automl", "ai"]
     },
     {
       "id": "mlR9fCXfWyM:c_0012",
       "videoId": "mlR9fCXfWyM",
-      "text": "If algorithms can already curate engaging content — and Google's AutoML demonstrates that algorithms can write algorithms — then it is the natural next step for AI to also generate the content, completing the Dead Internet circuit and reducing humans to data sources for the system.",
-      "kind": "speculative",
+      "text": "If AI can run social media accounts, attract millions of followers, generate billions of dollars, influence elections, and drop bombs without human intervention, then the internet really is dead.",
+      "kind": "opinion",
       "entities": [
-        "technology:algorithms",
-        "organization:google",
-        "person:whistleblower",
-        "technology:artificial intelligence"
+        "technology:artificial intelligence",
+        "technology:dead internet"
       ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "mlR9fCXfWyM",
-          "charStart": 10860,
-          "charEnd": 10986,
-          "timeStart": 684.56,
-          "timeEnd": 697.839,
-          "quote": "a google\nwhistleblower has said that google has\nalgorithms that can write other\nalgorithms google's auto ml0 does\nexactly this"
-        },
-        {
-          "transcriptId": "mlR9fCXfWyM",
-          "charStart": 11088,
-          "charEnd": 11315,
+          "charStart": 11060,
+          "charEnd": 11240,
           "timeStart": 697.839,
-          "timeEnd": 715.92,
-          "quote": "if\nartificial intelligence can create\nsocial media accounts attract millions\nof followers generate billions of\ndollars influence elections and drop\nbombs on people all without human\nintervention well the internet really is\ndead"
+          "timeEnd": 711.68,
+          "quote": "s it's definitely true look if\nartificial intelligence can create\nsocial media accounts attract millions\nof followers generate billions of\ndollars influence elections and drop\nbomb"
         }
       ],
-      "confidence": 0.95,
-      "directTruth": 0.7,
-      "rationale": "Google's AutoML is real (announced 2017) and is a meta-learning framework where neural networks help design other neural networks; the host's 'AutoML0' name is slightly garbled. By 2026 the trajectory the host extrapolates has substantially come true — large language models like GPT-4/Claude generate huge volumes of online text and there are documented cases of AI-generated influencer content. So the speculative claim from the original video has aged into being substantially supported.",
+      "confidence": 0.8,
+      "rationale": "The host's summary verdict: if each component is individually true (and the video argues each is), the dead-internet conclusion follows. This is a rhetorical conditional rather than a factual assertion.",
       "hostStance": "asserts",
+      "inVerdictSection": true,
       "dependencies": [
-        {
-          "target": "mlR9fCXfWyM:c_0001",
-          "kind": "supports"
-        },
-        {
-          "target": "mlR9fCXfWyM:c_0009",
-          "kind": "elaborates"
-        },
-        {
-          "target": "mlR9fCXfWyM:c_0010",
-          "kind": "elaborates"
-        }
-      ]
+        { "target": "mlR9fCXfWyM:c_0005", "kind": "supports" },
+        { "target": "mlR9fCXfWyM:c_0007", "kind": "supports" },
+        { "target": "mlR9fCXfWyM:c_0009", "kind": "supports" },
+        { "target": "mlR9fCXfWyM:c_0011", "kind": "supports" }
+      ],
+      "tags": ["verdict", "dead-internet", "synthesis"]
     }
   ]
 }
