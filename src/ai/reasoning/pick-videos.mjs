@@ -36,6 +36,10 @@ const DERIVED_FILES = new Set([
   "claims-index",
   "dependency-graph",
   "contradictions",
+  "edge-truth",
+  "embeddings",
+  "consonance",
+  "contradiction-verdicts",
 ]);
 
 function videoIdsWithFile(dir) {

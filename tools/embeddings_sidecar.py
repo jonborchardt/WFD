@@ -83,17 +83,90 @@ def main() -> None:
         return
 
     try:
-        # `encode` is synchronous and batches internally; batch_size is
-        # a hint, not a hard limit. Pre-normalized vectors let the Node
-        # cosine implementation skip magnitude division (dot product is
-        # cosine for unit vectors).
-        vecs = model.encode(
-            texts,
-            batch_size=batch_size,
-            convert_to_numpy=True,
-            normalize_embeddings=normalize,
-            show_progress_bar=False,
-        )
+        # ST 5.x `encode` can trip on a single malformed text in a batch
+        # (the underlying tokenizer raises a TextEncodeInput error that
+        # taints the whole call). Encode chunk-by-chunk so one bad row
+        # doesn't kill the batch; fall through to an empty vector for
+        # any row that individually fails, log the bad text's first
+        # 80 chars to stderr so the operator can diagnose.
+        import numpy as np
+
+        # Coerce hard: strip control chars, truncate extreme outliers,
+        # and replace empty / whitespace-only entries with a single
+        # space so the tokenizer still returns a valid (if meaningless)
+        # vector.
+        def clean(t):
+            if not isinstance(t, str):
+                t = str(t)
+            # remove chars that commonly break HF tokenizers
+            t = "".join(
+                ch for ch in t if ch == "\n" or ch == "\t" or ord(ch) >= 0x20
+            )
+            t = t.strip()
+            if not t:
+                t = " "
+            # ST default max is ~512 tokens; 4000 chars is comfortably
+            # under even after tokenization blow-up, and saves cycles
+            # on accidental giant inputs.
+            if len(t) > 4000:
+                t = t[:4000]
+            return t
+
+        cleaned = [clean(t) for t in texts]
+
+        all_vecs = []
+        dims = 0
+        start = 0
+        while start < len(cleaned):
+            end = min(start + batch_size, len(cleaned))
+            chunk = cleaned[start:end]
+            try:
+                v = model.encode(chunk, show_progress_bar=False)
+                if hasattr(v, "cpu"):
+                    v = v.cpu().numpy()
+                v = np.asarray(v, dtype=np.float32)
+                if v.ndim == 1:
+                    v = v.reshape(1, -1)
+                if dims == 0 and v.ndim == 2:
+                    dims = int(v.shape[1])
+                for row in v:
+                    all_vecs.append(row)
+            except Exception as chunk_exc:
+                # Fall back to one-at-a-time within this chunk so one
+                # bad row only costs itself.
+                sys.stderr.write(
+                    f"[embeddings] chunk {start}..{end} failed "
+                    f"({chunk_exc}); falling back per-row\n"
+                )
+                for t in chunk:
+                    try:
+                        v = model.encode([t], show_progress_bar=False)
+                        if hasattr(v, "cpu"):
+                            v = v.cpu().numpy()
+                        v = np.asarray(v, dtype=np.float32)
+                        if v.ndim == 1:
+                            v = v.reshape(1, -1)
+                        if dims == 0:
+                            dims = int(v.shape[1])
+                        all_vecs.append(v[0])
+                    except Exception as row_exc:
+                        sys.stderr.write(
+                            f"[embeddings] row failed "
+                            f"({str(row_exc)[:60]}): "
+                            f"{t[:80]!r}\n"
+                        )
+                        # Zero vector so indices stay aligned with the
+                        # caller's batch; caller can detect all-zeros
+                        # and fall back to Jaccard for this claim.
+                        all_vecs.append(np.zeros(dims or 384, dtype=np.float32))
+            start = end
+
+        vecs = np.vstack(all_vecs) if all_vecs else np.zeros((0, dims or 384), dtype=np.float32)
+
+        if normalize and vecs.ndim == 2 and vecs.shape[0] > 0:
+            norms = np.linalg.norm(vecs, axis=1, keepdims=True)
+            norms[norms == 0] = 1.0
+            vecs = vecs / norms
     except Exception as exc:
         fail(f"encode failed: {exc}\n{traceback.format_exc(limit=3)}")
         return
