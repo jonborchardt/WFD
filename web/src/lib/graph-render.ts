@@ -3,32 +3,12 @@
 import type { Node, Edge } from "reactflow";
 import type { GraphNode, GraphEdge, EdgeTruthFile } from "../types";
 import { elkNodeWidth, ELK_NODE_HEIGHT, type Positions } from "./graph-layouts";
+import { colors, entityNodeColor } from "../theme";
 import { truthColor } from "./truth-palette";
 
-export const ENTITY_TYPE_HEX: Record<string, string> = {
-  person: "#42a5f5",
-  organization: "#ab47bc",
-  location: "#66bb6a",
-  event: "#ffa726",
-  thing: "#29b6f6",
-  time: "#bdbdbd",
-  work_of_media: "#ef5350",
-  role: "#78909c",
-  quantity: "#8d6e63",
-  date_time: "#bdbdbd",
-  ideology: "#ec407a",
-  facility: "#5c6bc0",
-  group_or_movement: "#7e57c2",
-  technology: "#26c6da",
-  nationality_or_ethnicity: "#9ccc65",
-  law_or_policy: "#ffca28",
-  time_of_day: "#90a4ae",
-  specific_date_time: "#9e9e9e",
-  specific_week: "#bdbdbd",
-  specific_month: "#cfd8dc",
-  year: "#b0bec5",
-  decade: "#78909c",
-};
+// Re-exported for legacy imports that referenced the per-type map
+// directly. New code should call entityNodeColor(type).
+export const ENTITY_TYPE_HEX = colors.entity;
 
 export interface EdgeGradient {
   id: string;
@@ -61,7 +41,7 @@ export function buildRenderData(
   const nodeIdSet = new Set(nodeMap.keys());
   const rfNodes: Node[] = [...nodeMap.values()].map((n) => {
     const p = positions[n.id] || { x: 0, y: 0 };
-    const color = ENTITY_TYPE_HEX[n.type] || "#888";
+    const color = entityNodeColor(n.type);
     const isSeed = seeds.has(n.id);
     const selected = selectedId === n.id;
     return {
@@ -70,8 +50,12 @@ export function buildRenderData(
       data: { label: n.canonical },
       style: {
         background: color,
-        color: "#000",
-        border: selected ? "3px solid #fff" : isSeed ? "2px solid #fff" : "1px solid rgba(0,0,0,0.3)",
+        color: colors.surface.textOnColor,
+        border: selected
+          ? `3px solid ${colors.surface.text}`
+          : isSeed
+            ? `2px solid ${colors.surface.text}`
+            : "1px solid rgba(0,0,0,0.3)",
         borderRadius: 6,
         padding: "4px 8px",
         fontSize: isSeed ? 13 : 11,
@@ -96,8 +80,8 @@ export function buildRenderData(
   const rfEdges: Edge[] = [...mergedEdges.values()].map((e) => {
     const srcNode = nodeMap.get(e.source);
     const tgtNode = nodeMap.get(e.target);
-    const srcColor = srcNode ? (ENTITY_TYPE_HEX[srcNode.type] || "#888") : "#888";
-    const tgtColor = tgtNode ? (ENTITY_TYPE_HEX[tgtNode.type] || "#888") : "#888";
+    const srcColor = srcNode ? entityNodeColor(srcNode.type) : colors.surface.fallback;
+    const tgtColor = tgtNode ? entityNodeColor(tgtNode.type) : colors.surface.fallback;
     const srcPos = positions[e.source] || { x: 0, y: 0 };
     const tgtPos = positions[e.target] || { x: 0, y: 0 };
     const sameColor = srcColor === tgtColor;
@@ -135,7 +119,7 @@ export function buildRenderData(
       target: e.target,
       type: "smoothstep",
       label: e.predicate,
-      labelStyle: { fontSize: 10, fill: "#ddd" },
+      labelStyle: { fontSize: 10, fill: colors.surface.text },
       labelBgStyle: { fill: "rgba(30,30,30,0.85)" },
       labelBgPadding: [4, 2],
       labelBgBorderRadius: 3,

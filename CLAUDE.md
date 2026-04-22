@@ -764,6 +764,21 @@ serves only `/api/*` routes and server-rendered admin pages
   [tests/helpers/setup.ts](tests/helpers/setup.ts) neutralize all three
   sidecars at startup.
 - CLI entrypoint: `captions` (see `package.json` `bin`).
+- **Web styling goes through the theme.** Every color, plus anything
+  MUI doesn't already model, lives in [web/src/theme.ts](web/src/theme.ts).
+  No raw hex literals in components — reach for `colors.entity.person`
+  (or `t.palette.entity.person` inside an sx callback) instead. The
+  theme has two layers: a `ramps` namespace (raw hex, grouped by hue,
+  slot # = perceived luminance × 1000 snapped to 50-multiples) and a
+  `colors` namespace (semantic tokens like `truth`, `entity`,
+  `claimKind`, `stance`, `facet`, `surface` — every value is a ramp
+  reference). Add a new color by adding the swatch to the appropriate
+  ramp first, then point a semantic token at it. For spacing,
+  typography variants, and breakpoints — use MUI's defaults
+  (`sx={{ p: 1.5 }}`, `<Typography variant="caption">`, `{ xs, sm }`),
+  not custom tokens. Only exception: HomePage's mini-illustration SVGs
+  use raw hex (decorative, non-reused) — every other surface reads
+  through the theme.
 
 ## Troubleshooting & tuning
 

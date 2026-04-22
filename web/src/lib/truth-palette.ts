@@ -1,15 +1,15 @@
-// Shared color ramp for truth values. Interpolates through the
-// same three colors the TruthBar databar uses: red (#c62828) at 0,
-// neutral gray (#555) at 0.5, green (#2e7d32) at 1. Consumers: the
-// TruthBar component, the relationships graph edge overlay, the
-// counterfactual slider swatch.
+// Truth-domain helpers: continuous ramp interpolation, side picker,
+// and the textual label ramp. Color values come from the central
+// theme; the math and labels live here.
 
-export const TRUTH_TRUE = "#2e7d32";
-export const TRUTH_FALSE = "#c62828";
-// 6-digit hex — the private `hex()` parser below reads two chars per
-// channel and returns NaN for a 3-digit input like "#555".
-export const TRUTH_NEUTRAL = "#555555";
+import { colors } from "../theme";
 
+export const TRUTH_TRUE = colors.truth.yes;
+export const TRUTH_FALSE = colors.truth.no;
+export const TRUTH_NEUTRAL = colors.truth.neutral;
+
+// Continuous interpolation through the three truth-ramp stops:
+// red at 0, neutral gray at 0.5, green at 1.
 export function truthColor(t: number): string {
   const clamped = Math.max(0, Math.min(1, t));
   if (clamped < 0.5) return mix(TRUTH_FALSE, TRUTH_NEUTRAL, clamped * 2);
@@ -35,15 +35,15 @@ export function truthLabel(t: number): string {
 }
 
 function mix(a: string, b: string, t: number): string {
-  const ca = hex(a);
-  const cb = hex(b);
+  const ca = parseHex(a);
+  const cb = parseHex(b);
   const r = Math.round(ca[0] + (cb[0] - ca[0]) * t);
   const g = Math.round(ca[1] + (cb[1] - ca[1]) * t);
   const bl = Math.round(ca[2] + (cb[2] - ca[2]) * t);
   return `rgb(${r}, ${g}, ${bl})`;
 }
 
-function hex(s: string): [number, number, number] {
+function parseHex(s: string): [number, number, number] {
   const h = s.replace("#", "");
   return [
     parseInt(h.slice(0, 2), 16),

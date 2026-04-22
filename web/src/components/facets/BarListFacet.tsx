@@ -7,6 +7,7 @@
 // (kind, host stance, truth source, verdict-yes-no, …).
 
 import { Box, Typography } from "@mui/material";
+import { colors } from "../../theme";
 
 export interface BarRow {
   id: string;
@@ -31,7 +32,7 @@ export function BarListFacet({
   rows,
   selected,
   onToggle,
-  color = "#90caf9",
+  color = colors.facet.accent,
   emptyText = "no options",
   maxRows,
 }: Props) {

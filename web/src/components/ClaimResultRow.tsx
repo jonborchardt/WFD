@@ -9,6 +9,7 @@ import {
 import { TruthBar } from "./TruthBar";
 import { entityChipSx } from "../lib/facet-helpers";
 import { truthSideColor } from "../lib/truth-palette";
+import { claimKindColor } from "../theme";
 import type { ClaimsIndexEntry } from "../types";
 import type { ClaimsBundle } from "./facets/claims-duck";
 
@@ -17,14 +18,6 @@ export interface ClaimResultRowProps {
   nav: ReturnType<typeof useNavigate>;
   bundle: ClaimsBundle;
 }
-
-const KIND_COLOR: Record<string, string> = {
-  empirical: "#1976d2",
-  historical: "#6d4c41",
-  speculative: "#8e24aa",
-  opinion: "#ef6c00",
-  definitional: "#00838f",
-};
 
 function truthNum(claim: ClaimsIndexEntry): number | null {
   const v = claim.derivedTruth ?? claim.directTruth ?? null;
@@ -36,7 +29,7 @@ export function ClaimResultRow({ claim, nav, bundle }: ClaimResultRowProps) {
   const deps = bundle.depCounts.get(claim.id) ?? { in: 0, out: 0 };
   const meta = bundle.videosById.get(claim.videoId);
   const title = meta?.title ?? claim.videoId;
-  const kColor = KIND_COLOR[claim.kind] ?? "#757575";
+  const kColor = claimKindColor(claim.kind);
   return (
     <Box
       sx={{

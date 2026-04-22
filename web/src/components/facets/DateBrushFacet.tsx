@@ -8,6 +8,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 
 interface Props {
   timestamps: number[];                 // ms since epoch
@@ -183,7 +184,7 @@ export function DateBrushFacet({ timestamps, selected, onChange }: Props) {
               sx={{
                 position: "absolute", left: x - 1, bottom: 0,
                 width: 2, height: h,
-                bgcolor: inBrush ? "primary.main" : "#90caf9",
+                bgcolor: (t) => inBrush ? t.palette.primary.main : t.palette.facet.accent,
                 opacity: inBrush ? 1 : 0.85,
               }}
             />
@@ -193,8 +194,8 @@ export function DateBrushFacet({ timestamps, selected, onChange }: Props) {
           <Box sx={{
             position: "absolute", left: dragX0, top: 0,
             width: dragX1 - dragX0, height: HEIGHT,
-            bgcolor: "rgba(33,150,243,0.2)",
-            border: "1px solid rgba(33,150,243,0.8)",
+            bgcolor: (t) => alpha(t.palette.facet.brushHue, 0.2),
+            border: (t) => `1px solid ${alpha(t.palette.facet.brushHue, 0.8)}`,
             pointerEvents: "none",
           }} />
         )}
@@ -202,8 +203,8 @@ export function DateBrushFacet({ timestamps, selected, onChange }: Props) {
           <Box sx={{
             position: "absolute", left: selX0, top: 0,
             width: Math.max(2, selX1 - selX0), height: HEIGHT,
-            bgcolor: "rgba(33,150,243,0.15)",
-            border: "1px dashed rgba(33,150,243,0.6)",
+            bgcolor: (t) => alpha(t.palette.facet.brushHue, 0.15),
+            border: (t) => `1px dashed ${alpha(t.palette.facet.brushHue, 0.6)}`,
             pointerEvents: "none",
           }} />
         )}

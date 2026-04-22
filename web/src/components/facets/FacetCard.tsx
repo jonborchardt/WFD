@@ -5,6 +5,7 @@
 
 import type { ReactNode } from "react";
 import { Box, Chip, Typography } from "@mui/material";
+import { colors } from "../../theme";
 
 interface Props {
   label: string;
@@ -17,7 +18,7 @@ interface Props {
 
 export function FacetCard({
   label,
-  color = "#90caf9",
+  color = colors.facet.accent,
   total,
   selected,
   children,

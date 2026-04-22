@@ -22,7 +22,8 @@ import {
   elkLayoutConfig, ELK_NODE_HEIGHT, elkNodeWidth,
   circularLayout, radialLayout, type Positions,
 } from "../lib/graph-layouts";
-import { buildRenderData, ENTITY_TYPE_HEX } from "../lib/graph-render";
+import { buildRenderData } from "../lib/graph-render";
+import { colors, entityNodeColor } from "../theme";
 import { isVisibleType } from "../lib/entity-visibility";
 import type {
   GraphNode,
@@ -330,7 +331,7 @@ export function RelationshipsPage() {
                 sx={{ display: "flex", alignItems: "center", gap: 1, px: 1, py: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" }, borderRadius: 1 }}
                 onClick={() => { addSeed(n); setQuery(""); setShowDropdown(false); }}
               >
-                <Box sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: ENTITY_TYPE_HEX[n.type] || "#888" }} />
+                <Box sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: entityNodeColor(n.type) }} />
                 <Typography variant="body2" sx={{ flexGrow: 1 }}>{n.canonical}</Typography>
                 <Typography variant="caption" color="text.secondary">{n.type} · {n.weight}</Typography>
               </Box>
@@ -363,7 +364,7 @@ export function RelationshipsPage() {
                     size="small"
                     onDelete={() => removeNode(id)}
                     onClick={() => focusNode(id)}
-                    sx={{ bgcolor: ENTITY_TYPE_HEX[n.type] || "#888", color: "#000", fontWeight: 600, "& .MuiChip-deleteIcon": { color: "rgba(0,0,0,0.5)" } }}
+                    sx={{ bgcolor: entityNodeColor(n.type), color: colors.surface.textOnColor, fontWeight: 600, "& .MuiChip-deleteIcon": { color: "rgba(0,0,0,0.5)" } }}
                   />
                 );
               })}
@@ -419,7 +420,7 @@ export function RelationshipsPage() {
         >
           <Typography variant="caption" sx={{ fontWeight: 600, display: "block", mt: 0.5 }}>node color = type</Typography>
           <Box sx={{ mt: 0.25, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-            {Object.entries(ENTITY_TYPE_HEX)
+            {Object.entries(colors.entity)
               .filter(([t]) => isVisibleType(t))
               .map(([t, c]) => (
                 <Box key={t} sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
@@ -432,11 +433,11 @@ export function RelationshipsPage() {
             <>
               <Typography variant="caption" sx={{ fontWeight: 600, display: "block", mt: 1 }}>edge color = truth</Typography>
               <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mt: 0.5 }}>
-                <Box sx={{ width: 16, height: 4, background: "rgb(211, 47, 47)" }} />
+                <Box sx={{ width: 16, height: 4, background: colors.truth.no }} />
                 <Typography variant="caption">false</Typography>
-                <Box sx={{ width: 16, height: 4, background: "rgb(158, 158, 158)", mx: 0.5 }} />
+                <Box sx={{ width: 16, height: 4, background: colors.truth.neutral, mx: 0.5 }} />
                 <Typography variant="caption">neutral</Typography>
-                <Box sx={{ width: 16, height: 4, background: "rgb(46, 125, 50)", mx: 0.5 }} />
+                <Box sx={{ width: 16, height: 4, background: colors.truth.yes, mx: 0.5 }} />
                 <Typography variant="caption">true</Typography>
               </Box>
             </>
@@ -484,9 +485,9 @@ export function RelationshipsPage() {
           <MiniMap
             pannable
             zoomable
-            nodeColor={(n: RfNode) => (n.style?.background as string | undefined) || "#9e9e9e"}
+            nodeColor={(n: RfNode) => (n.style?.background as string | undefined) || colors.entity.specific_date_time}
             maskColor="rgba(0,0,0,0.55)"
-            style={{ background: "#1e1e1e", border: "1px solid rgba(255,255,255,0.15)" }}
+            style={{ background: colors.surface.base, border: "1px solid rgba(255,255,255,0.15)" }}
           />
         </ReactFlow>
       )}
@@ -561,7 +562,7 @@ export function RelationshipsPage() {
                       return (
                         <Box
                           key={cid}
-                          sx={{ p: 0.5, borderLeft: "2px solid #ddd", pl: 1, my: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" } }}
+                          sx={{ p: 0.5, borderLeft: "2px solid", borderLeftColor: "divider", pl: 1, my: 0.5, cursor: "pointer", "&:hover": { bgcolor: "action.hover" } }}
                           onClick={() => claim && nav(`/video/${claim.videoId}#claim-${cid}`)}
                         >
                           <Typography variant="caption" sx={{ display: "block" }}>

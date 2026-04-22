@@ -39,6 +39,7 @@ import {
 } from "../lib/claim-graph-build";
 import { entityChipSx } from "../lib/facet-helpers";
 import { truthColor } from "../lib/truth-palette";
+import { colors } from "../theme";
 import { TruthBar } from "../components/TruthBar";
 import type {
   ClaimsIndexEntry,
@@ -423,7 +424,7 @@ export function ClaimGraphPage() {
     if (!data) return { nodes: [] as RfNode[], edges: [] as RfEdge[] };
     const rfNodes: RfNode[] = [...data.nodes.values()].map((n) => {
       const pos = positions[n.id] ?? { x: 0, y: 0 };
-      const color = n.truth !== null ? truthColor(n.truth) : "#bdbdbd";
+      const color = n.truth !== null ? truthColor(n.truth) : colors.entity.time;
       const selected = selectedId === n.id;
       const seed = n.distance === 0;
       return {
@@ -439,7 +440,7 @@ export function ClaimGraphPage() {
           // override through the wrapper.
           backgroundColor: color,
           color: textColor(n.truth),
-          border: selected ? "3px solid #000" : seed ? "2px solid #000" : "1px solid rgba(0,0,0,0.3)",
+          border: selected ? `3px solid ${colors.surface.textOnColor}` : seed ? `2px solid ${colors.surface.textOnColor}` : "1px solid rgba(0,0,0,0.3)",
           borderRadius: 6,
           padding: 6,
           fontSize: 11,
@@ -453,7 +454,7 @@ export function ClaimGraphPage() {
       target: e.to,
       type: "smoothstep",
       label: e.kind === "shared-evidence" ? "evidence" : e.kind,
-      labelStyle: { fontSize: 10, fill: "#333" },
+      labelStyle: { fontSize: 10, fill: colors.surface.textOnColor },
       labelBgStyle: { fill: "rgba(255,255,255,0.85)" },
       style: {
         stroke: EDGE_COLOR[e.kind],
@@ -671,11 +672,11 @@ export function ClaimGraphPage() {
               // Use the node's own background when it has one (truth-
               // colored claim nodes). Fall back to a theme-neutral tone.
               const bg = (n.style as { background?: string } | undefined)?.background;
-              return bg ?? "#9e9e9e";
+              return bg ?? colors.entity.specific_date_time;
             }}
             maskColor="rgba(0,0,0,0.55)"
             style={{
-              background: "#1e1e1e",
+              background: colors.surface.base,
               border: "1px solid rgba(255,255,255,0.15)",
             }}
           />
@@ -724,9 +725,8 @@ function truncate(s: string, n: number): string {
 }
 
 function textColor(t: number | null): string {
-  // Null-truth falls back to #bdbdbd (light gray) background — dark text reads.
-  if (t === null) return "#111";
-  // Every truthColor(t) for t ∈ [0,1] mixes between #c62828 / #555 / #2e7d32,
-  // all dark enough that white text has WCAG AA contrast. Keep it simple.
-  return "#fff";
+  // Null-truth falls back to a light-gray entity tone; dark text reads.
+  // Every truthColor(t) for t ∈ [0,1] mixes through colors.truth.{no,
+  // neutral,yes} — all dark enough that white text has WCAG AA contrast.
+  return t === null ? colors.surface.textOnColor : "white";
 }

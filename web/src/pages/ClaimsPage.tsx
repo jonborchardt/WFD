@@ -36,7 +36,10 @@ import {
 } from "../lib/facet-helpers";
 import { matchesTopic } from "../lib/claim-search";
 import { beginLoad } from "../lib/loading";
+import { colors } from "../theme";
 import type { ClaimsIndexEntry } from "../types";
+
+const FACET = colors.facet;
 
 
 const SORT_OPTIONS: SortOption[] = [
@@ -510,7 +513,7 @@ export function ClaimsPage() {
         placeholder="search claim text, entities, kind…"
       />
           <FacetSection title="sort">
-            <FacetCard label="sort by" color="#ffb74d">
+            <FacetCard label="sort by" color={FACET.sort}>
               <SortFacet
                 options={SORT_OPTIONS}
                 value={filter.sort}
@@ -521,7 +524,7 @@ export function ClaimsPage() {
 
           <FacetSection title="claim type">
             <FacetCard
-              label="kind" color="#1976d2"
+              label="kind" color={FACET.kind}
               selected={filter.kinds.size} total={kindRows.length}
             >
               <BarListFacet
@@ -530,7 +533,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="host stance" color="#26a69a"
+              label="host stance" color={FACET.hostStance}
               selected={filter.stances.size} total={stanceRows.length}
             >
               <BarListFacet
@@ -539,7 +542,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="truth source" color="#9c27b0"
+              label="truth source" color={FACET.truthSource}
               selected={filter.sources.size} total={sourceRows.length}
             >
               <BarListFacet
@@ -551,7 +554,7 @@ export function ClaimsPage() {
 
           <FacetSection title="magnitudes">
             <FacetCard
-              label="truth range" color="#388e3c"
+              label="truth range" color={FACET.truthRange}
               selected={filter.truthRange ? 1 : 0}
             >
               <NumericRangeFacet
@@ -561,7 +564,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="confidence" color="#689f38"
+              label="confidence" color={FACET.confidence}
               selected={filter.confRange ? 1 : 0}
             >
               <NumericRangeFacet
@@ -571,7 +574,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="publish date" color="#1565c0"
+              label="publish date" color={FACET.publishDate}
               selected={filter.dateRange ? 1 : 0}
             >
               <DateBrushFacet
@@ -584,7 +587,7 @@ export function ClaimsPage() {
 
           <FacetSection title="flags">
             <FacetCard
-              label="verdict" color="#f57c00"
+              label="verdict" color={FACET.verdict}
               selected={filter.verdict.size} total={2}
             >
               <BarListFacet
@@ -594,7 +597,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="contradictions" color="#d32f2f"
+              label="contradictions" color={FACET.contradictions}
               selected={filter.contradicted.size} total={2}
             >
               <BarListFacet
@@ -604,7 +607,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="cited by (incoming)" color="#5e35b1"
+              label="cited by (incoming)" color={FACET.citedBy}
               selected={filter.hasIn.size} total={2}
             >
               <BarListFacet
@@ -614,7 +617,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="cites (outgoing)" color="#3949ab"
+              label="cites (outgoing)" color={FACET.cites}
               selected={filter.hasOut.size} total={2}
             >
               <BarListFacet
@@ -628,7 +631,7 @@ export function ClaimsPage() {
           <FacetSection title="entities">
             {orderedTypes.map((type) => {
               const bucket = entityByType.get(type)!;
-              const color = ENTITY_TYPE_COLOR[type] || "#90caf9";
+              const color = ENTITY_TYPE_COLOR[type] || FACET.accent;
               const selectedInType = [...filter.entities]
                 .filter((k) => splitEntityKey(k).type === type).length;
               // Bucket empty → no search, no "+ more", just a note.
@@ -697,7 +700,7 @@ export function ClaimsPage() {
 
           <FacetSection title="video">
             <FacetCard
-              label="video" color="#455a64"
+              label="video" color={FACET.video}
               selected={filter.videos.size} total={videoRows.length}
             >
               <TextField

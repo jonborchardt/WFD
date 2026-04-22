@@ -7,6 +7,7 @@ import { DepRow } from "./DepRow";
 import { entityChipSx } from "../lib/facet-helpers";
 import { deepLink, fmtTimestamp } from "../lib/format";
 import { truthColor, truthSideColor } from "../lib/truth-palette";
+import { claimKindColor } from "../theme";
 import {
   runCounterfactual,
   type CounterfactualResult,
@@ -19,14 +20,6 @@ import type {
   ClaimsIndexEntry,
   TruthSource,
 } from "../types";
-
-const KIND_COLOR: Record<string, string> = {
-  empirical: "#1976d2",
-  historical: "#6d4c41",
-  speculative: "#8e24aa",
-  opinion: "#ef6c00",
-  definitional: "#00838f",
-};
 
 interface Props {
   videoId: string;
@@ -151,7 +144,7 @@ export function ClaimDetailCard({
       ? "direct"
       : "uncalibrated");
 
-  const kColor = KIND_COLOR[claim.kind] ?? "#757575";
+  const kColor = claimKindColor(claim.kind);
 
   return (
     <Box

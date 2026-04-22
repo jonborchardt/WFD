@@ -12,8 +12,19 @@ import {
 } from "@mui/material";
 import { TruthBar } from "./TruthBar";
 import { ContradictionMenu } from "./ContradictionMenu";
+import { colors } from "../theme";
 import type { ClaimContradiction, ClaimsIndexEntry } from "../types";
 import type { ClaimsBundle } from "./facets/claims-duck";
+
+// 12% alpha overlay used as the soft tinted background behind each
+// stance panel. Same hue as the stance border, eight times lighter.
+function tintedBg(hex: string): string {
+  const h = hex.replace("#", "");
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, 0.12)`;
+}
 
 export interface ContradictionResultRowProps {
   cx: ClaimContradiction;
@@ -28,33 +39,17 @@ export interface ContradictionResultRowProps {
 export function stanceTint(stance?: string | null): {
   bg: string; border: string; fg: string; label: string;
 } {
-  switch (stance) {
-    case "asserts":
-      return {
-        bg: "rgba(46, 125, 50, 0.12)", border: "#2e7d32",
-        fg: "#2e7d32", label: "ASSERTS",
-      };
-    case "denies":
-      return {
-        bg: "rgba(211, 47, 47, 0.12)", border: "#d32f2f",
-        fg: "#d32f2f", label: "DENIES",
-      };
-    case "uncertain":
-      return {
-        bg: "rgba(245, 124, 0, 0.12)", border: "#f57c00",
-        fg: "#f57c00", label: "UNCERTAIN",
-      };
-    case "steelman":
-      return {
-        bg: "rgba(94, 53, 177, 0.12)", border: "#5e35b1",
-        fg: "#5e35b1", label: "STEELMAN",
-      };
-    default:
-      return {
-        bg: "transparent", border: "rgba(0,0,0,0.2)",
-        fg: "text.secondary", label: "—",
-      };
+  const hue = stance ? colors.stance[stance as keyof typeof colors.stance] : undefined;
+  if (!hue) {
+    return {
+      bg: "transparent", border: "rgba(0,0,0,0.2)",
+      fg: "text.secondary", label: "—",
+    };
   }
+  return {
+    bg: tintedBg(hue), border: hue, fg: hue,
+    label: (stance ?? "").toUpperCase(),
+  };
 }
 
 export function ContradictionResultRow(props: ContradictionResultRowProps) {
@@ -123,7 +118,7 @@ export function StancePanel({ claim, id, bundle, nav }: StancePanelProps) {
       <Box sx={{
         px: 1.25, py: 0.5,
         backgroundColor: tint.border,
-        color: "#fff",
+        color: "common.white",
         display: "flex", alignItems: "center", gap: 1,
       }}>
         <Typography sx={{

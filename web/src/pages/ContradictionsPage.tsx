@@ -36,7 +36,10 @@ import {
 import { invalidateClaimsCaches } from "../lib/data";
 import { matchesTopic } from "../lib/claim-search";
 import { beginLoad } from "../lib/loading";
+import { colors } from "../theme";
 import type { ClaimContradiction } from "../types";
+
+const FACET = colors.facet;
 
 
 const SORT_OPTIONS: SortOption[] = [
@@ -436,7 +439,7 @@ export function ContradictionsPage() {
         placeholder="search summary, either claim, shared entity…"
       />
           <FacetSection title="sort">
-            <FacetCard label="sort by" color="#ffb74d">
+            <FacetCard label="sort by" color={FACET.sort}>
               <SortFacet
                 options={SORT_OPTIONS}
                 value={filter.sort}
@@ -447,7 +450,7 @@ export function ContradictionsPage() {
 
           <FacetSection title="kind">
             <FacetCard
-              label="kind" color="#1976d2"
+              label="kind" color={FACET.kind}
               selected={filter.kinds.size} total={kindRows.length}
             >
               <BarListFacet
@@ -456,7 +459,7 @@ export function ContradictionsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="cross-video match" color="#26a69a"
+              label="cross-video match" color={FACET.crossVideo}
               selected={filter.reasons.size} total={reasonRows.length}
             >
               <BarListFacet
@@ -468,7 +471,7 @@ export function ContradictionsPage() {
 
           <FacetSection title="magnitudes">
             <FacetCard
-              label="shared entities" color="#689f38"
+              label="shared entities" color={FACET.sharedEntities}
               selected={filter.sharedRange ? 1 : 0}
             >
               <NumericRangeFacet
@@ -480,7 +483,7 @@ export function ContradictionsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="text similarity" color="#9c27b0"
+              label="text similarity" color={FACET.similarity}
               selected={filter.simRange ? 1 : 0}
             >
               <NumericRangeFacet
@@ -490,7 +493,7 @@ export function ContradictionsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="publish date" color="#1565c0"
+              label="publish date" color={FACET.publishDate}
               selected={filter.dateRange ? 1 : 0}
             >
               <DateBrushFacet
@@ -504,7 +507,7 @@ export function ContradictionsPage() {
           <FacetSection title="entities">
             {orderedTypes.map((type) => {
               const bucket = entityByType.get(type)!;
-              const color = ENTITY_TYPE_COLOR[type] || "#90caf9";
+              const color = ENTITY_TYPE_COLOR[type] || FACET.accent;
               const selectedInType = [...filter.entities]
                 .filter((k) => splitEntityKey(k).type === type).length;
               if (bucket.size === 0) {
@@ -570,7 +573,7 @@ export function ContradictionsPage() {
 
           <FacetSection title="video">
             <FacetCard
-              label="video" color="#455a64"
+              label="video" color={FACET.video}
               selected={filter.videos.size} total={videoRows.length}
             >
               <TextField

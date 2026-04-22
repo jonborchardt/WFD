@@ -47,6 +47,12 @@ import {
 import { SimpleVideoTable } from "../components/SimpleVideoTable";
 import { beginLoad } from "../lib/loading";
 import { ENTITY_TYPE_COLOR } from "../components/catalog-columns";
+import { colors } from "../theme";
+
+// Lighter (chip-on-dark) palette for the rail's facet cards. Re-export
+// of the shared entityChip ramp; same values used on /claims and
+// /contradictions facets.
+const TYPE_COLOR = colors.entityChip;
 import { EntityMenuButton } from "../components/EntityMenu";
 
 const PER_TYPE_VISIBLE = 8;
@@ -59,16 +65,6 @@ const ENTITY_PRIORITY = [
   "person", "organization", "location",
   "event", "thing", "topic", "misc",
 ];
-
-const TYPE_COLOR: Record<string, string> = {
-  person: "#90caf9",
-  organization: "#ce93d8",
-  location: "#a5d6a7",
-  event: "#ffb74d",
-  thing: "#80deea",
-  misc: "#80deea",
-  time: "#bdbdbd",
-};
 
 type SlotMap = Record<string, Set<string>[]>;
 
@@ -331,7 +327,7 @@ export function VideosPage() {
     const selectedInType = slots.reduce((n, s) => n + s.size, 0);
     const hasMultipleSlots = slots.length > 1;
 
-    const color = TYPE_COLOR[type] || "#90caf9";
+    const color = TYPE_COLOR[type] || colors.facet.accent;
 
     return (
       <Box key={type} sx={{
@@ -399,7 +395,7 @@ export function VideosPage() {
                   >
                     {i === 0 ? type : `AND #${i + 1}`}
                     {slots[i].size > 0 && (
-                      <span style={{ color: "#888", marginLeft: 3 }}>
+                      <span style={{ color: colors.surface.fallback, marginLeft: 3 }}>
                         ({slots[i].size})
                       </span>
                     )}
@@ -568,7 +564,7 @@ export function VideosPage() {
                   sx={{ height: 16, fontSize: 10 }}
                 />
                 <span style={{
-                  color: "#999", fontVariantNumeric: "tabular-nums",
+                  color: colors.surface.textMuted, fontVariantNumeric: "tabular-nums",
                 }}>
                   {option.mentions.toLocaleString()}
                 </span>
@@ -591,7 +587,7 @@ export function VideosPage() {
             const sel = slots[0] || new Set<string>();
             const isBrush = TIME_FACET_TYPES.has(type);
             const isSimple = SIMPLE_FACET_TYPES.has(type);
-            const tcolor = TYPE_COLOR[type] || "#bdbdbd";
+            const tcolor = TYPE_COLOR[type] || colors.entity.time;
             if (!isBrush && !isSimple) return renderEntityCard(type);
             return (
               <Box key={type} sx={{

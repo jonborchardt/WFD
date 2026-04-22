@@ -13,6 +13,7 @@ import type {
   ClaimContradiction,
   DependencyGraphFile,
 } from "../types";
+import { colors } from "../theme";
 
 export type ClaimGraphEdgeKind =
   | "supports"
@@ -176,14 +177,7 @@ export function buildClaimGraph(
   return { nodes, edges };
 }
 
-export const EDGE_COLOR: Record<ClaimGraphEdgeKind, string> = {
-  supports: "#43a047",
-  contradicts: "#e53935",
-  presupposes: "#1e88e5",
-  elaborates: "#9e9e9e",
-  "shared-evidence": "#8e24aa",
-  contradiction: "#ef6c00",
-};
+export const EDGE_COLOR: Record<ClaimGraphEdgeKind, string> = colors.claimRelation as Record<ClaimGraphEdgeKind, string>;
 
 export const EDGE_STYLE: Record<ClaimGraphEdgeKind, { dasharray?: string }> = {
   supports: {},

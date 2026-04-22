@@ -2,6 +2,8 @@
 // pages. Keeping them in one place so the two pages don't drift on
 // parsing / formatting / entity-type conventions.
 
+import { colors } from "../theme";
+
 // Prefixes the entity-card ordering in the rail. Types not listed
 // fall through to the end in discovery order.
 export const ENTITY_PRIORITY = [
@@ -9,15 +11,7 @@ export const ENTITY_PRIORITY = [
   "event", "thing", "topic", "misc",
 ];
 
-export const ENTITY_TYPE_COLOR: Record<string, string> = {
-  person: "#90caf9",
-  organization: "#ce93d8",
-  location: "#a5d6a7",
-  event: "#ffb74d",
-  thing: "#80deea",
-  topic: "#80deea",
-  misc: "#b0bec5",
-};
+export const ENTITY_TYPE_COLOR = colors.entityChip;
 
 // Cap on claim IDs sent to the claim-graph via a "graph these" button.
 // The graph degrades quickly past a few hundred nodes once dependency

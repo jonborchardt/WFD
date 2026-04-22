@@ -3,11 +3,12 @@ import type { ReactNode } from "react";
 import {
   Box, Container, Link, Paper, Typography,
 } from "@mui/material";
+import { colors } from "../theme";
 
 // Single subtle accent used across the page. Section colors tried
 // earlier read as a rainbow; one restrained accent plus type hierarchy
 // does the same job without the noise.
-const ACCENT = "#1976d2";
+const ACCENT = colors.brand.accent;
 
 export function HomePage() {
   return (
@@ -336,6 +337,11 @@ function ShowcaseCard({ title, body, href, onClick, image }: ShowcaseCardProps) 
 // Each ~96×64, color-echoing the feature. Stylized rather than
 // literal — enough to give the eye a hint of what the page shows
 // without trying to render actual UI.
+//
+// These hex values are intentionally inline. They're a decorative
+// pastel palette used nowhere else in the app — surfacing them
+// through the central theme would only add noise, since they have
+// no semantic role. (See the comment block at the top of theme.ts.)
 
 function MiniVideos() {
   // Facet-rail sketch: one "search bar" up top, three bar-list rows

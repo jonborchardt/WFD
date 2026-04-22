@@ -8,17 +8,8 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { TruthBar } from "./TruthBar";
 import { truthSideColor } from "../lib/truth-palette";
+import { claimRelationColor } from "../theme";
 import type { ClaimsIndexEntry } from "../types";
-
-// Colors for the four dependency kinds. Matches the semantic
-// downstream: supports (green), contradicts (red), presupposes
-// (purple), elaborates (neutral gray — no truth effect).
-export const DEP_KIND_COLOR: Record<string, string> = {
-  supports: "#2e7d32",
-  contradicts: "#d32f2f",
-  presupposes: "#5e35b1",
-  elaborates: "#757575",
-};
 
 export interface DepRowProps {
   direction: "in" | "out";
@@ -33,7 +24,7 @@ export function DepRow({
 }: DepRowProps) {
   const target = corpusIndex?.find((c) => c.id === targetId);
   const title = target?.text ?? targetId;
-  const kColor = DEP_KIND_COLOR[kind] ?? "#757575";
+  const kColor = claimRelationColor(kind);
   const t = target
     ? (target.derivedTruth ?? target.directTruth ?? null)
     : null;
