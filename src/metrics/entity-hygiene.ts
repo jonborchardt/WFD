@@ -1,8 +1,9 @@
-// Entity-hygiene metrics (Plan 05 — from plans2/05-calibration-loop.md §M1).
+// Entity-hygiene metrics.
 //
 // Reads aliases.json + the corpus entity scan to surface the signals
-// Plan 01 cared about: how many entities deleted, how many merged,
-// how many role-noun persons or tautologies still leak through.
+// the entity-hygiene program cares about: how many entities deleted,
+// how many merged, how many role-noun persons or tautologies still
+// leak through.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";

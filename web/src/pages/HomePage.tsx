@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as RouterLink } from "react-router-dom";
 import type { ReactNode } from "react";
 import {
   Box, Container, Link, Paper, Typography,
@@ -132,21 +132,39 @@ export function HomePage() {
         <Typography paragraph>
           On top of the relationship graph, an AI pass over each
           transcript extracts <strong>claims</strong>: thesis-level
-          statements the host makes, each with evidence quotes, a truth
-          score, and (where relevant) <em>dependencies</em> on other
-          claims — "this follows from," "this contradicts," "this
-          presupposes." A reasoning layer then propagates truth through
-          the claim graph, flags contradictions (within a single episode,
-          between episodes, or when a presupposition is broken), and
-          supports counterfactual queries: "if this claim were false,
-          which others would move?"
+          statements the host makes, each with a tight single-sentence
+          evidence quote, a truth score, and (where relevant){" "}
+          <em>dependencies</em> on other claims — "this follows from,"
+          "this contradicts," "this presupposes." Contradicts
+          dependencies carry a subkind tag so the reasoning layer knows
+          whether A strictly rules out B, debunks it, proposes a
+          competing explanation, or just undercuts its probative value.
+        </Typography>
+        <Typography paragraph>
+          A reasoning layer propagates truth through the claim graph,
+          flags contradictions (within a single episode, between
+          episodes, or when a presupposition is broken), and supports
+          counterfactual queries: "if this claim were false, which
+          others would move?" Cross-video contradiction candidates are
+          found by sentence-embedding similarity and then run through a
+          second AI pass that verdicts each pair — so what surfaces on{" "}
+          <Link component={RouterLink} to="/contradictions">
+            /contradictions
+          </Link>{" "}
+          is real disagreement, not noise from a shared generic entity.
         </Typography>
         <Typography paragraph sx={{ mb: 0 }}>
-          Everything is searchable and filterable by truth, kind, and
-          stance. Each claim row carries a truth bar and a confidence bar
-          so you can see at a glance whether the AI thinks the host is
-          asserting something firmly, steelmanning a fringe idea, or
-          explicitly debunking it.
+          The flip side also gets its own page:{" "}
+          <Link component={RouterLink} to="/cross-video-agreements">
+            /cross-video-agreements
+          </Link>{" "}
+          lists pairs the verifier identified as asserting the same
+          thesis across two different videos — positive corroboration
+          rather than conflict. Everything is searchable and filterable
+          by truth, kind, and stance. Each claim row carries a truth
+          bar and a confidence bar so you can see at a glance whether
+          the AI thinks the host is asserting something firmly,
+          steelmanning a fringe idea, or explicitly debunking it.
         </Typography>
       </Section>
 
@@ -240,6 +258,8 @@ function StartHere() {
       </Typography>
       <Box sx={{
         display: "grid",
+        // 6 cards: 1 column on xs, 2 columns on sm+, so the grid fills
+        // cleanly as 3 rows of 2 on normal viewports.
         gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
         gap: 1.5,
       }}>
@@ -259,7 +279,7 @@ function StartHere() {
         />
         <ShowcaseCard
           title="Cross-video conflicts"
-          body="Claims from different episodes that share entities and assert opposite things."
+          body="Verified disagreements between episodes — a semantic-similarity pass finds candidates, a second AI pass verdicts each one so only real contradictions surface."
           href="/contradictions?kind=cross-video&sort=shared-desc"
           onClick={() =>
             nav("/contradictions?kind=cross-video&sort=shared-desc")
@@ -274,6 +294,23 @@ function StartHere() {
             nav("/argument-map?kind=claim&q=-HxKHUEwnug:c_0003")
           }
           image={<MiniArgumentMap />}
+        />
+        <ShowcaseCard
+          title="Cross-video agreements"
+          body="The flip side of contradictions — pairs the verifier flagged as asserting the same thesis in two different videos. Positive cross-video corroboration."
+          href="/cross-video-agreements"
+          onClick={() => nav("/cross-video-agreements")}
+          image={<MiniAgreements />}
+        />
+        <ShowcaseCard
+          title="Explore the entity graph"
+          body="Every person, place, organization, and event across the corpus, laid out as a graph. Click an edge to jump to the transcript span where the relationship was claimed; toggle truth coloring to shade edges by the derived truth of the citing claims."
+          // Seed on click; landing at /entity-graph directly opens empty.
+          href="/entity-graph?seed=facility:goat+lab"
+          onClick={() =>
+            nav("/entity-graph?seed=" + encodeURIComponent("facility:goat lab"))
+          }
+          image={<MiniEntityGraph />}
         />
       </Box>
     </Paper>
@@ -421,6 +458,74 @@ function MiniArgumentMap() {
         stroke="#1565c0" strokeWidth="2" />
       <circle cx="74" cy="20" r="6" fill="#81c784" />
       <circle cx="74" cy="48" r="6" fill="#e57373" />
+    </svg>
+  );
+}
+
+function MiniEntityGraph() {
+  // Force-directed-style cluster: a central hub node linked out to
+  // five satellites of mixed hue, echoing the entity-type palette
+  // used on /entity-graph (person / org / location / event / etc.).
+  // Deliberately busier than MiniArgumentMap so the two read as
+  // different views rather than near-duplicates at thumbnail scale.
+  return (
+    <svg width="96" height="64" viewBox="0 0 96 64">
+      {/* edges, drawn first so nodes overlay them cleanly */}
+      <line x1="48" y1="32" x2="18" y2="14"
+        stroke="#90a4ae" strokeWidth="1.5" />
+      <line x1="48" y1="32" x2="80" y2="14"
+        stroke="#90a4ae" strokeWidth="1.5" />
+      <line x1="48" y1="32" x2="10" y2="38"
+        stroke="#90a4ae" strokeWidth="1.5" />
+      <line x1="48" y1="32" x2="86" y2="40"
+        stroke="#90a4ae" strokeWidth="1.5" />
+      <line x1="48" y1="32" x2="48" y2="58"
+        stroke="#90a4ae" strokeWidth="1.5" />
+      {/* one satellite-to-satellite tie so the graph has a loop */}
+      <line x1="80" y1="14" x2="86" y2="40"
+        stroke="#b0bec5" strokeWidth="1" strokeDasharray="2 2" />
+      {/* satellites, colored roughly by entity type ramp */}
+      <circle cx="18" cy="14" r="5" fill="#42a5f5" />
+      <circle cx="80" cy="14" r="5" fill="#ab47bc" />
+      <circle cx="10" cy="38" r="5" fill="#66bb6a" />
+      <circle cx="86" cy="40" r="5" fill="#ffa726" />
+      <circle cx="48" cy="58" r="5" fill="#ef5350" />
+      {/* central hub — larger, bordered to read as the focus node */}
+      <circle cx="48" cy="32" r="8" fill="#fff59d"
+        stroke="#f9a825" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function MiniAgreements() {
+  // Two panels facing each other with a "yes" check in the middle —
+  // intentionally echoes the MiniContradictions composition (opposing
+  // panels + central mark) but shifts the palette to a calmer green
+  // to signal "same thesis" rather than conflict.
+  return (
+    <svg width="96" height="64" viewBox="0 0 96 64">
+      <rect x="6" y="10" width="34" height="44" rx="2"
+        fill="#e8f5e9" stroke="#81c784" />
+      <rect x="56" y="10" width="34" height="44" rx="2"
+        fill="#f1f8e9" stroke="#aed581" />
+      <path d="M24 32 L44 32" stroke="#43a047"
+        strokeWidth="2" fill="none" markerEnd="url(#ag-rm)" />
+      <path d="M72 32 L52 32" stroke="#558b2f"
+        strokeWidth="2" fill="none" markerEnd="url(#ag-lm)" />
+      <defs>
+        <marker id="ag-rm" viewBox="0 0 10 10" refX="7" refY="5"
+          markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#43a047" />
+        </marker>
+        <marker id="ag-lm" viewBox="0 0 10 10" refX="7" refY="5"
+          markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#558b2f" />
+        </marker>
+      </defs>
+      {/* checkmark centered in the gap */}
+      <path d="M44 33 L47 36 L52 29"
+        stroke="#2e7d32" strokeWidth="2.5" fill="none"
+        strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

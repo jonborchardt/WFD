@@ -6,15 +6,15 @@
 // subgraphs; we still treat it as one graph because the algorithm doesn't
 // care.
 //
-// Rules (from plans/03-reasoning-layer.md):
+// Base coupling rules:
 //   - A supports B   : B is pulled toward A (positive coupling)
 //   - A contradicts B: B is pushed away from A (toward 1-A)
 //   - A presupposes B: A is min-capped at B  (A cannot be truer than B)
 //   - A elaborates B : no coupling
 //
-// Plan 04 (plans2/04-contradictions-v2.md) layers subkind semantics on top
-// of `contradicts` — the subkind is parsed from the dep's rationale
-// prefix (`[logical]` / `[debunks]` / `[alternative]` / `[undercuts]`).
+// Typed `contradicts` subkind semantics layer on top — parsed from the
+// dep's rationale prefix (`[logical]` / `[debunks]` / `[alternative]` /
+// `[undercuts]`).
 //   - "logical" / "debunks"      : full contradicts coupling (contribution = 1-v)
 //   - "alternative"              : halved negative coupling (competing explanations
 //                                   pull less hard than strict contradictions)

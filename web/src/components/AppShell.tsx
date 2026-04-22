@@ -1,20 +1,51 @@
 import { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
-  AppBar, Box, Button, Chip, Fab, LinearProgress, Toolbar, Typography, Zoom,
+  AppBar, Box, Button, Chip, Drawer, Fab, IconButton,
+  LinearProgress, List, ListItemButton, ListItemText, Toolbar,
+  Typography, Zoom, useMediaQuery, useTheme,
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import MenuIcon from "@mui/icons-material/Menu";
 import { IS_ADMIN, ADMIN_BUILD, setViewMode } from "../lib/admin";
 import { useLoadingCount } from "../lib/loading";
 
+export interface NavItem {
+  path: string;
+  label: string;
+  adminOnly?: boolean;
+}
+
+// Labels are Title Case — desktop renders through MUI Button's default
+// text-transform (uppercased either way), mobile Drawer's ListItemText
+// renders them verbatim, so the source needs to be human-readable.
+export const NAV_ITEMS: NavItem[] = [
+  { path: "/",                       label: "Home" },
+  { path: "/videos",                 label: "Videos" },
+  { path: "/claims",                 label: "Claims" },
+  { path: "/contradictions",         label: "Contradictions" },
+  { path: "/cross-video-agreements", label: "Agreements" },
+  { path: "/entity-graph",           label: "Entity Graph" },
+  { path: "/argument-map",           label: "Argument Map" },
+  { path: "/admin",                  label: "Admin", adminOnly: true },
+];
+
+function visibleNavItems(): NavItem[] {
+  return NAV_ITEMS.filter((item) => !item.adminOnly || IS_ADMIN);
+}
+
 export function AppShell() {
   const nav = useNavigate();
-  // Progress bar is driven by the global loading counter in
-  // src/lib/loading.ts. Pages call `beginLoad()`/`trackLoad()` around
-  // their fetches; while any count is outstanding we render the bar.
-  // This replaces the old fixed-400ms-on-route-change approach which
-  // fired *after* page data had already arrived.
+  const { pathname } = useLocation();
+  const theme = useTheme();
+  const isWide = useMediaQuery(theme.breakpoints.up("md"));
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const loadingCount = useLoadingCount();
+
+  const items = visibleNavItems();
+  const isActive = (path: string) =>
+    path === "/" ? pathname === "/" : pathname.startsWith(path);
+
   return (
     <>
       <AppBar
@@ -33,6 +64,18 @@ export function AppShell() {
             px: { xs: 1.5, sm: 2 },
           }}
         >
+          {!isWide && (
+            <IconButton
+              size="small"
+              edge="start"
+              color="inherit"
+              aria-label="open navigation"
+              onClick={() => setDrawerOpen(true)}
+              sx={{ mr: 1 }}
+            >
+              <MenuIcon fontSize="small" />
+            </IconButton>
+          )}
           <Typography
             variant="subtitle1"
             sx={{ cursor: "pointer", flexGrow: 1, fontWeight: 600, lineHeight: 1 }}
@@ -51,13 +94,49 @@ export function AppShell() {
             </Box>{" "}
             Database
           </Typography>
-          <Button size="small" color="inherit" onClick={() => nav("/")}>home</Button>
-          <Button size="small" color="inherit" onClick={() => nav("/videos")}>videos</Button>
-          <Button size="small" color="inherit" onClick={() => nav("/claims")}>claims</Button>
-          <Button size="small" color="inherit" onClick={() => nav("/contradictions")}>contradictions</Button>
-          <Button size="small" color="inherit" onClick={() => nav("/entity-graph")}>entity graph</Button>
-          <Button size="small" color="inherit" onClick={() => nav("/argument-map")}>argument map</Button>
-          {IS_ADMIN && <Button size="small" color="inherit" onClick={() => nav("/admin")}>admin</Button>}
+          {isWide && (
+            <Box
+              component="nav"
+              aria-label="primary"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.25,
+                ml: 1,
+                flexShrink: 1,
+                minWidth: 0,
+              }}
+            >
+              {items.map((item) => (
+                <Button
+                  key={item.path}
+                  size="small"
+                  color="inherit"
+                  onClick={() => nav(item.path)}
+                  sx={{
+                    // Keep the Title Case source rather than MUI's
+                    // default all-caps — caps on 2-word items like
+                    // "ENTITY GRAPH" eat horizontal space and shout.
+                    textTransform: "none",
+                    // Prevent wrapping inside a button (what caused
+                    // "ENTITY" + "GRAPH" to stack on two lines on
+                    // narrow desktop widths).
+                    whiteSpace: "nowrap",
+                    px: 1.25,
+                    fontWeight: isActive(item.path) ? 600 : 400,
+                    // Subtle active-item underline so the 600-weight
+                    // difference reads at small sizes too.
+                    borderBottom: isActive(item.path) ? 2 : 0,
+                    borderBottomColor: "primary.main",
+                    borderRadius: isActive(item.path) ? 0 : undefined,
+                    mb: isActive(item.path) ? "-2px" : 0,
+                  }}
+                >
+                  {item.label}
+                </Button>
+              ))}
+            </Box>
+          )}
           {ADMIN_BUILD && (
             <Chip
               size="small"
@@ -70,6 +149,30 @@ export function AppShell() {
           )}
         </Toolbar>
       </AppBar>
+      <Drawer
+        anchor="left"
+        open={drawerOpen && !isWide}
+        onClose={() => setDrawerOpen(false)}
+        ModalProps={{ keepMounted: true }}
+      >
+        <Box
+          sx={{ width: 260 }}
+          role="navigation"
+          onClick={() => setDrawerOpen(false)}
+        >
+          <List>
+            {items.map((item) => (
+              <ListItemButton
+                key={item.path}
+                selected={isActive(item.path)}
+                onClick={() => nav(item.path)}
+              >
+                <ListItemText primary={item.label} />
+              </ListItemButton>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
       <Box sx={{ height: 3, position: "relative" }}>
         {loadingCount > 0 && <LinearProgress sx={{ position: "absolute", inset: 0 }} />}
       </Box>

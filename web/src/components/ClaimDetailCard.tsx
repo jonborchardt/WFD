@@ -34,6 +34,8 @@ interface Props {
   inboundDeps?: ClaimDependency[];
   // Contradiction records that reference this claim on either side.
   contradictions?: ClaimContradiction[];
+  // Cross-video agreements (consonance) that reference this claim.
+  agreements?: ClaimContradiction[];
   // Full corpus index, needed only for the counterfactual toggle. When
   // omitted the toggle is hidden.
   corpusIndex?: ClaimsIndexEntry[];
@@ -50,6 +52,7 @@ export function ClaimDetailCard({
   overrideRationale,
   inboundDeps,
   contradictions,
+  agreements,
   corpusIndex,
   onMutated,
 }: Props) {
@@ -206,6 +209,12 @@ export function ClaimDetailCard({
           <Typography variant="caption" sx={{ color: "warning.main" }}>
             · ⚠ {contradictions.length} contradiction
             {contradictions.length > 1 ? "s" : ""}
+          </Typography>
+        )}
+        {agreements && agreements.length > 0 && (
+          <Typography variant="caption" sx={{ color: "success.main" }}>
+            · ✓ {agreements.length} agreement
+            {agreements.length > 1 ? "s" : ""}
           </Typography>
         )}
         {claim.confidence != null && (
