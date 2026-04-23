@@ -547,9 +547,9 @@ export function renderDetailPage(
   );
 }
 
-// Surface the `_stale` marker that nlpStage stamps onto an AI response
-// file when NLP is regenerated. Returns null when the response file does
-// not exist or has no marker. Does not mutate the file.
+// Surface the `_stale` marker that entities/relations stages stamp onto
+// the legacy AI response file when neural output is regenerated. Returns
+// null when the file does not exist or has no marker. Does not mutate.
 export function readAiResponseStale(
   videoId: string,
   dataDir?: string,
@@ -573,6 +573,30 @@ export function readAiResponseStale(
   }
 }
 
+// Surface the `_stale` marker that entities/relations stages stamp onto
+// `data/claims/<id>.json` when neural output is regenerated under a file
+// the ai-claims-extraction skill already wrote. Returns null when the
+// file does not exist or has no marker.
+export function readClaimsStale(
+  videoId: string,
+  dataDir?: string,
+): { since: string; reason: string } | null {
+  const root = dataDir ?? join(process.cwd(), "data");
+  const p = join(root, "claims", `${videoId}.json`);
+  if (!existsSync(p)) return null;
+  try {
+    const raw = JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>;
+    const stale = raw._stale as { since?: string; reason?: string } | undefined;
+    if (!stale?.since) return null;
+    return {
+      since: stale.since,
+      reason: stale.reason ?? "claim file stale",
+    };
+  } catch {
+    return null;
+  }
+}
+
 // Unified per-video admin page. Shows neural entities and relations on
 // one screen, with a troubleshooting section at the bottom describing
 // how to respond to common quality issues. Tables are sortable client
@@ -582,6 +606,7 @@ export function renderUnifiedVideoAdmin(
   neuralEntities: PersistedEntities | null,
   neuralRelations: PersistedRelations | null,
   aiResponseStale: { since: string; reason: string; nlpAt?: string } | null,
+  claimsStale: { since: string; reason: string } | null,
 ): string {
   const stageRows = (["fetched", "entities", "relations", "ai", "per-claim"] as const)
     .map((name) => {
@@ -636,11 +661,18 @@ export function renderUnifiedVideoAdmin(
         .join("")
     : "";
 
-  const staleBanner = aiResponseStale
-    ? `<div class="warn">
-        ⚠ AI response marked stale since ${escapeHtml(aiResponseStale.since)} — ${escapeHtml(aiResponseStale.reason)}.
-      </div>`
-    : "";
+  const staleBanner = [
+    aiResponseStale
+      ? `<div class="warn">
+          ⚠ AI response marked stale since ${escapeHtml(aiResponseStale.since)} — ${escapeHtml(aiResponseStale.reason)}.
+        </div>`
+      : "",
+    claimsStale
+      ? `<div class="warn">
+          ⚠ Claim file marked stale since ${escapeHtml(claimsStale.since)} — ${escapeHtml(claimsStale.reason)}. Re-run the <code>ai-claims-extraction</code> skill on this video to refresh it.
+        </div>`
+      : "",
+  ].join("");
 
   const neuralStatus = neuralEntities
     ? `${neuralEntities.mentions.length} mentions · model ${escapeHtml(neuralEntities.model)} · coref=${neuralEntities.corefApplied}`
@@ -2198,6 +2230,7 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       const neuralEntities = readPersistedEntities(row.videoId, dataRoot);
       const neuralRelations = readPersistedRelations(row.videoId, dataRoot);
       const aiResponseStale = readAiResponseStale(row.videoId, opts.dataDir);
+      const claimsStale = readClaimsStale(row.videoId, opts.dataDir);
       res.writeHead(200, { "content-type": "text/html" });
       res.end(
         renderUnifiedVideoAdmin(
@@ -2205,6 +2238,7 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           neuralEntities,
           neuralRelations,
           aiResponseStale,
+          claimsStale,
         ),
       );
       return;
