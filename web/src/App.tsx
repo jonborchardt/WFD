@@ -5,6 +5,12 @@ import { AppShell } from "./components/AppShell";
 import { VideoDetailPage } from "./pages/VideoDetailPage";
 import { EntityDetailPage } from "./pages/EntityDetailPage";
 import { HomePage } from "./pages/HomePage";
+import { HomePage1 } from "./pages/HomePage1";
+import { HomePage2 } from "./pages/HomePage2";
+import { HomePage3 } from "./pages/HomePage3";
+import { HomePage4 } from "./pages/HomePage4";
+import { HomePage5 } from "./pages/HomePage5";
+import { HomeVariantsPage } from "./pages/HomeVariantsPage";
 import { VideosPage } from "./pages/VideosPage";
 import { ClaimsPage } from "./pages/ClaimsPage";
 import { ClaimDetailPage } from "./pages/ClaimDetailPage";
@@ -35,6 +41,12 @@ export function App() {
     <Routes>
       <Route element={<AppShell />}>
         <Route index element={<HomePage />} />
+        <Route path="home-variants" element={<HomeVariantsPage />} />
+        <Route path="home1" element={<HomePage1 />} />
+        <Route path="home2" element={<HomePage2 />} />
+        <Route path="home3" element={<HomePage3 />} />
+        <Route path="home4" element={<HomePage4 />} />
+        <Route path="home5" element={<HomePage5 />} />
         <Route path="videos" element={<VideosPage />} />
         <Route path="about" element={<HomePage />} />
         <Route path="video/:videoId" element={<VideoDetailPage />} />
