@@ -45,6 +45,20 @@ export const DELETE_ALWAYS: DeleteAlwaysEntry[] = [
   { key: "work_of_media:laughter", reason: "[laughter] cue tag" },
   { key: "work_of_media:[laughter]", reason: "[laughter] cue tag" },
   { key: "work_of_media:podcast", reason: "generic noun; outro pollution" },
+  { key: "work_of_media:story", reason: "generic noun" },
+  { key: "work_of_media:stories", reason: "generic noun" },
+  { key: "work_of_media:episode", reason: "generic noun; meta reference to the video itself" },
+  { key: "work_of_media:episodes", reason: "generic noun" },
+  { key: "work_of_media:video", reason: "generic noun; meta reference to the video itself" },
+  { key: "work_of_media:videos", reason: "generic noun" },
+  { key: "work_of_media:film", reason: "generic noun when standalone; specific films kept" },
+  { key: "work_of_media:movie", reason: "generic noun when standalone; specific movies kept" },
+  { key: "work_of_media:book", reason: "generic noun when standalone; specific books kept" },
+  { key: "work_of_media:article", reason: "generic noun when standalone" },
+  { key: "work_of_media:paper", reason: "generic noun when standalone; specific papers kept" },
+  { key: "work_of_media:report", reason: "generic noun when standalone" },
+  { key: "work_of_media:show", reason: "generic noun when standalone" },
+  { key: "work_of_media:documentary", reason: "generic noun when standalone" },
 
   // YouTube / platform outro mentions
   { key: "organization:channel", reason: "outro: 'like and subscribe to the channel'" },
@@ -114,6 +128,19 @@ export const DELETE_ALWAYS: DeleteAlwaysEntry[] = [
   { key: "person:sister", reason: "relationship noun, not a person" },
   { key: "person:parent", reason: "relationship noun, not a person" },
   { key: "person:parents", reason: "relationship noun, not a person" },
+  { key: "person:god", reason: "deity, not a person entity; folded into concept if needed" },
+  { key: "person:president", reason: "role noun when standalone" },
+  { key: "person:presidents", reason: "role noun when standalone" },
+  { key: "person:aliens", reason: "generic noun; specific named aliens are events/concepts" },
+  { key: "person:alien", reason: "generic noun" },
+
+  // Generic group-or-movement nouns that leak into the top tier
+  { key: "group_or_movement:people", reason: "generic noun" },
+  { key: "group_or_movement:group", reason: "generic noun" },
+  { key: "group_or_movement:groups", reason: "generic noun" },
+  { key: "group_or_movement:crowd", reason: "generic noun" },
+  { key: "nationality_or_ethnicity:foreign", reason: "generic adjective, not an ethnicity" },
+  { key: "nationality_or_ethnicity:people", reason: "generic noun" },
 
   // Generic orgs / institutions (too broad to be entities on their own;
   // specific forms like "US government", "British army" remain intact)

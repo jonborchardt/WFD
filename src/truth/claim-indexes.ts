@@ -15,14 +15,38 @@
 //   dependency-graph.json  — flat edge list for the claim DAG
 //   contradictions.json    — pair / broken-presupposition / cross-video
 
-import type { Claim, ClaimId, DependencyKind } from "../claims/types.js";
+import type { Claim, ClaimId, DependencyKind, HostStance } from "../claims/types.js";
 import { propagateClaims } from "./claim-propagation.js";
 import {
   detectClaimContradictions,
   type ClaimContradiction,
 } from "./claim-contradictions.js";
+import { parseContradictsSubkind } from "./contradicts-subkind.js";
+
+// Redundancy cap for consonance — plan3 A3: a single video was appearing in
+// 7/57 SAME-CLAIM pairs all around one topical cluster (Doty/Bennewitz),
+// surfacing as "multiple corroborations" when it was really one source.
+// Cap pairs-per-video so no video dominates the feed.
+const MAX_CONSONANCE_PAIRS_PER_VIDEO = 4;
 
 export type TruthSource = "direct" | "derived" | "override" | "uncalibrated";
+
+// Inbound "this claim was called into question by another claim in the
+// same video" edge. Populated from intra-video `contradicts` deps whose
+// subkind is `alternative` (competing primary explanation) or
+// `undercuts` (reduces probative value). Semantically these aren't
+// standoffs — they're the host delivering a verdict against a claim
+// they themselves introduced, so they belong next to the *target*
+// claim as "evidence against it" rather than on a /contradictions
+// standoff page. Truth propagation already consumes these (half-weight
+// for alternative, derived-truth cap for undercuts).
+export interface CounterEvidenceEntry {
+  fromClaimId: ClaimId;
+  kind: "alternative" | "undercuts";
+  rationale: string | null;
+  fromDirectTruth: number | null;
+  fromHostStance: Claim["hostStance"] | null;
+}
 
 export interface ClaimsIndexEntry {
   id: ClaimId;
@@ -41,6 +65,10 @@ export interface ClaimsIndexEntry {
   inVerdictSection?: boolean;
   tags: string[];
   fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale" | "tags">;
+  /** Inbound author-delivered evidence-against edges. Missing when the
+   *  claim has none. Never populated from cross-video edges — those
+   *  stay in contradictions.json / consonance.json. */
+  counterEvidence?: CounterEvidenceEntry[];
 }
 
 export interface ClaimsIndexFile {
@@ -212,6 +240,33 @@ export function buildClaimIndexes(
   const propResult = propagateClaims(claims, { pinned });
   const generatedAt = new Date().toISOString();
 
+  // Build the inbound counter-evidence index. For every intra-video
+  // `contradicts` dep whose subkind is `alternative` or `undercuts`,
+  // attach a row to the target claim.
+  const claimById = new Map<ClaimId, Claim>();
+  for (const c of claims) claimById.set(c.id, c);
+  const counterByTarget = new Map<ClaimId, CounterEvidenceEntry[]>();
+  for (const a of claims) {
+    if (!a.dependencies) continue;
+    for (const dep of a.dependencies) {
+      if (dep.kind !== "contradicts") continue;
+      const sub = parseContradictsSubkind(dep.rationale);
+      if (sub !== "alternative" && sub !== "undercuts") continue;
+      const target = claimById.get(dep.target);
+      if (!target) continue;
+      if (target.videoId !== a.videoId) continue; // intra-video only
+      const list = counterByTarget.get(dep.target) ?? [];
+      list.push({
+        fromClaimId: a.id,
+        kind: sub,
+        rationale: dep.rationale ?? null,
+        fromDirectTruth: a.directTruth ?? null,
+        fromHostStance: a.hostStance ?? null,
+      });
+      counterByTarget.set(dep.target, list);
+    }
+  }
+
   const indexEntries: ClaimsIndexEntry[] = claims.map((c) => {
     const override = overrideById.get(c.id);
     const derived = propResult.derived.get(c.id) ?? null;
@@ -257,6 +312,7 @@ export function buildClaimIndexes(
       inVerdictSection: c.inVerdictSection,
       tags: c.tags ?? [],
       fieldOverrides,
+      counterEvidence: counterByTarget.get(c.id),
     };
   });
 
@@ -330,6 +386,11 @@ export function buildClaimIndexes(
   const droppedByVerdict: Record<string, number> = {};
   let droppedTotal = 0;
 
+  // Claim lookup for the stance-opposition gate applied at SAME-CLAIM
+  // promotion time.
+  const byIdForStance = new Map<ClaimId, Claim>();
+  for (const c of claims) byIdForStance.set(c.id, c);
+
   for (const c of detected) {
     if (dismissed.has(pairKey(c.left, c.right))) continue;
 
@@ -350,9 +411,31 @@ export function buildClaimIndexes(
       ...c,
       verified: { verdict: v.verdict, reasoning: v.reasoning ?? undefined, by: v.by ?? "ai" },
     };
-    if (v.verdict === "LOGICAL-CONTRADICTION" || v.verdict === "DEBUNKS") {
+    if (
+      v.verdict === "LOGICAL-CONTRADICTION" ||
+      v.verdict === "DEBUNKS" ||
+      v.verdict === "UNDERCUTS" ||
+      v.verdict === "ALTERNATIVE"
+    ) {
+      // plan3 follow-up: UNDERCUTS and ALTERNATIVE are real
+      // disagreement signals the verifier certified. Surface them too
+      // with their verdict label so the UI can render them as a lower
+      // tier. Only COMPLEMENTARY / IRRELEVANT still drop.
       surviving.push(enriched);
     } else if (v.verdict === "SAME-CLAIM") {
+      // plan3 A3: reject SAME-CLAIM pairs where the two claims' hostStances
+      // are opposed. If one video asserts and the other denies, the
+      // verdicter overcalled — that's disagreement on framing, not
+      // corroboration.
+      const leftClaim = byIdForStance.get(c.left);
+      const rightClaim = byIdForStance.get(c.right);
+      const stanceOpposed = stancesOpposed(leftClaim?.hostStance, rightClaim?.hostStance);
+      if (stanceOpposed) {
+        droppedTotal++;
+        droppedByVerdict["SAME-CLAIM-stance-mismatch"] =
+          (droppedByVerdict["SAME-CLAIM-stance-mismatch"] ?? 0) + 1;
+        continue;
+      }
       consonanceRows.push(enriched);
       droppedTotal++;
       droppedByVerdict[v.verdict] = (droppedByVerdict[v.verdict] ?? 0) + 1;
@@ -392,11 +475,22 @@ export function buildClaimIndexes(
     contradictions: all,
   };
 
+  // Redundancy cap (plan3 A3). If one video dominates the consonance feed,
+  // drop the tail past the cap — sorted by pair-id so the choice is
+  // deterministic.
+  const capped = capConsonancePerVideo(consonanceRows, MAX_CONSONANCE_PAIRS_PER_VIDEO);
+  const cappedDrop = consonanceRows.length - capped.length;
+  if (cappedDrop > 0) {
+    droppedTotal += cappedDrop;
+    droppedByVerdict["SAME-CLAIM-redundancy-cap"] =
+      (droppedByVerdict["SAME-CLAIM-redundancy-cap"] ?? 0) + cappedDrop;
+  }
+
   const consonance: ConsonanceFile = {
     schemaVersion: 1,
     generatedAt,
-    count: consonanceRows.length,
-    agreements: consonanceRows,
+    count: capped.length,
+    agreements: capped,
   };
 
   return { index, dependencyGraph, contradictions, consonance };
@@ -404,4 +498,37 @@ export function buildClaimIndexes(
 
 function pairKey(a: string, b: string): string {
   return a < b ? `${a}~~${b}` : `${b}~~${a}`;
+}
+
+function stancesOpposed(
+  a: HostStance | undefined | null,
+  b: HostStance | undefined | null,
+): boolean {
+  return (a === "asserts" && b === "denies") || (a === "denies" && b === "asserts");
+}
+
+// Per-video cap over consonance rows. Each pair counts once per video; rows
+// exceeding either side's cap are dropped.
+function capConsonancePerVideo(
+  rows: ClaimContradiction[],
+  cap: number,
+): ClaimContradiction[] {
+  const sorted = [...rows].sort((x, y) => {
+    const xk = pairKey(x.left, x.right);
+    const yk = pairKey(y.left, y.right);
+    return xk < yk ? -1 : xk > yk ? 1 : 0;
+  });
+  const counts = new Map<string, number>();
+  const videoOf = (id: ClaimId) => id.split(":")[0];
+  const out: ClaimContradiction[] = [];
+  for (const r of sorted) {
+    const va = videoOf(r.left);
+    const vb = videoOf(r.right);
+    if ((counts.get(va) ?? 0) >= cap) continue;
+    if ((counts.get(vb) ?? 0) >= cap) continue;
+    counts.set(va, (counts.get(va) ?? 0) + 1);
+    counts.set(vb, (counts.get(vb) ?? 0) + 1);
+    out.push(r);
+  }
+  return out;
 }

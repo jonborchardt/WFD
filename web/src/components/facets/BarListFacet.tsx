@@ -6,7 +6,7 @@
 // one takes pre-built rows so it can back any categorical dimension
 // (kind, host stance, truth source, verdict-yes-no, …).
 
-import { Box, Typography } from "@mui/material";
+import { Box, Tooltip, Typography } from "@mui/material";
 import { colors } from "../../theme";
 
 export interface BarRow {
@@ -52,11 +52,38 @@ export function BarListFacet({
       {visible.map((r) => {
         const width = Math.max(2, Math.round((r.count / max) * 100));
         const isSelected = selected.has(r.id);
+        // Tooltip anchors on the *text* itself, not on the surrounding
+        // flex cell. The outer slot is flex:1 so the row stays aligned,
+        // but the inline-block span shrinks to the actual word width —
+        // so hover only fires when the cursor is over the letters, not
+        // the empty space to the right of a short label.
+        const textSpan = (
+          <Box
+            component="span"
+            sx={{
+              display: "inline-block",
+              maxWidth: "100%",
+              verticalAlign: "bottom",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+              ...(r.title ? {
+                textDecoration: "underline dotted",
+                textUnderlineOffset: 2,
+                textDecorationColor: "currentColor",
+                textDecorationThickness: 1,
+                cursor: "help",
+              } : null),
+            }}
+            onClick={(e) => { if (r.title) e.stopPropagation(); }}
+          >
+            {r.label}
+          </Box>
+        );
         return (
           <Box
             key={r.id}
             onClick={() => onToggle(r.id)}
-            title={r.title}
             sx={{
               display: "flex", alignItems: "center", gap: 0.5,
               py: 0.25, px: 0.5,
@@ -65,12 +92,10 @@ export function BarListFacet({
               bgcolor: isSelected ? "action.selected" : "transparent",
             }}
           >
-            <Box sx={{
-              flex: 1, fontSize: 11, minWidth: 0,
-              overflow: "hidden", textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-            }}>
-              {r.label}
+            <Box sx={{ flex: 1, minWidth: 0, fontSize: 11 }}>
+              {r.title
+                ? <Tooltip title={r.title} placement="right" arrow>{textSpan}</Tooltip>
+                : textSpan}
             </Box>
             <Box sx={{
               width: 50, height: 6,

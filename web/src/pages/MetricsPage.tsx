@@ -5,7 +5,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import {
-  Box, Chip, Stack, Typography, Link as MuiLink,
+  Box, Chip, Stack, Tooltip, Typography, Link as MuiLink,
 } from "@mui/material";
 import { colors } from "../theme";
 
@@ -132,8 +132,8 @@ export function MetricsPage() {
               const st = g?.status ?? "ok";
               const bg = statusColor(st);
               return (
+                <Tooltip key={m.name} title={m.description ?? m.name} arrow>
                 <Box
-                  key={m.name}
                   sx={{
                     p: 1.25,
                     border: `1px solid ${colors.surface.border}`,
@@ -141,7 +141,6 @@ export function MetricsPage() {
                     bgcolor: bg,
                     minHeight: 88,
                   }}
-                  title={m.description ?? m.name}
                 >
                   <Typography variant="caption" sx={{ color: colors.surface.textMuted, fontWeight: 500 }}>
                     {m.name}
@@ -172,6 +171,7 @@ export function MetricsPage() {
                     </Typography>
                   )}
                 </Box>
+                </Tooltip>
               );
             })}
           </Box>

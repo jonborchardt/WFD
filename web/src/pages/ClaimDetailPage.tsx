@@ -173,6 +173,7 @@ export function ClaimDetailPage() {
           }))}
           contradictions={contradictionsForClaim}
           agreements={agreementsForClaim}
+          counterEvidence={indexEntry?.counterEvidence}
           corpusIndex={corpusIndex}
           onMutated={refresh}
         />

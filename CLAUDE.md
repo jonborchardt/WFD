@@ -286,15 +286,35 @@ and writes five corpus files under `data/claims/`:
 
 - `claims-index.json` — flat list with `derivedTruth` + `truthSource`
   (`direct` / `derived` / `override` / `uncalibrated`) per claim.
+  Each entry also carries an optional `counterEvidence` array — the
+  inbound view of intra-video `alternative` / `undercuts` dep edges
+  (see below). The per-claim UI renders these as "evidence against"
+  rather than contradictions.
 - `dependency-graph.json` — claim DAG edges with kinds.
 - `contradictions.json` — pair / broken-presupposition / cross-video /
-  manual, respecting dismissals. Post-Plan-04 the stage filters
-  cross-video and pair entries through `contradiction-verdicts.json`:
-  only LOGICAL-CONTRADICTION / DEBUNKS verdicts surface. Unverified
-  candidates survive with `verified: null` (visible in admin, filtered
-  out of the public view by `web/src/components/facets/claims-duck.ts`).
+  manual, respecting dismissals. Post-plan3 the surface model is:
+  - **intra-video pair contradictions** only surface when the dep's
+    subkind is `logical` or `debunks` (both sides asserted true → real
+    self-contradiction). Intra-video `alternative` / `undercuts` are
+    the host delivering a verdict against a claim they themselves
+    introduced — those go into `claims-index.json[i].counterEvidence`,
+    not `contradictions.json`, and feed truth propagation directly.
+  - **broken-presupposition** requires truth-asymmetry —
+    `a.directTruth ≥ 0.5 AND b.directTruth < 0.3` — so we don't
+    surface presupposition chains between two equally-fringe claims.
+  - **cross-video entries** filter through `contradiction-verdicts.json`:
+    LOGICAL-CONTRADICTION / DEBUNKS / UNDERCUTS / ALTERNATIVE surface
+    with their verdict label (the UI can tier them); COMPLEMENTARY /
+    IRRELEVANT drop; SAME-CLAIM moves to `consonance.json`. Unverified
+    candidates survive with `verified: null` (visible in admin,
+    filtered out of the public view by
+    `web/src/components/facets/claims-duck.ts`).
 - `consonance.json` — SAME-CLAIM verdicts promoted to cross-video
-  agreements. Rendered at `/cross-video-agreements`.
+  agreements. Rendered at `/cross-video-agreements`. Plan3 added two
+  gates at promotion time: pairs whose two claims have opposed
+  `hostStance` (one asserts / one denies) are rejected (not
+  consonance, it's framing disagreement), and a per-video pair cap of
+  4 prevents a single topical cluster from dominating the feed.
 - `edge-truth.json` — `${subjectId}|${predicate}|${objectId}` →
   averaged derived truth of citing claims, for the relationships-graph
   truth overlay.
@@ -498,6 +518,21 @@ Per mention in [src/graph/adapt.ts](src/graph/adapt.ts) `neuralToGraph()`:
 
 Per edge: drop if composite `(videoId, subject, predicate, object, timeStart)`
 is in `deletedRelations`.
+
+Plan3 added a second per-edge drop: a **predicate type-filter**. The
+adapter holds a static `PREDICATE_SCHEMA` table mapping each GLiREL
+predicate to its allowed subject/object label sets (e.g. `located_in`
+requires the object label to be `location` or `facility`; `member_of`
+requires the object to be `organization` or `group_or_movement`;
+`authored` requires a `person` or `organization` subject and a
+`work_of_media` object). Edges whose endpoint labels don't fit the
+schema are dropped before they reach the graph store. This is
+corrective-only, applied at adapter read-time against the existing
+per-video relations files — no GLiREL re-run. Origin: plan3 A6
+flagged 40/60 relationship edges as type-confused (dates as subjects
+in `located_in`, events as subjects in `member_of`, 839 person-object
+`member_of` edges corpus-wide). The filter eliminated every flagged
+pattern on the first rebuild.
 
 ### Entity action menu
 
@@ -967,9 +1002,10 @@ npx captions pipeline --stage claim-indexes
 
 (Yes, second run — verdicts are a stage input, so re-running folds
 the new ones in. SAME-CLAIM verdicts move into `consonance.json`;
-LOGICAL-CONTRADICTION / DEBUNKS stay in `contradictions.json`;
-UNDERCUTS / ALTERNATIVE / COMPLEMENTARY / IRRELEVANT drop from the
-public view but stay in the DAG for propagation.)
+LOGICAL-CONTRADICTION / DEBUNKS / UNDERCUTS / ALTERNATIVE stay in
+`contradictions.json` with their verdict label so the UI can tier
+them; COMPLEMENTARY / IRRELEVANT drop from the public view but stay
+in the DAG for propagation.)
 
 ### 10. Metrics gate + baseline
 

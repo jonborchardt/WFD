@@ -141,16 +141,21 @@ export function NumericRangeFacet({
               : false;
           if (h === 0) return null;
           return (
-            <Box
+            <Tooltip
               key={i}
               title={`${format(b.min)}–${format(b.max)}: ${b.count}`}
-              sx={{
-                position: "absolute", left: x0, bottom: 0,
-                width: w, height: h,
-                bgcolor: inBrush ? "primary.main" : color,
-                opacity: inBrush ? 1 : 0.85,
-              }}
-            />
+              arrow
+              disableInteractive
+            >
+              <Box
+                sx={{
+                  position: "absolute", left: x0, bottom: 0,
+                  width: w, height: h,
+                  bgcolor: inBrush ? "primary.main" : color,
+                  opacity: inBrush ? 1 : 0.85,
+                }}
+              />
+            </Tooltip>
           );
         })}
         {drag && dragX1 - dragX0 >= 1 && (

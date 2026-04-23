@@ -6,7 +6,7 @@
 // user's filter exceeds the cap we still navigate but mark it so the
 // tooltip explains the truncation.
 
-import { Button } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { GRAPH_SEED_CAP } from "../../lib/facet-helpers";
 
@@ -31,7 +31,7 @@ export function GraphSeedsButton({ claimIds, label }: Props) {
   }
   const truncated = seen.size >= GRAPH_SEED_CAP && claimIds.length > deduped.length;
   const disabled = deduped.length === 0;
-  return (
+  const btn = (
     <Button
       size="small"
       variant="outlined"
@@ -44,11 +44,18 @@ export function GraphSeedsButton({ claimIds, label }: Props) {
         if (truncated) qs.set("capped", "1");
         nav(`/argument-map?${qs.toString()}`);
       }}
-      title={truncated
-        ? `capped to ${GRAPH_SEED_CAP} claims for graph legibility`
-        : undefined}
     >
       {label ?? "graph these"}
     </Button>
   );
+  return truncated
+    ? (
+      <Tooltip
+        title={`capped to ${GRAPH_SEED_CAP} claims for graph legibility`}
+        arrow
+      >
+        <span>{btn}</span>
+      </Tooltip>
+    )
+    : btn;
 }
