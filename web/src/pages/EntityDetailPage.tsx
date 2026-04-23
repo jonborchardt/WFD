@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Container, Typography, Box, Paper, Button, Link, Chip, TextField, Stack } from "@mui/material";
 import { ENTITY_TYPE_COLOR } from "../components/catalog-columns";
+import { useOpenVideo } from "../components/VideoLightbox";
 import { EntitySuggestions } from "../components/EntitySuggestions";
 import { PageLoading } from "../components/PageLoading";
 import { fetchCatalog, fetchEntityIndex, fetchEntityVideos } from "../lib/data";
@@ -22,6 +23,7 @@ export function EntityDetailPage() {
   const { entityId: rawId } = useParams<{ entityId: string }>();
   const entityId = rawId ? decodeURIComponent(rawId) : "";
   const nav = useNavigate();
+  const openVideo = useOpenVideo();
   const [entity, setEntity] = useState<EntityIndexEntry | null>(null);
   const [videos, setVideos] = useState<EntityVideo[]>([]);
   const [text, setText] = useState("");
@@ -126,8 +128,10 @@ export function EntityDetailPage() {
                     {v.mentions.slice(0, 60).map((m, i) => (
                       <Link
                         key={i}
-                        href={"https://www.youtube.com/watch?v=" + v.videoId + "&t=" + Math.floor(m.timeStart) + "s"}
-                        target="_blank" rel="noopener" underline="hover"
+                        component="button"
+                        type="button"
+                        underline="hover"
+                        onClick={() => openVideo({ videoId: v.videoId, title: v.title, timeStart: m.timeStart })}
                         sx={{ fontFamily: "monospace", fontSize: 12 }}
                       >
                         [{fmtTimestamp(m.timeStart)}]

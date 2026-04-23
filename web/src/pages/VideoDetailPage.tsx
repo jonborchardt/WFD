@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Container, Typography, Box, Paper, Button, Link, Chip } from "@mui/material";
+import { useOpenVideo } from "../components/VideoLightbox";
 import { NlpPanel } from "../components/NlpPanel";
 import { ClaimsPanel } from "../components/ClaimsPanel";
 import { SuggestChip } from "../components/SuggestChip";
@@ -29,6 +30,7 @@ import type {
 export function VideoDetailPage() {
   const { videoId } = useParams<{ videoId: string }>();
   const nav = useNavigate();
+  const openVideo = useOpenVideo();
   const [row, setRow] = useState<VideoRow | null>(null);
   const [transcript, setTranscript] = useState<Transcript | null>(null);
   const [nlp, setNlp] = useState<VideoNlp | null>(null);
@@ -143,9 +145,23 @@ export function VideoDetailPage() {
           <Box id="video-header" sx={{ scrollMarginTop: "80px" }}>
             <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start", flexWrap: "wrap" }}>
               {row.thumbnailUrl && (
-                <Link href={row.sourceUrl || ("https://www.youtube.com/watch?v=" + row.videoId)} target="_blank" rel="noopener" sx={{ flexShrink: 0 }}>
+                <Box
+                  component="button"
+                  type="button"
+                  onClick={() => openVideo({ videoId: row.videoId, title: row.title, sourceUrl: row.sourceUrl })}
+                  aria-label={`play ${row.title || row.videoId}`}
+                  sx={{
+                    flexShrink: 0,
+                    p: 0,
+                    border: 0,
+                    bgcolor: "transparent",
+                    cursor: "pointer",
+                    borderRadius: 1,
+                    "&:focus-visible": { outline: 2, outlineColor: "primary.main", outlineOffset: 2 },
+                  }}
+                >
                   <img src={row.thumbnailUrl} alt="" style={{ width: 320, maxWidth: "100%", height: "auto", display: "block", borderRadius: 4 }} />
-                </Link>
+                </Box>
               )}
               <Box sx={{ flex: 1, minWidth: 240 }}>
                 <Typography variant="h5">{row.title || row.videoId}</Typography>
@@ -207,9 +223,10 @@ export function VideoDetailPage() {
                 {cues.map((c, i) => (
                   <Box key={i} sx={{ py: 0.5 }}>
                     <Link
-                      href={"https://www.youtube.com/watch?v=" + row.videoId + "&t=" + Math.floor(c.start) + "s"}
-                      target="_blank"
+                      component="button"
+                      type="button"
                       underline="hover"
+                      onClick={() => openVideo({ videoId: row.videoId, title: row.title, sourceUrl: row.sourceUrl, timeStart: c.start })}
                     >
                       [{fmtTimestamp(c.start)}]
                     </Link>

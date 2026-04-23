@@ -3,7 +3,8 @@ import { Box, Typography, Chip, Link } from "@mui/material";
 import { ENTITY_TYPE_COLOR } from "./catalog-columns";
 import { SuggestChip } from "./SuggestChip";
 import { EntityMenuButton, RelationMenuButton } from "./EntityMenu";
-import { fmtTimestamp, deepLink } from "../lib/format";
+import { useOpenVideo } from "./VideoLightbox";
+import { fmtTimestamp } from "../lib/format";
 import { isVisibleType } from "../lib/entity-visibility";
 import type { VideoNlp } from "../types";
 
@@ -21,6 +22,7 @@ interface Props {
 
 export function NlpPanel({ videoId, nlp }: Props) {
   const nav = useNavigate();
+  const openVideo = useOpenVideo();
   if (!nlp) return <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>analyzing transcript…</Typography>;
 
   const { entities, relationships } = nlp;
@@ -97,7 +99,13 @@ export function NlpPanel({ videoId, nlp }: Props) {
             if (!s || !o || !r.evidence) return null;
             return (
               <Box key={r.id} sx={{ display: "flex", alignItems: "center", gap: 1, fontSize: 14 }}>
-                <Link href={deepLink(videoId, r.evidence.timeStart)} target="_blank" underline="hover" sx={{ fontFamily: "monospace", fontSize: 12 }}>
+                <Link
+                  component="button"
+                  type="button"
+                  underline="hover"
+                  onClick={() => openVideo({ videoId, timeStart: r.evidence!.timeStart })}
+                  sx={{ fontFamily: "monospace", fontSize: 12 }}
+                >
                   [{fmtTimestamp(r.evidence.timeStart)}]
                 </Link>
                 <Chip size="small" label={s.canonical} variant="outlined" color={ENTITY_TYPE_COLOR[s.type] || "default"} clickable onClick={() => nav("/entity/" + encodeURIComponent(s.id))} />
