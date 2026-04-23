@@ -134,21 +134,22 @@ export function detectClaimContradictions(
       const subkind: ContradictsSubkind =
         parseContradictsSubkind(dep.rationale) ?? "logical";
 
-      // Plan 04: only `logical` and `debunks` surface as contradictions.
-      // `alternative` and `undercuts` remain in the DAG (propagation
-      // honors them) but don't get reported as contradictions in the
-      // public `/contradictions` view — they're weaker signals.
+      // Within one video the author is the same party on both sides, so
+      // an `alternative` / `undercuts` dep isn't a standoff — it's the
+      // host grading a claim they themselves introduced. Those signals
+      // belong to truth propagation (which already consumes them; see
+      // claim-propagation.ts) and to the target claim's derivedTruth,
+      // not to `/contradictions`. Only `logical` and `debunks`
+      // represent self-contradiction worth flagging as a pair.
+      // Cross-video ALTERNATIVE / UNDERCUTS are different (two
+      // independent authors judged by the AI verifier) and surface
+      // separately in claim-indexes.ts.
       if (subkind !== "logical" && subkind !== "debunks") continue;
 
-      // For `debunks`: A shows B is false. Normal state is A-high /
-      // B-low and that's not a contradiction — flag only when both
-      // are asserted simultaneously high, meaning the author
-      // contradicted themselves.
       if (subkind === "debunks") {
         if ((a.directTruth ?? 0) < 0.7) continue;
         if ((b.directTruth ?? 0) < 0.7) continue;
       } else {
-        // `logical`: any both-high assertion is a contradiction.
         if ((a.directTruth ?? 0) < pairFloor) continue;
         if ((b.directTruth ?? 0) < pairFloor) continue;
       }
@@ -163,7 +164,11 @@ export function detectClaimContradictions(
     }
   }
 
-  // (2) broken presupposition — unchanged.
+  // (2) broken presupposition — plan3 A1: require truth-asymmetry so
+  // we don't surface presupposition chains between two equally-false
+  // claims ("NASA created chupacabra presupposes chupacabra is real"
+  // when both are 0.15). A real broken-presupposition is "A is
+  // asserted (truth ≥ 0.5) but its B-foundation is false (truth < 0.3)".
   for (const a of claims) {
     if (!a.dependencies) continue;
     for (const dep of a.dependencies) {
@@ -172,11 +177,12 @@ export function detectClaimContradictions(
       if (!b) continue;
       if (b.directTruth === undefined) continue;
       if (b.directTruth >= presupFloor) continue;
+      if ((a.directTruth ?? 0) < pairFloor) continue;
       out.push({
         kind: "broken-presupposition",
         left: a.id,
         right: b.id,
-        summary: `"${truncate(a.text, 80)}" presupposes "${truncate(b.text, 80)}" which has low truth (${b.directTruth.toFixed(2)})`,
+        summary: `"${truncate(a.text, 80)}" (${(a.directTruth ?? 0).toFixed(2)}) presupposes "${truncate(b.text, 80)}" which has low truth (${b.directTruth.toFixed(2)})`,
       });
     }
   }

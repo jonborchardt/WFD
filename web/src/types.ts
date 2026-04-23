@@ -186,6 +186,20 @@ export interface PersistedClaims {
   _stale?: { since: string; reason: string };
 }
 
+// Inbound "another claim in the same video calls this one into question"
+// edge. Populated by the claim-indexes stage from intra-video
+// `contradicts` deps whose subkind is `alternative` or `undercuts`.
+// Semantically not a standoff — the host's own verdict on a claim they
+// themselves introduced, so displayed next to the target claim as
+// "evidence against it" rather than on the contradictions page.
+export interface CounterEvidenceEntry {
+  fromClaimId: string;
+  kind: "alternative" | "undercuts";
+  rationale: string | null;
+  fromDirectTruth: number | null;
+  fromHostStance: HostStance | null;
+}
+
 export interface ClaimsIndexEntry extends Omit<Claim,
   "evidence" | "rationale" | "dependencies" | "tags"
 > {
@@ -195,6 +209,7 @@ export interface ClaimsIndexEntry extends Omit<Claim,
   dependencies: ClaimDependency[];
   tags: string[];
   fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale" | "tags">;
+  counterEvidence?: CounterEvidenceEntry[];
 }
 
 export interface ClaimsIndexFile {

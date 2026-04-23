@@ -4,7 +4,7 @@
 
 import { useNavigate } from "react-router-dom";
 import {
-  Box, Chip, Link as MuiLink, Stack, Typography,
+  Box, Chip, Link as MuiLink, Stack, Tooltip, Typography,
 } from "@mui/material";
 import { TruthBar } from "./TruthBar";
 import { entityChipSx } from "../lib/facet-helpers";
@@ -98,9 +98,28 @@ export function ClaimResultRow({ claim, nav, bundle }: ClaimResultRowProps) {
           </Typography>
         )}
         {(deps.in > 0 || deps.out > 0) && (
-          <Typography variant="caption">
-            · {deps.out} out / {deps.in} in
-          </Typography>
+          <Tooltip
+            arrow
+            title={
+              <Box sx={{ fontSize: 12, lineHeight: 1.4 }}>
+                <Box sx={{ mb: 0.5 }}>
+                  <strong>{deps.out} out</strong> — this claim
+                  supports / contradicts / presupposes / elaborates{" "}
+                  {deps.out === 1 ? "another claim" : "other claims"}
+                </Box>
+                <Box>
+                  <strong>{deps.in} in</strong> —{" "}
+                  {deps.in === 1 ? "another claim" : "other claims"}{" "}
+                  point at this one (it supports, contradicts,
+                  presupposes, or elaborates them)
+                </Box>
+              </Box>
+            }
+          >
+            <Typography variant="caption" sx={{ cursor: "help", textDecoration: "underline dotted" }}>
+              · {deps.out} out / {deps.in} in
+            </Typography>
+          </Tooltip>
         )}
       </Stack>
       {claim.entities.length > 0 && (

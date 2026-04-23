@@ -6,11 +6,14 @@ description: Run the contradiction verification pass — embed claims, run reaso
 # AI contradiction verify
 
 Filters out false-positive
-contradiction candidates by asking an AI verdict per pair: real
-contradictions (LOGICAL-CONTRADICTION, DEBUNKS) stay in the public
-view; UNDERCUTS / ALTERNATIVE stay in the DAG for propagation;
-COMPLEMENTARY / IRRELEVANT are dropped; SAME-CLAIM pairs become
-cross-video agreements in `data/claims/consonance.json`.
+contradiction candidates by asking an AI verdict per pair.
+Post-plan3 surface:
+LOGICAL-CONTRADICTION / DEBUNKS / UNDERCUTS / ALTERNATIVE verdicts
+all surface on `/contradictions` with their verdict label so the UI
+can tier them (LOGICAL > DEBUNKS > ALTERNATIVE > UNDERCUTS);
+COMPLEMENTARY / IRRELEVANT drop from the public view (the propagation
+DAG still honors their coupling); SAME-CLAIM pairs become cross-video
+agreements in `data/claims/consonance.json`.
 
 This is an **AI session**, sharded across N parallel agents. Helper
 scripts live in [src/ai/contradiction-verify/](../../../src/ai/contradiction-verify/).
@@ -164,11 +167,14 @@ This:
 - Merges all shard verdicts into `data/claims/contradiction-verdicts.json`
   (the persistent cache — preserved across runs, operator overrides
   via `by: "operator"` win).
-- Rewrites `data/claims/contradictions.json` so only LOGICAL +
-  DEBUNKS verdicts surface (plus broken-presupposition, which wasn't
-  verified).
+- Rewrites `data/claims/contradictions.json` so LOGICAL-CONTRADICTION
+  / DEBUNKS / UNDERCUTS / ALTERNATIVE verdicts surface with their
+  verdict label (plus broken-presupposition, which wasn't verified).
+  COMPLEMENTARY / IRRELEVANT drop from the public view.
 - Writes `data/claims/consonance.json` with SAME-CLAIM pairs as
-  cross-video agreements.
+  cross-video agreements. Plan3 gates: SAME-CLAIM pairs with opposed
+  `hostStance` are rejected; per-video pair count capped at 4 to
+  avoid a single video dominating the feed.
 
 ### 7. Report
 
@@ -186,9 +192,11 @@ The verifier is the quality gate. The generator casts a wide net
 - ≥ 80% of final surfaced contradictions pass operator spot-check
 - SAME-CLAIM and IRRELEVANT together should be the largest buckets
   (these are the false-positives the verifier was designed to catch)
-- LOGICAL + DEBUNKS combined should be 5-15% of the candidate pool —
-  more than that means the generator's thresholds are too tight;
-  less means they're too loose.
+- LOGICAL + DEBUNKS + UNDERCUTS + ALTERNATIVE combined (the surfaced
+  set, post-plan3) should be 15-30% of the candidate pool — more
+  means the generator is too tight; less means too loose. Note:
+  UNDERCUTS + ALTERNATIVE are lower-tier signals; the UI should sort
+  them below LOGICAL + DEBUNKS.
 
 ## Invariants
 

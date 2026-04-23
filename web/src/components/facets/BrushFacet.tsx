@@ -237,19 +237,24 @@ export function BrushFacet({ type, selection, bundle, selected, onSetGroup }: Pr
             : hasSel && x >= selX0 && x <= selX1;
           if (h === 0) return null;
           return (
-            <Box
+            <Tooltip
               key={r.entityId}
               title={`${r.canonical} · ${r.total.toLocaleString()}`}
-              sx={{
-                position: "absolute",
-                left: x - 1,
-                bottom: 0,
-                width: 2,
-                height: h,
-                bgcolor: (t) => inBrush ? t.palette.primary.main : t.palette.facet.accent,
-                opacity: inBrush ? 1 : 0.85,
-              }}
-            />
+              arrow
+              disableInteractive
+            >
+              <Box
+                sx={{
+                  position: "absolute",
+                  left: x - 1,
+                  bottom: 0,
+                  width: 2,
+                  height: h,
+                  bgcolor: (t) => inBrush ? t.palette.primary.main : t.palette.facet.accent,
+                  opacity: inBrush ? 1 : 0.85,
+                }}
+              />
+            </Tooltip>
           );
         })}
         {drag && dragX1 - dragX0 >= 1 && (

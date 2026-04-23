@@ -26,7 +26,7 @@
 
 import { Fragment } from "react";
 import type { MouseEvent } from "react";
-import { Box, Button, Chip } from "@mui/material";
+import { Box, Button, Chip, Tooltip } from "@mui/material";
 
 export interface ChipItem {
   id: string;
@@ -70,14 +70,15 @@ export function FilterChipStrip({ slots, onClearAll }: Props) {
           <Fragment key={slot.key}>
             {slotIdx > 0 && <OpBadge op="AND" />}
             {slot.compactLabel !== undefined ? (
-              <Chip
-                size="small"
-                variant="outlined"
-                label={slot.compactLabel}
-                title={slot.compactTitle}
-                onDelete={slot.onCompactClear}
-                sx={chipSx}
-              />
+              <MaybeTooltip title={slot.compactTitle}>
+                <Chip
+                  size="small"
+                  variant="outlined"
+                  label={slot.compactLabel}
+                  onDelete={slot.onCompactClear}
+                  sx={chipSx}
+                />
+              </MaybeTooltip>
             ) : slot.items.length > 1 ? (
               <Box sx={{
                 display: "inline-flex", flexWrap: "wrap",
@@ -90,28 +91,30 @@ export function FilterChipStrip({ slots, onClearAll }: Props) {
                 {slot.items.map((c, i) => (
                   <Fragment key={c.id}>
                     {i > 0 && <OpBadge op={slot.conj} />}
-                    <Chip
-                      size="small"
-                      variant="outlined"
-                      label={c.label}
-                      title={c.title}
-                      onClick={c.onClick}
-                      onDelete={c.onClear}
-                      sx={chipSx}
-                    />
+                    <MaybeTooltip title={c.title}>
+                      <Chip
+                        size="small"
+                        variant="outlined"
+                        label={c.label}
+                        onClick={c.onClick}
+                        onDelete={c.onClear}
+                        sx={chipSx}
+                      />
+                    </MaybeTooltip>
                   </Fragment>
                 ))}
               </Box>
             ) : (
-              <Chip
-                size="small"
-                variant="outlined"
-                label={slot.items[0].label}
-                title={slot.items[0].title}
-                onClick={slot.items[0].onClick}
-                onDelete={slot.items[0].onClear}
-                sx={chipSx}
-              />
+              <MaybeTooltip title={slot.items[0].title}>
+                <Chip
+                  size="small"
+                  variant="outlined"
+                  label={slot.items[0].label}
+                  onClick={slot.items[0].onClick}
+                  onDelete={slot.items[0].onClear}
+                  sx={chipSx}
+                />
+              </MaybeTooltip>
             )}
           </Fragment>
         );
@@ -123,6 +126,19 @@ export function FilterChipStrip({ slots, onClearAll }: Props) {
       )}
     </Box>
   );
+}
+
+// Wrap a child in a MUI Tooltip when the title is a non-empty string;
+// otherwise pass through so absent titles don't render an empty bubble.
+function MaybeTooltip({
+  title,
+  children,
+}: {
+  title?: string;
+  children: React.ReactElement;
+}) {
+  if (!title) return children;
+  return <Tooltip title={title} arrow disableInteractive>{children}</Tooltip>;
 }
 
 export function OpBadge({ op }: { op: "AND" | "OR" }) {

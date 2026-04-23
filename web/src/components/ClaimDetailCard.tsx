@@ -18,6 +18,7 @@ import type {
   ClaimContradiction,
   ClaimDependency,
   ClaimsIndexEntry,
+  CounterEvidenceEntry,
   TruthSource,
 } from "../types";
 
@@ -36,6 +37,10 @@ interface Props {
   contradictions?: ClaimContradiction[];
   // Cross-video agreements (consonance) that reference this claim.
   agreements?: ClaimContradiction[];
+  // Intra-video "evidence against" edges — other claims in the same
+  // video the host uses to call this claim into question (alternative
+  // explanation / undercut).
+  counterEvidence?: CounterEvidenceEntry[];
   // Full corpus index, needed only for the counterfactual toggle. When
   // omitted the toggle is hidden.
   corpusIndex?: ClaimsIndexEntry[];
@@ -53,6 +58,7 @@ export function ClaimDetailCard({
   inboundDeps,
   contradictions,
   agreements,
+  counterEvidence,
   corpusIndex,
   onMutated,
 }: Props) {
@@ -61,6 +67,7 @@ export function ClaimDetailCard({
   const [showEvidence, setShowEvidence] = useState(false);
   const [showEntities, setShowEntities] = useState(false);
   const [showDeps, setShowDeps] = useState(false);
+  const [showCounter, setShowCounter] = useState(false);
 
   // Counterfactual state has three situations we need to distinguish:
   //   1. closed — panel isn't open yet
@@ -217,6 +224,11 @@ export function ClaimDetailCard({
             {agreements.length > 1 ? "s" : ""}
           </Typography>
         )}
+        {counterEvidence && counterEvidence.length > 0 && (
+          <Typography variant="caption" sx={{ color: "warning.main" }}>
+            · ↯ {counterEvidence.length} against
+          </Typography>
+        )}
         {claim.confidence != null && (
           <Typography variant="caption">
             · conf {claim.confidence.toFixed(2)}
@@ -354,6 +366,55 @@ export function ClaimDetailCard({
         </Box>
       )}
 
+      {counterEvidence && counterEvidence.length > 0 && (
+        <Box sx={{ mt: 0.75 }}>
+          <Link
+            component="button"
+            variant="caption"
+            onClick={() => setShowCounter((v) => !v)}
+            underline="hover"
+          >
+            {showCounter ? "▾" : "▸"} evidence against ({counterEvidence.length})
+          </Link>
+          <Collapse in={showCounter}>
+            <Box sx={{ mt: 0.5, pl: 1.5, borderLeft: "2px solid", borderColor: "warning.light" }}>
+              {counterEvidence.map((ce, i) => (
+                <Box key={i} sx={{ mb: 0.75 }}>
+                  <Stack direction="row" spacing={0.75} alignItems="center" sx={{ mb: 0.25 }}>
+                    <Typography variant="caption" sx={{
+                      fontWeight: 700,
+                      letterSpacing: 0.5,
+                      textTransform: "uppercase",
+                      fontSize: 10,
+                      color: ce.kind === "alternative" ? "info.main" : "warning.main",
+                    }}>
+                      {ce.kind}
+                    </Typography>
+                    {ce.fromDirectTruth !== null && (
+                      <TruthBar value={ce.fromDirectTruth} label="truth" width={120} />
+                    )}
+                    <Link
+                      component="button"
+                      variant="caption"
+                      onClick={() => scrollToClaim(ce.fromClaimId)}
+                      sx={{ fontFamily: "monospace" }}
+                      underline="hover"
+                    >
+                      {ce.fromClaimId.split(":").slice(-1)[0]}
+                    </Link>
+                  </Stack>
+                  {ce.rationale && (
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.35 }}>
+                      {stripSubkindPrefix(ce.rationale)}
+                    </Typography>
+                  )}
+                </Box>
+              ))}
+            </Box>
+          </Collapse>
+        </Box>
+      )}
+
       {corpusIndex && corpusIndex.length > 0 && !hasDependents && (
         <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.75, fontStyle: "italic" }}>
           no dependent claims — counterfactual unavailable
@@ -453,6 +514,14 @@ export function ClaimDetailCard({
 function scrollToClaim(id: string): void {
   const el = document.getElementById(`claim-${id}`);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+// Counter-evidence rationales are emitted with a leading `[alternative]` /
+// `[undercuts]` tag (parsed by src/truth/contradicts-subkind.ts on the
+// server side). The kind is already shown as its own label next to the
+// rationale, so strip the redundant prefix from the displayed copy.
+function stripSubkindPrefix(rationale: string): string {
+  return rationale.replace(/^\s*\[(alternative|undercuts|logical|debunks)\]\s*/i, "");
 }
 
 function truncate(s: string, n: number): string {

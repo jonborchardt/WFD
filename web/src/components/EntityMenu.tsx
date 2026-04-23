@@ -20,6 +20,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { Tooltip } from "@mui/material";
 import { IS_ADMIN } from "../lib/admin";
 import { colors } from "../theme";
 import {
@@ -170,10 +171,10 @@ export function EntityMenuButton(props: EntityMenuProps) {
   const btnRef = useRef<HTMLButtonElement>(null);
   return (
     <>
+      <Tooltip title="edit entity" arrow>
       <button
         ref={btnRef}
         onClick={(e) => { e.stopPropagation(); setOpen(true); }}
-        title="edit entity"
         aria-label="edit entity"
         style={{
           border: "none", background: "none", cursor: "pointer",
@@ -187,6 +188,7 @@ export function EntityMenuButton(props: EntityMenuProps) {
           <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
         </svg>
       </button>
+      </Tooltip>
       {open && btnRef.current && (
         <Popover anchor={btnRef.current} onClose={() => setOpen(false)}>
           {IS_ADMIN ? (
@@ -603,15 +605,16 @@ export function RelationMenuButton(props: RelationMenuProps) {
   const btnRef = useRef<HTMLButtonElement>(null);
   return (
     <>
+      <Tooltip title="relationship actions" arrow>
       <button
         ref={btnRef}
         onClick={(e) => { e.stopPropagation(); setOpen(true); }}
-        title="relationship actions"
         style={{
           border: "none", background: "none", cursor: "pointer",
           padding: "0 4px", fontSize: 13, color: SURFACE.fallback,
         }}
       >✎</button>
+      </Tooltip>
       {open && btnRef.current && (
         <Popover anchor={btnRef.current} onClose={() => setOpen(false)}>
           <RelationMenuBody

@@ -101,6 +101,7 @@ export function ClaimsPanel({ videoId, claims, indexEntries, contradictions, cor
             overrideRationale={idx?.overrideRationale}
             inboundDeps={inboundByClaim.get(c.id)}
             contradictions={contradictionsByClaim.get(c.id)}
+            counterEvidence={idx?.counterEvidence}
             corpusIndex={corpusIndex}
             onMutated={onMutated}
           />
