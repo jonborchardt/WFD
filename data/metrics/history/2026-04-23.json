@@ -1,0 +1,374 @@
+{
+  "generatedAt": "2026-04-23T02:32:45.249Z",
+  "metrics": [
+    {
+      "section": "entity-hygiene",
+      "name": "entities.total",
+      "value": 22603,
+      "unit": "count",
+      "description": "unique entity keys observed across all videos (pre-alias resolution)",
+      "source": "data/entities/*.json"
+    },
+    {
+      "section": "entity-hygiene",
+      "name": "entities.active",
+      "value": 17607,
+      "unit": "count",
+      "description": "entities still visible in the graph after aliases + DELETE_LABELS resolution",
+      "source": "data/entities/*.json + data/aliases.json"
+    },
+    {
+      "section": "entity-hygiene",
+      "name": "entities.deleted",
+      "value": 4116,
+      "unit": "count",
+      "description": "entries in aliases.deletedEntities",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "entity-hygiene",
+      "name": "entities.merged",
+      "value": 907,
+      "unit": "count",
+      "description": "corpus-wide merges in aliases.merges",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "entity-hygiene",
+      "name": "entities.perVideoMerged",
+      "value": 657,
+      "unit": "count",
+      "description": "per-video merges in aliases.videoMerges",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "entity-hygiene",
+      "name": "entities.roleNounPersons",
+      "value": 0,
+      "unit": "count",
+      "description": "single-token person: entries matching the role-noun blocklist that are still active (target: 0)",
+      "source": "data/entities/*.json + data/aliases.json"
+    },
+    {
+      "section": "entity-hygiene",
+      "name": "entities.tautologies",
+      "value": 0,
+      "unit": "count",
+      "description": "tautological entities still active (technology:technology, etc.)",
+      "source": "data/entities/*.json + data/aliases.json"
+    },
+    {
+      "section": "entity-hygiene",
+      "name": "entities.deleteAlwaysListSize",
+      "value": 173,
+      "unit": "count",
+      "description": "size of the committed DELETE_ALWAYS list",
+      "source": "src/ai/curate/delete-always.ts"
+    },
+    {
+      "section": "entity-resolution",
+      "name": "resolution.gazetteerSize",
+      "value": 187,
+      "unit": "count",
+      "description": "total ALWAYS_PROMOTE entries in the committed gazetteer",
+      "source": "src/ai/curate/delete-always.ts"
+    },
+    {
+      "section": "entity-resolution",
+      "name": "resolution.gazetteerActive",
+      "value": 161,
+      "unit": "count",
+      "description": "gazetteer entries where at least one endpoint exists in the corpus",
+      "source": "corpus scan"
+    },
+    {
+      "section": "entity-resolution",
+      "name": "resolution.firstNamePersonsMultiVideo",
+      "value": 101,
+      "unit": "count",
+      "description": "single-token person entities appearing in ≥3 videos without a per-video merge (target: 0 — run Plan 2-2 Part C)",
+      "source": "data/entities/*.json + data/aliases.json"
+    },
+    {
+      "section": "entity-resolution",
+      "name": "resolution.caseDuplicates",
+      "value": 0,
+      "unit": "count",
+      "description": "active entities that collide with a same-label neighbor after lowercase normalization (target: 0)",
+      "source": "corpus scan"
+    },
+    {
+      "section": "claims",
+      "name": "claims.total",
+      "value": 3020,
+      "unit": "count",
+      "description": "claims across every data/claims/<id>.json",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.avgPerVideo",
+      "value": 14.38,
+      "unit": "count",
+      "description": "avg claims per video",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.directTruthPct",
+      "value": 92.81,
+      "unit": "pct",
+      "description": "share of claims with directTruth set (target: ≤80%)",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.deniesPct",
+      "value": 7.58,
+      "unit": "pct",
+      "description": "share of claims with hostStance='denies' (target: ≥5%)",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.dependencyCoveragePct",
+      "value": 42.35,
+      "unit": "pct",
+      "description": "share of claims with ≥1 dependency (target: ≥55%)",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.evidenceP50Chars",
+      "value": 94,
+      "unit": "chars",
+      "description": "median evidence quote length (target: ≤150)",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.evidenceP90Chars",
+      "value": 180,
+      "unit": "chars",
+      "description": "p90 evidence quote length (target: ≤450)",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.evidenceMaxChars",
+      "value": 451,
+      "unit": "chars",
+      "description": "max evidence quote length (target: ≤800)",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "claims",
+      "name": "claims.contradictsSubkindPct",
+      "value": 96.58,
+      "unit": "pct",
+      "description": "share of contradicts deps whose rationale carries a typed prefix (target: ≥95%)",
+      "source": "data/claims/*.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "contradictions.total",
+      "value": 33,
+      "unit": "count",
+      "description": "rows in data/claims/contradictions.json (post-verdict filter)",
+      "source": "data/claims/contradictions.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "contradictions.pair",
+      "value": 17,
+      "unit": "count",
+      "description": "pair contradictions surfaced (logical + debunks; both asserted true)",
+      "source": "data/claims/contradictions.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "contradictions.crossVideo",
+      "value": 15,
+      "unit": "count",
+      "description": "cross-video contradictions surfaced",
+      "source": "data/claims/contradictions.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "contradictions.brokenPresupposition",
+      "value": 1,
+      "unit": "count",
+      "description": "broken-presupposition contradictions (mechanically derived)",
+      "source": "data/claims/contradictions.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "contradictions.pendingVerify",
+      "value": 0,
+      "unit": "count",
+      "description": "candidates still awaiting AI verification (target: 0 on production)",
+      "source": "data/claims/contradictions.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.total",
+      "value": 130,
+      "unit": "count",
+      "description": "entries in data/claims/contradiction-verdicts.json",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.logicalContradiction",
+      "value": 1,
+      "unit": "count",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.debunks",
+      "value": 6,
+      "unit": "count",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.undercuts",
+      "value": 19,
+      "unit": "count",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.alternative",
+      "value": 6,
+      "unit": "count",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.complementary",
+      "value": 31,
+      "unit": "count",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.irrelevant",
+      "value": 10,
+      "unit": "count",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.sameClaim",
+      "value": 57,
+      "unit": "count",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "verdicts.operator",
+      "value": 0,
+      "unit": "count",
+      "description": "verdicts authored by the operator (outrank AI)",
+      "source": "data/claims/contradiction-verdicts.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "consonance.count",
+      "value": 44,
+      "unit": "count",
+      "description": "cross-video SAME-CLAIM agreements surfaced on /cross-video-agreements",
+      "source": "data/claims/consonance.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "embeddings.cached",
+      "value": 3020,
+      "unit": "count",
+      "description": "claim texts with a sentence embedding in the cache",
+      "source": "data/claims/embeddings.json"
+    },
+    {
+      "section": "contradictions",
+      "name": "embeddings.dimensions",
+      "value": 384,
+      "unit": "count",
+      "description": "embedding model dimensionality",
+      "source": "data/claims/embeddings.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.claimTruthOverrides",
+      "value": 0,
+      "unit": "count",
+      "description": "operator-pinned directTruth values for individual claims",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.claimDeletions",
+      "value": 0,
+      "unit": "count",
+      "description": "claims the operator has dropped from the corpus view",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.claimFieldOverrides",
+      "value": 0,
+      "unit": "count",
+      "description": "claims with operator-edited text / kind / stance / rationale / tags",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.contradictionDismissals",
+      "value": 0,
+      "unit": "count",
+      "description": "operator-dismissed contradictions",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.customContradictions",
+      "value": 0,
+      "unit": "count",
+      "description": "operator-authored contradictions",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.displayOverrides",
+      "value": 10,
+      "unit": "count",
+      "description": "render-only display overrides on entity keys",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.notSamePairs",
+      "value": 1209,
+      "unit": "count",
+      "description": "asserted-distinct entity pairs (operator cluster review)",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.dismissedClusters",
+      "value": 51,
+      "unit": "count",
+      "description": "operator-dismissed cluster-review proposals",
+      "source": "data/aliases.json"
+    },
+    {
+      "section": "operator-corrections",
+      "name": "corrections.deletedRelations",
+      "value": 1,
+      "unit": "count",
+      "description": "per-video relation suppressions",
+      "source": "data/aliases.json"
+    }
+  ]
+}

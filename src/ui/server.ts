@@ -652,21 +652,52 @@ export function renderUnifiedVideoAdmin(
   const troubleshooting = `
     <details>
       <summary>Troubleshooting &amp; tuning — what to do if…</summary>
-      <p>Knobs live in <code>config/models.json</code>, <code>config/entity-labels.json</code>, and <code>config/relation-labels.json</code>. Re-run with <code>captions neural --video ${escapeHtml(row.videoId)}</code> after any change.</p>
+      <p>Neural knobs live in <code>config/models.json</code>, <code>config/entity-labels.json</code>, and <code>config/relation-labels.json</code>. After changing any of those, re-run <code>captions neural --video ${escapeHtml(row.videoId)}</code>. For corpus-wide curation (committed lists, predicate type-filter, claim quality) most fixes are code edits in <code>src/</code> followed by <code>npx captions pipeline --stage indexes</code> or <code>--stage claim-indexes</code> — no neural re-run needed.</p>
+
+      <h4>Extraction (GLiNER / GLiREL, per-video)</h4>
       <table>
         <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
         <tbody>
           <tr><td>Too many noisy relations overall</td><td>Raise per-predicate thresholds in <code>config/relation-labels.json</code> (0.3 → 0.35 or 0.4)</td></tr>
           <tr><td>Specific predicates are garbage (e.g. <code>died_in</code>, <code>caused</code>)</td><td>Raise just those thresholds; leave reliable ones (<code>located_in</code>, <code>part_of</code>) alone</td></tr>
-          <tr><td>Transcript artifacts like <code>[Music]</code> or <code>[Applause]</code> extracted as entities</td><td>Add them to <code>PRONOUN_STOPWORDS</code> in <code>src/entities/canonicalize.ts</code></td></tr>
           <tr><td>Generic common nouns (<code>channel</code>, <code>house</code>, <code>scientists</code>) firing as person/org</td><td>Raise <code>gliner.minScore</code> in <code>config/models.json</code> from 0.5 → 0.6 or 0.7</td></tr>
           <tr><td>Zero relations and the log shows “0 raw preds” across every sentence</td><td>Lower <code>glirel.minScore</code> to 0.1 and rerun with <code>CAPTIONS_PY_DEBUG=1</code> to inspect raw scores</td></tr>
           <tr><td>Relations are correct but thin (few edges from many entities)</td><td>Increase the relation-window size in <code>src/relations/extract.ts</code> (<code>RELATION_WINDOW_CHARS</code>) or bump <code>glirel.maxPairsPerSentence</code></td></tr>
-          <tr><td>Entities concentrated near the start of the transcript only</td><td>Auto-gen transcript truncation — lower <code>TARGET_CHUNK_CHARS</code> in <code>tools/gliner_sidecar.py</code> (currently 800)</td></tr>
-          <tr><td>Pronouns (<code>I</code>, <code>he</code>, <code>you</code>) showing up as entities</td><td>Already filtered in <code>src/entities/canonicalize.ts</code>; check the <code>PRONOUN_STOPWORDS</code> set hasn't been modified</td></tr>
+          <tr><td>Entities concentrated near the start of the transcript only</td><td>Lower <code>TARGET_CHUNK_CHARS</code> in <code>tools/gliner_sidecar.py</code> (currently 800)</td></tr>
+          <tr><td>Labels firing for wrong GLiNER categories (e.g. dates tagged as persons)</td><td>Drop those labels from <code>config/entity-labels.json</code> or narrow them to fit this corpus</td></tr>
+          <tr><td>Pronouns (<code>I</code>, <code>he</code>, <code>you</code>) showing up as entities</td><td>Already filtered in <code>src/entities/canonicalize.ts</code> (<code>PRONOUN_STOPWORDS</code>); check that set hasn't been modified</td></tr>
           <tr><td>Self-loops (same canonical on both sides of a relation)</td><td>Already filtered in <code>src/relations/extract.ts</code>; shouldn't appear</td></tr>
-          <tr><td>Labels firing for wrong categories (e.g. dates tagged as persons)</td><td>Drop those labels from <code>config/entity-labels.json</code> or narrow to the ones that actually fit this corpus</td></tr>
-          <tr><td>Entity coref broken (pronoun resolution)</td><td>Install <code>fastcoref</code> with a compatible <code>transformers</code> version (&lt;4.48), then flip <code>coref.enabled: true</code> in <code>config/models.json</code></td></tr>
+          <tr><td>Entity coref broken (pronoun resolution)</td><td>Install <code>fastcoref</code> with compatible <code>transformers</code> (&lt;4.48), then flip <code>coref.enabled: true</code> in <code>config/models.json</code></td></tr>
+        </tbody>
+      </table>
+
+      <h4>Graph curation (aliases + type-filter, no neural re-run)</h4>
+      <table>
+        <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Transcript artifacts (<code>[Music]</code>, <code>[Applause]</code>) or generic nouns (<code>government</code>, <code>story</code>, <code>episode</code>) appearing as entities</td><td>Add the key to <code>DELETE_ALWAYS</code> in <code>src/ai/curate/delete-always.ts</code>, then <code>npx captions pipeline --stage indexes</code></td></tr>
+          <tr><td>Whole label is never graph-worthy on this corpus (<code>quantity:*</code>, <code>role:*</code>, <code>law_or_policy:*</code>)</td><td>Add to <code>DELETE_LABELS</code> in <code>src/ai/curate/delete-always.ts</code></td></tr>
+          <tr><td>Famous short form not merging into the full name (e.g. <code>person:obama</code> → <code>person:barack obama</code>)</td><td>Add to <code>ALWAYS_PROMOTE</code> in <code>src/ai/curate/delete-always.ts</code> (applied only when both endpoints exist)</td></tr>
+          <tr><td>Type-confused relations surviving the adapter (e.g. date as subject of <code>located_in</code>, person as target of <code>member_of</code>)</td><td>Tighten <code>PREDICATE_SCHEMA</code> in <code>src/graph/adapt.ts</code>, rebuild with <code>--stage indexes</code></td></tr>
+          <tr><td>First-name person conflates different people across videos (<code>person:linda</code>, <code>person:dan</code>)</td><td>Open <code>/admin/entity/person:&lt;name&gt;</code>, use the ⋯ menu to write per-video <code>videoMerges</code>, or run the <code>ai-entity-resolution</code> skill</td></tr>
+          <tr><td>One specific bad edge in one video (wrong subject, misattributed quote)</td><td>Use the <code>✎</code> menu on the relation row → "delete this edge" (writes to <code>deletedRelations</code> in <code>data/aliases.json</code>)</td></tr>
+          <tr><td>Stale-looking top-100 entities (already in <code>DELETE_ALWAYS</code> but still appearing)</td><td>Bump <code>graph.dirtyAt</code> in <code>data/catalog/catalog.json</code> and re-run <code>--stage indexes</code>; the committed-list apply hook early-exits when fresh</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Claims &amp; contradictions (AI-written per-video, no neural stage)</h4>
+      <table>
+        <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Claim file exists but is flagged stale (banner at top of this page)</td><td>Re-run the <code>ai-claims-extraction</code> skill on this video; entities/relations changed since the claim was written</td></tr>
+          <tr><td>Compound "X and Y" claim that should be two separate claims</td><td>Operator: use ⋯ on the claim row → "edit text" to split, or re-run the <code>ai-claims-extraction</code> skill (the v2 prompt enforces atomicity)</td></tr>
+          <tr><td>Quote in evidence doesn't match the transcript span</td><td>The write-time validator should have blocked this — if you see it, check <code>src/claims/validate.ts</code> is actually running; quote equals <code>flattenedText.slice(charStart, charEnd)</code> (<code>flattenedText = cues.map(c =&gt; c.text).join("\\n")</code>)</td></tr>
+          <tr><td>Claim's <code>directTruth</code> is wrong or absent</td><td>Use the ⋯ menu on the claim → "override truth"; writes to <code>claimTruthOverrides</code> in <code>data/aliases.json</code></td></tr>
+          <tr><td>Cross-video pair is labeled UNDERCUTS but is really a DEBUNKS (context inverts meaning)</td><td>Operator: use the ✎ menu on the contradiction row → set verdict to DEBUNKS; writes to <code>contradiction-verdicts.json</code> with <code>by: "operator"</code>. Or re-run the <code>ai-contradiction-verify</code> skill on the UNDERCUTS subset with a sharpened prompt</td></tr>
+          <tr><td>Two videos surface as cross-video contradiction but they're really about different things (generic entity collision)</td><td>Operator: ✎ menu → "dismiss this pair"; writes to <code>contradictionDismissals</code></td></tr>
+          <tr><td>Two videos surface as consonance (same claim) but they disagree</td><td>Indicates a verifier leak — operator dismissal via ✎, or adjust the hostStance-opposition gate / per-video cap in <code>src/truth/claim-indexes.ts</code></td></tr>
+          <tr><td>Counter-evidence rendered on a claim but the target's truth score didn't move</td><td>Expected on targets with <code>directTruth ≥ 0.7</code> — propagation coupling in <code>src/truth/claim-propagation.ts</code> is intentionally conservative; tighten the undercuts cap coefficient (currently <code>1 − 0.2·s·c</code>) if you want confident claims to yield to intra-video counter-claims. Admin landing page carries a note about this</td></tr>
+          <tr><td>Intra-video contradiction is really just one claim undercutting another (not a standoff)</td><td>Expected — post-plan3 only <code>[logical]</code> + <code>[debunks]</code> subkinds with both sides asserted-true surface as intra-video pair contradictions; <code>[alternative]</code> and <code>[undercuts]</code> land on the target claim's <code>counterEvidence</code> field instead</td></tr>
         </tbody>
       </table>
     </details>

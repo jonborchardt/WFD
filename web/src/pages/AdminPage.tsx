@@ -1,4 +1,4 @@
-import { Container, Typography, Stack, Link } from "@mui/material";
+import { Alert, AlertTitle, Container, Link, Stack, Typography } from "@mui/material";
 import { UpstreamCheck } from "../components/UpstreamCheck";
 import { AdminCatalogTable } from "../components/AdminCatalogTable";
 import type { VideoRow } from "../types";
@@ -16,6 +16,25 @@ export function AdminPage() {
         <Link href="/admin/aliases">aliases</Link>
         <Link href="/admin/metrics">metrics</Link>
       </Stack>
+
+      <Alert severity="info" sx={{ mb: 2 }}>
+        <AlertTitle>Known issue — counter-evidence propagation</AlertTitle>
+        Claims with a populated <strong>counterEvidence</strong> field
+        (intra-video "evidence against" edges — 216 claims, 242 rows as
+        of the last rebuild) render the counter-claims in the UI, but
+        they don't move the target's <code>derivedTruth</code> when the
+        target's <code>directTruth ≥ 0.7</code>. The propagation
+        coupling in{" "}
+        <code>src/truth/claim-propagation.ts</code> (alternative at
+        half-weight, undercuts as a cap at{" "}
+        <code>1 − 0.2·sourceTruth·sourceConfidence</code>) is too
+        weak relative to the directTruth anchor. Flagged by plan3
+        agent A9 (33% of sampled edges show zero propagation effect,
+        concentrated on high-confidence targets). Decision pending:
+        tighten coupling, or leave the score pinned and have the UI
+        surface a "no effect" note next to the panel.
+      </Alert>
+
       <UpstreamCheck />
       <AdminCatalogTable onRowClick={handleRowClick} />
     </Container>
