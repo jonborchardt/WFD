@@ -1968,44 +1968,112 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
       const dataRoot = opts.dataDir ?? join(process.cwd(), "data");
       const u = new URL(url, "http://local");
       const op = u.searchParams.get("op") ?? "";
-      const aliases = readAliases(dataRoot);
       let summary = "";
       let ok = true;
-      if (op === "delete" || op === "hide") {
-        const key = u.searchParams.get("key") ?? "";
-        if (!key) { ok = false; summary = "missing key"; }
-        else {
-          if (aliases[key] && !isSentinel(aliases[key])) delete aliases[key];
-          aliases[key] = SENTINEL_DELETED;
-          summary = `deleted ${key}`;
+      try {
+        // Structured-section ops: use typed mutators. These read/write the
+        // v2 file internally, so we must NOT fall through to the flat
+        // writeAliases() below — that would clobber the structured sections.
+        if (op === "claim-truth-override") {
+          const claimId = u.searchParams.get("claimId") ?? "";
+          const dt = Number(u.searchParams.get("directTruth"));
+          if (!claimId) { ok = false; summary = "missing claimId"; }
+          else if (!Number.isFinite(dt) || dt < 0 || dt > 1) {
+            ok = false; summary = "directTruth not in [0,1]";
+          } else {
+            const rationale = u.searchParams.get("rationale") ?? undefined;
+            addClaimTruthOverride(dataRoot, claimId, dt, rationale);
+            summary = `truth ${dt.toFixed(2)} → ${claimId}`;
+          }
+        } else if (op === "claim-field-override") {
+          const claimId = u.searchParams.get("claimId") ?? "";
+          if (!claimId) { ok = false; summary = "missing claimId"; }
+          else {
+            const patch: Record<string, unknown> = {};
+            const text = u.searchParams.get("text");
+            if (text !== null) patch.text = text;
+            const kind = u.searchParams.get("kind");
+            if (kind !== null) patch.kind = kind;
+            const hostStance = u.searchParams.get("hostStance");
+            if (hostStance !== null) patch.hostStance = hostStance;
+            const rationale = u.searchParams.get("rationale");
+            if (rationale !== null) patch.rationale = rationale;
+            const tagsRaw = u.searchParams.get("tags");
+            if (tagsRaw !== null) {
+              patch.tags = tagsRaw
+                .split(",")
+                .map((s) => s.trim().toLowerCase())
+                .filter(Boolean);
+            }
+            const fields = Object.keys(patch);
+            if (fields.length === 0) { ok = false; summary = "no field provided"; }
+            else {
+              setClaimFieldOverride(dataRoot, claimId, patch);
+              summary = `claim ${claimId} ${fields.join(", ")}`;
+            }
+          }
+        } else if (op === "dismiss-contradiction") {
+          const a = u.searchParams.get("a") ?? "";
+          const b = u.searchParams.get("b") ?? "";
+          if (!a || !b) { ok = false; summary = "missing a/b"; }
+          else {
+            const reason = u.searchParams.get("reason") ?? undefined;
+            addContradictionDismissal(dataRoot, a, b, reason);
+            summary = `dismissed ${a} ↔ ${b}`;
+          }
+        } else if (op === "custom-contradiction") {
+          const a = u.searchParams.get("a") ?? "";
+          const b = u.searchParams.get("b") ?? "";
+          const sum = u.searchParams.get("summary") ?? "";
+          if (!a || !b) { ok = false; summary = "missing a/b"; }
+          else if (!sum) { ok = false; summary = "missing summary"; }
+          else {
+            addCustomContradiction(dataRoot, a, b, sum);
+            summary = `flagged ${a} ↔ ${b}`;
+          }
+        } else {
+          // Flat-aliases ops (read → modify → write once).
+          const aliases = readAliases(dataRoot);
+          if (op === "delete" || op === "hide") {
+            const key = u.searchParams.get("key") ?? "";
+            if (!key) { ok = false; summary = "missing key"; }
+            else {
+              if (aliases[key] && !isSentinel(aliases[key])) delete aliases[key];
+              aliases[key] = SENTINEL_DELETED;
+              summary = `deleted ${key}`;
+            }
+          } else if (op === "merge") {
+            const from = u.searchParams.get("from") ?? "";
+            const to = u.searchParams.get("to") ?? "";
+            if (!from || !to || from === to) { ok = false; summary = "bad from/to"; }
+            else { aliases[from] = to; summary = `merged ${from} → ${to}`; }
+          } else if (op === "display") {
+            const key = u.searchParams.get("key") ?? "";
+            const value = u.searchParams.get("value") ?? "";
+            if (!key || !value) { ok = false; summary = "missing key/value"; }
+            else { aliases[`display:${key}`] = value; summary = `display ${key} = "${value}"`; }
+          } else if (op === "video-merge") {
+            const videoId = u.searchParams.get("videoId") ?? "";
+            const from = u.searchParams.get("from") ?? "";
+            const to = u.searchParams.get("to") ?? "";
+            if (!videoId || !from || !to) { ok = false; summary = "missing videoId/from/to"; }
+            else { aliases[`video:${videoId}:${from}`] = to; summary = `video:${videoId} ${from} → ${to}`; }
+          } else if (op === "delete-relation") {
+            const videoId = u.searchParams.get("videoId") ?? "";
+            const key = u.searchParams.get("key") ?? "";
+            if (!videoId || !key) { ok = false; summary = "missing videoId/key"; }
+            else { aliases[`del:${videoId}:${key}`] = "true"; summary = `deleted relation in ${videoId}`; }
+          } else {
+            ok = false;
+            summary = `unknown op: ${op}`;
+          }
+          if (ok) writeAliases(dataRoot, aliases);
         }
-      } else if (op === "merge") {
-        const from = u.searchParams.get("from") ?? "";
-        const to = u.searchParams.get("to") ?? "";
-        if (!from || !to || from === to) { ok = false; summary = "bad from/to"; }
-        else { aliases[from] = to; summary = `merged ${from} → ${to}`; }
-      } else if (op === "display") {
-        const key = u.searchParams.get("key") ?? "";
-        const value = u.searchParams.get("value") ?? "";
-        if (!key || !value) { ok = false; summary = "missing key/value"; }
-        else { aliases[`display:${key}`] = value; summary = `display ${key} = "${value}"`; }
-      } else if (op === "video-merge") {
-        const videoId = u.searchParams.get("videoId") ?? "";
-        const from = u.searchParams.get("from") ?? "";
-        const to = u.searchParams.get("to") ?? "";
-        if (!videoId || !from || !to) { ok = false; summary = "missing videoId/from/to"; }
-        else { aliases[`video:${videoId}:${from}`] = to; summary = `video:${videoId} ${from} → ${to}`; }
-      } else if (op === "delete-relation") {
-        const videoId = u.searchParams.get("videoId") ?? "";
-        const key = u.searchParams.get("key") ?? "";
-        if (!videoId || !key) { ok = false; summary = "missing videoId/key"; }
-        else { aliases[`del:${videoId}:${key}`] = "true"; summary = `deleted relation in ${videoId}`; }
-      } else {
+      } catch (err) {
         ok = false;
-        summary = `unknown op: ${op}`;
+        summary = (err as Error).message;
       }
       if (ok) {
-        writeAliases(dataRoot, aliases);
         nlpCache.clear();
         entityIndexCache = null;
         entityVideosCache = null;
