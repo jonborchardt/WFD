@@ -3,7 +3,6 @@
 // Shows ALL video statuses and pipeline stage columns.
 
 import { useState, useEffect } from "react";
-import { Checkbox, FormControlLabel } from "@mui/material";
 import { ADMIN_COLUMNS } from "./catalog-columns";
 import { CatalogTableView } from "./CatalogTableView";
 import type { VideoRow } from "../types";
@@ -24,14 +23,12 @@ export function AdminCatalogTable({ onRowClick }: Props) {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
   const [text, setText] = useState("");
-  const [failedOnly, setFailedOnly] = useState(true);
 
-  useEffect(() => { setPage(1); }, [text, failedOnly]);
+  useEffect(() => { setPage(1); }, [text]);
 
   useEffect(() => {
     const q = new URLSearchParams();
     if (text) q.set("text", text);
-    if (failedOnly) q.set("incompleteStages", "1");
     q.set("page", String(page));
     q.set("pageSize", String(pageSize));
     let cancelled = false;
@@ -43,7 +40,7 @@ export function AdminCatalogTable({ onRowClick }: Props) {
         .catch(() => {});
     }, delay);
     return () => { cancelled = true; clearTimeout(h); };
-  }, [text, failedOnly, page, pageSize]);
+  }, [text, page, pageSize]);
 
   return (
     <CatalogTableView
@@ -58,12 +55,6 @@ export function AdminCatalogTable({ onRowClick }: Props) {
       onTextChange={setText}
       onRowClick={onRowClick}
       onSuggestionNavigate={(to) => { window.location.href = to; }}
-      toolbarExtras={
-        <FormControlLabel
-          control={<Checkbox size="small" checked={failedOnly} onChange={(e) => setFailedOnly(e.target.checked)} />}
-          label="failed"
-        />
-      }
     />
   );
 }
