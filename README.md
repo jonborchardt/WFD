@@ -11,6 +11,8 @@ was actually made.
 The goal is not to declare what is true. The goal is to make claims, evidence,
 and contradictions **traceable**.
 
+![Home — browse the corpus, jump to the most-contradicted claims, open the entity graph or argument map](docs/screenshots/home.png)
+
 ## What you can do with it
 
 - **Look up a topic, person, or organization** and get a relationship map of
@@ -22,24 +24,36 @@ and contradictions **traceable**.
   (`supports` / `contradicts` / `presupposes` / `elaborates`), typed
   `contradicts` subkinds (`logical` / `debunks` / `alternative` / `undercuts`),
   and cross-claim contradictions flagged inline.
+
+![Per-video claims panel — each claim with its truth bar, host stance, evidence count, and dependency edges](docs/screenshots/video-detail.png)
+
 - **See contradictions.** When two sources disagree, both claims are kept and
   surfaced side-by-side instead of one silently winning. Tabbed browser for
   pair / broken-presupposition / cross-video / manual kinds. Cross-video
   candidates go through an AI verification pass; only verdicted-real entries
   surface on the public site.
+
+![Contradictions browser — verified pair / broken-presupposition / cross-video disagreements, faceted by entity and date](docs/screenshots/contradictions.png)
 - **See cross-video agreements.** The flip side of contradictions — a
   `/cross-video-agreements` page lists pairs the verifier identified as
   asserting the same thesis in multiple videos (positive corroboration).
 - **Color the relationships graph by truth.** Edges can be shaded red→green
   based on the derived truth of the claims that cite them.
+
+![Entity graph — Nikola Tesla's neighborhood across the corpus, with predicates on every edge](docs/screenshots/entity-graph.png)
+
 - **Walk the claim graph.** A dedicated view renders claims as nodes with
   dependency, contradiction, and shared-evidence links — seed by entity,
   video, or single claim.
+
+![Argument map — the Phantom Time Hypothesis neighborhood, supports/contradicts/elaborates/presupposes edges, nodes colored by derived truth](docs/screenshots/argument-map.png)
 - **Run counterfactuals.** "What if this claim were false?" replays truth
   propagation with that claim pinned and shows which others move and by how
   much.
 - **Search by tag.** Every claim and contradiction is filterable by free-form
   tag (e.g. `ufo`, `project-blue-book`, `cold-war`).
+
+![Claims browser — sort by most-certain / most-contradicted / most-cited, facet by kind, host stance, truth source, truth range, confidence, date](docs/screenshots/claims.png)
 - **See novel links.** Connections that emerge from combining multiple sources,
   which no single video states directly, are flagged for review.
 - **Speaker credibility over time.** Skeptic scoring tracks how a given speaker's
