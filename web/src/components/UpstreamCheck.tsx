@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Box, Alert, AlertTitle, Link } from "@mui/material";
 import { fmtDate } from "../lib/format";
+import { useOpenVideo } from "./VideoLightbox";
 
 interface ChannelCheck {
   channelId: string;
@@ -12,6 +13,7 @@ interface ChannelCheck {
 }
 
 export function UpstreamCheck() {
+  const openVideo = useOpenVideo();
   const [state, setState] = useState<{ loading: boolean; channels: ChannelCheck[] }>({ loading: true, channels: [] });
 
   useEffect(() => {
@@ -38,11 +40,20 @@ export function UpstreamCheck() {
         if (c.behind && c.upstream) {
           const upDate = fmtDate(c.upstream.publishedAt);
           const catDate = c.catalog?.publishDate ? fmtDate(c.catalog.publishDate) : "none";
-          const ytUrl = "https://www.youtube.com/watch?v=" + c.upstream.videoId;
+          const upstream = c.upstream;
           return (
             <Alert key={c.channelId} severity="warning" sx={{ mb: 1 }}>
               <AlertTitle>{c.channelLabel}: new video needs upload</AlertTitle>
-              Upstream latest: <Link href={ytUrl} target="_blank" rel="noopener">{c.upstream.title}</Link> ({upDate})
+              Upstream latest:{" "}
+              <Link
+                component="button"
+                type="button"
+                underline="hover"
+                onClick={() => openVideo({ videoId: upstream.videoId, title: upstream.title })}
+              >
+                {upstream.title}
+              </Link>{" "}
+              ({upDate})
               <Box component="span" sx={{ ml: 1, color: "text.secondary" }}>— catalog latest: {catDate}</Box>
             </Alert>
           );

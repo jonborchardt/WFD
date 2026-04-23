@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { TruthBar } from "./TruthBar";
 import { ClaimMenu } from "./ClaimMenu";
 import { DepRow } from "./DepRow";
+import { useOpenVideo } from "./VideoLightbox";
 import { entityChipSx } from "../lib/facet-helpers";
-import { deepLink, fmtTimestamp } from "../lib/format";
+import { fmtTimestamp } from "../lib/format";
 import { truthColor, truthSideColor } from "../lib/truth-palette";
 import { claimKindColor } from "../theme";
 import {
@@ -63,6 +64,7 @@ export function ClaimDetailCard({
   onMutated,
 }: Props) {
   const nav = useNavigate();
+  const openVideo = useOpenVideo();
   const [showWhy, setShowWhy] = useState(false);
   const [showEvidence, setShowEvidence] = useState(false);
   const [showEntities, setShowEntities] = useState(false);
@@ -287,10 +289,11 @@ export function ClaimDetailCard({
                   “{ev.quote}”
                 </Typography>
                 <Link
-                  href={deepLink(videoId, ev.timeStart)}
-                  target="_blank"
-                  rel="noopener"
+                  component="button"
+                  type="button"
                   variant="caption"
+                  underline="hover"
+                  onClick={() => openVideo({ videoId, timeStart: ev.timeStart })}
                 >
                   [{fmtTimestamp(ev.timeStart)}]
                 </Link>

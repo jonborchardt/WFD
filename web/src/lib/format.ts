@@ -22,6 +22,3 @@ export const fmtTimestamp = (s: number): string => {
   const n = Math.floor(s);
   return String(Math.floor(n / 60)).padStart(2, "0") + ":" + String(n % 60).padStart(2, "0");
 };
-
-export const deepLink = (videoId: string, timeStart: number): string =>
-  `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(timeStart)}s`;

@@ -1,6 +1,25 @@
 import { Chip, Link, Tooltip } from "@mui/material";
 import type { VideoRow, CatalogColumn } from "../types";
 import { fmtDate, descriptionPreview } from "../lib/format";
+import { useOpenVideo } from "./VideoLightbox";
+
+function CatalogTitleLink({ row }: { row: VideoRow }) {
+  const openVideo = useOpenVideo();
+  return (
+    <Link
+      component="button"
+      type="button"
+      underline="hover"
+      onClick={(e: React.MouseEvent) => {
+        e.stopPropagation();
+        openVideo({ videoId: row.videoId, title: row.title, sourceUrl: row.sourceUrl });
+      }}
+      sx={{ textAlign: "left" }}
+    >
+      {row.title || row.videoId}
+    </Link>
+  );
+}
 
 export const ENTITY_TYPE_COLOR: Record<string, "primary" | "secondary" | "success" | "warning" | "info" | "default"> = {
   person: "primary",
@@ -29,15 +48,7 @@ export const CATALOG_COLUMNS: CatalogColumn[] = [
   {
     key: "title", label: "Title", default: true,
     headSx: { width: 240 }, cellSx: { width: 240 },
-    render: (r: VideoRow) => (
-      <Link
-        href={r.sourceUrl || ("https://www.youtube.com/watch?v=" + r.videoId)}
-        target="_blank" rel="noopener" underline="hover"
-        onClick={(e: React.MouseEvent) => e.stopPropagation()}
-      >
-        {r.title || r.videoId}
-      </Link>
-    ),
+    render: (r: VideoRow) => <CatalogTitleLink row={r} />,
   },
   { key: "channel", label: "Channel", default: false, render: (r: VideoRow) => r.channel || "" },
   { key: "channelId", label: "Channel ID", default: false, render: (r: VideoRow) => r.channelId || "" },

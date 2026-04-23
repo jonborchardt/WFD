@@ -9,6 +9,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IS_ADMIN, ADMIN_BUILD, setViewMode } from "../lib/admin";
 import { useLoadingCount } from "../lib/loading";
+import { VideoLightboxProvider } from "./VideoLightbox";
 
 export interface NavItem {
   path: string;
@@ -47,7 +48,7 @@ export function AppShell() {
     path === "/" ? pathname === "/" : pathname.startsWith(path);
 
   return (
-    <>
+    <VideoLightboxProvider>
       <AppBar
         position="sticky"
         color="default"
@@ -178,7 +179,7 @@ export function AppShell() {
       </Box>
       <Outlet />
       <ScrollToTopFab />
-    </>
+    </VideoLightboxProvider>
   );
 }
 
