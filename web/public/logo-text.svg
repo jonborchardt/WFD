@@ -1,0 +1,13 @@
+<!-- Why Files Database — text lockup logo.
+     WHY FILES (96/-3) renders at its natural width (~608); DATABASE (68/+2)
+     is x-scaled by 1.283 to match that width exactly. Uses transform scale
+     instead of textLength so it raster-renders identically in browsers and
+     librsvg (sharp). Fill is currentColor. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 608 180" preserveAspectRatio="xMidYMid meet">
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif" fill="currentColor">
+    <text x="0" y="80" font-size="96" font-weight="900" letter-spacing="-3">WHY FILES</text>
+    <g transform="translate(0,158) scale(1.283,1)">
+      <text x="0" y="0" font-size="68" font-weight="900" letter-spacing="2">DATABASE</text>
+    </g>
+  </g>
+</svg>

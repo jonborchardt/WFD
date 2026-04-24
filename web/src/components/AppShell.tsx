@@ -3,13 +3,13 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   AppBar, Box, Button, Chip, Drawer, Fab, IconButton,
   LinearProgress, List, ListItemButton, ListItemText, Toolbar,
-  Typography, Zoom, useMediaQuery, useTheme,
+  Zoom, useMediaQuery, useTheme,
 } from "@mui/material";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IS_ADMIN, ADMIN_BUILD, setViewMode } from "../lib/admin";
 import { useLoadingCount } from "../lib/loading";
 import { VideoLightboxProvider } from "./VideoLightbox";
+import { TextLogo, LiftoffUfo } from "./brand";
 
 export interface NavItem {
   path: string;
@@ -77,24 +77,21 @@ export function AppShell() {
               <MenuIcon fontSize="small" />
             </IconButton>
           )}
-          <Typography
-            variant="subtitle1"
-            sx={{ cursor: "pointer", flexGrow: 1, fontWeight: 600, lineHeight: 1 }}
+          <Box
+            role="img"
+            aria-label="Why Files Database"
             onClick={() => nav("/")}
+            sx={{
+              cursor: "pointer",
+              flexGrow: 1,
+              display: "flex",
+              alignItems: "center",
+              color: "text.primary",
+              minWidth: 0,
+            }}
           >
-            {/* Tighten the space between "Why" and "Files" so the
-                channel name reads as one unit, not "Why" + "Files
-                Database" — the corpus is The Why Files, not some
-                "why-files" thing. nbsp glues them; the inner span
-                carries a small negative word-spacing. */}
-            <Box
-              component="span"
-              sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
-            >
-              Why{"\u00a0"}Files
-            </Box>{" "}
-            Database
-          </Typography>
+            <TextLogo height={30} />
+          </Box>
           {isWide && (
             <Box
               component="nav"
@@ -201,7 +198,7 @@ function ScrollToTopFab() {
   return (
     <Zoom in={visible} unmountOnExit>
       <Fab
-        size="small"
+        size="medium"
         color="primary"
         aria-label="scroll to top"
         onClick={onClick}
@@ -211,11 +208,14 @@ function ScrollToTopFab() {
           bottom: { xs: 16, sm: 24 },
           // Below the sticky app bar but above page content.
           zIndex: (t) => t.zIndex.appBar - 1,
-          opacity: 0.9,
+          opacity: 0.92,
+          overflow: "visible",
           "&:hover": { opacity: 1 },
+          "&:hover .wfd-saucer": { top: 0 },
+          "&:hover .wfd-beam":   { opacity: 0.9 },
         }}
       >
-        <KeyboardArrowUpIcon />
+        <LiftoffUfo saucer={14} rise={16} />
       </Fab>
     </Zoom>
   );

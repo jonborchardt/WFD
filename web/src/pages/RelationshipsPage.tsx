@@ -8,8 +8,9 @@ import type ELKCtor from "elkjs/lib/elk.bundled.js";
 type ELKInstance = InstanceType<typeof ELKCtor>;
 type ElkLayoutResult = Awaited<ReturnType<ELKInstance["layout"]>>;
 import {
-  Box, Paper, TextField, Typography, Chip, MenuItem, Button, CircularProgress, Stack,
+  Box, Paper, TextField, Typography, Chip, MenuItem, Button, Stack,
 } from "@mui/material";
+import { UfoLoader } from "../components/brand";
 import { CollapseSection } from "../components/CollapseSection";
 import { SpacingSlider } from "../components/SpacingSlider";
 import { fetchRelationshipsGraph, fetchEdgeTruth, fetchClaimsIndex } from "../lib/data";
@@ -302,7 +303,7 @@ export function RelationshipsPage() {
   };
 
   if (error) return <Box sx={{ p: 3 }}><Typography color="error">{error}</Typography></Box>;
-  if (!graphIndex) return <Box sx={{ p: 3, textAlign: "center" }}><CircularProgress /></Box>;
+  if (!graphIndex) return <Box sx={{ p: 3, textAlign: "center" }}><UfoLoader size={56} /></Box>;
 
   const hasNodes = rfNodes.length > 0;
   const selNode = selectedId ? nodeMap.current.get(selectedId) : null;

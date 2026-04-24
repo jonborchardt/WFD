@@ -2,6 +2,7 @@ import { Link as RouterLink } from "react-router-dom";
 import type { ReactNode } from "react";
 import { Box, Container, Link, Paper, Typography } from "@mui/material";
 import { colors } from "../theme";
+import { UfoLogo } from "../components/brand";
 
 // About page. Holds the long-form explanation — motivation,
 // pipeline internals, claims+contradictions depth, contribution,
@@ -29,28 +30,49 @@ export function AboutPage() {
         >
           about
         </Typography>
-        <Typography
-          variant="h4"
-          sx={{ fontWeight: 700, lineHeight: 1.2, mt: 0.5 }}
-        >
-          About{" "}
-          <Box
-            component="span"
-            sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
-          >
-            Why{"\u00a0"}Files
-          </Box>{" "}
-          Database
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={{ mt: 1, color: "text.secondary", maxWidth: 640 }}
-        >
-          What it is, why it exists, how the pipeline works, and how
-          to help improve it. If you haven't seen the one-claim
-          walk-through yet, start on the{" "}
-          <Link component={RouterLink} to="/">home page</Link>.
-        </Typography>
+        <Box sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: { xs: 2, sm: 3 },
+          mt: 0.5,
+          flexDirection: { xs: "column", sm: "row" },
+          textAlign: { xs: "center", sm: "left" },
+        }}>
+          <Box sx={{ flex: 1 }}>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: 700, lineHeight: 1.2 }}
+            >
+              About{" "}
+              <Box
+                component="span"
+                sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
+              >
+                Why{"\u00a0"}Files
+              </Box>{" "}
+              Database
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{ mt: 1, color: "text.secondary", maxWidth: 640 }}
+            >
+              What it is, why it exists, how the pipeline works, and how
+              to help improve it. If you haven't seen the one-claim
+              walk-through yet, start on the{" "}
+              <Link component={RouterLink} to="/">home page</Link>.
+            </Typography>
+          </Box>
+          <Box sx={{
+            flexShrink: 0,
+            "& > *": { animation: "wfd-about-hover 5s ease-in-out infinite" },
+            "@keyframes wfd-about-hover": {
+              "0%, 100%": { transform: "translateY(0)" },
+              "50%":      { transform: "translateY(-8px)" },
+            },
+          }}>
+            <UfoLogo height={120} />
+          </Box>
+        </Box>
       </Paper>
 
       <Section title="What is this?">

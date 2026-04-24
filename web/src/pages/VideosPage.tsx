@@ -45,6 +45,7 @@ import {
   FacetsPageHeader, FacetsPageOuter, RailResultsLayout,
 } from "../components/facets/FacetsPageShell";
 import { SimpleVideoTable } from "../components/SimpleVideoTable";
+import { PageLoading } from "../components/PageLoading";
 import { beginLoad } from "../lib/loading";
 import { ENTITY_TYPE_COLOR } from "../components/catalog-columns";
 import { colors } from "../theme";
@@ -195,7 +196,7 @@ export function VideosPage() {
     return out;
   }, [bundle]);
 
-  if (!bundle) return null;
+  if (!bundle) return <PageLoading label="loading videos…" />;
 
   const present = new Set(bundle.typesInOrder);
   const timeTypes = TIME_TYPES_IN_ORDER.filter((t) => present.has(t));

@@ -14,10 +14,10 @@ import {
   Chip,
   Button,
   Link as MuiLink,
-  CircularProgress,
   Stack,
 } from "@mui/material";
 import { CollapseSection } from "../components/CollapseSection";
+import { EmptyUfo, UfoLoader } from "../components/brand";
 import { SpacingSlider } from "../components/SpacingSlider";
 import {
   fetchCatalog,
@@ -469,7 +469,7 @@ export function ClaimGraphPage() {
   if (!ready) {
     return (
       <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
-        <CircularProgress />
+        <UfoLoader size={56} />
       </Box>
     );
   }
@@ -637,10 +637,11 @@ export function ClaimGraphPage() {
       </Paper>
 
       {data && data.nodes.size === 0 && (
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", opacity: 0.6 }}>
-          <Typography variant="body2" color="text.secondary">
-            no claims match this seed.
-          </Typography>
+        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
+          <EmptyUfo
+            message="no signals detected"
+            hint="no claims match this seed. Try a different entity, video, or claim id."
+          />
         </Box>
       )}
 

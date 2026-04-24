@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { CircularProgress, Box } from "@mui/material";
+import { Box } from "@mui/material";
+import { UfoLoader } from "./components/brand";
 import { AppShell } from "./components/AppShell";
 import { VideoDetailPage } from "./pages/VideoDetailPage";
 import { EntityDetailPage } from "./pages/EntityDetailPage";
@@ -28,7 +29,7 @@ const MetricsPage = IS_ADMIN
   : null;
 
 function Loading() {
-  return <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}><CircularProgress /></Box>;
+  return <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}><UfoLoader size={56} /></Box>;
 }
 
 export function App() {

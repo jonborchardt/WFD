@@ -2,6 +2,7 @@ import { Link as RouterLink } from "react-router-dom";
 import type { ReactNode } from "react";
 import { Box, Button, Container, Link, Paper, Stack, Typography } from "@mui/material";
 import { colors } from "../theme";
+import { UfoLogo } from "../components/brand";
 
 // Editorial hero establishes what the site is and why it exists,
 // then a three-step walk-through teaches the core concepts (claim,
@@ -30,21 +31,41 @@ export function HomePage() {
           >
             an independent research index
           </Typography>
-          <Typography
-            component="h1"
-            sx={{
-              fontSize: { xs: "2.25rem", md: "3.25rem" },
-              fontWeight: 800,
-              lineHeight: 1.05,
-              mt: 1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            A searchable map of who, what, and where —
-            <Box component="span" sx={{ color: ACCENT }}>
-              {" "}across the entire Why Files corpus.
+          <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: { xs: 2, md: 3 },
+            mt: 1,
+            maxWidth: 720,
+            flexDirection: { xs: "column", sm: "row" },
+            textAlign: { xs: "center", sm: "left" },
+          }}>
+            <Typography
+              component="h1"
+              sx={{
+                fontSize: { xs: "2rem", md: "2.75rem" },
+                fontWeight: 800,
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+                flex: 1,
+              }}
+            >
+              A searchable map of who, what, and where —
+              <Box component="span" sx={{ color: ACCENT }}>
+                {" "}across the entire Why Files corpus.
+              </Box>
+            </Typography>
+            <Box sx={{
+              flexShrink: 0,
+              "& > *": { animation: "wfd-home-hover 6s ease-in-out infinite" },
+              "@keyframes wfd-home-hover": {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%":      { transform: "translateY(-6px)" },
+              },
+            }}>
+              <UfoLogo height={110} />
             </Box>
-          </Typography>
+          </Box>
           <Typography
             variant="h6"
             sx={{
