@@ -24,7 +24,7 @@ export const NAV_ITEMS: NavItem[] = [
   { path: "/videos",                 label: "Videos" },
   { path: "/claims",                 label: "Claims" },
   { path: "/contradictions",         label: "Contradictions" },
-  { path: "/cross-video-agreements", label: "Agreements" },
+  { path: "/cross-video-agreements", label: "Repeat Claims" },
   { path: "/entity-map",             label: "Entity Map" },
   { path: "/argument-map",           label: "Argument Map" },
   { path: "/about",                  label: "About" },

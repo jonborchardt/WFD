@@ -104,15 +104,15 @@ export function ClaimResultRow({ claim, nav, bundle }: ClaimResultRowProps) {
             title={
               <Box sx={{ fontSize: 12, lineHeight: 1.4 }}>
                 <Box sx={{ mb: 0.5 }}>
-                  <strong>{deps.out} out</strong> — this claim
-                  supports / contradicts / presupposes / elaborates{" "}
+                  <strong>{deps.out} out</strong> — this claim backs
+                  up, contradicts, leans on, or adds to{" "}
                   {deps.out === 1 ? "another claim" : "other claims"}
                 </Box>
                 <Box>
                   <strong>{deps.in} in</strong> —{" "}
                   {deps.in === 1 ? "another claim" : "other claims"}{" "}
-                  point at this one (it supports, contradicts,
-                  presupposes, or elaborates them)
+                  link to this one (they back it up, contradict it,
+                  lean on it, or add to it)
                 </Box>
               </Box>
             }

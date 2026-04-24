@@ -708,7 +708,7 @@ export function VideosPage() {
         title="Videos"
         matchCount={activeRows.length}
         totalCount={bundle.videos.length}
-        description="Every Why Files episode in the corpus, with the entities each episode mentions. Brush a time range or pick entities in the rail to narrow to the videos that touch a topic."
+        description="Every Why Files episode, with the people, places, and topics each one covers. Drag a time range, or pick topics in the sidebar, to narrow the list down to episodes that touch a subject."
       />
       <RailResultsLayout rail={rail} results={results} />
     </FacetsPageOuter>

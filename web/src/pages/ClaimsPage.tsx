@@ -59,40 +59,40 @@ const SORT_OPTIONS: SortOption[] = [
 // optional `title` that surfaces as the native hover tooltip; these
 // maps are the source of truth for what each categorical value means.
 const KIND_TITLES: Record<string, string> = {
-  empirical: "Testable against observation or measurement — facts about the world that could in principle be verified.",
+  empirical: "Could be checked against the real world — something you could in theory measure or prove.",
   historical: "A claim about a past event: what happened, when, to whom.",
-  speculative: "Goes beyond available evidence — predictions, conjectures, \"what if\" reasoning.",
-  opinion: "A subjective value judgment about what is good, right, or worthwhile.",
-  definitional: "A claim about what a term means or how categories should be drawn.",
+  speculative: "Goes past what the evidence shows — guesses, predictions, \"what if\" thinking.",
+  opinion: "A judgment call about what's good, right, or worthwhile.",
+  definitional: "A claim about what a word means, or where the line between two categories should go.",
 };
 const STANCE_TITLES: Record<string, string> = {
-  asserts: "The host endorses the claim as true.",
-  denies: "The host presents the claim in order to reject it (\"some people say X, but…\").",
-  uncertain: "The host is agnostic or non-committal about the claim.",
-  steelman: "The host presents the strongest version of a view they do not necessarily hold, to engage with it honestly.",
-  __none__: "No stance was annotated on this claim.",
+  asserts: "The host is saying this is true.",
+  denies: "The host brings it up to push back on it (\"some people say X, but…\").",
+  uncertain: "The host isn't taking a side on this one.",
+  steelman: "The host lays out the strongest version of an idea he doesn't necessarily agree with, so it gets a fair hearing.",
+  __none__: "No stance was recorded on this claim.",
 };
 const SOURCE_TITLES: Record<string, string> = {
-  direct: "directTruth was set explicitly on the claim during extraction (usually because it sits in a verdict section).",
-  derived: "Truth was computed by propagation through supporting and contradicting dependencies in the claim graph.",
-  override: "An operator manually pinned this claim's truth value, overriding the derived value.",
-  uncalibrated: "No signal either way — neutral default; the reasoning layer has no basis to move this claim off 0.5.",
+  direct: "The host gave his verdict on this claim directly in the episode.",
+  derived: "The truth score was worked out from other claims that back this up or push against it.",
+  override: "Someone reviewing the site pinned this claim's truth score by hand.",
+  uncalibrated: "No signal either way — we have nothing to judge this claim on yet.",
 };
 const VERDICT_TITLES: Record<string, string> = {
-  yes: "The claim appears in a verdict-labeled segment of the transcript — a strong signal for directTruth.",
-  no: "The claim is not in a verdict segment; directTruth (if any) came from evidence, not a host rating.",
+  yes: "The claim shows up in a part of the episode where the host is giving his verdict — a strong signal for the truth score.",
+  no: "The claim isn't in a verdict segment; any truth score came from the evidence, not a direct host rating.",
 };
 const CONTRADICTED_TITLES: Record<string, string> = {
-  yes: "At least one other claim in the corpus contradicts this one.",
-  no: "No detected contradictions against this claim.",
+  yes: "At least one other claim on the site contradicts this one.",
+  no: "No contradictions against this claim were found.",
 };
 const HASIN_TITLES: Record<string, string> = {
-  yes: "At least one other claim depends on this claim (supports / contradicts / presupposes / elaborates).",
-  no: "Nothing else in the corpus cites this claim.",
+  yes: "At least one other claim links to this one (backs it up, contradicts it, leans on it, or adds to it).",
+  no: "Nothing else on the site links to this claim.",
 };
 const HASOUT_TITLES: Record<string, string> = {
-  yes: "This claim has dependencies on other claims — it supports, contradicts, presupposes, or elaborates them.",
-  no: "This claim stands alone; it has no outgoing dependencies.",
+  yes: "This claim links out to other claims — it backs them up, contradicts them, leans on them, or adds to them.",
+  no: "This claim stands alone; it doesn't link to any other claims.",
 };
 
 const KIND_ORDER = [
@@ -398,8 +398,8 @@ export function ClaimsPage() {
   );
   const verdictRows = makeCountRows(
     [
-      ["yes", "verdict section", VERDICT_TITLES.yes],
-      ["no", "not in verdict", VERDICT_TITLES.no],
+      ["yes", "host gave a verdict", VERDICT_TITLES.yes],
+      ["no", "no host verdict", VERDICT_TITLES.no],
     ],
     filterExcept(bundle.claims, filter, bundle, "verdict"),
     (c) => c.inVerdictSection ? "yes" : "no",
@@ -414,7 +414,7 @@ export function ClaimsPage() {
   );
   const hasInRows = makeCountRows(
     [
-      ["yes", "cited by others", HASIN_TITLES.yes],
+      ["yes", "other claims link to it", HASIN_TITLES.yes],
       ["no", "none", HASIN_TITLES.no],
     ],
     filterExcept(bundle.claims, filter, bundle, "hasIn"),
@@ -422,7 +422,7 @@ export function ClaimsPage() {
   );
   const hasOutRows = makeCountRows(
     [
-      ["yes", "cites others", HASOUT_TITLES.yes],
+      ["yes", "links to other claims", HASOUT_TITLES.yes],
       ["no", "none", HASOUT_TITLES.no],
     ],
     filterExcept(bundle.claims, filter, bundle, "hasOut"),
@@ -604,7 +604,7 @@ export function ClaimsPage() {
             </FacetCard>
           </FacetSection>
 
-          <FacetSection title="magnitudes">
+          <FacetSection title="scores">
             <FacetCard
               label="truth range" color={FACET.truthRange}
               selected={filter.truthRange ? 1 : 0}
@@ -659,7 +659,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="cited by (incoming)" color={FACET.citedBy}
+              label="linked from" color={FACET.citedBy}
               selected={filter.hasIn.size} total={2}
             >
               <BarListFacet
@@ -669,7 +669,7 @@ export function ClaimsPage() {
               />
             </FacetCard>
             <FacetCard
-              label="cites (outgoing)" color={FACET.cites}
+              label="links out to" color={FACET.cites}
               selected={filter.hasOut.size} total={2}
             >
               <BarListFacet
@@ -797,7 +797,7 @@ export function ClaimsPage() {
         matchCount={filtered.length}
         totalCount={bundle.claims.length}
         suffix={<GraphSeedsButton claimIds={sorted.map((c) => c.id)} />}
-        description="Thesis-level claims extracted from each video — the debatable points the host makes, with derived truth from the dependency graph and links back to the transcript evidence."
+        description="The big points the host makes in each episode — the kind of thing you could argue for or against. Each one has a truth score, links to other claims it leans on or conflicts with, and a jump back to the spot in the transcript where it was said."
       />
       <RailResultsLayout rail={rail} results={results} />
     </FacetsPageOuter>
@@ -819,10 +819,10 @@ const STRING_KEY_LABEL: Record<StringSetKey, string> = {
 };
 
 const BOOL_CHIP_LABEL: Record<BoolSetKey, Record<YesNo, string>> = {
-  verdict:       { yes: "verdict section", no: "not in verdict" },
-  contradicted:  { yes: "contradicted",    no: "no contradictions" },
-  hasIn:         { yes: "cited by others", no: "not cited" },
-  hasOut:        { yes: "cites others",    no: "no outgoing deps" },
+  verdict:       { yes: "host gave a verdict",        no: "no host verdict" },
+  contradicted:  { yes: "contradicted",                no: "no contradictions" },
+  hasIn:         { yes: "other claims link to it",     no: "nothing links to it" },
+  hasOut:        { yes: "links to other claims",       no: "stands alone" },
 };
 
 // Build pre-sorted BarRows with per-bucket counts from a projection.

@@ -15,7 +15,7 @@ import { beginLoad } from "../lib/loading";
 const SORT_OPTIONS: SortOption[] = [
   { value: "shared-desc", label: "most shared entities" },
   { value: "similarity-desc", label: "highest text similarity",
-    hint: "jaccard desc (cross-video only)" },
+    hint: "strongest word overlap first (across-episode only)" },
   { value: "kind", label: "group by kind" },
 ];
 
@@ -38,7 +38,7 @@ export function ContradictionsPage() {
   return (
     <FacetedPairsPage
       title="Contradictions"
-      description="Claim pairs that take opposing positions — within one video, across different videos, or between a claim and the presupposition another claim depends on. Each row links to both sides' evidence."
+      description="Pairs of claims that don't agree — sometimes in the same episode, sometimes across different episodes, and sometimes because one claim quietly assumes something another claim says isn't true. Each row links to the transcript for both sides."
       rows={bundle.contradictions}
       bundle={bundle}
       facets={{

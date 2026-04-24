@@ -50,25 +50,25 @@ const PER_TYPE_VISIBLE = 8;
 // Third tuple element is the hover tooltip rendered by BarListFacet —
 // a plain-English definition of the categorical value.
 export const KIND_LABELS: ReadonlyArray<readonly [string, string, string]> = [
-  ["pair", "pair",
-    "Two claims in the same video that contradict each other."],
-  ["broken-presupposition", "broken presupp",
-    "One claim presupposes something another claim explicitly denies — the chain rests on a premise that's rejected elsewhere."],
-  ["cross-video", "cross-video",
-    "Two claims from different videos detected as conflicting (via shared entities + text similarity, then AI-verified)."],
-  ["manual", "manual",
-    "An operator-authored contradiction the automated detector missed."],
+  ["pair", "same episode",
+    "Two claims in the same episode that contradict each other."],
+  ["broken-presupposition", "quiet assumption",
+    "One claim quietly takes something for granted that another claim flat-out denies."],
+  ["cross-video", "across episodes",
+    "Two claims from different episodes that disagree. The site spotted them, then an AI double-checked that it's a real conflict."],
+  ["manual", "added by hand",
+    "A contradiction someone reviewing the site added, that the automatic detector missed."],
 ];
 
 export const REASON_LABELS: ReadonlyArray<readonly [string, string, string]> = [
-  ["jaccard", "jaccard",
-    "Candidate pair detected via Jaccard token-overlap between the two claim texts."],
-  ["strong-overlap", "strong-overlap",
-    "Candidate pair detected via unusually strong shared-entity overlap."],
-  ["cosine", "cosine",
-    "Candidate pair detected via sentence-embedding cosine similarity (semantic match, not just shared words)."],
+  ["jaccard", "shared words",
+    "Found because the two claims share a lot of the same words."],
+  ["strong-overlap", "shared entities",
+    "Found because the two claims mention an unusual number of the same people, places, or things."],
+  ["cosine", "similar meaning",
+    "Found because the two claims mean similar things, even when they use different words."],
   ["__none__", "(none)",
-    "No cross-video match reason — same-video pair, manual entry, or legacy record."],
+    "No across-episode match reason — same-episode pair, added by hand, or older record."],
 ];
 
 export interface FacetToggles {
