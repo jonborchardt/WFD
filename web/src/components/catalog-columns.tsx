@@ -1,23 +1,38 @@
-import { Chip, Link, Tooltip } from "@mui/material";
+import { Box, Chip, Link, Tooltip } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import type { VideoRow, CatalogColumn } from "../types";
 import { fmtDate, descriptionPreview } from "../lib/format";
 import { useOpenVideo } from "./VideoLightbox";
 
-function CatalogTitleLink({ row }: { row: VideoRow }) {
+function CatalogTitleCell({ row }: { row: VideoRow }) {
   const openVideo = useOpenVideo();
   return (
-    <Link
-      component="button"
-      type="button"
-      underline="hover"
-      onClick={(e: React.MouseEvent) => {
-        e.stopPropagation();
-        openVideo({ videoId: row.videoId, title: row.title, sourceUrl: row.sourceUrl });
-      }}
-      sx={{ textAlign: "left" }}
-    >
-      {row.title || row.videoId}
-    </Link>
+    <Box>
+      <Box sx={{ fontWeight: 500, lineHeight: 1.3 }}>{row.title || row.videoId}</Box>
+      <Box sx={{ mt: 0.25, display: "flex", gap: 1, fontSize: 12 }}>
+        <Link
+          component="button"
+          type="button"
+          underline="hover"
+          onClick={(e: React.MouseEvent) => {
+            e.stopPropagation();
+            openVideo({ videoId: row.videoId, title: row.title, sourceUrl: row.sourceUrl });
+          }}
+          sx={{ fontSize: 12 }}
+        >
+          youtube
+        </Link>
+        <Link
+          component={RouterLink}
+          to={"/video/" + row.videoId}
+          underline="hover"
+          onClick={(e: React.MouseEvent) => e.stopPropagation()}
+          sx={{ fontSize: 12 }}
+        >
+          details
+        </Link>
+      </Box>
+    </Box>
   );
 }
 
@@ -48,16 +63,16 @@ export const CATALOG_COLUMNS: CatalogColumn[] = [
   { key: "videoId", label: "ID", default: false, render: (r: VideoRow) => r.videoId },
   {
     key: "title", label: "Title", default: true, mobileDefault: true,
-    headSx: { width: 240 }, cellSx: { width: 240 },
-    render: (r: VideoRow) => <CatalogTitleLink row={r} />,
+    headSx: { minWidth: 360 }, cellSx: { minWidth: 360 },
+    render: (r: VideoRow) => <CatalogTitleCell row={r} />,
   },
   { key: "channel", label: "Channel", default: false, render: (r: VideoRow) => r.channel || "" },
   { key: "channelId", label: "Channel ID", default: false, render: (r: VideoRow) => r.channelId || "" },
   {
-    key: "description", label: "Description", default: true,
+    key: "description", label: "Description", default: false,
     headSx: { width: 480 },
     cellSx: { width: 480, maxWidth: 480, color: "text.secondary" },
-    render: (r: VideoRow) => descriptionPreview(r.description, 100),
+    render: (r: VideoRow) => descriptionPreview(r.description, 80),
   },
   { key: "publishDate", label: "Published", default: true, mobileDefault: true, render: (r: VideoRow) => fmtDate(r.publishDate) },
   { key: "uploadDate", label: "Uploaded", default: false, render: (r: VideoRow) => fmtDate(r.uploadDate) },

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="sky6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#05040a"/>
+      <stop offset="0.6" stop-color="#1a0a1a"/>
+      <stop offset="1" stop-color="#3a1040"/>
+    </linearGradient>
+    <radialGradient id="moon6" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.6" stop-color="#ffe8a0"/>
+      <stop offset="0.85" stop-color="#ffe8a0" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#ffe8a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="beam6" cx="0.5" cy="0" r="1" fx="0.5" fy="0">
+      <stop offset="0" stop-color="#8affc0" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#8affc0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur6"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#sky6)"/>
+
+  <g fill="#ffffff">
+    <circle cx="80" cy="60" r="1.2"/>
+    <circle cx="220" cy="90" r="0.8"/>
+    <circle cx="340" cy="40" r="1.5"/>
+    <circle cx="450" cy="110" r="0.9"/>
+    <circle cx="560" cy="50" r="1"/>
+    <circle cx="640" cy="130" r="0.7"/>
+    <circle cx="780" cy="70" r="1.3"/>
+    <circle cx="890" cy="30" r="0.9"/>
+    <circle cx="980" cy="100" r="1"/>
+    <circle cx="1080" cy="50" r="0.8"/>
+    <circle cx="1150" cy="130" r="1.2"/>
+    <circle cx="130" cy="180" r="0.7"/>
+    <circle cx="420" cy="200" r="1"/>
+    <circle cx="720" cy="210" r="0.8"/>
+    <circle cx="960" cy="190" r="1.1"/>
+    <circle cx="1120" cy="240" r="0.9"/>
+    <circle cx="50" cy="280" r="1"/>
+    <circle cx="1180" cy="310" r="0.7"/>
+  </g>
+
+  <g transform="translate(1000,120)">
+    <circle r="80" fill="url(#moon6)"/>
+    <circle r="55" fill="#fff6d8"/>
+    <circle cx="-18" cy="-12" r="6" fill="#e8d8a8" opacity="0.6"/>
+    <circle cx="14" cy="8" r="8" fill="#e8d8a8" opacity="0.5"/>
+    <circle cx="-6" cy="22" r="4" fill="#e8d8a8" opacity="0.7"/>
+  </g>
+
+  <path d="M0 460 L90 400 L180 440 L270 380 L380 440 L500 390 L620 450 L760 380 L900 440 L1040 400 L1200 460 L1200 630 L0 630 Z" fill="#0a0812" opacity="0.9"/>
+  <path d="M0 510 L120 470 L240 500 L380 460 L520 500 L680 450 L820 500 L980 460 L1200 510 L1200 630 L0 630 Z" fill="#0a0612"/>
+
+  <!-- UFO (graphical logo lockup) -->
+  <g transform="translate(280,200)">
+    <path d="M-70 30 L-190 260 L190 260 L70 30 Z" fill="url(#beam6)"/>
+    <ellipse cx="0" cy="25" rx="110" ry="14" fill="#0a0810"/>
+    <ellipse cx="0" cy="20" rx="100" ry="22" fill="#6a4a90"/>
+    <ellipse cx="0" cy="14" rx="88" ry="18" fill="#9a7ac0"/>
+    <ellipse cx="0" cy="5" rx="50" ry="18" fill="#c0a0e8"/>
+    <ellipse cx="-10" cy="-2" rx="26" ry="8" fill="#e8d8ff" opacity="0.8"/>
+    <circle cx="-70" cy="22" r="5" fill="#ff5070"/>
+    <circle cx="-40" cy="26" r="5" fill="#50ff90"/>
+    <circle cx="-10" cy="28" r="5" fill="#ffd050"/>
+    <circle cx="20" cy="28" r="5" fill="#50a0ff"/>
+    <circle cx="50" cy="26" r="5" fill="#ff5070"/>
+    <circle cx="80" cy="22" r="5" fill="#50ff90"/>
+    <ellipse cx="-70" cy="22" r="12" fill="#ff5070" opacity="0.3" filter="url(#blur6)"/>
+    <ellipse cx="-40" cy="26" r="12" fill="#50ff90" opacity="0.3" filter="url(#blur6)"/>
+    <ellipse cx="80" cy="22" r="12" fill="#50ff90" opacity="0.3" filter="url(#blur6)"/>
+  </g>
+
+  <g transform="translate(260,450)">
+    <ellipse cx="0" cy="12" rx="28" ry="4" fill="#000" opacity="0.5"/>
+    <path d="M-20,0 L-22,-12 L-16,-14 L-14,-4 L14,-4 L16,-14 L22,-12 L20,0 L18,10 L-18,10 Z" fill="#2a1a1a"/>
+    <circle cx="-14" cy="-8" r="2" fill="#0a0812"/>
+  </g>
+
+  <!-- Text lockup: WHY FILES over DATABASE, same width (608).
+       DATABASE is x-scaled 1.283 so the lockup aligns in librsvg / sharp too
+       (textLength is unreliable in rasterizers — transform scale is not). -->
+  <g transform="translate(540,230)" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif" fill="#fff">
+    <text x="0" y="0" font-size="20" font-weight="700" letter-spacing="7" fill="#8affc0">★ AN INDEPENDENT RESEARCH INDEX ★</text>
+    <text x="0" y="90" font-size="96" font-weight="900" letter-spacing="-3">WHY FILES</text>
+    <g transform="translate(0,168) scale(1.283,1)">
+      <text x="0" y="0" font-size="68" font-weight="900" letter-spacing="2">DATABASE</text>
+    </g>
+    <rect x="0" y="186" width="608" height="5" fill="#8affc0"/>
+    <text x="0" y="238" font-family="'Georgia', serif" font-style="italic" font-size="28" fill="#e0d0f0">
+      <tspan x="0" dy="0">the truth is out there</tspan>
+      <tspan x="0" dy="38">— and it's fully cited.</tspan>
+    </text>
+  </g>
+
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18">
+    <text x="600" y="605" text-anchor="middle" fill="#8affc0" letter-spacing="4">◉ jonborchardt.github.io/WFD ◉</text>
+  </g>
+</svg>

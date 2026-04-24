@@ -1,4 +1,5 @@
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { UfoLoader } from "./brand";
 
 interface Props {
   label?: string;
@@ -23,7 +24,7 @@ export function PageLoading({ label = "loading…", hint }: Props) {
         py: 8,
       }}
     >
-      <CircularProgress />
+      <UfoLoader size={56} />
       <Typography variant="body2" color="text.secondary">{label}</Typography>
       {hint && (
         <Typography variant="caption" color="text.secondary">{hint}</Typography>

@@ -45,6 +45,7 @@ import {
   FacetsPageHeader, FacetsPageOuter, RailResultsLayout,
 } from "../components/facets/FacetsPageShell";
 import { SimpleVideoTable } from "../components/SimpleVideoTable";
+import { PageLoading } from "../components/PageLoading";
 import { beginLoad } from "../lib/loading";
 import { ENTITY_TYPE_COLOR } from "../components/catalog-columns";
 import { colors } from "../theme";
@@ -195,7 +196,7 @@ export function VideosPage() {
     return out;
   }, [bundle]);
 
-  if (!bundle) return null;
+  if (!bundle) return <PageLoading label="loading videos…" />;
 
   const present = new Set(bundle.typesInOrder);
   const timeTypes = TIME_TYPES_IN_ORDER.filter((t) => present.has(t));
@@ -707,7 +708,7 @@ export function VideosPage() {
         title="Videos"
         matchCount={activeRows.length}
         totalCount={bundle.videos.length}
-        description="Every Why Files episode in the corpus, with the entities each episode mentions. Brush a time range or pick entities in the rail to narrow to the videos that touch a topic."
+        description="Every Why Files episode, with the people, places, and topics each one covers. Drag a time range, or pick topics in the sidebar, to narrow the list down to episodes that touch a subject."
       />
       <RailResultsLayout rail={rail} results={results} />
     </FacetsPageOuter>

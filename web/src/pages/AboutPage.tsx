@@ -2,6 +2,7 @@ import { Link as RouterLink } from "react-router-dom";
 import type { ReactNode } from "react";
 import { Box, Container, Link, Paper, Typography } from "@mui/material";
 import { colors } from "../theme";
+import { UfoLogo } from "../components/brand";
 
 // About page. Holds the long-form explanation — motivation,
 // pipeline internals, claims+contradictions depth, contribution,
@@ -29,28 +30,49 @@ export function AboutPage() {
         >
           about
         </Typography>
-        <Typography
-          variant="h4"
-          sx={{ fontWeight: 700, lineHeight: 1.2, mt: 0.5 }}
-        >
-          About{" "}
-          <Box
-            component="span"
-            sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
-          >
-            Why{"\u00a0"}Files
-          </Box>{" "}
-          Database
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={{ mt: 1, color: "text.secondary", maxWidth: 640 }}
-        >
-          What it is, why it exists, how the pipeline works, and how
-          to help improve it. If you haven't seen the one-claim
-          walk-through yet, start on the{" "}
-          <Link component={RouterLink} to="/">home page</Link>.
-        </Typography>
+        <Box sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: { xs: 2, sm: 3 },
+          mt: 0.5,
+          flexDirection: { xs: "column", sm: "row" },
+          textAlign: { xs: "center", sm: "left" },
+        }}>
+          <Box sx={{ flex: 1 }}>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: 700, lineHeight: 1.2 }}
+            >
+              About{" "}
+              <Box
+                component="span"
+                sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
+              >
+                Why{"\u00a0"}Files
+              </Box>{" "}
+              Database
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{ mt: 1, color: "text.secondary", maxWidth: 640 }}
+            >
+              What it is, why it exists, how the pipeline works, and how
+              to help improve it. If you haven't seen the one-claim
+              walk-through yet, start on the{" "}
+              <Link component={RouterLink} to="/">home page</Link>.
+            </Typography>
+          </Box>
+          <Box sx={{
+            flexShrink: 0,
+            "& > *": { animation: "wfd-about-hover 5s ease-in-out infinite" },
+            "@keyframes wfd-about-hover": {
+              "0%, 100%": { transform: "translateY(0)" },
+              "50%":      { transform: "translateY(-8px)" },
+            },
+          }}>
+            <UfoLogo height={120} />
+          </Box>
+        </Box>
       </Paper>
 
       <Section title="What is this?">
@@ -64,40 +86,38 @@ export function AboutPage() {
             </Box>{" "}
             Database
           </strong>{" "}
-          ingests the full YouTube transcript corpus of{" "}
+          takes every YouTube transcript from{" "}
           <Link href="https://thewhyfiles.com" target="_blank" rel="noopener">
             The Why Files
           </Link>{" "}
-          and turns it into something you can actually <em>query</em>: a
-          searchable catalog of videos, an extracted graph of the people,
-          places, organizations, and events discussed across hundreds of
-          episodes, and a set of tools for surfacing contradictions,
-          recurring claims, and novel connections — all of it pointing
-          back to the exact moment in the exact video where something was
-          said.
+          and turns it into something you can actually <em>search</em>:
+          a catalog of episodes, a map of the people, places, groups,
+          and events talked about across hundreds of episodes, and a
+          set of tools for surfacing contradictions, repeat claims,
+          and new connections — all of it pointing back to the exact
+          moment in the exact video where something was said.
         </Typography>
       </Section>
 
       <Section title="Why build it?">
         <Typography paragraph>
-          Contested, long-running topics accumulate a{" "}
-          <em>narrative history</em> that no single episode captures.
-          A viewer who has seen the entire corpus carries a model of
-          which claims the host has asserted firmly, which he's
-          walked back, which he's debunked in a later episode, and
-          which he's introduced as a steelman. That model lives
-          nowhere except in their head. This site is an attempt to
-          externalize it.
+          Topics like UFOs and ancient mysteries keep coming back
+          across episodes, and the story changes as they do. A
+          viewer who's watched every episode carries a mental map:
+          which claims the host has stated firmly, which ones he's
+          walked back, which ones he's debunked in a later episode,
+          and which ones he's laid out fairly just to engage with
+          them. That map only exists in your head. This site is an
+          attempt to put it on the screen.
         </Typography>
         <Typography paragraph>
-          Once the transcripts are structured data, a lot of
-          questions that are infeasible to ask a YouTube search bar
-          become trivial: <em>"every time Bigfoot has been
-          mentioned, sorted by how firmly the host was asserting the
-          claim"</em>,{" "}
-          <em>"all the places where two episodes disagree about the
-          same event"</em>, <em>"every claim whose support depends on
-          a presupposition the host himself rejected elsewhere"</em>.
+          Once the transcripts become a searchable database, a lot
+          of questions that are painful to ask a YouTube search bar
+          become easy: <em>"every time Bigfoot has been mentioned,
+          sorted by how firmly the host was stating the claim"</em>,{" "}
+          <em>"every place two episodes disagree about the same
+          event"</em>, <em>"every claim whose support quietly leans
+          on something the host himself rejected elsewhere"</em>.
         </Typography>
         <Callout>
           Our goal is <strong>not to declare truth</strong>. The goal
@@ -111,66 +131,71 @@ export function AboutPage() {
 
       <Section title="How it works">
         <Typography paragraph>
-          The pipeline runs in stages. First we <strong>fetch</strong>{" "}
-          transcripts directly from YouTube (politely — transcripts are
-          gold; once we have one, we never re-fetch it). Then a pair of
-          zero-shot neural models does the heavy lifting:{" "}
-          <Mono>GLiNER</Mono> pulls out entities across fourteen label
-          types (people, organizations, locations, facilities, events,
-          dates, roles, technologies, works of media, laws, ideologies,
-          and more) and <Mono>GLiREL</Mono> scores relations between them
-          against a vocabulary of predicates.
+          The site builds itself in stages. First we{" "}
+          <strong>pull in</strong> transcripts directly from YouTube
+          (politely — transcripts are gold; once we have one, we
+          never re-fetch it). Then two AI models do the heavy
+          lifting: the first one pulls out the names in each episode
+          — people, groups, places, buildings, events, dates, roles,
+          technologies, books and movies, laws, ideologies, and so
+          on — and the second one figures out how they connect.
         </Typography>
         <Typography paragraph sx={{ mb: 0 }}>
-          After that, an <strong>AI enrichment</strong> pass refines and
-          adds relationships the neural models missed. A cross-transcript
-          alias layer merges duplicates (e.g. "Dan" and "Dan Brown"
-          across 40 videos) and filters known noise. Everything lands in
-          a graph store with per-claim truth scoring, contradiction
-          detection, and loop detection. A separate "skeptic" layer
-          scores speaker credibility from transcript signals. The public
-          site you're reading right now is the read-only front end on top
-          of all of that.
+          After that, a more careful <strong>AI pass</strong> cleans
+          up what those models missed or got wrong, and adds
+          connections they couldn't see. A merge step ties together
+          the same name when it shows up in different forms (e.g.
+          "Dan" and "Dan Brown" across 40 videos) and drops known
+          junk. Everything lands in one big map with a truth score
+          on each claim, contradiction spotting, and loop detection.
+          A separate "skeptic" layer rates each speaker's track
+          record from what their own transcripts say. The public
+          site you're reading right now is the read-only front end
+          on top of all of that.
         </Typography>
       </Section>
 
       <Section title="Claims & contradictions">
         <Typography paragraph>
-          On top of the relationship graph, an AI pass over each
-          transcript extracts <strong>claims</strong>: thesis-level
-          statements the host makes, each with a tight single-sentence
-          evidence quote, a truth score, and (where relevant){" "}
-          <em>dependencies</em> on other claims — "this follows from,"
-          "this contradicts," "this presupposes." Contradicts
-          dependencies carry a subkind tag so the reasoning layer knows
-          whether A strictly rules out B, debunks it, proposes a
-          competing explanation, or just undercuts its probative value.
+          On top of that map, another AI pass reads each transcript
+          and pulls out the <strong>claims</strong>: the big points
+          the host is making — the kind of thing worth a heading —
+          each one with a short quote from the transcript, a truth
+          score, and (when it applies) <em>links</em> to other
+          claims: "this backs up," "this contradicts," "this takes
+          for granted." Contradiction links are tagged so the site
+          knows whether claim A <em>rules out</em> claim B,{" "}
+          <em>pushes back on the evidence for</em> it, offers a{" "}
+          <em>different explanation</em>, or just <em>weakens</em>{" "}
+          it.
         </Typography>
         <Typography paragraph>
-          A reasoning layer propagates truth through the claim graph,
-          flags contradictions (within a single episode, between
-          episodes, or when a presupposition is broken), and supports
-          counterfactual queries: "if this claim were false, which
-          others would move?" Cross-video contradiction candidates are
-          found by sentence-embedding similarity and then run through a
-          second AI pass that verdicts each pair — so what surfaces on{" "}
+          A reasoning layer works truth out from the links (within a
+          single episode, between episodes, or when one claim quietly
+          assumes something another claim denies), and answers
+          "what-if" questions: "if this claim turned out to be
+          false, which other claims would move?" Contradictions
+          across episodes are found by matching claims that sound
+          like they might disagree, then double-checked by a second
+          AI pass — so what shows up on{" "}
           <Link component={RouterLink} to="/contradictions">
             /contradictions
           </Link>{" "}
-          is real disagreement, not noise from a shared generic entity.
+          is real disagreement, not two episodes that happen to
+          mention the same name.
         </Typography>
         <Typography paragraph sx={{ mb: 0 }}>
           The flip side also gets its own page:{" "}
           <Link component={RouterLink} to="/cross-video-agreements">
             /cross-video-agreements
           </Link>{" "}
-          lists pairs the verifier identified as asserting the same
-          thesis across two different videos — positive corroboration
-          rather than conflict. Everything is searchable and filterable
-          by truth, kind, and stance. Each claim row carries a truth
-          bar and a confidence bar so you can see at a glance whether
-          the AI thinks the host is asserting something firmly,
-          steelmanning a fringe idea, or explicitly debunking it.
+          lists pairs the checker identified as the same idea said
+          twice in two different episodes — agreement rather than
+          conflict. Everything is searchable and can be filtered by
+          truth, type, and the host's stance. Each claim row has a
+          truth bar and a confidence bar so you can see at a glance
+          whether the host is stating something firmly, giving a
+          fringe idea a fair hearing, or flat-out knocking it down.
         </Typography>
       </Section>
 

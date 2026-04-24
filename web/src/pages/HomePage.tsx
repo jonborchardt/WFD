@@ -2,6 +2,7 @@ import { Link as RouterLink } from "react-router-dom";
 import type { ReactNode } from "react";
 import { Box, Button, Container, Link, Paper, Stack, Typography } from "@mui/material";
 import { colors } from "../theme";
+import { UfoLogo } from "../components/brand";
 
 // Editorial hero establishes what the site is and why it exists,
 // then a three-step walk-through teaches the core concepts (claim,
@@ -28,23 +29,43 @@ export function HomePage() {
             variant="overline"
             sx={{ color: ACCENT, letterSpacing: 2, fontWeight: 700 }}
           >
-            an independent research index
+            an independent fan-built index
           </Typography>
-          <Typography
-            component="h1"
-            sx={{
-              fontSize: { xs: "2.25rem", md: "3.25rem" },
-              fontWeight: 800,
-              lineHeight: 1.05,
-              mt: 1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            A searchable map of who, what, and where —
-            <Box component="span" sx={{ color: ACCENT }}>
-              {" "}across the entire Why Files corpus.
+          <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: { xs: 2, md: 3 },
+            mt: 1,
+            maxWidth: 720,
+            flexDirection: { xs: "column", sm: "row" },
+            textAlign: { xs: "center", sm: "left" },
+          }}>
+            <Typography
+              component="h1"
+              sx={{
+                fontSize: { xs: "2rem", md: "2.75rem" },
+                fontWeight: 800,
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+                flex: 1,
+              }}
+            >
+              A searchable map of who, what, and where —
+              <Box component="span" sx={{ color: ACCENT }}>
+                {" "}across every Why Files episode.
+              </Box>
+            </Typography>
+            <Box sx={{
+              flexShrink: 0,
+              "& > *": { animation: "wfd-home-hover 6s ease-in-out infinite" },
+              "@keyframes wfd-home-hover": {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%":      { transform: "translateY(-6px)" },
+              },
+            }}>
+              <UfoLogo height={110} />
             </Box>
-          </Typography>
+          </Box>
           <Typography
             variant="h6"
             sx={{
@@ -59,11 +80,12 @@ export function HomePage() {
             <Link href="https://thewhyfiles.com" target="_blank" rel="noopener">
               The Why Files
             </Link>{" "}
-            turned into structured data. People, places, events, and
-            the claims made about them — each one anchored to the
-            exact transcript line it came from. Nothing floats.
-            Nothing is declared true. You just get to see who said
-            what, where they said it, and who disagreed.
+            turned into a database you can actually search. People,
+            places, events, and the claims made about them — each
+            one tied to the exact line in the transcript it came
+            from. Nothing is floating. Nothing is declared true. You
+            just see who said what, where they said it, and who
+            disagreed.
           </Typography>
           <Typography
             variant="body1"
@@ -75,13 +97,12 @@ export function HomePage() {
             }}
           >
             <em>The Why Files</em> covers contested territory: UFOs,
-            cryptids, ancient mysteries, unsolved cases, fringe
-            science. That's the kind of material where a normal
-            "search the video" experience falls apart. You don't
-            want a keyword hit — you want to know every time a given
-            person, place, or event is mentioned, what was claimed
-            about it, who contradicted whom, and which episode
-            introduced which thread.
+            cryptids, ancient mysteries, unsolved cases, weird
+            science. With that kind of material, searching a single
+            video for a keyword isn't enough. You want to know{" "}
+            <em>every</em> time a person, place, or event comes up,
+            what was said about it, who pushed back, and which
+            episode started the thread.
           </Typography>
           <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 4 }}>
             <Button
@@ -165,11 +186,11 @@ export function HomePage() {
             </Box>
           </Paper>
           <Caption>
-            A <strong>claim</strong> is a single testable proposition
-            the host makes — not every fact, just the ones worth a
-            heading. Each one gets a <em>directTruth</em> score and a
-            record of whether the host is asserting it, denying it,
-            or presenting it to debunk it.
+            A <strong>claim</strong> is a single point the host is
+            making — not every small fact, just the ones big enough
+            to get their own heading. Each one gets a truth score
+            and a note on whether the host is stating it, pushing
+            back on it, or bringing it up to knock it down.
           </Caption>
         </Step>
 
@@ -198,10 +219,11 @@ export function HomePage() {
             </Typography>
           </Paper>
           <Caption>
-            Every claim points back to an <strong>evidence span</strong>:
-            a specific transcript id + character range. You can click
-            through to hear it in context. No floating assertions, no
-            "trust us" — if the claim isn't anchored, it doesn't exist.
+            Every claim points back to the{" "}
+            <strong>exact words in the transcript</strong> — a
+            specific episode and timestamp you can click through to.
+            No floating claims, no "trust us" — if the claim isn't
+            anchored, it doesn't exist.
           </Caption>
         </Step>
 
@@ -217,7 +239,7 @@ export function HomePage() {
             }}
           >
             <Typography variant="caption" color="error.main" sx={{ fontWeight: 600 }}>
-              CROSS-VIDEO · LOGICAL-CONTRADICTION
+              ACROSS EPISODES · CAN'T BOTH BE TRUE
             </Typography>
             <Typography sx={{ mt: 0.5, fontSize: "1rem", lineHeight: 1.5 }}>
               "The Marfa lights can't be car headlights — local
@@ -229,12 +251,11 @@ export function HomePage() {
             </Typography>
           </Paper>
           <Caption>
-            A second AI pass looks for claims across different
-            episodes that assert <em>incompatible</em> theses,
-            verdicts each candidate, and surfaces only the real
-            disagreements. This is a{" "}
-            <strong>cross-video contradiction</strong> — the same
-            host, two different episodes, two claims that can't
+            A second pass hunts for claims in different episodes
+            that don't fit together, checks each one, and surfaces
+            only the real disagreements. This is a{" "}
+            <strong>cross-episode contradiction</strong> — same
+            host, two different episodes, two things that can't
             both be right.
           </Caption>
         </Step>
@@ -252,9 +273,9 @@ export function HomePage() {
             That's the whole game.
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, maxWidth: 540, mx: "auto" }}>
-            Multiply it by every episode, every claim, and the graph
-            of everything that connects them. The rest of the site
-            is just ways to slice that data.
+            Multiply that by every episode and every claim, and you
+            get a big web of connections. The rest of the site is
+            just different ways to look at it.
           </Typography>
           <Box sx={{ display: "inline-flex", gap: 1.5, flexWrap: "wrap", justifyContent: "center" }}>
             <Button component={RouterLink} to="/claims" variant="contained">
