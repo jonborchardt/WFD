@@ -76,8 +76,11 @@ export function ContradictionResultRow(props: ContradictionResultRowProps) {
 function Frame({ children }: { children: ReactNode }) {
   return (
     <Box sx={{
-      border: "1px solid", borderColor: "divider",
-      borderRadius: 1, p: 1.5, mb: 1.5,
+      border: { xs: "2px solid", md: "1px solid" },
+      borderColor: { xs: "text.secondary", md: "divider" },
+      borderRadius: { xs: 1.5, md: 1 },
+      p: { xs: 1.25, md: 1.5 },
+      mb: { xs: 2, md: 1.5 },
     }}>
       {children}
     </Box>
@@ -122,12 +125,12 @@ export function StancePanel({ claim, id, bundle, nav }: StancePanelProps) {
         display: "flex", alignItems: "center", gap: 1,
       }}>
         <Typography sx={{
-          fontSize: 11, fontWeight: 700, letterSpacing: 1.5,
+          fontSize: { xs: 12, sm: 11 }, fontWeight: 700, letterSpacing: 1.5,
         }}>
           {tint.label}
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
-        <Typography sx={{ fontSize: 10, opacity: 0.9 }}>
+        <Typography sx={{ fontSize: { xs: 11, sm: 10 }, opacity: 0.9 }}>
           {claim.kind}
         </Typography>
       </Box>

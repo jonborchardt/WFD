@@ -297,6 +297,12 @@ export interface CatalogColumn {
   label: string;
   menuLabel?: string;
   default: boolean;
+  /**
+   * Visible on phone (xs) viewports. Tables prune down to these at xs
+   * so a 6-column layout doesn't produce horizontal scroll on 375 px.
+   * Defaults to false when unset.
+   */
+  mobileDefault?: boolean;
   headSx?: Record<string, unknown>;
   cellSx?: Record<string, unknown>;
   render: (r: VideoRow) => React.ReactNode;

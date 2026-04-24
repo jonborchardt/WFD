@@ -43,7 +43,7 @@ export function ClaimResultRow({ claim, nav, bundle }: ClaimResultRowProps) {
       <Typography variant="body1" sx={{ mb: 1, fontWeight: 500 }}>
         {claim.text}
       </Typography>
-      <Stack direction="row" spacing={2} sx={{
+      <Stack direction="row" spacing={{ xs: 1, sm: 2 }} sx={{
         mb: 0.75, alignItems: "center", flexWrap: "wrap",
       }}>
         <TruthBar
@@ -61,8 +61,9 @@ export function ClaimResultRow({ claim, nav, bundle }: ClaimResultRowProps) {
           </Typography>
         )}
       </Stack>
-      <Stack direction="row" spacing={1} sx={{
+      <Stack direction="row" spacing={{ xs: 0.75, sm: 1 }} sx={{
         color: "text.secondary", alignItems: "center", flexWrap: "wrap",
+        rowGap: 0.25,
       }}>
         <Typography variant="caption" sx={{
           color: kColor, fontWeight: 700, letterSpacing: 0.5,

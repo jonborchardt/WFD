@@ -21,13 +21,13 @@ export interface NavItem {
 // text-transform (uppercased either way), mobile Drawer's ListItemText
 // renders them verbatim, so the source needs to be human-readable.
 export const NAV_ITEMS: NavItem[] = [
-  { path: "/",                       label: "Home" },
   { path: "/videos",                 label: "Videos" },
   { path: "/claims",                 label: "Claims" },
   { path: "/contradictions",         label: "Contradictions" },
   { path: "/cross-video-agreements", label: "Agreements" },
-  { path: "/entity-graph",           label: "Entity Graph" },
+  { path: "/entity-map",             label: "Entity Map" },
   { path: "/argument-map",           label: "Argument Map" },
+  { path: "/about",                  label: "About" },
   { path: "/admin",                  label: "Admin", adminOnly: true },
 ];
 
@@ -39,7 +39,7 @@ export function AppShell() {
   const nav = useNavigate();
   const { pathname } = useLocation();
   const theme = useTheme();
-  const isWide = useMediaQuery(theme.breakpoints.up("md"));
+  const isWide = useMediaQuery(theme.breakpoints.up("sm"));
   const [drawerOpen, setDrawerOpen] = useState(false);
   const loadingCount = useLoadingCount();
 

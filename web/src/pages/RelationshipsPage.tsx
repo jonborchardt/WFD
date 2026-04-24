@@ -318,7 +318,7 @@ export function RelationshipsPage() {
   return (
     <Box sx={{ position: "relative", height: "calc(100vh - 64px)", width: "100%" }}>
       <Paper sx={{ position: "absolute", top: 12, left: 12, zIndex: 10, p: 1.5, width: 340, maxHeight: "calc(100vh - 100px)", overflow: "auto" }}>
-        <Typography variant="subtitle2" sx={{ mb: 1 }}>Entity graph</Typography>
+        <Typography variant="subtitle2" sx={{ mb: 1 }}>Entity map</Typography>
         <TextField
           size="small"
           fullWidth

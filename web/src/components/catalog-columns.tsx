@@ -38,7 +38,8 @@ export function StatusChip({ status }: { status: string }) {
 
 export const CATALOG_COLUMNS: CatalogColumn[] = [
   {
-    key: "thumbnail", label: "", menuLabel: "Thumbnail", default: true,
+    key: "thumbnail", label: "", menuLabel: "Thumbnail",
+    default: true, mobileDefault: true,
     headSx: { width: 72 }, cellSx: { p: 0.5 },
     render: (r: VideoRow) => r.thumbnailUrl
       ? <img src={r.thumbnailUrl} alt="" width="64" height="64" style={{ objectFit: "contain", display: "block", borderRadius: 2, background: "transparent" }} />
@@ -46,7 +47,7 @@ export const CATALOG_COLUMNS: CatalogColumn[] = [
   },
   { key: "videoId", label: "ID", default: false, render: (r: VideoRow) => r.videoId },
   {
-    key: "title", label: "Title", default: true,
+    key: "title", label: "Title", default: true, mobileDefault: true,
     headSx: { width: 240 }, cellSx: { width: 240 },
     render: (r: VideoRow) => <CatalogTitleLink row={r} />,
   },
@@ -58,7 +59,7 @@ export const CATALOG_COLUMNS: CatalogColumn[] = [
     cellSx: { width: 480, maxWidth: 480, color: "text.secondary" },
     render: (r: VideoRow) => descriptionPreview(r.description, 100),
   },
-  { key: "publishDate", label: "Published", default: true, render: (r: VideoRow) => fmtDate(r.publishDate) },
+  { key: "publishDate", label: "Published", default: true, mobileDefault: true, render: (r: VideoRow) => fmtDate(r.publishDate) },
   { key: "uploadDate", label: "Uploaded", default: false, render: (r: VideoRow) => fmtDate(r.uploadDate) },
   { key: "category", label: "Category", default: false, render: (r: VideoRow) => r.category || "" },
   {
