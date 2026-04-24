@@ -314,7 +314,7 @@ export function ClaimGraphPage() {
   }, [ready, index, deps, contradictions]);
 
   // Append an option's neighborhood to the existing graph (matches
-  // the entity-graph's add-on-pick behavior — selecting an item in
+  // the entity-map's add-on-pick behavior — selecting an item in
   // the autocomplete always adds, never replaces). Resets the search
   // field so the user can immediately type the next seed.
   const addOption = useCallback((opt: SeedOption | null) => {

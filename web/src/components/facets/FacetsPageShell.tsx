@@ -16,7 +16,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { Box, TextField, Typography } from "@mui/material";
+import {
+  Box, Button, Collapse, TextField, Typography,
+  useMediaQuery, useTheme,
+} from "@mui/material";
 
 interface HeaderProps {
   title: string;
@@ -73,20 +76,55 @@ export function FacetsPageHeader({
 interface LayoutProps {
   rail: ReactNode;
   results: ReactNode;
+  /** Count of applied filters, shown on the mobile toggle button. */
+  filterCount?: number;
 }
 
-export function RailResultsLayout({ rail, results }: LayoutProps) {
+export function RailResultsLayout({ rail, results, filterCount }: LayoutProps) {
+  const theme = useTheme();
+  const isWide = useMediaQuery(theme.breakpoints.up("md"));
+  // Below md, rail stacks above results behind a toggle. Default open on
+  // tablet-ish widths (sm) where there's enough room to see both at once,
+  // collapsed on phones where the rail would otherwise push results
+  // off-screen.
+  const isTablet = useMediaQuery(theme.breakpoints.only("sm"));
+  const [railOpen, setRailOpen] = useState(isTablet);
+
+  if (isWide) {
+    return (
+      <Box sx={{ display: "flex", gap: 2 }}>
+        <Box sx={{
+          flex: "1 1 0", minWidth: 0,
+          maxWidth: "calc((100% - 16px) / 3)",
+        }}>
+          {rail}
+        </Box>
+        <Box sx={{ flex: "2 1 0", minWidth: 0 }}>
+          {results}
+        </Box>
+      </Box>
+    );
+  }
+
+  const label = filterCount && filterCount > 0
+    ? `Filters · ${filterCount}`
+    : "Filters";
   return (
-    <Box sx={{ display: "flex", gap: 2 }}>
-      <Box sx={{
-        flex: "1 1 0", minWidth: 0,
-        maxWidth: "calc((100% - 16px) / 3)",
-      }}>
-        {rail}
-      </Box>
-      <Box sx={{ flex: "2 1 0", minWidth: 0 }}>
-        {results}
-      </Box>
+    <Box>
+      <Button
+        onClick={() => setRailOpen((o) => !o)}
+        size="small"
+        variant="outlined"
+        fullWidth
+        aria-expanded={railOpen}
+        sx={{ mb: 1 }}
+      >
+        {railOpen ? `Hide ${label.toLowerCase()}` : label}
+      </Button>
+      <Collapse in={railOpen} unmountOnExit={false}>
+        <Box sx={{ mb: 2 }}>{rail}</Box>
+      </Collapse>
+      <Box sx={{ minWidth: 0 }}>{results}</Box>
     </Box>
   );
 }
@@ -102,7 +140,10 @@ interface OuterProps {
  */
 export function FacetsPageOuter({ children }: OuterProps) {
   return (
-    <Box sx={{ px: 2, py: 2, maxWidth: 1800, mx: "auto" }}>
+    <Box sx={{
+      px: { xs: 1.5, sm: 2 }, py: 2,
+      maxWidth: { xs: "100%", md: 1800 }, mx: "auto",
+    }}>
       {children}
     </Box>
   );

@@ -8,7 +8,7 @@ interface Props {
   onChange: (v: number) => void;
 }
 
-// "Tight ←→ loose" spacing slider used in the entity graph and the
+// "Tight ←→ loose" spacing slider used in the entity map and the
 // argument map sidebars. The outer padding gives the edge mark labels
 // (which sit ±half-label-width past the track) room to stay inside
 // the panel.

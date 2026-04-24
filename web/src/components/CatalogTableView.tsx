@@ -6,7 +6,7 @@ import { ReactNode, useState } from "react";
 import {
   Paper, Table, TableHead, TableBody, TableRow, TableCell,
   TablePagination, TextField, Box, Button, Menu, MenuItem,
-  Checkbox, ListItemIcon, ListItemText,
+  Checkbox, ListItemIcon, ListItemText, useMediaQuery, useTheme,
 } from "@mui/material";
 import { EntitySuggestions } from "./EntitySuggestions";
 import type { VideoRow, CatalogColumn } from "../types";
@@ -30,10 +30,16 @@ export function CatalogTableView({
   columns, rows, total, page, pageSize, onPageChange, onPageSizeChange,
   text, onTextChange, onRowClick, onSuggestionNavigate, toolbarExtras,
 }: Props) {
+  const theme = useTheme();
+  const isPhone = useMediaQuery(theme.breakpoints.down("sm"));
   const [showDropdown, setShowDropdown] = useState(false);
+  // Seed the initial visible set from the appropriate default field —
+  // `mobileDefault` on phones, `default` on everything else. User
+  // toggles via the menu override from there. The seed only runs once;
+  // viewport resizes don't re-seed, which is fine for a design pass.
   const [visible, setVisible] = useState<Record<string, boolean>>(() => {
     const init: Record<string, boolean> = {};
-    for (const c of columns) init[c.key] = c.default;
+    for (const c of columns) init[c.key] = isPhone ? !!c.mobileDefault : c.default;
     return init;
   });
   const [colMenuAnchor, setColMenuAnchor] = useState<HTMLElement | null>(null);
@@ -53,7 +59,11 @@ export function CatalogTableView({
 
   return (
     <Paper>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, px: 1, py: 0.5, borderBottom: 1, borderColor: "divider" }}>
+      <Box sx={{
+        display: "flex", alignItems: "center", gap: 1,
+        px: 1, py: 0.5, borderBottom: 1, borderColor: "divider",
+        flexWrap: "wrap",
+      }}>
         <TextField
           size="small"
           placeholder="search"
@@ -64,9 +74,10 @@ export function CatalogTableView({
             if (e.key === "Enter") { setShowDropdown(false); (e.target as HTMLInputElement).blur(); }
             else if (e.key === "Escape") setShowDropdown(false);
           }}
+          sx={{ flex: { xs: "1 1 100%", sm: "0 1 auto" } }}
         />
         {toolbarExtras}
-        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }} />
         <Button size="small" variant="outlined" onClick={(e) => setColMenuAnchor(e.currentTarget)}>
           columns ▾
         </Button>
@@ -94,6 +105,7 @@ export function CatalogTableView({
         />
       )}
       {pagination}
+      <Box sx={{ overflowX: "auto" }}>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -112,6 +124,7 @@ export function CatalogTableView({
           ))}
         </TableBody>
       </Table>
+      </Box>
       {pagination}
     </Paper>
   );

@@ -1,594 +1,355 @@
-import { useNavigate, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import type { ReactNode } from "react";
-import {
-  Box, Container, Link, Paper, Typography,
-} from "@mui/material";
+import { Box, Button, Container, Link, Paper, Stack, Typography } from "@mui/material";
 import { colors } from "../theme";
 
-// Single subtle accent used across the page. Section colors tried
-// earlier read as a rainbow; one restrained accent plus type hierarchy
-// does the same job without the noise.
+// Editorial hero establishes what the site is and why it exists,
+// then a three-step walk-through teaches the core concepts (claim,
+// evidence, contradiction) on one illustrative example. Long-form
+// explanation of the pipeline, data model, and credit lives on /about.
+
 const ACCENT = colors.brand.accent;
 
 export function HomePage() {
   return (
-    <Container maxWidth="md" sx={{ mt: 4, mb: 6 }}>
-      {/* ── hero ─────────────────────────────────────────────── */}
-      <Paper
-        variant="outlined"
+    <Box>
+      {/* ── hero ──────────────────────────────────────────────── */}
+      <Box
         sx={{
-          mb: 3,
-          p: { xs: 3, md: 4 },
-          borderLeft: 4,
-          borderLeftColor: ACCENT,
-          borderRadius: 2,
-        }}
-      >
-        <Typography
-          variant="overline"
-          sx={{ color: ACCENT, letterSpacing: 1, fontWeight: 600 }}
-        >
-          home
-        </Typography>
-        <Typography
-          variant="h4"
-          sx={{ fontWeight: 700, lineHeight: 1.2, mt: 0.5 }}
-        >
-          {/* "Why Files" is the channel name; keep those two words
-              tight so the title doesn't read as "Why" + "Files
-              Database." */}
-          <Box
-            component="span"
-            sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
-          >
-            Why{"\u00a0"}Files
-          </Box>{" "}
-          Database
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={{ mt: 1, color: "text.secondary", maxWidth: 640 }}
-        >
-          An independent, evidence-anchored index of <em>The Why Files</em>{" "}
-          corpus — searchable, traceable, and built from the transcripts up.
-        </Typography>
-      </Paper>
-
-      <StartHere />
-
-      <Section title="What is this?">
-        <Typography paragraph sx={{ mb: 0 }}>
-          <strong>
-            <Box
-              component="span"
-              sx={{ whiteSpace: "nowrap", wordSpacing: "-0.2em" }}
-            >
-              Why{"\u00a0"}Files
-            </Box>{" "}
-            Database
-          </strong>{" "}
-          ingests the full YouTube
-          transcript corpus of{" "}
-          <Link href="https://thewhyfiles.com" target="_blank" rel="noopener">
-            The Why Files
-          </Link>{" "}
-          and turns it into something you can actually <em>query</em>: a
-          searchable catalog of videos, an extracted graph of the people,
-          places, organizations, and events discussed across hundreds of
-          episodes, and a set of tools for surfacing contradictions,
-          recurring claims, and novel connections — all of it pointing
-          back to the exact moment in the exact video where something was
-          said.
-        </Typography>
-      </Section>
-
-      <Section title="Why build it?">
-        <Typography paragraph>
-          The corpus is, by design,{" "}
-          <strong>contested and controversial</strong>: UFOs, cryptids,
-          ancient mysteries, unsolved cases, fringe science. That's
-          exactly the kind of material where a normal "search the video"
-          experience falls apart. You don't want a keyword hit — you want
-          to know every time a given person, place, or event is
-          mentioned, what was claimed about it, who contradicted whom,
-          and which episode introduced which thread.
-        </Typography>
-        <Callout>
-          Our goal is <strong>not to declare truth</strong>. The goal is
-          to make claims, evidence, and contradictions <em>traceable</em>.
-          Every edge in the graph carries an evidence pointer: a
-          transcript id plus a character span, so you can jump straight
-          to the line and hear it in context. No floating claims, no
-          vibes, no "trust us."
-        </Callout>
-      </Section>
-
-      <Section title="How it works">
-        <Typography paragraph>
-          The pipeline runs in stages. First we <strong>fetch</strong>{" "}
-          transcripts directly from YouTube (politely — transcripts are
-          gold; once we have one, we never re-fetch it). Then a pair of
-          zero-shot neural models does the heavy lifting:{" "}
-          <Mono>GLiNER</Mono> pulls out entities across fourteen label
-          types (people, organizations, locations, facilities, events,
-          dates, roles, technologies, works of media, laws, ideologies,
-          and more) and <Mono>GLiREL</Mono> scores relations between them
-          against a vocabulary of predicates.
-        </Typography>
-        <Typography paragraph sx={{ mb: 0 }}>
-          After that, an <strong>AI enrichment</strong> pass refines and
-          adds relationships the neural models missed. A cross-transcript
-          alias layer merges duplicates (e.g. "Dan" and "Dan Brown"
-          across 40 videos) and filters known noise. Everything lands in
-          a graph store with per-claim truth scoring, contradiction
-          detection, and loop detection. A separate "skeptic" layer
-          scores speaker credibility from transcript signals. The public
-          site you're reading right now is the read-only front end on top
-          of all of that.
-        </Typography>
-      </Section>
-
-      <Section title="Claims & contradictions">
-        <Typography paragraph>
-          On top of the relationship graph, an AI pass over each
-          transcript extracts <strong>claims</strong>: thesis-level
-          statements the host makes, each with a tight single-sentence
-          evidence quote, a truth score, and (where relevant){" "}
-          <em>dependencies</em> on other claims — "this follows from,"
-          "this contradicts," "this presupposes." Contradicts
-          dependencies carry a subkind tag so the reasoning layer knows
-          whether A strictly rules out B, debunks it, proposes a
-          competing explanation, or just undercuts its probative value.
-        </Typography>
-        <Typography paragraph>
-          A reasoning layer propagates truth through the claim graph,
-          flags contradictions (within a single episode, between
-          episodes, or when a presupposition is broken), and supports
-          counterfactual queries: "if this claim were false, which
-          others would move?" Cross-video contradiction candidates are
-          found by sentence-embedding similarity and then run through a
-          second AI pass that verdicts each pair — so what surfaces on{" "}
-          <Link component={RouterLink} to="/contradictions">
-            /contradictions
-          </Link>{" "}
-          is real disagreement, not noise from a shared generic entity.
-        </Typography>
-        <Typography paragraph sx={{ mb: 0 }}>
-          The flip side also gets its own page:{" "}
-          <Link component={RouterLink} to="/cross-video-agreements">
-            /cross-video-agreements
-          </Link>{" "}
-          lists pairs the verifier identified as asserting the same
-          thesis across two different videos — positive corroboration
-          rather than conflict. Everything is searchable and filterable
-          by truth, kind, and stance. Each claim row carries a truth
-          bar and a confidence bar so you can see at a glance whether
-          the AI thinks the host is asserting something firmly,
-          steelmanning a fringe idea, or explicitly debunking it.
-        </Typography>
-      </Section>
-
-      <Section title="Help improve it">
-        <Typography paragraph sx={{ mb: 0 }}>
-          <strong>Spotted something wrong?</strong> Every entity,
-          relationship, claim, and contradiction has a pencil (
-          <Mono>✎</Mono>) edit button that opens a prefilled GitHub issue
-          so we can fix it. You can suggest truth changes, better
-          wording, new tags, or flag a contradiction the detector missed.
-        </Typography>
-      </Section>
-
-      <Section title="Credit">
-        <Typography paragraph sx={{ mb: 0 }}>
-          All transcript content belongs to{" "}
-          <Link href="https://thewhyfiles.com" target="_blank" rel="noopener">
-            The Why Files
-          </Link>{" "}
-          and AJ Gentile. This is an independent research index and is
-          not affiliated with, endorsed by, or operated by The Why Files.
-          If you enjoy the show, please support it directly on{" "}
-          <Link
-            href="https://www.patreon.com/thewhyfiles"
-            target="_blank"
-            rel="noopener"
-          >
-            Patreon
-          </Link>
-          , the{" "}
-          <Link
-            href="https://shop.thewhyfiles.com"
-            target="_blank"
-            rel="noopener"
-          >
-            Shop
-          </Link>
-          , or{" "}
-          <Link
-            href="https://www.youtube.com/@TheWhyFiles"
-            target="_blank"
-            rel="noopener"
-          >
-            YouTube
-          </Link>
-          .
-        </Typography>
-      </Section>
-    </Container>
-  );
-}
-
-// ── Start here showcase ──────────────────────────────────────────
-// Four deep-linked examples that each showcase one capability.
-// Inline-SVG miniatures rather than external images: zero asset
-// deps, no network, they scale cleanly, and they visually echo
-// what each destination looks like.
-//
-// The exact entity / claim ids in these URLs may need adjusting
-// once the corpus is re-indexed (e.g. if the default seed claim
-// gets renumbered). The claim id `-HxKHUEwnug:c_0003` matches the
-// ClaimGraphPage default seed as of writing.
-function StartHere() {
-  const nav = useNavigate();
-  return (
-    <Paper
-      variant="outlined"
-      sx={{
-        mb: 3,
-        p: { xs: 2.5, md: 3 },
-        borderRadius: 2,
-      }}
-    >
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          mb: 0.25,
-        }}
-      >
-        Start here
-      </Typography>
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        sx={{
-          mb: 2, pb: 1, borderBottom: 1, borderColor: "divider",
-        }}
-      >
-        Four one-click examples that show off what this site does.
-      </Typography>
-      <Box sx={{
-        display: "grid",
-        // 6 cards: 1 column on xs, 2 columns on sm+, so the grid fills
-        // cleanly as 3 rows of 2 on normal viewports.
-        gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
-        gap: 1.5,
-      }}>
-        <ShowcaseCard
-          title="Browse The Why Files catalog"
-          body="The full faceted catalog — filter videos by person, place, organization, event, year, or any combination."
-          href="/videos"
-          onClick={() => nav("/videos")}
-          image={<MiniVideos />}
-        />
-        <ShowcaseCard
-          title="Most-contradicted claims"
-          body="Jump to the claims browser sorted by contradiction count. Where the host disagrees most with himself (or with other episodes)."
-          href="/claims?sort=contradicted"
-          onClick={() => nav("/claims?sort=contradicted")}
-          image={<MiniClaims />}
-        />
-        <ShowcaseCard
-          title="Cross-video conflicts"
-          body="Verified disagreements between episodes — a semantic-similarity pass finds candidates, a second AI pass verdicts each one so only real contradictions surface."
-          href="/contradictions?kind=cross-video&sort=shared-desc"
-          onClick={() =>
-            nav("/contradictions?kind=cross-video&sort=shared-desc")
-          }
-          image={<MiniContradictions />}
-        />
-        <ShowcaseCard
-          title="See an argument map"
-          body="A claim-dependency graph — supports, contradictions, and shared-evidence links. In this example, seeded on the Marfa lights mystery."
-          href="/argument-map?kind=claim&q=-HxKHUEwnug:c_0003"
-          onClick={() =>
-            nav("/argument-map?kind=claim&q=-HxKHUEwnug:c_0003")
-          }
-          image={<MiniArgumentMap />}
-        />
-        <ShowcaseCard
-          title="Cross-video agreements"
-          body="The flip side of contradictions — pairs the verifier flagged as asserting the same thesis in two different videos. Positive cross-video corroboration."
-          href="/cross-video-agreements"
-          onClick={() => nav("/cross-video-agreements")}
-          image={<MiniAgreements />}
-        />
-        <ShowcaseCard
-          title="Explore the entity graph"
-          body="Every person, place, organization, and event across the corpus, laid out as a graph. Click an edge to jump to the transcript span where the relationship was claimed; toggle truth coloring to shade edges by the derived truth of the citing claims."
-          // Seed on click; landing at /entity-graph directly opens empty.
-          href="/entity-graph?seed=facility:goat+lab"
-          onClick={() =>
-            nav("/entity-graph?seed=" + encodeURIComponent("facility:goat lab"))
-          }
-          image={<MiniEntityGraph />}
-        />
-      </Box>
-    </Paper>
-  );
-}
-
-interface ShowcaseCardProps {
-  title: string;
-  body: string;
-  href: string;
-  onClick: () => void;
-  image: ReactNode;
-}
-
-function ShowcaseCard({ title, body, href, onClick, image }: ShowcaseCardProps) {
-  return (
-    // Anchor so middle-click / ⌘-click opens the deep link in a new
-    // tab; onClick still drives SPA navigation for normal clicks.
-    <Box
-      component="a"
-      href={href}
-      onClick={(e: React.MouseEvent) => {
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-        e.preventDefault();
-        onClick();
-      }}
-      sx={{
-        display: "flex", gap: 1.5,
-        p: 1.5, border: 1, borderColor: "divider",
-        borderRadius: 1,
-        textDecoration: "none", color: "inherit",
-        cursor: "pointer",
-        transition: "background-color 120ms, border-color 120ms",
-        "&:hover": {
-          bgcolor: "action.hover", borderColor: ACCENT,
-        },
-      }}
-    >
-      <Box sx={{
-        width: 96, height: 64, flexShrink: 0,
-        borderRadius: 0.5, overflow: "hidden",
-        bgcolor: "action.hover",
-        border: 1, borderColor: "divider",
-        display: "flex", alignItems: "center", justifyContent: "center",
-      }}>
-        {image}
-      </Box>
-      <Box sx={{ minWidth: 0 }}>
-        <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.25 }}>
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {body}
-        </Typography>
-      </Box>
-    </Box>
-  );
-}
-
-// ── SVG miniatures ──────────────────────────────────────────────
-// Each ~96×64, color-echoing the feature. Stylized rather than
-// literal — enough to give the eye a hint of what the page shows
-// without trying to render actual UI.
-//
-// These hex values are intentionally inline. They're a decorative
-// pastel palette used nowhere else in the app — surfacing them
-// through the central theme would only add noise, since they have
-// no semantic role. (See the comment block at the top of theme.ts.)
-
-function MiniVideos() {
-  // Facet-rail sketch: one "search bar" up top, three bar-list rows
-  // below with varying widths, evoking BarListFacet cards.
-  return (
-    <svg width="96" height="64" viewBox="0 0 96 64">
-      <rect x="6" y="6" width="84" height="8" rx="2"
-        fill="#e3f2fd" stroke="#90caf9" />
-      <rect x="6" y="20" width="50" height="6" rx="1" fill="#90caf9" />
-      <rect x="6" y="30" width="70" height="6" rx="1" fill="#64b5f6" />
-      <rect x="6" y="40" width="34" height="6" rx="1" fill="#42a5f5" />
-      <rect x="6" y="50" width="58" height="6" rx="1" fill="#1e88e5" />
-    </svg>
-  );
-}
-
-function MiniClaims() {
-  // Claim-row sketch: a chip, a text line, two truth/confidence bars.
-  return (
-    <svg width="96" height="64" viewBox="0 0 96 64">
-      <rect x="6" y="6" width="18" height="8" rx="2" fill="#1976d2" />
-      <rect x="28" y="7" width="60" height="6" rx="1" fill="#cfd8dc" />
-      <rect x="6" y="22" width="80" height="4" rx="1" fill="#eceff1" />
-      <rect x="6" y="22" width="56" height="4" rx="1" fill="#66bb6a" />
-      <rect x="6" y="32" width="80" height="4" rx="1" fill="#eceff1" />
-      <rect x="6" y="32" width="40" height="4" rx="1" fill="#ff7043" />
-      <rect x="6" y="46" width="22" height="6" rx="1" fill="#b0bec5" />
-      <rect x="32" y="46" width="22" height="6" rx="1" fill="#b0bec5" />
-    </svg>
-  );
-}
-
-function MiniContradictions() {
-  // Two panels with opposing arrows meeting in the middle.
-  return (
-    <svg width="96" height="64" viewBox="0 0 96 64">
-      <rect x="6" y="10" width="34" height="44" rx="2"
-        fill="#fff3e0" stroke="#ffb74d" />
-      <rect x="56" y="10" width="34" height="44" rx="2"
-        fill="#fbe9e7" stroke="#ff8a65" />
-      <path d="M24 32 L44 32" stroke="#ef6c00"
-        strokeWidth="2" fill="none" markerEnd="url(#cx-rm)" />
-      <path d="M72 32 L52 32" stroke="#d84315"
-        strokeWidth="2" fill="none" markerEnd="url(#cx-lm)" />
-      <defs>
-        <marker id="cx-rm" viewBox="0 0 10 10" refX="7" refY="5"
-          markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef6c00" />
-        </marker>
-        <marker id="cx-lm" viewBox="0 0 10 10" refX="7" refY="5"
-          markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#d84315" />
-        </marker>
-      </defs>
-      <circle cx="48" cy="32" r="4" fill="#f57c00" />
-    </svg>
-  );
-}
-
-function MiniArgumentMap() {
-  // Five nodes in a small network, colored by stylized "truth".
-  return (
-    <svg width="96" height="64" viewBox="0 0 96 64">
-      <line x1="22" y1="20" x2="48" y2="32"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="22" y1="20" x2="22" y2="48"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="48" y1="32" x2="74" y2="20"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="48" y1="32" x2="74" y2="48"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="22" y1="48" x2="48" y2="32"
-        stroke="#ef5350" strokeWidth="1.5" strokeDasharray="3 2" />
-      <circle cx="22" cy="20" r="6" fill="#66bb6a" />
-      <circle cx="22" cy="48" r="6" fill="#ffb74d" />
-      <circle cx="48" cy="32" r="7" fill="#42a5f5"
-        stroke="#1565c0" strokeWidth="2" />
-      <circle cx="74" cy="20" r="6" fill="#81c784" />
-      <circle cx="74" cy="48" r="6" fill="#e57373" />
-    </svg>
-  );
-}
-
-function MiniEntityGraph() {
-  // Force-directed-style cluster: a central hub node linked out to
-  // five satellites of mixed hue, echoing the entity-type palette
-  // used on /entity-graph (person / org / location / event / etc.).
-  // Deliberately busier than MiniArgumentMap so the two read as
-  // different views rather than near-duplicates at thumbnail scale.
-  return (
-    <svg width="96" height="64" viewBox="0 0 96 64">
-      {/* edges, drawn first so nodes overlay them cleanly */}
-      <line x1="48" y1="32" x2="18" y2="14"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="48" y1="32" x2="80" y2="14"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="48" y1="32" x2="10" y2="38"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="48" y1="32" x2="86" y2="40"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      <line x1="48" y1="32" x2="48" y2="58"
-        stroke="#90a4ae" strokeWidth="1.5" />
-      {/* one satellite-to-satellite tie so the graph has a loop */}
-      <line x1="80" y1="14" x2="86" y2="40"
-        stroke="#b0bec5" strokeWidth="1" strokeDasharray="2 2" />
-      {/* satellites, colored roughly by entity type ramp */}
-      <circle cx="18" cy="14" r="5" fill="#42a5f5" />
-      <circle cx="80" cy="14" r="5" fill="#ab47bc" />
-      <circle cx="10" cy="38" r="5" fill="#66bb6a" />
-      <circle cx="86" cy="40" r="5" fill="#ffa726" />
-      <circle cx="48" cy="58" r="5" fill="#ef5350" />
-      {/* central hub — larger, bordered to read as the focus node */}
-      <circle cx="48" cy="32" r="8" fill="#fff59d"
-        stroke="#f9a825" strokeWidth="2" />
-    </svg>
-  );
-}
-
-function MiniAgreements() {
-  // Two panels facing each other with a "yes" check in the middle —
-  // intentionally echoes the MiniContradictions composition (opposing
-  // panels + central mark) but shifts the palette to a calmer green
-  // to signal "same thesis" rather than conflict.
-  return (
-    <svg width="96" height="64" viewBox="0 0 96 64">
-      <rect x="6" y="10" width="34" height="44" rx="2"
-        fill="#e8f5e9" stroke="#81c784" />
-      <rect x="56" y="10" width="34" height="44" rx="2"
-        fill="#f1f8e9" stroke="#aed581" />
-      <path d="M24 32 L44 32" stroke="#43a047"
-        strokeWidth="2" fill="none" markerEnd="url(#ag-rm)" />
-      <path d="M72 32 L52 32" stroke="#558b2f"
-        strokeWidth="2" fill="none" markerEnd="url(#ag-lm)" />
-      <defs>
-        <marker id="ag-rm" viewBox="0 0 10 10" refX="7" refY="5"
-          markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#43a047" />
-        </marker>
-        <marker id="ag-lm" viewBox="0 0 10 10" refX="7" refY="5"
-          markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#558b2f" />
-        </marker>
-      </defs>
-      {/* checkmark centered in the gap */}
-      <path d="M44 33 L47 36 L52 29"
-        stroke="#2e7d32" strokeWidth="2.5" fill="none"
-        strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-// ── shared building blocks ───────────────────────────────────────
-function Section({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <Paper
-      variant="outlined"
-      sx={{
-        mb: 2,
-        p: { xs: 2.5, md: 3 },
-        borderRadius: 2,
-      }}
-    >
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          mb: 1.5,
-          pb: 1,
+          bgcolor: "action.hover",
           borderBottom: 1,
           borderColor: "divider",
+          py: { xs: 6, md: 10 },
+          px: 3,
         }}
       >
-        {title}
-      </Typography>
-      {children}
-    </Paper>
-  );
-}
+        <Container maxWidth="md" sx={{ px: 0 }}>
+          <Typography
+            variant="overline"
+            sx={{ color: ACCENT, letterSpacing: 2, fontWeight: 700 }}
+          >
+            an independent research index
+          </Typography>
+          <Typography
+            component="h1"
+            sx={{
+              fontSize: { xs: "2.25rem", md: "3.25rem" },
+              fontWeight: 800,
+              lineHeight: 1.05,
+              mt: 1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            A searchable map of who, what, and where —
+            <Box component="span" sx={{ color: ACCENT }}>
+              {" "}across the entire Why Files corpus.
+            </Box>
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              mt: 3,
+              color: "text.secondary",
+              fontWeight: 400,
+              maxWidth: 720,
+              lineHeight: 1.55,
+            }}
+          >
+            Every episode of{" "}
+            <Link href="https://thewhyfiles.com" target="_blank" rel="noopener">
+              The Why Files
+            </Link>{" "}
+            turned into structured data. People, places, events, and
+            the claims made about them — each one anchored to the
+            exact transcript line it came from. Nothing floats.
+            Nothing is declared true. You just get to see who said
+            what, where they said it, and who disagreed.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              mt: 2.5,
+              color: "text.secondary",
+              maxWidth: 720,
+              lineHeight: 1.65,
+            }}
+          >
+            <em>The Why Files</em> covers contested territory: UFOs,
+            cryptids, ancient mysteries, unsolved cases, fringe
+            science. That's the kind of material where a normal
+            "search the video" experience falls apart. You don't
+            want a keyword hit — you want to know every time a given
+            person, place, or event is mentioned, what was claimed
+            about it, who contradicted whom, and which episode
+            introduced which thread.
+          </Typography>
+          <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 4 }}>
+            <Button
+              component={RouterLink}
+              to="/videos"
+              variant="contained"
+              size="large"
+              sx={{ bgcolor: ACCENT, "&:hover": { bgcolor: ACCENT, filter: "brightness(0.9)" } }}
+            >
+              Browse the catalog
+            </Button>
+            <Button
+              component="a"
+              href="#walkthrough"
+              variant="outlined"
+              size="large"
+            >
+              See how it works
+            </Button>
+            <Button
+              component={RouterLink}
+              to="/about"
+              variant="text"
+              size="large"
+            >
+              About this project
+            </Button>
+          </Stack>
+        </Container>
+      </Box>
 
-function Callout({ children }: { children: ReactNode }) {
-  return (
-    <Box
-      sx={{
-        mt: 2,
-        p: 2,
-        borderLeft: 3,
-        borderColor: ACCENT,
-        bgcolor: "action.hover",
-        borderRadius: 1,
-      }}
-    >
-      <Typography variant="body2" component="div">{children}</Typography>
+      {/* ── walk-through ──────────────────────────────────────── */}
+      <Container id="walkthrough" maxWidth="md" sx={{ mt: { xs: 5, md: 7 }, mb: 8 }}>
+        <Typography
+          variant="overline"
+          sx={{
+            color: "text.secondary",
+            letterSpacing: 2,
+            fontWeight: 700,
+            borderTop: 2,
+            borderColor: ACCENT,
+            pt: 2,
+            display: "block",
+            mb: 2,
+          }}
+        >
+          how it works · in one claim
+        </Typography>
+        <Typography
+          component="h2"
+          sx={{
+            fontSize: { xs: "1.75rem", md: "2.25rem" },
+            fontWeight: 700,
+            lineHeight: 1.2,
+            mb: 2,
+          }}
+        >
+          Let's walk through <Box component="span" sx={{ color: ACCENT }}>one claim</Box> end-to-end.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 5, maxWidth: 620 }}>
+          Once you've seen how one claim works, the rest of the site
+          is just more of these. Here's an illustrative example,
+          annotated.
+        </Typography>
+
+        {/* Step 1 — the claim itself */}
+        <Step index={1} label="The claim">
+          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 2, borderLeft: 4, borderColor: ACCENT }}>
+            <Typography variant="caption" color="text.secondary">
+              from "Marfa Lights: Texas's UFO mystery"
+            </Typography>
+            <Typography sx={{ mt: 0.5, fontSize: "1.1rem", lineHeight: 1.5 }}>
+              "The Marfa lights are most likely atmospheric reflections
+              of distant car headlights on Highway 67."
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, mt: 1.5, alignItems: "center" }}>
+              <TruthBar value={0.62} />
+              <Typography variant="caption" color="text.secondary">
+                truth 0.62 · host stance: asserts
+              </Typography>
+            </Box>
+          </Paper>
+          <Caption>
+            A <strong>claim</strong> is a single testable proposition
+            the host makes — not every fact, just the ones worth a
+            heading. Each one gets a <em>directTruth</em> score and a
+            record of whether the host is asserting it, denying it,
+            or presenting it to debunk it.
+          </Caption>
+        </Step>
+
+        {/* Step 2 — the evidence */}
+        <Step index={2} label="The evidence">
+          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 2, bgcolor: "action.hover" }}>
+            <Typography variant="caption" color="text.secondary">
+              transcript · 08:24
+            </Typography>
+            <Typography
+              sx={{
+                mt: 0.5,
+                fontFamily: "Georgia, serif",
+                fontStyle: "italic",
+                fontSize: "1.02rem",
+                lineHeight: 1.6,
+                borderLeft: 3,
+                borderColor: "divider",
+                pl: 2,
+              }}
+            >
+              "…the prevailing scientific explanation is that what
+              people are seeing from the viewing platform is actually
+              reflected headlights from cars on Highway 67, bent by
+              temperature gradients in the desert air."
+            </Typography>
+          </Paper>
+          <Caption>
+            Every claim points back to an <strong>evidence span</strong>:
+            a specific transcript id + character range. You can click
+            through to hear it in context. No floating assertions, no
+            "trust us" — if the claim isn't anchored, it doesn't exist.
+          </Caption>
+        </Step>
+
+        {/* Step 3 — the cross-video contradiction */}
+        <Step index={3} label="The contradiction">
+          <Paper
+            variant="outlined"
+            sx={{
+              p: 2.5,
+              borderRadius: 2,
+              borderLeft: 4,
+              borderColor: "error.main",
+            }}
+          >
+            <Typography variant="caption" color="error.main" sx={{ fontWeight: 600 }}>
+              CROSS-VIDEO · LOGICAL-CONTRADICTION
+            </Typography>
+            <Typography sx={{ mt: 0.5, fontSize: "1rem", lineHeight: 1.5 }}>
+              "The Marfa lights can't be car headlights — local
+              reports predate the Presidio highway by at least sixty
+              years."
+            </Typography>
+            <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 1 }}>
+              from "Top 10 unexplained American phenomena"
+            </Typography>
+          </Paper>
+          <Caption>
+            A second AI pass looks for claims across different
+            episodes that assert <em>incompatible</em> theses,
+            verdicts each candidate, and surfaces only the real
+            disagreements. This is a{" "}
+            <strong>cross-video contradiction</strong> — the same
+            host, two different episodes, two claims that can't
+            both be right.
+          </Caption>
+        </Step>
+
+        <Box
+          sx={{
+            mt: 6, p: 4,
+            border: 1, borderColor: "divider",
+            borderRadius: 2,
+            textAlign: "center",
+            bgcolor: "action.hover",
+          }}
+        >
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+            That's the whole game.
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, maxWidth: 540, mx: "auto" }}>
+            Multiply it by every episode, every claim, and the graph
+            of everything that connects them. The rest of the site
+            is just ways to slice that data.
+          </Typography>
+          <Box sx={{ display: "inline-flex", gap: 1.5, flexWrap: "wrap", justifyContent: "center" }}>
+            <Button component={RouterLink} to="/claims" variant="contained">
+              Browse all claims
+            </Button>
+            <Button component={RouterLink} to="/contradictions" variant="outlined">
+              See every contradiction
+            </Button>
+            <Button component={RouterLink} to="/videos" variant="outlined">
+              Start from a video
+            </Button>
+          </Box>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ mt: 3, pt: 2, borderTop: 1, borderColor: "divider" }}
+          >
+            Want the pipeline details, the data model, or how to
+            flag a bad claim?{" "}
+            <Link component={RouterLink} to="/about">
+              Read the about page
+            </Link>
+            .
+          </Typography>
+        </Box>
+      </Container>
     </Box>
   );
 }
 
-function Mono({ children }: { children: ReactNode }) {
+function Step({ index, label, children }: { index: number; label: string; children: ReactNode }) {
   return (
-    <Box
-      component="code"
+    <Box sx={{ display: "flex", gap: 2.5, mb: 4 }}>
+      <Box sx={{ flexShrink: 0, width: 44, textAlign: "center" }}>
+        <Box
+          sx={{
+            width: 40, height: 40,
+            borderRadius: "50%",
+            bgcolor: ACCENT,
+            color: "#fff",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontWeight: 700, fontSize: "1.1rem",
+          }}
+        >
+          {index}
+        </Box>
+        <Box
+          sx={{
+            width: 2, flex: 1, bgcolor: "divider",
+            mx: "auto", mt: 1,
+            minHeight: 40,
+          }}
+        />
+      </Box>
+      <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Typography
+          variant="overline"
+          sx={{ color: "text.secondary", letterSpacing: 1.5, fontWeight: 700 }}
+        >
+          step {index} · {label}
+        </Typography>
+        <Box sx={{ mt: 1 }}>{children}</Box>
+      </Box>
+    </Box>
+  );
+}
+
+function Caption({ children }: { children: ReactNode }) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
       sx={{
-        fontFamily: "monospace",
-        fontSize: "0.9em",
-        px: 0.5,
-        py: 0.125,
-        borderRadius: 0.5,
-        bgcolor: "action.hover",
+        mt: 1.5,
+        pl: 2,
+        borderLeft: 2,
+        borderColor: ACCENT,
+        lineHeight: 1.6,
       }}
     >
       {children}
+    </Typography>
+  );
+}
+
+function TruthBar({ value }: { value: number }) {
+  return (
+    <Box sx={{ flex: 1, maxWidth: 140, height: 6, bgcolor: "divider", borderRadius: 3, overflow: "hidden" }}>
+      <Box
+        sx={{
+          width: `${Math.round(value * 100)}%`,
+          height: "100%",
+          bgcolor: value > 0.5 ? "success.main" : "warning.main",
+        }}
+      />
     </Box>
   );
 }

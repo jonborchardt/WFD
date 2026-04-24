@@ -1,5 +1,8 @@
 import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
-import { Box, Dialog, IconButton, Link, Typography } from "@mui/material";
+import {
+  Box, Dialog, IconButton, Link, Typography,
+  useMediaQuery, useTheme,
+} from "@mui/material";
 import { alpha } from "@mui/material/styles";
 import CloseIcon from "@mui/icons-material/Close";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -69,6 +72,8 @@ interface VideoLightboxProps {
 }
 
 function VideoLightbox({ open, args, onClose }: VideoLightboxProps) {
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const videoId = args?.videoId;
   const timeStart = args?.timeStart;
   const title = args?.title;
@@ -81,11 +86,12 @@ function VideoLightbox({ open, args, onClose }: VideoLightboxProps) {
       onClose={onClose}
       maxWidth={false}
       fullWidth
+      fullScreen={fullScreen}
       PaperProps={{
         sx: {
-          width: { xs: "100vw", sm: "92vw" },
+          width: fullScreen ? "100%" : "92vw",
           maxWidth: 1400,
-          m: { xs: 0, sm: 2 },
+          m: fullScreen ? 0 : 2,
           bgcolor: "background.paper",
         },
       }}

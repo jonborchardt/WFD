@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Paper, Table, TableHead, TableBody, TableRow, TableCell, TablePagination,
-  TableSortLabel,
+  Box, Paper, Table, TableHead, TableBody, TableRow, TableCell, TablePagination,
+  TableSortLabel, useMediaQuery, useTheme,
 } from "@mui/material";
 import { CATALOG_COLUMNS } from "./catalog-columns";
 import type { CatalogColumn, VideoRow } from "../types";
@@ -45,15 +45,20 @@ function compareVals(a: unknown, b: unknown): number {
 
 export function SimpleVideoTable({ rows, columns }: Props) {
   const nav = useNavigate();
+  const theme = useTheme();
+  const isPhone = useMediaQuery(theme.breakpoints.down("sm"));
   const cols = columns || CATALOG_COLUMNS;
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(25);
   const [sortKey, setSortKey] = useState<string>("publishDate");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
-  // The default-visible columns defined in catalog-columns are what
-  // we show; no runtime picker. If you need to show or hide a column,
-  // flip its `default` flag in catalog-columns.ts.
-  const activeCols = cols.filter((c) => c.default);
+  // The default-visible columns defined in catalog-columns are what we
+  // show; no runtime picker. On phones, prune down to each column's
+  // `mobileDefault` flag so a 6-column desktop layout doesn't produce
+  // horizontal scroll at 375px.
+  const activeCols = cols.filter((c) =>
+    isPhone ? !!c.mobileDefault : c.default,
+  );
 
   const sorted = useMemo(() => {
     if (!sortKey) return rows;
@@ -94,6 +99,7 @@ export function SimpleVideoTable({ rows, columns }: Props) {
   return (
     <Paper>
       {pagination}
+      <Box sx={{ overflowX: "auto" }}>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -130,6 +136,7 @@ export function SimpleVideoTable({ rows, columns }: Props) {
           ))}
         </TableBody>
       </Table>
+      </Box>
       {pagination}
     </Paper>
   );
