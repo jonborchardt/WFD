@@ -36,11 +36,16 @@ jobs:
             package-lock.json
             web/package-lock.json
 
-      - name: Install root deps (for sitemap CLI)
-        run: npm ci
-
+      # Install web deps BEFORE root deps. Root pulls vitest 3 → vite 6 →
+      # esbuild 0.27.x; web pins esbuild 0.21.5 (via vite 5). If root
+      # installs first, web's esbuild postinstall walks up via require.resolve
+      # and copies the wrong-version binary out of the root's node_modules,
+      # then fails its own version check.
       - name: Install web deps
         working-directory: web
+        run: npm ci
+
+      - name: Install root deps (for sitemap CLI)
         run: npm ci
 
       - name: Test
