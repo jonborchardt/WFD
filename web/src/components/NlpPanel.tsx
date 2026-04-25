@@ -64,7 +64,14 @@ export function NlpPanel({ videoId, nlp }: Props) {
                       size="small"
                       color={ENTITY_TYPE_COLOR[t] || "default"}
                       variant="outlined"
-                      label={e.canonical}
+                      label={
+                        <Box component="span" sx={{ display: "inline-flex", alignItems: "baseline", gap: 0.5 }}>
+                          <span>{e.canonical}</span>
+                          <Box component="span" sx={{ color: "text.secondary", fontSize: "0.75em" }}>
+                            {e.mentions.length}
+                          </Box>
+                        </Box>
+                      }
                       clickable
                       onClick={(ev) => {
                         if (ev.shiftKey) return; // shift+click opens menu via the button
