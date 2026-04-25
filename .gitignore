@@ -1,31 +1,31 @@
-node_modules/
-dist/
-output/
-coverage/
-tmp/
-.nvmrc
-.nx/
-.claude/*
-!.claude/skills/
-*.local
-test-results
-playwright-report
-.playwright-mcp/
-*.tsbuildinfo
-.planning/
-plans/
-temp/
-_curate_tmp/
+_claims_backup/
 _claims_tmp/
-_reasoning_tmp/
+_curate_tmp/
 _entity_audit_tmp/
 _entity_resolution_tmp/
-_claims_backup/
-data/logs/
+_reasoning_tmp/
+.claude/*
+!.claude/skills/
+.nvmrc
+.nx/
+.planning/
+.playwright-mcp/
+*.local
+*.tsbuildinfo
+coverage/
 data/ai/bundles/
+data/logs/
 data/ratelimit.json
+dist/
+docs/ignore/
 generated/
-
+node_modules/
+output/
+plans/
+playwright-report
+temp/
+test-results
+tmp/
 
 # client-side tsc output (compiled in-place next to .tsx sources via
 # tsconfig.client.json). app.js and index.html are hand-authored and stay.
@@ -35,7 +35,7 @@ src/ui/client/shared/*.js
 src/ui/client/shared/*.js.map
 _contradiction_verify_tmp/
 
-# Plan 04 embeddings cache — 24 MB, regenerable in ~70s from the
+# embeddings cache — 24 MB, regenerable in ~70s from the
 # sentence-transformers sidecar. Not needed at runtime by the web/
 # static site. Regenerate with: node src/ai/reasoning/embed-claims.mjs
 data/claims/embeddings.json
