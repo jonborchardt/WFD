@@ -92,19 +92,20 @@ export function ClaimsPanel({ videoId, claims, indexEntries, contradictions, cor
       {claims.claims.map((c) => {
         const idx = indexById.get(c.id);
         return (
-          <ClaimDetailCard
-            key={c.id}
-            videoId={videoId}
-            claim={c}
-            derivedTruth={idx?.derivedTruth ?? null}
-            truthSource={idx?.truthSource}
-            overrideRationale={idx?.overrideRationale}
-            inboundDeps={inboundByClaim.get(c.id)}
-            contradictions={contradictionsByClaim.get(c.id)}
-            counterEvidence={idx?.counterEvidence}
-            corpusIndex={corpusIndex}
-            onMutated={onMutated}
-          />
+          <Box key={c.id} id={`claim-${c.id}`} sx={{ scrollMarginTop: "80px", borderRadius: 1 }}>
+            <ClaimDetailCard
+              videoId={videoId}
+              claim={c}
+              derivedTruth={idx?.derivedTruth ?? null}
+              truthSource={idx?.truthSource}
+              overrideRationale={idx?.overrideRationale}
+              inboundDeps={inboundByClaim.get(c.id)}
+              contradictions={contradictionsByClaim.get(c.id)}
+              counterEvidence={idx?.counterEvidence}
+              corpusIndex={corpusIndex}
+              onMutated={onMutated}
+            />
+          </Box>
         );
       })}
     </Box>
