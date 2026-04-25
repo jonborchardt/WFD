@@ -30,11 +30,6 @@
       "confidence": 0.9,
       "directTruth": 0.02,
       "rationale": "Host opens with this claim as the viral document's core assertion, then in the verdict section explicitly calls Project Anchor a hoax originating on TikTok/Instagram. Near-zero directTruth because the host (and physics) decisively debunks it.",
-      "tags": [
-        "project-anchor",
-        "hoax",
-        "gravity"
-      ],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -61,12 +56,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Host's explicit verdict; matches NASA's real December-2025 public rebuttal of the viral document. Verifiable claim about a specific, datable social-media origin.",
-      "tags": [
-        "project-anchor",
-        "hoax",
-        "verdict",
-        "social-media"
-      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -100,12 +89,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Host accurately describes the physics of gravitational waves (spacetime ripples, not cancelable force beams). Matches textbook general relativity and LIGO documentation.",
-      "tags": [
-        "physics",
-        "gravitational-waves",
-        "ligo",
-        "verdict"
-      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -139,12 +122,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Direct consequence of Newton's F=GMm/r^2 and general relativity (gravity sourced by mass-energy). Well-established physics.",
-      "tags": [
-        "physics",
-        "mass",
-        "newton",
-        "verdict"
-      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -177,11 +154,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Well-documented historical fact: Principia Mathematica published 1687, contains universal gravitation. Newton's hypotheses non fingo line about mechanism is accurately summarized.",
-      "tags": [
-        "newton",
-        "history-of-physics",
-        "1687"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -208,12 +180,6 @@
       "confidence": 0.97,
       "directTruth": 0.95,
       "rationale": "Standard physics history: GR published November 1915. Mass warping spacetime is the mainstream colloquial summary.",
-      "tags": [
-        "einstein",
-        "relativity",
-        "1915",
-        "spacetime"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -239,11 +205,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Mainstream physics consensus as of 2026: no experimental confirmation of individual gravitons. Dyson argument about detector collapsing to black hole is legitimate.",
-      "tags": [
-        "graviton",
-        "physics",
-        "particle-physics"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -269,11 +230,6 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Correctly cites the hierarchy-problem ratio (~10^40 between electromagnetism and gravity between two protons). Well-known physics puzzle.",
-      "tags": [
-        "hierarchy-problem",
-        "physics",
-        "fundamental-forces"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -309,12 +265,6 @@
       "confidence": 0.85,
       "directTruth": 0.65,
       "rationale": "Thomas Townsend Brown's biphase Townsend-effect work and the 1956 Aviation Week article on anti-gravity industry research are documented. The claim that the field 'went dark' post-1956 is partly true (public publications declined) but partly an overinterpretation.",
-      "tags": [
-        "brown",
-        "electrogravidics",
-        "1956",
-        "anti-gravity-history"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -341,12 +291,6 @@
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "Podkletnov's 1992 paper and Sunday Telegraph headline are real; however the ~2% weight reduction has never been independently replicated despite multiple attempts. Claim-as-reported is historically accurate but the physical effect remains unconfirmed.",
-      "tags": [
-        "podkletnov",
-        "superconductor",
-        "anti-gravity",
-        "1992"
-      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -374,12 +318,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "Ning Li's DoD funding, AC Gravity LLC, and publication gap are documented in open sources. Host frames as sinister; the classified-work interpretation is speculation but the factual scaffold is verifiable.",
-      "tags": [
-        "ning-li",
-        "dod",
-        "ac-gravity",
-        "classified"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -406,12 +344,6 @@
       "confidence": 0.92,
       "directTruth": 0.55,
       "rationale": "Lazar did make these public claims (1989 KLAS interview) — that part is historical fact. Truth of the claims themselves (alien craft, element 115 fuel) is highly contested: element 115 (moscovium) does exist but is millisecond-lived, which host flags.",
-      "tags": [
-        "lazar",
-        "area-51",
-        "element-115",
-        "ufo"
-      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -437,12 +369,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Host's geopolitical argument for why anti-gravity research would stay classified. Speculative — no existing anti-gravity tech has been demonstrated; the 'makes war obsolete' framing is rhetorical. Omitting directTruth.",
-      "tags": [
-        "anti-gravity",
-        "classified",
-        "military",
-        "speculation"
-      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -469,11 +395,6 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "Supported by mainstream physics: we have excellent descriptive theories (GR, quantum mechanics) but no unified quantum theory of gravity and no direct graviton observation. Host's framing is an accurate summary of that open problem.",
-      "tags": [
-        "physics",
-        "quantum-gravity",
-        "open-problem"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [

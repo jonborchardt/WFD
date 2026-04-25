@@ -299,14 +299,12 @@ These are real entries from the corpus. They're the shape to match.
   "confidence": 0.95,
   "directTruth": 0.95,
   "rationale": "Standard model physics: fermion masses arise via Yukawa coupling to the Higgs field — well-established since the Higgs discovery in 2012.",
-  "hostStance": "asserts",
-  "tags": ["higgs-boson", "electron", "standard-model"]
+  "hostStance": "asserts"
 }
 ```
 
 Atomic (one proposition). Evidence quote = 60 chars (right in target).
-`directTruth` set with real grounding (standard model). Tags are
-lowercase kebab-case.
+`directTruth` set with real grounding (standard model).
 
 ### Example 2 — `[debunks]` typed contradiction wiring
 
@@ -335,7 +333,6 @@ lowercase kebab-case.
   "directTruth": 0.7,
   "rationale": "Host attributes this to the Hansen/Butler/Stefula debunker investigation, presenting it as a finding that undercuts the case.",
   "hostStance": "asserts",
-  "tags": ["handwriting", "hoax-evidence", "janet-kimball"],
   "dependencies": [
     {
       "target": "<videoId>:c_0003",

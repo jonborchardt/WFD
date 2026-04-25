@@ -353,7 +353,7 @@ export function claimTruthIssueUrl(
 
 export function claimFieldIssueUrl(
   claim: { id: string; videoId: string; text: string },
-  field: "text" | "kind" | "hostStance" | "rationale" | "tags",
+  field: "text" | "kind" | "hostStance" | "rationale",
   suggestedValue: string,
 ): string {
   const apply = applyLink("claim-field-override", {
@@ -372,8 +372,6 @@ export function claimFieldIssueUrl(
       "How the host presents the claim: `asserts` (endorses), `denies` (rejects, often 'some people say X, but…'), `reports` (neutral), `questions` (raises without endorsing).",
     rationale:
       "Short operator-facing note explaining why the claim was extracted or scored the way it was.",
-    tags:
-      "Comma-separated topic tags (lowercased, e.g. `ufo, area-51, cold-war`).",
   };
   const lines = [
     `**Action:** edit claim \`${field}\``,

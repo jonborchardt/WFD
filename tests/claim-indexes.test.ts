@@ -75,20 +75,18 @@ describe("buildClaimIndexes", () => {
 
   it("field overrides propagate into the index entry and reasoning", () => {
     const claims = [
-      claim({ id: "v:c1", videoId: "v", text: "orig text", kind: "empirical", tags: ["old"] }),
+      claim({ id: "v:c1", videoId: "v", text: "orig text", kind: "empirical" }),
     ];
     const r = buildClaimIndexes({
       claims,
       videoCount: 1,
-      fieldOverrides: [{ claimId: "v:c1", text: "new text", tags: ["ufo", "cold-war"] }],
+      fieldOverrides: [{ claimId: "v:c1", text: "new text", rationale: "fixed" }],
     });
     const e = r.index.claims[0];
     expect(e.text).toBe("new text");
-    expect(e.tags).toEqual(["ufo", "cold-war"]);
     expect(e.fieldOverrides).toContain("text");
-    expect(e.fieldOverrides).toContain("tags");
+    expect(e.fieldOverrides).toContain("rationale");
     expect(e.fieldOverrides).not.toContain("kind");
-    expect(e.fieldOverrides).not.toContain("rationale");
   });
 
   it("field overrides list filters out undefined fields even if the loader materialized them", () => {
@@ -104,7 +102,6 @@ describe("buildClaimIndexes", () => {
         kind: undefined,
         hostStance: undefined,
         rationale: undefined,
-        tags: undefined,
       }],
     });
     expect(r.index.claims[0].fieldOverrides).toEqual(["text"]);

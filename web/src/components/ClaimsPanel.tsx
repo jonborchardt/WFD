@@ -95,7 +95,7 @@ export function ClaimsPanel({ videoId, claims, indexEntries, contradictions, cor
           <ClaimDetailCard
             key={c.id}
             videoId={videoId}
-            claim={{ ...c, tags: idx?.tags ?? c.tags }}
+            claim={c}
             derivedTruth={idx?.derivedTruth ?? null}
             truthSource={idx?.truthSource}
             overrideRationale={idx?.overrideRationale}

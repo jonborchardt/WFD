@@ -1,11 +1,12 @@
 import { useMemo, useState } from "react";
-import { Box, Chip, Slider, Typography, Link, Collapse, Stack } from "@mui/material";
+import { Box, Chip, Slider, Typography, Link, Collapse, Stack, Tooltip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { TruthBar } from "./TruthBar";
 import { ClaimMenu } from "./ClaimMenu";
 import { DepRow } from "./DepRow";
 import { useOpenVideo } from "./VideoLightbox";
 import { entityChipSx } from "../lib/facet-helpers";
+import { isVisibleType } from "../lib/entity-visibility";
 import { fmtTimestamp } from "../lib/format";
 import { truthColor, truthSideColor } from "../lib/truth-palette";
 import { claimKindColor } from "../theme";
@@ -183,7 +184,6 @@ export function ClaimDetailCard({
             kind: claim.kind,
             hostStance: claim.hostStance ?? null,
             rationale: claim.rationale,
-            tags: claim.tags,
           }}
           hasOverride={truthSource === "override"}
           onMutated={onMutated}
@@ -232,9 +232,24 @@ export function ClaimDetailCard({
           </Typography>
         )}
         {claim.confidence != null && (
-          <Typography variant="caption">
-            · conf {claim.confidence.toFixed(2)}
-          </Typography>
+          <Tooltip
+            arrow
+            title={
+              <Box sx={{ fontSize: 12, lineHeight: 1.4 }}>
+                How sure the extractor is that the host actually
+                asserted this claim in the transcript — not whether
+                the claim is <em>true</em>. Truthiness is the bar
+                above.
+              </Box>
+            }
+          >
+            <Typography
+              variant="caption"
+              sx={{ cursor: "help", textDecoration: "underline dotted" }}
+            >
+              · conf {claim.confidence.toFixed(2)}
+            </Typography>
+          </Tooltip>
         )}
       </Stack>
 
@@ -244,33 +259,39 @@ export function ClaimDetailCard({
         </Typography>
       )}
 
-      {claim.entities.length > 0 && (
-        <Box sx={{ mt: 1 }}>
-          <Link
-            component="button"
-            variant="caption"
-            onClick={() => setShowEntities((v) => !v)}
-            underline="hover"
-          >
-            {showEntities ? "▾" : "▸"} entities ({claim.entities.length})
-          </Link>
-          <Collapse in={showEntities}>
-            <Box sx={{ mt: 0.5, pl: 1.5, display: "flex", flexWrap: "wrap", gap: 0.5, borderLeft: "2px solid", borderColor: "divider" }}>
-              {claim.entities.map((k) => (
-                <Chip
-                  key={k}
-                  size="small"
-                  variant="outlined"
-                  clickable
-                  label={k}
-                  onClick={() => nav(`/entity/${encodeURIComponent(k)}`)}
-                  sx={{ fontSize: "0.7rem", ...entityChipSx(k) }}
-                />
-              ))}
-            </Box>
-          </Collapse>
-        </Box>
-      )}
+      {(() => {
+        const visibleEntities = claim.entities.filter((k) =>
+          isVisibleType(k.split(":")[0]),
+        );
+        if (visibleEntities.length === 0) return null;
+        return (
+          <Box sx={{ mt: 1 }}>
+            <Link
+              component="button"
+              variant="caption"
+              onClick={() => setShowEntities((v) => !v)}
+              underline="hover"
+            >
+              {showEntities ? "▾" : "▸"} entities ({visibleEntities.length})
+            </Link>
+            <Collapse in={showEntities}>
+              <Box sx={{ mt: 0.5, pl: 1.5, display: "flex", flexWrap: "wrap", gap: 0.5, borderLeft: "2px solid", borderColor: "divider" }}>
+                {visibleEntities.map((k) => (
+                  <Chip
+                    key={k}
+                    size="small"
+                    variant="outlined"
+                    clickable
+                    label={k}
+                    onClick={() => nav(`/entity/${encodeURIComponent(k)}`)}
+                    sx={{ fontSize: "0.7rem", ...entityChipSx(k) }}
+                  />
+                ))}
+              </Box>
+            </Collapse>
+          </Box>
+        );
+      })()}
 
       <Box sx={{ mt: 1 }}>
         <Link

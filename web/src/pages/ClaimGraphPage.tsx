@@ -701,13 +701,6 @@ export function ClaimGraphPage() {
               />
             ))}
           </Box>
-          {sel.claim.tags && sel.claim.tags.length > 0 && (
-            <Box sx={{ mt: 1 }}>
-              {sel.claim.tags.map((t) => (
-                <Typography key={t} component="span" variant="caption" sx={{ color: "text.secondary", mr: 0.5, fontFamily: "monospace" }}>#{t}</Typography>
-              ))}
-            </Box>
-          )}
           <Box sx={{ mt: 1 }}>
             <MuiLink component="button" variant="caption" onClick={() => nav(`/video/${sel.claim.videoId}#claim-${sel.id}`)}>
               open on video page →

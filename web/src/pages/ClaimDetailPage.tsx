@@ -162,7 +162,7 @@ export function ClaimDetailPage() {
       <Box sx={{ mt: 2 }}>
         <ClaimDetailCard
           videoId={videoId}
-          claim={{ ...claim, tags: indexEntry?.tags ?? claim.tags }}
+          claim={claim}
           derivedTruth={indexEntry?.derivedTruth ?? null}
           truthSource={indexEntry?.truthSource}
           overrideRationale={indexEntry?.overrideRationale}

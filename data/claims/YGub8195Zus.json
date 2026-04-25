@@ -31,11 +31,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Stuxnet's 2010 discovery (by Belarusian firm VirusBlokAda) is documented fact, corroborated by Symantec's dossier and Kim Zetter's 'Countdown to Zero Day.' The '20 times more sophisticated' is rhetorical but the extreme sophistication is genuine â€” expert consensus places it as a step-change in malware.",
-      "tags": [
-        "stuxnet",
-        "2010",
-        "discovery"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -67,11 +62,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Natanz centrifuge failures were reported by IAEA in late 2009-early 2010 and are documented in the IAEA director's reports of the period (though the host says 'iraq' â€” a transcript error; Natanz is in Iran). Centrifuge replacement rates spiked anomalously.",
-      "tags": [
-        "natanz",
-        "iaea",
-        "centrifuge-failures"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -99,11 +89,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Stuxnet's reported binary sizes track roughly with Symantec's analysis. Sizes of ~500KB-1.5MB are documented depending on modules. The order-of-magnitude contrast with typical contemporary malware is accurate.",
-      "tags": [
-        "stuxnet",
-        "code-size",
-        "technical"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -132,11 +117,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Documented in Symantec's W32.Stuxnet dossier and widely confirmed. Stuxnet used stolen code-signing certificates from both Realtek Semiconductor (first variant) and JMicron (later variant), both based in Taiwan's Hsinchu science park. Both certificates were subsequently revoked.",
-      "tags": [
-        "stuxnet",
-        "certificate-theft",
-        "technical"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -173,11 +153,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Stuxnet's four Windows zero-days (LNK vulnerability, print-spooler, two privilege escalations) are documented. Four zero-days in one malware sample was unprecedented in 2010 and remains exceptional. The 10-12/year figure is roughly accurate for that period (modern figures are higher due to more dedicated vuln research).",
-      "tags": [
-        "stuxnet",
-        "zero-days",
-        "unprecedented"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -209,11 +184,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Stuxnet's payload specifically targeted Siemens S7-315 and S7-417 PLCs running STEP 7 software with specific motor-controller profiles (Vacon and Fararo Paya frequency converters used in uranium enrichment). Fully documented by Symantec and Langner.",
-      "tags": [
-        "stuxnet",
-        "siemens-plc",
-        "icd"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -243,11 +213,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "USB-based infection vector for Natanz is the consensus account (LNK exploit made USB autorun unnecessary). Whether specifically introduced by 'outside contractors' vs. unwitting insiders vs. intelligence-inserted compromised equipment is less settled, but the air-gap-crossing via USB is well-established.",
-      "tags": [
-        "air-gap",
-        "usb-infection",
-        "natanz"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -275,11 +240,6 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "Core Stuxnet attack sequence is well-documented. Observation/recording phase before payload activation, followed by sabotage cycles while replaying normal data to operators â€” all described in Ralph Langner's detailed analysis and in Countdown to Zero Day. Exact timings may vary across variants but the pattern is accurate.",
-      "tags": [
-        "stuxnet",
-        "attack-sequence",
-        "sabotage"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -308,11 +268,6 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Estimates of ~1,000 destroyed centrifuges at Natanz over 2009-2010 match IAEA replacement-rate data and ISIS (Institute for Science and International Security) analysis. Setback magnitude is debated â€” some estimate weeks to months, others 1-2 years. 'Months to years' is a defensible range.",
-      "tags": [
-        "stuxnet",
-        "damage",
-        "iran-nuclear"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -353,11 +308,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Operation Olympic Games as the covert name for the Stuxnet program is reported by David Sanger in 'Confront and Conceal' and the New York Times (2012), sourced to multiple current/former officials. Never officially confirmed, but attribution to US+Israel is consensus among analysts. UK-allied involvement is weaker sourcing.",
-      "tags": [
-        "olympic-games",
-        "attribution",
-        "us-israel"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -395,11 +345,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "2012 Shamoon attack on Saudi Aramco wiped ~30,000 workstations and is widely attributed to Iran (via 'Cutting Sword of Justice'). Operation Ababil DDoS attacks on US banks including Wells Fargo, PNC, BofA (2011-2013) were attributed to Iran's Izz ad-Din al-Qassam Cyber Fighters by US intelligence.",
-      "tags": [
-        "iran-retaliation",
-        "shamoon",
-        "operation-ababil"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -437,12 +382,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Duqu (2011) and Flame (2012) are both documented, share code lineage with Stuxnet, and were extensively analyzed by Kaspersky and others. Flame's capabilities (Skype recording, screenshot, keylogging) are confirmed. Industroyer attack on Ukraine's grid was December 2016.",
-      "tags": [
-        "duqu",
-        "flame",
-        "industroyer",
-        "follow-on"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -472,11 +411,6 @@
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "The 'Hiroshima moment' framing â€” Stuxnet as the first weaponized cyber attack on physical infrastructure â€” is shared by many cyber-security analysts including Michael Hayden and Kim Zetter. The analogy captures the precedent-setting aspect even if not the scale of casualties.",
-      "tags": [
-        "hiroshima",
-        "stuxnet",
-        "precedent"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -514,11 +448,6 @@
       "confidence": 0.85,
       "directTruth": 0.65,
       "rationale": "Nitro Zeus was reported by the New York Times and the 2016 documentary 'Zero Days' (Alex Gibney), sourced to former US intelligence officials. Reporting includes scale (thousands of personnel, hundreds of millions of dollars) and target set. Whether currently deployed and dormant is asserted by Gibney's sources but not independently confirmed.",
-      "tags": [
-        "nitro-zeus",
-        "us-cyberwar",
-        "iran"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -546,10 +475,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Well-documented by cybersecurity researchers (ICS-CERT, Dragos, Shodan surveys). Much US/UK utility and water-system SCADA/ICS equipment runs legacy firmware, some exposed to the internet with weak credentials. The comparison to Natanz is apt: Natanz had better OT security than most civilian utilities, yet it was breached.",
-      "tags": [
-        "legacy-infrastructure",
-        "ics-vulnerability"
-      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

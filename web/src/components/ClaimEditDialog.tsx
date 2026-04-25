@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 
-export type ClaimEditField = "text" | "kind" | "hostStance" | "rationale" | "tags";
+export type ClaimEditField = "text" | "kind" | "hostStance" | "rationale";
 
 interface Props {
   open: boolean;
@@ -26,8 +26,8 @@ const KIND_OPTIONS = ["empirical", "historical", "speculative", "opinion", "defi
 const STANCE_OPTIONS = ["", "asserts", "denies", "uncertain", "steelman"];
 
 // Replaces the old native `prompt()` flow with a real MUI dialog.
-// Multi-line for rationale/text, select for kind/stance, comma-parsed
-// for tags. Submit is disabled if text is empty for required fields.
+// Multi-line for rationale/text, select for kind/stance. Submit is
+// disabled if the text is empty.
 export function ClaimEditDialog({ open, field, initialValue, onCancel, onSubmit, mode }: Props) {
   const [value, setValue] = useState(initialValue);
 
@@ -51,16 +51,6 @@ export function ClaimEditDialog({ open, field, initialValue, onCancel, onSubmit,
         {STANCE_OPTIONS.map((k) => <MenuItem key={k} value={k}>{k || "(none)"}</MenuItem>)}
       </TextField>
     );
-  } else if (field === "tags") {
-    inputEl = (
-      <TextField
-        fullWidth
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        label="tags (comma separated)"
-        helperText="lowercase kebab-case suggested: ufo, area-51, cold-war"
-      />
-    );
   } else {
     inputEl = (
       <TextField
@@ -75,7 +65,7 @@ export function ClaimEditDialog({ open, field, initialValue, onCancel, onSubmit,
     );
   }
 
-  const canSubmit = isSelect ? true : value.trim().length > 0 || field === "tags";
+  const canSubmit = isSelect ? true : value.trim().length > 0;
 
   return (
     <Dialog open={open} onClose={onCancel} fullWidth maxWidth="sm">

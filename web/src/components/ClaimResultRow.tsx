@@ -10,6 +10,7 @@ import { TruthBar } from "./TruthBar";
 import { entityChipSx } from "../lib/facet-helpers";
 import { truthSideColor } from "../lib/truth-palette";
 import { claimKindColor } from "../theme";
+import { isVisibleType } from "../lib/entity-visibility";
 import type { ClaimsIndexEntry } from "../types";
 import type { ClaimsBundle } from "./facets/claims-duck";
 
@@ -54,11 +55,30 @@ export function ClaimResultRow({ claim, nav, bundle }: ClaimResultRowProps) {
           minLabelWidth={0}
         />
         {claim.confidence != null && (
-          <Typography variant="caption" color="text.secondary" sx={{
-            fontWeight: 500,
-          }}>
-            conf {claim.confidence.toFixed(2)}
-          </Typography>
+          <Tooltip
+            arrow
+            title={
+              <Box sx={{ fontSize: 12, lineHeight: 1.4 }}>
+                How sure the extractor is that the host actually
+                asserted this claim in the transcript — not whether
+                the claim is <em>true</em>. Truthiness is the bar to
+                the left.
+              </Box>
+            }
+          >
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              sx={{
+                fontWeight: 500,
+                cursor: "help",
+                textDecoration: "underline dotted",
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              conf {claim.confidence.toFixed(2)}
+            </Typography>
+          </Tooltip>
         )}
       </Stack>
       <Stack direction="row" spacing={{ xs: 0.75, sm: 1 }} sx={{
@@ -123,32 +143,39 @@ export function ClaimResultRow({ claim, nav, bundle }: ClaimResultRowProps) {
           </Tooltip>
         )}
       </Stack>
-      {claim.entities.length > 0 && (
-        <Box sx={{
-          mt: 0.75, display: "flex", flexWrap: "wrap", gap: 0.5,
-          alignItems: "center",
-        }}>
-          {claim.entities.slice(0, 6).map((k) => (
-            <Chip
-              key={k}
-              size="small"
-              variant="outlined"
-              clickable
-              label={k}
-              onClick={(e) => {
-                e.stopPropagation();
-                nav(`/entity/${encodeURIComponent(k)}`);
-              }}
-              sx={{ fontSize: "0.7rem", ...entityChipSx(k) }}
-            />
-          ))}
-          {claim.entities.length > 6 && (
-            <Typography variant="caption" color="text.secondary">
-              +{claim.entities.length - 6} more
-            </Typography>
-          )}
-        </Box>
-      )}
+      {(() => {
+        const visible = claim.entities.filter((k) => {
+          const t = k.split(":")[0];
+          return isVisibleType(t);
+        });
+        if (visible.length === 0) return null;
+        return (
+          <Box sx={{
+            mt: 0.75, display: "flex", flexWrap: "wrap", gap: 0.5,
+            alignItems: "center",
+          }}>
+            {visible.slice(0, 6).map((k) => (
+              <Chip
+                key={k}
+                size="small"
+                variant="outlined"
+                clickable
+                label={k}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nav(`/entity/${encodeURIComponent(k)}`);
+                }}
+                sx={{ fontSize: "0.7rem", ...entityChipSx(k) }}
+              />
+            ))}
+            {visible.length > 6 && (
+              <Typography variant="caption" color="text.secondary">
+                +{visible.length - 6} more
+              </Typography>
+            )}
+          </Box>
+        );
+      })()}
     </Box>
   );
 }

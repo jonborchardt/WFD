@@ -29,11 +29,6 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "Framing sentence for the conspiracy theory being explored. The episode itself argues against the plausibility of the overall plan, and there is no real evidence that any such coordinated program exists. Very low directTruth as a factual claim about the world.",
-      "tags": [
-        "project-bluebeam",
-        "conspiracy",
-        "new-world-order"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -64,12 +59,7 @@
       ],
       "confidence": 0.95,
       "directTruth": 0.65,
-      "rationale": "Monast (the subject's actual name) was born in Quebec in 1945 and did work as a journalist/conspiracy writer. The factual biography is accurate; the 'secret Illuminati cabal' belief is his claim, not a verified fact, so directTruth is moderate.",
-      "tags": [
-        "serge-monast",
-        "biography",
-        "illuminati"
-      ]
+      "rationale": "Monast (the subject's actual name) was born in Quebec in 1945 and did work as a journalist/conspiracy writer. The factual biography is accurate; the 'secret Illuminati cabal' belief is his claim, not a verified fact, so directTruth is moderate."
     },
     {
       "id": "YaaGvq2mcR0:c_0003",
@@ -98,11 +88,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Monast did self-publish his Project Blue Beam tract in 1994; the book exists and is widely cited in conspiracy circles. Historical fact about the book's existence is reliable; the plan it describes is not.",
-      "tags": [
-        "serge-monast",
-        "1994",
-        "book"
-      ],
       "dependencies": [
         {
           "target": "YaaGvq2mcR0:c_0002",
@@ -137,13 +122,7 @@
       ],
       "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "MK Ultra is extensively documented in the Church Committee reports (1975) and declassified files. The 1953 start date and drug-based methods are historical fact.",
-      "tags": [
-        "mk-ultra",
-        "cia",
-        "declassified",
-        "mind-control"
-      ]
+      "rationale": "MK Ultra is extensively documented in the Church Committee reports (1975) and declassified files. The 1953 start date and drug-based methods are historical fact."
     },
     {
       "id": "YaaGvq2mcR0:c_0005",
@@ -169,11 +148,6 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "The four-step framing is Monast's own structural claim about his theory; it is an accurate summary of his text. directTruth reflects the accuracy of the summary, not the reality of the alleged plan.",
-      "tags": [
-        "project-bluebeam",
-        "four-steps",
-        "framing"
-      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -208,12 +182,6 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "This is Monast's step one. The plan is operationally implausible (host himself argues large-scale discreet earthquake engineering is impossible) and there is no evidence any actor is pursuing it. Very low directTruth.",
-      "tags": [
-        "project-bluebeam",
-        "step-one",
-        "earthquakes",
-        "archaeology"
-      ],
       "hostStance": "denies",
       "dependencies": [
         {
@@ -247,13 +215,7 @@
       ],
       "confidence": 0.9,
       "directTruth": 0.9,
-      "rationale": "The Dead Sea Scrolls were discovered in the Qumran caves starting in 1946-47 by Bedouin shepherds. The scrolls include early versions of biblical books and non-canonical texts. Well-established archaeological history.",
-      "tags": [
-        "dead-sea-scrolls",
-        "qumran",
-        "1947",
-        "bible"
-      ]
+      "rationale": "The Dead Sea Scrolls were discovered in the Qumran caves starting in 1946-47 by Bedouin shepherds. The scrolls include early versions of biblical books and non-canonical texts. Well-established archaeological history."
     },
     {
       "id": "YaaGvq2mcR0:c_0008",
@@ -280,12 +242,6 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "No satellite system capable of projecting free-space 3D images of this scale exists or is known to be in development. The host later explains that holograms require a substrate and cannot be convincingly projected into empty sky.",
-      "tags": [
-        "project-bluebeam",
-        "step-two",
-        "holograms",
-        "satellites"
-      ],
       "hostStance": "denies",
       "dependencies": [
         {
@@ -320,12 +276,6 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "Neuralink-style BCIs do exist in limited research form, but there is no public, deployed technology that beams intelligible voices into a person's brain via ELF/VLF waves. The step-three claim is not supported.",
-      "tags": [
-        "project-bluebeam",
-        "neurolink",
-        "mind-control",
-        "elf"
-      ],
       "hostStance": "uncertain",
       "dependencies": [
         {
@@ -362,11 +312,6 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "Monast did die in December 1996 at age 51; the official cause of death was heart attack. The timing relative to an arrest is a genuine biographical fact. Causation (suspicious death) is conspiracy speculation; the bare facts are supported.",
-      "tags": [
-        "serge-monast",
-        "death",
-        "1996"
-      ],
       "dependencies": [
         {
           "target": "YaaGvq2mcR0:c_0002",
@@ -398,11 +343,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Induced seismicity from fracking, mining, and large reservoirs is real and well-studied, but targeting precise sites while concealing the operation is operationally implausible given monitoring by USGS and independent seismologists.",
-      "tags": [
-        "induced-seismicity",
-        "debunking",
-        "feasibility"
-      ],
       "hostStance": "denies",
       "inVerdictSection": true
     },
@@ -429,12 +369,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Optical-physics fact: holograms require a medium to scatter light, and free-space volumetric displays remain a niche research area. Pepper's-ghost is a Victorian-era stage trick that depends on angle and lighting, as the host correctly explains.",
-      "tags": [
-        "holograms",
-        "peppers-ghost",
-        "optics",
-        "debunking"
-      ],
       "hostStance": "denies",
       "inVerdictSection": true,
       "dependencies": [
@@ -469,13 +403,7 @@
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "TMS is FDA-approved for treatment-resistant depression. BCIs have demonstrated thought-to-cursor control in both non-invasive (EEG) and invasive (Utah array, Neuralink) forms. Both are established, not speculation.",
-      "tags": [
-        "tms",
-        "bci",
-        "neurolink",
-        "medicine"
-      ]
+      "rationale": "TMS is FDA-approved for treatment-resistant depression. BCIs have demonstrated thought-to-cursor control in both non-invasive (EEG) and invasive (Utah array, Neuralink) forms. Both are established, not speculation."
     },
     {
       "id": "YaaGvq2mcR0:c_0014",
@@ -503,12 +431,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Operation Northwoods was declassified in 1997; memoranda from the Joint Chiefs to SecDef McNamara proposed false-flag attacks on US civilians to justify war with Cuba. Kennedy rejected it. All documented.",
-      "tags": [
-        "operation-northwoods",
-        "false-flag",
-        "declassified",
-        "1962"
-      ],
       "dependencies": [
         {
           "target": "YaaGvq2mcR0:c_0015",
@@ -541,13 +463,7 @@
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
-      "rationale": "Declassified NSA historical analysis (Hanyok 2001, released 2005) confirmed the August 4, 1964 second Gulf of Tonkin 'attack' did not occur. This is one of the best-documented pretext incidents in US history.",
-      "tags": [
-        "gulf-of-tonkin",
-        "vietnam-war",
-        "false-flag",
-        "declassified"
-      ]
+      "rationale": "Declassified NSA historical analysis (Hanyok 2001, released 2005) confirmed the August 4, 1964 second Gulf of Tonkin 'attack' did not occur. This is one of the best-documented pretext incidents in US history."
     },
     {
       "id": "YaaGvq2mcR0:c_0016",
@@ -577,12 +493,6 @@
       "confidence": 0.9,
       "directTruth": 0.65,
       "rationale": "'The God Thing' is a real Roddenberry script that was never produced; 'Devil's Due' (TNG S04E13, Feb 1991) does feature an entity posing as a god via technology. Temporal sequence (pre-dates 1994 Bluebeam book) supports the influence claim, though direct causation is inference.",
-      "tags": [
-        "star-trek",
-        "roddenberry",
-        "devils-due",
-        "influence"
-      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -616,11 +526,6 @@
       ],
       "confidence": 0.95,
       "rationale": "Host's verdict editorial. Argument is rhetorical rather than empirical — directTruth omitted because this is a values/opinion claim rather than a testable proposition.",
-      "tags": [
-        "verdict",
-        "elites",
-        "opinion"
-      ],
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [

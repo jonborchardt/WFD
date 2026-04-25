@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, Chip, Link } from "@mui/material";
+import { Box, Typography, Chip, Link, Tooltip } from "@mui/material";
 import { ENTITY_TYPE_COLOR } from "./catalog-columns";
 import { SuggestChip } from "./SuggestChip";
 import { EntityMenuButton, RelationMenuButton } from "./EntityMenu";
@@ -111,7 +111,26 @@ export function NlpPanel({ videoId, nlp }: Props) {
                 <Chip size="small" label={s.canonical} variant="outlined" color={ENTITY_TYPE_COLOR[s.type] || "default"} clickable onClick={() => nav("/entity/" + encodeURIComponent(s.id))} />
                 <Typography variant="caption" color="text.secondary">{r.predicate}</Typography>
                 <Chip size="small" label={o.canonical} variant="outlined" color={ENTITY_TYPE_COLOR[o.type] || "default"} clickable onClick={() => nav("/entity/" + encodeURIComponent(o.id))} />
-                <Typography variant="caption" color="text.secondary">{r.confidence.toFixed(2)}</Typography>
+                <Tooltip
+                  arrow
+                  title={
+                    <Box sx={{ fontSize: 12, lineHeight: 1.4 }}>
+                      GLiREL's score that the predicate
+                      <strong> {r.predicate}</strong> holds between
+                      these two entities, given the evidence sentence
+                      at the timestamp on the left. Higher = stronger
+                      model signal; not a truth judgment.
+                    </Box>
+                  }
+                >
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ cursor: "help", textDecoration: "underline dotted" }}
+                  >
+                    {r.confidence.toFixed(2)}
+                  </Typography>
+                </Tooltip>
                 <RelationMenuButton
                   videoId={videoId}
                   relation={{

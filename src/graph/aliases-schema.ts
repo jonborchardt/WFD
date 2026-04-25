@@ -88,7 +88,6 @@ export interface ClaimFieldOverrideEntry {
   kind?: string;          // one of ClaimKind values
   hostStance?: string;    // one of HostStance values
   rationale?: string;
-  tags?: string[];        // replaces the claim's own tags when present
 }
 
 // Operator decision to dismiss a detected contradiction. Keyed by the
@@ -659,26 +658,13 @@ export function setClaimFieldOverride(
         delete merged[k];
       }
     }
-    // Normalize tags: lowercase, trim, dedupe, sort. An empty array means
-    // the operator wants to clear tags; undefined means "no change".
-    if (merged.tags !== undefined) {
-      const cleaned = [
-        ...new Set(merged.tags.map((t) => t.trim().toLowerCase()).filter(Boolean)),
-      ].sort();
-      if (cleaned.length === 0) {
-        delete merged.tags;
-      } else {
-        merged.tags = cleaned;
-      }
-    }
     f.claimFieldOverrides = f.claimFieldOverrides.filter((e) => e.claimId !== claimId);
     // Only write the entry if it contains at least one override field.
     const hasContent =
       merged.text !== undefined ||
       merged.kind !== undefined ||
       merged.hostStance !== undefined ||
-      merged.rationale !== undefined ||
-      (merged.tags !== undefined && merged.tags.length > 0);
+      merged.rationale !== undefined;
     if (hasContent) f.claimFieldOverrides.push(merged);
   });
 }

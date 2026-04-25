@@ -18,7 +18,6 @@ interface Props {
     kind?: string;
     hostStance?: string | null;
     rationale?: string;
-    tags?: string[];
   };
   hasOverride: boolean;
   onMutated?: () => void;
@@ -84,8 +83,7 @@ export function ClaimMenu({ claim, hasOverride, onMutated }: Props) {
     if (field === "text") return claim.text;
     if (field === "kind") return claim.kind ?? "empirical";
     if (field === "hostStance") return claim.hostStance ?? "";
-    if (field === "rationale") return claim.rationale ?? "";
-    return (claim.tags ?? []).join(", ");
+    return claim.rationale ?? "";
   };
 
   return (
@@ -118,9 +116,6 @@ export function ClaimMenu({ claim, hasOverride, onMutated }: Props) {
         </MenuItem>
         <MenuItem onClick={() => openField("rationale")}>
           {IS_ADMIN ? "edit rationale…" : "suggest rationale…"}
-        </MenuItem>
-        <MenuItem onClick={() => openField("tags")}>
-          {IS_ADMIN ? "edit tags…" : "suggest tags…"}
         </MenuItem>
         {IS_ADMIN && (
           <MenuItem onClick={() => post("claim-field-unoverride", {})}>

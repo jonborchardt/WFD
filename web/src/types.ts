@@ -174,7 +174,6 @@ export interface Claim {
   dependencies?: ClaimDependency[];
   inVerdictSection?: boolean;
   hostStance?: HostStance | null;
-  tags?: string[];
 }
 
 export interface PersistedClaims {
@@ -201,14 +200,13 @@ export interface CounterEvidenceEntry {
 }
 
 export interface ClaimsIndexEntry extends Omit<Claim,
-  "evidence" | "rationale" | "dependencies" | "tags"
+  "evidence" | "rationale" | "dependencies"
 > {
   derivedTruth: number | null;
   truthSource: TruthSource;
   overrideRationale?: string;
   dependencies: ClaimDependency[];
-  tags: string[];
-  fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale" | "tags">;
+  fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale">;
   counterEvidence?: CounterEvidenceEntry[];
 }
 

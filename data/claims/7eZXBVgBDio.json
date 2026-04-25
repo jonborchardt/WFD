@@ -26,11 +26,6 @@
       ],
       "confidence": 0.9,
       "rationale": "The Voynich manuscript (c. 1400-1430, Yale Beinecke MS 408) is genuinely undeciphered despite a century of cryptographic attention. Host's pronunciation is 'voage' but the referent is unambiguous.",
-      "tags": [
-        "voynich",
-        "cryptography",
-        "undeciphered"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.9
@@ -56,11 +51,6 @@
       ],
       "confidence": 0.95,
       "rationale": "The Caesar cipher is documented in Suetonius' 'Life of Julius Caesar'. Whether Caesar used it for *all* correspondence is a minor overstatement — he used it for sensitive military messages.",
-      "tags": [
-        "caesar-cipher",
-        "cryptography",
-        "history"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.85
@@ -87,11 +77,6 @@
       ],
       "confidence": 0.95,
       "rationale": "The Z-340 cipher was solved in December 2020 by Sam Blake, David Oranchak, and Jarl Van Eycke. Widely reported and confirmed by the FBI. The 'stumped best cryptographers for 51 years' framing is accurate — multiple NSA and FBI attempts had failed.",
-      "tags": [
-        "zodiac-killer",
-        "z340",
-        "cryptography"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.9
@@ -117,11 +102,6 @@
       ],
       "confidence": 0.95,
       "rationale": "Accurate description of RSA, the dominant public-key crypto system since 1977. The explanation is simplified ('modern encryption' encompasses RSA, ECC, AES, and others with different primitives) but the prime-factorization foundation of RSA is correct.",
-      "tags": [
-        "rsa",
-        "encryption",
-        "cryptography"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.8
@@ -148,11 +128,6 @@
       ],
       "confidence": 0.9,
       "rationale": "Google's Willow chip was announced in December 2024 and did benchmark a random-circuit sampling problem in ~5 minutes vs an estimated 10^25 years on classical hardware. Important caveat: that benchmark does not translate to cracking RSA or any useful encryption; host conflates benchmark speedup with general computational supremacy.",
-      "tags": [
-        "google",
-        "willow",
-        "quantum-computer"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.7
@@ -178,11 +153,6 @@
       ],
       "confidence": 0.9,
       "rationale": "Superposition is real but 'tries all combinations simultaneously' is the popular simplification that misleads. A qubit's measurement still collapses to one value; quantum speedup depends on interference patterns, not parallel trial enumeration. True in spirit, wrong in mechanism.",
-      "tags": [
-        "qubits",
-        "superposition",
-        "quantum-computing"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.6
@@ -208,11 +178,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Y2Q is a real NIST/NSA preparedness framework. NIST's formal migration-deadline guidance targets 2030-2035; the '2029' acceleration is the host's extrapolation from Willow. Mainstream cryptographers still estimate 2030s-2040s for cryptographically-relevant quantum computers (CRQC) — 2029 is aggressive.",
-      "tags": [
-        "y2q",
-        "nsa",
-        "post-quantum"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.35
@@ -239,11 +204,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Strong claim with a specific date. Requires ~4000+ logical qubits with sufficient error correction — Willow demonstrated 105 physical qubits with a breakthrough in error correction, nowhere near RSA-breaking scale. Expert consensus (Mosca, IBM, NIST) still places CRQC in 2030s-2040s with wide error bars.",
-      "tags": [
-        "quantum-apocalypse",
-        "timeline",
-        "2029"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.15,
@@ -276,11 +236,6 @@
       ],
       "confidence": 0.85,
       "rationale": "DoD has a real Quantum Strategy and issued CNSA 2.0 guidance in 2022 with migration deadlines. A 'critical systems quantum-resistant by 2025' directive is not the public mandate — CNSA 2.0 timelines run to 2030-2035. Host may be conflating general urgency with a specific directive.",
-      "tags": [
-        "department-of-defense",
-        "quantum-resistance",
-        "pqc"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.45
@@ -304,11 +259,6 @@
       ],
       "confidence": 0.75,
       "rationale": "Bitcoin wallet public keys are already on the public blockchain — no 'collection' is needed. The 'harvest now, decrypt later' threat model is real for other encrypted traffic, but the specific 'hundreds of thousands of Bitcoin wallets' figure and 'Shadow groups' are uncited and unverified.",
-      "tags": [
-        "bitcoin",
-        "quantum-threat",
-        "speculation"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.1
@@ -336,11 +286,6 @@
       ],
       "confidence": 0.75,
       "rationale": "JP Morgan does have a quantum-research program and has piloted quantum-key-distribution networks, but 'offline vaults with paper records and human couriers' is the host's dramatization, not corroborated by public JPM disclosures. The direction of travel is real; the specifics are fictionalized.",
-      "tags": [
-        "jp-morgan",
-        "quantum-resistant",
-        "banking"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.25
@@ -366,11 +311,6 @@
       ],
       "confidence": 0.85,
       "rationale": "The 'harvest now, decrypt later' (HNDL) threat is a real and widely-discussed intelligence-community concern. NSA bulk collection of encrypted traffic has been documented since the Snowden disclosures (2013). Waiting-for-quantum motive is explicit in NIST's PQC migration rationale.",
-      "tags": [
-        "harvest-now-decrypt-later",
-        "cold-war",
-        "nsa"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.7
@@ -396,11 +336,6 @@
       ],
       "confidence": 0.8,
       "rationale": "Host's dramatic framing. No public demonstration of RSA-2048 or ECC-256 being broken by a quantum computer exists as of this video's airing. Willow is impressive but cannot factor cryptographically relevant numbers. Framing as 'already here' is narrative, not technical.",
-      "tags": [
-        "quantum-apocalypse",
-        "framing",
-        "narrative"
-      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "directTruth": 0.15,
@@ -434,12 +369,6 @@
       ],
       "confidence": 0.7,
       "rationale": "This is the climactic twist of the host's dramatized Carl Bishop storyline. No public record of a CTEC NSA-DARPA quantum program exists. Narrative fiction the host presents inside the story frame, not a factual claim, but treated as a claim by the format.",
-      "tags": [
-        "ctec",
-        "nsa",
-        "narrative",
-        "speculation"
-      ],
       "inVerdictSection": false,
       "hostStance": "steelman",
       "directTruth": 0.02
@@ -465,11 +394,6 @@
       ],
       "confidence": 0.7,
       "rationale": "Host's conspiracy-theory capstone, framed as the 'real' explanation behind the dramatized events. No evidence supports a deliberate NSA project to destroy digital privacy; actual NSA practice has been opposite — aggressive classification of capabilities and parallel construction to hide sources.",
-      "tags": [
-        "nsa",
-        "conspiracy",
-        "narrative"
-      ],
       "inVerdictSection": false,
       "hostStance": "steelman",
       "directTruth": 0.03,
@@ -502,11 +426,6 @@
       ],
       "confidence": 0.9,
       "rationale": "Broadly true as a historical pattern. Enigma was broken by Rejewski/Turing/Bletchley; Purple was broken by Friedman's team. RSA is not yet broken at cryptographically-relevant key sizes but the pattern-matching is reasonable.",
-      "tags": [
-        "enigma",
-        "purple",
-        "cryptography-history"
-      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "directTruth": 0.8
