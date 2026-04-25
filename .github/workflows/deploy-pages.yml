@@ -48,12 +48,21 @@ jobs:
       - name: Install root deps (for sitemap CLI)
         run: npm ci
 
+      # Pin esbuild to web's own 0.21.5 binary. Without this, esbuild's host
+      # JS does require.resolve('@esbuild/linux-x64/bin/esbuild') from
+      # web/node_modules/esbuild/lib/, walks up past web/node_modules/ (the
+      # lockfile only carries @esbuild/win32-x64), and finds the root's
+      # 0.27.7 binary (vitest 3 → vite 6) → host/binary version mismatch.
       - name: Test
         working-directory: web
+        env:
+          ESBUILD_BINARY_PATH: ${{ github.workspace }}/web/node_modules/esbuild/bin/esbuild
         run: npm test
 
       - name: Build
         working-directory: web
+        env:
+          ESBUILD_BINARY_PATH: ${{ github.workspace }}/web/node_modules/esbuild/bin/esbuild
         run: npm run build
 
       - name: Layer data into dist/
