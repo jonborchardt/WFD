@@ -3,6 +3,7 @@
   "transcriptId": "s6JjHAnCWqU",
   "generatedAt": "2026-04-21T12:40:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "s6JjHAnCWqU:c_0001",
@@ -38,7 +39,11 @@
       "directTruth": 0.85,
       "rationale": "The Latitude Society ran 2013-2015 in San Francisco with the invitation-card and physical initiation format described. Contemporary Wired and Vice coverage documents the experience including the slide, hallway, and fable chamber.",
       "hostStance": "asserts",
-      "tags": ["latitude-society", "san-francisco", "arg"]
+      "tags": [
+        "latitude-society",
+        "san-francisco",
+        "arg"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0002",
@@ -66,10 +71,18 @@
       "directTruth": 0.85,
       "rationale": "The fable-as-origin-myth was a documented core Latitude Society mechanism reported in Vice, Wired, and participant accounts.",
       "dependencies": [
-        { "target": "s6JjHAnCWqU:c_0001", "kind": "elaborates", "rationale": "Specific initiation mechanic within the broader recruitment funnel." }
+        {
+          "target": "s6JjHAnCWqU:c_0001",
+          "kind": "elaborates",
+          "rationale": "Specific initiation mechanic within the broader recruitment funnel."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["fable", "initiation", "latitude-society"]
+      "tags": [
+        "fable",
+        "initiation",
+        "latitude-society"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0003",
@@ -116,7 +129,11 @@
       "directTruth": 0.75,
       "rationale": "Jeff Hull is a real artist/designer in the SF Bay Area and founder of Nonchalance. The 'half a billion dollar family firm' figure is less well documented in mainstream coverage and should be treated as Hull's self-reported origin story; the broader biographical outline is consistent.",
       "hostStance": "asserts",
-      "tags": ["jeff-hull", "founder", "nonchalance"]
+      "tags": [
+        "jeff-hull",
+        "founder",
+        "nonchalance"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0004",
@@ -152,7 +169,11 @@
       "directTruth": 0.95,
       "rationale": "Nonchalance and the Jejune Institute (2008-2011, San Francisco) are well-documented; The Institute is the 2012 documentary by Spencer McCall. Accurate on every point.",
       "hostStance": "asserts",
-      "tags": ["nonchalance", "jejune-institute", "arg"]
+      "tags": [
+        "nonchalance",
+        "jejune-institute",
+        "arg"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0005",
@@ -180,7 +201,11 @@
       "directTruth": 0.95,
       "rationale": "'Dispatches From Elsewhere' (AMC, 2020) created by Jason Segel is explicitly inspired by the Jejune Institute ARG. Confirmed in Segel's own interviews.",
       "hostStance": "asserts",
-      "tags": ["dispatches-from-elsewhere", "jason-segel", "jejune"]
+      "tags": [
+        "dispatches-from-elsewhere",
+        "jason-segel",
+        "jejune"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0006",
@@ -223,7 +248,11 @@
       "directTruth": 0.8,
       "rationale": "The operating cost and personal-investment figures are consistent with reporting in Vice and Wired coverage of the Latitude Society's 2015 shutdown.",
       "hostStance": "asserts",
-      "tags": ["latitude-society", "finances", "shutdown"]
+      "tags": [
+        "latitude-society",
+        "finances",
+        "shutdown"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0007",
@@ -256,10 +285,18 @@
       "directTruth": 0.8,
       "rationale": "Card and dues structure and member backlash are documented in 2015 Vice coverage of the Latitude Society's dissolution.",
       "dependencies": [
-        { "target": "s6JjHAnCWqU:c_0006", "kind": "elaborates", "rationale": "Specific revenue mechanisms tried to address the sustainability shortfall." }
+        {
+          "target": "s6JjHAnCWqU:c_0006",
+          "kind": "elaborates",
+          "rationale": "Specific revenue mechanisms tried to address the sustainability shortfall."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["monetization", "membership-fees", "latitude-society"]
+      "tags": [
+        "monetization",
+        "membership-fees",
+        "latitude-society"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0008",
@@ -285,7 +322,10 @@
       "directTruth": 0.85,
       "rationale": "The ~3,000-member peak is consistent with reporting on the society's membership at dissolution.",
       "hostStance": "asserts",
-      "tags": ["membership", "latitude-society"]
+      "tags": [
+        "membership",
+        "latitude-society"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0009",
@@ -311,7 +351,11 @@
       "directTruth": 0.9,
       "rationale": "Steven Hassan's BITE model is a real and widely-referenced framework in cult-recovery literature (Combating Cult Mind Control, 1988). The characterization of its four axes is accurate.",
       "hostStance": "asserts",
-      "tags": ["bite-model", "steven-hassan", "cult-definition"]
+      "tags": [
+        "bite-model",
+        "steven-hassan",
+        "cult-definition"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0010",
@@ -348,11 +392,23 @@
       "directTruth": 0.5,
       "rationale": "The BITE-model checklist approach, applied strictly, would also flag many non-cult institutions (military, fraternities, corporate culture). Latitude does share cosmetic features with cults — secrecy rituals, monikers, hierarchies — but lacks the core cult features of coercive financial or psychological control that BITE is designed to surface. Partial match.",
       "dependencies": [
-        { "target": "s6JjHAnCWqU:c_0009", "kind": "elaborates", "rationale": "Applies the BITE framework to the specific Latitude case." },
-        { "target": "s6JjHAnCWqU:c_0011", "kind": "contradicts", "rationale": "[alternative] Host's own verdict: he doesn't believe Hull intended to form a cult or to harm members." }
+        {
+          "target": "s6JjHAnCWqU:c_0009",
+          "kind": "elaborates",
+          "rationale": "Applies the BITE framework to the specific Latitude case."
+        },
+        {
+          "target": "s6JjHAnCWqU:c_0011",
+          "kind": "contradicts",
+          "rationale": "[alternative] Host's own verdict: he doesn't believe Hull intended to form a cult or to harm members."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["bite-model", "latitude-society", "cult-analysis"]
+      "tags": [
+        "bite-model",
+        "latitude-society",
+        "cult-analysis"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0011",
@@ -388,7 +444,11 @@
       "rationale": "Contemporaneous reporting (including Hull's own statements on the society's dissolution) supports the benign-intent framing: the financial failure drove the shutdown, not exploitation or scandal.",
       "inVerdictSection": true,
       "hostStance": "denies",
-      "tags": ["intent", "jeff-hull", "verdict"]
+      "tags": [
+        "intent",
+        "jeff-hull",
+        "verdict"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0012",
@@ -415,11 +475,19 @@
       "directTruth": 0.7,
       "rationale": "Hull made similar on-record statements in 2015 interviews. The framing is an important epistemic point: cult-like dynamics can emerge from narrative design plus human attachment, not only from deliberate predation.",
       "dependencies": [
-        { "target": "s6JjHAnCWqU:c_0011", "kind": "supports", "rationale": "Hull's admission explains how a non-cult intent can still produce cult-like dynamics." }
+        {
+          "target": "s6JjHAnCWqU:c_0011",
+          "kind": "supports",
+          "rationale": "Hull's admission explains how a non-cult intent can still produce cult-like dynamics."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "asserts",
-      "tags": ["verdict", "narrative-power", "jeff-hull"]
+      "tags": [
+        "verdict",
+        "narrative-power",
+        "jeff-hull"
+      ]
     },
     {
       "id": "s6JjHAnCWqU:c_0013",
@@ -446,7 +514,11 @@
       "rationale": "The claim oversimplifies: while colloquial dictionary definitions overlap, sociology of religion distinguishes cults by structural features (charismatic leader, demanding membership, deviance from dominant tradition) beyond mere belief-sharing. The 'only difference is social acceptance' framing is a common but reductive rhetorical move.",
       "inVerdictSection": true,
       "hostStance": "asserts",
-      "tags": ["religion", "cult", "definitional"]
+      "tags": [
+        "religion",
+        "cult",
+        "definitional"
+      ]
     }
   ]
 }

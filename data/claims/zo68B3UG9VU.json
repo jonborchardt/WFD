@@ -3,6 +3,7 @@
   "transcriptId": "zo68B3UG9VU",
   "generatedAt": "2026-04-22T12:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b2-agent0",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "zo68B3UG9VU:c_0001",
@@ -36,7 +37,13 @@
       "confidence": 0.98,
       "directTruth": 0.98,
       "rationale": "ARPA was established February 7, 1958, roughly three months after Sputnik 2 (launched November 3, 1957). 'D' added in 1972. Founding mission to prevent technological surprise is documented in its charter.",
-      "tags": ["darpa", "arpa", "sputnik", "1958", "founding"],
+      "tags": [
+        "darpa",
+        "arpa",
+        "sputnik",
+        "1958",
+        "founding"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -74,7 +81,12 @@
       "confidence": 0.98,
       "directTruth": 0.95,
       "rationale": "ARPANET's first message (UCLA to SRI, 'lo' - partial 'login') was sent Oct 29, 1969. Baran, Davies, and Kleinrock's packet-switching work dates to 1964-1966. The IMP-based network ARPANET is universally credited as the internet's technical ancestor.",
-      "tags": ["arpanet", "internet", "packet-switching", "1969"],
+      "tags": [
+        "arpanet",
+        "internet",
+        "packet-switching",
+        "1969"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -118,7 +130,12 @@
       "confidence": 0.95,
       "directTruth": 0.75,
       "rationale": "DARPA funding underpins the VLSI microprocessor program, GPS (jointly DARPA/Air Force), capacitive touchscreens (via University of Delaware/Wayne Westerman), Siri's origins at SRI, and Mead-Conway semiconductor design methodology. 'Originated' overstates somewhat - many technologies had civilian co-contributors - but DARPA seed funding is consistently traceable. Medium-high directTruth.",
-      "tags": ["darpa", "smartphone", "gps", "microprocessor"],
+      "tags": [
+        "darpa",
+        "smartphone",
+        "gps",
+        "microprocessor"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -145,7 +162,11 @@
       ],
       "confidence": 0.85,
       "rationale": "This is a frequently-asserted but unverifiable rule of thumb, popular in DARPA journalism but lacking a rigorous benchmark. True for some projects (GPS 1973, civilian 1990s), exaggerated for others. Omitting directTruth because no operational metric makes this testable.",
-      "tags": ["darpa", "tech-ahead", "opinion"],
+      "tags": [
+        "darpa",
+        "tech-ahead",
+        "opinion"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -180,7 +201,12 @@
       "confidence": 0.85,
       "directTruth": 0.5,
       "rationale": "The 2017 Canadian JTF2 shot at 3,540m (2.2 miles) in Iraq is confirmed. DARPA's EXACTO program public demonstrations (2014-2015) showed successful guidance at much shorter ranges (under a mile). The '5-6 miles' capability is not in public documentation; the actual range advantage remains classified. Medium directTruth.",
-      "tags": ["exacto", "sniper", "darpa", "canadian-military"],
+      "tags": [
+        "exacto",
+        "sniper",
+        "darpa",
+        "canadian-military"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -207,7 +233,12 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "DARPA's Safe Genes program (2017) explicitly funds CRISPR/Cas9 research, including applications for soldier protection and biodefense. However, the 'superhuman abilities' framing exceeds what's publicly announced. The core claim that DARPA funds CRISPR work is true; the magnitude of application is speculative.",
-      "tags": ["darpa", "crispr", "soldier-enhancement", "safe-genes"],
+      "tags": [
+        "darpa",
+        "crispr",
+        "soldier-enhancement",
+        "safe-genes"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -234,7 +265,12 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Atlas was unveiled July 11, 2013 by Boston Dynamics (DARPA-funded). Its progression through parkour, backflips, and gymnastic routines is documented in public Boston Dynamics videos. Learning via reinforcement-learning AI methods is confirmed in later iterations.",
-      "tags": ["atlas", "boston-dynamics", "robotics", "2013"],
+      "tags": [
+        "atlas",
+        "boston-dynamics",
+        "robotics",
+        "2013"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -262,7 +298,12 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "The Highlands Forum, founded by Richard O'Neill at Pentagon's Office of Net Assessment in 1994, is a real, documented, invitation-only off-the-record forum. Nafeez Ahmed's 2015 Medium series and subsequent academic coverage establish its existence, membership practices, and influence on DoD strategy. Chatham House Rule operation is standard practice.",
-      "tags": ["highlands-forum", "pentagon", "think-tank", "1994"],
+      "tags": [
+        "highlands-forum",
+        "pentagon",
+        "think-tank",
+        "1994"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -309,7 +350,13 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Brin and Page's 1998 paper 'The Anatomy of a Large-Scale Hypertextual Web Search Engine' does acknowledge NSF/DARPA/NASA funding in section 7. The MDDS program (1993-1999) jointly funded by intelligence and NSF is documented. The host-framed 'intelligence community built Google' is an aggressive interpretation - the students' core innovation (PageRank) was their own, though foundation grants did support early Stanford work. Medium-high directTruth for funding chain, weaker for intent framing.",
-      "tags": ["google", "mdds", "darpa", "nsf", "surveillance"],
+      "tags": [
+        "google",
+        "mdds",
+        "darpa",
+        "nsf",
+        "surveillance"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -337,7 +384,12 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "Kennedy significantly expanded ARPA's counterinsurgency focus including Project AGILE in 1961-1962, with budgetary increases tied to Vietnam engagement. 'Doubled' matches Annie Jacobsen's Pentagon's Brain research on the period, though exact FY-to-FY ratios vary.",
-      "tags": ["jfk", "darpa", "1961", "project-agile"],
+      "tags": [
+        "jfk",
+        "darpa",
+        "1961",
+        "project-agile"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -382,7 +434,12 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Operation Ranch Hand (1962-1971) and its DARPA/ARPA origins under Project AGILE are documented history. The rainbow herbicides naming convention (pink, purple, blue, white, orange) for their container stripes is accurate. Annie Jacobsen and declassified records confirm DARPA's role.",
-      "tags": ["agent-orange", "vietnam", "darpa", "project-agile"],
+      "tags": [
+        "agent-orange",
+        "vietnam",
+        "darpa",
+        "project-agile"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -402,14 +459,19 @@
           "charStart": 32320,
           "charEnd": 32460,
           "timeStart": 2344.4,
-          "timeEnd": 2360.0,
+          "timeEnd": 2360,
           "quote": "uch worse the VA\nestimates 300,000 to 400,000 veterans\nmay have died from illnesses caused by\nthe exposure to agent orange may\nhave to this\n"
         }
       ],
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "VA does recognize dozens of presumptive conditions linked to Agent Orange exposure. The specific 300K-400K death figure is harder to nail down; it appears in activist literature and some VA contexts but is not an official mortality estimate from official reports. The order-of-magnitude long-term toll is well-documented but the exact figure deserves medium directTruth.",
-      "tags": ["va", "agent-orange", "vietnam-veterans", "mortality"],
+      "tags": [
+        "va",
+        "agent-orange",
+        "vietnam-veterans",
+        "mortality"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -442,7 +504,12 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "DARPA's recent headcount (~220 program managers plus support staff) and ~$3.5-4B annual budget are consistent with published figures. Other Transactions Authority (OTA) does allow expedited contracting outside FAR. All solid public-record facts.",
-      "tags": ["darpa", "budget", "ota", "personnel"],
+      "tags": [
+        "darpa",
+        "budget",
+        "ota",
+        "personnel"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -469,7 +536,12 @@
       "confidence": 0.9,
       "directTruth": 0.55,
       "rationale": "Annie Jacobsen makes this structural claim in 'The Pentagon's Brain'. DARPA's use of external technical consultants (Jasons, defense industry reps) on review panels is documented. Whether contractor CEOs personally drive classified-program selection is a stronger, harder-to-verify claim. Medium directTruth reflects documented conflict-of-interest risk without endorsing the full framing.",
-      "tags": ["darpa", "military-industrial-complex", "annie-jacobsen", "conflict-of-interest"],
+      "tags": [
+        "darpa",
+        "military-industrial-complex",
+        "annie-jacobsen",
+        "conflict-of-interest"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -502,7 +574,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "DARPA's dual offensive/defensive mandate is openly declared in its charter and public statements - covering everything from weapons to cybersecurity defense to pandemic response. The sword-and-shield framing is a standard paraphrase.",
-      "tags": ["darpa", "mission", "sword-shield"],
+      "tags": [
+        "darpa",
+        "mission",
+        "sword-shield"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     }

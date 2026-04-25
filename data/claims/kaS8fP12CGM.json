@@ -3,6 +3,7 @@
   "transcriptId": "kaS8fP12CGM",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b2",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "kaS8fP12CGM:c_0001",
@@ -27,7 +28,11 @@
       "confidence": 0.95,
       "directTruth": 0.65,
       "rationale": "Monast was a Quebec journalist and author active in the early 1990s — verifiable fact. His cabal claim is his own subjective thesis and is unsupported by independent evidence. Moderate directTruth balances these.",
-      "tags": ["monast", "biography", "quebec"]
+      "tags": [
+        "monast",
+        "biography",
+        "quebec"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0002",
@@ -55,7 +60,12 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "The 1994 self-published Project Blue Beam tract is an attested document; its content is faithfully described here. The higher-order claim that NASA/UN are actually executing the plan is not verified — this claim is specifically about the book's existence and contents.",
-      "tags": ["monast", "project-bluebeam", "book", "1994"],
+      "tags": [
+        "monast",
+        "project-bluebeam",
+        "book",
+        "1994"
+      ],
       "dependencies": [
         {
           "target": "kaS8fP12CGM:c_0001",
@@ -87,7 +97,10 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "This is an accurate summary of what Monast's book says. As a description of the book's thesis it is correct; as a claim about reality it is speculative. Moderate directTruth reflecting the mixed interpretation.",
-      "tags": ["four-goals", "framework"]
+      "tags": [
+        "four-goals",
+        "framework"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0004",
@@ -111,7 +124,11 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "Monast was detained in December 1996 shortly before his death. The precise charge is disputed in sources — some describe it as a psychiatric hold. The night-in-jail framing is supported by the Canadian-conspiracy-writer biographies. Moderate directTruth.",
-      "tags": ["monast", "arrest", "canada"],
+      "tags": [
+        "monast",
+        "arrest",
+        "canada"
+      ],
       "dependencies": [
         {
           "target": "kaS8fP12CGM:c_0002",
@@ -142,7 +159,11 @@
       "confidence": 0.9,
       "directTruth": 0.65,
       "rationale": "Monast's December 1996 death at age 51 by heart attack is a matter of public record. The claim that two other journalists also died of sudden heart attacks while investigating Blue Beam is frequently repeated but unverified — moderate directTruth covers the main documented fact while flagging the unproven extension.",
-      "tags": ["monast", "death", "1996"]
+      "tags": [
+        "monast",
+        "death",
+        "1996"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0006",
@@ -168,7 +189,11 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "Accurate summary of Monast's own framing — the host quotes the book directly. As a description of the book's claim it is correct.",
-      "tags": ["new-age-religion", "framing", "monast"]
+      "tags": [
+        "new-age-religion",
+        "framing",
+        "monast"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0007",
@@ -194,7 +219,11 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "No satellite-plus-ionosphere projection system capable of producing free-space 3D images is known to exist. Host later acknowledges the tech is not there. Very low directTruth for the capability claim.",
-      "tags": ["holograms", "ionosphere", "step-two"],
+      "tags": [
+        "holograms",
+        "ionosphere",
+        "step-two"
+      ],
       "hostStance": "denies",
       "dependencies": [
         {
@@ -227,7 +256,12 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "MK Ultra is declassified and well-documented; psyops including loudspeaker/wandering-soul broadcasts in Vietnam are historical record. The stronger 'sleeper agents' implication is unsubstantiated.",
-      "tags": ["mk-ultra", "psyops", "vietnam", "cia"]
+      "tags": [
+        "mk-ultra",
+        "psyops",
+        "vietnam",
+        "cia"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0009",
@@ -253,7 +287,11 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "This is Monast's step four. No evidence that any such operation is planned or executable exists. The idea has roots in a 1962 Wernher von Braun comment and Reagan-era rhetorical flourishes but no planning documents substantiate it.",
-      "tags": ["step-four", "alien-invasion", "monast"],
+      "tags": [
+        "step-four",
+        "alien-invasion",
+        "monast"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -280,7 +318,12 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Oklahoma saw a dramatic rise in induced seismicity tied to wastewater-injection disposal (USGS). The roughly 2-to-900 order-of-magnitude jump between the 2000s and 2015 is widely reported. The host's figures are in the right ballpark.",
-      "tags": ["induced-seismicity", "oklahoma", "fracking", "usgs"]
+      "tags": [
+        "induced-seismicity",
+        "oklahoma",
+        "fracking",
+        "usgs"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0011",
@@ -305,7 +348,12 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Optical-physics argument: volumetric free-space displays at sky-scale would indeed require civilization-scale power. The host's verdict is technically sound.",
-      "tags": ["holograms", "debunking", "physics", "verdict"],
+      "tags": [
+        "holograms",
+        "debunking",
+        "physics",
+        "verdict"
+      ],
       "hostStance": "denies",
       "inVerdictSection": true
     },
@@ -332,7 +380,13 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Operation Gladio's existence as a Cold-War stay-behind network is acknowledged by the Italian Parliament (1990 admission by PM Andreotti). The strong claim about Mafia-plus-CIA arming Italian terrorists to kill civilians is the 'strategy of tension' interpretation, which has substantial but contested historical support.",
-      "tags": ["gladio", "nato", "italy", "cia", "strategy-of-tension"]
+      "tags": [
+        "gladio",
+        "nato",
+        "italy",
+        "cia",
+        "strategy-of-tension"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0013",
@@ -360,7 +414,13 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Operation Northwoods is declassified; the 1962 Joint Chiefs memorandum to SecDef McNamara proposing false-flag attacks on US civilians to justify war with Cuba is a matter of public record. Kennedy did reject it.",
-      "tags": ["northwoods", "false-flag", "kennedy", "declassified", "1962"]
+      "tags": [
+        "northwoods",
+        "false-flag",
+        "kennedy",
+        "declassified",
+        "1962"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0014",
@@ -385,7 +445,12 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "NSA declassification (Hanyok 2005) confirmed the second Gulf of Tonkin 'attack' (Aug 4, 1964) did not occur and was used to obtain Congressional authorization for Vietnam escalation.",
-      "tags": ["gulf-of-tonkin", "lbj", "vietnam", "declassified"],
+      "tags": [
+        "gulf-of-tonkin",
+        "lbj",
+        "vietnam",
+        "declassified"
+      ],
       "dependencies": [
         {
           "target": "kaS8fP12CGM:c_0013",
@@ -418,7 +483,12 @@
       "confidence": 0.9,
       "directTruth": 0.65,
       "rationale": "'The God Thing' is a real Roddenberry script; 'Devil's Due' (TNG, Feb 1991) features an alien using advanced tech to pose as a god. Temporal sequence (pre-dates 1994 Blue Beam book) makes the influence plausible; direct causation is still inference.",
-      "tags": ["star-trek", "roddenberry", "devils-due", "influence"],
+      "tags": [
+        "star-trek",
+        "roddenberry",
+        "devils-due",
+        "influence"
+      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -451,7 +521,12 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "Danish MP Ida Auken did publish the 2016 WEF blog post 'Welcome to 2030: I own nothing'. The 'state would own all resources' paraphrase is a strong reading — the original essay is framed as a speculative future rather than a policy proposal. Moderate directTruth.",
-      "tags": ["wef", "ida-auken", "own-nothing", "2016"]
+      "tags": [
+        "wef",
+        "ida-auken",
+        "own-nothing",
+        "2016"
+      ]
     },
     {
       "id": "kaS8fP12CGM:c_0017",
@@ -477,7 +552,13 @@
       ],
       "confidence": 0.9,
       "rationale": "The existence of these organizations is fact. The 'not looking out for us' framing is a value judgment, not a testable proposition — directTruth omitted.",
-      "tags": ["globalism", "cfr", "bilderberg", "wef", "opinion"],
+      "tags": [
+        "globalism",
+        "cfr",
+        "bilderberg",
+        "wef",
+        "opinion"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [

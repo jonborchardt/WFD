@@ -3,6 +3,7 @@
   "transcriptId": "1hCz21GCFdw",
   "generatedAt": "2026-04-22T12:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b2-agent0",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "1hCz21GCFdw:c_0001",
@@ -45,7 +46,12 @@
       "confidence": 0.98,
       "directTruth": 0.95,
       "rationale": "The Circleville Letters are a documented real case - local news coverage, the 1993 Unsolved Mysteries episode, and court filings all confirm the time frame, Columbus postmarks, and letter volume. The 20-year / 1000+ letter figures are standard in the case literature.",
-      "tags": ["circleville-letters", "anonymous", "ohio", "1976"],
+      "tags": [
+        "circleville-letters",
+        "anonymous",
+        "ohio",
+        "1976"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -61,7 +67,9 @@
         "person:massey",
         "date_time:march 1977"
       ],
-      "relationships": ["r_0041"],
+      "relationships": [
+        "r_0041"
+      ],
       "evidence": [
         {
           "transcriptId": "1hCz21GCFdw",
@@ -75,7 +83,12 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Mary Gillespie has publicly acknowledged receiving the letters and - as the video notes - later admitted a relationship with Massey that she says began after her husband's death. The allegation itself is a well-documented element of the case; the letters' accusation existed even if their timing claim was disputed.",
-      "tags": ["mary-gillespie", "affair", "massey", "letters"],
+      "tags": [
+        "mary-gillespie",
+        "affair",
+        "massey",
+        "letters"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -112,7 +125,12 @@
       "confidence": 0.9,
       "directTruth": 0.2,
       "rationale": "Ron's BAC of 0.16 at autopsy is documented and is a complete natural explanation for a rural single-vehicle crash - he was legally intoxicated. The suspicious details (fired bullet with no hole, quick crushing of truck) are circumstantial. Sheriff ruled it an accident; most independent reviewers accept drunk-driving. Low directTruth on the murder framing.",
-      "tags": ["ron-gillespie", "death", "accident", "murder"],
+      "tags": [
+        "ron-gillespie",
+        "death",
+        "accident",
+        "murder"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -148,7 +166,12 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The August 1983 booby-trap discovery on Mary Gillespie's bus route is the central physical evidence of the case - documented in Pickaway County Sheriff records, court filings, and news reports. The device was real, loaded, and physically recovered.",
-      "tags": ["booby-trap", "1983", "attempted-murder", "gillespie"],
+      "tags": [
+        "booby-trap",
+        "1983",
+        "attempted-murder",
+        "gillespie"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -186,7 +209,12 @@
       "confidence": 0.98,
       "directTruth": 0.95,
       "rationale": "Paul Freshour's 1983 conviction, sentence, and the gun-ownership trace are matters of public court record - he served 10 years in Lima Correctional Institution, released 1994. The fact of conviction is uncontested; the question whether he was actually guilty is the separate debate.",
-      "tags": ["paul-freshour", "conviction", "1983", "gun"],
+      "tags": [
+        "paul-freshour",
+        "conviction",
+        "1983",
+        "gun"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -215,7 +243,12 @@
       "confidence": 0.85,
       "directTruth": 0.5,
       "rationale": "The procedure described - asking a suspect to copy a questioned document, then citing the copy as the match - is indeed considered weak forensic practice, but Ohio courts in 1983 had broader discretion than the host implies. Whether the trial was actually reversible-error weak versus merely poor is a legal-opinion question, so medium-range directTruth.",
-      "tags": ["paul-freshour", "framed", "handwriting", "trial"],
+      "tags": [
+        "paul-freshour",
+        "framed",
+        "handwriting",
+        "trial"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -245,14 +278,19 @@
           "charStart": 13175,
           "charEnd": 13273,
           "timeStart": 840.8,
-          "timeEnd": 852.0,
+          "timeEnd": 852,
           "quote": "he was\nimprisoned in lima ohio over 100 miles\nfrom circleville yet somehow the letters\nkept coming"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.8,
       "rationale": "Multiple independent sources (the warden's testimony, parole board records, news reports) confirm letters continued arriving while Freshour was in solitary confinement - this is the strongest piece of evidence for his innocence and is widely considered well-established in the case literature.",
-      "tags": ["paul-freshour", "alibi", "letters-continued", "lima"],
+      "tags": [
+        "paul-freshour",
+        "alibi",
+        "letters-continued",
+        "lima"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -296,7 +334,11 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "The cessation of letters after Freshour's release is well-documented. It's a factual coincidence; interpretation is separate. One reading supports his guilt (he resumed lawful life); the other supports a co-conspirator who stopped once the frame-up's target was freed. The bare fact is solid.",
-      "tags": ["letters-stopped", "1994", "cessation"],
+      "tags": [
+        "letters-stopped",
+        "1994",
+        "cessation"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -324,7 +366,12 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "The CBS 48 Hours segment (2021) featuring opposing FBI analysis is a real televised episode. The fact of disagreement is not disputed; it highlights that the handwriting evidence is ambiguous rather than determinative.",
-      "tags": ["fbi", "handwriting", "48-hours", "ambiguous"],
+      "tags": [
+        "fbi",
+        "handwriting",
+        "48-hours",
+        "ambiguous"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -369,7 +416,12 @@
       "confidence": 0.85,
       "directTruth": 0.45,
       "rationale": "The alternate-witness story is traced to investigator Martin Yant's research and has not been fully corroborated by contemporaneous sheriff records. It's a plausible lead that was never given defense weight - worth considering, but the witness's testimony was reportedly never called at trial. Medium directTruth to reflect credibility without endorsement.",
-      "tags": ["witness", "el-camino", "karen", "martin-yant"],
+      "tags": [
+        "witness",
+        "el-camino",
+        "karen",
+        "martin-yant"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -413,7 +465,12 @@
       "confidence": 0.85,
       "directTruth": 0.4,
       "rationale": "The divorce timing, typewriter request, and shift to typed letters coinciding with the divorce are suggestive but entirely circumstantial. Martin Yant's published investigation makes this case; Karen has never been charged. Medium directTruth to reflect compelling circumstantial story without evidentiary resolution.",
-      "tags": ["karen-freshhour", "frame-up", "typewriter", "divorce"],
+      "tags": [
+        "karen-freshhour",
+        "frame-up",
+        "typewriter",
+        "divorce"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -449,7 +506,11 @@
       "confidence": 0.75,
       "directTruth": 0.3,
       "rationale": "Longberry was an early suspect and is the person Mary initially suspected. The timing coincidence (his flight in 1993 with the letters tapering) is suggestive but several suspects share this period. Low-medium directTruth because the pass-then-letters theory has narrative coherence but never translated to evidence.",
-      "tags": ["david-longberry", "suspect", "1993"],
+      "tags": [
+        "david-longberry",
+        "suspect",
+        "1993"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -478,7 +539,12 @@
       "confidence": 0.7,
       "directTruth": 0.2,
       "rationale": "Mark's 2002 death is a real event; Paul's belief that Mark stole the gun is reported in Martin Yant's investigation. The guilt-over-frame-up narrative is entirely speculative - depression has many causes, and there's no evidence Mark confessed. Low directTruth for the guilt attribution.",
-      "tags": ["mark-freshour", "suicide", "2002", "gun"],
+      "tags": [
+        "mark-freshour",
+        "suicide",
+        "2002",
+        "gun"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -506,7 +572,11 @@
       ],
       "confidence": 0.85,
       "rationale": "Host's verdict-section conclusion. An opinion claim about the case's social dynamics rather than a factual assertion, so directTruth is omitted. The multi-author theory fits the observation that letter style shifted over 20 years, which is historically documented.",
-      "tags": ["verdict", "opinion", "circleville"],
+      "tags": [
+        "verdict",
+        "opinion",
+        "circleville"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

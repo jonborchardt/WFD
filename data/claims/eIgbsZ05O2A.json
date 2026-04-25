@@ -3,6 +3,7 @@
   "transcriptId": "eIgbsZ05O2A",
   "generatedAt": "2026-04-22T06:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "eIgbsZ05O2A:c_0001",
@@ -18,15 +19,19 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 385,
           "charEnd": 451,
-          "timeStart": 20.0,
-          "timeEnd": 26.0,
+          "timeStart": 20,
+          "timeEnd": 26,
           "quote": "electric universe theory\nsays that instead of gravity the\nuniverse"
         }
       ],
       "confidence": 0.98,
       "directTruth": 0.1,
       "rationale": "This is an accurate statement of the EU theory's central claim. The claim itself is rejected by mainstream cosmology and plasma physics — gravity as described by general relativity is extremely well-tested, and EU's replacement framework has no peer-reviewed supporting evidence.",
-      "tags": ["electric-universe", "cosmology", "fringe-theory"],
+      "tags": [
+        "electric-universe",
+        "cosmology",
+        "fringe-theory"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -43,15 +48,19 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 5521,
           "charEnd": 5575,
-          "timeStart": 281.0,
-          "timeEnd": 287.0,
+          "timeStart": 281,
+          "timeEnd": 287,
           "quote": "dark matter\nis just a theory that's used as a\nBand-Aid"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.25,
       "rationale": "Dark matter has indirect but substantial evidence (galaxy rotation curves, gravitational lensing, CMB anisotropies, Bullet Cluster). Its precise identity is unknown, but calling it 'no proof' misrepresents decades of converging observational constraints. The Band-Aid framing is EU polemic.",
-      "tags": ["dark-matter", "cosmology", "electric-universe"],
+      "tags": [
+        "dark-matter",
+        "cosmology",
+        "electric-universe"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -66,15 +75,19 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 5985,
           "charEnd": 6011,
-          "timeStart": 307.0,
-          "timeEnd": 310.0,
+          "timeStart": 307,
+          "timeEnd": 310,
           "quote": "plasma makes up over\n99.9%"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.4,
       "rationale": "The '99.9% of visible matter is plasma' statistic is broadly accepted (stars, nebulae, ISM are plasma). The second half — a single galaxy-spanning circuit — is the contested EU addition and has no observational support from mainstream astrophysics.",
-      "tags": ["plasma", "electric-universe", "cosmology"],
+      "tags": [
+        "plasma",
+        "electric-universe",
+        "cosmology"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -93,23 +106,28 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 8328,
           "charEnd": 8357,
-          "timeStart": 433.0,
-          "timeEnd": 436.0,
+          "timeStart": 433,
+          "timeEnd": 436,
           "quote": "lightning\ncreates the Canyons"
         },
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 8397,
           "charEnd": 8412,
-          "timeStart": 436.0,
-          "timeEnd": 439.0,
+          "timeStart": 436,
+          "timeEnd": 439,
           "quote": "valis marineras"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "Directly contradicted by stratigraphy, isotopic dating, river geomorphology on Earth, and the well-mapped rift-tectonics origin of Valles Marineris (Tharsis uplift, ~3.5 Gyr timescale). No known mechanism delivers interplanetary arcs of the required magnitude.",
-      "tags": ["grand-canyon", "mars", "electric-universe", "lightning"],
+      "tags": [
+        "grand-canyon",
+        "mars",
+        "electric-universe",
+        "lightning"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0001",
@@ -134,15 +152,20 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 10765,
           "charEnd": 10796,
-          "timeStart": 603.0,
-          "timeEnd": 608.0,
+          "timeStart": 603,
+          "timeEnd": 608,
           "quote": "our nearest neighbor was Saturn"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.02,
       "rationale": "Physically impossible under known orbital mechanics — Saturn is 9.5 AU out and could not have been in an Earth-proximal binary configuration without rewriting the entire solar-system formation record. Radiometric dating of terrestrial rocks places Earth's orbit as stable for billions of years.",
-      "tags": ["saturn", "velikovsky", "polar-configuration", "pseudoscience"],
+      "tags": [
+        "saturn",
+        "velikovsky",
+        "polar-configuration",
+        "pseudoscience"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0001",
@@ -162,21 +185,28 @@
         "work_of_media:worlds in collision",
         "person:velikovsky"
       ],
-      "relationships": ["r_0019", "r_0020"],
+      "relationships": [
+        "r_0019",
+        "r_0020"
+      ],
       "evidence": [
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 11033,
           "charEnd": 11107,
-          "timeStart": 623.0,
-          "timeEnd": 632.0,
+          "timeStart": 623,
+          "timeEnd": 632,
           "quote": "when Emanuel velikovsky released his\nbest-selling book worlds in Collision"
         }
       ],
       "confidence": 0.98,
       "directTruth": 0.9,
       "rationale": "Accurate description of Velikovsky's thesis and book. The book was a real bestseller (1950, Macmillan → Doubleday). The historical-attribution claim holds regardless of the book's scientific merit.",
-      "tags": ["velikovsky", "worlds-in-collision", "history"],
+      "tags": [
+        "velikovsky",
+        "worlds-in-collision",
+        "history"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -189,29 +219,37 @@
         "location:jupiter",
         "date_time:3,500 years ago"
       ],
-      "relationships": ["r_0024", "r_0026"],
+      "relationships": [
+        "r_0024",
+        "r_0026"
+      ],
       "evidence": [
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 16628,
           "charEnd": 16731,
-          "timeStart": 935.0,
-          "timeEnd": 945.0,
+          "timeStart": 935,
+          "timeEnd": 945,
           "quote": "a chunk of Jupiter was ejected from the\ncenter of the planet this matter took\nthe form of a giant Comet"
         },
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 29583,
           "charEnd": 29625,
-          "timeStart": 1670.0,
-          "timeEnd": 1676.0,
+          "timeStart": 1670,
+          "timeEnd": 1676,
           "quote": "3,500 years ago\nVenus emerged from Jupiter"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.02,
       "rationale": "Celestial-mechanics impossibility. Venus has a cratered surface and atmosphere consistent with ~4 Gyr formation; Jupiter ejection would leave isotopic and dynamical fingerprints that aren't observed. The host explicitly concedes near end: 'Venus was probably never a comet.'",
-      "tags": ["venus", "velikovsky", "jupiter", "pseudoscience"],
+      "tags": [
+        "venus",
+        "velikovsky",
+        "jupiter",
+        "pseudoscience"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0005",
@@ -236,23 +274,27 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 19879,
           "charEnd": 19915,
-          "timeStart": 1118.0,
-          "timeEnd": 1122.0,
+          "timeStart": 1118,
+          "timeEnd": 1122,
           "quote": "sapphire team built a\nplasma reactor"
         },
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 21515,
           "charEnd": 21528,
-          "timeStart": 1215.0,
-          "timeEnd": 1219.0,
+          "timeStart": 1215,
+          "timeEnd": 1219,
           "quote": "transmutation"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "No peer-reviewed reproducible evidence for Sapphire's claims of transmutation or sun-like plasma. Dr. Lee Morgan, the project's own plasma physicist, left calling it 'a fraud' / 'bozos', quoted by the host. Extraordinary claims, no verification.",
-      "tags": ["sapphire-project", "plasma", "fringe-science"],
+      "tags": [
+        "sapphire-project",
+        "plasma",
+        "fringe-science"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0001",
@@ -276,23 +318,27 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 32572,
           "charEnd": 32582,
-          "timeStart": 1830.0,
-          "timeEnd": 1834.0,
+          "timeStart": 1830,
+          "timeEnd": 1834,
           "quote": "LOL Morgan"
         },
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 33066,
           "charEnd": 33093,
-          "timeStart": 1862.0,
-          "timeEnd": 1866.0,
+          "timeStart": 1862,
+          "timeEnd": 1866,
           "quote": "they could no longer pay me"
         }
       ],
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "Host cites email correspondence between Morgan and science YouTuber Professor Dave Farina, a well-known critic who has published this exchange. Direct testimony from inside the project.",
-      "tags": ["sapphire-project", "skepticism", "insider-testimony"],
+      "tags": [
+        "sapphire-project",
+        "skepticism",
+        "insider-testimony"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0008",
@@ -318,23 +364,28 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 27411,
           "charEnd": 27457,
-          "timeStart": 1540.0,
-          "timeEnd": 1545.0,
+          "timeStart": 1540,
+          "timeEnd": 1545,
           "quote": "2022 Alana spect John\nclauser and Anton Zinger"
         },
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 27774,
           "charEnd": 27815,
-          "timeStart": 1560.0,
-          "timeEnd": 1565.0,
+          "timeStart": 1560,
+          "timeEnd": 1565,
           "quote": "Nobel Prize in physics for this\ndiscovery"
         }
       ],
       "confidence": 0.98,
       "directTruth": 0.98,
       "rationale": "Aspect, Clauser, and Zeilinger did win the 2022 Nobel Prize in Physics for their loophole-closing Bell tests demonstrating quantum entanglement's non-local correlations. Textbook history of physics.",
-      "tags": ["nobel-prize", "entanglement", "bell-test", "history"],
+      "tags": [
+        "nobel-prize",
+        "entanglement",
+        "bell-test",
+        "history"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -351,15 +402,20 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 5773,
           "charEnd": 5803,
-          "timeStart": 297.0,
-          "timeEnd": 301.0,
+          "timeStart": 297,
+          "timeEnd": 301,
           "quote": "permeating space is a\nvast sea"
         }
       ],
       "confidence": 0.85,
       "directTruth": 0.02,
       "rationale": "Entanglement does not transmit signals or information — the no-communication theorem forbids faster-than-light signaling. Bell-test correlations are non-local but don't require a medium. The aether hypothesis was refuted by Michelson-Morley in 1887.",
-      "tags": ["entanglement", "electric-universe", "aether", "pseudoscience"],
+      "tags": [
+        "entanglement",
+        "electric-universe",
+        "aether",
+        "pseudoscience"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0010",
@@ -385,23 +441,28 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 37056,
           "charEnd": 37085,
-          "timeStart": 2088.0,
-          "timeEnd": 2094.0,
+          "timeStart": 2088,
+          "timeEnd": 2094,
           "quote": "scientific ideas must survive"
         },
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 39159,
           "charEnd": 39221,
-          "timeStart": 2210.0,
-          "timeEnd": 2218.0,
+          "timeStart": 2210,
+          "timeEnd": 2218,
           "quote": "that mainstream scientific\nview exists for money and for power"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.3,
       "rationale": "The Velikovsky-publisher pressure story has documented elements (Shapley and others did pressure Macmillan in 1950). But generalizing this to 'science suppresses dissent for money and power' is a polemic conclusion. Mainstream science has robust peer review with real flaws but not the conspiratorial structure the host sketches.",
-      "tags": ["velikovsky", "suppression", "philosophy-of-science", "media-criticism"],
+      "tags": [
+        "velikovsky",
+        "suppression",
+        "philosophy-of-science",
+        "media-criticism"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -419,15 +480,19 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 30631,
           "charEnd": 30663,
-          "timeStart": 1720.0,
-          "timeEnd": 1725.0,
+          "timeStart": 1720,
+          "timeEnd": 1725,
           "quote": "Venus was probably\nnever a comet"
         }
       ],
       "confidence": 0.92,
       "directTruth": 0.95,
       "rationale": "Host's own concession in the skeptical section. Venus observation records in Babylonian, Mayan, and Egyptian astronomy predate 3500 BP. The walk-back is accurate.",
-      "tags": ["venus", "velikovsky", "skepticism"],
+      "tags": [
+        "venus",
+        "velikovsky",
+        "skepticism"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0007",
@@ -454,23 +519,28 @@
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 30820,
           "charEnd": 30848,
-          "timeStart": 1735.0,
-          "timeEnd": 1740.0,
+          "timeStart": 1735,
+          "timeEnd": 1740,
           "quote": "NASA's epoxy mission in\n2005"
         },
         {
           "transcriptId": "eIgbsZ05O2A",
           "charStart": 31206,
           "charEnd": 31231,
-          "timeStart": 1758.0,
-          "timeEnd": 1762.0,
+          "timeStart": 1758,
+          "timeEnd": 1762,
           "quote": "but none of that\nhappened"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Deep Impact occurred in 2005 and the predicted EU signatures (large pre-impact arcs, x-ray flashes, equipment malfunction) were not observed. Documented by NASA mission reports and by EU critics. This is a concrete falsification.",
-      "tags": ["thornhill", "deep-impact", "falsification", "electric-universe"],
+      "tags": [
+        "thornhill",
+        "deep-impact",
+        "falsification",
+        "electric-universe"
+      ],
       "dependencies": [
         {
           "target": "eIgbsZ05O2A:c_0001",

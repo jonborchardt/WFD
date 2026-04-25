@@ -3,13 +3,17 @@
   "transcriptId": "-ZRwlYtAMps",
   "generatedAt": "2026-04-21T19:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "-ZRwlYtAMps:c_0001",
       "videoId": "-ZRwlYtAMps",
       "text": "Technology capable of producing unlimited clean free energy has existed for over 100 years.",
       "kind": "speculative",
-      "entities": ["technology:invention", "person:inventors"],
+      "entities": [
+        "technology:invention",
+        "person:inventors"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -25,14 +29,20 @@
       "directTruth": 0.03,
       "rationale": "No peer-reviewed controlled experiment has ever demonstrated net-positive energy output from any of the devices cited. The first and second laws of thermodynamics are among the most empirically tested principles in physics; a 100-year conspiracy would require sustained coordination across multiple sovereign patent offices, oil majors, and the physics community.",
       "hostStance": "asserts",
-      "tags": ["free-energy", "suppression", "thesis"]
+      "tags": [
+        "free-energy",
+        "suppression",
+        "thesis"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0002",
       "videoId": "-ZRwlYtAMps",
       "text": "This episode will not take a side in the climate-change debate.",
       "kind": "definitional",
-      "entities": ["organization:wi files"],
+      "entities": [
+        "organization:wi files"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -47,15 +57,24 @@
       "confidence": 0.98,
       "rationale": "This is a framing statement by the host defining the scope of the episode; it is a performative definitional declaration rather than an empirical claim, and can be evaluated by observing the episode itself.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0001", "kind": "elaborates" }],
-      "tags": ["framing"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0001",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "framing"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0003",
       "videoId": "-ZRwlYtAMps",
       "text": "Global warming is a myth.",
       "kind": "empirical",
-      "entities": ["organization:wi files"],
+      "entities": [
+        "organization:wi files"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -71,15 +90,25 @@
       "directTruth": 0.02,
       "rationale": "The human-presented character advances this line; the host (AJ) immediately rejects it with 'it's not a myth.' Anthropogenic warming is supported by multiple independent lines of evidence (instrumental record, isotopic signatures, basic radiative physics) and is the consensus of every major scientific academy.",
       "hostStance": "denies",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0002", "kind": "elaborates" }],
-      "tags": ["climate-change"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0002",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "climate-change"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0004",
       "videoId": "-ZRwlYtAMps",
       "text": "In 1936 Charles Pogue was issued a patent for a high-mileage carburetor.",
       "kind": "historical",
-      "entities": ["person:pog", "technology:carburetor"],
+      "entities": [
+        "person:pog",
+        "technology:carburetor"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -95,15 +124,27 @@
       "directTruth": 0.9,
       "rationale": "Charles N. Pogue's carburetor patents (US 1,938,497 and follow-ups) are in the US patent record from the early-to-mid 1930s; the existence of the patent itself is easy to verify.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0001", "kind": "supports" }],
-      "tags": ["pogue", "carburetor", "patent"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0001",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "pogue",
+        "carburetor",
+        "patent"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0005",
       "videoId": "-ZRwlYtAMps",
       "text": "The Pogue carburetor delivered roughly 200 miles per gallon in independent tests.",
       "kind": "empirical",
-      "entities": ["person:pog", "technology:carburetor"],
+      "entities": [
+        "person:pog",
+        "technology:carburetor"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -119,15 +160,27 @@
       "directTruth": 0.08,
       "rationale": "Gasoline's thermochemical energy density caps theoretical best-case mileage for a ~3500 lb V8 of that era below ~80 mpg even with perfect combustion and zero aerodynamic drag; claims of 200+ mpg have never been reproduced under controlled instrumented conditions. Original test reports were promotional, not blinded.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0004", "kind": "presupposes" }],
-      "tags": ["pogue", "carburetor", "fuel-economy"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0004",
+          "kind": "presupposes"
+        }
+      ],
+      "tags": [
+        "pogue",
+        "carburetor",
+        "fuel-economy"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0006",
       "videoId": "-ZRwlYtAMps",
       "text": "After the Pogue carburetor was publicized, oil-company stocks crashed on the Toronto Stock Exchange.",
       "kind": "historical",
-      "entities": ["person:pog", "organization:oil companies"],
+      "entities": [
+        "person:pog",
+        "organization:oil companies"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -143,15 +196,26 @@
       "directTruth": 0.15,
       "rationale": "No contemporary TSX price record or financial-press report from 1936 documents an oil-stock crash coinciding with Pogue's carburetor publicity. This detail circulates exclusively in conspiracy secondary literature and should be treated as unverified folklore.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0005", "kind": "presupposes" }],
-      "tags": ["pogue", "oil-companies"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0005",
+          "kind": "presupposes"
+        }
+      ],
+      "tags": [
+        "pogue",
+        "oil-companies"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0007",
       "videoId": "-ZRwlYtAMps",
       "text": "In 1951 the United States passed the Invention Secrecy Act.",
       "kind": "historical",
-      "entities": ["organization:us government", "law_or_policy:secrecy order"],
+      "entities": [
+        "organization:us government",
+        "law_or_policy:secrecy order"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -167,15 +231,26 @@
       "directTruth": 0.98,
       "rationale": "The Invention Secrecy Act of 1951 (Pub.L. 82-256, codified at 35 U.S.C. 181-188) is a verifiable US federal law still in force. As of recent FAS reporting, several thousand secrecy orders are active at any time.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0001", "kind": "supports" }],
-      "tags": ["secrecy-act", "law"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0001",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "secrecy-act",
+        "law"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0008",
       "videoId": "-ZRwlYtAMps",
       "text": "Tom Ogle's modified 1970 Ford Galaxy achieved 100 miles per gallon.",
       "kind": "empirical",
-      "entities": ["person:ogle", "technology:carburetor"],
+      "entities": [
+        "person:ogle",
+        "technology:carburetor"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -191,14 +266,20 @@
       "directTruth": 0.12,
       "rationale": "Ogle's April 1977 El Paso demonstration was an open-road drive, not a dyno-instrumented test with independent fuel measurement. No subsequent engineering team reproduced the figure. A 4000-lb V8 achieving 100 mpg on a pure-hydrocarbon fuel cycle is far outside the thermodynamic ceiling for the engine design.",
       "hostStance": "asserts",
-      "tags": ["ogle", "fuel-economy"]
+      "tags": [
+        "ogle",
+        "fuel-economy"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0009",
       "videoId": "-ZRwlYtAMps",
       "text": "Shell Oil offered Tom Ogle $25 million cash for his carburetor design.",
       "kind": "historical",
-      "entities": ["person:ogle", "organization:oil companies"],
+      "entities": [
+        "person:ogle",
+        "organization:oil companies"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -214,15 +295,26 @@
       "directTruth": 0.25,
       "rationale": "This detail comes from Ogle and his attorney's retelling and has been repeated in fringe literature; Shell Oil has no record of the offer, and no corroborating business filings or press reports from 1977-78 substantiate a $25M corporate acquisition overture of this scale.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0008", "kind": "presupposes" }],
-      "tags": ["ogle", "shell", "buyout"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0008",
+          "kind": "presupposes"
+        }
+      ],
+      "tags": [
+        "ogle",
+        "shell",
+        "buyout"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0010",
       "videoId": "-ZRwlYtAMps",
       "text": "Tom Ogle was shot by a stranger outside a bar in 1978.",
       "kind": "historical",
-      "entities": ["person:ogle"],
+      "entities": [
+        "person:ogle"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -238,14 +330,20 @@
       "directTruth": 0.6,
       "rationale": "El Paso police records and contemporaneous local press did document a shooting incident involving Ogle in April 1978; he survived. His death four months later was ruled an overdose. Whether the shooting was random or targeted was never determined.",
       "hostStance": "asserts",
-      "tags": ["ogle", "shooting"]
+      "tags": [
+        "ogle",
+        "shooting"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0011",
       "videoId": "-ZRwlYtAMps",
       "text": "Stanley Meyer invented a car that runs on nothing but water.",
       "kind": "empirical",
-      "entities": ["person:stan", "technology:water fuel cell injector"],
+      "entities": [
+        "person:stan",
+        "technology:water fuel cell injector"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -261,15 +359,25 @@
       "directTruth": 0.03,
       "rationale": "Electrolyzing water into H2 and O2 and then burning them recovers at most the energy used for electrolysis minus losses - net energy is negative. A 1996 Ohio court (Fayette County) found Meyer guilty of 'gross and egregious fraud' against two investors who bought into the water-fuel-cell promise, and no independent engineering test has verified the claim.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0001", "kind": "supports" }],
-      "tags": ["meyer", "water-car"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0001",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "meyer",
+        "water-car"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0012",
       "videoId": "-ZRwlYtAMps",
       "text": "Stanley Meyer was poisoned.",
       "kind": "empirical",
-      "entities": ["person:stan"],
+      "entities": [
+        "person:stan"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -285,15 +393,26 @@
       "directTruth": 0.15,
       "rationale": "Meyer's death was investigated by the Grove City, Ohio police; the official ruling was cerebral aneurysm, and toxicology screens did not find poisons. Meyer's statement 'they poisoned me' at the moment of collapse is first-person testimony under acute medical distress - it is primary evidence but not corroborated.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0011", "kind": "elaborates" }],
-      "tags": ["meyer", "death"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0011",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "meyer",
+        "death"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0013",
       "videoId": "-ZRwlYtAMps",
       "text": "Stanley Meyer's water engine violates the second law of thermodynamics.",
       "kind": "empirical",
-      "entities": ["person:stan", "law_or_policy:second law of thermodynamics"],
+      "entities": [
+        "person:stan",
+        "law_or_policy:second law of thermodynamics"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -309,15 +428,27 @@
       "directTruth": 0.95,
       "rationale": "The skeptic's characterization cited by the host is correct. A device that extracts more combustion energy from water than the electrical energy used to split it is a perpetual-motion machine of the second kind. The host then dismisses this with a rhetorical 'maybe the laws are wrong' move that is not supported by any peer-reviewed result.",
       "hostStance": "steelman",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0011", "kind": "contradicts", "rationale": "[logical] If Meyer's engine violates 2LoT, the claim that it works as described cannot be simultaneously true." }],
-      "tags": ["thermodynamics", "physics"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0011",
+          "kind": "contradicts",
+          "rationale": "[logical] If Meyer's engine violates 2LoT, the claim that it works as described cannot be simultaneously true."
+        }
+      ],
+      "tags": [
+        "thermodynamics",
+        "physics"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0014",
       "videoId": "-ZRwlYtAMps",
       "text": "Enough zero-point energy exists in a coffee cup of empty space to boil the world's oceans.",
       "kind": "speculative",
-      "entities": ["location:empty space", "person:tesla"],
+      "entities": [
+        "location:empty space",
+        "person:tesla"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -333,14 +464,20 @@
       "directTruth": 0.1,
       "rationale": "The figure originates from a naive reading of a QED vacuum-energy density upper bound at the Planck scale; the extractable zero-point energy in any reference frame is operationally zero, because energy is defined relative to the vacuum itself. No apparatus has ever drawn net power from vacuum fluctuations.",
       "hostStance": "asserts",
-      "tags": ["zero-point", "physics"]
+      "tags": [
+        "zero-point",
+        "physics"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0015",
       "videoId": "-ZRwlYtAMps",
       "text": "Floyd Sweet's VTA device produced 224,000 watts from 0.3 milliwatts of input.",
       "kind": "empirical",
-      "entities": ["person:sparky", "organization:vta"],
+      "entities": [
+        "person:sparky",
+        "organization:vta"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -356,15 +493,27 @@
       "directTruth": 0.03,
       "rationale": "A gain of ~7.5x10^8 in power without an identified energy reservoir violates energy conservation. Sweet's demonstrations were filmed for promotional videos by Tom Bearden; no controlled third-party lab ever instrumented input and output under replicable conditions. The measurement artifacts (e.g. inductive pickup, battery hidden in device housing) are standard explanations that were never ruled out.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0001", "kind": "supports" }],
-      "tags": ["sweet", "zero-point", "overunity"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0001",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "sweet",
+        "zero-point",
+        "overunity"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0016",
       "videoId": "-ZRwlYtAMps",
       "text": "Within 24 hours of Sweet's death the FBI confiscated all his equipment and research.",
       "kind": "historical",
-      "entities": ["person:sparky", "organization:fbi"],
+      "entities": [
+        "person:sparky",
+        "organization:fbi"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -380,15 +529,27 @@
       "directTruth": 0.12,
       "rationale": "This seizure is reported only in Bearden's secondary narrative; no FOIA-released FBI case file, property-receipt record, or contemporary news item documents it. The FBI does not routinely seize inventor estates without a criminal-case predicate.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0015", "kind": "presupposes" }],
-      "tags": ["sweet", "fbi", "seizure"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0015",
+          "kind": "presupposes"
+        }
+      ],
+      "tags": [
+        "sweet",
+        "fbi",
+        "seizure"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0017",
       "videoId": "-ZRwlYtAMps",
       "text": "In 2010 the Federation of American Scientists counted 5,135 inventions placed under secrecy orders in that single year.",
       "kind": "historical",
-      "entities": ["organization:american physical society", "law_or_policy:secrecy order"],
+      "entities": [
+        "organization:american physical society",
+        "law_or_policy:secrecy order"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -404,15 +565,27 @@
       "directTruth": 0.7,
       "rationale": "FAS's Secrecy News tracker does publish annual totals of active secrecy orders; the ~5,000 figure is consistent with the active-orders total for 2010 (cumulative, not orders imposed that year specifically). The host conflates 'active' with 'new' - a common reporting error - but the underlying tally itself is real and public.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0007", "kind": "elaborates" }],
-      "tags": ["fas", "secrecy-orders", "statistics"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0007",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "fas",
+        "secrecy-orders",
+        "statistics"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0018",
       "videoId": "-ZRwlYtAMps",
       "text": "In 1971 a 20% efficient solar panel was patented and made secret.",
       "kind": "historical",
-      "entities": ["technology:solar panels", "law_or_policy:secrecy order"],
+      "entities": [
+        "technology:solar panels",
+        "law_or_policy:secrecy order"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -428,15 +601,25 @@
       "directTruth": 0.25,
       "rationale": "Lab-scale solar cells did reach ~20% efficiency in the early 1970s (notably at Bell Labs and COMSAT), but reaching that efficiency in mass-manufactured panels required decades of materials-science iteration. The specific 1971 'secrecy-ordered' 20% solar patent cited is not identifiable in Patent Office records released to date.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0007", "kind": "elaborates" }],
-      "tags": ["solar", "secrecy-order"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0007",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "solar",
+        "secrecy-order"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0019",
       "videoId": "-ZRwlYtAMps",
       "text": "Commercial solar panels last only 15 to 20 years before decaying into toxic landfill waste.",
       "kind": "empirical",
-      "entities": ["technology:solar panels"],
+      "entities": [
+        "technology:solar panels"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -452,15 +635,25 @@
       "directTruth": 0.35,
       "rationale": "Industry data (NREL, IEA PVPS) typically quote crystalline-silicon panel lifetimes of 25-30 years with ~0.5% annual degradation; the 15-20 figure understates real-world lifespans. Crystalline Si panels are not classified as hazardous waste in most jurisdictions; the 'toxic' framing applies mainly to some thin-film chemistries (e.g. CdTe) and broken-glass leachate, not to the dominant c-Si technology.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0020", "kind": "supports" }],
-      "tags": ["solar", "green-energy"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0020",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "solar",
+        "green-energy"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0020",
       "videoId": "-ZRwlYtAMps",
       "text": "Modern green energy is a scam.",
       "kind": "opinion",
-      "entities": ["technology:green energy"],
+      "entities": [
+        "technology:green energy"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -476,14 +669,19 @@
       "directTruth": 0.2,
       "rationale": "Lifecycle analyses published across independent research groups (MIT, IEA, IPCC working groups) consistently find that solar, wind, and nuclear all produce significantly lower lifecycle CO2 per kWh than fossil generation, even accounting for manufacturing and end-of-life. The 'scam' framing is polemical; the underlying critiques of cost overruns, subsidy capture, and supply-chain ethics have kernels of truth but do not support the sweeping verdict.",
       "hostStance": "asserts",
-      "tags": ["green-energy", "verdict"]
+      "tags": [
+        "green-energy",
+        "verdict"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0021",
       "videoId": "-ZRwlYtAMps",
       "text": "Over 80% of US electricity comes from coal, oil, and natural gas.",
       "kind": "empirical",
-      "entities": ["location:united states"],
+      "entities": [
+        "location:united states"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -499,15 +697,25 @@
       "directTruth": 0.2,
       "rationale": "US EIA data for 2023-2024 show fossil-fuel-sourced electricity at roughly 60%, with the balance from nuclear (~19%) and renewables (~21%). The 80% figure was accurate in the early 2000s but overstates the current mix by about 20 percentage points.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "-ZRwlYtAMps:c_0020", "kind": "supports" }],
-      "tags": ["electricity", "statistics"]
+      "dependencies": [
+        {
+          "target": "-ZRwlYtAMps:c_0020",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "electricity",
+        "statistics"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0022",
       "videoId": "-ZRwlYtAMps",
       "text": "Salvatore Pais holds a patent for a deck-of-cards-sized device that generates unlimited clean energy from the vacuum.",
       "kind": "historical",
-      "entities": ["technology:invention"],
+      "entities": [
+        "technology:invention"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -523,14 +731,21 @@
       "directTruth": 0.45,
       "rationale": "Pais's US Navy-assigned patents (including US 10,322,827 and US 10,144,532) do exist and do describe exotic electromagnetic field configurations claimed to produce large energy effects. Whether the devices work as described is contested: internal Navy reviews leaked to Drive magazine show skepticism among Navy technologists, and no working prototype has been publicly demonstrated.",
       "hostStance": "asserts",
-      "tags": ["pais", "patent", "navy"]
+      "tags": [
+        "pais",
+        "patent",
+        "navy"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0023",
       "videoId": "-ZRwlYtAMps",
       "text": "Free-energy and anti-gravity technology exists and is in active use by a shadow government of contractors operating outside US constitutional oversight.",
       "kind": "speculative",
-      "entities": ["organization:shadow government", "technology:anti-gravity"],
+      "entities": [
+        "organization:shadow government",
+        "technology:anti-gravity"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -548,17 +763,30 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "-ZRwlYtAMps:c_0001", "kind": "elaborates" },
-        { "target": "-ZRwlYtAMps:c_0022", "kind": "supports" }
+        {
+          "target": "-ZRwlYtAMps:c_0001",
+          "kind": "elaborates"
+        },
+        {
+          "target": "-ZRwlYtAMps:c_0022",
+          "kind": "supports"
+        }
       ],
-      "tags": ["shadow-government", "verdict", "conspiracy"]
+      "tags": [
+        "shadow-government",
+        "verdict",
+        "conspiracy"
+      ]
     },
     {
       "id": "-ZRwlYtAMps:c_0024",
       "videoId": "-ZRwlYtAMps",
       "text": "Inventors of free-energy devices should publish their designs anonymously online rather than seek patents.",
       "kind": "opinion",
-      "entities": ["person:inventors", "technology:invention"],
+      "entities": [
+        "person:inventors",
+        "technology:invention"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -576,10 +804,20 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "-ZRwlYtAMps:c_0023", "kind": "elaborates" },
-        { "target": "-ZRwlYtAMps:c_0001", "kind": "contradicts", "rationale": "[logical] If anonymous online publication is a viable escape hatch, then a globe-spanning 100-year suppression is self-undermining." }
+        {
+          "target": "-ZRwlYtAMps:c_0023",
+          "kind": "elaborates"
+        },
+        {
+          "target": "-ZRwlYtAMps:c_0001",
+          "kind": "contradicts",
+          "rationale": "[logical] If anonymous online publication is a viable escape hatch, then a globe-spanning 100-year suppression is self-undermining."
+        }
       ],
-      "tags": ["verdict", "advice"]
+      "tags": [
+        "verdict",
+        "advice"
+      ]
     }
   ]
 }

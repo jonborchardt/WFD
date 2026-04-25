@@ -3,6 +3,7 @@
   "transcriptId": "Rg-Ocr5hNLI",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "Rg-Ocr5hNLI:c_0001",
@@ -23,14 +24,18 @@
           "charStart": 4200,
           "charEnd": 4360,
           "timeStart": 319.16,
-          "timeEnd": 336.20,
+          "timeEnd": 336.2,
           "quote": " made the universal\nmicroscope in the 1920s standard\nmicroscopes could only magnify objects\nup to 2,000 times r reached 60,000 times\nmagnification he could see "
         }
       ],
       "confidence": 0.8,
       "directTruth": 0.25,
       "rationale": "Rife did build elaborate optical microscopes with reflected UV/violet illumination, and some reports claim high effective magnifications. However, modern optical physics places the diffraction limit around ~2,000x useful magnification regardless of lens quality — 60,000x optical magnification past that is unusable detail-wise. The claim conflates magnification with resolution.",
-      "tags": ["rife-microscope", "magnification", "optics"],
+      "tags": [
+        "rife-microscope",
+        "magnification",
+        "optics"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -57,7 +62,11 @@
       "confidence": 0.9,
       "directTruth": 0.15,
       "rationale": "Rife did claim to observe the 'BX' cancer virus. Some cancers do have viral etiology (HPV, HBV, EBV, HTLV-1), but 'cancer IS a virus' as a universal thesis is incorrect — most cancers are driven by accumulated somatic mutations, not viral agents. His specific 'BX' has never been independently isolated.",
-      "tags": ["rife", "bx-virus", "cancer-theory"],
+      "tags": [
+        "rife",
+        "bx-virus",
+        "cancer-theory"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -84,7 +93,11 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "The physical principle that objects have resonant frequencies is real (the 'shatter a wine glass' example). But applying it at the frequencies and intensities Rife claimed to selectively destroy microbes in tissue has never been independently replicated. Modern cancer-acoustic work (c_0014) is different and nascent.",
-      "tags": ["mortal-oscillatory-rate", "resonance", "rife"],
+      "tags": [
+        "mortal-oscillatory-rate",
+        "resonance",
+        "rife"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -108,7 +121,7 @@
           "charStart": 6000,
           "charEnd": 6180,
           "timeStart": 459.68,
-          "timeEnd": 488.40,
+          "timeEnd": 488.4,
           "quote": "ged a\nstudy on 16 cancer patients using ri's\nmachine in 3 months 14 of the 16\npatients were completely cured Dr Royal\nRaymond R discovered the cure for cancer\nand it ruined him\nRoy"
         },
         {
@@ -123,7 +136,11 @@
       "confidence": 0.85,
       "directTruth": 0.2,
       "rationale": "A document known as the 'Special Medical Research Committee Report' purportedly signed by Johnson does circulate. However, there was no IRB, no controls, no modern imaging verification, no replication, and primary records were destroyed. By modern clinical-trial standards the evidence is weak. Mainstream oncology does not recognize these results.",
-      "tags": ["milbank-johnson", "1934-trial", "rife-machine"],
+      "tags": [
+        "milbank-johnson",
+        "1934-trial",
+        "rife-machine"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -146,15 +163,19 @@
           "transcriptId": "Rg-Ocr5hNLI",
           "charStart": 7530,
           "charEnd": 7770,
-          "timeStart": 577.40,
-          "timeEnd": 608.40,
+          "timeStart": 577.4,
+          "timeEnd": 608.4,
           "quote": "than Morris\n[Music]\nfishbine fishbine head of the American\nMedical Association was known to be very\naggressive some critics called him the\nmedical\nmusolini at first fishbine offered to\nbuy R out but when R said no fish Bin's\nattitude change"
         }
       ],
       "confidence": 0.8,
       "directTruth": 0.45,
       "rationale": "Morris Fishbein (1889-1976) did lead JAMA for decades and was a famously aggressive critic of alternative medicine — some peers did use the 'medical Mussolini' epithet. The specific Rife-buyout claim is part of Rife-community lore and is harder to verify; Fishbein denied it.",
-      "tags": ["fishbein", "ama", "rife-conflict"],
+      "tags": [
+        "fishbein",
+        "ama",
+        "rife-conflict"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -177,7 +198,7 @@
           "transcriptId": "Rg-Ocr5hNLI",
           "charStart": 8960,
           "charEnd": 9240,
-          "timeStart": 697.60,
+          "timeStart": 697.6,
           "timeEnd": 725.08,
           "quote": "t\nlast\nlong in 1960 their Labs were raided\nwithout a warrant all equipment and\nrecords were seized R stayed out of\ncourt but his Partners were charged with\nmedical fraud even though 14 patients\ntestified they were cured by the rif\nmachine Crane and Mar Marsh were\nsentenced to 3 y"
         }
@@ -185,7 +206,11 @@
       "confidence": 0.8,
       "directTruth": 0.5,
       "rationale": "John Crane was convicted of practicing medicine without a license in 1961 (not 3 years — sentence was 10 years, released on appeal). The general shape of the raid and conviction is correct, details are approximate.",
-      "tags": ["crane", "marsh", "ama-conflict"],
+      "tags": [
+        "crane",
+        "marsh",
+        "ama-conflict"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -227,7 +252,11 @@
       "confidence": 0.75,
       "directTruth": 0.3,
       "rationale": "Milbank Johnson did die in 1944 with some documents reporting a poisoning rumor; the primary cause of death is recorded as natural causes. Rife did die in 1971 with Valium in his system. The 'suspicious circumstances' pattern is a hallmark of Rife mythology; individual coincidences are plausible but cumulative-intent is not established.",
-      "tags": ["rife", "associates-deaths", "conspiracy"],
+      "tags": [
+        "rife",
+        "associates-deaths",
+        "conspiracy"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -255,7 +284,11 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "The AMA was indeed founded in 1847, and standardizing training (with the explicit effect of eliminating competing schools) was a core objective — well-documented in Flexner Report context (c_0009). Characterizing it as 'a trade union' is a simplification but substantively captures the economic motive of the original organization.",
-      "tags": ["ama-history", "1847", "trade-union"],
+      "tags": [
+        "ama-history",
+        "1847",
+        "trade-union"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -295,7 +328,12 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The 1910 Flexner Report (commissioned by Carnegie Foundation, endorsed by AMA) did cause mass medical-school closures. Five of seven historically Black medical schools closed (only Howard and Meharry survived); all women-only medical schools closed. The AMA itself has since acknowledged this history.",
-      "tags": ["flexner-report", "carnegie", "medical-education", "racism"],
+      "tags": [
+        "flexner-report",
+        "carnegie",
+        "medical-education",
+        "racism"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -324,7 +362,11 @@
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "Accurate core: the 1962 Kefauver-Harris Amendments to the FD&C Act required drug-efficacy proof for the first time. Before 1962, the FDA required only safety (post-1938) and not efficacy. The AMA 'Seal of Acceptance' program (1905-1955) did effectively gatekeep drug endorsements, tied to JAMA ad revenue. Host's framing is broadly correct.",
-      "tags": ["fda", "1962-amendments", "ama-seal"],
+      "tags": [
+        "fda",
+        "1962-amendments",
+        "ama-seal"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -352,7 +394,11 @@
       "confidence": 0.85,
       "directTruth": 0.6,
       "rationale": "The cigarette industry did run famous 'More doctors smoke Camels than any other cigarette' ads (Camel is RJ Reynolds, not Philip Morris — host's brand attribution is off). JAMA did carry cigarette advertising through the 1950s. Specific 'Philip Morris was largest contributor to AMA' is harder to document but aligns with documented pharma/tobacco ad-revenue patterns.",
-      "tags": ["tobacco", "ama", "advertising"],
+      "tags": [
+        "tobacco",
+        "ama",
+        "advertising"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -384,14 +430,18 @@
           "charStart": 16920,
           "charEnd": 17130,
           "timeStart": 1297.88,
-          "timeEnd": 1323.00,
+          "timeEnd": 1323,
           "quote": "oxy was\narrested 119 times for practicing\nmedicine without a license between 1937\nand 1939 he was arrested over a 100\ntimes in Texas fishbine labeled hawy the\nworst cancer quack of the century and\npressured the"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "The Hoxsey clinic in Dallas was indeed a large cancer-treatment operation (though 'world's largest' is marketing). Hoxsey was arrested repeatedly throughout the 1930s-50s. Specific 119-count and 17-state figures are consistent with biographical sources but likely round numbers. The biographical arc is well-documented.",
-      "tags": ["hoxsey", "herbal-medicine", "ama-conflict"],
+      "tags": [
+        "hoxsey",
+        "herbal-medicine",
+        "ama-conflict"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -411,7 +461,7 @@
           "transcriptId": "Rg-Ocr5hNLI",
           "charStart": 19790,
           "charEnd": 19990,
-          "timeStart": 1520.80,
+          "timeStart": 1520.8,
           "timeEnd": 1538.16,
           "quote": "r doctor hoy's formula has\nbeen tested and there's no proof it\ncures anything in fact it could even be\ndangerous need more proof guess how\nHarry Hoy died don't tell me it was\ncancer cancer prostate ca"
         },
@@ -427,7 +477,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Harry Hoxsey did die of prostate cancer in 1974. His own case is often cited by skeptics as damning evidence against the Hoxsey therapy. NIH and NCI reviews have found no clinical evidence that the Hoxsey formula cures cancer. Host's verdict is well-supported.",
-      "tags": ["hoxsey", "debunk", "verdict"],
+      "tags": [
+        "hoxsey",
+        "debunk",
+        "verdict"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -454,7 +508,7 @@
           "transcriptId": "Rg-Ocr5hNLI",
           "charStart": 21380,
           "charEnd": 21560,
-          "timeStart": 1620.20,
+          "timeStart": 1620.2,
           "timeEnd": 1643.44,
           "quote": "nerable\nbetween the frequencies of 100,000 Hertz\nand 300,000 Hertz so now we attack\nleukemia cells leukemia cell number one\ntries to grow a copy of\nitself but the new cell is shatt"
         },
@@ -470,7 +524,11 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "Histotripsy is a real technique (FDA-approved for some liver-tumor applications in 2023). Acoustic-frequency effects on cancer cells in vitro (Holland's lab) are real but not translated to clinical treatments. The host correctly presents these as 'promising but unproven.'",
-      "tags": ["histotripsy", "ultrasound", "cancer-research"],
+      "tags": [
+        "histotripsy",
+        "ultrasound",
+        "cancer-research"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -492,14 +550,19 @@
           "charStart": 23360,
           "charEnd": 23620,
           "timeStart": 1757.44,
-          "timeEnd": 1781.00,
+          "timeEnd": 1781,
           "quote": "es\nSteve Jobs was a billionaire Elite he\nwas diagnosed with cancer at age 49 he\nhad the resources for any treatment\nwanted conventional or otherwise in fact\nSteve Jobs spent the first N9 months\nafter his diagnosis trying nothing but\nalternative treatments agai"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Host's central verdict. Steve Jobs did delay conventional treatment for his pancreatic neuroendocrine tumor ~9 months trying alternative approaches — a widely-reported and regretted choice. The argument that a suppressed cure would leak given the number of conscientious researchers involved is sound. This is the main counter-thesis of the video.",
-      "tags": ["verdict", "big-pharma", "steve-jobs", "conspiracy-skeptic"],
+      "tags": [
+        "verdict",
+        "big-pharma",
+        "steve-jobs",
+        "conspiracy-skeptic"
+      ],
       "inVerdictSection": true,
       "hostStance": "denies",
       "dependencies": [

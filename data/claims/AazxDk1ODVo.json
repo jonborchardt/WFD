@@ -3,13 +3,19 @@
   "transcriptId": "AazxDk1ODVo",
   "generatedAt": "2026-04-22T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "AazxDk1ODVo:c_0001",
       "videoId": "AazxDk1ODVo",
       "text": "Kenny Beach was an extreme hiker with a deep interest in the Mojave Desert and in aliens/UFOs, and lived near Area 51.",
       "kind": "historical",
-      "entities": ["person:kenny", "location:mojave desert", "location:area 51", "role:extreme hiker"],
+      "entities": [
+        "person:kenny",
+        "location:mojave desert",
+        "location:area 51",
+        "role:extreme hiker"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -24,7 +30,7 @@
           "transcriptId": "AazxDk1ODVo",
           "charStart": 3281,
           "charEnd": 3408,
-          "timeStart": 227.0,
+          "timeStart": 227,
           "timeEnd": 237.9,
           "quote": "hiked the desert not far from Area\n51 he also spent a lot of time watching\nYouTube videos about aliens and\nconspiracy theories "
         }
@@ -33,14 +39,21 @@
       "directTruth": 0.75,
       "rationale": "Kenny Beach's hiking activity, Las Vegas residence, and YouTube-commenting history on UFO channels are well documented in his own posted videos and in the subsequent missing-persons search. Mainstream reporting on his 2014 disappearance confirms the biographical outline.",
       "hostStance": "asserts",
-      "tags": ["kenny-beach", "mojave", "biography"]
+      "tags": [
+        "kenny-beach",
+        "mojave",
+        "biography"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0002",
       "videoId": "AazxDk1ODVo",
       "text": "Kenny Beach claimed he found a hidden cave shaped like a perfect capital M whose entrance made his body involuntarily vibrate.",
       "kind": "speculative",
-      "entities": ["person:kenny", "location:m cave"],
+      "entities": [
+        "person:kenny",
+        "location:m cave"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -56,14 +69,23 @@
       "directTruth": 0.4,
       "rationale": "Kenny posted this description in YouTube comments and his own videos — so the claim that he SAID it is well-sourced. Whether the cave actually exists as described or the vibration was a real external cause is what's uncertain; self-reported perceptual experiences of this kind are rarely corroborated.",
       "hostStance": "asserts",
-      "tags": ["m-cave", "vibration", "anomaly"]
+      "tags": [
+        "m-cave",
+        "vibration",
+        "anomaly"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0003",
       "videoId": "AazxDk1ODVo",
       "text": "On November 10, 2014, Kenny Beach set out on a 3-day solo hike in the Mojave Desert and was never seen again.",
       "kind": "historical",
-      "entities": ["person:kenny", "date_time:november 10th 2014", "location:mojave desert", "quantity:3-day"],
+      "entities": [
+        "person:kenny",
+        "date_time:november 10th 2014",
+        "location:mojave desert",
+        "quantity:3-day"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -79,21 +101,28 @@
       "directTruth": 0.9,
       "rationale": "Kenny Veach's November 10, 2014 disappearance in the Mojave Desert near Nellis AFB / Pahrump is documented in Nevada missing-persons records and Las Vegas news coverage. The date and multi-day hike framing match the official record.",
       "hostStance": "asserts",
-      "tags": ["disappearance", "2014"]
+      "tags": [
+        "disappearance",
+        "2014"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0004",
       "videoId": "AazxDk1ODVo",
       "text": "The search-and-rescue effort found Kenny Beach's cell phone at a Min shaft — undamaged, with battery — but no body, blood, or campsite.",
       "kind": "historical",
-      "entities": ["person:kenny", "location:min shaft", "organization:search and rescue"],
+      "entities": [
+        "person:kenny",
+        "location:min shaft",
+        "organization:search and rescue"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AazxDk1ODVo",
           "charStart": 10474,
           "charEnd": 10660,
-          "timeStart": 724.0,
+          "timeStart": 724,
           "timeEnd": 736.6,
           "quote": "Searchers got to the Min shaft they\nfound Kenny's cell phone it wasn't\ndamaged it wasn't even scratched it had\nplenty of battery left it's like the\nphone was just placed\nthere if Kenny h"
         }
@@ -102,15 +131,28 @@
       "directTruth": 0.75,
       "rationale": "The undamaged-phone-at-mineshaft detail is consistently reported in the Veach missing-persons case files and in multiple independent news/documentary accounts from 2014-2015.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AazxDk1ODVo:c_0003", "kind": "elaborates" }],
-      "tags": ["search", "mineshaft", "cellphone"]
+      "dependencies": [
+        {
+          "target": "AazxDk1ODVo:c_0003",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "search",
+        "mineshaft",
+        "cellphone"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0005",
       "videoId": "AazxDk1ODVo",
       "text": "The US government owns over 80% of Nevada and restricts access to the land surrounding Area 51 using white pickup trucks and black helicopters.",
       "kind": "empirical",
-      "entities": ["organization:us government", "location:nevada", "location:area 51"],
+      "entities": [
+        "organization:us government",
+        "location:nevada",
+        "location:area 51"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -118,7 +160,7 @@
           "charStart": 11502,
           "charEnd": 11700,
           "timeStart": 796.5,
-          "timeEnd": 812.0,
+          "timeEnd": 812,
           "quote": "the Nellis Air Force bombing range\ndo you know what else is on the Nellis\nAir Force bombing range Area\n[Music]\n51 the United States government owns\nmost of the land in Nevada in fact it\nowns over 80"
         },
         {
@@ -126,7 +168,7 @@
           "charStart": 12105,
           "charEnd": 12320,
           "timeStart": 840.5,
-          "timeEnd": 856.0,
+          "timeEnd": 856,
           "quote": "Area 51 they guard all the land around\nit and they will not let you get\n[Music]\nclose if you try you'll start seeing\nblack helicopters try to get closer the\ninfamous white pickup trucks will\nappear the white trucks "
         }
       ],
@@ -134,14 +176,23 @@
       "directTruth": 0.85,
       "rationale": "Federal agencies (BLM, military, USFS, NPS) do own ~85% of Nevada per US Census Bureau and BLM records — 80% is a close match. The 'cammo dudes' in white pickup trucks guarding the Groom Lake perimeter are documented in numerous mainstream reports.",
       "hostStance": "asserts",
-      "tags": ["area-51", "nevada", "government-land"]
+      "tags": [
+        "area-51",
+        "nevada",
+        "government-land"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0006",
       "videoId": "AazxDk1ODVo",
       "text": "Kenny Beach wandered too close to a restricted military area near Area 51 / Nellis AFB and was killed or detained for what he saw there.",
       "kind": "speculative",
-      "entities": ["person:kenny", "location:area 51", "location:nellis air force base", "location:restricted area"],
+      "entities": [
+        "person:kenny",
+        "location:area 51",
+        "location:nellis air force base",
+        "location:restricted area"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -157,15 +208,28 @@
       "directTruth": 0.2,
       "rationale": "No direct evidence supports the military-intervention thesis. Kenny's last known location is plausibly near the perimeter, but the absence of any physical trace is equally consistent with an accidental death in open desert. Plausibility high, direct support low.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AazxDk1ODVo:c_0003", "kind": "elaborates" }],
-      "tags": ["conspiracy", "area-51", "military"]
+      "dependencies": [
+        {
+          "target": "AazxDk1ODVo:c_0003",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "conspiracy",
+        "area-51",
+        "military"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0007",
       "videoId": "AazxDk1ODVo",
       "text": "YouTuber abandoned mines 11 located the M cave, and a restricted-area sign was later installed on it by authorities.",
       "kind": "historical",
-      "entities": ["location:abandon mines 11", "location:m cave", "location:restricted area"],
+      "entities": [
+        "location:abandon mines 11",
+        "location:m cave",
+        "location:restricted area"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -189,15 +253,27 @@
       "directTruth": 0.6,
       "rationale": "Abandoned Mines 11's two-part M-cave video series is publicly verifiable on YouTube and shows a cave with warning signage nearby. Whether that particular cave is Kenny's is contested; the video exists and the signage is visible on screen.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AazxDk1ODVo:c_0002", "kind": "elaborates" }],
-      "tags": ["m-cave", "youtube", "abandoned-mines-11"]
+      "dependencies": [
+        {
+          "target": "AazxDk1ODVo:c_0002",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "m-cave",
+        "youtube",
+        "abandoned-mines-11"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0008",
       "videoId": "AazxDk1ODVo",
       "text": "While searching near his candidate M cave, Shawn Whacker suffered a sudden wave of nausea and four minutes of vomiting that he could not explain.",
       "kind": "historical",
-      "entities": ["person:shawn", "location:m cave"],
+      "entities": [
+        "person:shawn",
+        "location:m cave"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -213,14 +289,23 @@
       "directTruth": 0.55,
       "rationale": "Shawn Whacker's on-camera vomiting episode at the candidate M-cave is documented in his public YouTube video. That something made him ill is clearly captured; attributing it to proximity to the cave vs. coincidence is the disputed step.",
       "hostStance": "asserts",
-      "tags": ["m-cave", "shawn", "nausea"]
+      "tags": [
+        "m-cave",
+        "shawn",
+        "nausea"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0009",
       "videoId": "AazxDk1ODVo",
       "text": "Kenny and Shawn's strange symptoms near the cave can be explained by directed-energy weapons such as the Active Denial System (heat ray) or an infrasound weapon deployed to keep people away.",
       "kind": "speculative",
-      "entities": ["technology:active denial system", "technology:infrasound weapon", "technology:heat ray", "location:m cave"],
+      "entities": [
+        "technology:active denial system",
+        "technology:infrasound weapon",
+        "technology:heat ray",
+        "location:m cave"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -236,15 +321,28 @@
       "directTruth": 0.2,
       "rationale": "The Active Denial System is a real US military nonlethal weapon (documented since the 2000s), and infrasound health effects are studied. But deploying either one to deter hikers near a random cave would be extraordinarily out of policy and unsupported by any evidence. Speculation-grade.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AazxDk1ODVo:c_0008", "kind": "supports" }],
-      "tags": ["directed-energy", "ads", "infrasound"]
+      "dependencies": [
+        {
+          "target": "AazxDk1ODVo:c_0008",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "directed-energy",
+        "ads",
+        "infrasound"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0010",
       "videoId": "AazxDk1ODVo",
       "text": "The 2016 Havana syndrome illness striking US embassy staff was suspected to be caused by a low-frequency/directed-energy weapon.",
       "kind": "empirical",
-      "entities": ["location:cuba", "date_time:2016", "event:something bizarre happened"],
+      "entities": [
+        "location:cuba",
+        "date_time:2016",
+        "event:something bizarre happened"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -260,15 +358,29 @@
       "directTruth": 0.5,
       "rationale": "Havana syndrome is a real, CIA-investigated cluster of illnesses starting December 2016. Directed-energy (pulsed RF) was a leading hypothesis in early investigations but ODNI's 2023 assessment found it 'very unlikely' that a foreign adversary was responsible. The weapon-attribution is disputed even though the illness cluster is real.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AazxDk1ODVo:c_0009", "kind": "supports" }],
-      "tags": ["havana-syndrome", "directed-energy", "cia"]
+      "dependencies": [
+        {
+          "target": "AazxDk1ODVo:c_0009",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "havana-syndrome",
+        "directed-energy",
+        "cia"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0011",
       "videoId": "AazxDk1ODVo",
       "text": "The US government has secret agreements with an alien race called the Tall Whites who operate from underground bases in the Nevada desert.",
       "kind": "speculative",
-      "entities": ["organization:us government", "person:charles james hall", "facility:underground bases", "location:nevada"],
+      "entities": [
+        "organization:us government",
+        "person:charles james hall",
+        "facility:underground bases",
+        "location:nevada"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -284,14 +396,24 @@
       "directTruth": 0.03,
       "rationale": "The Tall Whites claim originates entirely with self-published memoirs by former USAF airman Charles Hall in the early 2000s. No corroborating evidence, no other witnesses, no declassified records. Mainstream ufology even treats it skeptically.",
       "hostStance": "asserts",
-      "tags": ["aliens", "tall-whites", "area-51"]
+      "tags": [
+        "aliens",
+        "tall-whites",
+        "area-51"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0012",
       "videoId": "AazxDk1ODVo",
       "text": "In 2013 Kenny Beach quit his 17-year job as a service technician for a coffee company to pursue art and inventing full-time.",
       "kind": "historical",
-      "entities": ["person:kenny", "date_time:2013", "role:service tech", "organization:coffee company", "quantity:17 years"],
+      "entities": [
+        "person:kenny",
+        "date_time:2013",
+        "role:service tech",
+        "organization:coffee company",
+        "quantity:17 years"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -307,14 +429,23 @@
       "directTruth": 0.75,
       "rationale": "Veach's career shift and inventor-hobbyist pursuits (toilet-paper-roll redesign, 'glower bear', redneck whistle, Shark Tank pitch) are all documented in his own pre-disappearance media presence. Well-sourced biographical claim.",
       "hostStance": "asserts",
-      "tags": ["kenny-beach", "biography", "2013"]
+      "tags": [
+        "kenny-beach",
+        "biography",
+        "2013"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0013",
       "videoId": "AazxDk1ODVo",
       "text": "In 2018 a man closely resembling Kenny Beach broke into his sister-in-law's Las Vegas shop and stole only an iPad, suggesting Kenny is alive and faked his death.",
       "kind": "speculative",
-      "entities": ["date_time:2018", "person:kenny", "facility:enchanted forest ricki center", "location:las vegas"],
+      "entities": [
+        "date_time:2018",
+        "person:kenny",
+        "facility:enchanted forest ricki center",
+        "location:las vegas"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -330,14 +461,22 @@
       "directTruth": 0.2,
       "rationale": "The 2018 break-in at the Enchanted Forest shop and the family's dispute over whether the burglar is Kenny is documented in the Veach case. Per the video, facial recognition analysis and police both concluded it is NOT Kenny. The identification rests on his mother's subjective recognition.",
       "hostStance": "asserts",
-      "tags": ["burglary", "2018", "faked-death"]
+      "tags": [
+        "burglary",
+        "2018",
+        "faked-death"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0014",
       "videoId": "AazxDk1ODVo",
       "text": "Facial recognition software and experts have confirmed the 2018 burglar at the Enchanted Forest shop is not Kenny Beach.",
       "kind": "empirical",
-      "entities": ["technology:facial recognition software", "person:kenny", "facility:enchanted forest ricki center"],
+      "entities": [
+        "technology:facial recognition software",
+        "person:kenny",
+        "facility:enchanted forest ricki center"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -354,16 +493,26 @@
       "rationale": "The host asserts a facial-recognition + expert analysis conclusion. The specific forensic report isn't publicly available, but police and investigators have consistently said the burglar is not Veach. Treat as credible dismissal of c_0013.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "AazxDk1ODVo:c_0013", "kind": "contradicts", "rationale": "[debunks] Facial-recognition analysis directly rebuts the visual ID that drives the 'Kenny is alive' thesis." }
+        {
+          "target": "AazxDk1ODVo:c_0013",
+          "kind": "contradicts",
+          "rationale": "[debunks] Facial-recognition analysis directly rebuts the visual ID that drives the 'Kenny is alive' thesis."
+        }
       ],
-      "tags": ["facial-recognition", "forensics"]
+      "tags": [
+        "facial-recognition",
+        "forensics"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0015",
       "videoId": "AazxDk1ODVo",
       "text": "Kenny Beach suffered from long-term depression, was reading material about how to hurt himself, wrote a document that repeatedly said 'help me', and also took his gun with him on his final hike.",
       "kind": "historical",
-      "entities": ["person:kenny", "person:sharon"],
+      "entities": [
+        "person:kenny",
+        "person:sharon"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -395,14 +544,23 @@
       "directTruth": 0.75,
       "rationale": "The depression/crisis framing and the detail that Veach left his camera but took his gun is documented in Sharon's public statements and in reporting on police searches of his computer. Extracted as a coherent thesis about his mental state because the host presents it that way.",
       "hostStance": "asserts",
-      "tags": ["depression", "mental-health", "final-hike"]
+      "tags": [
+        "depression",
+        "mental-health",
+        "final-hike"
+      ]
     },
     {
       "id": "AazxDk1ODVo:c_0016",
       "videoId": "AazxDk1ODVo",
       "text": "Kenny Beach deliberately ended his own life in the Mojave Desert by finding a remote cave to die in and leaving his phone at the mine shaft so he could not be tracked.",
       "kind": "speculative",
-      "entities": ["person:kenny", "location:mojave desert", "location:remote part of the desert", "person:sharon"],
+      "entities": [
+        "person:kenny",
+        "location:mojave desert",
+        "location:remote part of the desert",
+        "person:sharon"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -419,10 +577,21 @@
       "rationale": "Girlfriend Sharon's suicide-hypothesis is the most coherent explanation that fits the depression indicators, the 'took gun, left camera' asymmetry, and the absent-body/absent-blood pattern (body sealed in a cave). Direct forensic confirmation is impossible without a body.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "AazxDk1ODVo:c_0015", "kind": "supports" },
-        { "target": "AazxDk1ODVo:c_0006", "kind": "contradicts", "rationale": "[alternative] Suicide-in-remote-cave and military-intervention-at-Area-51 are competing explanations for the same disappearance — only one can be the cause." }
+        {
+          "target": "AazxDk1ODVo:c_0015",
+          "kind": "supports"
+        },
+        {
+          "target": "AazxDk1ODVo:c_0006",
+          "kind": "contradicts",
+          "rationale": "[alternative] Suicide-in-remote-cave and military-intervention-at-Area-51 are competing explanations for the same disappearance — only one can be the cause."
+        }
       ],
-      "tags": ["suicide", "disappearance", "hypothesis"]
+      "tags": [
+        "suicide",
+        "disappearance",
+        "hypothesis"
+      ]
     }
   ]
 }

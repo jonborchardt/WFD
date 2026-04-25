@@ -118,6 +118,8 @@ const HIGHER_IS_BETTER: Record<string, boolean> = {
   "claims.deniesPct": true,
   "claims.dependencyCoveragePct": true,
   "claims.contradictsSubkindPct": true,
+  "claims.promptVersionV2Pct": true,
+  "claims.promptVersionUnknownFiles": false,
   "claims.evidenceP50Chars": false,
   "claims.evidenceP90Chars": false,
   "claims.evidenceMaxChars": false,
@@ -152,18 +154,31 @@ export function runGate(
     let status: GateStatus = "ok";
     let reason: string | undefined;
     let targetBreached = false;
+    let targetWarning: string | undefined;
 
     // Target-bound check first — these are absolute, baseline doesn't
-    // rescue a target breach.
+    // rescue a target breach. `min`/`max` are hard (fail). `targetMin`/
+    // `targetMax` are aspirations (warning only, gate stays ok).
     if (target && m.value !== null) {
+      const unitSuffix = target.unit === "pct" ? "%" : "";
       if (target.max !== undefined && m.value > target.max) {
         status = "regressed";
-        reason = `exceeds max ${target.max}${target.unit === "pct" ? "%" : ""}`;
+        reason = `exceeds max ${target.max}${unitSuffix}`;
         targetBreached = true;
       } else if (target.min !== undefined && m.value < target.min) {
         status = "regressed";
-        reason = `below min ${target.min}${target.unit === "pct" ? "%" : ""}`;
+        reason = `below min ${target.min}${unitSuffix}`;
         targetBreached = true;
+      }
+      // Soft aspirational bounds — these don't flip the gate, but do
+      // surface as `targetWarning` on the row so the dashboard can
+      // render distance-to-target.
+      if (!targetBreached) {
+        if (target.targetMax !== undefined && m.value > target.targetMax) {
+          targetWarning = `above aspirational target ${target.targetMax}${unitSuffix} (current ${m.value}${unitSuffix})`;
+        } else if (target.targetMin !== undefined && m.value < target.targetMin) {
+          targetWarning = `below aspirational target ${target.targetMin}${unitSuffix} (current ${m.value}${unitSuffix})`;
+        }
       }
     }
 
@@ -201,7 +216,7 @@ export function runGate(
       reason = "baseline had a value, current run produced null";
     }
 
-    rows.push({ name: m.name, current: m.value, baseline: base, target, status, reason });
+    rows.push({ name: m.name, current: m.value, baseline: base, target, status, reason, targetWarning });
   }
 
   const regressions = rows.filter((r) => r.status === "regressed");

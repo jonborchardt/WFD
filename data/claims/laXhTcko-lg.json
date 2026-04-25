@@ -3,6 +3,7 @@
   "transcriptId": "laXhTcko-lg",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "laXhTcko-lg:c_0001",
@@ -28,7 +29,10 @@
       "confidence": 0.85,
       "directTruth": 0.02,
       "rationale": "The hollow-moon hypothesis is rejected by modern selenology: Apollo-era seismology, lunar laser ranging, and gravity mapping (GRAIL) are all consistent with a solid moon with small iron core, silicate mantle, and crust. Host himself concedes at the end that 'explanations aren't perfect but they're enough to satisfy skeptics.'",
-      "tags": ["hollow-moon", "thesis"],
+      "tags": [
+        "hollow-moon",
+        "thesis"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -50,14 +54,18 @@
           "charStart": 1655,
           "charEnd": 1830,
           "timeStart": 97.44,
-          "timeEnd": 113.20,
+          "timeEnd": 113.2,
           "quote": "giant impact theory\nthis says that a large object about the\nsize of mars smashed into the\nproto-earth the debris field from the\ncollision coalesced to create the earth\nmoon sy"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Accurately reports the mainstream giant-impact (Theia) hypothesis. It is indeed the dominant scientific account, supported by isotopic similarity between Earth and Moon samples and by physical simulations.",
-      "tags": ["giant-impact", "theia", "mainstream-science"],
+      "tags": [
+        "giant-impact",
+        "theia",
+        "mainstream-science"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -78,14 +86,18 @@
           "charStart": 3780,
           "charEnd": 3960,
           "timeStart": 241.76,
-          "timeEnd": 256.80,
+          "timeEnd": 256.8,
           "quote": " out older rock would be\non top but the list of anomalies goes on\ntypical planetary structures have denser\nmaterials toward the core and lighter\nmaterials toward the surface on the"
         }
       ],
       "confidence": 0.8,
       "directTruth": 0.2,
       "rationale": "The claim is a misreading. Lunar regolith is older on average than the underlying bedrock in the sampled areas because the surface has been churned by impact gardening for billions of years with low erosion — not because older material was brought up. Standard selenology explains this without mystery.",
-      "tags": ["moon-rocks", "stratigraphy", "anomaly"],
+      "tags": [
+        "moon-rocks",
+        "stratigraphy",
+        "anomaly"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -119,7 +131,11 @@
       "confidence": 0.75,
       "directTruth": 0.25,
       "rationale": "Both isotopes are produced in trace amounts naturally by neutron capture on uranium ores (notably at Oklo) and by cosmic-ray interactions. Their detection in lunar samples is fully explained by galactic-cosmic-ray spallation on exposed regolith — no artificial production needed. Claim overstates their absence from nature.",
-      "tags": ["moon-rocks", "isotopes", "anomaly"],
+      "tags": [
+        "moon-rocks",
+        "isotopes",
+        "anomaly"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -147,14 +163,18 @@
           "charStart": 4938,
           "charEnd": 5120,
           "timeStart": 314.88,
-          "timeEnd": 328.80,
+          "timeEnd": 328.8,
           "quote": "titanium chromium and zirconium are rare\non earth but these are found in\nabundance on the moon if the earth and\nmoon were formed together why such a big\ndiscrepancy and those metals "
         }
       ],
       "confidence": 0.7,
       "directTruth": 0.25,
       "rationale": "Partly true (lunar mare basalts are titanium-rich compared to terrestrial basalts, a known feature explained by early lunar differentiation) but titanium and zirconium are actually common in Earth's crust, not rare. The 'structural reinforcement' inference is not supported.",
-      "tags": ["lunar-composition", "titanium", "speculation"],
+      "tags": [
+        "lunar-composition",
+        "titanium",
+        "speculation"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -188,15 +208,18 @@
           "transcriptId": "laXhTcko-lg",
           "charStart": 6106,
           "charEnd": 6320,
-          "timeStart": 392.00,
-          "timeEnd": 411.60,
+          "timeStart": 392,
+          "timeEnd": 411.6,
           "quote": "moon rang\nlike a bell and reverberated for more\nthan an hour this was with a very small\nobject compared to the size of the moon\nso during apollo 13 an even heavier\nobject was crashed into the surface this\ntime the "
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "The reverberation phenomenon is real and documented by ALSEP seismometers. Mainstream selenology explains it by the Moon's extremely low volatile content (especially water) and highly fractured upper crust, which lets seismic waves scatter for long times. The 'ringing' is genuine; the 'therefore hollow' inference is not.",
-      "tags": ["moon-rings-like-bell", "apollo-seismology"],
+      "tags": [
+        "moon-rings-like-bell",
+        "apollo-seismology"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -223,7 +246,11 @@
       "confidence": 0.85,
       "directTruth": 0.15,
       "rationale": "Factually wrong. Moon diameter is ~27% of Earth's — correct. Density: Moon is 3.34 g/cc vs. Earth's 5.51 g/cc, so Moon is ~61% of Earth's density, NOT 1%. The 1% figure is a gross error that breaks the hollow-shell inference.",
-      "tags": ["density", "size", "error"],
+      "tags": [
+        "density",
+        "size",
+        "error"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -258,7 +285,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Accurate within measurement tolerance: Sun/Moon diameter ratio ~400:1, Earth-Sun/Earth-Moon distance ratio ~390:1. The coincidence is real, though the host later accurately notes eclipses are 'close but not perfect.'",
-      "tags": ["eclipse", "solar-system", "coincidence"],
+      "tags": [
+        "eclipse",
+        "solar-system",
+        "coincidence"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -286,7 +317,11 @@
       "confidence": 0.85,
       "directTruth": 0.35,
       "rationale": "The 'Spaceship Moon' paper by Mikhail Vasin and Alexander Shcherbakov was indeed published in Sputnik magazine in July 1970. The hypothesis was published; the hypothesis itself is fringe speculation, not mainstream science. Claim accurately reports that the paper exists.",
-      "tags": ["vasin-shcherbakov", "soviet-science", "hollow-moon"],
+      "tags": [
+        "vasin-shcherbakov",
+        "soviet-science",
+        "hollow-moon"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -320,7 +355,11 @@
       "confidence": 0.7,
       "directTruth": 0.1,
       "rationale": "The 'proselene' (pre-lunar) Arcadians claim traces to Apollonius Rhodius (Argonautica), not 5th-century BC. The Tiwanaku 'moon arrived 11,500-13,000 years ago' attribution is not in documented Tiwanaku ethnography — it comes from 20th-century ancient-astronaut literature. Low directTruth.",
-      "tags": ["tiwanaku", "pre-lunar", "ancient-myth"],
+      "tags": [
+        "tiwanaku",
+        "pre-lunar",
+        "ancient-myth"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -341,8 +380,8 @@
           "transcriptId": "laXhTcko-lg",
           "charStart": 9260,
           "charEnd": 9450,
-          "timeStart": 596.00,
-          "timeEnd": 614.80,
+          "timeStart": 596,
+          "timeEnd": 614.8,
           "quote": "are zulu\nlegends that specifically say the moon\nis hollow and living inside is an\nintelligent race of reptilian\nextraterrestrials is it people yep\nlizard people built the moon\nthat's what th"
         },
         {
@@ -357,7 +396,12 @@
       "confidence": 0.65,
       "directTruth": 0.15,
       "rationale": "The 'Zulu reptilians inside the hollow moon' story traces to Credo Mutwa (late 1990s), not to traditional Zulu mythology; it's late-20th-century syncretism with David Icke's reptilian mythology. Enki and Enlil are real Sumerian deities, and 'Anunnaki' is a real Sumerian divine category, but neither were 'extraterrestrial gods who created mankind' — that's Zecharia Sitchin's gloss.",
-      "tags": ["zulu", "anunnaki", "reptilians", "myth-syncretism"],
+      "tags": [
+        "zulu",
+        "anunnaki",
+        "reptilians",
+        "myth-syncretism"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -385,7 +429,10 @@
       "confidence": 0.6,
       "directTruth": 0.2,
       "rationale": "Transient Lunar Phenomena (TLP) are real observational reports, but the specific 'March 7, 1971 water vapor cloud' is poorly documented in scientific literature. The Moon does have a very tenuous exosphere, and outgassing events from radon decay have been detected, so TLP are not unexplained — many fit prosaic geophysical explanations.",
-      "tags": ["transient-lunar-phenomena", "outgassing"],
+      "tags": [
+        "transient-lunar-phenomena",
+        "outgassing"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -424,7 +471,11 @@
       "confidence": 0.8,
       "directTruth": 0.3,
       "rationale": "Karl Wolfe's testimony is part of the Disclosure Project (2001) and his account has been publicly given. Whether the 'artificial structures' were really artificial vs. image artifacts / craters / compression defects in Lunar Orbiter photos is not established. Single-witness late-testimony with no surviving artifact.",
-      "tags": ["karl-wolfe", "lunar-structures", "disclosure-project"],
+      "tags": [
+        "karl-wolfe",
+        "lunar-structures",
+        "disclosure-project"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -450,7 +501,11 @@
       "confidence": 0.6,
       "directTruth": 0.15,
       "rationale": "Subjective reading of body language. Armstrong was famously introverted and media-averse; Aldrin was notably reserved and later struggled with depression independent of any lunar revelation; Collins was measured. Their post-flight affect is routinely cited by UFO enthusiasts but has equally parsimonious explanations.",
-      "tags": ["apollo-11", "press-conference", "body-language"],
+      "tags": [
+        "apollo-11",
+        "press-conference",
+        "body-language"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -478,7 +533,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Accurate. Lunar recession is ~3.8 cm/year (measured by Apollo retroreflectors). Total eclipses are currently common but in ~600 million years the Moon will appear too small for totality. Host's verdict-section concession.",
-      "tags": ["lunar-recession", "eclipse", "verdict"],
+      "tags": [
+        "lunar-recession",
+        "eclipse",
+        "verdict"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

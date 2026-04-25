@@ -3,20 +3,24 @@
   "transcriptId": "DQ9M1J9-77Y",
   "generatedAt": "2026-04-22T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "DQ9M1J9-77Y:c_0001",
       "videoId": "DQ9M1J9-77Y",
       "text": "On November 28, 1953, Frank Olson fell 13 stories through a window of the Statler Hotel in New York City and died on the sidewalk at 2:30am.",
       "kind": "historical",
-      "entities": ["person:frank olson", "location:new york"],
+      "entities": [
+        "person:frank olson",
+        "location:new york"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "DQ9M1J9-77Y",
           "charStart": 0,
           "charEnd": 170,
-          "timeStart": 0.0,
+          "timeStart": 0,
           "timeEnd": 9.6,
           "quote": "november 28 1953 new york city\nat 2 30 a.m the body hit the sidewalk a\nfew seconds later a shower of glass the\ndoorman of the statler hotel yelled to\nthe lobby that there"
         }
@@ -25,22 +29,29 @@
       "directTruth": 0.95,
       "rationale": "Frank Olson's November 28, 1953 fatal fall from the 10th/13th floor of the Hotel Statler in Manhattan is an established historical fact documented in NYPD records, NYT/Washington Post coverage, and the Rockefeller Commission report.",
       "hostStance": "asserts",
-      "tags": ["olson", "1953", "statler"]
+      "tags": [
+        "olson",
+        "1953",
+        "statler"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0002",
       "videoId": "DQ9M1J9-77Y",
       "text": "Minutes after Frank Olson's fall, Robert Lashbrook (present in the hotel room) called Dr. Harold Abramson and said 'well he's gone', to which Abramson replied 'well that's too bad'.",
       "kind": "historical",
-      "entities": ["person:robert lashbrook", "person:dr abramson"],
+      "entities": [
+        "person:robert lashbrook",
+        "person:dr abramson"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "DQ9M1J9-77Y",
           "charStart": 1783,
           "charEnd": 1980,
-          "timeStart": 113.0,
-          "timeEnd": 125.0,
+          "timeStart": 113,
+          "timeEnd": 125,
           "quote": "a call was\njust made a few minutes ago and because\nit ran through a switchboard she heard\nthe whole thing the caller robert\nlashbrook who is the man in the bathroom\ncalled a number on long island w"
         }
       ],
@@ -48,15 +59,28 @@
       "directTruth": 0.7,
       "rationale": "The Statler switchboard operator's contemporaneous testimony about the Lashbrook-Abramson call is preserved in the NYPD file and in the 1975 Colby memorandum. The terse exchange is widely cited as evidence the death was not a surprise.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "DQ9M1J9-77Y:c_0001", "kind": "elaborates" }],
-      "tags": ["lashbrook", "abramson", "phone-call"]
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0001",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "lashbrook",
+        "abramson",
+        "phone-call"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0003",
       "videoId": "DQ9M1J9-77Y",
       "text": "In 1975 the Rockefeller Commission revealed that a civilian Navy scientist had been dosed with LSD without consent by the CIA, sent to psychiatric care in New York, and died by falling from a hotel.",
       "kind": "historical",
-      "entities": ["date_time:1975", "organization:cia", "event:experiments"],
+      "entities": [
+        "date_time:1975",
+        "organization:cia",
+        "event:experiments"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -72,14 +96,20 @@
       "directTruth": 0.9,
       "rationale": "The Rockefeller Commission 1975 report (and the parallel Church Committee) documented the unwitting LSD dosing of a civilian employee of the Army (not Navy — minor misstatement by host) and his subsequent death. This disclosure is historical fact.",
       "hostStance": "asserts",
-      "tags": ["rockefeller", "1975", "cia"]
+      "tags": [
+        "rockefeller",
+        "1975",
+        "cia"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0004",
       "videoId": "DQ9M1J9-77Y",
       "text": "During WWII Frank Olson was a biological-weapons scientist at Fort Detrick, Maryland, specializing in aerosolizing biological agents into munitions.",
       "kind": "historical",
-      "entities": ["person:frank olson"],
+      "entities": [
+        "person:frank olson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -95,22 +125,28 @@
       "directTruth": 0.95,
       "rationale": "Frank Olson's employment at Fort Detrick's Camp Detrick / Special Operations Division as a bio-warfare scientist is documented in Army and CIA personnel records. His specialty in aerosolization is named in declassified reports.",
       "hostStance": "asserts",
-      "tags": ["fort-detrick", "bioweapons", "olson"]
+      "tags": [
+        "fort-detrick",
+        "bioweapons",
+        "olson"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0005",
       "videoId": "DQ9M1J9-77Y",
       "text": "Frank Olson participated in Operation Sea-Spray, in which live bacteria were sprayed over the San Francisco Bay Area to test urban vulnerability to a bioweapon attack.",
       "kind": "historical",
-      "entities": ["person:frank olson"],
+      "entities": [
+        "person:frank olson"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "DQ9M1J9-77Y",
           "charStart": 4702,
           "charEnd": 4880,
-          "timeStart": 303.0,
-          "timeEnd": 315.0,
+          "timeStart": 303,
+          "timeEnd": 315,
           "quote": "operation harness\nwhere animals in the caribbean were\nexposed to anthrax tularemia and\nbrucella he was part of operation sea\nspray where different strains of\nbacteria were spraye"
         }
       ],
@@ -118,14 +154,21 @@
       "directTruth": 0.85,
       "rationale": "Operation Sea-Spray (September 1950, San Francisco) is a real declassified Army test — Serratia marcescens and Bacillus globigii were released over the bay. Olson's direct participation as an Army researcher is plausible based on his role at Special Ops Division.",
       "hostStance": "asserts",
-      "tags": ["sea-spray", "bioweapons"]
+      "tags": [
+        "sea-spray",
+        "bioweapons"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0006",
       "videoId": "DQ9M1J9-77Y",
       "text": "Sidney Gottlieb ran the CIA's mind-control program that evolved from Project Bluebird to Artichoke to MK-Ultra.",
       "kind": "historical",
-      "entities": ["person:sydney gottlieb", "organization:cia", "organization:mkultra"],
+      "entities": [
+        "person:sydney gottlieb",
+        "organization:cia",
+        "organization:mkultra"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -141,14 +184,21 @@
       "directTruth": 0.9,
       "rationale": "The Bluebird (1949) → Artichoke (1951) → MK-Ultra (1953) program lineage and Gottlieb's role as Chemical Division chief and MK-Ultra director are on the public record via the 1977 Church Committee and Senate hearings.",
       "hostStance": "asserts",
-      "tags": ["gottlieb", "mkultra", "bluebird"]
+      "tags": [
+        "gottlieb",
+        "mkultra",
+        "bluebird"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0007",
       "videoId": "DQ9M1J9-77Y",
       "text": "MK-Ultra subjects known as 'expendables' — mostly suspected (not proven) spies and leaks — were subjected to LSD, hypnosis, electric shocks, isolation, sexual abuse, and torture, sometimes to death.",
       "kind": "historical",
-      "entities": ["group_or_movement:expendables", "organization:mkultra"],
+      "entities": [
+        "group_or_movement:expendables",
+        "organization:mkultra"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -164,14 +214,21 @@
       "directTruth": 0.7,
       "rationale": "MK-Ultra subprojects at CIA black sites (Villa Schuster in Germany, sites in Japan and South Korea) using 'expendables' are documented in declassified Inspector General reports. The specific techniques cited were among those tested. Accurate but heavy.",
       "hostStance": "asserts",
-      "tags": ["mkultra", "torture", "expendables"]
+      "tags": [
+        "mkultra",
+        "torture",
+        "expendables"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0008",
       "videoId": "DQ9M1J9-77Y",
       "text": "At a November 1953 CIA retreat at Deep Creek Lake, Sidney Gottlieb covertly dosed Frank Olson and other scientists with LSD by spiking their after-dinner Cointreau.",
       "kind": "historical",
-      "entities": ["person:frank olson", "person:sydney gottlieb"],
+      "entities": [
+        "person:frank olson",
+        "person:sydney gottlieb"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -187,14 +244,20 @@
       "directTruth": 0.9,
       "rationale": "The November 19, 1953 Deep Creek Lake LSD dosing is documented in CIA memoranda declassified in the 1975 Rockefeller Commission. The Cointreau detail comes from Ruwet/Lashbrook testimony.",
       "hostStance": "asserts",
-      "tags": ["deep-creek", "lsd", "1953"]
+      "tags": [
+        "deep-creek",
+        "lsd",
+        "1953"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0009",
       "videoId": "DQ9M1J9-77Y",
       "text": "Dr. Harold Abramson, the 'psychiatrist' Olson was sent to see, was actually an allergist who worked for the CIA and only pretended to be a psychiatrist.",
       "kind": "historical",
-      "entities": ["person:dr abramson"],
+      "entities": [
+        "person:dr abramson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -210,15 +273,26 @@
       "directTruth": 0.85,
       "rationale": "Harold Abramson was a real CIA-consulting allergist-immunologist, not a psychiatrist. His role as a MK-Ultra LSD researcher and his 'treatment' of Olson under false pretenses are documented in declassified MK-Ultra files.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "DQ9M1J9-77Y:c_0002", "kind": "elaborates" }],
-      "tags": ["abramson", "cover-up"]
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0002",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "abramson",
+        "cover-up"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0010",
       "videoId": "DQ9M1J9-77Y",
       "text": "A 1994 second autopsy by James Starrs found no glass shards or cuts on Olson's body and a blunt-force trauma wound above his left eye inconsistent with a window jump.",
       "kind": "empirical",
-      "entities": ["person:james starr", "person:frank olson"],
+      "entities": [
+        "person:james starr",
+        "person:frank olson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -234,14 +308,20 @@
       "directTruth": 0.8,
       "rationale": "Professor James Starrs's 1994 exhumation and re-autopsy of Olson's remains is published forensic work. The unexplained blunt-force injury above the left eye is a documented finding inconsistent with the official defenestration story.",
       "hostStance": "asserts",
-      "tags": ["autopsy", "starrs", "forensics"]
+      "tags": [
+        "autopsy",
+        "starrs",
+        "forensics"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0011",
       "videoId": "DQ9M1J9-77Y",
       "text": "Forensic evidence and the blunt-force injury pattern indicate Frank Olson was intentionally thrown from the hotel window rather than having jumped.",
       "kind": "empirical",
-      "entities": ["person:frank olson"],
+      "entities": [
+        "person:frank olson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -257,23 +337,34 @@
       "directTruth": 0.65,
       "rationale": "Starrs's conclusion, quoted in full, was 'intentionally, deliberately, with malice aforethought, thrown out of the window.' The Manhattan DA's 1997 investigation treated the death as a probable homicide. The thesis is supported by forensic evidence but cannot be fully confirmed without a surviving confession.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "DQ9M1J9-77Y:c_0010", "kind": "supports" }],
-      "tags": ["murder", "forensics", "starrs"]
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0010",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "murder",
+        "forensics",
+        "starrs"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0012",
       "videoId": "DQ9M1J9-77Y",
       "text": "A 1953 CIA handbook, 'A Study of Assassination', recommends pushing victims from at least 75 feet onto a hard surface as the optimal method because 'it causes little excitement and is only casually investigated'.",
       "kind": "historical",
-      "entities": ["organization:cia"],
+      "entities": [
+        "organization:cia"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "DQ9M1J9-77Y",
           "charStart": 11343,
           "charEnd": 11540,
-          "timeStart": 731.0,
-          "timeEnd": 743.0,
+          "timeStart": 731,
+          "timeEnd": 743,
           "quote": "cia study of\nassassination it's fascinating and i'll\nlink it below it describes that the best\nway to assassinate a target is to drop\nthem from at least 75 feet onto a hard\nsurface the manual says w"
         }
       ],
@@ -281,15 +372,25 @@
       "directTruth": 0.9,
       "rationale": "The CIA's 'A Study of Assassination' (1953), declassified and publicly available, does contain the 75-foot-drop recommendation and the wording about low investigation. Verified primary source.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "DQ9M1J9-77Y:c_0011", "kind": "supports" }],
-      "tags": ["cia", "assassination-manual"]
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0011",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "cia",
+        "assassination-manual"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0013",
       "videoId": "DQ9M1J9-77Y",
       "text": "Frank Olson was killed because he was one of only a few scientists who could confirm that the US deployed chemical/biological weapons against Korean and Chinese soldiers during the Korean War.",
       "kind": "speculative",
-      "entities": ["person:frank olson"],
+      "entities": [
+        "person:frank olson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -305,15 +406,27 @@
       "directTruth": 0.3,
       "rationale": "Korean War US biological-weapons allegations have circumstantial support (the 1952 'International Scientific Commission' report) but have been officially denied. Connecting this directly to Olson's silence as a motive for murder is plausible but speculative.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "DQ9M1J9-77Y:c_0011", "kind": "supports" }],
-      "tags": ["korean-war", "motive"]
+      "dependencies": [
+        {
+          "target": "DQ9M1J9-77Y:c_0011",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "korean-war",
+        "motive"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0014",
       "videoId": "DQ9M1J9-77Y",
       "text": "MK-Ultra ended in 1973 and no CIA personnel involved were ever prosecuted; Gottlieb, Lashbrook and senior MKUltra scientists all retired with full pensions.",
       "kind": "historical",
-      "entities": ["organization:mkultra", "person:sydney gottlieb", "person:robert lashbrook"],
+      "entities": [
+        "organization:mkultra",
+        "person:sydney gottlieb",
+        "person:robert lashbrook"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -329,14 +442,20 @@
       "directTruth": 0.85,
       "rationale": "Richard Helms's 1973 order to destroy MK-Ultra records is historical fact; the non-prosecution of MK-Ultra personnel is fact; Gottlieb retired from the CIA in 1972 and died in 1999 never having been prosecuted.",
       "hostStance": "asserts",
-      "tags": ["mkultra", "1973", "impunity"]
+      "tags": [
+        "mkultra",
+        "1973",
+        "impunity"
+      ]
     },
     {
       "id": "DQ9M1J9-77Y:c_0015",
       "videoId": "DQ9M1J9-77Y",
       "text": "Frank Olson jumped or fell from the hotel window of his own volition due to LSD-induced distress — the official cover story.",
       "kind": "historical",
-      "entities": ["person:frank olson"],
+      "entities": [
+        "person:frank olson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -353,10 +472,22 @@
       "rationale": "Extracted as a denies claim — the host spends the whole verdict walking the viewer through why the jumped/fell story does not fit the forensic evidence. The original suicide-ruling is the thesis he is refuting.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "DQ9M1J9-77Y:c_0011", "kind": "contradicts", "rationale": "[alternative] 'Jumped on his own' vs. 'thrown by CIA' are competing explanations for the same fall." },
-        { "target": "DQ9M1J9-77Y:c_0010", "kind": "contradicts", "rationale": "[debunks] The no-glass-cuts and blunt-force-trauma findings are direct falsifiers of the fell-through-window story." }
+        {
+          "target": "DQ9M1J9-77Y:c_0011",
+          "kind": "contradicts",
+          "rationale": "[alternative] 'Jumped on his own' vs. 'thrown by CIA' are competing explanations for the same fall."
+        },
+        {
+          "target": "DQ9M1J9-77Y:c_0010",
+          "kind": "contradicts",
+          "rationale": "[debunks] The no-glass-cuts and blunt-force-trauma findings are direct falsifiers of the fell-through-window story."
+        }
       ],
-      "tags": ["olson", "cover-story", "denied"]
+      "tags": [
+        "olson",
+        "cover-story",
+        "denied"
+      ]
     }
   ]
 }

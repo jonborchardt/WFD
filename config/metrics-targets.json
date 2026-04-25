@@ -9,12 +9,14 @@
     { "name": "resolution.firstNamePersonsMultiVideo", "max": 150, "note": "after Plan 2-2 Part C; DEFERs account for the remainder. Tighten toward 25 as operator hand-resolves the deferred pool." },
     { "name": "claims.total", "min": 2000, "unit": "count" },
     { "name": "claims.directTruthPct", "max": 95, "unit": "pct", "note": "Plan 03 v2 calibrated: target ≤80 ideally, 95 is the soft ceiling from the batch-average. Tighten as operator samples and re-extracts weakest videos." },
-    { "name": "claims.deniesPct", "min": 5, "unit": "pct", "note": "Plan 03 v2 aggressive denies target" },
-    { "name": "claims.dependencyCoveragePct", "min": 35, "unit": "pct", "note": "Plan 03 target ≥55%; 35 is the regression floor below which something is clearly wrong" },
-    { "name": "claims.evidenceP50Chars", "max": 200, "note": "Plan 03 target 60-150; 200 is the soft ceiling" },
-    { "name": "claims.evidenceP90Chars", "max": 600, "note": "Plan 03 target ≤450; 600 is the soft ceiling" },
-    { "name": "claims.evidenceMaxChars", "max": 1500, "note": "Plan 03 hard avoid >800; 1500 is the absolute ceiling" },
-    { "name": "claims.contradictsSubkindPct", "min": 90, "unit": "pct", "note": "Plan 04 §A — typed prefix required" },
+    { "name": "claims.deniesPct", "min": 5, "targetMin": 7, "unit": "pct", "note": "v2 aggressive denies target. Hard floor 5% (gate fails below); aspiration 7% (dashboard warning if below)." },
+    { "name": "claims.dependencyCoveragePct", "min": 35, "targetMin": 55, "unit": "pct", "note": "v2 prompt aims for ≥55% of claims to carry ≥1 dep edge. 35 is the regression floor below which reasoning is clearly broken; 55 is the aspiration." },
+    { "name": "claims.evidenceP50Chars", "max": 150, "targetMin": 60, "targetMax": 110, "note": "v2 target 60–150 chars; 150 is now the hard ceiling (tightened 2026-04-24 from 200). 60–110 is the sweet spot — distance-to-target shown on dashboard." },
+    { "name": "claims.evidenceP90Chars", "max": 600, "note": "v2 target ≤450; 600 is the soft ceiling" },
+    { "name": "claims.evidenceMaxChars", "max": 1500, "note": "v2 hard avoid >800; 1500 is the absolute ceiling" },
+    { "name": "claims.contradictsSubkindPct", "min": 90, "targetMin": 95, "unit": "pct", "note": "v2 typed-prefix coverage. Hard floor 90%, aspiration 95% — below aspiration flags the dashboard but doesn't fail the gate." },
+    { "name": "claims.promptVersionV2Pct", "min": 100, "unit": "pct", "note": "Every claim file must be stamped promptVersion=v2 (plan 2026-04-24 phase 2). Below 100% = immediate gate failure so stray / legacy writes are caught on the next CI run." },
+    { "name": "claims.promptVersionUnknownFiles", "max": 0, "unit": "count", "note": "count of claim files missing / with unknown promptVersion. Direct companion to promptVersionV2Pct — zero tolerance." },
     { "name": "contradictions.pendingVerify", "max": 0, "note": "every cross-video candidate should have a verdict on production" }
   ]
 }

@@ -3,6 +3,7 @@
   "transcriptId": "8Kl2LcO9nBQ",
   "generatedAt": "2026-04-22T04:20:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "8Kl2LcO9nBQ:c_0001",
@@ -15,7 +16,9 @@
         "location:uk",
         "technology:life support systems"
       ],
-      "relationships": ["r_0004"],
+      "relationships": [
+        "r_0004"
+      ],
       "evidence": [
         {
           "transcriptId": "8Kl2LcO9nBQ",
@@ -37,7 +40,12 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "The Tandy / Coventry infrasound ghost story is published in Journal of the Society for Psychical Research (1998) and Tandy's 2000 follow-up. The 19 Hz fan and the 'sense of presence' are documented. Eyeball-resonance is a partial explanation often debated but with experimental support.",
-      "tags": ["tandy", "infrasound", "ghosts", "warwick-labs"],
+      "tags": [
+        "tandy",
+        "infrasound",
+        "ghosts",
+        "warwick-labs"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -63,7 +71,10 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Standard acoustic definition: 20 Hz-20 kHz is the nominal human audibility range; <20 Hz = infrasound. Infrasound's physiological effects at sufficient SPL are documented.",
-      "tags": ["infrasound", "acoustics"],
+      "tags": [
+        "infrasound",
+        "acoustics"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -89,7 +100,11 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Tiger and lion roars do contain low-frequency components down to ~18 Hz (von Muggenthaler's Fauna Communications research). The 'disorient' claim is the common interpretation but not rigorously proven as causative in hunts.",
-      "tags": ["infrasound", "tiger", "bioacoustics"],
+      "tags": [
+        "infrasound",
+        "tiger",
+        "bioacoustics"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -109,7 +124,7 @@
           "charStart": 3388,
           "charEnd": 3458,
           "timeStart": 206.239,
-          "timeEnd": 212.0,
+          "timeEnd": 212,
           "quote": "brown note is said to occur at\nfrequencies between five and nine hertz"
         },
         {
@@ -124,7 +139,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "MythBusters S4 E8 (2005) tested and did not reproduce the brown note effect. No peer-reviewed demonstration exists. The 'hasn't been proven' framing matches the actual state of evidence. Host is effectively denying the popular myth.",
-      "tags": ["brown-note", "infrasound", "mythbusters"],
+      "tags": [
+        "brown-note",
+        "infrasound",
+        "mythbusters"
+      ],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -152,7 +171,11 @@
       "confidence": 0.85,
       "directTruth": 0.6,
       "rationale": "NASA and USAF did perform whole-body vibration studies in the 1960s (e.g. NASA TN D-3267) that documented physiological responses to low-frequency mechanical vibration via pilot seats. The 'brown note' framing is popular-press; the underlying research is real.",
-      "tags": ["nasa", "vibration", "space-program"],
+      "tags": [
+        "nasa",
+        "vibration",
+        "space-program"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -178,14 +201,18 @@
           "charStart": 5727,
           "charEnd": 5833,
           "timeStart": 346.08,
-          "timeEnd": 354.0,
+          "timeEnd": 354,
           "quote": "most dangerous frequencies to humans\nare at about seven hertz this is the\nmedian alpha rhythm of the brain"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.4,
       "rationale": "Alpha rhythm is ~8-13 Hz (not strictly 'median 7 Hz') and organ resonance is spread across a range. Claim oversimplifies. Some truth in that abdominal organs do resonate around 4-8 Hz, but the 'especially dangerous' framing is overstated in the literature.",
-      "tags": ["infrasound", "alpha-rhythm", "body-resonance"],
+      "tags": [
+        "infrasound",
+        "alpha-rhythm",
+        "body-resonance"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -201,14 +228,16 @@
         "location:marseille",
         "technology:infrasonic weapons"
       ],
-      "relationships": ["r_0020"],
+      "relationships": [
+        "r_0020"
+      ],
       "evidence": [
         {
           "transcriptId": "8Kl2LcO9nBQ",
           "charStart": 6194,
           "charEnd": 6232,
           "timeStart": 371.759,
-          "timeEnd": 376.0,
+          "timeEnd": 376,
           "quote": "french scientist named vladimir govrow"
         },
         {
@@ -223,7 +252,12 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Vladimir Gavreau did work on infrasound weapons at the Laboratoire d'Electroacoustique Marseille and publish on the topic in the 1960s. The 1957 Marseille-plant origin story is widely repeated but the illness-diagnosis narrative mixes anecdote and fact. Weapon-prototype claims are partially supported.",
-      "tags": ["gavreau", "infrasonic-weapons", "marseille", "history"],
+      "tags": [
+        "gavreau",
+        "infrasonic-weapons",
+        "marseille",
+        "history"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -239,7 +273,10 @@
         "event:death",
         "technology:infrasonic weapons"
       ],
-      "relationships": ["r_0023", "r_0026"],
+      "relationships": [
+        "r_0023",
+        "r_0026"
+      ],
       "evidence": [
         {
           "transcriptId": "8Kl2LcO9nBQ",
@@ -253,7 +290,11 @@
       "confidence": 0.9,
       "directTruth": 0.25,
       "rationale": "[alternative] The lethal-infrasound claim originates from Gavreau's self-reported tests but has not been independently replicated. Modern reviews (e.g. Leventhall 2006) conclude infrasound at believable urban SPLs does not produce the catastrophic physiological effects described. Organ rupture from 7 Hz infrasound is not demonstrated.",
-      "tags": ["infrasound", "weapons", "gavreau"],
+      "tags": [
+        "infrasound",
+        "weapons",
+        "gavreau"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -288,7 +329,12 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "LRAD (Long Range Acoustic Device) is well-documented in anti-piracy deployments — notably the 2005 Seabourn Spirit incident off Somalia. Technically LRAD is high-intensity audible sound rather than strict ultrasound, but the substantive claim about sonic anti-pirate use is accurate.",
-      "tags": ["lrad", "us-navy", "sonic-weapons", "pirates"],
+      "tags": [
+        "lrad",
+        "us-navy",
+        "sonic-weapons",
+        "pirates"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -304,7 +350,9 @@
         "technology:sonic weapon",
         "event:unexplained health incidents"
       ],
-      "relationships": ["r_0047"],
+      "relationships": [
+        "r_0047"
+      ],
       "evidence": [
         {
           "transcriptId": "8Kl2LcO9nBQ",
@@ -326,7 +374,12 @@
       "confidence": 0.9,
       "directTruth": 0.35,
       "rationale": "The existence of Havana Syndrome is real; the causation is contested. The 2020 National Academies report flagged pulsed RF as one hypothesis, but the 2023 ODNI intelligence community assessment concluded 'very unlikely' that a foreign adversary caused the symptoms. Most cases now attributed to environmental factors / preexisting conditions / stress. Sonic-weapon etiology has lost support.",
-      "tags": ["havana-syndrome", "cia", "cuba", "sonic-weapons"],
+      "tags": [
+        "havana-syndrome",
+        "cia",
+        "cuba",
+        "sonic-weapons"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -340,7 +393,10 @@
         "nationality_or_ethnicity:russians",
         "organization:cia"
       ],
-      "relationships": ["r_0052", "r_0053"],
+      "relationships": [
+        "r_0052",
+        "r_0053"
+      ],
       "evidence": [
         {
           "transcriptId": "8Kl2LcO9nBQ",
@@ -362,7 +418,12 @@
       "confidence": 0.9,
       "directTruth": 0.2,
       "rationale": "[undercuts] The 2023 IC assessment explicitly contradicted the Russia-did-it framing, concluding it was 'very unlikely' a foreign adversary was responsible. The intelligence officers 'pointing the finger' pattern was a real 2021-era view but has since been walked back officially.",
-      "tags": ["havana-syndrome", "russia", "cia", "attribution"],
+      "tags": [
+        "havana-syndrome",
+        "russia",
+        "cia",
+        "attribution"
+      ],
       "inVerdictSection": false,
       "hostStance": "uncertain",
       "dependencies": [
@@ -396,7 +457,10 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "White House / Ellipse Havana-Syndrome incidents in November 2020 and 2021 were widely reported and officially acknowledged as Anomalous Health Incidents by the US government. The event did happen; the sonic-weapon causation is separate.",
-      "tags": ["havana-syndrome", "white-house"],
+      "tags": [
+        "havana-syndrome",
+        "white-house"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [

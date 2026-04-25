@@ -3,13 +3,17 @@
   "transcriptId": "16xhpv13DsM",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7[1m]/plan-03-v2",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "16xhpv13DsM:c_0001",
       "videoId": "16xhpv13DsM",
       "text": "Rainfall of non-water material (fish, frogs, spiders, worms, blood, meat) is a real, recurring meteorological phenomenon documented across centuries and continents.",
       "kind": "empirical",
-      "entities": ["person:pliny the elder", "date_time:first century a.d."],
+      "entities": [
+        "person:pliny the elder",
+        "date_time:first century a.d."
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -32,7 +36,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The premise of the video — animal rain events happen — is corroborated by many specific dated newspaper accounts (Memphis 1877, Kansas City 1873, Kerala 2001, Goulburn 2015, etc.) and by Pliny's first-century record. Modern meteorology accepts tornadic waterspouts as a transport mechanism for at least some reported events.",
-      "tags": ["animal-rain", "meteorology", "fortean"],
+      "tags": [
+        "animal-rain",
+        "meteorology",
+        "fortean"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": false
     },
@@ -41,7 +49,10 @@
       "videoId": "16xhpv13DsM",
       "text": "The prevailing scientific hypothesis is that tornadic waterspouts lift small animals into parent clouds and deposit them far inland.",
       "kind": "empirical",
-      "entities": ["location:tropics", "location:great lakes"],
+      "entities": [
+        "location:tropics",
+        "location:great lakes"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -65,9 +76,17 @@
       "directTruth": 0.75,
       "rationale": "The waterspout/vortex hypothesis is a mainstream meteorological explanation with a plausible physical mechanism (buffeting small flat objects inside a convective cell). The host frames it as the 'current working hypothesis,' not as definitive.",
       "dependencies": [
-        { "target": "16xhpv13DsM:c_0001", "kind": "elaborates", "rationale": "Identifies the leading mechanism for the phenomenon claimed in c_0001." }
+        {
+          "target": "16xhpv13DsM:c_0001",
+          "kind": "elaborates",
+          "rationale": "Identifies the leading mechanism for the phenomenon claimed in c_0001."
+        }
       ],
-      "tags": ["waterspout", "meteorology", "mechanism"],
+      "tags": [
+        "waterspout",
+        "meteorology",
+        "mechanism"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": false
     },
@@ -76,8 +95,16 @@
       "videoId": "16xhpv13DsM",
       "text": "Honduras experiences an annual 'rain of fish' in the town of Yoro despite being a landlocked region with no ocean within roughly 120 miles.",
       "kind": "empirical",
-      "entities": ["location:honduras", "location:town of yoro", "event:yoovidhya case", "quantity:one hundred and twenty miles"],
-      "relationships": ["r_0001", "r_0005"],
+      "entities": [
+        "location:honduras",
+        "location:town of yoro",
+        "event:yoovidhya case",
+        "quantity:one hundred and twenty miles"
+      ],
+      "relationships": [
+        "r_0001",
+        "r_0005"
+      ],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
@@ -107,7 +134,11 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "The Lluvia de Peces in Yoro is a well-documented local tradition recorded by multiple outside observers (including National Geographic). Note: Honduras actually has a Caribbean and Pacific coast; the '120 miles' refers to distance from Yoro, not Honduras as a whole — the host's framing is slightly loose.",
-      "tags": ["honduras", "yoro", "fish-rain"],
+      "tags": [
+        "honduras",
+        "yoro",
+        "fish-rain"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -115,7 +146,11 @@
       "videoId": "16xhpv13DsM",
       "text": "The mass spider rain in Goulburn, Australia was caused by ballooning, not precipitation — spiders climb high, spin silk sails, and are carried on the wind.",
       "kind": "empirical",
-      "entities": ["location:goulburn, australia", "date_time:may 15th, 20 15", "quantity:millions"],
+      "entities": [
+        "location:goulburn, australia",
+        "date_time:may 15th, 20 15",
+        "quantity:millions"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -130,8 +165,8 @@
           "transcriptId": "16xhpv13DsM",
           "charStart": 5218,
           "charEnd": 5291,
-          "timeStart": 345.0,
-          "timeEnd": 352.0,
+          "timeStart": 345,
+          "timeEnd": 352,
           "quote": "sort\nof parachute that catches a breeze, which can carry\nthem a long way."
         }
       ],
@@ -139,9 +174,17 @@
       "directTruth": 0.9,
       "rationale": "Ballooning is a well-established entomological behavior (documented in Darwin and confirmed by modern research including electrostatic lift studies). The Goulburn 2015 event was widely reported and matched ballooning's signature: mass aerial dispersal on calm days.",
       "dependencies": [
-        { "target": "16xhpv13DsM:c_0002", "kind": "contradicts", "rationale": "[alternative] Spider rain has a non-waterspout mechanism, showing the waterspout hypothesis does not cover all animal-rain reports." }
+        {
+          "target": "16xhpv13DsM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[alternative] Spider rain has a non-waterspout mechanism, showing the waterspout hypothesis does not cover all animal-rain reports."
+        }
       ],
-      "tags": ["spiders", "ballooning", "goulburn"],
+      "tags": [
+        "spiders",
+        "ballooning",
+        "goulburn"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -149,7 +192,14 @@
       "videoId": "16xhpv13DsM",
       "text": "The red 'blood rain' on Kerala in 2001 was not blood or extraterrestrial matter but colored by airborne algal spores (Trentepohlia).",
       "kind": "empirical",
-      "entities": ["location:kerala", "location:india", "date_time:2001", "date_time:2012", "event:red rain", "location:austria"],
+      "entities": [
+        "location:kerala",
+        "location:india",
+        "date_time:2001",
+        "date_time:2012",
+        "event:red rain",
+        "location:austria"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -180,7 +230,12 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host explicitly presents this as the settled scientific conclusion ('studies have confirmed with certainty'). This matches the peer-reviewed literature on Trentepohlia spores in Kerala rain (Sampath et al. and subsequent work).",
-      "tags": ["kerala", "red-rain", "algae", "trentepohlia"],
+      "tags": [
+        "kerala",
+        "red-rain",
+        "algae",
+        "trentepohlia"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": true
     },
@@ -189,7 +244,11 @@
       "videoId": "16xhpv13DsM",
       "text": "The initial atmospheric-meteor-burst theory for the Kerala red rain is wrong.",
       "kind": "empirical",
-      "entities": ["event:atmospheric meteor burst", "location:kerala", "event:red rain"],
+      "entities": [
+        "event:atmospheric meteor burst",
+        "location:kerala",
+        "event:red rain"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -213,9 +272,17 @@
       "directTruth": 0.1,
       "rationale": "Host presents the meteor-burst theory specifically to reject it in favor of the algal-spore explanation. The scientific consensus likewise rejects it.",
       "dependencies": [
-        { "target": "16xhpv13DsM:c_0005", "kind": "contradicts", "rationale": "[debunks] The algal-spore finding (c_0005) directly falsifies the meteor-burst theory." }
+        {
+          "target": "16xhpv13DsM:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] The algal-spore finding (c_0005) directly falsifies the meteor-burst theory."
+        }
       ],
-      "tags": ["kerala", "red-rain", "meteor-theory"],
+      "tags": [
+        "kerala",
+        "red-rain",
+        "meteor-theory"
+      ],
       "hostStance": "denies"
     },
     {
@@ -223,7 +290,11 @@
       "videoId": "16xhpv13DsM",
       "text": "The famous 1877 Memphis 'snake rain' was almost certainly earthworms, not snakes.",
       "kind": "historical",
-      "entities": ["location:memphis", "date_time:eighteen seventy seven", "event:snake rain"],
+      "entities": [
+        "location:memphis",
+        "date_time:eighteen seventy seven",
+        "event:snake rain"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -255,9 +326,18 @@
       "directTruth": 0.75,
       "rationale": "Host reaches this conclusion as an explicit verdict after walking through the single eyewitness's own description (black, clumped, turning flesh-colored when rinsed, moving in horseshoe shapes). That behavior profile fits earthworms, not snakes.",
       "dependencies": [
-        { "target": "16xhpv13DsM:c_0008", "kind": "supports", "rationale": "Worm misidentification explains why the 1877 report was propagated uncritically." }
+        {
+          "target": "16xhpv13DsM:c_0008",
+          "kind": "supports",
+          "rationale": "Worm misidentification explains why the 1877 report was propagated uncritically."
+        }
       ],
-      "tags": ["memphis", "snake-rain", "worms", "misidentification"],
+      "tags": [
+        "memphis",
+        "snake-rain",
+        "worms",
+        "misidentification"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": true
     },
@@ -266,8 +346,14 @@
       "videoId": "16xhpv13DsM",
       "text": "The 1877 Memphis snake rain story spread nationally because 19th-century newspapers reprinted it without fact-checking the original account.",
       "kind": "historical",
-      "entities": ["organization:the new york times", "date_time:eighteen seventy seven", "location:memphis"],
-      "relationships": ["r_0106"],
+      "entities": [
+        "organization:the new york times",
+        "date_time:eighteen seventy seven",
+        "location:memphis"
+      ],
+      "relationships": [
+        "r_0106"
+      ],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
@@ -280,7 +366,11 @@
       ],
       "confidence": 0.8,
       "rationale": "Host asserts NYT reprint seeded nationwide spread and characterizes 19th-century reprint culture as uncritical ('they just regurgitated the same story'). Plausible but single-quote evidence; no specific citations given, so directTruth is left unset.",
-      "tags": ["journalism", "memphis", "snake-rain"],
+      "tags": [
+        "journalism",
+        "memphis",
+        "snake-rain"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -288,7 +378,13 @@
       "videoId": "16xhpv13DsM",
       "text": "Neither the waterspout hypothesis nor the bird-drop hypothesis adequately explains the 2009 countrywide tadpole rain in Japan.",
       "kind": "speculative",
-      "entities": ["location:japan", "location:ishikawa", "date_time:2009", "event:tadpole downpour", "organization:local meteorologists"],
+      "entities": [
+        "location:japan",
+        "location:ishikawa",
+        "date_time:2009",
+        "event:tadpole downpour",
+        "organization:local meteorologists"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -319,9 +415,17 @@
       "confidence": 0.85,
       "rationale": "Host explicitly rejects both mainstream explanations. The argument from scale (entire country) and clear weather is reasonable, but the 'entire country' framing appears to be hyperbole — reports were limited to scattered incidents in multiple locales, not a continuous blanket. Truth unset because this is argument-from-incredulity.",
       "dependencies": [
-        { "target": "16xhpv13DsM:c_0002", "kind": "contradicts", "rationale": "[undercuts] If waterspouts can't explain a clear-weather event, the waterspout hypothesis has coverage gaps." }
+        {
+          "target": "16xhpv13DsM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] If waterspouts can't explain a clear-weather event, the waterspout hypothesis has coverage gaps."
+        }
       ],
-      "tags": ["japan", "tadpoles", "unexplained"],
+      "tags": [
+        "japan",
+        "tadpoles",
+        "unexplained"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -329,7 +433,12 @@
       "videoId": "16xhpv13DsM",
       "text": "Historical blood-rain events were interpreted as supernatural omens, including as predictors of the Viking invasion of England and the arrival of the Black Plague.",
       "kind": "historical",
-      "entities": ["event:viking invasion", "event:black plague", "location:germany", "date_time:thirteen forty seven"],
+      "entities": [
+        "event:viking invasion",
+        "event:black plague",
+        "location:germany",
+        "date_time:thirteen forty seven"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -352,7 +461,11 @@
       "confidence": 0.8,
       "directTruth": 0.7,
       "rationale": "Medieval chronicles do record blood-rain events as portents; this is well-attested historically (though the retrospective linking to specific catastrophes like the Black Plague is obviously post-hoc). The claim is about how they were interpreted, not about their predictive validity.",
-      "tags": ["blood-rain", "medieval", "omens"],
+      "tags": [
+        "blood-rain",
+        "medieval",
+        "omens"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -360,8 +473,18 @@
       "videoId": "16xhpv13DsM",
       "text": "The 1958 film The Blob was inspired by a 1954 Philadelphia police report of a large disc of quivering jelly that dissolved on contact.",
       "kind": "historical",
-      "entities": ["work_of_media:the blob", "date_time:nineteen fifty eight", "date_time:nineteen fifty four", "location:philadelphia", "person:jack harris", "location:pennsylvania"],
-      "relationships": ["r_0117", "r_0121"],
+      "entities": [
+        "work_of_media:the blob",
+        "date_time:nineteen fifty eight",
+        "date_time:nineteen fifty four",
+        "location:philadelphia",
+        "person:jack harris",
+        "location:pennsylvania"
+      ],
+      "relationships": [
+        "r_0117",
+        "r_0121"
+      ],
       "evidence": [
         {
           "transcriptId": "16xhpv13DsM",
@@ -383,7 +506,12 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "The 1954 Philadelphia 'flying saucer' / jelly incident is a genuine news story (covered by Time magazine at the time), and Jack Harris's Pennsylvania roots are established. The specific causal claim that the incident inspired the screenplay is widely reported but not formally documented in Harris's published interviews at the same strength.",
-      "tags": ["the-blob", "star-jelly", "philadelphia", "film-history"],
+      "tags": [
+        "the-blob",
+        "star-jelly",
+        "philadelphia",
+        "film-history"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -391,7 +519,9 @@
       "videoId": "16xhpv13DsM",
       "text": "Samples of star jelly tested by the National Geographic Society contained no detectable DNA, leaving its origin scientifically unresolved.",
       "kind": "empirical",
-      "entities": ["organization:national geographic society"],
+      "entities": [
+        "organization:national geographic society"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -399,14 +529,14 @@
           "charStart": 17011,
           "charEnd": 17075,
           "timeStart": 1092.56,
-          "timeEnd": 1097.0,
+          "timeEnd": 1097,
           "quote": "scientists in the\nNational Geographic Society tested the sample."
         },
         {
           "transcriptId": "16xhpv13DsM",
           "charStart": 17076,
           "charEnd": 17111,
-          "timeStart": 1097.0,
+          "timeStart": 1097,
           "timeEnd": 1099.31,
           "quote": "In the US they found no DNA at all."
         },
@@ -422,9 +552,17 @@
       "confidence": 0.7,
       "rationale": "The 'no DNA' assertion is attributed to NatGeo but given without a specific citation. Published scientific analyses of star jelly have produced mixed results (some samples show bacterial DNA, others organic debris), so the universal 'no DNA' framing is an oversimplification. Truth unset.",
       "dependencies": [
-        { "target": "16xhpv13DsM:c_0011", "kind": "elaborates", "rationale": "Provides the scientific-mystery angle that connects to the Blob inspiration." }
+        {
+          "target": "16xhpv13DsM:c_0011",
+          "kind": "elaborates",
+          "rationale": "Provides the scientific-mystery angle that connects to the Blob inspiration."
+        }
       ],
-      "tags": ["star-jelly", "natgeo", "unexplained"],
+      "tags": [
+        "star-jelly",
+        "natgeo",
+        "unexplained"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -432,7 +570,11 @@
       "videoId": "16xhpv13DsM",
       "text": "Many documented animal-rain incidents occurred without any reported storm, wind, or waterspout activity, making a single meteorological explanation insufficient.",
       "kind": "empirical",
-      "entities": ["location:hungary", "date_time:june of 2010", "organization:zoologists"],
+      "entities": [
+        "location:hungary",
+        "date_time:june of 2010",
+        "organization:zoologists"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -455,10 +597,22 @@
       "confidence": 0.85,
       "rationale": "Host asserts multiple clear-weather incidents (Hungary 2010, Japan 2009, Norway worms) fall outside the waterspout explanation. True as a coverage claim about the waterspout hypothesis, but not necessarily evidence against it holding for other events. DirectTruth unset — it's a meta-claim about explanatory scope.",
       "dependencies": [
-        { "target": "16xhpv13DsM:c_0002", "kind": "contradicts", "rationale": "[undercuts] Clear-weather incidents reduce the probative value of a pure-waterspout explanation across the full phenomenon." },
-        { "target": "16xhpv13DsM:c_0001", "kind": "supports", "rationale": "Reinforces that the phenomenon is broader than any single mechanism, consistent with the overall thesis." }
+        {
+          "target": "16xhpv13DsM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Clear-weather incidents reduce the probative value of a pure-waterspout explanation across the full phenomenon."
+        },
+        {
+          "target": "16xhpv13DsM:c_0001",
+          "kind": "supports",
+          "rationale": "Reinforces that the phenomenon is broader than any single mechanism, consistent with the overall thesis."
+        }
       ],
-      "tags": ["hungary", "frogs", "waterspout-limits"],
+      "tags": [
+        "hungary",
+        "frogs",
+        "waterspout-limits"
+      ],
       "hostStance": "asserts"
     }
   ]

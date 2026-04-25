@@ -3,6 +3,7 @@
   "transcriptId": "hHpfGf_bFps",
   "generatedAt": "2026-04-22T07:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b4-agent4",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "hHpfGf_bFps:c_0001",
@@ -28,7 +29,12 @@
       "confidence": 0.95,
       "directTruth": 0.75,
       "rationale": "The Overton Bridge dog-jumping phenomenon is widely documented in UK press and paranormal media since the mid-20th century. The specific 'hundreds/fifty died' count appears in multiple independent sources including Dr Sands' investigation referenced later in the episode.",
-      "tags": ["overton-bridge", "dog-suicide", "scotland", "unexplained"],
+      "tags": [
+        "overton-bridge",
+        "dog-suicide",
+        "scotland",
+        "unexplained"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -55,7 +61,11 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "Host attributes this to 'those who believe' in supernatural forces, framing it as a position held by locals rather than endorsed by himself. Thin-place Celtic folklore is unfalsifiable and the host later offers a purely naturalistic explanation (mink scent) that he endorses, so directTruth is low.",
-      "tags": ["thin-place", "celtic-folklore", "supernatural"],
+      "tags": [
+        "thin-place",
+        "celtic-folklore",
+        "supernatural"
+      ],
       "hostStance": "steelman"
     },
     {
@@ -68,7 +78,9 @@
         "person:john",
         "date_time:1908"
       ],
-      "relationships": ["r_0015"],
+      "relationships": [
+        "r_0015"
+      ],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
@@ -82,7 +94,11 @@
       "confidence": 0.8,
       "directTruth": 0.1,
       "rationale": "Ghost-attribution theory. The historical detail (husband died 1908) is presented uncritically but the haunting claim is unfalsifiable. Host offers it as one of several supernatural theories he will ultimately set aside in favor of Sands' mink hypothesis, so directTruth is low.",
-      "tags": ["white-lady", "ghost", "haunting"],
+      "tags": [
+        "white-lady",
+        "ghost",
+        "haunting"
+      ],
       "hostStance": "steelman"
     },
     {
@@ -110,7 +126,11 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "The 1994 Overton Bridge infanticide is a documented Scottish criminal case widely cited in coverage of the bridge. Host presents it matter-of-factly without hedging, and it is verifiable through UK court records.",
-      "tags": ["overton-bridge", "1994-infanticide", "true-crime"],
+      "tags": [
+        "overton-bridge",
+        "1994-infanticide",
+        "true-crime"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -135,7 +155,11 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Standard mainstream position in veterinary ethology: dogs lack the metacognition to form suicidal intent, though they can waste away from depression. Host endorses this consensus as background to reject the supernatural compulsion narrative.",
-      "tags": ["animal-behavior", "dog-psychology", "consensus"],
+      "tags": [
+        "animal-behavior",
+        "dog-psychology",
+        "consensus"
+      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -160,7 +184,11 @@
         "quantity:waist high",
         "quantity:completely solid"
       ],
-      "relationships": ["r_0016", "r_0026", "r_0027"],
+      "relationships": [
+        "r_0016",
+        "r_0026",
+        "r_0027"
+      ],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
@@ -174,7 +202,11 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Physical architectural facts about the 1895 gothic bridge, straightforward to verify from photographs. Host attributes the observation to Dr Sands' on-site investigation.",
-      "tags": ["overton-bridge", "architecture", "sands-hypothesis"],
+      "tags": [
+        "overton-bridge",
+        "architecture",
+        "sands-hypothesis"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -187,7 +219,10 @@
         "facility:bridge",
         "date_time:2006"
       ],
-      "relationships": ["r_0016", "r_0019"],
+      "relationships": [
+        "r_0016",
+        "r_0019"
+      ],
       "evidence": [
         {
           "transcriptId": "hHpfGf_bFps",
@@ -201,7 +236,10 @@
       "confidence": 0.95,
       "directTruth": 0.8,
       "rationale": "Sands' 2006 investigation and BBC coverage of it are verifiable public-record events. Host presents it as sourced fact with no hedging.",
-      "tags": ["dr-sands", "2006-investigation"],
+      "tags": [
+        "dr-sands",
+        "2006-investigation"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -228,7 +266,11 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "American mink introduction to the UK (including Scotland) in the early 20th century for fur farming, with wild populations established mid-century, is a well-documented ecological history. Timing correlation with the bridge phenomenon is the load-bearing piece of Sands' hypothesis.",
-      "tags": ["mink", "invasive-species", "scotland"],
+      "tags": [
+        "mink",
+        "invasive-species",
+        "scotland"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -249,14 +291,18 @@
           "charStart": 4041,
           "charEnd": 4190,
           "timeStart": 252.319,
-          "timeEnd": 264.0,
+          "timeEnd": 264,
           "quote": "off the\nbridge\nin the field were three containers each\ncontaining an animal scent\nseven of the dogs headed straight to the\ncontainer containing\nthe m"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.55,
       "rationale": "Host cites Sands' small-n (10 dogs, 3 containers) experiment as supporting evidence. The result is reported specifically, but n=10 is underpowered and the experiment has not been independently replicated in peer-reviewed literature, so directTruth is moderate.",
-      "tags": ["sands-experiment", "mink-scent", "dog-behavior"],
+      "tags": [
+        "sands-experiment",
+        "mink-scent",
+        "dog-behavior"
+      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -289,7 +335,11 @@
       "confidence": 0.85,
       "directTruth": 0.5,
       "rationale": "Host presents the weather-correlation as fact supporting Sands' scent hypothesis. 'Appear to' softens it; no source citation is given and the underlying incident log is not publicly audited, so moderate truth.",
-      "tags": ["weather", "scent-dispersal", "sands-hypothesis"],
+      "tags": [
+        "weather",
+        "scent-dispersal",
+        "sands-hypothesis"
+      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -315,14 +365,18 @@
           "charStart": 4419,
           "charEnd": 4559,
           "timeStart": 274.48,
-          "timeEnd": 284.0,
+          "timeEnd": 284,
           "quote": "the bridge\nand in general with dogs the longer the\nnose the better their sense of smell\nso then driven by their instinct to hunt\nand unaware"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "Host's preferred synthesis: combines architectural-cue-deprivation, mink scent, and hunt instinct. He endorses it as the 'most logical theory' but it remains one explanatory model among several and has not been empirically demonstrated on the bridge itself.",
-      "tags": ["sands-hypothesis", "hunt-instinct", "explanation"],
+      "tags": [
+        "sands-hypothesis",
+        "hunt-instinct",
+        "explanation"
+      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -365,7 +419,11 @@
       "confidence": 0.8,
       "directTruth": 0.15,
       "rationale": "Anecdotal first-person reports of an 'invisible finger' are consistent with well-documented suggestion and expectation effects at reputedly-haunted sites. Host relays without endorsing and pairs it with a rhetorical 'what do you think it was' nudge toward the ghost theory.",
-      "tags": ["paranormal-experience", "white-lady", "suggestion"],
+      "tags": [
+        "paranormal-experience",
+        "white-lady",
+        "suggestion"
+      ],
       "hostStance": "steelman",
       "dependencies": [
         {
@@ -391,14 +449,18 @@
           "charStart": 5081,
           "charEnd": 5231,
           "timeStart": 312.48,
-          "timeEnd": 322.0,
+          "timeEnd": 322,
           "quote": "y are quick to point out that there\nare other bridges just like this\nall over the area with the same\ncharacteristics yet dogs are not jumping\nso what "
         }
       ],
       "confidence": 0.85,
       "directTruth": 0.5,
       "rationale": "Host relays this skeptical-of-skepticism local argument without adjudicating. The claim 'same characteristics' is unverified; no inventory of comparable bridges is offered. Undermines a purely-architectural or purely-mink account, but host does not follow through.",
-      "tags": ["comparison", "skeptic-rebuttal", "scotland"],
+      "tags": [
+        "comparison",
+        "skeptic-rebuttal",
+        "scotland"
+      ],
       "hostStance": "uncertain",
       "dependencies": [
         {

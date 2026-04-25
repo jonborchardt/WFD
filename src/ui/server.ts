@@ -2060,7 +2060,11 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           if (!a || !b) { ok = false; summary = "missing a/b"; }
           else if (!sum) { ok = false; summary = "missing summary"; }
           else {
-            addCustomContradiction(dataRoot, a, b, sum);
+            const shared = (u.searchParams.get("sharedEntities") ?? "")
+              .split(",")
+              .map((s) => s.trim())
+              .filter(Boolean);
+            addCustomContradiction(dataRoot, a, b, sum, shared.length ? shared : undefined);
             summary = `flagged ${a} ↔ ${b}`;
           }
         } else {

@@ -3,6 +3,7 @@
   "transcriptId": "TqM-rhKniLE",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b2",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "TqM-rhKniLE:c_0001",
@@ -14,7 +15,11 @@
         "date_time:2045",
         "technology:mind uploading"
       ],
-      "relationships": ["r_0001", "r_0002", "r_0003"],
+      "relationships": [
+        "r_0001",
+        "r_0002",
+        "r_0003"
+      ],
       "evidence": [
         {
           "transcriptId": "TqM-rhKniLE",
@@ -28,7 +33,11 @@
       "confidence": 0.95,
       "directTruth": 0.2,
       "rationale": "Kurzweil's 2045 timeline is a well-known public prediction and is faithfully attributed here. The host labels it 'a bit optimistic' and the episode later enumerates massive unsolved technical barriers (no human connectome, orders-of-magnitude storage gap), so the underlying prediction's probability of being realized on schedule is low.",
-      "tags": ["mind-uploading", "kurzweil", "singularity"],
+      "tags": [
+        "mind-uploading",
+        "kurzweil",
+        "singularity"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": false
     },
@@ -55,7 +64,10 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "A definitional framing the host uses to structure the episode. The three-pillar decomposition matches standard transhumanist treatments of whole brain emulation (e.g. Sandberg & Bostrom 2008 roadmap).",
-      "tags": ["whole-brain-emulation", "framing"],
+      "tags": [
+        "whole-brain-emulation",
+        "framing"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -81,7 +93,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The C. elegans complete connectome was published by White et al. in 1986, the ~86B-neuron human estimate is well-established (Azevedo et al. 2009). The host is reporting consensus neuroscience.",
-      "tags": ["connectome", "neuroscience", "c-elegans"],
+      "tags": [
+        "connectome",
+        "neuroscience",
+        "c-elegans"
+      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -116,7 +132,11 @@
       "confidence": 0.95,
       "directTruth": 0.8,
       "rationale": "Matches the MICrONS / Allen Institute serial-section EM milestones around 2019-2020. Neuron and synapse counts are within published ranges for a cubic millimeter of cortex.",
-      "tags": ["connectome", "electron-microscopy", "mouse-brain"]
+      "tags": [
+        "connectome",
+        "electron-microscopy",
+        "mouse-brain"
+      ]
     },
     {
       "id": "TqM-rhKniLE:c_0005",
@@ -141,7 +161,11 @@
       ],
       "confidence": 0.85,
       "rationale": "The 2PB-per-mm^3 to 2000EB-per-brain extrapolation is a back-of-envelope linear scaling and depends on voxel assumptions. The Google-storage estimate (~15EB) is an unofficial figure that varies widely. Omitting directTruth because the numbers are informed estimates, not verified figures.",
-      "tags": ["storage", "scaling", "google"],
+      "tags": [
+        "storage",
+        "scaling",
+        "google"
+      ],
       "dependencies": [
         {
           "target": "TqM-rhKniLE:c_0004",
@@ -173,7 +197,11 @@
       "confidence": 0.9,
       "directTruth": 0.35,
       "rationale": "Moore's original formulation was transistor count doubling every ~24 months, not compute power every 18 months; the host blends Moore with David House's restatement. Host also admits slowdown. The stronger implication — that doubling guarantees mind-uploading compute — is speculative.",
-      "tags": ["moores-law", "compute", "scaling"]
+      "tags": [
+        "moores-law",
+        "compute",
+        "scaling"
+      ]
     },
     {
       "id": "TqM-rhKniLE:c_0007",
@@ -185,7 +213,10 @@
         "organization:nectome",
         "organization:mit"
       ],
-      "relationships": ["r_0004", "r_0009"],
+      "relationships": [
+        "r_0004",
+        "r_0009"
+      ],
       "evidence": [
         {
           "transcriptId": "TqM-rhKniLE",
@@ -199,7 +230,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Nectome was founded by Robert McIntyre (MIT); this is a matter of public record. The founding relationship has the highest GLiREL score in the file (r_0004, 0.74).",
-      "tags": ["nectome", "brain-preservation", "mcintyre"],
+      "tags": [
+        "nectome",
+        "brain-preservation",
+        "mcintyre"
+      ],
       "hostStance": "asserts"
     },
     {
@@ -225,7 +260,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Nectome's aldehyde-stabilized cryopreservation is indeed administered to living subjects and is explicitly terminal — widely reported after the 2018 MIT Tech Review piece. Host is relaying an accurate fact.",
-      "tags": ["nectome", "euthanasia", "asc"],
+      "tags": [
+        "nectome",
+        "euthanasia",
+        "asc"
+      ],
       "dependencies": [
         {
           "target": "TqM-rhKniLE:c_0007",
@@ -244,7 +283,10 @@
         "technology:aldehyde stabilized cryopreservation",
         "organization:alcor life extension foundation"
       ],
-      "relationships": ["r_0016", "r_0017"],
+      "relationships": [
+        "r_0016",
+        "r_0017"
+      ],
       "evidence": [
         {
           "transcriptId": "TqM-rhKniLE",
@@ -258,7 +300,12 @@
       "confidence": 0.95,
       "directTruth": 0.8,
       "rationale": "ASC is real; McIntyre developed it with cryobiologist Greg Fahy. It won the Brain Preservation Foundation's Large Mammal Prize in 2018. The nitrogen-damage motivation reflects an ongoing debate in cryonics.",
-      "tags": ["asc", "cryonics", "mcintyre", "fahy"]
+      "tags": [
+        "asc",
+        "cryonics",
+        "mcintyre",
+        "fahy"
+      ]
     },
     {
       "id": "TqM-rhKniLE:c_0010",
@@ -283,7 +330,11 @@
       "confidence": 0.9,
       "directTruth": 0.55,
       "rationale": "Nanometer-scale ultrastructural preservation has been demonstrated in pig and rabbit brains (BPF prize). The hundreds-to-thousands-of-years durability claim extrapolates from vitrification physics and is not directly verified over such timescales.",
-      "tags": ["asc", "preservation-claims", "nectome"],
+      "tags": [
+        "asc",
+        "preservation-claims",
+        "nectome"
+      ],
       "hostStance": "asserts",
       "dependencies": [
         {
@@ -316,7 +367,11 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Nectome's stated mission, distinct from Alcor's revival-focused cryonics. Matches McIntyre's and Hayworth's public statements.",
-      "tags": ["nectome", "philosophy", "information-preservation"]
+      "tags": [
+        "nectome",
+        "philosophy",
+        "information-preservation"
+      ]
     },
     {
       "id": "TqM-rhKniLE:c_0012",
@@ -327,7 +382,10 @@
         "person:ken hayworth",
         "organization:brain preservation foundation"
       ],
-      "relationships": ["r_0018", "r_0023"],
+      "relationships": [
+        "r_0018",
+        "r_0023"
+      ],
       "evidence": [
         {
           "transcriptId": "TqM-rhKniLE",
@@ -340,7 +398,11 @@
       ],
       "confidence": 0.9,
       "rationale": "Hayworth really holds the role and the analogy is his standard public framing. Omitting directTruth because the analogy is an unfalsifiable reframing of the deeper question of whether the connectome is really sufficient to reinstantiate a person.",
-      "tags": ["hayworth", "brain-preservation-foundation", "analogy"]
+      "tags": [
+        "hayworth",
+        "brain-preservation-foundation",
+        "analogy"
+      ]
     },
     {
       "id": "TqM-rhKniLE:c_0013",
@@ -364,7 +426,11 @@
       ],
       "confidence": 0.85,
       "rationale": "A thought-experiment risk the host raises to unsettle the utopian framing. Omitting directTruth: conditional speculation about a technology that does not yet exist.",
-      "tags": ["digital-mind", "security", "risk"]
+      "tags": [
+        "digital-mind",
+        "security",
+        "risk"
+      ]
     },
     {
       "id": "TqM-rhKniLE:c_0014",
@@ -387,7 +453,11 @@
       ],
       "confidence": 0.9,
       "rationale": "Host's explicit editorial. Pure value claim, not an empirical one; directTruth omitted by design.",
-      "tags": ["philosophy", "mortality", "meaning"],
+      "tags": [
+        "philosophy",
+        "mortality",
+        "meaning"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": true
     },
@@ -413,7 +483,11 @@
       "confidence": 0.95,
       "directTruth": 0.75,
       "rationale": "Host's verdict. The near-term-infeasibility half is well-supported by the engineering barriers laid out in the episode (no human connectome, ~100x Google-scale storage required, no known simulation substrate). The 'enjoy actual life' half is advice, not a testable claim.",
-      "tags": ["verdict", "mind-uploading", "near-term"],
+      "tags": [
+        "verdict",
+        "mind-uploading",
+        "near-term"
+      ],
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [

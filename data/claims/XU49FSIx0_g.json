@@ -3,6 +3,7 @@
   "transcriptId": "XU49FSIx0_g",
   "generatedAt": "2026-04-22T04:15:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "XU49FSIx0_g:c_0001",
@@ -14,7 +15,9 @@
         "technology:wireless power",
         "location:earth"
       ],
-      "relationships": ["r_0001"],
+      "relationships": [
+        "r_0001"
+      ],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
@@ -28,7 +31,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Well-documented: Tesla's 1899 Colorado Springs experiments and his 1901 Wardenclyffe tower project were explicitly aimed at global wireless power transmission via Earth-resonant currents. Attribution of the belief is uncontested historical fact.",
-      "tags": ["tesla", "wireless-power", "history"],
+      "tags": [
+        "tesla",
+        "wireless-power",
+        "history"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -41,7 +48,9 @@
         "location:great pyramid of giza",
         "person:khufu"
       ],
-      "relationships": ["r_0002"],
+      "relationships": [
+        "r_0002"
+      ],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
@@ -55,7 +64,12 @@
       "confidence": 0.95,
       "directTruth": 0.25,
       "rationale": "Mainstream Egyptology maintains the Great Pyramid was built as Khufu's tomb based on quarry marks naming Khufu's work gangs, relieving-chamber graffiti, the king's name on exterior marks, and the Merer logbook documenting limestone delivery. No mummy in the pyramid does not imply it wasn't built as a tomb — many Old Kingdom pyramids were looted. directTruth low because the consensus evidence is strong.",
-      "tags": ["great-pyramid", "khufu", "tomb", "egyptology"],
+      "tags": [
+        "great-pyramid",
+        "khufu",
+        "tomb",
+        "egyptology"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -69,7 +83,9 @@
         "person:christopher dunn",
         "technology:technology"
       ],
-      "relationships": ["r_0007"],
+      "relationships": [
+        "r_0007"
+      ],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
@@ -91,7 +107,12 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "Dunn's 'Giza Power Plant' hypothesis is his 1998 book's central thesis. It is not accepted in mainstream Egyptology or physics — no peer-reviewed mechanism explains how microwave-frequency hydrogen production could be sustained in a rock structure, and chemical residues claimed in the shafts have not been independently replicated.",
-      "tags": ["great-pyramid", "christopher-dunn", "power-plant", "speculative"],
+      "tags": [
+        "great-pyramid",
+        "christopher-dunn",
+        "power-plant",
+        "speculative"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -133,7 +154,12 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "[alternative] The hydrochloric-acid / zinc-chloride chemistry claim comes from Dunn's self-published work. Independent chemical testing of the Queen's Chamber shafts has not confirmed these residues; the actual shafts were sealed and only surveyed by the Djedi and Upuaut robots, which did not find industrial chemistry residue. directTruth low because no replicated lab analysis supports it.",
-      "tags": ["great-pyramid", "queens-chamber", "hydrogen", "christopher-dunn"],
+      "tags": [
+        "great-pyramid",
+        "queens-chamber",
+        "hydrogen",
+        "christopher-dunn"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -155,7 +181,9 @@
         "quantity:440 hertz",
         "technology:helmholtz resonator"
       ],
-      "relationships": ["r_0010"],
+      "relationships": [
+        "r_0010"
+      ],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
@@ -177,7 +205,11 @@
       "confidence": 0.85,
       "directTruth": 0.5,
       "rationale": "Acoustic measurements do find resonance in the Grand Gallery and King's Chamber (Dunn, Alexander, and others); the specific '440 Hz F-sharp' framing is Dunn's reading. Independent replications find multiple resonant modes rather than a single 440 Hz peak, so the precise claim is only partly supported.",
-      "tags": ["great-pyramid", "acoustics", "440-hz"],
+      "tags": [
+        "great-pyramid",
+        "acoustics",
+        "440-hz"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -192,7 +224,10 @@
         "organization:general electric",
         "technology:wireless power"
       ],
-      "relationships": ["r_0019", "r_0026"],
+      "relationships": [
+        "r_0019",
+        "r_0026"
+      ],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
@@ -214,7 +249,12 @@
       "confidence": 0.9,
       "directTruth": 0.55,
       "rationale": "The funding pull is historically documented. The motive attribution is contested: Morgan's contemporaneous letters cite Tesla's pivot from trans-Atlantic telegraphy (what Morgan paid for) to free power (what Morgan didn't sign up for); the 'Morgan killed it to protect GE' narrative is popular but not supported by primary sources. Morgan also did not actually own General Electric — he was an early backer and major shareholder but lost control in the 1890s.",
-      "tags": ["tesla", "jp-morgan", "wardenclyffe", "general-electric"],
+      "tags": [
+        "tesla",
+        "jp-morgan",
+        "wardenclyffe",
+        "general-electric"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -241,7 +281,11 @@
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "Tesla did die in financial distress in 1943 and had difficulty raising capital after Wardenclyffe's failure. A formal investor blacklist organized by Morgan is not documented in primary sources, but the pattern of funding aversion is historically real.",
-      "tags": ["tesla", "jp-morgan", "blacklist"],
+      "tags": [
+        "tesla",
+        "jp-morgan",
+        "blacklist"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -276,7 +320,11 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Host is describing the skeptic position, which he is about to try to counter. The statement itself — no physical or written record of ancient Egyptian electricity — is well-supported. No glass, filament, insulated wire, or electrical diagrams in any period document.",
-      "tags": ["ancient-egypt", "electricity", "skeptic"],
+      "tags": [
+        "ancient-egypt",
+        "electricity",
+        "skeptic"
+      ],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -304,7 +352,11 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "Contradicted by the Merer papyrus (c. 2560 BC) describing limestone deliveries to Giza, by quarry work-gang graffiti naming Khufu, and by carbon-14 dating of mortar consistent with the 4th Dynasty timeline. No archaeological evidence supports a pre-Egyptian civilization constructing the Great Pyramid.",
-      "tags": ["great-pyramid", "ancient-civilization", "alternative-history"],
+      "tags": [
+        "great-pyramid",
+        "ancient-civilization",
+        "alternative-history"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -339,7 +391,12 @@
       "confidence": 0.9,
       "directTruth": 0.4,
       "rationale": "The water-erosion thesis (Schoch/West) is real academic controversy, not fringe nonsense — Schoch is a Boston University geologist. However, Egyptologists counter that the Sphinx enclosure erosion is consistent with limestone weathering under Nile-era climate rather than requiring Pleistocene flooding. Community is split but mainstream remains against the early-Sphinx reading.",
-      "tags": ["sphinx", "water-erosion", "younger-dryas", "schoch"],
+      "tags": [
+        "sphinx",
+        "water-erosion",
+        "younger-dryas",
+        "schoch"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -376,7 +433,11 @@
       "confidence": 0.9,
       "directTruth": 0.15,
       "rationale": "A Younger Dryas CME/impact hypothesis exists in speculative literature (Kennett et al., Hancock) but is not peer-accepted as cause of a pyramid-power-plant failure because no such plant is mainstream-accepted in the first place. Linking solar event → lightning → pyramid damage is a chain of speculation.",
-      "tags": ["younger-dryas", "solar-event", "great-pyramid"],
+      "tags": [
+        "younger-dryas",
+        "solar-event",
+        "great-pyramid"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -398,21 +459,29 @@
         "organization:oss",
         "technology:wireless power"
       ],
-      "relationships": ["r_0111", "r_0120"],
+      "relationships": [
+        "r_0111",
+        "r_0120"
+      ],
       "evidence": [
         {
           "transcriptId": "XU49FSIx0_g",
           "charStart": 22258,
           "charEnd": 22313,
           "timeStart": 1383.539,
-          "timeEnd": 1392.0,
+          "timeEnd": 1392,
           "quote": "FBI and agents\nof the OSS were for some reason close by"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.65,
       "rationale": "Tesla's papers were seized by the Office of Alien Property on January 9, 1943, and later reviewed by MIT's John G. Trump for the FBI. This is documented in declassified FBI files. The 'suppression' framing is interpretive — Trump's memo concluded the papers contained 'no new sound, workable principles'. So the seizure is fact, the suppression intent is speculative.",
-      "tags": ["tesla", "fbi", "oss", "suppression"],
+      "tags": [
+        "tesla",
+        "fbi",
+        "oss",
+        "suppression"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -445,7 +514,11 @@
       ],
       "confidence": 0.9,
       "rationale": "Host's editorial position in the verdict section. Untestable as stated (counterfactual about a non-existent world), so directTruth is omitted. Historical evidence from other resource-abundance cases (oil, water) suggests abundance alone does not eliminate geopolitical conflict.",
-      "tags": ["free-energy", "geopolitics", "opinion"],
+      "tags": [
+        "free-energy",
+        "geopolitics",
+        "opinion"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

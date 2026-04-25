@@ -3,6 +3,7 @@
   "transcriptId": "1HwC9L4BDpE",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "1HwC9L4BDpE:c_0001",
@@ -25,8 +26,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 98,
           "charEnd": 277,
-          "timeStart": 10.0,
-          "timeEnd": 20.0,
+          "timeStart": 10,
+          "timeEnd": 20,
           "quote": "Suffolk, England, October 1957.\nThree Royal Navy cadets walked across\ngreen hills on a training exercise, map\nreading and orientation. William Lang,\nMichael Crowley, and Ray Baker"
         }
       ],
@@ -34,7 +35,11 @@
       "directTruth": 0.4,
       "rationale": "The 'Kersey time slip' is a documented SPR case file (Andrew MacKenzie, 'Adventures in Time', 1997). Three cadets' written accounts decades later exist; Kersey's real history matches some details (plague, halted church tower). Whether the experience was a literal time slip versus shared misperception, hallucination, or later narrative embellishment is unknown. directTruth below 0.5 because the core supernatural interpretation has no physical evidence; only witness testimony.",
       "hostStance": "asserts",
-      "tags": ["kersey", "time-slip", "1957"]
+      "tags": [
+        "kersey",
+        "time-slip",
+        "1957"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0002",
@@ -54,8 +59,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 11299,
           "charEnd": 11389,
-          "timeStart": 715.0,
-          "timeEnd": 721.0,
+          "timeStart": 715,
+          "timeEnd": 721,
           "quote": "McKenzie concluded the\ncadets saw Courcey as it was around\n1420, 70 years after the plague"
         }
       ],
@@ -64,9 +69,16 @@
       "rationale": "MacKenzie's research and 1420 dating appear in his SPR publications. The factual match (glazed windows appear post-1400, church tower halted in 1348, wool trade recovery) is clever storytelling. However, MacKenzie's conclusion is an interpretation of a single witness narrative decades after the fact — not independent corroboration that the cadets saw anything supernatural. The historical-alignment argument is suggestive but also the kind of thing that confirmation bias produces naturally.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0001", "kind": "elaborates" }
+        {
+          "target": "1HwC9L4BDpE:c_0001",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["mckenzie", "dating", "1420"]
+      "tags": [
+        "mckenzie",
+        "dating",
+        "1420"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0003",
@@ -85,8 +97,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 11095,
           "charEnd": 11135,
-          "timeStart": 702.0,
-          "timeEnd": 706.0,
+          "timeStart": 702,
+          "timeEnd": 706,
           "quote": "church tower construction halted in\n1348"
         }
       ],
@@ -95,9 +107,16 @@
       "rationale": "The 1348 Black Death halt of Kersey's St Mary's church tower construction is verifiable from local church records and historical surveys — the village was severely affected. The suggestive alignment with the cadets' account is the strongest piece of 'explained by real history' corroboration, but a cadet on a 1957 orientation exercise could plausibly have read local history beforehand.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0002", "kind": "supports" }
+        {
+          "target": "1HwC9L4BDpE:c_0002",
+          "kind": "supports"
+        }
       ],
-      "tags": ["kersey-church", "1348", "history"]
+      "tags": [
+        "kersey-church",
+        "1348",
+        "history"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0004",
@@ -116,8 +135,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 10662,
           "charEnd": 10746,
-          "timeStart": 677.0,
-          "timeEnd": 684.0,
+          "timeStart": 677,
+          "timeEnd": 684,
           "quote": "1350 was the year of Black Death reached\nCourcey.\nThe plague killed half of England."
         }
       ],
@@ -125,7 +144,11 @@
       "directTruth": 0.85,
       "rationale": "The Black Death (1348-1350 in England) killed an estimated 40-60% of the English population — standard estimate in Benedictow's 'The Black Death' and most plague historiography. Half-of-England figure is within the accepted range. The Kersey-1350 date is plausible; the plague moved through East Anglia in 1349-50.",
       "hostStance": "asserts",
-      "tags": ["black-death", "1350", "england"]
+      "tags": [
+        "black-death",
+        "1350",
+        "england"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0005",
@@ -144,8 +167,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 13303,
           "charEnd": 13602,
-          "timeStart": 840.0,
-          "timeEnd": 864.0,
+          "timeStart": 840,
+          "timeEnd": 864,
           "quote": "Don Decker served time at Monroe County\nCorrectional Facility for receiving\nstolen property. Don was 21 years old.\nThe stolen property charge was minor,\ntools taken from a construction site. He\ngot 18 months.\n[Music]\nIn February 1983, he got a temporary\nfurlough to attend his grandfather's\nfuneral."
         }
       ],
@@ -153,7 +176,12 @@
       "directTruth": 0.65,
       "rationale": "The 'Rain Boy of Stroudsburg' case is documented. Don Decker was real; he served time at Monroe County; the February 1983 incident produced signed witness statements from Officer John Baujan, Officer Ron Van Why, Lieutenant Keenhold, etc. The case was featured on 'Unsolved Mysteries' (1993 season). Whether the events were paranormal or elaborate collective misperception/shared fraud is unresolved.",
       "hostStance": "asserts",
-      "tags": ["decker", "rspk", "stroudsburg", "1983"]
+      "tags": [
+        "decker",
+        "rspk",
+        "stroudsburg",
+        "1983"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0006",
@@ -172,8 +200,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 17934,
           "charEnd": 17975,
-          "timeStart": 1134.0,
-          "timeEnd": 1138.0,
+          "timeStart": 1134,
+          "timeEnd": 1138,
           "quote": "Three deep scratches appeared on his\nneck"
         }
       ],
@@ -182,9 +210,16 @@
       "rationale": "The scratch claims are in the officers' statements and the 'Unsolved Mysteries' episode. The scratches appearing 'in real time' with multiple witnesses is consistent with accounts; whether the marks were pre-existing and missed, self-inflicted in a dissociative state, or genuinely anomalous is open. directTruth middling — witness consistency supports that officers saw marks; supernatural cause remains unsupported.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0005", "kind": "elaborates" }
+        {
+          "target": "1HwC9L4BDpE:c_0005",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["scratches", "prison", "witnesses"]
+      "tags": [
+        "scratches",
+        "prison",
+        "witnesses"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0007",
@@ -198,8 +233,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 20723,
           "charEnd": 20805,
-          "timeStart": 1310.0,
-          "timeEnd": 1317.0,
+          "timeStart": 1310,
+          "timeEnd": 1317,
           "quote": "Parapsychologists have a name for this,\nrecurrent spontaneous psychokinesis,\nRSPK."
         }
       ],
@@ -207,7 +242,11 @@
       "directTruth": 0.4,
       "rationale": "RSPK is a real diagnostic category within parapsychology (William G. Roll, 'The Poltergeist', 1972), proposing that adolescent/trauma-driven psychokinesis explains classical poltergeist cases. The '100+ documented cases' count reflects parapsychology literature, which mainstream science does not accept as providing evidence of genuine psychokinesis. directTruth: the definition is correctly reported; the implied existence of the phenomenon is not scientifically established.",
       "hostStance": "asserts",
-      "tags": ["rspk", "parapsychology", "roll"]
+      "tags": [
+        "rspk",
+        "parapsychology",
+        "roll"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0008",
@@ -226,8 +265,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 21903,
           "charEnd": 22060,
-          "timeStart": 1390.0,
-          "timeEnd": 1402.0,
+          "timeStart": 1390,
+          "timeEnd": 1402,
           "quote": "April 5th, 2015, a\nYouTube channel appeared with a nonsense\nname, Unfavorable Semicircle. That first\nday, that channel uploaded 1,247\nvideos within 24 hours."
         }
       ],
@@ -235,7 +274,11 @@
       "directTruth": 0.9,
       "rationale": "Unfavorable Semicircle is a well-documented internet mystery. The April 5, 2015 start date and first-day volume match the Reddit archival records and news coverage (BBC Future, Feb 25 2016 article). Upload patterns were logged by investigators in the r/UnfavorableSemicircle subreddit.",
       "hostStance": "asserts",
-      "tags": ["unfavorable-semicircle", "youtube", "2015"]
+      "tags": [
+        "unfavorable-semicircle",
+        "youtube",
+        "2015"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0009",
@@ -253,8 +296,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 22306,
           "charEnd": 22352,
-          "timeStart": 1425.0,
-          "timeEnd": 1431.0,
+          "timeStart": 1425,
+          "timeEnd": 1431,
           "quote": "Within\n9 months, it posted over 72,000 videos."
         }
       ],
@@ -263,9 +306,16 @@
       "rationale": "Total count (~72,000+) and peak rate (~3/min) are widely cited in contemporary coverage and Reddit archives. Whether this 'required backend permissions' or simply exploited a bug / undocumented API endpoint is not established — the host's inference is plausible but not proven; small cloud scripts operating against YouTube's 2015-era Data API could sustain high upload rates before rate limiting was tightened.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0008", "kind": "elaborates" }
+        {
+          "target": "1HwC9L4BDpE:c_0008",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["uploads", "youtube", "api"]
+      "tags": [
+        "uploads",
+        "youtube",
+        "api"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0010",
@@ -283,8 +333,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 27344,
           "charEnd": 27436,
-          "timeStart": 1743.0,
-          "timeEnd": 1750.0,
+          "timeStart": 1743,
+          "timeEnd": 1750,
           "quote": "On February 25th, 2016, the DBC\npublished an article calling it\nYouTube's strangest mystery."
         }
       ],
@@ -293,9 +343,16 @@
       "rationale": "The BBC Future article by Brad Esposito (transcript says 'DBC' — likely typo) on Feb 25 2016 exists and described the channel in exactly that framing. YouTube's suspension followed shortly after. The temporal correlation is documented. Verifiable via Wayback Machine archives of the BBC article.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0008", "kind": "elaborates" }
+        {
+          "target": "1HwC9L4BDpE:c_0008",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["bbc", "2016", "suspension"]
+      "tags": [
+        "bbc",
+        "2016",
+        "suspension"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0011",
@@ -312,8 +369,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 28573,
           "charEnd": 28644,
-          "timeStart": 1825.0,
-          "timeEnd": 1832.0,
+          "timeStart": 1825,
+          "timeEnd": 1832,
           "quote": "the Voyager\nGolden Record, the message humanity sent\nto aliens in 1977."
         }
       ],
@@ -322,9 +379,16 @@
       "rationale": "The Voyager 1 and 2 launches (1977) and the Golden Record (Sagan, Drake, Druyan) are real. The claim that combined frames form the Golden Record image is reported by Reddit investigators; whether the composite is compelling or a pareidolic match is subjective. The 'creator confirmed in 2022 via BrickSails on Twitter' part is reported by the host but the broader 2022 Twitter claim ('outsider art project') undercuts the elaborate-meaning interpretation.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0008", "kind": "elaborates" }
+        {
+          "target": "1HwC9L4BDpE:c_0008",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["voyager", "golden-record", "1977"]
+      "tags": [
+        "voyager",
+        "golden-record",
+        "1977"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0012",
@@ -341,8 +405,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 30229,
           "charEnd": 30338,
-          "timeStart": 1933.0,
-          "timeEnd": 1942.0,
+          "timeStart": 1933,
+          "timeEnd": 1942,
           "quote": "In 2022,\nsomeone claiming to be the creator of\nBrickSails on Twitter.\nHe said it was an outsider art project."
         }
       ],
@@ -351,10 +415,20 @@
       "rationale": "[alternative] The 2022 BrickSails attribution is reported in online discussions of the mystery. If true, it is the most mundane explanation — artistic curiosity at scale. The host characterizes this as incomplete (doesn't explain coordinates, real-time adaptation, etc.), but an unpretentious outsider-art claim from the originator is by default the simplest hypothesis and should carry substantial prior weight vs. 'alien intelligence' alternatives.",
       "hostStance": "uncertain",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0011", "kind": "contradicts" },
-        { "target": "1HwC9L4BDpE:c_0008", "kind": "elaborates" }
+        {
+          "target": "1HwC9L4BDpE:c_0011",
+          "kind": "contradicts"
+        },
+        {
+          "target": "1HwC9L4BDpE:c_0008",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["bricksails", "2022", "explanation"]
+      "tags": [
+        "bricksails",
+        "2022",
+        "explanation"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0013",
@@ -370,8 +444,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 30992,
           "charEnd": 31046,
-          "timeStart": 1983.0,
-          "timeEnd": 1988.0,
+          "timeStart": 1983,
+          "timeEnd": 1988,
           "quote": "the upload source, it led to a\ndata center in Iceland."
         }
       ],
@@ -380,9 +454,16 @@
       "rationale": "[logical] The 'traced to offline Iceland data center' claim is common in creepypasta embellishments of real mysteries. No public YouTube engineering disclosure of such a trace exists. The claim is internally contradictory (an offline server cannot be the source of active uploads) and unverifiable — the host clearly flags this as campfire storytelling material.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "1HwC9L4BDpE:c_0008", "kind": "elaborates" }
+        {
+          "target": "1HwC9L4BDpE:c_0008",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["iceland", "data-center", "campfire"]
+      "tags": [
+        "iceland",
+        "data-center",
+        "campfire"
+      ]
     },
     {
       "id": "1HwC9L4BDpE:c_0014",
@@ -398,8 +479,8 @@
           "transcriptId": "1HwC9L4BDpE",
           "charStart": 32528,
           "charEnd": 32554,
-          "timeStart": 2094.0,
-          "timeEnd": 2096.0,
+          "timeStart": 2094,
+          "timeEnd": 2096,
           "quote": "that was a campfire story."
         }
       ],
@@ -408,7 +489,11 @@
       "rationale": "The host's own closing framing — a rare explicit disclaimer. Not arguing truth so much as telling three linked uncanny stories for entertainment. Makes directTruth reasonable to set high for the meta-framing claim, even while directTruth on the underlying stories varies widely.",
       "hostStance": "asserts",
       "inVerdictSection": true,
-      "tags": ["framing", "campfire", "verdict"]
+      "tags": [
+        "framing",
+        "campfire",
+        "verdict"
+      ]
     }
   ]
 }

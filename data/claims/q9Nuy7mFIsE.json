@@ -3,6 +3,7 @@
   "transcriptId": "q9Nuy7mFIsE",
   "generatedAt": "2026-04-22T04:10:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "q9Nuy7mFIsE:c_0001",
@@ -15,7 +16,9 @@
         "location:cydonia",
         "person:toby owen"
       ],
-      "relationships": ["r_0003"],
+      "relationships": [
+        "r_0003"
+      ],
       "evidence": [
         {
           "transcriptId": "q9Nuy7mFIsE",
@@ -37,7 +40,12 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Well-documented historical fact: Viking 1 frame 35A72 imaged the 'Face on Mars' in Cydonia in July 1976. The existence of the image is undisputed — subsequent interpretation of it as artificial is what's contested.",
-      "tags": ["mars", "face-on-mars", "cydonia", "viking"],
+      "tags": [
+        "mars",
+        "face-on-mars",
+        "cydonia",
+        "viking"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -64,7 +72,11 @@
       "confidence": 0.9,
       "directTruth": 0.5,
       "rationale": "Host asserts the 'disconfirming' photo NASA referenced at the 1976 press conference does not exist. Later in the episode the host contradicts himself — saying Dipietro/Molinar eventually did find a second image (misfiled). The strict claim is partly true: the one NASA described at the press conference wasn't produced at the time, but a second Viking frame of the face does exist in the archive.",
-      "tags": ["mars", "face-on-mars", "nasa-cover-up"],
+      "tags": [
+        "mars",
+        "face-on-mars",
+        "nasa-cover-up"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -91,7 +103,11 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Aligns with mainstream planetary science: MAVEN, Curiosity and Mars Express data support surface water, an early thicker atmosphere, past volcanism, and remnant crustal magnetism indicating a former global field. Degree and duration of habitability remain open, so not a full 1.0.",
-      "tags": ["mars", "paleoclimate", "astrobiology"],
+      "tags": [
+        "mars",
+        "paleoclimate",
+        "astrobiology"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -105,7 +121,9 @@
         "nationality_or_ethnicity:italian",
         "location:mars"
       ],
-      "relationships": ["r_0007"],
+      "relationships": [
+        "r_0007"
+      ],
       "evidence": [
         {
           "transcriptId": "q9Nuy7mFIsE",
@@ -119,7 +137,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Standard account in the history of astronomy: Schiaparelli's 1877 'canali' was indeed translated as 'canals', which Percival Lowell later promoted as artificial Martian waterworks. This mistranslation story is widely documented and accepted.",
-      "tags": ["mars", "schiaparelli", "history-of-astronomy"],
+      "tags": [
+        "mars",
+        "schiaparelli",
+        "history-of-astronomy"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -134,7 +156,9 @@
         "location:cydonia",
         "organization:defense mapping agency"
       ],
-      "relationships": ["r_0019"],
+      "relationships": [
+        "r_0019"
+      ],
       "evidence": [
         {
           "transcriptId": "q9Nuy7mFIsE",
@@ -148,7 +172,11 @@
       "confidence": 0.85,
       "directTruth": 0.2,
       "rationale": "Torun's Defense Mapping Agency credential is real but his artificial-origin conclusion is not supported by the planetary science community. Higher-resolution MGS and HiRISE images show the D&M 'pyramid' is an eroded hill with irregular faces, not a symmetrical five-sided artificial form. directTruth reflects community consensus against the artificiality claim.",
-      "tags": ["mars", "cydonia", "dm-pyramid"],
+      "tags": [
+        "mars",
+        "cydonia",
+        "dm-pyramid"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -191,7 +219,12 @@
       "confidence": 0.85,
       "directTruth": 0.25,
       "rationale": "Claim rests on Lan Fleming's self-published analysis, not peer-reviewed. The 1998 MGS image was low-contrast due to atmospheric haze and camera dynamic range; subsequent 2001 MGS and 2007 Mars Express images at higher resolution show the face is a mesa, which undercuts the 'fraud' framing. directTruth low but not near-zero because NASA does admit applying filters for release.",
-      "tags": ["mars", "face-on-mars", "cat-box", "nasa-cover-up"],
+      "tags": [
+        "mars",
+        "face-on-mars",
+        "cat-box",
+        "nasa-cover-up"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -206,7 +239,9 @@
         "organization:nasa",
         "event:nuclear event"
       ],
-      "relationships": ["r_0093"],
+      "relationships": [
+        "r_0093"
+      ],
       "evidence": [
         {
           "transcriptId": "q9Nuy7mFIsE",
@@ -228,7 +263,12 @@
       "confidence": 0.95,
       "directTruth": 0.08,
       "rationale": "Brandenburg's nuclear-war-on-Mars hypothesis is accurately attributed — he has made this claim in papers and conference talks. The hypothesis itself is not accepted by planetary scientists; xenon-129 isotope ratios on Mars are explained by cosmic-ray spallation and natural fission, and no peer-reviewed venue has endorsed the ancient-nuclear-war interpretation.",
-      "tags": ["mars", "brandenburg", "nuclear-war", "speculative"],
+      "tags": [
+        "mars",
+        "brandenburg",
+        "nuclear-war",
+        "speculative"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -264,7 +304,12 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "[debunks] Xenon-129 on Mars is well-explained by cosmic-ray spallation of barium in the Martian crust and natural fission of uranium, as measured by the SAM instrument on Curiosity. The 'only nuclear weapons make Xe-129' framing is factually wrong — it is also produced by stellar nucleosynthesis and by iodine-129 beta decay. The host later cites the Gabon natural reactor analog, undermining his own framing.",
-      "tags": ["mars", "xenon-129", "nuclear-war", "isotopes"],
+      "tags": [
+        "mars",
+        "xenon-129",
+        "nuclear-war",
+        "isotopes"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -285,7 +330,9 @@
         "location:mars",
         "organization:mainstream scientists"
       ],
-      "relationships": ["r_0099"],
+      "relationships": [
+        "r_0099"
+      ],
       "evidence": [
         {
           "transcriptId": "q9Nuy7mFIsE",
@@ -306,7 +353,12 @@
       ],
       "confidence": 0.9,
       "rationale": "Host acknowledges peer-review rejection but dismisses it by impugning the motives of mainstream science. Rejection itself is factual; the 'they have an agenda' claim is an unsupported ad-hominem. directTruth omitted because the claim is a compound of a fact and an opinion.",
-      "tags": ["mars", "brandenburg", "peer-review", "mainstream-science"],
+      "tags": [
+        "mars",
+        "brandenburg",
+        "peer-review",
+        "mainstream-science"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -329,7 +381,9 @@
         "organization:nasa",
         "location:cydonia"
       ],
-      "relationships": ["r_0082"],
+      "relationships": [
+        "r_0082"
+      ],
       "evidence": [
         {
           "transcriptId": "q9Nuy7mFIsE",
@@ -343,7 +397,12 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Hoagland's frequent appearances on Coast to Coast AM and his organized campaigns around Mars Observer and Mars Global Surveyor imaging targets are documented in the show's archives and in Hoagland's own books. That these pressured NASA into imaging Cydonia earlier than planned is plausible and frequently reported, though NASA denies the pressure was decisive.",
-      "tags": ["hoagland", "coast-to-coast", "mars", "cydonia"],
+      "tags": [
+        "hoagland",
+        "coast-to-coast",
+        "mars",
+        "cydonia"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -370,7 +429,11 @@
       "confidence": 0.85,
       "directTruth": 0.85,
       "rationale": "Host presents pareidolia as the default mainstream explanation. This is the scientific consensus — subsequent high-resolution imaging reduces every claimed Cydonia structure to a natural landform consistent with erosion and lighting. Host personally concedes the artificial-origin chance is 'almost zero'.",
-      "tags": ["pareidolia", "mars", "skepticism"],
+      "tags": [
+        "pareidolia",
+        "mars",
+        "skepticism"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -405,7 +468,11 @@
       "confidence": 0.8,
       "directTruth": 0.03,
       "rationale": "[logical] The 'Mars photos are actually Devon Island' framing is a conspiracy trope the host is sarcastically performing through the Heckle Fish bit. Devon Island is a real NASA analog training site but no evidence shows rover imagery is being substituted. Host treats the idea ironically ('take your Arctic lemming and shove it up your ass'), signalling he rejects it. directTruth near zero — the swap claim is unsupported.",
-      "tags": ["mars", "devon-island", "conspiracy"],
+      "tags": [
+        "mars",
+        "devon-island",
+        "conspiracy"
+      ],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -432,7 +499,11 @@
       "confidence": 0.95,
       "directTruth": 0.8,
       "rationale": "Host's explicit verdict. The first clause (artificiality is nearly zero) matches scientific consensus. The second clause (therefore close-up imaging is warranted) is a policy opinion consistent with how NASA has since responded — HiRISE has imaged Cydonia at ~25 cm/pixel showing natural mesa structure.",
-      "tags": ["mars", "face-on-mars", "verdict"],
+      "tags": [
+        "mars",
+        "face-on-mars",
+        "verdict"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

@@ -3,6 +3,7 @@
   "transcriptId": "TJDT8vn-nVU",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "TJDT8vn-nVU:c_0001",
@@ -28,7 +29,12 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "Host opens with detailed villager testimony from San Antonio de Pintiaku and other Amazon villages in summer 2023. Multiple witnesses, Peruvian press coverage, and Tim Alberino's documented expedition corroborate that villagers reported these attacks. What happened physically remains disputed, but that they reported this experience is well-established.",
-      "tags": ["peru", "amazon", "face-peelers", "pelicaras"],
+      "tags": [
+        "peru",
+        "amazon",
+        "face-peelers",
+        "pelicaras"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -56,7 +62,12 @@
       "confidence": 0.95,
       "directTruth": 0.2,
       "rationale": "Host presents the official jetpack-miner explanation explicitly as the story he is about to demolish — commercial jetpacks are loud, short-endurance, and can't hover silently for hours; the nearby city of Na has no gold but had sightings anyway. Host calls it convenient and dismissive, so directTruth low.",
-      "tags": ["peru", "official-story", "jetpacks", "gold-mining"],
+      "tags": [
+        "peru",
+        "official-story",
+        "jetpacks",
+        "gold-mining"
+      ],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -83,7 +94,11 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Well-documented engineering fact. JetPack Aviation's JB-11 flies ~10 minutes; Gravity Industries jet suit ~5-9 minutes; all commercial units are audibly loud due to turbine exhaust. Aligns with public specifications.",
-      "tags": ["jetpacks", "technology", "debunk"],
+      "tags": [
+        "jetpacks",
+        "technology",
+        "debunk"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -112,14 +127,19 @@
           "charStart": 13628,
           "charEnd": 13762,
           "timeStart": 951.2,
-          "timeEnd": 968.0,
+          "timeEnd": 968,
           "quote": "Resolute\nSentinel 2023, right out of Aikito's\nnaval base, just up river from San\nAntonio to Pintoyaku to Leah's village.\n87 US Marines"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Resolute Sentinel is a real annual SOUTHCOM humanitarian/military exercise in Peru. The 2023 iteration ran in Loreto and other regions; U.S. Southern Command press releases confirm Marines, Air Force, and Space Force participation. Dates align with public reporting.",
-      "tags": ["us-military", "resolute-sentinel", "peru", "southcom"],
+      "tags": [
+        "us-military",
+        "resolute-sentinel",
+        "peru",
+        "southcom"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -148,7 +168,11 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "Host stresses this as 'fact, not theory.' Resolute Sentinel 2023 end date and Pelicatus attack start dates are both reported in Peruvian press. Correlation is solid; host uses it to argue causation, so I discount slightly for the causal inference the correlation invites.",
-      "tags": ["timeline", "us-military", "peru"],
+      "tags": [
+        "timeline",
+        "us-military",
+        "peru"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -176,13 +200,17 @@
           "charStart": 14780,
           "charEnd": 14835,
           "timeStart": 1030.4,
-          "timeEnd": 1038.0,
+          "timeEnd": 1038,
           "quote": "Two voices, one local, the other a\ngringo, an American."
         }
       ],
       "confidence": 0.85,
       "rationale": "Single witness testimony from a traumatized teen. Host treats it as central evidence for the American-involvement theory. Uncorroborated by other witnesses, so omitting directTruth — it's a reported claim, not independently verified.",
-      "tags": ["tia-davila", "witness-testimony", "american-accent"],
+      "tags": [
+        "tia-davila",
+        "witness-testimony",
+        "american-accent"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -211,7 +239,12 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "The pishtaco is a well-documented Andean folk figure extensively covered in Latin American ethnography (Mary Weismantel's 'Cholas and Pishtacos' is the standard reference). Colonial-era origin and fat-extraction motif align with published scholarship.",
-      "tags": ["pishtaco", "folklore", "colonial-peru", "andean"],
+      "tags": [
+        "pishtaco",
+        "folklore",
+        "colonial-peru",
+        "andean"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -240,7 +273,12 @@
       "confidence": 0.9,
       "directTruth": 0.45,
       "rationale": "The November 2009 Peruvian police announcement of the 'Pishtacos' gang was widely reported (BBC, Reuters). However, Peruvian journalists and police later questioned the cosmetics-market angle; the $36,000/gallon figure and European sale never had hard corroboration. The arrest is real; the human-fat-to-cosmetics pipeline is dubious.",
-      "tags": ["peru", "human-fat", "pishtaco-gang", "2009"],
+      "tags": [
+        "peru",
+        "human-fat",
+        "pishtaco-gang",
+        "2009"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -276,7 +314,13 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "The Edward Lansdale aswang psy-op against the Huks is documented in Lansdale's memoir 'In the Midst of Wars' (1972) and in subsequent declassified material. Episode details (hanging drained corpses) are widely cited. A real event whose specifics have been embellished in retelling.",
-      "tags": ["cia", "philippines", "psyop", "aswang", "1950s"],
+      "tags": [
+        "cia",
+        "philippines",
+        "psyop",
+        "aswang",
+        "1950s"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -305,7 +349,11 @@
       ],
       "confidence": 0.85,
       "rationale": "Host's central inferential claim. TALOS (Tactical Assault Light Operator Suit) is a real but officially cancelled USSOCOM program; the Active Denial System is a real millimeter-wave directed-energy weapon. Mapping is suggestive but speculative — omitting directTruth because matching capability descriptions to armor types isn't verification.",
-      "tags": ["talos-suit", "directed-energy", "speculative-attribution"],
+      "tags": [
+        "talos-suit",
+        "directed-energy",
+        "speculative-attribution"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -346,7 +394,11 @@
       "confidence": 0.95,
       "directTruth": 0.2,
       "rationale": "Host himself concedes 'no proof.' The claim stacks multiple extraordinary components — reverse-engineered alien tech, global trafficking syndicate, operational use in Peru — each of which requires evidence, none provided. Speculation, not verdict.",
-      "tags": ["tim-alberino", "speculation", "alien-technology"],
+      "tags": [
+        "tim-alberino",
+        "speculation",
+        "alien-technology"
+      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -380,7 +432,11 @@
       ],
       "confidence": 0.95,
       "rationale": "Host's explicit verdict-section statement. Opinion claim synthesizing the episode's investigation. Omitting directTruth because the verdict is a judgment about which speculative theory is most plausible, not a verified fact — the entire question remains officially unresolved.",
-      "tags": ["verdict", "face-peelers", "human-perpetrators"],
+      "tags": [
+        "verdict",
+        "face-peelers",
+        "human-perpetrators"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

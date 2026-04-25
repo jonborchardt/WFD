@@ -3,6 +3,7 @@
   "transcriptId": "urvVEQWbWak",
   "generatedAt": "2026-04-21T13:00:00.000Z",
   "generator": "claude-opus-4-7-1m",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "urvVEQWbWak:c_0001",
@@ -27,7 +28,10 @@
       "directTruth": 0.65,
       "rationale": "Strictly, 'aroma' requires a medium and a nose — vacuum has neither. But the episode means chemical signatures that could be smelled in a pressurized atmosphere on-site, which is a reasonable generalization.",
       "hostStance": "asserts",
-      "tags": ["space-smell", "framing"]
+      "tags": [
+        "space-smell",
+        "framing"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0002",
@@ -54,7 +58,11 @@
       "directTruth": 0.95,
       "rationale": "Schmitt (Apollo 17 LM pilot) is on record describing lunar dust as smelling like spent gunpowder after his EVAs — corroborated by other Apollo astronauts including Cernan, Aldrin.",
       "hostStance": "asserts",
-      "tags": ["apollo-17", "schmitt", "moon-dust"]
+      "tags": [
+        "apollo-17",
+        "schmitt",
+        "moon-dust"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0003",
@@ -87,10 +95,16 @@
       "directTruth": 0.9,
       "rationale": "Lunar regolith is dominantly impact-shocked silicates (agglutinate glass). Modern smokeless powders are indeed nitrocellulose/nitroglycerin. The composition mismatch is correct, which is precisely why the gunpowder-smell analogy is scientifically interesting.",
       "dependencies": [
-        { "target": "urvVEQWbWak:c_0002", "kind": "elaborates" }
+        {
+          "target": "urvVEQWbWak:c_0002",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["regolith", "chemistry"]
+      "tags": [
+        "regolith",
+        "chemistry"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0004",
@@ -115,10 +129,16 @@
       "directTruth": 0.9,
       "rationale": "Consensus science: the gunpowder smell of lunar regolith has no definitive mechanism. Leading hypotheses are solar-wind-implanted volatiles and reactive dust surfaces oxidizing on contact with cabin humidity.",
       "dependencies": [
-        { "target": "urvVEQWbWak:c_0002", "kind": "elaborates" }
+        {
+          "target": "urvVEQWbWak:c_0002",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["moon-dust", "mystery"]
+      "tags": [
+        "moon-dust",
+        "mystery"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0005",
@@ -144,10 +164,16 @@
       "directTruth": 0.85,
       "rationale": "True — lunar samples brought back to Earth do not smell. The transient smell in the cabin is the key evidence for the 'activated on exposure' hypothesis.",
       "dependencies": [
-        { "target": "urvVEQWbWak:c_0004", "kind": "supports" }
+        {
+          "target": "urvVEQWbWak:c_0004",
+          "kind": "supports"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["samples", "odorless"]
+      "tags": [
+        "samples",
+        "odorless"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0006",
@@ -173,7 +199,10 @@
       "directTruth": 0.9,
       "rationale": "ISS astronauts (Don Pettit, Scott Kelly, Thomas Jones, others) have repeatedly described the 'smell of space' after EVAs as seared steak, welding fumes, or hot metal.",
       "hostStance": "asserts",
-      "tags": ["space-smell", "eva"]
+      "tags": [
+        "space-smell",
+        "eva"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0007",
@@ -198,7 +227,10 @@
       "directTruth": 0.65,
       "rationale": "Venus's atmosphere is ~96% CO2 with sulfuric acid clouds and some SO2. 'Burnt match' (SO2) and 'rotten eggs' (H2S) are chemically plausible descriptors. But the surface pressure (~90 atm) means any human nose would be destroyed before smelling anything.",
       "hostStance": "asserts",
-      "tags": ["venus", "planet-smell"]
+      "tags": [
+        "venus",
+        "planet-smell"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0008",
@@ -232,7 +264,11 @@
       "directTruth": 0.9,
       "rationale": "Established planetary science: Mars's core dynamo stopped ~4 Gyr ago, and MAVEN confirmed solar wind stripping as the mechanism for atmospheric loss. Iron-oxide (hematite) surface is confirmed by Pathfinder, Spirit, Opportunity spectra.",
       "hostStance": "asserts",
-      "tags": ["mars", "magnetosphere", "iron-oxide"]
+      "tags": [
+        "mars",
+        "magnetosphere",
+        "iron-oxide"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0009",
@@ -257,7 +293,10 @@
       "directTruth": 0.65,
       "rationale": "Jupiter's upper atmosphere does contain ammonia clouds (Juno confirmed NH3 banding). Ammonia indeed has the horse-urine smell. Fair chemistry-to-scent mapping.",
       "hostStance": "asserts",
-      "tags": ["jupiter", "ammonia"]
+      "tags": [
+        "jupiter",
+        "ammonia"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0010",
@@ -282,7 +321,10 @@
       "directTruth": 0.95,
       "rationale": "Cassini and modern remote-sensing measurements confirm Saturn's atmosphere at approximately 96% H2, 3% He, with traces of the listed hydrocarbons and phosphine.",
       "hostStance": "asserts",
-      "tags": ["saturn", "composition"]
+      "tags": [
+        "saturn",
+        "composition"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0011",
@@ -307,7 +349,10 @@
       "directTruth": 0.9,
       "rationale": "Gemini North near-infrared spectroscopy in 2018 (Irwin et al., Nature Astronomy) directly detected H2S in Uranus's cloud tops — the stinkbomb result. Broadly accepted.",
       "hostStance": "asserts",
-      "tags": ["uranus", "hydrogen-sulfide"]
+      "tags": [
+        "uranus",
+        "hydrogen-sulfide"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0012",
@@ -332,7 +377,10 @@
       "directTruth": 0.5,
       "rationale": "Neptune does have H2S, methane, ammonia like Uranus. Framing it as scentless is a rhetorical choice — it would smell, just less because of lower atmospheric temperature condensing smelly molecules out.",
       "hostStance": "asserts",
-      "tags": ["neptune", "planet-smell"]
+      "tags": [
+        "neptune",
+        "planet-smell"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0013",
@@ -357,7 +405,11 @@
       "directTruth": 0.45,
       "rationale": "Enceladus plumes were recently detected to contain methanol (Herschel 2011, Cassini mass-spec analyses). 'Martini' is cheeky — methanol is not the main aroma of a martini (that's vermouth/gin botanicals, + ethanol).",
       "hostStance": "asserts",
-      "tags": ["enceladus", "methanol", "humor"]
+      "tags": [
+        "enceladus",
+        "methanol",
+        "humor"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0014",
@@ -383,7 +435,10 @@
       "directTruth": 0.92,
       "rationale": "2009 radio-astronomy detection of ethyl formate in Sgr B2 by Belloche et al. is the real basis for this frequently-cited fun fact.",
       "hostStance": "asserts",
-      "tags": ["sagittarius-b2", "ethyl-formate"]
+      "tags": [
+        "sagittarius-b2",
+        "ethyl-formate"
+      ]
     },
     {
       "id": "urvVEQWbWak:c_0015",
@@ -408,7 +463,10 @@
       "directTruth": 0.98,
       "rationale": "Host explicitly rejects moon-landing-hoax framing as a prerequisite for the episode. Apollo landings are corroborated by retroreflectors still pinged by Earth-based lasers, Soviet confirmation, and hundreds of kg of samples.",
       "hostStance": "denies",
-      "tags": ["moon-landing", "hoax-rejection"]
+      "tags": [
+        "moon-landing",
+        "hoax-rejection"
+      ]
     }
   ]
 }

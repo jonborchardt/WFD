@@ -3,6 +3,7 @@
   "transcriptId": "P6mwnfqoNFg",
   "generatedAt": "2026-04-21T13:15:00.000Z",
   "generator": "claude-opus-4-7-1m",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "P6mwnfqoNFg:c_0001",
@@ -20,7 +21,7 @@
           "transcriptId": "P6mwnfqoNFg",
           "charStart": 362,
           "charEnd": 447,
-          "timeStart": 19.0,
+          "timeStart": 19,
           "timeEnd": 24.78,
           "quote": "you can live\nfor 150 years, maybe even longer.\nNano robotics could create this world."
         }
@@ -29,7 +30,10 @@
       "directTruth": 0.2,
       "rationale": "Lifespan-extension via nanobots is a long-tail futurist projection. Current verified human lifespan ceiling is ~120 years (Jeanne Calment). No clinical nanomedicine has shown population-level lifespan extension.",
       "hostStance": "asserts",
-      "tags": ["life-extension", "nano-medicine"]
+      "tags": [
+        "life-extension",
+        "nano-medicine"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0002",
@@ -63,7 +67,10 @@
       "directTruth": 0.98,
       "rationale": "Basic SI definition: 1 nm = 1e-9 m. The Earth/marble analogy is a common educational simplification (Earth diameter ~1.3e7 m; marble ~1.3e-2 m ratio ~1e9), close enough.",
       "hostStance": "asserts",
-      "tags": ["definition", "nanometer"]
+      "tags": [
+        "definition",
+        "nanometer"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0003",
@@ -88,7 +95,10 @@
       "directTruth": 0.95,
       "rationale": "Standard fact: B-form DNA double helix is approximately 2 nm in diameter — 2.5 nm is close enough for a typical educational rounding.",
       "hostStance": "asserts",
-      "tags": ["dna", "scale"]
+      "tags": [
+        "dna",
+        "scale"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0004",
@@ -115,7 +125,10 @@
       "directTruth": 0.98,
       "rationale": "Well-established: Feynman's Dec 29, 1959 lecture to the APS at Caltech is widely credited as the conceptual origin of nanotechnology.",
       "hostStance": "asserts",
-      "tags": ["feynman", "nanotech-history"]
+      "tags": [
+        "feynman",
+        "nanotech-history"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0005",
@@ -144,10 +157,16 @@
       "directTruth": 0.98,
       "rationale": "Verifiable historical fact: Drexler, Engines of Creation (Anchor, 1986) is the genre-defining popularization, directly citing Feynman.",
       "dependencies": [
-        { "target": "P6mwnfqoNFg:c_0004", "kind": "elaborates" }
+        {
+          "target": "P6mwnfqoNFg:c_0004",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["drexler", "engines-of-creation"]
+      "tags": [
+        "drexler",
+        "engines-of-creation"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0006",
@@ -174,10 +193,16 @@
       "directTruth": 0.55,
       "rationale": "Drexler's storage-density prediction is directionally plausible (DNA-based storage has already achieved extremely high densities, see c_0011), though 'universal assemblers' as literal molecular machines remains unbuilt — Richard Smalley debate.",
       "dependencies": [
-        { "target": "P6mwnfqoNFg:c_0005", "kind": "elaborates" }
+        {
+          "target": "P6mwnfqoNFg:c_0005",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["drexler", "storage-density"]
+      "tags": [
+        "drexler",
+        "storage-density"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0007",
@@ -205,10 +230,17 @@
       "directTruth": 0.7,
       "rationale": "Drexler did popularize the grey-goo scenario in Engines of Creation. He has since walked it back as unlikely given thermodynamic and evolutionary constraints — but the proposal itself is documented.",
       "dependencies": [
-        { "target": "P6mwnfqoNFg:c_0005", "kind": "elaborates" }
+        {
+          "target": "P6mwnfqoNFg:c_0005",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["grey-goo", "x-risk", "drexler"]
+      "tags": [
+        "grey-goo",
+        "x-risk",
+        "drexler"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0008",
@@ -239,7 +271,10 @@
       "directTruth": 0.85,
       "rationale": "Rossnagel et al., 'A single-atom heat engine' (Science, 2016, Mainz University) — real published work using a single calcium ion in a Paul trap as a heat engine. Transcript says 'Mines' via ASR error but the claim is verified.",
       "hostStance": "asserts",
-      "tags": ["single-atom-engine", "mainz"]
+      "tags": [
+        "single-atom-engine",
+        "mainz"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0009",
@@ -267,7 +302,10 @@
       "directTruth": 0.8,
       "rationale": "Bradley Nelson's ETH Zurich group with Technion did publish magnetic helical nano/microswimmers around this era (Peyer/Zhang et al.) — real research.",
       "hostStance": "asserts",
-      "tags": ["nano-swimmer", "drug-delivery"]
+      "tags": [
+        "nano-swimmer",
+        "drug-delivery"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0010",
@@ -293,7 +331,10 @@
       "directTruth": 0.4,
       "rationale": "Targeted nano-drug-delivery is an active field with some approved products (Abraxane, Doxil) but fully selective cancer-curing nanobots do not exist. Promising, unproven.",
       "hostStance": "asserts",
-      "tags": ["cancer", "nano-medicine"]
+      "tags": [
+        "cancer",
+        "nano-medicine"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0011",
@@ -321,7 +362,11 @@
       "directTruth": 0.85,
       "rationale": "George Church lab (Harvard Wyss Institute) 2012 Science paper demonstrated ~5.5 petabits per mm³ DNA storage, roughly on the order quoted. Number is consistent.",
       "hostStance": "asserts",
-      "tags": ["dna-storage", "church", "harvard"]
+      "tags": [
+        "dna-storage",
+        "church",
+        "harvard"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0012",
@@ -347,7 +392,10 @@
       "directTruth": 0.55,
       "rationale": "Carbon nanotubes have theoretical tensile strength ~100× steel at ~1/6 density (confirmed for individual tubes). Bulk CNT sponges are less exceptional. Numbers are real but refer to idealized, not production-scale, CNTs.",
       "hostStance": "asserts",
-      "tags": ["carbon-nanotubes", "filtration"]
+      "tags": [
+        "carbon-nanotubes",
+        "filtration"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0013",
@@ -382,7 +430,11 @@
       "directTruth": 0.1,
       "rationale": "Kurzweil has made this prediction consistently. As of 2026, no brain-cloud interface exists outside of narrow BCI prototypes (Neuralink N1). 2030 fulfillment highly unlikely.",
       "hostStance": "asserts",
-      "tags": ["kurzweil", "brain-cloud", "singularity"]
+      "tags": [
+        "kurzweil",
+        "brain-cloud",
+        "singularity"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0014",
@@ -410,10 +462,17 @@
       "directTruth": 0.25,
       "rationale": "Kurzweil himself scored his predictions at 86%. Independent analyses (IEEE Spectrum 2012) find the scoring too generous — many predictions were vague or self-fulfilling. The 86% figure is self-reported marketing.",
       "dependencies": [
-        { "target": "P6mwnfqoNFg:c_0013", "kind": "supports", "rationale": "his track record is the basis for trusting his 2030 brain-cloud prediction" }
+        {
+          "target": "P6mwnfqoNFg:c_0013",
+          "kind": "supports",
+          "rationale": "his track record is the basis for trusting his 2030 brain-cloud prediction"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["kurzweil", "forecasting"]
+      "tags": [
+        "kurzweil",
+        "forecasting"
+      ]
     },
     {
       "id": "P6mwnfqoNFg:c_0015",
@@ -438,10 +497,17 @@
       "confidence": 0.9,
       "rationale": "Self-replicating machine-phase nanobots remain entirely theoretical. 'Self-aware' nanobots compound two unsolved problems (molecular machine-phase construction + artificial consciousness). Host flags as a cautionary unknown.",
       "dependencies": [
-        { "target": "P6mwnfqoNFg:c_0007", "kind": "elaborates" }
+        {
+          "target": "P6mwnfqoNFg:c_0007",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "uncertain",
-      "tags": ["x-risk", "self-replication", "ai"]
+      "tags": [
+        "x-risk",
+        "self-replication",
+        "ai"
+      ]
     }
   ]
 }

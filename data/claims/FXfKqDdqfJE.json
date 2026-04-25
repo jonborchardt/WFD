@@ -3,13 +3,18 @@
   "transcriptId": "FXfKqDdqfJE",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "FXfKqDdqfJE:c_0001",
       "videoId": "FXfKqDdqfJE",
       "text": "In summer 1974, Peter Williamson was hosting a backyard barbecue in Somerset, England when a lightning strike caused him to vanish in front of 16 witnesses.",
       "kind": "historical",
-      "entities": ["person:peter williamson", "location:somerset", "date_time:1974"],
+      "entities": [
+        "person:peter williamson",
+        "location:somerset",
+        "date_time:1974"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -39,7 +44,9 @@
       "videoId": "FXfKqDdqfJE",
       "text": "Hugh Everett III proposed the many-worlds interpretation of quantum mechanics in 1957, positing that every measurement splits reality rather than collapsing a wavefunction.",
       "kind": "historical",
-      "entities": ["technology:quantum mechanics"],
+      "entities": [
+        "technology:quantum mechanics"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -61,7 +68,9 @@
       "videoId": "FXfKqDdqfJE",
       "text": "Google announced Willow, a 105-qubit quantum computer that performed a benchmark calculation in 5 minutes which would take a classical supercomputer 10^25 years.",
       "kind": "historical",
-      "entities": ["organization:google"],
+      "entities": [
+        "organization:google"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -83,7 +92,10 @@
       "videoId": "FXfKqDdqfJE",
       "text": "Google's Willow announcement explicitly invoked the many-worlds multiverse, stating quantum computation may be occurring across parallel universes — a framing that drew significant scientific criticism.",
       "kind": "historical",
-      "entities": ["organization:google", "technology:quantum mechanics"],
+      "entities": [
+        "organization:google",
+        "technology:quantum mechanics"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -99,14 +111,21 @@
       "directTruth": 0.9,
       "rationale": "Hartmut Neven's December 2024 blog post announcing Willow did explicitly claim the result 'lends credence' to the many-worlds interpretation. This was widely criticized by physicists (Scott Aaronson, Mikhail Lukin, and others) as overreach. Claim is accurate about what Google said.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "FXfKqDdqfJE:c_0003", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "FXfKqDdqfJE:c_0003",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "FXfKqDdqfJE:c_0005",
       "videoId": "FXfKqDdqfJE",
       "text": "In 2014, physicists at Griffith University proposed the Many Interacting Worlds theory, in which parallel universes interact through gravitational influence rather than remaining permanently isolated.",
       "kind": "historical",
-      "entities": ["technology:quantum mechanics"],
+      "entities": [
+        "technology:quantum mechanics"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -128,7 +147,9 @@
       "videoId": "FXfKqDdqfJE",
       "text": "On the third day after his vanishing, Peter Williamson reappeared in his own backyard, dry despite rain, wearing unfamiliar green corduroy pants.",
       "kind": "historical",
-      "entities": ["person:peter williamson"],
+      "entities": [
+        "person:peter williamson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -152,14 +173,21 @@
       "directTruth": 0.1,
       "rationale": "Part of the same unverified urban legend; with no contemporaneous records, the details of reappearance rest entirely on Colin Parsons's 1996 book, which the host notes cites no primary sources. Low directTruth.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "FXfKqDdqfJE:c_0001", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "FXfKqDdqfJE:c_0001",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "FXfKqDdqfJE:c_0007",
       "videoId": "FXfKqDdqfJE",
       "text": "The tailor Herbert Fox, whose label appeared on Peter's pants, had actually died and his shop had burned down over 20 years before the 1974 incident.",
       "kind": "historical",
-      "entities": ["person:herbert fox"],
+      "entities": [
+        "person:herbert fox"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -175,14 +203,22 @@
       "directTruth": 0.1,
       "rationale": "Same unverified urban legend; the tailor detail is structurally the 'impossible evidence' plot point and no archival corroboration exists for the Williamson story at all. Low directTruth.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "FXfKqDdqfJE:c_0006", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "FXfKqDdqfJE:c_0006",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "FXfKqDdqfJE:c_0008",
       "videoId": "FXfKqDdqfJE",
       "text": "When Peter visited the real hospital where Dr Nent worked, the doctor did not recognize him and Peter's name was absent from all intake forms from the night of his supposed admission.",
       "kind": "historical",
-      "entities": ["person:dr nent", "person:peter"],
+      "entities": [
+        "person:dr nent",
+        "person:peter"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -206,14 +242,23 @@
       "directTruth": 0.1,
       "rationale": "Same unverified urban legend. The no-intake-record detail drives the 'parallel universe hospital' inference but has no source outside the paperback chain.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "FXfKqDdqfJE:c_0006", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "FXfKqDdqfJE:c_0006",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "FXfKqDdqfJE:c_0009",
       "videoId": "FXfKqDdqfJE",
       "text": "The Peter Williamson story appears in Rodney Davies's 1996 book 'Supernatural Vanishings', which sourced it from Colin Parsons's 'Encounters with the Unknown' — the ultimate (and unsourced) origin of the legend.",
       "kind": "historical",
-      "entities": ["event:time storms", "person:peter williamson", "person:colin parsons"],
+      "entities": [
+        "event:time storms",
+        "person:peter williamson",
+        "person:colin parsons"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -243,7 +288,11 @@
       "videoId": "FXfKqDdqfJE",
       "text": "No newspapers, police records, or property records from Somerset in 1974 document Peter Williamson's disappearance — undermining the factual basis of the story.",
       "kind": "empirical",
-      "entities": ["location:somerset", "date_time:1974", "person:peter williamson"],
+      "entities": [
+        "location:somerset",
+        "date_time:1974",
+        "person:peter williamson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -260,8 +309,16 @@
       "rationale": "The host reports conducting this archival check himself. A well-publicized police search with 'national television' coverage in 1974 UK would leave a substantial newspaper record. Its absence is strong negative evidence.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "FXfKqDdqfJE:c_0001", "kind": "contradicts", "rationale": "[debunks] Absence of any period archival trail falsifies the public-vanishing claim at its core." },
-        { "target": "FXfKqDdqfJE:c_0006", "kind": "contradicts", "rationale": "[debunks] Same archival silence falsifies the three-day-return corollary." }
+        {
+          "target": "FXfKqDdqfJE:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] Absence of any period archival trail falsifies the public-vanishing claim at its core."
+        },
+        {
+          "target": "FXfKqDdqfJE:c_0006",
+          "kind": "contradicts",
+          "rationale": "[debunks] Same archival silence falsifies the three-day-return corollary."
+        }
       ]
     },
     {
@@ -269,7 +326,9 @@
       "videoId": "FXfKqDdqfJE",
       "text": "Colin Parsons — the investigative source for the Williamson story — wrote only crossword puzzle books and has no other investigative journalism credits, further undercutting the story's credibility.",
       "kind": "empirical",
-      "entities": ["person:colin parsons"],
+      "entities": [
+        "person:colin parsons"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -286,8 +345,14 @@
       "rationale": "Colin Parsons wrote multiple paranormal paperbacks and crossword puzzle books in the 1990s. He is not listed in journalism or academic databases. The credibility-undermining inference is defensible.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "FXfKqDdqfJE:c_0009", "kind": "elaborates" },
-        { "target": "FXfKqDdqfJE:c_0010", "kind": "supports" }
+        {
+          "target": "FXfKqDdqfJE:c_0009",
+          "kind": "elaborates"
+        },
+        {
+          "target": "FXfKqDdqfJE:c_0010",
+          "kind": "supports"
+        }
       ]
     },
     {
@@ -295,7 +360,9 @@
       "videoId": "FXfKqDdqfJE",
       "text": "Richard Feynman famously observed in 1964 that 'nobody understands quantum mechanics' — a benchmark the host uses to frame the Williamson story as hovering at the edge of physics rather than inside it.",
       "kind": "historical",
-      "entities": ["technology:quantum mechanics"],
+      "entities": [
+        "technology:quantum mechanics"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -317,7 +384,10 @@
       "videoId": "FXfKqDdqfJE",
       "text": "Verdict: the Williamson story is probably a fabricated or highly embellished urban legend despite its appealing quantum framing — the physics theories it invokes are real but there is no empirical evidence connecting lightning to actual universe-hopping.",
       "kind": "speculative",
-      "entities": ["person:peter williamson", "technology:quantum mechanics"],
+      "entities": [
+        "person:peter williamson",
+        "technology:quantum mechanics"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -334,9 +404,18 @@
       "rationale": "The host's final verdict separates the real quantum physics from the unsourced 1996 narrative. The verdict is consistent with his archival findings — physics exists, story doesn't.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "FXfKqDdqfJE:c_0010", "kind": "supports" },
-        { "target": "FXfKqDdqfJE:c_0011", "kind": "supports" },
-        { "target": "FXfKqDdqfJE:c_0002", "kind": "supports" }
+        {
+          "target": "FXfKqDdqfJE:c_0010",
+          "kind": "supports"
+        },
+        {
+          "target": "FXfKqDdqfJE:c_0011",
+          "kind": "supports"
+        },
+        {
+          "target": "FXfKqDdqfJE:c_0002",
+          "kind": "supports"
+        }
       ],
       "inVerdictSection": true
     }

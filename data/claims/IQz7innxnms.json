@@ -3,6 +3,7 @@
   "transcriptId": "IQz7innxnms",
   "generatedAt": "2026-04-21T12:20:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "IQz7innxnms:c_0001",
@@ -40,7 +41,11 @@
       "directTruth": 0.15,
       "rationale": "Operation Highjump (1946-47) was a real US Navy expedition that did end before its planned duration, but the official reasons were weather, aircraft losses, and supply problems. The 'flying disc' interpretation originates from a heavily embellished claim by Admiral Byrd via later fringe literature; it is not in the contemporaneous Navy records.",
       "hostStance": "asserts",
-      "tags": ["operation-highjump", "antarctica", "ufo"]
+      "tags": [
+        "operation-highjump",
+        "antarctica",
+        "ufo"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0002",
@@ -79,7 +84,11 @@
       "directTruth": 0.1,
       "rationale": "No NSF or Navy public record corroborates a 1995 Marie Byrd Land disappearance-and-return incident. Missing-scientists events at Antarctic research stations are rigorously documented through the US Antarctic Program and none of that scale is missing from the archive. 'Brian' is a single anonymous witness.",
       "hostStance": "asserts",
-      "tags": ["brian", "marie-byrd-land", "missing-scientists"]
+      "tags": [
+        "brian",
+        "marie-byrd-land",
+        "missing-scientists"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0003",
@@ -114,10 +123,18 @@
       "directTruth": 0.08,
       "rationale": "Narrative details (catatonic silence, men in black, classification of the gear) are textbook single-witness conspiracy structure with no corroborating evidence. The story also strains credibility: unbuckling adults by force would be documented by the rest of the rescue crew, who are not on the record.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0002", "kind": "elaborates", "rationale": "Continuation of the Brian account." }
+        {
+          "target": "IQz7innxnms:c_0002",
+          "kind": "elaborates",
+          "rationale": "Continuation of the Brian account."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["brian", "ptsd", "men-in-black"]
+      "tags": [
+        "brian",
+        "ptsd",
+        "men-in-black"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0004",
@@ -153,10 +170,17 @@
       "directTruth": 0.2,
       "rationale": "Wright-Patterson was the actual HQ of Project Blue Book (terminated 1969); the tie-in is accurate but the onward inference that therefore the 1995 Marie Byrd Land gear indicates UFO material is a non-sequitur. Wright-Patterson also houses countless non-UFO defense research programs.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0003", "kind": "elaborates", "rationale": "Fate of the scientists' equipment in the Brian narrative." }
+        {
+          "target": "IQz7innxnms:c_0003",
+          "kind": "elaborates",
+          "rationale": "Fate of the scientists' equipment in the Brian narrative."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["wright-patterson", "project-blue-book"]
+      "tags": [
+        "wright-patterson",
+        "project-blue-book"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0005",
@@ -191,10 +215,18 @@
       "directTruth": 0.1,
       "rationale": "The 'Antarctic pyramids' are well-explained as nunataks — glacial-era rock peaks whose erosion produces pyramid-shaped faces. Geological consensus rejects artificial origin; the 'perfect cardinal alignment' claim is not documented in published imagery analysis.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0018", "kind": "contradicts", "rationale": "[debunks] Host's own verdict admits most pyramid photos are pointy rocks." }
+        {
+          "target": "IQz7innxnms:c_0018",
+          "kind": "contradicts",
+          "rationale": "[debunks] Host's own verdict admits most pyramid photos are pointy rocks."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["antarctica", "pyramids", "nunatak"]
+      "tags": [
+        "antarctica",
+        "pyramids",
+        "nunatak"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0006",
@@ -219,7 +251,11 @@
       "directTruth": 0.95,
       "rationale": "A 2020 Nature paper (Klages et al.) analyzing a West Antarctic sediment core 90 km off the coast found Cretaceous temperate rainforest root-pollen-soil signatures dated to ~90 Mya. The claim is mainstream science.",
       "hostStance": "asserts",
-      "tags": ["antarctica", "paleoclimate", "core-sample"]
+      "tags": [
+        "antarctica",
+        "paleoclimate",
+        "core-sample"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0007",
@@ -267,10 +303,19 @@
       "directTruth": 0.2,
       "rationale": "Both maps exist and do include southerly coastlines often matched to Antarctica. But mainstream cartographic historians attribute the 'southern continent' to extrapolation from Ptolemaic tradition (Terra Australis) and mis-identification of South American features, not precognition of ice-covered Antarctica. The 'interior features match satellite imagery' claim is heavily contested and depends on generous pattern-matching.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0008", "kind": "supports", "rationale": "Ancient maps are the core evidentiary anchor for the Hapgood/pole-shift argument." }
+        {
+          "target": "IQz7innxnms:c_0008",
+          "kind": "supports",
+          "rationale": "Ancient maps are the core evidentiary anchor for the Hapgood/pole-shift argument."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["piri-reis", "oronteus-finaeus", "antarctica", "cartography"]
+      "tags": [
+        "piri-reis",
+        "oronteus-finaeus",
+        "antarctica",
+        "cartography"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0008",
@@ -318,10 +363,18 @@
       "directTruth": 0.03,
       "rationale": "Hapgood's crustal-displacement theory (1958) is rejected by geophysics: the lithosphere does not decouple from the mantle on human timescales. Antarctica's glaciation onset is ~34 Mya (Eocene-Oligocene transition), not 12 kya. The one-day timescale is physically impossible — moment-of-inertia arguments rule out any such rapid shift.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0007", "kind": "supports", "rationale": "Hapgood used the ancient maps as evidence for recent Antarctic temperate conditions." }
+        {
+          "target": "IQz7innxnms:c_0007",
+          "kind": "supports",
+          "rationale": "Hapgood used the ancient maps as evidence for recent Antarctic temperate conditions."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["hapgood", "crustal-displacement", "catastrophism"]
+      "tags": [
+        "hapgood",
+        "crustal-displacement",
+        "catastrophism"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0009",
@@ -359,10 +412,18 @@
       "directTruth": 0.1,
       "rationale": "Barbiero's book is real but remains outside mainstream geophysics. The Younger Dryas impact hypothesis (a separate and less radical claim) is itself contested but not rejected; however linking it to a continent-scale crustal shift is unsupported. Climate cooling from an impact would not rotate the lithosphere.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0008", "kind": "elaborates", "rationale": "Variant causal mechanism for the crustal-displacement framework." }
+        {
+          "target": "IQz7innxnms:c_0008",
+          "kind": "elaborates",
+          "rationale": "Variant causal mechanism for the crustal-displacement framework."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["barbiero", "younger-dryas", "civilization-under-ice"]
+      "tags": [
+        "barbiero",
+        "younger-dryas",
+        "civilization-under-ice"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0010",
@@ -409,10 +470,19 @@
       "directTruth": 0.03,
       "rationale": "Single anonymous source via Linda Moulton Howe, an investigator with a long record of high-yield/low-corroboration UFO claims. No other SEAL, no photographs, no corroborating mission records. A 62-acre structure under ice in an active glaciological research area would be incompatible with the 40+ years of independent ice-penetrating radar surveys.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0019", "kind": "contradicts", "rationale": "[undercuts] Host's own verdict: single witness, no corroboration — so weight accordingly." }
+        {
+          "target": "IQz7innxnms:c_0019",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Host's own verdict: single witness, no corroboration — so weight accordingly."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["spartan-one", "alien-structure", "beardmore", "moulton-howe"]
+      "tags": [
+        "spartan-one",
+        "alien-structure",
+        "beardmore",
+        "moulton-howe"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0011",
@@ -438,7 +508,11 @@
       "directTruth": 0.15,
       "rationale": "Google Earth imagery resolution varies by region based on the commercial satellite sources available at each update — regions without recent high-resolution coverage show older composites. This is the mundane explanation for varying resolution of the same coordinates over time; it is not evidence of deliberate cover-up.",
       "hostStance": "asserts",
-      "tags": ["google-earth", "antarctica", "coverup"]
+      "tags": [
+        "google-earth",
+        "antarctica",
+        "coverup"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0012",
@@ -466,7 +540,11 @@
       "directTruth": 0.15,
       "rationale": "A 2002 Free Republic forum post with that headline does exist, but Free Republic is a user-contributor bulletin-board; the story is originally attributed to an uncorroborated source and was never picked up by mainstream or science press. 'Atlantis TV' has no verifiable existence as a production company.",
       "hostStance": "asserts",
-      "tags": ["atlantis-tv", "free-republic", "antarctica"]
+      "tags": [
+        "atlantis-tv",
+        "free-republic",
+        "antarctica"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0013",
@@ -503,7 +581,11 @@
       "directTruth": 0.98,
       "rationale": "ʻOumuamua (1I/2017 U1) was discovered by Pan-STARRS on 19 October 2017 and confirmed to be on an unbound hyperbolic trajectory — the first detected interstellar interloper. Mainstream astronomy consensus. The 'accelerated on departure' observation is also real and unexplained by standard cometary outgassing.",
       "hostStance": "asserts",
-      "tags": ["oumuamua", "interstellar", "astronomy"]
+      "tags": [
+        "oumuamua",
+        "interstellar",
+        "astronomy"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0014",
@@ -531,7 +613,11 @@
       "directTruth": 0.9,
       "rationale": "The Antarctic Treaty was signed on 1 December 1959 in Washington DC by twelve original signatories; it entered force in 1961. It reserves the continent for peaceful/scientific use and does coordinate (though less strictly than the host implies) access.",
       "hostStance": "asserts",
-      "tags": ["antarctic-treaty", "1959", "governance"]
+      "tags": [
+        "antarctic-treaty",
+        "1959",
+        "governance"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0015",
@@ -559,7 +645,11 @@
       "directTruth": 0.2,
       "rationale": "Antarctica does host the largest known volcanic region in the world beneath the West Antarctic Ice Sheet (138+ subglacial volcanoes mapped). Subglacial lakes (Vostok etc.) exist and can harbor microbial life. But the leap to 'intelligent civilization beneath the ice' is unsupported — the caverns are water-filled, kilometers below, and surveyed by ice-penetrating radar showing no artificial structures.",
       "hostStance": "asserts",
-      "tags": ["volcanism", "subglacial-lakes", "antarctica"]
+      "tags": [
+        "volcanism",
+        "subglacial-lakes",
+        "antarctica"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0016",
@@ -588,10 +678,18 @@
       "directTruth": 0.25,
       "rationale": "Multiple-pilot UFO anecdotes from Antarctic operations exist but remain unverified in public records. The host's 'no doubt' framing is stronger than the evidence supports — anonymous corroboration doesn't lift the evidentiary bar meaningfully above single-witness.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0001", "kind": "supports", "rationale": "Continuity with Operation Highjump disc-craft claims." }
+        {
+          "target": "IQz7innxnms:c_0001",
+          "kind": "supports",
+          "rationale": "Continuity with Operation Highjump disc-craft claims."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["ufo", "antarctica", "brian"]
+      "tags": [
+        "ufo",
+        "antarctica",
+        "brian"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0017",
@@ -618,12 +716,24 @@
       "directTruth": 0.8,
       "rationale": "This is the host's own epistemic-humility caveat — single-source stories require corroboration. It's a correct skeptical heuristic.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0002", "kind": "contradicts", "rationale": "[undercuts] Host himself flags the story as thinly sourced." },
-        { "target": "IQz7innxnms:c_0003", "kind": "contradicts", "rationale": "[undercuts] Same caveat applies to the return-of-scientists details." }
+        {
+          "target": "IQz7innxnms:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Host himself flags the story as thinly sourced."
+        },
+        {
+          "target": "IQz7innxnms:c_0003",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Same caveat applies to the return-of-scientists details."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "denies",
-      "tags": ["verdict", "single-witness", "skepticism"]
+      "tags": [
+        "verdict",
+        "single-witness",
+        "skepticism"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0018",
@@ -656,11 +766,19 @@
       "directTruth": 0.85,
       "rationale": "The host concedes the mainstream geological explanation for the majority of pyramid images (nunataks) and correctly invokes pareidolia for face-on-terrain claims.",
       "dependencies": [
-        { "target": "IQz7innxnms:c_0005", "kind": "contradicts", "rationale": "[debunks] Most pyramids are rocks, per host's own verdict." }
+        {
+          "target": "IQz7innxnms:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] Most pyramids are rocks, per host's own verdict."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "denies",
-      "tags": ["verdict", "pyramids", "pareidolia"]
+      "tags": [
+        "verdict",
+        "pyramids",
+        "pareidolia"
+      ]
     },
     {
       "id": "IQz7innxnms:c_0019",
@@ -689,7 +807,11 @@
       "rationale": "Host explicitly applies his single-witness caveat to the Spartan One account, which is correct epistemically. Linda Moulton Howe is a known conduit for uncorroborated anonymous claims.",
       "inVerdictSection": true,
       "hostStance": "denies",
-      "tags": ["verdict", "spartan-one", "single-witness"]
+      "tags": [
+        "verdict",
+        "spartan-one",
+        "single-witness"
+      ]
     }
   ]
 }

@@ -3,6 +3,7 @@
   "transcriptId": "V7b2X8rqpsM",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "V7b2X8rqpsM:c_0001",
@@ -29,7 +30,11 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "Central premise of the video. Host later acknowledges leading hoax-exposure research by Joseph Matheny and by John Razimus that names specific people who likely authored the posts; multiple predictions failed (Civil War by 2005, nuclear war 2015, no post-2004 Olympics). Near-zero directTruth.",
-      "tags": ["titor", "time-travel", "claim"],
+      "tags": [
+        "titor",
+        "time-travel",
+        "claim"
+      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -56,7 +61,11 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Art Bell's July 29, 1998 Open Timelines broadcast is documented in the show's archives; the 1998 time-traveler faxes are the opening salvo of the Titor legend and are preserved online. The broadcast did happen; the fax's origin is what remains contested.",
-      "tags": ["art-bell", "coast-to-coast", "1998"],
+      "tags": [
+        "art-bell",
+        "coast-to-coast",
+        "1998"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -85,7 +94,11 @@
       "confidence": 0.9,
       "directTruth": 0.03,
       "rationale": "We are currently past several Titor milestones (Civil War by 2005, nuclear war 2015) without them occurring, and CERN's LHC does not produce manipulable Kerr black holes. The 2034 date is future but the technology described is not on any credible research trajectory.",
-      "tags": ["cern", "time-travel", "singularity"],
+      "tags": [
+        "cern",
+        "time-travel",
+        "singularity"
+      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -113,7 +126,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Frank Tipler's 1974 paper 'Rotating cylinders and the possibility of global causality violation' (Physical Review D) is genuine published physics. Checkable citation.",
-      "tags": ["tipler", "physics", "1974"],
+      "tags": [
+        "tipler",
+        "physics",
+        "1974"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -141,7 +158,11 @@
       "confidence": 0.9,
       "directTruth": 0.5,
       "rationale": "The Unix Year 2038 problem is real (signed 32-bit time_t overflow on January 19, 2038). The IBM 5100 did have an undocumented APL capability. However the assumption that future engineers would need a 60-year-old machine to fix this (rather than emulators or source code already archived) is dubious. Medium directTruth because the component facts are right but the joining inference is weak.",
-      "tags": ["ibm-5100", "y2038", "unix"],
+      "tags": [
+        "ibm-5100",
+        "y2038",
+        "unix"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -178,7 +199,11 @@
       "confidence": 0.95,
       "directTruth": 0.02,
       "rationale": "Failed prediction — no American civil war started in 2004 or 2005. Host himself concedes 'obviously that didn't happen'. Near-zero directTruth.",
-      "tags": ["civil-war", "failed-prediction", "titor"],
+      "tags": [
+        "civil-war",
+        "failed-prediction",
+        "titor"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -214,7 +239,11 @@
       "confidence": 0.95,
       "directTruth": 0.01,
       "rationale": "Another failed Titor prediction — no 2015 nuclear war occurred. Near-zero directTruth.",
-      "tags": ["world-war-3", "failed-prediction", "titor"],
+      "tags": [
+        "world-war-3",
+        "failed-prediction",
+        "titor"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -248,7 +277,10 @@
       "confidence": 0.8,
       "directTruth": 0.3,
       "rationale": "There were real BSE cases in the early 2000s but mad cow was already a hot topic in 2000-2001 (British outbreak peaked 1992-1993; CJD link established by 1996). 'Predicting' an ongoing outbreak at a slightly later date is not meaningful precognition.",
-      "tags": ["mad-cow", "prediction"],
+      "tags": [
+        "mad-cow",
+        "prediction"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -276,7 +308,11 @@
       "confidence": 0.85,
       "directTruth": 0.25,
       "rationale": "The 2012 CERN Higgs announcement (confirmed 2013) is real. But Titor's generic mention of 'breakthroughs in high energy physics at CERN' is vague enough that almost any notable CERN result over 30 years would count as fulfillment — this is retrofitting, not prediction.",
-      "tags": ["higgs-boson", "cern", "retrofit"],
+      "tags": [
+        "higgs-boson",
+        "cern",
+        "retrofit"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -302,7 +338,11 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "The Hawking black-hole information paradox and his public concession in 2004 (paying off the Preskill bet) is documented physics history.",
-      "tags": ["hawking", "black-hole", "information-paradox"],
+      "tags": [
+        "hawking",
+        "black-hole",
+        "information-paradox"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -338,7 +378,11 @@
       "confidence": 0.8,
       "directTruth": 0.5,
       "rationale": "Matheny has publicly claimed authorship in multiple interviews and his background in Ong's Hat ARG and tech industry makes his authorship plausible. However he has refused to name his three collaborators or provide hard evidence, so the claim rests on his word.",
-      "tags": ["matheny", "ong-hat", "arg"],
+      "tags": [
+        "matheny",
+        "ong-hat",
+        "arg"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -374,7 +418,11 @@
       "confidence": 0.75,
       "directTruth": 0.45,
       "rationale": "John Razimus's text-comparison and P.O.-box tracking identifies Maury Haber as a leading candidate; the family's demonstrable commercial interest in the Titor brand (registered trademark, LLC, book publication) is suggestive. But the evidence is circumstantial and no party has confirmed authorship.",
-      "tags": ["haber", "maury-haber", "identity"],
+      "tags": [
+        "haber",
+        "maury-haber",
+        "identity"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -403,7 +451,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "USPTO trademark record and Florida LLC filings are public record and confirm the registrations. The conflict-of-interest interpretation is host editorializing but on the facts is well-grounded.",
-      "tags": ["haber", "trademark", "conflict-of-interest"],
+      "tags": [
+        "haber",
+        "trademark",
+        "conflict-of-interest"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -438,7 +490,11 @@
       "confidence": 0.8,
       "directTruth": 0.7,
       "rationale": "The Tipler reference and Kerr-metric rotating-black-hole framing are real theoretical physics. This is evidence that the Titor author was scientifically literate, not evidence that Titor is real — supports the Matheny/Haber attribution more than the time-traveler thesis.",
-      "tags": ["tipler", "physics", "post"],
+      "tags": [
+        "tipler",
+        "physics",
+        "post"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [

@@ -12,6 +12,7 @@ import type { PersistedRelations } from "../relations/index.js";
 import { entityKeyOf, readAliases } from "../graph/canonicalize.js";
 import {
   CLAIMS_SCHEMA_VERSION,
+  KNOWN_PROMPT_VERSIONS,
   type Claim,
   type ClaimEvidence,
   type ClaimId,
@@ -320,6 +321,24 @@ export function validateClaimsPayload(
   }
   if (!payload.generator || typeof payload.generator !== "string") {
     errors.push("generator required");
+  }
+  // promptVersion is optional at the type level so legacy files parse,
+  // but when present it MUST be a known version. A hand-edited file
+  // with "v1" or a typo must fail loudly, not pass silently.
+  if (payload.promptVersion !== undefined) {
+    if (typeof payload.promptVersion !== "string") {
+      errors.push(
+        `promptVersion must be string, got ${typeof payload.promptVersion}`,
+      );
+    } else if (
+      !(KNOWN_PROMPT_VERSIONS as readonly string[]).includes(
+        payload.promptVersion,
+      )
+    ) {
+      errors.push(
+        `promptVersion "${payload.promptVersion}" not in known set [${KNOWN_PROMPT_VERSIONS.join(", ")}]`,
+      );
+    }
   }
   if (!Array.isArray(payload.claims)) {
     errors.push("claims must be array");

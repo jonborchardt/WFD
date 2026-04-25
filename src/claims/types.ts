@@ -62,7 +62,25 @@ export interface PersistedClaims {
   transcriptId: string;
   generatedAt: string;
   generator: string;
+  // Prompt-of-record version the AI session ran under. Required on every
+  // new write so future audits can tell which quality bar produced a file.
+  // Legacy files backfilled by tools/stamp-existing-claims.mjs after the
+  // v2 prompt was lost in 2026-04-24's working-tree cleanup. See
+  // plans/2026-04-24-v2-recovery-and-drift-prevention.md.
+  // Optional at the type level for back-compat with pre-stamp files; the
+  // validator separately requires presence on active-corpus writes and
+  // rejects any value other than a known version string.
+  promptVersion?: string;
   claims: Claim[];
 }
 
 export const CLAIMS_SCHEMA_VERSION = 1 as const;
+
+/**
+ * Known values for `promptVersion`. Add a new entry here when the prompt
+ * tightens (and bump the skill's `version:` frontmatter in the same PR).
+ * The validator rejects any `promptVersion` outside this set.
+ */
+export const KNOWN_PROMPT_VERSIONS = ["v2"] as const;
+export type KnownPromptVersion = (typeof KNOWN_PROMPT_VERSIONS)[number];
+export const CURRENT_PROMPT_VERSION: KnownPromptVersion = "v2";

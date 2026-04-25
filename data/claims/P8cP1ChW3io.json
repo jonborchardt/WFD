@@ -3,13 +3,16 @@
   "transcriptId": "P8cP1ChW3io",
   "generatedAt": "2026-04-21T19:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "P8cP1ChW3io:c_0001",
       "videoId": "P8cP1ChW3io",
       "text": "Humans are evolved primates and an alien species could be reptilian, insectoid, or something altogether unimaginable.",
       "kind": "definitional",
-      "entities": ["organization:human race"],
+      "entities": [
+        "organization:human race"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -25,14 +28,19 @@
       "directTruth": 0.9,
       "rationale": "Humans being evolved primates is uncontroversial biology. The claim that alien biology could take any of an enormous space of forms is a staple of astrobiology; it is definitionally true in that we have zero samples outside Earth and no basis to assume a specific form.",
       "hostStance": "asserts",
-      "tags": ["astrobiology", "framing"]
+      "tags": [
+        "astrobiology",
+        "framing"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0002",
       "videoId": "P8cP1ChW3io",
       "text": "There are an estimated 40 billion Earth-like planets in the Milky Way that could support life.",
       "kind": "empirical",
-      "entities": ["location:milky way"],
+      "entities": [
+        "location:milky way"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -48,15 +56,26 @@
       "directTruth": 0.8,
       "rationale": "The 40-billion figure traces to Petigura, Howard & Marcy (PNAS 2013) using Kepler data: approximately 22% of Sun-like stars host Earth-sized planets in habitable zones. Extended across the galaxy's Sun-like and M-dwarf populations, ~40 billion is a commonly cited order-of-magnitude estimate.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "P8cP1ChW3io:c_0001", "kind": "elaborates" }],
-      "tags": ["kepler", "fermi-paradox"]
+      "dependencies": [
+        {
+          "target": "P8cP1ChW3io:c_0001",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "kepler",
+        "fermi-paradox"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0003",
       "videoId": "P8cP1ChW3io",
       "text": "Every civilization that reaches a certain point on the Kardashev scale destroys itself.",
       "kind": "speculative",
-      "entities": ["organization:civilization", "technology:kardashev scale"],
+      "entities": [
+        "organization:civilization",
+        "technology:kardashev scale"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -72,15 +91,26 @@
       "directTruth": 0.15,
       "rationale": "No civilization other than humanity has ever been observed, so we have a sample size of one - not the statistical basis required to claim an inevitable self-destruction mechanism. The attributed JPL/Caltech reference most likely points to speculative papers modeling civilizations-as-biomarkers under various Great Filter hypotheses, which explore rather than confirm self-termination.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "P8cP1ChW3io:c_0002", "kind": "elaborates" }],
-      "tags": ["great-filter", "fermi-paradox"]
+      "dependencies": [
+        {
+          "target": "P8cP1ChW3io:c_0002",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "great-filter",
+        "fermi-paradox"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0004",
       "videoId": "P8cP1ChW3io",
       "text": "Nikolai Kardashev theorized the Kardashev scale in 1964.",
       "kind": "historical",
-      "entities": ["person:nikolai kardashev", "technology:kardashev scale"],
+      "entities": [
+        "person:nikolai kardashev",
+        "technology:kardashev scale"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -96,14 +126,19 @@
       "directTruth": 0.98,
       "rationale": "Kardashev published 'Transmission of information by extraterrestrial civilizations' in Soviet Astronomy in 1964; the three-tier scale was introduced in that paper.",
       "hostStance": "asserts",
-      "tags": ["kardashev"]
+      "tags": [
+        "kardashev"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0005",
       "videoId": "P8cP1ChW3io",
       "text": "Humanity is currently at approximately 0.7 to 0.75 on the Kardashev scale.",
       "kind": "empirical",
-      "entities": ["organization:human race", "technology:kardashev scale"],
+      "entities": [
+        "organization:human race",
+        "technology:kardashev scale"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -119,15 +154,25 @@
       "directTruth": 0.85,
       "rationale": "Carl Sagan's 1973 formulation (K = (log10 P - 6) / 10) placed humanity at ~0.7 with ~10^13 W of global power. At current global energy consumption of ~18-20 TW, K is ~0.72-0.73. The 0.7 figure is well established.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "P8cP1ChW3io:c_0004", "kind": "presupposes" }],
-      "tags": ["kardashev", "energy"]
+      "dependencies": [
+        {
+          "target": "P8cP1ChW3io:c_0004",
+          "kind": "presupposes"
+        }
+      ],
+      "tags": [
+        "kardashev",
+        "energy"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0006",
       "videoId": "P8cP1ChW3io",
       "text": "A Type II civilization can harness all the energy within its own solar system.",
       "kind": "definitional",
-      "entities": ["technology:kardashev scale"],
+      "entities": [
+        "technology:kardashev scale"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -143,15 +188,25 @@
       "directTruth": 0.95,
       "rationale": "Kardashev's original definition of Type II is the ability to harness the total power output of the host star (~10^26 W), typically via a Dyson-sphere-like construct. Wrapping the host star equals all the energy in that solar system to good first approximation.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "P8cP1ChW3io:c_0004", "kind": "elaborates" }],
-      "tags": ["type-ii", "dyson-sphere"]
+      "dependencies": [
+        {
+          "target": "P8cP1ChW3io:c_0004",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "type-ii",
+        "dyson-sphere"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0007",
       "videoId": "P8cP1ChW3io",
       "text": "Tabby's Star emits light and energy patterns that cannot be explained by current stellar physics.",
       "kind": "empirical",
-      "entities": ["location:universe"],
+      "entities": [
+        "location:universe"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -167,15 +222,25 @@
       "directTruth": 0.3,
       "rationale": "KIC 8462852 (Boyajian's Star) did show unusual irregular dimming events (up to 22%) in Kepler data, published in Boyajian et al. 2016. However, follow-up wavelength-dependent dimming analysis (Boyajian et al. 2018) strongly favors the circumstellar-dust/comet-fragment hypothesis, which is entirely within known stellar physics. The 'cannot be explained' framing is outdated.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "P8cP1ChW3io:c_0006", "kind": "supports" }],
-      "tags": ["tabbys-star", "anomaly"]
+      "dependencies": [
+        {
+          "target": "P8cP1ChW3io:c_0006",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "tabbys-star",
+        "anomaly"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0008",
       "videoId": "P8cP1ChW3io",
       "text": "In 2018 scientists proposed using ESA's Gaia mission to search for Dyson spheres and other megastructures.",
       "kind": "historical",
-      "entities": ["organization:european space agency"],
+      "entities": [
+        "organization:european space agency"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -191,14 +256,20 @@
       "directTruth": 0.9,
       "rationale": "Zackrisson et al. 2018 ('Extragalactic SETI: The Tony Stark Perspective') and related proposals explicitly outlined using Gaia's parallax-plus-photometric-anomaly dataset to identify Dyson-sphere candidates. The approach is real and an active search program (Project Hephaistos) now uses it.",
       "hostStance": "asserts",
-      "tags": ["gaia", "seti"]
+      "tags": [
+        "gaia",
+        "seti"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0009",
       "videoId": "P8cP1ChW3io",
       "text": "A Type III civilization would span the entire galaxy and harness the energy of all its stars.",
       "kind": "definitional",
-      "entities": ["location:galaxy", "organization:type 3 civilization"],
+      "entities": [
+        "location:galaxy",
+        "organization:type 3 civilization"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -214,15 +285,25 @@
       "directTruth": 0.95,
       "rationale": "This is Kardashev's original definition of Type III (~10^36 W, roughly the total stellar luminosity of a galaxy like the Milky Way). Definitionally correct.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "P8cP1ChW3io:c_0004", "kind": "elaborates" }],
-      "tags": ["type-iii"]
+      "dependencies": [
+        {
+          "target": "P8cP1ChW3io:c_0004",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "type-iii"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0010",
       "videoId": "P8cP1ChW3io",
       "text": "A Type IV civilization would harness a power output equal to all galaxies in the observable universe.",
       "kind": "speculative",
-      "entities": ["location:universe", "quantity:type 4"],
+      "entities": [
+        "location:universe",
+        "quantity:type 4"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -238,14 +319,20 @@
       "directTruth": 0.3,
       "rationale": "Kardashev himself only proposed Types I-III. The Type IV extension (~10^46 W, observable-universe scale) is an unofficial post-hoc addition attributed to various popularizers and is not a canonical astrophysical concept. Definitionally coherent as energy budget; its engineering plausibility is far outside any physics we can test.",
       "hostStance": "asserts",
-      "tags": ["type-iv", "speculative"]
+      "tags": [
+        "type-iv",
+        "speculative"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0011",
       "videoId": "P8cP1ChW3io",
       "text": "Star Trek is about a 2.2 on the Kardashev scale.",
       "kind": "opinion",
-      "entities": ["work_of_media:star trek", "technology:kardashev scale"],
+      "entities": [
+        "work_of_media:star trek",
+        "technology:kardashev scale"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -261,14 +348,19 @@
       "directTruth": 0.5,
       "rationale": "No fictional universe quantifies its total power output, so any such rating is necessarily subjective. A Federation spanning multiple star systems with matter-antimatter warp propulsion is plausibly above Type II (single star); 2.2 is as defensible a fan estimate as any other. This is entertainment arithmetic rather than astrophysics.",
       "hostStance": "asserts",
-      "tags": ["pop-culture", "kardashev"]
+      "tags": [
+        "pop-culture",
+        "kardashev"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0012",
       "videoId": "P8cP1ChW3io",
       "text": "Aliens don't have to be evil to be dangerous to us.",
       "kind": "opinion",
-      "entities": ["organization:human race"],
+      "entities": [
+        "organization:human race"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -284,14 +376,19 @@
       "directTruth": 0.8,
       "rationale": "The indifference-rather-than-malice argument is a staple of existential-risk thinking (Liu Cixin's Dark Forest, Nick Bostrom's paperclip maximizer). It is logically sound: a vastly more powerful agent with goals orthogonal to human flourishing could harm humans without animus, simply by resource competition or by-product effects.",
       "hostStance": "asserts",
-      "tags": ["x-risk", "dark-forest"]
+      "tags": [
+        "x-risk",
+        "dark-forest"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0013",
       "videoId": "P8cP1ChW3io",
       "text": "Stephen Hawking was convinced it is a firm 'no' that we should be signaling our location to aliens.",
       "kind": "historical",
-      "entities": ["organization:human race"],
+      "entities": [
+        "organization:human race"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -307,15 +404,25 @@
       "directTruth": 0.95,
       "rationale": "Hawking publicly opposed active METI (Messaging Extraterrestrial Intelligence) most prominently in a 2010 Discovery Channel documentary 'Into the Universe with Stephen Hawking' and in his 2016 short film 'Stephen Hawking's Favorite Places,' where he made exactly this argument.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "P8cP1ChW3io:c_0012", "kind": "supports" }],
-      "tags": ["hawking", "meti"]
+      "dependencies": [
+        {
+          "target": "P8cP1ChW3io:c_0012",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "hawking",
+        "meti"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0014",
       "videoId": "P8cP1ChW3io",
       "text": "Breakthrough Initiatives was founded in 2015 and funded by billionaire Yuri Milner.",
       "kind": "historical",
-      "entities": ["organization:breakthrough initiatives"],
+      "entities": [
+        "organization:breakthrough initiatives"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -331,14 +438,19 @@
       "directTruth": 0.98,
       "rationale": "Breakthrough Initiatives was announced July 2015 by Yuri Milner with Stephen Hawking's public endorsement. Its constituent programs (Listen, Watch, Starshot, Message, Discuss) are well documented.",
       "hostStance": "asserts",
-      "tags": ["breakthrough", "seti"]
+      "tags": [
+        "breakthrough",
+        "seti"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0015",
       "videoId": "P8cP1ChW3io",
       "text": "John Barrow proposed an alternative civilization-ranking scale based on downward mastery of smaller physical scales rather than upward expansion in energy.",
       "kind": "historical",
-      "entities": ["person:john barrow"],
+      "entities": [
+        "person:john barrow"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -354,14 +466,20 @@
       "directTruth": 0.9,
       "rationale": "Sir John D. Barrow (Cambridge, 1952-2020) proposed the 'Microdimensional Mastery' scale in his 1998 book 'Impossibility: The Limits of Science and the Science of Limits.' The economic argument - miniaturization is cheaper than expansion - is his standard counterpoint to Kardashev.",
       "hostStance": "asserts",
-      "tags": ["barrow", "alternative-scale"]
+      "tags": [
+        "barrow",
+        "alternative-scale"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0016",
       "videoId": "P8cP1ChW3io",
       "text": "The scenario where civilizations destroy themselves before going interstellar seems plausible for humanity.",
       "kind": "opinion",
-      "entities": ["organization:human race", "organization:civilization"],
+      "entities": [
+        "organization:human race",
+        "organization:civilization"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -379,17 +497,28 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "P8cP1ChW3io:c_0003", "kind": "elaborates" },
-        { "target": "P8cP1ChW3io:c_0017", "kind": "presupposes" }
+        {
+          "target": "P8cP1ChW3io:c_0003",
+          "kind": "elaborates"
+        },
+        {
+          "target": "P8cP1ChW3io:c_0017",
+          "kind": "presupposes"
+        }
       ],
-      "tags": ["verdict", "x-risk"]
+      "tags": [
+        "verdict",
+        "x-risk"
+      ]
     },
     {
       "id": "P8cP1ChW3io:c_0017",
       "videoId": "P8cP1ChW3io",
       "text": "Humanity is not close to going interstellar.",
       "kind": "empirical",
-      "entities": ["organization:human race"],
+      "entities": [
+        "organization:human race"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -405,7 +534,10 @@
       "directTruth": 0.95,
       "rationale": "Voyager 1, our fastest-departing probe, is at ~17 km/s and would take ~75,000 years to reach the nearest star system at current velocity. Known propulsion technology (chemical, ion, even current laser-sail concepts in Breakthrough Starshot at 0.2c) is decades to centuries from a credible interstellar mission.",
       "hostStance": "asserts",
-      "tags": ["interstellar", "propulsion"]
+      "tags": [
+        "interstellar",
+        "propulsion"
+      ]
     }
   ]
 }

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "$schema": "Each entry is a phrase + list of files it must appear in (normalized: en/em-dash → hyphen, case-insensitive, smart-quotes normalized). The checker fails on any missing phrase so doc-vs-doc or doc-vs-code drift is caught pre-merge. Add a new entry whenever CLAUDE.md tightens a rule that an external actor (AI skill, operator script, reader) relies on.",
+  "assertions": [
+    {
+      "phrase": "60-150",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-claims-extraction/SKILL.md"
+      ],
+      "rationale": "v2 evidence char target — SKILL.md must keep the same target band as CLAUDE.md and the claim files (corpus p50 ~93)."
+    },
+    {
+      "phrase": "[logical]",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-claims-extraction/SKILL.md",
+        "src/truth/contradicts-subkind.ts"
+      ],
+      "rationale": "typed-contradicts prefix — parser, CLAUDE.md doc, and AI extraction skill must all list the same prefix vocabulary."
+    },
+    {
+      "phrase": "[debunks]",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-claims-extraction/SKILL.md",
+        "src/truth/contradicts-subkind.ts"
+      ],
+      "rationale": "typed-contradicts prefix."
+    },
+    {
+      "phrase": "[alternative]",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-claims-extraction/SKILL.md",
+        "src/truth/contradicts-subkind.ts"
+      ],
+      "rationale": "typed-contradicts prefix."
+    },
+    {
+      "phrase": "[undercuts]",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-claims-extraction/SKILL.md",
+        "src/truth/contradicts-subkind.ts"
+      ],
+      "rationale": "typed-contradicts prefix."
+    },
+    {
+      "phrase": "promptVersion",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-claims-extraction/SKILL.md",
+        "src/claims/types.ts",
+        "src/claims/validate.ts"
+      ],
+      "rationale": "artifact provenance field — must be declared in the type, required by validator, documented in CLAUDE.md + the extraction skill, with the value v2 written by the skill."
+    },
+    {
+      "phrase": "denies",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-claims-extraction/SKILL.md",
+        "src/claims/types.ts"
+      ],
+      "rationale": "aggressive hostStance=denies is the primary cross-video contradiction signal; every surface that describes host-stance must preserve this vocabulary."
+    },
+    {
+      "phrase": "PREDICATE_SCHEMA",
+      "must_appear_in": [
+        "CLAUDE.md",
+        "src/graph/adapt.ts"
+      ],
+      "rationale": "predicate type-filter constant — CLAUDE.md 'Adapter precedence' references it by name; renaming the constant without updating the doc produces invisible drift."
+    },
+    {
+      "phrase": "LOGICAL-CONTRADICTION",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-contradiction-verify/SKILL.md"
+      ],
+      "rationale": "verdict taxonomy — the skill emits these labels; CLAUDE.md consumes them (apply.mjs filters + UI tiering). Divergence silently breaks post-verify rendering."
+    },
+    {
+      "phrase": "DEBUNKS",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-contradiction-verify/SKILL.md"
+      ],
+      "rationale": "verdict taxonomy."
+    },
+    {
+      "phrase": "UNDERCUTS",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-contradiction-verify/SKILL.md"
+      ],
+      "rationale": "verdict taxonomy."
+    },
+    {
+      "phrase": "ALTERNATIVE",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-contradiction-verify/SKILL.md"
+      ],
+      "rationale": "verdict taxonomy."
+    },
+    {
+      "phrase": "COMPLEMENTARY",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-contradiction-verify/SKILL.md"
+      ],
+      "rationale": "verdict taxonomy (drop-from-public verdict)."
+    },
+    {
+      "phrase": "IRRELEVANT",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-contradiction-verify/SKILL.md"
+      ],
+      "rationale": "verdict taxonomy (drop-from-public verdict)."
+    },
+    {
+      "phrase": "SAME-CLAIM",
+      "must_appear_in": [
+        "CLAUDE.md",
+        ".claude/skills/ai-contradiction-verify/SKILL.md"
+      ],
+      "rationale": "verdict taxonomy — SAME-CLAIM is the signal that promotes a pair into data/claims/consonance.json."
+    }
+  ]
+}

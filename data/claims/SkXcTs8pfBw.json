@@ -3,6 +3,7 @@
   "transcriptId": "SkXcTs8pfBw",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "SkXcTs8pfBw:c_0001",
@@ -134,7 +135,11 @@
       "rationale": "The second caller's follow-up did happen on Coast to Coast and some listeners disputed a voice match. Ear-based voice-identification by uncontrolled listeners is unreliable, so the audience rejection does not carry much evidentiary weight either way.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "SkXcTs8pfBw:c_0003", "kind": "contradicts", "rationale": "[alternative] Presents the actor/hoax explanation as an alternative to the extradimensional-aliens claim." }
+        {
+          "target": "SkXcTs8pfBw:c_0003",
+          "kind": "contradicts",
+          "rationale": "[alternative] Presents the actor/hoax explanation as an alternative to the extradimensional-aliens claim."
+        }
       ]
     },
     {
@@ -242,7 +247,10 @@
       "rationale": "The May 2000 removal by Pacific Bell at the request of the National Park Service is well-documented. The stated justification (environmental impact on Mojave National Preserve) matches contemporary press coverage.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "SkXcTs8pfBw:c_0007", "kind": "elaborates" }
+        {
+          "target": "SkXcTs8pfBw:c_0007",
+          "kind": "elaborates"
+        }
       ]
     },
     {
@@ -319,7 +327,10 @@
       "rationale": "The black triangle, gray creature, and dog-to-dust narrative is uncorroborated first-person testimony from Reed. No physical evidence, independent witness, or crash site has ever been produced.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "SkXcTs8pfBw:c_0011", "kind": "elaborates" }
+        {
+          "target": "SkXcTs8pfBw:c_0011",
+          "kind": "elaborates"
+        }
       ]
     },
     {
@@ -346,7 +357,10 @@
       "rationale": "The freezer-storage detail is the most memorable element of Reed's narrative but the 'alien body' has never been produced or examined. The surviving photo/video footage has been analyzed and most analysts view it as a puppet/model.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "SkXcTs8pfBw:c_0012", "kind": "elaborates" }
+        {
+          "target": "SkXcTs8pfBw:c_0012",
+          "kind": "elaborates"
+        }
       ]
     },
     {
@@ -374,8 +388,16 @@
       "rationale": "Skeptical analysis of Reed's footage by UFO researchers and special-effects professionals has consistently identified pupeteering and prosthetics hallmarks. Reed's 'Dr.' title has never been matched to a verifiable academic or clinical record.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "SkXcTs8pfBw:c_0011", "kind": "contradicts", "rationale": "[debunks] Offers a puppet-and-con-man explanation that undercuts the psychologist-witness framing." },
-        { "target": "SkXcTs8pfBw:c_0012", "kind": "contradicts", "rationale": "[alternative] Provides the mundane-hoax alternative to the triangular-craft-and-creature narrative." }
+        {
+          "target": "SkXcTs8pfBw:c_0011",
+          "kind": "contradicts",
+          "rationale": "[debunks] Offers a puppet-and-con-man explanation that undercuts the psychologist-witness framing."
+        },
+        {
+          "target": "SkXcTs8pfBw:c_0012",
+          "kind": "contradicts",
+          "rationale": "[alternative] Provides the mundane-hoax alternative to the triangular-craft-and-creature narrative."
+        }
       ]
     },
     {
@@ -403,7 +425,11 @@
       "rationale": "The 'no rational hoaxer would destroy their life' argument commits the converse error — plenty of hoaxers become obsessed, mentally ill, or trapped by their own narratives and do destroy their lives without external enforcement. The destroyed-life framing does not authenticate the content.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "SkXcTs8pfBw:c_0014", "kind": "contradicts", "rationale": "[alternative] Counter-argues the skeptical hoax interpretation by citing Reed's life-cost as implicit evidence of sincerity." }
+        {
+          "target": "SkXcTs8pfBw:c_0014",
+          "kind": "contradicts",
+          "rationale": "[alternative] Counter-argues the skeptical hoax interpretation by citing Reed's life-cost as implicit evidence of sincerity."
+        }
       ]
     }
   ]

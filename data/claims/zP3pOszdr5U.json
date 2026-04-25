@@ -3,6 +3,7 @@
   "transcriptId": "zP3pOszdr5U",
   "generatedAt": "2026-04-21T12:30:00.000Z",
   "generator": "claude-opus-4-7-1m",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "zP3pOszdr5U:c_0001",
@@ -30,7 +31,7 @@
           "transcriptId": "zP3pOszdr5U",
           "charStart": 329,
           "charEnd": 372,
-          "timeStart": 22.0,
+          "timeStart": 22,
           "timeEnd": 29.6,
           "quote": "They\nwere called the First Earth Battalion."
         }
@@ -39,7 +40,11 @@
       "directTruth": 0.8,
       "rationale": "The First Earth Battalion Operations Manual (Jim Channon, 1979) is a real declassified document. 'Project Jedi' as an umbrella label is informal journalism; the Army's official psychic programs cycle through names (SCANATE, GONDOLA WISH, GRILL FLAME, CENTER LANE, SUN STREAK, STAR GATE).",
       "hostStance": "asserts",
-      "tags": ["first-earth-battalion", "project-jedi", "psychic-warfare"]
+      "tags": [
+        "first-earth-battalion",
+        "project-jedi",
+        "psychic-warfare"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0002",
@@ -66,10 +71,17 @@
       "directTruth": 0.65,
       "rationale": "The Goat Lab at Fort Bragg existed (Special Forces medical training used live goats), and Jon Ronson's 'The Men Who Stare at Goats' documents Guy Savelli's claim to have stopped a goat's heart. Whether the experiment actually worked is another question (see c_0013).",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0001", "kind": "elaborates" }
+        {
+          "target": "zP3pOszdr5U:c_0001",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["goat-lab", "fort-bragg", "psychic"]
+      "tags": [
+        "goat-lab",
+        "fort-bragg",
+        "psychic"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0003",
@@ -105,7 +117,11 @@
       "directTruth": 0.4,
       "rationale": "Jim Channon's Vietnam service and 173rd Airborne record are established; the specific 'zero casualties for 317 days' and 'never killed a civilian' figures come from Channon's own recollections and his First Earth Battalion lore, which historians regard as self-mythologized.",
       "hostStance": "asserts",
-      "tags": ["channon", "vietnam", "combat-record"]
+      "tags": [
+        "channon",
+        "vietnam",
+        "combat-record"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0004",
@@ -132,7 +148,7 @@
           "transcriptId": "zP3pOszdr5U",
           "charStart": 5962,
           "charEnd": 6005,
-          "timeStart": 400.0,
+          "timeStart": 400,
           "timeEnd": 405.36,
           "quote": "It's been\ndeclassified and archived online."
         }
@@ -141,10 +157,17 @@
       "directTruth": 0.95,
       "rationale": "The First Earth Battalion Operations Manual is indeed available online (archive.org, and Channon's own website). Leavenworth authorship is verified via Army bio.",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0001", "kind": "supports" }
+        {
+          "target": "zP3pOszdr5U:c_0001",
+          "kind": "supports"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["channon", "manual", "declassified"]
+      "tags": [
+        "channon",
+        "manual",
+        "declassified"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0005",
@@ -161,7 +184,7 @@
           "transcriptId": "zP3pOszdr5U",
           "charStart": 11157,
           "charEnd": 11202,
-          "timeStart": 728.0,
+          "timeStart": 728,
           "timeEnd": 735.52,
           "quote": "Stubble believed he\ncould walk through walls."
         },
@@ -169,7 +192,7 @@
           "transcriptId": "zP3pOszdr5U",
           "charStart": 11109,
           "charEnd": 11156,
-          "timeStart": 724.0,
+          "timeStart": 724,
           "timeEnd": 732.88,
           "quote": "He hit his head hard again and\nagain and again."
         },
@@ -186,10 +209,16 @@
       "directTruth": 0.75,
       "rationale": "Stubblebine's wall-walking anecdote is repeatedly confirmed in his own interviews (Jon Ronson, History Channel). It is one of the few psychic-warfare stories with direct on-record corroboration from the participant.",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0001", "kind": "elaborates" }
+        {
+          "target": "zP3pOszdr5U:c_0001",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["stubblebine", "walk-through-walls"]
+      "tags": [
+        "stubblebine",
+        "walk-through-walls"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0006",
@@ -215,10 +244,16 @@
       "directTruth": 0.7,
       "rationale": "Uri Geller was engaged by SRI and the CIA/Army in the 1970s — confirmed in declassified STARGATE files. Geller himself has long described Stubblebine-era testing.",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0005", "kind": "supports" }
+        {
+          "target": "zP3pOszdr5U:c_0005",
+          "kind": "supports"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["geller", "remote-influence"]
+      "tags": [
+        "geller",
+        "remote-influence"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0007",
@@ -253,7 +288,11 @@
       "directTruth": 0.3,
       "rationale": "Some STARGATE sessions did produce suggestive sketches (notably Pat Price's Semipalatinsk session), but the 'three days later satellite confirmation' is a best-case cherry-pick; overall program accuracy when blindly graded was at chance.",
       "hostStance": "asserts",
-      "tags": ["remote-viewing", "cia", "stargate"]
+      "tags": [
+        "remote-viewing",
+        "cia",
+        "stargate"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0008",
@@ -279,7 +318,11 @@
       "directTruth": 0.2,
       "rationale": "The Swann-Jupiter session (1973) did include a ring-like feature, but his description also contained many misses, and skeptics note Jupiter rings were anticipated in astronomy before Pioneer 10 confirmed them.",
       "hostStance": "asserts",
-      "tags": ["ingo-swann", "jupiter", "remote-viewing"]
+      "tags": [
+        "ingo-swann",
+        "jupiter",
+        "remote-viewing"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0009",
@@ -305,7 +348,11 @@
       "directTruth": 0.95,
       "rationale": "The CIA STARGATE program was officially terminated in 1995 following the AIR report. This is fully declassified public record.",
       "hostStance": "asserts",
-      "tags": ["stargate", "1995", "cia-termination"]
+      "tags": [
+        "stargate",
+        "1995",
+        "cia-termination"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0010",
@@ -341,7 +388,11 @@
       "directTruth": 0.6,
       "rationale": "Rock-music siege of the Vatican embassy in Panama City (Dec 1989) is well-documented, but Noriega surrendered primarily for diplomatic reasons (papal nuncio pressure). The music's causal role is disputed.",
       "hostStance": "asserts",
-      "tags": ["panama", "noriega", "sound-weapon"]
+      "tags": [
+        "panama",
+        "noriega",
+        "sound-weapon"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0011",
@@ -383,7 +434,11 @@
       "directTruth": 0.9,
       "rationale": "The Wright Lab 'Harassing, Annoying and Bad Guy Identifying Chemicals' proposal (1994, FOIA-released 2005) is a matter of documented record. It was never developed into a deployed weapon.",
       "hostStance": "asserts",
-      "tags": ["gay-bomb", "wright-lab", "non-lethal"]
+      "tags": [
+        "gay-bomb",
+        "wright-lab",
+        "non-lethal"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0012",
@@ -417,10 +472,17 @@
       "directTruth": 0.1,
       "rationale": "The story is self-reported by Savelli, uncontrolled and unreplicated. The 'wrong goat' admission strongly suggests coincidence, not psychic kinetics. The host explicitly flags this as a tell.",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0002", "kind": "elaborates" }
+        {
+          "target": "zP3pOszdr5U:c_0002",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "denies",
-      "tags": ["goat-lab", "savelli", "psychokinesis"]
+      "tags": [
+        "goat-lab",
+        "savelli",
+        "psychokinesis"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0013",
@@ -446,11 +508,23 @@
       "directTruth": 0.85,
       "rationale": "The 1995 American Institutes for Research (AIR) evaluation commissioned by the CIA concluded remote viewing had no operational utility. This is the standard skeptical endpoint for STARGATE.",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0007", "kind": "contradicts", "rationale": "[debunks] AIR review undercut the cherry-picked hits" },
-        { "target": "zP3pOszdr5U:c_0008", "kind": "contradicts", "rationale": "[debunks] same review applies to Swann's sessions" }
+        {
+          "target": "zP3pOszdr5U:c_0007",
+          "kind": "contradicts",
+          "rationale": "[debunks] AIR review undercut the cherry-picked hits"
+        },
+        {
+          "target": "zP3pOszdr5U:c_0008",
+          "kind": "contradicts",
+          "rationale": "[debunks] same review applies to Swann's sessions"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["air-report", "debunk", "stargate"]
+      "tags": [
+        "air-report",
+        "debunk",
+        "stargate"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0014",
@@ -477,10 +551,16 @@
       "directTruth": 0.75,
       "rationale": "The host explicitly adopts this steelman: Channon's results are real but attributable to mindfulness and training, not ESP. Neuroscience supports the claim that meditation improves threat detection.",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0003", "kind": "elaborates" }
+        {
+          "target": "zP3pOszdr5U:c_0003",
+          "kind": "elaborates"
+        }
       ],
       "hostStance": "steelman",
-      "tags": ["situational-awareness", "debunk"]
+      "tags": [
+        "situational-awareness",
+        "debunk"
+      ]
     },
     {
       "id": "zP3pOszdr5U:c_0015",
@@ -506,11 +586,21 @@
       "directTruth": 0.85,
       "rationale": "Col. John Alexander is a real figure — author of 'The Warrior's Edge' and 'Future War'; his role developing Army non-lethal weapons programs at Los Alamos is well documented.",
       "dependencies": [
-        { "target": "zP3pOszdr5U:c_0001", "kind": "elaborates" },
-        { "target": "zP3pOszdr5U:c_0014", "kind": "supports" }
+        {
+          "target": "zP3pOszdr5U:c_0001",
+          "kind": "elaborates"
+        },
+        {
+          "target": "zP3pOszdr5U:c_0014",
+          "kind": "supports"
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["john-alexander", "non-lethal", "legacy"]
+      "tags": [
+        "john-alexander",
+        "non-lethal",
+        "legacy"
+      ]
     }
   ]
 }

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-25T00:42:18.629Z",
+  "corpus": {
+    "claimFiles": 215,
+    "totalClaims": 3090
+  },
+  "evidenceLength": {
+    "p25": 57,
+    "p50": 93,
+    "p75": 144,
+    "p90": 180,
+    "p99": 260,
+    "max": 451,
+    "mean": 103.52,
+    "targetMin": 60,
+    "targetMax": 150,
+    "hardMax": 300,
+    "pctInTargetRange": 52.02,
+    "pctOverHardMax": 0.26
+  },
+  "claimsPerVideo": {
+    "p25": 13,
+    "p50": 14,
+    "p75": 15,
+    "p90": 16,
+    "mean": 14.37,
+    "min": 8,
+    "max": 24
+  },
+  "hostStance": {
+    "asserts": 2609,
+    "denies": 234,
+    "uncertain": 91,
+    "steelman": 73,
+    "unset": 83,
+    "deniesPct": 7.57,
+    "targetDeniesMinPct": 5
+  },
+  "kind": {
+    "empirical": 931,
+    "historical": 1313,
+    "speculative": 548,
+    "opinion": 233,
+    "definitional": 65
+  },
+  "dependencies": {
+    "coveragePct": 42.43,
+    "targetCoverageMinPct": 55,
+    "claimsWithDeps": 1311,
+    "kindHist": {
+      "supports": 449,
+      "contradicts": 510,
+      "presupposes": 76,
+      "elaborates": 457
+    },
+    "contradicts": {
+      "total": 510,
+      "typed": 493,
+      "typedPct": 96.67,
+      "subkindHist": {
+        "logical": 44,
+        "debunks": 199,
+        "alternative": 124,
+        "undercuts": 126,
+        "untyped": 17
+      },
+      "targetTypedMinPct": 95
+    }
+  },
+  "directTruth": {
+    "setCount": 2873,
+    "setPct": 92.98
+  },
+  "inVerdictSection": {
+    "setCount": 496,
+    "setPct": 16.05
+  },
+  "atomicity": {
+    "likelyCompoundCount": 251,
+    "likelyCompoundPct": 8.12
+  },
+  "generatorHist": {
+    "claude-opus-4.7-claims-plan03-calibration": 59,
+    "claude-opus-4-7": 81,
+    "claude-opus-4.7-claims-plan03-b4-resume": 12,
+    "claude-opus-4-7[1m]/plan-03-v2": 1,
+    "claude-opus-4.7-claims-plan03-b2-agent0": 8,
+    "claude-opus-4.7-claims-plan03-b4-agent6": 5,
+    "claude-opus-4-7-v2-calibration": 1,
+    "claude-opus-4.7-claims-plan03-b4-resume-v2": 6,
+    "claude-opus-4-7-plan3-b2": 8,
+    "claude-opus-4.7-claims-plan03-b2": 7,
+    "claude-opus-4.7 plan3-agent2": 5,
+    "claude-opus-4.7-claims-plan03-b4-agent4": 6,
+    "claude-opus-4.7-claims-plan03-v2": 5,
+    "claude-opus-4-7-1m": 6,
+    "agent0-plan03-reextract": 5
+  },
+  "perDay": {
+    "2026-04-21": {
+      "files": 117,
+      "evP50AvgChars": 108.29,
+      "deniesPct": 6.85
+    },
+    "2026-04-22": {
+      "files": 93,
+      "evP50AvgChars": 105.49,
+      "deniesPct": 8.49
+    },
+    "2026-04-24": {
+      "files": 5,
+      "evP50AvgChars": 62.4,
+      "deniesPct": 7.14
+    }
+  }
+}

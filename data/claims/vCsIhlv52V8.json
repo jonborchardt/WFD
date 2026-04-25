@@ -3,13 +3,17 @@
   "transcriptId": "vCsIhlv52V8",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "vCsIhlv52V8:c_0001",
       "videoId": "vCsIhlv52V8",
       "text": "'Yankee Blue' is described as a fake disinformation program that the Pentagon created to hide classified aerospace research.",
       "kind": "historical",
-      "entities": ["organization:yankee blue", "facility:pentagon"],
+      "entities": [
+        "organization:yankee blue",
+        "facility:pentagon"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -31,7 +35,10 @@
       "videoId": "vCsIhlv52V8",
       "text": "The Pentagon deliberately spread UFO myths for decades as disinformation to hide classified stealth-aircraft programs from the Soviets and the public.",
       "kind": "historical",
-      "entities": ["facility:pentagon", "work_of_media:ufo stories"],
+      "entities": [
+        "facility:pentagon",
+        "work_of_media:ufo stories"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -53,7 +60,10 @@
       "videoId": "vCsIhlv52V8",
       "text": "Australian researcher Dean Harrison has tracked the Yowie cryptid for over 25 years, interviewing hundreds of witnesses and claiming his own physical encounter with the creature.",
       "kind": "historical",
-      "entities": ["person:dean harrison", "location:australia"],
+      "entities": [
+        "person:dean harrison",
+        "location:australia"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -75,7 +85,10 @@
       "videoId": "vCsIhlv52V8",
       "text": "In 1882, Henry James McCooey reported seeing an 'indigenous ape' on the New South Wales coast — an early written Yowie sighting.",
       "kind": "historical",
-      "entities": ["date_time:1882", "person:henry wilkinson"],
+      "entities": [
+        "date_time:1882",
+        "person:henry wilkinson"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -97,7 +110,9 @@
       "videoId": "vCsIhlv52V8",
       "text": "McCooey offered the Australian Museum £40 (roughly $4,000 today) to capture a live Yowie specimen, but the museum declined.",
       "kind": "historical",
-      "entities": ["organization:australian museum"],
+      "entities": [
+        "organization:australian museum"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -113,14 +128,23 @@
       "directTruth": 0.75,
       "rationale": "McCooey did propose an expedition to capture a specimen for the Australian Museum for a £40 reward in his 1882 letter. Detail is well-sourced in Yowie historiography; the museum did not act on it.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "vCsIhlv52V8:c_0004", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "vCsIhlv52V8:c_0004",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "vCsIhlv52V8:c_0006",
       "videoId": "vCsIhlv52V8",
       "text": "In 1846, an unusual skull washed up on the Murrumbidgee River; Aboriginal elders identified it as a 'bunyip' when it was displayed at the Australian Museum in Sydney, and the skull was later removed from display.",
       "kind": "historical",
-      "entities": ["date_time:1846", "organization:australian museum", "person:elders"],
+      "entities": [
+        "date_time:1846",
+        "organization:australian museum",
+        "person:elders"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -142,7 +166,11 @@
       "videoId": "vCsIhlv52V8",
       "text": "A carcass purportedly matching the bunyip description was found at Brungle Creek by Henry Wilkinson in the 1880s and sent to the Sydney Museum, where the package allegedly never arrived.",
       "kind": "historical",
-      "entities": ["person:henry wilkinson", "location:brungal creek", "organization:sydney museum"],
+      "entities": [
+        "person:henry wilkinson",
+        "location:brungal creek",
+        "organization:sydney museum"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -165,14 +193,21 @@
       "confidence": 0.7,
       "rationale": "The Brungle Creek / Henry Wilkinson bunyip-carcass story appears in Australian folklore compilations but primary 19th-century sources are thin and the 'lost in shipping' detail is often repeated in cryptozoology circles without archival citation. Omit directTruth.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "vCsIhlv52V8:c_0006", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "vCsIhlv52V8:c_0006",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "vCsIhlv52V8:c_0008",
       "videoId": "vCsIhlv52V8",
       "text": "The Yara-ma-yha-who is depicted as a small, frog-like tree-dwelling creature that drops on victims, drinks their blood with suckered fingers, swallows them whole, and regurgitates them transformed.",
       "kind": "definitional",
-      "entities": ["work_of_media:fairy tales"],
+      "entities": [
+        "work_of_media:fairy tales"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -194,7 +229,10 @@
       "videoId": "vCsIhlv52V8",
       "text": "A boy on a school field trip disappeared near a Blue Mountains fig grove and, after being found a day later, withdrew from social contact and lost six hours of memory — attributed by the episode to Yara-ma-yha-who predation.",
       "kind": "historical",
-      "entities": ["location:blue mountains", "person:boy"],
+      "entities": [
+        "location:blue mountains",
+        "person:boy"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -210,14 +248,21 @@
       "directTruth": 0.1,
       "rationale": "No named child, date, school, or search-and-rescue record for this incident; reads as a narrative illustration rather than a documented case. No cryptid-caused disappearances of children are on record for the Blue Mountains.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "vCsIhlv52V8:c_0008", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "vCsIhlv52V8:c_0008",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "vCsIhlv52V8:c_0010",
       "videoId": "vCsIhlv52V8",
       "text": "Yowie sightings do not hold up as physical evidence: footprints are too vague and hair samples analyzed by researchers consistently come back as possum, dog, or human.",
       "kind": "empirical",
-      "entities": ["organization:researchers"],
+      "entities": [
+        "organization:researchers"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -239,7 +284,9 @@
       "videoId": "vCsIhlv52V8",
       "text": "Dean Harrison's own Yowie-attack story is internally inconsistent — sometimes told as fleeing, sometimes as tracking — undermining him as a reliable witness.",
       "kind": "empirical",
-      "entities": ["person:dean harrison"],
+      "entities": [
+        "person:dean harrison"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -256,8 +303,15 @@
       "rationale": "Multiple interviews with Dean Harrison across YouTube channels and Australian media contain variations in the attack narrative. Whether those are memory-drift vs. substantive contradictions is a judgment call; the host's skepticism is defensible.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "vCsIhlv52V8:c_0003", "kind": "contradicts", "rationale": "[undercuts] Harrison's inconsistent testimony weakens the credibility of his own tracking-record claim." },
-        { "target": "vCsIhlv52V8:c_0010", "kind": "supports" }
+        {
+          "target": "vCsIhlv52V8:c_0003",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Harrison's inconsistent testimony weakens the credibility of his own tracking-record claim."
+        },
+        {
+          "target": "vCsIhlv52V8:c_0010",
+          "kind": "supports"
+        }
       ]
     },
     {
@@ -265,7 +319,9 @@
       "videoId": "vCsIhlv52V8",
       "text": "The Yara-ma-yha-who legend is best understood as a protective parable told to indigenous Australian children, like Hansel and Gretel or Red Riding Hood, warning against wandering off alone.",
       "kind": "speculative",
-      "entities": ["work_of_media:fairy tales"],
+      "entities": [
+        "work_of_media:fairy tales"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -287,7 +343,10 @@
       "videoId": "vCsIhlv52V8",
       "text": "These Australian cryptids — Yowie, bunyip, Yara-ma-yha-who — probably don't exist as biological creatures, but the legends still encode real wilderness dangers worth heeding.",
       "kind": "speculative",
-      "entities": ["location:australia", "work_of_media:fairy tales"],
+      "entities": [
+        "location:australia",
+        "work_of_media:fairy tales"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -304,10 +363,23 @@
       "rationale": "Explicit host verdict: the cryptids themselves are unreal but the wilderness dangers and folklore value are real. Consistent with consensus scientific view.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "vCsIhlv52V8:c_0010", "kind": "supports" },
-        { "target": "vCsIhlv52V8:c_0011", "kind": "supports" },
-        { "target": "vCsIhlv52V8:c_0012", "kind": "supports" },
-        { "target": "vCsIhlv52V8:c_0003", "kind": "contradicts", "rationale": "[alternative] Wilderness-danger / folklore reading replaces biological-cryptid account of Harrison's investigatory target." }
+        {
+          "target": "vCsIhlv52V8:c_0010",
+          "kind": "supports"
+        },
+        {
+          "target": "vCsIhlv52V8:c_0011",
+          "kind": "supports"
+        },
+        {
+          "target": "vCsIhlv52V8:c_0012",
+          "kind": "supports"
+        },
+        {
+          "target": "vCsIhlv52V8:c_0003",
+          "kind": "contradicts",
+          "rationale": "[alternative] Wilderness-danger / folklore reading replaces biological-cryptid account of Harrison's investigatory target."
+        }
       ],
       "inVerdictSection": true
     }

@@ -3,6 +3,7 @@
   "transcriptId": "g5NG6mo1zGY",
   "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "g5NG6mo1zGY:c_0001",
@@ -37,7 +38,12 @@
       "directTruth": 0.03,
       "rationale": "Mainstream historians across multiple independent traditions (European, Islamic, Byzantine, Chinese) reject the hypothesis; dendrochronology, astronomical records, and Islamic/Chinese dating independently corroborate the disputed centuries. Illig's argument is regarded as fringe.",
       "hostStance": "asserts",
-      "tags": ["phantom-time", "calendar", "middle-ages", "conspiracy"]
+      "tags": [
+        "phantom-time",
+        "calendar",
+        "middle-ages",
+        "conspiracy"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0002",
@@ -51,7 +57,11 @@
         "date_time:7th century",
         "date_time:10th century"
       ],
-      "relationships": ["r_0014", "r_0015", "r_0017"],
+      "relationships": [
+        "r_0014",
+        "r_0015",
+        "r_0017"
+      ],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
@@ -66,10 +76,18 @@
       "directTruth": 0.02,
       "rationale": "Constantine VII reigned 913-959, which makes a backdating scheme with Otto III (980-1002) chronologically incoherent even within the hypothesis. No primary-source evidence of any such plan exists.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "elaborates", "rationale": "Names the specific alleged conspirators underpinning the broader hypothesis." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "elaborates",
+          "rationale": "Names the specific alleged conspirators underpinning the broader hypothesis."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["phantom-time", "otto-iii", "conspiracy"]
+      "tags": [
+        "phantom-time",
+        "otto-iii",
+        "conspiracy"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0003",
@@ -82,7 +100,10 @@
         "organization:aonian dynasty",
         "work_of_media:propaganda"
       ],
-      "relationships": ["r_0021", "r_0028"],
+      "relationships": [
+        "r_0021",
+        "r_0028"
+      ],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
@@ -105,10 +126,17 @@
       "directTruth": 0.03,
       "rationale": "Charlemagne's existence is corroborated by Byzantine, Papal, Abbasid, and Carolingian administrative records, surviving coinage, charters, the Aachen palace, and cross-referenced Arabic sources (e.g. the embassy of Harun al-Rashid). The fiction claim has no evidentiary support.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "presupposes", "rationale": "If the 7th-9th centuries were fabricated, a Charlemagne living in that window must also be fabricated." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "presupposes",
+          "rationale": "If the 7th-9th centuries were fabricated, a Charlemagne living in that window must also be fabricated."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["charlemagne", "phantom-time"]
+      "tags": [
+        "charlemagne",
+        "phantom-time"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0004",
@@ -119,7 +147,9 @@
         "person:charlemagne",
         "law_or_policy:jury system"
       ],
-      "relationships": ["r_0041"],
+      "relationships": [
+        "r_0041"
+      ],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
@@ -134,11 +164,22 @@
       "directTruth": 0.35,
       "rationale": "The war count is inflated (Charlemagne was on campaign most years but not literally at war continuously), and most reforms were enacted by his court (Alcuin, Einhard) rather than personally. The host later concedes this point, attributing accomplishments to his talented advisors.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0003", "kind": "supports", "rationale": "Host frames the overloaded biography as suspicious, arguing it points toward fabrication." },
-        { "target": "g5NG6mo1zGY:c_0013", "kind": "contradicts", "rationale": "[alternative] Host's own rebuttal — advisors did the work — explains the biography without invoking fabrication." }
+        {
+          "target": "g5NG6mo1zGY:c_0003",
+          "kind": "supports",
+          "rationale": "Host frames the overloaded biography as suspicious, arguing it points toward fabrication."
+        },
+        {
+          "target": "g5NG6mo1zGY:c_0013",
+          "kind": "contradicts",
+          "rationale": "[alternative] Host's own rebuttal — advisors did the work — explains the biography without invoking fabrication."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["charlemagne", "biography"]
+      "tags": [
+        "charlemagne",
+        "biography"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0005",
@@ -175,11 +216,23 @@
       "directTruth": 0.05,
       "rationale": "This is the hypothesis's single strongest falsifiable anchor — and it's directly rebutted later in the same video: the 10-day correction was calibrated to the 325 AD Council of Nicaea anchor point (not 45 BC), so 10 days is exactly right.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "The 10-vs-13-day gap is the quantitative basis Illig cites for the whole hypothesis." },
-        { "target": "g5NG6mo1zGY:c_0011", "kind": "contradicts", "rationale": "[debunks] The Nicaea-anchor explanation shows the math works without any fabrication." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "supports",
+          "rationale": "The 10-vs-13-day gap is the quantitative basis Illig cites for the whole hypothesis."
+        },
+        {
+          "target": "g5NG6mo1zGY:c_0011",
+          "kind": "contradicts",
+          "rationale": "[debunks] The Nicaea-anchor explanation shows the math works without any fabrication."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["pope-gregory", "calendar", "phantom-time"]
+      "tags": [
+        "pope-gregory",
+        "calendar",
+        "phantom-time"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0006",
@@ -207,10 +260,18 @@
       "directTruth": 0.25,
       "rationale": "The general observation that post-Roman Western Europe saw material and technological regression is broadly supported by archaeology. However, the claim of ZERO progress is overstated — medieval innovations in the disputed window (heavy plough, three-field rotation, lateen sail, water-powered mills) are well-documented.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "Technology stagnation cited as circumstantial evidence for the disputed centuries being fake." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "supports",
+          "rationale": "Technology stagnation cited as circumstantial evidence for the disputed centuries being fake."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["dark-ages", "archaeology", "phantom-time"]
+      "tags": [
+        "dark-ages",
+        "archaeology",
+        "phantom-time"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0007",
@@ -245,10 +306,18 @@
       "directTruth": 0.2,
       "rationale": "Many fortifications and proto-castle motte-and-bailey structures from this period exist (e.g. Aachen palace complex, Carolingian fortifications, surviving churches at Lorsch and Aachen). The framing relies on narrow definitions of 'castle' that exclude pre-Romanesque architecture.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "Absent architecture is cited as physical evidence for the missing centuries." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "supports",
+          "rationale": "Absent architecture is cited as physical evidence for the missing centuries."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["castles", "archaeology", "phantom-time"]
+      "tags": [
+        "castles",
+        "archaeology",
+        "phantom-time"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0008",
@@ -260,7 +329,9 @@
         "location:germany",
         "organization:ar archeologists"
       ],
-      "relationships": ["r_0019"],
+      "relationships": [
+        "r_0019"
+      ],
       "evidence": [
         {
           "transcriptId": "g5NG6mo1zGY",
@@ -274,10 +345,17 @@
       "confidence": 0.7,
       "rationale": "The claim as stated ('not a single Discovery') is not independently verifiable from the transcript alone and contradicts standard German medieval archaeology (Carolingian-era finds are well-catalogued). Declining directTruth — would need to see the cited 1986 source.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "supports", "rationale": "German archaeological gap cited as regional corroboration of the hypothesis." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "supports",
+          "rationale": "German archaeological gap cited as regional corroboration of the hypothesis."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["germany", "archaeology"]
+      "tags": [
+        "germany",
+        "archaeology"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0009",
@@ -311,11 +389,19 @@
       "directTruth": 0.95,
       "rationale": "Chinese astronomical records of Halley's Comet across the disputed period are real and precisely dated, as are parallel records from Arabic and Byzantine astronomers. This is one of the most cited independent falsifications of Phantom Time.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "contradicts", "rationale": "[debunks] Independent dated astronomical records spanning the disputed window refute the claim that those years didn't happen." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] Independent dated astronomical records spanning the disputed window refute the claim that those years didn't happen."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "asserts",
-      "tags": ["halleys-comet", "astronomy", "debunking"]
+      "tags": [
+        "halleys-comet",
+        "astronomy",
+        "debunking"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0010",
@@ -351,7 +437,11 @@
       "rationale": "The broad strokes are correct: literacy was extremely limited, most production was subsistence agriculture, and record-keeping collapsed with urban administration. The specific 95%/5% figures are rough but within standard estimates for early medieval Europe.",
       "inVerdictSection": true,
       "hostStance": "asserts",
-      "tags": ["dark-ages", "debunking", "alternative-explanation"]
+      "tags": [
+        "dark-ages",
+        "debunking",
+        "alternative-explanation"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0011",
@@ -382,11 +472,19 @@
       "directTruth": 0.97,
       "rationale": "Historically accurate. The Gregorian reform explicitly referenced the Nicaean spring equinox date (March 21) as the anchor. The arithmetic works exactly, which fully dissolves Illig's central 'mathematical evidence'.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0005", "kind": "contradicts", "rationale": "[debunks] Dismantles the alleged 3-day discrepancy that Illig treats as proof of fabrication." }
+        {
+          "target": "g5NG6mo1zGY:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] Dismantles the alleged 3-day discrepancy that Illig treats as proof of fabrication."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "asserts",
-      "tags": ["pope-gregory", "council-of-nicaea", "debunking"]
+      "tags": [
+        "pope-gregory",
+        "council-of-nicaea",
+        "debunking"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0012",
@@ -412,11 +510,19 @@
       "directTruth": 0.97,
       "rationale": "Accurate characterization of the academic consensus. Phantom Time is a fringe hypothesis rejected by mainstream medievalists, astronomers, dendrochronologists, and Islamic/Chinese historians.",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0001", "kind": "contradicts", "rationale": "[logical] Consensus rejection of the hypothesis undercuts the hypothesis itself." }
+        {
+          "target": "g5NG6mo1zGY:c_0001",
+          "kind": "contradicts",
+          "rationale": "[logical] Consensus rejection of the hypothesis undercuts the hypothesis itself."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "denies",
-      "tags": ["consensus", "debunking", "verdict"]
+      "tags": [
+        "consensus",
+        "debunking",
+        "verdict"
+      ]
     },
     {
       "id": "g5NG6mo1zGY:c_0013",
@@ -441,11 +547,18 @@
       "directTruth": 0.85,
       "rationale": "Matches mainstream scholarship: Charlemagne's existence is unambiguous in primary sources, while hagiographic embellishments (notably by Einhard) are well-known. Many educational/legal reforms did come from his court scholars (Alcuin of York especially).",
       "dependencies": [
-        { "target": "g5NG6mo1zGY:c_0003", "kind": "contradicts", "rationale": "[debunks] Directly denies the claim that Charlemagne is pure fiction." }
+        {
+          "target": "g5NG6mo1zGY:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] Directly denies the claim that Charlemagne is pure fiction."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "denies",
-      "tags": ["charlemagne", "verdict"]
+      "tags": [
+        "charlemagne",
+        "verdict"
+      ]
     }
   ]
 }

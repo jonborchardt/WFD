@@ -3,6 +3,7 @@
   "transcriptId": "XLhMi6YEhsQ",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "XLhMi6YEhsQ:c_0001",
@@ -30,7 +31,10 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Standard astronomical description. The Kuiper Belt does start near Neptune's orbit at ~30 AU and extend outward to ~50 AU (the ~4.5-billion-mile figure is roughly right).",
-      "tags": ["kuiper-belt", "astronomy"],
+      "tags": [
+        "kuiper-belt",
+        "astronomy"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -69,7 +73,10 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Accurate. Edgeworth (1943) and independently Kuiper (1951) predicted the belt; Jewitt and Luu discovered 1992 QB1 in August 1992, the first confirmed KBO beyond Pluto.",
-      "tags": ["kuiper-belt", "history-of-astronomy"],
+      "tags": [
+        "kuiper-belt",
+        "history-of-astronomy"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -88,7 +95,7 @@
           "transcriptId": "XLhMi6YEhsQ",
           "charStart": 6280,
           "charEnd": 6430,
-          "timeStart": 441.00,
+          "timeStart": 441,
           "timeEnd": 459.36,
           "quote": "ther object around\nit it glowed and dimmed in a regular\nrhythm every 5 and a half hours which by\nspace standards is fast insanely fast\ntoo\nfast so fas"
         },
@@ -104,7 +111,11 @@
       "confidence": 0.75,
       "directTruth": 0.2,
       "rationale": "The target here is most plausibly Arrokoth (2014 MU69), actually discovered 2014, not 1994. Arrokoth's rotation period is ~15.9 hours, not 5.5 — so the factual specifics are wrong. 'Artificially fast' is the host's editorial framing; there is nothing anomalous about Arrokoth's spin. Low directTruth.",
-      "tags": ["arrokoth", "kuiper-belt", "fast-rotation"],
+      "tags": [
+        "arrokoth",
+        "kuiper-belt",
+        "fast-rotation"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -141,7 +152,11 @@
       "confidence": 0.8,
       "directTruth": 0.05,
       "rationale": "Host later explicitly debunks this in the verdict section (c_0014): NASA has no record of a New Horizons blackout near Arrokoth in 2016. Very low directTruth.",
-      "tags": ["new-horizons", "signal-jamming", "conspiracy"],
+      "tags": [
+        "new-horizons",
+        "signal-jamming",
+        "conspiracy"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -169,7 +184,11 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "Coriolis effects on rotating habitats are a real, studied concern — tolerance drops below ~2 RPM rotation rates, which forces impractically large radii. 'We puke and die' is hyperbole but the underlying science (Coriolis, vestibular adaptation) is correct.",
-      "tags": ["artificial-gravity", "coriolis", "space-habitats"],
+      "tags": [
+        "artificial-gravity",
+        "coriolis",
+        "space-habitats"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -198,14 +217,18 @@
           "charStart": 10262,
           "charEnd": 10450,
           "timeStart": 714.08,
-          "timeEnd": 730.60,
+          "timeEnd": 730.6,
           "quote": "brown dwarf\nresiding deep in the Kyper belt\nBrown dwarfs are actually called failed\nStars they're huge objects about 80\ntimes the size of Jupiter but they don't\nhave enough Mass to ignite "
         }
       ],
       "confidence": 0.75,
       "directTruth": 0.15,
       "rationale": "The Nemesis hypothesis (Muller, Davis, Hut 1984) proposed a stellar companion but has been essentially ruled out by WISE infrared survey (Luhman 2014) — a brown-dwarf companion within ~10,000 AU would have been detected. Planet 9 is a separate, smaller-mass hypothesis. Conflating them here is inaccurate, and 'brown dwarf in the Kuiper belt' is too close for observations to miss.",
-      "tags": ["planet-x", "nemesis", "brown-dwarf"],
+      "tags": [
+        "planet-x",
+        "nemesis",
+        "brown-dwarf"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -225,7 +248,7 @@
           "transcriptId": "XLhMi6YEhsQ",
           "charStart": 11200,
           "charEnd": 11360,
-          "timeStart": 781.60,
+          "timeStart": 781.6,
           "timeEnd": 802.24,
           "quote": " a few kbos that make no sense\nat all meet kbo 2008 KV 42 a comet\nwithin the Kyper belt KV 42 is nicknamed\nDr after Dracula as vampires have the\nability to walk"
         },
@@ -233,7 +256,7 @@
           "transcriptId": "XLhMi6YEhsQ",
           "charStart": 11700,
           "charEnd": 11900,
-          "timeStart": 815.00,
+          "timeStart": 815,
           "timeEnd": 834.92,
           "quote": "on\nwalls that's what Dr is doing with its\norbit Dr moves in total retrograde in\nthe opposite direction of everything\nelse and it ignores the plane of the\necliptic it's just out there doing its\nown thi"
         }
@@ -241,7 +264,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Accurate: 2008 KV42 (nicknamed 'Drac') really does have a retrograde, highly-inclined (~104 degrees) orbit — unusual and worth investigating. Explanation is likely perturbation/capture from the Oort cloud, not intelligent design, but the orbital description is correct.",
-      "tags": ["drac", "kuiper-belt", "retrograde-orbit"],
+      "tags": [
+        "drac",
+        "kuiper-belt",
+        "retrograde-orbit"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -268,7 +295,11 @@
       "confidence": 0.8,
       "directTruth": 0.2,
       "rationale": "NASA does color-map and process raw sensor data for public release — that's standard image processing, not 'altering to hide truth.' Raw data is routinely published in MAST/PDS archives. The conspiracy framing is not supported.",
-      "tags": ["nasa", "media-criticism", "image-tampering"],
+      "tags": [
+        "nasa",
+        "media-criticism",
+        "image-tampering"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -306,7 +337,11 @@
       "confidence": 0.8,
       "directTruth": 0.05,
       "rationale": "Classic repeat-abductee and secret-space-program narrative. Moon bases with psychic training schools are not supported by any evidence; host later concedes in the verdict that the 20-and-back story is 'probably not, almost definitely not' true.",
-      "tags": ["rebecca-rose", "abduction", "secret-space-program"],
+      "tags": [
+        "rebecca-rose",
+        "abduction",
+        "secret-space-program"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -337,7 +372,7 @@
           "charStart": 17157,
           "charEnd": 17360,
           "timeStart": 1191.84,
-          "timeEnd": 1208.00,
+          "timeEnd": 1208,
           "quote": "Great Lakes Naval Station and put\nthrough trauma-based mind control\nprogramming this was done using\ntechniques perfected in the cia's MK\nUltra project next she's strapped to a\nseat and sent through a jum"
         },
         {
@@ -352,7 +387,11 @@
       "confidence": 0.8,
       "directTruth": 0.03,
       "rationale": "MK-Ultra was real (1953-1973) but did not involve children sent through portals to Mars. Jump gates / portal tech do not exist. Narrative belongs to the secret-space-program folklore family.",
-      "tags": ["mk-ultra", "mars-base", "jump-gates"],
+      "tags": [
+        "mk-ultra",
+        "mars-base",
+        "jump-gates"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -395,7 +434,11 @@
       "confidence": 0.85,
       "directTruth": 0.02,
       "rationale": "Pure mythology within the UFO-community. Draconians / reptilians appear in David Icke's writings and Corey Goode's Sphere Being Alliance content; no evidence of existence. Host later admits 20-and-back is probably fiction.",
-      "tags": ["draconians", "reptilians", "planet-x"],
+      "tags": [
+        "draconians",
+        "reptilians",
+        "planet-x"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -424,7 +467,11 @@
       "confidence": 0.7,
       "directTruth": 0.1,
       "rationale": "Recovered-memory-after-trauma mechanism is the standard plot device in the 20-and-back subgenre. Memory science does not support instantaneous reliable recovery of previously-inaccessible memories from accident; such accounts are better explained by confabulation.",
-      "tags": ["rebecca-rose", "recovered-memory", "2012"],
+      "tags": [
+        "rebecca-rose",
+        "recovered-memory",
+        "2012"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -453,7 +500,7 @@
           "transcriptId": "XLhMi6YEhsQ",
           "charStart": 22534,
           "charEnd": 22720,
-          "timeStart": 1563.80,
+          "timeStart": 1563.8,
           "timeEnd": 1579.88,
           "quote": "started with Cory good between the age\nof 16 and 17 years old I was transported\nto the moon and after 20 years I was age\nregressed back in time and then returned\nto civilian life he came"
         }
@@ -461,7 +508,11 @@
       "confidence": 0.85,
       "directTruth": 0.65,
       "rationale": "Goode is a real figure whose public 20-and-back narrative emerged around 2014-2015 (not 2010, but approximately so). His deposition in the lawsuit against the Wilcocks and related parties did include admissions that aspects of his claims were embellished or delusional. Host accurately reports Goode's own admissions.",
-      "tags": ["corey-goode", "20-and-back", "origin"],
+      "tags": [
+        "corey-goode",
+        "20-and-back",
+        "origin"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -481,14 +532,18 @@
           "charStart": 22338,
           "charEnd": 22470,
           "timeStart": 1549.32,
-          "timeEnd": 1563.80,
+          "timeEnd": 1563.8,
           "quote": "is\nthe 20 in backstory or the dark Fleet\ntrue probably not almost definitely not\nit's hard to know for sure where the\nstory started "
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host's explicit verdict. Consistent with the lack of any physical, documentary, or photographic evidence for a secret space program with jump gates, Mars bases, and reptilian rulers.",
-      "tags": ["verdict", "20-and-back", "skeptic"],
+      "tags": [
+        "verdict",
+        "20-and-back",
+        "skeptic"
+      ],
       "inVerdictSection": true,
       "hostStance": "denies",
       "dependencies": [
@@ -542,7 +597,11 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Accurate. The only real New Horizons anomaly was the July 4, 2015 main-computer autonomy event before the Pluto flyby (software glitch, recovered in ~two days). No Arrokoth-flyby blackout is in the record. Host is correctly debunking his own opening hook.",
-      "tags": ["new-horizons", "verdict", "debunk"],
+      "tags": [
+        "new-horizons",
+        "verdict",
+        "debunk"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

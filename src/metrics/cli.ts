@@ -136,6 +136,7 @@ function toHumanText(
       else if (g?.status === "improved") bits.push(`  ↑ improved`);
       else if (g?.status === "new") bits.push(`  · ${g.reason ?? "new"}`);
       else if (g?.status === "missing") bits.push(`  ! missing`);
+      if (g?.targetWarning) bits.push(`  ⚑ ${g.targetWarning}`);
       if (m.unit === "pct") bits[1] = `${bits[1].trim()}%`.padStart(11);
       lines.push(bits.join(""));
     }

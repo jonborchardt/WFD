@@ -1,6 +1,8 @@
 ---
 name: ai-entity-audit
 description: Audit top-mention entities in the corpus and propose KEEP / DELETE-GLOBAL / MERGE-INTO / PER-VIDEO-MERGE / DEFER actions. Use when the user asks to "audit entities", "clean up top entities", "run entity hygiene", or after a batch of new videos lands.
+version: v1
+lastVerifiedAgainstCorpus: 2026-04-24
 ---
 
 # AI entity audit

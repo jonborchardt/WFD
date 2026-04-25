@@ -3,13 +3,17 @@
   "transcriptId": "cfv6nm4ykLY",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "cfv6nm4ykLY:c_0001",
       "videoId": "cfv6nm4ykLY",
       "text": "Numbers stations — shortwave radio broadcasts of coded messages — have transmitted continuously since World War I and are still active today.",
       "kind": "historical",
-      "entities": ["organization:no stations", "technology:shortwave radio"],
+      "entities": [
+        "organization:no stations",
+        "technology:shortwave radio"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -31,7 +35,10 @@
       "videoId": "cfv6nm4ykLY",
       "text": "The 'Lincolnshire Poacher' numbers station, triangulated to a Royal Air Force base in Cyprus, is believed to have been operated by MI6 from the mid-1970s until it went silent in 2008.",
       "kind": "historical",
-      "entities": ["organization:mi6", "date_time:2008"],
+      "entities": [
+        "organization:mi6",
+        "date_time:2008"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -61,7 +68,10 @@
       "videoId": "cfv6nm4ykLY",
       "text": "The 'Swedish Rhapsody' numbers station, which used a child's voice reading German numbers over a music-box melody, was operated by the Polish secret police for nearly 50 years.",
       "kind": "historical",
-      "entities": ["work_of_media:swedish rhapsody", "organization:polish secret police"],
+      "entities": [
+        "work_of_media:swedish rhapsody",
+        "organization:polish secret police"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -83,7 +93,13 @@
       "videoId": "cfv6nm4ykLY",
       "text": "The 'Yosemite Sam' numbers station — which broadcast a Looney Tunes voice clip before a data burst — was traced in February 2005 by amateur radio operators to the Mobility Assessment Test and Integration Center (MATIC), part of a LAGOONA Industries facility near Lagoona, New Mexico.",
       "kind": "historical",
-      "entities": ["person:yosemite sam", "location:lagoona", "location:new mexico", "date_time:february 2005", "organization:lagoona industries"],
+      "entities": [
+        "person:yosemite sam",
+        "location:lagoona",
+        "location:new mexico",
+        "date_time:february 2005",
+        "organization:lagoona industries"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -113,7 +129,9 @@
       "videoId": "cfv6nm4ykLY",
       "text": "Within three hours of the amateur operators photographing the Yosemite Sam facility, the broadcasts stopped and have not been heard since — suggesting the operators had effective monitoring of their own site's exposure.",
       "kind": "historical",
-      "entities": ["person:yosemite sam"],
+      "entities": [
+        "person:yosemite sam"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -129,14 +147,22 @@
       "directTruth": 0.75,
       "rationale": "This timeline is the widely repeated account from the two radio hobbyists who tracked the station. The causal inference that the operators responded to the visit is plausible. Confirmation from official sources has not occurred; factual status rests on the hobbyists' own reporting.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "cfv6nm4ykLY:c_0004", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "cfv6nm4ykLY:c_0004",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "cfv6nm4ykLY:c_0006",
       "videoId": "cfv6nm4ykLY",
       "text": "The core claim that numbers stations are effectively run by governments — pirate in form but untouched by regulators — is the consensus interpretation among researchers.",
       "kind": "speculative",
-      "entities": ["organization:no stations", "organization:government"],
+      "entities": [
+        "organization:no stations",
+        "organization:government"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -158,7 +184,10 @@
       "videoId": "cfv6nm4ykLY",
       "text": "Shortwave radio remains useful for espionage because skywave propagation lets signals bounce off the ionosphere to cover entire continents, and the receiver is entirely passive and untraceable.",
       "kind": "empirical",
-      "entities": ["technology:shortwave radio", "date_time:late nineteen twenties"],
+      "entities": [
+        "technology:shortwave radio",
+        "date_time:late nineteen twenties"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -180,7 +209,10 @@
       "videoId": "cfv6nm4ykLY",
       "text": "Properly-executed one-time-pad encryption used in numbers-station broadcasts is mathematically unbreakable.",
       "kind": "empirical",
-      "entities": ["technology:key", "organization:no stations"],
+      "entities": [
+        "technology:key",
+        "organization:no stations"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -210,7 +242,11 @@
       "videoId": "cfv6nm4ykLY",
       "text": "In 1983, the KGB uncovered a CIA agent posing as a Soviet diplomat who was receiving his orders via American numbers-station broadcasts — establishing numbers stations as operational espionage infrastructure, not a theoretical curiosity.",
       "kind": "historical",
-      "entities": ["date_time:nineteen eighty three", "organization:cia", "organization:kgb"],
+      "entities": [
+        "date_time:nineteen eighty three",
+        "organization:cia",
+        "organization:kgb"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -232,7 +268,9 @@
       "videoId": "cfv6nm4ykLY",
       "text": "The 'Cuban Five' espionage case in U.S. federal court used intercepted shortwave numbers-station broadcasts as prosecution evidence, establishing legal precedent for numbers-station espionage.",
       "kind": "historical",
-      "entities": ["location:cuba"],
+      "entities": [
+        "location:cuba"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -254,7 +292,12 @@
       "videoId": "cfv6nm4ykLY",
       "text": "Ana Montes of the U.S. Defense Intelligence Agency was arrested in 2001 and convicted of spying for Cuba; a shortwave radio and code sheet found in her home confirmed she received orders via numbers stations, and CNN in 2016 called her 'the most dangerous spy you've never heard of.'",
       "kind": "historical",
-      "entities": ["date_time:2001", "person:montas", "location:cuba", "date_time:twenty sixteen"],
+      "entities": [
+        "date_time:2001",
+        "person:montas",
+        "location:cuba",
+        "date_time:twenty sixteen"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -276,7 +319,10 @@
       "videoId": "cfv6nm4ykLY",
       "text": "Ana Montes's intelligence directly led to the death of at least one American soldier by exposing U.S. covert operators in Cuba.",
       "kind": "empirical",
-      "entities": ["person:montas", "location:cuba"],
+      "entities": [
+        "person:montas",
+        "location:cuba"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -292,14 +338,23 @@
       "directTruth": 0.65,
       "rationale": "Reporting on Montes credits her disclosures with the death of U.S. Green Beret Gregory Fronius in El Salvador in 1987 during combat influenced by leaked intelligence. Causation has been debated but the direction is supported by multiple U.S. counterintelligence accounts and a Senate Intelligence Committee report.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "cfv6nm4ykLY:c_0011", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "cfv6nm4ykLY:c_0011",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "cfv6nm4ykLY:c_0013",
       "videoId": "cfv6nm4ykLY",
       "text": "Despite the Montes conviction and the Cuban Five case, no government or intelligence agency has ever officially acknowledged operating numbers stations.",
       "kind": "empirical",
-      "entities": ["organization:government", "organization:no stations", "organization:intelligence agency"],
+      "entities": [
+        "organization:government",
+        "organization:no stations",
+        "organization:intelligence agency"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -316,8 +371,14 @@
       "rationale": "Despite decades of evidence in court cases and counterintelligence reports, no state has officially owned a numbers station. Germany's 'Yankee' station (DGT) was an implicit but never formal acknowledgment. The claim holds.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "cfv6nm4ykLY:c_0010", "kind": "supports" },
-        { "target": "cfv6nm4ykLY:c_0011", "kind": "supports" }
+        {
+          "target": "cfv6nm4ykLY:c_0010",
+          "kind": "supports"
+        },
+        {
+          "target": "cfv6nm4ykLY:c_0011",
+          "kind": "supports"
+        }
       ]
     },
     {
@@ -325,7 +386,10 @@
       "videoId": "cfv6nm4ykLY",
       "text": "Numbers stations persist because unlike digital encrypted communications, shortwave broadcasts leave no receiver trail — making them ideal for spies operating in hostile territory where any digital activity could be tracked.",
       "kind": "speculative",
-      "entities": ["technology:shortwave radio", "organization:spies"],
+      "entities": [
+        "technology:shortwave radio",
+        "organization:spies"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -342,8 +406,14 @@
       "rationale": "Passive shortwave reception is fundamentally untraceable without physical access to the receiving equipment. Given this physical property and the existence of active stations, the operational-security advantage for spies in hostile territory is the leading explanation for continued use.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "cfv6nm4ykLY:c_0007", "kind": "elaborates" },
-        { "target": "cfv6nm4ykLY:c_0008", "kind": "supports" }
+        {
+          "target": "cfv6nm4ykLY:c_0007",
+          "kind": "elaborates"
+        },
+        {
+          "target": "cfv6nm4ykLY:c_0008",
+          "kind": "supports"
+        }
       ],
       "inVerdictSection": true
     }

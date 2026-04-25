@@ -3,6 +3,7 @@
   "transcriptId": "8HgLQGb907s",
   "generatedAt": "2026-04-22T04:40:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "8HgLQGb907s:c_0001",
@@ -41,7 +42,12 @@
       "confidence": 0.9,
       "directTruth": 0.3,
       "rationale": "The Dienach / Papahatzis backstory is itself part of the book's preface and has not been independently verified. No Swiss birth/death record for 'Paul Amadeus Dienach' has been produced by historians. The circumstantial existence of Papahatzis (a real Greek jurist who published 'Chronicles From the Future' in 1972) is confirmed, but Dienach's biography is largely asserted by the text.",
-      "tags": ["dienach", "papahatzis", "1924", "backstory"],
+      "tags": [
+        "dienach",
+        "papahatzis",
+        "1924",
+        "backstory"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -56,7 +62,9 @@
         "person:andreas northam",
         "date_time:3906"
       ],
-      "relationships": ["r_0017"],
+      "relationships": [
+        "r_0017"
+      ],
       "evidence": [
         {
           "transcriptId": "8HgLQGb907s",
@@ -70,7 +78,12 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "[debunks] The soul-transfer-to-the-future narrative is the central plot of the book, not a verified event. No physical mechanism is known for consciousness to traverse 2000 years into another body. Host later concludes the most likely explanation is the book was written as an intellectual exercise (see c_0011).",
-      "tags": ["dienach", "time-travel", "coma", "3906"],
+      "tags": [
+        "dienach",
+        "time-travel",
+        "coma",
+        "3906"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -85,7 +98,9 @@
         "organization:doctors",
         "organization:electors"
       ],
-      "relationships": ["r_0014"],
+      "relationships": [
+        "r_0014"
+      ],
       "evidence": [
         {
           "transcriptId": "8HgLQGb907s",
@@ -99,7 +114,12 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "[debunks] Therapeutic hypothermia after cardiac arrest is a real medical technique (established in the 2000s), so the plot detail is science-flavored, but the 'mind transfer from the past' interpretation has no scientific basis. Plot device of the book.",
-      "tags": ["dienach", "body-transfer", "hypothermia", "plot"],
+      "tags": [
+        "dienach",
+        "body-transfer",
+        "hypothermia",
+        "plot"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -134,7 +154,12 @@
       "confidence": 0.9,
       "directTruth": 0.3,
       "rationale": "2204 Mars colonization is a book prediction. Current mainstream roadmaps (NASA, SpaceX) target 2030s–2040s for first crewed Mars missions. If Mars is colonized by 2204, the 'truth' of the claim would be premature rather than wrong, but the specific 'population 20 million by 2264' is extremely optimistic given current scaling.",
-      "tags": ["dienach", "mars-colony", "2204", "future-prediction"],
+      "tags": [
+        "dienach",
+        "mars-colony",
+        "2204",
+        "future-prediction"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -161,7 +186,12 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "Book prediction about a future nuclear war, not a fact. No basis to evaluate as true/false historically; cannot be falsified yet. directTruth low because confident future-dated predictions without mechanism are generally wrong, and the Baltic-survival specificity has no geopolitical basis as of 2026.",
-      "tags": ["dienach", "nuclear-war", "2309", "prediction"],
+      "tags": [
+        "dienach",
+        "nuclear-war",
+        "2309",
+        "prediction"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -187,7 +217,12 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "Book prediction. 'Redstot' is invented terminology specific to Dienach's text. Cannot be verified or refuted before 2396. directTruth low because no observable trend supports a world government with the structure described.",
-      "tags": ["dienach", "world-government", "redstot", "2396"],
+      "tags": [
+        "dienach",
+        "world-government",
+        "redstot",
+        "2396"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -201,7 +236,10 @@
         "quantity:two years",
         "ideology:socialism"
       ],
-      "relationships": ["r_0032", "r_0033"],
+      "relationships": [
+        "r_0032",
+        "r_0033"
+      ],
       "evidence": [
         {
           "transcriptId": "8HgLQGb907s",
@@ -215,7 +253,12 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "Utopia projection. No empirical basis. The hosts' own later observation — socialism fails because of human nature — weighs against the plausibility of this world working. Book prediction for ~2000 years in the future cannot be evaluated.",
-      "tags": ["dienach", "automation", "utopia", "3906"],
+      "tags": [
+        "dienach",
+        "automation",
+        "utopia",
+        "3906"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -250,7 +293,12 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "'Needlework / Niebelwerk' is invented book terminology for a speculative spiritual-transcendence event. No equivalent concept exists in mainstream futurism or physics. Pure speculation within the narrative.",
-      "tags": ["dienach", "needlework", "posthuman", "spiritual"],
+      "tags": [
+        "dienach",
+        "needlework",
+        "posthuman",
+        "spiritual"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -266,7 +314,10 @@
         "organization:council of state",
         "role:law professor"
       ],
-      "relationships": ["r_0075", "r_0082"],
+      "relationships": [
+        "r_0075",
+        "r_0082"
+      ],
       "evidence": [
         {
           "transcriptId": "8HgLQGb907s",
@@ -288,7 +339,12 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Georgios A. Papahatzis (1908-1991) was a real Greek legal scholar and University of Athens law professor; he served on the Council of State (Symvoulio tis Epikrateias), Greece's supreme administrative court. Host's attribution matches his biography.",
-      "tags": ["papahatzis", "greece", "council-of-state", "law"],
+      "tags": [
+        "papahatzis",
+        "greece",
+        "council-of-state",
+        "law"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -316,7 +372,11 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "No Swiss, German, or Greek civil record of 'Paul Amadeus Dienach' has been documented. The name does not appear in tuberculosis-era Swiss death registries. The single photo used in all retellings (flagged by the host) also has no independent attribution. Strong circumstantial case that Dienach was a literary invention.",
-      "tags": ["dienach", "hoax", "no-records"],
+      "tags": [
+        "dienach",
+        "hoax",
+        "no-records"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -351,7 +411,12 @@
       "confidence": 0.95,
       "directTruth": 0.75,
       "rationale": "Host's verdict. Papahatzis published 'Chronicles From the Future' himself in 1972, the timing lines up with the Greek junta's cultural milieu, and internal content mirrors his own academic interests (administrative law, social studies, humanities). Attribution to Papahatzis as author (using Dienach as a literary framing) is the parsimonious explanation.",
-      "tags": ["dienach", "papahatzis", "literary-exercise", "verdict"],
+      "tags": [
+        "dienach",
+        "papahatzis",
+        "literary-exercise",
+        "verdict"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -378,7 +443,10 @@
         "work_of_media:the shadow out of time",
         "date_time:1936"
       ],
-      "relationships": ["r_0085", "r_0065"],
+      "relationships": [
+        "r_0085",
+        "r_0065"
+      ],
       "evidence": [
         {
           "transcriptId": "8HgLQGb907s",
@@ -392,7 +460,12 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "Lovecraft's 'The Shadow Out of Time' (1936) does feature a consciousness-transfer across time that's plausibly a literary antecedent for Dienach's narrative. The influence attribution is the host's conjecture but is plausible given the parallel plot devices.",
-      "tags": ["lovecraft", "papahatzis", "literary-influence", "1936"],
+      "tags": [
+        "lovecraft",
+        "papahatzis",
+        "literary-influence",
+        "1936"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

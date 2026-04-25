@@ -3,6 +3,7 @@
   "transcriptId": "aTuonpTAIOw",
   "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "aTuonpTAIOw:c_0001",
@@ -31,7 +32,12 @@
       "directTruth": 0.98,
       "rationale": "The Max Headroom broadcast-signal intrusion is documented by FCC records, multiple contemporaneous news reports, and surviving archival recordings. Date, station, and host all verified.",
       "hostStance": "asserts",
-      "tags": ["max-headroom", "wgn", "1987", "broadcast-intrusion"]
+      "tags": [
+        "max-headroom",
+        "wgn",
+        "1987",
+        "broadcast-intrusion"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0002",
@@ -59,9 +65,17 @@
       "rationale": "WTTW (Chicago PBS) had its signal hijacked during an episode of Doctor Who ('Horror of Fang Rock') on the same night — confirmed in WTTW's own statements and FCC records.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aTuonpTAIOw:c_0001", "kind": "elaborates" }
+        {
+          "target": "aTuonpTAIOw:c_0001",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["wttw", "pbs", "doctor-who", "max-headroom"]
+      "tags": [
+        "wttw",
+        "pbs",
+        "doctor-who",
+        "max-headroom"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0003",
@@ -88,7 +102,12 @@
       "directTruth": 0.97,
       "rationale": "The 1985 Channel 4 TV movie and 1987-88 ABC series 'Max Headroom' are both well-documented in television history.",
       "hostStance": "asserts",
-      "tags": ["max-headroom", "abc", "1985", "tv-history"]
+      "tags": [
+        "max-headroom",
+        "abc",
+        "1985",
+        "tv-history"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0004",
@@ -115,9 +134,16 @@
       "rationale": "Matt Frewer's prosthetics-based performance of Max Headroom is well-documented by the show's producers (Rocky Morton / Annabel Jankel) and Frewer's own interviews.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aTuonpTAIOw:c_0003", "kind": "elaborates" }
+        {
+          "target": "aTuonpTAIOw:c_0003",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["matt-frewer", "max-headroom", "practical-effects"]
+      "tags": [
+        "matt-frewer",
+        "max-headroom",
+        "practical-effects"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0005",
@@ -134,7 +160,7 @@
           "charStart": 5495,
           "charEnd": 5660,
           "timeStart": 445.759,
-          "timeEnd": 458.0,
+          "timeEnd": 458,
           "quote": "ow he created this voice\nby running the audio feed through an\nanalog\nring modulator you can create this\neffect and it might not have been an\naccident that max hijack"
         }
       ],
@@ -142,7 +168,11 @@
       "directTruth": 0.85,
       "rationale": "Audio analysis of the 1987 tape is consistent with ring-modulator processing, and the Dalek voice in Doctor Who is famously produced the same way — amateur technical analysis of the intrusion corroborates.",
       "hostStance": "asserts",
-      "tags": ["ring-modulator", "audio", "max-headroom"]
+      "tags": [
+        "ring-modulator",
+        "audio",
+        "max-headroom"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0006",
@@ -165,7 +195,11 @@
       "directTruth": 0.95,
       "rationale": "STL architecture is standard broadcast-engineering practice. The technique of overpowering an STL is the generally accepted explanation for the Max Headroom hack.",
       "hostStance": "asserts",
-      "tags": ["stl", "broadcast-engineering", "intrusion"]
+      "tags": [
+        "stl",
+        "broadcast-engineering",
+        "intrusion"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0007",
@@ -192,7 +226,12 @@
       "directTruth": 0.95,
       "rationale": "The Captain Midnight HBO hack on April 27, 1986 is well-documented and widely referenced as America's first major broadcast-signal intrusion.",
       "hostStance": "asserts",
-      "tags": ["captain-midnight", "hbo", "1986", "first-intrusion"]
+      "tags": [
+        "captain-midnight",
+        "hbo",
+        "1986",
+        "first-intrusion"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0008",
@@ -221,9 +260,16 @@
       "rationale": "FCC records and contemporaneous reporting confirm John R. MacDougall of Ocala, Florida as the Captain Midnight hacker.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aTuonpTAIOw:c_0007", "kind": "elaborates" }
+        {
+          "target": "aTuonpTAIOw:c_0007",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["macdougall", "identified", "captain-midnight"]
+      "tags": [
+        "macdougall",
+        "identified",
+        "captain-midnight"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0009",
@@ -249,9 +295,16 @@
       "rationale": "MacDougall's plea and $5000 fine (under the Communications Act) are part of the public court record.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aTuonpTAIOw:c_0008", "kind": "elaborates" }
+        {
+          "target": "aTuonpTAIOw:c_0008",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["fine", "plea", "macdougall"]
+      "tags": [
+        "fine",
+        "plea",
+        "macdougall"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0010",
@@ -278,9 +331,16 @@
       "rationale": "The Max Headroom intrusion is famously unsolved as of the video's production. No arrest or identified perpetrator exists in the public record (despite recurring internet theories).",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aTuonpTAIOw:c_0001", "kind": "elaborates" }
+        {
+          "target": "aTuonpTAIOw:c_0001",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["unsolved", "max-headroom", "mystery"]
+      "tags": [
+        "unsolved",
+        "max-headroom",
+        "mystery"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0011",
@@ -306,7 +366,11 @@
       "directTruth": 0.5,
       "rationale": "ABC's Max Headroom was indeed cancelled after two short seasons; Friday-night competition from NBC's Miami Vice is often cited in retrospective explanations. 'Beaten by Miami Vice' is a popular but simplified explanation.",
       "hostStance": "asserts",
-      "tags": ["cancellation", "miami-vice", "ratings"]
+      "tags": [
+        "cancellation",
+        "miami-vice",
+        "ratings"
+      ]
     },
     {
       "id": "aTuonpTAIOw:c_0012",
@@ -332,9 +396,16 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "aTuonpTAIOw:c_0010", "kind": "supports" }
+        {
+          "target": "aTuonpTAIOw:c_0010",
+          "kind": "supports"
+        }
       ],
-      "tags": ["verdict", "motive", "max-headroom"]
+      "tags": [
+        "verdict",
+        "motive",
+        "max-headroom"
+      ]
     }
   ]
 }

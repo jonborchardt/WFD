@@ -1,6 +1,8 @@
 ---
 name: ai-reasoning-layer
 description: Run the reasoning-layer test harness. Use when the user asks to "run reasoning", "try the reasoning layer", "compute derived truth", "find contradictions", or any time the reasoning modules (claim-propagation / claim-contradictions / claim-counterfactual) need to be exercised against a slice of the corpus.
+version: v2
+lastVerifiedAgainstCorpus: 2026-04-24
 ---
 
 # AI reasoning layer
@@ -153,9 +155,12 @@ Full-corpus mode skips this step — nothing to follow up on.
   every `dep.target` is a claim id within the same file. Propagation
   respects this; the DAG is a disjoint union of per-video subgraphs.
 - **Cross-video contradictions are inferred, not declared.** They come
-  from shared entity keys + opposite `hostStance` + token-Jaccard
-  similarity on claim text. Version-1 heuristic only; embedding
-  similarity is a later add.
+  from shared entity keys + opposite `hostStance` + (when
+  `data/claims/embeddings.json` is populated) embedding-cosine
+  similarity on claim text, falling back to token-Jaccard when the
+  embeddings cache is missing. Generate embeddings with
+  `node src/ai/reasoning/embed-claims.mjs` — idempotent, ~5 s per 100
+  claims.
 
 ## Quality bar for the report back to the user
 

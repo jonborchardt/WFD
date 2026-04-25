@@ -3,6 +3,7 @@
   "transcriptId": "r8p44wQMtNE",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "r8p44wQMtNE:c_0001",
@@ -19,8 +20,8 @@
           "transcriptId": "r8p44wQMtNE",
           "charStart": 259,
           "charEnd": 352,
-          "timeStart": 16.0,
-          "timeEnd": 24.0,
+          "timeStart": 16,
+          "timeEnd": 24,
           "quote": "a virtual reality\ncreated more than 250 000 years ago for\na single purpose to use you as food"
         }
       ],
@@ -28,7 +29,11 @@
       "rationale": "The episode's central framing thesis — synthesized from David Icke, John Lear, Zechariah Sitchin, and Ellis Silver. Unfalsifiable by design, no evidentiary basis outside the named conspiracy sources. Omitting directTruth because the proposition is not scientifically tractable rather than defaulting to a meaningless 0.5.",
       "hostStance": "asserts",
       "inVerdictSection": true,
-      "tags": ["prison-planet", "aliens", "simulation"]
+      "tags": [
+        "prison-planet",
+        "aliens",
+        "simulation"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0002",
@@ -48,7 +53,7 @@
           "charStart": 5275,
           "charEnd": 5598,
           "timeStart": 340.4,
-          "timeEnd": 360.0,
+          "timeEnd": 360,
           "quote": "Zechariah sitchin in his book the 12th\nPlanet claims the Anunnaki are actually\naliens who visited Earth thousands of\nyears ago from their home planet Nibiru\nwhen they arrived the deity called enki\nadded alien DNA to Ancient Man and the\nresult was us\nthe intention was to create a slave\nspecies to mine gold for the Anunnaki"
         }
       ],
@@ -57,9 +62,16 @@
       "rationale": "Sitchin's The 12th Planet (1976) does make exactly these claims. The underlying translations have been systematically rejected by academic Sumerologists — the host himself concedes later that 'interpretations of Sumerian texts have been largely discredited'. directTruth scored low because the factual content (aliens, Nibiru, slave species) has no scientific basis.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0001", "kind": "supports" }
+        {
+          "target": "r8p44wQMtNE:c_0001",
+          "kind": "supports"
+        }
       ],
-      "tags": ["anunnaki", "sitchin", "ancient-aliens"]
+      "tags": [
+        "anunnaki",
+        "sitchin",
+        "ancient-aliens"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0003",
@@ -78,7 +90,7 @@
           "charStart": 28171,
           "charEnd": 28234,
           "timeStart": 1822.84,
-          "timeEnd": 1829.0,
+          "timeEnd": 1829,
           "quote": "interpretations of Sumerian texts have\nbeen largely discredited"
         }
       ],
@@ -87,9 +99,16 @@
       "rationale": "Uncontroversially true. Assyriologists (Michael Heiser, Ronald Wallenfels) have published detailed rebuttals: 'Nibiru' does not mean 'planet of the crossing' in cuneiform; 'Anunnaki' means 'offspring of Anu', not alien pilots. The host's own concession here aligns with academic consensus.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0002", "kind": "contradicts" }
+        {
+          "target": "r8p44wQMtNE:c_0002",
+          "kind": "contradicts"
+        }
       ],
-      "tags": ["sitchin", "sumerology", "academic-consensus"]
+      "tags": [
+        "sitchin",
+        "sumerology",
+        "academic-consensus"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0004",
@@ -102,14 +121,16 @@
         "organization:illuminati",
         "organization:major media companies"
       ],
-      "relationships": ["r_0030"],
+      "relationships": [
+        "r_0030"
+      ],
       "evidence": [
         {
           "transcriptId": "r8p44wQMtNE",
           "charStart": 8260,
           "charEnd": 8367,
           "timeStart": 533.84,
-          "timeEnd": 540.0,
+          "timeEnd": 540,
           "quote": "Ike claims that humans share the Earth\nwith a race of shape-shifting reptilian\nhumanoids called the archons"
         }
       ],
@@ -118,9 +139,16 @@
       "rationale": "Icke does make this claim across his 20+ books ('The Biggest Secret', 1999). The factual content — reptilian humanoid overlords — has zero evidentiary basis and is a textbook example of modern conspiracy theorizing. directTruth near-zero for the substantive reptilian claim.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0001", "kind": "supports" }
+        {
+          "target": "r8p44wQMtNE:c_0001",
+          "kind": "supports"
+        }
       ],
-      "tags": ["reptilians", "icke", "conspiracy"]
+      "tags": [
+        "reptilians",
+        "icke",
+        "conspiracy"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0005",
@@ -139,7 +167,7 @@
           "charStart": 30112,
           "charEnd": 30182,
           "timeStart": 1953.28,
-          "timeEnd": 1960.0,
+          "timeEnd": 1960,
           "quote": "in 1991 he claimed to be\nthe Son of God and the world was going\nto end"
         }
       ],
@@ -148,9 +176,16 @@
       "rationale": "Documented — Icke's March 1991 Wogan interview on BBC where (in turquoise) he announced he was a 'son of the Godhead' and predicted specific date-bound disasters. The interview is archived and widely replayed.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0004", "kind": "contradicts" }
+        {
+          "target": "r8p44wQMtNE:c_0004",
+          "kind": "contradicts"
+        }
       ],
-      "tags": ["icke", "1991", "wogan"]
+      "tags": [
+        "icke",
+        "1991",
+        "wogan"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0006",
@@ -171,7 +206,7 @@
           "charStart": 14762,
           "charEnd": 15041,
           "timeStart": 950.76,
-          "timeEnd": 972.0,
+          "timeEnd": 972,
           "quote": "this photo was taken December 6 2021 by\nthe chinese-made lunar rover u22 while\nexploring The Far Side of the Moon a\ncube-shaped object is clearly seen 80\nmeters from the Von Carmen crater and\nfor some reason the China National Space\nAdministration labeled this object\nmystery Hut"
         }
       ],
@@ -179,7 +214,11 @@
       "directTruth": 0.8,
       "rationale": "The 'mystery hut' / 神秘小屋 episode is real — Yutu-2 did image a feature near Von Karman crater in Dec 2021 and CNSA/Our Space informally called it 神秘小屋. Follow-up imaging (Jan 2022) revealed a small rabbit-shaped rock. The rover's proper designation is Yutu-2 (玉兔二号), not U22; otherwise the documented event is accurate.",
       "hostStance": "asserts",
-      "tags": ["moon", "yutu-2", "mystery-hut"]
+      "tags": [
+        "moon",
+        "yutu-2",
+        "mystery-hut"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0007",
@@ -198,7 +237,7 @@
           "charStart": 24769,
           "charEnd": 24877,
           "timeStart": 1605.12,
-          "timeEnd": 1615.0,
+          "timeEnd": 1615,
           "quote": "in 1970 two Soviet scientists proposed\nthat not only is the moon hollow the\nMoon is an artificial spacecraft"
         }
       ],
@@ -206,9 +245,16 @@
       "rationale": "Mikhail Vasin and Alexander Shcherbakov published 'Is the Moon the Creation of Alien Intelligence?' in Sputnik magazine (July 1970), proposing exactly this. The historical attribution is correct. Omitting directTruth because the claim conflates a real historical proposal (well-documented) with an unsupported substantive hypothesis (no evidentiary basis) — no coherent single number.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0008", "kind": "supports" }
+        {
+          "target": "r8p44wQMtNE:c_0008",
+          "kind": "supports"
+        }
       ],
-      "tags": ["spaceship-moon", "vasin-shcherbakov", "1970"]
+      "tags": [
+        "spaceship-moon",
+        "vasin-shcherbakov",
+        "1970"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0008",
@@ -226,8 +272,8 @@
           "transcriptId": "r8p44wQMtNE",
           "charStart": 24365,
           "charEnd": 24455,
-          "timeStart": 1578.0,
-          "timeEnd": 1586.0,
+          "timeStart": 1578,
+          "timeEnd": 1586,
           "quote": "the moon vibrating for over an hour the\nmoon was famously described as ringing\nlike a bell"
         }
       ],
@@ -236,9 +282,16 @@
       "rationale": "Apollo 12 (Nov 1969) did impact its LM ascent stage into the Moon and the seismic signal lasted about an hour. The 'ringing like a bell' quote is authentic. The hollow-Moon inference is rejected by mainstream lunar seismology — long durations are attributed to the dry, fractured lunar crust's low seismic damping, not to a hollow interior.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0007", "kind": "supports" }
+        {
+          "target": "r8p44wQMtNE:c_0007",
+          "kind": "supports"
+        }
       ],
-      "tags": ["apollo-12", "hollow-moon", "seismology"]
+      "tags": [
+        "apollo-12",
+        "hollow-moon",
+        "seismology"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0009",
@@ -258,7 +311,7 @@
           "charStart": 22718,
           "charEnd": 22808,
           "timeStart": 1472.6,
-          "timeEnd": 1481.0,
+          "timeEnd": 1481,
           "quote": "size of the Moon should be about 40\nmiles in diameter that's it it's over 2\n000 miles wide"
         }
       ],
@@ -266,7 +319,11 @@
       "directTruth": 0.55,
       "rationale": "The Moon's actual diameter (~2,159 miles) and its large Earth-ratio (~1/4) are factual. The '40 miles' figure is a rhetorical extrapolation from typical moon-to-planet ratios in outer-planet systems — not a rigorous physical prediction. The genuine puzzle (Earth's moon is unusually large for a terrestrial planet) is real; current mainstream explanation is the giant-impact / Theia hypothesis.",
       "hostStance": "asserts",
-      "tags": ["moon", "diameter", "anomaly"]
+      "tags": [
+        "moon",
+        "diameter",
+        "anomaly"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0010",
@@ -285,8 +342,8 @@
           "transcriptId": "r8p44wQMtNE",
           "charStart": 18971,
           "charEnd": 19422,
-          "timeStart": 1227.0,
-          "timeEnd": 1254.0,
+          "timeStart": 1227,
+          "timeEnd": 1254,
           "quote": "Duncan McDougall tried to\ndetermine if the soul had measurable\nMass he thought that if a soul existed\nit would have weight so upon death the\nsoul would escape and the weight loss\ncould be detected McDougall had six\ndying patients placed on sensitive\nscales finding that they lost an average\nof 21 Grams at the moment of death he\nconcluded this represented the Soul's\nMass but this small sample size and\nerrors in methodology cast out on the\nexperiment"
         }
       ],
@@ -294,7 +351,11 @@
       "directTruth": 0.75,
       "rationale": "MacDougall's study was published in American Medicine (April 1907) with six patients; the '21 grams' figure entered popular culture. Host's structural framing is correct — the methodological problems (scale resolution, non-simultaneous endpoints, tiny n) are well-known, and no replication has succeeded.",
       "hostStance": "asserts",
-      "tags": ["macdougall", "21-grams", "soul"]
+      "tags": [
+        "macdougall",
+        "21-grams",
+        "soul"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0011",
@@ -311,8 +372,8 @@
           "transcriptId": "r8p44wQMtNE",
           "charStart": 20846,
           "charEnd": 20919,
-          "timeStart": 1349.0,
-          "timeEnd": 1354.0,
+          "timeStart": 1349,
+          "timeEnd": 1354,
           "quote": "conclusive scientific evidence of the\nhuman soul has yet to be discovered"
         }
       ],
@@ -321,9 +382,16 @@
       "rationale": "Factually accurate as of 2026. NDEs have documented neurological correlates (stimulation of the temporoparietal junction reproduces out-of-body sensation). No reproducible evidence of a separable 'soul' exists in peer-reviewed science.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0010", "kind": "elaborates" }
+        {
+          "target": "r8p44wQMtNE:c_0010",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["soul", "neuroscience", "ndes"]
+      "tags": [
+        "soul",
+        "neuroscience",
+        "ndes"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0012",
@@ -344,8 +412,8 @@
           "transcriptId": "r8p44wQMtNE",
           "charStart": 29450,
           "charEnd": 29568,
-          "timeStart": 1908.0,
-          "timeEnd": 1920.0,
+          "timeStart": 1908,
+          "timeEnd": 1920,
           "quote": "50 000\nyears ago ancient humans procreated with\na species that scientists didn't know\nexisted they call this ghost DNA"
         }
       ],
@@ -354,9 +422,16 @@
       "rationale": "Refers to Durvasula & Sankararaman (2020, Science Advances) identifying introgression from an archaic 'ghost' population into West African genomes. Real finding; interpretation in paleogenetics is another archaic hominin, not extraterrestrial origin. The leap to 'aliens dropped us off' is unsupported — the ghost-DNA paper assumes terrestrial common ancestry throughout.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0001", "kind": "supports" }
+        {
+          "target": "r8p44wQMtNE:c_0001",
+          "kind": "supports"
+        }
       ],
-      "tags": ["ghost-dna", "2020", "paleogenetics"]
+      "tags": [
+        "ghost-dna",
+        "2020",
+        "paleogenetics"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0013",
@@ -376,8 +451,8 @@
           "transcriptId": "r8p44wQMtNE",
           "charStart": 30696,
           "charEnd": 30766,
-          "timeStart": 1988.0,
-          "timeEnd": 1995.0,
+          "timeStart": 1988,
+          "timeEnd": 1995,
           "quote": "there are no\ntunnels and there is no Hopey legend of\nthe lizard people"
         }
       ],
@@ -386,9 +461,16 @@
       "rationale": "[debunks] The host is correct. Jean Bosquet's 1934 LA Times article relayed mining engineer G. Warren Shufelt's claims, but no tunnels were ever found despite Shufelt's excavations beneath Fort Moore Hill, and ethnographers confirm no Hopi oral tradition of lizard-people. Rare debunk inside the episode.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0004", "kind": "contradicts" }
+        {
+          "target": "r8p44wQMtNE:c_0004",
+          "kind": "contradicts"
+        }
       ],
-      "tags": ["debunk", "1934", "la-times"]
+      "tags": [
+        "debunk",
+        "1934",
+        "la-times"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0014",
@@ -405,7 +487,7 @@
           "charStart": 28775,
           "charEnd": 28967,
           "timeStart": 1862.5,
-          "timeEnd": 1875.0,
+          "timeEnd": 1875,
           "quote": "chimps share almost 99 of their\nDNA with humans dogs and cows share\naround 80 percent birds and humans share\n65 percent of their DNA humans even\nshare over 50 percent of their DNA with\nbananas"
         }
       ],
@@ -414,9 +496,16 @@
       "rationale": "[undercuts] The percentages are approximate but correct: chimp-human ≈ 98.8% coding DNA; banana-human ≈ 40-60% depending on methodology. Every human gene has clear evolutionary continuity with Earth life — a strong structural argument against the Anunnaki-DNA hypothesis even though the host does not explicitly frame it as contradiction.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "r8p44wQMtNE:c_0002", "kind": "contradicts" }
+        {
+          "target": "r8p44wQMtNE:c_0002",
+          "kind": "contradicts"
+        }
       ],
-      "tags": ["genetics", "dna", "debunk"]
+      "tags": [
+        "genetics",
+        "dna",
+        "debunk"
+      ]
     },
     {
       "id": "r8p44wQMtNE:c_0015",
@@ -430,8 +519,8 @@
           "transcriptId": "r8p44wQMtNE",
           "charStart": 32003,
           "charEnd": 32146,
-          "timeStart": 2072.0,
-          "timeEnd": 2085.0,
+          "timeStart": 2072,
+          "timeEnd": 2085,
           "quote": "negative emotions fuel the\ncycle positive emotions can break it so\nyou have a choice you can choose to be\nthe change choose kindness over anger"
         }
       ],
@@ -439,7 +528,10 @@
       "rationale": "Normative prescription, not a factual claim. Uses the prison-planet cosmology as motivational frame for standard virtue-ethics advice. Omitting directTruth because moral prescriptions aren't truth-apt in the same sense as empirical propositions.",
       "hostStance": "asserts",
       "inVerdictSection": true,
-      "tags": ["verdict", "moral"]
+      "tags": [
+        "verdict",
+        "moral"
+      ]
     }
   ]
 }

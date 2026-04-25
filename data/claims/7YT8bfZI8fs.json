@@ -3,13 +3,18 @@
   "transcriptId": "7YT8bfZI8fs",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b4-resume",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "7YT8bfZI8fs:c_0001",
       "videoId": "7YT8bfZI8fs",
       "text": "Recent releases of Navy pilot videos and classified documents from world governments indicate we may be on the verge of a 'UFO renaissance'.",
       "kind": "opinion",
-      "entities": ["work_of_media:strange navy pilot videos", "work_of_media:ufo renaissance", "organization:world governments"],
+      "entities": [
+        "work_of_media:strange navy pilot videos",
+        "work_of_media:ufo renaissance",
+        "organization:world governments"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -23,7 +28,10 @@
       ],
       "confidence": 0.75,
       "rationale": "Host's opening editorializing. The 2017 NYT Tic Tac videos and 2021 ODNI UAP report did mark a real shift in official engagement with UFOs, and subsequent declassifications (2023 Grusch testimony, 2024 AARO report) suggest a genuine uptick. 'Renaissance' framing is subjective but defensible. Opinion claim — directTruth omitted.",
-      "tags": ["ufo-renaissance", "opening-statement"],
+      "tags": [
+        "ufo-renaissance",
+        "opening-statement"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -32,7 +40,9 @@
       "videoId": "7YT8bfZI8fs",
       "text": "The CIA has declassified a large number of secret files related to unexplained UFO sightings.",
       "kind": "empirical",
-      "entities": ["organization:cia"],
+      "entities": [
+        "organization:cia"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -47,7 +57,11 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Factually correct: the CIA's UAP-related files were released in January 2021 after a long FOIA process. The release is publicly documented and the files are hosted on the CIA's CREST system as well as The Black Vault.",
-      "tags": ["cia", "declassification", "ufo"],
+      "tags": [
+        "cia",
+        "declassification",
+        "ufo"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -56,8 +70,14 @@
       "videoId": "7YT8bfZI8fs",
       "text": "The declassified CIA UFO files are being hosted on The Black Vault, a privately run database of declassified government papers.",
       "kind": "empirical",
-      "entities": ["facility:black vault", "organization:black vault"],
-      "relationships": ["r_0001", "r_0003"],
+      "entities": [
+        "facility:black vault",
+        "organization:black vault"
+      ],
+      "relationships": [
+        "r_0001",
+        "r_0003"
+      ],
       "evidence": [
         {
           "transcriptId": "7YT8bfZI8fs",
@@ -71,7 +91,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "The Black Vault (theblackvault.com) is a real, well-established privately operated FOIA-document repository that does host the 2021 CIA UFO release. Host's reporting is factually accurate and the site can be independently verified.",
-      "tags": ["black-vault", "foia", "declassification"],
+      "tags": [
+        "black-vault",
+        "foia",
+        "declassification"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -80,7 +104,10 @@
       "videoId": "7YT8bfZI8fs",
       "text": "The CIA UAP document release comprises roughly 3,000 pages of PDFs focused on alien spacecraft encounters and unidentified aerial phenomena.",
       "kind": "empirical",
-      "entities": ["quantity:almost 3 000 pages", "organization:cia"],
+      "entities": [
+        "quantity:almost 3 000 pages",
+        "organization:cia"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -95,7 +122,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The January 2021 CIA UAP release was approximately 2,700-3,000 pages, widely reported in coverage (Vice, Popular Mechanics, Greenewald's own reporting). Host's figure is accurate.",
-      "tags": ["cia", "uap", "document-count"],
+      "tags": [
+        "cia",
+        "uap",
+        "document-count"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -104,8 +135,17 @@
       "videoId": "7YT8bfZI8fs",
       "text": "Black Vault founder John Greenewald Jr. spent almost 20 years filing lawsuits and Freedom of Information Act requests demanding the CIA disclose its UAP records.",
       "kind": "historical",
-      "entities": ["person:john greenwald jr", "facility:black vault", "law_or_policy:foia", "law_or_policy:freedom of information requests", "organization:cia"],
-      "relationships": ["r_0002", "r_0004"],
+      "entities": [
+        "person:john greenwald jr",
+        "facility:black vault",
+        "law_or_policy:foia",
+        "law_or_policy:freedom of information requests",
+        "organization:cia"
+      ],
+      "relationships": [
+        "r_0002",
+        "r_0004"
+      ],
       "evidence": [
         {
           "transcriptId": "7YT8bfZI8fs",
@@ -119,7 +159,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "John Greenewald Jr. founded The Black Vault in 1996 and has been a prolific FOIA requester for ~25+ years. The multi-year CIA UAP FOIA fight is well-documented in his own writings and interviews. Host's timeline estimate is defensible.",
-      "tags": ["greenewald", "foia", "black-vault-history"],
+      "tags": [
+        "greenewald",
+        "foia",
+        "black-vault-history"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -128,7 +172,12 @@
       "videoId": "7YT8bfZI8fs",
       "text": "A document in the CIA UAP release dated April 1976 and titled 'UFO Research' indicates the CIA hand-delivered a physical object to a researcher advising the government.",
       "kind": "empirical",
-      "entities": ["date_time:april 1976", "organization:cia", "person:researcher", "organization:government"],
+      "entities": [
+        "date_time:april 1976",
+        "organization:cia",
+        "person:researcher",
+        "organization:government"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -143,7 +192,12 @@
       "confidence": 0.75,
       "directTruth": 0.5,
       "rationale": "CIA document C0551 from April 1976 referencing UFO research and hand-delivery of an object is a real artifact in the release (CREST archive), and Greenewald highlighted it. But without the redacted details, 'hand-delivered object' could cover mundane things — a report, a photograph, or a technical specimen. Host's framing as 'physical evidence of a UFO' in earlier sentence is speculative.",
-      "tags": ["cia", "c0551", "april-1976", "document"],
+      "tags": [
+        "cia",
+        "c0551",
+        "april-1976",
+        "document"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -152,7 +206,10 @@
       "videoId": "7YT8bfZI8fs",
       "text": "Document C0551 provides physical evidence of a UFO.",
       "kind": "speculative",
-      "entities": ["organization:cia", "date_time:april 1976"],
+      "entities": [
+        "organization:cia",
+        "date_time:april 1976"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -167,7 +224,11 @@
       "confidence": 0.7,
       "directTruth": 0.15,
       "rationale": "Host hedges with 'seems to prove' — an appropriate hedge because the document is heavily redacted. Claiming C0551 constitutes physical UFO evidence goes beyond what the redacted text supports; the 'hand-delivered object' could be entirely conventional. Low directTruth for the strong interpretive claim.",
-      "tags": ["c0551", "ufo-evidence", "overclaim"],
+      "tags": [
+        "c0551",
+        "ufo-evidence",
+        "overclaim"
+      ],
       "inVerdictSection": false,
       "hostStance": "steelman",
       "dependencies": [
@@ -183,7 +244,9 @@
       "videoId": "7YT8bfZI8fs",
       "text": "The key details of what was hand-delivered by the CIA remain redacted, so the true significance of document C0551 cannot yet be determined.",
       "kind": "empirical",
-      "entities": ["organization:cia"],
+      "entities": [
+        "organization:cia"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -198,7 +261,11 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Factually correct: the CIA UAP documents retain significant redactions under b(1) national security and b(3) statutory exemptions. Researchers can make progress via cross-document reference, but definitive interpretation awaits further declassification.",
-      "tags": ["redaction", "uncertainty", "cia-docs"],
+      "tags": [
+        "redaction",
+        "uncertainty",
+        "cia-docs"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

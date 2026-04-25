@@ -111,6 +111,7 @@ interface FilterState {
   kinds: Set<string>;
   stances: Set<string>;             // includes "__none__" sentinel
   sources: Set<string>;
+  tags: Set<string>;
   truthRange: [number, number] | null;
   confRange: [number, number] | null;
   dateRange: [number, number] | null;
@@ -126,7 +127,7 @@ interface FilterState {
 // Every set-valued key on FilterState. Used by helpers that iterate
 // over "all the set facets" without special-casing each one.
 const STRING_SET_KEYS = [
-  "kinds", "stances", "sources", "entities", "videos",
+  "kinds", "stances", "sources", "tags", "entities", "videos",
 ] as const;
 type StringSetKey = (typeof STRING_SET_KEYS)[number];
 const BOOL_SET_KEYS = [
@@ -139,6 +140,7 @@ const EMPTY_FILTER: FilterState = {
   kinds: new Set(),
   stances: new Set(),
   sources: new Set(),
+  tags: new Set(),
   truthRange: null,
   confRange: null,
   dateRange: null,
@@ -169,6 +171,7 @@ function parseFiltersFromUrl(): FilterState {
     kinds: setOf("kind"),
     stances: setOf("stance"),
     sources: setOf("src"),
+    tags: setOf("tag"),
     truthRange: parseRange(p.get("truth")),
     confRange: parseRange(p.get("conf")),
     dateRange: parseDateRange(p.get("date")),
@@ -191,6 +194,7 @@ function writeFiltersToUrl(s: FilterState) {
   setParam("kind", s.kinds);
   setParam("stance", s.stances);
   setParam("src", s.sources);
+  setParam("tag", s.tags);
   if (s.truthRange) p.set("truth", rangeStr(s.truthRange));
   if (s.confRange) p.set("conf", rangeStr(s.confRange));
   if (s.dateRange) p.set("date", dateRangeStr(s.dateRange));
@@ -217,6 +221,12 @@ function passes(
   if (s.kinds.size > 0 && !s.kinds.has(c.kind)) return false;
   if (s.stances.size > 0 && !s.stances.has(c.hostStance ?? "__none__")) return false;
   if (s.sources.size > 0 && !s.sources.has(c.truthSource)) return false;
+  if (s.tags.size > 0) {
+    const ct = c.tags ?? [];
+    let any = false;
+    for (const t of s.tags) if (ct.includes(t)) { any = true; break; }
+    if (!any) return false;
+  }
   if (s.truthRange) {
     const t = truthValue(c);
     if (t === null || t < s.truthRange[0] || t > s.truthRange[1]) return false;
@@ -275,6 +285,7 @@ function filterExcept(
     case "kinds": stripped.kinds = new Set(); break;
     case "stances": stripped.stances = new Set(); break;
     case "sources": stripped.sources = new Set(); break;
+    case "tags": stripped.tags = new Set(); break;
     case "truthRange": stripped.truthRange = null; break;
     case "confRange": stripped.confRange = null; break;
     case "dateRange": stripped.dateRange = null; break;
@@ -296,6 +307,8 @@ export function ClaimsPage() {
   const [filter, setFilter] = useState<FilterState>(() => parseFiltersFromUrl());
   const [entitySearch, setEntitySearch] = useState<Record<string, string>>({});
   const [videoSearch, setVideoSearch] = useState("");
+  const [tagSearch, setTagSearch] = useState("");
+  const [showAllTags, setShowAllTags] = useState(false);
   const [showAllByType, setShowAllByType] =
     useState<Record<string, boolean>>({});
 
@@ -396,6 +409,18 @@ export function ClaimsPage() {
     filterExcept(bundle.claims, filter, bundle, "sources"),
     (c) => c.truthSource,
   );
+  const tagScope = filterExcept(bundle.claims, filter, bundle, "tags");
+  const tagCounts = new Map<string, number>();
+  for (const c of tagScope) {
+    for (const t of (c.tags ?? [])) {
+      tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+    }
+  }
+  const tagRowsAll: BarRow[] = [...tagCounts.entries()]
+    .map(([id, count]) => ({ id, label: id, count }))
+    .filter((r) => !tagSearch || r.label.toLowerCase().includes(tagSearch.toLowerCase()))
+    .sort((a, b) => b.count - a.count);
+
   const verdictRows = makeCountRows(
     [
       ["yes", "host gave a verdict", VERDICT_TITLES.yes],
@@ -680,6 +705,38 @@ export function ClaimsPage() {
             </FacetCard>
           </FacetSection>
 
+          <FacetSection title="tags">
+            <FacetCard
+              label="tag" color={FACET.accent}
+              selected={filter.tags.size} total={tagCounts.size}
+            >
+              <TextField
+                size="small"
+                placeholder="search…"
+                value={tagSearch}
+                onChange={(e) => setTagSearch(e.target.value)}
+                fullWidth
+                sx={compactInputSx}
+              />
+              <BarListFacet
+                rows={tagRowsAll.slice(0, showAllTags ? 200 : PER_TYPE_VISIBLE)}
+                selected={filter.tags}
+                onToggle={(v) => toggleString("tags", v)}
+              />
+              {tagRowsAll.length > PER_TYPE_VISIBLE && (
+                <Button
+                  size="small"
+                  onClick={() => setShowAllTags((v) => !v)}
+                  sx={{ fontSize: 10, py: 0, minHeight: 20, px: 0.5 }}
+                >
+                  {showAllTags
+                    ? "top 8"
+                    : `+${tagRowsAll.length - PER_TYPE_VISIBLE} more`}
+                </Button>
+              )}
+            </FacetCard>
+          </FacetSection>
+
           <FacetSection title="entities">
             {orderedTypes.map((type) => {
               const bucket = entityByType.get(type)!;
@@ -814,6 +871,7 @@ const STRING_KEY_LABEL: Record<StringSetKey, string> = {
   kinds: "kind",
   stances: "stance",
   sources: "source",
+  tags: "tag",
   entities: "entity",
   videos: "video",
 };

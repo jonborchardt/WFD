@@ -1,11 +1,13 @@
 ---
 name: metrics
 description: Compute + check + baseline the corpus-quality metrics. Use when the user asks to "run metrics", "check metrics", "capture baseline", "show the dashboard numbers", "gate on metrics", "did we regress", or any time the operator wants to see the entity-hygiene / claims / contradictions / corrections signals in one place.
+version: v2
+lastVerifiedAgainstCorpus: 2026-04-24
 ---
 
 # Metrics
 
-Runs the metrics module at [src/metrics/](../../../src/metrics/) — 47
+Runs the metrics module at [src/metrics/](../../../src/metrics/) — 49
 quality signals across 5 sections: entity-hygiene, entity-resolution,
 claims, contradictions, operator-corrections. Three modes:
 

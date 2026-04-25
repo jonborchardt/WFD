@@ -34,6 +34,32 @@ function loadAllClaims(dataDir: string): Claim[] {
   return out;
 }
 
+interface PromptVersionBreakdown {
+  fileCount: number;
+  v2Files: number;
+  unknownOrUnstamped: number;
+}
+
+function promptVersionBreakdown(dataDir: string): PromptVersionBreakdown {
+  const dir = join(dataDir, "claims");
+  if (!existsSync(dir)) return { fileCount: 0, v2Files: 0, unknownOrUnstamped: 0 };
+  const files = readdirSync(dir).filter(
+    (f) => f.endsWith(".json") && !RESERVED_CLAIM_FILES.has(f),
+  );
+  let v2 = 0;
+  let other = 0;
+  let total = 0;
+  for (const f of files) {
+    let j: PersistedClaims;
+    try { j = JSON.parse(readFileSync(join(dir, f), "utf8")) as PersistedClaims; } catch { continue; }
+    if (!Array.isArray(j.claims)) continue;
+    total++;
+    if (j.promptVersion === "v2") v2++;
+    else other++;
+  }
+  return { fileCount: total, v2Files: v2, unknownOrUnstamped: other };
+}
+
 function percentile(sorted: number[], p: number): number {
   if (sorted.length === 0) return 0;
   const idx = Math.min(sorted.length - 1, Math.max(0, Math.floor(sorted.length * p)));
@@ -44,6 +70,7 @@ export const claimsSection: MetricSection = {
   section: "claims",
   compute(dataDir: string): Metric[] {
     const claims = loadAllClaims(dataDir);
+    const pv = promptVersionBreakdown(dataDir);
     const total = claims.length;
     if (total === 0) {
       // File layout is present but no claim files — emit null metrics so
@@ -58,6 +85,8 @@ export const claimsSection: MetricSection = {
         { section: "claims", name: "claims.evidenceP90Chars", value: null, unit: "chars" },
         { section: "claims", name: "claims.evidenceMaxChars", value: null, unit: "chars" },
         { section: "claims", name: "claims.contradictsSubkindPct", value: null, unit: "pct" },
+        { section: "claims", name: "claims.promptVersionV2Pct", value: null, unit: "pct" },
+        { section: "claims", name: "claims.promptVersionUnknownFiles", value: null, unit: "count" },
       ];
     }
 
@@ -129,6 +158,16 @@ export const claimsSection: MetricSection = {
         unit: "pct",
         description: "share of contradicts deps whose rationale carries a typed prefix (target: ≥95%)",
         source: "data/claims/*.json" },
+      { section: "claims", name: "claims.promptVersionV2Pct",
+        value: pv.fileCount === 0 ? null : pct(pv.v2Files, pv.fileCount),
+        unit: "pct",
+        description: "share of claim files stamped promptVersion=v2 (target: 100%)",
+        source: "data/claims/<id>.json promptVersion field" },
+      { section: "claims", name: "claims.promptVersionUnknownFiles",
+        value: pv.unknownOrUnstamped,
+        unit: "count",
+        description: "claim files missing promptVersion or with an unknown value (target: 0)",
+        source: "data/claims/<id>.json promptVersion field" },
     ];
   },
 };

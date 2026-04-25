@@ -3,13 +3,16 @@
   "transcriptId": "AZXvhIpYwak",
   "generatedAt": "2026-04-22T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "AZXvhIpYwak:c_0001",
       "videoId": "AZXvhIpYwak",
       "text": "A hidden network of controllers places symbols in logos, politics, and media to shape public opinion and behavior subconsciously.",
       "kind": "speculative",
-      "entities": ["organization:illuminati"],
+      "entities": [
+        "organization:illuminati"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -25,7 +28,11 @@
       "directTruth": 0.1,
       "rationale": "The general claim that marketing and political campaigns use symbol-emotion associations is real; but the 'hidden controllers' / Illuminati framing attributing coordinated steering to a secret group is not supported by any evidence. Pseudo-conspiratorial umbrella.",
       "hostStance": "asserts",
-      "tags": ["illuminati", "symbols", "manipulation"]
+      "tags": [
+        "illuminati",
+        "symbols",
+        "manipulation"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0002",
@@ -48,7 +55,10 @@
       "directTruth": 0.6,
       "rationale": "Visual cortex → amygdala / limbic-system routing is real in cognitive neuroscience (see LeDoux's 'low road' vs. 'high road' pathway for emotional processing). The claim that this makes symbols 'faster than words' is oversimplified but directionally correct.",
       "hostStance": "asserts",
-      "tags": ["neuroscience", "limbic-system"]
+      "tags": [
+        "neuroscience",
+        "limbic-system"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0003",
@@ -71,7 +81,10 @@
       "directTruth": 0.7,
       "rationale": "McDonald's brand research and child-marketing critique documents (FTC and academic studies) show deliberate design choices targeting children's recall and positive association. Accurate restatement.",
       "hostStance": "asserts",
-      "tags": ["mcdonalds", "branding"]
+      "tags": [
+        "mcdonalds",
+        "branding"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0004",
@@ -94,14 +107,19 @@
       "directTruth": 0.5,
       "rationale": "Color-emotion associations are reported in some marketing studies, but much of the 'red = urgency, blue = trust' pop-psych is weakly evidenced and culturally variable. The claim is approximately true in Western contexts but often overstated.",
       "hostStance": "asserts",
-      "tags": ["color-psychology", "branding"]
+      "tags": [
+        "color-psychology",
+        "branding"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0005",
       "videoId": "AZXvhIpYwak",
       "text": "Bohemian Grove is an exclusive all-male summer retreat attended by powerful figures from both US political parties including multiple presidents.",
       "kind": "historical",
-      "entities": ["location:bohemian grove"],
+      "entities": [
+        "location:bohemian grove"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -125,14 +143,19 @@
       "directTruth": 0.9,
       "rationale": "Bohemian Grove is a well-documented real gathering of the Bohemian Club in Monte Rio, California. The attendee lists (including Eisenhower, Nixon, Reagan, both Bushes, Jimmy Carter, Colin Powell, Henry Kissinger) are confirmed by leaked member rosters and published sources.",
       "hostStance": "asserts",
-      "tags": ["bohemian-grove", "elites"]
+      "tags": [
+        "bohemian-grove",
+        "elites"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0006",
       "videoId": "AZXvhIpYwak",
       "text": "The Bohemian Grove opening ceremony (Cremation of Care) involves burning a human effigy while members wear robes and hoods in a ritual resembling occult and pagan practices.",
       "kind": "historical",
-      "entities": ["location:bohemian grove"],
+      "entities": [
+        "location:bohemian grove"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -148,15 +171,27 @@
       "directTruth": 0.9,
       "rationale": "The Cremation of Care ritual at the foot of a 40-foot owl statue is well documented — Alex Jones's 2000 infiltration footage is the most cited, but the club's own mid-century brochures describe it. The ritual's existence is not seriously contested.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AZXvhIpYwak:c_0005", "kind": "elaborates" }],
-      "tags": ["bohemian-grove", "ritual", "owl"]
+      "dependencies": [
+        {
+          "target": "AZXvhIpYwak:c_0005",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "bohemian-grove",
+        "ritual",
+        "owl"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0007",
       "videoId": "AZXvhIpYwak",
       "text": "The owl is an Illuminati symbol of wisdom and hidden power, through which members influence global events from the darkness.",
       "kind": "speculative",
-      "entities": ["organization:illuminati", "location:bohemian grove"],
+      "entities": [
+        "organization:illuminati",
+        "location:bohemian grove"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -172,15 +207,27 @@
       "directTruth": 0.15,
       "rationale": "Owls are a real visual motif at Bohemian Grove. Attributing covert global influence to an 'Illuminati' wielding owl iconography adds unsupported causal claims on top of a real symbolic association.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AZXvhIpYwak:c_0006", "kind": "elaborates" }],
-      "tags": ["owl", "illuminati", "symbols"]
+      "dependencies": [
+        {
+          "target": "AZXvhIpYwak:c_0006",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "owl",
+        "illuminati",
+        "symbols"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0008",
       "videoId": "AZXvhIpYwak",
       "text": "The Illuminati's ultimate goal is a 'New World Order' — a One-World Government under their control.",
       "kind": "speculative",
-      "entities": ["organization:illuminati", "ideology:new world order"],
+      "entities": [
+        "organization:illuminati",
+        "ideology:new world order"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -196,14 +243,21 @@
       "directTruth": 0.05,
       "rationale": "'New World Order' is a real phrase used by politicians (George H.W. Bush, Gorbachev) to describe geopolitical realignment. Mapping it onto a literal Illuminati global-government project is a conspiracy trope with no supporting evidence.",
       "hostStance": "asserts",
-      "tags": ["new-world-order", "illuminati"]
+      "tags": [
+        "new-world-order",
+        "illuminati"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0009",
       "videoId": "AZXvhIpYwak",
       "text": "In 1307 the Knights Templar were dissolved, and this same year marks the beginning of the Illuminati.",
       "kind": "historical",
-      "entities": ["date_time:1307", "organization:knights templar", "organization:illuminati"],
+      "entities": [
+        "date_time:1307",
+        "organization:knights templar",
+        "organization:illuminati"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -219,14 +273,22 @@
       "directTruth": 0.15,
       "rationale": "The 1307 suppression of the Knights Templar by Philip IV of France is historical fact. Tying it to an Illuminati founding is not — the Bavarian Illuminati were founded 1776 by Weishaupt. The 1307/Illuminati identity is a popular conspiracy confabulation with no primary-source basis.",
       "hostStance": "asserts",
-      "tags": ["templar", "1307", "illuminati"]
+      "tags": [
+        "templar",
+        "1307",
+        "illuminati"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0010",
       "videoId": "AZXvhIpYwak",
       "text": "The surviving Knights Templar rebranded and evolved into the Freemasons, with Sir William Sinclair's tomb inscribed 'Knight Templar' as evidence.",
       "kind": "historical",
-      "entities": ["organization:knights templar", "organization:freemasons", "location:scotland"],
+      "entities": [
+        "organization:knights templar",
+        "organization:freemasons",
+        "location:scotland"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -242,7 +304,7 @@
           "charStart": 16540,
           "charEnd": 16740,
           "timeStart": 1197.4,
-          "timeEnd": 1213.0,
+          "timeEnd": 1213,
           "quote": "but there\nis hard evidence he was something\nelse on his tomb carved right under his\nname is Knight Templar it appears the\nKnights Templar weren't gone after all\nthey rebranded and rebuilt and became\nk"
         }
       ],
@@ -250,15 +312,28 @@
       "directTruth": 0.2,
       "rationale": "Rosslyn Chapel and the Sinclair family's Freemasonry connections are real; the direct Templar→Freemason succession is a popular folk-historical thesis promoted by 1980s pseudohistory books (Baigent/Lincoln) but rejected by academic historians of Freemasonry (e.g. David Stevenson).",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AZXvhIpYwak:c_0009", "kind": "elaborates" }],
-      "tags": ["templar", "freemasons", "sinclair"]
+      "dependencies": [
+        {
+          "target": "AZXvhIpYwak:c_0009",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "templar",
+        "freemasons",
+        "sinclair"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0011",
       "videoId": "AZXvhIpYwak",
       "text": "George Washington believed the Illuminati were influencing America, but he specifically wanted it known the Freemasons were not the vector.",
       "kind": "historical",
-      "entities": ["person:george washington", "organization:illuminati", "organization:freemasons"],
+      "entities": [
+        "person:george washington",
+        "organization:illuminati",
+        "organization:freemasons"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -274,14 +349,20 @@
       "directTruth": 0.65,
       "rationale": "Washington's 1798 letter to Rev. G.W. Snyder is authentic — he acknowledged awareness of Illuminati doctrines but did not believe American Masonic lodges had adopted them. The host's paraphrase is roughly accurate.",
       "hostStance": "asserts",
-      "tags": ["washington", "illuminati", "freemasons"]
+      "tags": [
+        "washington",
+        "illuminati",
+        "freemasons"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0012",
       "videoId": "AZXvhIpYwak",
       "text": "Celebrities and media figures have been recruited by the Illuminati to act as a public-facing army that spreads their messaging.",
       "kind": "speculative",
-      "entities": ["organization:illuminati"],
+      "entities": [
+        "organization:illuminati"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -297,14 +378,20 @@
       "directTruth": 0.05,
       "rationale": "Celebrities do use common marketing iconography (diamonds, triangles, one-eye gestures), and PR agencies coordinate campaigns, but neither amounts to an Illuminati-controlled recruitment pipeline. Pattern-matching on stage-design aesthetics does not establish conspiracy.",
       "hostStance": "asserts",
-      "tags": ["celebrities", "illuminati", "influence"]
+      "tags": [
+        "celebrities",
+        "illuminati",
+        "influence"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0013",
       "videoId": "AZXvhIpYwak",
       "text": "Diamond-shape hand gestures at public ceremonies and award shows signal senior status in the Illuminati's hierarchy and are used by political and business leaders.",
       "kind": "speculative",
-      "entities": ["organization:illuminati"],
+      "entities": [
+        "organization:illuminati"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -320,23 +407,35 @@
       "directTruth": 0.05,
       "rationale": "The 'diamond' or 'triangle of power' hand gesture is associated with Jay-Z / Roc Nation branding. The Illuminati-signal reading is selection-biased pattern-matching on widely-used hand poses. No evidence for hierarchy-signaling function.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "AZXvhIpYwak:c_0012", "kind": "elaborates" }],
-      "tags": ["gestures", "illuminati", "celebrities"]
+      "dependencies": [
+        {
+          "target": "AZXvhIpYwak:c_0012",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "gestures",
+        "illuminati",
+        "celebrities"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0014",
       "videoId": "AZXvhIpYwak",
       "text": "There is no actual 'Illuminati' — the apparent pattern is coincidence and the human tendency to make connections that aren't there; a real group of elites does coordinate, but calling them Illuminati is misleading.",
       "kind": "opinion",
-      "entities": ["organization:illuminati", "organization:the illuminati"],
+      "entities": [
+        "organization:illuminati",
+        "organization:the illuminati"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AZXvhIpYwak",
           "charStart": 26930,
           "charEnd": 27140,
-          "timeStart": 1948.0,
-          "timeEnd": 1961.0,
+          "timeStart": 1948,
+          "timeEnd": 1961,
           "quote": "ncidence and our tendency to make\nconnections that aren't there I don't\nthink there's a group called The\nIlluminati but I do think there's a\ngroup of Elites working together acting\nlike the Illuminati like I sa"
         }
       ],
@@ -345,25 +444,39 @@
       "rationale": "The host's concluding reframe: elite coordination via think tanks, conferences, and donor networks is real; calling it Illuminati dresses up the mundane as mystic. This undercuts the literal Illuminati framing that structured most of the video.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "AZXvhIpYwak:c_0001", "kind": "contradicts", "rationale": "[alternative] The host steps back from the 'hidden controllers placing symbols' frame and offers 'coincidence + real-but-mundane elite networks' as the alternative reading." },
-        { "target": "AZXvhIpYwak:c_0008", "kind": "contradicts", "rationale": "[undercuts] Rejecting the literal Illuminati reduces the probative weight of the New World Order thesis." }
+        {
+          "target": "AZXvhIpYwak:c_0001",
+          "kind": "contradicts",
+          "rationale": "[alternative] The host steps back from the 'hidden controllers placing symbols' frame and offers 'coincidence + real-but-mundane elite networks' as the alternative reading."
+        },
+        {
+          "target": "AZXvhIpYwak:c_0008",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Rejecting the literal Illuminati reduces the probative weight of the New World Order thesis."
+        }
       ],
-      "tags": ["skepticism", "verdict", "illuminati"]
+      "tags": [
+        "skepticism",
+        "verdict",
+        "illuminati"
+      ]
     },
     {
       "id": "AZXvhIpYwak:c_0015",
       "videoId": "AZXvhIpYwak",
       "text": "Lizard people shape-shift into humans and are involved in the elite control of society.",
       "kind": "speculative",
-      "entities": ["group_or_movement:lizard people"],
+      "entities": [
+        "group_or_movement:lizard people"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "AZXvhIpYwak",
           "charStart": 4620,
           "charEnd": 4782,
-          "timeStart": 325.0,
-          "timeEnd": 335.0,
+          "timeStart": 325,
+          "timeEnd": 335,
           "quote": "ard people no no today we'll be\ntalking about humans hello lizard people\ncan shape shift into humans this episode\nis not about lizard people lizard lizard\nlizard "
         }
       ],
@@ -371,7 +484,11 @@
       "directTruth": 0.01,
       "rationale": "Invoked and explicitly mocked by the host ('today we'll be talking about humans'). Extracted as a denies claim because the lizard-people framing is raised only to be rejected.",
       "hostStance": "denies",
-      "tags": ["lizard-people", "denied", "conspiracy"]
+      "tags": [
+        "lizard-people",
+        "denied",
+        "conspiracy"
+      ]
     }
   ]
 }

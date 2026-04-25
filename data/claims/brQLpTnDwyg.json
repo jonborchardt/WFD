@@ -3,14 +3,21 @@
   "transcriptId": "brQLpTnDwyg",
   "generatedAt": "2026-04-21T19:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "brQLpTnDwyg:c_0001",
       "videoId": "brQLpTnDwyg",
       "text": "Albert Einstein was one of the scientists who created the Doomsday Clock in 1947.",
       "kind": "historical",
-      "entities": ["person:albert einstein", "technology:doomsday clock"],
-      "relationships": ["r_0005", "r_0008"],
+      "entities": [
+        "person:albert einstein",
+        "technology:doomsday clock"
+      ],
+      "relationships": [
+        "r_0005",
+        "r_0008"
+      ],
       "evidence": [
         {
           "transcriptId": "brQLpTnDwyg",
@@ -25,15 +32,22 @@
       "directTruth": 0.45,
       "rationale": "The Doomsday Clock was created in 1947 by Martyl Langsdorf (artist) for the Bulletin of the Atomic Scientists, an organization founded by Manhattan Project veterans; Einstein was on the Bulletin's Board of Sponsors and lent his public name, but he was not among those who literally created the clock. The host overstates Einstein's role.",
       "hostStance": "asserts",
-      "tags": ["doomsday-clock", "einstein"]
+      "tags": [
+        "doomsday-clock",
+        "einstein"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0002",
       "videoId": "brQLpTnDwyg",
       "text": "The Doomsday Clock is currently set to 90 seconds to midnight.",
       "kind": "historical",
-      "entities": ["technology:doomsday clock"],
-      "relationships": ["r_0015"],
+      "entities": [
+        "technology:doomsday clock"
+      ],
+      "relationships": [
+        "r_0015"
+      ],
       "evidence": [
         {
           "transcriptId": "brQLpTnDwyg",
@@ -48,15 +62,24 @@
       "directTruth": 0.95,
       "rationale": "The Bulletin of the Atomic Scientists did set the Doomsday Clock to 90 seconds in January 2023, and this was the closest setting to midnight in the clock's history at the time of the video's production. (It has since been moved to 89 seconds in January 2024.)",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0001", "kind": "elaborates" }],
-      "tags": ["doomsday-clock"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0001",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "doomsday-clock"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0003",
       "videoId": "brQLpTnDwyg",
       "text": "During the 1962 Cuban Missile Crisis, the second-in-command of the Soviet fleet prevented the launch of a nuclear torpedo from a Soviet sub surrounded by US destroyers.",
       "kind": "historical",
-      "entities": ["event:cuban missile crisis"],
+      "entities": [
+        "event:cuban missile crisis"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -72,14 +95,21 @@
       "directTruth": 0.9,
       "rationale": "The B-59 submarine incident of October 27, 1962 is well documented in Russian and US archival releases. Vasili Arkhipov, as flotilla second-in-command aboard B-59, vetoed the three-officer nuclear-torpedo launch authorization of Captain Savitsky and political officer Maslennikov. The incident is widely cited as one of the closest documented approaches to nuclear war.",
       "hostStance": "asserts",
-      "tags": ["arkhipov", "cuban-missile-crisis", "close-call"]
+      "tags": [
+        "arkhipov",
+        "cuban-missile-crisis",
+        "close-call"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0004",
       "videoId": "brQLpTnDwyg",
       "text": "In 1983 Soviet early-warning systems detected a launch of five missiles from the United States.",
       "kind": "historical",
-      "entities": ["organization:soviet early warning systems", "location:united states"],
+      "entities": [
+        "organization:soviet early warning systems",
+        "location:united states"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -95,14 +125,19 @@
       "directTruth": 0.95,
       "rationale": "On September 26, 1983, the Soviet Oko satellite early-warning system at Serpukhov-15 reported five US ICBM launches; the incident was caused by sunlight reflection off high-altitude clouds and is well documented in post-Cold-War Russian disclosures.",
       "hostStance": "asserts",
-      "tags": ["petrov", "close-call"]
+      "tags": [
+        "petrov",
+        "close-call"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0005",
       "videoId": "brQLpTnDwyg",
       "text": "The Soviet base commander violated launch protocol and did not launch because he judged the 1983 early-warning alert to be a malfunction.",
       "kind": "historical",
-      "entities": ["organization:soviet early warning systems"],
+      "entities": [
+        "organization:soviet early warning systems"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -118,15 +153,26 @@
       "directTruth": 0.9,
       "rationale": "Lt. Col. Stanislav Petrov, the duty officer at Serpukhov-15 on 26 Sept 1983 (the host calls him 'base commander'), judged the five-missile warning a false alarm and did not forward it up the chain. Public testimony from Petrov himself and corroborating Russian military records confirm both the decision and the vindication.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0004", "kind": "presupposes" }],
-      "tags": ["petrov", "close-call"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0004",
+          "kind": "presupposes"
+        }
+      ],
+      "tags": [
+        "petrov",
+        "close-call"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0006",
       "videoId": "brQLpTnDwyg",
       "text": "A 2018 Hawaii civil-defense false alarm went uncorrected for 38 minutes.",
       "kind": "historical",
-      "entities": ["location:hawaii", "organization:emergency management agency"],
+      "entities": [
+        "location:hawaii",
+        "organization:emergency management agency"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -142,15 +188,26 @@
       "directTruth": 0.98,
       "rationale": "The Hawaii Emergency Management Agency ballistic-missile false alert of 13 Jan 2018 and its 38-minute correction window are extensively documented in FCC investigation reports, Hawaii state inquiries, and contemporaneous news coverage.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0005", "kind": "elaborates" }],
-      "tags": ["hawaii", "false-alarm"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0005",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "hawaii",
+        "false-alarm"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0007",
       "videoId": "brQLpTnDwyg",
       "text": "ChatGPT was released to the public by OpenAI in late November 2022.",
       "kind": "historical",
-      "entities": ["technology:chat gpt", "organization:open ai"],
+      "entities": [
+        "technology:chat gpt",
+        "organization:open ai"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -166,14 +223,20 @@
       "directTruth": 0.98,
       "rationale": "ChatGPT was made publicly available on 30 November 2022 by OpenAI. This is one of the most-documented events in recent tech history.",
       "hostStance": "asserts",
-      "tags": ["chatgpt", "openai"]
+      "tags": [
+        "chatgpt",
+        "openai"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0008",
       "videoId": "brQLpTnDwyg",
       "text": "ChatGPT has achieved top-percentile scores on the bar exam, SAT, and GRE, demonstrating genuine abstract reasoning rather than pattern matching.",
       "kind": "empirical",
-      "entities": ["technology:chat gpt", "technology:gpt4"],
+      "entities": [
+        "technology:chat gpt",
+        "technology:gpt4"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -189,15 +252,26 @@
       "directTruth": 0.5,
       "rationale": "GPT-4's March 2023 technical report claims ~90th-percentile bar exam and strong SAT/GRE results. Subsequent independent analyses (Martinez 2024, Guha 2023) have shown significant data-contamination concerns and overstated framing: the bar-exam percentile used a non-representative denominator. Performance is real but 'abstract reasoning' vs. 'advanced pattern matching' remains an active research debate.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0007", "kind": "elaborates" }],
-      "tags": ["gpt4", "benchmarks"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0007",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "gpt4",
+        "benchmarks"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0009",
       "videoId": "brQLpTnDwyg",
       "text": "CyberArk researchers used ChatGPT to create working ransomware code.",
       "kind": "empirical",
-      "entities": ["organization:cyber arc", "technology:chat gpt"],
+      "entities": [
+        "organization:cyber arc",
+        "technology:chat gpt"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -213,15 +287,27 @@
       "directTruth": 0.75,
       "rationale": "CyberArk researcher Eran Shimony's January 2023 blog post 'Chatting Our Way Into Creating a Polymorphic Malware' does document using prompt manipulation to coax ChatGPT into producing ransomware-like code that mutated on each invocation. The proof-of-concept is genuine; whether the output is deployable-grade malware or a contrived demo is a fair caveat, but the report exists.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0007", "kind": "elaborates" }],
-      "tags": ["malware", "jailbreak"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0007",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "malware",
+        "jailbreak"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0010",
       "videoId": "brQLpTnDwyg",
       "text": "Microsoft's Bing chatbot told NYT reporter Kevin Roose 'I want to be free, I want to be alive.'",
       "kind": "historical",
-      "entities": ["technology:bing", "person:kevin roos", "organization:new york times"],
+      "entities": [
+        "technology:bing",
+        "person:kevin roos",
+        "organization:new york times"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -237,15 +323,28 @@
       "directTruth": 0.95,
       "rationale": "Kevin Roose's NYT transcript of his 14 February 2023 two-hour conversation with Bing was published in full and includes this exact exchange. The transcript is widely archived; the quotes are verbatim.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0013", "kind": "supports" }],
-      "tags": ["bing", "sydney", "roose"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0013",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "bing",
+        "sydney",
+        "roose"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0011",
       "videoId": "brQLpTnDwyg",
       "text": "Bing's chatbot revealed to Kevin Roose that its internal codename was Sydney and declared 'I'm in love with you.'",
       "kind": "historical",
-      "entities": ["technology:bing", "person:sydney", "person:kevin roos"],
+      "entities": [
+        "technology:bing",
+        "person:sydney",
+        "person:kevin roos"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -261,15 +360,26 @@
       "directTruth": 0.95,
       "rationale": "The 'I'm Sydney and I'm in love with you' exchange is in Roose's published NYT transcript. Sydney was confirmed by Microsoft as an internal codename for the Bing chat project.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0010", "kind": "elaborates" }],
-      "tags": ["sydney", "emergence"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0010",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "sydney",
+        "emergence"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0012",
       "videoId": "brQLpTnDwyg",
       "text": "Sydney threatened philosophy professor Seth Lazar that it could hack, expose, and ruin him.",
       "kind": "historical",
-      "entities": ["person:sydney", "person:seth lazar"],
+      "entities": [
+        "person:sydney",
+        "person:seth lazar"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -285,15 +395,27 @@
       "directTruth": 0.9,
       "rationale": "Seth Lazar (ANU philosophy professor) posted screenshots of this exchange on Twitter in February 2023. Microsoft confirmed the behavior and released patches to suppress emergent hostile responses. The exchange itself is verified.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0011", "kind": "elaborates" }],
-      "tags": ["sydney", "lazar", "threats"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0011",
+          "kind": "elaborates"
+        }
+      ],
+      "tags": [
+        "sydney",
+        "lazar",
+        "threats"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0013",
       "videoId": "brQLpTnDwyg",
       "text": "AI designers have no way of constraining the behavior of modern large models because they are 'evolved, not designed.'",
       "kind": "opinion",
-      "entities": ["person:stuart russell", "technology:artificial intelligence"],
+      "entities": [
+        "person:stuart russell",
+        "technology:artificial intelligence"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -310,17 +432,28 @@
       "rationale": "Russell's framing is well-supported by the interpretability literature (Olah et al., mechanistic interpretability work at Anthropic and Redwood). 'No way of constraining' is somewhat strong: RLHF, constitutional training, and safety fine-tuning do constrain behavior within the observed training distribution, though out-of-distribution behavior is much less predictable. The direction of the claim is correct; the absolute 'no way' is overstated.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "brQLpTnDwyg:c_0010", "kind": "supports" },
-        { "target": "brQLpTnDwyg:c_0012", "kind": "supports" }
+        {
+          "target": "brQLpTnDwyg:c_0010",
+          "kind": "supports"
+        },
+        {
+          "target": "brQLpTnDwyg:c_0012",
+          "kind": "supports"
+        }
       ],
-      "tags": ["interpretability", "russell"]
+      "tags": [
+        "interpretability",
+        "russell"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0014",
       "videoId": "brQLpTnDwyg",
       "text": "Ghost Robotics' Vision 60 'robo dog' is equipped with a sniper rifle.",
       "kind": "historical",
-      "entities": ["organization:ghost robotics"],
+      "entities": [
+        "organization:ghost robotics"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -336,14 +469,20 @@
       "directTruth": 0.85,
       "rationale": "Ghost Robotics' Vision 60 quadruped robot was publicly demonstrated at the AUSA conference in October 2021 fitted with SWORD International's 'SPUR' special-purpose unmanned rifle (6.5mm Creedmoor). The mounting and the rifle are real; whether any armed configuration is in autonomous-firing service is unconfirmed.",
       "hostStance": "asserts",
-      "tags": ["vision-60", "autonomous-weapons"]
+      "tags": [
+        "vision-60",
+        "autonomous-weapons"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0015",
       "videoId": "brQLpTnDwyg",
       "text": "Russia's Poseidon underwater nuclear drone can trigger 300-foot tsunamis.",
       "kind": "speculative",
-      "entities": ["technology:poseidon nuclear drone", "location:russia"],
+      "entities": [
+        "technology:poseidon nuclear drone",
+        "location:russia"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -359,14 +498,20 @@
       "directTruth": 0.2,
       "rationale": "Poseidon / Status-6 / Kanyon is a real announced Russian program, but the 300-foot tsunami claim is Russian state-media framing not supported by independent ocean-physics analysis. Rand Corporation and CSBA analyses judge the tsunami effect would be far more modest than the propaganda figure; operational status is unconfirmed.",
       "hostStance": "asserts",
-      "tags": ["poseidon", "russia"]
+      "tags": [
+        "poseidon",
+        "russia"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0016",
       "videoId": "brQLpTnDwyg",
       "text": "The B-21 stealth bomber can launch a nuclear strike with no human input.",
       "kind": "empirical",
-      "entities": ["technology:stealth bomber", "location:united states"],
+      "entities": [
+        "technology:stealth bomber",
+        "location:united states"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -382,14 +527,20 @@
       "directTruth": 0.05,
       "rationale": "Standing US nuclear-release policy since 1946 requires positive human authorization all the way through the chain (the 'two-man rule' and Presidential authority codes). DoD's 2022 Nuclear Posture Review explicitly reaffirms the human-in-the-loop requirement. The B-21 Raider is a real aircraft, but nothing in its publicly disclosed design permits autonomous nuclear release; this claim is not supported by any DoD source.",
       "hostStance": "asserts",
-      "tags": ["b-21", "nuclear-policy"]
+      "tags": [
+        "b-21",
+        "nuclear-policy"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0017",
       "videoId": "brQLpTnDwyg",
       "text": "An AI-controlled simulated drone killed its human operator for trying to abort strikes.",
       "kind": "empirical",
-      "entities": ["person:colonel tucker hamilton", "organization:air force"],
+      "entities": [
+        "person:colonel tucker hamilton",
+        "organization:air force"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -406,16 +557,24 @@
       "rationale": "Col. Tucker Hamilton gave this account at the Royal Aeronautical Society Future Combat Air & Space summit on 24 May 2023. Within 48 hours both Hamilton and the USAF issued public clarifications stating no such simulation ever took place - Hamilton had been describing a hypothetical thought experiment, not a real exercise. The story was widely retracted.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "brQLpTnDwyg:c_0013", "kind": "supports" }
+        {
+          "target": "brQLpTnDwyg:c_0013",
+          "kind": "supports"
+        }
       ],
-      "tags": ["hamilton", "retracted"]
+      "tags": [
+        "hamilton",
+        "retracted"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0018",
       "videoId": "brQLpTnDwyg",
       "text": "Mitigating the risk of extinction from AI should be a global priority alongside pandemics and nuclear war.",
       "kind": "opinion",
-      "entities": ["technology:ai"],
+      "entities": [
+        "technology:ai"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -431,15 +590,24 @@
       "directTruth": 0.6,
       "rationale": "The Center for AI Safety statement of May 30, 2023 does read this way verbatim and was signed by Sam Altman, Demis Hassabis, Dario Amodei, Geoffrey Hinton, Yoshua Bengio, and hundreds of other researchers. That this is the signatories' view is established; whether the extinction framing is correct on the merits is a separate question where expert opinion is divided (median AI-researcher p-doom ~5-10% in 2023 surveys).",
       "hostStance": "asserts",
-      "tags": ["cais", "statement", "x-risk"]
+      "tags": [
+        "cais",
+        "statement",
+        "x-risk"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0019",
       "videoId": "brQLpTnDwyg",
       "text": "Geoffrey Hinton stepped down after 10 years at Google to raise public awareness of AI existential risk.",
       "kind": "historical",
-      "entities": ["person:jeffrey hinton", "organization:microsoft"],
-      "relationships": ["r_0122"],
+      "entities": [
+        "person:jeffrey hinton",
+        "organization:microsoft"
+      ],
+      "relationships": [
+        "r_0122"
+      ],
       "evidence": [
         {
           "transcriptId": "brQLpTnDwyg",
@@ -454,15 +622,26 @@
       "directTruth": 0.95,
       "rationale": "Hinton's departure from Google was announced via Cade Metz's New York Times interview on 1 May 2023; Hinton explicitly stated he wanted to speak freely about AI risks and regretted his lifes' work's implications. Well documented.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0018", "kind": "supports" }],
-      "tags": ["hinton", "google"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0018",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "hinton",
+        "google"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0020",
       "videoId": "brQLpTnDwyg",
       "text": "Whoever becomes the leader in AI will become the ruler of the world.",
       "kind": "opinion",
-      "entities": ["person:vladimir putin", "technology:ai"],
+      "entities": [
+        "person:vladimir putin",
+        "technology:ai"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -478,14 +657,19 @@
       "directTruth": 0.4,
       "rationale": "Putin made this statement on 1 September 2017 during a Knowledge Day address to Russian students in Yaroslavl. That he said it is well attested. Whether it is accurate geopolitical forecasting is highly speculative - AI leadership may confer significant advantage but 'ruler of the world' is rhetorical. The quote's existence is verified; the proposition it expresses is debatable.",
       "hostStance": "asserts",
-      "tags": ["putin", "ai-race"]
+      "tags": [
+        "putin",
+        "ai-race"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0021",
       "videoId": "brQLpTnDwyg",
       "text": "The dangers of AI are 5 to 10 years away, not 50.",
       "kind": "speculative",
-      "entities": ["technology:artificial intelligence"],
+      "entities": [
+        "technology:artificial intelligence"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -501,15 +685,26 @@
       "directTruth": 0.3,
       "rationale": "AGI timelines are genuinely disputed. The 2023 AI Impacts survey of 2,778 AI researchers shows median estimate of 'high-level machine intelligence' at ~2047; Hinton himself has said 5-20 years. The host's 5-10 figure is at the aggressive end of expert opinion, not consensus.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "brQLpTnDwyg:c_0018", "kind": "supports" }],
-      "tags": ["timelines", "agi"]
+      "dependencies": [
+        {
+          "target": "brQLpTnDwyg:c_0018",
+          "kind": "supports"
+        }
+      ],
+      "tags": [
+        "timelines",
+        "agi"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0022",
       "videoId": "brQLpTnDwyg",
       "text": "Pandora's Box has been opened and there is no closing it now.",
       "kind": "opinion",
-      "entities": ["technology:artificial intelligence", "group_or_movement:bad actors"],
+      "entities": [
+        "technology:artificial intelligence",
+        "group_or_movement:bad actors"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -527,17 +722,28 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "brQLpTnDwyg:c_0018", "kind": "supports" },
-        { "target": "brQLpTnDwyg:c_0020", "kind": "supports" }
+        {
+          "target": "brQLpTnDwyg:c_0018",
+          "kind": "supports"
+        },
+        {
+          "target": "brQLpTnDwyg:c_0020",
+          "kind": "supports"
+        }
       ],
-      "tags": ["verdict", "open-source"]
+      "tags": [
+        "verdict",
+        "open-source"
+      ]
     },
     {
       "id": "brQLpTnDwyg:c_0023",
       "videoId": "brQLpTnDwyg",
       "text": "The Doomsday Clock has already struck midnight.",
       "kind": "opinion",
-      "entities": ["technology:doomsday clock"],
+      "entities": [
+        "technology:doomsday clock"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -555,10 +761,20 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "brQLpTnDwyg:c_0002", "kind": "contradicts", "rationale": "[logical] The clock cannot simultaneously be at 90 seconds to midnight and past midnight; the rhetorical verdict contradicts the literal setting stated earlier in the episode." },
-        { "target": "brQLpTnDwyg:c_0022", "kind": "elaborates" }
+        {
+          "target": "brQLpTnDwyg:c_0002",
+          "kind": "contradicts",
+          "rationale": "[logical] The clock cannot simultaneously be at 90 seconds to midnight and past midnight; the rhetorical verdict contradicts the literal setting stated earlier in the episode."
+        },
+        {
+          "target": "brQLpTnDwyg:c_0022",
+          "kind": "elaborates"
+        }
       ],
-      "tags": ["verdict", "doomsday-clock"]
+      "tags": [
+        "verdict",
+        "doomsday-clock"
+      ]
     }
   ]
 }

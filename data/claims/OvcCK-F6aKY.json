@@ -3,6 +3,7 @@
   "transcriptId": "OvcCK-F6aKY",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "OvcCK-F6aKY:c_0001",
@@ -45,7 +46,12 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "He Jiankui's CCR5 edit on twin embryos is a documented historical event (announced November 2018). Whether the children are actually HIV-immune is separately uncertain — see c_0013.",
-      "tags": ["crispr", "he-jiankui", "gene-editing", "twins"],
+      "tags": [
+        "crispr",
+        "he-jiankui",
+        "gene-editing",
+        "twins"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -80,11 +86,19 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "He Jiankui was sentenced to 3 years imprisonment plus a 3-million-yuan fine by a Shenzhen court in December 2019. Public record.",
-      "tags": ["he-jiankui", "china", "prison-sentence"],
+      "tags": [
+        "he-jiankui",
+        "china",
+        "prison-sentence"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "OvcCK-F6aKY:c_0001", "kind": "elaborates", "rationale": "Consequence of the gene-editing event." }
+        {
+          "target": "OvcCK-F6aKY:c_0001",
+          "kind": "elaborates",
+          "rationale": "Consequence of the gene-editing event."
+        }
       ]
     },
     {
@@ -109,7 +123,11 @@
       "confidence": 0.95,
       "directTruth": 0.98,
       "rationale": "Standard definition — coined by Mojica / Jansen. CRISPR loci were first recognized in E. coli in 1987 (Ishino et al.) and the bacterial-immune-system function was described in 2007 (Barrangou et al.).",
-      "tags": ["crispr", "definition", "molecular-biology"],
+      "tags": [
+        "crispr",
+        "definition",
+        "molecular-biology"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -146,11 +164,20 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Charpentier & Doudna's 2012 Science paper on CRISPR-Cas9 programmability won them the 2020 Nobel in Chemistry. Host's date 'in 2020 scientists discovered' slightly misframes — the discovery itself was 2012, the prize was 2020.",
-      "tags": ["crispr-cas9", "nobel-prize", "doudna", "charpentier"],
+      "tags": [
+        "crispr-cas9",
+        "nobel-prize",
+        "doudna",
+        "charpentier"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "OvcCK-F6aKY:c_0003", "kind": "elaborates", "rationale": "The tool built on the CRISPR bacterial system." }
+        {
+          "target": "OvcCK-F6aKY:c_0003",
+          "kind": "elaborates",
+          "rationale": "The tool built on the CRISPR bacterial system."
+        }
       ]
     },
     {
@@ -193,7 +220,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Victoria Gray received CRISPR-based ex vivo HBB editing therapy (Vertex/CRISPR Therapeutics, now Casgevy) starting July 2019 and her clinical response is well-documented. FDA approved Casgevy in December 2023.",
-      "tags": ["victoria-gray", "sickle-cell", "crispr-therapy"],
+      "tags": [
+        "victoria-gray",
+        "sickle-cell",
+        "crispr-therapy"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -228,7 +259,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Indiana's 1907 involuntary-sterilization statute (signed by Gov. Hanly) was indeed the world's first; by the 1930s, about 33 states had similar laws. Standard history of US eugenics (Lombardo, 'Three Generations, No Imbeciles', 2008).",
-      "tags": ["eugenics", "indiana-law-1907", "sterilization"],
+      "tags": [
+        "eugenics",
+        "indiana-law-1907",
+        "sterilization"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -254,7 +289,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Sweden sterilized approximately 62,000 people under the 1934 and 1941 laws (repealed 1976) — figure matches the 1999 Swedish government commission report.",
-      "tags": ["eugenics", "sweden", "sterilization"],
+      "tags": [
+        "eugenics",
+        "sweden",
+        "sterilization"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -280,7 +319,11 @@
       "confidence": 0.85,
       "directTruth": 0.6,
       "rationale": "Termination rates following Down-syndrome diagnosis are in the 67-90% range depending on country (Iceland, Denmark, UK — see Natoli et al., 2012). Host's 'up to 90%' is the high-end country estimate. Whether this counts as eugenics is definitional and genuinely contested; host poses it as a question rather than assertion.",
-      "tags": ["eugenics", "prenatal-screening", "abortion"],
+      "tags": [
+        "eugenics",
+        "prenatal-screening",
+        "abortion"
+      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -307,7 +350,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Putin's October 2017 remarks about genetic soldier enhancement are a matter of record, reported by Russian state media and Western outlets (Times, Guardian). The substantive capability claim is aspirational / propagandistic, not proof such soldiers exist.",
-      "tags": ["putin", "genetic-enhancement", "soldiers"],
+      "tags": [
+        "putin",
+        "genetic-enhancement",
+        "soldiers"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -334,11 +381,19 @@
       "confidence": 0.8,
       "directTruth": 0.4,
       "rationale": "Claim sourced from then-Director of National Intelligence John Ratcliffe's 2020 WSJ op-ed, which asserted China was biologically enhancing PLA troops. The underlying intelligence has not been released; skeptical analysts (Feldstein, Cohen) have noted the claim is unverified in open sources.",
-      "tags": ["china", "crispr-soldiers", "speculation"],
+      "tags": [
+        "china",
+        "crispr-soldiers",
+        "speculation"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "OvcCK-F6aKY:c_0009", "kind": "elaborates", "rationale": "Same arms-race theme." }
+        {
+          "target": "OvcCK-F6aKY:c_0009",
+          "kind": "elaborates",
+          "rationale": "Same arms-race theme."
+        }
       ]
     },
     {
@@ -364,11 +419,20 @@
       "confidence": 0.7,
       "directTruth": 0.4,
       "rationale": "The UK's ARIA was established in 2021 with £800 million initial funding for blue-sky research. The claim that this is earmarked for genetic soldier enhancement is a significant mischaracterization — ARIA's mandate is general-purpose high-risk research, not soldier gene editing. Host's framing is overreach.",
-      "tags": ["uk", "aria", "military-biotech", "overclaim"],
+      "tags": [
+        "uk",
+        "aria",
+        "military-biotech",
+        "overclaim"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "OvcCK-F6aKY:c_0009", "kind": "elaborates", "rationale": "Same 'arms race' theme." }
+        {
+          "target": "OvcCK-F6aKY:c_0009",
+          "kind": "elaborates",
+          "rationale": "Same 'arms race' theme."
+        }
       ]
     },
     {
@@ -394,7 +458,11 @@
       "confidence": 0.7,
       "directTruth": 0.5,
       "rationale": "DARPA's Safe Genes program (launched 2017) and Personalized Assistant for Complex Environments are real, but neither is squarely 'genetically editing soldiers'. Safe Genes focused on gene-drive safety mechanisms. Host's framing overstates intent.",
-      "tags": ["darpa", "safe-genes", "military-biotech"],
+      "tags": [
+        "darpa",
+        "safe-genes",
+        "military-biotech"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -421,11 +489,19 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Independent analyses (notably Kiani et al. 2019, and commentary from Kathy Niakan and others) showed the CCR5 edits in the twins were mosaic, incomplete, and introduced novel variants not known to confer HIV resistance. Host states directly 'it didn't work' in video's summary section.",
-      "tags": ["he-jiankui", "crispr", "debunk"],
+      "tags": [
+        "he-jiankui",
+        "crispr",
+        "debunk"
+      ],
       "inVerdictSection": true,
       "hostStance": "denies",
       "dependencies": [
-        { "target": "OvcCK-F6aKY:c_0001", "kind": "contradicts", "rationale": "[debunks] Overturns the core 'success' framing of the original event." }
+        {
+          "target": "OvcCK-F6aKY:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] Overturns the core 'success' framing of the original event."
+        }
       ]
     },
     {
@@ -459,11 +535,19 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Kosicki, Tomberg & Bradley (Nature Biotech 2018) showed large deletions and complex rearrangements at CRISPR-Cas9 target sites — widely replicated finding. This is the study referenced by the host's '$300M stock drop' comment.",
-      "tags": ["crispr", "off-target", "dna-damage"],
+      "tags": [
+        "crispr",
+        "off-target",
+        "dna-damage"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "OvcCK-F6aKY:c_0013", "kind": "supports", "rationale": "Same underlying biology of CRISPR imprecision." }
+        {
+          "target": "OvcCK-F6aKY:c_0013",
+          "kind": "supports",
+          "rationale": "Same underlying biology of CRISPR imprecision."
+        }
       ]
     },
     {
@@ -488,7 +572,11 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "WHO's 2021 Human Genome Editing Framework Committee recommendations explicitly limit heritable editing to medical need and urge a global registry. The recommendations are guidance, not treaty law — enforcement is entirely national. Host's characterization is accurate.",
-      "tags": ["who", "gene-editing-governance", "policy"],
+      "tags": [
+        "who",
+        "gene-editing-governance",
+        "policy"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     }

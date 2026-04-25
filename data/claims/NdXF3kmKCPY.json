@@ -3,6 +3,7 @@
   "transcriptId": "NdXF3kmKCPY",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "NdXF3kmKCPY:c_0001",
@@ -27,7 +28,11 @@
       ],
       "confidence": 0.9,
       "rationale": "This is the video's central premise, introduced in the opening as the thesis to be examined. The host later catalogues substantial evidence against it (fake photos, clumsy Latin, deathbed recantation), so directTruth is omitted here and handled on the downstream sub-claims.",
-      "tags": ["chronovisor", "vatican", "time-viewing"],
+      "tags": [
+        "chronovisor",
+        "vatican",
+        "time-viewing"
+      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -42,7 +47,10 @@
         "organization:catholic university of milan",
         "date_time:1952"
       ],
-      "relationships": ["r_0050", "r_0051"],
+      "relationships": [
+        "r_0050",
+        "r_0051"
+      ],
       "evidence": [
         {
           "transcriptId": "NdXF3kmKCPY",
@@ -56,7 +64,11 @@
       "confidence": 0.8,
       "directTruth": 0.65,
       "rationale": "Ernetti's employment at the Catholic University of Milan and his work on Gregorian chant tapes in the early 1950s are part of the publicly known biographical record. The specific 1952 date for the chronovisor genesis comes from the Brune-derived legend rather than independent documentation.",
-      "tags": ["ernetti", "vatican", "origin-story"],
+      "tags": [
+        "ernetti",
+        "vatican",
+        "origin-story"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -71,7 +83,10 @@
         "person:ernetti",
         "organization:team"
       ],
-      "relationships": ["r_0094", "r_0095"],
+      "relationships": [
+        "r_0094",
+        "r_0095"
+      ],
       "evidence": [
         {
           "transcriptId": "NdXF3kmKCPY",
@@ -93,7 +108,12 @@
       "confidence": 0.85,
       "directTruth": 0.15,
       "rationale": "Host later reports a distant relative saying Fermi 'had nothing to do with the machine' as part of Ernetti's alleged deathbed recantation, and both cited scientists were unavailable to confirm when the story broke. Low directTruth reflects that the celebrity-scientist roster is a hallmark claim the video treats as suspect.",
-      "tags": ["chronovisor", "fermi", "von-braun", "celebrity-witnesses"],
+      "tags": [
+        "chronovisor",
+        "fermi",
+        "von-braun",
+        "celebrity-witnesses"
+      ],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -120,7 +140,11 @@
       "confidence": 0.85,
       "directTruth": 0.05,
       "rationale": "The proposed mechanism (persistent residual light and sound energy detectable by antennas and rendered on a cathode ray tube) contradicts basic physics — electromagnetic radiation dissipates and does not preserve recoverable historical scenes. Very low directTruth because this is scientifically implausible, not merely unproven.",
-      "tags": ["chronovisor", "physics", "mechanism"],
+      "tags": [
+        "chronovisor",
+        "physics",
+        "mechanism"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -146,7 +170,11 @@
       ],
       "confidence": 0.8,
       "rationale": "This dismantling order is the legend's convenient explanation for why the machine cannot be inspected. Omitting directTruth because the claim is unfalsifiable by design — no independent Vatican record corroborates or refutes a 1950s dismantling of a secret device.",
-      "tags": ["chronovisor", "pope-pius-xii", "dismantled"],
+      "tags": [
+        "chronovisor",
+        "pope-pius-xii",
+        "dismantled"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -183,7 +211,11 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "The host's own debunk section notes the surviving manuscript is only ~150 lines (versus an expected ~1000+), and linguists say the Latin uses vocabulary that postdates the play's era by 200 years — strong internal evidence the transcription was fabricated, not time-viewed.",
-      "tags": ["chronovisor", "thyestes", "latin-manuscript"],
+      "tags": [
+        "chronovisor",
+        "thyestes",
+        "latin-manuscript"
+      ],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -218,7 +250,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Host cites scholarly linguistic consensus and a specific length mismatch (150 lines vs expected 1000+). This is a standard philological argument; cited expert opinion converges against authenticity.",
-      "tags": ["thyestes", "linguistics", "debunk"],
+      "tags": [
+        "thyestes",
+        "linguistics",
+        "debunk"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -255,7 +291,12 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Host gives a specific artist, date, and location for the statue; the identification is checkable and widely reported in skeptic literature. The rebuttal (sculptor inspired by a nun's vision) is not evidentially equivalent.",
-      "tags": ["chronovisor", "fake-photo", "valera", "debunk"],
+      "tags": [
+        "chronovisor",
+        "fake-photo",
+        "valera",
+        "debunk"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -292,7 +333,11 @@
       "confidence": 0.85,
       "directTruth": 0.2,
       "rationale": "Brune's counter-narrative (sculptor inspired by a nun's vision of the same scene the chronovisor photographed) is presented as strained — host explicitly says the photo and statue 'look identical'. Host signals he finds this defense unpersuasive.",
-      "tags": ["brune", "apologetics", "chronovisor-photo"],
+      "tags": [
+        "brune",
+        "apologetics",
+        "chronovisor-photo"
+      ],
       "inVerdictSection": true,
       "hostStance": "denies"
     },
@@ -319,7 +364,11 @@
       ],
       "confidence": 0.75,
       "rationale": "Host flags the confession as coming from an anonymous 'distant relative' and says he doesn't trust such sources; Brune countered that any confession was coerced. The sourcing is poor on both sides, so directTruth is omitted rather than guessed.",
-      "tags": ["ernetti", "deathbed-confession", "anonymous-source"],
+      "tags": [
+        "ernetti",
+        "deathbed-confession",
+        "anonymous-source"
+      ],
       "inVerdictSection": true,
       "hostStance": "uncertain"
     },
@@ -346,7 +395,10 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Direct institutional statement from the Vatican is easily checkable and widely reported; no source in the video disputes that the official position is denial.",
-      "tags": ["vatican", "official-denial"],
+      "tags": [
+        "vatican",
+        "official-denial"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -381,7 +433,11 @@
       "confidence": 0.7,
       "directTruth": 0.25,
       "rationale": "Host frames this as an 'interesting side note' pointing the other direction — a classic 'why deny it if untrue' move. Weak inference from institutional behavior; the decree could equally address broader occult concerns unrelated to a specific device.",
-      "tags": ["chronovisor", "1988-decree", "excommunication"],
+      "tags": [
+        "chronovisor",
+        "1988-decree",
+        "excommunication"
+      ],
       "inVerdictSection": true,
       "hostStance": "uncertain",
       "dependencies": [
@@ -404,7 +460,11 @@
         "date_time:1994",
         "date_time:2019"
       ],
-      "relationships": ["r_0117", "r_0118", "r_0172"],
+      "relationships": [
+        "r_0117",
+        "r_0118",
+        "r_0172"
+      ],
       "evidence": [
         {
           "transcriptId": "NdXF3kmKCPY",
@@ -426,7 +486,11 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Biographical claim about Ernetti's and Brune's public statements is verifiable via open letters and published books. The claim is about what they said, not whether they were right.",
-      "tags": ["ernetti", "brune", "biographical"],
+      "tags": [
+        "ernetti",
+        "brune",
+        "biographical"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -453,7 +517,11 @@
       ],
       "confidence": 0.7,
       "rationale": "Host's closing opinion frame about institutional risk. Normative commentary, not an empirical claim — directTruth omitted as appropriate.",
-      "tags": ["chronovisor", "opinion", "institutional-risk"],
+      "tags": [
+        "chronovisor",
+        "opinion",
+        "institutional-risk"
+      ],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

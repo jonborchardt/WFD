@@ -3,6 +3,7 @@
   "transcriptId": "Ve-XooFp9-A",
   "generatedAt": "2026-04-21T12:30:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "Ve-XooFp9-A:c_0001",
@@ -33,7 +34,11 @@
       "directTruth": 0.7,
       "rationale": "The Musconetcong River exists, runs ~46 miles from Lake Hopatcong to the Delaware, and is indeed the focus of regional cryptid lore. The 'unusually prominent hotspot' framing is subjective but matches regional folklore-community claims.",
       "hostStance": "asserts",
-      "tags": ["musconetcong", "new-jersey", "geography"]
+      "tags": [
+        "musconetcong",
+        "new-jersey",
+        "geography"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0002",
@@ -69,7 +74,11 @@
       "directTruth": 0.1,
       "rationale": "The 2006 Paul Jax account is real — it is documented in Lon Strickler's Phantoms & Monsters site and subsequent cryptid literature. But the described phenomenon (7-foot telepathic cloaking insect) is not corroborated by physical evidence, photographs, or neutral third-party observation.",
       "hostStance": "asserts",
-      "tags": ["paul-jax", "mantis-man", "2006"]
+      "tags": [
+        "paul-jax",
+        "mantis-man",
+        "2006"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0003",
@@ -104,10 +113,18 @@
       "directTruth": 0.1,
       "rationale": "The 2011 Pari account is also documented on Phantoms & Monsters but adds even more elaborate embellishments (fog, wing extension, telepathic memory extraction). The uncanny narrative consistency across witnesses is plausibly explained by cultural contamination (both witnesses familiar with prior Mantis-Man reports) rather than independent corroboration.",
       "dependencies": [
-        { "target": "Ve-XooFp9-A:c_0002", "kind": "supports", "rationale": "Host frames these as independent corroborating accounts establishing the Mantis Man pattern." }
+        {
+          "target": "Ve-XooFp9-A:c_0002",
+          "kind": "supports",
+          "rationale": "Host frames these as independent corroborating accounts establishing the Mantis Man pattern."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["joe-pari", "mantis-man", "2011"]
+      "tags": [
+        "joe-pari",
+        "mantis-man",
+        "2011"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0004",
@@ -135,10 +152,18 @@
       "directTruth": 0.1,
       "rationale": "A 2014 driver account appears in Strickler's compilation but is single-source with no physical trace. The 'turned transparent' detail aligns suspiciously closely with the earlier 2006/2011 reports, suggesting shared narrative template rather than independent sighting of a novel phenomenon.",
       "dependencies": [
-        { "target": "Ve-XooFp9-A:c_0002", "kind": "elaborates", "rationale": "Third in the sequence of claimed Mantis-Man sightings on the same river." }
+        {
+          "target": "Ve-XooFp9-A:c_0002",
+          "kind": "elaborates",
+          "rationale": "Third in the sequence of claimed Mantis-Man sightings on the same river."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["mantis-man", "2014", "sighting"]
+      "tags": [
+        "mantis-man",
+        "2014",
+        "sighting"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0005",
@@ -164,11 +189,22 @@
       "directTruth": 0.25,
       "rationale": "The 'independent witnesses' claim is the story's strongest evidentiary anchor, but is weakened by the 5-year gap during which the Jax report circulated online and the Pari brothers fished the same river. Independent corroboration requires epistemic isolation that cannot be verified here.",
       "dependencies": [
-        { "target": "Ve-XooFp9-A:c_0002", "kind": "supports", "rationale": "Frames the first sighting as strengthened by later independent confirmation." },
-        { "target": "Ve-XooFp9-A:c_0003", "kind": "supports", "rationale": "Frames the second sighting as strengthened by prior independent observation." }
+        {
+          "target": "Ve-XooFp9-A:c_0002",
+          "kind": "supports",
+          "rationale": "Frames the first sighting as strengthened by later independent confirmation."
+        },
+        {
+          "target": "Ve-XooFp9-A:c_0003",
+          "kind": "supports",
+          "rationale": "Frames the second sighting as strengthened by prior independent observation."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["independent-witnesses", "corroboration"]
+      "tags": [
+        "independent-witnesses",
+        "corroboration"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0006",
@@ -194,7 +230,11 @@
       "directTruth": 0.35,
       "rationale": "Strickler's Phantoms & Monsters does host dozens of Mantis Man reports. However, Strickler is a paranormal aggregator, not a peer-reviewed researcher, and the 'consistent pattern' is arguably the product of witness-account templating once the template is established online.",
       "hostStance": "asserts",
-      "tags": ["strickler", "phantoms-and-monsters", "mantis-man"]
+      "tags": [
+        "strickler",
+        "phantoms-and-monsters",
+        "mantis-man"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0007",
@@ -230,10 +270,18 @@
       "directTruth": 0.05,
       "rationale": "NASA X-points (magnetic reconnection regions) are real but exist in space plasma at magnetopause altitudes (tens of thousands of km up), not at terrestrial fault lines. The magnetic-reconnection-creates-local-portal framing misuses the physics; fault systems produce piezoelectric effects but not dimensional portals.",
       "dependencies": [
-        { "target": "Ve-XooFp9-A:c_0006", "kind": "supports", "rationale": "Attempted physical-mechanism framing for the consistent encounter pattern." }
+        {
+          "target": "Ve-XooFp9-A:c_0006",
+          "kind": "supports",
+          "rationale": "Attempted physical-mechanism framing for the consistent encounter pattern."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["x-points", "magnetic-reconnection", "pseudoscience"]
+      "tags": [
+        "x-points",
+        "magnetic-reconnection",
+        "pseudoscience"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0008",
@@ -269,7 +317,11 @@
       "directTruth": 0.05,
       "rationale": "Terry Lovelace's 2018 book Incident at Devil's Den describes this experience; it is uncorroborated single-witness testimony consistent with dissociative or hypnopompic experience, not independently verifiable abduction.",
       "hostStance": "asserts",
-      "tags": ["terry-lovelace", "abduction", "devils-den"]
+      "tags": [
+        "terry-lovelace",
+        "abduction",
+        "devils-den"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0009",
@@ -296,7 +348,11 @@
       "directTruth": 0.2,
       "rationale": "It is true that mantis-type beings are a recurring type in the abduction-literature corpus (Strieber, Hopkins, Jacobs, John Mack). However, 'thousands of documented cases' inflates the verification standard of 'documented' — most are self-reported anecdotes filtered through hypnotic regression, a methodology widely discredited as memory-generative.",
       "hostStance": "asserts",
-      "tags": ["abduction", "whitley-strieber", "mantis"]
+      "tags": [
+        "abduction",
+        "whitley-strieber",
+        "mantis"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0010",
@@ -330,7 +386,11 @@
       "directTruth": 0.5,
       "rationale": "John Mack (1929-2004) was indeed a Harvard psychiatrist and 1977 Pulitzer Prize winner (for T.E. Lawrence biography) who published Abduction (1994) taking abduction accounts seriously. Harvard investigated him but did not revoke his tenure. His finding of psychiatric normality in abductees is accurate; whether the experiences themselves are veridical remains the heavy-disputed question.",
       "hostStance": "asserts",
-      "tags": ["john-mack", "harvard", "abduction-research"]
+      "tags": [
+        "john-mack",
+        "harvard",
+        "abduction-research"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0011",
@@ -375,7 +435,12 @@
       "directTruth": 0.4,
       "rationale": "The Teymareh (Iranian) petroglyph and San mantis imagery are real archaeological finds. The claimed 4,000-40,000 year age bracket is extremely broad and cross-cultural stylistic convergence on a 'mantis-like biped' is more parsimoniously explained by (a) mantises being real, visually striking insects and (b) humans universally finding anthropomorphic symmetry in them.",
       "hostStance": "asserts",
-      "tags": ["petroglyphs", "san-people", "iran", "archaeology"]
+      "tags": [
+        "petroglyphs",
+        "san-people",
+        "iran",
+        "archaeology"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0012",
@@ -417,10 +482,18 @@
       "directTruth": 0.9,
       "rationale": "Meganeuropsis permiana had a ~710 mm wingspan (closer to 2.3 ft) and lived during higher-oxygen Carboniferous/Permian. The square-cube law does make giant tracheal-respiration arthropods mechanically impossible at terrestrial scale. The physics argument against earth-evolved giant mantises is sound.",
       "dependencies": [
-        { "target": "Ve-XooFp9-A:c_0002", "kind": "contradicts", "rationale": "[logical] If a 7-ft insect cannot biologically exist on Earth, the described Mantis Man cannot be a terrestrial biological entity." }
+        {
+          "target": "Ve-XooFp9-A:c_0002",
+          "kind": "contradicts",
+          "rationale": "[logical] If a 7-ft insect cannot biologically exist on Earth, the described Mantis Man cannot be a terrestrial biological entity."
+        }
       ],
       "hostStance": "asserts",
-      "tags": ["meganeuropsis", "oxygen", "biophysics"]
+      "tags": [
+        "meganeuropsis",
+        "oxygen",
+        "biophysics"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0013",
@@ -445,10 +518,17 @@
       "directTruth": 0.6,
       "rationale": "The symptom-matching argument is partially sound: hypnagogic/hypnopompic hallucinations plus sleep paralysis explain a large fraction of bedroom-abduction accounts (Cheyne & Rueffer 1999). The host is correct that it doesn't cover waking outdoor sightings — for those, highway-hypnosis, dissociative states, or fabrication are more likely alternative explanations.",
       "dependencies": [
-        { "target": "Ve-XooFp9-A:c_0002", "kind": "contradicts", "rationale": "[alternative] Sleep-paralysis/hypnagogia explains indoor-mantis reports without invoking an actual entity." }
+        {
+          "target": "Ve-XooFp9-A:c_0002",
+          "kind": "contradicts",
+          "rationale": "[alternative] Sleep-paralysis/hypnagogia explains indoor-mantis reports without invoking an actual entity."
+        }
       ],
       "hostStance": "uncertain",
-      "tags": ["sleep-paralysis", "alternative-explanation"]
+      "tags": [
+        "sleep-paralysis",
+        "alternative-explanation"
+      ]
     },
     {
       "id": "Ve-XooFp9-A:c_0014",
@@ -473,12 +553,23 @@
       "directTruth": 0.75,
       "rationale": "The host's stated inability to debunk is probably a rhetorical framing: the biophysics (c_0012) and sleep-paralysis (c_0013) arguments do substantially undermine the phenomenon, even if they don't falsify every individual account. 'Inability to debunk' ≠ 'evidence of existence'.",
       "dependencies": [
-        { "target": "Ve-XooFp9-A:c_0012", "kind": "contradicts", "rationale": "[logical] Biophysics argument is a robust debunking tool against earth-insect hypothesis, which the host does present." },
-        { "target": "Ve-XooFp9-A:c_0013", "kind": "contradicts", "rationale": "[alternative] Sleep-paralysis explains a large fraction of reports." }
+        {
+          "target": "Ve-XooFp9-A:c_0012",
+          "kind": "contradicts",
+          "rationale": "[logical] Biophysics argument is a robust debunking tool against earth-insect hypothesis, which the host does present."
+        },
+        {
+          "target": "Ve-XooFp9-A:c_0013",
+          "kind": "contradicts",
+          "rationale": "[alternative] Sleep-paralysis explains a large fraction of reports."
+        }
       ],
       "inVerdictSection": true,
       "hostStance": "uncertain",
-      "tags": ["verdict", "epistemics"]
+      "tags": [
+        "verdict",
+        "epistemics"
+      ]
     }
   ]
 }

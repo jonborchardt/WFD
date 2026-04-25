@@ -3,6 +3,7 @@
   "transcriptId": "UFG8RiMUGD0",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "UFG8RiMUGD0:c_0001",
@@ -97,7 +98,7 @@
           "transcriptId": "UFG8RiMUGD0",
           "charStart": 3710,
           "charEnd": 3860,
-          "timeStart": 248.0,
+          "timeStart": 248,
           "timeEnd": 258.4,
           "quote": "\ncity discovered is five square miles or\n13 square kilometers and housed over 22\n000 people the upper floors were used as\napartments closest to the fr"
         }
@@ -207,7 +208,10 @@
       "rationale": "Bottom-up water control is a plausible defensive inference from the well placement but the specific claim that wells 'could only' be controlled from below is a reasonable engineering interpretation rather than a documented design specification.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "UFG8RiMUGD0:c_0006", "kind": "elaborates" }
+        {
+          "target": "UFG8RiMUGD0:c_0006",
+          "kind": "elaborates"
+        }
       ]
     },
     {
@@ -312,7 +316,11 @@
       "rationale": "The Phrygian-origin hypothesis is gaining traction in recent scholarship (noting Greek-speaking Hellenized Phrygian occupation of Cappadocia). The Greek-inscribed chapel argument is decent but not conclusive — Greek writing also fits later Christian-era use.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "UFG8RiMUGD0:c_0011", "kind": "contradicts", "rationale": "[alternative] Offers the Phrygians as the more plausible builders, displacing the Hittite hypothesis." }
+        {
+          "target": "UFG8RiMUGD0:c_0011",
+          "kind": "contradicts",
+          "rationale": "[alternative] Offers the Phrygians as the more plausible builders, displacing the Hittite hypothesis."
+        }
       ]
     },
     {
@@ -343,7 +351,10 @@
       "rationale": "Xenophon's Anabasis Book IV does describe Armenian/Anatolian people living in partly-underground dwellings. Linking that passage specifically to Derinkuyu is interpretive but the textual existence and general description are documented.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "UFG8RiMUGD0:c_0012", "kind": "supports" }
+        {
+          "target": "UFG8RiMUGD0:c_0012",
+          "kind": "supports"
+        }
       ]
     },
     {
