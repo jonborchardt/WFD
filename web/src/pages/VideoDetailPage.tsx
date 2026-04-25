@@ -33,6 +33,7 @@ export function VideoDetailPage() {
   const openVideo = useOpenVideo();
   const [row, setRow] = useState<VideoRow | null>(null);
   const [transcript, setTranscript] = useState<Transcript | null>(null);
+  const [transcriptLoaded, setTranscriptLoaded] = useState(false);
   const [nlp, setNlp] = useState<VideoNlp | null>(null);
   const [claims, setClaims] = useState<PersistedClaims | null>(null);
   const [claimIndex, setClaimIndex] = useState<ClaimsIndexEntry[] | null>(null);
@@ -52,6 +53,7 @@ export function VideoDetailPage() {
     setLoading(true);
     setRow(null);
     setTranscript(null);
+    setTranscriptLoaded(false);
     setNlp(null);
     setClaims(null);
     setClaimIndex(null);
@@ -65,7 +67,9 @@ export function VideoDetailPage() {
         setRow(found || null);
         setLoading(false);
       }),
-      fetchTranscript(videoId).then(setTranscript),
+      fetchTranscript(videoId)
+        .then((t) => setTranscript(t))
+        .finally(() => setTranscriptLoaded(true)),
       fetchVideoNlp(videoId).then(setNlp),
       fetchClaims(videoId).then(setClaims),
       fetchClaimsIndex().then((idx) => {
@@ -184,7 +188,11 @@ export function VideoDetailPage() {
             </Box>
           )}
 
-          {!transcript && <Typography sx={{ mt: 2 }}>no transcript available</Typography>}
+          {!transcript && (
+            transcriptLoaded
+              ? <Typography sx={{ mt: 2 }}>no transcript available</Typography>
+              : <PageLoading label="loading transcript & analysis…" />
+          )}
 
           {transcript && (
             // NlpPanel renders both entities and relationships; we wrap
