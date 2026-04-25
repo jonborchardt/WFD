@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "gfYUaMcmmSM",
+  "generatedAt": "2026-04-24T15:44:03.605Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "gfYUaMcmmSM:c_0001",
+      "videoId": "gfYUaMcmmSM",
+      "text": "The Silver Bridge collapse on December 15, 1967 killed 46 commuters in Point Pleasant, West Virginia, marking the end of a year of local Mothman sightings.",
+      "kind": "historical",
+      "entities": [
+        "location:silver bridge",
+        "facility:silver bridge",
+        "location:point pleasant",
+        "location:west virginia",
+        "date_time:1967"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 7978,
+          "charEnd": 8050,
+          "timeStart": 529.12,
+          "timeEnd": 537.519,
+          "quote": "rush hour on\nDecember 15th, 1967, [music] and the\nbridge was packed. It "
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Silver Bridge collapse on Dec 15, 1967 is documented engineering history.",
+      "directTruth": 0.95,
+      "hostStance": "asserts",
+      "tags": [
+        "silver-bridge",
+        "mothman",
+        "point-pleasant"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0002",
+      "videoId": "gfYUaMcmmSM",
+      "text": "Mothman sightings preceded major disasters including Chernobyl (1986), the Twin Towers (2001) and the 2007 I-35 bridge collapse, suggesting Mothman acts as a disaster-predictor.",
+      "kind": "speculative",
+      "entities": [
+        "person:moth man",
+        "location:twin towers",
+        "facility:i35 bridge",
+        "event:9/11 attack",
+        "event:bridge collapse",
+        "date_time:2011",
+        "event:silver bridge collapse"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 24168,
+          "charEnd": 24272,
+          "timeStart": 1458.046,
+          "timeEnd": 1467.6,
+          "quote": "Twin Towers in 2001 before the\n9/11 attack. In August 2007, after a\nmonth of Moth Man sightings, [music]"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The 'Mothman-before-disasters' pattern is a classic post-hoc narrative driven by selection bias; no prospective prediction has been verified.",
+      "directTruth": 0.1,
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0001",
+          "kind": "supports",
+          "rationale": "[logical] Silver Bridge 1967 is the original instance of the claimed pattern"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "mothman",
+        "prophecy",
+        "disasters"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0003",
+      "videoId": "gfYUaMcmmSM",
+      "text": "John Keel's book 'The Mothman Prophecies' diverges significantly from his own investigative notes, undermining its reliability as a source for Mothman history.",
+      "kind": "empirical",
+      "entities": [
+        "person:john keel",
+        "work_of_media:the moth man prophecies",
+        "person:moth man"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 35057,
+          "charEnd": 35171,
+          "timeStart": 2056.079,
+          "timeEnd": 2063.359,
+          "quote": "information in the Moth Man prophecies\n[music] is vastly different than the\nnotes he took during his investigation"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Keel's Mothman Prophecies embellishes his original journalism; scholars comparing the archival notes to the book confirm substantial divergence.",
+      "directTruth": 0.7,
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] if the main source is unreliable, the prophecy pattern it anchored is weakened"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "mothman",
+        "john-keel",
+        "source-criticism"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0004",
+      "videoId": "gfYUaMcmmSM",
+      "text": "The legend that over 100 people saw the Mothman in Point Pleasant is an exaggeration; the actual documented-incident count is only six or seven.",
+      "kind": "empirical",
+      "entities": [
+        "person:moth man",
+        "location:point pleasant",
+        "person:witnesses"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 35173,
+          "charEnd": 35280,
+          "timeStart": 2061.52,
+          "timeEnd": 2070.639,
+          "quote": "Now, the legend says that over 100\npeople saw the Moth Man in Point\nPleasant, but the actual number of\ninci"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Primary-source contemporary news coverage from 1966–1967 records roughly half a dozen core Point Pleasant sightings, not the often-inflated totals.",
+      "directTruth": 0.75,
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] if the scale is inflated the prophecy pattern may not be real"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "mothman",
+        "point-pleasant",
+        "source-criticism"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0005",
+      "videoId": "gfYUaMcmmSM",
+      "text": "The 1967 Patterson-Gimlin film remains the single best piece of Bigfoot evidence after 60 years — and the absence of any better footage, despite phones being ubiquitous, is itself suspicious.",
+      "kind": "speculative",
+      "entities": [
+        "person:patterson",
+        "person:roger patterson",
+        "person:gimlin",
+        "person:bob gimlin",
+        "work_of_media:patterson film",
+        "work_of_media:gimlin film"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 70147,
+          "charEnd": 70257,
+          "timeStart": 4423.679,
+          "timeEnd": 4435.36,
+          "quote": "The Patterson encounter was over\n60 years [music] ago, and that's still\nthe best we've got. I want to see more"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Patterson-Gimlin film date and status as canonical evidence are well-established; the 'absence of better evidence argues against existence' is a defensible epistemic point.",
+      "directTruth": 0.7,
+      "hostStance": "asserts",
+      "tags": [
+        "bigfoot",
+        "patterson-gimlin",
+        "sasquatch"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0006",
+      "videoId": "gfYUaMcmmSM",
+      "text": "No physical evidence of Bigfoot — no skeleton, hair sample, or scat — has ever been found despite decades of reported sightings.",
+      "kind": "empirical",
+      "entities": [
+        "person:patterson",
+        "group_or_movement:bigfoot believers"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 70259,
+          "charEnd": 70335,
+          "timeStart": 4432.32,
+          "timeEnd": 4437.679,
+          "quote": "A skeleton, hair, [music] even feces. No\nphysical evidence of Bigfoot exists"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Every purported Bigfoot sample submitted to credible labs has been identified as known species or animal; no species-identifying fossil or remains exists.",
+      "directTruth": 0.9,
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0005",
+          "kind": "supports",
+          "rationale": "[logical] absence of remains corroborates the 'best evidence stopped in 1967' observation"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "bigfoot",
+        "physical-evidence"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0007",
+      "videoId": "gfYUaMcmmSM",
+      "text": "In 1987 Operation Deep Scan swept Loch Ness with 24 sonar-equipped boats covering the full width of the lake and found no trace of Nessie, severely weakening the Loch Ness Monster hypothesis.",
+      "kind": "empirical",
+      "entities": [
+        "location:loch ness",
+        "event:operation deep scan",
+        "technology:sonar",
+        "organization:scientists"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 55020,
+          "charEnd": 55121,
+          "timeStart": 3425.2,
+          "timeEnd": 3435.2,
+          "quote": " Operation Deep Scan. For 2\ndays, scientists covered the body of the\nlake with a flotilla of 24 boats"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Operation Deep Scan (1987) is a documented Loch Ness sonar sweep; its failure to find a large creature is strong evidence against a viable Nessie population.",
+      "directTruth": 0.85,
+      "hostStance": "asserts",
+      "tags": [
+        "loch-ness",
+        "nessie",
+        "sonar"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0008",
+      "videoId": "gfYUaMcmmSM",
+      "text": "Sightings of the Jersey Devil, Flatwoods Monster, Kelly-Bmbe (Hopkinsville Goblin) and Adair Beast cluster over one of America's largest aquifer cave networks, suggesting the creatures may be extradimensional entities emerging through electrical anomalies.",
+      "kind": "speculative",
+      "entities": [
+        "location:new jersey",
+        "location:aquifers"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 100064,
+          "charEnd": 100149,
+          "timeStart": 6553.52,
+          "timeEnd": 6563.679,
+          "quote": "17 trillion gallons\nof [music] water. Recent studies\nrevealed extensive cave networks"
+        },
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 115088,
+          "charEnd": 115181,
+          "timeStart": 7594.719,
+          "timeEnd": 7603.119,
+          "quote": "these beings are\nextradimensional. They slip into our\nworld through cracks in reality created"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Geographic clustering of cryptid sightings can be explained by population density and historical folklore; 'extradimensional' is not a testable hypothesis.",
+      "directTruth": 0.05,
+      "hostStance": "asserts",
+      "tags": [
+        "jersey-devil",
+        "flatwoods-monster",
+        "hopkinsville-goblin",
+        "extradimensional"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0009",
+      "videoId": "gfYUaMcmmSM",
+      "text": "Antarctic 'Ninion' shapes briefly captured by satellite imagery near the ice shelf suggest intelligent marine life hiding in deep cold water.",
+      "kind": "speculative",
+      "entities": [
+        "location:antarctica",
+        "location:antarctic ice"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 80055,
+          "charEnd": 80228,
+          "timeStart": 5110.88,
+          "timeEnd": 5124.08,
+          "quote": "the Antarctic [music] coast. The shapes\nwere too large to be whales, too defined\nto be icebergs. A few days later, the\nimages vanished.\nCryptozoolologists believe the Ninion"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Unidentified imagery that 'vanished' is not checkable evidence; Antarctic-marine-cryptid claims have no peer-reviewed support.",
+      "directTruth": 0.05,
+      "hostStance": "asserts",
+      "tags": [
+        "antarctica",
+        "ninion",
+        "cryptid"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0010",
+      "videoId": "gfYUaMcmmSM",
+      "text": "Terry Lovelace's 1977 Devil's Den State Park alien abduction encounter is canonical modern evidence that Mantis-type humanoid insect-beings interact with humans.",
+      "kind": "speculative",
+      "entities": [
+        "person:terry",
+        "location:devil's den state park",
+        "location:arkansas",
+        "event:alien abduction cases"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 140031,
+          "charEnd": 140195,
+          "timeStart": 9396.64,
+          "timeEnd": 9408.72,
+          "quote": "Terry Love Lace abduction story.\nI'll link to it below, but here's a\nquick recap. Terry and a friend went\ncamping at Devil's Den State Park in\nArkansas. In the midd"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Lovelace's account is a first-person testimony with no corroborating physical evidence; mantis-abduction reports rely on subjective experience and popular UFO literature.",
+      "directTruth": 0.1,
+      "hostStance": "asserts",
+      "tags": [
+        "terry-lovelace",
+        "arkansas",
+        "mantis-man",
+        "abduction"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0011",
+      "videoId": "gfYUaMcmmSM",
+      "text": "American missionary Eugene Thomas reported a dinosaur-like creature crossing the Jaw River in 1919, and cryptozoologist Ivan Sanderson was charged by a similar reptilian beast during a 1932 expedition — historical anchors for the Mokele-Mbembe species claim.",
+      "kind": "historical",
+      "entities": [
+        "person:eugene thomas",
+        "person:ivan sanderson",
+        "date_time:1909"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 105021,
+          "charEnd": 105189,
+          "timeStart": 6910.639,
+          "timeEnd": 6926.8,
+          "quote": "1919, American missionary Eugene\nThomas reported a dinosaur-like creature\ncrossing the Jaw River. In 1932, famous\ncryptozoolologist Ivan Sanderson was\ncharged by a huge"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Sanderson's 1932 account is real; no physical evidence has ever emerged, so the 'living dinosaur' framing remains speculative folklore.",
+      "directTruth": 0.3,
+      "hostStance": "asserts",
+      "tags": [
+        "mokele-mbembe",
+        "ivan-sanderson"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0012",
+      "videoId": "gfYUaMcmmSM",
+      "text": "A McMurdo-station Apple 2e hard drive belonging to 'Anton's father' documented the world's largest human-trafficking operation in Antarctica, shipping children to be conditioned by 'Striders.'",
+      "kind": "speculative",
+      "entities": [
+        "person:anton",
+        "facility:mcmurto station",
+        "technology:apple 2e",
+        "location:antarctica"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 90216,
+          "charEnd": 90264,
+          "timeStart": 5884.08,
+          "timeEnd": 5891.1990000000005,
+          "quote": "largest human trafficking\noperation in the world"
+        },
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 90289,
+          "charEnd": 90317,
+          "timeStart": 5888.719,
+          "timeEnd": 5893.52,
+          "quote": "Anton found his old computer"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "The 'Anton's father' / 'Striders' human-trafficking narrative appears to be a framing device unique to this show; no corroborating evidence exists outside the transcript.",
+      "directTruth": 0.02,
+      "hostStance": "asserts",
+      "tags": [
+        "antarctica",
+        "striders",
+        "human-trafficking"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0013",
+      "videoId": "gfYUaMcmmSM",
+      "text": "The host explicitly declares he does not believe in the cryptids covered in this episode, though the exercise has made him believe in adjacent phenomena (crop circles, lunar anomalies, something under Antarctic ice).",
+      "kind": "opinion",
+      "entities": [
+        "location:antarctica"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 95204,
+          "charEnd": 95333,
+          "timeStart": 6216.676,
+          "timeEnd": 6227.199,
+          "quote": "I don't believe in these\ncryptids, but doing this show has made\nme believe other things. Crop circles\nare real. The moon is weird"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Host's own verdict statement; the 'I don't believe' portion is the operational claim, while the 'crop-circles-real' portion is an uncalibrated tangent.",
+      "directTruth": 0.5,
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host personally disbelieves the Mothman-disaster pattern"
+        },
+        {
+          "target": "gfYUaMcmmSM:c_0005",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host personally disbelieves Bigfoot"
+        },
+        {
+          "target": "gfYUaMcmmSM:c_0010",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host personally disbelieves the Mantis-Man narrative"
+        }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "uncertain",
+      "tags": [
+        "verdict",
+        "host-disbelief"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0014",
+      "videoId": "gfYUaMcmmSM",
+      "text": "The Mantis-Man encounters Paul described — humanoid insect with triangular head and telepathic intelligence — are genuine evidence of a non-human intelligence interacting with humans.",
+      "kind": "speculative",
+      "entities": [
+        "event:mantis sightings",
+        "event:mantis man encounters"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "gfYUaMcmmSM",
+          "charStart": 135127,
+          "charEnd": 135263,
+          "timeStart": 9058.56,
+          "timeEnd": 9072.399,
+          "quote": "The creature had a\ntriangular head, massive black eyes, and\na gangly body, just like a prey mantis.\nBut this wasn't just a large insect."
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Mantis-being reports have no physical corroboration; the globally-consistent form is better explained by sleep paralysis iconography than by interdimensional mantis visitation.",
+      "directTruth": 0.05,
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0013",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host's own verdict section flags cryptid-disbelief, which undercuts mantis-being earnestness"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "mantis-man",
+        "abduction"
+      ]
+    }
+  ]
+}

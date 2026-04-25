@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-04-23T03:25:33.447Z",
-  "total": 33,
+  "generatedAt": "2026-04-24T16:03:03.632Z",
+  "total": 35,
   "byKind": {
     "pair": 17,
     "broken-presupposition": 1,
-    "cross-video": 15
+    "cross-video": 17
   },
   "verifiedDropped": {
-    "total": 98,
+    "total": 107,
     "byVerdict": {
-      "COMPLEMENTARY": 31,
-      "SAME-CLAIM": 48,
+      "COMPLEMENTARY": 34,
+      "SAME-CLAIM": 54,
       "IRRELEVANT": 10,
       "SAME-CLAIM-stance-mismatch": 9,
       "SAME-CLAIM-redundancy-cap": 4
@@ -48,8 +48,8 @@
       "right": "aXG5R4HRlgs:c_0007",
       "summary": "\"Cambridge linguist Dr. Laura Wright argued in the same BBC documentary that the…\" contradicts \"Peter Trinder, a literature teacher acting as translator, went on BBC camera in…\" but both asserted true (0.85 vs 0.80) [logical]",
       "verified": {
-        "verdict": "DEBUNKS",
-        "reasoning": "Wright's linguistic evidence that the messages contain anachronistic verb errors a genuine 16th-century writer would not produce is directly presented as evidence that Trinder's 'very real' authenticity endorsement is false — net effect: the authenticity claim cannot be asserted.",
+        "verdict": "UNDERCUTS",
+        "reasoning": "Wright's linguistic analysis of anachronistic verb inflections directly undercuts Trinder's 'very real' endorsement of authenticity without logically negating the possibility that messages exist.",
         "by": "ai"
       }
     },
@@ -120,8 +120,8 @@
       "right": "B70KYVTJ1is:c_0001",
       "summary": "\"A universal megalithic yard accurate to millimeters shared across Neolithic Eur…\" contradicts \"Alexander Tom, a Scottish engineer and Oxford professor, identified a precise 2…\" but both asserted true (0.85 vs 0.85) [debunks]",
       "verified": {
-        "verdict": "DEBUNKS",
-        "reasoning": "The host's denies verdict 'a universal megalithic yard probably did not exist' directly refutes left's assertion that the 2.72ft unit was actually 'used at hundreds of ancient stone sites' — if the unit did not exist, the sites did not use it.",
+        "verdict": "UNDERCUTS",
+        "reasoning": "The host's skeptical verdict about a universal precise megalithic yard undercuts the probative value of Thom's claimed 2.72ft unit without strictly contradicting that Thom measured and published such a unit.",
         "by": "ai"
       }
     },
@@ -216,8 +216,8 @@
       "right": "_0n1Q0CV-3A:c_0009",
       "summary": "\"Dr Maurice Doreal's real name was Claude Doggins; he was not a doctor, never gr…\" contradicts \"In 1925 Dr Maurice Doreal claimed to have discovered ten Emerald Tablets in Egy…\" but both asserted true (0.80 vs 0.70) [debunks]",
       "verified": {
-        "verdict": "DEBUNKS",
-        "reasoning": "Passages matching Lovecraft's Necronomicon word-for-word plus fake credentials show the 'Emerald Tablets discovered in Egypt' narrative was fabricated, not genuinely discovered — net effect is the discovery claim can no longer be asserted as true.",
+        "verdict": "UNDERCUTS",
+        "reasoning": "The debunk of Doreal's credentials and plagiarism undercuts his 'discovery' narrative but doesn't strictly negate the historical fact that he published the Tablets and founded the Brotherhood.",
         "by": "ai"
       }
     },
@@ -226,6 +226,22 @@
       "left": "2NMBjRd8PXw:c_0011",
       "right": "2NMBjRd8PXw:c_0008",
       "summary": "\"If Hitler really survived WWII and fled to Indonesia undetected, it would repre…\" (0.70) presupposes \"A man who died in Surabaya, Indonesia was actually Adolf Hitler, who escaped Eu…\" which has low truth (0.05)"
+    },
+    {
+      "kind": "cross-video",
+      "left": "-jtqMGKaw6c:c_0010",
+      "right": "eALW00vr9Qc:c_0009",
+      "sharedEntities": [
+        "facility:harp"
+      ],
+      "similarity": 0.5854560513760494,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "ALTERNATIVE",
+        "reasoning": "Left (host stance: denies) frames HARP as more than a radio tower; right posits chaos-driven weather/seismic weaponization. Competing explanations of HARP's effective capability.",
+        "by": "ai"
+      },
+      "summary": "-jtqMGKaw6c denies vs eALW00vr9Qc asserts — cos=0.59 — shared: facility:harp (pending verify)"
     },
     {
       "kind": "cross-video",
@@ -310,6 +326,22 @@
     },
     {
       "kind": "cross-video",
+      "left": "eALW00vr9Qc:c_0002",
+      "right": "XU49FSIx0_g:c_0006",
+      "sharedEntities": [
+        "organization:jp morgan"
+      ],
+      "similarity": 0.7780322381215553,
+      "matchReason": "cosine",
+      "verified": {
+        "verdict": "ALTERNATIVE",
+        "reasoning": "Both agree Morgan pulled funding. They differ on motive: eALW attributes it to Tesla wanting free electricity worldwide; XU49 attributes it to Morgan protecting his GE interests.",
+        "by": "ai"
+      },
+      "summary": "eALW00vr9Qc asserts vs XU49FSIx0_g asserts — cos=0.78 — shared: organization:jp morgan (pending verify)"
+    },
+    {
+      "kind": "cross-video",
       "left": "EZsihZg1EGs:c_0006",
       "right": "VJme28KSb6I:c_0005",
       "sharedEntities": [
@@ -318,8 +350,8 @@
       "similarity": 0.7465283157640149,
       "matchReason": "cosine",
       "verified": {
-        "verdict": "DEBUNKS",
-        "reasoning": "A2's exact pattern: left quotes Voltaire as if sincere endorsement of Saint Germain, right restores the sarcastic context that inverts the meaning — the inference 'Voltaire endorsed Saint Germain as immortal' cannot be asserted once the sarcasm is known.",
+        "verdict": "UNDERCUTS",
+        "reasoning": "Right's sarcasm-context gloss reduces probative force of left's bare quotation of Voltaire without strictly contradicting that Voltaire said the words.",
         "by": "ai"
       },
       "summary": "EZsihZg1EGs asserts vs VJme28KSb6I denies — cos=0.75 — shared: person:voltaire (pending verify)"

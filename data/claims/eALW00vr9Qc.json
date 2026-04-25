@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "transcriptId": "eALW00vr9Qc",
+  "generatedAt": "2026-04-24T15:33:45.217Z",
+  "generator": "claude-opus-4-7",
+  "claims": [
+    {
+      "id": "eALW00vr9Qc:c_0001",
+      "videoId": "eALW00vr9Qc",
+      "text": "Nicola Tesla's 1901 Warden Cliffe tower was built to transmit wireless energy worldwide, not for radio signals.",
+      "kind": "historical",
+      "entities": [
+        "person:nicola tesla",
+        "location:warden cliff tower",
+        "location:long island",
+        "technology:wireless energy transmission"
+      ],
+      "relationships": [
+        "r_0015",
+        "r_0017"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 3298,
+          "charEnd": 3375,
+          "timeStart": 248.799,
+          "timeEnd": 260.04,
+          "quote": "in 1901 Nicola Tesla built Warden\nCliffe the 190 ft tower on Long Island\nwasn"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Well-documented historical fact: Wardenclyffe Tower's wireless power transmission goal is part of Tesla's public record.",
+      "directTruth": 0.85,
+      "hostStance": "asserts",
+      "tags": [
+        "tesla",
+        "wardenclyffe",
+        "wireless-power"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0002",
+      "videoId": "eALW00vr9Qc",
+      "text": "JP Morgan withdrew his financing from Tesla's Wardenclyffe project when he realized Tesla intended to provide free electricity worldwide.",
+      "kind": "historical",
+      "entities": [
+        "person:morgan",
+        "organization:jp morgan",
+        "person:tesla",
+        "location:warden cliff tower"
+      ],
+      "relationships": [
+        "r_0024",
+        "r_0025"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 4392,
+          "charEnd": 4515,
+          "timeStart": 327.72,
+          "timeEnd": 338.96,
+          "quote": "JP Morgan and initially funded\nthe project but withdrew when he\nrealized Tesla wanted to provide free\nelectricity worldwide"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Commonly repeated narrative; the 'free electricity' framing is somewhat apocryphal but Morgan's withdrawal is documented.",
+      "directTruth": 0.7,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0001",
+          "kind": "presupposes",
+          "rationale": "[logical] presupposes that the Wardenclyffe project existed and had Morgan funding"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "tesla",
+        "jp-morgan",
+        "wardenclyffe"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0003",
+      "videoId": "eALW00vr9Qc",
+      "text": "When Tesla died in 1943 the US government moved almost immediately to seize his research and papers.",
+      "kind": "historical",
+      "entities": [
+        "person:tesla",
+        "organization:government agents",
+        "date_time:1943"
+      ],
+      "relationships": [
+        "r_0001",
+        "r_0002"
+      ],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 4962,
+          "charEnd": 5042,
+          "timeStart": 366.4,
+          "timeEnd": 376.639,
+          "quote": "when Tesla died in 1943 the US\ngovernment responded fast his body was\nstill warm"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "The 1943 Office of Alien Property seizure of Tesla's papers is widely documented.",
+      "directTruth": 0.8,
+      "hostStance": "asserts",
+      "tags": [
+        "tesla",
+        "government-seizure"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0004",
+      "videoId": "eALW00vr9Qc",
+      "text": "Dr. John Trump's NDRC review concluded Tesla's research contained nothing of value — a conclusion the host contends was false.",
+      "kind": "speculative",
+      "entities": [
+        "person:dr john trump",
+        "person:tesla"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 5356,
+          "charEnd": 5463,
+          "timeStart": 406.52,
+          "timeEnd": 417.52,
+          "quote": "Dr Trump also a National Defense\nresearch Committee Member said Tesla's\nresearch contained nothing valuable"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Trump's 1943 review is real; whether it accurately reflected Tesla's work is genuinely contested. The host explicitly calls the review's conclusion false.",
+      "directTruth": 0.5,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0003",
+          "kind": "presupposes",
+          "rationale": "[logical] presupposes the government seized the research in the first place"
+        }
+      ],
+      "hostStance": "denies",
+      "tags": [
+        "tesla",
+        "john-trump",
+        "cover-up"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0005",
+      "videoId": "eALW00vr9Qc",
+      "text": "After Tesla's death the US military secretly continued his particle-beam research through classified programs Project Nick (1945) and DARPA's Project Seesaw (1958).",
+      "kind": "historical",
+      "entities": [
+        "person:tesla",
+        "organization:military",
+        "event:project nick",
+        "event:project seesaw",
+        "organization:darpa",
+        "date_time:1958"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 5556,
+          "charEnd": 5627,
+          "timeStart": 427.24,
+          "timeEnd": 438.44,
+          "quote": "some research went to write\nPatterson Air Force Base under project\nNick"
+        },
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 5830,
+          "charEnd": 5885,
+          "timeStart": 450.24,
+          "timeEnd": 457.91900000000004,
+          "quote": "DARPA launched project seesaw in\n1958 like project Nick"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Project Nick and Project Seesaw are documented government programs; the causal link to Tesla's specific research is the host's narrative and less firmly established.",
+      "directTruth": 0.55,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0004",
+          "kind": "supports",
+          "rationale": "[debunks] if the military kept researching Tesla's work then Trump's 'no value' conclusion was misleading"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "tesla",
+        "particle-beam",
+        "darpa",
+        "cold-war"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0006",
+      "videoId": "eALW00vr9Qc",
+      "text": "HARP in Alaska is a direct descendant of physicist Bernard Eastland's 1987 ionospheric-heating patent, which itself built on Tesla's unrealized wireless-power concepts.",
+      "kind": "historical",
+      "entities": [
+        "facility:harp",
+        "person:bernard eastland",
+        "organization:darpa",
+        "organization:air force",
+        "location:alaska",
+        "date_time:1987",
+        "person:tesla"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 6316,
+          "charEnd": 6393,
+          "timeStart": 492.52,
+          "timeEnd": 502.96,
+          "quote": "in 1987 physicist Bernard Eastland\nfiled a patent titled method and\napparatus"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Eastland's patents and DARPA/Air Force funding of HARP are public record. The Tesla-lineage framing is more interpretive.",
+      "directTruth": 0.75,
+      "hostStance": "asserts",
+      "tags": [
+        "harp",
+        "bernard-eastland",
+        "patents"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0007",
+      "videoId": "eALW00vr9Qc",
+      "text": "Eastland's patent explicitly describes military applications — destroying missiles, disrupting communications, modifying weather, and deflecting missile trajectories — contradicting any purely-research framing of the facility.",
+      "kind": "empirical",
+      "entities": [
+        "facility:harp",
+        "person:bernard eastland",
+        "organization:military"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 8043,
+          "charEnd": 8153,
+          "timeStart": 606.36,
+          "timeEnd": 617.8,
+          "quote": "applications uh discussed in the\npatents included uh destroying missiles\nCommunications control and disruption"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "The patent language is public record; the inference that this reveals HARP's real purpose is the host's reading.",
+      "directTruth": 0.75,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0006",
+          "kind": "supports",
+          "rationale": "[logical] if the underlying patent describes weapons uses, then HARP inherits those capabilities"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "harp",
+        "patents",
+        "weapons"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0008",
+      "videoId": "eALW00vr9Qc",
+      "text": "Bernard Eastland confirmed the military's weapons intent for HARP before his 2007 death, calling HARP 'the perfect first step toward a plan like mine.'",
+      "kind": "historical",
+      "entities": [
+        "person:bernard eastland",
+        "facility:harp",
+        "date_time:2007"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 9481,
+          "charEnd": 9535,
+          "timeStart": 707.16,
+          "timeEnd": 717.3599999999999,
+          "quote": "harp is the\nperfect first step toward a plan like\nmine"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Quote attributed to Eastland appears in multiple Why-Files-adjacent sources; not independently fact-checked by me, but plausible given his own patent framing.",
+      "directTruth": 0.7,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0007",
+          "kind": "supports",
+          "rationale": "[logical] the inventor's own testimony confirms the weapons intent inferred from his patent"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "harp",
+        "bernard-eastland"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0009",
+      "videoId": "eALW00vr9Qc",
+      "text": "Although HARP's 3.6 MW is tiny compared to natural weather systems, chaos-theoretic leverage at the right place and time could let HARP trigger large weather or seismic events.",
+      "kind": "speculative",
+      "entities": [
+        "facility:harp",
+        "event:hurricane"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 12025,
+          "charEnd": 12091,
+          "timeStart": 910.16,
+          "timeEnd": 918.88,
+          "quote": "designers understood Chaos\nTheory they didn't need to match\nNature"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The butterfly-effect framing is speculative; no peer-reviewed evidence that HARP energy inputs can reliably drive macro-scale weather or tectonic outcomes.",
+      "directTruth": 0.2,
+      "hostStance": "asserts",
+      "tags": [
+        "harp",
+        "weather-warfare",
+        "chaos-theory"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0010",
+      "videoId": "eALW00vr9Qc",
+      "text": "Major earthquakes including Haiti 2010, Sichuan 2008 and Fukushima 2011 coincided with ionospheric anomalies correlated with HARP operations, suggesting HARP may have played a role.",
+      "kind": "speculative",
+      "entities": [
+        "facility:harp",
+        "event:earthquakes",
+        "event:fukushima disaster",
+        "event:sishwar earthquake",
+        "location:haiti",
+        "date_time:2008",
+        "date_time:2011"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 16034,
+          "charEnd": 16102,
+          "timeStart": 1252.24,
+          "timeEnd": 1263.1200000000001,
+          "quote": "January 2nd 2020 a\ndevastating 7.0 magnitude earthquake\nstruck Haiti"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Correlation between seismic events and ionospheric anomalies is real; the causal HARP hypothesis is fringe and not supported by seismological consensus.",
+      "directTruth": 0.15,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0009",
+          "kind": "supports",
+          "rationale": "[logical] if chaos-leveraged HARP can trigger disasters then specific earthquake correlations are evidence"
+        }
+      ],
+      "hostStance": "asserts",
+      "tags": [
+        "harp",
+        "earthquake",
+        "haiti"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0011",
+      "videoId": "eALW00vr9Qc",
+      "text": "HARP can generate ELF waves in the same frequency range as human brain waves, making electromagnetic mind-control-style effects at scale technologically plausible.",
+      "kind": "speculative",
+      "entities": [
+        "facility:harp",
+        "technology:ef waves",
+        "technology:mind control",
+        "person:dr nick begic",
+        "organization:us navy"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 18165,
+          "charEnd": 18235,
+          "timeStart": 1412.2,
+          "timeEnd": 1422,
+          "quote": "harp can generate waves in\nexactly the same range as human brain\nwaves"
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "HARP-generated ELF is real; frequency-following response is real; but population-scale neural influence from HARP distances lacks peer-reviewed support.",
+      "directTruth": 0.2,
+      "hostStance": "asserts",
+      "tags": [
+        "harp",
+        "mind-control",
+        "elf-waves"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0012",
+      "videoId": "eALW00vr9Qc",
+      "text": "Correlations between HARP operations and natural disasters do not prove HARP caused them — earthquakes and severe weather existed long before HARP.",
+      "kind": "empirical",
+      "entities": [
+        "facility:harp",
+        "event:earthquakes"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 22034,
+          "charEnd": 22129,
+          "timeStart": 1684.039,
+          "timeEnd": 1695.24,
+          "quote": "correlations exist between harp\noperations in certain disasters but\ncorrelation isn't causation"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "Textbook epistemological principle; the host states it explicitly as the verdict-section caveat.",
+      "directTruth": 0.9,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0010",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host himself notes causation is not established from correlation"
+        },
+        {
+          "target": "eALW00vr9Qc:c_0009",
+          "kind": "contradicts",
+          "rationale": "[undercuts] same principle undercuts the chaos-leveraged causation claim"
+        }
+      ],
+      "inVerdictSection": true,
+      "hostStance": "uncertain",
+      "tags": [
+        "harp",
+        "epistemology",
+        "verdict"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0013",
+      "videoId": "eALW00vr9Qc",
+      "text": "HARP is only a scientific research facility — military has no weapons program here.",
+      "kind": "speculative",
+      "entities": [
+        "facility:harp",
+        "organization:military"
+      ],
+      "relationships": [],
+      "evidence": [
+        {
+          "transcriptId": "eALW00vr9Qc",
+          "charStart": 23140,
+          "charEnd": 23212,
+          "timeStart": 1755.159,
+          "timeEnd": 1764.24,
+          "quote": "Forma darer employees\nhave said the most sensitive equipment\nwas removed"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Host presents this as the official/public narrative to reject; Eastland's patent and DARPA funding suggest a broader purpose.",
+      "directTruth": 0.3,
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0007",
+          "kind": "contradicts",
+          "rationale": "[logical] cannot simultaneously be research-only and patent-documented weapons platform"
+        },
+        {
+          "target": "eALW00vr9Qc:c_0008",
+          "kind": "contradicts",
+          "rationale": "[debunks] Eastland's own statement debunks the research-only framing"
+        }
+      ],
+      "hostStance": "denies",
+      "tags": [
+        "harp",
+        "military",
+        "cover-up"
+      ]
+    }
+  ]
+}

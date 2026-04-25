@@ -1,24 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-23T02:40:53.137Z",
-  "count": 130,
+  "generatedAt": "2026-04-24T15:57:47.287Z",
+  "count": 141,
   "byVerdict": {
-    "DEBUNKS": 11,
-    "UNDERCUTS": 14,
-    "COMPLEMENTARY": 31,
-    "SAME-CLAIM": 57,
+    "UNDERCUTS": 18,
+    "SAME-CLAIM": 63,
+    "COMPLEMENTARY": 34,
+    "ALTERNATIVE": 8,
     "IRRELEVANT": 10,
-    "ALTERNATIVE": 6,
+    "DEBUNKS": 7,
     "LOGICAL-CONTRADICTION": 1
   },
   "verdicts": [
     {
       "left": "_0n1Q0CV-3A:c_0009",
       "right": "_0n1Q0CV-3A:c_0010",
-      "verdict": "DEBUNKS",
-      "reasoning": "Passages matching Lovecraft's Necronomicon word-for-word plus fake credentials show the 'Emerald Tablets discovered in Egypt' narrative was fabricated, not genuinely discovered — net effect is the discovery claim can no longer be asserted as true.",
+      "verdict": "UNDERCUTS",
+      "reasoning": "The debunk of Doreal's credentials and plagiarism undercuts his 'discovery' narrative but doesn't strictly negate the historical fact that he published the Tablets and founded the Brotherhood.",
       "by": "ai",
-      "at": "2026-04-23T02:40:53.135Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "e1328c22c0dd64264a97802bf18a0abda6845542",
+      "rightTextHash": "d4824e87d1327de598ca7d4c94e5b3b5e1bdcf3f"
     },
     {
       "left": "_nGePkIW3Ac:c_0001",
@@ -26,7 +28,49 @@
       "verdict": "UNDERCUTS",
       "reasoning": "Framing MJ-12 as introduced via the Aquarius/Bennewitz disinformation op undercuts the claim that MJ-12 was a genuine 1947 body, though both could coexist narratively.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "d9fdb7d24b795a833e415b0daac874b93c034678",
+      "rightTextHash": "f19ce41ec2516470484254fd8eed253a2d26049f"
+    },
+    {
+      "left": "-1p0mvfzPS8:c_0001",
+      "right": "gfYUaMcmmSM:c_0005",
+      "verdict": "SAME-CLAIM",
+      "reasoning": "Both videos independently assert the Patterson-Gimlin 1967 film is the best/most important piece of Bigfoot evidence. Same thesis.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.260Z",
+      "leftTextHash": "6d80daea2027ca248b6ed093eb6f61e36c825e64",
+      "rightTextHash": "0d796ccec0629aeeaaf62cf26e746acd81e03285"
+    },
+    {
+      "left": "-1p0mvfzPS8:c_0003",
+      "right": "gfYUaMcmmSM:c_0005",
+      "verdict": "COMPLEMENTARY",
+      "reasoning": "Left addresses the skeptic framing that Bigfoot reports copy the 1967 film (host denies); right argues absence of better evidence is itself suspicious. Different angles on the same artifact; not in conflict.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "4d6e0ac1cfc34528b3e96c42279da322003c792c",
+      "rightTextHash": "0d796ccec0629aeeaaf62cf26e746acd81e03285"
+    },
+    {
+      "left": "-jtqMGKaw6c:c_0010",
+      "right": "eALW00vr9Qc:c_0006",
+      "verdict": "COMPLEMENTARY",
+      "reasoning": "Left: HARP officially a radio tower. Right: HARP descends from Eastland's 1987 patent. Different facets, can coexist.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "3e13bf5b2af20ffd0220e9824699ea0350d325cf",
+      "rightTextHash": "f07db8cab0c82307c8119af420f60887d3c4b241"
+    },
+    {
+      "left": "-jtqMGKaw6c:c_0010",
+      "right": "eALW00vr9Qc:c_0009",
+      "verdict": "ALTERNATIVE",
+      "reasoning": "Left (host stance: denies) frames HARP as more than a radio tower; right posits chaos-driven weather/seismic weaponization. Competing explanations of HARP's effective capability.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "3e13bf5b2af20ffd0220e9824699ea0350d325cf",
+      "rightTextHash": "9604f3aa910357664679ad599c3eb32d6b4715fb"
     },
     {
       "left": "-jtqMGKaw6c:c_0015",
@@ -34,7 +78,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both reference the same Brookings report discussing societal effects of ET discovery; the right claim adds a (factually incorrect) secrecy recommendation but they describe the same underlying document.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "c0e5bcd56286369e20b2bbf26e96d85681fb950f",
+      "rightTextHash": "b1ed434751ffe68d759de43393a5e53d7bcfb594"
     },
     {
       "left": "-jtqMGKaw6c:c_0015",
@@ -42,7 +88,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Left accurately paraphrases the real Brookings report's societal-impact discussion; right denies the popular distortion that it confirms aliens — consistent positions on the same document.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "c0e5bcd56286369e20b2bbf26e96d85681fb950f",
+      "rightTextHash": "6aaa55a764736ca2186f19163cdfe400f8a54be3"
     },
     {
       "left": "-l_GdVh1LYE:c_0003",
@@ -66,7 +114,9 @@
       "verdict": "UNDERCUTS",
       "reasoning": "The letters-from-prison fact undercuts Freshour's conviction as a just verdict but doesn't logically contradict the fact of conviction itself.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "bf2dccaecdc0067afbea797a9e2f6bfa20720f77",
+      "rightTextHash": "437bd028d883b5fda6880a12430bb9302f6fc0e2"
     },
     {
       "left": "2k7YTFrmt84:c_0002",
@@ -74,7 +124,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both videos assert the same ~1,600 Nazi scientists brought to the US under Operation Paperclip.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "397bdc15e463be2051371499b4c873052da5bac6",
+      "rightTextHash": "23d3a5b48c143c2347ea6c68dda9e453aaff2282"
     },
     {
       "left": "2k7YTFrmt84:c_0002",
@@ -82,7 +134,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both claims state Operation Paperclip recruited ~1,600 Nazi scientists after WWII, describing the same historical thesis.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "397bdc15e463be2051371499b4c873052da5bac6",
+      "rightTextHash": "8f553804b7cce21f867b1d2ccf0cfff79d516307"
     },
     {
       "left": "2k7YTFrmt84:c_0004",
@@ -90,7 +144,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both describe Operation Gladio as a real NATO-CIA stay-behind network; the second adds the stronger strategy-of-tension interpretation as a compatible extension.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "0255f7c3c28def9153ae782c04141324c57a3fc1",
+      "rightTextHash": "06288f73e21ad25b8bed79c2aef00bf70fffd2d3"
     },
     {
       "left": "2NMBjRd8PXw:c_0012",
@@ -98,7 +154,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "Both mention Oswald/JFK but address completely different subjects (lone-gunman thesis vs. an anonymous phone-call anecdote about reverse-speech analysis).",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "1b5497f1d2e39da2038300718ef6aa01f5af5323",
+      "rightTextHash": "88f9078ee0642705cd79954514c0a4327965ecd0"
     },
     {
       "left": "4n3fkTq_p0o:c_0002",
@@ -106,7 +164,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "Both involve CIA redactions but of entirely different documents (Adam and Eve Story vs. Gateway report), so they are different subjects sharing a generic agency.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "dc10609b6dd39535b9c3d41fa3650531469fc21b",
+      "rightTextHash": "6210ca3413ad9d1b10ba4ac756fc9eaab5db597b"
     },
     {
       "left": "4n3fkTq_p0o:c_0011",
@@ -114,7 +174,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "One denies the crustal-displacement conflation, the other describes the actual slow geomagnetic reversal — both can be true and address different aspects of pole-flip discourse.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "6ffd4659be79ea9f38809f6a6bc78c7f86c2c733",
+      "rightTextHash": "0105a417236fa7f5a071d18bff0106842e4746d2"
     },
     {
       "left": "4TrT9tVjNJg:c_0007",
@@ -122,7 +184,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert the same historical thesis about MKUltra: CIA mind-control program starting in the 1950s using drugs on non-consenting subjects.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "a5748c6670bb67421ce250fe4f1275034c19babc",
+      "rightTextHash": "b03de8e4acc48a6a4dac97fd1ea1a9a3e02e7a3d"
     },
     {
       "left": "4wMhXxZ1zNM:c_0006",
@@ -138,7 +202,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both videos make essentially the same retrocausality interpretation of Wheeler's delayed-choice experiment.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "bf3871e19dd95a56eb16b17e85ba6951914d2f66",
+      "rightTextHash": "1b87d097ffe7616261034fd00068d9c62aae4a65"
     },
     {
       "left": "50Y5r9HeR2w:c_0008",
@@ -146,7 +212,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both state that AFOSI agent Richard Doty ran a targeted disinformation campaign against Paul Bennewitz.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "f097399e2c46e6fc7aedcd5bb5f11154ee3abbf7",
+      "rightTextHash": "ab30e69bee627b0c4f191db2d8eab246f285eb4f"
     },
     {
       "left": "50Y5r9HeR2w:c_0008",
@@ -154,7 +222,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert Doty ran the AFOSI disinformation op that fed Bennewitz the fabricated alien narrative.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "f097399e2c46e6fc7aedcd5bb5f11154ee3abbf7",
+      "rightTextHash": "7e9d3933c923b44cfed31eae4af47eebe3c2a2b6"
     },
     {
       "left": "50Y5r9HeR2w:c_0011",
@@ -162,7 +232,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Doty's personal insistence that the disinfo content was 'really true' and the Bennewitz-specific claim that his alien narrative was fabricated describe different layers of the same psyop.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "cefd81d40d04cf1a4d603a86103d4653050f6a0e",
+      "rightTextHash": "7e9d3933c923b44cfed31eae4af47eebe3c2a2b6"
     },
     {
       "left": "50Y5r9HeR2w:c_0011",
@@ -170,7 +242,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe Richard Doty's public position that most of the UFO disinformation (including Roswell) is actually true.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "cefd81d40d04cf1a4d603a86103d4653050f6a0e",
+      "rightTextHash": "2438fd0c0cc7e80b64eb910fa9bd9d09aab2872a"
     },
     {
       "left": "56OmlPWDRjs:c_0007",
@@ -178,7 +252,9 @@
       "verdict": "ALTERNATIVE",
       "reasoning": "Competing versions of the same Templar-found-the-Ark legend: one says they took it to Chartres, the other says they found six arks under Solomon's Temple — different primary narratives of the same event.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "6f56e1ce33d02cc7f9a828627cda990c9ca58331",
+      "rightTextHash": "835a5ecf6b14f05619f706524d37172545ab7b00"
     },
     {
       "left": "59IiApDiWjA:c_0009",
@@ -186,7 +262,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both claims give the same 1968 Bellagio/Rockefeller/Morgenthau-group founding account of the Club of Rome, asserted in two different videos.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "4a2ab06b3d9f4eed7945cac557cb0e1d03047be6",
+      "rightTextHash": "9485fcddd189c22abd4f10ff3db866d6b51e4023"
     },
     {
       "left": "7eZXBVgBDio:c_0005",
@@ -202,7 +280,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert Havana Syndrome is likely caused by a directed-energy/sonic weapon — cross-video agreement on the same thesis.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "a61f8f40d8168834ac2048aea144c1e4b402c709",
+      "rightTextHash": "50cdc02fc361f8d3d473058b77dbb13c13d8191a"
     },
     {
       "left": "9kUromZCP9M:c_0001",
@@ -210,7 +290,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "The lighthouse-explanation claim explains what the airmen saw; the other just establishes that they were on patrol and saw lights — both can be true simultaneously.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "f293be39830178468456285102339a80714e6ce4",
+      "rightTextHash": "86eae6217ceb3f6784f5175f6cbcc7e51530f6a9"
     },
     {
       "left": "9kUromZCP9M:c_0014",
@@ -218,7 +300,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both hosts assert that UFO whistleblowers including Grusch are Pentagon-cleared spokesmen rather than genuine whistleblowers.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "614b3405fdd9b6d227b1656da0450b4b57fc84e4",
+      "rightTextHash": "dc3207781cf3bb847cc34d5acd668b64ce55a805"
     },
     {
       "left": "AazxDk1ODVo:c_0005",
@@ -226,7 +310,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert US government owns most of Nevada with Area 51 located inside federal land — the same geographic thesis.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "383bbd8674500e87c204b59d11765bcdf595fd97",
+      "rightTextHash": "2fe8e00ad25bce440fb69a1d3931b5ae07c43c9c"
     },
     {
       "left": "acJ7WfebEcc:c_0009",
@@ -234,7 +320,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "The Pascal's-Wager framing and the counter-basilisk symmetry objection are two different critiques of Roko's Basilisk that reinforce rather than contradict each other.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "f444710c2a39b177e1f7861e444dc7ffd8af1e41",
+      "rightTextHash": "188df9d33cfcef7a877e714943123e099b61dccd"
     },
     {
       "left": "aXG5R4HRlgs:c_0001",
@@ -242,7 +330,9 @@
       "verdict": "UNDERCUTS",
       "reasoning": "Wright's linguistic finding of anachronistic verb errors reduces probative value of the claim that the messages were authored by a 16th-century writer, without directly contradicting the experiential premise.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "21bc15ad82e898440e3b6df80ff9196fe4772f32",
+      "rightTextHash": "412b6b720dec064c40cadeac66c5a25f866fe1f2"
     },
     {
       "left": "aXG5R4HRlgs:c_0001",
@@ -258,15 +348,19 @@
       "verdict": "UNDERCUTS",
       "reasoning": "Nick's denial of phenomena undercuts Webster's paranormal interpretation but both can share the baseline fact of residence and computer messages.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "21bc15ad82e898440e3b6df80ff9196fe4772f32",
+      "rightTextHash": "2ffff116d398089f0c98011dc98dfad529000de8"
     },
     {
       "left": "aXG5R4HRlgs:c_0007",
       "right": "aXG5R4HRlgs:c_0008",
-      "verdict": "DEBUNKS",
-      "reasoning": "Wright's linguistic evidence that the messages contain anachronistic verb errors a genuine 16th-century writer would not produce is directly presented as evidence that Trinder's 'very real' authenticity endorsement is false — net effect: the authenticity claim cannot be asserted.",
+      "verdict": "UNDERCUTS",
+      "reasoning": "Wright's linguistic analysis of anachronistic verb inflections directly undercuts Trinder's 'very real' endorsement of authenticity without logically negating the possibility that messages exist.",
       "by": "ai",
-      "at": "2026-04-23T02:40:53.136Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "d28af6eb0083b64c62935628642712477ddab139",
+      "rightTextHash": "412b6b720dec064c40cadeac66c5a25f866fe1f2"
     },
     {
       "left": "AZXvhIpYwak:c_0014",
@@ -274,7 +368,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both hosts deny the existence of a literal Illuminati organization.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "006ff1f23ebe5ceb2082e821fe107a329e666ebe",
+      "rightTextHash": "2edb2f20ad1112a19aedd7f3df90b5dac1dd62cf"
     },
     {
       "left": "B70KYVTJ1is:c_0001",
@@ -282,7 +378,9 @@
       "verdict": "UNDERCUTS",
       "reasoning": "Ruggles' selection-bias critique reduces probative value of Thom's megalithic-yard claim without strictly falsifying that he identified the unit.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "1741bf62a7849cef82fcce16a5cfec658a346cd0",
+      "rightTextHash": "92ac9d1194a3154a7d7247a03ffd4acce82b27d5"
     },
     {
       "left": "B70KYVTJ1is:c_0001",
@@ -290,15 +388,19 @@
       "verdict": "UNDERCUTS",
       "reasoning": "The absence of any physical measuring rod undercuts Thom's inferred standardized-unit hypothesis without directly contradicting that Thom conducted surveys and proposed the 2.72 ft unit.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "1741bf62a7849cef82fcce16a5cfec658a346cd0",
+      "rightTextHash": "29bf4e3153a86ae0aefee9a251d3d46fcab9e36e"
     },
     {
       "left": "B70KYVTJ1is:c_0001",
       "right": "B70KYVTJ1is:c_0018",
-      "verdict": "DEBUNKS",
-      "reasoning": "The host's denies verdict 'a universal megalithic yard probably did not exist' directly refutes left's assertion that the 2.72ft unit was actually 'used at hundreds of ancient stone sites' — if the unit did not exist, the sites did not use it.",
+      "verdict": "UNDERCUTS",
+      "reasoning": "The host's skeptical verdict about a universal precise megalithic yard undercuts the probative value of Thom's claimed 2.72ft unit without strictly contradicting that Thom measured and published such a unit.",
       "by": "ai",
-      "at": "2026-04-23T02:40:53.136Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "1741bf62a7849cef82fcce16a5cfec658a346cd0",
+      "rightTextHash": "ce17dede7c0c058212ac36caf5f09fb14ed1638c"
     },
     {
       "left": "BzRR4Yg6B3w:c_0006",
@@ -306,7 +408,19 @@
       "verdict": "DEBUNKS",
       "reasoning": "The USS Eldridge deck log, absent Navy records, and fake yearbook photo evidence directly demonstrate Bielek's Edward Cameron memories are fabricated.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "387a615fc1d1dff1e321d9bc49b020ea2416aa0d",
+      "rightTextHash": "d9926fe3c21b6232d2c0e1a4ed1958262050e9ab"
+    },
+    {
+      "left": "BzRR4Yg6B3w:c_0015",
+      "right": "eALW00vr9Qc:c_0005",
+      "verdict": "COMPLEMENTARY",
+      "reasoning": "Left: Tesla produced a working death-ray in WWI. Right: post-death US military continued particle-beam research via Project Nick / Seesaw. Sequential, non-conflicting.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "aac50f7ba3ec21e517f164850d15e57f1f05ae5b",
+      "rightTextHash": "7f425a9e8ac9f3f85e5e8db1666c012f3c47feaa"
     },
     {
       "left": "BzRR4Yg6B3w:c_0015",
@@ -314,7 +428,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "One addresses whether Tesla built a working death ray; the other addresses Tesla's peace-through-deterrence motive for proposing it — different aspects of Tesla's teleforce work.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "aac50f7ba3ec21e517f164850d15e57f1f05ae5b",
+      "rightTextHash": "a1b6204036294a4ba0958027906e36106ba49b53"
     },
     {
       "left": "c-yXhTmSSro:c_0002",
@@ -322,7 +438,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Sequential timeline: 2004 initial 2.7% impact risk and 2005 downgrade-with-keyhole are consistent stages of Apophis orbital analysis.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "03970fb325fffdb34e685e591af9084b2a416d53",
+      "rightTextHash": "3b9c0aab1e2fa3199fd19db509404d9939d00641"
     },
     {
       "left": "c-yXhTmSSro:c_0004",
@@ -330,7 +448,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "The 2021 radar data updates the 2005 keyhole concern by ruling out passage, so both are true at their respective dates describing the same Apophis threat evolution.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "3b9c0aab1e2fa3199fd19db509404d9939d00641",
+      "rightTextHash": "0fd8fd687b88bdb368e52e1e61f00b1c3621b498"
     },
     {
       "left": "CFNvij1f0Nk:c_0011",
@@ -338,7 +458,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both videos assert the same eyewitness phenomenon of UFOs flying into Mount Shasta and vanishing into the rock.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "d3f747c757aae25b66e8482e24d95bed7423a9e3",
+      "rightTextHash": "5f25c6e5324f21456925819a7949915c85b9f812"
     },
     {
       "left": "CLATUuVcPBs:c_0006",
@@ -354,7 +476,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "Both involve Nostradamus but address different subjects (Hitler-prophecy accuracy vs. Goebbels's forged-pamphlet propaganda operation).",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "3dc4c71ab6992c243b9e727803a6fbd63571e995",
+      "rightTextHash": "d0ecc388a46b176e384982f83798fe88d7616933"
     },
     {
       "left": "DJuxIDyHZCw:c_0009",
@@ -362,7 +486,19 @@
       "verdict": "UNDERCUTS",
       "reasoning": "The first denies Aldrin endorsed artificial construction while the second mentions Aldrin's Phobos monolith comments; they don't strictly contradict but the first reduces the probative value of the second's implication.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "351f098699d242ad9b01fd8c868677ff165bbec1",
+      "rightTextHash": "cb71f645c1511e3033aede3038139920d7d4b847"
+    },
+    {
+      "left": "eALW00vr9Qc:c_0003",
+      "right": "vCjo9KBpK9I:c_0003",
+      "verdict": "SAME-CLAIM",
+      "reasoning": "Both videos assert the US government seized Tesla's papers after his 1943 death. The right adds the FBI-Vault detail — same thesis elaborated.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "03f13eed1771420b7256e0742008c9885e93fe76",
+      "rightTextHash": "e29bda09aba7802d914f06329203b27ba03a7f75"
     },
     {
       "left": "EZsihZg1EGs:c_0001",
@@ -370,7 +506,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe the same 1745 London arrest of the Count of Saint Germain for espionage.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "5b2d486837f15b6ab14b1cc328692dae0364120f",
+      "rightTextHash": "f3fe58c2be1f7e1368139e1c78481859bd799049"
     },
     {
       "left": "EZsihZg1EGs:c_0001",
@@ -378,15 +516,19 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both claim the same 1745 London arrest of Saint-Germain on espionage suspicion, with nearly identical historical framing.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "5b2d486837f15b6ab14b1cc328692dae0364120f",
+      "rightTextHash": "a6645f7941c03e99d30301e8af6d6b23fe247cf9"
     },
     {
       "left": "EZsihZg1EGs:c_0006",
       "right": "VJme28KSb6I:c_0005",
-      "verdict": "DEBUNKS",
-      "reasoning": "A2's exact pattern: left quotes Voltaire as if sincere endorsement of Saint Germain, right restores the sarcastic context that inverts the meaning — the inference 'Voltaire endorsed Saint Germain as immortal' cannot be asserted once the sarcasm is known.",
+      "verdict": "UNDERCUTS",
+      "reasoning": "Right's sarcasm-context gloss reduces probative force of left's bare quotation of Voltaire without strictly contradicting that Voltaire said the words.",
       "by": "ai",
-      "at": "2026-04-23T02:40:53.136Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "b774e16d56554c325418dc46d8b81278b7bf5008",
+      "rightTextHash": "812a97aab6462d1a1b94c788747dec885e7e262c"
     },
     {
       "left": "EZsihZg1EGs:c_0012",
@@ -394,7 +536,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both narrate the 'Unknown Speaker/Professor' legend of summer 1776 inspiring Declaration signing — the same speculative legend.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "48d4ccde499ba4b24d82138a4aea24a706195b4e",
+      "rightTextHash": "8c01e3c642b6baba6ee596b3247abfb945b9eeb6"
     },
     {
       "left": "EZsihZg1EGs:c_0014",
@@ -402,7 +546,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe Guy Ballard founding the I AM Activity after his 1930 claimed encounter with Saint Germain on Mount Shasta.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "241801ee40180464631f553ff66204e27e741163",
+      "rightTextHash": "69d6a26a7a8167638c92d944b91a2f83141ab09d"
     },
     {
       "left": "EZsihZg1EGs:c_0014",
@@ -418,7 +564,9 @@
       "verdict": "ALTERNATIVE",
       "reasoning": "The pulsar explanation is a competing natural alternative to the 'artificial/alien' interpretation of Tesla's 1899 signals; both can acknowledge the reception happened.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "3b6085607c6bda4674050b6979c355083e6a0a67",
+      "rightTextHash": "e732f4ac36ac8f2e8bc191f19fcff3bf67f7437b"
     },
     {
       "left": "f5cPzD2a_Ao:c_0010",
@@ -426,7 +574,9 @@
       "verdict": "UNDERCUTS",
       "reasoning": "The retraction and methodological failure undercut the probative value of Lunan's original decoding claim while not denying that he made it.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "5f37c469186c86f37f92fdbee9f8034651dd082a",
+      "rightTextHash": "bce4f3b7acd92108872f3da07cec4b3210195e55"
     },
     {
       "left": "FpxLpEzJpAs:c_0004",
@@ -434,7 +584,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both identify Project Stargate as the CIA-backed remote-viewing program, with only minor detail differences.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "ff7c9c0c7692a9b40a0ff3e82bcaa63323d41f9b",
+      "rightTextHash": "446b8c81328448704e7e5812ce133f23771f2280"
     },
     {
       "left": "FpxLpEzJpAs:c_0004",
@@ -442,7 +594,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert the historical existence of CIA's Project Stargate remote-viewing program — cross-video agreement.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "ff7c9c0c7692a9b40a0ff3e82bcaa63323d41f9b",
+      "rightTextHash": "d301f05aae4f8bc801fa85102c6005bfcd78fdfa"
     },
     {
       "left": "FpxLpEzJpAs:c_0004",
@@ -450,7 +604,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert the CIA-backed Project Stargate was a real remote-viewing program at SRI.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "ff7c9c0c7692a9b40a0ff3e82bcaa63323d41f9b",
+      "rightTextHash": "e6bf661d556c4998adc26520137231243ba3c88e"
     },
     {
       "left": "fWKCFahyRHw:c_0001",
@@ -458,7 +614,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both describe Area 51's geographic setting — one by distance to Las Vegas/Rachel, the other by its place within NTTR/Nellis — consistent and non-conflicting.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "4d1bc04a355fa66d643296fda4a0b3229f0c43a8",
+      "rightTextHash": "5e77c16e27d6d3178886170044fd3349dc844df2"
     },
     {
       "left": "fWKCFahyRHw:c_0003",
@@ -466,7 +624,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both claims summarize Bob Lazar's 1989 public claim of reverse-engineering alien spacecraft at Area 51/S4.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "49c6af325aa64ef0e735670cb0d8c57c49ec18af",
+      "rightTextHash": "308fc5d93528835d775e094dba5e1bb4d42d847c"
     },
     {
       "left": "GDL70lKAz0A:c_0003",
@@ -474,7 +634,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both state Raymond Moody coined 'near-death experience' in his 1975 Life After Life — the same historical fact.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "93a61a1570af0bd67239259292d5ced81be1a805",
+      "rightTextHash": "ca1b4aa27a0f347f314c544e111da0e5dc3af72b"
     },
     {
       "left": "GDL70lKAz0A:c_0005",
@@ -482,7 +644,29 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both articulate the mainstream skeptical neuroscience account of NDEs: oxygen deprivation, endorphins, and temporal-lobe activity producing the experience.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "b4b28f351f08016f632e7f20dbbd3c8211f15707",
+      "rightTextHash": "5b5f912c731cc4d759922859ff3cc7869c26c640"
+    },
+    {
+      "left": "gfYUaMcmmSM:c_0001",
+      "right": "jCUfqwy7bSs:c_0002",
+      "verdict": "SAME-CLAIM",
+      "reasoning": "Both videos describe the December 15, 1967 Silver Bridge collapse in Point Pleasant that killed 46. Identical historical thesis.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "40bedb2685166496c91031c00d30491df190cc7b",
+      "rightTextHash": "ee6edf602efac8409475fcf54405dcee2d66f0fa"
+    },
+    {
+      "left": "gfYUaMcmmSM:c_0002",
+      "right": "jCUfqwy7bSs:c_0006",
+      "verdict": "SAME-CLAIM",
+      "reasoning": "Both videos assert Mothman acts as a disaster-predictor appearing before Chernobyl, 9/11, and the I-35 bridge collapse.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "d2ecea97c1eb25e042e93b3e82180103f09c814c",
+      "rightTextHash": "f4f62c7895c33e1fe3acf023d255cb5c5f7682ae"
     },
     {
       "left": "j-tGHCHVM_o:c_0001",
@@ -490,7 +674,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "The cat-through-portal denial addresses a specific rumored detail; the core Markham/time-machine framing is unaffected, so these cover different aspects of the same story.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "3fe7eebab666e00205f06ce55dee4b21a26e8742",
+      "rightTextHash": "88c3ff124362113d430f57eaf9b0db181c637f4a"
     },
     {
       "left": "Je3Qu-xMuxM:c_0002",
@@ -498,7 +684,9 @@
       "verdict": "ALTERNATIVE",
       "reasoning": "The FBI's predator-action conclusion and Valdez's surgical-mutilation observations are competing primary explanations for the same cattle deaths.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "a85085f5f52d2b6176f4cdc38b05e23a63a4124c",
+      "rightTextHash": "95b9d48b49c0550b2aaf1c2211719faedab36301"
     },
     {
       "left": "Je3Qu-xMuxM:c_0015",
@@ -506,7 +694,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both state AFOSI agent Richard Doty ran a disinformation campaign against Paul Bennewitz, with near-identical factual content.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "ab30e69bee627b0c4f191db2d8eab246f285eb4f",
+      "rightTextHash": "7e9d3933c923b44cfed31eae4af47eebe3c2a2b6"
     },
     {
       "left": "JRnFkpLZrsA:c_0009",
@@ -514,7 +704,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Same video, same investigation: one states SPR investigated the Scole Group, the other states the Bennetts had prior stage-magic background — both compatible facts about the same case.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "0b745212e4053161362b6aabbd0173df26acf302",
+      "rightTextHash": "92abb24790f5b2716347862b7d32560b0c808139"
     },
     {
       "left": "kJQ_FsmU19g:c_0006",
@@ -522,7 +714,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both affirm Doty/AFOSI's disinformation role; left focuses on the Bennewitz operation while right frames Doty as an architect of a broader campaign.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "7e9d3933c923b44cfed31eae4af47eebe3c2a2b6",
+      "rightTextHash": "2d005cf7f92445121b148d39afd9f3e346a63135"
     },
     {
       "left": "kJQ_FsmU19g:c_0008",
@@ -530,7 +724,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe Bill Moore's 1989 MUFON Las Vegas confession about spreading government disinformation in the UFO community.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "d01073a1eacf010f70b7abb31539a60d10fd002e",
+      "rightTextHash": "d33b1fd9099f7f6e841bb90ea02ee5f73a6d20a2"
     },
     {
       "left": "Knl85VitcIg:c_0009",
@@ -538,7 +734,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both claims affirm Saint-Germain's documented 1784 death, differing only in which corollary detail they emphasize.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "da8e36e60593e088880ef0d4715065a8b601aae9",
+      "rightTextHash": "4e1eee3debcefdb8d923cce821f7ac0c9583fbd2"
     },
     {
       "left": "Knl85VitcIg:c_0014",
@@ -562,7 +760,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe Gary McKinnon's 2001-2002 intrusion into US military/NASA systems searching for UFO evidence — cross-video agreement.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "8a92f92dcf46a349cb1c9201ad65676a1a623aee",
+      "rightTextHash": "351e9d7005880006d64d9c9881b342f9c3652f3e"
     },
     {
       "left": "lPpFFU9EMr8:c_0009",
@@ -578,7 +778,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both retell the same 1904 JC Brown Mount Shasta lava-tube/giant-skeletons legend with minor detail differences.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "5f4371baf5dd6a2f9a92f8c1b7f985acff42daba",
+      "rightTextHash": "a82d821e55872e73e0d49983f7d6a33d131cf294"
     },
     {
       "left": "LQJs8BHtTXg:c_0007",
@@ -586,7 +788,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both recount the same Lemurian-survivors-in-Telos-beneath-Mount-Shasta lore, though one host denies it and the other asserts as narrative.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "a187b0d992f8dcfcf7982e8930f07e06964cec80",
+      "rightTextHash": "e30dfae11d41a70d7a16f643d333bb5f8f5c362e"
     },
     {
       "left": "n84o7Ggw2Fw:c_0005",
@@ -594,7 +798,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both note the cross-cultural ubiquity of flood myths; they share the same observation even though one uses it for Noah and the other for Younger Dryas.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "b376cbe6e1ac367a43a260219331fe56718c84c7",
+      "rightTextHash": "0becd3c13e41be939de1d123171f0ba5a0e865f4"
     },
     {
       "left": "n84o7Ggw2Fw:c_0005",
@@ -602,7 +808,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both document widespread flood-myth similarity; they differ in degree but not in core factual claim.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "b376cbe6e1ac367a43a260219331fe56718c84c7",
+      "rightTextHash": "b314720d86f2ece88ed383bebef53e00a79965a1"
     },
     {
       "left": "n84o7Ggw2Fw:c_0010",
@@ -610,7 +818,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "The two claims share only the CIA entity but concern entirely different subjects — Ararat anomaly classification versus STARGATE remote viewing.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "8b08248ae64a3fda377bf31c5969669897b9c853",
+      "rightTextHash": "0bba59e76e3f2fd634b8d631c15a38de436ce3ba"
     },
     {
       "left": "NtUSYNHmPyU:c_0015",
@@ -618,7 +828,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both accurately describe MK Ultra from different angles — purpose/illegality versus scope and institutional breakdown.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "13008a245573d4d794ec3ae70e0183f2540b5668",
+      "rightTextHash": "d583d7d7fcfd8b0898d324751c4507d715c4c22e"
     },
     {
       "left": "o5ZaamPJd5U:c_0006",
@@ -626,7 +838,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both videos advance the same Brandenburg-derived thesis that elevated Martian xenon-129 is evidence of ancient nuclear detonations.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "280f5cc1f75c5a5b26b7c35d96b274638b953052",
+      "rightTextHash": "c7e9b266d5d7ecc2c487a3ad55da981d996af1ed"
     },
     {
       "left": "o5ZaamPJd5U:c_0010",
@@ -634,7 +848,9 @@
       "verdict": "DEBUNKS",
       "reasoning": "The cosmic-ray-spallation explanation for Martian xenon-129 removes the primary isotopic evidence used to support Brandenburg's nuclear-war-on-Mars hypothesis.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "4e16b0b530840fab679335e17a63f62778325490",
+      "rightTextHash": "2ca72fc79f82ff31ffa9170bc455dbedbf313a5b"
     },
     {
       "left": "o5ZaamPJd5U:c_0010",
@@ -642,7 +858,9 @@
       "verdict": "DEBUNKS",
       "reasoning": "The cosmic-ray-spallation mechanism directly refutes the claim that Martian Xe-129 has no natural explanation and uniquely signals nuclear detonation.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "4e16b0b530840fab679335e17a63f62778325490",
+      "rightTextHash": "c7e9b266d5d7ecc2c487a3ad55da981d996af1ed"
     },
     {
       "left": "OhBVWX0IkIk:c_0001",
@@ -658,7 +876,9 @@
       "verdict": "UNDERCUTS",
       "reasoning": "The edit happened (historical fact) but failed to confer the claimed HIV immunity — undercuts the stated purpose without contradicting the event.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "7c76bd2bc5776348a3430968694dfb387033712e",
+      "rightTextHash": "1d91072507506e89f01891f6ca644fe669fee5c1"
     },
     {
       "left": "OvcCK-F6aKY:c_0012",
@@ -666,7 +886,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert DARPA is exploring gene editing of soldiers, citing overlapping Safe Genes / CRISPR programs.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "2af3cdb2cfd2f65fba2845b71e3ce0c87216dde4",
+      "rightTextHash": "943ecf61c9d657817cd07c692e77c4cbfe468294"
     },
     {
       "left": "P6mwnfqoNFg:c_0013",
@@ -674,7 +896,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Kurzweil's 2030 brain-to-cloud prediction and 2045 mind-upload prediction are distinct stages of his published timeline, not in conflict.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "351f37121f598c8d5c5a5c4d45ebee54de676616",
+      "rightTextHash": "e28d698a672a6d8fa8de2894ea49c66685fa11d4"
     },
     {
       "left": "PDQ4bFoUWGA:c_0001",
@@ -682,7 +906,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe the March 1989 geomagnetic storm knocking out Quebec power, with the second adding corroborating satellite/shuttle/radio details.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "5a05223e08bb029e0406f69df086f94452ec5ad5",
+      "rightTextHash": "3491daccc5fa81e05872ee6274f27d2e8135f271"
     },
     {
       "left": "PQuLc-kEin0:c_0003",
@@ -690,7 +916,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert Edgar Cayce predicted WWII including US entry in 1941 — cross-video agreement with slightly different dates cited.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "53229a8bd6fd1c9914fb109922496b7d18ea845b",
+      "rightTextHash": "b8ac6749d6f0f84926d7fb181170bd8c5a036628"
     },
     {
       "left": "PQuLc-kEin0:c_0004",
@@ -706,7 +934,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both claims recount Cayce's 1938/1939 Atlantis/Bimini prediction preceding the 1968 Bimini Road discovery.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "24cea3708342f2c577ada642e1677057421da368",
+      "rightTextHash": "20fc003a300feb54e2dbad97a0a7a72697150c40"
     },
     {
       "left": "r8p44wQMtNE:c_0002",
@@ -722,7 +952,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert the Sitchin thesis that Anunnaki were Nibiru aliens needing Earth's gold for atmospheric repair — cross-video agreement.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "16ab4a990d7e31e281e3df1c4825a37630e88704",
+      "rightTextHash": "224d1a8cdf1bea1536cefe5e339451188b31d7cf"
     },
     {
       "left": "Rg-Ocr5hNLI:c_0012",
@@ -730,7 +962,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "One claim gives Hoxsey's biographical clinic history, the other debunks his formula's efficacy — different aspects of the same subject with no direct conflict.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "e881c27138d279f48a0b07fa1810927600ae57a4",
+      "rightTextHash": "a646a545d94cfaad3af979c1ccf22a2ce446d831"
     },
     {
       "left": "rih9-80p0Ec:c_0006",
@@ -738,7 +972,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both describe the same Roswell retraction — one states the Army's public story, the other that it was deliberately false; together they form the cover-up narrative.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "af8195d19d7c55309234796761f821d461818e63",
+      "rightTextHash": "e231e6e39597f9d33c3e689e1588a03e556c2009"
     },
     {
       "left": "RKwXczzJAB4:c_0008",
@@ -746,7 +982,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both retell Sitchin's Anunnaki-DNA-splicing-to-create-Adamu narrative.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "aa23f1b97075e62500cbbce39f298a85d6fad676",
+      "rightTextHash": "0052b7149f4d3db71293ac1573e8c51a959b156c"
     },
     {
       "left": "RxMa6VD7DOE:c_0002",
@@ -754,7 +992,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both state the same 1,600-Nazi-scientist Paperclip figure as core historical fact.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "23d3a5b48c143c2347ea6c68dda9e453aaff2282",
+      "rightTextHash": "8f553804b7cce21f867b1d2ccf0cfff79d516307"
     },
     {
       "left": "s9VoC8MoeUs:c_0001",
@@ -762,7 +1002,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "The MJ12 document-arrival claim and the anachronistic 'Area 51' forensic critique are consistent — the latter debunks the documents' authenticity, not the fact of their delivery.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "a1632181028cb681128c679ceb94c3eba58b0372",
+      "rightTextHash": "6289a45c31de7c958e016be19babcba3668130c7"
     },
     {
       "left": "s9VoC8MoeUs:c_0001",
@@ -770,7 +1012,9 @@
       "verdict": "DEBUNKS",
       "reasoning": "The pre-Sputnik 1954 dating anachronism debunks the authenticity of the MJ12 documents delivered to Shandera.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "a1632181028cb681128c679ceb94c3eba58b0372",
+      "rightTextHash": "fa28b0657710bd6917678faa900175235bca26ff"
     },
     {
       "left": "s9VoC8MoeUs:c_0001",
@@ -778,7 +1022,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "The documents being forgeries is consistent with the historical fact that a package containing them was delivered to Shandera in 1984.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "a1632181028cb681128c679ceb94c3eba58b0372",
+      "rightTextHash": "7f54b0f1d4dd407c4a846dccb6fb1043441e3434"
     },
     {
       "left": "s9VoC8MoeUs:c_0012",
@@ -786,7 +1032,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both agree Area 51 was only publicly acknowledged in 2013; the MJ12 claim uses this to debunk a document, the other is the plain historical fact.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "6289a45c31de7c958e016be19babcba3668130c7",
+      "rightTextHash": "b438e4f1066961559278ce46b736250ca293ab40"
     },
     {
       "left": "s9VoC8MoeUs:c_0012",
@@ -794,7 +1042,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "Shared Area 51 entity only; one forensically dates MJ12 usage of the term, the other lists aircraft tested there — different subjects.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "6289a45c31de7c958e016be19babcba3668130c7",
+      "rightTextHash": "b61bafde78434da3d3eb555db17f224f17d6dac8"
     },
     {
       "left": "SBlf1uukcm0:c_0001",
@@ -802,7 +1052,9 @@
       "verdict": "ALTERNATIVE",
       "reasoning": "Both reference Tesla's ~1900 Colorado Springs unusual-signal reception but offer competing framings — 'spirit' detection (1901) versus extraterrestrial radio (1899).",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "8268e13634e35bc18fca34e150e858dcc3bbb7f2",
+      "rightTextHash": "3b6085607c6bda4674050b6979c355083e6a0a67"
     },
     {
       "left": "SJek6PsN2xg:c_0011",
@@ -810,7 +1062,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe the conspiracy-community claim that the Brookings Report recommended NASA suppress ET discovery; one host partly accepts it while the other denies it.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "b1ed434751ffe68d759de43393a5e53d7bcfb594",
+      "rightTextHash": "6aaa55a764736ca2186f19163cdfe400f8a54be3"
     },
     {
       "left": "totDkXxKOXg:c_0001",
@@ -818,7 +1072,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "These two claims jointly describe the same narrative — pre-dye languages lacked blue, and the Egyptian dye invention marks the emergence — no conflict.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "18b614814b01c178347458dba46411bef1935582",
+      "rightTextHash": "d3a73e159a7230a1545938562871ed0bcd4c2dbe"
     },
     {
       "left": "U-dFlC97VtE:c_0006",
@@ -826,7 +1082,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe Project Stargate as a CIA-funded remote-viewing psychic research program — the same thesis expressed in two videos.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "e6bf661d556c4998adc26520137231243ba3c88e",
+      "rightTextHash": "446b8c81328448704e7e5812ce133f23771f2280"
     },
     {
       "left": "u2MrTgBoqiI:c_0003",
@@ -834,7 +1092,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both advance Sitchin's Anunnaki-came-to-Earth-for-gold thesis drawn from the same idiosyncratic Sumerian tablet reading.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "6560f6fb8d925d96e63da1f84c202e3698ba4388",
+      "rightTextHash": "4ad502cbe18a70c89338c28efff5bb39121d6add"
     },
     {
       "left": "u2MrTgBoqiI:c_0003",
@@ -842,7 +1102,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both articulate the Sitchin thesis that the Anunnaki were extraterrestrials from Nibiru who came to Earth for gold/resources.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "6560f6fb8d925d96e63da1f84c202e3698ba4388",
+      "rightTextHash": "224d1a8cdf1bea1536cefe5e339451188b31d7cf"
     },
     {
       "left": "u2MrTgBoqiI:c_0003",
@@ -850,7 +1112,9 @@
       "verdict": "DEBUNKS",
       "reasoning": "The scholarly translation of Anunnaki as 'royal seed / offspring of Anu' debunks Sitchin's extraterrestrial-from-Nibiru reading on which the left claim rests.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "6560f6fb8d925d96e63da1f84c202e3698ba4388",
+      "rightTextHash": "13b11471158379eeccf1d1aaf0babb115a605b79"
     },
     {
       "left": "UPxOHRySFRM:c_0013",
@@ -858,7 +1122,9 @@
       "verdict": "ALTERNATIVE",
       "reasoning": "Two competing speculative reinterpretations of Eisenhower's MIC warning — alien-technology confession vs. disarmament-advocate suppression — offered as primary explanations.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "90e854ddb16326dd387d08043a16fd1da08da760",
+      "rightTextHash": "a35504c2944548513837fd59915cc7cf8b47a2a2"
     },
     {
       "left": "urvVEQWbWak:c_0015",
@@ -866,7 +1132,9 @@
       "verdict": "LOGICAL-CONTRADICTION",
       "reasoning": "'The moon landings were real' and 'NASA faked the Apollo moon landings on a soundstage' cannot both be true.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "8a4e5d8995fa4319718d7741d056e9f6915e38fb",
+      "rightTextHash": "e2b1062654a60d4cf511a626bca0bff8344b0ca2"
     },
     {
       "left": "urvVEQWbWak:c_0015",
@@ -882,7 +1150,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "One states Swann remote-viewed Jupiter in 1973; the other notes the ring-observation claim — different aspects of the same session.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "775eb83ba3e81dd17f472e912992b69cc822d79f",
+      "rightTextHash": "90fbe62de83d6c66c1ed62c9cd62edb8e49874d4"
     },
     {
       "left": "V8kT6J_uoic:c_0011",
@@ -893,12 +1163,24 @@
       "at": "2026-04-22T21:02:59.546Z"
     },
     {
+      "left": "Ve-XooFp9-A:c_0008",
+      "right": "gfYUaMcmmSM:c_0010",
+      "verdict": "SAME-CLAIM",
+      "reasoning": "Both describe Terry Lovelace's Devil's Den State Park (Arkansas) mantis-being abduction encounter.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "98c82f8616a14100776157997bfad08064872c82",
+      "rightTextHash": "98ecf234b3742c90e23a491df7ba2dd1ca8281d9"
+    },
+    {
       "left": "Ve-XooFp9-A:c_0012",
       "right": "Ve-XooFp9-A:c_0014",
       "verdict": "UNDERCUTS",
       "reasoning": "The biophysics impossibility argument substantially undercuts the host's 'couldn't debunk' framing but they can technically coexist as rhetorical stance vs. physical argument.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "4168d16ce88c20f587367c2e058da7b0bddfcddc",
+      "rightTextHash": "f90f753c0271672c200f4104ac2d5b3b39539b5f"
     },
     {
       "left": "veVqh9XoXUs:c_0002",
@@ -906,7 +1188,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both agree Hitler died April 30, 1945 in the Berlin bunker; the astrologer-prediction claim adds a speculative framing rather than contradicting the death.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "fb5c7f5dffe9af7fc0ec33dbe7db6b00b225d26d",
+      "rightTextHash": "bca3074aa9a0e72c51017e444b41fb98736455c8"
     },
     {
       "left": "WMETBHvo-U4:c_0004",
@@ -914,7 +1198,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Both describe Area 51's Nevada location and distance from Las Vegas; different framings of compatible geographic facts.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "2fe8e00ad25bce440fb69a1d3931b5ae07c43c9c",
+      "rightTextHash": "4d1bc04a355fa66d643296fda4a0b3229f0c43a8"
     },
     {
       "left": "WMETBHvo-U4:c_0008",
@@ -922,7 +1208,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "Shared 'Area 51' entity only; one is about Nevada Triangle disappearance attribution, the other just states the facility's location.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "29b4f14b29ed9749b9a34bfea0a6f0ce28ca041f",
+      "rightTextHash": "4d1bc04a355fa66d643296fda4a0b3229f0c43a8"
     },
     {
       "left": "WMETBHvo-U4:c_0008",
@@ -930,7 +1218,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "The historical fact of Area 51 plane testing is a different subject from whether Area 51 testing causes Nevada Triangle disappearances.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "29b4f14b29ed9749b9a34bfea0a6f0ce28ca041f",
+      "rightTextHash": "b61bafde78434da3d3eb555db17f224f17d6dac8"
     },
     {
       "left": "WMETBHvo-U4:c_0008",
@@ -938,7 +1228,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "One discusses the Nevada Triangle conspiracy involving Area 51 testing while the other describes Area 51's geographic/administrative setting — different subjects sharing only the Area 51 entity.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "29b4f14b29ed9749b9a34bfea0a6f0ce28ca041f",
+      "rightTextHash": "5e77c16e27d6d3178886170044fd3349dc844df2"
     },
     {
       "left": "WNavHksmXnA:c_0011",
@@ -946,7 +1238,19 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe Cayce's late-1930s prediction that Atlantis would be found at Bimini in the Bahamas.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "20fc003a300feb54e2dbad97a0a7a72697150c40",
+      "rightTextHash": "bdde3d56e00054f8f47ca3bf63932a302c9ad0bd"
+    },
+    {
+      "left": "Wnx-uM5Rn60:c_0007",
+      "right": "eALW00vr9Qc:c_0002",
+      "verdict": "SAME-CLAIM",
+      "reasoning": "Both describe JP Morgan becoming impatient / pulling funding from Tesla's Wardenclyffe project.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "bf75a25ea4babed7ecbd6c67558e04a1738406a7",
+      "rightTextHash": "382dbcf0397503529e455edc46b6740d773207df"
     },
     {
       "left": "WqHimq-PT_s:c_0005",
@@ -954,7 +1258,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "Apollo 11 fabricated-transcript denial and the Apollo 20 fictional-spaceship premise are separate hoaxes sharing only the generic lunar setting.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "0b83e2c82d24f9663847aca8242f4f75aac1998e",
+      "rightTextHash": "24ca7e8e8cffc98ff7a809b23fd1946e373a4b1a"
     },
     {
       "left": "WqHimq-PT_s:c_0010",
@@ -965,12 +1271,24 @@
       "at": "2026-04-22T21:02:59.546Z"
     },
     {
+      "left": "XU49FSIx0_g:c_0006",
+      "right": "eALW00vr9Qc:c_0002",
+      "verdict": "ALTERNATIVE",
+      "reasoning": "Both agree Morgan pulled funding. They differ on motive: eALW attributes it to Tesla wanting free electricity worldwide; XU49 attributes it to Morgan protecting his GE interests.",
+      "by": "ai",
+      "at": "2026-04-24T15:57:47.261Z",
+      "leftTextHash": "bdc49427a879687f968e11c2ef0fbbfc82b0970e",
+      "rightTextHash": "382dbcf0397503529e455edc46b6740d773207df"
+    },
+    {
       "left": "YaaGvq2mcR0:c_0001",
       "right": "kaS8fP12CGM:c_0003",
       "verdict": "SAME-CLAIM",
       "reasoning": "Both define Project Blue Beam's goals as dismantling religion/nations/family — essentially the same definitional summary of the conspiracy theory.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "2acb2864a66670bbd7bbcccfc14ccd980f17130a",
+      "rightTextHash": "b32cd82d8315cdb97346bfc4f27ef8e9834494a7"
     },
     {
       "left": "YaaGvq2mcR0:c_0002",
@@ -978,7 +1296,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both videos give the same biographical sketch of Serge Monast as a Quebec journalist who believed in a secret controlling cabal.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "762d2844429a2cffc1fb5a79d6382695965f893d",
+      "rightTextHash": "5a7389589d61face3a5171a75f6b1594f5653fa9"
     },
     {
       "left": "YaaGvq2mcR0:c_0003",
@@ -986,7 +1306,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both assert Monast published Project Blue Beam in 1994 describing a one-world-government plan.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "203666790a0be5639b111c3013649150087f60a1",
+      "rightTextHash": "51d7efb4ac597ced74be80a0f0ed6affc87af841"
     },
     {
       "left": "YaaGvq2mcR0:c_0008",
@@ -994,7 +1316,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe Blue Beam step-two satellite-projected holographic deities in the sky — the same conspiracy claim denied by both hosts.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "39868750a4b1f418cfb3d3ef0cd71cdc2eebbf40",
+      "rightTextHash": "595acc25cf8d0407926fcadedc5c018333fc1e99"
     },
     {
       "left": "YaaGvq2mcR0:c_0010",
@@ -1002,7 +1326,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both state the same biographical fact: Monast died of a heart attack at age 51 the day after his arrest.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "13426c7a7d66e850d3b2bb339bebc58b285230d5",
+      "rightTextHash": "1dda976ac7c5d084823eae40bd83010a21928b66"
     },
     {
       "left": "YaaGvq2mcR0:c_0014",
@@ -1010,7 +1336,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both describe the 1962 DoD Operation Northwoods proposal for false-flag attacks on US civilians to justify invading Cuba.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.549Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "db9371677cd1122bdebc1574a21aced5a21697a0",
+      "rightTextHash": "5c154c77ca0d66e383b80c98c0e0dcf9a90c355e"
     },
     {
       "left": "YaaGvq2mcR0:c_0016",
@@ -1018,7 +1346,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both videos make the identical assertion that Project Blue Beam drew from Roddenberry's 'God Thing' script and the TNG 'Devil's Due' episode.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.550Z"
+      "at": "2026-04-24T15:57:47.265Z",
+      "leftTextHash": "de6a442db90392fa1a9e39174a53c6300fb60861",
+      "rightTextHash": "1cf6792185672cadc894adce990d1260c296ea35"
     },
     {
       "left": "YpZKwbdbsJ4:c_0003",
@@ -1026,7 +1356,9 @@
       "verdict": "COMPLEMENTARY",
       "reasoning": "Speth's admission identifies the creator of the videos that 'retired AFB' later posted in 2007; both facts coexist describing the same hoax chronology.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.264Z",
+      "leftTextHash": "5a7839836965e42dc1efebadeec6fae3b982c504",
+      "rightTextHash": "fbda31fcef7e200a35cde45bc63cc6ee56be9375"
     },
     {
       "left": "YpZKwbdbsJ4:c_0008",
@@ -1042,7 +1374,9 @@
       "verdict": "SAME-CLAIM",
       "reasoning": "Both relay Carl Wolfe's testimony about mushroom-shaped lunar-base photographs from the 1965 Lunar Orbiter — cross-video agreement.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.547Z"
+      "at": "2026-04-24T15:57:47.262Z",
+      "leftTextHash": "5ec052f162be986143c5722c32421ede0f2a5b4a",
+      "rightTextHash": "528fa97f5fd7f05cf2efb2742ff9655301febbc2"
     },
     {
       "left": "ZCYMAs4cqRU:c_0008",
@@ -1050,7 +1384,9 @@
       "verdict": "IRRELEVANT",
       "reasoning": "Only the Smithsonian is shared — one is about a Grand Canyon Egyptian-cave hoax, the other about Crump's Cave wooden coffins, entirely different subjects.",
       "by": "ai",
-      "at": "2026-04-22T21:02:59.548Z"
+      "at": "2026-04-24T15:57:47.263Z",
+      "leftTextHash": "545a60a766e84f73e7a7e127836e910050094c74",
+      "rightTextHash": "92f0d9def8a3a3e3e0cab4a92cc1f14701c7bff4"
     }
   ]
 }

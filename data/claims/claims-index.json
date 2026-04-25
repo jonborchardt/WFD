@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-04-23T03:25:33.447Z",
-  "videoCount": 210,
-  "claimCount": 3020,
+  "generatedAt": "2026-04-24T16:03:03.632Z",
+  "videoCount": 215,
+  "claimCount": 3090,
   "propagation": {
     "iterations": 4,
     "maxDelta": 0.00041779200000000016,
-    "claimsWithDerived": 2832
+    "claimsWithDerived": 2902
   },
   "claims": [
     {
@@ -20782,6 +20782,401 @@
       "tags": []
     },
     {
+      "id": "eALW00vr9Qc:c_0001",
+      "videoId": "eALW00vr9Qc",
+      "kind": "historical",
+      "text": "Nicola Tesla's 1901 Warden Cliffe tower was built to transmit wireless energy worldwide, not for radio signals.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:nicola tesla",
+        "location:warden cliff tower",
+        "location:long island",
+        "technology:wireless energy transmission"
+      ],
+      "relationships": [
+        "r_0015",
+        "r_0017"
+      ],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "tesla",
+        "wardenclyffe",
+        "wireless-power"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0002",
+      "videoId": "eALW00vr9Qc",
+      "kind": "historical",
+      "text": "JP Morgan withdrew his financing from Tesla's Wardenclyffe project when he realized Tesla intended to provide free electricity worldwide.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:morgan",
+        "organization:jp morgan",
+        "person:tesla",
+        "location:warden cliff tower"
+      ],
+      "relationships": [
+        "r_0024",
+        "r_0025"
+      ],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0001",
+          "kind": "presupposes",
+          "rationale": "[logical] presupposes that the Wardenclyffe project existed and had Morgan funding"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "derivedTruth": 0.7,
+      "truthSource": "direct",
+      "tags": [
+        "tesla",
+        "jp-morgan",
+        "wardenclyffe"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0003",
+      "videoId": "eALW00vr9Qc",
+      "kind": "historical",
+      "text": "When Tesla died in 1943 the US government moved almost immediately to seize his research and papers.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:tesla",
+        "organization:government agents",
+        "date_time:1943"
+      ],
+      "relationships": [
+        "r_0001",
+        "r_0002"
+      ],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "derivedTruth": 0.8,
+      "truthSource": "direct",
+      "tags": [
+        "tesla",
+        "government-seizure"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0004",
+      "videoId": "eALW00vr9Qc",
+      "kind": "speculative",
+      "text": "Dr. John Trump's NDRC review concluded Tesla's research contained nothing of value — a conclusion the host contends was false.",
+      "hostStance": "denies",
+      "entities": [
+        "person:dr john trump",
+        "person:tesla"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0003",
+          "kind": "presupposes",
+          "rationale": "[logical] presupposes the government seized the research in the first place"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "derivedTruth": 0.52,
+      "truthSource": "derived",
+      "tags": [
+        "tesla",
+        "john-trump",
+        "cover-up"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0005",
+      "videoId": "eALW00vr9Qc",
+      "kind": "historical",
+      "text": "After Tesla's death the US military secretly continued his particle-beam research through classified programs Project Nick (1945) and DARPA's Project Seesaw (1958).",
+      "hostStance": "asserts",
+      "entities": [
+        "person:tesla",
+        "organization:military",
+        "event:project nick",
+        "event:project seesaw",
+        "organization:darpa",
+        "date_time:1958"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0004",
+          "kind": "supports",
+          "rationale": "[debunks] if the military kept researching Tesla's work then Trump's 'no value' conclusion was misleading"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.55,
+      "derivedTruth": 0.55,
+      "truthSource": "direct",
+      "tags": [
+        "tesla",
+        "particle-beam",
+        "darpa",
+        "cold-war"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0006",
+      "videoId": "eALW00vr9Qc",
+      "kind": "historical",
+      "text": "HARP in Alaska is a direct descendant of physicist Bernard Eastland's 1987 ionospheric-heating patent, which itself built on Tesla's unrealized wireless-power concepts.",
+      "hostStance": "asserts",
+      "entities": [
+        "facility:harp",
+        "person:bernard eastland",
+        "organization:darpa",
+        "organization:air force",
+        "location:alaska",
+        "date_time:1987",
+        "person:tesla"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.75,
+      "derivedTruth": 0.742,
+      "truthSource": "derived",
+      "tags": [
+        "harp",
+        "bernard-eastland",
+        "patents"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0007",
+      "videoId": "eALW00vr9Qc",
+      "kind": "empirical",
+      "text": "Eastland's patent explicitly describes military applications — destroying missiles, disrupting communications, modifying weather, and deflecting missile trajectories — contradicting any purely-research framing of the facility.",
+      "hostStance": "asserts",
+      "entities": [
+        "facility:harp",
+        "person:bernard eastland",
+        "organization:military"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0006",
+          "kind": "supports",
+          "rationale": "[logical] if the underlying patent describes weapons uses, then HARP inherits those capabilities"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.75,
+      "derivedTruth": 0.73,
+      "truthSource": "derived",
+      "tags": [
+        "harp",
+        "patents",
+        "weapons"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0008",
+      "videoId": "eALW00vr9Qc",
+      "kind": "historical",
+      "text": "Bernard Eastland confirmed the military's weapons intent for HARP before his 2007 death, calling HARP 'the perfect first step toward a plan like mine.'",
+      "hostStance": "asserts",
+      "entities": [
+        "person:bernard eastland",
+        "facility:harp",
+        "date_time:2007"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0007",
+          "kind": "supports",
+          "rationale": "[logical] the inventor's own testimony confirms the weapons intent inferred from his patent"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "derivedTruth": 0.7,
+      "truthSource": "direct",
+      "tags": [
+        "harp",
+        "bernard-eastland"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0009",
+      "videoId": "eALW00vr9Qc",
+      "kind": "speculative",
+      "text": "Although HARP's 3.6 MW is tiny compared to natural weather systems, chaos-theoretic leverage at the right place and time could let HARP trigger large weather or seismic events.",
+      "hostStance": "asserts",
+      "entities": [
+        "facility:harp",
+        "event:hurricane"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.2,
+      "derivedTruth": 0.18,
+      "truthSource": "derived",
+      "tags": [
+        "harp",
+        "weather-warfare",
+        "chaos-theory"
+      ],
+      "counterEvidence": [
+        {
+          "fromClaimId": "eALW00vr9Qc:c_0012",
+          "kind": "undercuts",
+          "rationale": "[undercuts] same principle undercuts the chaos-leveraged causation claim",
+          "fromDirectTruth": 0.9,
+          "fromHostStance": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0010",
+      "videoId": "eALW00vr9Qc",
+      "kind": "speculative",
+      "text": "Major earthquakes including Haiti 2010, Sichuan 2008 and Fukushima 2011 coincided with ionospheric anomalies correlated with HARP operations, suggesting HARP may have played a role.",
+      "hostStance": "asserts",
+      "entities": [
+        "facility:harp",
+        "event:earthquakes",
+        "event:fukushima disaster",
+        "event:sishwar earthquake",
+        "location:haiti",
+        "date_time:2008",
+        "date_time:2011"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0009",
+          "kind": "supports",
+          "rationale": "[logical] if chaos-leveraged HARP can trigger disasters then specific earthquake correlations are evidence"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.15,
+      "derivedTruth": 0.15,
+      "truthSource": "direct",
+      "tags": [
+        "harp",
+        "earthquake",
+        "haiti"
+      ],
+      "counterEvidence": [
+        {
+          "fromClaimId": "eALW00vr9Qc:c_0012",
+          "kind": "undercuts",
+          "rationale": "[undercuts] host himself notes causation is not established from correlation",
+          "fromDirectTruth": 0.9,
+          "fromHostStance": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0011",
+      "videoId": "eALW00vr9Qc",
+      "kind": "speculative",
+      "text": "HARP can generate ELF waves in the same frequency range as human brain waves, making electromagnetic mind-control-style effects at scale technologically plausible.",
+      "hostStance": "asserts",
+      "entities": [
+        "facility:harp",
+        "technology:ef waves",
+        "technology:mind control",
+        "person:dr nick begic",
+        "organization:us navy"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.85,
+      "directTruth": 0.2,
+      "derivedTruth": 0.2,
+      "truthSource": "direct",
+      "tags": [
+        "harp",
+        "mind-control",
+        "elf-waves"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0012",
+      "videoId": "eALW00vr9Qc",
+      "kind": "empirical",
+      "text": "Correlations between HARP operations and natural disasters do not prove HARP caused them — earthquakes and severe weather existed long before HARP.",
+      "hostStance": "uncertain",
+      "entities": [
+        "facility:harp",
+        "event:earthquakes"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0010",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host himself notes causation is not established from correlation"
+        },
+        {
+          "target": "eALW00vr9Qc:c_0009",
+          "kind": "contradicts",
+          "rationale": "[undercuts] same principle undercuts the chaos-leveraged causation claim"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "derivedTruth": 0.9,
+      "truthSource": "direct",
+      "inVerdictSection": true,
+      "tags": [
+        "harp",
+        "epistemology",
+        "verdict"
+      ]
+    },
+    {
+      "id": "eALW00vr9Qc:c_0013",
+      "videoId": "eALW00vr9Qc",
+      "kind": "speculative",
+      "text": "HARP is only a scientific research facility — military has no weapons program here.",
+      "hostStance": "denies",
+      "entities": [
+        "facility:harp",
+        "organization:military"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "eALW00vr9Qc:c_0007",
+          "kind": "contradicts",
+          "rationale": "[logical] cannot simultaneously be research-only and patent-documented weapons platform"
+        },
+        {
+          "target": "eALW00vr9Qc:c_0008",
+          "kind": "contradicts",
+          "rationale": "[debunks] Eastland's own statement debunks the research-only framing"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.3,
+      "derivedTruth": 0.3,
+      "truthSource": "direct",
+      "tags": [
+        "harp",
+        "military",
+        "cover-up"
+      ]
+    },
+    {
       "id": "EieUJvKrjo4:c_0001",
       "videoId": "EieUJvKrjo4",
       "kind": "historical",
@@ -26308,6 +26703,429 @@
         "hellish-nde",
         "egyptian-mythology",
         "universality"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0001",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "historical",
+      "text": "The Silver Bridge collapse on December 15, 1967 killed 46 commuters in Point Pleasant, West Virginia, marking the end of a year of local Mothman sightings.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:silver bridge",
+        "facility:silver bridge",
+        "location:point pleasant",
+        "location:west virginia",
+        "date_time:1967"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.95,
+      "derivedTruth": 0.61,
+      "truthSource": "derived",
+      "tags": [
+        "silver-bridge",
+        "mothman",
+        "point-pleasant"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0002",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "speculative",
+      "text": "Mothman sightings preceded major disasters including Chernobyl (1986), the Twin Towers (2001) and the 2007 I-35 bridge collapse, suggesting Mothman acts as a disaster-predictor.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:moth man",
+        "location:twin towers",
+        "facility:i35 bridge",
+        "event:9/11 attack",
+        "event:bridge collapse",
+        "date_time:2011",
+        "event:silver bridge collapse"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0001",
+          "kind": "supports",
+          "rationale": "[logical] Silver Bridge 1967 is the original instance of the claimed pattern"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "derivedTruth": 0.1,
+      "truthSource": "direct",
+      "tags": [
+        "mothman",
+        "prophecy",
+        "disasters"
+      ],
+      "counterEvidence": [
+        {
+          "fromClaimId": "gfYUaMcmmSM:c_0003",
+          "kind": "undercuts",
+          "rationale": "[undercuts] if the main source is unreliable, the prophecy pattern it anchored is weakened",
+          "fromDirectTruth": 0.7,
+          "fromHostStance": "asserts"
+        },
+        {
+          "fromClaimId": "gfYUaMcmmSM:c_0004",
+          "kind": "undercuts",
+          "rationale": "[undercuts] if the scale is inflated the prophecy pattern may not be real",
+          "fromDirectTruth": 0.75,
+          "fromHostStance": "asserts"
+        },
+        {
+          "fromClaimId": "gfYUaMcmmSM:c_0013",
+          "kind": "undercuts",
+          "rationale": "[undercuts] host personally disbelieves the Mothman-disaster pattern",
+          "fromDirectTruth": 0.5,
+          "fromHostStance": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0003",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "empirical",
+      "text": "John Keel's book 'The Mothman Prophecies' diverges significantly from his own investigative notes, undermining its reliability as a source for Mothman history.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:john keel",
+        "work_of_media:the moth man prophecies",
+        "person:moth man"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] if the main source is unreliable, the prophecy pattern it anchored is weakened"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "derivedTruth": 0.7,
+      "truthSource": "direct",
+      "tags": [
+        "mothman",
+        "john-keel",
+        "source-criticism"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0004",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "empirical",
+      "text": "The legend that over 100 people saw the Mothman in Point Pleasant is an exaggeration; the actual documented-incident count is only six or seven.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:moth man",
+        "location:point pleasant",
+        "person:witnesses"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] if the scale is inflated the prophecy pattern may not be real"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "derivedTruth": 0.75,
+      "truthSource": "direct",
+      "tags": [
+        "mothman",
+        "point-pleasant",
+        "source-criticism"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0005",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "speculative",
+      "text": "The 1967 Patterson-Gimlin film remains the single best piece of Bigfoot evidence after 60 years — and the absence of any better footage, despite phones being ubiquitous, is itself suspicious.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:patterson",
+        "person:roger patterson",
+        "person:gimlin",
+        "person:bob gimlin",
+        "work_of_media:patterson film",
+        "work_of_media:gimlin film"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "derivedTruth": 0.78,
+      "truthSource": "derived",
+      "tags": [
+        "bigfoot",
+        "patterson-gimlin",
+        "sasquatch"
+      ],
+      "counterEvidence": [
+        {
+          "fromClaimId": "gfYUaMcmmSM:c_0013",
+          "kind": "undercuts",
+          "rationale": "[undercuts] host personally disbelieves Bigfoot",
+          "fromDirectTruth": 0.5,
+          "fromHostStance": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0006",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "empirical",
+      "text": "No physical evidence of Bigfoot — no skeleton, hair sample, or scat — has ever been found despite decades of reported sightings.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:patterson",
+        "group_or_movement:bigfoot believers"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0005",
+          "kind": "supports",
+          "rationale": "[logical] absence of remains corroborates the 'best evidence stopped in 1967' observation"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "derivedTruth": 0.9,
+      "truthSource": "direct",
+      "tags": [
+        "bigfoot",
+        "physical-evidence"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0007",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "empirical",
+      "text": "In 1987 Operation Deep Scan swept Loch Ness with 24 sonar-equipped boats covering the full width of the lake and found no trace of Nessie, severely weakening the Loch Ness Monster hypothesis.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:loch ness",
+        "event:operation deep scan",
+        "technology:sonar",
+        "organization:scientists"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "loch-ness",
+        "nessie",
+        "sonar"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0008",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "speculative",
+      "text": "Sightings of the Jersey Devil, Flatwoods Monster, Kelly-Bmbe (Hopkinsville Goblin) and Adair Beast cluster over one of America's largest aquifer cave networks, suggesting the creatures may be extradimensional entities emerging through electrical anomalies.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:new jersey",
+        "location:aquifers"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "derivedTruth": 0.05,
+      "truthSource": "direct",
+      "tags": [
+        "jersey-devil",
+        "flatwoods-monster",
+        "hopkinsville-goblin",
+        "extradimensional"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0009",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "speculative",
+      "text": "Antarctic 'Ninion' shapes briefly captured by satellite imagery near the ice shelf suggest intelligent marine life hiding in deep cold water.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:antarctica",
+        "location:antarctic ice"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.8,
+      "directTruth": 0.05,
+      "derivedTruth": 0.05,
+      "truthSource": "direct",
+      "tags": [
+        "antarctica",
+        "ninion",
+        "cryptid"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0010",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "speculative",
+      "text": "Terry Lovelace's 1977 Devil's Den State Park alien abduction encounter is canonical modern evidence that Mantis-type humanoid insect-beings interact with humans.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:terry",
+        "location:devil's den state park",
+        "location:arkansas",
+        "event:alien abduction cases"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.85,
+      "directTruth": 0.1,
+      "derivedTruth": 0.1,
+      "truthSource": "direct",
+      "tags": [
+        "terry-lovelace",
+        "arkansas",
+        "mantis-man",
+        "abduction"
+      ],
+      "counterEvidence": [
+        {
+          "fromClaimId": "gfYUaMcmmSM:c_0013",
+          "kind": "undercuts",
+          "rationale": "[undercuts] host personally disbelieves the Mantis-Man narrative",
+          "fromDirectTruth": 0.5,
+          "fromHostStance": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0011",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "historical",
+      "text": "American missionary Eugene Thomas reported a dinosaur-like creature crossing the Jaw River in 1919, and cryptozoologist Ivan Sanderson was charged by a similar reptilian beast during a 1932 expedition — historical anchors for the Mokele-Mbembe species claim.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:eugene thomas",
+        "person:ivan sanderson",
+        "date_time:1909"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.8,
+      "directTruth": 0.3,
+      "derivedTruth": 0.3,
+      "truthSource": "direct",
+      "tags": [
+        "mokele-mbembe",
+        "ivan-sanderson"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0012",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "speculative",
+      "text": "A McMurdo-station Apple 2e hard drive belonging to 'Anton's father' documented the world's largest human-trafficking operation in Antarctica, shipping children to be conditioned by 'Striders.'",
+      "hostStance": "asserts",
+      "entities": [
+        "person:anton",
+        "facility:mcmurto station",
+        "technology:apple 2e",
+        "location:antarctica"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.85,
+      "directTruth": 0.02,
+      "derivedTruth": 0.02,
+      "truthSource": "direct",
+      "tags": [
+        "antarctica",
+        "striders",
+        "human-trafficking"
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0013",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "opinion",
+      "text": "The host explicitly declares he does not believe in the cryptids covered in this episode, though the exercise has made him believe in adjacent phenomena (crop circles, lunar anomalies, something under Antarctic ice).",
+      "hostStance": "uncertain",
+      "entities": [
+        "location:antarctica"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0002",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host personally disbelieves the Mothman-disaster pattern"
+        },
+        {
+          "target": "gfYUaMcmmSM:c_0005",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host personally disbelieves Bigfoot"
+        },
+        {
+          "target": "gfYUaMcmmSM:c_0010",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host personally disbelieves the Mantis-Man narrative"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.5,
+      "derivedTruth": 0.5,
+      "truthSource": "direct",
+      "inVerdictSection": true,
+      "tags": [
+        "verdict",
+        "host-disbelief"
+      ],
+      "counterEvidence": [
+        {
+          "fromClaimId": "gfYUaMcmmSM:c_0014",
+          "kind": "undercuts",
+          "rationale": "[undercuts] host's own verdict section flags cryptid-disbelief, which undercuts mantis-being earnestness",
+          "fromDirectTruth": 0.05,
+          "fromHostStance": "asserts"
+        }
+      ]
+    },
+    {
+      "id": "gfYUaMcmmSM:c_0014",
+      "videoId": "gfYUaMcmmSM",
+      "kind": "speculative",
+      "text": "The Mantis-Man encounters Paul described — humanoid insect with triangular head and telepathic intelligence — are genuine evidence of a non-human intelligence interacting with humans.",
+      "hostStance": "asserts",
+      "entities": [
+        "event:mantis sightings",
+        "event:mantis man encounters"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "gfYUaMcmmSM:c_0013",
+          "kind": "contradicts",
+          "rationale": "[undercuts] host's own verdict section flags cryptid-disbelief, which undercuts mantis-being earnestness"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.05,
+      "derivedTruth": 0.05,
+      "truthSource": "direct",
+      "tags": [
+        "mantis-man",
+        "abduction"
       ]
     },
     {
@@ -35807,6 +36625,369 @@
         "verdict",
         "andrew-dawson",
         "hoax"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0001",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "historical",
+      "text": "Daniel Whiteson, a particle physicist at UC Irvine, works on CERN's Large Hadron Collider, where every 24 nanoseconds his team collides protons searching for new fundamental physics.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "person:daniel whitson",
+        "organization:uc irvine",
+        "organization:cern",
+        "facility:large hydrron collider"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "derivedTruth": 0.95,
+      "truthSource": "direct",
+      "tags": [
+        "daniel-whiteson",
+        "cern",
+        "particle-physics"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0002",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "historical",
+      "text": "Whiteson's book 'Do Aliens Speak Physics?' was co-written with cartoonist Andy Warner and asks whether physics and math, as we know them, are universal or products of human cognition.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "person:andy warner",
+        "work_of_media:do aliens speak physics?"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "derivedTruth": 0.9,
+      "truthSource": "direct",
+      "tags": [
+        "book",
+        "andy-warner",
+        "alien-physics"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0003",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "opinion",
+      "text": "Popular culture treats physics as 'mostly figured out,' but that framing actively discourages talented students from pursuing the open mysteries at the frontier of fundamental science.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "organization:science",
+        "person:kid"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.75,
+      "derivedTruth": 0.83,
+      "truthSource": "derived",
+      "tags": [
+        "science-education",
+        "public-understanding"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0004",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "empirical",
+      "text": "An electron in isolation would have no mass; the mass we measure comes from the electron's continuous interaction with the Higgs boson field.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "person:higs",
+        "event:higs bzon"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "derivedTruth": 0.9099999999999999,
+      "truthSource": "derived",
+      "tags": [
+        "higgs-boson",
+        "electron",
+        "standard-model"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0005",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "opinion",
+      "text": "Whiteson hopes experiments at CERN produce results that match none of the existing theoretical predictions, because that's the scenario where truly new physics is revealed.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "organization:cern",
+        "facility:large hydrron collider"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "derivedTruth": 0.7,
+      "truthSource": "direct",
+      "tags": [
+        "cern",
+        "new-physics",
+        "experimental-science"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0006",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "speculative",
+      "text": "Our scientific theories may reflect the structure of human cognition rather than reality itself — aliens with different cognitive architectures might develop fundamentally different but equally valid physics.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "person:aliens",
+        "organization:science",
+        "ideology:philosophy"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "L7eqw_pRRPE:c_0002",
+          "kind": "elaborates",
+          "rationale": "this is the central thesis of the book mentioned in c_0002"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.5,
+      "derivedTruth": 0.54,
+      "truthSource": "derived",
+      "tags": [
+        "philosophy-of-science",
+        "aliens",
+        "cognition"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0007",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "speculative",
+      "text": "Even if aliens do practice science, communicating with them via symbolic messages may be impossible because the translation between ideas and symbols is a non-trivial human-specific encoding.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "person:aliens",
+        "technology:radio communication"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "L7eqw_pRRPE:c_0006",
+          "kind": "elaborates",
+          "rationale": "extends the cognitive-difference thesis to practical SETI communication"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.5,
+      "derivedTruth": 0.54,
+      "truthSource": "derived",
+      "tags": [
+        "seti",
+        "communication",
+        "aliens"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0008",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "opinion",
+      "text": "US society spends more money on smartphones than on all scientific research combined — a priority imbalance that constrains civilization's progress on fundamental questions.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "organization:science",
+        "technology:phones"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.65,
+      "derivedTruth": 0.65,
+      "truthSource": "direct",
+      "tags": [
+        "science-funding",
+        "priorities"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0009",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "historical",
+      "text": "NASA's budget as a percentage of federal spending has fallen dramatically since 1969, and the decline is explained by the loss of a military/geopolitical driver for space exploration.",
+      "hostStance": "asserts",
+      "entities": [
+        "organization:nasa",
+        "location:mars",
+        "date_time:1969"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "nasa",
+        "space-funding",
+        "apollo"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0010",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "opinion",
+      "text": "Science funding should direct more money to 'blue-sky' speculative research — scientists pursuing hunches rather than committee-approved roadmaps — because most historical breakthroughs come from that mode.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "organization:science",
+        "ideology:crazy ideas",
+        "event:discoveries"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "L7eqw_pRRPE:c_0008",
+          "kind": "elaborates",
+          "rationale": "connects the priority-imbalance critique to a specific funding-structure prescription"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.7,
+      "derivedTruth": 0.7,
+      "truthSource": "direct",
+      "tags": [
+        "science-funding",
+        "basic-research"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0011",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "speculative",
+      "text": "Meaningful physics conversation with aliens requires every link in a chain — they exist, they do science, we can detect them, we can communicate, our concepts translate — and the joint probability is vanishingly small.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "person:aliens",
+        "event:when aliens arrive"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "L7eqw_pRRPE:c_0007",
+          "kind": "supports",
+          "rationale": "[logical] the communication-symbol gap is one of the non-zero factors"
+        },
+        {
+          "target": "L7eqw_pRRPE:c_0006",
+          "kind": "supports",
+          "rationale": "[logical] the cognitive-difference issue is another non-zero factor"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "derivedTruth": 0.6,
+      "truthSource": "direct",
+      "tags": [
+        "aliens",
+        "drake-equation",
+        "contact"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0012",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "opinion",
+      "text": "The fundamental question Whiteson most wants aliens to answer is: what is the universe made of at its deepest level?",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "location:universe",
+        "person:aliens"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.6,
+      "derivedTruth": 0.6,
+      "truthSource": "direct",
+      "tags": [
+        "universe",
+        "fundamental-physics"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0013",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "empirical",
+      "text": "When physicists measure an 'electron' in the lab they are not interacting with a pure electron — they are measuring a dressed object, the electron bound to Higgs bosons and other fields.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "person:higs",
+        "event:higs bzon"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "L7eqw_pRRPE:c_0004",
+          "kind": "supports",
+          "rationale": "[logical] the 'dressed' framing explains why electrons have the mass we measure"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "electron",
+        "higgs",
+        "quantum-field-theory"
+      ]
+    },
+    {
+      "id": "L7eqw_pRRPE:c_0014",
+      "videoId": "L7eqw_pRRPE",
+      "kind": "empirical",
+      "text": "Modern physics has not figured out ~95% of what the universe is made of — dark matter and dark energy remain fundamental open questions.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:daniel whiteson",
+        "location:the universe",
+        "event:big bang"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "L7eqw_pRRPE:c_0003",
+          "kind": "supports",
+          "rationale": "[logical] the 'mostly figured out' myth is wrong precisely because 95% is unaccounted for"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.95,
+      "derivedTruth": 0.95,
+      "truthSource": "direct",
+      "tags": [
+        "dark-matter",
+        "dark-energy",
+        "cosmology"
       ]
     },
     {
@@ -55462,6 +56643,380 @@
       ]
     },
     {
+      "id": "TGGlLkE_-SA:c_0001",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "Peter Levenda is an investigative author of more than 20 books — including Unholy Alliance, the Sinister Forces Trilogy, and the Secret Machine series (with Tom DeLonge) — focused on the dark intersections of occultism, intelligence operations, and hidden history for over 50 years.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:peter levenda",
+        "person:peter levvena",
+        "work_of_media:unholy alliance",
+        "work_of_media:sinister forces trilogy",
+        "work_of_media:the secret machine series",
+        "person:tom dong",
+        "ideology:occultism"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "derivedTruth": 0.8808108108108108,
+      "truthSource": "derived",
+      "tags": [
+        "peter-levenda",
+        "biography"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0002",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "Levenda refused to serve in the Vietnam War, choosing neither conscription nor Canada/Sweden exile, and instead pursued mid-1960s occultism research in New York — a formative rebellion that shaped his later investigative trajectory.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:peter levvena",
+        "location:vietnam",
+        "location:canada",
+        "location:sweden",
+        "location:new york",
+        "ideology:occultism"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TGGlLkE_-SA:c_0001",
+          "kind": "supports",
+          "rationale": "[logical] the occultism research origin explains the later authorship theme"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.7,
+      "derivedTruth": 0.7,
+      "truthSource": "direct",
+      "tags": [
+        "vietnam-war",
+        "peter-levenda"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0003",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "Fred Chrisman — the Maury Island UFO informant to Kenneth Arnold in 1947 — later appears in Jim Garrison's 1960s New Orleans JFK-assassination investigation as a witness or subject, connecting the modern-UFO era to the JFK-assassination inquiry.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:fred chrisman",
+        "person:chrisman",
+        "person:kenneth arnold",
+        "person:jim garrison",
+        "person:jfk",
+        "person:kennedy",
+        "location:new orleans",
+        "date_time:1947"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "derivedTruth": 0.5900000000000001,
+      "truthSource": "derived",
+      "tags": [
+        "fred-chrisman",
+        "maury-island",
+        "kennedy-assassination",
+        "kenneth-arnold"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0004",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "Ruth Forbes Payne Young acted as a key social bridge figure introducing Lee Harvey Oswald into New Orleans and Dallas milieus, placing her at the core of the JFK-assassination web.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:ruth payne",
+        "person:ruth forbes payne young",
+        "person:lee harvey oswald",
+        "person:oswald",
+        "person:jfk",
+        "location:new orleans"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TGGlLkE_-SA:c_0003",
+          "kind": "supports",
+          "rationale": "[logical] Ruth Payne's role is part of the same JFK-assassination web Chrisman appears in"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "derivedTruth": 0.4,
+      "truthSource": "direct",
+      "tags": [
+        "ruth-payne",
+        "lee-harvey-oswald",
+        "kennedy-assassination"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0005",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "Guy Banister and David Ferrie — New Orleans figures on the periphery of US intelligence — are central to Garrison's JFK-assassination investigation and to Levenda's analysis of the event.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:guy banister",
+        "person:david ferry",
+        "person:jim garrison",
+        "location:new orleans",
+        "organization:cia"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TGGlLkE_-SA:c_0003",
+          "kind": "elaborates",
+          "rationale": "further details the Garrison/New-Orleans JFK investigation web"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "derivedTruth": 0.75,
+      "truthSource": "direct",
+      "tags": [
+        "guy-banister",
+        "david-ferrie",
+        "garrison-investigation"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0006",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "A Japan-biased American advisor's personal study of Japan materially shifted US WWII-era Asian alignment preferences — championing Japan as 'the elite' while dismissing China as 'the mongrel race of Asia.'",
+      "hostStance": "asserts",
+      "entities": [
+        "nationality_or_ethnicity:japanese",
+        "location:japan",
+        "location:china",
+        "organization:government"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.85,
+      "directTruth": 0.4,
+      "derivedTruth": 0.4,
+      "truthSource": "direct",
+      "tags": [
+        "us-japan-policy",
+        "wwii"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0007",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "Himmler directed Nazi-era occultism research including the Ernst Schaefer Tibet expedition, entangling the SS with esoteric ethnography as part of the broader Nazi-occult project.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:himmler",
+        "location:tibet",
+        "organization:ss",
+        "ideology:nazi occultism",
+        "organization:nazis"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TGGlLkE_-SA:c_0001",
+          "kind": "elaborates",
+          "rationale": "specific case of the 'dark occultism + intelligence' thesis Levenda explored in Unholy Alliance"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "himmler",
+        "tibet",
+        "nazi-occult",
+        "ahnenerbe"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0008",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "speculative",
+      "text": "Levenda experienced an unexplained electronic-noise paranormal phenomenon in his Westerly, Rhode Island home (on Ashawway Road), which he reported to Whitley Strieber's network of anomalous-experience investigators.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:peter levvena",
+        "person:whitley",
+        "person:whitley strieber",
+        "location:rhode island",
+        "location:ashawway road"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.4,
+      "derivedTruth": 0.4,
+      "truthSource": "direct",
+      "tags": [
+        "paranormal",
+        "whitley-strieber",
+        "rhode-island"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0009",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "speculative",
+      "text": "An unexplained Indonesian death in Surabaya drew recurring anniversary visits from European mourners, hinting at a Nazi-diaspora or esoteric-network link to the dead man.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:indonesia",
+        "location:surabaya",
+        "location:europe",
+        "ideology:nazism"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.3,
+      "derivedTruth": 0.3,
+      "truthSource": "direct",
+      "tags": [
+        "indonesia",
+        "surabaya",
+        "nazi-diaspora"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0010",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "historical",
+      "text": "Levenda is autodidactic — he only attended formal university in the 21st century, after decades of independent self-directed research across occultism, UFO lore, and hidden history.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:peter levvena",
+        "ideology:occultism"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TGGlLkE_-SA:c_0001",
+          "kind": "supports",
+          "rationale": "[logical] his autodidactic approach explains the interdisciplinary breadth of his investigative authorship"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "peter-levenda",
+        "autodidact"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0011",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "opinion",
+      "text": "A full US-intelligence document release (UFOs, Kennedy, etc.) would not resolve the underlying mysteries — names, dates, and places in raw classified files take years to contextualize, by which point key witnesses are dead.",
+      "hostStance": "asserts",
+      "entities": [
+        "organization:cia",
+        "organization:fbi",
+        "event:disclosure"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.65,
+      "derivedTruth": 0.65,
+      "truthSource": "direct",
+      "tags": [
+        "disclosure",
+        "classified-documents",
+        "epistemology"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0012",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "opinion",
+      "text": "The host's closing reflection: the weight of investigating conspiracy and hidden history is bearable only by finding trustworthy people to share that reality with — community, not certainty, makes the load tolerable.",
+      "hostStance": "uncertain",
+      "entities": [
+        "person:peter levvena"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.5,
+      "derivedTruth": 0.5,
+      "truthSource": "direct",
+      "inVerdictSection": true,
+      "tags": [
+        "verdict",
+        "community",
+        "conspiracy-research"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0013",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "speculative",
+      "text": "Fred Chrisman's Maury Island narrative should be dismissed as a hoax or mental-health episode and has no meaningful bearing on either UFO history or the JFK case.",
+      "hostStance": "denies",
+      "entities": [
+        "person:fred chrisman",
+        "event:assassination"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TGGlLkE_-SA:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] mainstream skeptic framing denies Chrisman had any meaningful role"
+        }
+      ],
+      "confidence": 0.85,
+      "directTruth": 0.25,
+      "derivedTruth": 0.25,
+      "truthSource": "direct",
+      "tags": [
+        "fred-chrisman",
+        "maury-island"
+      ]
+    },
+    {
+      "id": "TGGlLkE_-SA:c_0014",
+      "videoId": "TGGlLkE_-SA",
+      "kind": "speculative",
+      "text": "Teenage and early-20s book-binding cover identities functioned as small-scale intelligence operations for Levenda and his contemporaries engaging Nazi-occult networks.",
+      "hostStance": "asserts",
+      "entities": [
+        "person:peter levvena",
+        "ideology:nazi occultism"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.8,
+      "directTruth": 0.4,
+      "derivedTruth": 0.4,
+      "truthSource": "direct",
+      "tags": [
+        "bookbinding",
+        "intelligence-operations",
+        "peter-levenda"
+      ]
+    },
+    {
       "id": "tgqAt6YN1jE:c_0001",
       "videoId": "tgqAt6YN1jE",
       "kind": "historical",
@@ -59033,6 +60588,405 @@
         "dyatlov-pass",
         "verdict",
         "hiker-decisions"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0001",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "Plum Island is officially a USDA livestock-disease research center, but it actually operates under the Department of Homeland Security — a detail that makes sense only if its real mission exceeds foot-and-mouth studies.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "organization:homeland security",
+        "organization:department of agriculture"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "plum-island",
+        "homeland-security"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0002",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "When Plum Island opened in 1952 its purpose was anti-animal biological warfare — specifically weaponizing foot-and-mouth disease against enemy livestock.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "date_time:1952"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "derivedTruth": 0.74,
+      "truthSource": "derived",
+      "tags": [
+        "plum-island",
+        "bioweapons",
+        "foot-and-mouth"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0003",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "To build Plum Island the US imported Nazi bioweapons scientist Eric Traub — who had run Hitler's biological warfare program on Riems Island — via Operation Paperclip.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "person:eric traub",
+        "person:hitler",
+        "person:heinrich himmler",
+        "location:reems island",
+        "event:operation paperclip"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TunNIAGN8Ac:c_0002",
+          "kind": "supports",
+          "rationale": "[logical] anti-animal BW mission explains the recruitment of BW-experienced Nazi scientists"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.6,
+      "derivedTruth": 0.6,
+      "truthSource": "direct",
+      "tags": [
+        "plum-island",
+        "operation-paperclip",
+        "eric-traub",
+        "nazis"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0004",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "The Plum Island Animal Disease Laboratory opened in 1954 modeled on Eric Traub's Reems Island facility in Germany.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "person:eric traub",
+        "location:reems island",
+        "date_time:1954"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.8,
+      "derivedTruth": 0.8,
+      "truthSource": "direct",
+      "tags": [
+        "plum-island",
+        "reems-island",
+        "history"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0005",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "speculative",
+      "text": "The 2008 Montauk Monster and other unidentifiable carcasses washing ashore near Plum Island are evidence of hybrid-animal experimentation happening on the island.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "location:montauk point",
+        "location:long island"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.8,
+      "directTruth": 0.1,
+      "derivedTruth": 0.1,
+      "truthSource": "direct",
+      "tags": [
+        "plum-island",
+        "montauk-monster",
+        "cryptid"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0006",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "speculative",
+      "text": "In January 2010 a human corpse with abnormally enlarged fingers and five surgical holes drilled in the skull was found on Plum Island, suggesting human experimentation.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "date_time:2010",
+        "date_time:january 2010",
+        "person:local security guard",
+        "person:black male"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TunNIAGN8Ac:c_0005",
+          "kind": "elaborates",
+          "rationale": "expands the 'experimentation' thesis from animal to human evidence"
+        }
+      ],
+      "confidence": 0.8,
+      "directTruth": 0.2,
+      "derivedTruth": 0.2,
+      "truthSource": "direct",
+      "tags": [
+        "plum-island",
+        "human-experimentation"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0007",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "Cuba's 1971 African swine fever outbreak — the only one in the Western Hemisphere — was a CIA bioweapons attack, smuggled via Navasa Island near Cuba.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:cuba",
+        "organization:cia",
+        "location:navasa island",
+        "date_time:1971",
+        "date_time:early 1971",
+        "person:fidel castro",
+        "event:operation mongoose"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.85,
+      "directTruth": 0.45,
+      "derivedTruth": 0.6300000000000001,
+      "truthSource": "derived",
+      "tags": [
+        "cuba",
+        "cia",
+        "operation-mongoose",
+        "african-swine-fever"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0008",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "A 1975 congressional report revealed the CIA maintained a biological weapons stockpile in violation of Nixon's 1969 bioweapons ban.",
+      "hostStance": "asserts",
+      "entities": [
+        "organization:cia",
+        "person:richard nixon",
+        "date_time:1975",
+        "date_time:1969"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TunNIAGN8Ac:c_0007",
+          "kind": "supports",
+          "rationale": "[logical] CIA's documented willingness to violate the bioweapons ban supports the plausibility of a Cuba attack"
+        }
+      ],
+      "confidence": 0.95,
+      "directTruth": 0.9,
+      "derivedTruth": 0.9,
+      "truthSource": "direct",
+      "tags": [
+        "cia",
+        "church-committee",
+        "bioweapons-ban"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0009",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "speculative",
+      "text": "Lyme disease originated from Plum Island bioweapons research involving tick-weaponization by Traub and Willie Bergdorfer.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "person:eric traub",
+        "person:dr willie bergdorfer",
+        "person:bergdorfer",
+        "location:old lyme connecticut"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.85,
+      "directTruth": 0.2,
+      "derivedTruth": 0.25,
+      "truthSource": "derived",
+      "tags": [
+        "lyme-disease",
+        "plum-island",
+        "willie-bergdorfer"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0010",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "Between 1966 and 1969 US government researchers released 300,000 irradiated ticks — including aggressive Lone Star ticks — into the wild, explaining their subsequent eastward range expansion and rising Alpha-gal syndrome cases.",
+      "hostStance": "asserts",
+      "entities": [
+        "organization:us government",
+        "organization:us military",
+        "date_time:1966",
+        "date_time:1969",
+        "date_time:late 1960s"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TunNIAGN8Ac:c_0009",
+          "kind": "supports",
+          "rationale": "[logical] demonstrates that tick-weaponization research did occur and produced real releases"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.55,
+      "derivedTruth": 0.55,
+      "truthSource": "direct",
+      "tags": [
+        "ticks",
+        "lone-star",
+        "alpha-gal",
+        "bioweapons"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0011",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "Plum Island has suffered serial biosafety failures — a 1978 foot-and-mouth escape requiring site-wide animal cremation, Rift Valley fever mosquito escapes, and major 2002 worker-strike security lapses.",
+      "hostStance": "asserts",
+      "entities": [
+        "location:plum island",
+        "date_time:1978",
+        "date_time:2002",
+        "organization:fbi",
+        "organization:usda"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.9,
+      "directTruth": 0.75,
+      "derivedTruth": 0.75,
+      "truthSource": "direct",
+      "tags": [
+        "plum-island",
+        "biosafety",
+        "fmd"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0012",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "In 2012 the CDC Atlanta headquarters had systemic biosafety failures including ~80 employees exposed to live Anthrax, pathogens stored in unlocked refrigerators, and improperly shipped deadly samples.",
+      "hostStance": "asserts",
+      "entities": [
+        "organization:cdc",
+        "location:atlanta",
+        "date_time:may 2012",
+        "date_time:june of 2012"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.85,
+      "derivedTruth": 0.85,
+      "truthSource": "direct",
+      "tags": [
+        "cdc",
+        "biosafety",
+        "anthrax"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0013",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "historical",
+      "text": "The US refused to sign the 1925 Geneva Protocol banning bioweapons for 50 years, only doing so in 1975 after Nixon's 1969 executive order.",
+      "hostStance": "asserts",
+      "entities": [
+        "organization:united states",
+        "date_time:1925",
+        "date_time:1975",
+        "person:richard nixon"
+      ],
+      "relationships": [],
+      "dependencies": [],
+      "confidence": 0.95,
+      "directTruth": 0.95,
+      "derivedTruth": 0.95,
+      "truthSource": "direct",
+      "tags": [
+        "geneva-protocol",
+        "bioweapons-ban"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0014",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "empirical",
+      "text": "Lyme disease was not created on Plum Island — DNA from the 5,000-year-old Ötzi mummy shows Lyme-like infection predates the facility by millennia.",
+      "hostStance": "denies",
+      "entities": [
+        "location:plum island",
+        "location:alps"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TunNIAGN8Ac:c_0009",
+          "kind": "contradicts",
+          "rationale": "[debunks] paleo-DNA evidence directly undermines the Plum-Island-origin thesis"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.9,
+      "derivedTruth": 0.9,
+      "truthSource": "direct",
+      "inVerdictSection": true,
+      "tags": [
+        "lyme-disease",
+        "verdict",
+        "otzi"
+      ]
+    },
+    {
+      "id": "TunNIAGN8Ac:c_0015",
+      "videoId": "TunNIAGN8Ac",
+      "kind": "speculative",
+      "text": "The US military and CIA have never conducted bioweapons research at Plum Island.",
+      "hostStance": "denies",
+      "entities": [
+        "location:plum island",
+        "organization:cia",
+        "organization:us military",
+        "organization:the military and intelligence community"
+      ],
+      "relationships": [],
+      "dependencies": [
+        {
+          "target": "TunNIAGN8Ac:c_0002",
+          "kind": "contradicts",
+          "rationale": "[debunks] the documented 1952 anti-animal BW mission directly contradicts the denial"
+        }
+      ],
+      "confidence": 0.9,
+      "directTruth": 0.15,
+      "derivedTruth": 0.15,
+      "truthSource": "direct",
+      "tags": [
+        "plum-island",
+        "cover-up"
       ]
     },
     {

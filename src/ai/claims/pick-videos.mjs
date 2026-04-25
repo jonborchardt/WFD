@@ -4,7 +4,7 @@
 // data/claims/<id>.json yet. Operator can pin specific ids with --video.
 // Writes _claims_tmp/picks.json so the skill can iterate.
 
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const t0 = Date.now();
@@ -40,8 +40,17 @@ const ents = videoIdsWithFile(join(dataDir, "entities"));
 const rels = videoIdsWithFile(join(dataDir, "relations"));
 const claims = videoIdsWithFile(join(dataDir, "claims"));
 
+function hasMentions(id) {
+  try {
+    const f = JSON.parse(readFileSync(join(dataDir, "entities", id + ".json"), "utf8"));
+    return Array.isArray(f.mentions) && f.mentions.length > 0;
+  } catch {
+    return false;
+  }
+}
+
 const eligible = [...ents]
-  .filter((id) => rels.has(id) && !claims.has(id))
+  .filter((id) => rels.has(id) && !claims.has(id) && hasMentions(id))
   .sort();
 
 let picks;
