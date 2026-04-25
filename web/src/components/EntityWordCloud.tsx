@@ -253,7 +253,9 @@ export function EntityWordCloud({ nlp }: Props) {
                 cursor: "pointer",
                 // Hit-test against the glyph bbox rather than glyph outlines
                 // so small words are still easy to tap on a touchscreen.
-                pointerEvents: "bounding-box",
+                // React's CSSProperties union doesn't yet include the SVG2
+                // "bounding-box" value, so cast.
+                pointerEvents: "bounding-box" as never,
               }}
               onClick={() => nav("/entity/" + encodeURIComponent(w.id))}
               onKeyDown={(ev) => {
