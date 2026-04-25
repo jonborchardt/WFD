@@ -1,6 +1,8 @@
 ---
 name: ai-contradiction-verify
 description: Run the contradiction verification pass — embed claims, run reasoning with cosine similarity, shard candidates across parallel agents, verdict each pair, apply verdicts. Use when the user asks to "verify contradictions", "clean up the contradictions", "re-run contradiction verification", or after new claim files land (re-extraction, new video ingest).
+version: v1
+lastVerifiedAgainstCorpus: 2026-04-24
 ---
 
 # AI contradiction verify

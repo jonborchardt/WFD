@@ -3,6 +3,7 @@
   "transcriptId": "zjhMCFNl_YU",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "zjhMCFNl_YU:c_0001",
@@ -260,7 +261,11 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "zjhMCFNl_YU:c_0008", "kind": "contradicts", "rationale": "[alternative] Offers insider-knowledge-plus-murder as the mundane explanation for the apparently accurate prophecy." }
+        {
+          "target": "zjhMCFNl_YU:c_0008",
+          "kind": "contradicts",
+          "rationale": "[alternative] Offers insider-knowledge-plus-murder as the mundane explanation for the apparently accurate prophecy."
+        }
       ]
     },
     {
@@ -348,7 +353,10 @@
       "rationale": "The 'Aktion Hess' crackdown on occultists and astrologers in June 1941 is well-documented. The 600-figure may be approximate but the suppression of occult practitioners after Hess's flight is real.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "zjhMCFNl_YU:c_0011", "kind": "elaborates" }
+        {
+          "target": "zjhMCFNl_YU:c_0011",
+          "kind": "elaborates"
+        }
       ]
     },
     {
@@ -438,8 +446,15 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "zjhMCFNl_YU:c_0010", "kind": "elaborates" },
-        { "target": "zjhMCFNl_YU:c_0002", "kind": "contradicts", "rationale": "[alternative] Reframes Nostradamus prophecies as belief-driven self-fulfillment rather than genuine foresight." }
+        {
+          "target": "zjhMCFNl_YU:c_0010",
+          "kind": "elaborates"
+        },
+        {
+          "target": "zjhMCFNl_YU:c_0002",
+          "kind": "contradicts",
+          "rationale": "[alternative] Reframes Nostradamus prophecies as belief-driven self-fulfillment rather than genuine foresight."
+        }
       ]
     }
   ]

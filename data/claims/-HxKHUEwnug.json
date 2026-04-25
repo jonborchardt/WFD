@@ -3,6 +3,7 @@
   "transcriptId": "-HxKHUEwnug",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "-HxKHUEwnug:c_0001",
@@ -44,7 +45,7 @@
           "charStart": 3640,
           "charEnd": 3800,
           "timeStart": 257.76,
-          "timeEnd": 270.0,
+          "timeEnd": 270,
           "quote": "o\non December 4th 1931 a trail of blood\nalmost a quarter of a mile long was\nfound in the small town of gurden\nArkansas it led to the body of will\nMcLean\na railr"
         }
       ],
@@ -78,7 +79,10 @@
       "rationale": "The Interstate 30 construction timeline is well documented (most Arkansas segments opened between 1960 and 1971). Sightings predating the highway are a strong falsifier of the headlights-on-I-30 hypothesis for Gurdon specifically.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "-HxKHUEwnug:c_0002", "kind": "elaborates" }
+        {
+          "target": "-HxKHUEwnug:c_0002",
+          "kind": "elaborates"
+        }
       ]
     },
     {
@@ -135,7 +139,11 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "-HxKHUEwnug:c_0004", "kind": "contradicts", "rationale": "[debunks] Absence of Ellison's own contemporary account undermines the 1883 first-sighting attribution." }
+        {
+          "target": "-HxKHUEwnug:c_0004",
+          "kind": "contradicts",
+          "rationale": "[debunks] Absence of Ellison's own contemporary account undermines the 1883 first-sighting attribution."
+        }
       ]
     },
     {
@@ -305,7 +313,7 @@
           "transcriptId": "-HxKHUEwnug",
           "charStart": 20220,
           "charEnd": 20380,
-          "timeStart": 1374.0,
+          "timeStart": 1374,
           "timeEnd": 1384.72,
           "quote": "ysics students went to Marfa\nto try to solve this over a three-day\nperiod they found that the number of\nMarfa lights directly correlated to the\namount of traffi"
         }
@@ -316,7 +324,11 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "-HxKHUEwnug:c_0006", "kind": "contradicts", "rationale": "[debunks] Reproducible headlight correlation undercuts the warrior-spirits narrative." }
+        {
+          "target": "-HxKHUEwnug:c_0006",
+          "kind": "contradicts",
+          "rationale": "[debunks] Reproducible headlight correlation undercuts the warrior-spirits narrative."
+        }
       ]
     },
     {
@@ -393,8 +405,16 @@
       "rationale": "The alien-probe laser hypothesis is an extraordinary claim with no published peer-reviewed support. Invoking an extraterrestrial device to explain phenomena that already have candidate mundane explanations (mirages, traffic-derived refraction, piezoelectric effects, perceptual error) violates basic parsimony.",
       "hostStance": "uncertain",
       "dependencies": [
-        { "target": "-HxKHUEwnug:c_0012", "kind": "contradicts", "rationale": "[alternative] Gross's unified-alien-probe theory displaces the prosaic traffic-refraction explanation by proposing a universal non-terrestrial cause." },
-        { "target": "-HxKHUEwnug:c_0013", "kind": "contradicts", "rationale": "[alternative] Also displaces the atmospheric-refraction explanation in favor of an exotic source." }
+        {
+          "target": "-HxKHUEwnug:c_0012",
+          "kind": "contradicts",
+          "rationale": "[alternative] Gross's unified-alien-probe theory displaces the prosaic traffic-refraction explanation by proposing a universal non-terrestrial cause."
+        },
+        {
+          "target": "-HxKHUEwnug:c_0013",
+          "kind": "contradicts",
+          "rationale": "[alternative] Also displaces the atmospheric-refraction explanation in favor of an exotic source."
+        }
       ]
     }
   ]

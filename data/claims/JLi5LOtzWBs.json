@@ -3,6 +3,7 @@
   "transcriptId": "JLi5LOtzWBs",
   "generatedAt": "2026-04-22T04:25:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "JLi5LOtzWBs:c_0001",
@@ -39,7 +40,6 @@
       "confidence": 0.95,
       "directTruth": 0.25,
       "rationale": "The Valdez story is a real UFO/paranormal case reported in Chilean media and compiled in J. Antonio Huneeus's reporting, but the watch-jumped-five-days detail is anecdotal, has had the beard/watch element challenged over time, and no physical evidence or contemporaneous medical record supports the time-dilation interpretation. Host frames as real; scientific plausibility is low.",
-      "tags": ["time-storms", "valdez", "chile", "1977"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -66,7 +66,6 @@
       "confidence": 0.85,
       "directTruth": 0.15,
       "rationale": "The 'time storm' category is a pop-paranormal taxonomy (Randles / Clark) rather than a recognized meteorological/physical phenomenon. Anecdotal reports exist; a unified phenomenon has never been instrumentally measured. directTruth low — the category is a conjecture.",
-      "tags": ["time-storms", "randles", "paranormal"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -97,7 +96,6 @@
       "confidence": 0.9,
       "directTruth": 0.3,
       "rationale": "Gernon's 1970 'electronic fog' account is well-known (book 'The Fog', 2005). The event is real in his telling; radar log cross-checks from Miami ARTCC are not publicly available, and alternate explanations (tailwind, navigational error, duration-estimation error) are plausible. The 'physics violation' reading is unsupported.",
-      "tags": ["bermuda-triangle", "gernon", "bahamas", "miami"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -121,7 +119,9 @@
         "date_time:1939",
         "work_of_media:flight towards reality"
       ],
-      "relationships": ["r_0044"],
+      "relationships": [
+        "r_0044"
+      ],
       "evidence": [
         {
           "transcriptId": "JLi5LOtzWBs",
@@ -143,7 +143,6 @@
       "confidence": 0.9,
       "directTruth": 0.35,
       "rationale": "Victor Goddard was a real RAF officer and did publish 'Flight Towards Reality' (1975) containing his Drem airfield precognition account. The event is sincerely claimed. Scientific plausibility is low — precognition is not accepted — and the 40-year gap between event and written account (flagged later by the host himself in c_0010) weakens the evidentiary value.",
-      "tags": ["goddard", "raf", "precognition", "time-storms"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -172,7 +171,6 @@
       "confidence": 0.9,
       "directTruth": 0.15,
       "rationale": "The Simpson/Gizby France retro-time-slip is a real paranormal-literature case (covered in Jenny Randles's books). The 19-franc price is consistent with the account. No physical evidence survived — no photos, no receipts. The time-slip interpretation is not supported by any mechanism. Receipts at that price are implausible but could reflect mis-translation or mis-memory.",
-      "tags": ["time-slip", "simpson", "france", "1979"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -199,7 +197,6 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "The Henshaw / Barnard Castle case appears in UK paranormal literature (1978). No independent witnesses or physical evidence survive, no scorched jacket preserved, and the 300-foot uphill-against-gravity claim is not reconcilable with any known physics. directTruth low.",
-      "tags": ["time-storms", "henshaw", "uk"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -213,7 +210,9 @@
         "event:alien abductions",
         "event:time storm"
       ],
-      "relationships": ["r_0071"],
+      "relationships": [
+        "r_0071"
+      ],
       "evidence": [
         {
           "transcriptId": "JLi5LOtzWBs",
@@ -235,7 +234,6 @@
       "confidence": 0.9,
       "directTruth": 0.2,
       "rationale": "The Oz factor is Randles's real published conjecture (Time Storms, 2001). That these diverse phenomena share a common cause is her unproven unifying hypothesis, not a mainstream finding. directTruth low because no experimental basis supports the unification.",
-      "tags": ["oz-factor", "randles", "paranormal", "unification"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -265,7 +263,6 @@
       "confidence": 0.9,
       "directTruth": 0.3,
       "rationale": "Recasting the Hill case as 'time storm instead of abduction' is a rhetorical move — the missing time, rural road, disorientation, etc. do match the time-storm pattern. Both interpretations (aliens vs. time storm) remain speculative. The 'same phenomenon' claim presupposes the Oz-factor unification.",
-      "tags": ["betty-barney-hill", "abduction", "1961", "new-hampshire"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -307,7 +304,6 @@
       "confidence": 0.95,
       "directTruth": 0.97,
       "rationale": "All three sub-claims match mainstream physics: GPS satellite clocks drift ~38 μs/day due to combined SR+GR effects; photons travel on null geodesics so their 'proper time' is zero. Standard undergraduate relativity material.",
-      "tags": ["relativity", "physics", "gps", "photon"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -336,7 +332,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Host is steelmanning the skeptical counter-case to his own earlier claim. The 40-year delay in Goddard's account and memory-reconstruction research (Loftus) do genuinely weaken the evidentiary value.",
-      "tags": ["goddard", "memory", "skeptic-argument"],
       "inVerdictSection": true,
       "hostStance": "steelman",
       "dependencies": [
@@ -370,7 +365,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host concedes this is the strongest skeptic point. In the smartphone era (~2010+) we have zero video of a claimed time storm — a significant absence-of-evidence argument. Matches the broader pattern that cryptid and paranormal footage has not improved despite camera ubiquity.",
-      "tags": ["time-storms", "skeptic", "no-evidence"],
       "inVerdictSection": true,
       "hostStance": "steelman",
       "dependencies": [
@@ -403,7 +397,6 @@
       "confidence": 0.9,
       "directTruth": 0.65,
       "rationale": "Persinger's 'God Helmet' experiments did report inducing altered states via weak magnetic fields — but meta-analyses (Granqvist 2005) failed to replicate the effect under double-blind conditions. Temporal lobe seizures do produce some of the listed phenomenology (déjà vu, presence, dissociation). Directional evidence is real but the strong 'explains almost every symptom' is overstated.",
-      "tags": ["temporal-lobe-epilepsy", "persinger", "neuroscience"],
       "inVerdictSection": true,
       "hostStance": "steelman"
     },
@@ -430,7 +423,6 @@
       "confidence": 0.9,
       "directTruth": 0.4,
       "rationale": "Host's counter-steelman: the physical-trace argument against pure hallucination is real and important in principle. However, the specific Nepal 11-people case cited here is not well-documented in peer-reviewed medical literature — attribution is anecdotal. The general logical point (shared physical trace defeats pure hallucination) is correct; this particular case is weakly sourced.",
-      "tags": ["nepal", "mass-hallucination", "physical-evidence"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -451,7 +443,10 @@
         "ideology:many worlds interpretation",
         "event:time storm"
       ],
-      "relationships": ["r_0072", "r_0074"],
+      "relationships": [
+        "r_0072",
+        "r_0074"
+      ],
       "evidence": [
         {
           "transcriptId": "JLi5LOtzWBs",
@@ -465,7 +460,6 @@
       "confidence": 0.9,
       "directTruth": 0.4,
       "rationale": "PKD did publish extensively (e.g. 'Exegesis', 'VALIS') about orthogonal time and reality-as-simulation. The attribution to Dick is accurate. The metaphysical claim itself (other timelines leaking through) is not physically testable; many-worlds interpretation exists but doesn't predict observable inter-timeline leakage.",
-      "tags": ["philip-k-dick", "many-worlds", "orthogonal-time"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

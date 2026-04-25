@@ -3,6 +3,7 @@
   "transcriptId": "fWKCFahyRHw",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "fWKCFahyRHw:c_0001",
@@ -35,7 +36,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Area 51 / Homey Airport / Groom Lake is a real US Air Force facility on Nellis / NTTR range in southern Nevada. CIA declassified its existence in a 2013 FOIA release. The 'Rachel, Nevada' location is the closest public town; the facility itself is on Groom Lake — near but not in Rachel.",
-      "tags": ["area-51", "nevada", "classified"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -63,7 +63,6 @@
       "confidence": 0.85,
       "directTruth": 0.15,
       "rationale": "The Roswell / Area 51 conspiracy is a staple of UFO mythology. The 1994 Air Force report identified the Roswell debris as Project Mogul balloon materials — a high-altitude acoustic surveillance program. No credible evidence of alien craft at Area 51 has ever been produced.",
-      "tags": ["area-51", "roswell", "ufo", "conspiracy"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -98,11 +97,14 @@
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "Lazar's 1989 interviews with KLAS-TV (George Knapp) are a historical fact. His claims of employment at S-4 / Area 51 have never been corroborated — his educational credentials (MIT, Caltech) are disputed, and neither institution has records. The historical event of the interviews happened; the substantive reverse-engineering claim is uncorroborated.",
-      "tags": ["bob-lazar", "area-51", "ufo-whistleblower"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "fWKCFahyRHw:c_0002", "kind": "supports", "rationale": "Lazar's testimony is cited as evidence for the alien-craft theory." }
+        {
+          "target": "fWKCFahyRHw:c_0002",
+          "kind": "supports",
+          "rationale": "Lazar's testimony is cited as evidence for the alien-craft theory."
+        }
       ]
     },
     {
@@ -136,7 +138,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "RAF Menwith Hill, operated primarily by the NSA since the 1960s, is well-documented in open sources (Bamford, Campbell, and subsequent parliamentary reports). Largest SIGINT site claim is commonly stated in journalism but is superlative and hard to verify precisely.",
-      "tags": ["menwith-hill", "nsa", "sigint"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -171,11 +172,14 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Echelon's existence was acknowledged by the European Parliament (Schmid report, 2001) and by later Snowden disclosures; Five-Eyes is officially confirmed. Whether it still operates under that specific name or has been folded into newer programs is less clear.",
-      "tags": ["echelon", "five-eyes", "surveillance"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "fWKCFahyRHw:c_0004", "kind": "elaborates", "rationale": "Menwith Hill is a key Echelon node." }
+        {
+          "target": "fWKCFahyRHw:c_0004",
+          "kind": "elaborates",
+          "rationale": "Menwith Hill is a key Echelon node."
+        }
       ]
     },
     {
@@ -200,11 +204,14 @@
       "confidence": 0.85,
       "directTruth": 0.25,
       "rationale": "The 'every text and call' claim is hyperbolic. NSA bulk-collection programs (as disclosed in Snowden 2013) target specific transits, metadata records, and targets via XKeyscore / PRISM / Stellar Wind — not literally every communication globally. Capacity and legal framework limits preclude truly-universal interception.",
-      "tags": ["echelon", "mass-surveillance", "overstatement"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "fWKCFahyRHw:c_0005", "kind": "elaborates", "rationale": "Strongest-form extension of the Echelon capability claim." }
+        {
+          "target": "fWKCFahyRHw:c_0005",
+          "kind": "elaborates",
+          "rationale": "Strongest-form extension of the Echelon capability claim."
+        }
       ]
     },
     {
@@ -231,7 +238,6 @@
       "confidence": 0.85,
       "directTruth": 0.85,
       "rationale": "Mount Weather Emergency Operations Center (Berryville, VA) is a real COG / FEMA facility, publicly acknowledged, with a large underground bunker. Exact acreage and bunker size are widely reported figures from journalism (notably Washington Post and Time).",
-      "tags": ["mount-weather", "fema", "continuity-of-government"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -257,7 +263,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "TWA 514 did crash into Mount Weather's ridge (December 1, 1974), and press coverage of that crash did significantly raise public awareness of the previously obscure facility. NTSB and contemporary press reporting confirm.",
-      "tags": ["mount-weather", "twa-514", "disclosure"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -283,7 +288,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "Congressional leaders were evacuated to an undisclosed location on 9/11, widely reported to include Mount Weather. 'Entire congressional leadership' is a simplification — it was top House/Senate leaders plus continuity-list officials, not all of Congress.",
-      "tags": ["mount-weather", "9-11", "continuity-of-government"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -318,7 +322,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Svalbard Global Seed Vault holds over 1.2 million seed samples from ~6,000 plant species as of 2024 (Crop Trust). The '900,000 varieties' figure fits mid-2010s counts. Facility runs are widely publicized.",
-      "tags": ["seed-vault", "svalbard", "agriculture"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -345,11 +348,14 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Site selection rationale as described by the Global Crop Diversity Trust matches: Svalbard is on a stable continental shelf with permafrost and elevation safety margin. 'Lacks tectonic activity' is approximate — Svalbard has low but non-zero seismicity.",
-      "tags": ["seed-vault", "geology", "site-selection"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "fWKCFahyRHw:c_0010", "kind": "elaborates", "rationale": "Why the vault is located where it is." }
+        {
+          "target": "fWKCFahyRHw:c_0010",
+          "kind": "elaborates",
+          "rationale": "Why the vault is located where it is."
+        }
       ]
     },
     {
@@ -376,7 +382,6 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Archivio Apostolico Vaticano (renamed from 'Archivio Segreto' in 2019) contains approximately 85 km (53 mi) of shelving. The 75-year waiting period and scholar-access rules are documented in Vatican archival policy.",
-      "tags": ["vatican", "apostolic-archives"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -403,7 +408,6 @@
       "confidence": 0.85,
       "directTruth": 0.05,
       "rationale": "Host surfaces this theory explicitly to note it as conspiracy. No evidence that the Vatican archives contain proof of Jesus's nonexistence; the historicity of Jesus is separately established to scholarly satisfaction by non-Christian sources (Josephus, Tacitus).",
-      "tags": ["vatican", "conspiracy", "jesus-myth"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -439,11 +443,14 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The Chinon Parchment (host transcript renders 'Shannon') was rediscovered by Barbara Frale in 2001 and published 2007 by the Vatican Secret Archives. It documents a 1308 private absolution by Clement V at Chinon, France. Real, well-documented archival discovery.",
-      "tags": ["knights-templar", "chinon-parchment", "vatican"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "fWKCFahyRHw:c_0012", "kind": "elaborates", "rationale": "Historical artifact actually found inside the archives." }
+        {
+          "target": "fWKCFahyRHw:c_0012",
+          "kind": "elaborates",
+          "rationale": "Historical artifact actually found inside the archives."
+        }
       ]
     },
     {
@@ -478,7 +485,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Bureau / Office 39 is widely reported in defector testimony, US Treasury sanctions, and Ken Gause's analyses of the DPRK party apparatus. 'Supernote' counterfeiting and narcotics revenue are documented in US indictments and UN panel of experts reports.",
-      "tags": ["office-39", "north-korea", "kim-il-sung"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     }

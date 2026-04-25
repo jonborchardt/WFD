@@ -33,10 +33,20 @@ export interface MetricsSnapshot {
 export interface MetricTarget {
   /** Metric name this target applies to. Must match a Metric.name. */
   name: string;
-  /** Optional floor — fail when current < min. */
+  /** Floor — gate fails when current < min. Hard regression boundary. */
   min?: number;
-  /** Optional ceiling — fail when current > max. */
+  /** Ceiling — gate fails when current > max. Hard regression boundary. */
   max?: number;
+  /**
+   * Aspirational floor — gate DOES NOT fail when current < targetMin, but
+   * the dashboard surfaces the distance-to-target so the team can see
+   * they're below where they want to be. Use alongside `min` (hard floor)
+   * when the current corpus can't meet the aspiration yet but the team
+   * wants to track progress toward it.
+   */
+  targetMin?: number;
+  /** Aspirational ceiling — same semantics as targetMin, for upper-bounded metrics. */
+  targetMax?: number;
   /** Optional unit hint, displayed next to the bound. */
   unit?: MetricUnit;
   /** Optional note explaining the target. */
@@ -77,6 +87,12 @@ export interface GateRow {
   status: GateStatus;
   /** When status !== "ok", why. */
   reason?: string;
+  /**
+   * True iff an aspirational `targetMin`/`targetMax` bound is breached.
+   * The gate itself stays "ok" (no failure) — this is an info-level
+   * signal the dashboard renders as "distance to target".
+   */
+  targetWarning?: string;
 }
 
 export interface GateReport {

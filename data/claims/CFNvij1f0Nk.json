@@ -3,6 +3,7 @@
   "transcriptId": "CFNvij1f0Nk",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "CFNvij1f0Nk:c_0001",
@@ -28,7 +29,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Halley's 1692 paper 'An Account of the Cause of the Change of the Variation of the Magnetical Needle' (Philosophical Transactions of the Royal Society) is a real historical document. The concentric-shells model is accurately described.",
-      "tags": ["edmund-halley", "hollow-earth", "history-of-science"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -56,7 +56,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Saint-Yves d'Alveydre's 'Mission de l'Inde en Europe' was published in 1886 (often dated 1885 for the internal printing), and is the documented source for modern Agartha. Host's spelling is phonetic but referent is correct.",
-      "tags": ["agartha", "saint-yves-dalveydre", "occultism"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -83,7 +82,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host states it directly ('spoiler alert it's not'). The 'secret diary' surfaced in the 1980s with no provenance traceable to Byrd's actual papers, which are archived at Ohio State. Byrd historians (Raimund Goerler, editor of his real diaries) confirm it's apocryphal.",
-      "tags": ["admiral-byrd", "hoax", "hollow-earth-diary"],
       "inVerdictSection": true,
       "hostStance": "denies"
     },
@@ -110,7 +108,6 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "The swastika-disc narrative is lifted verbatim from the apocryphal diary. Since c_0003 establishes the diary is fake, the specific scene is derivative fiction. Host presents it as a recital of the legend, not as established fact.",
-      "tags": ["admiral-byrd", "nazi-ufos", "hollow-earth"],
       "inVerdictSection": false,
       "hostStance": "denies",
       "dependencies": [
@@ -145,7 +142,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Well-established fact. The Kola SG-3 borehole at 12,262 m (40,230 ft) is the deepest artificial point on Earth (depth surpassed in 2011 by Sakhalin's Chayvo O-14 for total drilled length but not vertical depth). Confirmed by geological literature.",
-      "tags": ["kola-borehole", "drilling", "science"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -173,7 +169,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "The 2014 Schmandt et al. study (Science) and the 2014 Pearson et al. ringwoodite inclusion paper (Nature) documented hydrated ringwoodite in the transition zone, consistent with multiple-ocean equivalents of H2O locked in mantle minerals. Real discovery.",
-      "tags": ["transition-zone", "ringwoodite", "mantle-water"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -199,7 +194,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Correct characterization. The transition-zone H2O is bound as hydroxyl groups in ringwoodite and wadsleyite crystal structure, not free liquid water. This is standard mantle petrology (Ohtani et al. reviews).",
-      "tags": ["mineral-hydration", "ringwoodite", "mantle"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -234,7 +228,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Refers to Wu & Irving (Princeton, 2019, Science) paper that used P'P' scattered waves from the 1994 Mw 8.2 Bolivia event to image roughness at the 660-km discontinuity (not 410 — host slightly conflates). The roughness is real; the Himalaya-taller-than mental image is a popular-press extrapolation.",
-      "tags": ["princeton", "bolivia-earthquake", "seismic", "2019"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -260,7 +253,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host's own correction. The Princeton study imaged topographic variation on a phase-transition boundary; this is not open-space terrain. Host explicitly clarifies the clickbait misreading.",
-      "tags": ["mantle", "density-variation", "clarification"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -295,7 +287,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host explicitly labels it a hoax in the verdict section. The clip widely circulated on hollow-earth sites has no verifiable Mir-telemetry provenance and is unusable as evidence.",
-      "tags": ["mir", "hoax", "north-pole", "hollow-earth"],
       "inVerdictSection": true,
       "hostStance": "denies"
     },
@@ -321,7 +312,6 @@
       ],
       "confidence": 0.8,
       "rationale": "Host makes this a personal-belief claim ('I believe them'). Mount Shasta UFO lore is extensive (Frederick Spencer Oliver's 'A Dweller on Two Planets', 1899; Guy Ballard's I AM movement) but eyewitness-only reports without video have low evidentiary weight for the 'flying into the mountain' part. Omitting directTruth.",
-      "tags": ["mount-shasta", "ufo", "witness-reports"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -346,7 +336,6 @@
       ],
       "confidence": 0.95,
       "rationale": "Host's explicit closing verdict. Epistemically a bit flat — 'can't prove it isn't' applies to countless things and is very weak evidence for something; scientific consensus is that Earth is not hollow (seismology, gravity, density). Omitting directTruth because as stated it's a stance, not a factual claim.",
-      "tags": ["verdict", "hollow-earth", "skepticism"],
       "inVerdictSection": true,
       "hostStance": "uncertain",
       "dependencies": [

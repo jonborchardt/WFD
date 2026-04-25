@@ -36,7 +36,7 @@ export const operatorCorrectionsSection: MetricSection = {
         source: "data/aliases.json" },
       { section: "operator-corrections", name: "corrections.claimFieldOverrides",
         value: claimFieldOverrides, unit: "count",
-        description: "claims with operator-edited text / kind / stance / rationale / tags",
+        description: "claims with operator-edited text / kind / stance / rationale",
         source: "data/aliases.json" },
       { section: "operator-corrections", name: "corrections.contradictionDismissals",
         value: contradictionDismissals, unit: "count",

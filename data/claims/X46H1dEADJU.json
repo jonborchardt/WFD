@@ -3,6 +3,7 @@
   "transcriptId": "X46H1dEADJU",
   "generatedAt": "2026-04-22T06:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "X46H1dEADJU:c_0001",
@@ -20,15 +21,14 @@
           "transcriptId": "X46H1dEADJU",
           "charStart": 5045,
           "charEnd": 5069,
-          "timeStart": 290.0,
-          "timeEnd": 293.0,
+          "timeStart": 290,
+          "timeEnd": 293,
           "quote": "NCI stands for narrative"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.55,
       "rationale": "Chase Hughes is a real author/consultant (Ellipsis Behavior Labs) who has published a propaganda-detection rubric. Whether it detects PSYOPs 'with scary accuracy' is a marketing claim without peer-reviewed validation. The tool exists; its claimed discriminative power is unverified.",
-      "tags": ["nci", "chase-hughes", "psyop-detection"],
       "hostStance": "asserts"
     },
     {
@@ -43,29 +43,31 @@
         "organization:hill and nolton",
         "date_time:october 10th, 1990"
       ],
-      "relationships": ["r_0055", "r_0058"],
+      "relationships": [
+        "r_0055",
+        "r_0058"
+      ],
       "evidence": [
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 7887,
           "charEnd": 7935,
-          "timeStart": 450.0,
-          "timeEnd": 455.0,
+          "timeStart": 450,
+          "timeEnd": 455,
           "quote": "Naria was the daughter of the\nKuwaiti ambassador"
         },
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 7948,
           "charEnd": 7962,
-          "timeStart": 455.0,
-          "timeEnd": 458.0,
+          "timeStart": 455,
+          "timeEnd": 458,
           "quote": "no dead\nbabies"
         }
       ],
       "confidence": 0.97,
       "directTruth": 0.92,
       "rationale": "Nayirah al-Ṣabah was indeed the Kuwaiti ambassador's daughter; Hill & Knowlton coached her testimony on behalf of Citizens for a Free Kuwait. The fabrication is well-documented (John MacArthur's 'Second Front', 1992 NYT reporting, 2003 CBC documentaries). Host's summary is historically accurate.",
-      "tags": ["gulf-war", "nayirah", "psyop", "hill-knowlton"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0001",
@@ -87,29 +89,31 @@
         "date_time:winter of 1953",
         "quantity:40 years"
       ],
-      "relationships": ["r_0077", "r_0083"],
+      "relationships": [
+        "r_0077",
+        "r_0083"
+      ],
       "evidence": [
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 9126,
           "charEnd": 9149,
-          "timeStart": 520.0,
-          "timeEnd": 525.0,
+          "timeStart": 520,
+          "timeEnd": 525,
           "quote": "cigarettes cause\ncancer"
         },
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 10725,
           "charEnd": 10745,
-          "timeStart": 615.0,
-          "timeEnd": 618.0,
+          "timeStart": 615,
+          "timeEnd": 618,
           "quote": "Doubt is our\nproduct"
         }
       ],
       "confidence": 0.98,
       "directTruth": 0.95,
       "rationale": "The 1953 Plaza Hotel tobacco meeting, Hill & Knowlton's involvement, TIRC creation, and the 'doubt is our product' Brown & Williamson memo (1969) are all thoroughly documented (Oreskes & Conway 'Merchants of Doubt'; the 1998 Master Settlement Agreement disclosed the 30M-page archive).",
-      "tags": ["tobacco", "hill-knowlton", "doubt-industry", "merchants-of-doubt"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0001",
@@ -133,15 +137,14 @@
           "transcriptId": "X46H1dEADJU",
           "charStart": 11873,
           "charEnd": 11919,
-          "timeStart": 680.0,
-          "timeEnd": 685.0,
+          "timeStart": 680,
+          "timeEnd": 685,
           "quote": "30 million pages\nof internal tobacco documents"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "The Tobacco Master Settlement Agreement (1998) opened ~40 million pages of industry documents now housed at UCSF's Legacy Tobacco Library. The '30 million' figure is in the right ballpark. Documented history.",
-      "tags": ["tobacco", "whistleblower", "documents"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0003",
@@ -165,15 +168,14 @@
           "transcriptId": "X46H1dEADJU",
           "charStart": 12728,
           "charEnd": 12767,
-          "timeStart": 730.0,
-          "timeEnd": 735.0,
+          "timeStart": 730,
+          "timeEnd": 735,
           "quote": "low-fat products were loaded with sugar"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "JAMA Internal Medicine 2016 published leaked Sugar Research Foundation documents from the 1960s showing the industry funded Harvard studies blaming fat. The consequences (low-fat product proliferation, added sugar content, rise in metabolic disease) are well-reviewed.",
-      "tags": ["sugar-industry", "nutrition", "psyop"],
       "hostStance": "asserts"
     },
     {
@@ -188,29 +190,32 @@
         "event:ethnic violence",
         "technology:algorithm"
       ],
-      "relationships": ["r_0114", "r_0115", "r_0117"],
+      "relationships": [
+        "r_0114",
+        "r_0115",
+        "r_0117"
+      ],
       "evidence": [
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 14459,
           "charEnd": 14521,
-          "timeStart": 830.0,
-          "timeEnd": 836.0,
+          "timeStart": 830,
+          "timeEnd": 836,
           "quote": "testified before\nCongress about what was happening in\nEthiopia"
         },
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 14536,
           "charEnd": 14584,
-          "timeStart": 836.0,
-          "timeEnd": 842.0,
+          "timeStart": 836,
+          "timeEnd": 842,
           "quote": "platform's\nalgorithm was causing ethnic violence"
         }
       ],
       "confidence": 0.92,
       "directTruth": 0.75,
       "rationale": "Frances Haugen's October 2021 Senate testimony is factual. Documented causal link between Facebook engagement ranking and hate-speech amplification is strong (Amnesty report 2023 on Tigray, internal documents). 'Caused' is debated in precise causal terms but the algorithmic amplification of hate is well-established.",
-      "tags": ["facebook", "haugen", "ethiopia", "algorithm", "whistleblower"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0001",
@@ -230,29 +235,31 @@
         "event:lab leak",
         "date_time:february 19th, 2020"
       ],
-      "relationships": ["r_0150", "r_0152"],
+      "relationships": [
+        "r_0150",
+        "r_0152"
+      ],
       "evidence": [
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 16896,
           "charEnd": 16919,
-          "timeStart": 970.0,
-          "timeEnd": 975.0,
+          "timeStart": 970,
+          "timeEnd": 975,
           "quote": "27\nprominent scientists"
         },
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 16937,
           "charEnd": 17006,
-          "timeStart": 977.0,
-          "timeEnd": 985.0,
+          "timeStart": 977,
+          "timeEnd": 985,
           "quote": "anyone who claimed the virus was a lab\nleak was a conspiracy theorist"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.88,
       "rationale": "The Lancet letter is real (Calisher et al, Feb 19 2020). It categorically dismissed lab-leak scenarios. Subsequent FOIA emails revealed Peter Daszak organized the letter without disclosing EcoHealth's conflict of interest. The characterization is accurate.",
-      "tags": ["covid-19", "lab-leak", "lancet", "conflict-of-interest"],
       "hostStance": "asserts"
     },
     {
@@ -265,29 +272,32 @@
         "organization:ecoalth alliance",
         "facility:wuhan lab"
       ],
-      "relationships": ["r_0165", "r_0167", "r_0172"],
+      "relationships": [
+        "r_0165",
+        "r_0167",
+        "r_0172"
+      ],
       "evidence": [
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 18239,
           "charEnd": 18248,
-          "timeStart": 1055.0,
-          "timeEnd": 1058.0,
+          "timeStart": 1055,
+          "timeEnd": 1058,
           "quote": "Peter Dic"
         },
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 18267,
           "charEnd": 18299,
-          "timeStart": 1058.0,
-          "timeEnd": 1062.0,
+          "timeStart": 1058,
+          "timeEnd": 1062,
           "quote": "Ecoalth Alliance funded research"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.92,
       "rationale": "Confirmed by FOIA'd emails released by US Right to Know (2020) and by congressional hearings. Daszak's role organizing the Lancet letter and EcoHealth's WIV subcontracts are documented facts.",
-      "tags": ["daszak", "ecohealth", "wuhan", "conflict-of-interest"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0007",
@@ -311,15 +321,14 @@
           "transcriptId": "X46H1dEADJU",
           "charStart": 16937,
           "charEnd": 17006,
-          "timeStart": 977.0,
-          "timeEnd": 985.0,
+          "timeStart": 977,
+          "timeEnd": 985,
           "quote": "anyone who claimed the virus was a lab\nleak was a conspiracy theorist"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.65,
       "rationale": "Both sides showed documented coordination and suppression tactics (the Lancet letter on one side, partisan politicization on the other). The symmetry claim is reasonable; the NCI-scoring-proves-it framing is weaker.",
-      "tags": ["covid-19", "lab-leak", "both-sides", "psyop"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0007",
@@ -340,28 +349,30 @@
         "role:whistleblower",
         "date_time:january 2025"
       ],
-      "relationships": ["r_0189", "r_0199"],
+      "relationships": [
+        "r_0189",
+        "r_0199"
+      ],
       "evidence": [
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 20288,
           "charEnd": 20363,
-          "timeStart": 1180.0,
-          "timeEnd": 1188.0,
+          "timeStart": 1180,
+          "timeEnd": 1188,
           "quote": "He told News\nNation he worked on secret UFO retrieval\nmissions for 30 years"
         },
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 20621,
           "charEnd": 20657,
-          "timeStart": 1200.0,
-          "timeEnd": 1204.0,
+          "timeStart": 1200,
+          "timeEnd": 1204,
           "quote": "News Nation verified his\ncredentials"
         }
       ],
       "confidence": 0.85,
       "rationale": "Barber did appear on News Nation (Jan 2025, Ross Coulthart) with the described claims. The 'SCOP score' inference is the host's opinion; no independent verification of the retrieval missions or craft has been offered. Omitting directTruth because whether it's a psyop vs. genuine disclosure vs. unreliable testimony is genuinely undetermined.",
-      "tags": ["ufo", "disclosure", "barber", "psyop"],
       "hostStance": "uncertain"
     },
     {
@@ -372,21 +383,22 @@
       "entities": [
         "person:jake barber"
       ],
-      "relationships": ["r_0209"],
+      "relationships": [
+        "r_0209"
+      ],
       "evidence": [
         {
           "transcriptId": "X46H1dEADJU",
           "charStart": 21440,
           "charEnd": 21487,
-          "timeStart": 1245.0,
-          "timeEnd": 1250.0,
+          "timeStart": 1245,
+          "timeEnd": 1250,
           "quote": "Barber formed a company called Sky\nWatchers LLC"
         }
       ],
       "confidence": 0.88,
       "directTruth": 0.8,
       "rationale": "Sky Watchers / Sol Foundation affiliation is publicly documented; the timing correlation with the disclosure interview is factual. Whether this disqualifies his testimony is a judgment call, but the financial-interest fact itself is accurate.",
-      "tags": ["barber", "sky-watchers", "financial-interest"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0010",
@@ -410,15 +422,14 @@
           "transcriptId": "X46H1dEADJU",
           "charStart": 5045,
           "charEnd": 5069,
-          "timeStart": 290.0,
-          "timeEnd": 293.0,
+          "timeStart": 290,
+          "timeEnd": 293,
           "quote": "NCI stands for narrative"
         }
       ],
       "confidence": 0.92,
       "directTruth": 0.9,
       "rationale": "This is an important meta-disclaimer the host himself makes. Rhetorical manipulation and factual truth-value are orthogonal dimensions — this definitional framing is logically sound.",
-      "tags": ["nci", "epistemology", "psyop-detection"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0001",
@@ -449,15 +460,14 @@
           "transcriptId": "X46H1dEADJU",
           "charStart": 14536,
           "charEnd": 14584,
-          "timeStart": 836.0,
-          "timeEnd": 842.0,
+          "timeStart": 836,
+          "timeEnd": 842,
           "quote": "platform's\nalgorithm was causing ethnic violence"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Well-supported observation in media studies literature (Zeynep Tufekci, Safiya Umoja Noble). Engagement-ranking algorithms structurally favor outrage-inducing content; no central orchestrator required. The Facebook / Ethiopia case is a canonical example.",
-      "tags": ["algorithm", "social-media", "manipulation", "amplification"],
       "dependencies": [
         {
           "target": "X46H1dEADJU:c_0006",
@@ -482,15 +492,14 @@
           "transcriptId": "X46H1dEADJU",
           "charStart": 14536,
           "charEnd": 14584,
-          "timeStart": 836.0,
-          "timeEnd": 842.0,
+          "timeStart": 836,
+          "timeEnd": 842,
           "quote": "platform's\nalgorithm was causing ethnic violence"
         }
       ],
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "The 'divide-and-distract' framing is speculative about intent. Algorithmic polarization is well-documented; attributing it to coordinated meta-design rather than emergent incentive dynamics is a stronger claim with weaker evidence. It's a plausible lens but not settled.",
-      "tags": ["polarization", "meta-psyop", "social-media"],
       "hostStance": "asserts"
     }
   ]

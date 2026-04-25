@@ -3,6 +3,7 @@
   "transcriptId": "YpZKwbdbsJ4",
   "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "YpZKwbdbsJ4:c_0001",
@@ -22,15 +23,14 @@
           "charStart": 12,
           "charEnd": 200,
           "timeStart": 0.96,
-          "timeEnd": 17.0,
+          "timeEnd": 17,
           "quote": "Apollo space flight program lasted\nfrom 1961 to 1972. Apollo 11 was Neil\nArmstrong's famous First Step Apollo 17\nwas the last manned mission to the Moon\nin all 20 Apollo flights were plann"
         }
       ],
       "confidence": 0.97,
       "directTruth": 0.97,
       "rationale": "Apollo ran 1961-1972. Apollo 17 (Dec 1972) was the last crewed lunar mission. Apollo 18-20 were cancelled in 1970 due to budget constraints — all well-documented NASA history.",
-      "hostStance": "asserts",
-      "tags": ["apollo", "history", "nasa"]
+      "hostStance": "asserts"
     },
     {
       "id": "YpZKwbdbsJ4:c_0002",
@@ -54,8 +54,7 @@
       "confidence": 0.99,
       "directTruth": 0.99,
       "rationale": "July 20, 1969 lunar landing is among the most documented events in human history — TV broadcasts, telemetry, returned samples, independent tracking by multiple countries.",
-      "hostStance": "asserts",
-      "tags": ["apollo-11", "armstrong", "1969"]
+      "hostStance": "asserts"
     },
     {
       "id": "YpZKwbdbsJ4:c_0003",
@@ -80,8 +79,7 @@
       "confidence": 0.95,
       "directTruth": 0.92,
       "rationale": "The 'retired AFB' Apollo 20 video series is a real documented 2007 YouTube upload that triggered the Apollo 20 hoax-legend cycle. The historical fact of posting is uncontested; the contents are fiction (see c_0011).",
-      "hostStance": "asserts",
-      "tags": ["retired-afb", "youtube", "apollo-20", "hoax"]
+      "hostStance": "asserts"
     },
     {
       "id": "YpZKwbdbsJ4:c_0004",
@@ -110,9 +108,11 @@
       "rationale": "The claim of identity is what 'retired AFB' asserted online. No person by this name appears in NASA or USAF astronaut rosters — later shown to be an alias used by the French hoaxer Thierry Speth.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "YpZKwbdbsJ4:c_0003", "kind": "elaborates" }
-      ],
-      "tags": ["william-rutledge", "identity-claim", "apollo-20"]
+        {
+          "target": "YpZKwbdbsJ4:c_0003",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "YpZKwbdbsJ4:c_0005",
@@ -139,9 +139,11 @@
       "rationale": "This is the fictional premise of the Apollo 20 hoax. A two-mile spaceship on the Moon would be trivially visible to every astronomer and orbiting telescope — it does not exist.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "YpZKwbdbsJ4:c_0003", "kind": "elaborates" }
-      ],
-      "tags": ["alien-spaceship", "moon", "fiction"]
+        {
+          "target": "YpZKwbdbsJ4:c_0003",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "YpZKwbdbsJ4:c_0006",
@@ -168,8 +170,7 @@
       "confidence": 0.97,
       "directTruth": 0.98,
       "rationale": "The Apollo-Soyuz Test Project of July 1975 — the first US-USSR joint crewed spaceflight, with Leonov commanding Soyuz 19 — is well-documented history.",
-      "hostStance": "asserts",
-      "tags": ["apollo-soyuz", "leonov", "detente"]
+      "hostStance": "asserts"
     },
     {
       "id": "YpZKwbdbsJ4:c_0007",
@@ -196,9 +197,11 @@
       "rationale": "A Saturn V launch on August 16, 1976 would have been trivially observable from dozens of tracking networks worldwide; none occurred. The last Saturn V launch was Skylab's in May 1973.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "YpZKwbdbsJ4:c_0005", "kind": "elaborates" }
-      ],
-      "tags": ["saturn-v", "1976", "secret-launch", "fiction"]
+        {
+          "target": "YpZKwbdbsJ4:c_0005",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "YpZKwbdbsJ4:c_0008",
@@ -232,8 +235,7 @@
       ],
       "confidence": 0.65,
       "rationale": "Carl Wolfe's 2001 Disclosure Project testimony is real and on the record. His identity and job history check out. His testimony about what a colleague allegedly told him is uncorroborated.",
-      "hostStance": "asserts",
-      "tags": ["carl-wolfe", "disclosure-project", "moon-base", "testimony"]
+      "hostStance": "asserts"
     },
     {
       "id": "YpZKwbdbsJ4:c_0009",
@@ -260,12 +262,27 @@
       "rationale": "Speth's authorship of the Apollo 20 hoax videos is well documented — he eventually gave interviews confirming the art project origin and released related material including a novel.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "YpZKwbdbsJ4:c_0003", "kind": "contradicts", "rationale": "[debunks] the videos were not leaked astronaut footage but artwork by a named French creator." },
-        { "target": "YpZKwbdbsJ4:c_0004", "kind": "contradicts", "rationale": "[debunks] 'William Rutledge' was Speth's online persona, not a real USAF astronaut." },
-        { "target": "YpZKwbdbsJ4:c_0005", "kind": "contradicts", "rationale": "[debunks] the two-mile spaceship story is part of Speth's fiction." },
-        { "target": "YpZKwbdbsJ4:c_0007", "kind": "contradicts", "rationale": "[debunks] no August-1976 Saturn V launch occurred; the narrative is invented." }
-      ],
-      "tags": ["thierry-speth", "hoax", "admission", "apollo-20"]
+        {
+          "target": "YpZKwbdbsJ4:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] the videos were not leaked astronaut footage but artwork by a named French creator."
+        },
+        {
+          "target": "YpZKwbdbsJ4:c_0004",
+          "kind": "contradicts",
+          "rationale": "[debunks] 'William Rutledge' was Speth's online persona, not a real USAF astronaut."
+        },
+        {
+          "target": "YpZKwbdbsJ4:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] the two-mile spaceship story is part of Speth's fiction."
+        },
+        {
+          "target": "YpZKwbdbsJ4:c_0007",
+          "kind": "contradicts",
+          "rationale": "[debunks] no August-1976 Saturn V launch occurred; the narrative is invented."
+        }
+      ]
     },
     {
       "id": "YpZKwbdbsJ4:c_0010",
@@ -293,9 +310,11 @@
       "rationale": "Baxter's 2016 interview with Speth is public and confirms origin of the Apollo 20 images; includes the alien-mask reveal.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "YpZKwbdbsJ4:c_0009", "kind": "supports" }
-      ],
-      "tags": ["chad-baxter", "interview", "2016"]
+        {
+          "target": "YpZKwbdbsJ4:c_0009",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "YpZKwbdbsJ4:c_0011",
@@ -323,10 +342,16 @@
       "hostStance": "denies",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "YpZKwbdbsJ4:c_0009", "kind": "supports" },
-        { "target": "YpZKwbdbsJ4:c_0005", "kind": "contradicts", "rationale": "[debunks] the moon-spaceship premise is fictional." }
-      ],
-      "tags": ["verdict", "apollo-20", "debunked"]
+        {
+          "target": "YpZKwbdbsJ4:c_0009",
+          "kind": "supports"
+        },
+        {
+          "target": "YpZKwbdbsJ4:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] the moon-spaceship premise is fictional."
+        }
+      ]
     },
     {
       "id": "YpZKwbdbsJ4:c_0012",
@@ -351,8 +376,7 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "NASA's FY2022 budget of ~$24B and DoD budget of ~$700B+ are publicly available. The '90% reduction vs 1970s' claim requires inflation-adjusted comparison: Apollo peaked at ~4.4% of federal outlay vs ~0.5% in 2022, so the relative-share drop is real, though the '90%' dollar-for-dollar framing is shakier.",
-      "hostStance": "asserts",
-      "tags": ["nasa-budget", "dod-budget", "2022"]
+      "hostStance": "asserts"
     }
   ]
 }

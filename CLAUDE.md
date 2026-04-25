@@ -47,7 +47,7 @@ deleted. Neural extraction now runs via Python sidecars — see below.
 - `captions relations --video <id>` — run the relations stage (depends on
   `entities` having produced its output file)
 - `captions neural --video <id>` — entities + relations in sequence
-- `npm run metrics` — print corpus-quality dashboard (47 signals)
+- `npm run metrics` — print corpus-quality dashboard (49 signals)
 - `npm run metrics:baseline` — freeze current as the gate baseline
 - `npm run metrics:check` — gate: exit non-zero on regression
 
@@ -176,7 +176,7 @@ Pipeline shape, roughly in order:
    (on-demand "if X were false, what moves?" queries).
 9. [src/skeptic/](src/skeptic/) — speaker credibility scoring from
    transcript signals.
-10. [src/metrics/](src/metrics/) — 47-signal corpus-quality metrics +
+10. [src/metrics/](src/metrics/) — 49-signal corpus-quality metrics +
     gate + CLI. Per-section files (entity-hygiene, entity-resolution,
     claims, contradictions, operator-corrections) compose into
     `computeAll()`. `runGate()` compares current vs targets + baseline
@@ -716,6 +716,14 @@ The skill prompt enforces a specific quality bar on every write:
   [contradicts-subkind.ts](src/truth/contradicts-subkind.ts) at read
   time. Schema stays at v1 — the subkind travels in-string.
 - **Dependency coverage** — aim for ≥55% of claims to have ≥1 dep edge.
+- **`promptVersion: "v2"` stamp** — every claim file carries the
+  provenance field in its top-level payload. The validator in
+  [src/claims/validate.ts](src/claims/validate.ts) rejects any
+  `promptVersion` outside the known set (currently just `"v2"`), so a
+  hand-edited `"v1"` fails loudly. The metrics gate enforces
+  `claims.promptVersionV2Pct == 100` — any stray unstamped file is a
+  gate failure. Backfill script:
+  [tools/stamp-existing-claims.mjs](tools/stamp-existing-claims.mjs).
 
 **Invocation** — from a Claude Code session, ask for the skill
 ("extract claims for N videos"). Or directly:
@@ -814,7 +822,7 @@ SAME-CLAIM pairs to `consonance.json`.
 
 ## Metrics
 
-[src/metrics/](src/metrics/) is a 47-signal corpus-quality module,
+[src/metrics/](src/metrics/) is a 49-signal corpus-quality module,
 grouped into 5 sections:
 
 - **entity-hygiene** — total / active / deleted / merged counts,

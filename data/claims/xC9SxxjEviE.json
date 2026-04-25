@@ -3,6 +3,7 @@
   "transcriptId": "xC9SxxjEviE",
   "generatedAt": "2026-04-22T04:35:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "xC9SxxjEviE:c_0001",
@@ -36,7 +37,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Well-documented: Anneliese Michel (1952-1976) was diagnosed with temporal-lobe epilepsy, prescribed Tegretol and Dilantin, and underwent psychiatric treatment before and during the period described. Court trial records establish the medical facts.",
-      "tags": ["anneliese-michel", "epilepsy", "medical-history"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -50,7 +50,9 @@
         "person:annelise",
         "event:exorcism"
       ],
-      "relationships": ["r_0004"],
+      "relationships": [
+        "r_0004"
+      ],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
@@ -72,7 +74,6 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "The 16 exorcism sessions are documented. The screaming, growling, and self-injury are also documented. 'Superhuman strength' and 'languages she had never learned' are contested — the trial expert witnesses attributed these to epileptic psychosis rather than demonic capacity.",
-      "tags": ["anneliese-michel", "exorcism", "symptoms"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -106,7 +107,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Autopsy confirmed Michel died July 1, 1976 at age 23 weighing ~30 kg (~68 lb) from malnutrition and dehydration. The Klingenberg court convicted her parents and two priests of negligent homicide. Well-documented.",
-      "tags": ["anneliese-michel", "death", "klingenberg-trial"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -143,7 +143,6 @@
       "confidence": 0.95,
       "directTruth": 0.6,
       "rationale": "Blatty did cite a 1949 Washington Post article about a boy in Mount Rainier, MD. The boy's real identity (Ronald Edwin Hunkeler, not 'Hunter' — transcript has it as Hunter) was confirmed posthumously in 2021. 'Based on real events' is correct in the inspiration sense; the novel's supernatural details are fiction.",
-      "tags": ["the-exorcist", "blatty", "hunkeler", "1949"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -170,7 +169,6 @@
       "confidence": 0.9,
       "directTruth": 0.65,
       "rationale": "[debunks] The 'Hunkeler confessed he faked it' narrative appears in later skeptical coverage (notably Mark Opsasnick's Strange magazine investigation). Primary documentary evidence is limited — Hunkeler himself never gave a public interview. The confession claim is partially supported.",
-      "tags": ["hunkeler", "exorcist", "faked", "skeptic"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -192,7 +190,9 @@
         "location:indiana",
         "date_time:2011"
       ],
-      "relationships": ["r_0053"],
+      "relationships": [
+        "r_0053"
+      ],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
@@ -214,7 +214,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "The 2011 Gary, Indiana case (3860 Carolina St) was covered by Indianapolis Star reporter Marisa Kwiatkowski (Jan 2014) with contemporaneous DCS, CPS, and Gary Police records. The family's move and the black-fly detail are documented in those files.",
-      "tags": ["ammons", "gary-indiana", "2011", "possession"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -229,7 +228,9 @@
         "organization:gary police department",
         "location:house"
       ],
-      "relationships": ["r_0082"],
+      "relationships": [
+        "r_0082"
+      ],
       "evidence": [
         {
           "transcriptId": "xC9SxxjEviE",
@@ -251,7 +252,6 @@
       "confidence": 0.95,
       "directTruth": 0.5,
       "rationale": "Austin's account and the Gary PD report are real and contemporaneous. The 'silhouette' photograph has been analyzed; it's widely interpreted as camera artifact / JPEG compression artifact rather than paranormal. Electronic device failures are reported but no root-cause analysis was published. Factual claim about the report exists; paranormal interpretation is weak.",
-      "tags": ["ammons", "captain-austin", "gary-police", "photo"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -280,7 +280,6 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "The 2023 Sony Pictures film The Pope's Exorcist does star Russell Crowe as Father Gabriele Amorth and borrows loosely from Amorth's memoirs ('An Exorcist Tells His Story'). Derivative connection is real though the film takes significant dramatic license.",
-      "tags": ["popes-exorcist", "amorth", "russell-crowe", "film"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -308,7 +307,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "William Friedkin (director of the 1973 Exorcist film) did film a 9th exorcism of 'Cristina' performed by Father Gabriele Amorth in May 2016 in Italy. The footage became 'The Devil and Father Amorth' (2017). Well-documented historical event.",
-      "tags": ["friedkin", "amorth", "2016", "documentary"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -327,14 +325,13 @@
           "charStart": 21352,
           "charEnd": 21395,
           "timeStart": 1282.14,
-          "timeEnd": 1290.0,
+          "timeEnd": 1290,
           "quote": "epilepsy schizophrenia\nmultiple personality"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Mainstream medical and psychiatric view. DSM-5 formally recognizes 'Dissociative Identity Disorder' (formerly MPD) and 'Dissociative Trance Disorder', both of which accommodate 'possession' presentations. Temporal-lobe epilepsy can produce ecstatic/religious auras. Standard explanation for most historical possession cases.",
-      "tags": ["epilepsy", "schizophrenia", "dissociative-disorder", "medicalization"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -367,7 +364,6 @@
       ],
       "confidence": 0.9,
       "rationale": "Host is presenting the skeptic framing (he identifies with it at ~90%). Exorcism-related deaths do occur (e.g. 2003 Terrance Cottrell Jr, 2005 Maricica Irina Cornici). Whether exorcism as a category is 'torture' is a value judgment. directTruth omitted because the claim is evaluative rather than factual.",
-      "tags": ["exorcism", "skeptic", "medieval", "torture"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -396,7 +392,6 @@
       "confidence": 0.85,
       "directTruth": 0.15,
       "rationale": "Amorth was indeed the Vatican's chief exorcist (1986-2016) and publicly maintained possession is distinct from mental illness (see 'An Exorcist Tells His Story', 1999). Attribution is accurate. The substantive metaphysical claim (real demons) has no scientific support.",
-      "tags": ["amorth", "vatican", "possession", "demons"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

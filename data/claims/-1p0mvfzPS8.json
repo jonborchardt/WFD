@@ -3,6 +3,7 @@
   "transcriptId": "-1p0mvfzPS8",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "-1p0mvfzPS8:c_0001",
@@ -28,7 +29,6 @@
       "confidence": 0.95,
       "directTruth": 0.7,
       "rationale": "Host repeatedly frames Patterson's 1967 footage as the best evidence produced in ~60 years, and no equivalent later artifact is named. Judgment is about evidentiary centrality within the Bigfoot corpus, not about Bigfoot's existence itself, so 0.7 reflects strong agreement among both believers and skeptics that this is the canonical artifact they argue over.",
-      "tags": ["bigfoot", "patterson-gimlin-film", "evidence"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -41,7 +41,9 @@
         "date_time:1846",
         "location:eastern arkansas"
       ],
-      "relationships": ["r_0066"],
+      "relationships": [
+        "r_0066"
+      ],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
@@ -54,7 +56,6 @@
       ],
       "confidence": 0.9,
       "rationale": "Host cites a researcher survey of 19th-century newspapers. Not independently verified in-episode, but the 1846 Arkansas report is a widely repeated claim in Bigfoot literature. Omitting directTruth because the host does not offer the citation and the episode does not debunk or confirm it.",
-      "tags": ["bigfoot", "historical-sightings"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -81,7 +82,6 @@
       "confidence": 0.85,
       "directTruth": 0.25,
       "rationale": "Host presents this claim explicitly to rebut it by citing pre-1967 newspaper reports from as far back as 1846. The framing 'now Skeptics say...' introduces a position he is about to undermine, so directTruth low.",
-      "tags": ["bigfoot", "skeptic-argument"],
       "inVerdictSection": false,
       "hostStance": "denies",
       "dependencies": [
@@ -114,7 +114,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Well-documented: no peer-reviewed journal or scientific society classifies Bigfoot as a recognized species. Host states it as a truism, and it aligns with the factual status of gigantopithecus americanus as not-recognized.",
-      "tags": ["bigfoot", "mainstream-science", "scientific-consensus"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -152,7 +151,6 @@
       "confidence": 0.9,
       "directTruth": 0.55,
       "rationale": "Host lays out Greg Long's 2004 book-length debunk in detail — funding by American National Enterprises, the gorilla suit from Philip Morris, Heronimus's confession and lie-detector test. Host also notes problems with Heronimus's account (wrong location by 23 miles). Hoax story is plausible and well-evidenced but not airtight, so directTruth moderately above 0.5.",
-      "tags": ["bigfoot", "patterson-gimlin-film", "hoax-theory"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -195,7 +193,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Host cites acquaintance interviews and the rapid commercial move as evidence of motive and bad character. Character judgments are partly subjective, but the Bigfoot Enterprises timeline is a matter of public record.",
-      "tags": ["bigfoot", "patterson-gimlin-film", "patterson-character"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -229,7 +226,6 @@
       "confidence": 0.85,
       "directTruth": 0.65,
       "rationale": "Host walks through the horseback/plaster/drive sequence and shows the time math fails; also notes the story changed across retellings. Undermines the film's provenance without proving forgery.",
-      "tags": ["bigfoot", "patterson-gimlin-film", "hoax-theory"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -262,7 +258,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host states this directly in his verdict. Aligns with established zoological consensus: every hair sample tested has matched known mammals (deer, bear, etc.). Widely documented.",
-      "tags": ["bigfoot", "evidence", "scientific-consensus"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -295,7 +290,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Host states this in his verdict section. The 1934 surgeon's photo hoax is a well-documented historical fact — Christian Spurling's 1994 deathbed confession admitted to the toy-submarine construction. Widely accepted.",
-      "tags": ["loch-ness", "hoax", "surgeons-photo"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -309,7 +303,10 @@
         "date_time:10,000 years ago",
         "date_time:65 million years ago"
       ],
-      "relationships": ["r_0134", "r_0135"],
+      "relationships": [
+        "r_0134",
+        "r_0135"
+      ],
       "evidence": [
         {
           "transcriptId": "-1p0mvfzPS8",
@@ -330,9 +327,7 @@
       ],
       "confidence": 0.95,
       "directTruth": 0.95,
-      "rationale": "Host raises this as a logical geological/paleontological argument. Both numbers are in standard scientific literature: Loch Ness glacial origin ~10ka, plesiosaur K-Pg extinction ~66Mya. The geological impossibility follows cleanly."
-      ,
-      "tags": ["loch-ness", "plesiosaurus", "geology"],
+      "rationale": "Host raises this as a logical geological/paleontological argument. Both numbers are in standard scientific literature: Loch Ness glacial origin ~10ka, plesiosaur K-Pg extinction ~66Mya. The geological impossibility follows cleanly.",
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -358,7 +353,6 @@
       "confidence": 0.8,
       "directTruth": 0.05,
       "rationale": "Host floats this as the romantic hypothesis but later debunks it using geological timelines (see c_0010). The morphological match he points to is real, but the timing makes the Plesiosaurus identification untenable.",
-      "tags": ["loch-ness", "plesiosaurus", "speculation"],
       "inVerdictSection": false,
       "hostStance": "steelman",
       "dependencies": [
@@ -392,14 +386,13 @@
           "charStart": 36659,
           "charEnd": 36747,
           "timeStart": 2613.08,
-          "timeEnd": 2622.40,
+          "timeEnd": 2622.4,
           "quote": "now locals think it's a giant eel and\nscientists have found a lot of eel DNA\nin the lake"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "The eel-DNA finding refers to Neil Gemmell's 2019 University of Otago environmental-DNA study, which is documented. Declining sightings is plausible but host provides no citation. The two evidence pieces reinforce each other — the giant-eel hypothesis explains the tapering.",
-      "tags": ["loch-ness", "eel-hypothesis", "urban-legend"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -437,15 +430,14 @@
           "transcriptId": "-1p0mvfzPS8",
           "charStart": 26452,
           "charEnd": 26532,
-          "timeStart": 1921.00,
-          "timeEnd": 1930.60,
+          "timeStart": 1921,
+          "timeEnd": 1930.6,
           "quote": "in March 1996 police in Miami Florida\nresponded to reports of a violent\nincident"
         }
       ],
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "Host lays out the chupacabra narrative in a compressed attack-by-attack sequence, then debunks it in the verdict: primary witness based her description on the movie Species, attacks were later attributed to coyotes, no physical evidence found. directTruth low because the host concludes 'chupacabra no'.",
-      "tags": ["chupacabra", "animal-attacks", "cryptid"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -472,7 +464,6 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Host cites a 1996 Tolentino interview with UFO Digest where she reportedly admitted this. This is the strongest single debunk of the chupacabra origin story. The alien-hybrid/Species parallel is widely reported in cryptozoology critical literature.",
-      "tags": ["chupacabra", "tolentino", "debunk"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -508,7 +499,6 @@
       "confidence": 0.65,
       "directTruth": 0.02,
       "rationale": "Host presents this via Heckle Fish as a conspiracy-theory flourish, not as his own serious claim. No evidence beyond the rumored egg transfer. Confidence moderate because the assertion is clearly made in-show as commentary; directTruth near zero because there is no credible basis for a NASA genetic-engineering origin of the chupacabra.",
-      "tags": ["chupacabra", "nasa", "conspiracy"],
       "inVerdictSection": false,
       "hostStance": "steelman",
       "dependencies": [

@@ -3,6 +3,7 @@
   "transcriptId": "eWANHcSyL5s",
   "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7-1m",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "eWANHcSyL5s:c_0001",
@@ -37,8 +38,7 @@
       "confidence": 0.98,
       "directTruth": 0.95,
       "rationale": "The 2008 Chatsworth Metrolink collision is well-documented historical fact; 25 people died including a victim named Charles Peck. Date, location, and collision mechanics match the NTSB record.",
-      "hostStance": "asserts",
-      "tags": ["chatsworth-crash", "metrolink", "train-accident"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0002",
@@ -74,10 +74,12 @@
       "directTruth": 0.45,
       "rationale": "Family accounts of phantom calls circulated in news coverage of the crash, but the 35-calls count and the claim that pings guided rescuers are story-level details that have never been verified by Verizon records or NTSB investigators.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0001", "kind": "presupposes" }
+        {
+          "target": "eWANHcSyL5s:c_0001",
+          "kind": "presupposes"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["phantom-calls", "paranormal"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0003",
@@ -103,10 +105,13 @@
       "confidence": 0.7,
       "rationale": "The missing-phone detail is central to the supernatural framing of the episode but has no independent source outside paranormal retellings; no contemporaneous police or NTSB report corroborates it.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0002", "kind": "supports", "rationale": "if phone was gone, the calls can't be explained as a simple mechanical redial" }
+        {
+          "target": "eWANHcSyL5s:c_0002",
+          "kind": "supports",
+          "rationale": "if phone was gone, the calls can't be explained as a simple mechanical redial"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["phantom-calls", "paranormal"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0004",
@@ -131,10 +136,13 @@
       "confidence": 0.75,
       "rationale": "The host raises this as the 'comfortable explanation' and then rejects it by appealing to the unfound phone (c_0003). It is the conventional engineering hypothesis.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0002", "kind": "contradicts", "rationale": "[alternative] a naturalistic shortcircuit account rivals the supernatural reading" }
+        {
+          "target": "eWANHcSyL5s:c_0002",
+          "kind": "contradicts",
+          "rationale": "[alternative] a naturalistic shortcircuit account rivals the supernatural reading"
+        }
       ],
-      "hostStance": "denies",
-      "tags": ["skeptical-hypothesis", "phantom-calls"]
+      "hostStance": "denies"
     },
     {
       "id": "eWANHcSyL5s:c_0005",
@@ -167,8 +175,7 @@
       "confidence": 0.7,
       "directTruth": 0.3,
       "rationale": "The 1979 'Phone Calls from the Dead' book by Rogo and Bayless does exist and collected self-reported cases, but it was not a peer-reviewed scientific study; the percentages are derived from anecdotal surveys, not controlled data.",
-      "hostStance": "asserts",
-      "tags": ["paranormal-research", "phantom-calls"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0006",
@@ -181,7 +188,11 @@
         "date_time:1920",
         "technology:spirit phone"
       ],
-      "relationships": ["r_0013", "r_0016", "r_0017"],
+      "relationships": [
+        "r_0013",
+        "r_0016",
+        "r_0017"
+      ],
       "evidence": [
         {
           "transcriptId": "eWANHcSyL5s",
@@ -195,8 +206,7 @@
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "The 1920 Scientific American interview with Edison is real; Edison did describe a 'valve' to detect spirits. Historians debate whether he was serious or trolling a credulous press.",
-      "hostStance": "asserts",
-      "tags": ["edison", "spirit-phone", "history"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0007",
@@ -230,8 +240,7 @@
       "confidence": 0.7,
       "directTruth": 0.35,
       "rationale": "Dean Koontz has retold versions of this mother-phone-call story in interviews, but it is a personal, uncorroborated anecdote and the specifics drift between tellings.",
-      "hostStance": "asserts",
-      "tags": ["dean-koontz", "phantom-calls", "paranormal"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0008",
@@ -266,8 +275,7 @@
       "confidence": 0.95,
       "directTruth": 0.4,
       "rationale": "Brian Bethel really did publish the originating Black-Eyed Kids post in 1996; that it happened as described is his sole claim. The legend has no corroborating physical evidence.",
-      "hostStance": "asserts",
-      "tags": ["black-eyed-kids", "bethel", "creepypasta-origin"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0009",
@@ -291,7 +299,7 @@
           "transcriptId": "eWANHcSyL5s",
           "charStart": 19508,
           "charEnd": 19596,
-          "timeStart": 1316.0,
+          "timeStart": 1316,
           "timeEnd": 1326.48,
           "quote": "100% of documented cases show the\nsame limitation. They cannot enter\nwithout permission."
         }
@@ -299,10 +307,12 @@
       "confidence": 0.8,
       "rationale": "This is a folkloric claim about an entity class with no independent evidence; the '100% of documented cases' statistic is meaningless given the 'documented cases' are unverified anecdotes.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0008", "kind": "elaborates" }
+        {
+          "target": "eWANHcSyL5s:c_0008",
+          "kind": "elaborates"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["black-eyed-kids", "folklore"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0010",
@@ -326,10 +336,12 @@
       "confidence": 0.8,
       "rationale": "Absence-of-testimony arguments are classically weak: the simpler explanation is that nobody has ever actually let an invitation-bound apparition into their car because the encounters are fictional.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0009", "kind": "supports" }
+        {
+          "target": "eWANHcSyL5s:c_0009",
+          "kind": "supports"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["black-eyed-kids", "argument-from-silence"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0011",
@@ -344,7 +356,11 @@
         "person:terry codddle",
         "date_time:1995"
       ],
-      "relationships": ["r_0075", "r_0082", "r_0084"],
+      "relationships": [
+        "r_0075",
+        "r_0082",
+        "r_0084"
+      ],
       "evidence": [
         {
           "transcriptId": "eWANHcSyL5s",
@@ -374,8 +390,7 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "The Graham-Cottle story is broadly documented in news coverage: transplant recipient marrying the donor's widow and later dying by suicide is fact. Interpretation of the preference changes as 'cellular memory' is where it gets contested.",
-      "hostStance": "asserts",
-      "tags": ["heart-transplant", "cellular-memory", "graham-cottle"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0012",
@@ -403,7 +418,7 @@
           "charStart": 27096,
           "charEnd": 27124,
           "timeStart": 1836.72,
-          "timeEnd": 1844.0,
+          "timeEnd": 1844,
           "quote": "Sunny Graham died\ninstantly."
         }
       ],
@@ -411,10 +426,12 @@
       "directTruth": 0.9,
       "rationale": "Graham's 2008 suicide is confirmed by police records and newspaper coverage in Vidalia, Georgia. The parallel to Cottle's 1995 suicide is a matter of record.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0011", "kind": "elaborates" }
+        {
+          "target": "eWANHcSyL5s:c_0011",
+          "kind": "elaborates"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["graham-cottle", "suicide"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0013",
@@ -449,10 +466,13 @@
       "directTruth": 0.2,
       "rationale": "Cellular memory is a fringe hypothesis with no accepted mechanism. The heart's intrinsic neurons exist but regulate rhythm, not encode declarative memory. Mainstream cardiology and neuroscience reject personality transfer.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0011", "kind": "supports", "rationale": "cellular memory is the mechanism Graham's case is being used to illustrate" }
+        {
+          "target": "eWANHcSyL5s:c_0011",
+          "kind": "supports",
+          "rationale": "cellular memory is the mechanism Graham's case is being used to illustrate"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["cellular-memory", "pseudoscience", "transplant"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0014",
@@ -477,10 +497,12 @@
       "directTruth": 0.25,
       "rationale": "Post-transplant personality-change surveys do exist (Bunzel 1992, Pearsall 2002) but methodology is weak: small self-report samples, confirmation bias, and mundane alternative explanations (immunosuppressants, near-death experience effects) are never controlled for.",
       "dependencies": [
-        { "target": "eWANHcSyL5s:c_0013", "kind": "supports" }
+        {
+          "target": "eWANHcSyL5s:c_0013",
+          "kind": "supports"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["cellular-memory", "transplant-research"]
+      "hostStance": "asserts"
     },
     {
       "id": "eWANHcSyL5s:c_0015",
@@ -512,8 +534,7 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The host (AJ) explicitly frames these as 'campfire stories' without debunking, which is a meta-observation directly attested in the closing remarks.",
-      "hostStance": "asserts",
-      "tags": ["format", "campfire-story", "meta"]
+      "hostStance": "asserts"
     }
   ]
 }

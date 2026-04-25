@@ -18,7 +18,6 @@ function entry(
     directTruth: partial.directTruth ?? null,
     derivedTruth: partial.derivedTruth ?? null,
     truthSource: partial.truthSource ?? "uncalibrated",
-    tags: partial.tags ?? [],
   };
 }
 
@@ -28,15 +27,7 @@ describe("matchesTopic", () => {
     expect(matchesTopic(entry({ id: "a", videoId: "v" }), "   ")).toBe(true);
   });
 
-  it("matches an explicit tag substring", () => {
-    const c = entry({ id: "a", videoId: "v", tags: ["ufo", "area-51"] });
-    expect(matchesTopic(c, "ufo")).toBe(true);
-    expect(matchesTopic(c, "area")).toBe(true);
-    expect(matchesTopic(c, "UFO")).toBe(true);  // case-insensitive
-    expect(matchesTopic(c, "zzz")).toBe(false);
-  });
-
-  it("falls back to entity canonicals when tags are empty", () => {
+  it("matches entity canonicals", () => {
     const c = entry({
       id: "a",
       videoId: "v",
@@ -66,7 +57,6 @@ describe("matchesTopic", () => {
     const c = entry({
       id: "a",
       videoId: "v",
-      tags: ["ufo"],
       entities: ["organization:cia"],
       kind: "empirical",
     });

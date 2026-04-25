@@ -3,6 +3,7 @@
   "transcriptId": "_0n1Q0CV-3A",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "_0n1Q0CV-3A:c_0001",
@@ -27,7 +28,6 @@
       "confidence": 0.95,
       "directTruth": 0.98,
       "rationale": "Standard definition within the alchemical tradition — lapis philosophorum. The definitional claim is uncontroversial; whether the object exists or grants those powers is separate.",
-      "tags": ["philosophers-stone", "alchemy", "definition"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -53,7 +53,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Newton's voluminous alchemical papers (Keynes collection, Cambridge; and Chymistry of Isaac Newton Project) document decades of alchemical research, including his translations of the Tabula Smaragdina. Dobbs's 'Foundations of Newton's Alchemy' (1975) is the canonical source.",
-      "tags": ["isaac-newton", "alchemy", "emerald-tablet"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -79,7 +78,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "The Tabula Smaragdina's earliest attestation is in the Arabic 'Kitab Sirr al-Khaliqa' (~8th-9th century CE); later translated into Latin by the 12th century. Alchemical canonicity confirmed by Principe, Newman, and Holmyard.",
-      "tags": ["emerald-tablet", "hermetic", "alchemy"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -114,7 +112,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Standard Egyptological description of Djehuty / Thoth, lunar deity of scribes, moon, wisdom, magic (Wilkinson 'Complete Gods and Goddesses of Ancient Egypt', 2003). Widely attested in the Pyramid Texts and Book of the Dead.",
-      "tags": ["thoth", "egyptian-mythology"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -149,7 +146,6 @@
       "confidence": 0.9,
       "directTruth": 0.02,
       "rationale": "Atlantis as described by Plato (Timaeus, Critias) is widely understood by historians to be a literary construct, not a real place; the 36,000-year-ago-Atlantean-origin-of-Thoth framing comes from Dr Maurice Doreal's 'Emerald Tablets of Thoth the Atlantean' (1939), not from mainstream Egyptology. Host later debunks this source.",
-      "tags": ["atlantis", "thoth", "speculation", "pseudo-history"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -191,11 +187,14 @@
       "confidence": 0.85,
       "directTruth": 0.15,
       "rationale": "Younger Dryas (c. 12,900-11,700 years ago) is a real climatic event with evidence of rapid cooling and possible megafauna extinction. The causal link to an 'Atlantis destruction' narrative is popularized by Graham Hancock and is rejected by mainstream archaeology.",
-      "tags": ["atlantis", "younger-dryas", "speculation"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "_0n1Q0CV-3A:c_0005", "kind": "supports", "rationale": "Shared Atlantis / ancient-civilization framing." }
+        {
+          "target": "_0n1Q0CV-3A:c_0005",
+          "kind": "supports",
+          "rationale": "Shared Atlantis / ancient-civilization framing."
+        }
       ]
     },
     {
@@ -229,7 +228,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The Hellenistic syncretism of Hermes (messenger-god) with Thoth is standard — 'Hermes Trismegistus' appears in Greco-Roman Egyptian sources (Fowden 'The Egyptian Hermes', 1986). Attribution of the Tabula Smaragdina to him is pseudepigraphic.",
-      "tags": ["hermes-trismegistus", "syncretism", "hermetica"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -256,7 +254,6 @@
       "confidence": 0.75,
       "directTruth": 0.2,
       "rationale": "The Apollonius-finding-the-tablet story originates in medieval Arabic pseudepigraphy (Balinus / pseudo-Apollonius in 'Sirr al-Khaliqa'). Apollonius himself was a real first-century Neopythagorean figure, but the corpse-and-cave discovery is legendary.",
-      "tags": ["apollonius", "emerald-tablet", "legend"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -292,7 +289,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Claude Doggins (aka 'Maurice Doreal') did publish 'The Emerald Tablets of Thoth-The-Atlantean' in 1939 and founded the Brotherhood of the White Temple (Colorado). Whether he 'discovered' genuine ancient tablets is a separate claim (host later debunks).",
-      "tags": ["doreal", "brotherhood-white-temple", "emerald-tablets"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -337,12 +333,19 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Claude Doggins biography is documented in skeptical literature on UFO/occult authors (Kelly 'Pulp Mythologies', 2016). Necronomicon plagiarism claim is standard critique — specifically noted as Doreal's 'Maskim Xul' passages echoing Lovecraft's 'Nameless City'. The Necronomicon itself is Lovecraft's own fiction, which is why this is debunking.",
-      "tags": ["debunk", "doreal", "doggins", "lovecraft"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "_0n1Q0CV-3A:c_0009", "kind": "contradicts", "rationale": "[debunks] Undermines Doreal's credentials and the origin of his text." },
-        { "target": "_0n1Q0CV-3A:c_0005", "kind": "contradicts", "rationale": "[debunks] Collapses the Atlantean-origin narrative which sourced from Doreal." }
+        {
+          "target": "_0n1Q0CV-3A:c_0009",
+          "kind": "contradicts",
+          "rationale": "[debunks] Undermines Doreal's credentials and the origin of his text."
+        },
+        {
+          "target": "_0n1Q0CV-3A:c_0005",
+          "kind": "contradicts",
+          "rationale": "[debunks] Collapses the Atlantean-origin narrative which sourced from Doreal."
+        }
       ]
     },
     {
@@ -368,11 +371,14 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "The cab-driving / no-passport / 'astral travel' evasion is reported in skeptical profiles of Doreal. Host's framing that 'the passport verifies this' is slightly mangled — what verifies is absence of entry stamps.",
-      "tags": ["debunk", "doreal", "astral-travel"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "_0n1Q0CV-3A:c_0010", "kind": "supports", "rationale": "Additional evidence Doreal was a fabulist." }
+        {
+          "target": "_0n1Q0CV-3A:c_0010",
+          "kind": "supports",
+          "rationale": "Additional evidence Doreal was a fabulist."
+        }
       ]
     },
     {
@@ -406,7 +412,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "'The Book of Aquarius' was indeed posted online around 2011 by an anonymous author, claiming to decode historical alchemical recipes in plain language; it circulated on occult forums. Whether its claimed method works is a separate claim — see c_0013.",
-      "tags": ["book-of-aquarius", "alchemy", "online"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -448,7 +453,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Hennig Brand's 1669 discovery of phosphorus via urine reduction is well-documented in the history of chemistry (Emsley 'The 13th Element', 2000). Brand is the first person credited with discovering an element since antiquity.",
-      "tags": ["hennig-brand", "phosphorus", "chemistry-history"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -475,7 +479,6 @@
       "confidence": 0.85,
       "directTruth": 0.05,
       "rationale": "Nicholas Flamel was a real 14th-century Parisian scribe who became posthumously associated with alchemy in 17th-century pseudepigraphic works. Claims of his immortality are legend — contemporary burial records and the Flamel house in Paris are preserved.",
-      "tags": ["nicholas-flamel", "alchemy", "legend"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -502,13 +505,24 @@
       ],
       "confidence": 0.9,
       "rationale": "Explicit host verdict. Separates the three artifacts: ancient Tabula Smaragdina (real, legendary origin); Doreal's book (plagiarism); Book of Aquarius (real document, unproven efficacy). Opinion claim about the overall evaluation — omit directTruth because it aggregates more specific empirical claims judged above.",
-      "tags": ["verdict", "doreal", "emerald-tablet"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "_0n1Q0CV-3A:c_0003", "kind": "supports", "rationale": "Ancient tablet is real." },
-        { "target": "_0n1Q0CV-3A:c_0010", "kind": "supports", "rationale": "Doreal plagiarism." },
-        { "target": "_0n1Q0CV-3A:c_0012", "kind": "supports", "rationale": "Book of Aquarius existence." }
+        {
+          "target": "_0n1Q0CV-3A:c_0003",
+          "kind": "supports",
+          "rationale": "Ancient tablet is real."
+        },
+        {
+          "target": "_0n1Q0CV-3A:c_0010",
+          "kind": "supports",
+          "rationale": "Doreal plagiarism."
+        },
+        {
+          "target": "_0n1Q0CV-3A:c_0012",
+          "kind": "supports",
+          "rationale": "Book of Aquarius existence."
+        }
       ]
     }
   ]

@@ -3,6 +3,7 @@
   "transcriptId": "LQJs8BHtTXg",
   "generatedAt": "2026-04-22T12:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b2-agent0",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "LQJs8BHtTXg:c_0001",
@@ -13,7 +14,9 @@
         "location:mount shasta",
         "location:northern california"
       ],
-      "relationships": ["r_0001"],
+      "relationships": [
+        "r_0001"
+      ],
       "evidence": [
         {
           "transcriptId": "LQJs8BHtTXg",
@@ -27,7 +30,6 @@
       "confidence": 0.98,
       "directTruth": 0.95,
       "rationale": "Mount Shasta's altitude (14,179 ft), location in northern California, and status as a stratovolcano that produces orographic weather are all well-documented geographic facts independent of this episode.",
-      "tags": ["mount-shasta", "geography", "volcano"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -54,7 +56,6 @@
       ],
       "confidence": 0.95,
       "rationale": "This is the video's framing thesis - that Shasta uniquely clusters multiple paranormal phenomena. Omitting directTruth because 'most mysterious place on earth' is a subjective, unfalsifiable superlative rather than a testable fact; Shasta is a real hot-spot for such reports but the 'more than anywhere else' framing is marketing, not geography.",
-      "tags": ["mount-shasta", "paranormal", "thesis"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -82,7 +83,6 @@
       "confidence": 0.92,
       "directTruth": 0.8,
       "rationale": "Archaeological evidence for approximately 10,000-year human presence in the Shasta region is consistent with the broader Paleo-Indian record for northern California. The 'longest-occupied in North America' superlative is weaker - many sites are older - which pulls directTruth down from higher.",
-      "tags": ["mount-shasta", "native-american", "archaeology"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -119,7 +119,6 @@
       "confidence": 0.85,
       "directTruth": 0.25,
       "rationale": "Native giant legends are real; the specific '1930 eight-foot skeleton in newspapers' trope belongs to a broader genre of debunked early-20th-century giant-skeleton stories that typically traced to sensational filler or misidentified animal bones. Low directTruth reflects how reliably these accounts collapse under primary-source scrutiny.",
-      "tags": ["giants", "native-legend", "nephilim"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -135,7 +134,9 @@
         "date_time:1904",
         "organization:gold mining operation"
       ],
-      "relationships": ["r_0011"],
+      "relationships": [
+        "r_0011"
+      ],
       "evidence": [
         {
           "transcriptId": "LQJs8BHtTXg",
@@ -157,7 +158,6 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "No corroborating geology, archaeology, or independent discovery of any such tunnel-city exists. The story traces entirely to JC Brown's later lectures, and the host himself presents 2017 research suggesting Brown was a hoaxer. Low directTruth captures the near-complete absence of evidentiary support.",
-      "tags": ["jc-brown", "lemuria", "lost-city", "hollow-earth"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -185,7 +185,6 @@
       "confidence": 0.7,
       "directTruth": 0.05,
       "rationale": "Host frames this as one explanation people have offered for Brown's no-show, alongside 'simply a fraud' and 'taken by a mysterious machine'. The secret-organization / Illuminati framing is classic conspiracy narrative with no named witnesses, no paper trail, no body. Host presents it to undercut it, not endorse it.",
-      "tags": ["jc-brown", "conspiracy", "illuminati"],
       "inVerdictSection": false,
       "hostStance": "denies",
       "dependencies": [
@@ -207,7 +206,10 @@
         "location:mount shasta",
         "location:telos"
       ],
-      "relationships": ["r_0055", "r_0048"],
+      "relationships": [
+        "r_0055",
+        "r_0048"
+      ],
       "evidence": [
         {
           "transcriptId": "LQJs8BHtTXg",
@@ -229,7 +231,6 @@
       "confidence": 0.95,
       "directTruth": 0.02,
       "rationale": "Lemuria was a 19th-century biological hypothesis for Madagascar-India lemur distribution, abandoned once plate tectonics explained the pattern. Sunken-continent and inside-the-mountain versions are theosophical fiction (Blavatsky, Churchward). Near-zero directTruth because continental geology flatly rules out a sunken Pacific landmass within the described timeframe.",
-      "tags": ["lemuria", "atlantis", "telos", "lost-civilization"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -255,7 +256,6 @@
       ],
       "confidence": 0.85,
       "rationale": "This is a specific quantitative ranking cited without a named source. 'Top 300, ranked 13th' is a suspiciously precise figure that appears widely repeated in paranormal blogs without primary-source backing. Omitting directTruth because the base methodology - what counts as a hot spot - is undefined.",
-      "tags": ["ufo", "mount-shasta", "ranking"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -283,7 +283,6 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "Eyewitness reports of objects vanishing into terrain are poorly corroborated - no radar, no photographs of the ingress, no physical trace. More mundane explanations (objects flying behind the ridgeline, lenticular cloud illusions, distance misjudgment against a featureless snow face) fit the reports without requiring a portal.",
-      "tags": ["ufo", "portal", "mount-shasta"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -328,7 +327,6 @@
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "Host presents Cendoni's 2017 research and notes that Cendoni himself is a hollow-earth believer, not a skeptic - which raises the credibility of the adverse finding. The exact connection between Bodie's residence and hoaxing is circumstantial rather than a confession, so 0.6 reflects 'compelling but not definitive' - the level the host himself endorses.",
-      "tags": ["jc-brown", "debunk", "hoax", "lemuria"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -358,7 +356,6 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Carl Landers is a documented 1999 missing-hiker case on Mount Shasta, covered in news reports and SAR records. The fact of his disappearance is well-attested; the 'wide open field, no fall possible' framing in the video is selective - the actual terrain and circumstances allow mundane explanations (fall into tree well, sudden weather). 0.75 reflects the disappearance being real without endorsing the paranormal framing.",
-      "tags": ["missing-person", "mount-shasta", "carl-landers"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -385,7 +382,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Lenticular clouds form routinely over isolated tall peaks like Shasta and are a documented meteorological phenomenon. Their disc shape has been confirmed as the source of countless flying-saucer reports since at least the 1940s. The host endorses this as an explanation in the verdict section.",
-      "tags": ["ufo", "debunk", "lenticular-clouds", "meteorology"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -416,7 +412,6 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "NASA magnetic-reconnection X-points are a real plasma-physics phenomenon in the magnetosphere, but they are not traversable portals, not located on mountainsides, and have no mechanism for transporting macroscopic matter. The claim conflates a real space-weather concept with science-fictional passage. The host himself hedges this as 'a stretch'.",
-      "tags": ["nasa", "x-point", "magnetism", "portal"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -446,7 +441,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Guy Ballard (1878-1939) and the founding of the I AM Activity after his claimed 1930 Shasta encounter with Saint Germain are documented religious history. The movement is a real organization with documented membership and surviving reading rooms. The historical-founding facts are solid; only Ballard's supernatural claims remain unverifiable.",
-      "tags": ["i-am-movement", "guy-ballard", "saint-germain", "religion"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     }

@@ -3,13 +3,18 @@
   "transcriptId": "VVMpple3CJc",
   "generatedAt": "2026-04-21T19:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "VVMpple3CJc:c_0001",
       "videoId": "VVMpple3CJc",
       "text": "An Iraqi intelligence report told Saddam Hussein that the FM transmitter in Khafji was broadcasting subliminal surrender messages.",
       "kind": "historical",
-      "entities": ["person:saddam hussein", "facility:fm transmitter", "location:kafi"],
+      "entities": [
+        "person:saddam hussein",
+        "facility:fm transmitter",
+        "location:kafi"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -24,15 +29,17 @@
       "confidence": 0.7,
       "directTruth": 0.1,
       "rationale": "The scene is presented as a dramatic reconstruction by the host and is not sourced to any declassified Iraqi intelligence document, post-war interrogation, or mainstream Gulf War history. The Iraqi 5th Mechanized Division's assault on Khafji is real, but its documented motivation was to provoke a costly ground engagement, not to destroy a subliminal transmitter.",
-      "hostStance": "asserts",
-      "tags": ["khafji", "gulf-war", "mind-control"]
+      "hostStance": "asserts"
     },
     {
       "id": "VVMpple3CJc:c_0002",
       "videoId": "VVMpple3CJc",
       "text": "Saddam Hussein ordered the Khafji transmitter destroyed within 3 days.",
       "kind": "historical",
-      "entities": ["person:saddam hussein", "facility:fm transmitter"],
+      "entities": [
+        "person:saddam hussein",
+        "facility:fm transmitter"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -48,15 +55,22 @@
       "directTruth": 0.08,
       "rationale": "Gulf War historians (e.g. Michael Gordon and Bernard Trainor's 'The Generals' War') describe the Khafji offensive as a conventional attempt to draw Coalition ground forces, with no documentation of an anti-transmitter destruction order.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0001", "kind": "presupposes" }],
-      "tags": ["khafji", "hussein"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0001",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0003",
       "videoId": "VVMpple3CJc",
       "text": "In 1957 a hidden movie-theater subliminal-ad experiment made popcorn sales jump 58%.",
       "kind": "historical",
-      "entities": ["location:new jersey", "technology:subliminal advertising"],
+      "entities": [
+        "location:new jersey",
+        "technology:subliminal advertising"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -72,15 +86,22 @@
       "directTruth": 0.08,
       "rationale": "James Vicary publicly admitted in 1962 (Advertising Age) that the 58% popcorn-jump study was a fabrication intended to promote his consulting business; subsequent controlled replications (e.g. Moore 1982 JCR review) found no behavioral effect from subliminal flashes. The episode is real as a PR event, false as a scientific demonstration.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0017", "kind": "supports" }],
-      "tags": ["subliminal", "vicary"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0017",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0004",
       "videoId": "VVMpple3CJc",
       "text": "Edward Bernays was a pioneer in public relations and propaganda.",
       "kind": "historical",
-      "entities": ["person:bernes", "person:edward bernay"],
+      "entities": [
+        "person:bernes",
+        "person:edward bernay"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -95,15 +116,18 @@
       "confidence": 0.98,
       "directTruth": 0.98,
       "rationale": "Bernays (1891-1995) is universally acknowledged as one of the founding figures of modern public relations; his books 'Crystallizing Public Opinion' (1923) and 'Propaganda' (1928) are foundational texts in the field.",
-      "hostStance": "asserts",
-      "tags": ["bernays", "pr"]
+      "hostStance": "asserts"
     },
     {
       "id": "VVMpple3CJc:c_0005",
       "videoId": "VVMpple3CJc",
       "text": "Bernays staged the 1929 'Torches of Freedom' Easter Parade cigarette stunt for the American Tobacco Company.",
       "kind": "historical",
-      "entities": ["person:bernes", "organization:american tobacco company", "event:easter parade"],
+      "entities": [
+        "person:bernes",
+        "organization:american tobacco company",
+        "event:easter parade"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -119,15 +143,22 @@
       "directTruth": 0.9,
       "rationale": "The 1929 'Torches of Freedom' campaign is documented in Bernays' own memoir 'Biography of an Idea' and in Larry Tye's biography 'The Father of Spin'; it is a canonical case study in PR curricula. The client (American Tobacco / George Washington Hill) is also verified.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0004", "kind": "elaborates" }],
-      "tags": ["bernays", "tobacco"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0004",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0006",
       "videoId": "VVMpple3CJc",
       "text": "Beech-Nut Packing hired Bernays to increase bacon sales by seeding a doctor-survey endorsement of hearty breakfasts.",
       "kind": "historical",
-      "entities": ["person:bernay", "organization:beachnut packing company"],
+      "entities": [
+        "person:bernay",
+        "organization:beachnut packing company"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -143,15 +174,23 @@
       "directTruth": 0.85,
       "rationale": "The Beech-Nut bacon-and-eggs campaign is one of the most widely cited examples in PR history, documented in Bernays' own memoirs and in Stuart Ewen's 'PR! A Social History of Spin.' The mechanism (survey-funded through an intermediary, then seeded to newspapers) is well-attested; the specific 5,000-doctor figure comes from Bernays' self-account and may be embellished.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0004", "kind": "elaborates" }],
-      "tags": ["bernays", "bacon"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0004",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0007",
       "videoId": "VVMpple3CJc",
       "text": "Bernays flooded American media with false articles portraying Jacobo Arbenz as a dangerous communist.",
       "kind": "historical",
-      "entities": ["person:bernes", "person:arb", "organization:united fruit company"],
+      "entities": [
+        "person:bernes",
+        "person:arb",
+        "organization:united fruit company"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -167,15 +206,22 @@
       "directTruth": 0.85,
       "rationale": "Bernays' role for United Fruit in running an anti-Arbenz press campaign is documented in Stephen Schlesinger and Stephen Kinzer's 'Bitter Fruit' (1982) and in declassified State Department / CIA records. Arbenz's actual political orientation was democratic-reformist, not Soviet-aligned, though his land-reform program made him a Cold-War target. The 'it was a lie' characterization is broadly supportable.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0004", "kind": "elaborates" }],
-      "tags": ["bernays", "guatemala", "arbenz"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0004",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0008",
       "videoId": "VVMpple3CJc",
       "text": "The CIA launched Operation PBSUCCESS in 1954 to overthrow Arbenz.",
       "kind": "historical",
-      "entities": ["organization:cia", "location:guatemala"],
+      "entities": [
+        "organization:cia",
+        "location:guatemala"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -191,15 +237,22 @@
       "directTruth": 0.98,
       "rationale": "PBSUCCESS is fully declassified; the CIA formally acknowledged the operation in its 1997 document release. Arbenz was forced into exile on 27 June 1954, replaced by Carlos Castillo Armas.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0007", "kind": "elaborates" }],
-      "tags": ["cia", "guatemala", "coup"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0007",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0009",
       "videoId": "VVMpple3CJc",
       "text": "The US Army's Vietnam-era Squawk Box delivered 120 dB of sound at 2.5 miles.",
       "kind": "empirical",
-      "entities": ["technology:squawk box", "technology:sonic weapon"],
+      "entities": [
+        "technology:squawk box",
+        "technology:sonic weapon"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -214,15 +267,16 @@
       "confidence": 0.85,
       "directTruth": 0.2,
       "rationale": "Sound attenuates at roughly 6 dB per doubling of distance; a source would need to emit well over 200 dB to reach 120 dB at 2.5 miles, which is above the threshold of mechanical air rupture and not achievable with speaker systems from that era. Vietnam-era PSYOPS loudspeaker systems (e.g. helicopter-mounted HS-30 and AN/UIQ-4) operated at loud but far lower effective levels and were used for voice propaganda, not as sonic incapacitants.",
-      "hostStance": "asserts",
-      "tags": ["squawk-box", "vietnam", "psyops"]
+      "hostStance": "asserts"
     },
     {
       "id": "VVMpple3CJc:c_0010",
       "videoId": "VVMpple3CJc",
       "text": "Between 1967 and 1968 an estimated 30,000 Viet Cong surrendered to US forces because of Squawk Box-induced distress.",
       "kind": "historical",
-      "entities": ["technology:squawk box"],
+      "entities": [
+        "technology:squawk box"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -238,15 +292,22 @@
       "directTruth": 0.25,
       "rationale": "The Chieu Hoi 'open arms' defector program did produce 150,000+ ralliers over its lifetime; the 1967-68 subset is in the right order of magnitude. But the causal link to a specific acoustic weapon is conspiracy-literature framing, not standard Vietnam War historiography, which credits leaflet drops, loudspeaker propaganda, amnesty offers, and battlefield pressure.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0009", "kind": "presupposes" }],
-      "tags": ["chieu-hoi", "vietnam"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0009",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0011",
       "videoId": "VVMpple3CJc",
       "text": "In 1961 Allan Frey discovered that pulsed microwaves cause people to hear sounds inside their heads.",
       "kind": "empirical",
-      "entities": ["person:alan frey", "technology:microwave technology"],
+      "entities": [
+        "person:alan frey",
+        "technology:microwave technology"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -262,15 +323,22 @@
       "directTruth": 0.95,
       "rationale": "The Frey microwave-auditory effect (Frey 1962, J. Applied Physiology 17:689) is a real and reproducible phenomenon caused by thermoelastic expansion of tissue near the inner ear. The frequency range is 200 MHz to 3 GHz (the host's transcript garbles this to '203,000 MHz' but the underlying phenomenon is correctly identified).",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0013", "kind": "supports" }],
-      "tags": ["frey-effect", "microwave"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0013",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0012",
       "videoId": "VVMpple3CJc",
       "text": "Soviet microwave researchers killed experimental subjects with 'microthermal' cooking effects.",
       "kind": "historical",
-      "entities": ["organization:soviets", "technology:microwave technology"],
+      "entities": [
+        "organization:soviets",
+        "technology:microwave technology"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -285,15 +353,18 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "Soviet bioeffects literature from the 1960s-70s (summarized in the 1976 DIA report 'Biological Effects of Electromagnetic Radiation') does document extensive non-thermal microwave research, but explicit deliberate-lethality claims appear only in conspiracy retellings. The Moscow Signal directed at the US embassy used non-thermal intensities. The 'cooked people' framing is not supported in the declassified primary literature.",
-      "hostStance": "asserts",
-      "tags": ["soviet", "microwave"]
+      "hostStance": "asserts"
     },
     {
       "id": "VVMpple3CJc:c_0013",
       "videoId": "VVMpple3CJc",
       "text": "J.F. Schapitz was a DoD scientist who demonstrated subliminal microwave hypnosis on a human subject.",
       "kind": "speculative",
-      "entities": ["person:jf schaetz", "organization:dod", "technology:microwave technology"],
+      "entities": [
+        "person:jf schaetz",
+        "organization:dod",
+        "technology:microwave technology"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -309,15 +380,22 @@
       "directTruth": 0.08,
       "rationale": "The Schapitz experiments are a fixture of mind-control folklore (original source: Walter Bowart, 'Operation Mind Control', 1978) but Schapitz himself has no verifiable DoD employment record, no peer-reviewed publications, and no FOIA-released case file confirming the experiments described. The soda-store anecdote should be regarded as unverified.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0011", "kind": "elaborates" }],
-      "tags": ["schapitz", "mind-control"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0011",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0014",
       "videoId": "VVMpple3CJc",
       "text": "Eldon Byrd's 1980 DoD research triggered 80% endogenous opioid release in chick brains using brainwave-synchronized electromagnetic fields.",
       "kind": "empirical",
-      "entities": ["person:dr elden bird", "organization:dod"],
+      "entities": [
+        "person:dr elden bird",
+        "organization:dod"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -333,15 +411,22 @@
       "directTruth": 0.45,
       "rationale": "Eldon Byrd was a real Navy researcher who gave widely-quoted interviews (Jim Marrs, Nexus magazine) claiming exactly these chick-brain opioid and rat-histamine effects from ELF entrainment. The program's existence is supportable; the specific 80% figure comes entirely from Byrd's later interviews, not from contemporaneous peer-reviewed publications, so the numerical precision should be treated as narrator-sourced rather than verified.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0017", "kind": "supports" }],
-      "tags": ["byrd", "elf", "brainwave"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0017",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0015",
       "videoId": "VVMpple3CJc",
       "text": "US Patent 5,159,703 was issued to Silent Sounds Incorporated for a silent subliminal presentation system.",
       "kind": "historical",
-      "entities": ["organization:silent sounds inc", "technology:microwave technology"],
+      "entities": [
+        "organization:silent sounds inc",
+        "technology:microwave technology"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -356,15 +441,17 @@
       "confidence": 0.98,
       "directTruth": 0.98,
       "rationale": "US Patent 5,159,703 (Lowery, 1992) is a real issued patent assigned to Silent Sounds Inc.; the patent text on USPTO is publicly searchable. The existence of the patent itself is uncontroversial.",
-      "hostStance": "asserts",
-      "tags": ["silent-sounds", "patent"]
+      "hostStance": "asserts"
     },
     {
       "id": "VVMpple3CJc:c_0016",
       "videoId": "VVMpple3CJc",
       "text": "Silent Sounds Inc.'s subliminal-emotion broadcasting system was used throughout Operation Desert Storm.",
       "kind": "historical",
-      "entities": ["organization:silent sounds inc", "event:operation desert storm"],
+      "entities": [
+        "organization:silent sounds inc",
+        "event:operation desert storm"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -380,15 +467,22 @@
       "directTruth": 0.2,
       "rationale": "The claim is Oliver Lowery's own 1993 marketing statement (ITV newsletter), recycled through Judy Wall and thence throughout conspiracy media. No US military operational record, no leaked communications intelligence, no Iraqi post-war intelligence debrief substantiates actual battlefield use. Patent plus promotional claim does not establish operational deployment.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0015", "kind": "presupposes" }],
-      "tags": ["silent-sounds", "desert-storm"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0015",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0017",
       "videoId": "VVMpple3CJc",
       "text": "A signal mimicking a hopelessness-brainwave frequency was embedded in Coalition radio broadcasts over Iraqi forces.",
       "kind": "speculative",
-      "entities": ["organization:silent sounds inc", "location:k g"],
+      "entities": [
+        "organization:silent sounds inc",
+        "location:k g"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -405,16 +499,20 @@
       "rationale": "No declassified Coalition PSYOPS record references a brainwave-carrier signal. 'Brainwave frequencies' in the single-digit Hz range cannot be transmitted as an audio sub-modulation on FM radio and entrain neural oscillations through the auditory pathway - this is not how EEG coherence with external stimuli works. The mechanism proposed is physically implausible.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "VVMpple3CJc:c_0016", "kind": "elaborates" }
-      ],
-      "tags": ["brainwave", "psyops"]
+        {
+          "target": "VVMpple3CJc:c_0016",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0018",
       "videoId": "VVMpple3CJc",
       "text": "Entire Iraqi battalions laid down their arms because of Coalition subliminal broadcasts.",
       "kind": "empirical",
-      "entities": ["organization:iraqi troops"],
+      "entities": [
+        "organization:iraqi troops"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -430,16 +528,26 @@
       "directTruth": 0.05,
       "rationale": "Mass Iraqi surrenders in 1991 are well documented, but the causal explanation in mainstream Gulf War historiography is leaflet drops (29 million, the largest PSYOPS leaflet campaign in history), Coalition air supremacy shattering morale, and a conscript army with no will to fight. The subliminal-broadcast causal chain is unsupported.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0017", "kind": "presupposes" }],
-      "tags": ["iraq", "surrender"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0017",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0019",
       "videoId": "VVMpple3CJc",
       "text": "Remote-controlled nervous-system incapacitation weapons exist.",
       "kind": "empirical",
-      "entities": ["organization:us government officials", "person:charles bernard"],
-      "relationships": ["r_0152", "r_0154"],
+      "entities": [
+        "organization:us government officials",
+        "person:charles bernard"
+      ],
+      "relationships": [
+        "r_0152",
+        "r_0154"
+      ],
       "evidence": [
         {
           "transcriptId": "VVMpple3CJc",
@@ -455,18 +563,30 @@
       "rationale": "Former Navy weapons research director Charles Bernard, speaking on the record, flatly denies any such working system exists. DARPA's periodic Active Denial and similar non-lethal-weapon programs have produced only heat-pain repulsion effects, not nervous-system control. Bernard's on-record position is consistent with the absence of any declassified program file describing a functioning remote neural weapon.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "VVMpple3CJc:c_0017", "kind": "contradicts", "rationale": "[debunks] If the foundational technology is denied by the Navy official who would know, the downstream Khafji deployment cannot have occurred." },
-        { "target": "VVMpple3CJc:c_0018", "kind": "contradicts", "rationale": "[debunks] Mass surrenders have a well-documented alternative explanation (leaflets, air supremacy) and do not require an inoperative technology." }
-      ],
-      "tags": ["denial", "bernard", "non-lethal-weapons"]
+        {
+          "target": "VVMpple3CJc:c_0017",
+          "kind": "contradicts",
+          "rationale": "[debunks] If the foundational technology is denied by the Navy official who would know, the downstream Khafji deployment cannot have occurred."
+        },
+        {
+          "target": "VVMpple3CJc:c_0018",
+          "kind": "contradicts",
+          "rationale": "[debunks] Mass surrenders have a well-documented alternative explanation (leaflets, air supremacy) and do not require an inoperative technology."
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0020",
       "videoId": "VVMpple3CJc",
       "text": "On March 1, 1991, one day after the ceasefire, a revolt against Saddam Hussein broke out in Basra.",
       "kind": "historical",
-      "entities": ["person:saddam hussein", "location:bazra"],
-      "relationships": ["r_0155"],
+      "entities": [
+        "person:saddam hussein",
+        "location:bazra"
+      ],
+      "relationships": [
+        "r_0155"
+      ],
       "evidence": [
         {
           "transcriptId": "VVMpple3CJc",
@@ -480,15 +600,16 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "The 1991 Iraqi Shia uprising in the south (and Kurdish uprising in the north) are thoroughly documented events that began within days of the Gulf War ceasefire. Human Rights Watch and the UN have published detailed accounts of the uprising's suppression by Saddam's loyalist forces.",
-      "hostStance": "asserts",
-      "tags": ["iraq", "uprising"]
+      "hostStance": "asserts"
     },
     {
       "id": "VVMpple3CJc:c_0021",
       "videoId": "VVMpple3CJc",
       "text": "The CIA operated the 'Voice of Free Iraq' radio station from Saudi Arabia to incite the post-ceasefire uprising.",
       "kind": "historical",
-      "entities": ["organization:cia"],
+      "entities": [
+        "organization:cia"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -504,16 +625,25 @@
       "directTruth": 0.8,
       "rationale": "The CIA-linked 'Voice of Free Iraq' broadcasts (and President Bush's concurrent public calls for Iraqis to overthrow Saddam) are documented in State Department records and in journalistic accounts by Jon Lee Anderson and Thomas Ricks. The fact that the US then failed to support the uprising militarily is one of the most-criticized episodes of the 1991 war.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "VVMpple3CJc:c_0020", "kind": "supports" }],
-      "tags": ["cia", "iraq", "propaganda"]
+      "dependencies": [
+        {
+          "target": "VVMpple3CJc:c_0020",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "VVMpple3CJc:c_0022",
       "videoId": "VVMpple3CJc",
       "text": "A HAARP-style facility was built in Fairbanks, Alaska the year after Desert Storm as a follow-on covert-influence program.",
       "kind": "speculative",
-      "entities": ["organization:darpa"],
-      "relationships": ["r_0156", "r_0157"],
+      "entities": [
+        "organization:darpa"
+      ],
+      "relationships": [
+        "r_0156",
+        "r_0157"
+      ],
       "evidence": [
         {
           "transcriptId": "VVMpple3CJc",
@@ -530,9 +660,11 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "VVMpple3CJc:c_0017", "kind": "elaborates" }
-      ],
-      "tags": ["haarp", "speculation"]
+        {
+          "target": "VVMpple3CJc:c_0017",
+          "kind": "elaborates"
+        }
+      ]
     }
   ]
 }

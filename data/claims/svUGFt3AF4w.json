@@ -3,13 +3,20 @@
   "transcriptId": "svUGFt3AF4w",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b4-resume",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "svUGFt3AF4w:c_0001",
       "videoId": "svUGFt3AF4w",
       "text": "In 12th-century Woolpit, Suffolk, a farmer discovered two children with green skin who spoke an unknown language and wore strange clothes — the case remains unsolved.",
       "kind": "historical",
-      "entities": ["location:woolpit", "location:suffolk county", "location:england", "date_time:12th century", "person:children"],
+      "entities": [
+        "location:woolpit",
+        "location:suffolk county",
+        "location:england",
+        "date_time:12th century",
+        "person:children"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -24,7 +31,6 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "The Woolpit green-children tale is documented by two 12th-century chroniclers (Ralph of Coggeshall and William of Newburgh), giving it strong historical attestation as a reported event. The underlying facts (some children appeared, were strange, one died) are plausible historical occurrences; the supernatural interpretation is not. Moderate directTruth for the event-level claim.",
-      "tags": ["woolpit", "green-children", "medieval"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -33,7 +39,11 @@
       "videoId": "svUGFt3AF4w",
       "text": "The Woolpit green children came from an underground village called Saint Martin's Land where all inhabitants had green skin and lived in perpetual twilight.",
       "kind": "speculative",
-      "entities": ["location:saint martin's land", "person:agnes", "location:woolpit"],
+      "entities": [
+        "location:saint martin's land",
+        "person:agnes",
+        "location:woolpit"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -48,7 +58,6 @@
       "confidence": 0.8,
       "directTruth": 0.05,
       "rationale": "Agnes's reported origin story is second-hand from chroniclers. Host later debunks this: Fornham St Martin's Church near Woolpit suggests 'Saint Martin's Land' was a Flemish refugee's description of her origin village. The literal underground-village interpretation has no supporting evidence and is inconsistent with historical geography.",
-      "tags": ["woolpit", "saint-martins-land", "folklore"],
       "inVerdictSection": false,
       "hostStance": "steelman"
     },
@@ -57,7 +66,13 @@
       "videoId": "svUGFt3AF4w",
       "text": "The Woolpit green children were most likely Flemish refugee children fleeing King Henry II's persecution of Flemish settlers during the 1173 Great Revolt, with green skin from iron-deficiency chlorosis (the 'green sickness').",
       "kind": "empirical",
-      "entities": ["nationality_or_ethnicity:flemish", "date_time:1173", "event:great revolt", "person:king henry", "location:woolpit"],
+      "entities": [
+        "nationality_or_ethnicity:flemish",
+        "date_time:1173",
+        "event:great revolt",
+        "person:king henry",
+        "location:woolpit"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -80,7 +95,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "This is the mainstream historiographical explanation (Clark & Lapworth; Paul Harris 1998 Fortean Times). The Battle of Fornham (1173), Henry II's persecution of Flemish settlers, and chlorosis (hypochromic anemia causing greenish skin pallor) are all documented historical facts. The combination provides a naturalistic explanation for every element of the legend. Still speculative in specifics, hence 0.7 not higher.",
-      "tags": ["woolpit", "flemish", "chlorosis", "historical-explanation"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -101,14 +115,19 @@
       "videoId": "svUGFt3AF4w",
       "text": "The Fornham church near Woolpit was called Saint Martin's Church, making it likely that 'Saint Martin's Land' was simply the girl's Flemish village of origin near Fornham, not an underground world.",
       "kind": "empirical",
-      "entities": ["location:fornum", "location:church of fornham", "person:saint martin", "location:saint martin's land"],
+      "entities": [
+        "location:fornum",
+        "location:church of fornham",
+        "person:saint martin",
+        "location:saint martin's land"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "svUGFt3AF4w",
           "charStart": 17650,
           "charEnd": 17800,
-          "timeStart": 1064.0,
+          "timeStart": 1064,
           "timeEnd": 1076.4,
           "quote": "the great revolt and the church\nof fornham was called saint martin's\nchurch when the girl said she was from\nsaint martin's land this is likely what\nsh"
         }
@@ -116,7 +135,6 @@
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "Fornham St Martin is a real Suffolk village, named for its medieval church. The etymological match between 'Saint Martin's Land' in the girl's testimony and the real parish is strong. This grounds her origin story in English geography rather than folklore.",
-      "tags": ["woolpit", "saint-martins", "etymology"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -132,7 +150,13 @@
       "videoId": "svUGFt3AF4w",
       "text": "On May 26, 1828, a teenage boy calling himself Kaspar Hauser appeared in Nuremberg, Germany, unable to walk or speak properly and carrying letters claiming he had been raised in total isolation.",
       "kind": "historical",
-      "entities": ["date_time:may 26 1828", "location:nuremberg", "location:nuremberg germany", "person:casper hauser", "person:teenage boy"],
+      "entities": [
+        "date_time:may 26 1828",
+        "location:nuremberg",
+        "location:nuremberg germany",
+        "person:casper hauser",
+        "person:teenage boy"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -147,7 +171,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Kaspar Hauser's May 26, 1828 appearance in Nuremberg is a well-documented historical event, with contemporary police records, letters, and eyewitness accounts. His initial inability to walk/speak fluently and the two letters he carried are in Nuremberg municipal archives.",
-      "tags": ["kaspar-hauser", "1828", "nuremberg"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -156,7 +179,12 @@
       "videoId": "svUGFt3AF4w",
       "text": "On December 14, 1833, Kaspar Hauser arrived home with a massive chest wound, claiming a stranger in a park had stabbed him; he died three days later.",
       "kind": "historical",
-      "entities": ["date_time:1833", "date_time:december 14th", "person:casper hauser", "event:murder"],
+      "entities": [
+        "date_time:1833",
+        "date_time:december 14th",
+        "person:casper hauser",
+        "event:murder"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -171,7 +199,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Hauser's stabbing on Dec 14, 1833 and death on Dec 17, 1833 are well-documented historical facts, recorded in contemporary Ansbach police files and medical records. His own account of a stranger-attacker is what's preserved.",
-      "tags": ["kaspar-hauser", "1833", "death"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -180,7 +207,10 @@
       "videoId": "svUGFt3AF4w",
       "text": "Kaspar Hauser stabbed himself and staged the scene — there was only one set of footprints (his) in the snow, and the note found at the scene had his characteristic corner-to-corner fold and grammatical errors.",
       "kind": "empirical",
-      "entities": ["person:casper hauser", "person:hauser"],
+      "entities": [
+        "person:casper hauser",
+        "person:hauser"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -195,7 +225,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "The single-footprint-in-snow detail and the note's characteristic fold are in the historical record. Modern forensic opinion on Hauser generally favors self-inflicted wound (possibly accidentally too deep). Host concludes 'it was thought that hauser attacked himself again but thrust the knife in too far.' Strong circumstantial case.",
-      "tags": ["kaspar-hauser", "self-inflicted", "forensic"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -211,7 +240,14 @@
       "videoId": "svUGFt3AF4w",
       "text": "A 2002 DNA test showed with 95 percent accuracy that Kaspar Hauser was related to Princess Josephine of Baden, whose mother was Stephanie de Beauharnais von Baden — supporting the lost-prince theory.",
       "kind": "empirical",
-      "entities": ["date_time:2002", "technology:dna", "person:casper hauser", "person:princess josephine of badden", "person:stephanie dibo dibuharnae von baden", "person:hauser"],
+      "entities": [
+        "date_time:2002",
+        "technology:dna",
+        "person:casper hauser",
+        "person:princess josephine of badden",
+        "person:stephanie dibo dibuharnae von baden",
+        "person:hauser"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -226,7 +262,6 @@
       "confidence": 0.75,
       "directTruth": 0.5,
       "rationale": "A 2002 LMU Munich DNA study did find mitochondrial matches between Hauser relics and Baden descendants with ~95% probability. But a 1996 Bavarian State Police / Univ. Münster test found non-matches, and the 2002 test has been contested for sample contamination. The true state is 'consistent with but not conclusive for' the Baden hypothesis. Host's framing is slightly too definitive.",
-      "tags": ["kaspar-hauser", "dna", "baden"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -235,7 +270,13 @@
       "videoId": "svUGFt3AF4w",
       "text": "Historian Otto Mittelstadt's 1876 research concluded Hauser was not the Prince of Baden, a finding confirmed by Fritz Trouts and by 1951's publication of the Grand Duchess's letters detailing the real prince's birth and death.",
       "kind": "historical",
-      "entities": ["date_time:1876", "date_time:1951", "person:historian otto middelstadt", "person:fritz trouts", "person:casper hauser"],
+      "entities": [
+        "date_time:1876",
+        "date_time:1951",
+        "person:historian otto middelstadt",
+        "person:fritz trouts",
+        "person:casper hauser"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -250,7 +291,6 @@
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "The historiographical record through ~1950 did reject the prince theory based on documentary evidence, with letters from Grand Duchess Stephanie being the strongest refutation. Host accurately reports this. The 2002 DNA test (prior claim) complicates but doesn't overturn the documentary record.",
-      "tags": ["kaspar-hauser", "prince", "debunk"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -266,7 +306,14 @@
       "videoId": "svUGFt3AF4w",
       "text": "In April 1922 two-year-old Pauline Picard went missing from her family farm in Brittany, France and was found a month later wandering in Cherbourg over 200 miles away.",
       "kind": "historical",
-      "entities": ["date_time:april 1922", "person:pauline picard", "person:two-year-old pauline picard", "location:brittany", "location:cherbourg", "location:france"],
+      "entities": [
+        "date_time:april 1922",
+        "person:pauline picard",
+        "person:two-year-old pauline picard",
+        "location:brittany",
+        "location:cherbourg",
+        "location:france"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -274,14 +321,13 @@
           "charStart": 13094,
           "charEnd": 13230,
           "timeStart": 787.68,
-          "timeEnd": 800.0,
+          "timeEnd": 800,
           "quote": " miracle a young girl\nwas found wandering around the town of\ncherbourg about 200 miles from brittany\nthe girl was scared alone and on fo"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The 1922 Pauline Picard case is documented in contemporary French press (Le Petit Parisien, L'Écho de Paris) and later crime historiography. The initial disappearance, the Cherbourg-found-girl, and the ~200 mile distance are in the public record.",
-      "tags": ["pauline-picard", "1922", "brittany"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -290,7 +336,11 @@
       "videoId": "svUGFt3AF4w",
       "text": "A few weeks after Pauline was returned, a farmer found a girl's body with Pauline's neatly folded clothes and a grown man's skull in a field near the Picard farm, indicating the returned girl was not the real Pauline.",
       "kind": "empirical",
-      "entities": ["person:pauline picard", "location:field", "location:farm"],
+      "entities": [
+        "person:pauline picard",
+        "location:field",
+        "location:farm"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -305,7 +355,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The field discovery with folded clothes and nearby skull is the pivot point of the Picard mystery and is documented in French case records. The geography and artifact list are what makes this case enduringly unsolved.",
-      "tags": ["pauline-picard", "body-found", "imposter"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -321,7 +370,12 @@
       "videoId": "svUGFt3AF4w",
       "text": "Local farmer Yves Martin confessed to Pauline Picard's murder before running off screaming and being committed to a lunatic asylum.",
       "kind": "historical",
-      "entities": ["person:yves martin", "person:pauline picard", "location:lunatic asylum", "event:murder"],
+      "entities": [
+        "person:yves martin",
+        "person:pauline picard",
+        "location:lunatic asylum",
+        "event:murder"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -336,7 +390,6 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "Yves Martin's confession and subsequent asylum commitment are in the case record. But the host notes 'no physical evidence was ever found that could link him to the murder'. A confession from someone immediately labeled insane is low-quality evidence — the case remained officially unsolved.",
-      "tags": ["pauline-picard", "yves-martin", "confession"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -345,7 +398,10 @@
       "videoId": "svUGFt3AF4w",
       "text": "The identity of the unknown girl that the Picard family briefly mistook for Pauline was never discovered — she barely spoke and died of measles in an orphanage a few months later.",
       "kind": "historical",
-      "entities": ["person:pauline picard", "location:orphanage"],
+      "entities": [
+        "person:pauline picard",
+        "location:orphanage"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -360,7 +416,6 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "The imposter-girl's fate at the orphanage dying of measles is documented in French regional records. Her identity was never established, keeping the case's central mystery unsolved — how did a second girl resembling Pauline appear 200 miles away?",
-      "tags": ["pauline-picard", "imposter", "unsolved"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -376,7 +431,10 @@
       "videoId": "svUGFt3AF4w",
       "text": "The Woolpit green children were Martian visitors to medieval England.",
       "kind": "speculative",
-      "entities": ["person:children", "location:woolpit"],
+      "entities": [
+        "person:children",
+        "location:woolpit"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -391,7 +449,6 @@
       "confidence": 0.7,
       "directTruth": 0.02,
       "rationale": "Heckle Fish's comedic alien interpretation is the pure-aliens take. Host explicitly rejects this in the verdict ('uh you mean the green martian children at planet mars uh unlikely'). No evidence; directTruth near zero for the literal claim.",
-      "tags": ["woolpit", "aliens", "comedy"],
       "inVerdictSection": false,
       "hostStance": "denies",
       "dependencies": [
@@ -407,7 +464,11 @@
       "videoId": "svUGFt3AF4w",
       "text": "Despite modern forensic and historical tools these three children's cases — Woolpit, Kaspar Hauser, and Pauline Picard — all remain officially unsolved with no definitive explanation.",
       "kind": "empirical",
-      "entities": ["location:woolpit", "person:casper hauser", "person:pauline picard"],
+      "entities": [
+        "location:woolpit",
+        "person:casper hauser",
+        "person:pauline picard"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -422,7 +483,6 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Factually correct: no case has a definitive, legally or scientifically closed resolution. Woolpit (interpretation disputed), Hauser (prince theory inconclusive, attacker unknown), Picard (killer never convicted, imposter never identified). Host's meta-claim is accurate.",
-      "tags": ["unsolved", "verdict"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

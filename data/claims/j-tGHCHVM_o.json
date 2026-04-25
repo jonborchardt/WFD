@@ -3,6 +3,7 @@
   "transcriptId": "j-tGHCHVM_o",
   "generatedAt": "2026-04-22T04:37:31.921Z",
   "generator": "claude-opus-4-7-plan3-b2",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "j-tGHCHVM_o:c_0001",
@@ -40,11 +41,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Markham's existence, Stanberry residence, and his tinkering project are documented via the news coverage and his Coast-to-Coast appearances. The 'time machine' framing is his own characterization; the underlying Jacob's Ladder experiment is real.",
-      "tags": [
-        "madman-markham",
-        "time-machine",
-        "missouri"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -84,12 +80,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The arrest and conviction are documented in AP wire reports and Missouri court records; the specific dates and sentence match contemporaneous news coverage.",
-      "tags": [
-        "madman-markham",
-        "arrest",
-        "king-city",
-        "felony"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0001",
@@ -124,11 +114,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Reproduces details from the AP wire account which are directly attributed to Stanberry PD Chief Tom Hampton.",
-      "tags": [
-        "stanberry-police",
-        "tom-hampton",
-        "transformers"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0002",
@@ -172,12 +157,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Audio of Bell's multiple Markham interviews is preserved in the Coast to Coast AM archive. The listener-donation response is verifiable from fan community records.",
-      "tags": [
-        "art-bell",
-        "coast-to-coast",
-        "madman-markham",
-        "radio"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0001",
@@ -210,12 +189,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Host explicitly flags an internet-circulated false detail and corrects it based on Markham's own on-air denial. Typed as [debunks] contradiction against the popular version of the story.",
-      "tags": [
-        "madman-markham",
-        "debunk",
-        "cat",
-        "couch"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0001",
@@ -250,12 +223,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Host cites Markham's own denial. The 1930 drowning-in-drum story appears in fan-community retellings but has no documentary basis.",
-      "tags": [
-        "madman-markham",
-        "debunk",
-        "1930",
-        "hoax"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0005",
@@ -297,11 +264,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Host personally verified Markham's current status. This is a simple empirical claim about a living person; directTruth is high but not absolute because the host declines to dox specifics.",
-      "tags": [
-        "madman-markham",
-        "alive",
-        "debunk"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0005",
@@ -336,12 +298,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Frank Tipler's 1974 cylinder solution and Gödel's rotating-universe solution are well-known closed-timelike-curve constructions in GR. Consensus: mathematically permitted, physically unrealized.",
-      "tags": [
-        "einstein",
-        "time-travel",
-        "general-relativity",
-        "tipler-cylinder"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -366,11 +322,6 @@
       "confidence": 0.7,
       "directTruth": 0.3,
       "rationale": "Attribution of a 'see through time' claim to Tesla appears in later Tesla-lore sources (esp. the alleged 1895 lab incident) without solid primary documentation. Low directTruth: the attribution is weakly supported.",
-      "tags": [
-        "tesla",
-        "electromagnetism",
-        "folklore"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -400,11 +351,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Orbital and galactic velocity figures are astronomical fact. Host's framing of the pop-culture objection is valid — fictional 'time machines' do typically hand-wave the spatial co-ordinate problem.",
-      "tags": [
-        "time-travel",
-        "relativity",
-        "physics"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -431,11 +377,6 @@
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "Host's skeptical-aside argument. This is a rhetorical point, not a formal inference — someone could have a working one-way device and choose not to leave. Moderate directTruth for the colloquial reasoning.",
-      "tags": [
-        "madman-markham",
-        "skepticism",
-        "opinion"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0001",
@@ -470,12 +411,6 @@
       ],
       "confidence": 0.95,
       "rationale": "Host makes this an explicit editorial self-statement. Opinion claim — omitting directTruth because it's a self-report of stance rather than an empirical proposition.",
-      "tags": [
-        "editorial",
-        "art-bell",
-        "host-stance",
-        "methodology"
-      ],
       "dependencies": [
         {
           "target": "j-tGHCHVM_o:c_0004",

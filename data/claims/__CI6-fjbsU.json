@@ -3,6 +3,7 @@
   "transcriptId": "__CI6-fjbsU",
   "generatedAt": "2026-04-21T12:10:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "__CI6-fjbsU:c_0001",
@@ -39,8 +40,7 @@
       "confidence": 0.98,
       "directTruth": 0.97,
       "rationale": "The Voynich manuscript's basic description — 240 surviving pages, unknown script, 15th-century dating — is confirmed by Yale's Beinecke Library and decades of published research. The 600-year figure is approximate (the carbon date is ~1404-1438).",
-      "hostStance": "asserts",
-      "tags": ["voynich", "manuscript"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0002",
@@ -65,8 +65,7 @@
       "confidence": 0.7,
       "directTruth": 0.4,
       "rationale": "Turing studied cryptograms and medieval ciphers informally but there is no well-documented sustained Turing effort on Voynich specifically. The more famously-attested WWII cryptographers who worked on it were William and Elizebeth Friedman. The Turing attribution is common folklore but weakly sourced.",
-      "hostStance": "asserts",
-      "tags": ["turing", "cryptography"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0003",
@@ -91,8 +90,7 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Consensus character-set analysis (EVA, Currier alphabets) identifies ~20-30 distinct graphemes, with statistical regularities that pattern like a natural language's letter frequencies (Zipf's law conformance documented).",
-      "hostStance": "asserts",
-      "tags": ["voynich", "cryptography", "linguistics"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0004",
@@ -103,7 +101,9 @@
         "person:elizabeth friedman",
         "date_time:1960"
       ],
-      "relationships": ["r_0008"],
+      "relationships": [
+        "r_0008"
+      ],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
@@ -118,10 +118,13 @@
       "directTruth": 0.9,
       "rationale": "Elizebeth Friedman's 1962 Washington Post article famously warned that any Voynich 'solution' attempting word-for-word translation was doomed; the quote is a paraphrase of her actual published position.",
       "dependencies": [
-        { "target": "__CI6-fjbsU:c_0007", "kind": "supports", "rationale": "Friedman's null-result framing predicts the pattern of failed solutions." }
+        {
+          "target": "__CI6-fjbsU:c_0007",
+          "kind": "supports",
+          "rationale": "Friedman's null-result framing predicts the pattern of failed solutions."
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["friedman", "cryptography"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0005",
@@ -136,7 +139,9 @@
         "work_of_media:voynich cheese",
         "date_time:june"
       ],
-      "relationships": ["r_0011"],
+      "relationships": [
+        "r_0011"
+      ],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
@@ -151,10 +156,13 @@
       "directTruth": 0.1,
       "rationale": "Hannig (Egyptologist at University of Marburg) did publish a Hebrew-based Voynich proposal; it has not been accepted by Hebrew linguists. Declining truth: the host's own follow-up statement says Hebrew experts reject it.",
       "dependencies": [
-        { "target": "__CI6-fjbsU:c_0006", "kind": "contradicts", "rationale": "[debunks] Hebrew experts rejected the Hannig translation." }
+        {
+          "target": "__CI6-fjbsU:c_0006",
+          "kind": "contradicts",
+          "rationale": "[debunks] Hebrew experts rejected the Hannig translation."
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["hannig", "hebrew", "voynich"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0006",
@@ -179,8 +187,7 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Peer response to Hannig's 2020 proposal was generally negative; specialists criticized selective letter substitutions and output strings that read as word salad even where Hebrew 'matches' were claimed.",
-      "hostStance": "asserts",
-      "tags": ["hannig", "hebrew", "debunking"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0007",
@@ -204,8 +211,7 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The '60+ proposed solutions, none accepted' characterization is accurate to the state of the field; Voynich.nu and Nick Pelling's Cipher Mysteries blog track the long list of unreproducible solutions.",
-      "hostStance": "asserts",
-      "tags": ["voynich", "debunking", "solutions"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0008",
@@ -220,7 +226,9 @@
         "organization:roman studies",
         "date_time:twenty nineteen"
       ],
-      "relationships": ["r_0012"],
+      "relationships": [
+        "r_0012"
+      ],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
@@ -235,10 +243,13 @@
       "directTruth": 0.05,
       "rationale": "The actual name is Gerard Cheshire (the host's 'David' appears to be a misread transcript). The 2019 Bristol proposal was rapidly debunked; Bristol distanced itself from the press release. The Romance Studies paper remains available but is widely rejected.",
       "dependencies": [
-        { "target": "__CI6-fjbsU:c_0007", "kind": "elaborates", "rationale": "Specific example of the debunked-solutions pattern." }
+        {
+          "target": "__CI6-fjbsU:c_0007",
+          "kind": "elaborates",
+          "rationale": "Specific example of the debunked-solutions pattern."
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["cheshire", "bristol", "voynich"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0009",
@@ -274,10 +285,13 @@
       "directTruth": 0.85,
       "rationale": "Gibbs's 2017 TLS piece generated wide coverage and equally wide rebuttal; his proposed decoding method was rejected by Latinists (Lisa Fagin Davis, Medieval Academy of America, among others).",
       "dependencies": [
-        { "target": "__CI6-fjbsU:c_0007", "kind": "elaborates", "rationale": "Another specific debunked-solution example." }
+        {
+          "target": "__CI6-fjbsU:c_0007",
+          "kind": "elaborates",
+          "rationale": "Another specific debunked-solution example."
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["gibbs", "latin", "voynich"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0010",
@@ -304,10 +318,13 @@
       "directTruth": 0.85,
       "rationale": "This refers to the 2016 Hauer & Kondrak University of Alberta paper, which used Google-Translate-assisted Hebrew anagram decoding. Hebrew scholars and the Voynich research community rejected their output as incoherent even where individual letter mappings seemed plausible.",
       "dependencies": [
-        { "target": "__CI6-fjbsU:c_0007", "kind": "elaborates", "rationale": "Further example of the Hebrew-angle failures." }
+        {
+          "target": "__CI6-fjbsU:c_0007",
+          "kind": "elaborates",
+          "rationale": "Further example of the Hebrew-angle failures."
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["hebrew", "google-translate", "voynich"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0011",
@@ -341,8 +358,7 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "The 2009 Arizona AMS carbon-date result (1404-1438, 95% confidence) is well-established. Northern Italian origin is inferred from pigment analysis, castle illustration styles (Swallow-tailed Ghibelline merlons), and paleography.",
-      "hostStance": "asserts",
-      "tags": ["carbon-dating", "arizona", "italy", "voynich"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0012",
@@ -359,7 +375,9 @@
         "location:rome",
         "date_time:late 16th century"
       ],
-      "relationships": ["r_0020"],
+      "relationships": [
+        "r_0020"
+      ],
       "evidence": [
         {
           "transcriptId": "__CI6-fjbsU",
@@ -381,8 +399,7 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Rudolf II's purchase (allegedly for 600 ducats, via John Dee), Baresch's ownership, and the dispatch to Athanasius Kircher (the Jesuit Egyptologist in Rome) are all documented in the surviving letter correspondence preserved at Yale.",
-      "hostStance": "asserts",
-      "tags": ["rudolf-ii", "baresch", "kircher", "provenance"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0013",
@@ -418,8 +435,7 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Documented provenance: the manuscript was held at the Collegio Romano through the 18th-19th centuries before Wilfrid Voynich purchased it in 1912 from the Villa Mondragone near Rome; it is now at the Beinecke.",
-      "hostStance": "asserts",
-      "tags": ["voynich", "provenance", "1912"]
+      "hostStance": "asserts"
     },
     {
       "id": "__CI6-fjbsU:c_0014",
@@ -454,11 +470,14 @@
       "directTruth": 0.2,
       "rationale": "The Kelley-hoax hypothesis has been proposed (Rugg 2004 especially), but it predicts cipher-generation statistical properties that the Voynich text only partially matches. Kelley did work with John Dee on angelic/Enochian texts in the 1580s, but Voynich predates Kelley's activity by 150+ years per carbon dating, which makes the direct-authorship hoax implausible.",
       "dependencies": [
-        { "target": "__CI6-fjbsU:c_0011", "kind": "contradicts", "rationale": "[logical] Carbon-dating to 1404-1438 predates Kelley (1555-1597), so Kelley cannot have physically authored the manuscript even if he later sold it." }
+        {
+          "target": "__CI6-fjbsU:c_0011",
+          "kind": "contradicts",
+          "rationale": "[logical] Carbon-dating to 1404-1438 predates Kelley (1555-1597), so Kelley cannot have physically authored the manuscript even if he later sold it."
+        }
       ],
       "inVerdictSection": true,
-      "hostStance": "asserts",
-      "tags": ["kelley", "hoax", "speculation"]
+      "hostStance": "asserts"
     }
   ]
 }

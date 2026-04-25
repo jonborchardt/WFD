@@ -3,17 +3,38 @@
   "transcriptId": "4TrT9tVjNJg",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "4TrT9tVjNJg:c_0001",
       "videoId": "4TrT9tVjNJg",
       "text": "The host frames the Polybius urban legend: a mysterious 1981 Portland arcade game that caused migraines, seizures, amnesia, aggression, and even a stabbing death among teens.",
       "kind": "speculative",
-      "entities": ["work_of_media:polybius", "location:portland", "date_time:1981"],
-      "relationships": ["r_0014"],
+      "entities": [
+        "work_of_media:polybius",
+        "location:portland",
+        "date_time:1981"
+      ],
+      "relationships": [
+        "r_0014"
+      ],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 0, "charEnd": 43, "timeStart": 0, "timeEnd": 10, "quote": "in 1981\nan arcade in portland was the scene"},
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 415, "charEnd": 488, "timeStart": 30, "timeEnd": 40, "quote": "fights started breaking out of the\narcade one player was stabbed to death"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 0,
+          "charEnd": 43,
+          "timeStart": 0,
+          "timeEnd": 10,
+          "quote": "in 1981\nan arcade in portland was the scene"
+        },
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 415,
+          "charEnd": 488,
+          "timeStart": 30,
+          "timeEnd": 40,
+          "quote": "fights started breaking out of the\narcade one player was stabbed to death"
+        }
       ],
       "confidence": 0.96,
       "directTruth": 0.1,
@@ -25,18 +46,40 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The legend claims Polybius was developed by a German company 'Sinneslöschen' meaning 'sense deleting', whose cabinets were serviced by men in black suits retrieving collected player data.",
       "kind": "speculative",
-      "entities": ["work_of_media:polybius", "organization:sinister", "location:germany"],
+      "entities": [
+        "work_of_media:polybius",
+        "organization:sinister",
+        "location:germany"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 1322, "charEnd": 1374, "timeStart": 85, "timeEnd": 95, "quote": "polybius was created by a company named\nsinus lotion"},
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 1777, "charEnd": 1830, "timeStart": 110, "timeEnd": 120, "quote": "data was periodically retrieved by\nmen in black suits"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 1322,
+          "charEnd": 1374,
+          "timeStart": 85,
+          "timeEnd": 95,
+          "quote": "polybius was created by a company named\nsinus lotion"
+        },
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 1777,
+          "charEnd": 1830,
+          "timeStart": 110,
+          "timeEnd": 120,
+          "quote": "data was periodically retrieved by\nmen in black suits"
+        }
       ],
       "confidence": 0.94,
       "directTruth": 0.08,
       "rationale": "'Sinneslöschen' is awkward German (a native speaker would say Sinnesentzug), suggesting non-native fabrication. No German corporate registry record of such a company has surfaced; the 'men in black retrieving data' trope is a standard paranormal narrative template.",
       "hostStance": "asserts",
       "dependencies": [
-        {"target": "4TrT9tVjNJg:c_0001", "kind": "elaborates", "rationale": "Adds specific fabricated corporate and operational details to the core Polybius legend from c_0001."}
+        {
+          "target": "4TrT9tVjNJg:c_0001",
+          "kind": "elaborates",
+          "rationale": "Adds specific fabricated corporate and operational details to the core Polybius legend from c_0001."
+        }
       ]
     },
     {
@@ -44,10 +87,20 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The host concedes the government has a documented history of creating arcade games — citing the US Army's Battlezone 'Bradley Trainer' as a real military use of arcade technology.",
       "kind": "historical",
-      "entities": ["work_of_media:tempest", "organization:government"],
+      "entities": [
+        "work_of_media:tempest",
+        "organization:government"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 4244, "charEnd": 4363, "timeStart": 270, "timeEnd": 282, "quote": "battlezone was used by the military\nas a training tool for tank crews\nthe army's version was called the\nbradley trainer"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 4244,
+          "charEnd": 4363,
+          "timeStart": 270,
+          "timeEnd": 282,
+          "quote": "battlezone was used by the military\nas a training tool for tank crews\nthe army's version was called the\nbradley trainer"
+        }
       ],
       "confidence": 0.95,
       "directTruth": 0.92,
@@ -59,10 +112,21 @@
       "videoId": "4TrT9tVjNJg",
       "text": "In 1982 14-year-old Michael Lopez suffered a seizure-like episode playing Tempest at the Malibu Grand Prix arcade in Beaverton, Oregon — evidence vector-based games caused real neurological harm.",
       "kind": "historical",
-      "entities": ["person:michael lopez", "work_of_media:tempest", "date_time:1982"],
+      "entities": [
+        "person:michael lopez",
+        "work_of_media:tempest",
+        "date_time:1982"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 4748, "charEnd": 4798, "timeStart": 300, "timeEnd": 310, "quote": "1982 14 year old\nmichael lopez was playing tempest"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 4748,
+          "charEnd": 4798,
+          "timeStart": 300,
+          "timeEnd": 310,
+          "quote": "1982 14 year old\nmichael lopez was playing tempest"
+        }
       ],
       "confidence": 0.93,
       "directTruth": 0.7,
@@ -74,11 +138,30 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The host compiles period cases — Jeff Dailey and Peter Bukowski dying of heart attacks while playing Berserk — as evidence that arcade games genuinely killed players.",
       "kind": "historical",
-      "entities": ["person:jeff daly", "person:peter bukowski", "work_of_media:berserk", "location:calumet city"],
+      "entities": [
+        "person:jeff daly",
+        "person:peter bukowski",
+        "work_of_media:berserk",
+        "location:calumet city"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 5230, "charEnd": 5279, "timeStart": 330, "timeEnd": 340, "quote": "jeff\ndaly who died after playing the game\nberserk"},
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 5444, "charEnd": 5474, "timeStart": 345, "timeEnd": 352, "quote": "peter bukowski of calumet city"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 5230,
+          "charEnd": 5279,
+          "timeStart": 330,
+          "timeEnd": 340,
+          "quote": "jeff\ndaly who died after playing the game\nberserk"
+        },
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 5444,
+          "charEnd": 5474,
+          "timeStart": 345,
+          "timeEnd": 352,
+          "quote": "peter bukowski of calumet city"
+        }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
@@ -90,10 +173,21 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The host asserts the FBI really did conduct sting operations in Portland arcades in the early 1980s, planting cameras inside Tempest cabinets to gather evidence on drugs and gambling.",
       "kind": "historical",
-      "entities": ["organization:fbi", "location:portland", "work_of_media:tempest"],
+      "entities": [
+        "organization:fbi",
+        "location:portland",
+        "work_of_media:tempest"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 7444, "charEnd": 7517, "timeStart": 470, "timeEnd": 482, "quote": "sting operation\nthe fbi placed microphones and cameras\ninside video games"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 7444,
+          "charEnd": 7517,
+          "timeStart": 470,
+          "timeEnd": 482,
+          "quote": "sting operation\nthe fbi placed microphones and cameras\ninside video games"
+        }
       ],
       "confidence": 0.92,
       "directTruth": 0.55,
@@ -105,11 +199,31 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The CIA's MKUltra program, run in the 1950s–60s by chemist Sidney Gottlieb, pursued mind-control drugs through covert LSD dosing and experiments on prisoners and detainees abroad.",
       "kind": "historical",
-      "entities": ["organization:cia", "event:mk ultra", "person:sydney gottlieb"],
-      "relationships": ["r_0092"],
+      "entities": [
+        "organization:cia",
+        "event:mk ultra",
+        "person:sydney gottlieb"
+      ],
+      "relationships": [
+        "r_0092"
+      ],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 8625, "charEnd": 8672, "timeStart": 560, "timeEnd": 570, "quote": "cia began its own secret\nprogram called\nmkultra"},
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 8755, "charEnd": 8854, "timeStart": 570, "timeEnd": 585, "quote": "mk ultra which operated in the 1950s and\n60s\nwas created and run by a chemist named\nsydney gottlieb"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 8625,
+          "charEnd": 8672,
+          "timeStart": 560,
+          "timeEnd": 570,
+          "quote": "cia began its own secret\nprogram called\nmkultra"
+        },
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 8755,
+          "charEnd": 8854,
+          "timeStart": 570,
+          "timeEnd": 585,
+          "quote": "mk ultra which operated in the 1950s and\n60s\nwas created and run by a chemist named\nsydney gottlieb"
+        }
       ],
       "confidence": 0.99,
       "directTruth": 0.95,
@@ -121,10 +235,20 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The host alleges the CIA destroyed MKUltra's records to cover up the human toll, making the death count impossible to measure.",
       "kind": "historical",
-      "entities": ["organization:cia", "event:mk ultra"],
+      "entities": [
+        "organization:cia",
+        "event:mk ultra"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 9525, "charEnd": 9548, "timeStart": 620, "timeEnd": 628, "quote": "cia destroyed\nthe files"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 9525,
+          "charEnd": 9548,
+          "timeStart": 620,
+          "timeEnd": 628,
+          "quote": "cia destroyed\nthe files"
+        }
       ],
       "confidence": 0.96,
       "directTruth": 0.9,
@@ -136,18 +260,39 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The host names freeware developer Rogue Synapse's 2007 fan game as the concrete source of most circulating 'Polybius gameplay' video — not a 1981 original.",
       "kind": "historical",
-      "entities": ["work_of_media:polybius", "date_time:2007"],
+      "entities": [
+        "work_of_media:polybius",
+        "date_time:2007"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 10261, "charEnd": 10293, "timeStart": 670, "timeEnd": 680, "quote": "freeware developer rogue synapse"},
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 10404, "charEnd": 10459, "timeStart": 680, "timeEnd": 690, "quote": "polybius in\n2007 and their version attempts to\nrecreate"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 10261,
+          "charEnd": 10293,
+          "timeStart": 670,
+          "timeEnd": 680,
+          "quote": "freeware developer rogue synapse"
+        },
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 10404,
+          "charEnd": 10459,
+          "timeStart": 680,
+          "timeEnd": 690,
+          "quote": "polybius in\n2007 and their version attempts to\nrecreate"
+        }
       ],
       "confidence": 0.95,
       "directTruth": 0.92,
       "rationale": "Rogue Synapse's Polybius (2007) is a genuine fan-made downloadable game. Most purported Polybius gameplay videos circulating online trace back to this or later tributes, not any 1981 original.",
       "hostStance": "asserts",
       "dependencies": [
-        {"target": "4TrT9tVjNJg:c_0001", "kind": "contradicts", "rationale": "[debunks] Provides the modern origin point for visual 'evidence' used to prop up the 1981 Polybius legend in c_0001."}
+        {
+          "target": "4TrT9tVjNJg:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] Provides the modern origin point for visual 'evidence' used to prop up the 1981 Polybius legend in c_0001."
+        }
       ]
     },
     {
@@ -155,10 +300,20 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The host argues the game's naming is deliberate trolling: Polybius was a 2nd-century-BC Greek philosopher famous for demanding that claims be verified with hard evidence and witnesses.",
       "kind": "speculative",
-      "entities": ["person:polybius", "location:megalopolis"],
+      "entities": [
+        "person:polybius",
+        "location:megalopolis"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 11209, "charEnd": 11271, "timeStart": 720, "timeEnd": 734, "quote": "polybius was a greek philosopher\nborn in 200 bc in megalopolis"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 11209,
+          "charEnd": 11271,
+          "timeStart": 720,
+          "timeEnd": 734,
+          "quote": "polybius was a greek philosopher\nborn in 200 bc in megalopolis"
+        }
       ],
       "confidence": 0.9,
       "directTruth": 0.7,
@@ -170,18 +325,43 @@
       "videoId": "4TrT9tVjNJg",
       "text": "The urban legend emerged in February 2000 when coinop.org owner Kurt Koller posted a fabricated listing for Polybius — and the story took off after GamePro and Slashdot picked it up.",
       "kind": "historical",
-      "entities": ["work_of_media:polybius", "date_time:february of 2000", "person:kurt coller", "organization:coin op", "organization:game pro", "organization:slashdot"],
+      "entities": [
+        "work_of_media:polybius",
+        "date_time:february of 2000",
+        "person:kurt coller",
+        "organization:coin op",
+        "organization:game pro",
+        "organization:slashdot"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 11594, "charEnd": 11646, "timeStart": 745, "timeEnd": 758, "quote": "urban legend of polybius emerged\nin february of 2000"},
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 11980, "charEnd": 12000, "timeStart": 770, "timeEnd": 775, "quote": "kurt coller the owne"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 11594,
+          "charEnd": 11646,
+          "timeStart": 745,
+          "timeEnd": 758,
+          "quote": "urban legend of polybius emerged\nin february of 2000"
+        },
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 11980,
+          "charEnd": 12000,
+          "timeStart": 770,
+          "timeEnd": 775,
+          "quote": "kurt coller the owne"
+        }
       ],
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "The February 2000 coinop.org listing is the widely accepted origin of the modern Polybius legend. Kurt Koller's role as site owner and first poster is documented in multiple arcade-history sources, though he has denied personally originating the hoax.",
       "hostStance": "asserts",
       "dependencies": [
-        {"target": "4TrT9tVjNJg:c_0001", "kind": "contradicts", "rationale": "[debunks] Pins the legend's actual origin to a 2000 web post, not a 1981 arcade cabinet, undercutting c_0001."}
+        {
+          "target": "4TrT9tVjNJg:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] Pins the legend's actual origin to a 2000 web post, not a 1981 arcade cabinet, undercutting c_0001."
+        }
       ]
     },
     {
@@ -189,10 +369,20 @@
       "videoId": "4TrT9tVjNJg",
       "text": "Steven Roach's public claim to have worked on Polybius is presented as a debunked notoriety-seeking hoax.",
       "kind": "historical",
-      "entities": ["person:steven roach", "organization:coin op"],
+      "entities": [
+        "person:steven roach",
+        "organization:coin op"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 12882, "charEnd": 12916, "timeStart": 820, "timeEnd": 830, "quote": "steven roach who posted\non coin op"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 12882,
+          "charEnd": 12916,
+          "timeStart": 820,
+          "timeEnd": 830,
+          "quote": "steven roach who posted\non coin op"
+        }
       ],
       "confidence": 0.9,
       "directTruth": 0.75,
@@ -204,11 +394,31 @@
       "videoId": "4TrT9tVjNJg",
       "text": "In the verdict the host concludes the specific Polybius cabinet never existed, but insists every adjacent claim — arcade-game deaths, FBI arcade stings, MKUltra, and modern-app mind control — is real.",
       "kind": "opinion",
-      "entities": ["work_of_media:polybius", "organization:cia", "organization:fbi", "event:mk ultra", "technology:mind control"],
+      "entities": [
+        "work_of_media:polybius",
+        "organization:cia",
+        "organization:fbi",
+        "event:mk ultra",
+        "technology:mind control"
+      ],
       "relationships": [],
       "evidence": [
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 13687, "charEnd": 13725, "timeStart": 875, "timeEnd": 885, "quote": "no i don't think the game ever\nexisted"},
-        {"transcriptId": "4TrT9tVjNJg", "charStart": 13205, "charEnd": 13261, "timeStart": 845, "timeEnd": 855, "quote": "addictive games\nand social media platforms like facebook"}
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 13687,
+          "charEnd": 13725,
+          "timeStart": 875,
+          "timeEnd": 885,
+          "quote": "no i don't think the game ever\nexisted"
+        },
+        {
+          "transcriptId": "4TrT9tVjNJg",
+          "charStart": 13205,
+          "charEnd": 13261,
+          "timeStart": 845,
+          "timeEnd": 855,
+          "quote": "addictive games\nand social media platforms like facebook"
+        }
       ],
       "confidence": 0.97,
       "directTruth": 0.65,
@@ -216,8 +426,16 @@
       "hostStance": "denies",
       "inVerdictSection": true,
       "dependencies": [
-        {"target": "4TrT9tVjNJg:c_0001", "kind": "contradicts", "rationale": "[debunks] Explicitly rejects the existence of the Polybius cabinet framed in c_0001."},
-        {"target": "4TrT9tVjNJg:c_0007", "kind": "supports", "rationale": "Affirms the MKUltra portion of the narrative from c_0007 is real."}
+        {
+          "target": "4TrT9tVjNJg:c_0001",
+          "kind": "contradicts",
+          "rationale": "[debunks] Explicitly rejects the existence of the Polybius cabinet framed in c_0001."
+        },
+        {
+          "target": "4TrT9tVjNJg:c_0007",
+          "kind": "supports",
+          "rationale": "Affirms the MKUltra portion of the narrative from c_0007 is real."
+        }
       ]
     }
   ]

@@ -3,6 +3,7 @@
   "transcriptId": "LeF3n-1sPJY",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "LeF3n-1sPJY:c_0001",
@@ -32,7 +33,6 @@
       "confidence": 0.9,
       "directTruth": 0.35,
       "rationale": "Brain-size expansion in the hominin lineage spans ~2 million years, not 100,000. The Homo erectus-to-sapiens growth was gradual (not a few-thousand-generation doubling). 'Too fast for scientific explanation' overstates; mainstream paleoanthropology has multiple candidate drivers (social brain hypothesis, cooking, obstetric selection). Claim is the framing premise of the episode's core Stoned Ape Hypothesis.",
-      "tags": ["human-evolution", "brain-size", "premise"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -68,7 +68,6 @@
       "confidence": 0.9,
       "directTruth": 0.55,
       "rationale": "Roland Fischer (Johns Hopkins primarily, not Harvard — transcript misattributes) did publish psilocybin visual-acuity experiments in the 1960s-70s. The '200% acuity improvement' is often cited in psychedelic literature but represents specific subjective measures (hyperacuity, enhanced edge detection), not clinical Snellen chart improvement. Loosely accurate but oft-misattributed.",
-      "tags": ["fischer", "psilocybin", "visual-acuity", "harvard"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -101,7 +100,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Homo habilis (~2 Mya) had ~650cc; Homo sapiens has ~1300-1500cc. Endpoints are roughly accurate (though 900 cc is higher than H. habilis, closer to H. erectus at ~1 Mya). 'Within 100,000 years' is wrong — the jump took ~1.9 million years. Host's own framing contradicts his '100,000 years' premise in c_0001.",
-      "tags": ["brain-size", "human-evolution", "hominins"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -136,7 +134,6 @@
       "confidence": 0.95,
       "directTruth": 0.2,
       "rationale": "Host accurately summarizes McKenna's hypothesis (published 1992 'Food of the Gods'). Low directTruth because the mechanism — diet-induced cognitive change heritable over generations — requires Lamarckian inheritance and is rejected by the genetics community. Host himself debunks this in the verdict.",
-      "tags": ["stoned-ape", "mckenna", "psilocybin", "evolution"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -160,7 +157,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Robin Carhart-Harris's 2012 Imperial College fMRI study on psilocybin is genuine and widely cited (PNAS 2012). DMN deactivation and cross-network connectivity increases are well-replicated. 'Goes silent' is slight overstatement — activity is reduced, not zero. Core claim is scientifically supported.",
-      "tags": ["psilocybin", "default-mode-network", "neuroscience", "carhart-harris"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -199,7 +195,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Carhart-Harris's 2012 PNAS study and 2014 Frontiers paper on 'entropic brain' are real. Post-drug connectivity changes persisting weeks-to-months are documented (Barrett, Griffiths et al. Johns Hopkins). Clinical literature supports durable neural effects, though 'remaining active for months' is at the upper bound of effect-persistence claims.",
-      "tags": ["carhart-harris", "imperial-college", "2012", "psilocybin"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -232,7 +227,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "MacLean, Johnson, Griffiths 2011 Journal of Psychopharmacology paper demonstrates lasting increases in the Openness Big Five trait post-psilocybin — a well-known landmark finding. Host's phrasing accurately captures the result.",
-      "tags": ["johns-hopkins", "psilocybin", "personality", "openness"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -273,7 +267,6 @@
       "confidence": 0.95,
       "directTruth": 0.55,
       "rationale": "The Eleusinian Mysteries are historically real. The 1978 Wasson-Hofmann-Ruck 'Road to Eleusis' hypothesis proposed ergot as the active ingredient in the kykeon, but this remains a hypothesis — scholars are divided. Recent chemical residue analysis (Mas Castellarte, Spain 2019) has revived the hypothesis for other rituals but Eleusis itself has no direct chemical evidence.",
-      "tags": ["eleusinian-mysteries", "kykeon", "ergot", "lsd"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -307,7 +300,6 @@
       "confidence": 0.85,
       "directTruth": 0.1,
       "rationale": "Acacia species do contain DMT (shown in phytochemistry) but burning DMT destroys it before inhalation can deliver an effective dose; activation requires MAOI co-administration (ayahuasca) or direct vaporization. The 'exactly 15 minutes' cherry-picks one DMT-duration profile and retrofits scripture. Benny Shanon's 2008 paper made similar claims and is widely disputed. Low directTruth.",
-      "tags": ["moses", "burning-bush", "dmt", "acacia", "speculation"],
       "inVerdictSection": false,
       "hostStance": "steelman",
       "dependencies": [
@@ -350,7 +342,6 @@
       "confidence": 0.9,
       "directTruth": 0.2,
       "rationale": "Allegro's 1970 book 'The Sacred Mushroom and the Cross' is genuine and did damage his reputation. But the etymological argument is rejected by essentially all Semitic-language scholars; there are no mushroom references in any Dead Sea Scroll Allegro translated. The attribution is real; the hypothesis is not credible scholarship.",
-      "tags": ["allegro", "dead-sea-scrolls", "christianity", "amanita", "mushroom-cult"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -378,7 +369,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Wasson's 1955 participation in Maria Sabina's velada in Huautla de Jiménez, Oaxaca is extensively documented (Wasson's own writings, Sabina's biography by Estrada). The June 29/30 1955 date is widely accepted. 'First known white person' is a documented claim though strictly the first Westerner to publicize, not necessarily the first to have participated.",
-      "tags": ["wasson", "maria-sabina", "oaxaca", "1955", "mushroom-ceremony"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -422,7 +412,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Walter Pahnke's April 20, 1962 Good Friday experiment at Marsh Chapel is a landmark in psychedelic research. Rick Doblin's 25-year follow-up (1991) confirmed lasting spiritual significance — real study, real results. The 9/10 figure matches the original Pahnke data on mysticism-scale scores.",
-      "tags": ["good-friday-experiment", "pahnke", "marsh-chapel", "1962", "mystical"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -457,7 +446,6 @@
       "confidence": 0.95,
       "directTruth": 0.8,
       "rationale": "FDA granted Breakthrough Therapy designation to COMPASS Pathways' psilocybin in 2018 for treatment-resistant depression, and to Usona for major depression in 2019. 70% response/remission figures come from small open-label Johns Hopkins studies (Davis et al. 2021, JAMA Psych). The 30% baseline is roughly consistent with SSRI response rates. Host's summary is accurate within rounding.",
-      "tags": ["fda", "psilocybin", "depression", "breakthrough-therapy", "2018"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -496,7 +484,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Standard neo-Darwinian rebuttal: acquired individual traits (including drug-induced neural changes) are not heritable. Weismann's germ-line experiments (1890s) and the modern genetic synthesis rule out the Lamarckian mechanism Stoned Ape requires. Modern epigenetics adds nuance but does not rehabilitate meaningful cross-generation transmission of psilocybin-induced cognitive states.",
-      "tags": ["lamarckism", "evolution", "debunk", "verdict"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -527,7 +514,6 @@
       "confidence": 0.9,
       "directTruth": 0.45,
       "rationale": "The '50% DNA shared' figure is a crude and oft-misquoted statistic — it depends on alignment methodology (protein-level conserved genes vs. whole-genome) and the real shared-gene percentage between humans and fungi is closer to 30-50% of core orthologous protein-coding genes, not 50% of DNA. The serotonin receptor fit is real (psilocin is a 5-HT2A agonist) but 'perfect key-in-lock' overstates — it's a partial agonist with multi-receptor profile.",
-      "tags": ["genetics", "fungi", "serotonin", "psilocin"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     }

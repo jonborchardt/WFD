@@ -1,6 +1,8 @@
 ---
 name: ai-alias-curation
 description: Run the heuristic AI alias-curation playbook. Use when the user asks to "curate aliases", "clean up entities", "run alias curation", "rebuild the graph with better merges", or any time new videos are added to the corpus and per-video short-name → full-name mappings need to be proposed again.
+version: v1
+lastVerifiedAgainstCorpus: 2026-04-24
 ---
 
 # AI alias curation

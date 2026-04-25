@@ -3,6 +3,31 @@ import type { ReactNode } from "react";
 import { Box, Button, Container, Link, Paper, Stack, Typography } from "@mui/material";
 import { colors } from "../theme";
 import { UfoLogo } from "../components/brand";
+import { TruthTimeline } from "./../components/TruthTimeline";
+import type { PersistedClaims } from "../types";
+
+// Hand-crafted illustrative claims for the home-page walk-through.
+// Spread across a 28-minute "video" with a mix of confident-true,
+// hedged, and confidently-false claims so the chart shows real shape.
+// Click-to-scroll is a no-op here (the dots reference ids that don't
+// exist on this page) — that's intentional; the chart is decorative.
+const DEMO_CLAIMS: PersistedClaims = {
+  schemaVersion: 1,
+  transcriptId: "demo",
+  generatedAt: "2026-04-24T00:00:00.000Z",
+  generator: "homepage-illustration",
+  claims: [
+    { id: "demo:c1", videoId: "demo", text: "Marfa lights were first reported in the 1880s, well before automobiles.", kind: "historical",   entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart:   95, timeEnd: 0, quote: "" }], confidence: 0.92, directTruth: 0.78, rationale: "", hostStance: "asserts" },
+    { id: "demo:c2", videoId: "demo", text: "Some early sightings turned out to be hoaxes by local ranchers.",          kind: "empirical",   entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart:  280, timeEnd: 0, quote: "" }], confidence: 0.74, directTruth: 0.55, rationale: "", hostStance: "asserts" },
+    { id: "demo:c3", videoId: "demo", text: "The lights are caused by a localized magnetic anomaly.",                     kind: "speculative", entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart:  470, timeEnd: 0, quote: "" }], confidence: 0.85, directTruth: 0.18, rationale: "", hostStance: "denies" },
+    { id: "demo:c4", videoId: "demo", text: "Atmospheric ducting can bend light from distant car headlights.",            kind: "empirical",   entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart:  720, timeEnd: 0, quote: "" }], confidence: 0.95, directTruth: 0.82, rationale: "", hostStance: "asserts" },
+    { id: "demo:c5", videoId: "demo", text: "Researchers replicated the lights using mounted headlights on Highway 67.",  kind: "empirical",   entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart:  955, timeEnd: 0, quote: "" }], confidence: 0.88, directTruth: 0.74, rationale: "", hostStance: "asserts" },
+    { id: "demo:c6", videoId: "demo", text: "Reports describe the lights moving in deliberate patterns.",                 kind: "empirical",   entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart: 1180, timeEnd: 0, quote: "" }], confidence: 0.62, directTruth: 0.40, rationale: "", hostStance: "uncertain" },
+    { id: "demo:c7", videoId: "demo", text: "The lights are visible from a single county-built viewing platform.",        kind: "empirical",   entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart: 1380, timeEnd: 0, quote: "" }], confidence: 0.97, directTruth: 0.92, rationale: "", hostStance: "asserts" },
+    { id: "demo:c8", videoId: "demo", text: "All Marfa-light photographs are deliberate fabrications.",                    kind: "empirical",   entities: [], relationships: [], evidence: [{ transcriptId: "demo", charStart: 0, charEnd: 0, timeStart: 1540, timeEnd: 0, quote: "" }], confidence: 0.80, directTruth: 0.10, rationale: "", hostStance: "denies" },
+  ],
+};
+const DEMO_LENGTH_SECONDS = 28 * 60;
 
 // Editorial hero establishes what the site is and why it exists,
 // then a three-step walk-through teaches the core concepts (claim,
@@ -168,8 +193,32 @@ export function HomePage() {
           annotated.
         </Typography>
 
-        {/* Step 1 — the claim itself */}
-        <Step index={1} label="The claim">
+        {/* Step 1 — the story arc */}
+        <Step index={1} label="The story arc">
+          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 2, borderLeft: 4, borderColor: ACCENT }}>
+            <Typography variant="caption" color="text.secondary">
+              from "Marfa Lights: Texas's UFO mystery"
+            </Typography>
+            <Box sx={{ mt: 0.5 }}>
+              <TruthTimeline
+                claims={DEMO_CLAIMS}
+                lengthSeconds={DEMO_LENGTH_SECONDS}
+                showHeading={false}
+                interactive={false}
+              />
+            </Box>
+          </Paper>
+          <Caption>
+            Every episode gets a <strong>story arc</strong> — a quick
+            visual of every claim the host made, plotted across the
+            runtime. Green sits above the line (likely true), red sits
+            below (likely false), and the dashed lines show how
+            confident we are.
+          </Caption>
+        </Step>
+
+        {/* Step 2 — the claim itself */}
+        <Step index={2} label="The claim">
           <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 2, borderLeft: 4, borderColor: ACCENT }}>
             <Typography variant="caption" color="text.secondary">
               from "Marfa Lights: Texas's UFO mystery"
@@ -194,8 +243,8 @@ export function HomePage() {
           </Caption>
         </Step>
 
-        {/* Step 2 — the evidence */}
-        <Step index={2} label="The evidence">
+        {/* Step 3 — the evidence */}
+        <Step index={3} label="The evidence">
           <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 2, bgcolor: "action.hover" }}>
             <Typography variant="caption" color="text.secondary">
               transcript · 08:24
@@ -227,8 +276,8 @@ export function HomePage() {
           </Caption>
         </Step>
 
-        {/* Step 3 — the cross-video contradiction */}
-        <Step index={3} label="The contradiction">
+        {/* Step 4 — the cross-video contradiction */}
+        <Step index={4} label="The contradiction">
           <Paper
             variant="outlined"
             sx={{

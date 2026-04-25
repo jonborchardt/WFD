@@ -18,7 +18,6 @@ function entry(
     directTruth: partial.directTruth ?? null,
     derivedTruth: partial.derivedTruth ?? null,
     truthSource: partial.truthSource ?? "uncalibrated",
-    tags: partial.tags ?? [],
   };
 }
 

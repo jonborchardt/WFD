@@ -53,6 +53,7 @@ import {
   readPersistedEntities,
   type PersistedEntities,
 } from "../entities/index.js";
+import { DELETE_LABELS } from "../ai/curate/delete-always.js";
 import {
   readPersistedRelations,
   type PersistedRelations,
@@ -618,8 +619,12 @@ export function renderUnifiedVideoAdmin(
     })
     .join("");
 
+  const droppedLabels = new Set(DELETE_LABELS.map((d) => d.label));
+  const visibleMentions = (neuralEntities?.mentions ?? []).filter(
+    (m) => !droppedLabels.has(m.label),
+  );
   const neuralEntityRows = neuralEntities
-    ? neuralEntities.mentions
+    ? visibleMentions
         .map((m) => {
           const link = `<a target="_blank" href="${escapeHtml(deepLink(row.videoId, m.span.timeStart))}">${formatTime(m.span.timeStart)}</a>`;
           const entityKey = entityKeyOf(m.label, m.canonical);
@@ -641,6 +646,13 @@ export function renderUnifiedVideoAdmin(
   );
   const neuralRelRows = neuralRelations
     ? neuralRelations.edges
+        .filter((e) => {
+          const subj = mentionById.get(e.subjectMentionId);
+          const obj = mentionById.get(e.objectMentionId);
+          if (subj && droppedLabels.has(subj.label)) return false;
+          if (obj && droppedLabels.has(obj.label)) return false;
+          return true;
+        })
         .map((e) => {
           const subj = mentionById.get(e.subjectMentionId);
           const obj = mentionById.get(e.objectMentionId);
@@ -675,7 +687,7 @@ export function renderUnifiedVideoAdmin(
   ].join("");
 
   const neuralStatus = neuralEntities
-    ? `${neuralEntities.mentions.length} mentions · model ${escapeHtml(neuralEntities.model)} · coref=${neuralEntities.corefApplied}`
+    ? `${visibleMentions.length} mentions · model ${escapeHtml(neuralEntities.model)} · coref=${neuralEntities.corefApplied}`
     : `<em>no data/entities/${escapeHtml(row.videoId)}.json — run <code>captions entities --video ${escapeHtml(row.videoId)}</code></em>`;
   const neuralRelStatus = neuralRelations
     ? `${neuralRelations.edges.length} edges · model ${escapeHtml(neuralRelations.model)}`
@@ -1823,13 +1835,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
               if (hostStance !== null) patch.hostStance = hostStance;
               const rationale = params.get("rationale");
               if (rationale !== null) patch.rationale = rationale;
-              const tagsRaw = params.get("tags");
-              if (tagsRaw !== null) {
-                patch.tags = tagsRaw
-                  .split(",")
-                  .map((s) => s.trim().toLowerCase())
-                  .filter(Boolean);
-              }
               setClaimFieldOverride(dataRoot, claimId, patch);
             }
           } catch (err) {
@@ -2030,13 +2035,6 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
             if (hostStance !== null) patch.hostStance = hostStance;
             const rationale = u.searchParams.get("rationale");
             if (rationale !== null) patch.rationale = rationale;
-            const tagsRaw = u.searchParams.get("tags");
-            if (tagsRaw !== null) {
-              patch.tags = tagsRaw
-                .split(",")
-                .map((s) => s.trim().toLowerCase())
-                .filter(Boolean);
-            }
             const fields = Object.keys(patch);
             if (fields.length === 0) { ok = false; summary = "no field provided"; }
             else {
@@ -2060,7 +2058,11 @@ export function handle(req: IncomingMessage, res: ServerResponse, opts: UiOption
           if (!a || !b) { ok = false; summary = "missing a/b"; }
           else if (!sum) { ok = false; summary = "missing summary"; }
           else {
-            addCustomContradiction(dataRoot, a, b, sum);
+            const shared = (u.searchParams.get("sharedEntities") ?? "")
+              .split(",")
+              .map((s) => s.trim())
+              .filter(Boolean);
+            addCustomContradiction(dataRoot, a, b, sum, shared.length ? shared : undefined);
             summary = `flagged ${a} ↔ ${b}`;
           }
         } else {

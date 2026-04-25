@@ -63,8 +63,7 @@ export interface ClaimsIndexEntry {
   truthSource: TruthSource;
   overrideRationale?: string;
   inVerdictSection?: boolean;
-  tags: string[];
-  fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale" | "tags">;
+  fieldOverrides?: Array<"text" | "kind" | "hostStance" | "rationale">;
   /** Inbound author-delivered evidence-against edges. Missing when the
    *  claim has none. Never populated from cross-video edges — those
    *  stay in contradictions.json / consonance.json. */
@@ -145,7 +144,6 @@ export interface ClaimFieldOverride {
   kind?: Claim["kind"];
   hostStance?: Claim["hostStance"];
   rationale?: string;
-  tags?: string[];
 }
 
 export interface ContradictionDismissal {
@@ -228,7 +226,6 @@ export function buildClaimIndexes(
         kind: (fo.kind ?? c.kind) as Claim["kind"],
         hostStance: (fo.hostStance ?? c.hostStance) as Claim["hostStance"],
         rationale: fo.rationale ?? c.rationale,
-        tags: fo.tags ?? c.tags,
       };
     });
 
@@ -279,16 +276,14 @@ export function buildClaimIndexes(
     const fo = fieldOverrideById.get(c.id);
     let fieldOverrides: ClaimsIndexEntry["fieldOverrides"];
     if (fo) {
-      // Only list fields whose override is actually set. Stage-side
-      // loaders may materialize undefined keys (e.g. `{ claimId, text,
-      // kind, ... }` built from a v2 file where only `tags` was set),
-      // so filter by defined value rather than by key presence.
-      const keys: Array<"text" | "kind" | "hostStance" | "rationale" | "tags"> = [];
+      // Only list fields whose override is actually set. Filter by
+      // defined value rather than by key presence so stage-side loaders
+      // that materialize undefined keys don't produce false positives.
+      const keys: Array<"text" | "kind" | "hostStance" | "rationale"> = [];
       if (fo.text !== undefined) keys.push("text");
       if (fo.kind !== undefined) keys.push("kind");
       if (fo.hostStance !== undefined) keys.push("hostStance");
       if (fo.rationale !== undefined) keys.push("rationale");
-      if (fo.tags !== undefined) keys.push("tags");
       if (keys.length > 0) fieldOverrides = keys;
     }
     return {
@@ -310,7 +305,6 @@ export function buildClaimIndexes(
       truthSource,
       overrideRationale: override?.rationale,
       inVerdictSection: c.inVerdictSection,
-      tags: c.tags ?? [],
       fieldOverrides,
       counterEvidence: counterByTarget.get(c.id),
     };

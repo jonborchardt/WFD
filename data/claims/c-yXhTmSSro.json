@@ -3,6 +3,7 @@
   "transcriptId": "c-yXhTmSSro",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "c-yXhTmSSro:c_0001",
@@ -28,7 +29,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "99942 Apophis's 2029 close approach is a well-documented NASA prediction: current JPL numbers give a miss distance of ~31,000 km (~19,800 mi) at 19:46 UT on April 13, 2029 — inside geosynchronous orbit altitude (~36,000 km). Host's number is accurate.",
-      "tags": ["apophis", "asteroid", "2029", "close-approach"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -55,7 +55,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "The December 23-27, 2004 impact-probability spike to 2.7% (1 in 37) is well-documented in NASA/JPL Sentry archives and contemporaneous news. It remains the highest impact probability ever calculated for a sizeable object.",
-      "tags": ["apophis", "2004-mn4", "impact-probability", "history"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -94,7 +93,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "In December 2004 Apophis reached Torino 4 — still the all-time high on that scale. Documented by IAU/JPL. Every other asteroid before and since has peaked at Torino 2 or below.",
-      "tags": ["apophis", "torino-scale", "record"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -133,7 +131,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The 2005 downgrade to 'miss in 2029' and the identification of the 2036-keyhole (Chesley, Chodas 2006) are documented. Subsequent radar tracking (2021 Arecibo/Goldstone) ruled out keyhole passage for the next century. 'Half-mile wide' is a reasonable approximation of the Apophis keyhole width (~600-800 m in most references).",
-      "tags": ["apophis", "keyhole", "2036", "2005"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -164,7 +161,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Host explicitly puts this in the verdict section as 'fact'. Confirmed by NASA JPL in March 2021 based on 2021 Arecibo/Goldstone radar tracking: Apophis is safely removed from the Sentry risk list for at least 100 years.",
-      "tags": ["apophis", "verdict", "no-threat", "goldstone", "arecibo"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -206,7 +202,6 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "NASA's estimate of ~25,000 near-Earth objects ≥140 m (the 'city killer' size bin, assuming airburst-level damage to regional areas) is the current planetary-defense community figure. As of 2024, ~42% have been catalogued — close to 'half'. Host's number is broadly accurate; exact catalog fraction varies by survey update.",
-      "tags": ["nasa", "city-killers", "near-earth-objects", "detection-gap"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -248,7 +243,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "2019 OK flyby July 25, 2019 at 0.19 lunar distances (~73,000 km / ~45,000 mi) with discovery only ~24h prior is well-documented. Size estimate 57-130 m; 300x Hiroshima is on the high side for kinetic energy but plausible for the upper size estimate. Host's auto-caption mangled 'OK' as 'okay'.",
-      "tags": ["2019-ok", "near-miss", "detection-gap", "hiroshima"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -282,7 +276,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "NEO Surveyor (previously NEOCam) is confirmed for September 2027 launch at L1 Lagrange point; mission goal is to find ≥2/3 of remaining hazardous NEOs ≥140 m within 10 years. 'Within 10-20 years' and '90%' are close to but slightly more optimistic than the stated mission objective.",
-      "tags": ["neo-surveyor", "nasa", "infrared", "2027"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -324,7 +317,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "DART/Dimorphos impact September 26, 2022 at ~22,500 km/h (~14,000 mph) is well-documented. The orbital-period change was 33 minutes vs. the ~73-second mission-success threshold — roughly 25x, as host states. A landmark planetary-defense demonstration.",
-      "tags": ["dart", "dimorphos", "planetary-defense", "2022"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -357,7 +349,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Outer Space Treaty Article IV prohibits placing nuclear weapons or WMDs in orbit, on celestial bodies, or stationed in outer space. Signed January 27, 1967. 'Placing' is the precise legal term — a single-use emergency deflection is legally murky but technically permitted under some readings.",
-      "tags": ["outer-space-treaty", "1967", "nuclear", "legal"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -407,7 +398,6 @@
       "confidence": 0.85,
       "directTruth": 0.35,
       "rationale": "The Younger Dryas Impact Hypothesis (Firestone et al. 2007, Kennett group) is a genuine published hypothesis but is contested. Mainstream paleoclimatology favors meltwater pulse / thermohaline circulation changes. 75% megafauna loss is accurate but causation remains debated. The '62-mile-wide comet' is on the larger end of proposed values. Host presents it as 'overwhelming' evidence, which overstates scientific consensus.",
-      "tags": ["younger-dryas", "impact-hypothesis", "megafauna", "extinction"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -440,7 +430,6 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "109P/Swift-Tuttle is ~26 km (~16 mi) in diameter (Yeomans et al.) and parent body of the Perseids. Its high velocity (60 km/s) and size give it massive kinetic energy; '27x Chicxulub' is plausible arithmetic for kinetic energy ratio but the Chicxulub impactor was ~10 km at lower velocity, so actual ratio depends on assumptions. Current orbital calculations rule out impact for ≥1000 years.",
-      "tags": ["swift-tuttle", "comet", "perseids", "chicxulub"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -473,7 +462,6 @@
       "confidence": 0.8,
       "directTruth": 0.2,
       "rationale": "This is very likely false as stated. Dust-grain cometary debris burns up daily in meteor showers, but 'comets' as in nucleus fragments hitting Earth every 3 days is orders of magnitude too frequent. Documented comet impacts (Tunguska 1908, Chelyabinsk 2013 if cometary) are decadal-to-centennial events. Host is conflating meteor-shower dust with comet-scale impacts.",
-      "tags": ["comets", "impact-frequency", "error"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -499,7 +487,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "Tunguska 1908 is well-documented: ~60-80 million trees flattened over ~2,150 km². Object estimated 50-80 m (not 200 ft / 60 m — reasonable match). 'During peak of the Torids' is contested — the Taurid connection is a minority hypothesis advanced by Asher & Clube; most Tunguska researchers favor an asteroidal bolide.",
-      "tags": ["tunguska", "1908", "taurids", "siberia"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -526,7 +513,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "2024 YR4 (discovered December 27, 2024) peaked at ~3.1% 2032 impact probability in February 2025 — the highest since Apophis's 2004 peak, making it the most dangerous NEO since Apophis for a brief window. Probability dropped to near zero with additional observations. China's 2024 announcement of a planetary-defense unit under CNSA is contemporaneous.",
-      "tags": ["2024-yr4", "china", "planetary-defense", "impact-probability"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     }

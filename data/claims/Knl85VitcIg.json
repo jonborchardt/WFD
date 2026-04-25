@@ -3,6 +3,7 @@
   "transcriptId": "Knl85VitcIg",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "Knl85VitcIg:c_0001",
@@ -58,7 +59,10 @@
       "rationale": "The framing conjoins a documented historical figure with the supernatural claim of non-aging across two centuries. The host himself later debunks the non-aging element (Prince Charles of Hesse-Kassel described a small gray-haired man in his 90s). This is the core legend, not established fact.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0001", "kind": "elaborates" }
+        {
+          "target": "Knl85VitcIg:c_0001",
+          "kind": "elaborates"
+        }
       ]
     },
     {
@@ -136,7 +140,11 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0004", "kind": "contradicts", "rationale": "[debunks] Offers sleight-of-hand as the mundane mechanism that produced the apparent transmutation." }
+        {
+          "target": "Knl85VitcIg:c_0004",
+          "kind": "contradicts",
+          "rationale": "[debunks] Offers sleight-of-hand as the mundane mechanism that produced the apparent transmutation."
+        }
       ]
     },
     {
@@ -167,7 +175,10 @@
       "rationale": "The Countess von Georgy anecdote appears in 18th-century memoirs, but the witness was reportedly ninety and the identification was contested at the time. Treated as eyewitness proof, it fails modern historical standards.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0002", "kind": "supports" }
+        {
+          "target": "Knl85VitcIg:c_0002",
+          "kind": "supports"
+        }
       ]
     },
     {
@@ -197,7 +208,11 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0006", "kind": "contradicts", "rationale": "[undercuts] Attacks the reliability of the witness who supposedly confirmed non-aging." }
+        {
+          "target": "Knl85VitcIg:c_0006",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Attacks the reliability of the witness who supposedly confirmed non-aging."
+        }
       ]
     },
     {
@@ -281,7 +296,11 @@
       "rationale": "The Marie Antoinette warning narrative comes from 'Souvenirs de Marie-Antoinette' attributed to Comtesse d'Adhémar — a text widely regarded by historians as a 19th-century forgery published decades after both figures died. Contradicts the documented 1784 death.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0009", "kind": "contradicts", "rationale": "[logical] A man documented to have died in 1784 cannot return in 1789 unless the supernatural claim is accepted." }
+        {
+          "target": "Knl85VitcIg:c_0009",
+          "kind": "contradicts",
+          "rationale": "[logical] A man documented to have died in 1784 cannot return in 1789 unless the supernatural claim is accepted."
+        }
       ]
     },
     {
@@ -363,8 +382,16 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0012", "kind": "contradicts", "rationale": "[debunks] Names the concealed-gold mechanism that produced the on-air effect." },
-        { "target": "Knl85VitcIg:c_0004", "kind": "contradicts", "rationale": "[debunks] Generalizes the stage-magic explanation to all the Count's transmutation demonstrations." }
+        {
+          "target": "Knl85VitcIg:c_0012",
+          "kind": "contradicts",
+          "rationale": "[debunks] Names the concealed-gold mechanism that produced the on-air effect."
+        },
+        {
+          "target": "Knl85VitcIg:c_0004",
+          "kind": "contradicts",
+          "rationale": "[debunks] Generalizes the stage-magic explanation to all the Count's transmutation demonstrations."
+        }
       ]
     },
     {
@@ -396,7 +423,11 @@
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0002", "kind": "contradicts", "rationale": "[alternative] Provides a mundane biographical explanation that removes the need for supernatural immortality." }
+        {
+          "target": "Knl85VitcIg:c_0002",
+          "kind": "contradicts",
+          "rationale": "[alternative] Provides a mundane biographical explanation that removes the need for supernatural immortality."
+        }
       ]
     },
     {
@@ -424,7 +455,11 @@
       "inVerdictSection": true,
       "hostStance": "uncertain",
       "dependencies": [
-        { "target": "Knl85VitcIg:c_0014", "kind": "contradicts", "rationale": "[alternative] Walks back the mundane explanation by re-introducing the immortality hypothesis as consistent with missing evidence." }
+        {
+          "target": "Knl85VitcIg:c_0014",
+          "kind": "contradicts",
+          "rationale": "[alternative] Walks back the mundane explanation by re-introducing the immortality hypothesis as consistent with missing evidence."
+        }
       ]
     }
   ]

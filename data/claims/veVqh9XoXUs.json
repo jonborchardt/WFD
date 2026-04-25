@@ -3,6 +3,7 @@
   "transcriptId": "veVqh9XoXUs",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "veVqh9XoXUs:c_0001",
@@ -28,7 +29,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Nick Bellantoni's 2009 DNA testing at the University of Connecticut found the skull fragment was female and under 40. Widely reported (Archaeology, National Geographic). The Russian position is that jaw/tooth fragments — not the skull — are the surviving Hitler remains.",
-      "tags": ["hitler", "dna-test", "skull-fragment"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -56,7 +56,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Mainstream scholarly consensus: Hitler committed suicide in the Führerbunker April 30, 1945. Documentary support from Hugh Trevor-Roper's 1947 'The Last Days of Hitler', contemporaneous Soviet autopsy records (Ian Kershaw 2000). The episode challenges this view — but the view itself is the consensus.",
-      "tags": ["hitler-death", "berlin-bunker", "consensus"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -84,7 +83,6 @@
       "confidence": 0.8,
       "directTruth": 0.7,
       "rationale": "FBI Vault released ~700 pages of Hitler-related files in 2014, including post-war sighting investigations through the 1970s. Characterizing these as 'their longest manhunt' is the host's framing — FBI processed sighting leads but did not consistently run an active case for 32 years.",
-      "tags": ["fbi", "hitler-manhunt"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -120,7 +118,6 @@
       "confidence": 0.85,
       "directTruth": 0.65,
       "rationale": "'Aktion Adlerflug' / 'Operation Eagle Flight' is the name given in some post-war reporting (notably Paul Manning's 1981 'Martin Bormann: Nazi in Exile') to Bormann's alleged 1944 wealth-flight operation. Its existence in that exact form is contested among historians; some Nazi wealth-flight activity is well-documented, but whether it was a single named operation and whether Bormann led it in the form described is less firm.",
-      "tags": ["bormann", "operation-eagle-flight", "nazi-wealth"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -147,7 +144,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Peron's government ran an explicit 'Die Spinne'-adjacent immigration operation admitting ex-Nazis (Uki Goñi, 'The Real Odessa', 2002). Figures of 'thousands' of fake passports are consistent with Goñi's archival work in Argentine foreign-ministry records. 'Supporter of Hitler' is strong — more accurately, Peron was sympathetic to Axis aims but politically pragmatic.",
-      "tags": ["peron", "argentina", "nazi-ratlines"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -173,7 +169,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Hudal's role in Nazi ratlines is well-documented (Gerald Steinacher 'Nazis on the Run', 2011; Uki Goñi). Vatican and Red Cross involvement in issuing travel documents used by fugitive Nazis is confirmed by ICRC's own 2011 acknowledgement that its travel documents were exploited.",
-      "tags": ["vatican", "ratlines", "hudal", "red-cross"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -201,11 +196,14 @@
       "confidence": 0.75,
       "directTruth": 0.3,
       "rationale": "'Operation Tierra del Fuego' / 'Land of Fire' with Parkinson's-specialist facilities is specific to the Abel Basti / Jerome Corsi conspiracy literature. General German settler population in Patagonia (e.g., Bariloche) is real; the specific 'infrastructure built for Hitler' claim is not supported by mainstream historical archives.",
-      "tags": ["patagonia", "nazi-conspiracy", "speculation"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "veVqh9XoXUs:c_0005", "kind": "elaborates", "rationale": "Peron's support underpins the infrastructure claim." }
+        {
+          "target": "veVqh9XoXUs:c_0005",
+          "kind": "elaborates",
+          "rationale": "Peron's support underpins the infrastructure claim."
+        }
       ]
     },
     {
@@ -239,7 +237,6 @@
       "confidence": 0.7,
       "directTruth": 0.35,
       "rationale": "Abel Basti is a real Argentine journalist / author whose books (Bariloche Nazi, 2005) advance Hitler-in-Argentina theories. The 2022 submarine 'discovery' is reported in fringe media; Argentine Navy and mainstream archaeology have not confirmed any wartime German sub in the cited location. Identification attributed to French/Italian researchers is not verifiable in peer-reviewed archaeology.",
-      "tags": ["abel-basti", "submarine", "argentina"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -274,7 +271,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The 1955 CIA memo from station chief 'CIMELODY-3' was declassified with the JFK files and is a real document. However, the memo itself does not verify Hitler was alive — it records a single secondhand claim the CIA's station chief declined to pursue. Existence of the memo is well-attested; the underlying claim is not.",
-      "tags": ["cia-memo", "1955", "jfk-files"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -319,7 +315,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Operation Paperclip is extensively documented (Annie Jacobsen 2014, Linda Hunt 1991, National Archives release). 1,600+ figure matches. Wernher von Braun, Arthur Rudolph, and colleagues moved to Redstone/Marshall and led Saturn V development.",
-      "tags": ["operation-paperclip", "von-braun", "nasa", "saturn-v"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -345,11 +340,14 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Rudolph received the NASA Distinguished Service Medal (1969) for Saturn V. His Mittelwerk management role is documented in the 1984 OSI investigation that led to his renouncing US citizenship and returning to West Germany. Mittelwerk death toll of ~20,000 is standard.",
-      "tags": ["arthur-rudolph", "mittelwerk", "slave-labor"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "veVqh9XoXUs:c_0010", "kind": "elaborates", "rationale": "Specific war-crime case within Paperclip." }
+        {
+          "target": "veVqh9XoXUs:c_0010",
+          "kind": "elaborates",
+          "rationale": "Specific war-crime case within Paperclip."
+        }
       ]
     },
     {
@@ -375,11 +373,14 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "US Counter-Intelligence Corps employment of Klaus Barbie and CIA-assisted ratline to Bolivia is documented in the 1983 Ryan Report (Justice Department's Allan Ryan). Barbie eventually extradited from Bolivia in 1983, convicted in France 1987.",
-      "tags": ["klaus-barbie", "butcher-of-lyon", "cia"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "veVqh9XoXUs:c_0010", "kind": "elaborates", "rationale": "Broader pattern of US post-war recruitment of Nazis." }
+        {
+          "target": "veVqh9XoXUs:c_0010",
+          "kind": "elaborates",
+          "rationale": "Broader pattern of US post-war recruitment of Nazis."
+        }
       ]
     },
     {
@@ -406,7 +407,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "The ~10,000 figure is Eric Lichtblau's estimate from 'The Nazis Next Door' (2014), based on OSI / Justice Department work and declassified files. Estimates vary widely; 10,000 is at the upper end of responsible journalism, but defensible.",
-      "tags": ["nazis-in-america", "cia-fbi", "post-war"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -433,11 +433,14 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "CIA Inspector General investigations into records destruction during the Nazi War Crimes Disclosure Act compliance (passed 1998) are publicly acknowledged. Several file series had been purged, timing of which has been questioned by IWG and NARA.",
-      "tags": ["cia", "file-destruction", "nazi-war-crimes-act"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "veVqh9XoXUs:c_0013", "kind": "supports", "rationale": "Document destruction helps explain why scope of CIA-Nazi ties is imprecisely known." }
+        {
+          "target": "veVqh9XoXUs:c_0013",
+          "kind": "supports",
+          "rationale": "Document destruction helps explain why scope of CIA-Nazi ties is imprecisely known."
+        }
       ]
     },
     {
@@ -463,7 +466,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Operation Sunrise (March-May 1945) is well-documented (Dulles's own 1966 'The Secret Surrender'; Kerstin von Lingen 2009). Dulles's secret OSS negotiations with Wolff arranged the early surrender of German forces in Italy. Whether this counts as 'protecting' Nazis is the interpretive layer — Wolff avoided a Nuremberg-scale trial.",
-      "tags": ["alan-dulles", "operation-sunrise", "karl-wolff"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     }

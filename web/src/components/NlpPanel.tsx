@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, Chip, Link } from "@mui/material";
+import { Box, Typography, Chip, Link, Tooltip, Accordion, AccordionSummary, AccordionDetails, useTheme } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ENTITY_TYPE_COLOR } from "./catalog-columns";
 import { SuggestChip } from "./SuggestChip";
+import { EntityWordCloud } from "./EntityWordCloud";
 import { EntityMenuButton, RelationMenuButton } from "./EntityMenu";
 import { useOpenVideo } from "./VideoLightbox";
 import { fmtTimestamp } from "../lib/format";
@@ -23,6 +25,8 @@ interface Props {
 export function NlpPanel({ videoId, nlp }: Props) {
   const nav = useNavigate();
   const openVideo = useOpenVideo();
+  const theme = useTheme();
+  const entityPalette = (theme.palette as unknown as { entity?: Record<string, string> }).entity;
   if (!nlp) return <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>analyzing transcript…</Typography>;
 
   const { entities, relationships } = nlp;
@@ -49,40 +53,91 @@ export function NlpPanel({ videoId, nlp }: Props) {
           {visibleEntityCount} unique · {visibleMentionCount} mentions
         </Typography>
       </Typography>
-      {visibleTypes.map((t) => (
-        <Box key={t} sx={{ mb: 1.5 }}>
-          <Typography variant="overline" color="text.secondary">{t}</Typography>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mt: 0.5 }}>
-            {(byType[t] || [])
-              .slice()
-              .sort((a, b) => b.mentions.length - a.mentions.length || a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
-              .map((e) => {
-                const split = splitEntityId(e.id);
-                return (
-                  <Box key={e.id} sx={{ display: "inline-flex", alignItems: "center" }}>
-                    <Chip
-                      size="small"
-                      color={ENTITY_TYPE_COLOR[t] || "default"}
-                      variant="outlined"
-                      label={e.canonical}
-                      clickable
-                      onClick={(ev) => {
-                        if (ev.shiftKey) return; // shift+click opens menu via the button
-                        nav("/entity/" + encodeURIComponent(e.id));
-                      }}
-                    />
-                    <EntityMenuButton
-                      entity={{ key: e.id, canonical: e.canonical, label: split.label }}
-                      videoId={videoId}
-                      where={`/video/${videoId}`}
-                    />
-                  </Box>
-                );
-              })}
-            <SuggestChip area={"new " + t} videoId={videoId} label={"suggest " + t + "\u2026"} />
-          </Box>
-        </Box>
-      ))}
+      <EntityWordCloud nlp={nlp} />
+      {visibleTypes.map((t) => {
+        const items = byType[t] || [];
+        const mentionTotal = items.reduce((n, e) => n + e.mentions.length, 0);
+        const typeHex = entityPalette?.[t];
+        return (
+          <Accordion
+            key={t}
+            disableGutters
+            elevation={0}
+            square
+            sx={{
+              "&:before": { display: "none" },
+              borderBottom: 1,
+              borderColor: "divider",
+              bgcolor: "transparent",
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon fontSize="small" />}
+              sx={{ minHeight: 0, px: 0, "& .MuiAccordionSummary-content": { my: 0.5 } }}
+            >
+              <Typography
+                variant="overline"
+                sx={{
+                  lineHeight: 1.5,
+                  color: entityPalette?.[t] ?? "text.secondary",
+                  fontWeight: 600,
+                }}
+              >
+                {t}{" "}
+                <Typography component="span" variant="caption" color="text.secondary" sx={{ fontWeight: 400 }}>
+                  {items.length} · {mentionTotal} mentions
+                </Typography>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails sx={{ px: 0, pt: 0, pb: 1 }}>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                {items
+                  .slice()
+                  .sort((a, b) => b.mentions.length - a.mentions.length || a.canonical.localeCompare(b.canonical, undefined, { numeric: true, sensitivity: "base" }))
+                  .map((e) => {
+                    const split = splitEntityId(e.id);
+                    return (
+                      <Box key={e.id} sx={{ display: "inline-flex", alignItems: "center" }}>
+                        <Chip
+                          size="small"
+                          variant="outlined"
+                          // Drive the chip color from the same entity palette as
+                          // the section title, so every type — not just the seven
+                          // mapped in ENTITY_TYPE_COLOR — gets a colored chip.
+                          sx={typeHex ? {
+                            borderColor: typeHex,
+                            color: typeHex,
+                            "& .MuiChip-label": { color: typeHex },
+                          } : undefined}
+                          color={typeHex ? undefined : (ENTITY_TYPE_COLOR[t] || "default")}
+                          label={
+                            <Box component="span" sx={{ display: "inline-flex", alignItems: "baseline", gap: 0.5 }}>
+                              <span>{e.canonical}</span>
+                              <Box component="span" sx={{ color: "text.secondary", fontSize: "0.75em" }}>
+                                {e.mentions.length}
+                              </Box>
+                            </Box>
+                          }
+                          clickable
+                          onClick={(ev) => {
+                            if (ev.shiftKey) return; // shift+click opens menu via the button
+                            nav("/entity/" + encodeURIComponent(e.id));
+                          }}
+                        />
+                        <EntityMenuButton
+                          entity={{ key: e.id, canonical: e.canonical, label: split.label }}
+                          videoId={videoId}
+                          where={`/video/${videoId}`}
+                        />
+                      </Box>
+                    );
+                  })}
+                <SuggestChip area={"new " + t} videoId={videoId} label={"suggest " + t + "\u2026"} />
+              </Box>
+            </AccordionDetails>
+          </Accordion>
+        );
+      })}
 
       <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>
         Relationships{" "}
@@ -97,6 +152,13 @@ export function NlpPanel({ videoId, nlp }: Props) {
             const s = entById[r.subjectId];
             const o = entById[r.objectId];
             if (!s || !o || !r.evidence) return null;
+            const sHex = entityPalette?.[s.type];
+            const oHex = entityPalette?.[o.type];
+            const hexChipSx = (hex: string | undefined) => hex ? {
+              borderColor: hex,
+              color: hex,
+              "& .MuiChip-label": { color: hex },
+            } : undefined;
             return (
               <Box key={r.id} sx={{ display: "flex", alignItems: "center", gap: 1, fontSize: 14 }}>
                 <Link
@@ -108,10 +170,45 @@ export function NlpPanel({ videoId, nlp }: Props) {
                 >
                   [{fmtTimestamp(r.evidence.timeStart)}]
                 </Link>
-                <Chip size="small" label={s.canonical} variant="outlined" color={ENTITY_TYPE_COLOR[s.type] || "default"} clickable onClick={() => nav("/entity/" + encodeURIComponent(s.id))} />
+                <Chip
+                  size="small"
+                  label={s.canonical}
+                  variant="outlined"
+                  sx={hexChipSx(sHex)}
+                  color={sHex ? undefined : (ENTITY_TYPE_COLOR[s.type] || "default")}
+                  clickable
+                  onClick={() => nav("/entity/" + encodeURIComponent(s.id))}
+                />
                 <Typography variant="caption" color="text.secondary">{r.predicate}</Typography>
-                <Chip size="small" label={o.canonical} variant="outlined" color={ENTITY_TYPE_COLOR[o.type] || "default"} clickable onClick={() => nav("/entity/" + encodeURIComponent(o.id))} />
-                <Typography variant="caption" color="text.secondary">{r.confidence.toFixed(2)}</Typography>
+                <Chip
+                  size="small"
+                  label={o.canonical}
+                  variant="outlined"
+                  sx={hexChipSx(oHex)}
+                  color={oHex ? undefined : (ENTITY_TYPE_COLOR[o.type] || "default")}
+                  clickable
+                  onClick={() => nav("/entity/" + encodeURIComponent(o.id))}
+                />
+                <Tooltip
+                  arrow
+                  title={
+                    <Box sx={{ fontSize: 12, lineHeight: 1.4 }}>
+                      GLiREL's score that the predicate
+                      <strong> {r.predicate}</strong> holds between
+                      these two entities, given the evidence sentence
+                      at the timestamp on the left. Higher = stronger
+                      model signal; not a truth judgment.
+                    </Box>
+                  }
+                >
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ cursor: "help", textDecoration: "underline dotted" }}
+                  >
+                    {r.confidence.toFixed(2)}
+                  </Typography>
+                </Tooltip>
                 <RelationMenuButton
                   videoId={videoId}
                   relation={{

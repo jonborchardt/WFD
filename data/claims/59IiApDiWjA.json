@@ -3,6 +3,7 @@
   "transcriptId": "59IiApDiWjA",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "59IiApDiWjA:c_0001",
@@ -27,7 +28,6 @@
       "confidence": 0.98,
       "directTruth": 0.98,
       "rationale": "The July 2022 bombing is documented by news reporting, CCTV footage (which the host discusses), ATF involvement, and Georgia's same-day decision to demolish the remaining stones for safety. Strong factual grounding.",
-      "tags": ["georgia-guidestones", "bombing", "destruction"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -54,7 +54,6 @@
       "confidence": 0.98,
       "directTruth": 0.97,
       "rationale": "The text of the first guide is directly quoted. The stones themselves were the primary source and the inscription is widely photographed.",
-      "tags": ["georgia-guidestones", "population"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -89,7 +88,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "The guide text is verbatim; the eugenic reading is interpretive but the companion book Common Sense Renewed explicitly argues for selective reproduction, making the eugenics label defensible.",
-      "tags": ["georgia-guidestones", "eugenics"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -124,7 +122,6 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Common Sense Renewed is a real 1986 publication sent to members of Congress and is the authoritative companion text to the Guidestones. Its contents are verifiable.",
-      "tags": ["common-sense-renewed", "rc-christian"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -153,7 +150,6 @@
       "confidence": 0.8,
       "directTruth": 0.55,
       "rationale": "The Kirsten identification comes from a return-address captured by a 2005 documentary crew and matches biographical details (WWII service, construction work, post-2000 death, conservationist). Strong circumstantial fit, but the bank president Wyatt Martin who knew the true identity never confirmed it and kept his word until his 2021 death.",
-      "tags": ["rc-christian", "kirsten", "identity"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -186,7 +182,6 @@
       ],
       "confidence": 0.7,
       "rationale": "This detail comes from the same post-2005 internet investigation that produced the Kirsten identification. It is not independently checkable from the video and I have no external documentation to confirm; omitting directTruth rather than guessing.",
-      "tags": ["kirsten", "david-duke", "politics"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -213,7 +208,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "The Bilderberg meetings began in 1954 at the Hotel de Bilderberg. The stated purpose of fostering Atlantic dialogue to prevent war is the official history given by the organization. Host qualifies this as 'what they say publicly'.",
-      "tags": ["bilderberg", "post-war"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -240,7 +234,6 @@
       "confidence": 0.7,
       "directTruth": 0.08,
       "rationale": "Host hedges with 'allegedly' and frames it as one of the conspiracy theories prompted by Bilderberg secrecy. No credible source connects the Bilderberg Group to engineered pandemics; the claim is a standard conspiracy-theory allegation.",
-      "tags": ["bilderberg", "depopulation", "conspiracy"],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -268,7 +261,6 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "The Club of Rome was founded in April 1968 at Villa Serbelloni in Bellagio (a Rockefeller Foundation conference center). The 'Morgenthau Group' attribution is idiosyncratic — the co-founders of record are Aurelio Peccei and Alexander King, so a partial fact-check discount.",
-      "tags": ["club-of-rome", "rockefeller", "bellagio"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -295,7 +287,6 @@
       "confidence": 0.8,
       "directTruth": 0.2,
       "rationale": "The 'New World Order' interpretation is a contested reading. The actual inscription reads as ecumenical liberal internationalism rather than a conspiratorial blueprint; the NWO gloss is host commentary, not textual fact.",
-      "tags": ["georgia-guidestones", "new-world-order"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -323,7 +314,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Wyatt Martin was the sole identified intermediary and his role is well-documented in local press and the 2005 Dark Clouds Over Elberton documentary.",
-      "tags": ["wyatt-martin", "rc-christian", "secrecy"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -350,7 +340,6 @@
       "confidence": 0.9,
       "directTruth": 0.95,
       "rationale": "Simple logical elimination — Martin confirmed Christian died after 2000, Turner is alive. Clean deductive argument.",
-      "tags": ["ted-turner", "rc-christian", "identity"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -385,7 +374,6 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Shockley shared the 1956 Nobel Prize for the transistor and later publicly advocated eugenic sterilization programs — documented in multiple biographies. Matter of public record.",
-      "tags": ["shockley", "nobel-prize", "eugenics"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -420,7 +408,6 @@
       "confidence": 0.7,
       "directTruth": 0.25,
       "rationale": "The rapid cleanup is documented but can be explained by safety concerns over unstable remaining monoliths; the state ordered full demolition the same day. The 'missing investigation' framing is host inference.",
-      "tags": ["georgia-guidestones", "cover-up", "cleanup"],
       "inVerdictSection": true,
       "hostStance": "uncertain"
     },
@@ -456,7 +443,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Host's closing opinion/rhetorical frame. The biographical facts (Kirsten four children, Rockefeller six, Shockley three) are checkable, but whether that constitutes 'hypocrisy' is normative. Omitting directTruth as appropriate for an opinion.",
-      "tags": ["hypocrisy", "depopulation", "elites"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

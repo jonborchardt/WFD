@@ -3,6 +3,7 @@
   "transcriptId": "TNKZz-C0EOc",
   "generatedAt": "2026-04-22T04:30:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "TNKZz-C0EOc:c_0001",
@@ -18,7 +19,9 @@
         "technology:teleportation",
         "technology:invisibility"
       ],
-      "relationships": ["r_0001"],
+      "relationships": [
+        "r_0001"
+      ],
       "evidence": [
         {
           "transcriptId": "TNKZz-C0EOc",
@@ -32,7 +35,6 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "[debunks] Host is immediately flagging this as the legend to debunk, not an assertion. No credible evidence of teleportation / invisibility / time travel experiments has ever been shown, and the US Navy's official position (and Office of Naval Research FAQ) says no such experiment occurred.",
-      "tags": ["philadelphia-experiment", "uss-eldridge", "navy", "conspiracy"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -60,7 +62,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Declassified Eldridge deck logs (available through the Naval History and Heritage Command) place the ship in New York on October 28, 1943. This is the single strongest factual refutation of the Philadelphia-experiment legend.",
-      "tags": ["uss-eldridge", "ships-log", "philadelphia-experiment"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -93,7 +94,6 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "The green-fog detail originates with Carl Allen/Carlos Allende's 1955 letters to Jessup and was not corroborated by any named witness or contemporaneous report. No ship's-log entry, photograph, or Navy record supports it.",
-      "tags": ["green-fog", "eldridge", "allende", "legend"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -126,7 +126,6 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "[debunks] The 'fused into the bulkhead' detail appears only in Allen's letters. The crew of the USS Eldridge had active postwar service records; no service member's death certificate or VA record attributes death to fusion into a metal wall. The claim fails basic biographical verification.",
-      "tags": ["fusion", "crew", "eldridge", "legend"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -170,7 +169,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Degaussing was absolutely a real WWII-era practice (the transcript mis-spells it 'degassing' and 'gousse'). Allied navies installed degaussing coils on many ships, and the Philadelphia Naval Shipyard was one of the sites performing this work. Mainstream naval history.",
-      "tags": ["degaussing", "navy", "world-war-2", "magnetic-mines"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -193,7 +191,9 @@
         "person:jessopp",
         "person:carl allen"
       ],
-      "relationships": ["r_0028"],
+      "relationships": [
+        "r_0028"
+      ],
       "evidence": [
         {
           "transcriptId": "TNKZz-C0EOc",
@@ -215,7 +215,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Morris K. Jessup was a real astronomer/author; Carl Meredith Allen (who used 'Carlos Allende') did send him the annotated copy of 'The Case for the UFO' c. 1955–1956 — extensively documented including in the Varo Edition held by the Office of Naval Research. Origin story is accurate.",
-      "tags": ["jessup", "allende", "1955", "origin-story"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -244,7 +243,6 @@
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "[debunks] Einstein did publish attempts at a unified field theory but never achieved one; no such theory was available for the Navy to apply in 1943. The modern Standard Model still hasn't unified gravity with the other forces. The Allende framing is scientifically impossible.",
-      "tags": ["einstein", "unified-field-theory", "allende", "pseudoscience"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -265,7 +263,9 @@
         "organization:gypsies",
         "work_of_media:the case of the ufo"
       ],
-      "relationships": ["r_0061"],
+      "relationships": [
+        "r_0061"
+      ],
       "evidence": [
         {
           "transcriptId": "TNKZz-C0EOc",
@@ -287,7 +287,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The 'Varo Edition' annotated book is a documented artifact; Allen's authorship of the annotations (under multiple pseudonyms) is established in the scholarship (Goerman's research, Navy records). Allen's own admission seals this.",
-      "tags": ["allende", "gypsies", "hoax", "varo-edition"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -329,7 +328,6 @@
       "confidence": 0.95,
       "directTruth": 0.02,
       "rationale": "[debunks] A human body cannot burn for 18 days; the caloric content is exhausted far faster. The 'walked through a wall' detail also violates basic physics. Host is recounting Allen's claims, clearly as examples of the unreliability of the source.",
-      "tags": ["allende", "hoax", "impossible-claims"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -352,7 +350,10 @@
         "date_time:april 20th",
         "date_time:april 19th, nineteen fifty nine"
       ],
-      "relationships": ["r_0071", "r_0072"],
+      "relationships": [
+        "r_0071",
+        "r_0072"
+      ],
       "evidence": [
         {
           "transcriptId": "TNKZz-C0EOc",
@@ -382,7 +383,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Jessup died April 20, 1959 in Dade County, FL, of carbon monoxide poisoning by self-administered vehicle exhaust. Police ruled it suicide. The 'no autopsy' claim is consistent with the period's practice for clear suicides. Well-documented historical death.",
-      "tags": ["jessup", "death", "suicide", "1959"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -408,7 +408,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Host's explicit verdict. The mainstream / skeptical position is that the Philadelphia experiment never occurred — no documents, no records, no corroborating witnesses. Matches the Office of Naval Research's own statement on the topic.",
-      "tags": ["philadelphia-experiment", "verdict", "skepticism"],
       "inVerdictSection": true,
       "hostStance": "denies"
     },
@@ -436,7 +435,6 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "[debunks] The 20-minutes-later / 10-minutes-earlier detail originates from Allende's hoax letters. The ship was demonstrably in New York the day in question (c_0002), making the transit narrative impossible.",
-      "tags": ["philadelphia-experiment", "time-travel", "teleportation"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [

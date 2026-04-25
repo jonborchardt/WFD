@@ -3,6 +3,7 @@
   "transcriptId": "RKwXczzJAB4",
   "generatedAt": "2026-04-21T12:15:00.000Z",
   "generator": "claude-opus-4-7-1m",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "RKwXczzJAB4:c_0001",
@@ -30,8 +31,7 @@
       "confidence": 0.95,
       "directTruth": 0.05,
       "rationale": "No declassified Pentagon document, satellite-imagery release, or mainstream archaeological record supports the existence of this chamber. The claim originates entirely in Radu Cinamar's 'Transylvanian Sunrise' fiction series.",
-      "hostStance": "asserts",
-      "tags": ["bucegi", "underground-chamber", "pentagon"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0002",
@@ -59,10 +59,12 @@
       "directTruth": 0.05,
       "rationale": "Same fictional source as c_0001; no independent archaeological or military record of an Iraqi chamber with a matched energy signature exists.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0001", "kind": "elaborates" }
+        {
+          "target": "RKwXczzJAB4:c_0001",
+          "kind": "elaborates"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["baghdad", "underground-chamber"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0003",
@@ -90,10 +92,12 @@
       "directTruth": 0.05,
       "rationale": "The WMD justification for the 2003 Iraq war was indeed false, but no credible evidence links the invasion to ancient archaeological sites. The claim is attributed to the fictional Senator Massini character.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0002", "kind": "presupposes" }
+        {
+          "target": "RKwXczzJAB4:c_0002",
+          "kind": "presupposes"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["iraq-war", "conspiracy", "bilderberg"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0004",
@@ -106,7 +110,10 @@
         "location:romania",
         "date_time:1970"
       ],
-      "relationships": ["r_0037", "r_0039"],
+      "relationships": [
+        "r_0037",
+        "r_0039"
+      ],
       "evidence": [
         {
           "transcriptId": "RKwXczzJAB4",
@@ -121,7 +128,7 @@
           "charStart": 3532,
           "charEnd": 3590,
           "timeStart": 217.6,
-          "timeEnd": 224.0,
+          "timeEnd": 224,
           "quote": "couldn't cut his umbilical cord.\nScissors couldn't cut it."
         },
         {
@@ -136,8 +143,7 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "Cezar Brad is a character in Cinamar's novels. No Romanian birth record, press archive, or government document corroborates his existence or the supernatural birth details.",
-      "hostStance": "asserts",
-      "tags": ["cezar-brad", "psychic", "romania"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0005",
@@ -163,10 +169,12 @@
       "directTruth": 0.1,
       "rationale": "Project Stargate was real — declassified 1995. Department Zero has no declassification paper trail, appears only in the Cinamar novels. Ceausescu-era Romania did run intelligence programs but no psychic unit is documented.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0004", "kind": "supports" }
+        {
+          "target": "RKwXczzJAB4:c_0004",
+          "kind": "supports"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["department-zero", "psychic-warfare", "stargate"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0006",
@@ -179,7 +187,11 @@
         "organization:illuminati",
         "person:chazar"
       ],
-      "relationships": ["r_0132", "r_0178", "r_0234"],
+      "relationships": [
+        "r_0132",
+        "r_0178",
+        "r_0234"
+      ],
       "evidence": [
         {
           "transcriptId": "RKwXczzJAB4",
@@ -194,10 +206,12 @@
       "directTruth": 0.05,
       "rationale": "Massini is a fictional narrator device in the Cinamar books. No Italian nobleman by that name with Bilderberg membership is verifiable.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0005", "kind": "elaborates" }
+        {
+          "target": "RKwXczzJAB4:c_0005",
+          "kind": "elaborates"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["bilderberg", "illuminati", "massini"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0007",
@@ -232,10 +246,12 @@
       "directTruth": 0.15,
       "rationale": "Plasma torches and plasma-jet drilling research exists (GA, EarthGrid), but a plasma drill that melts granite into a 30-foot-wide glass tunnel in 6 hours exceeds all declassified capability by orders of magnitude.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0001", "kind": "presupposes" }
+        {
+          "target": "RKwXczzJAB4:c_0001",
+          "kind": "presupposes"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["plasma-drill", "reverse-engineering"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0008",
@@ -271,8 +287,7 @@
       "confidence": 0.95,
       "directTruth": 0.02,
       "rationale": "Zecharia Sitchin's Anunnaki narrative has been universally rejected by Assyriologists; Sumerian tablets do not describe genetic engineering. Anatomically modern humans appear ~300,000 years ago via standard evolution.",
-      "hostStance": "asserts",
-      "tags": ["anunnaki", "ancient-aliens", "sitchin"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0009",
@@ -305,8 +320,7 @@
       "confidence": 0.85,
       "directTruth": 0.05,
       "rationale": "Atlantis is a Platonic allegory in 'Timaeus/Critias'. The Younger Dryas cooling event is real (~12,900 years ago), but mapping Plato's fiction onto it is a Graham Hancock-style conjecture rejected by mainstream archaeology.",
-      "hostStance": "asserts",
-      "tags": ["atlantis", "younger-dryas"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0010",
@@ -318,7 +332,10 @@
         "organization:nato",
         "organization:bilderberg group"
       ],
-      "relationships": ["r_0239", "r_0240"],
+      "relationships": [
+        "r_0239",
+        "r_0240"
+      ],
       "evidence": [
         {
           "transcriptId": "RKwXczzJAB4",
@@ -332,8 +349,7 @@
       "confidence": 0.95,
       "directTruth": 0.55,
       "rationale": "Romania's March 29, 2004 NATO accession is verified. But 'denied for 20 years' oversimplifies — Romania formally applied in 1994 and was in the Partnership for Peace track. Timing is coincidence, not causation.",
-      "hostStance": "asserts",
-      "tags": ["nato", "romania", "timing"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0011",
@@ -376,11 +392,18 @@
       "directTruth": 0.95,
       "rationale": "Documented fact: the entire Bucegi mythos originates in Cinamar's 'Transylvanian Sunrise' series published by Peter Moon's Sky Books imprint. No other primary source exists.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0001", "kind": "contradicts", "rationale": "[undercuts] the single-source origin undermines the chamber's empirical claim" },
-        { "target": "RKwXczzJAB4:c_0003", "kind": "contradicts", "rationale": "[undercuts] Massini's Iraq-war reveal also traces back to the same fiction" }
+        {
+          "target": "RKwXczzJAB4:c_0001",
+          "kind": "contradicts",
+          "rationale": "[undercuts] the single-source origin undermines the chamber's empirical claim"
+        },
+        {
+          "target": "RKwXczzJAB4:c_0003",
+          "kind": "contradicts",
+          "rationale": "[undercuts] Massini's Iraq-war reveal also traces back to the same fiction"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["cinamar", "source-criticism"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0012",
@@ -408,10 +431,13 @@
       "directTruth": 0.95,
       "rationale": "Verifiable: Moon and Nichols co-authored The Montauk Project: Experiments in Time (1992); Moon's Sky Books publishes Cinamar's Transylvanian Series.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0011", "kind": "supports", "rationale": "publisher chain undermines source credibility" }
+        {
+          "target": "RKwXczzJAB4:c_0011",
+          "kind": "supports",
+          "rationale": "publisher chain undermines source credibility"
+        }
       ],
-      "hostStance": "asserts",
-      "tags": ["peter-moon", "montauk", "publisher"]
+      "hostStance": "asserts"
     },
     {
       "id": "RKwXczzJAB4:c_0013",
@@ -445,11 +471,17 @@
       "directTruth": 0.8,
       "rationale": "The host (AJ) explicitly names this framing. Hecklefish flags the hero's-journey structure; AJ concurs. The meta-reading is well supported by the transcript.",
       "dependencies": [
-        { "target": "RKwXczzJAB4:c_0001", "kind": "contradicts", "rationale": "[undercuts] genre-pattern analysis undermines literal-truth reading" },
-        { "target": "RKwXczzJAB4:c_0011", "kind": "supports" }
+        {
+          "target": "RKwXczzJAB4:c_0001",
+          "kind": "contradicts",
+          "rationale": "[undercuts] genre-pattern analysis undermines literal-truth reading"
+        },
+        {
+          "target": "RKwXczzJAB4:c_0011",
+          "kind": "supports"
+        }
       ],
-      "hostStance": "denies",
-      "tags": ["meta-analysis", "hero-journey", "debunk"]
+      "hostStance": "denies"
     },
     {
       "id": "RKwXczzJAB4:c_0014",
@@ -481,8 +513,7 @@
       "confidence": 0.7,
       "directTruth": 0.1,
       "rationale": "Monoatomic elements (ORMEs) is a David Hudson fringe hypothesis — no peer-reviewed confirmation of anti-aging effects exists. The transcript itself concedes no scientific studies confirm life extension.",
-      "hostStance": "uncertain",
-      "tags": ["monoatomic-gold", "alchemy", "pseudoscience"]
+      "hostStance": "uncertain"
     },
     {
       "id": "RKwXczzJAB4:c_0015",
@@ -524,8 +555,7 @@
       "confidence": 0.9,
       "directTruth": 0.5,
       "rationale": "Göbekli Tepe is ~5% excavated, and concrete walkways have been controversial. Giza has large unexplored subterranean voids (Jean-Pierre Houdin scans). But 'suppression' framing exceeds the evidence — these are ordinary excavation-politics disputes.",
-      "hostStance": "asserts",
-      "tags": ["gobekli-tepe", "giza", "archaeology-suppression"]
+      "hostStance": "asserts"
     }
   ]
 }

@@ -4,6 +4,7 @@ import { Container, Typography, Box, Paper, Button, Link, Chip } from "@mui/mate
 import { useOpenVideo } from "../components/VideoLightbox";
 import { NlpPanel } from "../components/NlpPanel";
 import { ClaimsPanel } from "../components/ClaimsPanel";
+import { TruthTimeline } from "../components/TruthTimeline";
 import { SuggestChip } from "../components/SuggestChip";
 import { PageToc, type TocSection } from "../components/PageToc";
 import { PageLoading } from "../components/PageLoading";
@@ -116,11 +117,8 @@ export function VideoDetailPage() {
   const tocSections: TocSection[] = [
     { id: "video-header", label: "overview" },
     ...(row.description ? [{ id: "video-description", label: "description" } as TocSection] : []),
-    ...(transcript && entityCount > 0
-      ? [{ id: "video-entities", label: "entities", count: entityCount } as TocSection]
-      : []),
-    ...(transcript && relationshipCount > 0
-      ? [{ id: "video-relationships", label: "relationships", count: relationshipCount } as TocSection]
+    ...(transcript && claimCount > 0
+      ? [{ id: "video-truth-timeline", label: "story arc" } as TocSection]
       : []),
     ...(transcript
       ? [{
@@ -128,6 +126,12 @@ export function VideoDetailPage() {
           label: "claims",
           count: claimCount,
         } as TocSection]
+      : []),
+    ...(transcript && entityCount > 0
+      ? [{ id: "video-entities", label: "entities", count: entityCount } as TocSection]
+      : []),
+    ...(transcript && relationshipCount > 0
+      ? [{ id: "video-relationships", label: "relationships", count: relationshipCount } as TocSection]
       : []),
     ...(transcript && contradictionCount > 0
       ? [{ id: "video-contradictions", label: "contradictions", count: contradictionCount } as TocSection]
@@ -194,15 +198,16 @@ export function VideoDetailPage() {
               : <PageLoading label="loading transcript & analysis…" />
           )}
 
-          {transcript && (
-            // NlpPanel renders both entities and relationships; we wrap
-            // with a pair of scroll-target anchors so the TOC can jump
-            // to either. The panel itself lays them out in order.
-            <Box sx={{ position: "relative" }}>
-              <Box id="video-entities" sx={{ position: "absolute", top: -80 }} aria-hidden />
-              <Box id="video-relationships" sx={{ position: "absolute", top: -40 }} aria-hidden />
-              <NlpPanel videoId={row.videoId} nlp={nlp} />
-            </Box>
+          {row.description && transcript && claims && claims.claims.length > 0 && (
+            <Box component="hr" sx={{ mt: 3, mb: 0, border: 0, borderTop: 1, borderColor: "divider" }} />
+          )}
+
+          {transcript && claims && claims.claims.length > 0 && (
+            <TruthTimeline
+              claims={claims}
+              indexEntries={claimIndex ?? undefined}
+              lengthSeconds={row.lengthSeconds}
+            />
           )}
 
           {transcript && (
@@ -215,6 +220,17 @@ export function VideoDetailPage() {
                 corpusIndex={corpusIndex ?? undefined}
                 onMutated={refreshClaims}
               />
+            </Box>
+          )}
+
+          {transcript && (
+            // NlpPanel renders both entities and relationships; we wrap
+            // with a pair of scroll-target anchors so the TOC can jump
+            // to either. The panel itself lays them out in order.
+            <Box sx={{ position: "relative" }}>
+              <Box id="video-entities" sx={{ position: "absolute", top: -80 }} aria-hidden />
+              <Box id="video-relationships" sx={{ position: "absolute", top: -40 }} aria-hidden />
+              <NlpPanel videoId={row.videoId} nlp={nlp} />
             </Box>
           )}
 
@@ -254,7 +270,7 @@ export function VideoDetailPage() {
             space to stick against. */}
         <Box
           sx={{
-            display: { xs: "none", lg: "block" },
+            display: { xs: "none", md: "block" },
             width: 200,
             flexShrink: 0,
           }}

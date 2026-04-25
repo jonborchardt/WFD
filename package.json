@@ -10,8 +10,9 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
-    "test:ci": "vitest run && npm run metrics:check",
+    "test:ci": "vitest run && npm run metrics:check && npm run drift:check",
     "test:watch": "vitest",
+    "drift:check": "node tools/check-doc-drift.mjs",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "dev": "tsx watch --clear-screen=false src/ui/main.ts",

@@ -3,6 +3,7 @@
   "transcriptId": "GLP5UupAvSY",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "GLP5UupAvSY:c_0001",
@@ -30,7 +31,6 @@
       "confidence": 0.85,
       "directTruth": 0.05,
       "rationale": "This is the origin-story frame of the This Man legend. Host later confirms the whole narrative is a hoax created by advertising executive Andrea Natella — the New York psychiatrist and patient are invented characters.",
-      "tags": ["this-man", "hoax", "origin"],
       "inVerdictSection": false,
       "hostStance": "uncertain"
     },
@@ -57,7 +57,6 @@
       "confidence": 0.8,
       "directTruth": 0.35,
       "rationale": "The 2,000+ figure comes from the thisman.org site which is itself the hoax. Some people plausibly did report sightings after seeing the highly suggestive poster/image, but the headline number is inflated marketing material.",
-      "tags": ["this-man", "sightings"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -103,7 +102,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Andrea Natella is a real Italian guerrilla-marketing executive who publicly admitted in 2010 (confirmed in Vice coverage) that Ever Dream This Man was a fabricated internet-legend experiment. Strong directTruth.",
-      "tags": ["this-man", "natella", "debunk", "marketing"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -142,7 +140,6 @@
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "Natella has publicly said this in multiple interviews. While unverifiable independently, it is consistent with the overall hoax narrative and is the only explanation he has offered for the specific likeness.",
-      "tags": ["this-man", "natella", "father"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -170,7 +167,6 @@
       "confidence": 0.8,
       "directTruth": 0.7,
       "rationale": "Vice did run an Ever Dream This Man piece in January 2015 followed by a correction note — both are archived. The speed of the retraction indicates the hoax was already known to at least some readers.",
-      "tags": ["vice", "journalism", "2015"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -221,7 +217,6 @@
       "confidence": 0.8,
       "directTruth": 0.3,
       "rationale": "Project Stargate and SRI's remote-viewing program are declassified and documented. A specific 'lucid dreaming sub-project in 1991' is not in the public declassified Stargate record to my knowledge; this appears to be speculative host embellishment of a real program. Inception's 2010 release date is real.",
-      "tags": ["cia", "stargate", "lucid-dreaming"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -247,7 +242,6 @@
       "confidence": 0.7,
       "directTruth": 0.45,
       "rationale": "The Ward Hill Lamon anecdote of Lincoln's death dream is genuinely in the historical record (Lamon's 1895 memoirs), but Lamon was an unreliable narrator with a book to sell and no independent corroboration exists. The story is repeated but partially apocryphal.",
-      "tags": ["lincoln", "precognition", "dream"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -274,7 +268,6 @@
       "confidence": 0.8,
       "directTruth": 0.6,
       "rationale": "The October 20, 1977 Lynyrd Skynyrd crash is verifiable. Billingsley did publicly claim a premonition dream prompted her to skip the flight; this story is documented in band biographies but relies on her personal account after the fact — a retrospective premonition claim is hard to falsify.",
-      "tags": ["skynyrd", "premonition", "billingsley"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -300,7 +293,6 @@
       "confidence": 0.8,
       "directTruth": 0.55,
       "rationale": "The October 1966 Aberfan disaster and Eryl Mai Jones's death are historical fact. Jones did reportedly tell her mother about a nightmare before the tragedy — this is part of the British Premonitions Bureau record. However the story is inherently non-falsifiable: the dream was only reported after the disaster and selection bias dominates premonition cases.",
-      "tags": ["aberfan", "jones", "premonition"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -335,7 +327,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "John Barker (1924-1968) was a real British psychiatrist who did found the Premonitions Bureau in 1967 following Aberfan. Documented in Sam Knight's book The Premonitions Bureau (2022). Checkable historical fact.",
-      "tags": ["barker", "premonitions-bureau"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -362,7 +353,6 @@
       "confidence": 0.8,
       "directTruth": 0.35,
       "rationale": "Hencher's prediction and the Britannia Airways flight 105 crash (April 1967, Nicosia) are real entries in Barker's Premonitions Bureau log. Close numerical match of a prediction to a real event of that era is the strongest single case in parapsychology, but still subject to selection bias — Hencher's many failed predictions are less remembered.",
-      "tags": ["hencher", "britannia", "cyprus"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -396,7 +386,6 @@
       "confidence": 0.75,
       "directTruth": 0.3,
       "rationale": "Middleton was a real Premonitions Bureau percipient; Barker's records show she logged multiple predictions. The specific June 1968 RFK call with Barker's inaction is in the Premonitions Bureau history. But the nine-point agreement with the event is generous — RFK was a high-profile public figure and vague 'life in danger' warnings happen constantly.",
-      "tags": ["middleton", "rfk", "1968"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -429,7 +418,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Freud's Die Traumdeutung was published November 1899 (dated 1900) and is universally recognized as a foundational text of psychoanalysis. Standard intellectual history.",
-      "tags": ["freud", "psychoanalysis"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -456,7 +444,6 @@
       "confidence": 0.8,
       "directTruth": 0.7,
       "rationale": "Host's closing nuance — suggestion and priming effects are well-documented in dream research; once someone has seen the widely-distributed poster image, incorporating it into a dream is plausible without requiring deception or coincidence.",
-      "tags": ["this-man", "suggestion", "priming"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

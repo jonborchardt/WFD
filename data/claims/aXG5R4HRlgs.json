@@ -3,6 +3,7 @@
   "transcriptId": "aXG5R4HRlgs",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "aXG5R4HRlgs:c_0001",
@@ -25,16 +26,15 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 0,
           "charEnd": 139,
-          "timeStart": 0.0,
-          "timeEnd": 9.0,
+          "timeStart": 0,
+          "timeEnd": 9,
           "quote": "in december 1984 ken webster a high\nschool teacher was living with his\nfriend nick and girlfriend debbie in the\nsmall village of doddleston"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "The publicly documented facts of the Dodleston case are reliable: Ken Webster wrote 'The Vertical Plane' (1989) documenting the alleged exchanges starting Dec 1984 on his BBC Micro. That Webster, Debbie, and Nick experienced unusual events and corresponded with an apparently-16th-century author is the agreed starting fact; the later causal/metaphysical interpretation is where doubt lives.",
-      "hostStance": "asserts",
-      "tags": ["dodleston", "webster", "1984"]
+      "hostStance": "asserts"
     },
     {
       "id": "aXG5R4HRlgs:c_0002",
@@ -56,8 +56,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 13121,
           "charEnd": 13203,
-          "timeStart": 850.0,
-          "timeEnd": 856.0,
+          "timeStart": 850,
+          "timeEnd": 856,
           "quote": "every single book exist at\nthe college but they were all\ncontemporary to the 1520s"
         }
       ],
@@ -66,9 +66,11 @@
       "rationale": "Webster's identification of the messenger as Thomas Harwarden, a real Brasenose fellow, is part of the book's central narrative. Historical records do include Brasenose fellows of that period, and the dialect analysis by Peter Trinder pointed at mid-16th-century Cheshire. Whether this constitutes genuine identification or retrofit by the hoaxer is open — the biographical match is suggestive but not conclusive.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0001", "kind": "elaborates" }
-      ],
-      "tags": ["harwarden", "brasenose", "oxford"]
+        {
+          "target": "aXG5R4HRlgs:c_0001",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0003",
@@ -86,8 +88,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 7115,
           "charEnd": 7166,
-          "timeStart": 460.0,
-          "timeEnd": 465.0,
+          "timeStart": 460,
+          "timeEnd": 465,
           "quote": "we thought you were also from 2109\nlike your friend"
         }
       ],
@@ -96,9 +98,11 @@
       "rationale": "The book records 2109's self-description as presented. Whether a future civilization communicated via BBC Micro is not a physically supportable proposition — tachyons remain hypothetical, and no mechanism for retrocausal text transfer is known. The literary existence of the 2109 messages is documented; the supernatural/paranormal interpretation has no corroboration.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0001", "kind": "elaborates" }
-      ],
-      "tags": ["2109", "future", "tachyon"]
+        {
+          "target": "aXG5R4HRlgs:c_0001",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0004",
@@ -119,16 +123,15 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 10065,
           "charEnd": 10155,
-          "timeStart": 653.0,
-          "timeEnd": 662.0,
+          "timeStart": 653,
+          "timeEnd": 662,
           "quote": "the society for psychical research or\nspr had been investigating the\nparanormal since 1882"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The SPR was indeed founded in 1882 (by Henry Sidgwick and others) and remains extant. That an SPR-adjacent investigation of the Dodleston case took place is recorded in Webster's book and contemporary correspondence. The SPR's later public-facing skepticism is well-documented.",
-      "hostStance": "asserts",
-      "tags": ["spr", "parapsychology"]
+      "hostStance": "asserts"
     },
     {
       "id": "aXG5R4HRlgs:c_0005",
@@ -146,8 +149,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 16483,
           "charEnd": 16583,
-          "timeStart": 1069.0,
-          "timeEnd": 1077.0,
+          "timeStart": 1069,
+          "timeEnd": 1077,
           "quote": "the spr said there is no\nrecord of such a case\ninvestigator john bucknell had\ndisappeared and nobody"
         }
       ],
@@ -156,9 +159,11 @@
       "rationale": "The 'investigators vanished' motif is standard in Webster's telling, but is also common in unreliable paranormal narratives and hard to cross-check. The SPR's own archives would be the authoritative source; without access to them, directTruth is below 0.5 — there is no independent confirmation Webster's account of their disavowal is accurate.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0004", "kind": "elaborates" }
-      ],
-      "tags": ["spr", "cover-up", "welch"]
+        {
+          "target": "aXG5R4HRlgs:c_0004",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0006",
@@ -175,16 +180,15 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 9420,
           "charEnd": 9521,
-          "timeStart": 611.0,
-          "timeEnd": 620.0,
+          "timeStart": 611,
+          "timeEnd": 620,
           "quote": "a ley line is an\nalignment drawn between two structures\nthat supposedly possess or can harness\nenergy"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.2,
       "rationale": "The video correctly reports the New Age definition of ley lines (coined by Alfred Watkins, 1921, reinterpreted supernaturally by John Michell in the 1960s). The historical claim that ancient sites align on energy conduits has no geomagnetic or archaeological basis — Watkins's original lines were simply statistically-likely alignments of points on a map. directTruth low because the 'harness energy' mechanism is pseudoscience, though the term's definition and mythology are correctly conveyed.",
-      "hostStance": "asserts",
-      "tags": ["ley-lines", "pseudoscience", "new-age"]
+      "hostStance": "asserts"
     },
     {
       "id": "aXG5R4HRlgs:c_0007",
@@ -204,8 +208,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 21956,
           "charEnd": 22029,
-          "timeStart": 1425.0,
-          "timeEnd": 1431.0,
+          "timeStart": 1425,
+          "timeEnd": 1431,
           "quote": "peter trinder even went on camera with\nthe bbc to say so it was very real"
         }
       ],
@@ -214,9 +218,11 @@
       "rationale": "Trinder appeared in the 1996 BBC 'Out of This World' documentary endorsing the case. He is a real Old English scholar whose linguistic appraisal has weight, though he was also personally invested and close to Webster. The endorsement is a piece of witness testimony, not independent confirmation.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0001", "kind": "supports" }
-      ],
-      "tags": ["trinder", "bbc", "1996"]
+        {
+          "target": "aXG5R4HRlgs:c_0001",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0008",
@@ -235,8 +241,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 22615,
           "charEnd": 22777,
-          "timeStart": 1467.0,
-          "timeEnd": 1479.0,
+          "timeStart": 1467,
+          "timeEnd": 1479,
           "quote": "but it wasn't possible to say i\ndoth or he she or it dust now all the\nway through um lucas's messages he mixes\nand messes up these suffixes with the\nwrong subject"
         }
       ],
@@ -245,10 +251,15 @@
       "rationale": "[undercuts] Wright is a real linguist at Cambridge specializing in historical English; her analysis of anachronistic verb-ending patterns is a technical, falsifiable observation that would be caught by anyone with training in Early Modern English paleography. Strong evidence against authenticity and the most substantive skeptical point in the episode.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0007", "kind": "contradicts" },
-        { "target": "aXG5R4HRlgs:c_0001", "kind": "contradicts" }
-      ],
-      "tags": ["linguistics", "wright", "hoax"]
+        {
+          "target": "aXG5R4HRlgs:c_0007",
+          "kind": "contradicts"
+        },
+        {
+          "target": "aXG5R4HRlgs:c_0001",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0009",
@@ -267,8 +278,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 23339,
           "charEnd": 23449,
-          "timeStart": 1513.0,
-          "timeEnd": 1522.0,
+          "timeStart": 1513,
+          "timeEnd": 1522,
           "quote": "both sets of writing tested close enough\nwith the software that they were\npossibly composed by the same author"
         }
       ],
@@ -277,9 +288,11 @@
       "rationale": "[undercuts] Stylometry can be indicative but not conclusive, especially with the ~300-word samples the host notes. Webster's rebuttal that the BBC cherry-picked passages is a legitimate methodological critique. Still, a non-match would have cleared him; the positive match is noteworthy evidence.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0001", "kind": "contradicts" }
-      ],
-      "tags": ["stylometry", "bbc", "hoax"]
+        {
+          "target": "aXG5R4HRlgs:c_0001",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0010",
@@ -298,8 +311,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 23742,
           "charEnd": 23846,
-          "timeStart": 1540.0,
-          "timeEnd": 1550.0,
+          "timeStart": 1540,
+          "timeEnd": 1550,
           "quote": "meadow cottage\nwas actually a peaceful place that he\nnever experienced any of the phenomena\nthat ken did"
         }
       ],
@@ -308,9 +321,11 @@
       "rationale": "[undercuts] A co-tenant's lack of corroboration is significant — he was in the house during the earliest events and would have been in a position to confirm the footprints, stacked bottles, poltergeist noises, etc. The host frames this charitably ('ken's not lying, just alone in seeing it'), but from an evidentiary standpoint the absence of corroboration by a fellow resident is a serious mark against authenticity.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0001", "kind": "contradicts" }
-      ],
-      "tags": ["nick", "corroboration", "hoax"]
+        {
+          "target": "aXG5R4HRlgs:c_0001",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0011",
@@ -330,8 +345,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 24423,
           "charEnd": 24683,
-          "timeStart": 1586.0,
-          "timeEnd": 1604.0,
+          "timeStart": 1586,
+          "timeEnd": 1604,
           "quote": "verma's last theorem would be solved\npierre de fermat proposed a mathematical\ntheorem in 1637 and it was studied by\nmathematicians for over 350 years and\ncouldn't be solved well in 1995 andrew\nwiles published the first successful\nproof of format's last theorem"
         }
       ],
@@ -340,9 +355,11 @@
       "rationale": "Andrew Wiles genuinely published his proof in 1993 (announced) and 1995 (final published version in Annals of Mathematics, corrected by Taylor-Wiles). By 1989 when 'The Vertical Plane' was published, Fermat's Last Theorem was one of the most famous unsolved problems — predicting it would be solved eventually was a reasonable educated guess, not miraculous foresight. The specific 6-year time horizon is less impressive than the host implies.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0003", "kind": "supports" }
-      ],
-      "tags": ["fermat", "wiles", "prediction"]
+        {
+          "target": "aXG5R4HRlgs:c_0003",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0012",
@@ -358,8 +375,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 24846,
           "charEnd": 24895,
-          "timeStart": 1613.0,
-          "timeEnd": 1618.0,
+          "timeStart": 1613,
+          "timeEnd": 1618,
           "quote": "2109 gave the coordinates of an\nundiscovered star"
         }
       ],
@@ -368,9 +385,11 @@
       "rationale": "Quasars are cosmologically distant objects and there are millions catalogued — 'later finding a quasar at the coordinates' depends on precision tolerance. Webster's book reports a coordinate; independent verification that the match is significant (narrow positional tolerance, not a catalog hit-rate artifact) has not been established. The coincidence is plausibly statistical.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0003", "kind": "supports" }
-      ],
-      "tags": ["quasar", "coordinates", "prediction"]
+        {
+          "target": "aXG5R4HRlgs:c_0003",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0013",
@@ -390,8 +409,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 25160,
           "charEnd": 25296,
-          "timeStart": 1633.0,
-          "timeEnd": 1645.0,
+          "timeStart": 1633,
+          "timeEnd": 1645,
           "quote": "there absolutely was a\nsir thomas falhurst with a slightly\ndifferent spelling but same\npronunciation who was sheriff of\ncheshire in 1529"
         }
       ],
@@ -400,9 +419,11 @@
       "rationale": "The Fowlehurst/Fallowhurst/Falhurst surname is attested in 16th-century Cheshire records; several men of this name appear in pedigrees of the period. The host's sleuthing is plausible, but verifying specifically that 'Sir Thomas Falhurst, Sheriff of Cheshire 1529' is a precise match would require consulting the Cheshire Sheriff's Rolls directly. Supportive but not definitive.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0002", "kind": "supports" }
-      ],
-      "tags": ["sheriff", "cheshire", "genealogy"]
+        {
+          "target": "aXG5R4HRlgs:c_0002",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "aXG5R4HRlgs:c_0014",
@@ -420,8 +441,8 @@
           "transcriptId": "aXG5R4HRlgs",
           "charStart": 23624,
           "charEnd": 23650,
-          "timeStart": 1532.0,
-          "timeEnd": 1535.0,
+          "timeStart": 1532,
+          "timeEnd": 1535,
           "quote": "media always has\nan agenda"
         }
       ],
@@ -430,11 +451,19 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "aXG5R4HRlgs:c_0008", "kind": "contradicts" },
-        { "target": "aXG5R4HRlgs:c_0009", "kind": "contradicts" },
-        { "target": "aXG5R4HRlgs:c_0011", "kind": "supports" }
-      ],
-      "tags": ["verdict", "credibility"]
+        {
+          "target": "aXG5R4HRlgs:c_0008",
+          "kind": "contradicts"
+        },
+        {
+          "target": "aXG5R4HRlgs:c_0009",
+          "kind": "contradicts"
+        },
+        {
+          "target": "aXG5R4HRlgs:c_0011",
+          "kind": "supports"
+        }
+      ]
     }
   ]
 }

@@ -3,6 +3,7 @@
   "transcriptId": "Je3Qu-xMuxM",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "Je3Qu-xMuxM:c_0001",
@@ -19,16 +20,15 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 563,
           "charEnd": 652,
-          "timeStart": 35.0,
-          "timeEnd": 41.0,
+          "timeStart": 35,
+          "timeEnd": 41,
           "quote": "Dulce is a town in New Mexico near the\nColorado border on the hickorya Apache\nreservation"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.6,
       "rationale": "Dulce exists on the Jicarilla Apache reservation (the host's transcript says 'hickorya'). The cattle-mutilation anomaly around Dulce is historically real (Gabe Valdez, the APRO investigations). The 'highest per-capita UFO sightings' claim is a frequently-cited statistic without rigorous sourcing; the underground base claim has no physical evidence. Directional geographical facts are correct; the 'underground alien base' framing is unsupported.",
-      "hostStance": "asserts",
-      "tags": ["dulce", "new-mexico", "ufo"]
+      "hostStance": "asserts"
     },
     {
       "id": "Je3Qu-xMuxM:c_0002",
@@ -47,16 +47,15 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 1419,
           "charEnd": 1508,
-          "timeStart": 87.0,
-          "timeEnd": 93.0,
+          "timeStart": 87,
+          "timeEnd": 93,
           "quote": "in 1975 a rancher in Dulce\ncalled the police in a panic one of his\ncattle had been killed"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Gabe Valdez was a real New Mexico State Police officer who spent decades documenting cattle mutilations starting in the mid-1970s. The specific anomalies (surgical precision, drained blood, missing organs, tripod marks) are consistently reported across Valdez's and others' case files. The 8,000 figure is a regional estimate often cited by UFO researchers; mainstream explanations attribute most cases to scavenger action.",
-      "hostStance": "asserts",
-      "tags": ["cattle-mutilation", "valdez", "1975"]
+      "hostStance": "asserts"
     },
     {
       "id": "Je3Qu-xMuxM:c_0003",
@@ -72,8 +71,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 3598,
           "charEnd": 3719,
-          "timeStart": 222.0,
-          "timeEnd": 230.0,
+          "timeStart": 222,
+          "timeEnd": 230,
           "quote": "the FBI said quote it was\nconsistent with predator action and\nthere is no federal interest in\ncontinuing an investigation"
         }
       ],
@@ -82,9 +81,11 @@
       "rationale": "The FBI did produce reports (the Rommel Report, 1980, and subsequent memos) concluding predator action — especially coyotes, skunks, and rodents post-mortem — explains the cattle deaths. Soft-tissue bloating and scavenger-preferred areas (eye, rectum, tongue) create the appearance of surgical removal. The FBI finding is well-documented; host's sarcastic framing ('the only predator that can do this is the Predator') is rhetorical pushback.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0002", "kind": "contradicts" }
-      ],
-      "tags": ["fbi", "predator", "debunk"]
+        {
+          "target": "Je3Qu-xMuxM:c_0002",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0004",
@@ -104,16 +105,15 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 11900,
           "charEnd": 12084,
-          "timeStart": 744.0,
-          "timeEnd": 758.0,
+          "timeStart": 744,
+          "timeEnd": 758,
           "quote": "66 men\nlost their lives in what was called the\nBattle of Dulce base the American\nMilitary had accidentally drilled into\nan alien base that had been there for\nfour or five hundred years"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.1,
       "rationale": "Phil Schneider genuinely gave this talk at the 1995 Preparedness Expo; recordings circulate widely. The factual content — Battle of Dulce, 66 casualties, centuries-old alien base, plasma-weapon amputation — has no corroborating evidence, no casualty records, no missing-persons reports that match. The host later systematically debunks Schneider's specifics (NATO/Delta/Secret Service anachronisms). directTruth low for the substantive claim.",
-      "hostStance": "asserts",
-      "tags": ["schneider", "battle-of-dulce", "1979"]
+      "hostStance": "asserts"
     },
     {
       "id": "Je3Qu-xMuxM:c_0005",
@@ -133,8 +133,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 27947,
           "charEnd": 28026,
-          "timeStart": 1822.0,
-          "timeEnd": 1830.0,
+          "timeStart": 1822,
+          "timeEnd": 1830,
           "quote": "in 1979 Delta Force was\nbarely 18 months old very few people\neven knew about it"
         }
       ],
@@ -143,9 +143,11 @@
       "rationale": "[logical] Historically correct. 1st SFOD-D (Delta Force) was established November 1977 by Charlie Beckwith. NATO is a foreign-affairs collective defense alliance with no domestic US deployment authority (Posse Comitatus also applies). USSS protects officials; it is not a tactical security force. Strong internal-consistency disqualifier.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0004", "kind": "contradicts" }
-      ],
-      "tags": ["delta-force", "nato", "debunk"]
+        {
+          "target": "Je3Qu-xMuxM:c_0004",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0006",
@@ -163,8 +165,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 29078,
           "charEnd": 29128,
-          "timeStart": 1899.0,
-          "timeEnd": 1903.0,
+          "timeStart": 1899,
+          "timeEnd": 1903,
           "quote": "father was actually born in San\nFrancisco in 1906."
         }
       ],
@@ -173,9 +175,11 @@
       "rationale": "[debunks] Oscar Schneider's US naval service record and birth details are verifiable public record. Phil Schneider repeatedly told audiences his father captained a captured Nazi U-boat and later worked on the Philadelphia Experiment — falsified by Oscar's US birth certificate, continuous US presence, and medical (not combatant) naval MOS. Direct biographical debunk of Phil's self-presentation.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0004", "kind": "contradicts" }
-      ],
-      "tags": ["schneider", "biography", "debunk"]
+        {
+          "target": "Je3Qu-xMuxM:c_0004",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0007",
@@ -194,8 +198,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 13204,
           "charEnd": 13322,
-          "timeStart": 825.0,
-          "timeEnd": 834.0,
+          "timeStart": 825,
+          "timeEnd": 834,
           "quote": "S government\nsigned four treaties with the aliens in\n1944 in 1954 1962 and the last one in\n1979 after the Dolce battle"
         }
       ],
@@ -204,9 +208,11 @@
       "rationale": "Schneider did make these claims on the 1995 lecture circuit. Factually: Eisenhower's supposed Holloman AFB meeting with aliens (the 'Greada/Grenada Treaty') is a staple of UFO conspiracy folklore with zero documentary evidence in declassified archives. The specific four-date treaty list appears nowhere outside the UFO conspiracy literature.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0004", "kind": "supports" }
-      ],
-      "tags": ["greada-treaty", "eisenhower", "conspiracy"]
+        {
+          "target": "Je3Qu-xMuxM:c_0004",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0008",
@@ -222,8 +228,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 14746,
           "charEnd": 14827,
-          "timeStart": 920.0,
-          "timeEnd": 928.0,
+          "timeStart": 920,
+          "timeEnd": 928,
           "quote": "the 1989 San Francisco\nearthquake and the 1995 Kobe earthquake\nwere weapons tests"
         }
       ],
@@ -232,9 +238,11 @@
       "rationale": "Schneider made the claim. Factually unsupported: the Loma Prieta (Mw 6.9, Oct 17, 1989) and Kobe/Great Hanshin (Mw 6.9, Jan 17, 1995) earthquakes are extensively modeled geophysically — both fit well within natural seismicity patterns on known fault systems (San Andreas; Nojima Fault). No seismic-weapon technology is known to science.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0004", "kind": "supports" }
-      ],
-      "tags": ["earthquake", "loma-prieta", "kobe"]
+        {
+          "target": "Je3Qu-xMuxM:c_0004",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0009",
@@ -250,8 +258,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 14962,
           "charEnd": 15095,
-          "timeStart": 933.0,
-          "timeEnd": 945.0,
+          "timeStart": 933,
+          "timeEnd": 945,
           "quote": "he said the bombings of the\nWorld Trade Center in 1993 and the\nOklahoma City bombing of 1995 were done\nwith miniature nuclear devices"
         }
       ],
@@ -260,9 +268,11 @@
       "rationale": "Factually absurd. The 1993 WTC bombing used a urea nitrate-hydrogen gas cylinder truck bomb (Ramzi Yousef convicted); the 1995 OKC bombing used an ANFO truck bomb by McVeigh and Nichols (both convicted, with detailed forensic evidence). AIDS is caused by HIV, a retrovirus with a well-mapped zoonotic origin. Schneider's claims combine several known-discredited conspiracy memes.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0008", "kind": "elaborates" }
-      ],
-      "tags": ["schneider", "wtc", "oklahoma-city", "aids"]
+        {
+          "target": "Je3Qu-xMuxM:c_0008",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0010",
@@ -279,16 +289,15 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 16384,
           "charEnd": 16496,
-          "timeStart": 1031.0,
-          "timeEnd": 1040.0,
+          "timeStart": 1031,
+          "timeEnd": 1040,
           "quote": "in January 1996 just four\nmonths after he gave his famous lecture\nPhil Schneider was found dead in his\napartment"
         }
       ],
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Schneider's death (January 17, 1996 in Wilsonville, Oregon) is documented. The circumstances were indeed unusual enough that the manner of death was initially undetermined; his ex-wife Cynthia Drayer has publicly disputed the suicide ruling. The anomalies the host lists (missing samples, strangulation configuration despite physical limitations) are corroborated by Drayer's public statements.",
-      "hostStance": "asserts",
-      "tags": ["schneider", "death", "1996"]
+      "hostStance": "asserts"
     },
     {
       "id": "Je3Qu-xMuxM:c_0011",
@@ -305,8 +314,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 30287,
           "charEnd": 30344,
-          "timeStart": 1982.0,
-          "timeEnd": 1988.0,
+          "timeStart": 1982,
+          "timeEnd": 1988,
           "quote": "Phil Schneider had a documented\nhistory of mental illness"
         }
       ],
@@ -315,9 +324,11 @@
       "rationale": "[undercuts] Publicly-documented fact. Schneider was reportedly under psychiatric treatment and had been diagnosed; his ex-wife has described his declining mental state. Does not by itself disprove his claims but explains the specific-number granularity (28%, 66 soldiers, 131 bases) characteristic of delusional systems. The host presents this as the most charitable skeptical interpretation.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0004", "kind": "contradicts" }
-      ],
-      "tags": ["schneider", "mental-health", "skepticism"]
+        {
+          "target": "Je3Qu-xMuxM:c_0004",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0012",
@@ -334,8 +345,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 31288,
           "charEnd": 31351,
-          "timeStart": 2045.0,
-          "timeEnd": 2052.0,
+          "timeStart": 2045,
+          "timeEnd": 2052,
           "quote": "the Chief Architect of the\nDulce base story in the 70s Levesque"
         }
       ],
@@ -344,9 +355,11 @@
       "rationale": "Traced in Adam Gorightly's 'Saucers, Spooks and Kooks' (2021) which identifies Thomas Bowyn/Levesque as the originator. The newsletter 'Hollow Earth Hassle' and its circulation are documented. Shaver-mystery connections (Richard Shaver, Amazing Stories 1945-48) as source material are well-attested in UFO-history literature.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0004", "kind": "contradicts" }
-      ],
-      "tags": ["levesque", "origin", "shaver-mystery"]
+        {
+          "target": "Je3Qu-xMuxM:c_0004",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0013",
@@ -364,8 +377,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 31972,
           "charEnd": 32043,
-          "timeStart": 2085.0,
-          "timeEnd": 2092.0,
+          "timeStart": 2085,
+          "timeEnd": 2092,
           "quote": "no\nrecord of anyone named Thomas Castello\nwas found in the U.S military"
         }
       ],
@@ -374,9 +387,11 @@
       "rationale": "[debunks] Consistent with researchers' exhaustive checks. Castello's entire body of 'testimony' reaches the public through the 'Bratton interview' and 'Dulce papers' which are not accompanied by any verifiable Bratton identity, and Castello himself is not confirmed in Army/AF/Navy service records, civilian-contractor directories for Nellis-area operations, or residential records of the period.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0012", "kind": "supports" }
-      ],
-      "tags": ["castello", "hoax", "debunk"]
+        {
+          "target": "Je3Qu-xMuxM:c_0012",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0014",
@@ -393,8 +408,8 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 32335,
           "charEnd": 32446,
-          "timeStart": 2109.0,
-          "timeEnd": 2118.0,
+          "timeStart": 2109,
+          "timeEnd": 2118,
           "quote": "Thomas\nCastello didn't take that picture it's\nactually a screenshot of the film The\nSixth Day released in 2000."
         }
       ],
@@ -403,9 +418,11 @@
       "rationale": "[debunks] Verifiable by image comparison — the purported 'leaked Dulce photograph' matches a frame from the 2000 film The Sixth Day. This is the most straightforward and damning piece of debunking in the episode. Independent researchers have published side-by-side comparisons.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "Je3Qu-xMuxM:c_0013", "kind": "supports" }
-      ],
-      "tags": ["photo", "sixth-day", "fabrication"]
+        {
+          "target": "Je3Qu-xMuxM:c_0013",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "Je3Qu-xMuxM:c_0015",
@@ -424,16 +441,15 @@
           "transcriptId": "Je3Qu-xMuxM",
           "charStart": 32577,
           "charEnd": 32676,
-          "timeStart": 2124.0,
-          "timeEnd": 2132.0,
+          "timeStart": 2124,
+          "timeEnd": 2132,
           "quote": "agent Richard Doty of the\nAir Force OSI perpetrated a\nmisinformation campaign against Paul\nbenowitz"
         }
       ],
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Well-documented. Doty has publicly acknowledged his role in the Bennewitz affair (see Greg Bishop's 'Project Beta', 2005, and Mark Pilkington's 'Mirage Men', 2010 book/film). Bennewitz was fed fake alien-intelligence material leading to his mental breakdown. The episode correctly cites one of the most credentialed pieces of 'the US government has deliberately disinformed UFO researchers' evidence.",
-      "hostStance": "asserts",
-      "tags": ["doty", "bennewitz", "disinformation"]
+      "hostStance": "asserts"
     }
   ]
 }

@@ -5,8 +5,9 @@
 // five legacy classes (person/organization/location/time/misc) and the
 // whole point of the refactor is a wider, configurable label set.
 //
-// When the old src/nlp/ module is deleted, the shared type will be
-// broadened to match EntityLabel below and the two type worlds can merge.
+// With src/nlp/ retired, the shared type union now co-exists alongside
+// EntityLabel below — a future merge can broaden it to match, but the
+// two worlds have coexisted without issue since the neural migration.
 
 // The 14 labels we pass to GLiNER at inference time. Keep in sync with
 // config/entity-labels.json — the JSON file is authoritative at runtime,

@@ -3,6 +3,7 @@
   "transcriptId": "BR_8AxIwKV8",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-calibration",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "BR_8AxIwKV8:c_0001",
@@ -34,7 +35,6 @@
       "confidence": 0.95,
       "directTruth": 0.98,
       "rationale": "Classical probability result: 1 − (365!/(365^23 · 342!)) ≈ 0.507. Assumes uniform distribution of birthdays and ignores leap-day effects. Standard textbook material.",
-      "tags": ["birthday-paradox", "probability"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -69,7 +69,6 @@
       "confidence": 0.95,
       "directTruth": 0.98,
       "rationale": "Trivial consequence of C = 2πr: ΔC = 2π·Δr, independent of r. Canonical counterintuitive-math example.",
-      "tags": ["math", "circumference", "counterintuitive"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -103,7 +102,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Definition of palindrome is standard; the quoted Panama palindrome is attributed to Leigh Mercer (1948) and is one of the most famous English palindromes.",
-      "tags": ["palindrome", "definition"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -137,7 +135,6 @@
       "confidence": 0.95,
       "directTruth": 0.98,
       "rationale": "Follows from digital-root ≡ n mod 9 for base 10; if n is divisible by 9, digital root is 9 (except n=0). Elementary number theory.",
-      "tags": ["math", "nine", "digital-root"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -180,7 +177,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "10 mm × 2^23 ≈ 83.9 km (note: the host's number would be closer if starting thickness were 0.1 mm; with 10-mm paper, 23 folds reaches ~84 km, not 1 km — host's unit-picking is sloppy but exponential-growth illustration is valid). 10 mm × 2^103 ≈ 10^28 m ≈ 10^12 light-years — roughly matches ~93 Gly observable universe at the order-of-magnitude level.",
-      "tags": ["paper-folding", "exponential-growth"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -207,7 +203,6 @@
       "confidence": 0.95,
       "directTruth": 0.98,
       "rationale": "10! = 3,628,800 and 6 weeks = 6×7×24×60×60 = 3,628,800 seconds. Exactly equal. Classic math curiosity.",
-      "tags": ["factorial", "math-curiosity"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -241,7 +236,6 @@
       "confidence": 0.95,
       "directTruth": 0.98,
       "rationale": "52! ≈ 8.07×10^67. Earth's atom count is ~1.33×10^50 — so 52! exceeds it by ~18 orders of magnitude. Very frequently quoted fact.",
-      "tags": ["card-shuffle", "factorial", "probability"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -279,7 +273,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Kasner and Newman's 'Mathematics and the Imagination' (1940) is the standard citation. Host spells his name 'Kassner'; actual spelling is Kasner. His nephew was Milton Sirotta, aged 9 at the time — the host's 'Peter Kassner' is wrong. directTruth reflects the concept while noting the name errors.",
-      "tags": ["googol", "googolplex", "kasner"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -306,7 +299,6 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "The 'misspelling of googol' origin is the commonly-told story; the actual record (David Koller's 2004 recollection, Stanford co-founders' interviews) attributes the misspelling to Sean Anderson, a graduate student, not Page — Page signed off on the name. Roughly accurate but the host misattributes.",
-      "tags": ["google", "etymology", "larry-page"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -350,11 +342,14 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Graham's number was introduced by Ronald Graham in work published in the early 1970s as an upper bound on a Ramsey-theory problem; Martin Gardner popularized it in 1977. It is defined via 64 iterations of Knuth up-arrow notation starting from 3↑↑↑↑3. The claim 'too large to write in the universe' is accurate. Host spells 'Gramme' (sic).",
-      "tags": ["grahams-number", "ramsey-theory", "big-numbers"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "BR_8AxIwKV8:c_0008", "kind": "elaborates", "rationale": "Larger entry in the same 'very big numbers' sequence." }
+        {
+          "target": "BR_8AxIwKV8:c_0008",
+          "kind": "elaborates",
+          "rationale": "Larger entry in the same 'very big numbers' sequence."
+        }
       ]
     },
     {
@@ -382,11 +377,14 @@
       "confidence": 0.85,
       "directTruth": 0.95,
       "rationale": "If size doubles daily and fills on day 48, half-full is day 47 — canonical exponential-growth teaching example. Evidence quote is proximate (same exponential-growth section) but not directly at the puzzle answer; quote selected within video invariants.",
-      "tags": ["lily-pad", "exponential-growth"],
       "inVerdictSection": false,
       "hostStance": "denies",
       "dependencies": [
-        { "target": "BR_8AxIwKV8:c_0005", "kind": "elaborates", "rationale": "Same phenomenon — human intuition fails with doubling processes." }
+        {
+          "target": "BR_8AxIwKV8:c_0005",
+          "kind": "elaborates",
+          "rationale": "Same phenomenon — human intuition fails with doubling processes."
+        }
       ]
     },
     {
@@ -413,11 +411,14 @@
       "confidence": 0.9,
       "directTruth": 0.95,
       "rationale": "n! is the number of orderings of n distinct items. 7! = 5040 exact; 52! ≈ 8.07×10^67 exact. Canonical combinatorics.",
-      "tags": ["factorial", "permutations"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "BR_8AxIwKV8:c_0007", "kind": "presupposes", "rationale": "The 52-card claim depends on factorial semantics." }
+        {
+          "target": "BR_8AxIwKV8:c_0007",
+          "kind": "presupposes",
+          "rationale": "The 52-card claim depends on factorial semantics."
+        }
       ]
     }
   ]

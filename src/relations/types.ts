@@ -1,10 +1,7 @@
 // Local types for the neural relations stage. Self-contained for the
 // same reason src/entities/types.ts is: the shared RelationshipType union
-// in src/shared/types.ts is frozen at the legacy 28 regex predicates and
-// we are rewriting the predicate schema as part of this refactor.
-//
-// When the old src/nlp/ module is deleted, the shared type will be
-// broadened to match PredicateName below.
+// in src/shared/types.ts is frozen at the legacy 28 regex predicates,
+// and the predicate schema was rewritten when src/nlp/ was retired.
 
 import type { EntitySpan } from "../entities/types.js";
 

@@ -729,7 +729,6 @@ export const claimIndexesStage: GraphStage = {
       kind: e.kind as Claim["kind"] | undefined,
       hostStance: e.hostStance as Claim["hostStance"] | undefined,
       rationale: e.rationale,
-      tags: e.tags,
     }));
     const dismissedContradictions = (aliases.contradictionDismissals ?? []).map(
       (e) => ({ a: e.a, b: e.b }),

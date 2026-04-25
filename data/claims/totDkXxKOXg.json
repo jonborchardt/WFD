@@ -3,6 +3,7 @@
   "transcriptId": "totDkXxKOXg",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "totDkXxKOXg:c_0001",
@@ -29,8 +30,7 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Linguistic-historical consensus following Lazarus Geiger, Guy Deutscher (Through the Language Glass), and the Berlin & Kay typology: across independent ancient text corpora, no color term unambiguously denoting blue appears. The video's claim generalizes a well-attested finding about Homer and extends it cross-culturally. Some exceptions exist (e.g., Egyptian hieroglyphics) which the video separately addresses in the Egyptian-dye segment.",
-      "hostStance": "asserts",
-      "tags": ["linguistics", "color", "history"]
+      "hostStance": "asserts"
     },
     {
       "id": "totDkXxKOXg:c_0002",
@@ -46,7 +46,9 @@
         "work_of_media:odyssey",
         "location:wine dark sea"
       ],
-      "relationships": ["r_0020"],
+      "relationships": [
+        "r_0020"
+      ],
       "evidence": [
         {
           "transcriptId": "totDkXxKOXg",
@@ -60,8 +62,7 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Historically documented. Gladstone's 1858 'Studies on Homer and the Homeric Age' (vol. III) contains the color-analysis chapter; he did serve four non-consecutive terms as UK PM (1868-74, 1880-85, 1886, 1892-94). Both facts are uncontroversial.",
-      "hostStance": "asserts",
-      "tags": ["gladstone", "homer", "color"]
+      "hostStance": "asserts"
     },
     {
       "id": "totDkXxKOXg:c_0003",
@@ -89,9 +90,11 @@
       "rationale": "Gladstone's count ratios are broadly consistent with what philologists find in the Homeric corpus, though modern scholarship (e.g., Maria Michela Sassi) argues the absence is better explained as a conceptual/categorical difference than colorblindness. The arithmetic tallies are approximately correct; the 'colorblind' inference is the historically discarded hypothesis.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0002", "kind": "elaborates" }
-      ],
-      "tags": ["homer", "lexicon"]
+        {
+          "target": "totDkXxKOXg:c_0002",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0004",
@@ -115,9 +118,11 @@
       "rationale": "This is essentially the Berlin & Kay (1969) 'Basic Color Terms' typology, which posits a partially-ordered evolutionary sequence across languages. It has been criticized and refined (the original stages are not strictly linear and there are counter-examples), but the generalization that 'blue' emerges late is well-supported.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0003", "kind": "supports" }
-      ],
-      "tags": ["linguistics", "berlin-and-kay"]
+        {
+          "target": "totDkXxKOXg:c_0003",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0005",
@@ -141,9 +146,11 @@
       "rationale": "Biologically well-documented. Structural color (thin-film interference in feathers, tapetum/iris stroma scattering) produces the blues of peacocks, blue jays, and blue eyes — actual blue pigment is extremely rare in animals. Olavarria-Gallegos and vision-ecology literature confirm.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0004", "kind": "supports" }
-      ],
-      "tags": ["biology", "structural-color"]
+        {
+          "target": "totDkXxKOXg:c_0004",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0006",
@@ -169,9 +176,11 @@
       "rationale": "Egyptian blue (calcium copper silicate, CaCuSi4O10) is the first known synthetic pigment, produced c. 3200 BCE. The causal claim that this specifically triggered global lexical adoption of 'blue' is a just-so story — the pigment predates Homer by millennia, yet Homer (9th-8th c. BCE Greek) still lacked a blue term. The invention unquestionably happened; the direct causation to every language's lexicon is oversimplified.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0001", "kind": "contradicts" }
-      ],
-      "tags": ["egypt", "dye", "etymology"]
+        {
+          "target": "totDkXxKOXg:c_0001",
+          "kind": "contradicts"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0007",
@@ -186,14 +195,18 @@
         "quantity:12 squares",
         "quantity:11 of the squares"
       ],
-      "relationships": ["r_0052", "r_0056", "r_0057"],
+      "relationships": [
+        "r_0052",
+        "r_0056",
+        "r_0057"
+      ],
       "evidence": [
         {
           "transcriptId": "totDkXxKOXg",
           "charStart": 3901,
           "charEnd": 4275,
           "timeStart": 244.159,
-          "timeEnd": 266.0,
+          "timeEnd": 266,
           "quote": "jules davidoff conducted an\nexperiment with the himba tribe in\nafrica and like ancient cultures the\nhimba have no word for blue to the himba\nblue is just a shade of green so himba\nparticipants were shown 12 squares on a\nscreen 11 of the squares were green one\nwas blue can you pick out the blue\nsquare now of course you can you found\nit immediately but the himba had trouble"
         }
       ],
@@ -202,9 +215,11 @@
       "rationale": "Davidoff, Davies & Roberson (2008) 'Color categories: Evidence for the cultural relativity hypothesis' reports reaction-time differences for Himba vs. English speakers on blue/green discrimination. The finding is real but widely sensationalized in pop science; subsequent replications show the effect is smaller than media reports suggest.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0001", "kind": "supports" }
-      ],
-      "tags": ["psycholinguistics", "himba", "davidoff"]
+        {
+          "target": "totDkXxKOXg:c_0001",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0008",
@@ -223,7 +238,7 @@
           "transcriptId": "totDkXxKOXg",
           "charStart": 4478,
           "charEnd": 4552,
-          "timeStart": 276.0,
+          "timeStart": 276,
           "timeEnd": 280.72,
           "quote": "the bbc and business\ninsider made that part up it's a\ncomplete fabrication"
         }
@@ -233,9 +248,11 @@
       "rationale": "[debunks] The host is correct that many pop-science retellings exaggerated Davidoff's original finding. The actual paper reports reaction-time differences, not inability to perceive. Treating the stronger claim as a media 'fabrication' is rhetorically sharp but factually supported by comparing the original paper to the BBC/Business Insider coverage.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0007", "kind": "elaborates" }
-      ],
-      "tags": ["media-criticism", "himba"]
+        {
+          "target": "totDkXxKOXg:c_0007",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0009",
@@ -261,9 +278,11 @@
       "rationale": "Also from the Davidoff et al. work: the inverse experiment (picking an odd green from 11 green squares) shows Himba outperforming English-speakers. Interpreted as evidence for linguistic-relativity-style priming. Robust but not an absolute, and the cognitive mechanism is debated.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0007", "kind": "elaborates" }
-      ],
-      "tags": ["linguistic-relativity", "himba"]
+        {
+          "target": "totDkXxKOXg:c_0007",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0010",
@@ -289,8 +308,7 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Well-documented in the history of optics. Newton's 1704 'Opticks' divides the spectrum into seven bands explicitly to parallel the diatonic scale. Indigo was the late addition to reach seven. Philip Steadman and Mark Blayney have written on the numerological reasoning.",
-      "hostStance": "asserts",
-      "tags": ["newton", "history-of-science"]
+      "hostStance": "asserts"
     },
     {
       "id": "totDkXxKOXg:c_0011",
@@ -316,8 +334,7 @@
       "confidence": 0.98,
       "directTruth": 0.9,
       "rationale": "Standard vision science: humans have three cone classes (L, M, S) with peak sensitivities near red, green, and blue. The one-million-color estimate is a widely cited but approximate figure (actual estimates range from ~100k to several million depending on methodology).",
-      "hostStance": "asserts",
-      "tags": ["vision", "biology"]
+      "hostStance": "asserts"
     },
     {
       "id": "totDkXxKOXg:c_0012",
@@ -330,7 +347,9 @@
         "quantity:trichromatic",
         "quantity:a hundred million colors"
       ],
-      "relationships": ["r_0066"],
+      "relationships": [
+        "r_0066"
+      ],
       "evidence": [
         {
           "transcriptId": "totDkXxKOXg",
@@ -346,9 +365,11 @@
       "rationale": "The 'cDa29' case (Concetta Antico is the famous publicized tetrachromat; a Newcastle study by Gabriele Jordan identified a confirmed functional tetrachromat in the UK around 2010). The 100-million figure is a theoretical upper bound from combinatorial math on 4 vs. 3 cone types — actual measured behavioral discrimination gains are more modest.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0011", "kind": "elaborates" }
-      ],
-      "tags": ["tetrachromacy", "vision"]
+        {
+          "target": "totDkXxKOXg:c_0011",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0013",
@@ -374,9 +395,11 @@
       "rationale": "This figure is a genetic-carrier estimate — being a genotypic carrier of a fourth cone type does not mean having functional tetrachromatic vision. Jordan et al. (2010) tested 24 carriers and found only one with demonstrable tetrachromat performance. The 12% carrier rate is approximately correct; functional tetrachromacy is far rarer. Video conflates genotype and phenotype.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0012", "kind": "supports" }
-      ],
-      "tags": ["genetics", "tetrachromacy"]
+        {
+          "target": "totDkXxKOXg:c_0012",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0014",
@@ -400,10 +423,15 @@
       "rationale": "This is the video's central thesis — a weak form of the Sapir-Whorf / linguistic relativity hypothesis applied to color. Empirically supported at the categorical-boundary level (Winawer et al. 2007 on Russian blues) but the strong Whorfian claim that one 'cannot see' a color without a word is overstated; perception still operates, categorization is what shifts.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0007", "kind": "supports" },
-        { "target": "totDkXxKOXg:c_0009", "kind": "supports" }
-      ],
-      "tags": ["sapir-whorf", "linguistic-relativity"]
+        {
+          "target": "totDkXxKOXg:c_0007",
+          "kind": "supports"
+        },
+        {
+          "target": "totDkXxKOXg:c_0009",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "totDkXxKOXg:c_0015",
@@ -414,7 +442,9 @@
         "person:bolado",
         "organization:university college london"
       ],
-      "relationships": ["r_0068"],
+      "relationships": [
+        "r_0068"
+      ],
       "evidence": [
         {
           "transcriptId": "totDkXxKOXg",
@@ -430,10 +460,12 @@
       "rationale": "The host spells the neuroscientist as 'bolado' — the actual UCL researcher is R. Beau Lotto, who has argued exactly this constructivist view of color perception in 'Deviate' and his TED talks. The philosophical claim that 'color doesn't exist' in an object-property sense is consonant with standard vision science; it's framed here as opinion but is mainstream within perception research.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "totDkXxKOXg:c_0014", "kind": "supports" }
+        {
+          "target": "totDkXxKOXg:c_0014",
+          "kind": "supports"
+        }
       ],
-      "inVerdictSection": true,
-      "tags": ["constructivism", "vision", "lotto"]
+      "inVerdictSection": true
     }
   ]
 }

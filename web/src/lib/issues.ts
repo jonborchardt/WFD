@@ -308,42 +308,6 @@ export function mergeEntityIssueUrl(
   return `${CAPTIONS_ISSUES_URL}?${params.toString()}`;
 }
 
-export function videoRenameIssueUrl(
-  e: EntityRef,
-  target: EntityRef,
-  videoId: string,
-): string {
-  const apply = applyLink("video-merge", {
-    videoId,
-    from: e.key,
-    to: target.key,
-  });
-  const title = `[edit-request] (video ${videoId}) rename "${e.canonical}" → "${target.canonical}"`;
-  const lines = [
-    `**Action:** per-video rename`,
-    `**Video ID:** ${videoId}`,
-    `**Video URL:** https://www.youtube.com/watch?v=${videoId}`,
-    `**From (this video only):** ${e.canonical}  \`${e.key}\``,
-    `**Into:** ${target.canonical}  \`${target.key}\``,
-    "",
-    "### What happens if an admin accepts this",
-    `Only within video \`${videoId}\`, every mention of \`${e.key}\` will render as \`${target.key}\`. Other videos are untouched. Use this when a short name (e.g. \`person:paul\`) refers to different full names in different videos.`,
-    "",
-    "### Evidence",
-    "Paste a transcript quote + timestamp from this video that makes the identity unambiguous:",
-    "",
-    "- **Timestamp (mm:ss):** <!-- 12:34 -->",
-    "- **Quote:** <!-- e.g. \"Paul McCartney said last year…\" -->",
-    applySection("video merge", apply),
-  ];
-  const params = new URLSearchParams({
-    title,
-    body: lines.join("\n"),
-    labels: "edit-request,video-rename",
-  });
-  return `${CAPTIONS_ISSUES_URL}?${params.toString()}`;
-}
-
 // ---- Claim / contradiction edit-requests ---------------------------
 
 export function claimTruthIssueUrl(
@@ -389,7 +353,7 @@ export function claimTruthIssueUrl(
 
 export function claimFieldIssueUrl(
   claim: { id: string; videoId: string; text: string },
-  field: "text" | "kind" | "hostStance" | "rationale" | "tags",
+  field: "text" | "kind" | "hostStance" | "rationale",
   suggestedValue: string,
 ): string {
   const apply = applyLink("claim-field-override", {
@@ -408,8 +372,6 @@ export function claimFieldIssueUrl(
       "How the host presents the claim: `asserts` (endorses), `denies` (rejects, often 'some people say X, but…'), `reports` (neutral), `questions` (raises without endorsing).",
     rationale:
       "Short operator-facing note explaining why the claim was extracted or scored the way it was.",
-    tags:
-      "Comma-separated topic tags (lowercased, e.g. `ufo, area-51, cold-war`).",
   };
   const lines = [
     `**Action:** edit claim \`${field}\``,

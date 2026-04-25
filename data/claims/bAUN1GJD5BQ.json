@@ -3,6 +3,7 @@
   "transcriptId": "bAUN1GJD5BQ",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "bAUN1GJD5BQ:c_0001",
@@ -72,7 +73,7 @@
           "transcriptId": "bAUN1GJD5BQ",
           "charStart": 840,
           "charEnd": 1000,
-          "timeStart": 58.0,
+          "timeStart": 58,
           "timeEnd": 67.2,
           "quote": " some have even made sounds despite being severed from the rest of their body there's even a famous story about a man who attended the execution of his friend d"
         }
@@ -158,7 +159,11 @@
       "rationale": "Postural and facial nerve spasms in the minutes following severance are well-established neurophysiology. Conflating them with intentional expression remains a common perceptual error and is the standard skeptical reading.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "bAUN1GJD5BQ:c_0005", "kind": "contradicts", "rationale": "[alternative] Offers reflexive neurological spasms as a parsimonious explanation that displaces 'conscious severed head'." }
+        {
+          "target": "bAUN1GJD5BQ:c_0005",
+          "kind": "contradicts",
+          "rationale": "[alternative] Offers reflexive neurological spasms as a parsimonious explanation that displaces 'conscious severed head'."
+        }
       ]
     },
     {
@@ -215,7 +220,10 @@
       "rationale": "The Piedelièvre & Fournier 1956 report to the French Academy of Medicine is historically attested. The 'every vital element' quote is widely reproduced. The conclusion that guillotining is non-instantaneous is consistent with modern neurophysiology.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "bAUN1GJD5BQ:c_0007", "kind": "supports" }
+        {
+          "target": "bAUN1GJD5BQ:c_0007",
+          "kind": "supports"
+        }
       ]
     },
     {
@@ -319,7 +327,7 @@
           "charStart": 4280,
           "charEnd": 4440,
           "timeStart": 291.36,
-          "timeEnd": 300.0,
+          "timeEnd": 300,
           "quote": "bon's facility of medicine diogo alves was portugal's first serial killer and one of the last people to be\nexecuted in the country in 1841. his severed head was"
         }
       ],
@@ -404,7 +412,10 @@
       "rationale": "The ~18-month survival, national tour, and Life magazine coverage are documented. The exact cause of death (choking on a corn kernel or a similar aspiration event) is the commonly cited cause in archival accounts.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "bAUN1GJD5BQ:c_0014", "kind": "elaborates" }
+        {
+          "target": "bAUN1GJD5BQ:c_0014",
+          "kind": "elaborates"
+        }
       ]
     }
   ]

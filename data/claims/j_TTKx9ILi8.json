@@ -3,13 +3,18 @@
   "transcriptId": "j_TTKx9ILi8",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b4-resume",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "j_TTKx9ILi8:c_0001",
       "videoId": "j_TTKx9ILi8",
       "text": "The 1977 Wow signal is the strongest single piece of evidence ever recorded for intelligent extraterrestrial life.",
       "kind": "empirical",
-      "entities": ["event:wow signal", "date_time:1977", "person:jerry aan"],
+      "entities": [
+        "event:wow signal",
+        "date_time:1977",
+        "person:jerry aan"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -24,7 +29,6 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "Host concludes the wow signal is 'considered by many to be the strongest evidence we have that there's intelligent alien life'. The 30-sigma intensity at the hydrogen line is real, widely cited in SETI literature. 'Strongest evidence' is a low bar given no confirmed alien detections exist; moderate directTruth reflects real evidentiary weight within a low-evidence field.",
-      "tags": ["wow-signal", "seti", "alien-life"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -33,7 +37,10 @@
       "videoId": "j_TTKx9ILi8",
       "text": "The Wow signal peaked 30 standard deviations above background and lasted 72 seconds, an intensity 'borderline impossible' for natural events.",
       "kind": "empirical",
-      "entities": ["event:wow signal", "facility:big ear radio telescope"],
+      "entities": [
+        "event:wow signal",
+        "facility:big ear radio telescope"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -48,7 +55,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Well-documented fact of record: Ehman's 1977 printout, the 6EQUJ5 intensity code, and the 72-second duration are all confirmed in SETI literature. The 30-sigma intensity is the standard figure. Host reports the numbers accurately.",
-      "tags": ["wow-signal", "technical-detail"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -57,14 +63,21 @@
       "videoId": "j_TTKx9ILi8",
       "text": "SETI monitored 1420 MHz because hydrogen, the universe's most common element, naturally emits at that frequency — making it the logical channel to search for alien signals.",
       "kind": "empirical",
-      "entities": ["quantity:1420 mhz", "organization:seti", "person:jerry aan", "facility:big ear radio telescope"],
-      "relationships": ["r_0045"],
+      "entities": [
+        "quantity:1420 mhz",
+        "organization:seti",
+        "person:jerry aan",
+        "facility:big ear radio telescope"
+      ],
+      "relationships": [
+        "r_0045"
+      ],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
           "charStart": 17793,
           "charEnd": 17906,
-          "timeStart": 1383.0,
+          "timeStart": 1383,
           "timeEnd": 1393.96,
           "quote": "listened for radio\nemissions at a frequency near 1420 MHz\nthis is the frequency that hydrogen\nnaturally emits hyd"
         }
@@ -72,7 +85,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "The hydrogen 21-cm / 1420.4 MHz emission line is a real astronomical feature and is a canonical SETI monitoring frequency (the 'water hole' reasoning, Cocconi & Morrison 1959). Host's description is textbook astronomy.",
-      "tags": ["seti", "hydrogen-line", "1420mhz"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -81,7 +93,11 @@
       "videoId": "j_TTKx9ILi8",
       "text": "The Wow signal was caused by one of two comets passing through the Big Ear telescope's observation area in 1977.",
       "kind": "empirical",
-      "entities": ["event:wow signal", "date_time:2017", "date_time:1977"],
+      "entities": [
+        "event:wow signal",
+        "date_time:2017",
+        "date_time:1977"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -96,7 +112,6 @@
       "confidence": 0.85,
       "directTruth": 0.12,
       "rationale": "Host presents the 2017 Antonio Paris comet hypothesis explicitly to reject it: 'this theory was eventually dismissed because the timeline and location just didn't line up'. Mainstream SETI consensus also disfavors the comet theory on timing/position grounds.",
-      "tags": ["wow-signal", "comet-hypothesis", "debunk"],
       "inVerdictSection": false,
       "hostStance": "denies",
       "dependencies": [
@@ -112,14 +127,17 @@
       "videoId": "j_TTKx9ILi8",
       "text": "Only about 2% of the population in affected areas can actually hear 'the hum', and reportedly even 2% of deaf people can hear it.",
       "kind": "empirical",
-      "entities": ["quantity:2%", "organization:tos new mexico"],
+      "entities": [
+        "quantity:2%",
+        "organization:tos new mexico"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
           "charStart": 12115,
           "charEnd": 12220,
-          "timeStart": 959.0,
+          "timeStart": 959,
           "timeEnd": 971.519,
           "quote": "le could hear it and\nthat's something interesting 2% of all\npeople can hear the hum whether they can\nhear"
         },
@@ -135,7 +153,6 @@
       "confidence": 0.8,
       "directTruth": 0.45,
       "rationale": "The ~2% audibility figure is a staple of hum reporting (Taos, Bristol, Windsor studies). The 'even deaf people hear it' add-on is anecdotal — no peer-reviewed documentation of profoundly deaf hearers exists. Moderate directTruth: the 2% figure is broadly defensible, the deaf claim is not.",
-      "tags": ["hum", "perception", "2-percent"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -144,8 +161,20 @@
       "videoId": "j_TTKx9ILi8",
       "text": "The 1991 Taos hum study — run by Los Alamos, Sandia, Philips Air Force Lab and UNM — could not identify any acoustic, seismic, magnetic, or electromagnetic source for the hum.",
       "kind": "empirical",
-      "entities": ["date_time:1991", "organization:tos new mexico", "facility:los elos national lab", "facility:sandia national labs", "facility:philips air force laboratory", "location:new mexico"],
-      "relationships": ["r_0019", "r_0020", "r_0022", "r_0026"],
+      "entities": [
+        "date_time:1991",
+        "organization:tos new mexico",
+        "facility:los elos national lab",
+        "facility:sandia national labs",
+        "facility:philips air force laboratory",
+        "location:new mexico"
+      ],
+      "relationships": [
+        "r_0019",
+        "r_0020",
+        "r_0022",
+        "r_0026"
+      ],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
@@ -159,7 +188,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The 1993 Mullins & Kelly Congressional investigation into the Taos hum involved the named institutions and produced a null finding. Widely documented in hum-research literature. Host's labs list and null conclusion are accurate.",
-      "tags": ["hum", "taos", "government-study"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -168,7 +196,10 @@
       "videoId": "j_TTKx9ILi8",
       "text": "The Windsor Ontario hum is caused by industrial activity on nearby Zug Island.",
       "kind": "empirical",
-      "entities": ["location:windsor canada", "location:zug island"],
+      "entities": [
+        "location:windsor canada",
+        "location:zug island"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -183,7 +214,6 @@
       "confidence": 0.75,
       "directTruth": 0.35,
       "rationale": "Host presents the researcher hypothesis then immediately undermines it: 'there's been industry on the island for 100 years, the hum is new'. The Environment Canada 2014 study did localize the source near Zug, but the century-old industry objection is serious. Host frames as steelman to rebut.",
-      "tags": ["hum", "windsor", "zug-island"],
       "inVerdictSection": false,
       "hostStance": "denies",
       "dependencies": [
@@ -199,8 +229,15 @@
       "videoId": "j_TTKx9ILi8",
       "text": "HAARP in Alaska has been used to create weather events and earthquakes through electromagnetic manipulation of the ionosphere.",
       "kind": "speculative",
-      "entities": ["facility:the harp array", "location:ionosphere", "technology:electromagnetic frequencies"],
-      "relationships": ["r_0031", "r_0033"],
+      "entities": [
+        "facility:the harp array",
+        "location:ionosphere",
+        "technology:electromagnetic frequencies"
+      ],
+      "relationships": [
+        "r_0031",
+        "r_0033"
+      ],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
@@ -214,7 +251,6 @@
       "confidence": 0.8,
       "directTruth": 0.08,
       "rationale": "Host explicitly labels this 'a fringe theory'. HAARP weather/earthquake control is a classic conspiracy narrative without peer-reviewed support. The facility does run ionospheric heating experiments but the weather-creation leap has no scientific basis.",
-      "tags": ["haarp", "conspiracy-theory", "ionosphere"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -223,7 +259,9 @@
       "videoId": "j_TTKx9ILi8",
       "text": "A thin layer of tinfoil is enough to disrupt the hum and provide relief to sufferers.",
       "kind": "empirical",
-      "entities": ["ideology:tinfoil hats"],
+      "entities": [
+        "ideology:tinfoil hats"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -238,7 +276,6 @@
       "confidence": 0.7,
       "directTruth": 0.2,
       "rationale": "Host delivers this as an 'interesting side note'. Anecdotal foil-relief reports exist in hum-forum literature, but a 2005 MIT study specifically showed foil caps amplify, not attenuate, certain GHz bands. No peer-reviewed replication of the relief effect.",
-      "tags": ["hum", "tinfoil", "anecdotal"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -247,8 +284,13 @@
       "videoId": "j_TTKx9ILi8",
       "text": "The 'biotwang' sound recorded in the Mariana Trench is a previously undiscovered dwarf minke whale call.",
       "kind": "empirical",
-      "entities": ["location:mariana trench", "location:western pacific"],
-      "relationships": ["r_0037"],
+      "entities": [
+        "location:mariana trench",
+        "location:western pacific"
+      ],
+      "relationships": [
+        "r_0037"
+      ],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
@@ -262,7 +304,6 @@
       "confidence": 0.85,
       "directTruth": 0.65,
       "rationale": "The 2016 Nieukirk et al. JASA paper attributed the biotwang to a candidate Balaenoptera acutorostrata call; a 2024 NOAA ML study confirmed the dwarf-minke association. Host's reporting of prevailing view is correct but he notes a complication (next claim).",
-      "tags": ["mariana-trench", "biotwang", "minke-whale"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -271,7 +312,10 @@
       "videoId": "j_TTKx9ILi8",
       "text": "The minke-whale explanation for the biotwang is incomplete because minkes only call during mating season but the biotwang is heard year-round.",
       "kind": "empirical",
-      "entities": ["location:mariana trench", "event:mating season"],
+      "entities": [
+        "location:mariana trench",
+        "event:mating season"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -286,7 +330,6 @@
       "confidence": 0.8,
       "directTruth": 0.55,
       "rationale": "Host raises this as a logical objection to the minke theory. Year-round detection is real (NOAA seasonal surveys), and minke mating calls are typically seasonal. But some cetologists argue minke vocalizations extend beyond strict mating season. Objection has force but isn't definitive.",
-      "tags": ["biotwang", "minke-whale", "counter-argument"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -302,7 +345,9 @@
       "videoId": "j_TTKx9ILi8",
       "text": "Sausalito houseboat owners' nightly disturbance was caused by male midshipman fish mating calls, not submarines.",
       "kind": "empirical",
-      "entities": ["location:selo california"],
+      "entities": [
+        "location:selo california"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -317,7 +362,6 @@
       "confidence": 0.95,
       "directTruth": 0.92,
       "rationale": "The Sausalito midshipman-hum story (late-1980s) is well documented: Prof. Andrew Bass at Cornell identified Porichthys notatus as the source. Widely reported in marine biology.",
-      "tags": ["midshipman-fish", "sausalito", "resolved-mystery"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -326,14 +370,17 @@
       "videoId": "j_TTKx9ILi8",
       "text": "The bloop and upsweep hydrophone recordings have geological origins — underwater volcanoes, collapsing caves, or ice cracking.",
       "kind": "empirical",
-      "entities": ["location:pacific ocean", "facility:hydrophones"],
+      "entities": [
+        "location:pacific ocean",
+        "facility:hydrophones"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
           "charStart": 21392,
           "charEnd": 21520,
-          "timeStart": 1616.0,
+          "timeStart": 1616,
           "timeEnd": 1628.36,
           "quote": "s the bloop upsweep sounds picked\nup by hydrophones could be caused by\nunderwater volcanoes or the collapse of\nunderwater caves "
         }
@@ -341,7 +388,6 @@
       "confidence": 0.9,
       "directTruth": 0.78,
       "rationale": "NOAA's 2005 reattribution of The Bloop to an icequake (cryogenic fracturing of Antarctic ice) is the mainstream consensus. Upsweep origin in seafloor volcanic activity is also supported. Host reports prevailing explanations accurately.",
-      "tags": ["bloop", "upsweep", "hydrophones"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -350,8 +396,20 @@
       "videoId": "j_TTKx9ILi8",
       "text": "Sky Quakes — loud booms on clear days — can be explained by shallow earthquakes, mining-induced rockbursts, giant offshore waves, or wind-reshaped sand dunes per a 2011 US Geological Survey report.",
       "kind": "empirical",
-      "entities": ["event:sky quakes", "organization:us geological survey", "date_time:2011", "event:shallow earthquakes", "event:giant waves", "event:spontaneous rock bursts"],
-      "relationships": ["r_0049", "r_0050", "r_0051", "r_0052"],
+      "entities": [
+        "event:sky quakes",
+        "organization:us geological survey",
+        "date_time:2011",
+        "event:shallow earthquakes",
+        "event:giant waves",
+        "event:spontaneous rock bursts"
+      ],
+      "relationships": [
+        "r_0049",
+        "r_0050",
+        "r_0051",
+        "r_0052"
+      ],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
@@ -365,7 +423,6 @@
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "The 2011 USGS 'mystery booms' compilation does catalog these candidate mechanisms. Each is individually well-established in seismology/geomorphology. Case-by-case attribution varies, but the menu of explanations is scientifically defensible.",
-      "tags": ["sky-quakes", "usgs", "geological"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -381,8 +438,13 @@
       "videoId": "j_TTKx9ILi8",
       "text": "Humans are drawn to apocalyptic thinking as a control mechanism — mentally rehearsing disaster spreads emotional load so survivors aren't paralyzed if catastrophe arrives.",
       "kind": "opinion",
-      "entities": ["person:haruki mami", "event:the end of the world"],
-      "relationships": ["r_0055"],
+      "entities": [
+        "person:haruki mami",
+        "event:the end of the world"
+      ],
+      "relationships": [
+        "r_0055"
+      ],
       "evidence": [
         {
           "transcriptId": "j_TTKx9ILi8",
@@ -395,7 +457,6 @@
       ],
       "confidence": 0.7,
       "rationale": "Host personal-essay framing. The stress-inoculation / anticipatory-grief coping concept is a real psychology finding (Janis 1958, Meichenbaum), but the 'hardwired survivor gene' extension is pop-psychology speculation. Opinion claim — directTruth omitted.",
-      "tags": ["apocalypse", "psychology", "opinion"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     }

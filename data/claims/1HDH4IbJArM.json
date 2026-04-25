@@ -3,6 +3,7 @@
   "transcriptId": "1HDH4IbJArM",
   "generatedAt": "2026-04-22T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b4-agent6",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "1HDH4IbJArM:c_0001",
@@ -14,7 +15,10 @@
         "facility:the royal air force base",
         "location:kortenberg belgium"
       ],
-      "relationships": ["r_0001", "r_0003"],
+      "relationships": [
+        "r_0001",
+        "r_0003"
+      ],
       "evidence": [
         {
           "transcriptId": "1HDH4IbJArM",
@@ -28,7 +32,6 @@
       "confidence": 0.95,
       "directTruth": 0.8,
       "rationale": "The core crewless-landing incident is the documentary anchor of the episode and is corroborated at video end by detailed records; date and place are specific and match published accounts of the 91st Bomber Group B-17 in Belgium.",
-      "tags": ["wwii", "phantom-fortress", "b-17"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -55,7 +58,6 @@
       "confidence": 0.92,
       "directTruth": 0.8,
       "rationale": "Crisp is named as the officer of record; host restates this corroborated at end of episode. No reason to doubt the name or action — standard WWII report.",
-      "tags": ["wwii", "john-crisp", "eyewitness"],
       "inVerdictSection": false,
       "hostStance": "asserts",
       "dependencies": [
@@ -89,7 +91,6 @@
       "confidence": 0.7,
       "directTruth": 0.3,
       "rationale": "Host himself explicitly disavows these creepy-factor details near the end ('the other aspects of the story like the half-eaten chocolate bars and the parachutes being intact were added to the story later'). Detail is part of the legend, not the documented event.",
-      "tags": ["phantom-fortress", "legend-embellishment"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -116,7 +117,6 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Host presents this as the documentary resolution to the mystery; matches 91st BG records. No contested framing.",
-      "tags": ["wwii", "crew", "91st-bomber-group"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -144,7 +144,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "Merseburg (the correct spelling) is well known in WWII historiography as a heavily defended oil-refinery target; host's ratio matches common accounts. Exact 160 figure is a round estimate.",
-      "tags": ["wwii", "merseburg", "anti-aircraft"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -172,7 +171,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "This is the mundane mechanical explanation the host endorses. Engaging autopilot before bailout was a documented WWII ditching protocol on the B-17.",
-      "tags": ["b-17", "autopilot", "ditching-protocol"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -198,7 +196,6 @@
       "confidence": 0.75,
       "directTruth": 0.1,
       "rationale": "Host surfaces the eyewitness supernatural interpretation specifically to reject it via mundane autopilot/conflation explanations in the verdict section. directTruth low because the claim is the thing being debunked.",
-      "tags": ["supernatural", "eyewitness", "phantom-fortress"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -224,7 +221,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "Host describes the paper-trail outcome matter-of-factly; no contradicting evidence. That the investigators closed on 'good luck' is an easily-checked bureaucratic fact.",
-      "tags": ["wwii", "investigators", "case-closed"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -250,7 +246,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "Host's verdict-section explanation; he provides specific dates/names for both incidents and draws a clean timeline separation. Plausible documentary claim; cannot verify independently from transcript alone.",
-      "tags": ["legend-origins", "phantom-fortress", "conflation"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -283,7 +278,6 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "Well-established finding in memory psychology (Loftus work on memory reconstruction and confabulation). Host's framing is informal but aligned with the science.",
-      "tags": ["memory", "confabulation", "psychology"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -316,7 +310,6 @@
       "confidence": 0.85,
       "directTruth": 0.75,
       "rationale": "Host argues the parachute/food details are embellishments rather than contemporaneous report entries; this is a reasonable folklore-accretion argument matching scholarly treatments of Mary Celeste.",
-      "tags": ["folklore", "legend-accretion", "mary-celeste"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -348,7 +341,6 @@
       ],
       "confidence": 0.9,
       "rationale": "Host's closing opinion — explicitly framed as his own take. Omitting directTruth because this is a value judgment ('amazing') rather than a testable proposition.",
-      "tags": ["verdict", "opinion", "b-17"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [

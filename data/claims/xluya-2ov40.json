@@ -3,6 +3,7 @@
   "transcriptId": "xluya-2ov40",
   "generatedAt": "2026-04-22T04:15:32.995Z",
   "generator": "claude-opus-4-7-plan3-b2",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "xluya-2ov40:c_0001",
@@ -30,12 +31,6 @@
       "confidence": 0.9,
       "directTruth": 0.7,
       "rationale": "The 1977 Colares flap is one of the best-documented UFO incidents on record, with military involvement, hospital records from Dr. Wellaide Cecim Carvalho, and over 2,000 pages of Brazilian Air Force documentation. The physical injuries and their pattern are empirically documented even if the source remains contested.",
-      "tags": [
-        "ufo",
-        "colares",
-        "brazil",
-        "1977"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -64,11 +59,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Operação Prato is a matter of declassified Brazilian military record; the documents were released publicly in 2005 by FAB. Captain Uyrangê Hollanda led the operation.",
-      "tags": [
-        "ufo",
-        "operation-saucer",
-        "brazilian-military"
-      ],
       "dependencies": [
         {
           "target": "xluya-2ov40:c_0001",
@@ -103,11 +93,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Confirmed in the released FAB dossier. The exposure problem is widely cited as the core reason the photographic evidence was considered inconclusive.",
-      "tags": [
-        "ufo",
-        "photography",
-        "operation-saucer"
-      ],
       "dependencies": [
         {
           "target": "xluya-2ov40:c_0002",
@@ -141,11 +126,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Host narrates this based on Hollanda's 1997 interview with AJ Gevaerd. The classification order is consistent with the subsequent 20-year silence, but the specific 'brigadier general' detail derives from a single late-career interview; omitting directTruth because the chain-of-command specifics are not independently documented.",
-      "tags": [
-        "ufo",
-        "classification",
-        "cover-up"
-      ],
       "dependencies": [
         {
           "target": "xluya-2ov40:c_0002",
@@ -195,12 +175,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Operation Condor is extensively documented in declassified US State Department and CIA archives (Kornbluh's National Security Archive work). The CIA funding/coordination is well established.",
-      "tags": [
-        "operation-condor",
-        "cia",
-        "south-america",
-        "dictatorship"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -234,12 +208,6 @@
       ],
       "confidence": 0.85,
       "rationale": "This is Hollanda's personal testimony from the 1997 Gevaerd interview. No physical implant was independently recovered or imaged (x-rays allegedly could not detect it). Omitting directTruth since this is single-witness extraordinary testimony with no corroborating evidence.",
-      "tags": [
-        "ufo",
-        "abduction",
-        "implant",
-        "colares"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -268,12 +236,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Uyrangê Hollanda's 1997 death by hanging is a matter of public record. The official ruling was suicide; conspiracy speculation exists but the death and timing are factually established.",
-      "tags": [
-        "ufo",
-        "hollanda",
-        "death",
-        "1997"
-      ],
       "dependencies": [
         {
           "target": "xluya-2ov40:c_0006",
@@ -316,11 +278,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Cixin Liu's The Dark Forest (2008) is the canonical source; the hypothesis is a well-known speculative resolution to the Fermi paradox. The attribution itself is not disputed.",
-      "tags": [
-        "dark-forest",
-        "fermi-paradox",
-        "liu-cixin"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -347,12 +304,6 @@
       ],
       "confidence": 0.9,
       "rationale": "Host is explicitly advocating the Dark-Forest precaution. This is a normative/speculative position — omitting directTruth since it's a contested policy stance that leading scientists split on.",
-      "tags": [
-        "seti",
-        "meti",
-        "dark-forest",
-        "policy"
-      ],
       "dependencies": [
         {
           "target": "xluya-2ov40:c_0008",
@@ -386,12 +337,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Host asserts a 2014 Amazon incident with matching phenomenology; this is harder to verify in English-language sources and local reports are the primary basis. Omitting directTruth pending corroboration.",
-      "tags": [
-        "ufo",
-        "amazon",
-        "2014",
-        "brazil"
-      ],
       "dependencies": [
         {
           "target": "xluya-2ov40:c_0001",
@@ -424,11 +369,6 @@
       ],
       "confidence": 0.9,
       "rationale": "This is an editorial opinion the host delivers near the closing. No directTruth — it's a value judgment.",
-      "tags": [
-        "first-contact",
-        "policy",
-        "civilian-oversight"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -455,11 +395,6 @@
       "confidence": 0.85,
       "directTruth": 0.15,
       "rationale": "Host presents the conventional-explanation list sarcastically ('right... swamp gu') and explicitly rejects it. directTruth low because the host's position is that the debunking explanations are inadequate.",
-      "tags": [
-        "ufo",
-        "debunk",
-        "cover-story"
-      ],
       "dependencies": [
         {
           "target": "xluya-2ov40:c_0001",

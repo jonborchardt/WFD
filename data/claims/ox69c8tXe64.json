@@ -3,13 +3,19 @@
   "transcriptId": "ox69c8tXe64",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "ox69c8tXe64:c_0001",
       "videoId": "ox69c8tXe64",
       "text": "On April 1, 2006, 27-year-old medical student Brian Schaefer entered a Columbus, Ohio bar monitored by security cameras at 1:15 a.m. and was never seen leaving.",
       "kind": "historical",
-      "entities": ["person:brian schaefer", "location:columbus", "location:bar", "technology:cameras"],
+      "entities": [
+        "person:brian schaefer",
+        "location:columbus",
+        "location:bar",
+        "technology:cameras"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -39,7 +45,10 @@
       "videoId": "ox69c8tXe64",
       "text": "Police K9 units tracked Brian's scent into the Ugly Tuna entrance then lost the trail entirely inside — the dogs circled and sat down at the door as if the trail simply ended.",
       "kind": "historical",
-      "entities": ["person:brian schaefer", "organization:police"],
+      "entities": [
+        "person:brian schaefer",
+        "organization:police"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -61,7 +70,11 @@
       "videoId": "ox69c8tXe64",
       "text": "Clint Florence, the last friend to see Brian alive, declined a polygraph, hired an attorney, and later refused to answer grand-jury questions about his final argument with Brian — making him the central (but uncharged) person of interest.",
       "kind": "historical",
-      "entities": ["person:clint florence", "person:clint", "person:brian"],
+      "entities": [
+        "person:clint florence",
+        "person:clint",
+        "person:brian"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -85,14 +98,22 @@
       "directTruth": 0.85,
       "rationale": "Clint Florence's polygraph refusal, grand jury silence, and attorney-mediated communication are all a matter of public record in coverage of the Shaffer case. He has never been charged. Refusal is legally advisable and not evidence of guilt, as the host correctly notes.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "ox69c8tXe64:c_0001", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "ox69c8tXe64:c_0001",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "ox69c8tXe64:c_0004",
       "videoId": "ox69c8tXe64",
       "text": "The 'smiley face killer' theory connecting Brian Schaefer to a supposed serial killer targeting young drunk men in the Midwest was rejected by both local police and the FBI.",
       "kind": "empirical",
-      "entities": ["person:brian schaefer", "organization:police"],
+      "entities": [
+        "person:brian schaefer",
+        "organization:police"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -114,7 +135,14 @@
       "videoId": "ox69c8tXe64",
       "text": "On October 8, 2009, Bobby and Cherylyn Jameson drove from Eufaula, Oklahoma with their six-year-old daughter Madison to view a 40-acre Sanbois Mountains property and were never seen alive again.",
       "kind": "historical",
-      "entities": ["person:bobby", "person:cherylyn", "person:madison", "location:samboy mountains", "location:oklahoma", "date_time:october 2009"],
+      "entities": [
+        "person:bobby",
+        "person:cherylyn",
+        "person:madison",
+        "location:samboy mountains",
+        "location:oklahoma",
+        "date_time:october 2009"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -136,7 +164,10 @@
       "videoId": "ox69c8tXe64",
       "text": "The Jamesons' abandoned pickup truck was found with $32,000 in cash sitting in plain sight, their coats, IDs, and cell phones all still inside — indicating they left on foot without basic supplies.",
       "kind": "historical",
-      "entities": ["person:bobby", "person:cherylyn"],
+      "entities": [
+        "person:bobby",
+        "person:cherylyn"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -160,14 +191,23 @@
       "directTruth": 0.95,
       "rationale": "The Jamisons' abandoned pickup found by hunters with $32,000 cash, coats, IDs, and phones still inside, with the dog Maisie barely alive in the cab, is extensively documented in the Latimer County Sheriff's Office case file and multiple press accounts.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "ox69c8tXe64:c_0005", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "ox69c8tXe64:c_0005",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "ox69c8tXe64:c_0007",
       "videoId": "ox69c8tXe64",
       "text": "Home security footage from the morning the Jamesons vanished shows Bobby and Cherylyn loading the truck in total silence, stopping periodically to stare vacantly — described by the sheriff as a trance-like state.",
       "kind": "historical",
-      "entities": ["person:bobby", "person:cherylyn", "technology:cameras"],
+      "entities": [
+        "person:bobby",
+        "person:cherylyn",
+        "technology:cameras"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -183,14 +223,25 @@
       "directTruth": 0.8,
       "rationale": "The trance-like footage is one of the most distinctive features of the Jamison case. The Latimer County sheriff Israel Beauchamp (and later investigators) publicly described the footage this way. Interpretation (drug-influenced? dissociative?) remains disputed, but the sheriff's description is a matter of record.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "ox69c8tXe64:c_0005", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "ox69c8tXe64:c_0005",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "ox69c8tXe64:c_0008",
       "videoId": "ox69c8tXe64",
       "text": "In November 2013, deer hunters found the skeletal remains of all three Jamesons in the Sanbois Range about 3 miles from where the truck was abandoned; cause of death was ruled undetermined due to four years of decomposition.",
       "kind": "historical",
-      "entities": ["date_time:november 2013", "location:samboy mountains", "person:bobby", "person:cherylyn", "person:madison"],
+      "entities": [
+        "date_time:november 2013",
+        "location:samboy mountains",
+        "person:bobby",
+        "person:cherylyn",
+        "person:madison"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -214,14 +265,22 @@
       "directTruth": 0.97,
       "rationale": "The November 2013 discovery by deer hunters and the Oklahoma Medical Examiner's July 2014 ruling of undetermined cause of death are both matters of public record. The 3-mile distance and condition of the remains are documented.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "ox69c8tXe64:c_0006", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "ox69c8tXe64:c_0006",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "ox69c8tXe64:c_0009",
       "videoId": "ox69c8tXe64",
       "text": "The meth-related theory of the Jamesons' deaths collapsed because police searches of the family home found no drugs, paraphernalia, or evidence of dealing — contrary to widely circulated speculation.",
       "kind": "empirical",
-      "entities": ["person:bobby", "person:cherylyn"],
+      "entities": [
+        "person:bobby",
+        "person:cherylyn"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -237,14 +296,23 @@
       "directTruth": 0.85,
       "rationale": "Police searches did not find evidence of methamphetamine involvement, contradicting the widely circulated 'meth murder' theory. This is reported in the Latimer County investigation record. Speculative theories persist but lacked evidentiary support.",
       "hostStance": "denies",
-      "dependencies": [{ "target": "ox69c8tXe64:c_0005", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "ox69c8tXe64:c_0005",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "ox69c8tXe64:c_0010",
       "videoId": "ox69c8tXe64",
       "text": "On May 14, 2008, 19-year-old Brandon Swanson called his parents from a crashed car near Porter, Minnesota and talked for 47 minutes before saying 'Oh —' and disappearing mid-call.",
       "kind": "historical",
-      "entities": ["person:brandon swanson", "location:porter", "date_time:2008"],
+      "entities": [
+        "person:brandon swanson",
+        "location:porter",
+        "date_time:2008"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -266,7 +334,11 @@
       "videoId": "ox69c8tXe64",
       "text": "Brandon believed he was near Lind, a town he knew, but his phone actually pinged a tower near Porter — 25 miles in the opposite direction — meaning he was completely lost in unfamiliar terrain.",
       "kind": "historical",
-      "entities": ["person:brandon", "location:porter", "location:lind"],
+      "entities": [
+        "person:brandon",
+        "location:porter",
+        "location:lind"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -282,14 +354,22 @@
       "directTruth": 0.92,
       "rationale": "The cell-tower ping data placing Brandon near Porter rather than Lind is a documented forensic fact from the case. The 25-mile discrepancy is one of the most critical pieces of evidence and is widely reported.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "ox69c8tXe64:c_0010", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "ox69c8tXe64:c_0010",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "ox69c8tXe64:c_0012",
       "videoId": "ox69c8tXe64",
       "text": "Search dogs tracked Brandon's scent across the Yellow Medicine River onto the opposite bank and north for miles — contradicting the official 'drowned while walking' explanation.",
       "kind": "empirical",
-      "entities": ["person:brandon", "location:yellow medicine river"],
+      "entities": [
+        "person:brandon",
+        "location:yellow medicine river"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -306,8 +386,14 @@
       "rationale": "Cadaver and tracking K9 teams reported Brandon's trail crossing the Yellow Medicine River and continuing. This undermines the simple 'fell in and drowned' explanation. The contradictory scent evidence has been reported by the family and the Yellow Medicine County Sheriff's office.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "ox69c8tXe64:c_0010", "kind": "elaborates" },
-        { "target": "ox69c8tXe64:c_0011", "kind": "supports" }
+        {
+          "target": "ox69c8tXe64:c_0010",
+          "kind": "elaborates"
+        },
+        {
+          "target": "ox69c8tXe64:c_0011",
+          "kind": "supports"
+        }
       ]
     },
     {
@@ -315,7 +401,10 @@
       "videoId": "ox69c8tXe64",
       "text": "Brandon's Law, passed by Minnesota in 2009, requires police to investigate missing adults immediately — eliminating the 'adults can be missing' waiting-period practice that delayed Brandon's search.",
       "kind": "historical",
-      "entities": ["person:brandon", "date_time:2009"],
+      "entities": [
+        "person:brandon",
+        "date_time:2009"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -331,14 +420,22 @@
       "directTruth": 0.95,
       "rationale": "Minnesota Statute 299C.535, signed into law in 2009 after lobbying by Annette and Brian Swanson, requires immediate police investigation of missing adults. The law is named for Brandon Swanson and is accurately described.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "ox69c8tXe64:c_0010", "kind": "elaborates" }]
+      "dependencies": [
+        {
+          "target": "ox69c8tXe64:c_0010",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "ox69c8tXe64:c_0014",
       "videoId": "ox69c8tXe64",
       "text": "The host explicitly frames these three cases as a 'campfire story' without debunking or analysis — conceding the disappearances are unsolved and acknowledging that folkloric framing, not evidentiary review, is the episode's mode.",
       "kind": "opinion",
-      "entities": ["organization:police", "person:brian schaefer"],
+      "entities": [
+        "organization:police",
+        "person:brian schaefer"
+      ],
       "relationships": [],
       "evidence": [
         {

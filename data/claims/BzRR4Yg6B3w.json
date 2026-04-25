@@ -3,13 +3,19 @@
   "transcriptId": "BzRR4Yg6B3w",
   "generatedAt": "2026-04-21T00:00:00.000Z",
   "generator": "claude-opus-4.7-claims-plan03-b4-resume",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "BzRR4Yg6B3w:c_0001",
       "videoId": "BzRR4Yg6B3w",
       "text": "The US Navy installed a Project-Rainbow prototype on the USS Eldridge in July 1943, led by Dr. John von Neumann, intended to make the ship invisible to radar and the naked eye.",
       "kind": "historical",
-      "entities": ["date_time:july 1943", "location:eldridge", "person:dr john v norman", "event:philadelphia experiment"],
+      "entities": [
+        "date_time:july 1943",
+        "location:eldridge",
+        "person:dr john v norman",
+        "event:philadelphia experiment"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -24,7 +30,6 @@
       "confidence": 0.7,
       "directTruth": 0.05,
       "rationale": "This is the core Philadelphia Experiment legend. No primary-source evidence supports it: the USS Eldridge's deck log shows it was not in Philadelphia in July/October 1943, von Neumann never worked on any such project, and there are no contemporaneous Navy records of a Project Rainbow invisibility experiment. Host himself presents this as the legend then debunks it later. Very low directTruth.",
-      "tags": ["philadelphia-experiment", "uss-eldridge", "1943"],
       "inVerdictSection": false,
       "hostStance": "steelman"
     },
@@ -33,7 +38,11 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Desperate for a WWII edge, the US launched Project Rainbow building on Tesla's electromagnetic-invisibility ideas and Einstein's 1919 proof that light bends in gravity.",
       "kind": "historical",
-      "entities": ["event:philadelphia experiment", "person:nicola tesla", "person:albert einstein"],
+      "entities": [
+        "event:philadelphia experiment",
+        "person:nicola tesla",
+        "person:albert einstein"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -48,7 +57,6 @@
       "confidence": 0.7,
       "directTruth": 0.1,
       "rationale": "Einstein's 1919 solar eclipse expedition (Eddington) did confirm gravitational light deflection — that part is real. But Project Rainbow as described never existed; the actual WWII 'Project Rainbow' was a degaussing project to reduce magnetic-mine vulnerability, not an invisibility experiment. Tesla's death-ray ideas had no operational development by the Navy. Legend does not hold up historically.",
-      "tags": ["philadelphia-experiment", "project-rainbow", "tesla", "einstein"],
       "inVerdictSection": false,
       "hostStance": "steelman",
       "dependencies": [
@@ -64,7 +72,10 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "The Montauk Project, successor to the Philadelphia Experiment, used a 'Montauk chair' that generated electromagnetic fields to amplify psychic abilities — letting subjects manifest objects, remote-view, and time-travel.",
       "kind": "speculative",
-      "entities": ["event:monok project", "organization:monok project"],
+      "entities": [
+        "event:monok project",
+        "organization:monok project"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -79,7 +90,6 @@
       "confidence": 0.85,
       "directTruth": 0.03,
       "rationale": "Host reports the core Montauk conspiracy narrative. The Camp Hero facility at Montauk Point existed and was a decommissioned Cold War radar station, but no documented psychic / time-travel research. The Montauk legend was originated by Preston Nichols whose claims lack any verification and whose 'memories' came through regression hypnosis. Very low directTruth.",
-      "tags": ["montauk-project", "montauk-chair", "pseudoscience"],
       "inVerdictSection": false,
       "hostStance": "steelman"
     },
@@ -88,7 +98,10 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Al Bielek publicly came forward with his Philadelphia-Experiment/Montauk story in 1989, and has since appeared on 40+ radio shows including Coast to Coast.",
       "kind": "historical",
-      "entities": ["date_time:1989", "person:al belck"],
+      "entities": [
+        "date_time:1989",
+        "person:al belck"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -103,7 +116,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Bielek (1927-2011) did become publicly active in the late 1980s, was a repeat Coast to Coast guest in the 1990s-2000s, and headlined UFO/conspiracy conferences. His public profile is documented in the UFO-research literature (e.g., Jacques Vallée, Kenn Thomas). Biographical fact, uncontested.",
-      "tags": ["bielek", "coast-to-coast", "1989"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -112,7 +124,11 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Al Bielek claimed to have seen HBO's 'The Philadelphia Experiment' late at night in 1988, which triggered his first Philadelphia-Experiment memories.",
       "kind": "historical",
-      "entities": ["date_time:1988", "organization:hbo", "work_of_media:the philadelphia experiment"],
+      "entities": [
+        "date_time:1988",
+        "organization:hbo",
+        "work_of_media:the philadelphia experiment"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -127,7 +143,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "Bielek's own standard origin story matches this description. The 1984 film 'The Philadelphia Experiment' was widely in HBO rotation in the late 1980s. Host accurately reports Bielek's self-report. The self-report being accurate does not validate the memory content (next claim), but that he says this is factually documented.",
-      "tags": ["bielek", "1988", "memory-origin"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -136,7 +151,12 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Bielek's Philadelphia/Montauk memories are fabrications: the USS Eldridge was in New York on the experiment date, no Navy record of Edward or Duncan Cameron exists, and his own website used a Princeton yearbook photo of an unrelated man as 'Edward Cameron'.",
       "kind": "empirical",
-      "entities": ["location:eldridge", "person:edward cameron", "person:alexander cameron iii", "person:al belck"],
+      "entities": [
+        "location:eldridge",
+        "person:edward cameron",
+        "person:alexander cameron iii",
+        "person:al belck"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -159,7 +179,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "USS Eldridge's 1943 deck log, preserved in the National Archives, confirms her location in New York harbor during the alleged experiment. No Navy personnel records exist for Edward or Duncan Cameron. The Princeton-yearbook photo substitution is documented by skeptic investigators (Jacques Vallée, Mike Dash). Host's debunk is factually solid.",
-      "tags": ["bielek", "debunk", "eldridge-log"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -175,7 +194,13 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Bielek's claim that John von Neumann ran the Montauk Project in 1983 is impossible because von Neumann died of cancer in 1957.",
       "kind": "empirical",
-      "entities": ["person:dr john van noyman", "person:john von noyman", "date_time:1957", "person:van noyman", "date_time:1983"],
+      "entities": [
+        "person:dr john van noyman",
+        "person:john von noyman",
+        "date_time:1957",
+        "person:van noyman",
+        "date_time:1983"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -190,7 +215,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Von Neumann's 1957 death from bone/pancreatic cancer at Walter Reed Hospital is one of the best-documented scientist deaths in 20th-century history. He was visited on his deathbed by high-ranking government officials for security reasons. 'Faked his death' is a classic unfalsifiable conspiracy rescue. Host's refutation is factually airtight.",
-      "tags": ["bielek", "von-neumann", "debunk"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -206,7 +230,10 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Bielek claimed the Office of Naval Research was involved in the 1943 Philadelphia Experiment, but ONR wasn't formed until 1946.",
       "kind": "empirical",
-      "entities": ["event:philadelphia experiment", "date_time:1943"],
+      "entities": [
+        "event:philadelphia experiment",
+        "date_time:1943"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -221,7 +248,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "ONR was established by Act of Congress on August 1, 1946. The three-year anachronism in Bielek's account is a factual error in his timeline that no 'different timeline' rescue can credibly explain. Host's fact-check is correct.",
-      "tags": ["bielek", "onr", "anachronism", "debunk"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -237,7 +263,9 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Bielek serially predicted nuclear war — in 2000, then 2005, then 2015 — with every date passing without event before his 2011 death.",
       "kind": "empirical",
-      "entities": ["person:al belck"],
+      "entities": [
+        "person:al belck"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -252,7 +280,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "Bielek's shifting nuclear-war prediction dates are documented in his lecture tour recordings and Coast to Coast appearances. The pattern of failed prophecy followed by forward-shifting dates is characteristic of false-prophet dynamics (Festinger's When Prophecy Fails). Host's reporting is factual.",
-      "tags": ["bielek", "failed-prophecy", "nuclear-war"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -268,7 +295,11 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "The Philadelphia Experiment conspiracy theory originated in the 1950s with two men — UFO fan Carl Allen and UFO writer Morris Jessup — not from any authentic Navy whistleblower.",
       "kind": "historical",
-      "entities": ["person:carl allen", "person:mars jessup", "event:philadelphia experiment"],
+      "entities": [
+        "person:carl allen",
+        "person:mars jessup",
+        "event:philadelphia experiment"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -283,7 +314,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "The Allen-Jessup correspondence (1955-1956) is the documented origin of the Philadelphia Experiment legend. Carl Allen, writing as 'Carlos Allende', sent annotated letters to Morris K. Jessup that framed the Eldridge story. Jessup's 1959 death by apparent suicide amplified the mystique. This origin narrative is well-established in UFO historiography.",
-      "tags": ["philadelphia-experiment", "allende", "jessup", "origin"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -292,7 +322,10 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "The Montauk Project involved kidnapping and experimenting on thousands of homeless boys aged 10-15, known as the 'Montauk Boys', for mind-control programming.",
       "kind": "speculative",
-      "entities": ["event:monok project", "group_or_movement:they're known as the monok boys"],
+      "entities": [
+        "event:monok project",
+        "group_or_movement:they're known as the monok boys"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -307,7 +340,6 @@
       "confidence": 0.85,
       "directTruth": 0.04,
       "rationale": "The Montauk Boys narrative comes exclusively from Preston Nichols (repeat confabulator) and adjacent self-described abductees using regressed-hypnosis 'recovered memories'. No missing-persons records, forensic evidence, or credible witnesses have ever supported the claim. Regression-hypnosis 'memories' are known to be fabrication-prone (Loftus). Very low directTruth.",
-      "tags": ["montauk-boys", "mind-control", "false-memory"],
       "inVerdictSection": false,
       "hostStance": "denies"
     },
@@ -316,7 +348,11 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "The US government has in fact conducted psychic-warfare (Stargate), mind-control (MK-Ultra), and remote-viewing research programs — making some claims made by conspiracy witnesses historically plausible.",
       "kind": "historical",
-      "entities": ["technology:project stargate", "technology:mk ultra", "technology:gateway process"],
+      "entities": [
+        "technology:project stargate",
+        "technology:mk ultra",
+        "technology:gateway process"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -331,7 +367,6 @@
       "confidence": 0.95,
       "directTruth": 0.95,
       "rationale": "Project Stargate (CIA/DIA remote-viewing, 1978-1995) and MK-Ultra (CIA mind-control, 1953-1973) are fully declassified, widely documented programs — Congress's 1977 Church Committee hearings confirmed MK-Ultra; Stargate was declassified in 1995. Their existence is historical fact. Host's point is sound: the existence of real black-ops programs doesn't validate Bielek's specific claims, but it makes wholesale dismissal of government secrecy-of-research naive.",
-      "tags": ["stargate", "mk-ultra", "declassified", "context"],
       "inVerdictSection": false,
       "hostStance": "asserts"
     },
@@ -340,7 +375,9 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "There is plenty of evidence Al Bielek made the whole Philadelphia-Experiment/Montauk story up, and when challenged he uses the 'different timeline' trope as an unfalsifiable rescue.",
       "kind": "empirical",
-      "entities": ["person:al belck"],
+      "entities": [
+        "person:al belck"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -355,7 +392,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Host's verdict consolidates the specific debunks (Eldridge log, Cameron-yearbook photo, von-Neumann death date, ONR anachronism) into a conclusion of fabrication. The 'different timeline' move is textbook unfalsifiability — it moves the claim outside any possible empirical test. Host's meta-point is analytically sound.",
-      "tags": ["bielek", "fabrication", "unfalsifiable"],
       "inVerdictSection": true,
       "hostStance": "asserts",
       "dependencies": [
@@ -376,7 +412,14 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Whistleblowers like Bielek, Bob Lazar, Phil Schneider, and David Grusch should be investigated on the merits — neither blindly believed nor instantly dismissed — because past whistleblowers were the sole source for now-confirmed programs like MK-Ultra and Stargate.",
       "kind": "opinion",
-      "entities": ["person:al belck", "person:bob lazar", "person:phil schneider", "person:david grush", "technology:mk ultra", "technology:project stargate"],
+      "entities": [
+        "person:al belck",
+        "person:bob lazar",
+        "person:phil schneider",
+        "person:david grush",
+        "technology:mk ultra",
+        "technology:project stargate"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -390,7 +433,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Host's epistemic recommendation. The underlying point that whistleblowers are the historical source for programs later confirmed (MK-Ultra, Stargate, NSA bulk collection) is defensible. However, equating Bielek (debunked in-show) with Grusch (sworn 2023 Congressional testimony, still unverified) is a category error — the evidential bar differs widely. Omitting directTruth: it's a meta-level opinion claim.",
-      "tags": ["whistleblowers", "epistemology", "skepticism"],
       "inVerdictSection": true,
       "hostStance": "asserts"
     },
@@ -399,7 +441,11 @@
       "videoId": "BzRR4Yg6B3w",
       "text": "Tesla created a working particle-beam weapon called Tesla's death ray during his WWI work with the US Army.",
       "kind": "historical",
-      "entities": ["person:tesla", "person:nicola tesla", "organization:united states army"],
+      "entities": [
+        "person:tesla",
+        "person:nicola tesla",
+        "organization:united states army"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -414,7 +460,6 @@
       "confidence": 0.7,
       "directTruth": 0.15,
       "rationale": "Tesla did work on remote-control and some wartime submarine-detection ideas (not widely adopted). His 1930s 'teleforce' particle-beam proposals were theoretical papers; no working prototype was ever built or tested. FBI impounded his papers at death in 1943 but nothing operational was developed. Host flags 'no evidence it worked' then pivots to 'maybe it worked a little too well' tongue-in-cheek — indicating he knows the claim is weak.",
-      "tags": ["tesla", "death-ray", "particle-beam"],
       "inVerdictSection": false,
       "hostStance": "steelman"
     }

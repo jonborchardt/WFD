@@ -3,13 +3,17 @@
   "transcriptId": "2NMBjRd8PXw",
   "generatedAt": "2026-04-22T00:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "2NMBjRd8PXw:c_0001",
       "videoId": "2NMBjRd8PXw",
       "text": "The JFK assassination has a deeper layer beyond the lone-gunman vs. conspiracy debate, specifically a UFO connection.",
       "kind": "speculative",
-      "entities": ["event:the kennedy assassination", "person:oswald"],
+      "entities": [
+        "event:the kennedy assassination",
+        "person:oswald"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -23,15 +27,19 @@
       ],
       "confidence": 0.9,
       "rationale": "Peter Levenda explicitly reframes the JFK case around a UFO angle, sidestepping the standard lone-gunman / conspiracy dichotomy. No mainstream declassified record corroborates the UFO framing, so directTruth is withheld.",
-      "hostStance": "asserts",
-      "tags": ["jfk", "ufo", "conspiracy"]
+      "hostStance": "asserts"
     },
     {
       "id": "2NMBjRd8PXw:c_0002",
       "videoId": "2NMBjRd8PXw",
       "text": "At age 17, Peter Levenda dressed as a priest and used this disguise to get past the Secret Service and into Bobby Kennedy's funeral.",
       "kind": "historical",
-      "entities": ["person:peter levenda", "person:bobby kennedy", "organization:secret service", "role:fake priest"],
+      "entities": [
+        "person:peter levenda",
+        "person:bobby kennedy",
+        "organization:secret service",
+        "role:fake priest"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -46,22 +54,26 @@
       "confidence": 0.85,
       "directTruth": 0.55,
       "rationale": "This is a personal anecdote told first-person by Levenda; he describes the scene in specific detail later in the transcript (high clergy, senators, actors present). No external public record either confirms or refutes his presence, so confidence in his sincerity is higher than confirmation of fact.",
-      "hostStance": "asserts",
-      "tags": ["rfk", "disguise", "biography"]
+      "hostStance": "asserts"
     },
     {
       "id": "2NMBjRd8PXw:c_0003",
       "videoId": "2NMBjRd8PXw",
       "text": "Levenda got a 4-F draft deferment during the Vietnam War by registering himself as a clergyman of his own invented church.",
       "kind": "historical",
-      "entities": ["location:vietnam", "law_or_policy:4-f deferment", "role:clergyman", "organization:church"],
+      "entities": [
+        "location:vietnam",
+        "law_or_policy:4-f deferment",
+        "role:clergyman",
+        "organization:church"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "2NMBjRd8PXw",
           "charStart": 843,
           "charEnd": 1004,
-          "timeStart": 45.0,
+          "timeStart": 45,
           "timeEnd": 54.1,
           "quote": "I could not understand it. I said, \"No,\nI'm not going to do this.\" How do you\nget deferred from going into the army?\nThere was a 4-F deferment. And that said\ncle"
         },
@@ -78,15 +90,24 @@
       "directTruth": 0.4,
       "rationale": "4-F deferments for clergy existed under the Selective Service system of the 1960s, but the specific claim that Levenda manufactured a fictitious Czechoslovakian Orthodox church to qualify is uncorroborated outside his own account. The category existed; the stunt is self-reported.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "2NMBjRd8PXw:c_0002", "kind": "elaborates" }],
-      "tags": ["vietnam", "draft", "clergy"]
+      "dependencies": [
+        {
+          "target": "2NMBjRd8PXw:c_0002",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "2NMBjRd8PXw:c_0004",
       "videoId": "2NMBjRd8PXw",
       "text": "Bobby Kennedy was assassinated in June 1968, and supporters viewed him as the figure who would end the Vietnam War.",
       "kind": "historical",
-      "entities": ["person:bobby kennedy", "date_time:june '68", "location:vietnam", "role:savior"],
+      "entities": [
+        "person:bobby kennedy",
+        "date_time:june '68",
+        "location:vietnam",
+        "role:savior"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -101,15 +122,19 @@
       "confidence": 0.95,
       "directTruth": 0.85,
       "rationale": "Robert F. Kennedy was shot by Sirhan Sirhan on June 5, 1968, and died June 6. His anti-Vietnam platform in the 1968 Democratic primary is thoroughly documented; supporters did view him as the candidate most likely to end the war. Factual minus minor stylization.",
-      "hostStance": "asserts",
-      "tags": ["rfk", "vietnam", "1968"]
+      "hostStance": "asserts"
     },
     {
       "id": "2NMBjRd8PXw:c_0005",
       "videoId": "2NMBjRd8PXw",
       "text": "The Bobby Kennedy funeral was attended simultaneously by high Catholic clergy (bishops, archbishops, cardinals), the sitting US president, senators, and actors.",
       "kind": "historical",
-      "entities": ["person:bobby kennedy", "person:bishops", "person:archbishops", "person:cardinals"],
+      "entities": [
+        "person:bobby kennedy",
+        "person:bishops",
+        "person:archbishops",
+        "person:cardinals"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -125,16 +150,27 @@
       "directTruth": 0.75,
       "rationale": "RFK's June 8, 1968 funeral at St. Patrick's Cathedral, NYC is extensively documented as attended by President Lyndon Johnson (sitting president), Cardinal Cushing celebrating, numerous senators, and public figures. The general guest list matches Levenda's description.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "2NMBjRd8PXw:c_0004", "kind": "elaborates" }],
-      "tags": ["rfk", "funeral"]
+      "dependencies": [
+        {
+          "target": "2NMBjRd8PXw:c_0004",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "2NMBjRd8PXw:c_0006",
       "videoId": "2NMBjRd8PXw",
       "text": "Colonia Dignidad in Chile is run by ex-Nazis and operates as a weird cult.",
       "kind": "historical",
-      "entities": ["location:colonia dignidad", "group_or_movement:ex-nazis", "ideology:nazis"],
-      "relationships": ["r_0015", "r_0016"],
+      "entities": [
+        "location:colonia dignidad",
+        "group_or_movement:ex-nazis",
+        "ideology:nazis"
+      ],
+      "relationships": [
+        "r_0015",
+        "r_0016"
+      ],
       "evidence": [
         {
           "transcriptId": "2NMBjRd8PXw",
@@ -148,15 +184,17 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "Colonia Dignidad was founded in 1961 in southern Chile by former Wehrmacht corporal Paul Schäfer and other ex-Nazi Germans. Decades of court cases in Germany and Chile, plus UN reports, confirm both the Nazi lineage of its founders and its cult-compound operations (child abuse, torture collaboration with DINA). Well-documented.",
-      "hostStance": "asserts",
-      "tags": ["chile", "nazis", "cult"]
+      "hostStance": "asserts"
     },
     {
       "id": "2NMBjRd8PXw:c_0007",
       "videoId": "2NMBjRd8PXw",
       "text": "When Levenda tried to leave Colonia Dignidad, a Mercedes blocked his car at the gate and two large men demanded his papers.",
       "kind": "historical",
-      "entities": ["location:colonia dignidad", "person:peter levenda"],
+      "entities": [
+        "location:colonia dignidad",
+        "person:peter levenda"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -164,14 +202,14 @@
           "charStart": 2485,
           "charEnd": 2647,
           "timeStart": 132.7,
-          "timeEnd": 142.0,
+          "timeEnd": 142,
           "quote": "I got into the car and I said, \"Okay,\nlet's go.\" I just wanted to take\npictures. I said, \"Let's let's get out\nof here.\"\n>> Yep. He says, \"Okay with me.\" Yep. And\n"
         },
         {
           "transcriptId": "2NMBjRd8PXw",
           "charStart": 2694,
           "charEnd": 2839,
-          "timeStart": 145.0,
+          "timeStart": 145,
           "timeEnd": 154.4,
           "quote": "the the mysterious Mercedes\npulls out, the gates close, Mercedes\nblocks our way of getting out, and two\nreally big guys get out of the Mercedes.\n"
         }
@@ -180,16 +218,27 @@
       "directTruth": 0.5,
       "rationale": "The stopping-at-the-gate anecdote is consistent with the compound's well-documented hostility toward outside visitors in the 1980s-90s. But this is Levenda's personal account; no independent corroboration is cited.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "2NMBjRd8PXw:c_0006", "kind": "elaborates" }],
-      "tags": ["chile", "anecdote"]
+      "dependencies": [
+        {
+          "target": "2NMBjRd8PXw:c_0006",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "2NMBjRd8PXw:c_0008",
       "videoId": "2NMBjRd8PXw",
       "text": "A man who died in Surabaya, Indonesia was actually Adolf Hitler, who escaped Europe and survived WWII.",
       "kind": "speculative",
-      "entities": ["person:hitler", "location:surabaya", "nationality_or_ethnicity:indonesians"],
-      "relationships": ["r_0017", "r_0018"],
+      "entities": [
+        "person:hitler",
+        "location:surabaya",
+        "nationality_or_ethnicity:indonesians"
+      ],
+      "relationships": [
+        "r_0017",
+        "r_0018"
+      ],
       "evidence": [
         {
           "transcriptId": "2NMBjRd8PXw",
@@ -203,45 +252,58 @@
       "confidence": 0.9,
       "directTruth": 0.05,
       "rationale": "Forensic evidence (dental records matched via Soviet autopsy records declassified 1993, DNA analysis of skull fragments) and consistent testimony of Hitler's inner circle place Adolf Hitler's death in the Führerbunker on April 30, 1945. The Surabaya 'Hitler' story has circulated in Indonesian folk history around a man named Dr. Poch in Sumbawa, but mainstream historians uniformly reject the identification.",
-      "hostStance": "asserts",
-      "tags": ["hitler", "indonesia", "conspiracy"]
+      "hostStance": "asserts"
     },
     {
       "id": "2NMBjRd8PXw:c_0009",
       "videoId": "2NMBjRd8PXw",
       "text": "The man who died in Surabaya was born in Austria in the same year as Hitler, supporting the identification.",
       "kind": "empirical",
-      "entities": ["location:austria", "person:hitler", "location:surabaya"],
-      "relationships": ["r_0019"],
+      "entities": [
+        "location:austria",
+        "person:hitler",
+        "location:surabaya"
+      ],
+      "relationships": [
+        "r_0019"
+      ],
       "evidence": [
         {
           "transcriptId": "2NMBjRd8PXw",
           "charStart": 3345,
           "charEnd": 3454,
           "timeStart": 174.5,
-          "timeEnd": 181.0,
+          "timeEnd": 181,
           "quote": "it'll tell me something. Oh, the guy was\nborn in Austria like the same year.\nI'm thinking, \"Oh, no, no, no.\"\n"
         }
       ],
       "confidence": 0.75,
       "rationale": "Levenda relays that the Surabaya man's passport gave an Austrian birthplace around 1889. He acknowledges the passport 'could be fake.' DirectTruth omitted — the evidentiary value of the passport is what's contested, not whether the document matched on paper.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "2NMBjRd8PXw:c_0008", "kind": "supports" }],
-      "tags": ["hitler", "austria", "passport"]
+      "dependencies": [
+        {
+          "target": "2NMBjRd8PXw:c_0008",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "2NMBjRd8PXw:c_0010",
       "videoId": "2NMBjRd8PXw",
       "text": "A local cemetery guide at Surabaya identified one of the graves as Hitler's.",
       "kind": "historical",
-      "entities": ["location:cemetery", "person:hitler", "location:surabaya"],
+      "entities": [
+        "location:cemetery",
+        "person:hitler",
+        "location:surabaya"
+      ],
       "relationships": [],
       "evidence": [
         {
           "transcriptId": "2NMBjRd8PXw",
           "charStart": 3515,
           "charEnd": 3675,
-          "timeStart": 183.0,
+          "timeStart": 183,
           "timeEnd": 193.5,
           "quote": "So, I went to look\nat the cemetery and a guide There's a\nguide there. The guy walking around the\ncemetery. \"I'll I'll take you. I know\nwho you're looking for.\"\n"
         }
@@ -250,15 +312,23 @@
       "directTruth": 0.3,
       "rationale": "A tour-guide identification is plausible as a self-report, but guides at tourist graveyards often perform local legends for visitors. The guide's claim supports folklore, not forensic fact.",
       "hostStance": "asserts",
-      "dependencies": [{ "target": "2NMBjRd8PXw:c_0008", "kind": "supports" }],
-      "tags": ["hitler", "cemetery", "anecdote"]
+      "dependencies": [
+        {
+          "target": "2NMBjRd8PXw:c_0008",
+          "kind": "supports"
+        }
+      ]
     },
     {
       "id": "2NMBjRd8PXw:c_0011",
       "videoId": "2NMBjRd8PXw",
       "text": "If Hitler really survived WWII and fled to Indonesia undetected, it would represent a massive failure of every intelligence agency on the planet.",
       "kind": "speculative",
-      "entities": ["event:massive failure", "organization:every intelligence agency", "person:hitler"],
+      "entities": [
+        "event:massive failure",
+        "organization:every intelligence agency",
+        "person:hitler"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -275,16 +345,21 @@
       "rationale": "Conditional framing — IF the Hitler-survived thesis were true, THEN postwar Allied and Soviet intelligence missed a top-priority target. The conditional logic is sound even though the antecedent is dubious.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "2NMBjRd8PXw:c_0008", "kind": "presupposes" }
-      ],
-      "tags": ["intelligence", "hitler"]
+        {
+          "target": "2NMBjRd8PXw:c_0008",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "2NMBjRd8PXw:c_0012",
       "videoId": "2NMBjRd8PXw",
       "text": "Lee Harvey Oswald acted alone in the JFK assassination.",
       "kind": "historical",
-      "entities": ["person:oswald", "event:the kennedy assassination"],
+      "entities": [
+        "person:oswald",
+        "event:the kennedy assassination"
+      ],
       "relationships": [],
       "evidence": [
         {
@@ -292,7 +367,7 @@
           "charStart": 147,
           "charEnd": 267,
           "timeStart": 5.2,
-          "timeEnd": 9.0,
+          "timeEnd": 9,
           "quote": "Oswald\nacted alone or Oswald was part of a\nconspiracy. I'm going to say there's\nanother thing happening here. There's a\n"
         }
       ],
@@ -301,17 +376,27 @@
       "rationale": "The Warren Commission's lone-gunman conclusion is the mainstream-supported account of JFK's killing. Levenda invokes the thesis specifically to brush past it in favor of a UFO angle — extracted as a denies claim because he explicitly declines to endorse it.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "2NMBjRd8PXw:c_0001", "kind": "contradicts", "rationale": "[alternative] Lone-gunman thesis and the UFO-connection thesis are competing frames for the same event." }
-      ],
-      "tags": ["jfk", "oswald"]
+        {
+          "target": "2NMBjRd8PXw:c_0001",
+          "kind": "contradicts",
+          "rationale": "[alternative] Lone-gunman thesis and the UFO-connection thesis are competing frames for the same event."
+        }
+      ]
     },
     {
       "id": "2NMBjRd8PXw:c_0013",
       "videoId": "2NMBjRd8PXw",
       "text": "The CIA ran mind control programs that are topically connected to JFK's assassination, Nazi occultism, UFOs, and secret seances among America's most powerful families.",
       "kind": "speculative",
-      "entities": ["organization:cia", "event:the jfk assassination", "ideology:nazi occultism", "location:america"],
-      "relationships": ["r_0001"],
+      "entities": [
+        "organization:cia",
+        "event:the jfk assassination",
+        "ideology:nazi occultism",
+        "location:america"
+      ],
+      "relationships": [
+        "r_0001"
+      ],
       "evidence": [
         {
           "transcriptId": "2NMBjRd8PXw",
@@ -325,8 +410,7 @@
       "confidence": 0.9,
       "directTruth": 0.25,
       "rationale": "CIA mind-control programs (MKUltra) are documented via the 1977 Church Committee. But the sweeping 'it's all connected' meta-claim tying MKUltra to JFK, Nazi occultism, UFOs, and elite seances is a synthetic conspiracy frame with no evidentiary support as a unified thesis.",
-      "hostStance": "asserts",
-      "tags": ["cia", "mkultra", "conspiracy", "synthesis"]
+      "hostStance": "asserts"
     }
   ]
 }

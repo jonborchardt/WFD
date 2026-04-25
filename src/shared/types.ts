@@ -100,7 +100,8 @@ export interface Relationship {
 
 // Validator used by graph store and by AI-enrichment ingest. Kept in
 // the shared types module so every consumer gets the same contract —
-// previously lived in src/nlp/relationships.ts, which is being deleted.
+// previously lived in src/nlp/relationships.ts, which was deleted when
+// the neural extraction path replaced the regex+BERT pipeline.
 export function isValidRelationship(r: unknown): r is Relationship {
   if (!r || typeof r !== "object") return false;
   const o = r as Record<string, unknown>;

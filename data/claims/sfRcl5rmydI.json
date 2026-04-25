@@ -3,6 +3,7 @@
   "transcriptId": "sfRcl5rmydI",
   "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "sfRcl5rmydI:c_0001",
@@ -32,8 +33,7 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "McKinnon's 2001-2002 intrusion methodology via blank and default passwords across ~97 US military and NASA machines is documented in the UK/US extradition record and his own public interviews.",
-      "hostStance": "asserts",
-      "tags": ["gary-mckinnon", "hacking", "nasa"]
+      "hostStance": "asserts"
     },
     {
       "id": "sfRcl5rmydI:c_0002",
@@ -45,7 +45,9 @@
         "facility:non-terrestrial offices",
         "organization:u.s navy"
       ],
-      "relationships": ["r_0044"],
+      "relationships": [
+        "r_0044"
+      ],
       "evidence": [
         {
           "transcriptId": "sfRcl5rmydI",
@@ -60,9 +62,11 @@
       "rationale": "McKinnon has repeated this 'non-terrestrial officers' story in interviews since the mid-2000s; the existence of the file itself is attested only by his personal testimony without corroborating documentary evidence.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0001", "kind": "presupposes" }
-      ],
-      "tags": ["non-terrestrial-officers", "mckinnon-testimony"]
+        {
+          "target": "sfRcl5rmydI:c_0001",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "sfRcl5rmydI:c_0003",
@@ -75,7 +79,9 @@
         "organization:u.s naval registry",
         "organization:secret space program"
       ],
-      "relationships": ["r_0046"],
+      "relationships": [
+        "r_0046"
+      ],
       "evidence": [
         {
           "transcriptId": "sfRcl5rmydI",
@@ -90,9 +96,11 @@
       "rationale": "Conclusion drawn by McKinnon; the video presents it as McKinnon's interpretation of a list, not as independently verified evidence of a space fleet.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0002", "kind": "elaborates" }
-      ],
-      "tags": ["secret-space-program", "speculation"]
+        {
+          "target": "sfRcl5rmydI:c_0002",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "sfRcl5rmydI:c_0004",
@@ -118,8 +126,7 @@
       ],
       "confidence": 0.7,
       "rationale": "This is Hare's personal whistleblower testimony, widely repeated in UFO circles since the 2001 Disclosure Project but not independently corroborated by NASA records.",
-      "hostStance": "asserts",
-      "tags": ["donna-hare", "nasa-cover-up", "whistleblower"]
+      "hostStance": "asserts"
     },
     {
       "id": "sfRcl5rmydI:c_0005",
@@ -154,8 +161,7 @@
       "confidence": 0.95,
       "directTruth": 0.97,
       "rationale": "The MOL program is declassified US Air Force history — it ran 1963-1969, was a crewed reconnaissance station, and was cancelled by the Nixon administration in June 1969. Primary sources include NRO declassified archives.",
-      "hostStance": "asserts",
-      "tags": ["mol", "air-force", "cold-war"]
+      "hostStance": "asserts"
     },
     {
       "id": "sfRcl5rmydI:c_0006",
@@ -184,9 +190,11 @@
       "rationale": "McKinnon's March 2002 arrest in London and the US indictment on 97 counts with approximately $700k-$800k in claimed damages are part of the public extradition case record (2002-2012).",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0001", "kind": "presupposes" }
-      ],
-      "tags": ["arrest", "extradition", "charges"]
+        {
+          "target": "sfRcl5rmydI:c_0001",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "sfRcl5rmydI:c_0007",
@@ -214,9 +222,11 @@
       "rationale": "Theresa May blocked McKinnon's extradition in October 2012 citing his Asperger's diagnosis and suicide risk — widely reported in UK and US press at the time.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0006", "kind": "elaborates" }
-      ],
-      "tags": ["theresa-may", "extradition", "asperger"]
+        {
+          "target": "sfRcl5rmydI:c_0006",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "sfRcl5rmydI:c_0008",
@@ -243,8 +253,7 @@
       "confidence": 0.85,
       "directTruth": 0.8,
       "rationale": "The 2006 Open Minds forum post is the commonly cited origin of the Solar Warden term in UFO circles; the claim is about authorship and date of a specific post, which can be dated but not externally verified as the absolute first reference.",
-      "hostStance": "asserts",
-      "tags": ["solar-warden", "origin", "open-minds-forum"]
+      "hostStance": "asserts"
     },
     {
       "id": "sfRcl5rmydI:c_0009",
@@ -274,9 +283,11 @@
       "rationale": "Perks's November 2012 HuffPost blog entry 'Solar Warden — The Secret Space Program' is verifiable and is the article that introduced the McKinnon-Solar Warden connection to mainstream readers.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0008", "kind": "elaborates" }
-      ],
-      "tags": ["solar-warden", "huffington-post", "darren-perks"]
+        {
+          "target": "sfRcl5rmydI:c_0008",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "sfRcl5rmydI:c_0010",
@@ -303,9 +314,12 @@
       "rationale": "Corey Goode gave sworn deposition testimony in the 2020 Wilcock/Gaia lawsuit that material aspects of his space-program narrative were fabricated; this has been widely reported within the UFO community.",
       "hostStance": "denies",
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0003", "kind": "contradicts", "rationale": "[debunks] undercuts the whistleblower testimony chain that elaborated on McKinnon's fleet interpretation." }
-      ],
-      "tags": ["corey-goode", "debunked", "blue-avians"]
+        {
+          "target": "sfRcl5rmydI:c_0003",
+          "kind": "contradicts",
+          "rationale": "[debunks] undercuts the whistleblower testimony chain that elaborated on McKinnon's fleet interpretation."
+        }
+      ]
     },
     {
       "id": "sfRcl5rmydI:c_0011",
@@ -332,9 +346,12 @@
       "rationale": "The narrator is making a source-criticism argument: the Solar Warden tropes match Gerry Anderson's 1970 UFO series closely enough to suggest cultural borrowing, which is plausible but is an interpretive rather than factual claim.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0003", "kind": "contradicts", "rationale": "[alternative] offers a pop-culture origin for fleet/carriers narrative that competes with McKinnon's testimony interpretation." }
-      ],
-      "tags": ["source-criticism", "science-fiction", "pop-culture"]
+        {
+          "target": "sfRcl5rmydI:c_0003",
+          "kind": "contradicts",
+          "rationale": "[alternative] offers a pop-culture origin for fleet/carriers narrative that competes with McKinnon's testimony interpretation."
+        }
+      ]
     },
     {
       "id": "sfRcl5rmydI:c_0012",
@@ -362,10 +379,15 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "sfRcl5rmydI:c_0010", "kind": "supports" },
-        { "target": "sfRcl5rmydI:c_0011", "kind": "supports" }
-      ],
-      "tags": ["verdict", "epistemic"]
+        {
+          "target": "sfRcl5rmydI:c_0010",
+          "kind": "supports"
+        },
+        {
+          "target": "sfRcl5rmydI:c_0011",
+          "kind": "supports"
+        }
+      ]
     }
   ]
 }

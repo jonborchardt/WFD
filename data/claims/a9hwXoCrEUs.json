@@ -3,6 +3,7 @@
   "transcriptId": "a9hwXoCrEUs",
   "generatedAt": "2026-04-21T12:00:00.000Z",
   "generator": "claude-opus-4-7",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "a9hwXoCrEUs:c_0001",
@@ -36,8 +37,7 @@
       "confidence": 0.8,
       "directTruth": 0.75,
       "rationale": "Doctors Trofimov and Kaznacheev at the Institute of Experimental Medicine (Novosibirsk) did run Kozyrev-mirror experiments in Siberia in 1990-1991 and publish results; the outer framing matches their own accounts, though the 'ESP enhancement' interpretation is their claim, not independently verified.",
-      "hostStance": "asserts",
-      "tags": ["kozyrev-mirror", "russia", "1990", "esp"]
+      "hostStance": "asserts"
     },
     {
       "id": "a9hwXoCrEUs:c_0002",
@@ -66,8 +66,7 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "Nikolai Kozyrev's 1958 spectroscopic observation of a gas emission from the crater Alphonsus is a documented event — his claim of transient lunar volcanism was controversial but later supported by TLP catalogs and Apollo-era follow-up.",
-      "hostStance": "asserts",
-      "tags": ["kozyrev", "moon", "volcanism", "1958"]
+      "hostStance": "asserts"
     },
     {
       "id": "a9hwXoCrEUs:c_0003",
@@ -85,15 +84,14 @@
           "transcriptId": "a9hwXoCrEUs",
           "charStart": 10595,
           "charEnd": 10760,
-          "timeStart": 701.0,
+          "timeStart": 701,
           "timeEnd": 714.779,
           "quote": "ed time is a physical\nForce actively participating in the\nuniverse's existence time is the\nheartbeat of the universe it creates\nenergy that impacts matter and space "
         }
       ],
       "confidence": 0.85,
       "rationale": "This is the core of Kozyrev's published 'causal mechanics' theory of time as energy — documented in his own papers. Whether the theory is physically correct is a separate question.",
-      "hostStance": "asserts",
-      "tags": ["causal-mechanics", "time-energy", "ether"]
+      "hostStance": "asserts"
     },
     {
       "id": "a9hwXoCrEUs:c_0004",
@@ -119,8 +117,7 @@
       "confidence": 0.75,
       "directTruth": 0.7,
       "rationale": "Kozyrev died in 1983 — this is a documented biographical fact. The 'mysteriously' framing is the host's editorializing; the cause of death was kidney failure, as the host acknowledges with 'kidney' one cue later.",
-      "hostStance": "asserts",
-      "tags": ["kozyrev-death", "1983"]
+      "hostStance": "asserts"
     },
     {
       "id": "a9hwXoCrEUs:c_0005",
@@ -144,8 +141,7 @@
       "confidence": 0.97,
       "directTruth": 0.97,
       "rationale": "Stargate was declassified in 1995; CIA documents (89,000+ pages released) confirm the remote-viewing focus. Run out of Fort Meade from 1972 to 1995 under successive names (SCANATE, Grill Flame, etc.).",
-      "hostStance": "asserts",
-      "tags": ["stargate", "remote-viewing", "cia"]
+      "hostStance": "asserts"
     },
     {
       "id": "a9hwXoCrEUs:c_0006",
@@ -171,9 +167,11 @@
       "rationale": "These claimed success rates come directly from Trofimov/Kaznacheev's book and their own unreplicated experiments. They have not been independently reproduced by mainstream parapsychology.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "a9hwXoCrEUs:c_0001", "kind": "elaborates" }
-      ],
-      "tags": ["telepathy", "magnetosphere", "experiment"]
+        {
+          "target": "a9hwXoCrEUs:c_0001",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "a9hwXoCrEUs:c_0007",
@@ -198,9 +196,11 @@
       "rationale": "A 95% telepathic image-transmission rate across 12 countries is an extraordinary claim with no independent replication. It comes only from the Trofimov/Kaznacheev account and would overturn decades of parapsychology null results.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "a9hwXoCrEUs:c_0006", "kind": "elaborates" }
-      ],
-      "tags": ["telepathy", "95-percent", "extraordinary-claim"]
+        {
+          "target": "a9hwXoCrEUs:c_0006",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "a9hwXoCrEUs:c_0008",
@@ -223,9 +223,11 @@
       "rationale": "The '80% ancient-Sumerian' statistic is asserted only by the Kaznacheev book; it's unverified and suffers from obvious methodological problems (confirmation bias, post-hoc classification of symbols).",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "a9hwXoCrEUs:c_0001", "kind": "elaborates" }
-      ],
-      "tags": ["sumerian", "symbols", "pattern-recognition"]
+        {
+          "target": "a9hwXoCrEUs:c_0001",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "a9hwXoCrEUs:c_0009",
@@ -251,9 +253,11 @@
       "rationale": "Self-reported phenomenology from suggestible participants in sensory-deprivation mirrors; results match standard hallucination literature for such conditions rather than confirming external entities.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "a9hwXoCrEUs:c_0001", "kind": "elaborates" }
-      ],
-      "tags": ["observers", "hallucinations", "mirror-space"]
+        {
+          "target": "a9hwXoCrEUs:c_0001",
+          "kind": "elaborates"
+        }
+      ]
     },
     {
       "id": "a9hwXoCrEUs:c_0010",
@@ -275,8 +279,7 @@
       "confidence": 0.9,
       "directTruth": 0.9,
       "rationale": "The CUNY Advanced Science Research Center group (Alù et al.) published a genuine 2023 Nature Physics paper on observing electromagnetic time reflections in a switched metamaterial — a real result, though it does not validate Kozyrev's metaphysics.",
-      "hostStance": "asserts",
-      "tags": ["time-reflection", "cuny", "metamaterial", "2023"]
+      "hostStance": "asserts"
     },
     {
       "id": "a9hwXoCrEUs:c_0011",
@@ -303,9 +306,11 @@
       "rationale": "The 61% vs 8% earthquake-prediction comparison comes from Trofimov's own papers; mainstream seismology does not accept his method and has not replicated the claimed accuracy.",
       "hostStance": "asserts",
       "dependencies": [
-        { "target": "a9hwXoCrEUs:c_0003", "kind": "presupposes" }
-      ],
-      "tags": ["earthquake-prediction", "trofimov", "kozyrev"]
+        {
+          "target": "a9hwXoCrEUs:c_0003",
+          "kind": "presupposes"
+        }
+      ]
     },
     {
       "id": "a9hwXoCrEUs:c_0012",
@@ -332,10 +337,17 @@
       "hostStance": "asserts",
       "inVerdictSection": true,
       "dependencies": [
-        { "target": "a9hwXoCrEUs:c_0003", "kind": "contradicts", "rationale": "[alternative] mainstream physics provides alternative, ether-free explanations for the phenomena Kozyrev invoked time-energy to explain." },
-        { "target": "a9hwXoCrEUs:c_0007", "kind": "contradicts", "rationale": "[undercuts] lack of independent replication of the extraordinary 95% figure undermines the result." }
-      ],
-      "tags": ["verdict", "mainstream-science", "skepticism"]
+        {
+          "target": "a9hwXoCrEUs:c_0003",
+          "kind": "contradicts",
+          "rationale": "[alternative] mainstream physics provides alternative, ether-free explanations for the phenomena Kozyrev invoked time-energy to explain."
+        },
+        {
+          "target": "a9hwXoCrEUs:c_0007",
+          "kind": "contradicts",
+          "rationale": "[undercuts] lack of independent replication of the extraordinary 95% figure undermines the result."
+        }
+      ]
     }
   ]
 }

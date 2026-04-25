@@ -43,20 +43,12 @@ describe("aliases-schema claim sections", () => {
 
   it("merges field overrides across successive writes", () => {
     setClaimFieldOverride(dir, "v:c1", { text: "rewritten" });
-    setClaimFieldOverride(dir, "v:c1", { tags: ["ufo", "area-51"] });
+    setClaimFieldOverride(dir, "v:c1", { rationale: "because" });
     const a = readAliasesFile(dir);
     expect(a.claimFieldOverrides).toHaveLength(1);
     const e = a.claimFieldOverrides[0];
     expect(e.text).toBe("rewritten");
-    expect(e.tags).toEqual(["area-51", "ufo"]);  // deduped + sorted
-  });
-
-  it("dedupes + lowercases + trims tags in the mutator", () => {
-    setClaimFieldOverride(dir, "v:c1", {
-      tags: ["UFO", "ufo ", "Area-51", "area-51", " ", ""],
-    });
-    const e = readAliasesFile(dir).claimFieldOverrides[0];
-    expect(e.tags).toEqual(["area-51", "ufo"]);
+    expect(e.rationale).toBe("because");
   });
 
   it("empty override is dropped entirely", () => {

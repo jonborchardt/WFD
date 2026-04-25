@@ -3,6 +3,7 @@
   "transcriptId": "7n5Dq-c0_Zw",
   "generatedAt": "2026-04-22T04:18:24.298Z",
   "generator": "claude-opus-4-7-plan3-b2",
+  "promptVersion": "v2",
   "claims": [
     {
       "id": "7n5Dq-c0_Zw:c_0001",
@@ -32,12 +33,6 @@
       "confidence": 0.9,
       "directTruth": 0.85,
       "rationale": "The 1972 origin of CIA/DIA-funded psychic research programs (initially at SRI) is documented in the declassified Stargate Collection released by the CIA in 2017. The Soviet-threat framing is also standard in the historical record.",
-      "tags": [
-        "cia",
-        "stargate",
-        "psychic",
-        "cold-war"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -69,12 +64,6 @@
       "confidence": 0.95,
       "directTruth": 0.9,
       "rationale": "Fort Meade hosted the program after SRI's early-1970s Stanford work; Stargate was publicly disclosed in 1995 and terminated that same year. This is well-documented.",
-      "tags": [
-        "stargate",
-        "fort-meade",
-        "cia",
-        "1995"
-      ],
       "dependencies": [
         {
           "target": "7n5Dq-c0_Zw:c_0001",
@@ -113,12 +102,6 @@
       ],
       "confidence": 0.85,
       "rationale": "The Congo-bomber anecdote (Tu-22 recovery attributed to Rosemary Smith and reportedly praised by Jimmy Carter) is widely repeated in Stargate lore but historians note the recovery is underdocumented. Omitting directTruth since it rests on a single widely-repeated story.",
-      "tags": [
-        "stargate",
-        "remote-viewing",
-        "congo",
-        "1976"
-      ],
       "dependencies": [
         {
           "target": "7n5Dq-c0_Zw:c_0002",
@@ -162,13 +145,6 @@
       ],
       "confidence": 0.9,
       "rationale": "The 1984 Mars viewing session exists as an actual declassified Stargate document. However, the content of McMoneagle's 'vision' is experiential data, not verified fact about Mars. Omitting directTruth because the host is reporting what the session produced, not endorsing its cosmological accuracy.",
-      "tags": [
-        "stargate",
-        "mars",
-        "mcmoneagle",
-        "remote-viewing",
-        "1984"
-      ],
       "dependencies": [
         {
           "target": "7n5Dq-c0_Zw:c_0002",
@@ -216,12 +192,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "McMoneagle's military service, Stargate tenure, and Legion of Merit award are matters of public record. The 450 missions figure is his own tally and is widely cited.",
-      "tags": [
-        "mcmoneagle",
-        "stargate",
-        "cia",
-        "legion-of-merit"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -251,12 +221,6 @@
       ],
       "confidence": 0.8,
       "rationale": "The Angela Ford / Charles Jordan case (Lovell misheard/transcribed as Lowell) is a widely repeated Stargate success story, originally surfaced in remote-viewing literature. Lovell, Wyoming is a real town; Jordan was reportedly apprehended there. Omitting directTruth because independent corroboration outside RV advocacy sources is limited.",
-      "tags": [
-        "stargate",
-        "remote-viewing",
-        "angela-ford",
-        "1989"
-      ],
       "dependencies": [
         {
           "target": "7n5Dq-c0_Zw:c_0002",
@@ -289,11 +253,6 @@
       ],
       "confidence": 0.7,
       "rationale": "The '20% hit-rate' figure appears in Stargate-era CIA summaries but exactly what counted as a hit is contested; the official 1995 AIR review concluded RV was not useful for intelligence. Omitting directTruth because the number's meaning depends heavily on the coding protocol.",
-      "tags": [
-        "stargate",
-        "mcmoneagle",
-        "hit-rate"
-      ],
       "dependencies": [
         {
           "target": "7n5Dq-c0_Zw:c_0005",
@@ -328,12 +287,6 @@
       "confidence": 0.9,
       "directTruth": 0.8,
       "rationale": "The ONR 'Enhanced Human Performance' premonition program (c. 2014, ~$3.85M) is well documented in press reporting (e.g., Time, Guardian) and in ONR basic-research contracts.",
-      "tags": [
-        "esp",
-        "onr",
-        "navy",
-        "2014"
-      ],
       "dependencies": [
         {
           "target": "7n5Dq-c0_Zw:c_0002",
@@ -380,11 +333,6 @@
       "confidence": 0.9,
       "directTruth": 0.75,
       "rationale": "Acoustic Kitty is confirmed in declassified CIA documents released via Victor Marchetti; the taxi-collision failure is the widely-reported anecdote although some historians dispute the exact cause of termination. Cost figure is approximate.",
-      "tags": [
-        "cia",
-        "acoustic-kitty",
-        "cold-war"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -413,11 +361,6 @@
       "confidence": 0.85,
       "directTruth": 0.7,
       "rationale": "The 2017 CREST release of CIA records was ~12 million pages total covering many programs, not all Stargate. Host's framing conflates the whole CREST dump with Stargate, so directTruth is moderated.",
-      "tags": [
-        "cia",
-        "foia",
-        "stargate"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -442,11 +385,6 @@
       ],
       "confidence": 0.85,
       "rationale": "Host explicitly takes an 'open-minded skeptic' position. This is editorial advocacy, not an empirical claim — omitting directTruth.",
-      "tags": [
-        "esp",
-        "policy",
-        "opinion"
-      ],
       "hostStance": "asserts"
     },
     {
@@ -473,11 +411,6 @@
       "confidence": 0.7,
       "directTruth": 0.2,
       "rationale": "Host opens with a hook framing, but treats McMoneagle's Mars session as historical Stargate artifact rather than confirmed Martian exploration. The self-labeled 'skeptical believer' stance and the refusal to assert the vision was veridical indicate low directTruth for the literal interpretation.",
-      "tags": [
-        "mars",
-        "remote-viewing",
-        "rhetorical-frame"
-      ],
       "dependencies": [
         {
           "target": "7n5Dq-c0_Zw:c_0004",
