@@ -1,5 +1,7 @@
 # captions
 
+Recent [Blog Post](https://jonb.hashnode.dev/building-a-searchable-contradiction-aware-index-of-the-why-files?utm_source=hashnode&utm_medium=feed)
+
 **Trace claims back to the tape.**
 
 `captions` ingests a large corpus of video transcripts — much of it contested or
